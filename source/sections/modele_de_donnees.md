@@ -1685,7 +1685,7 @@ Il y a une valeur d’offset par couple tenant/collection.
 Base MetaData
 -------------
 
-La base Metadata contient les collections relatives aux métadonnées des unités archivistiques (collection Unit) et des groupes d’objets (collection ObjectGroup). Une collection technique Offset liée à la reconstruction existe également.
+La base Metadata contient les collections relatives aux métadonnées des unités archivistiques (collection Unit) et des groupes d’objets (collection ObjectGroup). Une collection technique Offset liée à la reconstruction existe également, de même qu'une collection Snapshot relative au suivi des recherches en mode "scroll".
 
 ### Collection Unit
 
@@ -3229,6 +3229,8 @@ https://redirect.francearchives.fr/seda/api\_v2-1/seda-2.1-main.html
     "_v": 1,
     "_av": 1,
     "_glpd": "2018-07-05T13:55:39.779",
+	"_acd": "2020-04-04T08:07:06",
+    "_aud": "2020-07-21T08:07:06",
     "_us": [
         "aeaqaaaaaahducypaasryallvnrahwaaaabq",
         "aeaqaaaaaahducypaasryallvnrai5aaaaaq"
@@ -3578,6 +3580,26 @@ représentées par ce groupe d’objets.
 
         -   Il s’agit d’un entier.
 
+**« _acd » :** Date de la création du groupe d'objets techniques
+
+-   Il s’agit d’une date au format ISO 8601 YYY-MM-DD + “T” + hh:mm:ss.millisecondes « + » timezone hh:mm.
+
+    Exemple : ```2016-08-19T16:36:07.942+02:00```
+
+-   Champ peuplé par la solution logicielle Vitam.
+
+-   Cardinalité : 1-1
+
+**« _aud » :** Date de la dernière modification du groupe d'objets techniques
+
+-   Il s’agit d’une date au format ISO 8601 YYY-MM-DD + “T” + hh:mm:ss.millisecondes « + » timezone hh:mm.
+
+    Exemple : ```2016-08-19T16:36:07.942+02:00```
+
+-   Champ peuplé par la solution logicielle Vitam.
+
+-   Cardinalité : 1-1
+
 **« _v » :** version de l’enregistrement décrit.
 
 -   Il s’agit d’un entier.
@@ -3671,6 +3693,66 @@ Il y a une valeur d’offset par couple tenant/collection.
     **« strategyId »** : identifiant de la stratégie de stockage.
 
 -   Il s’agit d’une chaîne de caractère.
+
+**« _tenant » :** identifiant du tenant.
+
+-   Il s’agit d’un entier.
+
+-   Champ peuplé par la solution logicielle Vitam.
+
+-   Cardinalité : 1-1
+
+### Collection Snapshot
+
+#### Utilisation de la collection Snapshot
+
+La collection Snapshot contient les informations relatives à la recherche en mode "scroll".
+Ses documents sont calculés à partir des requêtes en mode "scroll" passées.
+Chaque document représente un instantané (snapshot) du nombre de requêtes effectuées ou de la date de la dernière requête effectuée, par tenant.
+Deux documents sont créés à chaque fois qu'un scroll est effectué par tenant et par jour.
+
+#### Exemple de JSON stocké en base comprenant l’exhaustivité des champs
+
+```json
+{
+    _id: 'aeaaaaaaaahp7qg2abuxiamcqikjbmaaaaaq',
+    Name: 'Scroll',
+    _tenant: 1,
+    Value: 3
+}
+```
+
+#### Détail des champs
+
+**« _id » :** identifiant unique.
+
+-   Il s’agit d’une chaîne de 36 caractères correspondant à un GUID.
+
+-   Champ peuplé par la solution logicielle Vitam.
+
+-   Cardinalité : 1-1
+
+**« Name » :** intitulé de l'"instantané".
+
+-   les valeurs possibles sont *Scroll* et *LastScrollRequestDate*.
+
+-    Champ peuplé par la solution logicielle Vitam.
+
+-   Il s’agit d’une chaîne de caractères.
+
+-   Cardinalité : 1-1
+
+**« Value » :** valeur calculée pour un "instantané" donné.
+
+-   les valeurs possibles sont :
+	-	pour un enregistrement dont le « Name » a pour valeur « Scroll » : un nombre correspondant au nombre de requêtes en mode "scroll" déjà opérées,
+	-	pour un enregistrement dont le « Name » a pour valeur « LastScrollRequestDate » : la date de dernière utilisation d'une requête en mode "scroll".
+
+-    Champ peuplé par la solution logicielle Vitam.
+
+-   Il s’agit d’une chaîne de caractères.
+
+-   Cardinalité : 1-1
 
 **« _tenant » :** identifiant du tenant.
 
@@ -4385,38 +4467,44 @@ Base collect
 ------------
 
 La base collect contient la collection relative aux métadonnées
-correspondant au contexte de versement (collection Collect) attendu dans
-le module de collecte.
+correspondant au contexte de versement (collection Project) et aux transactions associées (collection Transaction) attendus dans le module de collecte.
 
-### Collection Collect
+### Collection Project
 
-#### Utilisation de la collection Collect
+#### Utilisation de la collection Project
 
-La collection Collect contient les informations relatives à l’en-tête
+La collection Project contient les informations relatives à l’en-tête
 d’un bordereau de transfert, soit des métadonnées permettant de
 contextualiser un versement.
 
-#### Exemple de JSON stocké dans la collection Collect
+#### Exemple de JSON stocké dans la collection Project
 
 Les champs présentés dans l’exemple ci-après ne font pas état de l’exhaustivité des champs disponibles dans le SEDA. Ceux-ci sont référencés dans la documentation SEDA disponible au lien suivant :
-https://redirect.francearchives.fr/seda/api\_v2-1/seda-2.1-main.html
+https://redirect.francearchives.fr/seda/api\_v2-1/seda-2.1-main.html et https://github.com/culturecommunication/seda
 
 ```json
 {
-    "_id": ObjectID("620a7a002d5a4059d5ccae10"),
-    "Id": "aeeaaaaaachfy24zabkoual67dwjhcqaaaaq",
-    "ArchivalAgencyIdentifier": "ArchivalAgencyIdentifier4",
-    "TransferingAgencyIdentifier": "TransferingAgencyIdentifier5",
-    "OriginatingAgencyIdentifier": "FRAN_NP_009913",
-    "ArchivalProfile": "ArchiveProfile",
-    "Comment": "Comments",
-    "Status": "SENT"
+    "_id": "aeeaaaaaaghj3m7nabjocamcdqvqqviaaaaq",
+    "context": {
+        "ArchivalAgreement": "IC-000001",
+        "MessageIdentifier": "20200131-000013",
+        "ArchivalAgencyIdentifier": "Vitam",
+        "TransferringAgencyIdentifier": "RATP",
+        "OriginatingAgencyIdentifier": "RATP",
+        "SubmissionAgencyIdentifier": "RATP",
+        "Comment": "SG - bureautique",
+        "UnitUp": "aeaqaaaaaehedmpfaay5gambwxsspviaaaba",
+        "CreationDate": "2022-08-23T09:05:52.242",
+        "LastUpdate": "2022-08-23T09:05:52.242",
+        "Status": "OPEN"
+    },
+    "_tenant": 1
 }
 ```
 
 #### Détail du JSON
 
-La structure de la collection Collect est composée de la transposition JSON des balises XML de premier niveau du message « ArchiveTransfer », ainsi que des balises contenues dans la balise &lt;ManagementMetadata&gt; du bordereau de transfert conforme au standard SEDA v.2.1.
+La structure de la collection Project est composée de la transposition JSON des balises XML de premier niveau du message « ArchiveTransfer », ainsi que des balises contenues dans la balise &lt;ManagementMetadata&gt; du bordereau de transfert conforme au standard SEDA v.2.1. et v.2.2.
 
 Cette transposition se fait comme suit :
 
@@ -4428,84 +4516,310 @@ Cette transposition se fait comme suit :
 
 -   Cardinalité : 1-1
 
-**« Id » :** identifiant de la transaction.
+**« context » :** contexte détaillé du projet de versement.
+
+-   Il s’agit d’un objet.
+
+-   Cardinalité : 1-1
+
+-   Cet objet peut contenir les champs suivants :
+
+    -   **« ArchivalAgreement » :** identifiant du contrat d’entrée utilisé pour réaliser l’entrée.
+
+		-   Il s’agit d’une chaîne de caractères.
+
+		-   Destiné à alimenter le champ ArchivalAgreement du message ArchiveTransfer.
+
+		-   Cardinalité : 0-1
+
+	- **« MessageIdentifier » :** identifiant du lot d’objets, utilisé pour identifier les versements.
+
+		-   Il s’agit d’une chaîne de caractères intelligible pour un humain qui permet de comprendre à quel SIP ou quel lot d’archives se rapporte l’événement.
+
+		-   Destiné à alimenter le champ MessageIdentifier du message ArchiveTransfer.
+
+		-   Cardinalité : 0-1
+
+	- **« ArchivalAgencyIdentifier »** : identifiant du service d’archivage.
+
+		-   Il s’agit d’une chaîne de caractères.
+
+		-   Destiné à alimenter le champ ArchivalAgencyIdentifier du message ArchiveTransfer.
+
+		-   Cardinalité : 0-1
+
+	- **« TransferringAgencyIdentifier » :** identifiant du service de transfert.
+
+		-   Il s’agit d’une chaîne de caractères.
+
+		-   Destiné à alimenter le champ TransferringAgencyIdentifier du message ArchiveTransfer.
+
+		-   Cardinalité : 0-1
+
+	- **« OriginatingAgencyIdentifier » :** identifiant du service producteur.
+
+		-   Il s’agit d’une chaîne de caractères
+
+		-   Destiné à alimenter le champ OriginatingAgencyIdentifier du message ArchiveTransfer.
+
+		-   Cardinalité : 0-1
+
+	- **« SubmissionAgencyIdentifier » :** identifiant du service versant.
+
+		-   Il s’agit d’une chaîne de caractères.
+
+		-   Destiné à alimenter le champ SubmissionAgencyIdentifier du message ArchiveTransfer.
+
+		-   Cardinalité : 0-1
+
+		-   Ce champ est facultatif dans le bordereau. S’il est absent ou vide, alors la valeur contenue dans le champ &lt;OriginatingAgencyIdentifier&gt; est reportée dans ce champ.
+
+	- **« ArchivalProfile » :** identifiant du profil d’archivage utilisé pour réaliser l’entrée.
+
+		-   Il s’agit d’une chaîne de caractères
+
+		-   Destiné à alimenter le champ ArchivalProfile du message ArchiveTransfer.
+
+		-   Cardinalité : 0-1
+
+	- **« Comment » :** précisions sur la demande de transfert.
+
+		-   Il s’agit d’une chaîne de caractères
+
+		-   Destiné à alimenter le champ Comment du message ArchiveTransfer.
+
+		-   Cardinalité : 0-1
+	
+	- **« LegalStatus » :** statut légal des archives.
+
+		-   Il s’agit d’une chaîne de caractères
+
+		-   Destiné à alimenter le champ LegalStatus du message ArchiveTransfer.
+		
+		- 	Si le champ est renseigné, les valeurs attendues sont : « Public Archive », « Private Archive », « Public and Private Archive ».
+
+		-   Cardinalité : 0-1
+	
+	- **« AcquisitionInformation » :** modalité d'entrée.
+
+		-   Il s’agit d’une chaîne de caractères
+
+		-   Destiné à alimenter le champ AcquisitionInformation du message ArchiveTransfer.
+
+		-   Cardinalité : 0-1
+	
+	- **« UnitUp » :** identifiant de l’unité archivistique à laquelle rattacher automatiquement la ou les unités racines des transactions associées au projet de versement.
+
+		-   Il s’agit d’une chaîne de 36 caractères correspondant à un GUID. Valeur du champ _id d’une unité archivistique (ou GUID) enregistré dans la collection Unit.
+
+		-   Cardinalité : 0-1
+
+	- **« Status » :** statut de la transaction
+
+		-   Il s’agit d’une chaîne de caractères.
+
+		-   Les valeurs peuvent être : « OPEN ».
+
+		-   Cardinalité : 1-1
+		
+	- **« CreationDate » :** date de création du projet de versement.
+
+		-   Champ peuplé par la solution logicielle Vitam.
+
+		-   Cardinalité : 1-1
+
+	- **« LastUpdate » :** date de dernière modification du projet de versement.
+
+		-   Champ peuplé par la solution logicielle Vitam.
+
+		-   Cardinalité : 1-1
+		
+**« _tenant » :** identifiant du tenant.
+
+-   Il s’agit d’un entier.
+
+-   Champ peuplé par la solution logicielle Vitam.
+
+-   Cardinalité : 1-1
+
+### Collection Transaction
+
+#### Utilisation de la collection Transaction
+
+La collection Transaction contient les informations relatives à l’en-tête
+d’un bordereau de transfert, soit des métadonnées permettant de
+contextualiser un versement, héritées pour tout ou partie d'un projet de versement.
+
+#### Exemple de JSON stocké dans la collection Transaction
+
+Les champs présentés dans l’exemple ci-après ne font pas état de l’exhaustivité des champs disponibles dans le SEDA. Ceux-ci sont référencés dans la documentation SEDA disponible au lien suivant :
+https://redirect.francearchives.fr/seda/api\_v2-1/seda-2.1-main.html et https://github.com/culturecommunication/seda
+
+```json
+{
+    "_id": "aeeaaaaaaghh6yjtab2dsamcqhhpdqiaaaaq",
+    "Status": "OPEN",
+    "ProjectId": "aeeaaaaaaghh6yjtab2dsamcqhho5jaaaaaq",
+    "context": {
+        "ArchivalAgreement": "IC-000001",
+        "MessageIdentifier": "20220302-000005",
+        "ArchivalAgencyIdentifier": "Identifier0",
+        "TransferingAgencyIdentifier": "Identifier3",
+        "OriginatingAgencyIdentifier": "FRAN_NP_009915",
+        "SubmissionAgencyIdentifier": "FRAN_NP_005061",
+        "ArchivalProfile": "ArchiveProfile5",
+        "Comment": "Versement du service producteur : Cabinet de Michel Mercier",
+        "UnitUp": "aeaqaaaaaahgnz5dabg42amava5kfoqaaaba",
+		"CreationDate": "2022-08-23T09:05:52.242",
+        "LastUpdate": "2022-08-23T09:05:52.242"
+    },
+    "_tenant": 1
+}
+```
+
+#### Détail du JSON
+
+La structure de la collection Transaction est composée de la transposition JSON des balises XML de premier niveau du message « ArchiveTransfer », ainsi que des balises contenues dans la balise &lt;ManagementMetadata&gt; du bordereau de transfert conforme au standard SEDA v.2.1. et v.2.2.
+
+Cette transposition se fait comme suit :
+
+**« _id » :** identifiant unique de la partie contextuelle du versement.
+
+-   Il s’agit d’une chaîne de 36 caractères correspondant à un GUID.
+
+-   Champ peuplé par la solution logicielle Vitam.
+
+-   Cardinalité : 1-1
+
+**« ProjectId » :** identifiant du projet de versement associé à la transaction.
 
 -   Il s’agit d’une chaîne de 36 caractères correspondant à un GUID.
 
 -   Cardinalité : 1-1
 
-**« ArchivalAgreement » :** identifiant du contrat d’entrée utilisé pour réaliser l’entrée.
+**« context » :** contexte détaillé hérité du projet de versement.
 
--   Il s’agit d’une chaîne de caractères.
-
--   Destiné à alimenter le champ ArchivalAgreement du message ArchiveTransfer.
+-   Il s’agit d’un objet.
 
 -   Cardinalité : 1-1
 
-**« MessageIdentifier » :** identifiant du lot d’objets, utilisé pour identifier les versements.
+-   Cet objet peut contenir les champs suivants :
 
--   Il s’agit d’une chaîne de caractères intelligible pour un humain qui permet de comprendre à quel SIP ou quel lot d’archives se rapporte l’événement.
+    -   **« ArchivalAgreement » :** identifiant du contrat d’entrée utilisé pour réaliser l’entrée.
 
--   Destiné à alimenter le champ MessageIdentifier du message ArchiveTransfer.
+		-   Il s’agit d’une chaîne de caractères.
 
--   Cardinalité : 1-1
+		-   Destiné à alimenter le champ ArchivalAgreement du message ArchiveTransfer.
 
-**« ArchivalAgencyIdentifier » :** identifiant du service d’archivage.
+		-   Cardinalité : 0-1
 
--   Il s’agit d’une chaîne de caractères.
+	- **« MessageIdentifier » :** identifiant du lot d’objets, utilisé pour identifier les versements.
 
--   Destiné à alimenter le champ ArchivalAgencyIdentifier du message ArchiveTransfer.
+		-   Il s’agit d’une chaîne de caractères intelligible pour un humain qui permet de comprendre à quel SIP ou quel lot d’archives se rapporte l’événement.
 
--   Cardinalité : 1-1
+		-   Destiné à alimenter le champ MessageIdentifier du message ArchiveTransfer.
 
-**« TransferringAgencyIdentifier » :** identifiant du service de
-transfert.
+		-   Cardinalité : 0-1
 
--   Il s’agit d’une chaîne de caractères.
+	- **« ArchivalAgencyIdentifier »** : identifiant du service d’archivage.
 
--   Destiné à alimenter le champ TransferringAgencyIdentifier du message ArchiveTransfer.
+		-   Il s’agit d’une chaîne de caractères.
 
--   Cardinalité : 1-1
+		-   Destiné à alimenter le champ ArchivalAgencyIdentifier du message ArchiveTransfer.
 
-**« OriginatingAgencyIdentifier » :** identifiant du service producteur.
+		-   Cardinalité : 0-1
 
--   Il s’agit d’une chaîne de caractères
+	- **« TransferringAgencyIdentifier » :** identifiant du service de transfert.
 
--   Destiné à alimenter le champ OriginatingAgencyIdentifier du message ArchiveTransfer.
+		-   Il s’agit d’une chaîne de caractères.
 
--   Cardinalité : 1-1
+		-   Destiné à alimenter le champ TransferringAgencyIdentifier du message ArchiveTransfer.
 
-**« SubmissionAgencyIdentifier » :** identifiant du service versant.
+		-   Cardinalité : 0-1
 
--   Il s’agit d’une chaîne de caractères.
+	- **« OriginatingAgencyIdentifier » :** identifiant du service producteur.
 
--   Destiné à alimenter le champ SubmissionAgencyIdentifier du message ArchiveTransfer.
+		-   Il s’agit d’une chaîne de caractères
 
--   Cardinalité : 1-1
+		-   Destiné à alimenter le champ OriginatingAgencyIdentifier du message ArchiveTransfer.
 
--   Ce champ est facultatif dans le bordereau. S’il est absent ou vide, alors la valeur contenue dans le champ &lt;OriginatingAgencyIdentifier&gt; est reportée dans ce champ.
+		-   Cardinalité : 0-1
 
-**« ArchivalProfile » :** identifiant du profil d’archivage utilisé pour réaliser l’entrée.
+	- **« SubmissionAgencyIdentifier » :** identifiant du service versant.
 
--   Il s’agit d’une chaîne de caractères
+		-   Il s’agit d’une chaîne de caractères.
 
--   Destiné à alimenter le champ ArchivalProfile du message ArchiveTransfer.
+		-   Destiné à alimenter le champ SubmissionAgencyIdentifier du message ArchiveTransfer.
 
--   Cardinalité : 0-1
+		-   Cardinalité : 0-1
 
-**« Comment » :** précisions sur la demande de transfert.
+		-   Ce champ est facultatif dans le bordereau. S’il est absent ou vide, alors la valeur contenue dans le champ &lt;OriginatingAgencyIdentifier&gt; est reportée dans ce champ.
 
--   Il s’agit d’une chaîne de caractères
+	- **« ArchivalProfile » :** identifiant du profil d’archivage utilisé pour réaliser l’entrée.
 
--   Destiné à alimenter le champ Comment du message ArchiveTransfer.
+		-   Il s’agit d’une chaîne de caractères
 
--   Cardinalité : 0-1
+		-   Destiné à alimenter le champ ArchivalProfile du message ArchiveTransfer.
+
+		-   Cardinalité : 0-1
+
+	- **« Comment » :** précisions sur la demande de transfert.
+
+		-   Il s’agit d’une chaîne de caractères
+
+		-   Destiné à alimenter le champ Comment du message ArchiveTransfer.
+
+		-   Cardinalité : 0-1
+	
+	- **« LegalStatus » :** statut légal des archives.
+
+		-   Il s’agit d’une chaîne de caractères
+
+		-   Destiné à alimenter le champ LegalStatus du message ArchiveTransfer.
+		
+		- 	Si le champ est renseigné, les valeurs attendues sont : « Public Archive », « Private Archive », « Public and Private Archive ».
+
+		-   Cardinalité : 0-1
+	
+	- **« AcquisitionInformation » :** modalité d'entrée.
+
+		-   Il s’agit d’une chaîne de caractères
+
+		-   Destiné à alimenter le champ AcquisitionInformation du message ArchiveTransfer.
+
+		-   Cardinalité : 0-1
+	
+	- **« UnitUp » :** identifiant de l’unité archivistique à laquelle rattacher automatiquement la ou les unités racines des transactions associées au projet de versement.
+
+		-   Il s’agit d’une chaîne de 36 caractères correspondant à un GUID. Valeur du champ _id d’une unité archivistique (ou GUID) enregistré dans la collection Unit.
+
+		-   Cardinalité : 0-1
+		
+	- **« CreationDate » :** date de création de la transaction.
+
+		-   Champ peuplé par la solution logicielle Vitam.
+
+		-   Cardinalité : 1-1
+
+	- **« LastUpdate » :** date de dernière modification de la transaction.
+
+		-   Champ peuplé par la solution logicielle Vitam.
+
+		-   Cardinalité : 1-1
 
 **« Status » :** statut de la transaction
 
 -   Il s’agit d’une chaîne de caractères.
 
 -   Les valeurs peuvent être : « OPEN », « CLOSE », « SEND », « WAITING_ACK », « ACK_OK », « ACK_KO ».
+
+-   Cardinalité : 1-1
+
+**« _tenant » :** identifiant du tenant.
+
+-   Il s’agit d’un entier.
+
+-   Champ peuplé par la solution logicielle Vitam.
 
 -   Cardinalité : 1-1
 
@@ -8203,7 +8517,6 @@ préservation.
 
 -   Cardinalité : 1-1
 
-
 Base Offer
 ----------
 
@@ -9018,8 +9331,6 @@ _v": version de la requête d'accès.
 * Il s’agit d’un entier.
 * Si le numéro est supérieur à 0, alors il s’agit du numéro de version de l’enregistrement.
 * Cardinalité : 1-1
-
-
 
 Annexe 1 : Valeurs possibles pour le champ evType du LogBook Operation
 ----------------------------------------------------------------------
@@ -9861,5 +10172,6 @@ Le champs « _uds » n’est pas accessible en externe.
 | #score                     | _score |
 | #version                   | _v |
 | #tenant                    | _tenant |
+
 
 
