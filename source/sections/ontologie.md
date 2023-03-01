@@ -11,7 +11,6 @@ Documents de référence
   **Vitam** – Profils d’unité archivistique                              27/09/2021               Ce document est complémentaire du présent document qui fait référence, ponctuellement, aux profils d’unité archivistique.
   **Vitam** – Documentation d’exploitation                               27/09/2021               
 
-
 Présentation du document
 ------------------------
 
@@ -20,15 +19,15 @@ de la notion d'ontologie dans la solution logicielle Vitam.
 
 Il s’articule autour des axes suivants :
 
--   une présentation de la notion d’ontologie ;
+- une présentation de la notion d’ontologie ;
 
--   une présentation de la manière dont la solution logicielle Vitam la
-    formalise ;
+- une présentation de la manière dont la solution logicielle Vitam la
+  formalise ;
 
--   une présentation des mécanismes mis en œuvre dans la solution
-    logicielle Vitam pour prendre en compte cette notion ;
+- une présentation des mécanismes mis en œuvre dans la solution
+  logicielle Vitam pour prendre en compte cette notion ;
 
--   quelques conseils complémentaires de mise en œuvre.
+- quelques conseils complémentaires de mise en œuvre.
 
 Le présent document décrit les fonctionnalités qui sont offertes par la
 solution logicielle Vitam au terme de la version 5.RC (septembre 2021).
@@ -42,6 +41,9 @@ Présentation de la notion d’ontologie
 
 ### Qu’est-ce qu’une ontologie ?
 
+
+Ceci est une modification
+
 L’ontologie référence l’**ensemble des vocabulaires** ou métadonnées
 acceptés dans la solution logicielle Vitam. Pour chacun de ces
 vocabulaires, elle définit un intitulé et un type d’indexation
@@ -52,69 +54,71 @@ utilise(nt)[^1].
 Les éléments dans l'ontologie:![](./medias/Pictures/ontologie_image2.png)
 
 L’ontologie se compose :
--   des vocabulaires définis dans le Standard d’échanges de données pour
-    l’archivage (SEDA), inclus par défaut. Ces vocabulaires
-    correspondent aux éléments XML présents dans les messages du SEDA
-    (ArchiveTransfer en particulier) ;
 
--   des vocabulaires propres à la solution logicielle Vitam, inclus par
-    défaut[^2] ;
+- des vocabulaires définis dans le Standard d’échanges de données pour
+  l’archivage (SEDA), inclus par défaut. Ces vocabulaires
+  correspondent aux éléments XML présents dans les messages du SEDA
+  (ArchiveTransfer en particulier) ;
 
--   de vocabulaires non gérés par les deux précédents items et ajoutés
-    pour répondre à un besoin particulier du service utilisateur, en
-    particulier enrichir les descriptions, en entrée ou en accès.
+- des vocabulaires propres à la solution logicielle Vitam, inclus par
+  défaut[^2] ;
+
+- de vocabulaires non gérés par les deux précédents items et ajoutés
+  pour répondre à un besoin particulier du service utilisateur, en
+  particulier enrichir les descriptions, en entrée ou en accès.
 
 Ces vocabulaires peuvent être utilisés pour décrire :
 
--   0 à n contexte(s) applicatif(s),
+- 0 à n contexte(s) applicatif(s),
 
--   0 à n contrat(s) d’accès,
+- 0 à n contrat(s) d’accès,
 
--   0 à n contrat(s) d’entrée,
+- 0 à n contrat(s) d’entrée,
 
--   0 à n contrat(s) de gestion,
+- 0 à n contrat(s) de gestion,
 
--   0 à n entrée(s) dans le registre des fonds (fonds propres et
-    symboliques, détail des fonds),
+- 0 à n entrée(s) dans le registre des fonds (fonds propres et
+  symboliques, détail des fonds),
 
--   0 à n format(s),
+- 0 à n format(s),
 
--   0 à n griffon(s),
+- 0 à n griffon(s),
 
--   0 à n groupe(s) d’objets,
+- 0 à n groupe(s) d’objets,
 
--   0 à n journal(ux) (opérations, cycles de vie),
+- 0 à n journal(ux) (opérations, cycles de vie),
 
--   0 à n profil(s) d’archivage,
+- 0 à n profil(s) d’archivage,
 
--   0 à n profil(s) de sécurité,
+- 0 à n profil(s) de sécurité,
 
--   0 à n profil(s) d’unité archivistique,
+- 0 à n profil(s) d’unité archivistique,
 
--   0 à n règle(s) de gestion,
+- 0 à n règle(s) de gestion,
 
--   0 à n scénario(s) de préservation,
+- 0 à n scénario(s) de préservation,
 
--   0 à n service(s) agent(s),
+- 0 à n service(s) agent(s),
 
--   0 à n unité(s) archivistique(s),
+- 0 à n unité(s) archivistique(s),
 
--   0 à n vocabulaire(s).
+- 0 à n vocabulaire(s).
 
 ***Points d'attention :***
 
--   les vocabulaires sont uniques dans la solution logicielle Vitam ;
+- les vocabulaires sont uniques dans la solution logicielle Vitam ;
 
--   les vocabulaires utilisés par la solution logicielle Vitam de type
-    « objet », c’est-à-dire ne contenant pas de valeurs
-    informationnelles, ne sont pas référencés dans l’ontologie. Il peut
-    s’agir de :
-
-    -   vocabulaires conformes au SEDA de type « objet », c'est-à-dire
-        correspondant à un élément XML englobant un sous-élément XML
-        (par exemple, Writer ou Management) ;
+- les vocabulaires utilisés par la solution logicielle Vitam de type
+  « objet », c’est-à-dire ne contenant pas de valeurs
+  informationnelles, ne sont pas référencés dans l’ontologie. Il peut
+  s’agir de :
+  
+  - vocabulaires conformes au SEDA de type « objet », c'est-à-dire
+    correspondant à un élément XML englobant un sous-élément XML
+    (par exemple, Writer ou Management) ;
 
 Exemple : ne sont pas présents dans l’ontologie les éléments XML <ManagementMetadata>, <StorageRule> et <AccessRule>. Les autres, qui contiennent des valeurs informationnelles, le sont.
+
 ```xml
 <ManagementMetadata>
       <AcquisitionInformation>Versement</AcquisitionInformation>
@@ -131,8 +135,8 @@ Exemple : ne sont pas présents dans l’ontologie les éléments XML <Manageme
  </ManagementMetadata>
 ```
 
--   vocabulaires générés par la solution logicielle Vitam, correspondant
-    à un élément JSON de type « objet ».
+- vocabulaires générés par la solution logicielle Vitam, correspondant
+  à un élément JSON de type « objet ».
 
 Exemple : ne sont pas présents dans l’ontologie les éléments JSON _mgt, AccessRule, Rules, CustodialHistory. Les autres, qui contiennent des valeurs informationnelles, le sont.
 
@@ -165,46 +169,46 @@ pouvant contenir des valeurs** (ou métadonnées) quand ils sont utilisés.
 
 L’ontologie répond à plusieurs besoins :
 
--   regrouper toutes les façons de nommer un même objet intellectuel et
-    disposer d’une liste de l’ensemble des vocabulaires gérés nativement
-    par la solution logicielle Vitam, précisant :
+- regrouper toutes les façons de nommer un même objet intellectuel et
+  disposer d’une liste de l’ensemble des vocabulaires gérés nativement
+  par la solution logicielle Vitam, précisant :
+  
+  - leur dénomination lorsqu’ils sont exposés via l’API externe
+    (ex : \#originating\_agency),
+  
+  - leur dénomination interne au système (\_sp),
+  
+  - leur dénomination dans un bordereau de transfert conforme au
+    SEDA (OriginatingAgencyIdentifier) ;
 
-    -   leur dénomination lorsqu’ils sont exposés via l’API externe
-        (ex : \#originating\_agency),
+- éviter les conflits en interdisant la définition d’un nouveau
+  vocabulaire avec le même identifiant et intitulé qu’un vocabulaire
+  préexistant ;
 
-    -   leur dénomination interne au système (\_sp),
+- connaître le type d’indexation des différents vocabulaires proposé
+  par défaut par la solution logicielle Vitam et, le cas échéant, s’il
+  ne correspond pas aux choix d’implémentation, le modifier ;
 
-    -   leur dénomination dans un bordereau de transfert conforme au
-        SEDA (OriginatingAgencyIdentifier) ;
+- pour un profil d’unité archivistique, connaître les vocabulaires et
+  leur type, afin de rédiger un profil conforme aux éléments indexés
+  et gérés par la solution logicielle Vitam ;
 
--   éviter les conflits en interdisant la définition d’un nouveau
-    vocabulaire avec le même identifiant et intitulé qu’un vocabulaire
-    préexistant ;
+- le cas échéant, ajouter des vocabulaires afin d’enrichir la
+  description des unités archivistiques et/ou des groupes d’objets
+  techniques[^3] ;
 
--   connaître le type d’indexation des différents vocabulaires proposé
-    par défaut par la solution logicielle Vitam et, le cas échéant, s’il
-    ne correspond pas aux choix d’implémentation, le modifier ;
+- éviter la multiplication des vocabulaires déclarés dans les profils
+  d’unité archivistique faisant référence à une même entité ;
 
--   pour un profil d’unité archivistique, connaître les vocabulaires et
-    leur type, afin de rédiger un profil conforme aux éléments indexés
-    et gérés par la solution logicielle Vitam ;
-
--   le cas échéant, ajouter des vocabulaires afin d’enrichir la
-    description des unités archivistiques et/ou des groupes d’objets
-    techniques[^3] ;
-
--   éviter la multiplication des vocabulaires déclarés dans les profils
-    d’unité archivistique faisant référence à une même entité ;
-
--   attribuer un type d’indexation particulier pour chacun d’entre eux,
-    et ainsi :
-
-    -   améliorer leur indexation dans le moteur de recherche Elastic
-        Search et, de fait, procéder à des recherches plus fines selon
-        leur type d’indexation,
-
-    -   contrôler les valeurs des unités archivistiques déclarant un
-        profil d’unité archivistique, en entrée comme en accès.
+- attribuer un type d’indexation particulier pour chacun d’entre eux,
+  et ainsi :
+  
+  - améliorer leur indexation dans le moteur de recherche Elastic
+    Search et, de fait, procéder à des recherches plus fines selon
+    leur type d’indexation,
+  
+  - contrôler les valeurs des unités archivistiques déclarant un
+    profil d’unité archivistique, en entrée comme en accès.
 
 Formalisation des vocabulaires ontologiques
 -------------------------------------------
@@ -231,15 +235,14 @@ Exemple : deux vocabulaires contenant uniquement les informations obligatoires 
 ]
 ```
 
-
 Un vocabulaire donné doit nécessairement être décrit avec les
 informations suivantes :
 
--   identifiant devant être unique dans le fichier JSON (Identifier) ;
+- identifiant devant être unique dans le fichier JSON (Identifier) ;
 
--   type d'indexation du vocabulaire, correspondant à un type attendu
-    par le moteur Elastic Search. Les valeurs acceptées sont : DATE,
-    TEXT, KEYWORD, BOOLEAN, LONG, DOUBLE, GEO\_POINT, ENUM[^4] ;
+- type d'indexation du vocabulaire, correspondant à un type attendu
+  par le moteur Elastic Search. Les valeurs acceptées sont : DATE,
+  TEXT, KEYWORD, BOOLEAN, LONG, DOUBLE, GEO\_POINT, ENUM[^4] ;
 
 Un nom (SedaField et/ou ApiField), une traduction (ShortName), une
 description (Description), une origine (Origin) et une référence à des
@@ -249,18 +252,18 @@ peuvent venir compléter ces informations.
 Les valeurs acceptées pour référencer une collection (Collections)
 sont :
 
--   pour les métadonnées : Unit, ObjectGroup ;
+- pour les métadonnées : Unit, ObjectGroup ;
 
--   pour le registre des fonds : AccessionRegisterSummary,
-    AccessionRegisterDetail, AccessionRegisterSymbolic ;
+- pour le registre des fonds : AccessionRegisterSummary,
+  AccessionRegisterDetail, AccessionRegisterSymbolic ;
 
--   pour les référentiels : Context, SecurityProfile,
-    ManagementContract, IngestContract, AccessContract, FileFormat,
-    PreservationScenario, Griffin, FileRules, Agencies, Profile,
-    ArchiveUnitProfile, Ontology ;
+- pour les référentiels : Context, SecurityProfile,
+  ManagementContract, IngestContract, AccessContract, FileFormat,
+  PreservationScenario, Griffin, FileRules, Agencies, Profile,
+  ArchiveUnitProfile, Ontology ;
 
--   pour les journaux : LogbookOperation, LogbookLifeCycleUnit,
-    LogbookLifeCycleObjectGroup.
+- pour les journaux : LogbookOperation, LogbookLifeCycleUnit,
+  LogbookLifeCycleObjectGroup.
 
 ### Dans la solution logicielle Vitam
 
@@ -270,17 +273,16 @@ JSON.
 
 Chaque enregistrement est modélisé comme suit[^5] :
 
-| Champs | Description |
-| --- | --- |
-| \_id | **identifiant** unique, fourni par le système (champ obligatoire) |
-| Identifier | **identifiant** unique dans l’ensemble du système (champ obligatoire).</br>- Pour les vocabulaires internes, cet identifiant correspond au nom de la métadonnée telle qu’elle est définie dans le modèle de données de la solution logicielle Vitam. </br>Pour un vocabulaire interne issu du SEDA, l’identifiant peut prendre deux formes différentes: </br>1. une dénomination interne au système (ex :\_sp, équivalent du bloc OriginatingAgencyIdentifier),</br> 2. une dénomination correspondant à la nomenclature du SEDA (ex : Tag) ;</br> -   Pour les vocabulaires externes, cet identifiant correspond au nom de la métadonnée telle qu'elle est nommée dans un bordereau de transfert ou dans un profil d'unité archivistique.|
-| SedaField et ApiField | **nom** du vocabulaire : </br>-   tel qu’il est défini dans la nomenclature du SEDA (champ facultatif). Ce champ est utilisé uniquement pour les vocabulaires référençant une unité archivistique et un groupe d'objets ; </br>-   tel qu’il est retourné via le DSL (champ facultatif. Exemple : \#sp).|
-| ShortName | **traduction** du vocabulaire, explicitant de manière intelligible le nom du vocabulaire (champ facultatif). |
-| Description | **description** (champ facultatif). |
-| Type | **type d’indexation** du vocabulaire, correspondant à un type attendu par le moteur Elastic Search (champ obligatoire).</br> Les valeurs acceptées sont : DATE, TEXT, KEYWORD, BOOLEAN, LONG, DOUBLE, GEO\_POINT, ENUM[^6].|
-| Origin | **origine** du vocabulaire, précisant la provenance du vocabulaire (champ facultatif). Sa valeur peut être égale à :</br>-   INTERNAL : pour les vocabulaires conformes au SEDA et les vocabulaires propres à la solution logicielle Vitam ;</br>-   EXTERNAL : pour les vocabulaires non gérés nativement par les deux précédents items et ajoutés pour répondre à un besoin particulier.|
-| Collections | **collection(s)** de la base de données MongoDB qui utilise(nt) le vocabulaire en question (champ facultatif). </br>   Les valeurs acceptées sont : </br>   -   pour les métadonnées : Unit, ObjectGroup ; </br>   -   pour le registre des fonds : AccessionRegisterSummary, AccessionRegisterDetail, AccessionRegisterSymbolic ; </br>   -   pour les référentiels : Context, SecurityProfile, ManagementContract, IngestContract, AccessContract, FileFormat, PreservationScenario, Griffin, FileRules, Agencies, Profile, ArchiveUnitProfile, Ontology ;</br>-   pour les journaux : LogbookOperation, LogbookLifeCycleUnit, LogbookLifeCycleObjectGroup. |
-                          
+| Champs                | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| \_id                  | **identifiant** unique, fourni par le système (champ obligatoire)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| Identifier            | **identifiant** unique dans l’ensemble du système (champ obligatoire).</br>- Pour les vocabulaires internes, cet identifiant correspond au nom de la métadonnée telle qu’elle est définie dans le modèle de données de la solution logicielle Vitam. </br>Pour un vocabulaire interne issu du SEDA, l’identifiant peut prendre deux formes différentes: </br>1. une dénomination interne au système (ex :\_sp, équivalent du bloc OriginatingAgencyIdentifier),</br> 2. une dénomination correspondant à la nomenclature du SEDA (ex : Tag) ;</br> -   Pour les vocabulaires externes, cet identifiant correspond au nom de la métadonnée telle qu'elle est nommée dans un bordereau de transfert ou dans un profil d'unité archivistique. |
+| SedaField et ApiField | **nom** du vocabulaire : </br>-   tel qu’il est défini dans la nomenclature du SEDA (champ facultatif). Ce champ est utilisé uniquement pour les vocabulaires référençant une unité archivistique et un groupe d'objets ; </br>-   tel qu’il est retourné via le DSL (champ facultatif. Exemple : \#sp).                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| ShortName             | **traduction** du vocabulaire, explicitant de manière intelligible le nom du vocabulaire (champ facultatif).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| Description           | **description** (champ facultatif).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| Type                  | **type d’indexation** du vocabulaire, correspondant à un type attendu par le moteur Elastic Search (champ obligatoire).</br> Les valeurs acceptées sont : DATE, TEXT, KEYWORD, BOOLEAN, LONG, DOUBLE, GEO\_POINT, ENUM[^6].                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| Origin                | **origine** du vocabulaire, précisant la provenance du vocabulaire (champ facultatif). Sa valeur peut être égale à :</br>-   INTERNAL : pour les vocabulaires conformes au SEDA et les vocabulaires propres à la solution logicielle Vitam ;</br>-   EXTERNAL : pour les vocabulaires non gérés nativement par les deux précédents items et ajoutés pour répondre à un besoin particulier.                                                                                                                                                                                                                                                                                                                                                 |
+| Collections           | **collection(s)** de la base de données MongoDB qui utilise(nt) le vocabulaire en question (champ facultatif). </br>   Les valeurs acceptées sont : </br>   -   pour les métadonnées : Unit, ObjectGroup ; </br>   -   pour le registre des fonds : AccessionRegisterSummary, AccessionRegisterDetail, AccessionRegisterSymbolic ; </br>   -   pour les référentiels : Context, SecurityProfile, ManagementContract, IngestContract, AccessContract, FileFormat, PreservationScenario, Griffin, FileRules, Agencies, Profile, ArchiveUnitProfile, Ontology ;</br>-   pour les journaux : LogbookOperation, LogbookLifeCycleUnit, LogbookLifeCycleObjectGroup.                                                                              |
 
 ### Dans le Standard d’échange de données pour l’archivage (SEDA)
 
@@ -294,74 +296,80 @@ l’ontologie de la solution logicielle Vitam.
 La norme NF Z 44‑022 offre la possibilité d’ajouter des éléments
 supplémentaires, appelés « extensions » :
 
--   Des extensions dont la définition est obligatoire pour que le schéma
-    soit valide (extensions par substitution, de type abstract). Sont
-    concernés :
+- Des extensions dont la définition est obligatoire pour que le schéma
+  soit valide (extensions par substitution, de type abstract). Sont
+  concernés :
 
-| **Bloc concerné** | **Elément XML** | **Signification / usage** |
-| --- | --- | --- |
-| test | test | test |
-| Métadonnées techniques | \<OtherDimensionsAbstract\> | Autres dimensions possibles pour un objet physique |
-| ^ | \<OtherCoreTechnicalMetadataAbstract\> | Métadonnées techniques essentielles ne correspondant : </br> • ni à des fichiers de type texte, </br> • ni à des fichiers de type document, </br> • ni à des fichiers de type image, </br> • ni à des fichiers de type audio, </br> • ni à des fichiers de type vidéo </br> Ex. : bases de données, plans 2D, plans 3D |
+| **Bloc concerné**      | **Elément XML**                        | **Signification / usage**                                                                                                                                                                                                                                                                                              |
+| ---------------------- | -------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| test                   | test                                   | test                                                                                                                                                                                                                                                                                                                   |
+| Métadonnées techniques | \<OtherDimensionsAbstract\>            | Autres dimensions possibles pour un objet physique                                                                                                                                                                                                                                                                     |
+| ^                      | \<OtherCoreTechnicalMetadataAbstract\> | Métadonnées techniques essentielles ne correspondant : </br> • ni à des fichiers de type texte, </br> • ni à des fichiers de type document, </br> • ni à des fichiers de type image, </br> • ni à des fichiers de type audio, </br> • ni à des fichiers de type vidéo </br> Ex. : bases de données, plans 2D, plans 3D |
 
   Métadonnées descriptives   &lt;ObjectGroupExtensionAbstract&gt;         Métadonnées descriptives complémentaires
 
-                             &lt;ArchiveUnitReferenceAbstract&gt;         Requêtes permettant de gérer la récursivité et de pointer vers un objet-archives supposé être déjà géré par le SAE
+                             <ArchiveUnitReferenceAbstract>         Requêtes permettant de gérer la récursivité et de pointer vers un objet-archives supposé être déjà géré par le SAE
 
   Métadonnées de gestion     &lt;OtherManagementAbstract&gt;              Autres métadonnées de gestion
+
   -------------------------- -------------------------------------------- --------------------------------------------------------------------------------------------------------------------
 
--   Des extensions dont la définition n’est pas obligatoire pour que le
-    schéma soit valide (extensions par redéfinition, de type OpenType).
-    Leur type peut être défini selon les besoins des utilisateurs qui
-    peuvent y mettre ce qu’ils veulent. Aucune vérification sur ces
-    extensions ne pourra être faite lors des transactions tant que le
-    type de ces extensions n’est pas défini. Sont concernés :
-
+- Des extensions dont la définition n’est pas obligatoire pour que le
+  schéma soit valide (extensions par redéfinition, de type OpenType).
+  Leur type peut être défini selon les besoins des utilisateurs qui
+  peuvent y mettre ce qu’ils veulent. Aucune vérification sur ces
+  extensions ne pourra être faite lors des transactions tant que le
+  type de ces extensions n’est pas défini. Sont concernés :
+  
   ------------------------ --------------------------------------------- ------------------------------------------------------------------------------------------------------------------
+  
   **Bloc concerné**        **Elément XML**                               **Signification / usage**
   Noyau du schéma (main)   &lt;OrganizationDescriptiveMetadataType&gt;   Métadonnées descriptives pour une organisation
-                           &lt;SignatureType&gt;                         Signature utilisée lors des échanges de messages
+  
+                         <SignatureType>                         Signature utilisée lors des échanges de messages
+  
   Métadonnées techniques   &lt;XXXTechnicalMetadataType&gt;              Métadonnées techniques essentielles correspondant à des fichiers de types texte, document, image, audio et vidéo
-                           &lt;DescriptiveTechnicalMetadataType&gt;      Autres métadonnées techniques
+  
+                         <DescriptiveTechnicalMetadataType>      Autres métadonnées techniques
+  
   ------------------------ --------------------------------------------- ------------------------------------------------------------------------------------------------------------------
 
 Ces extensions doivent être qualifiées d’origine « EXTERNAL » dans
 l’ontologie.
 
-1.  []{#__RefHeading___Toc12966_582479276 .anchor}Mécanismes mis en
-    œuvre dans la solution logicielle Vitam
+1. []{#__RefHeading___Toc12966_582479276 .anchor}Mécanismes mis en
+   œuvre dans la solution logicielle Vitam
 
 La solution logicielle Vitam offre à un service d’archives ou à un
 service externe plusieurs fonctionnalités lui permettant de mettre en
 œuvre des vocabulaires ontologiques :
 
--   en termes d’administration :
+- en termes d’administration :
+  
+  - la **gestion d’un référentiel** appelé « Ontologie » ;
+  
+  - une vérification que les **profils d’unité archivistique** (ou
+    documents type) **déclarent des vocabulaires conformément à leur
+    référencement** dans l'ontologie ;
 
-    -   la **gestion d’un référentiel** appelé « Ontologie » ;
+- en entrée du système :
+  
+  - une **vérification que les unités archivistiques** présentes
+    dans le SIP et déclarant un profil d’unité archivistique **sont
+    conformes à l’ontologie et à leur profil d’unité archivistique**
+    (ou document type) ;
+  
+  - une **vérification que les unités archivistiques** présentes
+    dans le SIP sont conformes à leur type d’indexation dans
+    l’ontologie, si les vocabulaires qu’elles contiennent y sont
+    référencés ;
 
-    -   une vérification que les **profils d’unité archivistique** (ou
-        documents type) **déclarent des vocabulaires conformément à leur
-        référencement** dans l'ontologie ;
-
--   en entrée du système :
-
-    -   une **vérification que les unités archivistiques** présentes
-        dans le SIP et déclarant un profil d’unité archivistique **sont
-        conformes à l’ontologie et à leur profil d’unité archivistique**
-        (ou document type) ;
-
-    -   une **vérification que les unités archivistiques** présentes
-        dans le SIP sont conformes à leur type d’indexation dans
-        l’ontologie, si les vocabulaires qu’elles contiennent y sont
-        référencés ;
-
--   en accès, **une traduction et une indexation** propre à chaque
-    vocabulaire, induisant des règles à suivre en recherche et lors de
-    la mise à jour des unités archivistiques.
-
-    1.  []{#__RefHeading__11286_3501494021 .anchor}Administration de
-        l'ontologie
+- en accès, **une traduction et une indexation** propre à chaque
+  vocabulaire, induisant des règles à suivre en recherche et lors de
+  la mise à jour des unités archivistiques.
+  
+  1. []{#__RefHeading__11286_3501494021 .anchor}Administration de
+     l'ontologie
 
 La solution logicielle Vitam intègre une ontologie, administrable par un
 utilisateur doté des droits adéquats (**administrateur fonctionnel et
@@ -377,7 +385,7 @@ depuis le **tenant d’administration**.
 
 Il est possible de réaliser les opérations présentées ci-dessous.
 
-1.  []{#__RefHeading___Toc7737_1347383732 .anchor}Import de l’ontologie
+1. []{#__RefHeading___Toc7737_1347383732 .anchor}Import de l’ontologie
 
 La solution logicielle Vitam intègre une ontologie, **automatiquement
 importée lors de l’initialisation de la plate-forme,** et comportant les
@@ -390,34 +398,34 @@ Cette opération peut s’effectuer depuis l’APP Ontologie de VitamUI.
 Il s’agit d’une opération d’administration (« MASTERDATA »), tracée dans
 le journal des opérations de la solution logicielle Vitam[^8].
 
-1.  []{#__RefHeading__11292_3501494021 .anchor}Modification de
-    l'ontologie
+1. []{#__RefHeading__11292_3501494021 .anchor}Modification de
+   l'ontologie
 
 La modification de l'ontologie est possible :
 
--   au moyen des API et de l’IHM standard fournie avec la solution
-    logicielle Vitam et s'effectue par un réimport complet de
-    l'ontologie, en mode « annule et remplace ». De fait, la solution
-    logicielle Vitam permet de :
+- au moyen des API et de l’IHM standard fournie avec la solution
+  logicielle Vitam et s'effectue par un réimport complet de
+  l'ontologie, en mode « annule et remplace ». De fait, la solution
+  logicielle Vitam permet de :
+  
+  - ajouter un nouveau vocabulaire ;
+  
+  - modifier les informations associées à un vocabulaire ;
+  
+  - supprimer un vocabulaire ;
 
-    -   ajouter un nouveau vocabulaire ;
-
-    -   modifier les informations associées à un vocabulaire ;
-
-    -   supprimer un vocabulaire ;
-
--   depuis l’APP Ontologie de VitamUI. Cette dernière permet, depuis le
-    tenant d’instance (ou tenant d’administration) de :
-
-    -   ajouter unitairement un nouveau vocabulaire ;
-
-    -   modifier unitairement les informations associées à un
-        vocabulaire ;
-
-    -   supprimer unitairement un vocabulaire
-
-    -   ajouter, modifier et supprimer des vocabulaires depuis l’import
-        de l’ontologie dans sa forme JSON.
+- depuis l’APP Ontologie de VitamUI. Cette dernière permet, depuis le
+  tenant d’instance (ou tenant d’administration) de :
+  
+  - ajouter unitairement un nouveau vocabulaire ;
+  
+  - modifier unitairement les informations associées à un
+    vocabulaire ;
+  
+  - supprimer unitairement un vocabulaire
+  
+  - ajouter, modifier et supprimer des vocabulaires depuis l’import
+    de l’ontologie dans sa forme JSON.
 
 Cette action provoque la création d’une nouvelle version du référentiel.
 Elle fait l’objet d’une journalisation dans le journal des opérations
@@ -426,12 +434,12 @@ Elle fait l’objet d’une journalisation dans le journal des opérations
 Au moyen d’un paramétrage technique, la solution logicielle Vitam permet
 de paramétrer les possibilités de mise à jour de l’ontologie :
 
--   elle peut interdire toute modification des vocabulaires internes,
-    qui ont vocation à ne pas être modifiés ni surtout supprimés en
-    production ;
+- elle peut interdire toute modification des vocabulaires internes,
+  qui ont vocation à ne pas être modifiés ni surtout supprimés en
+  production ;
 
--   elle peut forcer la mise à jour des types d’indexation, sans tenir
-    compte des règles prédéfinies[^10].
+- elle peut forcer la mise à jour des types d’indexation, sans tenir
+  compte des règles prédéfinies[^10].
 
 Au moyen d’un acte d’exploitation, elle permet en outre de modifier,
 d’ajouter ou de supprimer les seuls vocabulaires internes[^11].
@@ -439,51 +447,53 @@ d’ajouter ou de supprimer les seuls vocabulaires internes[^11].
 Pour un vocabulaire externe et, si le paramétrage de l’ontologie le
 permet, pour un vocabulaire interne, les champs modifiables sont :
 
--   le nom du vocabulaire :
+- le nom du vocabulaire :
+  
+  - tel qu'il est défini dans la nomenclature du SEDA (SedaField) ;
+  
+  - tel qu'il est retourné via le DSL (ApiField) ;
 
-    -   tel qu'il est défini dans la nomenclature du SEDA (SedaField) ;
+- la traduction du vocabulaire (ShortName) ;
 
-    -   tel qu'il est retourné via le DSL (ApiField) ;
+- la description (Description) ;
 
--   la traduction du vocabulaire (ShortName) ;
+- le type d'indexation du vocabulaire, correspondant à un type attendu
+  par le moteur Elastic Search (Type). Les valeurs acceptées sont :
+  DATE, TEXT, KEYWORD, BOOLEAN, LONG, DOUBLE, ENUM, GEO\_POINT[^12] ;
 
--   la description (Description) ;
+- l'origine du vocabulaire (Origin – facultatif). Les valeurs
+  acceptées sont : INTERNAL, EXTERNAL ;
 
--   le type d'indexation du vocabulaire, correspondant à un type attendu
-    par le moteur Elastic Search (Type). Les valeurs acceptées sont :
-    DATE, TEXT, KEYWORD, BOOLEAN, LONG, DOUBLE, ENUM, GEO\_POINT[^12] ;
-
--   l'origine du vocabulaire (Origin – facultatif). Les valeurs
-    acceptées sont : INTERNAL, EXTERNAL ;
-
--   la collection de la base de données MongoDB qui utilise le
-    vocabulaire en question (Collections). Ce champ doit toujours
-    contenir une référence à au moins une collection. Les valeurs
-    acceptées sont Unit et/ou ObjectGroup[^13].
+- la collection de la base de données MongoDB qui utilise le
+  vocabulaire en question (Collections). Ce champ doit toujours
+  contenir une référence à au moins une collection. Les valeurs
+  acceptées sont Unit et/ou ObjectGroup[^13].
 
 Lors de ce ré-import ou de cette mise à jour, l’opération peut aboutir
 aux statuts suivants :
 
   ------------ ---------------------------------------------------------------------------------------------------------------------------
+
   **Statut**   **Motifs**
 
   Succès       Opération réalisée sans rencontrer de problèmes particuliers.
 
   Échec        Sans journalisation :
-               
-               – ré-import d’un référentiel sous la forme d’un fichier qui n’est pas au format JSON ;
-               
-               – import d’un référentiel dont au moins un des champs contient une injection HTML.
 
+               – ré-import d’un référentiel sous la forme d’un fichier qui n’est pas au format JSON ;
+    
+               – import d’un référentiel dont au moins un des champs contient une injection HTML.
+    
                Avec journalisation :
-               
+    
                – ajout d’un vocabulaire dont l’identifiant est déjà utilisé par un autre vocabulaire de l’ontologie ;
-               
+    
                – ajout d’un vocabulaire dont l’identifiant ne correspond pas aux règles imposées par la solution logicielle Vitam[^14] ;
-               
+    
                – incompatibilité entre le nouveau et l’ancien type d’indexation ;
-               
+    
                – suppression d’un vocabulaire utilisé dans un profil d’unité archivistique.
+
   ------------ ---------------------------------------------------------------------------------------------------------------------------
 
 Les différentes versions du référentiel font l’objet d’une sauvegarde
@@ -494,8 +504,8 @@ obligatoirement être accompagnées d’un acte technique d’exploitation,
 afin que la nouvelle indexation soit effective et prise en compte par le
 moteur de recherche Elastic Search[^15].
 
-1.  []{#__RefHeading___Toc6287_1217828720 .anchor}Contrôle de
-    l'ontologie sur les profils d’unité archivistique
+1. []{#__RefHeading___Toc6287_1217828720 .anchor}Contrôle de
+   l'ontologie sur les profils d’unité archivistique
 
 Lors de la création ou de la mise à jour de profils d’unité
 archivistique (ou documents type), la solution logicielle Vitam vérifie
@@ -505,41 +515,41 @@ existant dans l’ontologie.
 L’import ou la mise à jour d’un profil d’unité archivistique peut
 échouer pour les motifs suivants :
 
--   le schéma de contrôle contient un vocabulaire inconnu de
-    l’ontologie,
+- le schéma de contrôle contient un vocabulaire inconnu de
+  l’ontologie,
 
--   le schéma de contrôle contient un vocabulaire de type « objet » que
-    l’on a oublié de qualifier comme tel.
+- le schéma de contrôle contient un vocabulaire de type « objet » que
+  l’on a oublié de qualifier comme tel.
 
 **Point d’attention :**
 
--   La solution logicielle Vitam n’effectue pas de contrôle sur la
-    conformité des vocabulaires par rapport à leur type d’indexation
-    dans l’ontologie, lors de la création de profils d’unité
-    archivistique. Néanmoins, il est obligatoire que le type du
-    vocabulaire défini dans le schéma de contrôle corresponde au type
-    d’indexation du vocabulaire tel qu’il est défini dans
-    l’ontologie[^16].
-
-    1.  []{#__RefHeading__11296_3501494021 .anchor}Processus d’entrée
+- La solution logicielle Vitam n’effectue pas de contrôle sur la
+  conformité des vocabulaires par rapport à leur type d’indexation
+  dans l’ontologie, lors de la création de profils d’unité
+  archivistique. Néanmoins, il est obligatoire que le type du
+  vocabulaire défini dans le schéma de contrôle corresponde au type
+  d’indexation du vocabulaire tel qu’il est défini dans
+  l’ontologie[^16].
+  
+  1. []{#__RefHeading__11296_3501494021 .anchor}Processus d’entrée
 
 Dans le cadre du processus d’entrée d’un ensemble d’archives, suite à la
 réception d’un message ArchiveTransfer du SEDA, parmi les tâches et
 traitements internes qu’elle effectue, la solution logicielle Vitam
 **vérifie que :**
 
--   **les unités archivistiques déclarant un profil d’unité
-    archivistique sont conformes**
+- **les unités archivistiques déclarant un profil d’unité
+  archivistique sont conformes**
+  
+  - **au type d’indexation défini dans l’ontologie pour l’ensemble
+    des vocabulaires qu’elles contiennent,**
+  
+  - **au profil d’unité archivistique ;**
 
-    -   **au type d’indexation défini dans l’ontologie pour l’ensemble
-        des vocabulaires qu’elles contiennent,**
-
-    -   **au profil d’unité archivistique ;**
-
--   **les unités archivistiques ne déclarant pas de profil d’unité
-    archivistique sont conformes au type d’indexation défini dans
-    l’ontologie pour les vocabulaires qu’elles contiennent et qui y sont
-    référencés.**
+- **les unités archivistiques ne déclarant pas de profil d’unité
+  archivistique sont conformes au type d’indexation défini dans
+  l’ontologie pour les vocabulaires qu’elles contiennent et qui y sont
+  référencés.**
 
 Ce contrôle s’effectue lors du processus de contrôle et traitements des
 unités archivistiques, avant les vérifications portant sur les règles de
@@ -552,26 +562,26 @@ archivistiques, ainsi que les métadonnées techniques associées à leurs
 objets en base, en se conformant au type d’indexation défini pour elles
 dans l’ontologie.
 
-1.  []{#__RefHeading___Toc12970_582479276 .anchor}Accès
-
-    1.  []{#__RefHeading___Toc7672_1347383732 .anchor}Affichage
-        dynamique des traductions
+1. []{#__RefHeading___Toc12970_582479276 .anchor}Accès
+   
+   1. []{#__RefHeading___Toc7672_1347383732 .anchor}Affichage
+      dynamique des traductions
 
 L’ontologie contenant la traduction des différents vocabulaires
 supportés par la solution logicielle Vitam, il est possible, en accès :
 
--   d’utiliser ce référentiel comme un fichier de propriétés pour
-    récupérer les traductions, plutôt que ce soit l’IHM qui porte ces
-    informations. Ainsi, cela évitera de constater des absences de
-    traduction des vocabulaires externes récemment créés ;
+- d’utiliser ce référentiel comme un fichier de propriétés pour
+  récupérer les traductions, plutôt que ce soit l’IHM qui porte ces
+  informations. Ainsi, cela évitera de constater des absences de
+  traduction des vocabulaires externes récemment créés ;
 
--   d’utiliser et d’afficher la traduction des vocabulaires dans les
-    IHM, rendue administrable dans ce référentiel, afin qu’un
-    administrateur fonctionnel ait la possibilité de modifier les
-    intitulés (ou traductions) de certains vocabulaires (par exemple,
-    modifier « Description », traduction textuelle du bloc Description
-    du SEDA, par « Présentation du contenu », terme issu de la norme
-    ISAD/G, davantage usité par les archivistes).
+- d’utiliser et d’afficher la traduction des vocabulaires dans les
+  IHM, rendue administrable dans ce référentiel, afin qu’un
+  administrateur fonctionnel ait la possibilité de modifier les
+  intitulés (ou traductions) de certains vocabulaires (par exemple,
+  modifier « Description », traduction textuelle du bloc Description
+  du SEDA, par « Présentation du contenu », terme issu de la norme
+  ISAD/G, davantage usité par les archivistes).
 
 À titre d’exemple, l’IHM de démonstration de la solution logicielle
 Vitam dispose de vocabulaires écrits en dur dans l’IHM de démonstration.
@@ -579,48 +589,47 @@ Dès qu’on transfère un bordereau contenant des vocabulaires externes,
 l’IHM ne les traduit pas. Il est alors nécessaire de demander un acte
 d’exploitation en vue de corriger ces éléments.
 
-1.  []{#__RefHeading___Toc7674_1347383732 .anchor}Optimisation de la
-    recherche![](./medias/Pictures/ontologie_image4.png){width="4.275in"
-    height="3.93125in"}
+1. []{#__RefHeading___Toc7674_1347383732 .anchor}Optimisation de la
+   recherche![](./medias/Pictures/ontologie_image4.png){width="4.275in"
+   height="3.93125in"}
 
 L’ontologie définit les types d’indexation des différents vocabulaires,
 sur lesquels il faut s’appuyer afin de pouvoir optimiser les modalités
 de recherche.
 
-1.  []{#__RefHeading___Toc7676_1347383732 .anchor}Contrôle lors de la
-    mise à jour des unités archivistiques
+1. []{#__RefHeading___Toc7676_1347383732 .anchor}Contrôle lors de la
+   mise à jour des unités archivistiques
 
 La solution logicielle Vitam permet en outre de modifier :
 
--   les métadonnées d’une **unité archivistique déclarant un profil
-    d’unité archivistique**, à la condition que l’unité archivistique
-    reste conforme à ce profil d’unité archivistique et, de fait, aux
-    vocabulaires définis dans le profil d’unité archivistique. Cette
-    conformité vaut aussi bien pour les vocabulaires utilisés que pour
-    les valeurs utilisées[^17]. Par exemple, un vocabulaire de type
-    « entier » tel que « AgeDuCapitaine » ne peut être mis à jour pour
-    inclure une valeur textuelle s’il est indexé comme entier ;
+- les métadonnées d’une **unité archivistique déclarant un profil
+  d’unité archivistique**, à la condition que l’unité archivistique
+  reste conforme à ce profil d’unité archivistique et, de fait, aux
+  vocabulaires définis dans le profil d’unité archivistique. Cette
+  conformité vaut aussi bien pour les vocabulaires utilisés que pour
+  les valeurs utilisées[^17]. Par exemple, un vocabulaire de type
+  « entier » tel que « AgeDuCapitaine » ne peut être mis à jour pour
+  inclure une valeur textuelle s’il est indexé comme entier ;
 
--   les métadonnées d’une **unité archivistique ne déclarant pas de
-    profil d’unité archivistique**.
-
-    -   Si le vocabulaire est enregistré dans l’ontologie, la solution
-        logicielle Vitam vérifie que la mise à jour est conforme au type
-        d’indexation du vocabulaire dans l’ontologie ;
-
-    -   Si le vocabulaire n’est pas référencé dans l’ontologie, il sera
-        mis à jour et interprété comme une chaîne de caractères textuels
-        répétable.
-
-1.  []{#__RefHeading___Toc6289_1217828720 .anchor}Conseils de mise en
-    œuvre
+- les métadonnées d’une **unité archivistique ne déclarant pas de
+  profil d’unité archivistique**.
+  
+  - Si le vocabulaire est enregistré dans l’ontologie, la solution
+    logicielle Vitam vérifie que la mise à jour est conforme au type
+    d’indexation du vocabulaire dans l’ontologie ;
+  
+  - Si le vocabulaire n’est pas référencé dans l’ontologie, il sera
+    mis à jour et interprété comme une chaîne de caractères textuels
+    répétable.
+1. []{#__RefHeading___Toc6289_1217828720 .anchor}Conseils de mise en
+   œuvre
 
 À l’issue de cette première phase de réalisation de fonctionnalités
 concernant l’ontologie, l’équipe projet Vitam est en mesure de fournir
 quelques recommandations de mise en œuvre :
 
-1.  []{#__RefHeading___Toc12972_582479276 .anchor}Quand et comment créer
-    une ontologie ?
+1. []{#__RefHeading___Toc12972_582479276 .anchor}Quand et comment créer
+   une ontologie ?
 
 La création d’une ontologie est un préalable à l’utilisation des
 vocabulaires dans la solution logicielle Vitam. C’est pourquoi, lors de
@@ -633,163 +642,167 @@ l’indexation réalisée dans le moteur de recherche Elastic Search.
 **Un administrateur fonctionnel n’a pas besoin, *a priori*, de créer une
 ontologie**. Il s’agit d’un acte d’exploitation technique.
 
-1.  []{#__RefHeading___Toc12974_582479276 .anchor}Quand et comment créer
-    un vocabulaire ?
+1. []{#__RefHeading___Toc12974_582479276 .anchor}Quand et comment créer
+   un vocabulaire ?
 
 La création d’un nouveau vocabulaire s’effectue :
 
--   au moyen des l’API et de l’IHM standard fournie avec la solution
-    logicielle Vitam, par un réimport complet du référentiel, auquel a
-    été ajouté un vocabulaire supplémentaire, d’origine externe.
+- au moyen des l’API et de l’IHM standard fournie avec la solution
+  logicielle Vitam, par un réimport complet du référentiel, auquel a
+  été ajouté un vocabulaire supplémentaire, d’origine externe.
 
--   depuis l’APP Ontologie de VitamUI, par :
-
-    -   la création unitaire d’un vocabulaire,
-
-    -   le réimport complet du référentiel, auquel a été ajouté un
-        vocabulaire supplémentaire, d’origine externe.
-
-        Cette action renvoie une nouvelle version du référentiel dans la
-        solution logicielle Vitam.
+- depuis l’APP Ontologie de VitamUI, par :
+  
+  - la création unitaire d’un vocabulaire,
+  
+  - le réimport complet du référentiel, auquel a été ajouté un
+    vocabulaire supplémentaire, d’origine externe.
+    
+    Cette action renvoie une nouvelle version du référentiel dans la
+    solution logicielle Vitam.
 
 **Cette opération s’effectue uniquement sur le tenant
 d’administration.**
 
 Elle obéit à des règles strictes :
 
--   un nouveau vocabulaire doit obligatoirement avoir une **origine
-    externe**, à moins de correspondre à un vocabulaire nécessaire à la
-    mise à jour du modèle de données géré par la solution logicielle
-    Vitam ou engendré par la publication d’une nouvelle version du
-    SEDA ;
+- un nouveau vocabulaire doit obligatoirement avoir une **origine
+  externe**, à moins de correspondre à un vocabulaire nécessaire à la
+  mise à jour du modèle de données géré par la solution logicielle
+  Vitam ou engendré par la publication d’une nouvelle version du
+  SEDA ;
 
--   un nouveau vocabulaire doit détenir un **identifiant** :
+- un nouveau vocabulaire doit détenir un **identifiant** :
+  
+  - unique,
+  
+  - ne commençant pas par un underscore (par exemple \_bibref) ou un
+    dièse (\#bibref), qui sont des caractères réservés par la
+    solution logicielle Vitam,
+  
+  - ne contenant pas d’espace,
+  
+  - étant insensible à la casse (il ne peut y avoir un nouveau
+    vocabulaire intitulé « identifier » si un vocabulaire intitulé
+    « Identifier » existe déjà dans l’ontologie) ;
 
-    -   unique,
+- un nouveau vocabulaire doit être obligatoirement associé à, au
+  moins, une **collection**. S’il s’agit d’un vocabulaire externe,
+  créé pour répondre à des besoins liés à l’entrée (par exemple, ajout
+  d’extensions dans le bordereau de transfert), la collection à
+  renseigner doit être :
+  
+  - soit Unit si on ajoute des métadonnées descriptives aux unités
+    archivistiques,
+  
+  - soit ObjectGroup si on étend les métadonnées liées au groupe
+    d’objets techniques ;
 
-    -   ne commençant pas par un underscore (par exemple \_bibref) ou un
-        dièse (\#bibref), qui sont des caractères réservés par la
-        solution logicielle Vitam,
-
-    -   ne contenant pas d’espace,
-
-    -   étant insensible à la casse (il ne peut y avoir un nouveau
-        vocabulaire intitulé « identifier » si un vocabulaire intitulé
-        « Identifier » existe déjà dans l’ontologie) ;
-
--   un nouveau vocabulaire doit être obligatoirement associé à, au
-    moins, une **collection**. S’il s’agit d’un vocabulaire externe,
-    créé pour répondre à des besoins liés à l’entrée (par exemple, ajout
-    d’extensions dans le bordereau de transfert), la collection à
-    renseigner doit être :
-
-    -   soit Unit si on ajoute des métadonnées descriptives aux unités
-        archivistiques,
-
-    -   soit ObjectGroup si on étend les métadonnées liées au groupe
-        d’objets techniques ;
-
--   un nouveau vocabulaire doit nécessairement avoir un **type
-    d’indexation**. Les types d’indexation pris en charge par la
-    solution logicielle Vitam sont :
-
+- un nouveau vocabulaire doit nécessairement avoir un **type
+  d’indexation**. Les types d’indexation pris en charge par la
+  solution logicielle Vitam sont :
+  
   -------------------------------- ------------------- ------------------------------------------------------------------- ------------------------------------------------------------------------------------
+  
   **Type d’indexation initiale**   **Signification**   **Valeur correspondante**                                           **Commentaires**
-
+  
   TEXT                             Texte               Paris, anciennement appelée Lutèce, est la capitale de la France.   La recherche sur un vocabulaire de type TEXT est effectuée en mode « full text ».
-
+  
   KEYWORD                          Mot-clé             Paris \[Ville\]                                                     La recherche sur un vocabulaire de type KEYWORD correspond à une recherche exacte.
-
+  
   DATE                             Date                2016-10-12T16:28:40                                                 
-                                                                                                                           
-                                                       2018-06-06                                                          
-
+  
+                                                     2018-06-06                                                          
+  
   LONG                             Entier              9999                                                                
-
+  
   DOUBLE                           Décimal             1.1111111                                                           
-                                                                                                                           
-                                                       20.00001                                                            
-                                                                                                                           
-                                                       3.0                                                                 
-
+  
+                                                     20.00001                                                            
+      
+                                                     3.0                                                                 
+  
   BOOLEAN                          Booléen             true                                                                
-                                                                                                                           
-                                                       false                                                               
-
+  
+                                                     false                                                               
+  
   GEO\_POINT                       Géolocalisation     /                                                                   L’équipe Vitam n’a pas investigué sur les usages de ces deux types d’indexation.
-
+  
   ENUM                             Énumération         /                                                                   
+  
   -------------------------------- ------------------- ------------------------------------------------------------------- ------------------------------------------------------------------------------------
 
 **Points d’attention :**
 
--   Un élément de type objet ne doit pas être référencé dans
-    l’ontologie[^18].
+- Un élément de type objet ne doit pas être référencé dans
+  l’ontologie[^18].
 
--   L’indexation de ce nouveau vocabulaire dans le moteur de recherche
-    Elastic Search correspond par défaut à un type TEXT (= texte). Si le
-    type d’indexation du nouveau vocabulaire diffère, il est obligatoire
-    de procéder à un acte d’exploitation technique visant à mettre en
-    cohérence l’indexation du vocabulaire dans le moteur de recherche
-    Elastic Search par rapport à l’ontologie[^19].
+- L’indexation de ce nouveau vocabulaire dans le moteur de recherche
+  Elastic Search correspond par défaut à un type TEXT (= texte). Si le
+  type d’indexation du nouveau vocabulaire diffère, il est obligatoire
+  de procéder à un acte d’exploitation technique visant à mettre en
+  cohérence l’indexation du vocabulaire dans le moteur de recherche
+  Elastic Search par rapport à l’ontologie[^19].
 
--   Seules les collections Unit et ObjectGroup peuvent faire l’objet
-    d’ajout de nouveaux vocabulaires. Il n’est pas possible d’étendre
-    les autres collections.
+- Seules les collections Unit et ObjectGroup peuvent faire l’objet
+  d’ajout de nouveaux vocabulaires. Il n’est pas possible d’étendre
+  les autres collections.
 
 La création d’un nouveau vocabulaire n’est pas un acte anodin. Avant de
 procéder à sa création, il est recommandé de prendre en considération
 les éléments suivants :
 
--   est-ce qu’un vocabulaire existant peut couvrir le même champ
-    sémantique et signifiant que le vocabulaire que l’on souhaite
-    ajouter dans l’ontologie ?
+- est-ce qu’un vocabulaire existant peut couvrir le même champ
+  sémantique et signifiant que le vocabulaire que l’on souhaite
+  ajouter dans l’ontologie ?
 
--   peut-on envisager une utilisation possible de ce nouveau vocabulaire
-    pour un autre domaine d’utilisation ?
+- peut-on envisager une utilisation possible de ce nouveau vocabulaire
+  pour un autre domaine d’utilisation ?
+  
+  Par exemple, on souhaite utiliser un vocabulaire permettant de gérer
+  un titre de recette.
+  
+  - veut-on créer un vocabulaire « SommeTitreDeRecette » qui ne sera
+    utilisable que dans un contexte particulier de recette ?
+  
+  - ou veut-on créer un vocabulaire qui sera plus générique, afin de
+    l’utiliser dans un contexte plus large ? Dans ce cas précis, on
+    pourrait choisir d’intituler le vocabulaire « Somme », afin de
+    l’utiliser pour des titres de recette, mais aussi pour qualifier
+    une dépense, le coût de frais de déplacement, une somme à payer
+    indiquée dans les bulletins de salaire, etc.
 
-    Par exemple, on souhaite utiliser un vocabulaire permettant de gérer
-    un titre de recette.
-
-    -   veut-on créer un vocabulaire « SommeTitreDeRecette » qui ne sera
-        utilisable que dans un contexte particulier de recette ?
-
-    -   ou veut-on créer un vocabulaire qui sera plus générique, afin de
-        l’utiliser dans un contexte plus large ? Dans ce cas précis, on
-        pourrait choisir d’intituler le vocabulaire « Somme », afin de
-        l’utiliser pour des titres de recette, mais aussi pour qualifier
-        une dépense, le coût de frais de déplacement, une somme à payer
-        indiquée dans les bulletins de salaire, etc.
-
--   a-t-on besoin d’ajouter ce nouveau vocabulaire ? Pour quels usages ?
+- a-t-on besoin d’ajouter ce nouveau vocabulaire ? Pour quels usages ?
 
 Pour créer un nouveau vocabulaire, il est recommandé de suivre les
 étapes suivantes :
 
   -------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------ ----------------------------
+
   **Qui ?**                                    **Quoi ?**                                                                                                                     **Via l’IHM démo Vitam ?**
   Administrateur fonctionnel                   émet le souhait d’ajouter un nouveau vocabulaire, **externe**, dans l’ontologie                                                Non
   Administrateur fonctionnel                   vérifie au préalable si ce nouveau vocabulaire n’existe pas ou si un vocabulaire préexistant ne correspond pas à son besoin.   Oui
   Administrateur fonctionnel et/ou technique   ajoute le nouveau vocabulaire dans l’ontologie.                                                                                Non
   Administrateur fonctionnel et/ou technique   met à jour l’ontologie sur le tenant d’administration.                                                                         Oui
   Administrateur technique                     Indexe le nouveau vocabulaire dans le moteur de recherche Elastic Search.                                                      Non
+
   -------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------ ----------------------------
 
-1.  []{#__RefHeading___Toc12976_582479276 .anchor}Quand et comment
-    modifier un type d’indexation ?
+1. []{#__RefHeading___Toc12976_582479276 .anchor}Quand et comment
+   modifier un type d’indexation ?
 
 La mise à jour du type d’indexation d’un vocabulaire s’effectue, depuis
 le tenant d’administration :
 
--   de l’IHM standard par un réimport complet du référentiel, après
-    avoir modifié le type d’indexation d’un à plusieurs vocabulaires ;
+- de l’IHM standard par un réimport complet du référentiel, après
+  avoir modifié le type d’indexation d’un à plusieurs vocabulaires ;
 
--   de VitamUI, dans l’APP Ontologie, par :
-
-    -   la mise à jour unitaire d’un vocabulaire,
-
-    -   le réimport complet du référentiel, après avoir modifié le type
-        d’indexation d’un à plusieurs vocabulaires.
+- de VitamUI, dans l’APP Ontologie, par :
+  
+  - la mise à jour unitaire d’un vocabulaire,
+  
+  - le réimport complet du référentiel, après avoir modifié le type
+    d’indexation d’un à plusieurs vocabulaires.
 
 Cette modification doit **obligatoirement** être suivie d’un acte
 technique d’exploitation en vue de la rendre effective dans le moteur de
@@ -798,16 +811,17 @@ recherche Elastic Search[^20].
 La modification du type d’indexation n’est pas un acte anodin. Elle peut
 entraîner :
 
--   des incohérences d’indexation si elle n’est pas mûrement réfléchie,
+- des incohérences d’indexation si elle n’est pas mûrement réfléchie,
 
--   une réindexation totale de la base de données, voire nécessiter des
-    actions de migration et de sauvegarde.
+- une réindexation totale de la base de données, voire nécessiter des
+  actions de migration et de sauvegarde.
 
 La solution logicielle Vitam supporte les modifications suivantes :
 
   -------------------------------- ----------------------------- ---------------------------------- -----------------------------------
+
   **Type d’indexation initiale**   **Compatibilité supportée**   **Compatibilité non supportée,**   **Compatibilité non recommandée**
-                                                                                                    
+
                                                                  **mais possible**                  
 
   TEXT                             KEYWORD                       DATE[^21]                          LONG, DOUBLE, BOOLEAN
@@ -825,6 +839,7 @@ La solution logicielle Vitam supporte les modifications suivantes :
   GEO\_POINT                       TEXT, KEYWORD                 /                                  /
 
   ENUM                             TEXT, KEYWORD                 /                                  /
+
   -------------------------------- ----------------------------- ---------------------------------- -----------------------------------
 
 Certaines modifications ne sont pas supportées, mais restent possibles
@@ -847,6 +862,7 @@ Pour modifier un type d’indexation, il est recommandé de suivre les
 étapes suivantes :
 
   -------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------ ----------------------------
+
   **Qui ?**                                    **Quoi ?**                                                                                                                                 **Via l’IHM démo Vitam ?**
 
   Administrateur fonctionnel et/ou technique   émet le souhait de modifier un type d’indexation dans l’ontologie.                                                                         Non
@@ -864,17 +880,18 @@ Pour modifier un type d’indexation, il est recommandé de suivre les
   **Compatibilité non supportée**
 
   Administrateur technique                     – arrête pour un temps donné les traitements en cours (en entrée comme en accès) dans la solution logicielle Vitam.                        Non
-                                                                                                                                                                                          
+
                                                – procède à une réindexation de la base de données et du moteur de recherche Elastic Search pour intégrer le nouveau type d’indexation     
 
   Administrateur technique                     met à jour l’ontologie sur le tenant d’administration.                                                                                     Oui
 
   Administrateur technique                     rétablit les traitements et accès dans la solution logicielle Vitam.                                                                       Non
+
   -------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------ ----------------------------
 
-1.  []{#__RefHeading___Toc12978_582479276 .anchor}Quels sont les types
-    d’indexation compatibles entre un profil d’unité archivistique et
-    des vocabulaires ontologiques ?
+1. []{#__RefHeading___Toc12978_582479276 .anchor}Quels sont les types
+   d’indexation compatibles entre un profil d’unité archivistique et
+   des vocabulaires ontologiques ?
 
 La solution logicielle Vitam n’effectue pas de contrôles de conformité
 entre un vocabulaire défini dans l’ontologie et la manière dont il est
@@ -891,10 +908,11 @@ recommandé de décrire un vocabulaire dans un schéma de contrôle avec les
 types suivants[^25] :
 
   ---------------------------------------- ------------------------------------------ --------------------------------- ----------------------------------------------------------------------------------
-  **Type d’indexation dans l’ontologie**   **Type correspondant**                     **Commentaires**
-                                                                                      
-                                           **dans un profil d’unité archivistique**   
 
+  **Type d’indexation dans l’ontologie**   **Type correspondant**                     **Commentaires**
+
+                                           **dans un profil d’unité archivistique**   
+    
                                            **Vocabulaire interne**                    **Vocabulaire externe**
 
   TEXT                                     string ou \[string\]                       \[string\]
@@ -904,7 +922,7 @@ types suivants[^25] :
   DATE                                     string ou \[string\] + pattern date        \[string\] + pattern date
 
   LONG                                     number ou integer                          \[number\] ou \[integer\]
-                                                                                      
+
                                            \[number\] ou \[integer\]                  
 
   DOUBLE                                   number ou \[number\]                       \[number\]
@@ -914,37 +932,38 @@ types suivants[^25] :
   GEO\_POINT                               string                                     \[string\]
 
   ENUM                                     \[string\] + pattern énumératif            \[string\] + pattern énumératif
+
   ---------------------------------------- ------------------------------------------ --------------------------------- ----------------------------------------------------------------------------------
 
-1.  []{#__RefHeading___Toc12980_582479276 .anchor}Quand et comment
-    supprimer un vocabulaire ?
+1. []{#__RefHeading___Toc12980_582479276 .anchor}Quand et comment
+   supprimer un vocabulaire ?
 
 La suppression d’un vocabulaire s’effectue :
 
--   depuis l’IHM standard et les API, par un réimport complet du
-    référentiel, duquel a été supprimé ce vocabulaire ;
+- depuis l’IHM standard et les API, par un réimport complet du
+  référentiel, duquel a été supprimé ce vocabulaire ;
 
--   depuis l’APP Ontologie de VitamUI, par :
-
-    -   la suppression unitaire d’un vocabulaire,
-
-    -   le réimport complet du référentiel, duquel a été supprimé ce
-        vocabulaire .
+- depuis l’APP Ontologie de VitamUI, par :
+  
+  - la suppression unitaire d’un vocabulaire,
+  
+  - le réimport complet du référentiel, duquel a été supprimé ce
+    vocabulaire .
 
 Cet acte n’est pas anodin. Avant de procéder à cette suppression, il est
 recommandé de vérifier les éléments suivants :
 
--   le vocabulaire devant être supprimé doit obligatoirement être un
-    vocabulaire d’origine externe, à moins de correspondre à un
-    vocabulaire supprimé à l’occasion d’une mise à jour du modèle de
-    données géré par la solution logicielle Vitam ou la publication
-    d’une nouvelle version du SEDA ;
+- le vocabulaire devant être supprimé doit obligatoirement être un
+  vocabulaire d’origine externe, à moins de correspondre à un
+  vocabulaire supprimé à l’occasion d’une mise à jour du modèle de
+  données géré par la solution logicielle Vitam ou la publication
+  d’une nouvelle version du SEDA ;
 
--   le vocabulaire ne doit pas être utilisé en base de données et
-    contenir des valeurs enregistrées en base de données ;
+- le vocabulaire ne doit pas être utilisé en base de données et
+  contenir des valeurs enregistrées en base de données ;
 
--   le vocabulaire ne doit pas être utilisé dans un profil d’unité
-    archivistique.
+- le vocabulaire ne doit pas être utilisé dans un profil d’unité
+  archivistique.
 
 **Point d’attention :** la suppression d’un vocabulaire doit être
 accompagnée d’un acte d’exploitation technique visant à supprimer
@@ -956,19 +975,19 @@ Pour supprimer vocabulaire, il est recommandé de suivre les étapes
 suivantes :
 
   -------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ----------------------------
+
   **Qui ?**                                    **Quoi ?**                                                                                                                                                                      **Via l’IHM démo Vitam ?**
 
   Administrateur fonctionnel                   émet le souhait de supprimer un vocabulaire, **externe**, dans l’ontologie.                                                                                                     Non
 
   Administrateur fonctionnel                   vérifie au préalable si ce vocabulaire n’est pas utilisé par une unité archivistique ou un profil d’unité archivistique ;                                                       Oui
-                                                                                                                                                                                                                               
+
                                                -   si ce vocabulaire est utilisé par des unités archivistiques, procède à une mise à jour de ces unités archivistiques, afin de modifier l’utilisation ;                       
-                                                                                                                                                                                                                               
+    
                                                -   si ce vocabulaire est utilisé par un profil d’unité archivistique, ôter la référence au profil d’unité archivistique dans l’(les) unité(s) archivistique(s) concernée(s).   
-                                                                                                                                                                                                                               
 
   Administrateur fonctionnel et/ou technique   – vérifient qu’aucun traitement en cours (en entrée comme en accès) n’utilise le vocabulaire à supprimer ;                                                                      Oui / Non
-                                                                                                                                                                                                                               
+
                                                – le cas échéant, arrêtent pour un temps donné les traitements en cours (en entrée comme en accès) dans la solution logicielle Vitam.                                           
 
   Administrateur fonctionnel et/ou technique   supprime le vocabulaire dans l’ontologie.                                                                                                                                       Non
@@ -978,11 +997,12 @@ suivantes :
   Administrateur technique                     supprime l’indexation du vocabulaire dans le moteur de recherche Elastic Search.                                                                                                Non
 
   Administrateur fonctionnel et/ou technique   rétablissent les traitements en cours (en entrée comme en accès).                                                                                                               Oui / Non
+
   -------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ----------------------------
 
-1.  []{#__RefHeading___Toc4666_549432207 .anchor}Comment mettre à jour
-    une unité archivistique associée ou non à un profil d’unité
-    archivistique ?
+1. []{#__RefHeading___Toc4666_549432207 .anchor}Comment mettre à jour
+   une unité archivistique associée ou non à un profil d’unité
+   archivistique ?
 
 Les métadonnées d’une unité archivistique déclarant un profil d’unité
 archivistique sont modifiables, à la condition que l’unité archivistique
@@ -991,11 +1011,11 @@ vocabulaires définis dans le profil d’unité archivistique. Cette
 conformité vaut aussi bien pour les vocabulaires utilisés que pour les
 valeurs utilisées. En d’autres termes :
 
--   le vocabulaire utilisé, mis à jour ou ajouté, doit être présent dans
-    le profil d’unité archivistique associé à l’unité archivistique ;
+- le vocabulaire utilisé, mis à jour ou ajouté, doit être présent dans
+  le profil d’unité archivistique associé à l’unité archivistique ;
 
--   la nouvelle valeur doit être conforme au type d’indexation défini
-    pour le vocabulaire auquel elle est associée.
+- la nouvelle valeur doit être conforme au type d’indexation défini
+  pour le vocabulaire auquel elle est associée.
 
 Les métadonnées d’une unité archivistique ne déclarant pas de profil
 d’unité archivistique sont modifiables à condition que la nouvelle
@@ -1003,6 +1023,7 @@ valeur soit conforme au type d’indexation défini pour le vocabulaire
 auquel elle est associée.
 
   -------------------------------- ----------------------- ------ -------- --------- --------- -------------
+
   **Type d’indexation initiale**   **Valeurs acceptées**
                                    Texte
   TEXT                             oui
@@ -1013,6 +1034,7 @@ auquel elle est associée.
   BOOLEAN                          
   GEO\_POINT                       oui
   ENUM                             oui
+
   -------------------------------- ----------------------- ------ -------- --------- --------- -------------
 
 []{#__RefHeading___Toc12984_582479276 .anchor}**Point d’attention :**
@@ -1020,13 +1042,13 @@ l’enregistrement des vocabulaires dans la base de données Mongo diffère,
 selon que le vocabulaire est de type TEXT, KEYWORD, DATE, GEO\_POINT,
 ENUM ou de type LONG, DOUBLE, BOOLEAN :
 
--   []{#__RefHeading___Toc12986_582479276 .anchor}dans le premier cas,
-    les valeurs sont enregistrées entre des *double quotes*
-    (guillemets),
+- []{#__RefHeading___Toc12986_582479276 .anchor}dans le premier cas,
+  les valeurs sont enregistrées entre des *double quotes*
+  (guillemets),
 
--   []{#__RefHeading___Toc12988_582479276 .anchor}dans le second cas,
-    les valeurs ne sont pas signalées par des *double quotes*
-    (guillemets).
+- []{#__RefHeading___Toc12988_582479276 .anchor}dans le second cas,
+  les valeurs ne sont pas signalées par des *double quotes*
+  (guillemets).
 
 Il est recommandé d’utiliser ces vocabulaires conformément à leur type
 d’indexation. Si ce n’est pas le cas (par exemple, on renseigne
@@ -1038,8 +1060,8 @@ vocabulaire en question.
 réindexation a posteriori des vocabulaires, cela peut engendrer des
 conflits.
 
-1.  []{#__RefHeading___Toc10433_666097311 .anchor}Quand et comment
-    modifier des vocabulaires internes ?
+1. []{#__RefHeading___Toc10433_666097311 .anchor}Quand et comment
+   modifier des vocabulaires internes ?
 
 La solution logicielle Vitam permet d’ajouter, de modifier ou de
 supprimer des vocabulaires internes, de transformer des vocabulaires
@@ -1054,11 +1076,11 @@ et pas les vocabulaires externes.
 
 Cette procédure d’exploitation peut avoir lieu dans les cas suivants :
 
--   lors d’une montée de version du modèle de données interne à la
-    solution logicielle Vitam,
+- lors d’une montée de version du modèle de données interne à la
+  solution logicielle Vitam,
 
--   lors d’une mise à jour du SEDA, qui décrit les unités archivistiques
-    et les groupes d’objets techniques.
+- lors d’une mise à jour du SEDA, qui décrit les unités archivistiques
+  et les groupes d’objets techniques.
 
 Elle obéit aux mêmes règles strictes que celles relatives aux
 vocabulaires externes[^29].
@@ -1070,30 +1092,30 @@ les vocabulaires externes. En cas de présence d’erreurs, il reviendra à
 l’exploitant de les analyser et de les corriger avant de procéder à la
 montée de version de l’ontologie[^30].
 
-1.  []{#__RefHeading___Toc12992_582479276 .anchor}Quel accès à
-    l’ontologie ?
-
-    1.  []{#__RefHeading___Toc12994_582479276 .anchor}Gestion des droits
+1. []{#__RefHeading___Toc12992_582479276 .anchor}Quel accès à
+   l’ontologie ?
+   
+   1. []{#__RefHeading___Toc12994_582479276 .anchor}Gestion des droits
 
 La gestion de l’ontologie relève d’opérations d’administration
 technico-fonctionnelle. Il est donc recommandé d’en limiter l’accès de
 la manière suivante :
 
--   des administrateurs fonctionnel et technique peuvent avoir accès à
-    l’ontologie et la mettre à jour (Create, Read, Update, Delete) ;
+- des administrateurs fonctionnel et technique peuvent avoir accès à
+  l’ontologie et la mettre à jour (Create, Read, Update, Delete) ;
 
--   seul un administrateur technique a vocation à gérer la mise à jour
-    des types d’indexation et leur mise en cohérence avec le moteur de
-    recherche Elastic Search ;
+- seul un administrateur technique a vocation à gérer la mise à jour
+  des types d’indexation et leur mise en cohérence avec le moteur de
+  recherche Elastic Search ;
 
--   un tiers n’a pas vocation à prendre connaissance de l’ensemble de
-    l’ontologie, mais peut avoir accès aux vocabulaires utilisés lors
-    d’un transfert et avec des profils d’unité archivistique, à savoir
-    les vocabulaires internes issus du SEDA et les vocabulaires externes
-    créés pour des besoins de transfert particuliers (Read).
-
-    1.  []{#__RefHeading___Toc35927_1590522192 .anchor}Restitution sur
-        une IHM
+- un tiers n’a pas vocation à prendre connaissance de l’ensemble de
+  l’ontologie, mais peut avoir accès aux vocabulaires utilisés lors
+  d’un transfert et avec des profils d’unité archivistique, à savoir
+  les vocabulaires internes issus du SEDA et les vocabulaires externes
+  créés pour des besoins de transfert particuliers (Read).
+  
+  1. []{#__RefHeading___Toc35927_1590522192 .anchor}Restitution sur
+     une IHM
 
 La solution logicielle Vitam propose une IHM pour représenter
 l’ontologie.
@@ -1102,129 +1124,129 @@ l’ontologie.
 archivistique, il est possible d’envisager d’associer pour chaque
 vocabulaire la liste des profils d’unité archivistique l’utilisant.
 
-1.  []{#__RefHeading___Toc12996_582479276 .anchor}Comment utiliser
-    l’ontologie ?
-
-  ------------------------------------------------------------------------------------------------------------ --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ------------------------------
-  **Intitulé**                                                                                                 **Description**                                                                                                                                                                                                                                                                               **Niveau de recommandation**
-
-  **Administration de l’ontologie**
-
-  Import ou modification de l’ontologie                                                                        Les opérations d’import et de mise à jour de l’ontologie s’effectuent obligatoirement sur le tenant d’administration.                                                                                                                                                                         Obligatoire
-                                                                                                                                                                                                                                                                                                                                                                                                             
-                                                                                                               L’indexation des vocabulaires dans le moteur de recherche Elastic Search se fait tenant par tenant.                                                                                                                                                                                           
-
-  Import initial de l’ontologie                                                                                Il est obligatoire d’importer l’ontologie lors de l’installation de la solution logicielle Vitam.                                                                                                                                                                                             Obligatoire
-                                                                                                                                                                                                                                                                                                                                                                                                             
-                                                                                                               Cette ontologie, fournie avec la solution logicielle Vitam, inclut par défaut l’ensemble des vocabulaires internes gérés par la solution.                                                                                                                                                     
-
-  Ajout d’un vocabulaire externe                                                                               La solution logicielle Vitam rend possible l’ajout d’un vocabulaire externe par un renvoi complet de l’ontologie depuis le tenant d’administration.                                                                                                                                           Recommandé
-                                                                                                                                                                                                                                                                                                                                                                                                             
-                                                                                                               Il peut s’agir d’un acte d’administration fonctionnelle, qui doit néanmoins être accompagné d’un acte d’exploitation visant à réindexer le nouveau vocabulaire dans le moteur de recherche Elastic Search.                                                                                    
-                                                                                                                                                                                                                                                                                                                                                                                                             
-                                                                                                               Il faut veiller à ce que le vocabulaire présent dans l’ontologie et les mappings du moteur de recherche Elastic Search soient cohérents.                                                                                                                                                      
-                                                                                                                                                                                                                                                                                                                                                                                                             
-                                                                                                               Exemple : si j’ajoute un vocabulaire sur les unités archivistiques, le mapping de la collection Unit Elastic Search devra être mise à jour.                                                                                                                                                   
-
-  Ajout d’un vocabulaire interne pour évolution du modèle de données ou évolution du SEDA                      La solution logicielle Vitam rend possible l’ajout d’un vocabulaire interne au moyen d’un acte d’exploitation, qui permet en outre de ne pas mettre à jour les vocabulaires externes du référentiel.                                                                                          Recommandé
-                                                                                                                                                                                                                                                                                                                                                                                                             
-                                                                                                               Cette opération ne peut avoir lieu qu’à deux occasions :                                                                                                                                                                                                                                      
-                                                                                                                                                                                                                                                                                                                                                                                                             
-                                                                                                               -   évolution du modèle de données de la solution logicielle Vitam,                                                                                                                                                                                                                           
-                                                                                                                                                                                                                                                                                                                                                                                                             
-                                                                                                               -   publication d’une nouvelle version du SEDA.                                                                                                                                                                                                                                               
-                                                                                                                                                                                                                                                                                                                                                                                                             
-                                                                                                               Elle est alors initiée et réalisée par un administrateur technique, car elle nécessite en plus un acte d’exploitation technique sur le moteur de recherche Elastic Search (réindexation).                                                                                                     
-                                                                                                                                                                                                                                                                                                                                                                                                             
-                                                                                                               En dehors de ces deux cas, il n’est pas recommandé d’ajouter un vocabulaire interne.                                                                                                                                                                                                          
-
-  Modification de l’identifiant des vocabulaires internes                                                      Selon son paramétrage, la solution logicielle Vitam permet de modifier les vocabulaires internes de l’ontologie.                                                                                                                                                                              Interdit
-                                                                                                                                                                                                                                                                                                                                                                                                             
-                                                                                                               Néanmoins, il est interdit de modifier leur identifiant.                                                                                                                                                                                                                                      
-
-  Modification du type d’indexation des vocabulaires internes par un administrateur fonctionnel                Selon son paramétrage, la solution logicielle Vitam permet de modifier le type d’indexation des vocabulaires internes de l’ontologie.                                                                                                                                                         Non recommandé
-                                                                                                                                                                                                                                                                                                                                                                                                             
-                                                                                                               Néanmoins, cette action pouvant avoir un impact sur l’indexation des enregistrements en base de données et devant être accompagnée d’un acte d’exploitation pour être effective, il n’est pas recommandé qu’un administrateur fonctionnel seul l’effectue.                                    
-
-  Modification du type d’indexation des vocabulaires internes par un administrateur technique                  Selon son paramétrage, la solution logicielle Vitam permet de modifier le type d’indexation des vocabulaires internes de l’ontologie.                                                                                                                                                         Recommandé
-                                                                                                                                                                                                                                                                                                                                                                                                             
-                                                                                                               Mais cette action peut avoir un impact sur l’indexation des enregistrements en base de données et doit être accompagnée d’un acte d’exploitation pour être effective.                                                                                                                         
-                                                                                                                                                                                                                                                                                                                                                                                                             
-                                                                                                               Il est recommandé que cet acte soit effectué par un administrateur technique, en accord avec un administrateur fonctionnel.                                                                                                                                                                   
-
-  Modification du type d’indexation des vocabulaires externes par un administrateur fonctionnel                La modification du type d’indexation des vocabulaires externes est possible, mais obéit à des règles précises.                                                                                                                                                                                Non recommandé
-                                                                                                                                                                                                                                                                                                                                                                                                             
-                                                                                                               Cette action pouvant avoir un impact sur l’indexation des enregistrements en base de données et devant être accompagnée d’un acte d’exploitation pour être effective, il n’est pas recommandé qu’un administrateur fonctionnel seul l’effectue.                                               
-
-  Suppression d’un vocabulaire externe inutilisé par un profil d’unité archivistique                           Si un vocabulaire externe n’est pas utilisé par un profil d’unité archivistique, il est possible de le supprimer de l’ontologie.                                                                                                                                                              Possible
-                                                                                                                                                                                                                                                                                                                                                                                                             
-                                                                                                               *Point d’attention :* il est ensuite nécessaire de procéder à une suppression de ce vocabulaire dans le moteur de recherche Elastic Search au moyen d’une opération technique d’exploitation                                                                                                  
-
-  Paramétrage d’interdiction de la Suppression d’un vocabulaire interne par un administrateur fonctionnel      La solution logicielle Vitam rend possible la suppression d’un vocabulaire interne au moyen d’un paramétrage visant à forcer cette suppression.                                                                                                                                               Recommandé
-                                                                                                                                                                                                                                                                                                                                                                                                             
-                                                                                                               Néanmoins, il est recommandé d’activer le paramétrage technique interdisant cette suppression. En effet, un vocabulaire interne n’a pas vocation a être supprimé en production.                                                                                                               
-
-  Suppression d’un vocabulaire interne par un administrateur fonctionnel                                       Il est interdit de supprimer un vocabulaire interne.                                                                                                                                                                                                                                          Interdit
-
-  Suppression d’un vocabulaire interne pour évolution du modèle de données ou évolution du SEDA                La solution logicielle Vitam rend possible la suppression d’un vocabulaire interne au moyen d’un paramétrage visant à forcer cette suppression, qui permet en outre de ne pas mettre à jour les vocabulaires externes du référentiel.                                                         Recommandé
-                                                                                                                                                                                                                                                                                                                                                                                                             
-                                                                                                               Cette opération ne peut avoir lieu qu’à deux occasions :                                                                                                                                                                                                                                      
-                                                                                                                                                                                                                                                                                                                                                                                                             
-                                                                                                               -   évolution du modèle de données de la solution logicielle Vitam,                                                                                                                                                                                                                           
-                                                                                                                                                                                                                                                                                                                                                                                                             
-                                                                                                               -   publication d’une nouvelle version du SEDA.                                                                                                                                                                                                                                               
-                                                                                                                                                                                                                                                                                                                                                                                                             
-                                                                                                               Elle est alors initiée et réalisée par un administrateur technique, car elle nécessite un acte d’exploitation technique sur le moteur de recherche Elastic Search (réindexation).                                                                                                             
-                                                                                                                                                                                                                                                                                                                                                                                                             
-                                                                                                               En dehors de ces deux cas, il n’est pas recommandé de supprimer un vocabulaire interne.                                                                                                                                                                                                       
-
-  Suppression d’un vocabulaire externe utilisé par un profil d’unité archivistique                             Si un vocabulaire externe est utilisé par un profil d’unité archivistique, il est interdit de le supprimer de l’ontologie.                                                                                                                                                                    Interdit
-
-  Suppression d’un vocabulaire externe utilisé par un profil d’unité archivistique                             Si un vocabulaire externe est utilisé par un profil d’unité archivistique, la solution logicielle Vitam ne permet pas de le supprimer de l’ontologie.                                                                                                                                         Recommandé
-                                                                                                                                                                                                                                                                                                                                                                                                             
-                                                                                                               Si l’on souhaite vraiment le supprimer, il est alors conseiller de procéder comme suit :                                                                                                                                                                                                      
-                                                                                                                                                                                                                                                                                                                                                                                                             
-                                                                                                               -   vérifier que le profil d’unité archivistique n’est pas utilisé par des unités archivistiques ;                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                                                                                                                                                             
-                                                                                                               -   le cas échéant, modifier le profil d’unité archivistique déclaré par ces unités archivistiques, l’objectif étant que le profil d’unité archivistique ne soit plus utilisé en accès ;                                                                                                      
-                                                                                                                                                                                                                                                                                                                                                                                                             
-                                                                                                               -   modifier le profil d’unité archivistique et supprimer le vocabulaire externe ;                                                                                                                                                                                                            
-                                                                                                                                                                                                                                                                                                                                                                                                             
-                                                                                                               -   supprimer le vocabulaire externe de l’ontologie.                                                                                                                                                                                                                                          
-                                                                                                                                                                                                                                                                                                                                                                                                             
+1. []{#__RefHeading___Toc12996_582479276 .anchor}Comment utiliser
+   l’ontologie ?
+   
+   ------------------------------------------------------------------------------------------------------------ --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ------------------------------
+   
+   **Intitulé**                                                                                                 **Description**                                                                                                                                                                                                                                                                               **Niveau de recommandation**
+   
+   **Administration de l’ontologie**
+   
+   Import ou modification de l’ontologie                                                                        Les opérations d’import et de mise à jour de l’ontologie s’effectuent obligatoirement sur le tenant d’administration.                                                                                                                                                                         Obligatoire
+   
+                                                                                                              L’indexation des vocabulaires dans le moteur de recherche Elastic Search se fait tenant par tenant.                                                                                                                                                                                           
+   
+   Import initial de l’ontologie                                                                                Il est obligatoire d’importer l’ontologie lors de l’installation de la solution logicielle Vitam.                                                                                                                                                                                             Obligatoire
+   
+                                                                                                              Cette ontologie, fournie avec la solution logicielle Vitam, inclut par défaut l’ensemble des vocabulaires internes gérés par la solution.                                                                                                                                                     
+   
+   Ajout d’un vocabulaire externe                                                                               La solution logicielle Vitam rend possible l’ajout d’un vocabulaire externe par un renvoi complet de l’ontologie depuis le tenant d’administration.                                                                                                                                           Recommandé
+   
+                                                                                                              Il peut s’agir d’un acte d’administration fonctionnelle, qui doit néanmoins être accompagné d’un acte d’exploitation visant à réindexer le nouveau vocabulaire dans le moteur de recherche Elastic Search.                                                                                    
+       
+                                                                                                              Il faut veiller à ce que le vocabulaire présent dans l’ontologie et les mappings du moteur de recherche Elastic Search soient cohérents.                                                                                                                                                      
+       
+                                                                                                              Exemple : si j’ajoute un vocabulaire sur les unités archivistiques, le mapping de la collection Unit Elastic Search devra être mise à jour.                                                                                                                                                   
+   
+   Ajout d’un vocabulaire interne pour évolution du modèle de données ou évolution du SEDA                      La solution logicielle Vitam rend possible l’ajout d’un vocabulaire interne au moyen d’un acte d’exploitation, qui permet en outre de ne pas mettre à jour les vocabulaires externes du référentiel.                                                                                          Recommandé
+   
+                                                                                                              Cette opération ne peut avoir lieu qu’à deux occasions :                                                                                                                                                                                                                                      
+       
+                                                                                                              -   évolution du modèle de données de la solution logicielle Vitam,                                                                                                                                                                                                                           
+       
+                                                                                                              -   publication d’une nouvelle version du SEDA.                                                                                                                                                                                                                                               
+       
+                                                                                                              Elle est alors initiée et réalisée par un administrateur technique, car elle nécessite en plus un acte d’exploitation technique sur le moteur de recherche Elastic Search (réindexation).                                                                                                     
+       
+                                                                                                              En dehors de ces deux cas, il n’est pas recommandé d’ajouter un vocabulaire interne.                                                                                                                                                                                                          
+   
+   Modification de l’identifiant des vocabulaires internes                                                      Selon son paramétrage, la solution logicielle Vitam permet de modifier les vocabulaires internes de l’ontologie.                                                                                                                                                                              Interdit
+   
+                                                                                                              Néanmoins, il est interdit de modifier leur identifiant.                                                                                                                                                                                                                                      
+   
+   Modification du type d’indexation des vocabulaires internes par un administrateur fonctionnel                Selon son paramétrage, la solution logicielle Vitam permet de modifier le type d’indexation des vocabulaires internes de l’ontologie.                                                                                                                                                         Non recommandé
+   
+                                                                                                              Néanmoins, cette action pouvant avoir un impact sur l’indexation des enregistrements en base de données et devant être accompagnée d’un acte d’exploitation pour être effective, il n’est pas recommandé qu’un administrateur fonctionnel seul l’effectue.                                    
+   
+   Modification du type d’indexation des vocabulaires internes par un administrateur technique                  Selon son paramétrage, la solution logicielle Vitam permet de modifier le type d’indexation des vocabulaires internes de l’ontologie.                                                                                                                                                         Recommandé
+   
+                                                                                                              Mais cette action peut avoir un impact sur l’indexation des enregistrements en base de données et doit être accompagnée d’un acte d’exploitation pour être effective.                                                                                                                         
+       
+                                                                                                              Il est recommandé que cet acte soit effectué par un administrateur technique, en accord avec un administrateur fonctionnel.                                                                                                                                                                   
+   
+   Modification du type d’indexation des vocabulaires externes par un administrateur fonctionnel                La modification du type d’indexation des vocabulaires externes est possible, mais obéit à des règles précises.                                                                                                                                                                                Non recommandé
+   
+                                                                                                              Cette action pouvant avoir un impact sur l’indexation des enregistrements en base de données et devant être accompagnée d’un acte d’exploitation pour être effective, il n’est pas recommandé qu’un administrateur fonctionnel seul l’effectue.                                               
+   
+   Suppression d’un vocabulaire externe inutilisé par un profil d’unité archivistique                           Si un vocabulaire externe n’est pas utilisé par un profil d’unité archivistique, il est possible de le supprimer de l’ontologie.                                                                                                                                                              Possible
+   
+                                                                                                              *Point d’attention :* il est ensuite nécessaire de procéder à une suppression de ce vocabulaire dans le moteur de recherche Elastic Search au moyen d’une opération technique d’exploitation                                                                                                  
+   
+   Paramétrage d’interdiction de la Suppression d’un vocabulaire interne par un administrateur fonctionnel      La solution logicielle Vitam rend possible la suppression d’un vocabulaire interne au moyen d’un paramétrage visant à forcer cette suppression.                                                                                                                                               Recommandé
+   
+                                                                                                              Néanmoins, il est recommandé d’activer le paramétrage technique interdisant cette suppression. En effet, un vocabulaire interne n’a pas vocation a être supprimé en production.                                                                                                               
+   
+   Suppression d’un vocabulaire interne par un administrateur fonctionnel                                       Il est interdit de supprimer un vocabulaire interne.                                                                                                                                                                                                                                          Interdit
+   
+   Suppression d’un vocabulaire interne pour évolution du modèle de données ou évolution du SEDA                La solution logicielle Vitam rend possible la suppression d’un vocabulaire interne au moyen d’un paramétrage visant à forcer cette suppression, qui permet en outre de ne pas mettre à jour les vocabulaires externes du référentiel.                                                         Recommandé
+   
+                                                                                                              Cette opération ne peut avoir lieu qu’à deux occasions :                                                                                                                                                                                                                                      
+       
+                                                                                                              -   évolution du modèle de données de la solution logicielle Vitam,                                                                                                                                                                                                                           
+       
+                                                                                                              -   publication d’une nouvelle version du SEDA.                                                                                                                                                                                                                                               
+       
+                                                                                                              Elle est alors initiée et réalisée par un administrateur technique, car elle nécessite un acte d’exploitation technique sur le moteur de recherche Elastic Search (réindexation).                                                                                                             
+       
+                                                                                                              En dehors de ces deux cas, il n’est pas recommandé de supprimer un vocabulaire interne.                                                                                                                                                                                                       
+   
+   Suppression d’un vocabulaire externe utilisé par un profil d’unité archivistique                             Si un vocabulaire externe est utilisé par un profil d’unité archivistique, il est interdit de le supprimer de l’ontologie.                                                                                                                                                                    Interdit
+   
+   Suppression d’un vocabulaire externe utilisé par un profil d’unité archivistique                             Si un vocabulaire externe est utilisé par un profil d’unité archivistique, la solution logicielle Vitam ne permet pas de le supprimer de l’ontologie.                                                                                                                                         Recommandé
+   
+                                                                                                              Si l’on souhaite vraiment le supprimer, il est alors conseiller de procéder comme suit :                                                                                                                                                                                                      
+       
+                                                                                                              -   vérifier que le profil d’unité archivistique n’est pas utilisé par des unités archivistiques ;                                                                                                                                                                                            
+       
+                                                                                                              -   le cas échéant, modifier le profil d’unité archivistique déclaré par ces unités archivistiques, l’objectif étant que le profil d’unité archivistique ne soit plus utilisé en accès ;                                                                                                      
+       
+                                                                                                              -   modifier le profil d’unité archivistique et supprimer le vocabulaire externe ;                                                                                                                                                                                                            
+       
+                                                                                                              -   supprimer le vocabulaire externe de l’ontologie.                                                                                                                                                                                                                                          
 
   **Entrée**
 
   Transfert d’un SIP déclarant un profil d’unité archivistique et contenant des vocabulaires externes          Le transfert d’un SIP déclarant un profil d’unité archivistique et comportant des extensions au SEDA nécessite en préalable les opérations suivantes :                                                                                                                                        Obligatoire
-                                                                                                                                                                                                                                                                                                                                                                                                             
+
                                                                                                                -   création des vocabulaires externes correspondant à ces extensions,                                                                                                                                                                                                                        
-                                                                                                                                                                                                                                                                                                                                                                                                             
+    
                                                                                                                -   création du profil d’unité archivistique.                                                                                                                                                                                                                                                 
-                                                                                                                                                                                                                                                                                                                                                                                                             
 
   Transfert d’un SIP ne déclarant pas de profil d’unité archivistique et contenant des vocabulaires externes   La solution logicielle Vitam autorise le transfert de bordereau contenant des extensions au SEDA. Ces extensions sont alors automatiquement indexées sous un type TEXT et peuvent *a posteriori* entrer en conflit avec des vocabulaires externes de l’ontologie.                             Recommandé
-                                                                                                                                                                                                                                                                                                                                                                                                             
+
                                                                                                                Avant un transfert de bordereau contenant des extensions, il est fortement recommandé de créer les vocabulaires correspondant dans l’ontologie.                                                                                                                                               
 
   **Accès**
 
   Modification des traductions des vocabulaires internes                                                       L’ontologie permet de gérer une traduction explicite des vocabulaires internes. La solution logicielle Vitam est livrée avec une traduction par défaut, notamment reprise du SEDA pour les vocabulaires issus du standard.                                                                    Recommandé
-                                                                                                                                                                                                                                                                                                                                                                                                             
+
                                                                                                                Afin de rendre intelligible ces vocabulaires par les futurs utilisateurs de la solution logicielle Vitam, il est recommandé de modifier ces vocabulaires (par exemple, traduire « Description » non pas par « Description », mais par « Présentation du contenu »).                           
 
   Utilisation de l’ontologie pour afficher les vocabulaires internes et externes dans l’IHM                    Dans les différentes IHM, il est recommandé de récupérer au moyen d’une requête la traduction des vocabulaires de l’ontologie, plutôt que d’afficher des intitulés en dur, afin de faciliter leur modification par un administrateur fonctionnel.                                             Recommandé
 
   Accès à l’ontologie par un administrateur fonctionnel                                                        Un administrateur fonctionnel peut avoir accès à l’ontologie et détenir des droits d’ajout et de modification de vocabulaires.                                                                                                                                                                Obligatoire
-                                                                                                                                                                                                                                                                                                                                                                                                             
+
                                                                                                                Il est obligatoire que son intervention sur l’ontologie, **surtout sur l’indexation**, soit réalisée de concert avec l’administrateur technique.                                                                                                                                              
-                                                                                                                                                                                                                                                                                                                                                                                                             
+    
                                                                                                                En outre, il est recommandé de lui interdire de supprimer de son propre chef des vocabulaires internes.                                                                                                                                                                                       
 
   Accès à l’ontologie par un administrateur technique                                                          Un administrateur technique doit avoir accès à l’ontologie et détenir des droits d’ajout et de modification de vocabulaire. Il a également la possibilité de supprimer des vocabulaires, internes et externes.                                                                                Recommandé
-                                                                                                                                                                                                                                                                                                                                                                                                             
+
                                                                                                                Il est recommandé de réaliser cette action de concert avec l’administrateur fonctionnel.                                                                                                                                                                                                      
 
   Accès à l’ontologie par un tiers                                                                             Il est recommandé, pour des tiers, de restreindre leur accès aux seuls vocabulaires utilisés lors d’un transfert et avec des profils d’unité archivistique, à savoir les vocabulaires internes issus du SEDA et les vocabulaires externes créés pour des besoins de transfert particuliers.   Recommandé
+
   ------------------------------------------------------------------------------------------------------------ --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ------------------------------
 
 []{#__RefHeading__11320_350149402 .anchor}Annexe 1 : Vocabulaires
@@ -7928,7 +7950,9 @@ contrôle, conformément au type d’indexation du vocabulaire déclaré dans
 l’ontologie :
 
   ----------------------------------------- ------------ ------------ ------------- ------------ -----------
+
                                             **string**   **number**   **boolean**   **object**   **array**
+
   \_up                                      x                                                    
   \_og                                      x                                                    
   ArchiveUnitProfile                        x                                                    
@@ -8049,6 +8073,7 @@ l’ontologie :
   GpsLongitude                              x                                                    
   GpsLongitudeRef                           x                                                    
   GpsDateStamp                              x                                                    
+
   ----------------------------------------- ------------ ------------ ------------- ------------ -----------
 
 [[]{#refheading___toc15927_1084181859
