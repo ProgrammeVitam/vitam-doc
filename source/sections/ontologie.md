@@ -30,6 +30,8 @@ Il s’articule autour des axes suivants :
 
 - quelques conseils complémentaires de mise en œuvre.
 
+TEST 
+
 Le présent document décrit les fonctionnalités qui sont offertes par la
 solution logicielle Vitam au terme de la version 5.RC (septembre 2021).
 Il a vocation a être amendé, complété et enrichi au fur et à mesure de
