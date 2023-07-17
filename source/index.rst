@@ -16,6 +16,7 @@ Documentation Vitam
    sections/modele_de_donnees.md
    sections/modele_de_workflow.md
    sections/module_de_collecte.md
+   sections/resip.md
 
 Indices and tables
 ==================
