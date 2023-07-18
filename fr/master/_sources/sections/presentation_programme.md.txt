@@ -31,7 +31,7 @@ couvre plus précisément les opérations suivantes :
     > politiques et de plates-formes d’archivage utilisant la solution
     > logicielle (projet Ad-Essor et ANET).
 
-La solution logicielle Vitam est développée en logiciel libre et recourt
+La solution logicielle VITAM est développée en logiciel libre et recourt
 aux technologies innovantes du Big Data, seules à même de relever le
 défi de l’archivage du nombre d’objets numériques qui seront produits
 ces prochaines années par les administrations de l’État. Afin de
