@@ -20,11 +20,22 @@ Documentation métier
    :caption: documentation métier
    :numbered:
 
-   sections/ontologie.md
+   sections/eliminations.md
    sections/gel.md
    sections/modele_de_donnees.md
    sections/modele_de_workflow.md
    sections/module_de_collecte.md
+   sections/ontologie.md
+
+Documentation Vitam UI
+======================
+
+.. toctree::
+   :caption: documentation Vitam UI
+   :numbered:
+
+   sections/VitamUI_Arbres_Plans.md
+
 
 Outils connexes
 ===============
