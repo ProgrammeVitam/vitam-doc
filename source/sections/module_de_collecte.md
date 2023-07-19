@@ -13,8 +13,8 @@ Introduction
   Standard d’échange de données pour l’archivage – SEDA – v. 2.1     06/2018              
   Standard d’échange de données pour l’archivage – SEDA – v. 2.2     02/2022              Cette nouvelle version du SEDA est intégrée à la solution logicielle Vitam à partir de la V6.RC.
   Vitam – Structuration des *Submission Information Package* (SIP)   31/03/2023           
-  Vitam – Modèle de données [](target_MDD).           
-  Vitam – Ontologie                     [](target_ONTOLOGIE).           
+  Vitam – [Modèle de données](./modele_de_donnees.md)      
+  Vitam – [Ontologie](./ontologie.md)           
   Vitam – Profils d’archivage                                        31/03/2023           
   Vitam – Profils d’unité archivistiques                             31/03/2023           
   ------------------------------------------------------------------ -------------------- --------------------------------------------------------------------------------------------------

@@ -1,8 +1,6 @@
 (target_MDD)=
 Modèle de données
 =================
-Reference [](target_MDD).
-
 
 Introduction
 ------------
