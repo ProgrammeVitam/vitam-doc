@@ -16,7 +16,7 @@ Lire la documentation  : à chaque besoin, sa documentation…
 
 ### La documentation générale
 
-![Schéma de lecture de la documentation](/medias/Pictures/202109_guide_lecture_maj.jpg)
+![Schéma de lecture de la documentation](medias/Pictures/202109_guide_lecture_maj.jpg)
 
 ### La documentation Vitam UI
 En plus des documents pour les développeurs et intégrateurs et des présentations des différentes APP (pour application) métier, deux documents font le point sur des sujets techniques :
@@ -29,7 +29,7 @@ Découvrir la solution logicielle Vitam
 
 ### Présentation du projet solution logicielle
 - Présentation : ce document présente de manière assez générale la solution logicielle : mode de développement, vision générale fonctionnelle et technique de la solution.  
-- Lien vers le document : [Présentation de la solution logicielle](/presentation_programme.md)  
+- Lien vers le document : [Présentation de la solution logicielle](/presentation_programme.html)  
 - Public cible : toute personne voulant découvrir la solution logicielle Vitam, tant profil technique que fonctionnel.  
 - Sommaire : 
     - Solution logicielle Vitam : Manifeste, Une logique back-office… à l’écoute des besoins métiers et techniques, Planning, Contenu des versions, Normes et textes pris en compte, Sécurité, Maintenance

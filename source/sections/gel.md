@@ -130,8 +130,7 @@ Le schéma ci-après, issu de la documentation publiée par le Service
 interministériel des archives de France (SIAF), illustre ces différentes
 possibilités.
 
-![](./medias/Pictures/1000000000000556000003002C2276E3B31C73E3.png){width="16.351cm"
-height="9.855cm"}
+![](./medias/Pictures/1000000000000556000003002C2276E3B31C73E3.png)
 
 Le bloc *ManagementMetadata* et le sous-bloc Management des unités
 archivistiques dispose d’un sous-bloc correspondant à la règle de gel
@@ -309,7 +308,7 @@ archivistique ou héritées d’unités archivistiques parentes.
 
 ***Par défaut***, est enregistrée la catégorie liée au gel (HoldRule)
 parmi l’**ensemble de catégories de règle indexées par
-défaut **pour une unité archivistique
+défaut** pour une unité archivistique
 (computedInheritedRule – facultatif)
 
 Elle peut contenir :
