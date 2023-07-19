@@ -10,6 +10,7 @@ Documentation Vitam
    :caption: Table des matières
    :numbered:
 
+   sections/guide_lecture.md
    sections/presentation_programme.md
    sections/ontologie.md
    sections/gel.md
