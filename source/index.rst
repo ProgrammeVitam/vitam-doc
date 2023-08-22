@@ -3,20 +3,47 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Documentation Vitam
-===================
+Première approche
+=================
 
 .. toctree::
-   :caption: Table des matières
+   :caption: première approche
    :numbered:
 
    sections/guide_lecture.md
    sections/presentation_programme.md
-   sections/ontologie.md
+
+Documentation métier
+====================
+
+.. toctree::
+   :caption: documentation métier
+   :numbered:
+
+   sections/eliminations.md
    sections/gel.md
    sections/modele_de_donnees.md
    sections/modele_de_workflow.md
    sections/module_de_collecte.md
+   sections/ontologie.md
+
+Documentation Vitam UI
+======================
+
+.. toctree::
+   :caption: documentation Vitam UI
+   :numbered:
+
+   sections/VitamUI_Arbres_Plans.md
+
+
+Outils connexes
+===============
+
+.. toctree::
+   :caption: outils connexes
+   :numbered:
+
    sections/resip.md
 
 Indices and tables
