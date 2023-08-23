@@ -562,8 +562,7 @@ Pour supprimer vocabulaire, il est recommandé de suivre les étapes suivantes 
 | Administrateur technique                   | supprime l’indexation du vocabulaire dans le moteur de recherche Elastic Search. | Non |
 | Administrateur fonctionnel et/ou technique | rétablissent les traitements en cours (en entrée comme en accès). | Oui / Non |
 
-[]{#anchor-27}Comment mettre à jour une unité archivistique associée ou non à un profil d’unité archivistique ?
----------------------------------------------------------------------------------------------------------------
+### Comment mettre à jour une unité archivistique associée ou non à un profil d’unité archivistique ?
 
 Les métadonnées d’une unité archivistique déclarant un profil d’unité archivistique sont modifiables, à la condition que l’unité archivistique reste conforme à ce profil d’unité archivistique et, de fait, aux vocabulaires définis dans le profil d’unité archivistique. Cette conformité vaut aussi bien pour les vocabulaires utilisés que pour les valeurs utilisées. En d’autres termes :
 
@@ -572,30 +571,27 @@ Les métadonnées d’une unité archivistique déclarant un profil d’unité a
 
 Les métadonnées d’une unité archivistique ne déclarant pas de profil d’unité archivistique sont modifiables à condition que la nouvelle valeur soit conforme au type d’indexation défini pour le vocabulaire auquel elle est associée.
 
-  ---------------------------- ------------------- ------ -------- --------- --------- -------------
-  Type d’indexation initiale   Valeurs acceptées
-                               Texte
-  TEXT                         oui
-  KEYWORD                      oui
-  DATE                         oui
-  LONG                         
-  DOUBLE                       
-  BOOLEAN                      
-  GEO\_POINT                   oui
-  ENUM                         oui
-  ---------------------------- ------------------- ------ -------- --------- --------- -------------
+Valeurs acceptées par type d'indexation:
+| Type d’indexation initiale | Texte | Date | Entier | Décimal | Booléen | Données GPS |
+|---|---|---|---|---|---|---|
+| TEXT     | oui | oui | oui | oui | oui | oui |
+| KEYWORD  | oui | oui | oui | oui | oui | oui |
+| DATE     | oui |     |     |     |     |     |
+| LONG     |     |     | oui |     |     |     |
+| DOUBLE   |     |     |     | oui |     |     |
+| BOOLEAN  |     |     |     |     | oui |     |
+| GEO_POINT| oui | oui | oui | oui | oui | oui |
+| ENUM     | oui | oui | oui | oui | oui | oui |
 
-[]{#anchor-28}**Point d’attention :** l’enregistrement des vocabulaires dans la base de données Mongo diffère, selon que le vocabulaire est de type TEXT, KEYWORD, DATE, GEO\_POINT, ENUM ou de type LONG, DOUBLE, BOOLEAN :
-
--   -   []{#anchor-29}dans le premier cas, les valeurs sont enregistrées entre des *double quotes* (guillemets),
-    -   []{#anchor-30}dans le second cas, les valeurs ne sont pas signalées par des *double quotes* (guillemets).
+**Point d’attention :** l’enregistrement des vocabulaires dans la base de données Mongo diffère, selon que le vocabulaire est de type TEXT, KEYWORD, DATE, GEO\_POINT, ENUM ou de type LONG, DOUBLE, BOOLEAN :
+   - dans le premier cas, les valeurs sont enregistrées entre des *double quotes* (guillemets),
+   - dans le second cas, les valeurs ne sont pas signalées par des *double quotes* (guillemets).
 
 Il est recommandé d’utiliser ces vocabulaires conformément à leur type d’indexation. Si ce n’est pas le cas (par exemple, on renseigne systématiquement des valeurs booléennes en utilisant un vocabulaire indexé comme texte), mieux vaut choisir une autre indexation pour le vocabulaire en question.
 
-[]{#anchor-31}Dans le cas d’une réindexation a posteriori des vocabulaires, cela peut engendrer des conflits.
+Dans le cas d’une réindexation a posteriori des vocabulaires, cela peut engendrer des conflits.
 
-[]{#anchor-32}Quand et comment modifier des vocabulaires internes ?
--------------------------------------------------------------------
+### Quand et comment modifier des vocabulaires internes ?
 
 La solution logicielle Vitam permet d’ajouter, de modifier ou de supprimer des vocabulaires internes, de transformer des vocabulaires externes en vocabulaires internes, de modifier leur indexation par un réimport complet du référentiel au moyen d’un **acte d’exploitation**, ou suite à une procédure de montée de version de la solution logicielle VITAM. L’import de l’ontologie à cet étape ne remet pas à jour les vocabulaires externes et veille à ce que cet import réussisse sans conflits entre les
 deux vocabulaires internes et externes [^27]. En d’autres termes, cet acte ne met à jour que les vocabulaires internes et pas les vocabulaires externes.
@@ -609,10 +605,9 @@ Elle obéit aux mêmes règles strictes que celles relatives aux vocabulaires e
 
 ***Point d’attention :*** Suite à un import par acte d’exploitation ou par procédure de montée de version une phase préliminaire permet de vérifier d’éventuelles incohérences entre les vocabulaires internes et les vocabulaires externes. En cas de présence d’erreurs, il reviendra à l’exploitant de les analyser et de les corriger avant de procéder à la montée de version de l’ontologie[^29].
 
-[]{#anchor-33}Quel accès à l’ontologie ?
-----------------------------------------
+### Quel accès à l’ontologie ?
 
-### []{#anchor-34}Gestion des droits
+#### Gestion des droits
 
 La gestion de l’ontologie relève d’opérations d’administration technico-fonctionnelle. Il est donc recommandé d’en limiter l’accès de la manière suivante :
 
@@ -620,7 +615,7 @@ La gestion de l’ontologie relève d’opérations d’administration technico-
 -   seul un administrateur technique a vocation à gérer la mise à jour des types d’indexation et leur mise en cohérence avec le moteur de recherche Elastic Search ;
 -   un tiers n’a pas vocation à prendre connaissance de l’ensemble de l’ontologie, mais peut avoir accès aux vocabulaires utilisés lors d’un transfert et avec des profils d’unité archivistique, à savoir les vocabulaires internes issus du SEDA et les vocabulaires externes créés pour des besoins de transfert particuliers (Read).
 
-### []{#anchor-35}Restitution sur une IHM
+#### Restitution sur une IHM
 
 La solution logicielle Vitam propose une IHM pour représenter l’ontologie. Elle permet :
 
@@ -634,41 +629,17 @@ La solution logicielle Vitam propose une IHM pour représenter l’ontologie. El
 
 Étant donné les liens étroits de l’ontologie avec les profils d’unité archivistique, il est possible d’envisager d’associer pour chaque vocabulaire la liste des profils d’unité archivistique l’utilisant.
 
-[]{#anchor-36}Comment utiliser l’ontologie ?
---------------------------------------------
+### Comment utiliser l’ontologie ?
 
-  ------------------------------------------------------------------------------------------------------------ --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- --------------------------
-  Intitulé                                                                                                     Description                                                                                                                                                                                                                                                                                   Niveau de recommandation
 
-  Administration de l’ontologie
-
-  Import ou modification de l’ontologie                                                                        Les opérations d’import et de mise à jour de l’ontologie s’effectuent obligatoirement sur le tenant d’administration.                                                                                                                                                                         Obligatoire
-                                                                                                                                                                                                                                                                                                                                                                                                             
-                                                                                                               L’indexation des vocabulaires dans le moteur de recherche Elastic Search se fait tenant par tenant.                                                                                                                                                                                           
-
-  Import initial de l’ontologie                                                                                Il est obligatoire d’importer l’ontologie lors de l’installation de la solution logicielle Vitam.                                                                                                                                                                                             Obligatoire
-                                                                                                                                                                                                                                                                                                                                                                                                             
-                                                                                                               Cette ontologie, fournie avec la solution logicielle Vitam, inclut par défaut l’ensemble des vocabulaires internes gérés par la solution.                                                                                                                                                     
-
-  Ajout d’un vocabulaire externe                                                                               La solution logicielle Vitam rend possible l’ajout d’un vocabulaire externe par un renvoi complet de l’ontologie depuis le tenant d’administration.                                                                                                                                           Recommandé
-                                                                                                                                                                                                                                                                                                                                                                                                             
-                                                                                                               Il peut s’agir d’un acte d’administration fonctionnelle, qui doit néanmoins être accompagné d’un acte d’exploitation visant à réindexer le nouveau vocabulaire dans le moteur de recherche Elastic Search.                                                                                    
-                                                                                                                                                                                                                                                                                                                                                                                                             
-                                                                                                               Il faut veiller à ce que le vocabulaire présent dans l’ontologie et les mappings du moteur de recherche Elastic Search soient cohérents.                                                                                                                                                      
-                                                                                                                                                                                                                                                                                                                                                                                                             
-                                                                                                               Exemple : si j’ajoute un vocabulaire sur les unités archivistiques, le mapping de la collection Unit Elastic Search devra être mise à jour.                                                                                                                                                   
-
-  Ajout d’un vocabulaire interne pour évolution du modèle de données ou évolution du SEDA                      La solution logicielle Vitam rend possible l’ajout d’un vocabulaire interne au moyen d’un acte d’exploitation, qui permet en outre de ne pas mettre à jour les vocabulaires externes du référentiel.                                                                                          Recommandé
-                                                                                                                                                                                                                                                                                                                                                                                                             
-                                                                                                               Cette opération ne peut avoir lieu qu’à deux occasions :                                                                                                                                                                                                                                      
-                                                                                                                                                                                                                                                                                                                                                                                                             
-                                                                                                               Elle est alors initiée et réalisée par un administrateur technique, car elle nécessite en plus un acte d’exploitation technique sur le moteur de recherche Elastic Search (réindexation).                                                                                                     
-                                                                                                                                                                                                                                                                                                                                                                                                             
-                                                                                                               En dehors de ces deux cas, il n’est pas recommandé d’ajouter un vocabulaire interne.                                                                                                                                                                                                          
-
-  Modification de l’identifiant des vocabulaires internes                                                      Selon son paramétrage, la solution logicielle Vitam permet de modifier les vocabulaires internes de l’ontologie.                                                                                                                                                                              Interdit
-                                                                                                                                                                                                                                                                                                                                                                                                             
-                                                                                                               Néanmoins, il est interdit de modifier leur identifiant.                                                                                                                                                                                                                                      
+| Intitulé | Niveau de recommandattion |  Description  |
+|---|---|---|
+| |<font color="navy"> Administration de l’ontologie</font>| |
+| Import ou modification de l’ontologie | Obligatoire | Les opérations d’import et de mise à jour de l’ontologie s’effectuent obligatoirement sur le tenant d’administration.<br>L’indexation des vocabulaires dans le moteur de recherche Elastic Search se fait tenant par tenant. | 
+| Import initial de l’ontologie | Il est obligatoire d’importer l’ontologie lors de l’installation de la solution logicielle Vitam.<br>Cette ontologie, fournie avec la solution logicielle Vitam, inclut par défaut l’ensemble des vocabulaires internes gérés par la solution.| Obligatoire | 
+| Ajout d’un vocabulaire externe |  La solution logicielle Vitam rend possible l’ajout d’un vocabulaire externe par un renvoi complet de l’ontologie depuis le tenant d’administration.</br>Il peut s’agir d’un acte d’administration fonctionnelle, qui doit néanmoins être accompagné</br> d’un acte d’exploitation visant à réindexer le nouveau vocabulaire dans le moteur de recherche Elastic Search.</br>Il faut veiller à ce que le vocabulaire présent dans l’ontologie et les mappings du moteur de recherche Elastic Search soient cohérents.</br>Exemple : si j’ajoute un vocabulaire sur les unités archivistiques,</br> le mapping de la collection Unit Elastic Search devra être mise à jour. | Recommandé | 
+| Ajout d’un vocabulaire interne pour évolution</br> du modèle de données ou évolution du SEDA | La solution logicielle Vitam rend possible l’ajout d’un vocabulaire interne au moyen d’un acte d’exploitation, qui permet en outre de ne pas mettre à jour les vocabulaires externes du référentiel.</br>Cette opération ne peut avoir lieu qu’à deux occasions :</br>- évolution du modèle de données de la solution.</br>- publication d'une nouvelle version du SEDA.</br> Elle est alors initiée et réalisée par un administrateur technique, car elle nécessite en plus un acte d’exploitation technique sur le moteur de recherche Elastic Search (réindexation).</br>En dehors de ces deux cas, il n’est pas recommandé d’ajouter un vocabulaire interne.| Recommandé | 
+| Modification de l’identifiant des vocabulaires internes | Selon son paramétrage, la solution logicielle Vitam permet de modifier les vocabulaires internes de l’ontologie.</br>Néanmoins, il est interdit de modifier leur identifiant. | Interdit | 
 
   Modification du type d’indexation des vocabulaires internes par un administrateur fonctionnel                Selon son paramétrage, la solution logicielle Vitam permet de modifier le type d’indexation des vocabulaires internes de l’ontologie.                                                                                                                                                         Non recommandé
                                                                                                                                                                                                                                                                                                                                                                                                              
