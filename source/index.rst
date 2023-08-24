@@ -20,6 +20,7 @@ Documentation métier
    :caption: documentation métier
    :numbered:
 
+   sections/valeur_probante.md
    sections/eliminations.md
    sections/gel.md
    sections/modele_de_donnees.md
