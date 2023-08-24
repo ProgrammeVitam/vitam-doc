@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1. Conservation de la valeur probante &mdash; Vitam documentation fonctionnelle</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="2. Les éliminations avec la solution logicielle Vitam" href="eliminations.html" />
+    <link rel="prev" title="2. Présentation du programme Vitam" href="presentation_programme.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: white" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/Vitam_Logo-CMJN.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">première approche</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="guide_lecture.html">1. Guide de lecture de la documentation Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="presentation_programme.html">2. Présentation du programme Vitam</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">documentation métier</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Conservation de la valeur probante</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">1.1. Introduction</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#documents-de-reference">1.1.1. Documents de référence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#presentation-du-document">1.1.2. Présentation du document</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#journaux">1.2. Journaux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#preuve-systemique">1.3. Preuve systémique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#securisation-des-journaux">1.4. Sécurisation des journaux</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#contexte-de-securisation">1.4.1. Contexte de sécurisation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#procedure-de-securisation">1.4.2. Procédure de sécurisation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mise-en-oeuvre-sur-le-journal-des-operations">1.4.3. Mise en œuvre sur le journal des opérations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mise-en-oeuvre-sur-les-journaux-du-cycle-de-vie">1.4.4. Mise en œuvre sur les journaux du cycle de vie</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mise-en-oeuvre-sur-le-journal-des-ecritures">1.4.5. Mise en œuvre sur le journal des écritures</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#releve-de-valeur-probante">1.5. Relevé de valeur probante</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#principe">1.5.1. Principe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#forme-du-releve">1.5.2. Forme du relevé</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#generation-du-releve">1.5.3. Génération du relevé</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#annexes">1.6. Annexes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#annexe-1-exemple-de-releve-de-valeur-probante">1.6.1. Annexe 1 : Exemple de relevé de valeur probante</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#annexe-2-liste-des-verifications-presentes-dans-le-releve-de-valeur-probante">1.6.2. Annexe 2 : Liste des vérifications présentes dans le relevé de valeur probante</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="eliminations.html">2. Les éliminations avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gel.html">3. Le gel d’archives avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_donnees.html">4. Modèle de données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_workflow.html">5. Description des workflows et des opérations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_de_collecte.html">6. Module de collecte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ontologie.html">7. Ontologie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services_prod.html">8. Services producteurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transfert.html">9. Le transfert avec la solution logicielle Vitam</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">documentation Vitam UI</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Arbres_Plans.html">1. APP Arbres et plans</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">outils connexes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="resip.html">1. RESIP</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: white" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Documentation utilisateur Vitam</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">1. </span>Conservation de la valeur probante</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/sections/valeur_probante.md.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="conservation-de-la-valeur-probante">
+<h1><span class="section-number">1. </span>Conservation de la valeur probante<a class="headerlink" href="#conservation-de-la-valeur-probante" title="Lien permanent vers ce titre"></a></h1>
+<section id="introduction">
+<h2><span class="section-number">1.1. </span>Introduction<a class="headerlink" href="#introduction" title="Lien permanent vers ce titre"></a></h2>
+<section id="documents-de-reference">
+<h3><span class="section-number">1.1.1. </span>Documents de référence<a class="headerlink" href="#documents-de-reference" title="Lien permanent vers ce titre"></a></h3>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="text-center head"><p>Document</p></th>
+<th class="text-center head"><p>Date de la version</p></th>
+<th class="text-center head"><p>Remarques</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>NF Z 42‑013 – Archivage électronique – recommandations et exigences</p></td>
+<td class="text-center"><p>30/09/2020</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>NF Z 42‑020 – Spécifications fonctionnelles d’un composant Coffre-Fort Numérique destiné à la conservation d’informations numériques dans des conditions de nature à en garantir leur intégrité dans le temps</p></td>
+<td class="text-center"><p>07/2012</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>GA Z42-019 – Guide d’application de la NF Z 42‑013 (Archivage électronique – Spécifications relatives à la conception et à l’exploitation de systèmes informatiques en vue d’assurer la conservation et l’intégrité des documents stockés dans ces systèmes)</p></td>
+<td class="text-center"><p>06/2010</p></td>
+<td class="text-center"><p>Cette nouvelle version du SEDA est intégrée à la solution logicielle Vitam à partir de la V6.RC.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Vitam – Gestion de la préservation</p></td>
+<td class="text-center"><p>31/03/2023</p></td>
+<td class="text-center"><p>Le document apporte des précisions sur le comportement de l’opération permettant de générer un relevé de valeur probante.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="presentation-du-document">
+<h3><span class="section-number">1.1.2. </span>Présentation du document<a class="headerlink" href="#presentation-du-document" title="Lien permanent vers ce titre"></a></h3>
+<p>La conservation de la valeur probante est un sujet central d’un système d’archivage électronique. L’objectif est de rendre prouvable toute opération effectuée sur toute unité archivistique ou tout objet qui lui est associé. Toutefois, vu les volumétries envisagées dans les implémentations de la solution logicielle Vitam, il est illusoire de gérer ceci objet par objet, en mettant en œuvre des principes cryptographiques (signatures des objets, des actions unitaires, etc.) ; cela induirait une gestion lourde et porterait même des risques d’écroulement de confiance en cas de corruption de quelques clés. La sécurité d’un SAE doit être systémique, c’est-à-dire reposer sur un faisceau d’éléments redondants dont la modification simultanée et cohérente est impossible, ou plus exactement non réalisable en pratique. Les journaux constituent un élément central de cette sécurité systémique.
+Le cadre fourni pour la conservation de la valeur probante par les normes NF Z 42‑013, NF Z 42‑020 mais aussi le guide d’application GA Z42-019, a été pris en compte et complété dans la solution logicielle Vitam.
+Ce document présente rapidement, d’un point de vue fonctionnel, le mécanisme de journalisation métier et de sécurisation de ces journaux qui est une brique essentielle de la conservation de la valeur probante dans la solution logicielle Vitam . Il décrit aussi le « relevé de valeur probante », attestation au sens de la NF Z 42‑013 de la conservation de la valeur probante qui peut être obtenue via une API. Ce document devra être enrichi au fur et à mesure de l’avancement des travaux sur la gestion de la preuve.</p>
+</section>
+</section>
+<section id="journaux">
+<h2><span class="section-number">1.2. </span>Journaux<a class="headerlink" href="#journaux" title="Lien permanent vers ce titre"></a></h2>
+<p>La solution logicielle Vitam enregistre les événements signifiants contribuant à la conservation de la valeur probante dans trois journaux métier :</p>
+<ul class="simple">
+<li><p>Le journal des opérations, qui a pour objectif d’enregistrer toutes les opérations effectuées par la solution logicielle et ayant un impact significatif dans le système ou sur les unités archivistiques, groupes d’objets et objets pris en charge par celle-ci ;</p></li>
+<li><p>Les journaux du cycle de vie, qui ont pour objectif d’enregistrer toutes les actions significatives effectuées par la solution logicielle sur chacune des unités archivistiques et sur chacun des groupes d’objets techniques et des objets qui les composent. Est considérée comme une action significative, toute action modifiant l’entité concernée ou apportant une information significative sur son cycle de vie (ex. : modification d’une règle de gestion pour une unité archivistique, ajout d’un nouvel objet ou réidentification du format des objets pour les groupes d’objets techniques). Ces journaux sont créés lors de la prise en charge des unités archivistiques et des groupes d’objets ;</p></li>
+<li><p>Le journal des écritures, qui a pour objectif de tracer les opérations d’écriture effectuées par la solution logicielle sur les offres de stockage. Il garantit de fait l’horodatage et l’intégrité de tout élément dans le système.</p></li>
+</ul>
+<p><strong>Nota bene :</strong>
+Il y a un décalage dans les appellations des journaux par rapport à la norme NF Z 42‑013. Alors que la 42-013 parle de journal de cycle de vie des archives sans distinction de type d’évènements, la solution logicielle Vitam a fait le choix d’avoir des informations journalisées de type micro, pour chaque élément d’archives, et d’autres de type macro, pour les actions du système comme les entrées de SIP, les éliminations, les transferts…  Il a été décidé que le niveau de journal le plus fin devait garder l’appellation de « journal du cycle de vie des archives ». Par contre, les événements de niveau plus macro du système sont enregistrés dans le « journal des opérations »[^1].</p>
+</section>
+<section id="preuve-systemique">
+<h2><span class="section-number">1.3. </span>Preuve systémique<a class="headerlink" href="#preuve-systemique" title="Lien permanent vers ce titre"></a></h2>
+<p>Comme dit en introduction la sécurité d’un SAE doit être systémique, c’est-à-dire reposer sur un faisceau d’éléments redondants dont la modification simultanée et cohérente est impossible, ou plus exactement non réalisable en pratique. La preuve systémique de la bonne conservation de la valeur probante vient de la sécurisation de ces trois journaux (opérations, cycle de vie, écriture) dont les informations croisées permettent d’assurer la traçabilité de tout événement, et d’en apporter la preuve, parfois par plusieurs voies.</p>
+<p>À titre d’exemple, l’entrée d’un objet, avec les éléments métiers utiles, peut être prouvée via :</p>
+<ul class="simple">
+<li><p>le journal du cycle de vie du groupe d’objets qui fournit la date de création du journal, l’identifiant de l’opération qui a occasionné la prise en charge de l’objet dans la solution logicielle Vitam, ainsi que l’empreinte de l’objet ;</p></li>
+<li><p>le journal des opérations qui contient l’identifiant de l’opération qui a occasionné la prise en charge de l’objet dans la solution logicielle Vitam, la date de cette opération et l’identité du service responsable de l’entrée (s’il s’agit d’une entrée et non d’une opération de préservation).</p></li>
+</ul>
+<p>Cette prise en charge d’un objet peut aussi être prouvée via le journal des écritures qui assure l’écriture de cet objet (via son empreinte) sur les offres de stockage, même si ce journal est de nature intermédiaire entre le log technique et le journal métier.</p>
+<p>Cette réflexion initiale devra être précisée au fur et à mesure des travaux sur les relevés de preuve à apporter et avec la détermination des événements précis que l’on voudra pouvoir prouver. Les éléments figurant actuellement dans les journaux doivent permettre par composition de prouver tous les types d’événements et l’état du système.</p>
+</section>
+<section id="securisation-des-journaux">
+<h2><span class="section-number">1.4. </span>Sécurisation des journaux<a class="headerlink" href="#securisation-des-journaux" title="Lien permanent vers ce titre"></a></h2>
+<section id="contexte-de-securisation">
+<h3><span class="section-number">1.4.1. </span>Contexte de sécurisation<a class="headerlink" href="#contexte-de-securisation" title="Lien permanent vers ce titre"></a></h3>
+<p>La sécurisation des journaux consiste à apporter de la sécurité cryptographique sur l’objet journal en tant que tel et permet de renforcer l’enregistrement des événements.</p>
+<p>Voici quelques éléments pris en compte dans la conception de cette sécurisation :</p>
+<ol class="arabic simple">
+<li><p>Le guide GA Z 42-019 demande explicitement (cf 2.2.8.1.b) un chaînage des journaux, celui-ci est mis en œuvre.</p></li>
+<li><p>La norme NF Z 42‑013 demande aussi un horodatage au moins toutes les 24 heures. Un fichier spécifique est généré avec toutes les lignes présentes dans le journal depuis la dernière sécurisation. Ce fichier est horodaté sûrement avec un tampon RFC 3161. Cette opération dont le délai est paramétrable doit être faite pour être conforme à la norme au moins une fois par 24 heures.</p></li>
+<li><p>La sécurité d’un tampon d’horodatage même ancien (plus que sa durée de validité cryptographique) peut être assurée par le chaînage et la vérification de la chaîne jusqu’à un tampon valide. Pour raccourcir ce parcours, le chaînage est fait avec des journaux du mois et de l’année précédents.</p></li>
+<li><p>Il est utile de pouvoir prouver une ligne d’un journal sans devoir montrer les autres, non seulement pour des raisons de poids de données à transmettre pour une vérification de l’ensemble des pièces, mais aussi pour des raisons de confidentialité. Un mécanisme d’arbre de Merkle[^2] est mis en œuvre pour rendre prouvable chaque ligne indépendamment des autres.
+De fait, la conjonction du chaînage et de l’arbre de Merkle constituent des principes des blockchains dont l’usage grandissant permet de garantir l’efficacité.</p></li>
+</ol>
+</section>
+<section id="procedure-de-securisation">
+<h3><span class="section-number">1.4.2. </span>Procédure de sécurisation<a class="headerlink" href="#procedure-de-securisation" title="Lien permanent vers ce titre"></a></h3>
+<p>La sécurisation des journaux est opérée, tenant par tenant, par la génération puis la sauvegarde sur l’offre de stockage d’un fichier selon la procédure suivante :</p>
+<ul class="simple">
+<li><p>extraction de l’ensemble des éléments du journal à raison d’une ligne par élément et en partant de la ligne la plus ancienne non sécurisée ;
+→ écriture dans un fichier nommé « data.txt »;</p></li>
+<li><p>construction et calcul de la racine de l’arbre de Merkle :
+→ écriture de l’arbre de Merkle sous forme d’un arbre binaire json (root, Left, Rigth) dans un fichier « merkleTree.json » ;</p></li>
+<li><p>prise en compte des données qui vont faire l’objet d’un tampon d’horodatage : (racine de l’arbre de Merkle | TSP (Journal (précédent)) | TSP (Journal (J-1 mois)) | TSP (Journal (J-1 an)) :
+→ écriture des quatre éléments utilisés pour le calcul du tampon d’horodatage à savoir dans l’ordre « currentHash » (racine de l’arbre de Merkle), « previousTimestampToken »,   « previousTimestampTokenMinusOneMonth » et « previousTimestampTokenMinusOneYear » dans un fichier « computing_information.txt » ;</p></li>
+<li><p>génération du tampon d’horodatage :
+→ écriture dans un fichier « token.tsp » ;</p></li>
+<li><p>ajout des informations générales :
+→ écriture des informations de nombre de lignes de journal sécurisées (« numberOfElements »), de date de début (« startDate ») et de date de fin (« endDate ») des événements des lignes de journal prises en compte, et de la version du format de sécurisation (« securisationVersion ») dans le fichier « additional_information .txt » ;</p></li>
+<li><p>clôture de l’opération :
+→ agrégation de l’ensemble des fichiers dans un conteneur .zip sans compression, sauvegardé dans l’offre de stockage.</p></li>
+</ul>
+<p><img alt="Contenu du conteneur de sécurisation" src="../_images/conteneur_secu.png" /></p>
+<p><img alt="Contenu des fichiers" src="../_images/contenu_fichiers.png" /></p>
+<p>Cette procédure est lancée régulièrement sur les différents journaux, tenant par tenant. La périodicité de cette sécurisation est définie lors de l’installation de la plateforme et doit être définie pour lisser la charge de sécurisation. Elle doit, pour être conforme à la NF Z 42‑013, rester inférieure à 24 heures.</p>
+<p>À noter, le format de sécurisation mis dans le fichier « additional_information.txt » est mis à titre conservatoire pour permettre la mise en place de nouveaux formats qui seront pris en compte dans les traitements ultérieurs d’audit ou de génération de relevé de valeur probante. À ce jour seul le format « V1 » est utilisé.</p>
+</section>
+<section id="mise-en-oeuvre-sur-le-journal-des-operations">
+<h3><span class="section-number">1.4.3. </span>Mise en œuvre sur le journal des opérations<a class="headerlink" href="#mise-en-oeuvre-sur-le-journal-des-operations" title="Lien permanent vers ce titre"></a></h3>
+<p>Le journal des opérations recense l’ensemble des opérations possibles dans le système : entrée, mise à jour unitaire ou en masse des métadonnées descriptives et des métadonnées de gestion,  élimination (des métadonnées ou des objets) et audit.
+Le journal des opérations correspond à une table dans laquelle chaque enregistrement est une opération :</p>
+<ul class="simple">
+<li><p>chaque opération est composée d’une série d’événements (le premier étant un événement parmi les autres, sauf que c’est le premier, appelé ici bloc maître) ;</p></li>
+<li><p>chaque événement dispose de sa date d’événement ;</p></li>
+<li><p>la dernière date d’événement est donc celle du dernier événement dans le tableau des  événements ;</p></li>
+<li><p>de plus, à chaque écriture effective en base d’un nouvel événement, une date technique de persistance est utilisée pour tracer l’écriture des événements en base.</p></li>
+</ul>
+<p>Lors de la sécurisation du journal des opérations, les éléments pris en compte pour la construction du fichier « data.txt » sont sélectionnés en fonction du moment de dernière modification en base des journaux à sécuriser, en partant du moment de dernière sécurisation jusqu’au moment présent, moins une période de temps paramétrable[^3] (par défaut 5 minutes).</p>
+<p>La question s’est posée de prendre comme élément à sécuriser soit les événements unitaires des opérations, soit les opérations elles-mêmes. Il a été choisi de prendre l’ensemble des opérations ayant fait l’objet d’un événement dans la période qui doit être sécurisée (date technique de persistance), et de reprendre tous les événements de ces opérations y compris les antérieurs à la période de sécurisation. Cela permet, pour les opérations réalisées sur une longue période, d’avoir un enregistrement complet de l’opération jusqu’à sa finalisation.</p>
+<p>Le fichier correspondant à l’extraction du journal des opérations est construit, de ce fait, avec tous les éléments du journal des opérations de la période de sécurisation (à savoir toutes les opérations dont l’un des événements a eu lieu dans la période temps de sécurisation), triés par date du dernier événement. Chaque élément du journal des opérations est enregistré au format JSON, mais à plat sur une ligne avec les sauts de ligne encodés.</p>
+<p><strong>Nota bene :</strong> comme la sécurisation est aussi une opération, en général[^4], le fichier de sécurisation du journal des opérations se finit par une opération de sécurisation non finalisée (celle en cours).</p>
+</section>
+<section id="mise-en-oeuvre-sur-les-journaux-du-cycle-de-vie">
+<h3><span class="section-number">1.4.4. </span>Mise en œuvre sur les journaux du cycle de vie<a class="headerlink" href="#mise-en-oeuvre-sur-les-journaux-du-cycle-de-vie" title="Lien permanent vers ce titre"></a></h3>
+<p>Chaque unité archivistique et chaque groupe d’objets techniques dispose de son propre journal du cycle de vie qui trace tous les événements qui les concernent. Cette masse très importante de fichiers est stockée, comme les objets et les métadonnées, sur les offres de stockage pour en garantir la conservation optimale. Ces fichiers contiennent de nombreuses informations qui peuvent être signifiantes (par exemple la mention des changements de métadonnées et le différentiel des métadonnées lors d’une opération de mise à jour). Il faut donc être sélectif dans ce qui sera sécurisé, non seulement pour assurer suffisamment de traces sûres, mais aussi pour ne pas avoir dans les fichiers de sécurisation des journaux des informations qui devraient être effacées lors de l’élimination ou qui seraient couvertes par la protection du secret de la Défense nationale.</p>
+<p>Pour la sécurisation, il a donc été choisi de faire une ligne par journal du cycle de vie ayant été affecté par une opération (une ligne est donc un couple cycle de vie/opération) pendant la période de sécurisation. Cette ligne portera des informations sur l’opération ayant généré l’événement de cycle de vie, des informations issues du journal du cycle de vie, le hachage des métadonnées et du journal du cycle de vie en base, le hachage du fichier contenant le couple métadonnées/journal du cycle de vie stocké sur disque et enfin, dans le cas des groupes d’objets techniques, la liste des objets et de leur hachage (voir le détail ci-dessous).</p>
+<p>Pour les journaux du cycle de vie comme pour les journaux d’opérations, les éléments pris en compte pour la construction du fichier « data.txt » sont sélectionnés en fonction du moment de dernière modification en base des journaux à sécuriser, en partant du moment de dernière sécurisation jusqu’au moment présent moins une période de temps paramétrable5 (par défaut 5 minutes). Si le nombre d’éléments est supérieur à une limite paramétrable (par défaut 100 000), l’extraction est limitée à ce nombre d’éléments et une nouvelle sécurisation est lancée pour prendre en compte le reste, et ceci jusqu’à épuisement.
+À ce jour, les opérations laissant une trace dans le journal du cycle de vie des unités archivistiques et des groupes d’objets sont : entrée, mise à jour unitaire ou en masse des métadonnées descriptives et des métadonnées de gestion, reclassement, préservation, élimination (des métadonnées ou des objets), transfert et audit (en cas d’erreur détectée).
+Par exemple, on aura pour une ligne de journal du cycle de vie d’un DataObjectGroup la structure suivante (mise à plat sans retour chariot) :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+	<span class="s2">&quot;hGlobalDetails&quot;</span><span class="p">:{</span>
+		<span class="s2">&quot;offerIds&quot;</span><span class="p">:[</span><span class="s2">&quot;offer-fs-1.service.itrec.consul&quot;</span><span class="p">],</span>
+		<span class="s2">&quot;strategyId&quot;</span><span class="p">:</span><span class="s2">&quot;default&quot;</span>
+	<span class="p">},</span>
+	<span class="s2">&quot;hGlobalFStorage&quot;</span><span class="p">:</span> <span class="s2">&quot;b1217c6339486e1d5b77aa496fa9b8805f4270ad59d1fbc754940641aea4656df56f122a15038234909b3b4192a027e68249b58ac6d81f44d571e43b516ea423&quot;</span><span class="p">,</span>
+	<span class="s2">&quot;hLFC&quot;</span><span class="p">:</span> <span class="s2">&quot;ewN6aTW5T+m7RzuvJmBM4vLfKWdh33qly5JF1Bd3ooKZF/Xctp98ism9h2bl0O2Pmcfzwpih0u5Q3vQrGdHYkA==&quot;</span><span class="p">,</span>
+	<span class="s2">&quot;hLFCEvts&quot;</span><span class="p">:</span> <span class="s2">&quot;d6gmO+wjZLye3L38Hu4geVjrYw9DaJ5+ScPthAyFRd8+CT2W88MCd9LNc2mEh2tlVoWryO50nCjVtc24JI4ZyQ==&quot;</span><span class="p">,</span>
+	<span class="s2">&quot;hMetadata&quot;</span><span class="p">:</span> <span class="s2">&quot;OsYUJhP1AxvpnuToMhq9JFYua2j9c3Jz4tdjoO7v5UxMJC/au450Zmvek3QirUjMrbDX6EtfKOiunrVWkgY/Dg==&quot;</span><span class="p">,</span>
+	<span class="s2">&quot;hOGDocsStorage&quot;</span><span class="p">:</span> <span class="p">[{</span>
+			<span class="s2">&quot;hDetails&quot;</span><span class="p">:{</span>
+				<span class="s2">&quot;offerIds&quot;</span><span class="p">:[</span><span class="s2">&quot;offer-fs-1.service.itrec.consul&quot;</span><span class="p">],</span>
+				<span class="s2">&quot;strategyId&quot;</span><span class="p">:</span><span class="s2">&quot;default&quot;</span>
+			<span class="p">},</span>
+			<span class="s2">&quot;hObject&quot;</span><span class="p">:</span> <span class="s2">&quot;46126752c92661048f734a9df8ddbcbab717e60400a3da9ea81c49d6018deb0587b841ac9f767701cb1b4b67818bb6c8344af13592f2b8b71ca7d7abf03ba992&quot;</span><span class="p">,</span>
+			<span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;aeaaaaaaaahdpurfabzhsald2t3xohqaaaaq&quot;</span>
+		<span class="p">}</span>
+	<span class="p">],</span>
+	<span class="s2">&quot;lEvDTime&quot;</span><span class="p">:</span> <span class="s2">&quot;2018-06-06T12:04:18.388&quot;</span><span class="p">,</span>
+	<span class="s2">&quot;lEvTypeProc&quot;</span><span class="p">:</span> <span class="s2">&quot;INGEST&quot;</span><span class="p">,</span>
+	<span class="s2">&quot;lEvtIdProc&quot;</span><span class="p">:</span> <span class="s2">&quot;aeeaaaaaachotoh2abksaald2t3ww5qaaaaq&quot;</span><span class="p">,</span>
+	<span class="s2">&quot;lfcId&quot;</span><span class="p">:</span> <span class="s2">&quot;aebaaaaaaahdpurfabzhsald2t3xohyaaaaq&quot;</span><span class="p">,</span>
+	<span class="s2">&quot;ltEvtOutcome&quot;</span><span class="p">:</span> <span class="s2">&quot;OK&quot;</span><span class="p">,</span>
+	<span class="s2">&quot;mdType&quot;</span><span class="p">:</span> <span class="s2">&quot;OBJECTGROUP&quot;</span><span class="p">,</span>
+	<span class="s2">&quot;up&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;aeaqaaaaaahdpurfabzhsald2t4c4paaaaaq&quot;</span><span class="p">,</span> <span class="s2">&quot;aeaqaaaaaahdpurfabzhsald2t3xoiiaaaba&quot;</span><span class="p">],</span>
+	<span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="mi">9</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Par exemple, on aura pour une ligne de journal du cycle de vie d’une unité archivistique la structure suivante (mise à plat sans retour chariot) :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+	<span class="s2">&quot;hGlobalDetails&quot;</span><span class="p">:{</span>
+		<span class="s2">&quot;offerIds&quot;</span><span class="p">:[</span><span class="s2">&quot;offer-fs-1.service.itrec.consul&quot;</span><span class="p">],</span>
+		<span class="s2">&quot;strategyId&quot;</span><span class="p">:</span><span class="s2">&quot;default&quot;</span>
+	<span class="p">},</span>
+	<span class="s2">&quot;hGlobalFStorage&quot;</span><span class="p">:</span> <span class="s2">&quot;42c7c6ca6e089878d8b1d7b5fe07d149a1cb413973bbba04e09e8aeb05e368137814eed5eb043d1e754d2df86395e30c63728712030f6fc63ec41a78911a2500&quot;</span><span class="p">,</span>
+	<span class="s2">&quot;hLFC&quot;</span><span class="p">:</span> <span class="s2">&quot;JsFAf/OekcIa74djhzh8zePPWbU9ErygsbQylrUpTrXvu1cuEahuMf1HzwXV9KU25FHesBU4LY0mNTesjhSDvg==&quot;</span><span class="p">,</span>
+	<span class="s2">&quot;hLFCEvts&quot;</span><span class="p">:</span> <span class="s2">&quot;GSKYDzjbZuHzyB8T82mIkawOB41BXSgDGgLjwRRPYJE1KqGUsF/aCW3CmoRB3bV21j+w2d1lMvilNNwr1DfJhA==&quot;</span><span class="p">,</span>
+	<span class="s2">&quot;hMetadata&quot;</span><span class="p">:</span> <span class="s2">&quot;VYYbdOT+LYEaynutm5GZjK00QJgGma3Ny8eE8fvCSEAzYwq2lwFn2lG+acuN8TqAnwGEArYDG5qUNzMHvEN3WQ==&quot;</span><span class="p">,</span>
+	<span class="s2">&quot;idOG&quot;</span><span class="p">:</span> <span class="s2">&quot;aebaaaaaaahdpurfabzhsald2tjahyyaaaba&quot;</span><span class="p">,</span>
+	<span class="s2">&quot;lEvDTime&quot;</span><span class="p">:</span> <span class="s2">&quot;2018-06-06T11:18:54.056&quot;</span><span class="p">,</span>
+	<span class="s2">&quot;lEvTypeProc&quot;</span><span class="p">:</span> <span class="s2">&quot;INGEST&quot;</span><span class="p">,</span>
+	<span class="s2">&quot;lEvtIdProc&quot;</span><span class="p">:</span> <span class="s2">&quot;aeeaaaaaachotoh2abksaald2ti7s4qaaaaq&quot;</span><span class="p">,</span>
+	<span class="s2">&quot;lfcId&quot;</span><span class="p">:</span> <span class="s2">&quot;aeaqaaaaaahdpurfabzhsald2tjah2yaaaaq&quot;</span><span class="p">,</span>
+	<span class="s2">&quot;ltEvtOutcome&quot;</span><span class="p">:</span> <span class="s2">&quot;OK&quot;</span><span class="p">,</span>
+	<span class="s2">&quot;mdType&quot;</span><span class="p">:</span> <span class="s2">&quot;UNIT&quot;</span><span class="p">,</span>
+	<span class="s2">&quot;up&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;aeaqaaaaaahdpurfabzhsald2tjah3iaaaba&quot;</span><span class="p">],</span>
+	<span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="mi">5</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Pour reprendre en détail chaque champ, on a :</p>
+<ul class="simple">
+<li><p>hGlobalDetails : définit la stratégie de stockage mise en œuvre pour les éléments hors objets</p></li>
+<li><p>hDetails : définit la stratégie de stockage utilisée pour un objet</p></li>
+<li><p>offerIds : indique la liste des offres utilisées</p></li>
+<li><p>strategyID : identifie la stratégie de stockage</p></li>
+<li><p>hGlobalFStorage: hachage du fichier stocké réunissant métadonnées et journal du cycle de vie et dans le cas des groupes d’objets techniques</p></li>
+<li><p>hLFC : hachage du journal du cycle de vie dans sa forme en base</p></li>
+<li><p>hLFCEvts : hachage des lignes d’événement du journal du cycle de vie, sans les informations annexes techniques en base (pour mémoire, ce hachage permet de garantir, en cas d’investigation ciblée, une capacité de vérification d’un journal du cycle de vie après reconstitution sans connaître des informations techniques liées seulement à la gestion de la persistance et de la base dans la solution logicielle)</p></li>
+<li><p>hMetadata : hachage des métadonnées dans leur forme en base</p></li>
+<li><p>hOGDocsStorage : liste des objets stockés attachés au groupe d’objets techniques</p>
+<ul>
+<li><p>id : identifiant unique de l’objet stocké</p></li>
+<li><p>hObject : hachage de l’objet stocké</p></li>
+</ul>
+</li>
+<li><p>idOG : identifiant unique du groupe d’objets techniques attaché le cas échéant à l’unité archivistique</p></li>
+<li><p>lEvDTime : date et heure de l’événement généré dans le journal du cycle de vie</p></li>
+<li><p>lEvTypeProc : nature de l’opération</p></li>
+<li><p>lEvtIdProc : identifiant unique de l’opération</p></li>
+<li><p>lfcId : identifiant unique du journal du cycle de vie, qui est aussi l’identifiant unique de l’unité archivistique ou du groupe d’objets techniques correspondant</p></li>
+<li><p>ltEvtOutcome : résultat de l’événement dans le journal du cycle de vie</p></li>
+<li><p>mdType : type UNIT pour les unités archivistiques ou OBJECTGROUP pour les groupes d’objets techniques</p></li>
+<li><p>up : liste des identifiants uniques des unités archivistiques parentes de cette unité archivistique ou de ce groupe d’objets techniques</p></li>
+<li><p>version : numéro de version, incrémenté à chaque modification de l’unité archivistique ou du groupe d’objets techniques, présent dans les métadonnées.</p></li>
+</ul>
+<p>Les journaux sécurisés comportent toutes les informations nécessaires à la construction automatique des relevés de valeur probante. Par ailleurs, pour des raisons de gestion des volumétries, la sécurisation des journaux du cycle de vie des unités archivistiques et des groupes d’objets techniques a été séparée en opérations distinctes, et donc dans des fichiers séparés et chaînés sur deux files distinctes.</p>
+</section>
+<section id="mise-en-oeuvre-sur-le-journal-des-ecritures">
+<h3><span class="section-number">1.4.5. </span>Mise en œuvre sur le journal des écritures<a class="headerlink" href="#mise-en-oeuvre-sur-le-journal-des-ecritures" title="Lien permanent vers ce titre"></a></h3>
+<p>Chaque écriture sur les offres de stockage donne lieu à une ligne dans un journal des écritures. Cette ligne comporte :</p>
+<ul class="simple">
+<li><p>la date de l’écriture</p></li>
+<li><p>le tenant concerné</p></li>
+<li><p>le type d’action (CREATE, DELETE)</p></li>
+<li><p>le nom du fichier</p></li>
+<li><p>le hachage du fichier récupéré lors de la vérification d’écriture</p></li>
+<li><p>la taille du fichier</p></li>
+<li><p>les modules des offres sur lesquels l’écriture a eu lieu</p></li>
+<li><p>le résultat de l’écriture</p></li>
+</ul>
+<p>Pour des raisons techniques et des raisons de séparation des mécanismes de sécurité, il a été choisi de ne pas s’appuyer sur une persistance en base (MongoDB, ElasticSearch…) pour ce journal, mais simplement sur des mécanismes de logs locaux propres à chaque serveur d’offre de stockage.</p>
+<p>La sécurisation se fait en 2 étapes :</p>
+<ul class="simple">
+<li><p>Sauvegarde des journaux locaux dans les offres. Cette opération est réalisée sur chacun des serveurs de stockage.</p></li>
+<li><p>Sécurisation globale de tous les journaux sauvegardés dans les offres.
+Le fait de ne pas s’appuyer sur une persistance en base et la volumétrie de ces journaux a amené deux différences avec les autres types de journaux sécurisés :</p></li>
+<li><p>la sécurisation ne reprend pas comme ligne à protéger par l’arbre de Merkle les lignes des journaux d’écriture, mais construit une seule et unique ligne par fichier de journal d’écriture sur chaque serveur d’offre de stockage. Cette ligne contient le hachage du fichier de journal d’écriture à sécuriser. Le journal sécurisé des écritures prend ainsi en compte l’ensemble des journaux d’écritures, et fait référence aux journaux des écritures eux-mêmes stockés par ailleurs.</p></li>
+<li><p>Le chaînage n’est fait qu’avec le précédent journal sécurisé.
+Hors ces différences, la structure est respectée et vérifiable de la même façon que les autres fichiers de sécurisation de journaux. Par exemple sur une ligne du fichier « data.txt » pour un fichier de journal d’écriture d’un serveur d’offre de stockage, on aura :</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;FileName&quot;</span><span class="p">:</span> <span class="s2">&quot;0_storage_logbook_20180306132033436_20180306132514628_aecaaaaaacfdgbvvaamrealb7n6msayaaaaq.log&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;Hash&quot;</span><span class="p">:</span> <span class="s2">&quot;kPvTdzVoWKk7QE4U+1y03qjzICz6HynE3Febm5OE0hY2eThlLyqJ5\/GaEesFqHb\/hSGA+fJRjrqOAFanklBfUQ==&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Pour reprendre en détail chaque champ, on a :</p>
+<ul class="simple">
+<li><p>FileName : nom du fichier contenant le journal des écritures,</p></li>
+<li><p>Hash : hachage du fichier.
+Ce journal est une sécurité supplémentaire par rapport aux journaux métiers standards (journal des opérations et journal du cycle de vie). Il peut servir d’ultime recours pour s’assurer de la présence d’un fichier dans le système à un moment donné.</p></li>
+</ul>
+</section>
+</section>
+<section id="releve-de-valeur-probante">
+<h2><span class="section-number">1.5. </span>Relevé de valeur probante<a class="headerlink" href="#releve-de-valeur-probante" title="Lien permanent vers ce titre"></a></h2>
+<section id="principe">
+<h3><span class="section-number">1.5.1. </span>Principe<a class="headerlink" href="#principe" title="Lien permanent vers ce titre"></a></h3>
+<p>Le relevé de valeur probante vise à apporter la preuve de la bonne existence d’un fichier dans le système à la date supposée de son apparition dans celui-ci. L’objet peut provenir de l’extérieur du SAE dans le cadre d’une opération d’entrée ou avoir été généré par le SAE dans le cadre d’une opération de préservation.</p>
+<p>Partons de l’hypothèse que nous établissons le relevé de valeur probante pour un objet binaire. Nous disposons :</p>
+<ul class="simple">
+<li><p>du journal du cycle de vie du groupe d’objets techniques qui le contient en base,</p></li>
+<li><p>de l’enregistrement dans le journal des opérations de son opération de création en base,</p></li>
+<li><p>de n versions du fichier de l’objet binaire sur les offres.</p></li>
+</ul>
+<p>Nous pouvons tirer de la base la date supposée de son apparition dans le système. L’objectif du relevé de valeur probante va être d’attester qu’à cette date supposée, l’objet binaire avait bien été créé dans le système et que les informations courantes, en base et sur les offres de stockage, sont bien cohérentes avec les informations dans les fichiers de sécurisation des journaux d’opération et du cycle de vie au moment de la création.</p>
+<p>En fait le relevé de valeur probante est d’une nature proche de l’audit de cohérence, sauf qu’il s’applique à la date de la création de l’objet dans le système, et qu’il donne le détail de toutes les vérifications dans le rapport.
+Sur chaque objet sont faites les vérifications de cohérences suivantes :</p>
+<ul class="simple">
+<li><p>la racine de l’arbre de Merkle de la sécurisation de l’opération de création en base, dans le fichier de sécurisation et celle recalculée sont les mêmes ;</p></li>
+<li><p>les tampons d’horodatage de la précédente sécurisation des journaux d’opération en base et dans le fichier de sécurisation sont les mêmes et sont bien des tampons valides ;</p></li>
+<li><p>les tampons d’horodatage de la sécurisation de l’opération de création en base et dans le fichier de sécurisation sont les mêmes et sont bien des tampons valides ;</p></li>
+<li><p>le tampon d’horodatage de la sécurisation de l’opération de création est bien issu du calcul avec, entre autres, les éléments vérifiés de la racine de l’arbre de Merkle et le tampon d’horodatage précédent.</p></li>
+</ul>
+<p><strong>Cette suite, ci-dessus, de vérifications atteste que la sécurisation du journal de l’opération de création de l’objet est bien faite et chaînée.</strong></p>
+<ul class="simple">
+<li><p>les tampons d’horodatage de la sécurisation du journal du cycle de vie de l’objet au moment supposé de sa création en base et dans le fichier de sécurisation sont les mêmes et sont bien des tampons valides ;</p></li>
+<li><p>la racine de l’arbre de Merkle de la sécurisation du journal du cycle de vie de l’objet au moment supposé de la création en base, dans le fichier de sécurisation et celle recalculée sont les mêmes ;</p></li>
+<li><p>le tampon d’horodatage de la précédente sécurisation des journaux du cycle de vie en base et dans le fichier de sécurisation sont les mêmes et sont bien des tampons valides ;</p></li>
+<li><p>le tampon d’horodatage de la sécurisation du journal du cycle de vie de l’objet au moment de la création est bien issu du calcul avec, entre autres, les éléments vérifiés de la racine de l’arbre de Merkle et le tampon d’horodatage précédent.</p></li>
+</ul>
+<p><strong>Cette suite, ci-dessus, de vérifications atteste que la sécurisation du journal du cycle de vie de l’objet au moment supposé de la création de l’objet est bien faite et chaînée.</strong></p>
+<ul class="simple">
+<li><p>les hachages de l’objet dans la base, dans le journal du cycle de vie sécurisé au moment de la création supposée, dans le journal du cycle de vie actuel en cours et sur les offres sont les mêmes.</p></li>
+</ul>
+<p><strong>Cette vérification, ci-dessus, atteste que l’objet actuellement en base est bien l’objet du journal du cycle de vie au moment supposé de la création supposée. Donc l’objet en base existait bien au moment supposé de la création.</strong></p>
+<ul class="simple">
+<li><p>le hachage des événements du journal du cycle de vie de l’objet pris en base arrêté à la date de sécurisation et le hachage des évènements dans la sécurisation du journal du cycle de vie au moment supposé de la création de l’objet sont les mêmes.</p></li>
+</ul>
+<p><strong>Cette vérification atteste que la part du journal du cycle de vie de l’objet (en fait celui du groupe d’objets) actuellement en base, avant le moment supposé de création est bien l’objet du journal du cycle de vie au moment supposé de la création. Donc le journal du cycle de vie de l’objet au moment de sa création peut être lu dans le journal du cycle de vie actuellement en base.
+Le relevé de valeur probante va en fait un cran plus loin que la simple preuve de l’existence de l’objet au moment, car outre la garantie de la date de création de l’objet dans le système, c’est tout le journal du cycle de vie du groupe d’objets au moment de la création de l’objet dans le système qui peut être attesté.</strong></p>
+</section>
+<section id="forme-du-releve">
+<h3><span class="section-number">1.5.2. </span>Forme du relevé<a class="headerlink" href="#forme-du-releve" title="Lien permanent vers ce titre"></a></h3>
+<p>Le relevé de valeur probante, émis sous la forme d’un fichier JSON, réunit les éléments permettant de fournir à un auditeur externe une présomption de confiance sur la valeur probante des objets qui lui sont communiqués (par exemple un magistrat dans le cadre d’une commission rogatoire).</p>
+<p>Le relevé est construit sur le modèle des rapports utilisés pour les opérations de traitement de masse (élimination, modification en masse de métadonnées…). Outre la mention du format du rapport, « ReportVersion », il contient les éléments suivants :</p>
+<ul class="simple">
+<li><p>informations essentielles sur l’opération de génération d’un relevé de valeur probante (« operationSummary »),</p></li>
+<li><p>résumé du rapport (« reportSummary »),</p></li>
+<li><p>éléments de requête qui permettent de savoir ce qui a était recherché (« context »),</p></li>
+<li><p>détail du rapport, objet par objet, décrivant les vérifications faites sur chacun (« reportEntries »).</p></li>
+</ul>
+<p>La première partie du rapport « operationSummary » fait état des informations essentielles sur l’opération :</p>
+<ul class="simple">
+<li><p>« tenant » : le tenant sur lequel a été lancé la génération de relevé de valeur probante ;</p></li>
+<li><p>« evId » : l’identifiant unique (GUID ) de l’opération ;</p></li>
+<li><p>« evType » : le type de l’opération, ici EXPORT_PROBATIVE_VALUE ;</p></li>
+<li><p>« outcome » : le code de résultat global de l’opération (OK, KO ou WARNING) ;</p></li>
+<li><p>« outDetail » : le code de résultat propre à l’opération ;</p></li>
+<li><p>« outMsg » : le message explicite de résultat ;</p></li>
+<li><p>« rightsStatementIdentifier.AccessContract » : le contrat d’accès utilisé pour lancer l’opération.</p></li>
+</ul>
+<p>La deuxième partie « reportSummary » est constituée du résumé du rapport :</p>
+<ul class="simple">
+<li><p>« evStartDateTime » : la date de création du rapport détaillé ;</p></li>
+<li><p>« evEndDateTime »: la date de la dernière écriture dans le rapport détaillé, postérieure à la date de création du rapport ;</p></li>
+<li><p>« reportType »: le type de rapport, ici PROBATIVE_VALUE ;</p></li>
+<li><p>« vitamResults » : la liste des valeurs de statut de valeur probante sur chaque objet (suite à extraction et vérification), ici OK, KO et WARNING, ainsi que le total.</p></li>
+</ul>
+<p>La troisième partie « context » est constituée des éléments de requête qui permettent de connaître les critères de recherche et sélection des objets :</p>
+<ul class="simple">
+<li><p>« dslQuery » : la requête DSL de définition des unités archivistiques cibles ;</p></li>
+<li><p>« usage » : le type d’objets ciblés – via leur usage au sens de la solution logicielle Vitam, la plupart du temps BinaryMaster ;</p></li>
+<li><p>« version » : la version des objets ciblés, la plupart du temps cela sera la version 1, mais dans le cas d’objets générés à l’occasion d’opérations de préservation, le numéro de version pourra être différent.</p></li>
+</ul>
+<p>La quatrième et dernière partie « reportEntries » rend compte des vérifications faites sur chaque objet binaire concerné, avec, pour chacun, un objet json contenant :</p>
+<ul class="simple">
+<li><p>« unitIds » : le tableau des unités archivistiques sélectionnées par la requête et contenant cet objet binaire (dans le cas général un seul) ;</p></li>
+<li><p>« objectGroupId » : l’identifiant unique du groupe d’objets techniques contenant cet objet binaire (GUID du GOT) ;</p></li>
+<li><p>« objectId » : l’identifiant unique de l’objet binaire concerné (GUID d’objet) ;</p></li>
+<li><p>« usageVersion » : le couple « usage_version » de l’objet concerné (ex. BinaryMaster_1) ;</p></li>
+<li><p>« operations » : un tableau contenant les opérations à vérifier sur l’objet binaire concerné, à savoir :</p>
+<ul>
+<li><p>l’opération (entrée/INGEST ou préservation/PRESERVATION) qui a conduit à la prise en charge de cet objet binaire dans le système ;</p></li>
+<li><p>l’opération de sécurisation de cette opération de création ;</p></li>
+<li><p>l’opération de sécurisation du journal du cycle de vie au moment de la création.</p></li>
+<li><p>Pour chacune de ces opérations sont fournies le type de l’opération, la date de fin de l’opération, ainsi que des éléments de contexte spécifiques aux opérations d’entrée/INGEST, à savoir :</p>
+<ul>
+<li><p>le contrat d’entrée « rightsStatementIdentifier »,</p></li>
+<li><p>le contexte applicatif d’entrée « agIdApp »,</p></li>
+<li><p>le jeton fourni par l’applicatif d’entrée « evIdAppSession ».</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>« checks » : le tableau de toutes les vérifications faites sur l’objet binaire concerné. Ces vérifications sont toutes décrites selon le même modèle qui permet de comparer les deux valeurs provenant de sources différentes :
+- « name » : le code de la vérification ;
+- « details » : le libellé explicite de la vérification ;
+- « type » : le type de la vérification à savoir « TIMESTAMP_CHECKING », « MERKLE_INTEGRITY », « CHAIN » ou « LOCAL_INTEGRITY » ;
+- « source » : l’origine de l’information à croiser avec la « destination » pour vérification, à savoir « DATABASE » (base de données Mongo), « TRACEABILITY_FILE » (fichier de sécurisation) ou « OFFER » (fichier sur une offre de stockage) ;
+- « destination » : l’origine de l’information à croiser avec l’« origine » pour vérification, à savoir « DATABASE », « TRACEABILITY_FILE » ou « OFFER » ;
+- « sourceComparable » : la valeur à comparer venant de la source ;
+- « destinationComparable » : la valeur à comparer venant de la destination ;
+- « action » : l’action faite lors de la vérification, en général « COMPARAISON » mais peut être aussi « VALIDATION » si, outre la comparaison, il est possible de vérifier le contenu de la valeur, ce qui est le cas pour un tampon d’horodatage ;
+- « item » : l’élément d’information sur l’objet qui est vérifié ;
+- « status » : le résultat de la vérification ;</p>
+<ul>
+<li><p>« evStartDateTime » : la date de l’enregistrement du premier résultat de check pour cet objet ;</p></li>
+<li><p>« evEndDateTime »: la date de l’enregistrement du dernier résultat de check pour cet objet, postérieure à la date de l’enregistrement du premier résultat ;</p></li>
+<li><p>« status » : finalement le statut final de la vérification de l’objet.</p></li>
+</ul>
+</li>
+</ul>
+<p>Cette structure très riche et détaillée n’est pas faite pour être lue directement, mais pour apporter tous les éléments utiles à la construction d’un document lisible selon la forme souhaitée par le demandeur, au niveau du front-office.</p>
+</section>
+<section id="generation-du-releve">
+<h3><span class="section-number">1.5.3. </span>Génération du relevé<a class="headerlink" href="#generation-du-releve" title="Lien permanent vers ce titre"></a></h3>
+<p>La solution logicielle Vitam permet de lancer des opérations de génération de relevé de valeur probante :</p>
+<ul class="simple">
+<li><p>depuis le panier de l’IHM démo sur un lot d’archives ;</p></li>
+<li><p>depuis l’APP Relevé de valeur probante de VitamUI, à partir de l’identifiant technique d’un objet technique ;</p></li>
+<li><p>par l’API, au moyen d’une requête DSL.</p></li>
+</ul>
+<p>Il s’agit d’une opération d’audit, tracée dans le journal des opérations (« EXPORT_PROBATIVE_VALUE »). Le relevé de valeur probante est associé à cette opération sous la forme d’un fichier :</p>
+<ul class="simple">
+<li><p>disponible au format JSON depuis l’IHM démo ou l’API,</p></li>
+<li><p>formaté en PDF depuis l’APP Relevé de valeur probante de VitamUI.</p></li>
+</ul>
+</section>
+</section>
+<section id="annexes">
+<h2><span class="section-number">1.6. </span>Annexes<a class="headerlink" href="#annexes" title="Lien permanent vers ce titre"></a></h2>
+<section id="annexe-1-exemple-de-releve-de-valeur-probante">
+<h3><span class="section-number">1.6.1. </span>Annexe 1 : Exemple de relevé de valeur probante<a class="headerlink" href="#annexe-1-exemple-de-releve-de-valeur-probante" title="Lien permanent vers ce titre"></a></h3>
+<p>En avertissement</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;operationSummary&quot;</span> <span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;tenant&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;evId&quot;</span> <span class="p">:</span> <span class="s2">&quot;aeeaaaaaaghc5bmkaamhmal65a6hbrqaaaaq&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;evType&quot;</span> <span class="p">:</span> <span class="s2">&quot;EXPORT_PROBATIVE_VALUE&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;outcome&quot;</span> <span class="p">:</span> <span class="s2">&quot;WARNING&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;outDetail&quot;</span> <span class="p">:</span> <span class="s2">&quot;EXPORT_PROBATIVE_VALUE.WARNING&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;outMsg&quot;</span> <span class="p">:</span> <span class="s2">&quot;!Avertissement lors du processus de cr</span><span class="se">\u00E9</span><span class="s2">ation du relev</span><span class="se">\u00E9</span><span class="s2"> de valeur probante!&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;rightsStatementIdentifier&quot;</span> <span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;AccessContract&quot;</span> <span class="p">:</span> <span class="s2">&quot;ContratTNR&quot;</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;reportSummary&quot;</span> <span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;evStartDateTime&quot;</span> <span class="p">:</span> <span class="s2">&quot;2022-02-11T10:03:03.991&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;evEndDateTime&quot;</span> <span class="p">:</span> <span class="s2">&quot;2022-02-11T10:03:04.793&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;reportType&quot;</span> <span class="p">:</span> <span class="s2">&quot;PROBATIVE_VALUE&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;vitamResults&quot;</span> <span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;OK&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s2">&quot;KO&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="s2">&quot;WARNING&quot;</span> <span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">&quot;total&quot;</span> <span class="p">:</span> <span class="mi">2</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;context&quot;</span> <span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;dslQuery&quot;</span> <span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;$query&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="p">{</span>
+        <span class="s2">&quot;$or&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="p">{</span>
+          <span class="s2">&quot;$in&quot;</span> <span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;#id&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;aeaqaaaaaehc5bmkab5f4al64yvz4jiaaaaq&quot;</span><span class="p">,</span> <span class="s2">&quot;aeaqaaaaaehc5bmkab5f4al64yvz4nyaaaba&quot;</span><span class="p">,</span> <span class="s2">&quot;aeaqaaaaaehc5bmkab5f4al64yvz4syaaaba&quot;</span><span class="p">,</span> <span class="s2">&quot;aeaqaaaaaehc5bmkab5f4al64yvz4syaaaca&quot;</span><span class="p">,</span> <span class="s2">&quot;aeaqaaaaaehc5bmkab5f4al64yvz4sqaaaaq&quot;</span> <span class="p">]</span>
+          <span class="p">}</span>
+        <span class="p">},</span> <span class="p">{</span>
+          <span class="s2">&quot;$in&quot;</span> <span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;#allunitups&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="p">]</span>
+          <span class="p">}</span>
+        <span class="p">}</span> <span class="p">]</span>
+      <span class="p">}</span> <span class="p">],</span>
+      <span class="s2">&quot;$filter&quot;</span> <span class="p">:</span> <span class="p">{</span> <span class="p">},</span>
+      <span class="s2">&quot;$projection&quot;</span> <span class="p">:</span> <span class="p">{</span> <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;usage&quot;</span> <span class="p">:</span> <span class="s2">&quot;BinaryMaster&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;version&quot;</span> <span class="p">:</span> <span class="s2">&quot;1&quot;</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;reportEntries&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="p">{</span>
+    <span class="s2">&quot;unitIds&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;aeaqaaaaaehc5bmkab5f4al64yvz4jiaaaaq&quot;</span> <span class="p">],</span>
+    <span class="s2">&quot;objectGroupId&quot;</span> <span class="p">:</span> <span class="s2">&quot;aebaaaaaaehc5bmkab5f4al64yvz4iaaaaaq&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;objectId&quot;</span> <span class="p">:</span> <span class="s2">&quot;aeaaaaaaaahc5bmkab5f4al64yvz4haaaaaq&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;usageVersion&quot;</span> <span class="p">:</span> <span class="s2">&quot;BinaryMaster_1&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;operations&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="p">{</span>
+      <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;aecaaaaaaghf7grmaadocal64zidj2iaaaba&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;evTypeProc&quot;</span> <span class="p">:</span> <span class="s2">&quot;STP_OP_SECURISATION&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;evDateTime&quot;</span> <span class="p">:</span> <span class="s2">&quot;2022-02-11T01:05:23.405&quot;</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;aecaaaaaaghf7grmaadocal64zmuagqaaaaq&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;evTypeProc&quot;</span> <span class="p">:</span> <span class="s2">&quot;LOGBOOK_OBJECTGROUP_LFC_TRACEABILITY&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;evDateTime&quot;</span> <span class="p">:</span> <span class="s2">&quot;2022-02-11T01:15:16.758&quot;</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;aeeaaaaaaghc5bmkaa4z4al64yvzjfaaaaaq&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;evTypeProc&quot;</span> <span class="p">:</span> <span class="s2">&quot;PROCESS_SIP_UNITARY&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;rightsStatementIdentifier&quot;</span> <span class="p">:</span> <span class="s2">&quot;{</span><span class="se">\&quot;</span><span class="s2">ArchivalAgreement</span><span class="se">\&quot;</span><span class="s2">:</span><span class="se">\&quot;</span><span class="s2">ArchivalAgreement0</span><span class="se">\&quot;</span><span class="s2">}&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;agIdApp&quot;</span> <span class="p">:</span> <span class="s2">&quot;CT-000001&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;evDateTime&quot;</span> <span class="p">:</span> <span class="s2">&quot;2022-02-11T00:25:22.910&quot;</span>
+    <span class="p">}</span> <span class="p">],</span>
+    <span class="s2">&quot;checks&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;TIMESTAMP_OPERATION_DATABASE_TRACEABILITY_VALIDATION&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;details&quot;</span> <span class="p">:</span> <span class="s2">&quot;Validating timestamp operation found in database &#39;AND&#39; timestamp operation found in traceability secured file.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;TIMESTAMP_CHECKING&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;source&quot;</span> <span class="p">:</span> <span class="s2">&quot;DATABASE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destination&quot;</span> <span class="p">:</span> <span class="s2">&quot;TRACEABILITY_FILE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;sourceComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;MIILGDAVAgEAMBAMDk9wZXJhdGlvbiBPa2F5MIIK/QYJKoZIhvcNAQcCoIIK7jCCCuoCAQMxDTALBglghkgBZQMEAgMwfgYLKoZIhvcNAQkQAQSgbwRtMGsCAQEGASkwTzALBglghkgBZQMEAgMEQJPrUVIPN+AvAStqZ2uV+DC3gAjMt7JnT/6UyEzIoH7aCcrWK4vTL0hELODY3hg0f8IexTLrVuqXV/wDo6ojM8O+M7uoZK/TP4ZCbRhvof1niCViQKyU9lVcZveBC&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destinationComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;MIILGDAVAgEAMBAMDk9wZXJhdGlvbiBPa2F5MIIK/QYJKoZIhvcNAQcCoIIK7jCCCuoCAQMxDTALBglghkgBZQMEAgMwfgYLKoZIhvcNAQkQAQSgbwRtMGsCAQEGASkwTzALBglghkgBZQMEAgMEQJPrUVIPN+AvAStqZ2uV+DC3gAjMt7JnT/&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;action&quot;</span> <span class="p">:</span> <span class="s2">&quot;VALIDATION&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;item&quot;</span> <span class="p">:</span> <span class="s2">&quot;TIMESTAMP_OPERATION&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;status&quot;</span> <span class="p">:</span> <span class="s2">&quot;OK&quot;</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;TIMESTAMP_OPERATION_DATABASE_TRACEABILITY_COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;details&quot;</span> <span class="p">:</span> <span class="s2">&quot;Comparing timestamp operation found in database with timestamp operation found in traceability secured file.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;TIMESTAMP_CHECKING&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;source&quot;</span> <span class="p">:</span> <span class="s2">&quot;DATABASE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destination&quot;</span> <span class="p">:</span> <span class="s2">&quot;TRACEABILITY_FILE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;sourceComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;MIILGDAVAgEAMBAMDk9wZXJhdGlvbiBPa2F5MIIK/QYJKoZIhvcNAQcCoIIK7jCCCuoCAQMxDTALBglghkgBZQMEAgMwfgYLKoZIhvcNAQkQAQSgbwRtMGsCAQEGASkwTzALBglghkgBZQMEAgMEQJPrUVIPN+AvAStqZ2uV+DC3gAjMt7JnT/&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destinationComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;MIILGDAVAgEAMBAMDk9wZXJhdGlvbiBPa2F5MIIK/QYJKoZIhvcNAQcCoIIK7jCCCuoCAQMxDTALBglghkgBZQMEAgMwfgYLKoZIhvcNAQkQAQSgbwRtMGsCAQEGASkwTzALBglghkgBZQMEAgMEQJPrUVIPN+AvAStqZ2uV+DC3gAjMt7JnT/&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;action&quot;</span> <span class="p">:</span> <span class="s2">&quot;COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;item&quot;</span> <span class="p">:</span> <span class="s2">&quot;TIMESTAMP_OPERATION&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;status&quot;</span> <span class="p">:</span> <span class="s2">&quot;OK&quot;</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;MERKLE_OPERATION_DIGEST_DATABASE_TRACEABILITY_COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;details&quot;</span> <span class="p">:</span> <span class="s2">&quot;Comparing operation merkle digest found in database with operation merkle digest found in traceability secured file.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;MERKLE_INTEGRITY&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;source&quot;</span> <span class="p">:</span> <span class="s2">&quot;DATABASE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destination&quot;</span> <span class="p">:</span> <span class="s2">&quot;TRACEABILITY_FILE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;sourceComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;eVQC2Pq/+E5KdCMNeCbuwfNvYrKe37LborZTUzBKmufYLRra+2S2SEt2BLjrFjMr81FQyBb15Ub/O47OHYv20g==&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destinationComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;eVQC2Pq/+E5KdCMNeCbuwfNvYrKe37LborZTUzBKmufYLRra+2S2SEt2BLjrFjMr81FQyBb15Ub/O47OHYv20g==&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;action&quot;</span> <span class="p">:</span> <span class="s2">&quot;COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;item&quot;</span> <span class="p">:</span> <span class="s2">&quot;MERKLE_TREE_ROOT_OPERATION_DIGEST&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;status&quot;</span> <span class="p">:</span> <span class="s2">&quot;OK&quot;</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;MERKLE_OPERATION_DIGEST_COMPUTATION_TRACEABILITY_COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;details&quot;</span> <span class="p">:</span> <span class="s2">&quot;Comparing operation merkle digest computed from secured data with operation merkle digest found in traceability secured file.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;MERKLE_INTEGRITY&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;source&quot;</span> <span class="p">:</span> <span class="s2">&quot;COMPUTATION&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destination&quot;</span> <span class="p">:</span> <span class="s2">&quot;TRACEABILITY_FILE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;sourceComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;eVQC2Pq/+E5KdCMNeCbuwfNvYrKe37LborZTUzBKmufYLRra+2S2SEt2BLjrFjMr81FQyBb15Ub/O47OHYv20g==&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destinationComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;eVQC2Pq/+E5KdCMNeCbuwfNvYrKe37LborZTUzBKmufYLRra+2S2SEt2BLjrFjMr81FQyBb15Ub/O47OHYv20g==&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;action&quot;</span> <span class="p">:</span> <span class="s2">&quot;COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;item&quot;</span> <span class="p">:</span> <span class="s2">&quot;MERKLE_TREE_ROOT_OPERATION_DIGEST&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;status&quot;</span> <span class="p">:</span> <span class="s2">&quot;OK&quot;</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;MERKLE_OPERATION_DIGEST_COMPUTATION_ADDITIONAL_TRACEABILITY_COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;details&quot;</span> <span class="p">:</span> <span class="s2">&quot;Comparing operation merkle digest computed from secured data with operation merkle digest found in additional traceability secured file.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;MERKLE_INTEGRITY&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;source&quot;</span> <span class="p">:</span> <span class="s2">&quot;COMPUTATION&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destination&quot;</span> <span class="p">:</span> <span class="s2">&quot;ADDITIONAL_TRACEABILITY&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;sourceComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;eVQC2Pq/+E5KdCMNeCbuwfNvYrKe37LborZTUzBKmufYLRra+2S2SEt2BLjrFjMr81FQyBb15Ub/O47OHYv20g==&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destinationComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;eVQC2Pq/+E5KdCMNeCbuwfNvYrKe37LborZTUzBKmufYLRra+2S2SEt2BLjrFjMr81FQyBb15Ub/O47OHYv20g==&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;action&quot;</span> <span class="p">:</span> <span class="s2">&quot;COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;item&quot;</span> <span class="p">:</span> <span class="s2">&quot;MERKLE_TREE_ROOT_OPERATION_DIGEST&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;status&quot;</span> <span class="p">:</span> <span class="s2">&quot;OK&quot;</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;TIMESTAMP_OPERATION_COMPUTATION_TRACEABILITY_COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;details&quot;</span> <span class="p">:</span> <span class="s2">&quot;Comparing timestamp operation computed from computing information traceability file with timestamp operation found in traceability secured file.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;TIMESTAMP_CHECKING&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;source&quot;</span> <span class="p">:</span> <span class="s2">&quot;COMPUTATION&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destination&quot;</span> <span class="p">:</span> <span class="s2">&quot;TRACEABILITY_FILE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;sourceComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;k+tRUg834C8BK2pna5X4MLeACMy3smdP8cuA4YnK1W7gekxMQP24BSuOlMmyhBCN8X3QUZEoVwUd97G5VfTNQA==&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destinationComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;k+tRUg834C8BK2pna5X4MLeACMy3smdP8cuA4YnK1W7gekxMQP24BSuOlMmyhBCN8X3QUZEoVwUd97G5VfTNQA==&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;action&quot;</span> <span class="p">:</span> <span class="s2">&quot;COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;item&quot;</span> <span class="p">:</span> <span class="s2">&quot;TIMESTAMP_OPERATION&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;status&quot;</span> <span class="p">:</span> <span class="s2">&quot;OK&quot;</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;PREVIOUS_TIMESTAMP_OPERATION_DATABASE_TRACEABILITY_VALIDATION&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;details&quot;</span> <span class="p">:</span> <span class="s2">&quot;Validating previous timestamp operation found in database &#39;AND&#39; previous timestamp operation found in traceability secured file.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;CHAIN&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;source&quot;</span> <span class="p">:</span> <span class="s2">&quot;DATABASE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destination&quot;</span> <span class="p">:</span> <span class="s2">&quot;TRACEABILITY_FILE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;sourceComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;No previous secured file.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destinationComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;No previous secured file.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;action&quot;</span> <span class="p">:</span> <span class="s2">&quot;VALIDATION&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;item&quot;</span> <span class="p">:</span> <span class="s2">&quot;PREVIOUS_TIMESTAMP_OPERATION&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;status&quot;</span> <span class="p">:</span> <span class="s2">&quot;WARNING&quot;</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;PREVIOUS_TIMESTAMP_OPERATION_DATABASE_TRACEABILITY_COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;details&quot;</span> <span class="p">:</span> <span class="s2">&quot;Comparing previous timestamp operation found in database with previous timestamp operation found in traceability secured file.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;CHAIN&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;source&quot;</span> <span class="p">:</span> <span class="s2">&quot;DATABASE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destination&quot;</span> <span class="p">:</span> <span class="s2">&quot;TRACEABILITY_FILE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;sourceComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;No previous secured file.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destinationComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;No previous secured file.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;action&quot;</span> <span class="p">:</span> <span class="s2">&quot;COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;item&quot;</span> <span class="p">:</span> <span class="s2">&quot;PREVIOUS_TIMESTAMP_OPERATION&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;status&quot;</span> <span class="p">:</span> <span class="s2">&quot;WARNING&quot;</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;EVENTS_OPERATION_DATABASE_TRACEABILITY_COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;details&quot;</span> <span class="p">:</span> <span class="s2">&quot;Comparing operation ID found in database with operation ID found in traceability secured file.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;LOCAL_INTEGRITY&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;source&quot;</span> <span class="p">:</span> <span class="s2">&quot;DATABASE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destination&quot;</span> <span class="p">:</span> <span class="s2">&quot;TRACEABILITY_FILE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;sourceComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;aeeaaaaaaghc5bmkaa4z4al64yvzjfaaaaaq&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destinationComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;aeeaaaaaaghc5bmkaa4z4al64yvzjfaaaaaq&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;action&quot;</span> <span class="p">:</span> <span class="s2">&quot;COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;item&quot;</span> <span class="p">:</span> <span class="s2">&quot;EVENT_OPERATION&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;status&quot;</span> <span class="p">:</span> <span class="s2">&quot;OK&quot;</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;TIMESTAMP_OBJECT_GROUP_DATABASE_TRACEABILITY_VALIDATION&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;details&quot;</span> <span class="p">:</span> <span class="s2">&quot;Validating timestamp object group found in database &#39;AND&#39; timestamp object group found in traceability secured file.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;TIMESTAMP_CHECKING&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;source&quot;</span> <span class="p">:</span> <span class="s2">&quot;DATABASE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destination&quot;</span> <span class="p">:</span> <span class="s2">&quot;TRACEABILITY_FILE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;sourceComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;MIILGDAVAgEAMBAMDk9wZXJhdGlvbiBPa2F5MIIK/QYJKoZIhvcNAQcCoIIK7jCCCuoCAQMxDTALBglghkgBZQMEAgMwfgYLKoZIhvcNAQkQAQSgbwRtMGsCAQEGASkwTzALBglghkgBZQMEAgMEQOdsQ6ST4Bt3EX6VpILove3WNIKa5Ig1zf+PkDd/gVaLEP/&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destinationComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;MIILGDAVAgEAMBAMDk9wZXJhdGlvbiBPa2F5MIIK/QYJKoZIhvcNAQcCoIIK7jCCCuoCAQMxDTALBglghkgBZQMEAgMwfgYLKoZIhvcNAQkQAQSgbwRtMGsCAQEGASkwTzALBglghkgBZQMEAgMEQOdsQ6ST4Bt3EX6VpILove3WNIKa5Ig1zf+PkDd/gVaLEP/&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;action&quot;</span> <span class="p">:</span> <span class="s2">&quot;VALIDATION&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;item&quot;</span> <span class="p">:</span> <span class="s2">&quot;TIMESTAMP_OBJECT_GROUP&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;status&quot;</span> <span class="p">:</span> <span class="s2">&quot;OK&quot;</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;TIMESTAMP_OBJECT_GROUP_DATABASE_TRACEABILITY_COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;details&quot;</span> <span class="p">:</span> <span class="s2">&quot;Comparing timestamp object group found in database with timestamp object group found in secured file.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;TIMESTAMP_CHECKING&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;source&quot;</span> <span class="p">:</span> <span class="s2">&quot;DATABASE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destination&quot;</span> <span class="p">:</span> <span class="s2">&quot;TRACEABILITY_FILE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;sourceComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;MIILGDAVAgEAMBAMDk9wZXJhdGlvbiBPa2F5MIIK/QYJKoZIhvcNAQcCoIIK7jCCCuoCAQMxDTALBglghkgBZQMEAgMwfgYLKoZIhvcNAQkQAQSgbwRtMGsCAQEGASkwTzALBglghkgBZQMEAgMEQOdsQ6ST4Bt3EX6VpILove3WNIKa5Ig1zf+PkDd/gVaLEP/&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destinationComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;MIILGDAVAgEAMBAMDk9wZXJhdGlvbiBPa2F5MIIK/QYJKoZIhvcNAQcCoIIK7jCCCuoCAQMxDTALBglghkgBZQMEAgMwfgYLKoZIhvcNAQkQAQSgbwRtMGsCAQEGASkwTzALBglghkgBZQMEAgMEQOdsQ6ST4Bt3EX6VpILove3WNIKa5Ig1zf+PkDd/gVaLEP/&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;action&quot;</span> <span class="p">:</span> <span class="s2">&quot;COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;item&quot;</span> <span class="p">:</span> <span class="s2">&quot;TIMESTAMP_OBJECT_GROUP&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;status&quot;</span> <span class="p">:</span> <span class="s2">&quot;OK&quot;</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;MERKLE_OBJECT_GROUP_DIGEST_DATABASE_TRACEABILITY_COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;details&quot;</span> <span class="p">:</span> <span class="s2">&quot;Comparing object group merkle digest found in database with object group merkle digest found in traceability secured file.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;MERKLE_INTEGRITY&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;source&quot;</span> <span class="p">:</span> <span class="s2">&quot;DATABASE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destination&quot;</span> <span class="p">:</span> <span class="s2">&quot;TRACEABILITY_FILE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;sourceComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;4JLwKGF0ZEli4r6MGi8NWlKVpKKEZRI/lz+4Fl3Aj3/UAhddKydUyBRvIgDULWONg1axGxA7BCzqQO4ktKY6Bw==&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destinationComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;4JLwKGF0ZEli4r6MGi8NWlKVpKKEZRI/lz+4Fl3Aj3/UAhddKydUyBRvIgDULWONg1axGxA7BCzqQO4ktKY6Bw==&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;action&quot;</span> <span class="p">:</span> <span class="s2">&quot;COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;item&quot;</span> <span class="p">:</span> <span class="s2">&quot;MERKLE_TREE_ROOT_OBJECT_GROUP_DIGEST&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;status&quot;</span> <span class="p">:</span> <span class="s2">&quot;OK&quot;</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;MERKLE_OBJECT_GROUP_DIGEST_COMPUTATION_TRACEABILITY_COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;details&quot;</span> <span class="p">:</span> <span class="s2">&quot;Comparing object group merkle digest computed from secured data with object group merkle digest found in traceability secured file.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;MERKLE_INTEGRITY&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;source&quot;</span> <span class="p">:</span> <span class="s2">&quot;COMPUTATION&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destination&quot;</span> <span class="p">:</span> <span class="s2">&quot;TRACEABILITY_FILE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;sourceComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;4JLwKGF0ZEli4r6MGi8NWlKVpKKEZRI/lz+4Fl3Aj3/UAhddKydUyBRvIgDULWONg1axGxA7BCzqQO4ktKY6Bw==&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destinationComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;4JLwKGF0ZEli4r6MGi8NWlKVpKKEZRI/lz+4Fl3Aj3/UAhddKydUyBRvIgDULWONg1axGxA7BCzqQO4ktKY6Bw==&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;action&quot;</span> <span class="p">:</span> <span class="s2">&quot;COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;item&quot;</span> <span class="p">:</span> <span class="s2">&quot;MERKLE_TREE_ROOT_OBJECT_GROUP_DIGEST&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;status&quot;</span> <span class="p">:</span> <span class="s2">&quot;OK&quot;</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;MERKLE_OBJECT_GROUP_DIGEST_COMPUTATION_ADDITIONAL_TRACEABILITY_COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;details&quot;</span> <span class="p">:</span> <span class="s2">&quot;Comparing object group merkle digest computed from secured data with object group merkle digest found in additional traceability secured file.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;MERKLE_INTEGRITY&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;source&quot;</span> <span class="p">:</span> <span class="s2">&quot;COMPUTATION&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destination&quot;</span> <span class="p">:</span> <span class="s2">&quot;ADDITIONAL_TRACEABILITY&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;sourceComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;4JLwKGF0ZEli4r6MGi8NWlKVpKKEZRI/lz+4Fl3Aj3/UAhddKydUyBRvIgDULWONg1axGxA7BCzqQO4ktKY6Bw==&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destinationComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;4JLwKGF0ZEli4r6MGi8NWlKVpKKEZRI/lz+4Fl3Aj3/UAhddKydUyBRvIgDULWONg1axGxA7BCzqQO4ktKY6Bw==&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;action&quot;</span> <span class="p">:</span> <span class="s2">&quot;COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;item&quot;</span> <span class="p">:</span> <span class="s2">&quot;MERKLE_TREE_ROOT_OBJECT_GROUP_DIGEST&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;status&quot;</span> <span class="p">:</span> <span class="s2">&quot;OK&quot;</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;TIMESTAMP_OBJECT_GROUP_COMPUTATION_TRACEABILITY_COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;details&quot;</span> <span class="p">:</span> <span class="s2">&quot;Comparing timestamp object group computed from computing information traceability file with timestamp object group found in secured file.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;TIMESTAMP_CHECKING&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;source&quot;</span> <span class="p">:</span> <span class="s2">&quot;COMPUTATION&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destination&quot;</span> <span class="p">:</span> <span class="s2">&quot;TRACEABILITY_FILE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;sourceComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;52xDpJPgG3cRfpWkgui97dY0gprkiDXN/4+QN3+BVosQ/8Z6Z76gyo6iDiTyamiQOqGdCl9jnthXnuXasIuPSA==&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destinationComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;52xDpJPgG3cRfpWkgui97dY0gprkiDXN/4+QN3+BVosQ/8Z6Z76gyo6iDiTyamiQOqGdCl9jnthXnuXasIuPSA==&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;action&quot;</span> <span class="p">:</span> <span class="s2">&quot;COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;item&quot;</span> <span class="p">:</span> <span class="s2">&quot;TIMESTAMP_OBJECT_GROUP&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;status&quot;</span> <span class="p">:</span> <span class="s2">&quot;OK&quot;</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;PREVIOUS_TIMESTAMP_OBJECT_GROUP_DATABASE_TRACEABILITY_VALIDATION&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;details&quot;</span> <span class="p">:</span> <span class="s2">&quot;Validating previous timestamp object group found in database &#39;AND&#39; previous timestamp object group found in traceability secured file.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;CHAIN&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;source&quot;</span> <span class="p">:</span> <span class="s2">&quot;DATABASE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destination&quot;</span> <span class="p">:</span> <span class="s2">&quot;TRACEABILITY_FILE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;sourceComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;No previous secured file.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destinationComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;No previous secured file.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;action&quot;</span> <span class="p">:</span> <span class="s2">&quot;VALIDATION&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;item&quot;</span> <span class="p">:</span> <span class="s2">&quot;PREVIOUS_TIMESTAMP_OBJECT_GROUP&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;status&quot;</span> <span class="p">:</span> <span class="s2">&quot;WARNING&quot;</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;PREVIOUS_TIMESTAMP_OBJECT_GROUP_DATABASE_TRACEABILITY_COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;details&quot;</span> <span class="p">:</span> <span class="s2">&quot;Comparing previous timestamp object group found in database with previous timestamp object group found in traceability secured file.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;CHAIN&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;source&quot;</span> <span class="p">:</span> <span class="s2">&quot;DATABASE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destination&quot;</span> <span class="p">:</span> <span class="s2">&quot;TRACEABILITY_FILE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;sourceComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;No previous secured file.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destinationComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;No previous secured file.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;action&quot;</span> <span class="p">:</span> <span class="s2">&quot;COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;item&quot;</span> <span class="p">:</span> <span class="s2">&quot;PREVIOUS_TIMESTAMP_OBJECT_GROUP&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;status&quot;</span> <span class="p">:</span> <span class="s2">&quot;WARNING&quot;</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;FILE_DIGEST_DATABASE_TRACEABILITY_COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;details&quot;</span> <span class="p">:</span> <span class="s2">&quot;Comparing binary file digest found in object group database with binary file digest found in traceability secured file.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;LOCAL_INTEGRITY&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;source&quot;</span> <span class="p">:</span> <span class="s2">&quot;DATABASE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destination&quot;</span> <span class="p">:</span> <span class="s2">&quot;TRACEABILITY_FILE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;sourceComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;dea90c836f3ac732b4dce1085b674150464cb18841e11af8729eca1990808193705ca7e94697c099dc8c5bfc83085b542f68a25577c0e652cce9a57a314ccd4b&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destinationComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;dea90c836f3ac732b4dce1085b674150464cb18841e11af8729eca1990808193705ca7e94697c099dc8c5bfc83085b542f68a25577c0e652cce9a57a314ccd4b&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;action&quot;</span> <span class="p">:</span> <span class="s2">&quot;COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;item&quot;</span> <span class="p">:</span> <span class="s2">&quot;FILE_DIGEST&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;status&quot;</span> <span class="p">:</span> <span class="s2">&quot;OK&quot;</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;EVENTS_OBJECT_GROUP_DIGEST_DATABASE_TRACEABILITY_COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;details&quot;</span> <span class="p">:</span> <span class="s2">&quot;Comparing object group lfc digest computed from logbook lifecycle object group database with object group lfc digest found in traceability secured file.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;LOCAL_INTEGRITY&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;source&quot;</span> <span class="p">:</span> <span class="s2">&quot;DATABASE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destination&quot;</span> <span class="p">:</span> <span class="s2">&quot;TRACEABILITY_FILE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;sourceComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;1Frcedzc+nEVizlwRUx3boR5eR4L3pcTrt5wa+/GDnrwr7qAdOFtRjL72Mjv5aYHTZJMDjilv6OfFAP9pP+SMA==&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destinationComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;1Frcedzc+nEVizlwRUx3boR5eR4L3pcTrt5wa+/GDnrwr7qAdOFtRjL72Mjv5aYHTZJMDjilv6OfFAP9pP+SMA==&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;action&quot;</span> <span class="p">:</span> <span class="s2">&quot;COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;item&quot;</span> <span class="p">:</span> <span class="s2">&quot;EVENT_OBJECT_GROUP&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;status&quot;</span> <span class="p">:</span> <span class="s2">&quot;OK&quot;</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;FILE_DIGEST_OFFER_DATABASE_COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;details&quot;</span> <span class="p">:</span> <span class="s2">&quot;Comparing binary file digest stored in offers with binary file digest found in object group database.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;LOCAL_INTEGRITY&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;source&quot;</span> <span class="p">:</span> <span class="s2">&quot;OFFER&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destination&quot;</span> <span class="p">:</span> <span class="s2">&quot;DATABASE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;sourceComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;dea90c836f3ac732b4dce1085b674150464cb18841e11af8729eca1990808193705ca7e94697c099dc8c5bfc83085b542f68a25577c0e652cce9a57a314ccd4b&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destinationComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;dea90c836f3ac732b4dce1085b674150464cb18841e11af8729eca1990808193705ca7e94697c099dc8c5bfc83085b542f68a25577c0e652cce9a57a314ccd4b&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;action&quot;</span> <span class="p">:</span> <span class="s2">&quot;COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;item&quot;</span> <span class="p">:</span> <span class="s2">&quot;FILE_DIGEST&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;status&quot;</span> <span class="p">:</span> <span class="s2">&quot;OK&quot;</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;FILE_DIGEST_LFC_DATABASE_COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;details&quot;</span> <span class="p">:</span> <span class="s2">&quot;Comparing binary file digest found in object group database with binary file digest found in logbook lifecycle object group database.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;LOCAL_INTEGRITY&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;source&quot;</span> <span class="p">:</span> <span class="s2">&quot;DATABASE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destination&quot;</span> <span class="p">:</span> <span class="s2">&quot;DATABASE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;sourceComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;dea90c836f3ac732b4dce1085b674150464cb18841e11af8729eca1990808193705ca7e94697c099dc8c5bfc83085b542f68a25577c0e652cce9a57a314ccd4b&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destinationComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;dea90c836f3ac732b4dce1085b674150464cb18841e11af8729eca1990808193705ca7e94697c099dc8c5bfc83085b542f68a25577c0e652cce9a57a314ccd4b&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;action&quot;</span> <span class="p">:</span> <span class="s2">&quot;COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;item&quot;</span> <span class="p">:</span> <span class="s2">&quot;FILE_DIGEST&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;status&quot;</span> <span class="p">:</span> <span class="s2">&quot;OK&quot;</span>
+    <span class="p">}</span> <span class="p">],</span>
+    <span class="s2">&quot;evStartDateTime&quot;</span> <span class="p">:</span> <span class="s2">&quot;2022-02-11T10:03:03.991&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;evEndDateTime&quot;</span> <span class="p">:</span> <span class="s2">&quot;2022-02-11T10:03:04.507&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;status&quot;</span> <span class="p">:</span> <span class="s2">&quot;WARNING&quot;</span>
+  <span class="p">},</span> <span class="p">{</span>
+    <span class="s2">&quot;unitIds&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;aeaqaaaaaehc5bmkab5f4al64yvz4sqaaaaq&quot;</span> <span class="p">],</span>
+    <span class="s2">&quot;objectGroupId&quot;</span> <span class="p">:</span> <span class="s2">&quot;aebaaaaaaehc5bmkab5f4al64yvz4iiaaaaq&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;objectId&quot;</span> <span class="p">:</span> <span class="s2">&quot;aeaaaaaaaahc5bmkab5f4al64yvz4iaaaaba&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;usageVersion&quot;</span> <span class="p">:</span> <span class="s2">&quot;BinaryMaster_1&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;operations&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="p">{</span>
+      <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;aecaaaaaaghf7grmaadocal64zidj2iaaaba&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;evTypeProc&quot;</span> <span class="p">:</span> <span class="s2">&quot;STP_OP_SECURISATION&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;evDateTime&quot;</span> <span class="p">:</span> <span class="s2">&quot;2022-02-11T01:05:23.405&quot;</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;aecaaaaaaghf7grmaadocal64zmuagqaaaaq&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;evTypeProc&quot;</span> <span class="p">:</span> <span class="s2">&quot;LOGBOOK_OBJECTGROUP_LFC_TRACEABILITY&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;evDateTime&quot;</span> <span class="p">:</span> <span class="s2">&quot;2022-02-11T01:15:16.758&quot;</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="s2">&quot;id&quot;</span> <span class="p">:</span> <span class="s2">&quot;aeeaaaaaaghc5bmkaa4z4al64yvzjfaaaaaq&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;evTypeProc&quot;</span> <span class="p">:</span> <span class="s2">&quot;PROCESS_SIP_UNITARY&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;rightsStatementIdentifier&quot;</span> <span class="p">:</span> <span class="s2">&quot;{</span><span class="se">\&quot;</span><span class="s2">ArchivalAgreement</span><span class="se">\&quot;</span><span class="s2">:</span><span class="se">\&quot;</span><span class="s2">ArchivalAgreement0</span><span class="se">\&quot;</span><span class="s2">}&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;agIdApp&quot;</span> <span class="p">:</span> <span class="s2">&quot;CT-000001&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;evDateTime&quot;</span> <span class="p">:</span> <span class="s2">&quot;2022-02-11T00:25:22.910&quot;</span>
+    <span class="p">}</span> <span class="p">],</span>
+    <span class="s2">&quot;checks&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;TIMESTAMP_OPERATION_DATABASE_TRACEABILITY_VALIDATION&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;details&quot;</span> <span class="p">:</span> <span class="s2">&quot;Validating timestamp operation found in database &#39;AND&#39; timestamp operation found in traceability secured file.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;TIMESTAMP_CHECKING&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;source&quot;</span> <span class="p">:</span> <span class="s2">&quot;DATABASE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destination&quot;</span> <span class="p">:</span> <span class="s2">&quot;TRACEABILITY_FILE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;sourceComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;MIILGDAVAgEAMBAMDk9wZXJhdGlvbiBPa2F5MIIK/QYJKoZIhvcNAQcCoIIK7jCCCuoCAQMxDTALBglghkgBZQMEAgMwfgYLKoZIhvcNAQkQAQSgbwRtMGsCAQEGASkwTzALBglghkgBZQMEAgMEQJPrUVIPN+AvAStqZ2uV+DC3gAjMt7JnT/&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destinationComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;MIILGDAVAgEAMBAMDk9wZXJhdGlvbiBPa2F5MIIK/QYJKoZIhvcNAQcCoIIK7jCCCuoCAQMxDTALBglghkgBZQMEAgMwfgYLKoZIhvcNAQkQAQSgbwRtMGsCAQEGASkwTzALBglghkgBZQMEAgMEQJPrUVIPN+AvAStqZ2uV+DC3gAjMt7JnT/&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;action&quot;</span> <span class="p">:</span> <span class="s2">&quot;VALIDATION&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;item&quot;</span> <span class="p">:</span> <span class="s2">&quot;TIMESTAMP_OPERATION&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;status&quot;</span> <span class="p">:</span> <span class="s2">&quot;OK&quot;</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;TIMESTAMP_OPERATION_DATABASE_TRACEABILITY_COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;details&quot;</span> <span class="p">:</span> <span class="s2">&quot;Comparing timestamp operation found in database with timestamp operation found in traceability secured file.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;TIMESTAMP_CHECKING&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;source&quot;</span> <span class="p">:</span> <span class="s2">&quot;DATABASE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destination&quot;</span> <span class="p">:</span> <span class="s2">&quot;TRACEABILITY_FILE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;sourceComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;MIILGDAVAgEAMBAMDk9wZXJhdGlvbiBPa2F5MIIK/QYJKoZIhvcNAQcCoIIK7jCCCuoCAQMxDTALBglghkgBZQMEAgMwfgYLKoZIhvcNAQkQAQSgbwRtMGsCAQEGASkwTzALBglghkgBZQMEAgMEQJPrUVIPN+AvAStqZ2uV+DC3gAjMt7JnT/AUiKgS/&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destinationComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;MIILGDAVAgEAMBAMDk9wZXJhdGlvbiBPa2F5MIIK/QYJKoZIhvcNAQcCoIIK7jCCCuoCAQMxDTALBglghkgBZQMEAgMwfgYLKoZIhvcNAQkQAQSgbwRtMGsCAQEGASkwTzALBglghkgBZQMEAgMEQJPrUVIPN+AvAStqZ2uV+DC3gAjMt7JnT/&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;action&quot;</span> <span class="p">:</span> <span class="s2">&quot;COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;item&quot;</span> <span class="p">:</span> <span class="s2">&quot;TIMESTAMP_OPERATION&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;status&quot;</span> <span class="p">:</span> <span class="s2">&quot;OK&quot;</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;MERKLE_OPERATION_DIGEST_DATABASE_TRACEABILITY_COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;details&quot;</span> <span class="p">:</span> <span class="s2">&quot;Comparing operation merkle digest found in database with operation merkle digest found in traceability secured file.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;MERKLE_INTEGRITY&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;source&quot;</span> <span class="p">:</span> <span class="s2">&quot;DATABASE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destination&quot;</span> <span class="p">:</span> <span class="s2">&quot;TRACEABILITY_FILE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;sourceComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;eVQC2Pq/+E5KdCMNeCbuwfNvYrKe37LborZTUzBKmufYLRra+2S2SEt2BLjrFjMr81FQyBb15Ub/O47OHYv20g==&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destinationComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;eVQC2Pq/+E5KdCMNeCbuwfNvYrKe37LborZTUzBKmufYLRra+2S2SEt2BLjrFjMr81FQyBb15Ub/O47OHYv20g==&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;action&quot;</span> <span class="p">:</span> <span class="s2">&quot;COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;item&quot;</span> <span class="p">:</span> <span class="s2">&quot;MERKLE_TREE_ROOT_OPERATION_DIGEST&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;status&quot;</span> <span class="p">:</span> <span class="s2">&quot;OK&quot;</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;MERKLE_OPERATION_DIGEST_COMPUTATION_TRACEABILITY_COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;details&quot;</span> <span class="p">:</span> <span class="s2">&quot;Comparing operation merkle digest computed from secured data with operation merkle digest found in traceability secured file.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;MERKLE_INTEGRITY&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;source&quot;</span> <span class="p">:</span> <span class="s2">&quot;COMPUTATION&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destination&quot;</span> <span class="p">:</span> <span class="s2">&quot;TRACEABILITY_FILE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;sourceComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;eVQC2Pq/+E5KdCMNeCbuwfNvYrKe37LborZTUzBKmufYLRra+2S2SEt2BLjrFjMr81FQyBb15Ub/O47OHYv20g==&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destinationComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;eVQC2Pq/+E5KdCMNeCbuwfNvYrKe37LborZTUzBKmufYLRra+2S2SEt2BLjrFjMr81FQyBb15Ub/O47OHYv20g==&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;action&quot;</span> <span class="p">:</span> <span class="s2">&quot;COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;item&quot;</span> <span class="p">:</span> <span class="s2">&quot;MERKLE_TREE_ROOT_OPERATION_DIGEST&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;status&quot;</span> <span class="p">:</span> <span class="s2">&quot;OK&quot;</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;MERKLE_OPERATION_DIGEST_COMPUTATION_ADDITIONAL_TRACEABILITY_COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;details&quot;</span> <span class="p">:</span> <span class="s2">&quot;Comparing operation merkle digest computed from secured data with operation merkle digest found in additional traceability secured file.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;MERKLE_INTEGRITY&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;source&quot;</span> <span class="p">:</span> <span class="s2">&quot;COMPUTATION&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destination&quot;</span> <span class="p">:</span> <span class="s2">&quot;ADDITIONAL_TRACEABILITY&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;sourceComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;eVQC2Pq/+E5KdCMNeCbuwfNvYrKe37LborZTUzBKmufYLRra+2S2SEt2BLjrFjMr81FQyBb15Ub/O47OHYv20g==&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destinationComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;eVQC2Pq/+E5KdCMNeCbuwfNvYrKe37LborZTUzBKmufYLRra+2S2SEt2BLjrFjMr81FQyBb15Ub/O47OHYv20g==&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;action&quot;</span> <span class="p">:</span> <span class="s2">&quot;COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;item&quot;</span> <span class="p">:</span> <span class="s2">&quot;MERKLE_TREE_ROOT_OPERATION_DIGEST&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;status&quot;</span> <span class="p">:</span> <span class="s2">&quot;OK&quot;</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;TIMESTAMP_OPERATION_COMPUTATION_TRACEABILITY_COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;details&quot;</span> <span class="p">:</span> <span class="s2">&quot;Comparing timestamp operation computed from computing information traceability file with timestamp operation found in traceability secured file.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;TIMESTAMP_CHECKING&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;source&quot;</span> <span class="p">:</span> <span class="s2">&quot;COMPUTATION&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destination&quot;</span> <span class="p">:</span> <span class="s2">&quot;TRACEABILITY_FILE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;sourceComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;k+tRUg834C8BK2pna5X4MLeACMy3smdP8cuA4YnK1W7gekxMQP24BSuOlMmyhBCN8X3QUZEoVwUd97G5VfTNQA==&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destinationComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;k+tRUg834C8BK2pna5X4MLeACMy3smdP8cuA4YnK1W7gekxMQP24BSuOlMmyhBCN8X3QUZEoVwUd97G5VfTNQA==&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;action&quot;</span> <span class="p">:</span> <span class="s2">&quot;COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;item&quot;</span> <span class="p">:</span> <span class="s2">&quot;TIMESTAMP_OPERATION&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;status&quot;</span> <span class="p">:</span> <span class="s2">&quot;OK&quot;</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;PREVIOUS_TIMESTAMP_OPERATION_DATABASE_TRACEABILITY_VALIDATION&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;details&quot;</span> <span class="p">:</span> <span class="s2">&quot;Validating previous timestamp operation found in database &#39;AND&#39; previous timestamp operation found in traceability secured file.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;CHAIN&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;source&quot;</span> <span class="p">:</span> <span class="s2">&quot;DATABASE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destination&quot;</span> <span class="p">:</span> <span class="s2">&quot;TRACEABILITY_FILE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;sourceComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;No previous secured file.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destinationComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;No previous secured file.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;action&quot;</span> <span class="p">:</span> <span class="s2">&quot;VALIDATION&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;item&quot;</span> <span class="p">:</span> <span class="s2">&quot;PREVIOUS_TIMESTAMP_OPERATION&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;status&quot;</span> <span class="p">:</span> <span class="s2">&quot;WARNING&quot;</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;PREVIOUS_TIMESTAMP_OPERATION_DATABASE_TRACEABILITY_COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;details&quot;</span> <span class="p">:</span> <span class="s2">&quot;Comparing previous timestamp operation found in database with previous timestamp operation found in traceability secured file.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;CHAIN&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;source&quot;</span> <span class="p">:</span> <span class="s2">&quot;DATABASE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destination&quot;</span> <span class="p">:</span> <span class="s2">&quot;TRACEABILITY_FILE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;sourceComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;No previous secured file.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destinationComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;No previous secured file.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;action&quot;</span> <span class="p">:</span> <span class="s2">&quot;COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;item&quot;</span> <span class="p">:</span> <span class="s2">&quot;PREVIOUS_TIMESTAMP_OPERATION&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;status&quot;</span> <span class="p">:</span> <span class="s2">&quot;WARNING&quot;</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;EVENTS_OPERATION_DATABASE_TRACEABILITY_COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;details&quot;</span> <span class="p">:</span> <span class="s2">&quot;Comparing operation ID found in database with operation ID found in traceability secured file.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;LOCAL_INTEGRITY&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;source&quot;</span> <span class="p">:</span> <span class="s2">&quot;DATABASE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destination&quot;</span> <span class="p">:</span> <span class="s2">&quot;TRACEABILITY_FILE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;sourceComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;aeeaaaaaaghc5bmkaa4z4al64yvzjfaaaaaq&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destinationComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;aeeaaaaaaghc5bmkaa4z4al64yvzjfaaaaaq&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;action&quot;</span> <span class="p">:</span> <span class="s2">&quot;COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;item&quot;</span> <span class="p">:</span> <span class="s2">&quot;EVENT_OPERATION&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;status&quot;</span> <span class="p">:</span> <span class="s2">&quot;OK&quot;</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;TIMESTAMP_OBJECT_GROUP_DATABASE_TRACEABILITY_VALIDATION&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;details&quot;</span> <span class="p">:</span> <span class="s2">&quot;Validating timestamp object group found in database &#39;AND&#39; timestamp object group found in traceability secured file.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;TIMESTAMP_CHECKING&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;source&quot;</span> <span class="p">:</span> <span class="s2">&quot;DATABASE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destination&quot;</span> <span class="p">:</span> <span class="s2">&quot;TRACEABILITY_FILE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;sourceComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;MIILGDAVAgEAMBAMDk9wZXJhdGlvbiBPa2F5MIIK/QYJKoZIhvcNAQcCoIIK7jCCCuoCAQMxDTALBglghkgBZQMEAgMwfgYLKoZIhvcNAQkQAQSgbwRtMGsCAQEGASkwTzALBglghkgBZQMEAgMEQOdsQ6ST4Bt3EX6VpILove3WNIKa5Ig1zf+PkDd/gVaLEP/&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destinationComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;MIILGDAVAgEAMBAMDk9wZXJhdGlvbiBPa2F5MIIK/QYJKoZIhvcNAQcCoIIK7jCCCuoCAQMxDTALBglghkgBZQMEAgMwfgYLKoZIhvcNAQkQAQSgbwRtMGsCAQEGASkwTzALBglghkgBZQMEAgMEQOdsQ6ST4Bt3EX6VpILove3WNIKa5Ig1zf+PkDd/gVaLEP/&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;action&quot;</span> <span class="p">:</span> <span class="s2">&quot;VALIDATION&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;item&quot;</span> <span class="p">:</span> <span class="s2">&quot;TIMESTAMP_OBJECT_GROUP&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;status&quot;</span> <span class="p">:</span> <span class="s2">&quot;OK&quot;</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;TIMESTAMP_OBJECT_GROUP_DATABASE_TRACEABILITY_COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;details&quot;</span> <span class="p">:</span> <span class="s2">&quot;Comparing timestamp object group found in database with timestamp object group found in secured file.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;TIMESTAMP_CHECKING&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;source&quot;</span> <span class="p">:</span> <span class="s2">&quot;DATABASE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destination&quot;</span> <span class="p">:</span> <span class="s2">&quot;TRACEABILITY_FILE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;sourceComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;MIILGDAVAgEAMBAMDk9wZXJhdGlvbiBPa2F5MIIK/QYJKoZIhvcNAQcCoIIK7jCCCuoCAQMxDTALBglghkgBZQMEAgMwfgYLKoZIhvcNAQkQAQSgbwRtMGsCAQEGASkwTzALBglghkgBZQMEAgMEQOdsQ6ST4Bt3EX6VpILove3WNIKa5Ig1zf+PkDd/gVaLEP/t&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destinationComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;MIILGDAVAgEAMBAMDk9wZXJhdGlvbiBPa2F5MIIK/QYJKoZIhvcNAQcCoIIK7jCCCuoCAQMxDTALBglghkgBZQMEAgMwfgYLKoZIhvcNAQkQAQSgbwRtMGsCAQEGASkwTzALBglghkgBZQMEAgMEQOdsQ6ST4Bt3EX6VpILove3WNIKa5Ig1zf+PkDd/gVaLEP/&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;action&quot;</span> <span class="p">:</span> <span class="s2">&quot;COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;item&quot;</span> <span class="p">:</span> <span class="s2">&quot;TIMESTAMP_OBJECT_GROUP&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;status&quot;</span> <span class="p">:</span> <span class="s2">&quot;OK&quot;</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;MERKLE_OBJECT_GROUP_DIGEST_DATABASE_TRACEABILITY_COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;details&quot;</span> <span class="p">:</span> <span class="s2">&quot;Comparing object group merkle digest found in database with object group merkle digest found in traceability secured file.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;MERKLE_INTEGRITY&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;source&quot;</span> <span class="p">:</span> <span class="s2">&quot;DATABASE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destination&quot;</span> <span class="p">:</span> <span class="s2">&quot;TRACEABILITY_FILE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;sourceComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;4JLwKGF0ZEli4r6MGi8NWlKVpKKEZRI/lz+4Fl3Aj3/UAhddKydUyBRvIgDULWONg1axGxA7BCzqQO4ktKY6Bw==&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destinationComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;4JLwKGF0ZEli4r6MGi8NWlKVpKKEZRI/lz+4Fl3Aj3/UAhddKydUyBRvIgDULWONg1axGxA7BCzqQO4ktKY6Bw==&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;action&quot;</span> <span class="p">:</span> <span class="s2">&quot;COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;item&quot;</span> <span class="p">:</span> <span class="s2">&quot;MERKLE_TREE_ROOT_OBJECT_GROUP_DIGEST&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;status&quot;</span> <span class="p">:</span> <span class="s2">&quot;OK&quot;</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;MERKLE_OBJECT_GROUP_DIGEST_COMPUTATION_TRACEABILITY_COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;details&quot;</span> <span class="p">:</span> <span class="s2">&quot;Comparing object group merkle digest computed from secured data with object group merkle digest found in traceability secured file.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;MERKLE_INTEGRITY&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;source&quot;</span> <span class="p">:</span> <span class="s2">&quot;COMPUTATION&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destination&quot;</span> <span class="p">:</span> <span class="s2">&quot;TRACEABILITY_FILE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;sourceComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;4JLwKGF0ZEli4r6MGi8NWlKVpKKEZRI/lz+4Fl3Aj3/UAhddKydUyBRvIgDULWONg1axGxA7BCzqQO4ktKY6Bw==&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destinationComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;4JLwKGF0ZEli4r6MGi8NWlKVpKKEZRI/lz+4Fl3Aj3/UAhddKydUyBRvIgDULWONg1axGxA7BCzqQO4ktKY6Bw==&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;action&quot;</span> <span class="p">:</span> <span class="s2">&quot;COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;item&quot;</span> <span class="p">:</span> <span class="s2">&quot;MERKLE_TREE_ROOT_OBJECT_GROUP_DIGEST&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;status&quot;</span> <span class="p">:</span> <span class="s2">&quot;OK&quot;</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;MERKLE_OBJECT_GROUP_DIGEST_COMPUTATION_ADDITIONAL_TRACEABILITY_COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;details&quot;</span> <span class="p">:</span> <span class="s2">&quot;Comparing object group merkle digest computed from secured data with object group merkle digest found in additional traceability secured file.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;MERKLE_INTEGRITY&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;source&quot;</span> <span class="p">:</span> <span class="s2">&quot;COMPUTATION&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destination&quot;</span> <span class="p">:</span> <span class="s2">&quot;ADDITIONAL_TRACEABILITY&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;sourceComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;4JLwKGF0ZEli4r6MGi8NWlKVpKKEZRI/lz+4Fl3Aj3/UAhddKydUyBRvIgDULWONg1axGxA7BCzqQO4ktKY6Bw==&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destinationComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;4JLwKGF0ZEli4r6MGi8NWlKVpKKEZRI/lz+4Fl3Aj3/UAhddKydUyBRvIgDULWONg1axGxA7BCzqQO4ktKY6Bw==&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;action&quot;</span> <span class="p">:</span> <span class="s2">&quot;COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;item&quot;</span> <span class="p">:</span> <span class="s2">&quot;MERKLE_TREE_ROOT_OBJECT_GROUP_DIGEST&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;status&quot;</span> <span class="p">:</span> <span class="s2">&quot;OK&quot;</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;TIMESTAMP_OBJECT_GROUP_COMPUTATION_TRACEABILITY_COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;details&quot;</span> <span class="p">:</span> <span class="s2">&quot;Comparing timestamp object group computed from computing information traceability file with timestamp object group found in secured file.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;TIMESTAMP_CHECKING&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;source&quot;</span> <span class="p">:</span> <span class="s2">&quot;COMPUTATION&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destination&quot;</span> <span class="p">:</span> <span class="s2">&quot;TRACEABILITY_FILE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;sourceComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;52xDpJPgG3cRfpWkgui97dY0gprkiDXN/4+QN3+BVosQ/8Z6Z76gyo6iDiTyamiQOqGdCl9jnthXnuXasIuPSA==&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destinationComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;52xDpJPgG3cRfpWkgui97dY0gprkiDXN/4+QN3+BVosQ/8Z6Z76gyo6iDiTyamiQOqGdCl9jnthXnuXasIuPSA==&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;action&quot;</span> <span class="p">:</span> <span class="s2">&quot;COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;item&quot;</span> <span class="p">:</span> <span class="s2">&quot;TIMESTAMP_OBJECT_GROUP&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;status&quot;</span> <span class="p">:</span> <span class="s2">&quot;OK&quot;</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;PREVIOUS_TIMESTAMP_OBJECT_GROUP_DATABASE_TRACEABILITY_VALIDATION&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;details&quot;</span> <span class="p">:</span> <span class="s2">&quot;Validating previous timestamp object group found in database &#39;AND&#39; previous timestamp object group found in traceability secured file.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;CHAIN&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;source&quot;</span> <span class="p">:</span> <span class="s2">&quot;DATABASE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destination&quot;</span> <span class="p">:</span> <span class="s2">&quot;TRACEABILITY_FILE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;sourceComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;No previous secured file.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destinationComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;No previous secured file.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;action&quot;</span> <span class="p">:</span> <span class="s2">&quot;VALIDATION&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;item&quot;</span> <span class="p">:</span> <span class="s2">&quot;PREVIOUS_TIMESTAMP_OBJECT_GROUP&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;status&quot;</span> <span class="p">:</span> <span class="s2">&quot;WARNING&quot;</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;PREVIOUS_TIMESTAMP_OBJECT_GROUP_DATABASE_TRACEABILITY_COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;details&quot;</span> <span class="p">:</span> <span class="s2">&quot;Comparing previous timestamp object group found in database with previous timestamp object group found in traceability secured file.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;CHAIN&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;source&quot;</span> <span class="p">:</span> <span class="s2">&quot;DATABASE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destination&quot;</span> <span class="p">:</span> <span class="s2">&quot;TRACEABILITY_FILE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;sourceComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;No previous secured file.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destinationComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;No previous secured file.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;action&quot;</span> <span class="p">:</span> <span class="s2">&quot;COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;item&quot;</span> <span class="p">:</span> <span class="s2">&quot;PREVIOUS_TIMESTAMP_OBJECT_GROUP&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;status&quot;</span> <span class="p">:</span> <span class="s2">&quot;WARNING&quot;</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;FILE_DIGEST_DATABASE_TRACEABILITY_COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;details&quot;</span> <span class="p">:</span> <span class="s2">&quot;Comparing binary file digest found in object group database with binary file digest found in traceability secured file.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;LOCAL_INTEGRITY&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;source&quot;</span> <span class="p">:</span> <span class="s2">&quot;DATABASE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destination&quot;</span> <span class="p">:</span> <span class="s2">&quot;TRACEABILITY_FILE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;sourceComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;df3c1f0fe7bf3ef61bdc5fb6148efa1e3638ee4e933a3fab26203d95634caf6c1b7393cdf908d797088da07554e523571803462b07c807744f25d78aa7038a16&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destinationComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;df3c1f0fe7bf3ef61bdc5fb6148efa1e3638ee4e933a3fab26203d95634caf6c1b7393cdf908d797088da07554e523571803462b07c807744f25d78aa7038a16&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;action&quot;</span> <span class="p">:</span> <span class="s2">&quot;COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;item&quot;</span> <span class="p">:</span> <span class="s2">&quot;FILE_DIGEST&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;status&quot;</span> <span class="p">:</span> <span class="s2">&quot;OK&quot;</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;EVENTS_OBJECT_GROUP_DIGEST_DATABASE_TRACEABILITY_COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;details&quot;</span> <span class="p">:</span> <span class="s2">&quot;Comparing object group lfc digest computed from logbook lifecycle object group database with object group lfc digest found in traceability secured file.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;LOCAL_INTEGRITY&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;source&quot;</span> <span class="p">:</span> <span class="s2">&quot;DATABASE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destination&quot;</span> <span class="p">:</span> <span class="s2">&quot;TRACEABILITY_FILE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;sourceComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;aupsn++fRt8HC1L4osVRhfI0icX+ngMw5xlXwQApKSmmdYxMUNmkTqbaEm5avbgszwYzCVMUvzapEoUgXY0Zzw==&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destinationComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;aupsn++fRt8HC1L4osVRhfI0icX+ngMw5xlXwQApKSmmdYxMUNmkTqbaEm5avbgszwYzCVMUvzapEoUgXY0Zzw==&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;action&quot;</span> <span class="p">:</span> <span class="s2">&quot;COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;item&quot;</span> <span class="p">:</span> <span class="s2">&quot;EVENT_OBJECT_GROUP&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;status&quot;</span> <span class="p">:</span> <span class="s2">&quot;OK&quot;</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;FILE_DIGEST_OFFER_DATABASE_COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;details&quot;</span> <span class="p">:</span> <span class="s2">&quot;Comparing binary file digest stored in offers with binary file digest found in object group database.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;LOCAL_INTEGRITY&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;source&quot;</span> <span class="p">:</span> <span class="s2">&quot;OFFER&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destination&quot;</span> <span class="p">:</span> <span class="s2">&quot;DATABASE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;sourceComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;df3c1f0fe7bf3ef61bdc5fb6148efa1e3638ee4e933a3fab26203d95634caf6c1b7393cdf908d797088da07554e523571803462b07c807744f25d78aa7038a16&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destinationComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;df3c1f0fe7bf3ef61bdc5fb6148efa1e3638ee4e933a3fab26203d95634caf6c1b7393cdf908d797088da07554e523571803462b07c807744f25d78aa7038a16&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;action&quot;</span> <span class="p">:</span> <span class="s2">&quot;COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;item&quot;</span> <span class="p">:</span> <span class="s2">&quot;FILE_DIGEST&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;status&quot;</span> <span class="p">:</span> <span class="s2">&quot;OK&quot;</span>
+    <span class="p">},</span> <span class="p">{</span>
+      <span class="s2">&quot;name&quot;</span> <span class="p">:</span> <span class="s2">&quot;FILE_DIGEST_LFC_DATABASE_COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;details&quot;</span> <span class="p">:</span> <span class="s2">&quot;Comparing binary file digest found in object group database with binary file digest found in logbook lifecycle object group database.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;type&quot;</span> <span class="p">:</span> <span class="s2">&quot;LOCAL_INTEGRITY&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;source&quot;</span> <span class="p">:</span> <span class="s2">&quot;DATABASE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destination&quot;</span> <span class="p">:</span> <span class="s2">&quot;DATABASE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;sourceComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;df3c1f0fe7bf3ef61bdc5fb6148efa1e3638ee4e933a3fab26203d95634caf6c1b7393cdf908d797088da07554e523571803462b07c807744f25d78aa7038a16&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;destinationComparable&quot;</span> <span class="p">:</span> <span class="s2">&quot;df3c1f0fe7bf3ef61bdc5fb6148efa1e3638ee4e933a3fab26203d95634caf6c1b7393cdf908d797088da07554e523571803462b07c807744f25d78aa7038a16&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;action&quot;</span> <span class="p">:</span> <span class="s2">&quot;COMPARISON&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;item&quot;</span> <span class="p">:</span> <span class="s2">&quot;FILE_DIGEST&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;status&quot;</span> <span class="p">:</span> <span class="s2">&quot;OK&quot;</span>
+    <span class="p">}</span> <span class="p">],</span>
+    <span class="s2">&quot;evStartDateTime&quot;</span> <span class="p">:</span> <span class="s2">&quot;2022-02-11T10:03:04.523&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;evEndDateTime&quot;</span> <span class="p">:</span> <span class="s2">&quot;2022-02-11T10:03:04.793&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;status&quot;</span> <span class="p">:</span> <span class="s2">&quot;WARNING&quot;</span>
+  <span class="p">}</span> <span class="p">],</span>
+  <span class="s2">&quot;ReportVersion&quot;</span> <span class="p">:</span> <span class="mi">2</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="annexe-2-liste-des-verifications-presentes-dans-le-releve-de-valeur-probante">
+<h3><span class="section-number">1.6.2. </span>Annexe 2 : Liste des vérifications présentes dans le relevé de valeur probante<a class="headerlink" href="#annexe-2-liste-des-verifications-presentes-dans-le-releve-de-valeur-probante" title="Lien permanent vers ce titre"></a></h3>
+<p><span class="xref myst">Liste des vérifications présentes dans le relevé de valeur probante</span></p>
+<p>[^1] Pour une description fine des journaux, voir le document VITAM. Organisation de l’information.</p>
+<p>[^2] Pour une explication de l’arbre de Merkle et de son utilisation pour la preuve d’une partie des éléments voir https://www.certificate-transparency.org/log-proofs-work</p>
+<p>[^3] Ce délai est nécessaire pour tenir compte de la latence de la base NoSQL au cœur de Vitam.</p>
+<p>[^4] Si d’autres opérations ont été journalisées après le déclenchement de la journalisation mais avant sa fin, il peut y avoir des événements concurrents qui s’intercalent, et la période prise en compte assure un léger recouvrement pour éviter toute perte dans un environnement fortement distribué et donc non strictement synchrone.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="presentation_programme.html" class="btn btn-neutral float-left" title="2. Présentation du programme Vitam" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="eliminations.html" class="btn btn-neutral float-right" title="2. Les éliminations avec la solution logicielle Vitam" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Programme Vitam.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: valeur_probante
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Tags</dt>
+      <dd><a href="../../v6.rc.1/index.html">v6.rc.1</a></dd>
+    </dl>
+    <dl>
+      <dt>Branches</dt>
+      <dd><a href="../../master/sections/valeur_probante.html">master</a></dd>
+      <dd><a href="../../master_6.rc.x/index.html">master_6.rc.x</a></dd>
+      <dd><a href="../../v5.0/index.html">v5.0</a></dd>
+      <dd><a href="../../Update_of_MDD_for_6.rc_version/index.html">Update_of_MDD_for_6.rc_version</a></dd>
+      <dd><a href="../../master_5.x/index.html">master_5.x</a></dd>
+      <dd><a href="../../update_of_workflow_model_for_6.rc_version/index.html">update_of_workflow_model_for_6.rc_version</a></dd>
+      <dd><a href="../../v6_modify_index/index.html">v6_modify_index</a></dd>
+      <dd><a href="../../v6_test_branche_Alice/index.html">v6_test_branche_Alice</a></dd>
+      <dd><a href="valeur_probante.html">valeur_probante</a></dd>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>
