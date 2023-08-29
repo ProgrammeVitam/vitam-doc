@@ -42,6 +42,21 @@ Documentation Vitam UI
    sections/VitamUI_Arbres_Plans.md
 
 
+Vademecum
+=======
+
+.. toctree::
+   :caption: Vademecum
+   :numbered:
+
+   sections/Vademecum_glossaire.md
+   sections/Vademecum_arbre.md
+   sections/Vademecum_contrat_gestion.md
+   sections/Vademecum_eliminations.md
+   sections/Vademecum_parametrages_pf.md
+   sections/Vademecum_plan.md
+   sections/Vademecum_registre_fonds.md
+
 Outils connexes
 ===============
 
