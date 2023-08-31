@@ -596,11 +596,13 @@ interface et de ses fonctionnalités d’import, d’export et de traitement
 de structures arborescentes d’archives. Il est possible :
 
 -   de choisir le mode d’affichage de l’interface ;
+-   de choisir la version du SEDA sur laquelle travailler ;
 -   d’exporter le fichier de paramétrage par défaut ;
 -   de modifier le fichier de paramétrage par défaut ;
 -   d’importer un fichier de paramétrage différent du fichier de
     paramétrage par défaut ;
--   de réinitialiser le paramétrage par défaut.
+-   de réinitialiser le paramétrage par défaut ;
+-   d’activer le service de compaction (mode expérimental).
 
 #### Choisir le mode d’affichage de l’interface
 
@@ -623,6 +625,18 @@ moulinette ReSIP, de cliquer sur l’action « ? ».
 Pour modifier l’interface par défaut afin d’obtenir l’interface dite
 « XML-expert », il suffit de cliquer sur « Editeur structuré ».
 
+#### Choisir la version du SEDA supportée
+
+La moulinette ReSIP peut être utilisée avec :
+-   soit la version 2.1. du SEDA ;
+-   soit la version 2.2. du SEDA.
+Pour modifier la version du SEDA sur laquelle travailler, il convient, dans le menu de la moulinette ReSIP, de cliquer sur l’action « Fichier » puis sur la sous-action « Préférences » 
+Le paramétrage de l’import est disponible dans l’onglet « Traitement/Interface » (cf. copie d’écran ci-dessous). Il suffit de cliquer sur la version du SEDA souhaitée.
+
+    ![](medias/resip/Pictures/D081.png)
+
+***Point d’attention :*** Il est recommandé d’effectuer ce paramétrage avant d’importer quoique ce soit dans la moulinette ReSIP.
+
 #### Activer le mode « debug »
 
 Afin d’activer le mode « debug », il convient, dans le menu de la
@@ -635,6 +649,15 @@ moulinette ReSIP, de cliquer sur l’action « ? ».
 
 Pour modifier le mode par défaut afin d’activer le mode « debug », il
 suffit de cliquer sur « Mode débug ».
+
+####   Activer le service de compaction
+
+Afin d’activer le service de compaction, disponible en expérimentation, il convient, dans le menu de la moulinette ReSIP, de cliquer sur l’action « ? ».
+
+-   Si « Mode expérimental » est précédé d’une coche, le service de compaction est activé,
+-   Si « Mode expérimental » n’est pas précédé d’une coche, le service de compaction n’est pas activé.
+
+Pour modifier le mode par défaut afin d’activer le service expérimental de compaction, il suffit de cliquer sur « Mode expérimental ».
 
 #### Exporter le fichier de paramétrage par défaut
 
@@ -1039,6 +1062,16 @@ par défaut disponibles dans l’arborescence de fichiers :
     SEDA). Le niveau de description (champ DescriptionLevel du standard
     SEDA) est incrémenté avec la valeur « RecordGrp ».
 
+***Point d’attention :*** Le processus retenu pour l’identification dans RESIP est le suivant[^5] :
+-   S’il y a des formats conteneurs, on ne garde qu’eux dans une liste de choix, s’il n’y en a pas ou s’il y a une erreur on passe à la suite ;
+-   S’il y a des formats signatures, on ne garde qu’eux dans une liste de choix ; s’il n’y en a pas ou s’il y a une erreur ,on passe à la suite ;
+-   Sinon, on garde les formats possibles d’après l’extension dans une liste de choix.
+-   Sur la liste de choix restante :
+	-   on trie et ne garde que ceux qui ont la plus haute priorité dans le fichier de signatures ;
+	-   s’il en reste un seul, on le prend,
+	-   s’il en reste plusieurs, on regarde si l’un d’eux correspond à l’extension et on prend le premier ;
+	-   sinon on prend arbitrairement le premier de la liste.
+
 Il est cependant possible d’effectuer des imports avancés pour disposer
 d’une structure arborescente d’archives enrichie avec :
 
@@ -1322,6 +1355,7 @@ Afin d’importer pour traitement une structure arborescente d’archives
 représentée par un DIP déjà constitué, il convient, dans le menu de la
 moulinette ReSIP, de cliquer sur l’action « Import » puis sur la
 sous-action « Importer depuis un DIP » (cf. copie d’écran ci-dessous).
+
 ![](medias/resip/Pictures/1000020100000335000001B836AD851BDF107140.png)
 
 Le clic sur la sous-action « Importer depuis un DIP » ouvre
@@ -1329,6 +1363,7 @@ l’explorateur Windows de l’utilisateur et permet à celui-ci de
 sélectionner le DIP et de l’importer dans la moulinette ReSIP en
 cliquant sur le bouton d’action « Ouvrir » (cf. copie d’écran
 ci-dessous).
+
 ![](medias/resip/Pictures/1000020100000555000002D9A24E1C973CE33972.png)
 
 L’opération d’import se déroule ensuite comme décrit dans la section
@@ -1338,7 +1373,12 @@ travail et exploite le manifeste pour restituer la structure
 arborescente d’archives dans le panneau de visualisation et de
 modification de la structure arborescente d’archives (cf. copie d’écran
 ci-dessous).
+
 ![](medias/resip/Pictures/1000020100000555000002D965EE2B9839A413AC.png)
+
+***Point d’attention :*** ReSIP permet d'importer :
+-   un DIP constitué uniquement du DataObjectPackage,
+-	un DIP correspondant au message ArchiveDeliveryRequestReply. Pour ce dernier, Il charge uniquement les métadonnées incluses dans le bloc DataObjectPackage. Les métadonnées d'en-tête (MessageRequestIdentifier, UnitIdentifier, ArchivalAgency, Requester) sont uniquement visibles dans la fenêtre d'import.
 
 ### Import d’une arborescence de fichiers sous forme de fichier .zip
 
@@ -1469,7 +1509,7 @@ L’annexe « Préparer un fichier .csv » apporte quelques conseils pour
 effectuer cette opération.
 
 **Attention :** ce type d’import ne permet pas d’importer des objets
-numériques au côté du fichier .csv[^5].
+numériques au côté du fichier .csv[^6].
 
 #### Présentation du processus d’import
 
@@ -1521,30 +1561,47 @@ section 4.1.1.).
 La moulinette ReSIP permet d’importer une structure arborescente
 d’archives et/ou de fichiers sous la forme d’un fichier .csv.
 
+#### Paramétrage de l’import
+
+Afin de paramétrer pour traitement l’import d’une structure arborescente
+d’archives accompagnée d'un fichier .csv, il convient,
+dans le menu de la moulinette ReSIP, de cliquer sur l’action « Fichier »
+puis sur la sous-action « Préférences » (cf. copie d’écran ci-dessous).
+
+![](medias/resip/Pictures/100002010000033E000001BABB2A3FE9F42480D2.png)
+
+Le clic sur la sous-action « Préférences » ouvre une
+
+fenêtre de dialogue composée de cinq onglets. Le paramétrage de l’import
+est disponible dans l’onglet « Import » (cf. copie d’écran ci-dessous).
+![](medias/resip/Pictures/ID10.png)
+
+Il permet de :
+
+-   sélectionner via un menu déroulant l’encodage utilisé dans le
+    fichier .csv. Par défaut, l’encodage proposé est
+    « windows-1252 » ;
+-   préciser le séparateur utilisé dans le fichier .csv. Par défaut, le séparateur est un point-virgule.
+
 #### Présentation du fichier d’import
 
-Le fichier d’import prend la forme d’un fichier au format .csv composé
-de x colonnes :
+Le fichier d’import prend la forme d’un fichier au format .csv composé de x colonnes :
 
--   ID : identifiant unique de l’unité archivistique, définie par
-    l’utilisateur (colonne facultative) ;
--   ParentID : identifiant unique de l’unité archivistique parente,
-    définie par l’utilisateur (colonne facultative) ;
--   File : chemin relatif à partir de l’emplacement où est enregistré le
-    fichier .csv (colonne obligatoire) ;
--   DescriptionLevel : niveau de description de l’unité archivistique
-    (colonne obligatoire) ;
+-   ID : identifiant unique de l’unité archivistique, définie par l’utilisateur (colonne facultative) ;
+-   ParentID : identifiant unique de l’unité archivistique parente, définie par l’utilisateur (colonne facultative) ;
+-   File : chemin relatif à partir de l’emplacement où est enregistré le fichier .csv (colonne obligatoire) ;
+-	ObjectFiles : nom du fichier numérique ou chemin relatif à partir de l’emplacement où est enregistré le fichier (colonne facultative) ;
+-   DescriptionLevel : niveau de description de l’unité archivistique (colonne obligatoire) ;
 -   Title : intitulé de l’unité archivistique (colonne obligatoire) ;
--   toute colonne correspondant à un champ du standard SEDA (colonnes
-    facultatives).
+-   toute colonne correspondant à un champ du standard SEDA (colonnes facultatives).
 
-La colonne File, obligatoirement renseignée, peut seule être présente
+La colonne File, obligatoire, peut seule être présente
 dans le fichier .csv d’import, sans que les colonnes Id et ParentId le
 soient (cf. copie d’écran ci-dessous) :
 
 ![](medias/resip/Pictures/1000000000000527000002B96E7F91CABE72A149.png)
-Si les colonnes Id et ParentId sont présentes, le
-fichier d’import se présentera comme suit (cf. copie d’écran
+
+Si les colonnes Id et ParentId sont présentes, le fichier d’import se présentera comme suit (cf. copie d’écran
 ci-dessous) :
 
 ![](medias/resip/Pictures/10000201000004F1000002979B7C790D0DE92459.png)
@@ -1554,17 +1611,19 @@ ci-dessous) :
 -   l’ordre des premières colonnes ne doit pas être modifié ;
 -   une première ligne d’en-tête donnant le nom des colonnes doit être
     présente, chaque ligne décrivant ensuite une unité archivistique ;
--   Si les colonnes Id et ParentId sont présentes, l’identification
-    devra nécessairement commencer par un identifiant portant le chiffre
+-   Si les colonnes Id et ParentId sont présentes :
+
+	- 	l’identification devra nécessairement commencer par un identifiant portant le chiffre
     1 (ex. « ID01 »). Il est par ailleurs recommandé de :
 
-    -   respecter une identification par ordre croissant, sans rupture
+		-   respecter une identification par ordre croissant, sans rupture
         numéraire ;
-    -   employer des identifiants ne comportant ni caractère accentué,
+		-   employer des identifiants ne comportant ni caractère accentué,
         ni virgule, ni apostrophe, ni parenthèse, ni espace, ni slash,
         ni élément de ponctuation, ou tout autre caractère spécial. Ne
         sont recommandés que l’underscore et le tiret comme
         séparateurs ;
+	- la colonne File, obligatoire, peut être non renseignée.
 
 -   le séparateur entre les colonnes est par défaut le « ; » et
     l’encodage par défaut est « windows-1252 ». Ces paramètres peuvent
@@ -1602,7 +1661,7 @@ ci-dessous) :
     (AAAA-MM-JJ).
 
 Le fichier d’import utilisé pour la rédaction du présent manuel se
-présente comme suit[^6] :
+présente comme suit[^7] :
 ```csv
 ID;ParentID;File;Content.DescriptionLevel;Content.Title;Content.ArchivalAgencyArchiveUnitIdentifier;Content.TransactedDate
 1;;documentation;RecordGrp;documentation;;
@@ -1941,7 +2000,7 @@ moulinette ReSIP, il est possible d’effectuer les traitements suivants :
 -   traitement des objets, tant physiques que binaires, et de leurs
     métadonnées (section 5.7.) ;
 -   vérification de la conformité de la structure arborescente
-    d’archives par rapport au SEDA 2.1. (section 5.8.) ;
+    d’archives par rapport au SEDA 2.1. et 2.2. (section 5.8.) ;
 -   sauvegarde du contexte de travail en cours de traitement (section
     5.9.) ;
 -   nettoyage de l’espace de travail (section 5.10.).
@@ -2467,6 +2526,27 @@ bouton d’action « Fermer » (cf. copie d’écran ci-dessous).
 ***Nota bene***** :** le fichier conteneur au format
 .zip, .tar, .tarbz2 ou .targz2 est supprimé de la structure
 d’arborescente d’archives.
+
+#### Extraction des éléments contenus dans un fichier conteneur au format .pst, .eml, .msg, .mbox
+
+Afin d’extraire les éléments contenus dans un fichier conteneur au format .pst, .eml, .msg, .mbox, il convient, dans le panneau de visualisation et de modification de la structure arborescente d’archives, de :
+
+-   positionner le curseur sur le groupe d’objets correspondant au fichier conteneur au format .pst, .eml, .msg, .mbox dont les contenus doivent être extraits ;
+-   effectuer un clic-droit ;
+-   cliquer sur le bouton d’action « Remplacer par l'extraction des messages » pour extraire le contenu du fichier conteneur et le transformer en structure arborescente d’archives (cf. copie d’écran ci-dessous).
+
+    ![](medias/resip/Pictures/ID06.png)
+
+Le clic sur le bouton d’action « Remplacer par l'extraction des messages » lance une fenêtre de dialogue « Import » indiquant que l’opération d’extraction est lancée et permettant de suivre sa progression. Cette opération peut être annulée en cliquant sur le bouton d’action « Annuler » de la fenêtre de dialogue.
+
+![](medias/resip/Pictures/ID03.png)
+
+Une fois l’opération d’extraction achevée, la fenêtre de dialogue indique le nombre d’éléments extraits (unités archivistiques, groupes d’objets, objets binaires, objets physiques) ainsi que le temps qui a
+été nécessaire pour réaliser l’opération d’import. La structure arborescente d’archives est désormais consultable et traitable depuis le panneau de visualisation et de modification de la structure arborescente d’archives. La fenêtre de dialogue peut être fermée en cliquant sur le bouton d’action « Fermer » (cf. copie d’écran ci-dessous).
+
+![](medias/resip/Pictures/ID04.png)
+
+***Nota bene***** :** le fichier conteneur  au format .pst, .eml, .msg, .mbox est supprimé de la structure d’arborescente d’archives.
 
 #### Suppression d’unités archivistiques
 
@@ -3073,7 +3153,7 @@ chargées initialement ou sauvegardées dernièrement (cf. section
 Les métadonnées de cet objet peuvent être modifiées en utilisant la
 fonction correspondante (cf. section 5.9.2.2).
 
-### Vérification de la conformité de la structure arborescente d’archives par rapport au SEDA 2.1.
+### Vérification de la conformité de la structure arborescente d’archives par rapport au SEDA 2.1. et 2.2.
 
 #### Vérification par rapport au schéma par défaut
 
@@ -3081,12 +3161,12 @@ Afin de vérifier la conformité d’une structure arborescente d’archives
 et de sa description par rapport au schéma par défaut proposé par le
 SEDA 2.1., il convient, dans la moulinette ReSIP, de cliquer sur
 l’action « Traiter » puis sur la sous-action « Vérifier la conformité
-SEDA 2.1 » (cf. copie d’écran ci-dessous).
+SEDA 2.1 » (cf. copie d’écran ci-dessous) ou « Vérifier la conformité SEDA 2.2 » selon que ReSIP a été paramétré pour gérer du SEDA 2.1. ou du SEDA 2.2..
 
 ![](medias/resip/Pictures/1000020100000362000001D098B26E4881427AE1.png)
 
 Le clic sur le bouton d’action « Vérifier la conformité
-au SEDA 2.1 » lance une fenêtre de dialogue « Vérification SEDA 2.. »
+au SEDA 2.X » lance une fenêtre de dialogue « Vérification SEDA 2.X. »
 indiquant que l’opération de vérification est lancée. Cette opération
 peut être annulée en cliquant sur le bouton d’action « Annuler » de la
 fenêtre de dialogue. Une fois l’opération de vérification terminée, la
@@ -3110,14 +3190,14 @@ d’action « Fermer » (cf. copie d’écran ci-dessous).
 
 Afin de vérifier la conformité d’une structure arborescente d’archives
 et de sa description par rapport à un profil d’archivage conforme au
-SEDA 2.1., il convient, dans la moulinette ReSIP, de cliquer sur
+SEDA 2.1. ou au SEDA 2.2., selon que ReSIP a été paramétré pour gérer du SEDA 2.1. ou du SEDA 2.2., il convient, dans la moulinette ReSIP, de cliquer sur
 l’action « Traiter » puis sur la sous-action « Vérifier la conformité à
-un profil SEDA 2.1 » (cf. copie d’écran ci-dessous).
+un profil SEDA 2.X » (cf. copie d’écran ci-dessous).
 
 ![](medias/resip/Pictures/1000020100000364000001D529A65631AEB58E3A.png)
 
 Le clic sur la sous-action « Vérifier la conformité à
-un profil SEDA 2.1 », ouvre l’explorateur Windows de l’utilisateur et
+un profil SEDA 2.X », ouvre l’explorateur Windows de l’utilisateur et
 permet à celui-ci de sélectionner un fichier correspondant à un profil
 d’archivage – au format XSD ou RNG – et de l’importer dans la moulinette
 ReSIP en cliquant sur le bouton d’action « Ouvrir » (cf. copie d’écran
@@ -3128,11 +3208,11 @@ ci-dessous).
 ![](medias/resip/Pictures/1000020100000555000002D9AC09C5B00130B68C.png)
 
 Le clic sur le bouton d’action « Ouvrir » lance une
-fenêtre de dialogue « Vérification profil SEDA 2.1 », indiquant que
+fenêtre de dialogue « Vérification profil SEDA 2.X », indiquant que
 l’opération de vérification est lancée. Cette opération peut être
 annulée en cliquant sur le bouton d’action « Annuler » de la fenêtre de
 dialogue. Une fois l’opération de vérification, la fenêtre de dialogue
-indique son résultat et les éventuelles non conformités identifiées[^7].
+indique son résultat et les éventuelles non conformités identifiées[^8].
 La fenêtre de dialogue peut être fermée en cliquant sur le bouton
 d’action « Fermer » (cf. copie d’écran ci-dessous).
 
@@ -3189,6 +3269,63 @@ travail de l’utilisateur. S’ils sont déplacés avant de reprendre le
 traitement du contexte de travail sauvegardé, la moulinette ReSIP sera
 incapable de recharger ce dernier.
 
+### Compacter les arborescences [mode expérimental]
+
+#### Paramétrages du compactage
+
+Peuvent être paramétrés depuis l’interface d’édition des paramètres par défaut ouverts par un clic sur la sous-action « Préférences » dans l’onglet « Compact » (cf. copie d’écran ci-dessous) :
+-   les limites des paquets de documents, à savoir :
+    -	la taille maximale des métadonnées (valeur par défaut : 1 million),
+    -   le nombre maximal de documents (valeur par défaut : 1 000),
+-   le filtrage des versions d’objet :
+    -   pour les documents (par défaut : BinaryMaster et TextContent),
+    -   les sous-documents (par défaut : BinaryMaster),
+-   le mode de construction des paquets de documents :
+	-   compressé ou non compressé (compressé par défaut),
+-   le filtrage des métadonnées (compaction par défaut de toutes les métadonnées).
+
+    ![](medias/resip/Pictures/D54E.png)
+
+#### Compacter des éléments
+
+Afin de compacter les éléments contenus dans une arborescence, il convient, dans le panneau de visualisation et de modification de la structure arborescente d’archives, de :
+-   positionner le curseur sur l’unité archivistique dont les sous-niveaux doivent être compactés ;
+-   effectuer un clic-droit ;
+-   cliquer sur le bouton d’action « Compacter l’ArchiveUnit » pour compacter les sous-niveaux de l’arborescence et réduire la structure arborescente d’archives (cf. copie d’écran ci-dessous).
+Le clic sur le bouton d’action « Compacter l’ArchiveUnit » lance une fenêtre de dialogue « Compactage » indiquant que l’opération de compactage est lancée et permettant de suivre sa progression. Cette opération peut être annulée en cliquant sur le bouton d’action « Annuler » de la fenêtre de dialogue.
+
+    ![](medias/resip/Pictures/DD08.png)
+
+Une fois l’opération de compaction achevée, la fenêtre de dialogue indique le nombre d’éléments compactés (nœuds, unités archivistiques, groupes d’objets) ainsi que le temps qui a été nécessaire pour réaliser l’opération et le nombre d’éléments éliminés (unités archivistiques, groupes d’objets) suite à cette opération. La structure arborescente d’archives compactée est désormais consultable et traitable depuis le panneau de visualisation et de modification de la structure arborescente d’archives. La fenêtre de dialogue peut être fermée en cliquant sur le bouton d’action « Fermer ».
+
+    ![](medias/resip/Pictures/D4424.png)
+
+Les métadonnées compactées  par défaut à ce jour sont les suivantes :
+-   pour les unités archivistiques correspondant au répertoire racine ayant fait l’objet de la compaction :
+    -   niveau de description (champ DescriptionLevel dans le SEDA), restant identique ;
+    -   titre (champ Title dans le SEDA), restant identique ;
+    -   un container (champ DocumentContainer) référençant le nombre d’unités archivistiques (DocumentsCount) et d’objets (FileObjectsCount) compactés ;
+    -   la restitution de l’arborescence initiale matérialisée par des groupes de documents (champ RecordGrp), qui disposent chacun :
+        -   d’un identifiant (RecordGrpID),
+        -   de métadonnées descriptives et de gestion que les unités archivistiques contenaient précédemment ;
+-   pour les unités archivistiques compactées en paquets :
+    -   niveau de description (champ DescriptionLevel dans le SEDA) = Item ;
+    -   titre (champ Title dans le SEDA), incrémenté « DocumentPack » suivi du numéro du paquet généré ;
+    -   la description du paquet (champ DocumentPack) référençant le nombre d’unités archivistiques (DocumentsCount) et d’objets (FileObjectsCount) contenus dans le paquet ;
+    -   pour les unités archivistiques correspondant précédemment à un répertoire (champ RecordGrp), également référencées dans l’unité archivistique racine :
+        -   un identifiant (RecordGrpID),
+        -   les métadonnées descriptives et de gestion qu’elles contenaient précédemment ;
+    -   pour les unités archivistiques précédemment associées à un objet (champ Document) :
+        -   un identifiant (RecordGrpID),
+        -   les métadonnées descriptives et de gestion qu’elles contenaient précédemment ;
+    -   pour les objets associés (champ FileObject) :
+        -   les métadonnées techniques préalablement incrémentées
+A un paquet donné, est associé un groupe d’objets techniques décrivant un fichier zippé qui contient l’ensemble des objets associés aux unités archivistiques décrites en tant que « Document ».
+
+***Nota bene :*** les arborescences et fichiers préalablement disposés sous l’unité archivistique compacté sont supprimés de la structure d’arborescente d’archives et sont désormais :
+-   restitués en tant que métadonnées dans l’unité archivistique racine compacté ou dans les unités archivistiques de type « DocumentPack » ;
+-   encapsulés dans le fichier zippé associé à un « DocumePack » pour les fichiers.
+
 ### Nettoyer l’espace de travail
 
 La moulinette ReSIP opère ses traitements en sauvegardant un certain
@@ -3239,9 +3376,9 @@ Export des données
 Il est possible d’exporter, depuis la moulinette ReSIP, une structure
 arborescente d’archives sous plusieurs formes différentes :
 
--   un SIP conforme au SEDA 2.1. et aux spécifications particulières de
+-   un SIP conforme au SEDA 2.1. ou au SEDA 2.2. et aux spécifications particulières de
     la solution logicielle Vitam (section 6.2.) ;
--   un manifeste conforme au SEDA 2.1. et aux spécifications
+-   un manifeste conforme au SEDA 2.1. ou au SEDA 2.2. et aux spécifications
     particulières de la solution logicielle Vitam (section 6.3.) ;
 -   une structure arborescente de fichiers (section 6.4.) ;
 -   une structure arborescente de fichiers accompagnée d’un fichier de
@@ -3271,7 +3408,8 @@ Peuvent être paramétrées :
     l’entrée, service versant de l’entrée) (onglets « Métadonnées
     globales » et « Métadonnées globales étendues ») (section 6.1.1.) ;
 -   les modalités de structuration du fichier XML correspondant au
-    manifeste (onglet « import/export ») (section 6.1.2.).
+    manifeste (onglet « import/export ») (section 6.1.2.);
+-   les modalités de structuration du fichier CSV décrivant les archives (onglet « import/export »).
 
 #### Paramétrage des métadonnées de l’en-tête et du bloc ManagementMetadata du manifeste
 
@@ -3281,32 +3419,32 @@ défaut ouverts par un clic sur la sous-action « Préférences » :
 -   dans l’onglet « Métadonnées globales » (cf. copie d’écran
     ci-dessous) :
 
-    -   l’identifiant du SIP (champ MessageIdentifier du SEDA 2.1.) ;
-    -   la date de transfert du SIP (champ Date du SEDA 2.1.) ;
-    -   la description du SIP (champ Comment du SEDA 2.1.) ;
+    -   l’identifiant du SIP (champ MessageIdentifier du SEDA 2.1. et 2.2.) ;
+    -   la date de transfert du SIP (champ Date du SEDA 2.1. et 2.2.) ;
+    -   la description du SIP (champ Comment du SEDA 2.1. et 2.2.) ;
     -   l’identifiant du contrat d’entrée utilisé pour transférer le SIP
         dans la solution logicielle Vitam (champ ArchivalAgreement du
         SEDA 2.1.) ;
     -   l’identifiant du service d’archives (champ
-        ArchivalAgency.Identifier du SEDA 2.1.) ;
+        ArchivalAgency.Identifier du SEDA 2.1. et 2.2.) ;
     -   l’identifiant du service de transfert (champ
-        TransferringAgency.Identifier du SEDA 2.1.) ;
+        TransferringAgency.Identifier du SEDA 2.1. et 2.2.) ;
 
         ![](medias/resip/Pictures/1000020100000555000002D866FA85CD62A0F93B.png)
 -   dans l’onglet « Métadonnées globales étendues »
     (cf. copie d’écran ci-dessous) :
 
     -   la liste des référentiels et listes d’autorité utilisés dans le
-        SIP, sous une forme XML (bloc CodeListVersions » du SEDA 2.1.) ;
+        SIP, sous une forme XML (bloc CodeListVersions » du SEDA 2.1. et 2.2.) ;
     -   les métadonnées de gestion applicables à l’ensemble du SIP, sous
-        une forme XML (bloc ManagementMetadata du SEDA 2.1.) ;
+        une forme XML (bloc ManagementMetadata du SEDA 2.1. et 2.2.) ;
     -   l’identifiant de la réponse transmise suite à une demande
-        d’entrée (champ TransferRequestReplyIdentifier du SEDA 2.1.) ;
+        d’entrée (champ TransferRequestReplyIdentifier du SEDA 2.1. et 2.2.) ;
     -   la description détaillée du service d’archives (champ
-        ArchivalAgency.OrganizationDescriptiveMetadata du SEDA 2.1.) ;
+        ArchivalAgency.OrganizationDescriptiveMetadata du SEDA 2.1. et 2.2.) ;
     -   la description détaillée du service de transfert (champ
         TransferringAgency.OrganizationDescriptiveMetadata du SEDA
-        2.1.).
+        2.1. et 2.2.).
 
         ![](medias/resip/Pictures/1000020100000555000002D8C00D11C099678E99.png)
 
@@ -3317,7 +3455,7 @@ de traitement.
 **Attention** :
 
 -   aucun contrôle de conformité par rapport à la structure et à la
-    sémantique du schéma XML défini par le SEDA 2.1. n’est réalisé ;
+    sémantique du schéma XML défini par le SEDA 2.1. et 2.2. n’est réalisé ;
 -   en cas d’import d’un SIP ou d’un DIP disposant de paramètres
     différents de ceux définis par défaut, ce sont les paramètres
     spécifiques à ce SIP ou à ce DIP qui s’affichent dans les différents
@@ -3334,10 +3472,10 @@ l’onglet « Export » (cf. copie d’écran ci-dessous) :
     unités archivistiques peuvent être exportées soit de manière
     imbriquée (les unités archivistiques sont exportées de manière
     « arborescente » et sont imbriquées les unes dans les autres, en
-    utilisant le champ ArchiveUnit du SEDA 2.1.), soit « à plat »
+    utilisant le champ ArchiveUnit du SEDA 2.1. et 2.2.), soit « à plat »
     (toutes les unités archivistiques sont exportées au même niveau et
     la structure arborescente est restituée par l’utilisation du champ
-    ArchiveUnitRefId du SEDA 2.1.) ;
+    ArchiveUnitRefId du SEDA 2.1. et 2.2.) ;
 -   la manière dont va être présenté le fichier XML correspondant au
     manifeste, avec ou sans indentation des éléments ;
 -   la renumérotation ou non des éléments composant le fichier XML
@@ -3360,10 +3498,11 @@ l’onglet « Export » (cf. copie d’écran ci-dessous) :
     défaut, l’option « Dernier » est sélectionnée ;
 -   la taille maximale de la chaîne de caractères correspondant aux
     répertoires, par défaut limitée à 32 caractères ;
+- 	la possibilité d'exporter des informations complémentaires relatives à la hiérarchie des archives et au nom des fichiers numériques (ID, ParentID, ObjectFiles);
 -   les métadonnées descriptives à exporter pour chaque unité
     archivistique.
 
-    ![](medias/resip/Pictures/1000020100000555000002D770FF995387F5CDBC.png)
+    ![](medias/resip/Pictures/ID09.png)
 
 Les paramètres saisis seront utilisés pour la réalisation de l’export de
 la structure arborescente d’archives en cours de traitement et du CSV.
@@ -3772,11 +3911,11 @@ rapport à un profil d’archivage au format XSD ou RNG.
 #### Dans la rédaction du profil d’archivage
 
 Il est recommandé de créer un profil d’archivage à l’aide du Service
-hébergé pour la rédaction de profils d’archivage (SHERPA)[^8], mis à
+hébergé pour la rédaction de profils d’archivage (SHERPA)[^9], mis à
 disposition par le Service interministériel des Archives de France, ou
 depuis un éditeur XML, puis de procéder à des modifications manuelles
 sur le profil d’archivage extrait de SHERPA, à l’aide d’un éditeur
-XML[^9].
+XML[^10].
 
 Pour utiliser le profil d’archivage dans ReSIP, il faut prendre en
 compte deux spécificités :
@@ -5065,28 +5204,30 @@ Renvois
 
 [^1]:  Lien vérifié le 02/03/2022.
 
-[^2]:  **Lien vérifié le 09/08/2021**
+[^2]:  Lien vérifié le 09/08/2021.
 
-[^3]: Lien vérifié le 09/08/2021
+[^3]:  Lien vérifié le 09/08/2021
 
 [^4]:  Voir également partie 5.1 du présent document.
 
-[^5]:  Si on souhaite importer un fichier .csv avec des objets
+[^5]:  Fonction getIdentificationResult dans sedalib/src/main/java/fr/gouv/vitam/tools/sedalib/droid/DroidIdentifier.java.
+
+[^6]:  Si on souhaite importer un fichier .csv avec des objets
     numériques associés, se référer au chapitre 4.6 « Import depuis un
     fichier .csv décrivant une structure arborescente d’archives et/ou
     de fichiers » du présent document.
 
-[^6]:  L’annexe « Préparer un fichier .csv » apporte quelques conseils
+[^7]:  L’annexe « Préparer un fichier .csv » apporte quelques conseils
     pour effectuer cette opération.
 
-[^7]:  Pour plus de précisions sur les contrôles de conformité,
+[^8]:  Pour plus de précisions sur les contrôles de conformité,
     consulter l’annexe « Contrôle de conformité à un profil
     d’archivage » du présent document.
 
-[^8]:  Le service et sa documentation sont disponibles à l’adresse
+[^9]:  Le service et sa documentation sont disponibles à l’adresse
     suivante : <https://www.francearchives.fr/sherpa/> (Lien consulté le
     24 novembre 2019).
 
-[^9]:  Se référer à la documentation *Profils d’archivage* et, plus
+[^10]:  Se référer à la documentation *Profils d’archivage* et, plus
     particulièrement, au chapitre 5.2 « Structuration des données à
     verser » de ce document.

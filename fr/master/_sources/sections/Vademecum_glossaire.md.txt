@@ -6,7 +6,7 @@ AIP : voir [vademecum Structuration de l’information](./Vademecum_)
 
 Arbre de positionnement : voir [vademecum Arbre de positionnement](./Vademecum_arbre.md)
 
-Certificat applicatif/certificat personnel : voir [vademecum Gestion des droits et permissions des utilisateurs applicatifs](./Vademecum)
+Certificat applicatif/certificat personnel : voir [vademecum Gestion des droits et permissions des utilisateurs applicatifs](./Vademecum_habilitations.md)
 
 Contexte : voir [vademecum Gestion des droits et permissions des utilisateurs applicatifs](./Vademecum)
 
@@ -26,9 +26,9 @@ Griffon : voir [vademecum Référentiel des griffons](./Vademecum_referentiel_g
 
 Groupe d’objets techniques : voir [vademecum Structuration de l’information](./Vademecum)
 
-Mode « maître » : voir [vademecum Attribution des identifiants](./Vademecum_)
+Mode « maître » : voir [vademecum Attribution des identifiants](./Vademecum_identifiants.md)
 
-Mode « esclave » : voir [vademecum Attribution des identifiants](./Vademecum)
+Mode « esclave » : voir [vademecum Attribution des identifiants](./Vademecum_identifiants.md)
 
 Nœud : voir [vademecum Structuration de l’information](./Vademecum)
 
@@ -42,13 +42,13 @@ Profil d’archivage : voir [vademecum Profils d’archivage](./Vademecum_pa.md
 
 Profil d’unité archivistique : voir [vademecum Profils d’unité archivistique](./Vademecum_pua.md)
 
-Profil de sécurité : voir [vademecum Gestion des droits et permissions des utilisateurs applicatifs](./Vademecum)
+Profil de sécurité : voir [vademecum Gestion des droits et permissions des utilisateurs applicatifs](./Vademecum_habilitations.md)
 
 Rattachement : voir [vademecum Faire un rattachement dans la solution logicielle Vitam](./Vademecum)
 
 Registre des fonds : voir [vademecum Registre des fonds](./Vademecum_registre_fonds.md)
 
-Règles de gestion : voir [vademecums Référentiel des règles de gestion, Positionner des règles de gestion et Le calcul des héritages des règles de gestion et l’indexation des échéances](./Vademecum)
+Règles de gestion : voir vademecums [Référentiel des règles de gestion](./Vademecum), [Positionner des règles de gestion](./Vademecum_reglesgestion_fonctionnement.md) et [Le calcul des héritages des règles de gestion et l’indexation des échéances](./Vademecum_echeances.md)
 
 Scénarios de préservation : voir [vademecum Référentiel des scénarios de préservation](./Vademecum)
 
