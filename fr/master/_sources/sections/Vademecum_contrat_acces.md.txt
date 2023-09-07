@@ -159,4 +159,4 @@ Il est possible de modifier un contrat d’accès utilisé dans un contexte appl
 |Avec plusieurs contrats d’accès|Désactivation d’un seul contrat d’accès, le temps de procéder à la modification, de manière à ne pas interrompre l’utilisation des autres contrats d’accès associés au contexte applicatif.|
 |Avec un ou plusieurs contrats d’accès|- Création d’un nouveau contrat d’accès contenant les modifications à apporter.<br>- Association de ce contrat d’accès au contexte applicatif.<br>- Activation de ce contrat d’accès.<br>- Désactivation de l’ancien contrat d’accès.<br>- Suppression du lien entre l’ancien contrat d’accès et le contexte applicatif.|
 
-Pour aller plus loin, consulter le [document VITAM. Gestion des habilitations](./).
+Pour aller plus loin, consulter le [document VITAM. Gestion des habilitations](./habilitations.md).

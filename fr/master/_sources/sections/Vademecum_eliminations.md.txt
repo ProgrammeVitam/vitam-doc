@@ -85,7 +85,7 @@ Les informations qui ont été indexées peuvent être interrogées et, pour cer
 - Date de début
 - Date de fin
 
-L’archiviste peut exporter sous forme de DIP* des listes filtrées des résultats de l’analyse des archives éliminables pour permettre la génération, depuis son front office, des bordereaux de demande d’élimination destinés aux services producteurs.
+L’archiviste peut exporter sous forme de DIP des listes filtrées des résultats de l’analyse des archives éliminables pour permettre la génération, depuis son front office, des bordereaux de demande d’élimination destinés aux services producteurs.
 
 
 ### Lancement d’une opération d’élimination (action)
@@ -113,7 +113,7 @@ Ainsi, sur toutes les unités archivistiques soumises, seules celles dont le sor
 
 La présence d’unités archivistiques de statut DESTROY qui ne peuvent être effectivement éliminées conduira à une opération en avertissement, mais n’interrompt pas le processus.
 
-Une fois le statut des unités archivistiques déterminé, la solution logicielle étudie les groupes d’objets techniques* (GOT) associés aux unités archivistiques :
+Une fois le statut des unités archivistiques déterminé, la solution logicielle étudie les groupes d’objets techniques (GOT) associés aux unités archivistiques :
 - si l’unité archivistique est conservée, le GOT est conservé (KEEP),
 - si le GOT n’est associé qu’à une unité archiviqtique et que celle-ci est éliminée, le GOT est éliminé (statut DELETED),
 - si le GOT est associé à une unité archivistique éliminée et à une unité archivistique non éliminée, le GOT est détaché (statut PARTIAL_DETACHMENT).
@@ -143,4 +143,4 @@ Pour les fonds propres, les totaux d’unités archivistiques, groupes d’objet
 
 Pour les fonds symboliques, au moment du calcul périodique des fonds symboliques de la base, les unités archivistiques, groupes d’objets techniques et objets techniques éliminés seront décomptés et la volumétrie sera mise à jour.
 
-Le calcul des unités archivistiques, groupes d’objets techniques et objets techniques rattachés à un producteur au titre de son fonds symbolique* n’est effectué qu’une fois par vingt-quatre heures (sauf paramétrage différent de la plate-forme). Dans ces conditions, si sur la même période de vingt-quatre heures l’archiviste effectue une entrée de 3 unités archivistiques et une élimination de 3 unités archivistiques, le total des unités archivistiques symboliques entre deux calculs n’aura pas évolué.
+Le calcul des unités archivistiques, groupes d’objets techniques et objets techniques rattachés à un producteur au titre de son fonds symbolique n’est effectué qu’une fois par vingt-quatre heures (sauf paramétrage différent de la plate-forme). Dans ces conditions, si sur la même période de vingt-quatre heures l’archiviste effectue une entrée de 3 unités archivistiques et une élimination de 3 unités archivistiques, le total des unités archivistiques symboliques entre deux calculs n’aura pas évolué.

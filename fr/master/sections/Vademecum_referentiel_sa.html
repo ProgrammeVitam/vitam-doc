@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>25. Le référentiel des services agents dans la solution logicielle Vitam &mdash; Vitam documentation fonctionnelle</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="26. Le registre des fonds dans la solution logicielle Vitam" href="Vademecum_registre_fonds.html" />
+    <link rel="prev" title="24. Le référentiel des règles de gestion dans la solution logicielle Vitam" href="Vademecum_referentiel_rg.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: white" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/Vitam_Logo-CMJN.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">première approche</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="guide_lecture.html">1. Guide de lecture de la documentation Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="presentation_programme.html">2. Présentation du programme Vitam</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">documentation métier</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="valeur_probante.html">1. Conservation de la valeur probante</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eliminations.html">2. Les éliminations avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gel.html">3. Le gel d’archives avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_donnees.html">4. Modèle de données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_workflow.html">5. Description des workflows et des opérations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_de_collecte.html">6. Module de collecte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ontologie.html">7. Ontologie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_archivage.html">8. Profils d’archivage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services_prod.html">9. Services producteurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transfert.html">10. Le transfert avec la solution logicielle Vitam</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">documentation Vitam UI</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Arbres_Plans.html">1. APP Arbres et plans</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Vademecum</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_sommaire.html">1. Vademecum: sommaire thématique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_glossaire.html">2. Notions utilisées dans la solution logicielle Vitam et lien vers la fiche qui les définit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_arbre.html">3. L’arbre de positionnement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_audit.html">4. Les audits dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_classification.html">5. La gestion des archives classifiées avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_acces.html">6. Le contrat d’accès dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_entree.html">7. Le contrat d’entrée dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_gestion.html">8. Le contrat de gestion dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_echeances.html">9. Le calcul des héritages des règles de gestion et l’indexation des échéances dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_eliminations.html">10. Réaliser des éliminations d’archives avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_habilitations.html">11. La gestion des droits et permissions des utilisateurs applicatifs dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_identifiants.html">12. L’attribution des identifiants dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_journalisation.html">13. La journalisation et la conservation de la valeur probante dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_ontologie.html">14. L’ontologie dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_pa.html">15. Les profils d’archivage dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_parametrages_pf.html">16. Le paramétrage fonctionnel d’une plate-forme utilisant la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_plan.html">17. Le plan de classement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_preservation.html">18. La préservation dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_pua.html">19. Les profils d’unité archivistique dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_rattachement.html">20. Faire un rattachement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_formats.html">21. Le référentiel des formats dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_griffons.html">22. Le référentiel des griffons dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_preservation.html">23. Le référentiel des scénarios de préservation dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_rg.html">24. Le référentiel des règles de gestion dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">25. Le référentiel des services agents dans la solution logicielle Vitam</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#presentation-du-referentiel-des-services-agents">25.1. Présentation du référentiel des services agents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#perimetre-du-referentiel-des-services-agents">25.1.1. Périmètre du référentiel des services agents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#controles-effectues-a-partir-du-referentiel-des-services-agents">25.1.2. Contrôles effectués à partir du référentiel des services agents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#configuration-du-referentiel-des-services-agents">25.2. Configuration du référentiel des services agents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#constitution-du-referentiel-des-services-agents">25.2.1. Constitution du référentiel des services agents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gestion-des-identifiants-des-services-agents">25.2.2. Gestion des identifiants des services agents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#formalisation-du-referentiel-des-services-agents">25.2.3. Formalisation du référentiel des services agents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#modification-du-referentiel-des-services-agents">25.3. Modification du référentiel des services agents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_registre_fonds.html">26. Le registre des fonds dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_structuration_information.html">27. La structuration des informations dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_suivi_acces.html">28. Le suivi des accès dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_tenant.html">29. Les tenants dans la solution logicielle Vitam</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">outils connexes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="resip.html">1. RESIP</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: white" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Documentation utilisateur Vitam</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">25. </span>Le référentiel des services agents dans la solution logicielle Vitam</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/sections/Vademecum_referentiel_sa.md.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="le-referentiel-des-services-agents-dans-la-solution-logicielle-vitam">
+<h1><span class="section-number">25. </span>Le référentiel des services agents dans la solution logicielle Vitam<a class="headerlink" href="#le-referentiel-des-services-agents-dans-la-solution-logicielle-vitam" title="Lien permanent vers ce titre"></a></h1>
+<p>Le service producteur constitue une donnée essentielle du système d’archivage électronique, car il permet d’identifier précisément les responsables des fonds d’archives, et de gérer les droits d’accès et de traitement sur celles-ci en se basant sur une information normalisée et fiable dans la solution logicielle Vitam.
+Le référentiel des services agents liste l’ensemble des services producteurs et versants des unités archivistiques conservées dans la solution logicielle Vitam et gère cette donnée de référence.
+Le référentiel sert de base au contrôle des services déclarés dans le bordereau de transfert lors de l’entrée, à l’alimentation du registre des fonds ainsi qu’à la gestion des accès sur les archives.</p>
+<section id="presentation-du-referentiel-des-services-agents">
+<h2><span class="section-number">25.1. </span>Présentation du référentiel des services agents<a class="headerlink" href="#presentation-du-referentiel-des-services-agents" title="Lien permanent vers ce titre"></a></h2>
+<section id="perimetre-du-referentiel-des-services-agents">
+<h3><span class="section-number">25.1.1. </span>Périmètre du référentiel des services agents<a class="headerlink" href="#perimetre-du-referentiel-des-services-agents" title="Lien permanent vers ce titre"></a></h3>
+<p>Un référentiel des services agents est propre au tenant sur lequel il a été importé.</p>
+</section>
+<section id="controles-effectues-a-partir-du-referentiel-des-services-agents">
+<h3><span class="section-number">25.1.2. </span>Contrôles effectués à partir du référentiel des services agents<a class="headerlink" href="#controles-effectues-a-partir-du-referentiel-des-services-agents" title="Lien permanent vers ce titre"></a></h3>
+<p>Lors d’une entrée, la solution logicielle Vitam vérifie que les services agents déclarés pour toute l’entrée (balise <ManagementMetadata> du bordereau de transfert) – c’est-à-dire le service producteur et le service versant de l’entrée – sont bien présents dans le référentiel des services agents applicable sur le tenant.</p>
+<p>En cas d’absence du référentiel des services agents, la vérification de la conformité des services agents présents dans le bordereau de transfert ne pourra être réalisée et l’entrée sera rejetée. Ce référentiel est donc indispensable pour pouvoir réaliser des entrées.</p>
+<p>Sur la base de ce contrôle, la solution logicielle enregistre la prise en charge du transfert pour le service producteur déclaré dans le bordereau de transfert et enrichit en conséquence le registre des fonds de celui-ci.</p>
+<p>Les services producteurs déclarés au niveau des unités archivistiques (balise <Content> dans la partie DescriptiveMetadata du bordereau) ne font pas l’objet d’un contrôle de conformité avec le référentiel des services agents, dans la mesure où ces informations sont traitées comme des métadonnées descriptives et ne servent pas de base à des traitements en gestion dans la solution logicielle Vitam.</p>
+<p>Il est possible de contrôler les accès aux archives en fonction des services ayant des droits sur les unités archivistiques, c’est-à-dire le service producteur d’une entrée et les éventuels services producteurs auxquels tout ou partie de cette entrée a été rattachée. Les services producteurs déclarés dans le contrat d’accès font l’objet d’un contrôle d’existence dans le référentiel des services agents. Si un contrat est créé ou modifié avec l’identifiant d’un service inconnu du référentiel, la création ou la modification de ce contrat est refusée.</p>
+</section>
+</section>
+<section id="configuration-du-referentiel-des-services-agents">
+<h2><span class="section-number">25.2. </span>Configuration du référentiel des services agents<a class="headerlink" href="#configuration-du-referentiel-des-services-agents" title="Lien permanent vers ce titre"></a></h2>
+<section id="constitution-du-referentiel-des-services-agents">
+<h3><span class="section-number">25.2.1. </span>Constitution du référentiel des services agents<a class="headerlink" href="#constitution-du-referentiel-des-services-agents" title="Lien permanent vers ce titre"></a></h3>
+<p>L’administrateur fonctionnel constitue le référentiel des services agents à partir du recensement des services producteurs et versants de son entité.
+À chacun de ces services, il associe un identifiant et une description sommaire qui permettra de différencier au besoin deux services au nom proche, par exemple, les services des ressources humaines des différentes entités.</p>
+<p>Le référentiel des services agents n’est pas un référentiel complet comme ceux utilisés dans les applications archivistiques qui indiquent les filiations et les héritages. Pour les services qui disposent déjà d’un tel outil, une extraction simplifiée en sera réalisée pour alimenter la solution logicielle Vitam.</p>
+</section>
+<section id="gestion-des-identifiants-des-services-agents">
+<h3><span class="section-number">25.2.2. </span>Gestion des identifiants des services agents<a class="headerlink" href="#gestion-des-identifiants-des-services-agents" title="Lien permanent vers ce titre"></a></h3>
+<p>Le référentiel des services agents fonctionne en mode « esclave ». En effet, le référencement des agents constitue une donnée de référence partagée entre de nombreux systèmes et, dans les services d’archives, souvent pilotée depuis le SIA ou des gestionnaires de référentiels externes au SAE. Le  référentiel du SAE sera alors constitué d’un export du référentiel maître applicable aux archives papier comme électroniques, ce qui permet de garder une unité dans la dénomination (identifiant) des services agents, quel que soit le support auquel ils s’appliquent.
+Utiliser le référentiel des services agents en mode « esclave » permet également au service d’archives d’attribuer des identifiants signifiants aux services agents et/ou de permettre l’interopérabilité avec des systèmes attribuant des identifiants nationaux ou internationaux pour désigner de manière univoque les personnes et les organismes, comme les identifiants ISNI (International Standard Name Identifier).</p>
+</section>
+<section id="formalisation-du-referentiel-des-services-agents">
+<h3><span class="section-number">25.2.3. </span>Formalisation du référentiel des services agents<a class="headerlink" href="#formalisation-du-referentiel-des-services-agents" title="Lien permanent vers ce titre"></a></h3>
+<p>Le référentiel des services agents est importé dans la solution logicielle Vitam sous la forme d’un fichier tableur au format .csv comportant les colonnes suivantes :</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="text-left head"><p>Nom de la colonne</p></th>
+<th class="text-left head"><p>Description de la colonne</p></th>
+<th class="text-left head"><p>Valeurs possibles</p></th>
+<th class="text-left head"><p>Observations</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Identifier</p></td>
+<td class="text-left"><p>Identifiant du service</p></td>
+<td class="text-left"><p></p></td>
+<td class="text-left"><p>Cet identifiant ne doit pas comprendre d’espace ou de caractère accentué</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Name</p></td>
+<td class="text-left"><p>Nom du service</p></td>
+<td class="text-left"><p></p></td>
+<td class="text-left"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Description</p></td>
+<td class="text-left"><p>Description du service</p></td>
+<td class="text-left"><p></p></td>
+<td class="text-left"><p></p></td>
+</tr>
+</tbody>
+</table>
+<p>Le fichier .csv à importer doit avoir les caractéristiques suivantes :</p>
+<ul class="simple">
+<li><p>encodage des caractères : UTF-8 ;</p></li>
+<li><p>séparateur de champ : la virgule ;</p></li>
+<li><p>séparateur de texte : guillemets simples ou doubles, espace vide.</p></li>
+</ul>
+<p>Pour en savoir plus, consulter le <a class="reference internal" href="modele_de_donnees.html"><span class="doc std std-doc">document VITAM. Modèle de données</span></a>.</p>
+</section>
+</section>
+<section id="modification-du-referentiel-des-services-agents">
+<h2><span class="section-number">25.3. </span>Modification du référentiel des services agents<a class="headerlink" href="#modification-du-referentiel-des-services-agents" title="Lien permanent vers ce titre"></a></h2>
+<p>Le référentiel des services agents ne peut pas être mis à jour unitairement (pour un service uniquement). Il convient d’importer un nouveau fichier .csv contenant l’ensemble des services agents en mode « annule et remplace ».</p>
+<p>Lors d’une mise à jour du référentiel, des contrôles sont effectués sur les services agents déjà utilisés dans la solution logicielle Vitam, c’est-à-dire les services agents déclarés par des entrées ou par des contrats d’accès.
+Sont appliqués les cas suivants :</p>
+<ul class="simple">
+<li><p>échec de la mise à jour si celle-ci a demandé la suppression d’un service agent déjà utilisé ;</p></li>
+<li><p>succès avec avertissement de la mise à jour si celle-ci a demandé la modification d’un service agent déjà utilisé (uniquement son intitulé et sa description).</p></li>
+</ul>
+<p>Les différentes versions du référentiel font l’objet d’une sauvegarde sur les offres de stockage utilisées par l’implémentation de la solution logicielle Vitam.</p>
+<p>Pour aller plus loin, consulter le <a class="reference internal" href="services_prod.html"><span class="doc std std-doc">document VITAM. Services producteurs</span></a>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="Vademecum_referentiel_rg.html" class="btn btn-neutral float-left" title="24. Le référentiel des règles de gestion dans la solution logicielle Vitam" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="Vademecum_registre_fonds.html" class="btn btn-neutral float-right" title="26. Le registre des fonds dans la solution logicielle Vitam" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Programme Vitam.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: master
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Tags</dt>
+      <dd><a href="../../v6.rc.1/index.html">v6.rc.1</a></dd>
+    </dl>
+    <dl>
+      <dt>Branches</dt>
+      <dd><a href="Vademecum_referentiel_sa.html">master</a></dd>
+      <dd><a href="../../master_6.rc.x/index.html">master_6.rc.x</a></dd>
+      <dd><a href="../../v5.0/index.html">v5.0</a></dd>
+      <dd><a href="../../Update_of_MDD_for_6.rc_version/index.html">Update_of_MDD_for_6.rc_version</a></dd>
+      <dd><a href="../../master_5.x/index.html">master_5.x</a></dd>
+      <dd><a href="../../update_index/index.html">update_index</a></dd>
+      <dd><a href="../../update_of_workflow_model_for_6.rc_version/index.html">update_of_workflow_model_for_6.rc_version</a></dd>
+      <dd><a href="../../v6_modify_index/index.html">v6_modify_index</a></dd>
+      <dd><a href="../../v6_test_branche_Alice/index.html">v6_test_branche_Alice</a></dd>
+      <dd><a href="../../v6_update_ontologie/index.html">v6_update_ontologie</a></dd>
+      <dd><a href="../../valeur_probante/index.html">valeur_probante</a></dd>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

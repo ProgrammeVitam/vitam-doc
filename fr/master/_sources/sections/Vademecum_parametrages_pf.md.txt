@@ -13,7 +13,7 @@ Au moment du déploiement de la solution logicielle Vitam, il est recommandé de
 
 La liste des niveaux de protection acceptés pourra être modifiée par la suite, mais il s’agira alors d’un acte d’exploitation technique nécessitant un arrêt des opérations en cours (entrées, éliminations, transferts…).
 
-Vademecum lié : [La gestion des archives classifiées avec la solution logicielle Vitam](./Vademecum_classification)
+Vademecum lié : [La gestion des archives classifiées avec la solution logicielle Vitam](./Vademecum_classification.md)
 
 
 Identification des besoins de cloisonnement des archives au sein de la plate-forme (recommandé)
@@ -21,7 +21,7 @@ Identification des besoins de cloisonnement des archives au sein de la plate-for
 La solution logicielle Vitam permet de cloisonner les archives prises en charge via des « espaces » distincts appelés « tenant ». Elle peut être utilisée sans cloisonnement (on parle alors de plate-forme « mono-tenant ») ou avec cloisonnements (on parle alors de plate-forme « multi-tenant »).
 
 Il est recommandé de définir à l’installation de la plate-forme ce paramétrage. Il sera possible de rajouter des tenants par la suite, mais il s’agira alors d’un acte d’exploitation technique nécessitant un arrêt des opérations en cours (entrées, éliminations, transferts…).
-Vademecum lié : [Les tenants dans la solution logicielle Vitam](./Vademecum_tenants)
+Vademecum lié : [Les tenants dans la solution logicielle Vitam](./Vademecum_tenants.md)
 
 
 Définition des stratégies de stockage (recommandé)
@@ -48,7 +48,7 @@ L’administrateur fonctionnel doit :
 - dès lors qu’un référentiel externe est utilisé pour alimenter la solution logicielle Vitam (référentiels gérés dans le front-office commun aux archives physiques et électroniques ou dans des outils extérieurs à la plate-forme), définir avec l’administrateur technique les modalités de synchronisation de ces données entre la source externe et la version utilisée dans la plate-forme ;
 - définir les modalités de gestion des identifiants des données de référence utilisées, sachant que la solution logicielle Vitam peut être paramétrée pour attribuer automatiquement un identifiant à certaines d’entre elles et que ce paramétrage n’est ensuite pas modifiable ;
 - définir, pour les règles de gestion, une durée minimale acceptée pour chaque catégorie de règles, afin d’éviter des modifications malveillantes qui déclencheraient des actions indésirables sur la plate-forme.
-Vademecum liés : [L’attribution des identifiants dans la solution logicielle Vitam](./Vademecum_identifiants_maitre_esclave), [Le référentiel des règles de gestion dans la solution logicielle Vitam](./Vademecum_rg), [Le référentiel des services agents dans la solution logicielle Vitam](./Vademecum_referentiel_sa), [Le référentiel des formats dans la solution logicielle Vitam](./Vademecum_referentiel_formats), [L’ontologie dans la solution logicielle Vitam](./Vademecum_ontologie)
+Vademecum liés : [L’attribution des identifiants dans la solution logicielle Vitam](./Vademecum_identifiants.md), [Le référentiel des règles de gestion dans la solution logicielle Vitam](./Vademecum_referentiel_rg.md), [Le référentiel des services agents dans la solution logicielle Vitam](./Vademecum_referentiel_sa.md), [Le référentiel des formats dans la solution logicielle Vitam](./Vademecum_referentiel_formats.md), [L’ontologie dans la solution logicielle Vitam](./Vademecum_ontologie.md)
 
 
 Définition de la structuration de l’information (recommandé)
@@ -58,7 +58,7 @@ La solution logicielle Vitam offre la possibilité de structurer de plusieurs ma
 Il est recommandé à l’administrateur fonctionnel de définir avant les premiers transferts la structuration qu’il compte adopter pour chacun des tenants : présence/absence de structuration, une seule structuration/plusieurs structurations, utilisation exclusive des arbres ou des plans/utilisation combinée des arbres et des plans.
 
 Il est possible par la suite de modifier la structuration choisie au fur et à mesure de l’utilisation de la plate-forme, mais cette opération de modification de l’arborescence peut être lourde.
-Vademecum liés : [L’arbre de positionnement dans la solution logicielle Vitam](./Vademecum_arbre), [Le plan de classement dans la solution logicielle Vitam](./Vademecum_plan)
+Vademecum liés : [L’arbre de positionnement dans la solution logicielle Vitam](./Vademecum_arbre.md), [Le plan de classement dans la solution logicielle Vitam](./Vademecum_plan.md)
 
 
 Définition des habilitations (obligatoire)
@@ -73,7 +73,7 @@ Pour réaliser des entrées et des accès, chaque application devra en outre dis
 
 Les habilitations pourront évoluer (modification des paramètres, import de nouvelles habilitations…).
 
-Vademecums liés : [La gestion des droits et permissions des utilisateurs applicatifs dans la solution logicielle Vitam](./Vademecum_droits_permissions), [Le contrat d’entrée dans la solution logicielle Vitam](./Vademecum_contrat_entree), [Le contrat d’accès dans la solution logicielle Vitam](./Vademecum_contrat_acces)
+Vademecums liés : [La gestion des droits et permissions des utilisateurs applicatifs dans la solution logicielle Vitam](./Vademecum_habilitations.md), [Le contrat d’entrée dans la solution logicielle Vitam](./Vademecum_contrat_entree.md), [Le contrat d’accès dans la solution logicielle Vitam](./Vademecum_contrat_acces.md)
 
 
 Définition de la fréquence de calcul de l’état des fonds symboliques* (facultatif)
@@ -84,7 +84,7 @@ Par défaut, cet état est produit toutes les vingt-quatre heures.
 
 Si l’administrateur fonctionnel souhaite suivre plus précisément les évolutions des fonds symboliques, il peut choisir de configurer la plate-forme pour produire plus fréquemment cet état.
 
-Vademecum lié : [Le registre des fonds dans la solution logicielle Vitam](./Vademecum_registre_fonds)
+Vademecum lié : [Le registre des fonds dans la solution logicielle Vitam](./Vademecum_registre_fonds.md)
 
 
 Définition du niveau de contrôle des archives prises en charge (facultatif)
@@ -95,7 +95,7 @@ L’administrateur fonctionnel peut souhaiter décliner ou renforcer les contrô
 
 Ces contrôles peuvent être définis au démarrage de la plate-forme ou par la suite.
 
-Vademecum liés : [L’ontologie dans la solution logicielle Vitam](./Vademecum_ontologie), [Le profil d’archivage dans la solution logicielle Vitam](./Vademecum_pa), [Le profil d’unité archivistique dans la solution logicielle Vitam](./Vademecum_pua)
+Vademecum liés : [L’ontologie dans la solution logicielle Vitam](./Vademecum_ontologie.md), [Le profil d’archivage dans la solution logicielle Vitam](./Vademecum_pa.md), [Le profil d’unité archivistique dans la solution logicielle Vitam](./Vademecum_pua.md)
 
 
 Définition des modalités de mise en œuvre de la politique de préservation (facultatif)
@@ -104,7 +104,7 @@ La solution logicielle Vitam permet de mettre en œuvre la politique de préserv
 
 L’administrateur fonctionnel peut définir des scénarios de préservation en fonction des formats de départ, des formats cibles, des actions à mettre en œuvre et des outils à utiliser. Il peut également lister les outils (griffons) à installer et à référencer dans le référentiels des griffons. L’installation de ces outils est un acte d’administration technique.
 
-Vademecum liés : [La préservation dans la solution logicielle Vitam](./Vademecum_preservation), [Le référentiel des griffons dans la solution logicielle Vitam](./Vademecum_referentiel_griffons), [Le référentiel des scénarios de préservation dans la solution logicielle Vitam](./Vademecum_scenario_preservation)
+Vademecum liés : [La préservation dans la solution logicielle Vitam](./Vademecum_preservation.md), [Le référentiel des griffons dans la solution logicielle Vitam](./Vademecum_referentiel_griffons.md), [Le référentiel des scénarios de préservation dans la solution logicielle Vitam](./Vademecum_referentiel_preservation.md)
 
 Définition de stratégies d’identification pérenne (facultatif)
 ----
@@ -131,7 +131,7 @@ Dans le cas où les paramétrages correspondants sont activés, l’indexation p
 - pour chaque catégorie de règles, les règles applicables et les échéances maximales applicables ;
 - toutes les règles retournées en cas de demande d’accès à l’unité archivistique, avec notamment l’indication des unités archivistiques par lesquelles ces règles sont héritées.
 
-Vademecum liés : [Positionner des règles de gestion dans la solution logicielle Vitam](./Vademecum_reglesgestion_fonctionnement), [Le calcul des héritages des règles de gestion et l’indexation des échéances dans la solution logicielle Vitam](./Vademecum_echeances)
+Vademecum liés : [Positionner des règles de gestion dans la solution logicielle Vitam](./Vademecum_reglesgestion_fonctionnement.md), [Le calcul des héritages des règles de gestion et l’indexation des échéances dans la solution logicielle Vitam](./Vademecum_echeances.md)
 
 
 Définition des modalités de versement des archives (facultatif)
@@ -162,7 +162,7 @@ Une limite en termes de taille d’export peut également être définie, pour l
 
 Il est possible de modifier ces paramètres au moyen d’un acte d’exploitation.
 
-Vademecum lié : [Structuration de l’information](./Vademecum_structuration_information)
+Vademecum lié : [Structuration de l’information](./Vademecum_structuration_information.md)
 
 Personnalisation des rapports d’élimination (facultatif)
 ---

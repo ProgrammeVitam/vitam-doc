@@ -100,4 +100,4 @@ Avant toute opération de préservation, il est recommandé que :
 |Administrateur fonctionnel et technique|- teste l’opération de préservation sur un environnement de test ;<br>- en fonction du résultat des tests, modifie le scénario de préservation et/ou le griffon utilisé ;<br>- intègre le scénario de préservation validé en production|
 
 
-Pour en savoir plus, consulter le [document VITAM. Gestion de la préservation](./preservation).
+Pour en savoir plus, consulter le [document VITAM. Gestion de la préservation](./preservation.md).

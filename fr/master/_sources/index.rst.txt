@@ -62,12 +62,23 @@ Vademecum
    sections/Vademecum_habilitations.md
    sections/Vademecum_identifiants.md
    sections/Vademecum_journalisation.md
-   sections/Vademecum_ontologie.md   
+   sections/Vademecum_ontologie.md
+   sections/Vademecum_pa.md     
    sections/Vademecum_parametrages_pf.md
    sections/Vademecum_plan.md
    sections/Vademecum_preservation.md
+   sections/Vademecum_pua.md
+   sections/Vademecum_rattachement.md
+   sections/Vademecum_referentiel_formats.md
+   sections/Vademecum_referentiel_griffons.md
+   sections/Vademecum_referentiel_preservation.md
+   sections/Vademecum_referentiel_rg.md
+   sections/Vademecum_referentiel_sa.md  
    sections/Vademecum_registre_fonds.md
+   sections/Vademecum_reglesgestion_gonctionnement.md
+   sections/Vademecum_structuration_information.md
    sections/Vademecum_suivi_acces.md
+   sections/Vademecum_tenant.md
 
 Outils connexes
 ===============

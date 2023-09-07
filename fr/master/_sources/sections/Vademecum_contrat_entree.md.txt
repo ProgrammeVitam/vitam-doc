@@ -98,7 +98,7 @@ Cas d’usage : un service dispose dans la solution logicielle Vitam de son pla
 L’unité archivistique déclarée peut être de type « arbre de positionnement », « plan de classement » ou « standard ».
 Les rattachements effectués à l’entrée doivent respecter la structuration de l’information dans la solution logicielle Vitam, sinon le transfert sera rejeté.
 
-Pour en savoir plus, consulter le [vademecum Faire un rattachement dans la solution logicielle Vitam](./Vademecum_.md)
+Pour en savoir plus, consulter le [vademecum Faire un rattachement dans la solution logicielle Vitam](./Vademecum_rattachement.md)
 
 
 ### Paramétrage du calcul des héritages de règles et de l’indexation des échéances

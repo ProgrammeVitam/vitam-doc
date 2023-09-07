@@ -2,16 +2,16 @@ Le contrat de gestion dans la solution logicielle Vitam
 =======
 
 
-Le contrat de gestion permet de définir sur un tenant* une stratégie de stockage spécifique, voire de mettre en place une stratégie différenciée pour les unités archivistiques, les groupes d’objets techniques et les objets techniques (fichiers numériques), ainsi qu’une stratégie d’identification pérenne.
+Le contrat de gestion permet de définir sur un tenant une stratégie de stockage spécifique, voire de mettre en place une stratégie différenciée pour les unités archivistiques, les groupes d’objets techniques et les objets techniques (fichiers numériques), ainsi qu’une stratégie d’identification pérenne.
 
-Le contrat de gestion est déclaré dans un contrat d’entrée* et s’applique aux objets métiers entrés en déclarant ce contrat d’entrée.
+Le contrat de gestion est déclaré dans un contrat d’entrée et s’applique aux objets métiers entrés en déclarant ce contrat d’entrée.
 
 
 Présentation du contrat de gestion
 -----
 
 ### Périmètre du contrat de gestion
-Un contrat de gestion est propre au tenant* sur lequel il a été importé.
+Un contrat de gestion est propre au tenant sur lequel il a été importé.
 
 ### Paramétrage du contrat de gestion
 Un contrat de gestion permet de déclarer une stratégie de stockage spécifique.
@@ -50,7 +50,7 @@ Il est ainsi possible d’offrir une qualité de service différente en fonction
 
 L’administrateur fonctionnel doit ainsi définir ses besoins en termes de stockage (quelles offres de stockage utiliser ? combien d’offres ? de copies ? de stratégies de stockage ?) pour permettre, le cas échéant, à l’administrateur technique de configurer une à plusieurs stratégies de stockage.
 
-Pour en savoir plus sur la définition des stratégies de stockage, consulter le document Vitam. Gestion de multiples stratégies de stockage.
+Pour en savoir plus sur la définition des stratégies de stockage, consulter le [document VITAM. Gestion de multiples stratégies de stockage](./strategies_stockage.md).
 
 ### Constitution du contrat de gestion
 La création d’un contrat de gestion n’est pas obligatoire quand une seule stratégie de stockage est utilisée au sein de la solution logicielle Vitam.
@@ -63,7 +63,7 @@ La création de contrats de gestion peut intervenir à différents moments :
 - lors de l’intégration d’une nouvelle application requérant un stockage particulier, différent de la stratégie de stockage par défaut, et/ou une stratégie d’identification pérenne spécifique.
 
 ### Gestion de l’identifiant du contrat de gestion
-À l’installation de la plate-forme Vitam, l’administrateur technique peut configurer le tenant pour que les identifiants des contrats de gestion soient générés par Vitam (**mode « maître* »**) ou par le front-office (**mode « esclave* »**).
+À l’installation de la plate-forme Vitam, l’administrateur technique peut configurer le tenant pour que les identifiants des contrats de gestion soient générés par Vitam (**mode « maître »**) ou par le front-office (**mode « esclave »**).
 
 Le mode « esclave » permet à un service de conserver la main sur les identifiants des contrats d’entrée pour utiliser des identifiants normés au niveau de l’institution et/ou à un niveau national ou international.
 
@@ -123,4 +123,4 @@ En cas d’ajout d’une stratégie de stockage, la mise à jour sera en échec 
 Si le contrat de gestion à modifier est utilisé dans au moins un contrat d’entrée, il est recommandé de désactiver le ou les contrats d’entrée déclarant le contrat de gestion, le temps de procéder à la modification du contrat de gestion.
 
 
-Pour aller plus loin, consulter le [document VITAM. Gestion des habilitations](./gestion_habilitations).
+Pour aller plus loin, consulter le [document VITAM. Gestion des habilitations](./habilitations.md).

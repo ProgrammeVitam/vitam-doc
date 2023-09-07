@@ -139,7 +139,7 @@ La mise à jour du référentiel peut échouer pour les motifs suivants :
 
 Les opérations de modification des types d’indexation doivent obligatoirement être accompagnées d’un acte technique d’exploitation, afin que la nouvelle indexation soit effective et prise en compte par le moteur de recherche Elastic Search et que les données soient ré-indexées en base.
 La suppression d’un vocabulaire doit être accompagnée d’un acte d’exploitation technique visant à supprimer l’indexation du vocabulaire concerné dans le moteur de recherche Elastic Search, sans quoi le vocabulaire ne sera pas complètement supprimé de la solution logicielle Vitam.
-Pour plus d’information, consulter la documentation d’exploitation.
+Pour plus d’information, consulter la [documentation d’exploitation](http://www.programmevitam.fr/ressources/DocCourante/html/exploitation/).
 
 Les différentes versions de l’ontologie font l’objet d’une sauvegarde sur les offres de stockage utilisées par l’implémentation de la solution logicielle Vitam.
 

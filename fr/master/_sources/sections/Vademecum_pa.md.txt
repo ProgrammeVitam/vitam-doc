@@ -59,92 +59,49 @@ L’administrateur fonctionnel peut se baser sur les bordereaux spécifiques à 
 
 *Illustration avec le bordereau de versement par une association de ses dossiers d’assemblée générale*
 
-|[En tête du bordereau]<br>	Association XY<br>	Dossiers d’assemblée générale<br>  2005-2006||||||
-|:-----|:----|:-----|:------|
-[Numéro d’ordre]
-
-1
-
-
-
-
-2
-[Description]
-
-Dossier de l’assemblée générale : convocation, documents joints,
-compte-rendu
-
-Dossier de l’assemblée générale : convocation, documents joints, compte-rendu
-[Date de début]
-
-20/10/2005
-
-
-
-
-19/10/2006
-[Date de fin]
-
-29/11/2005
-
-
-
-
-28/11/2006
-[DUA]
-
-5 ans
-
-
-
-
-5 ans
-[Sort final]
-
-Conserver
-
-
-
-
-Conserver
+|[En tête du bordereau]|<br>	Association XY<br>	Dossiers d’assemblée générale<br>  2005-2006|||||
+|:-----|:----|:-----|:------|:------|:------|
+|[Numéro d’ordre]|[Description]|[Date de début]|[Date de fin]|[DUA]|[Sort final]|
+|1|Dossier de l’assemblée générale : convocation, documents joints,compte-rendu|20/10/2005|29/11/2005|5 ans|Conserver|
+|2|Dossier de l’assemblée générale : convocation, documents joints, compte-rendu|19/10/2006|28/11/2006|5 ans|Conserver|
 
 Le profil d’archivage va définir les éléments qui sont fixes (en gras) qui devront obligatoirement être présents et correspondre aux valeurs définies, ceux qui doivent être remplis par le producteur (en italique) en précisant les valeurs attendues (une date, une chaîne de caractères…). Le profil va également imposer qu’un dossier d’assemblée générale se compose systématiquement de trois unités archivistiques nommés « convocation », « documents joints » et « compte rendu ».
 
 Le profil d’archivage peut se combiner avec le profil d’unité archivistique. En ce cas, le profil d’archivage décrira la structure générale du bordereau et le profil d’unité archivistique précisera les champs et valeurs attendues pour les unités archivistiques (dossiers, pièces).
 
-Pour la formalisation des champs et leur type d’indexation, consulter la fiche L’ontologie dans la solution logicielle Vitam.
+Pour la formalisation des champs et leur type d’indexation, consulter le [vademecum L’ontologie dans la solution logicielle Vitam](./Vademecum_ontologie.md).
 
 
-Gestion des identifiants des profils d’archivage
+### Gestion des identifiants des profils d’archivage
 À l’installation de la plate-forme Vitam, l’administrateur technique peut configurer le tenant pour que les identifiants des profils d’archivage soient générés par Vitam (mode « maître ») ou par le front-office (mode « esclave »).
 Le mode esclave est intéressant si les profils d’archivage sont générés dans une autre application qui leur donne un identifiant que l’on souhaite pouvoir suivre.
 
 
-Formalisation du référentiel des profils d’archivage
+### Formalisation du référentiel des profils d’archivage
 Les profils d’archivage prennent la forme de fichiers au format XSD ou Relax NG (RNG) qui permettent de valider un fichier écrit en XML, comme le bordereau de transfert. Ils sont élaborés hors de la solution logicielle Vitam, par exemple avec les outils mis à disposition par le Service interministériel des archives de France (outil SHERPA).
 
 Le référentiel des profils d’archivage de la solution logicielle Vitam se compose de notices descriptives au format JSON auxquelles il est possible d’associer le profil d’archivage proprement dit au format XSD ou RNG.
 
 La notice descriptive est composée des éléments suivants :
 
-Éléments obligatoires
+**Éléments obligatoires**
 - identifiant unique donné à la notice, sauf s’il est généré automatiquement par le système
 - nom du profil d’archivage, qui doit être obligatoirement renseigné dans la solution logicielle Vitam
 - statut « Actif » ou « Inactif » ; par défaut, le statut est « Inactif »
       - format du profil d’archivage, obligatoire (Format). Il correspond au format du profil d’archivage associé à la notice, à savoir :
-        ◦ XSD si le profil d’archivage a été écrit en XSD,
-        ◦ RNG si le profil d’archivage a été généré conformément au langage Relax NG
-Éléments facultatifs
+            - XSD si le profil d’archivage a été écrit en XSD,
+            - RNG si le profil d’archivage a été généré conformément au langage Relax NG
+**Éléments facultatifs**
 - description du profil d’archivage
 - date d’activation
 - date de désactivation
 
-Pour plus d’informations, consulter le document Vitam. Modèle de données, chapitre « 5.12. Collection Profile ».
+Pour plus d’informations, consulter le [document VITAM. Modèle de données](./modele_de_donnees.md), chapitre « 5.12. Collection Profile ».
 
-      L’import des notices est une opération d’administration fonctionnelle.
-      Il est possible d’importer en une seule fois un référentiel complet, comprenant plusieurs notices décrivant chacune un profil d’archivage. La solution logicielle Vitam ne comptabilisera qu’une seule opération, et ne prendra pas en compte dans le journal des opérations la création unitaire des différents items compris dans le référentiel importé. Afin d’optimiser la traçabilité de la création des différentes notices, il est recommandé de créer ces dernières une par une.
+L’import des notices est une opération d’administration fonctionnelle.<br>
+Il est possible d’importer en une seule fois un référentiel complet, comprenant plusieurs notices décrivant chacune un profil d’archivage. La solution logicielle Vitam ne comptabilisera qu’une seule opération, et ne prendra pas en compte dans le journal des opérations la création unitaire des différents items compris dans le référentiel importé. Afin d’optimiser la traçabilité de la création des différentes notices, il est recommandé de créer ces dernières une par une.
       
-      L’import d’une notice ne suffit pas pour utiliser un profil d’archivage dans la solution logicielle Vitam. Il est nécessaire, après cette opération, d’importer le fichier .xsd ou .rng correspondant au profil d’archivage lui-même et de l’associer à la notice qui le référence, afin qu’il soit pris en compte dans la solution logicielle Vitam.
+L’import d’une notice ne suffit pas pour utiliser un profil d’archivage dans la solution logicielle Vitam. Il est nécessaire, après cette opération, d’importer le fichier .xsd ou .rng correspondant au profil d’archivage lui-même et de l’associer à la notice qui le référence, afin qu’il soit pris en compte dans la solution logicielle Vitam.
 
 À chaque notice descriptive, il n’est possible d’associer qu’un seul profil d’archivage qui doit être conforme au format déclaré dans la notice (XSD ou RNG).
 Si le profil d’archivage n’est pas conforme au format annoncé dans la notice, il n’est pas possible de l’importer dans la solution logicielle Vitam.
@@ -152,29 +109,29 @@ Si le profil d’archivage n’est pas conforme au format annoncé dans la notic
 L’import d’un profil d’archivage dans le référentiel des profils est un des prérequis indispensable pour pouvoir réaliser des contrôles entre un profil d’archivage et des bordereaux de transfert au moment de leur versement dans la solution logicielle Vitam.
 
 
-Activation/désactivation d’un profil d’archivage
+### Activation/désactivation d’un profil d’archivage
 Un profil d’archivage peut être importé avec un statut inactif ou être désactivé lors d’une mise à jour du profil. Pour pouvoir être utilisé pour effectuer des contrôles en entrée, un profil d’archivage doit avoir un statut « actif » dans le référentiel des profils d’archivage.
 
 Si le profil n’a pas un statut « actif », les transferts déclarant ce profil seront rejetés.
 
 
 Modification du référentiel des profils d’archivage
-
+---
 Les champs des notices décrivant les profils d’archivage peuvent être modifiés. Cette action provoque la création d’une nouvelle version de la notice modifiée. Elle fait l’objet d’une journalisation dans le journal des opérations.
 
 Les champs modifiables sont :
-    • le nom du profil d’archivage ;
-    • la description du profil d’archivage ;
-    • le statut « Actif » ou « Inactif » ;
-    • le chemin d’accès au profil d’archivage associé à la notice détaillée.
+- le nom du profil d’archivage ;
+- la description du profil d’archivage ;
+- le statut « Actif » ou « Inactif » ;
+- le chemin d’accès au profil d’archivage associé à la notice détaillée.
 
-      La solution logicielle Vitam permet de modifier le fichier au format XSD ou RNG correspondant au profil d’archivage. Néanmoins, cette action requiert des précautions d’usage, dans la mesure où le profil d’archivage peut être utilisé pour des transferts en cours. Avant de modifier un profil d’archivage dans une notice descriptive, il est recommandé de :
-            ▪ vérifier qu’aucun transfert nécessitant ce profil d’archivage n’est en cours ou programmé ;
-            ▪ désactiver la notice descriptive ;
-            ▪ modifier le profil d’archivage en téléchargeant un nouveau profil qui prend la forme :
-                • d’un fichier XSD si la notice déclare un format XSD,
-                • d’un fichier RNG si la notice déclare un format Relax NG ;
-            ▪ rétablir les services désactivés.
+La solution logicielle Vitam permet de modifier le fichier au format XSD ou RNG correspondant au profil d’archivage. Néanmoins, cette action requiert des précautions d’usage, dans la mesure où le profil d’archivage peut être utilisé pour des transferts en cours. Avant de modifier un profil d’archivage dans une notice descriptive, il est recommandé de :
+- vérifier qu’aucun transfert nécessitant ce profil d’archivage n’est en cours ou programmé ;
+- désactiver la notice descriptive ;
+- modifier le profil d’archivage en téléchargeant un nouveau profil qui prend la forme :
+      - d’un fichier XSD si la notice déclare un format XSD,
+      - d’un fichier RNG si la notice déclare un format Relax NG ;
+- rétablir les services désactivés.
 
 
-Pour en savoir plus, consulter le document Vitam. Profils d’archivage.
+Pour en savoir plus, consulter le [document VITAM. Profils d’archivage](./profil_archivage.md).

@@ -76,7 +76,7 @@ Si l’utilisateur applicatif doit réaliser des entrées, son contexte applicat
 
 De même, pour réaliser des accès, son contexte applicatif doit être associé à un ou plusieurs contrats d’accès.
 Les contrats d’entrée et d’accès permettent de paramétrer finement les droits des utilisateurs applicatifs : par exemple, une application externe qui a le droit de télécharger un objet pourra dans son contrat d’accès être limitée aux archives de certains producteurs et à certains usages des objets.
-Pour en savoir plus, consulter les fiches Le contrat d’entrée dans la solution logicielle Vitam et Le contrat d’accès dans la solution logicielle Vitam.
+Pour en savoir plus, consulter les vademecum [Le contrat d’entrée dans la solution logicielle Vitam](./Vademecum_contrat_entree.md) et [Le contrat d’accès dans la solution logicielle Vitam](./Vademecum_contrat_acces.md).
 
 
 Présentation des référentiels des habilitations
@@ -106,7 +106,7 @@ Configuration des habilitations
 ---
 La configuration des habilitations est une opération d’administration technique.
 Toutefois, l’administrateur fonctionnel intervient dans la définition des droits à accorder à chaque application en fonction de ses besoins d’interaction avec la plate-forme d’archivage.
-Pour en savoir plus sur la formalisation des habilitations, consulter le document Vitam. Modèle des données.
+Pour en savoir plus sur la formalisation des habilitations, consulter le [document VITAM. Modèle des données](./modele_de_donnees.md).
 
 
 ### Gestion d’une nouvelle application

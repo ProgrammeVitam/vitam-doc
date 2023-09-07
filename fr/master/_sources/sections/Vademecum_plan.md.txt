@@ -33,7 +33,7 @@ Les unités archivistiques de plan de classement peuvent déclarer des règles d
 
 Ces règles pourront être héritées par les unités de plan de classement ou les unités archivistiques standard qui leur seront rattachées.
 
-Pour en savoir plus sur l’héritage et le positionnement des règles de gestion, consulter les fiches Positionner des règles de gestion dans la solution logicielle Vitam et Réaliser des éliminations avec la solution logicielle Vitam.
+Pour en savoir plus sur l’héritage et le positionnement des règles de gestion, consulter les vademecum [Positionner des règles de gestion dans la solution logicielle Vitam](./Vademecum_reglesgestion_fonctionnement.md) et [Réaliser des éliminations avec la solution logicielle Vitam](./Vademecum_eliminations.md).
 
 
 
@@ -81,7 +81,7 @@ Rattachement et modification d’un plan de classement
 ----
 
 ### Rattachement à l’import
-Il est possible de rattacher un plan de classement à un arbre ou un plan existant déjà dans le système par déclaration dans le bordereau de versement ou par rattachement systématique déclaré dans le contrat d’entrée* à condition de respecter les règles de structuration de l’information dans la solution logicielle Vitam.
+Il est possible de rattacher un plan de classement à un arbre ou un plan existant déjà dans le système par déclaration dans le bordereau de versement ou par rattachement systématique déclaré dans le contrat d’entrée à condition de respecter les règles de structuration de l’information dans la solution logicielle Vitam.
 
 
 ### Modification d’une arborescence d’un plan de classement
@@ -94,4 +94,4 @@ La solution logicielle Vitam permet de modifier l’arborescence d’unités arc
 L’opération est journalisée dans le journal du cycle de vie de l’unité archivistique ayant été rattachée, déplacée ou modifiée.
 
 
-Pour aller plus loin, consulter le [document VITAM. Gestion des archives et des arborescences](./).
+Pour aller plus loin, consulter le [document VITAM. Gestion des archives et des arborescences](./gestion_archives_arbo.md).
