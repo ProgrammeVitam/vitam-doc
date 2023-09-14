@@ -27,6 +27,7 @@ Documentation métier
    sections/modele_de_workflow.md
    sections/module_de_collecte.md
    sections/ontologie.md
+   sections/preservation.md
    sections/profil_archivage
    sections/règles_gestion.md
    sections/services_prod.md
@@ -41,6 +42,14 @@ Documentation Vitam UI
 
    sections/VitamUI_Arbres_Plans.md
 
+Outils connexes
+===============
+
+.. toctree::
+   :caption: outils connexes
+   :numbered:
+
+   sections/resip.md
 
 Vademecum
 =======
@@ -79,15 +88,6 @@ Vademecum
    sections/Vademecum_structuration_information.md
    sections/Vademecum_suivi_acces.md
    sections/Vademecum_tenant.md
-
-Outils connexes
-===============
-
-.. toctree::
-   :caption: outils connexes
-   :numbered:
-
-   sections/resip.md
 
 Indices and tables
 ==================
