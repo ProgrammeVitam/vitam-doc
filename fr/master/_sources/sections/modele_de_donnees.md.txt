@@ -7137,7 +7137,7 @@ Par exemple : IC-007485. Si le référentiel est en position esclave, cet ident
 
         -   Cardinalité : 1-1
 
-    -   « NeedSignature » : option permettant de contrôler la présence d'une signature.
+    -   « DeclaredSignature » : option permettant de contrôler la présence d'une signature.
 
         -   Il s’agit d’un booléen.
 		
@@ -7145,7 +7145,7 @@ Par exemple : IC-007485. Si le référentiel est en position esclave, cet ident
 
         -   Cardinalité : 1-1
 		
-    -   « NeedTimestamp » : option permettant de contrôler la présence d'un horodatage.
+    -   « DeclaredTimestamp » : option permettant de contrôler la présence d'un horodatage.
 
         -   Il s’agit d’un booléen.
 		
@@ -7153,7 +7153,7 @@ Par exemple : IC-007485. Si le référentiel est en position esclave, cet ident
 
         -   Cardinalité : 1-1
 
--   « NeedAdditionalProof » : option permettant de contrôler la présence de preuves complémentaires.
+	-   « DeclaredAdditionalProof » : option permettant de contrôler la présence de preuves complémentaires.
 
         -   Il s’agit d’un booléen.
 		

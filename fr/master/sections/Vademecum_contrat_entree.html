@@ -54,14 +54,16 @@
 <li class="toctree-l1"><a class="reference internal" href="valeur_probante.html">1. Conservation de la valeur probante</a></li>
 <li class="toctree-l1"><a class="reference internal" href="eliminations.html">2. Les éliminations avec la solution logicielle Vitam</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gel.html">3. Le gel d’archives avec la solution logicielle Vitam</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modele_de_donnees.html">4. Modèle de données</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modele_de_workflow.html">5. Description des workflows et des opérations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="module_de_collecte.html">6. Module de collecte</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ontologie.html">7. Ontologie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="preservation.html">8. Gestion de la préservation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="profil_archivage.html">9. Profils d’archivage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="services_prod.html">10. Services producteurs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="transfert.html">11. Le transfert avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gestion_habilitations.html">4. Gestion des habilitations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_donnees.html">5. Modèle de données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_workflow.html">6. Description des workflows et des opérations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_de_collecte.html">7. Module de collecte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ontologie.html">8. Ontologie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preservation.html">9. Gestion de la préservation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_archivage.html">10. Profils d’archivage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regles_gestion.html">11. Règles de gestion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services_prod.html">12. Services producteurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transfert.html">13. Le transfert avec la solution logicielle Vitam</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">documentation Vitam UI</span></p>
 <ul>
@@ -100,6 +102,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#parametrage-du-calcul-des-heritages-de-regles-et-de-lindexation-des-echeances">7.1.6. Paramétrage du calcul des héritages de règles et de l’indexation des échéances</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#utilisation-dun-contrat-de-gestion-specifique">7.1.7. Utilisation d’un contrat de gestion spécifique</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#parametrage-sur-les-archives-signees-electroniquement">7.1.8. Paramétrage sur les archives signées électroniquement</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#configuration-du-contrat-dentree">7.2. Configuration du contrat d’entrée</a><ul>
@@ -337,6 +340,28 @@ Les rattachements effectués à l’entrée doivent respecter la structuration d
 <p>Si aucun contrat n’est renseigné, c’est la stratégie de stockage par défaut qui s’appliquera.</p>
 <p>Pour en savoir plus, consulter le <a class="reference internal" href="Vademecum_contrat_gestion.html"><span class="doc std std-doc">vademecum Le contrat de gestion dans la solution logicielle Vitam</span></a>.</p>
 </section>
+<section id="parametrage-sur-les-archives-signees-electroniquement">
+<h3><span class="section-number">7.1.8. </span>Paramétrage sur les archives signées électroniquement<a class="headerlink" href="#parametrage-sur-les-archives-signees-electroniquement" title="Lien permanent vers ce titre"></a></h3>
+<p>Le contrat d’entrée prévoit une option permettant d’autoriser ou non le transfert d’archives signées électroniquement, et de vérifier la présence de leurs pièces pièces annexes (jeton d’horodatage, signature, preuves complémentaires).</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="text-left head"><p>Option retenue dans le contrat d’entrée</p></th>
+<th class="text-left head"><p>Comportement à l’entrée</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Archives signées autorisées (valeur « MANDATORY »)</p></td>
+<td class="text-left"><p>Chaque unité d’archives devra nécessairement contenir des documents signés et, le cas échéant, devra ou non contenir une signature (rôle « DeclaredSignature »), un jeton d’horodatage (rôle « DeclaredTimestamp ») et/ou des preuves complémentaires (rôle « DeclaredAdditionnalProof »)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Archives signées obligatoires (valeur « MANDATORY »)</p></td>
+<td class="text-left"><p>Chaque unité d’archives seront autorisés à contenir des documents signés et, le cas échéant, devra ou non contenir une signature (rôle « DeclaredSignature »), un jeton d’horodatage (rôle « DeclaredTimestamp ») et/ou des preuves complémentaires (rôle « DeclaredAdditionnalProof »)</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Archives signées interdites (valeur par défaut « FORBIDDEN »)</p></td>
+<td class="text-left"><p>Les archives ne devront pas contenir d’archives signées électroniquement</p></td>
+</tr>
+</tbody>
+</table>
+</section>
 </section>
 <section id="configuration-du-contrat-dentree">
 <h2><span class="section-number">7.2. </span>Configuration du contrat d’entrée<a class="headerlink" href="#configuration-du-contrat-dentree" title="Lien permanent vers ce titre"></a></h2>
@@ -421,6 +446,7 @@ D’autres informations, facultatives, peuvent venir compléter ces informations
 <li><p>sélection d’usages autorisés pour l’ajout d’un objet technique à un groupe d’objets existant</p></li>
 <li><p>sélection de formats autorisés en entrée</p></li>
 <li><p>contrat de gestion applicable aux métadonnées et objets techniques</p></li>
+<li><p>contrôle sur les archives signées électroniquement.</p></li>
 </ul>
 </li>
 </ul>
@@ -500,22 +526,10 @@ Les champs « Identifiant », « Date de création », « Dernière modific
   </span>
   <div class="rst-other-versions">
     <dl>
-      <dt>Tags</dt>
-      <dd><a href="../../v6.rc.1/index.html">v6.rc.1</a></dd>
-    </dl>
-    <dl>
       <dt>Branches</dt>
       <dd><a href="Vademecum_contrat_entree.html">master</a></dd>
       <dd><a href="../../master_6.rc.x/index.html">master_6.rc.x</a></dd>
-      <dd><a href="../../v5.0/index.html">v5.0</a></dd>
-      <dd><a href="../../Update_of_MDD_for_6.rc_version/index.html">Update_of_MDD_for_6.rc_version</a></dd>
-      <dd><a href="../../master_5.x/index.html">master_5.x</a></dd>
-      <dd><a href="../../update_index/index.html">update_index</a></dd>
-      <dd><a href="../../update_of_workflow_model_for_6.rc_version/index.html">update_of_workflow_model_for_6.rc_version</a></dd>
-      <dd><a href="../../v6_modify_index/index.html">v6_modify_index</a></dd>
-      <dd><a href="../../v6_test_branche_Alice/index.html">v6_test_branche_Alice</a></dd>
       <dd><a href="../../v6_update_ontologie/index.html">v6_update_ontologie</a></dd>
-      <dd><a href="../../valeur_probante/index.html">valeur_probante</a></dd>
     </dl>
   </div>
 </div><script>

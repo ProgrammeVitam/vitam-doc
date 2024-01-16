@@ -125,6 +125,16 @@ Si aucun contrat n’est renseigné, c’est la stratégie de stockage par défa
 Pour en savoir plus, consulter le [vademecum Le contrat de gestion dans la solution logicielle Vitam](./Vademecum_contrat_gestion.md).
 
 
+### Paramétrage sur les archives signées électroniquement
+Le contrat d’entrée prévoit une option permettant d’autoriser ou non le transfert d'archives signées électroniquement, et de vérifier la présence de leurs pièces pièces annexes (jeton d'horodatage, signature, preuves complémentaires).
+
+|Option retenue dans le contrat d’entrée|Comportement à l’entrée|
+|:----|:---|
+|Archives signées autorisées (valeur « MANDATORY »)|Chaque unité d'archives devra nécessairement contenir des documents signés et, le cas échéant, devra ou non contenir une signature (rôle « DeclaredSignature »), un jeton d'horodatage (rôle « DeclaredTimestamp ») et/ou des preuves complémentaires (rôle « DeclaredAdditionnalProof »)|
+|Archives signées obligatoires (valeur « MANDATORY »)|Chaque unité d'archives seront autorisés à contenir des documents signés et, le cas échéant, devra ou non contenir une signature (rôle « DeclaredSignature »), un jeton d'horodatage (rôle « DeclaredTimestamp ») et/ou des preuves complémentaires (rôle « DeclaredAdditionnalProof »)|
+|Archives signées interdites (valeur par défaut « FORBIDDEN »)|Les archives ne devront pas contenir d'archives signées électroniquement|
+
+
 Configuration du contrat d’entrée
 ----
 
@@ -191,6 +201,7 @@ Le contrat d’entrée est composé des éléments suivants :
     - sélection d’usages autorisés pour l’ajout d’un objet technique à un groupe d’objets existant
     - sélection de formats autorisés en entrée
     - contrat de gestion applicable aux métadonnées et objets techniques
+	- contrôle sur les archives signées électroniquement.
 
 Pour plus d’informations, consulter le [document VITAM. Modèle de données](./modele_de_donnees.md).
 

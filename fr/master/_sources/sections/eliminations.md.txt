@@ -22,7 +22,7 @@ Ce document s’articule autour des axes suivants :
 - calcul des règles et détermination du caractère éliminable des unités archivistiques,
 - modalités d’une campagne d’évaluation du caractère éliminable des unités archivistiques (analyse),
 - modalités d’une campagne de mise en œuvre de l’élimination (action).
-Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 6 (mars 2023). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
+Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 7.0 (octobre 2023). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
 
 Détermination du caractère éliminable d’une unité archivistique avec la solution logicielle Vitam
 ----
@@ -62,6 +62,46 @@ Nota bene : cette propriété implicite est calculée à l’affichage des règ
 
 Réalisation d’une élimination avec la solution logicielle Vitam
 ---
+
+## Configuration de la plate-forme
+
+
+Au terme de la version 7.0, la solution logicielle Vitam permet de personnaliser les rapports produits à la suite d'une opération d'élimination.
+
+Cette configuration, optionnelle, est établie lors du paramétrage initial de la plate-forme par les administrateurs – fonctionnel pour la définition du besoin et technique1 pour la saisie réelle des informations – de chaque implémentation de la solution logicielle Vitam et définit, pour chaque tenant les informations complémentaires à faire apparaître dans les rapports, si elles sont présentes dans la base de données.
+Il est possible d'ajouter dans le rapport, pour chaque unité archivistique, les éléments suivant :
+- "#version" : version de l'unité archivistique,
+- "#unitups" : unité(s) archivistique(s) parente(s),
+- "#originating_agency" : service producteur,
+- "#approximate_creation_date": date de création de l'unité archivistique,
+- "#approximate_update_date" : date de dernière modification de l'unité archivistique,
+- "FilePlanPosition" : position(s) dans le plan de classement, 
+- "SystemId": identifiant(s) du système,
+- "OriginatingSystemId": identifiant(s) du système d'origine,
+- "ArchivalAgencyArchiveUnitIdentifier: identifiant(s) émanant du service d'archives,
+- "OriginatingAgencyArchiveUnitIdentifier: identifiant(s) du service producteur,
+- "TransferringAgencyArchiveUnitIdentifier: identifiant(s) du service responsable du transfert.
+
+Le fichier de configuration (vitam.conf) se présente comme suit (exemple fictif) :
+```
+eliminationReportExtraFields:
+ - tenant: 0
+   metadataFields: []
+ - tenant: 1
+   metadataFields: ["#approximate_creation_date", "approximate_update_date", "FilePlanPosition",]
+ - tenant: 2
+   metadataFields: ["OriginatingAgencyArchiveUnitIdentifier"]
+ - tenant: 4
+   metadataFields: []
+```
+
+Dans l’exemple ci-dessus :
+    • sur le tenant 0 :
+        ◦ aucune information complémentaire n'est attendue dans les rapports d'élimination;
+    • sur le tenant 1 :
+        ◦ le rapport d'élimination pourra contenir la date de création et de dernière modification, ainsi que la position dans le plan de classement de chaque unité archivistique;
+	• sur le tenant 4 :
+        ◦ le rapport d'élimination pourra contenir l'identifiant émanant du service producteur.	
 
 ### Lancement d’une campagne d’évaluation des éliminables (analyse)
 

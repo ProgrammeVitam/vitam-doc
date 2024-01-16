@@ -896,9 +896,12 @@ L’import du fichier zip incluant un fichier .csv et une arborescence bureautiq
 Lors de cette action, l’opération peut aboutir aux résultats suivants :
 
 | Statut | Motifs |
-| --- | --- |
+| --- | --- |
 | Succès | Action réalisée sans rencontrer de problèmes particuliers. |
-| Échec  | Le fichier .zip n’a pas été téléchargé pour cause de nom erroné ou de chemin introuvable ;La transaction n’existe pas ou est erronée ;<br>La transaction est clôturée. |
+| Échec  | Le fichier .zip n’a pas été téléchargé pour cause de nom erroné ou de chemin introuvable ; Le fichier .csv contient au moins une erreur ; La transaction n’existe pas ou est erronée ; La transaction est clôturée. |
+
+
+
 
 Cette action n’est pas journalisée dans le journal des opérations.
 
@@ -915,7 +918,7 @@ Cette action n’est pas journalisée dans le journal des opérations.
     -   il n'est pas au format CSV ;
     -   il ne contient pas de séparateurs de champs.
 
-    Si le fichier CSV est erroné, une erreur peut être renvoyée par l’API, le contenu du fichier CSV sera ignoré et seule l’arborescence bureautique sera téléchargée selon le comportement décrit dans la sous-section précédente.
+-    Si le fichier CSV est erroné, une erreur peut être renvoyée par l’API, le contenu du fichier CSV sera ignoré et seule l’arborescence bureautique sera téléchargée selon le comportement décrit dans la sous-section précédente.
 
 -   Aucun contrôle n’est effectué entre le nombre de répertoires et d’objets binaires présents dans l’arborescence bureautique et les éléments décrits dans le fichier .csv. Il est recommandé de veiller à ne pas ajouter de niveaux intermédiaires dans l’arborescence bureautique non référencés dans le fichier .csv, car ils seront automatiquement créés dans le module de collecte selon le comportement décrit dans la sous-section précédente.
 
@@ -1048,6 +1051,7 @@ Il est possible de :
 -   obtenir :
 
     -   une liste de résultats, incluant l’ensemble des métadonnées des unités archivistiques ou une sélection,
+    -   le nombre exact de résultats, s’il dépasse les 10 000 unités d’archives, au moyen d’un paramétrage de la plate-forme.
     -   un résultat par facettes (nombre d’occurrences pour une métadonnée donnée).
 
 ***Point d’attention :*** 
