@@ -12,6 +12,7 @@ Première approche
 
    sections/guide_lecture.md
    sections/presentation_programme.md
+   sections/guide_prise_en_main.md
 
 Documentation métier
 ====================
@@ -41,6 +42,7 @@ Documentation Vitam UI
    :caption: documentation Vitam UI
    :numbered:
 
+   sections/VitamUI_Autoprovisionning.md
    sections/VitamUI_Arbres_Plans.md
 
 Outils connexes

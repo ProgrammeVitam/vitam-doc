@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="fr" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>23. Le référentiel des scénarios de préservation dans la solution logicielle Vitam &mdash; Vitam documentation fonctionnelle</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
   
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/translations.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -48,6 +47,8 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="guide_lecture.html">1. Documentation Vitam - guide de lecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="presentation_programme.html">2. Présentation du programme Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_prise_en_main.html">3. Guide de prise en main de la solution logicielle Vitam – Vitam UI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_prise_en_main.html#realiser-une-premiere-entree">4. <em>Réaliser une première entrée</em></a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">documentation métier</span></p>
 <ul>
@@ -67,7 +68,8 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">documentation Vitam UI</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="VitamUI_Arbres_Plans.html">1. APP Arbres et plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Autoprovisionning.html">1. Vitam UI : présentation de la fonctionnalité d’auto-provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Arbres_Plans.html">2. APP Arbres et plans</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">outils connexes</span></p>
 <ul>
@@ -158,8 +160,8 @@
 
            <div itemprop="articleBody">
              
-  <section class="tex2jax_ignore mathjax_ignore" id="le-referentiel-des-scenarios-de-preservation-dans-la-solution-logicielle-vitam">
-<h1><span class="section-number">23. </span>Le référentiel des scénarios de préservation dans la solution logicielle Vitam<a class="headerlink" href="#le-referentiel-des-scenarios-de-preservation-dans-la-solution-logicielle-vitam" title="Lien permanent vers ce titre"></a></h1>
+  <section id="le-referentiel-des-scenarios-de-preservation-dans-la-solution-logicielle-vitam">
+<h1><span class="section-number">23. </span>Le référentiel des scénarios de préservation dans la solution logicielle Vitam<a class="headerlink" href="#le-referentiel-des-scenarios-de-preservation-dans-la-solution-logicielle-vitam" title="Lien permanent vers cette rubrique"></a></h1>
 <p>Un scénario de préservation décrit, pour une liste de formats donnée et un griffon donné, les actions de préservation à lancer.
 Le référentiel des scénarios de préservation a pour finalités de :</p>
 <ul class="simple">
@@ -168,13 +170,13 @@ Le référentiel des scénarios de préservation a pour finalités de :</p>
 <li><p>permettre l’utilisation des scénarios de préservation ainsi référencés dans une ou plusieurs opérations de préservation.</p></li>
 </ul>
 <section id="presentation-du-referentiel-des-scenarios-de-preservation">
-<h2><span class="section-number">23.1. </span>Présentation du référentiel des scénarios de préservation<a class="headerlink" href="#presentation-du-referentiel-des-scenarios-de-preservation" title="Lien permanent vers ce titre"></a></h2>
+<h2><span class="section-number">23.1. </span>Présentation du référentiel des scénarios de préservation<a class="headerlink" href="#presentation-du-referentiel-des-scenarios-de-preservation" title="Lien permanent vers cette rubrique"></a></h2>
 <section id="perimetre">
-<h3><span class="section-number">23.1.1. </span>Périmètre<a class="headerlink" href="#perimetre" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">23.1.1. </span>Périmètre<a class="headerlink" href="#perimetre" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Le référentiel des scénarios de préservation est propre au tenant sur lequel il a été importé.</p>
 </section>
 <section id="actions-couvertes-par-un-scenario-de-preservation">
-<h3><span class="section-number">23.1.2. </span>Actions couvertes par un scénario de préservation<a class="headerlink" href="#actions-couvertes-par-un-scenario-de-preservation" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">23.1.2. </span>Actions couvertes par un scénario de préservation<a class="headerlink" href="#actions-couvertes-par-un-scenario-de-preservation" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Quatre actions élémentaires de préservation peuvent être effectuées par un scénario de préservation :</p>
 <ul class="simple">
 <li><p>GENERATE : génération d’un nouvel objet, par exemple, conversion d’un format,</p></li>
@@ -185,7 +187,7 @@ Un scénario de préservation peut effectuer une ou plusieurs de ces actions él
 </ul>
 </section>
 <section id="parametrage-du-griffon-utilise">
-<h3><span class="section-number">23.1.3. </span>Paramétrage du griffon utilisé<a class="headerlink" href="#parametrage-du-griffon-utilise" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">23.1.3. </span>Paramétrage du griffon utilisé<a class="headerlink" href="#parametrage-du-griffon-utilise" title="Lien permanent vers cette rubrique"></a></h3>
 <p>À un scénario de préservation, un ou plusieurs griffons peuvent être associés.</p>
 <p>Le griffon déclaré dans le scénario de préservation doit impérativement figurer dans le référentiel des griffons.</p>
 <p>Pour chaque griffon, le scénario de préservation définit des arguments (des précisions sur l’action de préservation) et des conditions d’appel permettant ainsi d’affiner l’action de préservation et d’aller au-delà d’une simple conversion de format ou d’une simple validation de format.
@@ -195,12 +197,12 @@ Exemple :</p>
 <li><p>valider un format d’image ainsi que sa résolution conformément aux paramètres du scénario de préservation.</p></li>
 </ul>
 <section id="formats">
-<h4><span class="section-number">23.1.3.1. </span>Formats<a class="headerlink" href="#formats" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">23.1.3.1. </span>Formats<a class="headerlink" href="#formats" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Un griffon peut être utilisé pour tous les formats d’objets techniques (griffon par défaut ou « DefaultGriffin ») ou pour des formats spécifiques listés dans le scénario (griffon par format ou « GriffinByFormat »).</p>
 <p>Les formats déclarés dans le scénario de préservation doivent impérativement figurer dans le référentiel des formats.</p>
 </section>
 <section id="mecanismes-de-surveillance-du-fonctionnement-des-griffons">
-<h4><span class="section-number">23.1.3.2. </span>Mécanismes de surveillance du fonctionnement des griffons<a class="headerlink" href="#mecanismes-de-surveillance-du-fonctionnement-des-griffons" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">23.1.3.2. </span>Mécanismes de surveillance du fonctionnement des griffons<a class="headerlink" href="#mecanismes-de-surveillance-du-fonctionnement-des-griffons" title="Lien permanent vers cette rubrique"></a></h4>
 <ul class="simple">
 <li><p>Délai de traitement maximal défini pour le griffon : sans réponse du griffon dans ce délai, l’opération de préservation sera en échec.</p></li>
 <li><p>Taille maximale pour la génération des objets numériques attendue : si le griffon génère un objet de taille supérieure à cette limite, l’opération de préservation sera en échec.</p></li>
@@ -208,7 +210,7 @@ Exemple :</p>
 </ul>
 </section>
 <section id="commande-a-executer">
-<h4><span class="section-number">23.1.3.3. </span>Commande à exécuter<a class="headerlink" href="#commande-a-executer" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">23.1.3.3. </span>Commande à exécuter<a class="headerlink" href="#commande-a-executer" title="Lien permanent vers cette rubrique"></a></h4>
 <ul class="simple">
 <li><p>Type d’action à exécuter : une des quatre actions élémentaires de préservation.</p></li>
 <li><p>Valeurs précisant les commandes passées par le scénario de préservation :</p>
@@ -222,21 +224,21 @@ Exemple :</p>
 </section>
 </section>
 <section id="controles-effectues">
-<h3><span class="section-number">23.1.4. </span>Contrôles effectués<a class="headerlink" href="#controles-effectues" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">23.1.4. </span>Contrôles effectués<a class="headerlink" href="#controles-effectues" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Lors du lancement d’une opération de préservation, la solution logicielle Vitam vérifie que le scénario de préservation déclaré figure bien dans le référentiel des scénarios de préservation.</p>
 </section>
 </section>
 <section id="configurer-un-referentiel-des-scenarios-de-preservation">
-<h2><span class="section-number">23.2. </span>Configurer un référentiel des scénarios de préservation<a class="headerlink" href="#configurer-un-referentiel-des-scenarios-de-preservation" title="Lien permanent vers ce titre"></a></h2>
+<h2><span class="section-number">23.2. </span>Configurer un référentiel des scénarios de préservation<a class="headerlink" href="#configurer-un-referentiel-des-scenarios-de-preservation" title="Lien permanent vers cette rubrique"></a></h2>
 <section id="constitution-du-referentiel-des-scenarios-de-preservation">
-<h3><span class="section-number">23.2.1. </span>Constitution du référentiel des scénarios de préservation<a class="headerlink" href="#constitution-du-referentiel-des-scenarios-de-preservation" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">23.2.1. </span>Constitution du référentiel des scénarios de préservation<a class="headerlink" href="#constitution-du-referentiel-des-scenarios-de-preservation" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Créer un scénario de préservation est un pré-requis obligatoire pour lancer une opération de préservation.<br>
 Pour cela, il convient de réfléchir aux actions de préservation que l’on souhaite réaliser et de mener des tests préalables afin de tester les outils à utiliser, de les valider et de valider les résultats de l’action de préservation.<br></p>
 <p>De fait, afin de créer un scénario de préservation, il est recommandé que :</p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Qui ?</p></th>
-<th class="text-left head"><p>Quoi ?</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Qui ?</p></th>
+<th class="head text-left"><p>Quoi ?</p></th>
 </tr>
 </thead>
 <tbody>
@@ -282,15 +284,15 @@ Cette deuxième solution permet d’effectuer des opérations de préservation p
 Cette troisième solution, modulaire, permet de disposer de scénarios génériques, portant sur l’ensemble des formats supportés dans la solution logicielle Vitam, en vue de réaliser une opération de préservation en particulier (ex : générer des GIF, grâce à plusieurs griffons et sur une liste exhaustive de formats). Mais elle permet également d’effectuer des actions plus ciblées et de répondre à des besoins plus circonscrits (ex : valider des fichiers PDF).</p>
 </section>
 <section id="transposition-dun-referentiel-existant">
-<h3><span class="section-number">23.2.2. </span>Transposition d’un référentiel existant<a class="headerlink" href="#transposition-dun-referentiel-existant" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">23.2.2. </span>Transposition d’un référentiel existant<a class="headerlink" href="#transposition-dun-referentiel-existant" title="Lien permanent vers cette rubrique"></a></h3>
 <p>La préservation numérique étant un domaine relativement récent pour les archivistes, il n’existe actuellement que rarement des outils métier qui pourraient être transposés pour élaborer le référentiel des scénarios de préservation.</p>
 </section>
 <section id="gestion-des-identifiants-des-scenarios-de-preservation">
-<h3><span class="section-number">23.2.3. </span>Gestion des identifiants des scénarios de préservation<a class="headerlink" href="#gestion-des-identifiants-des-scenarios-de-preservation" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">23.2.3. </span>Gestion des identifiants des scénarios de préservation<a class="headerlink" href="#gestion-des-identifiants-des-scenarios-de-preservation" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Le référentiel des scénarios de préservation fonctionne en mode « esclave ». Les identifiants des scénarios de préservation sont gérés dans un outil externe.</p>
 </section>
 <section id="formalisation-du-referentiel">
-<h3><span class="section-number">23.2.4. </span>Formalisation du référentiel<a class="headerlink" href="#formalisation-du-referentiel" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">23.2.4. </span>Formalisation du référentiel<a class="headerlink" href="#formalisation-du-referentiel" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Le référentiel des scénarios de préservation est importé dans la solution logicielle Vitam sous la forme d’un fichier JSON contenant l’ensemble des scénarios de préservation.
 Un scénario de préservation comporte obligatoirement les informations suivantes :</p>
 <ul class="simple">
@@ -304,9 +306,9 @@ Une description (Description), ainsi qu’une action et un griffon à exécuter 
 </section>
 </section>
 <section id="modification-du-referentiel-des-scenarios-de-preservation">
-<h2><span class="section-number">23.3. </span>Modification du référentiel des scénarios de préservation<a class="headerlink" href="#modification-du-referentiel-des-scenarios-de-preservation" title="Lien permanent vers ce titre"></a></h2>
+<h2><span class="section-number">23.3. </span>Modification du référentiel des scénarios de préservation<a class="headerlink" href="#modification-du-referentiel-des-scenarios-de-preservation" title="Lien permanent vers cette rubrique"></a></h2>
 <section id="suppression-dun-scenario-de-preservation">
-<h3><span class="section-number">23.3.1. </span>Suppression d’un scénario de préservation<a class="headerlink" href="#suppression-dun-scenario-de-preservation" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">23.3.1. </span>Suppression d’un scénario de préservation<a class="headerlink" href="#suppression-dun-scenario-de-preservation" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Si on ne souhaite plus utiliser un scénario de préservation, il faut l’ôter du référentiel des scénarios de préservation et ainsi il ne pourra plus être utilisé dans une opération de préservation.
 Les raisons pouvant amener à supprimer un scénario sont les suivantes :</p>
 <ul class="simple">
@@ -318,7 +320,7 @@ Les raisons pouvant amener à supprimer un scénario sont les suivantes :</p>
 <p>Avant de supprimer tout scénario de préservation, il est recommandé de vérifier qu’il n’est pas utilisé dans le cadre d’une opération de préservation en cours de réalisation.</p>
 </section>
 <section id="mise-a-jour-du-referentiel">
-<h3><span class="section-number">23.3.2. </span>Mise à jour du référentiel<a class="headerlink" href="#mise-a-jour-du-referentiel" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">23.3.2. </span>Mise à jour du référentiel<a class="headerlink" href="#mise-a-jour-du-referentiel" title="Lien permanent vers cette rubrique"></a></h3>
 <p>La mise à jour du référentiel des scénarios de préservation s’effectue par un réimport du fichier JSON, en mode « annule et remplace ». Il est donc possible :</p>
 <ul class="simple">
 <li><p>d’ajouter un nouveau scénario ;</p></li>

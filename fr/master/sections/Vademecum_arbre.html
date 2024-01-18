@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="fr" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>3. L’arbre de positionnement dans la solution logicielle Vitam &mdash; Vitam documentation fonctionnelle</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
   
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/translations.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -48,6 +47,8 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="guide_lecture.html">1. Documentation Vitam - guide de lecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="presentation_programme.html">2. Présentation du programme Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_prise_en_main.html">3. Guide de prise en main de la solution logicielle Vitam – Vitam UI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_prise_en_main.html#realiser-une-premiere-entree">4. <em>Réaliser une première entrée</em></a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">documentation métier</span></p>
 <ul>
@@ -67,7 +68,8 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">documentation Vitam UI</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="VitamUI_Arbres_Plans.html">1. APP Arbres et plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Autoprovisionning.html">1. Vitam UI : présentation de la fonctionnalité d’auto-provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Arbres_Plans.html">2. APP Arbres et plans</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">outils connexes</span></p>
 <ul>
@@ -153,17 +155,17 @@
 
            <div itemprop="articleBody">
              
-  <section class="tex2jax_ignore mathjax_ignore" id="larbre-de-positionnement-dans-la-solution-logicielle-vitam">
-<h1><span class="section-number">3. </span>L’arbre de positionnement dans la solution logicielle Vitam<a class="headerlink" href="#larbre-de-positionnement-dans-la-solution-logicielle-vitam" title="Lien permanent vers ce titre"></a></h1>
+  <section id="larbre-de-positionnement-dans-la-solution-logicielle-vitam">
+<h1><span class="section-number">3. </span>L’arbre de positionnement dans la solution logicielle Vitam<a class="headerlink" href="#larbre-de-positionnement-dans-la-solution-logicielle-vitam" title="Lien permanent vers cette rubrique"></a></h1>
 <p>Un service d’archives peut avoir besoin d’organiser les fonds d’archives placés sous sa responsabilité, quel qu’en soit le producteur, afin de faciliter la recherche et la navigation dans ceux-ci. L’arbre de positionnement est, dans la solution logicielle Vitam, l’outil pour réaliser cette organisation des fonds. Il permettra à un service d’archives et à ses utilisateurs de rechercher un fonds d’archives et de le positionner dans une organisation plus globale.</p>
 <section id="presentation-de-larbre-de-positionnement">
-<h2><span class="section-number">3.1. </span>Présentation de l’arbre de positionnement<a class="headerlink" href="#presentation-de-larbre-de-positionnement" title="Lien permanent vers ce titre"></a></h2>
+<h2><span class="section-number">3.1. </span>Présentation de l’arbre de positionnement<a class="headerlink" href="#presentation-de-larbre-de-positionnement" title="Lien permanent vers cette rubrique"></a></h2>
 <section id="perimetre-de-larbre-de-positionnement">
-<h3><span class="section-number">3.1.1. </span>Périmètre de l’arbre de positionnement<a class="headerlink" href="#perimetre-de-larbre-de-positionnement" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">3.1.1. </span>Périmètre de l’arbre de positionnement<a class="headerlink" href="#perimetre-de-larbre-de-positionnement" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Un arbre de positionnement est propre au tenant sur lequel il a été importé.</p>
 </section>
 <section id="controles-effectues-a-partir-de-larbre-de-positionnement">
-<h3><span class="section-number">3.1.2. </span>Contrôles effectués à partir de l’arbre de positionnement<a class="headerlink" href="#controles-effectues-a-partir-de-larbre-de-positionnement" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">3.1.2. </span>Contrôles effectués à partir de l’arbre de positionnement<a class="headerlink" href="#controles-effectues-a-partir-de-larbre-de-positionnement" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Il est possible d’utiliser l’arbre de positionnement :</p>
 <ul class="simple">
 <li><p>en entrée, pour rattacher/classer systématiquement des archives transférées dans la solution logicielle Vitam dans l’organisation globale des fonds d’archives sous la responsabilité du service d’archives. Cette opération peut être systématique, en paramétrant pour cela le contrat d’entrée, ou spécifique, via une déclaration dans le bordereau de transfert ;</p></li>
@@ -173,7 +175,7 @@ Dans un contrat d’accès, les nœuds de l’arbre de positionnement pourront �
 </ul>
 </section>
 <section id="articulation-des-arbres-de-positionnement-des-plans-de-classement-et-des-sip">
-<h3><span class="section-number">3.1.3. </span>Articulation des arbres de positionnement, des plans de classement et des SIP<a class="headerlink" href="#articulation-des-arbres-de-positionnement-des-plans-de-classement-et-des-sip" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">3.1.3. </span>Articulation des arbres de positionnement, des plans de classement et des SIP<a class="headerlink" href="#articulation-des-arbres-de-positionnement-des-plans-de-classement-et-des-sip" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Les arbres de positionnement, les plans de classement et les SIP constituent tous les trois des moyens d’organiser les archives sous la responsabilité d’un service d’archives. Ils se présentent tous les trois sous la forme d’arborescences d’unités archivistiques. Ils sont cependant traités de manière différente dans la solution logicielle Vitam. Les unités d’arbres de positionnement présentent les caractéristiques suivantes :</p>
 <ul class="simple">
 <li><p>elles ne peuvent être rattachées qu’à d’autres unités d’arbres ;</p></li>
@@ -183,9 +185,9 @@ Dans un contrat d’accès, les nœuds de l’arbre de positionnement pourront �
 </section>
 </section>
 <section id="configuration-de-larbre-de-positionnement">
-<h2><span class="section-number">3.2. </span>Configuration de l’arbre de positionnement<a class="headerlink" href="#configuration-de-larbre-de-positionnement" title="Lien permanent vers ce titre"></a></h2>
+<h2><span class="section-number">3.2. </span>Configuration de l’arbre de positionnement<a class="headerlink" href="#configuration-de-larbre-de-positionnement" title="Lien permanent vers cette rubrique"></a></h2>
 <section id="pourquoi-constituer-un-arbre-de-positionnement">
-<h3><span class="section-number">3.2.1. </span>Pourquoi constituer un arbre de positionnement ?<a class="headerlink" href="#pourquoi-constituer-un-arbre-de-positionnement" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">3.2.1. </span>Pourquoi constituer un arbre de positionnement ?<a class="headerlink" href="#pourquoi-constituer-un-arbre-de-positionnement" title="Lien permanent vers cette rubrique"></a></h3>
 <p>L’utilisation d’un arbre de positionnement n’est pas obligatoire. Il est tout à fait possible de verser des SIP en les plaçant tous au même niveau « racine » dans la solution logicielle Vitam.
 Cependant, l’utilisation d’un arbre de positionnement permettra de :</p>
 <ul class="simple">
@@ -194,7 +196,7 @@ Cependant, l’utilisation d’un arbre de positionnement permettra de :</p>
 </ul>
 </section>
 <section id="comment-structurer-un-arbre-de-positionnement">
-<h3><span class="section-number">3.2.2. </span>Comment structurer un arbre de positionnement ?<a class="headerlink" href="#comment-structurer-un-arbre-de-positionnement" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">3.2.2. </span>Comment structurer un arbre de positionnement ?<a class="headerlink" href="#comment-structurer-un-arbre-de-positionnement" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Un arbre de positionnement peut être organisé :</p>
 <ul class="simple">
 <li><p>en fonction du statut juridique (archives publiques/archives privées) ;</p></li>
@@ -207,20 +209,20 @@ Par exemple, les Archives nationales ont mis en place un arbre de positionnement
 </ul>
 </section>
 <section id="quelle-profondeur-pour-un-arbre-de-positionnement">
-<h3><span class="section-number">3.2.3. </span>Quelle profondeur pour un arbre de positionnement ?<a class="headerlink" href="#quelle-profondeur-pour-un-arbre-de-positionnement" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">3.2.3. </span>Quelle profondeur pour un arbre de positionnement ?<a class="headerlink" href="#quelle-profondeur-pour-un-arbre-de-positionnement" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Un arbre de positionnement n’a pas nécessairement besoin d’avoir une grande profondeur pour faciliter la navigation dans les archives.
 Par exemple, pour un service d’archives départementales, un arbre de positionnement pourrait ne définir que quelques branches : archives de l’État, archives du conseil départemental, archives communales, archives notariales, archives privées, pour fournir une orientation générale dans les fonds. Si le besoin en est ressenti, un deuxième niveau pourrait être ajouté pour distinguer dans les archives de l’État celles de la préfecture, celles des services déconcentrés…</p>
 <p>Avant de commencer à réaliser des transferts, il est fortement recommandé de travailler sur l’organisation des archives transférées au sein de la solution logicielle Vitam. Une fois en production, des modifications ponctuelles d’arborescence (rattachement et détachement d’une unité archivistique) seront possibles, mais il s’agit potentiellement d’opérations lourdes car ayant un impact sur toute la descendance de l’unité archivistique.</p>
 </section>
 <section id="transposition-doutils-existants">
-<h3><span class="section-number">3.2.4. </span>Transposition d’outils existants<a class="headerlink" href="#transposition-doutils-existants" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">3.2.4. </span>Transposition d’outils existants<a class="headerlink" href="#transposition-doutils-existants" title="Lien permanent vers cette rubrique"></a></h3>
 <p>La notion d’arbre de positionnement s’apparente à celle de cadre de classement existant aux Archives nationales ou dans les services d’archives départementaux ou communaux.</p>
 <p>Toutefois, un arbre de positionnement peut être utilisé pour décrire la structure des fonds d’un service en dehors de toute référence à un cadre de classement normatif.</p>
 <p>Pour élaborer son arbre de positionnement, l’administrateur fonctionnel pourra donc s’appuyer sur diverses documentations métier existantes : cadre de classement, guide des fonds, présentation des archives…
 Dans certains cas, des services d’archives disposant d’un « plan de classement » alimenté par les versements des services producteurs auront tout intérêt à traduire cette structure dans la solution logicielle Vitam au moyen d’un arbre de positionnement, dès lors que cette structuration est plus thématique qu’organique et qu’il n’est pas nécessaire d’associer à ces unités archivistiques des services producteurs et des règles de gestion (cf. <a class="reference internal" href="Vademecum_reglesgestion_fonctionnement.html"><span class="doc std std-doc">vademecum Positionner des règles de gestion dans la solution logicielle Vitam</span></a>).</p>
 </section>
 <section id="formalisation-de-larbre-de-positionnement">
-<h3><span class="section-number">3.2.5. </span>Formalisation de l’arbre de positionnement<a class="headerlink" href="#formalisation-de-larbre-de-positionnement" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">3.2.5. </span>Formalisation de l’arbre de positionnement<a class="headerlink" href="#formalisation-de-larbre-de-positionnement" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Les arbres de positionnement sont importés dans la solution logicielle Vitam sous la forme de SIP contenant un bordereau de transfert, mais sans aucun objet associé. L’arbre de positionnement ne peut pas contenir de règle de gestion ni de service producteur associé à l’entrée ou aux unités archivistiques.</p>
 <p>La description des unités archivistiques de type arbre de positionnement comprend :</p>
 <ul class="simple">
@@ -234,13 +236,13 @@ Dans certains cas, des services d’archives disposant d’un « plan de classe
 </section>
 </section>
 <section id="rattachement-et-modification-dun-arbre-de-positionnement">
-<h2><span class="section-number">3.3. </span>Rattachement et modification d’un arbre de positionnement<a class="headerlink" href="#rattachement-et-modification-dun-arbre-de-positionnement" title="Lien permanent vers ce titre"></a></h2>
+<h2><span class="section-number">3.3. </span>Rattachement et modification d’un arbre de positionnement<a class="headerlink" href="#rattachement-et-modification-dun-arbre-de-positionnement" title="Lien permanent vers cette rubrique"></a></h2>
 <section id="rattachement-a-limport">
-<h3><span class="section-number">3.3.1. </span>Rattachement à l’import<a class="headerlink" href="#rattachement-a-limport" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">3.3.1. </span>Rattachement à l’import<a class="headerlink" href="#rattachement-a-limport" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Il est possible de rattacher un arbre de positionnement à un arbre existant déjà dans le système par déclaration dans le bordereau de versement ou par rattachement systématique déclaré dans le contrat d’entrée à condition de respecter les règles de structuration de l’information dans la solution logicielle Vitam.</p>
 </section>
 <section id="modification-de-larbre-de-positionnement">
-<h3><span class="section-number">3.3.2. </span>Modification de l’arbre de positionnement<a class="headerlink" href="#modification-de-larbre-de-positionnement" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">3.3.2. </span>Modification de l’arbre de positionnement<a class="headerlink" href="#modification-de-larbre-de-positionnement" title="Lien permanent vers cette rubrique"></a></h3>
 <p>La solution logicielle Vitam permet également de modifier l’arborescence d’unités archivistiques d’arbre de positionnement déjà entrées dans le système. Il est possible de :</p>
 <ul class="simple">
 <li><p>modifier les intitulés des unités archivistiques d’arbre (modification unitaire ou en masse) ;</p></li>

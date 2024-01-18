@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="fr" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>9. Gestion de la préservation &mdash; Vitam documentation fonctionnelle</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
   
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/translations.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -48,6 +47,8 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="guide_lecture.html">1. Documentation Vitam - guide de lecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="presentation_programme.html">2. Présentation du programme Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_prise_en_main.html">3. Guide de prise en main de la solution logicielle Vitam – Vitam UI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_prise_en_main.html#realiser-une-premiere-entree">4. <em>Réaliser une première entrée</em></a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">documentation métier</span></p>
 <ul class="current">
@@ -361,7 +362,8 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">documentation Vitam UI</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="VitamUI_Arbres_Plans.html">1. APP Arbres et plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Autoprovisionning.html">1. Vitam UI : présentation de la fonctionnalité d’auto-provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Arbres_Plans.html">2. APP Arbres et plans</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">outils connexes</span></p>
 <ul>
@@ -426,15 +428,15 @@
 
            <div itemprop="articleBody">
              
-  <section class="tex2jax_ignore mathjax_ignore" id="gestion-de-la-preservation">
-<h1><span class="section-number">9. </span>Gestion de la préservation<a class="headerlink" href="#gestion-de-la-preservation" title="Lien permanent vers ce titre"></a></h1>
+  <section id="gestion-de-la-preservation">
+<h1><span class="section-number">9. </span>Gestion de la préservation<a class="headerlink" href="#gestion-de-la-preservation" title="Lien permanent vers cette rubrique"></a></h1>
 <section id="documents-de-reference">
-<h2><span class="section-number">9.1. </span>Documents de référence<a class="headerlink" href="#documents-de-reference" title="Lien permanent vers ce titre"></a></h2>
-<table class="colwidths-auto docutils align-default">
+<h2><span class="section-number">9.1. </span>Documents de référence<a class="headerlink" href="#documents-de-reference" title="Lien permanent vers cette rubrique"></a></h2>
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p><strong>Document</strong></p></th>
-<th class="text-center head"><p><strong>Date de la version</strong></p></th>
-<th class="text-left head"><p><strong>Remarques</strong></p></th>
+<tr class="row-odd"><th class="head text-left"><p><strong>Document</strong></p></th>
+<th class="head text-center"><p><strong>Date de la version</strong></p></th>
+<th class="head text-left"><p><strong>Remarques</strong></p></th>
 </tr>
 </thead>
 <tbody>
@@ -470,10 +472,10 @@
 </table>
 </section>
 <section id="resume">
-<h2><span class="section-number">9.2. </span>Résumé<a class="headerlink" href="#resume" title="Lien permanent vers ce titre"></a></h2>
+<h2><span class="section-number">9.2. </span>Résumé<a class="headerlink" href="#resume" title="Lien permanent vers cette rubrique"></a></h2>
 <p>Jusqu’à présent, pour la gestion, la conservation, la préservation et la consultation des archives numériques, les acteurs du secteur public étatique ont utilisé des techniques d’archivage classiques, adaptées aux volumes limités dont la prise en charge leur était proposée. Cette situation évolue désormais rapidement et les acteurs du secteur public étatique se sont organisés pour être en capacité de traiter les volumes croissants d’archives numériques qui doivent être archivés, grâce à un saut technologique.</p>
 <section id="presentation-de-la-problematique">
-<h3><span class="section-number">9.2.1. </span>Présentation de la problématique<a class="headerlink" href="#presentation-de-la-problematique" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">9.2.1. </span>Présentation de la problématique<a class="headerlink" href="#presentation-de-la-problematique" title="Lien permanent vers cette rubrique"></a></h3>
 <p>La préservation numérique consiste en un ensemble de processus visant à maintenir un accès aux fichiers numériques sur le très long terme. Elle implique d’assurer un moyen de représenter ces fichiers dans le temps, de vérifier leur disponibilité et leur intégrité dans la solution logicielle Vitam.
 Les processus, permettant de garantir qu’un fichier numérique est en mesure de traverser le temps durant tout son cycle de vie tout en préservant son intégrité, sont les suivants :</p>
 <ul class="simple">
@@ -502,7 +504,7 @@ Pour répondre à cette problématique et à cet objectif, la solution logiciell
 </ul>
 </section>
 <section id="presentation-du-document">
-<h3><span class="section-number">9.2.2. </span>Présentation du document<a class="headerlink" href="#presentation-du-document" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">9.2.2. </span>Présentation du document<a class="headerlink" href="#presentation-du-document" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Le document présente les fonctionnalités associées à la gestion et à la réalisation d’opérations de préservation numérique dans la solution logicielle Vitam.
 Il s’articule autour des axes suivants :</p>
 <ul class="simple">
@@ -515,7 +517,7 @@ Le présent document décrit les fonctionnalités qui sont offertes par la deuxi
 </section>
 </section>
 <section id="administration-de-la-preservation-numerique">
-<h2><span class="section-number">9.3. </span>Administration de la préservation numérique<a class="headerlink" href="#administration-de-la-preservation-numerique" title="Lien permanent vers ce titre"></a></h2>
+<h2><span class="section-number">9.3. </span>Administration de la préservation numérique<a class="headerlink" href="#administration-de-la-preservation-numerique" title="Lien permanent vers cette rubrique"></a></h2>
 <p>La solution logicielle Vitam s’appuie sur trois référentiels pour administrer, gérer et paramétrer les actions de préservation numérique :</p>
 <ul class="simple">
 <li><p>le référentiel des formats,</p></li>
@@ -523,9 +525,9 @@ Le présent document décrit les fonctionnalités qui sont offertes par la deuxi
 <li><p>le référentiel des scénarios de préservation.</p></li>
 </ul>
 <section id="referentiel-des-formats">
-<h3><span class="section-number">9.3.1. </span>Référentiel des formats<a class="headerlink" href="#referentiel-des-formats" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">9.3.1. </span>Référentiel des formats<a class="headerlink" href="#referentiel-des-formats" title="Lien permanent vers cette rubrique"></a></h3>
 <section id="definition">
-<h4><span class="section-number">9.3.1.1. </span>Définition<a class="headerlink" href="#definition" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">9.3.1.1. </span>Définition<a class="headerlink" href="#definition" title="Lien permanent vers cette rubrique"></a></h4>
 <p>La préservation numérique implique d’effectuer des traitements sur des fichiers numériques en s’appuyant sur une identification fiable de ces derniers. Cette identification est assurée, référencée, harmonisée et normalisée au moyen d’un référentiel des formats, unique dans le système.<br>
 Par nature, un référentiel des formats identifie un ensemble de formats, en leur associant les informations nécessaires à leur identification, et fournit les moyens de contrôler les objets binaires conservés dans la solution logicielle Vitam.<br>
 La solution logicielle Vitam utilise comme référentiel des formats le registre PRONOM, développé en mars 2002 par The National Archives (UK) pour faciliter l’accès et la préservation sur le long terme aux archives numériques qu’elle conservait. Il s’agit de la principale ressource disponible en ligne sur les formats de fichiers connus ainsi que sur les produits logiciels capables de les créer et de les lire – y compris leur cycle de vie et leurs spécifications techniques. Mis en ligne à partir de février 2004, ce registre continue de s’enrichir et contient en septembre 2018 plus de 2000 entrées.<br>
@@ -561,9 +563,9 @@ La solution logicielle Vitam intègre une version simplifiée du registre PRONOM
 </ul>
 </section>
 <section id="formalisation">
-<h4><span class="section-number">9.3.1.2. </span>Formalisation<a class="headerlink" href="#formalisation" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">9.3.1.2. </span>Formalisation<a class="headerlink" href="#formalisation" title="Lien permanent vers cette rubrique"></a></h4>
 <section id="dans-le-registre-pronom">
-<h5><span class="section-number">9.3.1.2.1. </span>Dans le registre PRONOM<a class="headerlink" href="#dans-le-registre-pronom" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.3.1.2.1. </span>Dans le registre PRONOM<a class="headerlink" href="#dans-le-registre-pronom" title="Lien permanent vers cette rubrique"></a></h5>
 <p>La version simplifiée du registre PRONOM que la solution logicielle Vitam utilise prend la forme d’un fichier XML, appelé « fichier de signatures » (ou « DROID_SignatureFile_VXX.xml »), publié par The National Archives (UK).<br>
 Pour un format donné, ce fichier :</p>
 <ul class="simple">
@@ -599,10 +601,10 @@ Caractéristiques du format dont le PUID est x-fmt/17 :</p></li>
 <li><p>signatures internes, que la solution logicielle Vitam n’enregistre pas dans son référentiel interne, mais prises en compte par les outils d’identification tels que Siegfried ou Droid pour réaliser leurs opérations d’identification.</p></li>
 </ul>
 <p>Les éléments XML du fichier de signatures sont modélisés comme suit :</p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Champ</p></th>
-<th class="text-left head"><p>Description</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Champ</p></th>
+<th class="head text-left"><p>Description</p></th>
 </tr>
 </thead>
 <tbody>
@@ -654,7 +656,7 @@ Caractéristiques du format dont le PUID est x-fmt/17 :</p></li>
 </ul>
 </section>
 <section id="dans-la-solution-logicielle-vitam">
-<h5><span class="section-number">9.3.1.2.2. </span>Dans la solution logicielle Vitam<a class="headerlink" href="#dans-la-solution-logicielle-vitam" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.3.1.2.2. </span>Dans la solution logicielle Vitam<a class="headerlink" href="#dans-la-solution-logicielle-vitam" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Les formats sont enregistrés dans la base de données MongoDB, dans la collection « FileFormat », sous la forme d’enregistrements au format JSON.
 Enregistrement du format dont le PUID est x-fmt/111 :</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
@@ -678,10 +680,10 @@ Enregistrement du format dont le PUID est x-fmt/111 :</p>
 </pre></div>
 </div>
 <p>Ils sont modélisés comme suit[^6] :</p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Champ</p></th>
-<th class="text-left head"><p>Description</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Champ</p></th>
+<th class="head text-left"><p>Description</p></th>
 </tr>
 </thead>
 <tbody>
@@ -732,11 +734,11 @@ Enregistrement du format dont le PUID est x-fmt/111 :</p>
 </section>
 </section>
 <section id="mecanismes-mis-en-oeuvre-dans-la-solution-logicielle-vitam">
-<h4><span class="section-number">9.3.1.3. </span>Mécanismes mis en œuvre dans la solution logicielle Vitam<a class="headerlink" href="#mecanismes-mis-en-oeuvre-dans-la-solution-logicielle-vitam" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">9.3.1.3. </span>Mécanismes mis en œuvre dans la solution logicielle Vitam<a class="headerlink" href="#mecanismes-mis-en-oeuvre-dans-la-solution-logicielle-vitam" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Le référentiel des formats intégré dans la solution logicielle Vitam est administrable par un utilisateur doté des droits adéquats (administrateur fonctionnel et technique).<br>
 Ce référentiel est multi-tenant. Il est administrable et journalisé depuis le tenant d’administration.</p>
 <section id="import">
-<h5><span class="section-number">9.3.1.3.1. </span>Import<a class="headerlink" href="#import" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.3.1.3.1. </span>Import<a class="headerlink" href="#import" title="Lien permanent vers cette rubrique"></a></h5>
 <p>La solution logicielle Vitam intègre un référentiel des formats, automatiquement importé lors de l’initialisation de la plate-forme. Sa version doit être :</p>
 <ul class="simple">
 <li><p>identique à la version du registre PRONOM importée dans l’outil d’identification de formats utilisé par la plate-forme (Siegfried actuellement) ;</p></li>
@@ -746,7 +748,7 @@ L’import du référentiel constitue une opération d’administration (« MAS
 </ul>
 </section>
 <section id="re-import-et-mise-a-jour">
-<h5><span class="section-number">9.3.1.3.2. </span>Ré-import et mise à jour<a class="headerlink" href="#re-import-et-mise-a-jour" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.3.1.3.2. </span>Ré-import et mise à jour<a class="headerlink" href="#re-import-et-mise-a-jour" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Le fichier de signatures est régulièrement mis à jour par The National Archives (UK). Il est disponible à cette adresse : http://www.nationalarchives.gov.uk/aboutapps/pronom/droid-signature-files.htm.
 La modification du référentiel des formats est possible au moyen des API et de l’IHM standard fournie avec la solution logicielle Vitam et s’effectue par un réimport du fichier de signatures, en mode « annule et remplace », depuis le tenant d’administration. De fait, la solution logicielle Vitam permet de :</p>
 <ul class="simple">
@@ -771,10 +773,10 @@ Elle provoque la création d’une nouvelle version du référentiel. Les diffé
 Sauf quelques cas d’erreur, elle fait l’objet d’une journalisation dans le journal des opérations du tenant d’administration (opération d’administration de type « MASTERDATA »).<br>
 Lors de ce ré-import ou de cette mise à jour, l’opération peut aboutir aux statuts suivants :</p></li>
 </ul>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Statut</p></th>
-<th class="text-left head"><p>Motifs</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Statut</p></th>
+<th class="head text-left"><p>Motifs</p></th>
 </tr>
 </thead>
 <tbody>
@@ -816,10 +818,10 @@ Lors de ce ré-import ou de cette mise à jour, l’opération peut aboutir aux 
 </section>
 </section>
 <section id="conseils-de-mise-en-oeuvre">
-<h4><span class="section-number">9.3.1.4. </span>Conseils de mise en œuvre<a class="headerlink" href="#conseils-de-mise-en-oeuvre" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">9.3.1.4. </span>Conseils de mise en œuvre<a class="headerlink" href="#conseils-de-mise-en-oeuvre" title="Lien permanent vers cette rubrique"></a></h4>
 <p>À l’issue de cette phase de réalisation de fonctionnalités concernant le référentiel des formats, l’équipe projet Vitam est en mesure de fournir plusieurs recommandations de mise en œuvre.</p>
 <section id="a-quoi-sert-le-referentiel-des-formats">
-<h5><span class="section-number">9.3.1.4.1. </span>À quoi sert le référentiel des formats ?<a class="headerlink" href="#a-quoi-sert-le-referentiel-des-formats" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.3.1.4.1. </span>À quoi sert le référentiel des formats ?<a class="headerlink" href="#a-quoi-sert-le-referentiel-des-formats" title="Lien permanent vers cette rubrique"></a></h5>
 <p>L’objectif du référentiel est de :</p>
 <ul class="simple">
 <li><p>connaître l’ensemble des formats pouvant être gérés et conservés par la solution logicielle Vitam ;</p></li>
@@ -840,7 +842,7 @@ Il a également pour vocation d’être utilisé par la solution logicielle Vita
 </ul>
 </section>
 <section id="quand-et-comment-creer-un-referentiel-des-formats">
-<h5><span class="section-number">9.3.1.4.2. </span>Quand et comment créer un référentiel des formats ?<a class="headerlink" href="#quand-et-comment-creer-un-referentiel-des-formats" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.3.1.4.2. </span>Quand et comment créer un référentiel des formats ?<a class="headerlink" href="#quand-et-comment-creer-un-referentiel-des-formats" title="Lien permanent vers cette rubrique"></a></h5>
 <p>La création d’un référentiel des formats est un préalable au transfert d’objets binaires dans la solution logicielle Vitam. C’est pourquoi, lors de l’installation de la solution logicielle Vitam, un référentiel est initialisé par défaut. Sa version est compatible avec celle du référentiel importé dans l’outil d’identification de formats (Siegfried à ce jour). Un administrateur fonctionnel n’a pas besoin, a priori, d’importer un référentiel des formats. Il s’agit d’un acte d’exploitation technique.
 <strong>Points d’attention :</strong></p>
 <ul class="simple">
@@ -849,7 +851,7 @@ Il a également pour vocation d’être utilisé par la solution logicielle Vita
 </ul>
 </section>
 <section id="quand-et-comment-re-importer-et-mettre-a-jour-le-referentiel-des-formats">
-<h5><span class="section-number">9.3.1.4.3. </span>Quand et comment ré-importer et mettre à jour le référentiel des formats ?<a class="headerlink" href="#quand-et-comment-re-importer-et-mettre-a-jour-le-referentiel-des-formats" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.3.1.4.3. </span>Quand et comment ré-importer et mettre à jour le référentiel des formats ?<a class="headerlink" href="#quand-et-comment-re-importer-et-mettre-a-jour-le-referentiel-des-formats" title="Lien permanent vers cette rubrique"></a></h5>
 <p>The National Archives (UK) produit mensuellement une nouvelle version du fichier de signatures. Cette nouvelle version est alors publiée sur le site de l’institution, sauf dans deux cas :</p>
 <ul class="simple">
 <li><p>aucune signature n’a été ajoutée dans le fichier de signatures ;</p></li>
@@ -883,13 +885,13 @@ De fait, il n’est pas obligatoire de monter de version du fichier de signature
 </ul>
 </section>
 <section id="comment-proceder-lors-dune-mise-a-jour-du-referentiel-des-formats">
-<h5><span class="section-number">9.3.1.4.4. </span>Comment procéder lors d’une mise à jour du référentiel des formats ?<a class="headerlink" href="#comment-proceder-lors-dune-mise-a-jour-du-referentiel-des-formats" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.3.1.4.4. </span>Comment procéder lors d’une mise à jour du référentiel des formats ?<a class="headerlink" href="#comment-proceder-lors-dune-mise-a-jour-du-referentiel-des-formats" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Pour mettre à jour le référentiel des formats, il est recommandé de suivre les étapes suivantes :</p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p>Qui ?</p></th>
-<th class="text-left head"><p>Quoi ?</p></th>
-<th class="text-center head"><p>Via l’IHM démo Vitam ?</p></th>
+<tr class="row-odd"><th class="head text-center"><p>Qui ?</p></th>
+<th class="head text-left"><p>Quoi ?</p></th>
+<th class="head text-center"><p>Via l’IHM démo Vitam ?</p></th>
 </tr>
 </thead>
 <tbody>
@@ -917,12 +919,12 @@ De fait, il n’est pas obligatoire de monter de version du fichier de signature
 </table>
 </section>
 <section id="comment-utiliser-le-referentiel-des-formats">
-<h5><span class="section-number">9.3.1.4.5. </span>Comment utiliser le référentiel des formats ?<a class="headerlink" href="#comment-utiliser-le-referentiel-des-formats" title="Lien permanent vers ce titre"></a></h5>
-<table class="colwidths-auto docutils align-default">
+<h5><span class="section-number">9.3.1.4.5. </span>Comment utiliser le référentiel des formats ?<a class="headerlink" href="#comment-utiliser-le-referentiel-des-formats" title="Lien permanent vers cette rubrique"></a></h5>
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Intitulé</p></th>
-<th class="text-left head"><p>Description</p></th>
-<th class="text-center head"><p>Niveau de recommandation</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Intitulé</p></th>
+<th class="head text-left"><p>Description</p></th>
+<th class="head text-center"><p>Niveau de recommandation</p></th>
 </tr>
 </thead>
 <tbody>
@@ -960,9 +962,9 @@ De fait, il n’est pas obligatoire de monter de version du fichier de signature
 </section>
 </section>
 <section id="outils-de-preservation-griffons">
-<h3><span class="section-number">9.3.2. </span>Outils de préservation (griffons)<a class="headerlink" href="#outils-de-preservation-griffons" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">9.3.2. </span>Outils de préservation (griffons)<a class="headerlink" href="#outils-de-preservation-griffons" title="Lien permanent vers cette rubrique"></a></h3>
 <section id="id1">
-<h4><span class="section-number">9.3.2.1. </span>Définition<a class="headerlink" href="#id1" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">9.3.2.1. </span>Définition<a class="headerlink" href="#id1" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Les outils de préservation, appelés griffons au sein de la solution logicielle Vitam, sont des outils logiciels permettant d’effectuer des traitements sur les objets binaires en fonction de leur format.<br>
 Ces traitements peuvent être de différentes natures :</p>
 <ul class="simple">
@@ -988,9 +990,9 @@ La solution logicielle Vitam implémente nativement plusieurs griffons[^15] :</
 </ul>
 </section>
 <section id="id2">
-<h4><span class="section-number">9.3.2.2. </span>Formalisation<a class="headerlink" href="#id2" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">9.3.2.2. </span>Formalisation<a class="headerlink" href="#id2" title="Lien permanent vers cette rubrique"></a></h4>
 <section id="dans-un-fichier-json">
-<h5><span class="section-number">9.3.2.2.1. </span>Dans un fichier JSON<a class="headerlink" href="#dans-un-fichier-json" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.3.2.2.1. </span>Dans un fichier JSON<a class="headerlink" href="#dans-un-fichier-json" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Un référentiel des griffons liste l’ensemble des griffons pouvant être utilisés par la solution logicielle Vitam. Ce référentiel est importé sous la forme d’un fichier JSON, contenant systématiquement l’ensemble des griffons utilisés[^16].</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;Identifier&quot;</span><span class="p">:</span> <span class="s2">&quot;GRI-000001&quot;</span><span class="p">,</span>
@@ -1011,13 +1013,13 @@ Une description (Description) et une date de création (CreationDate), facultati
 <p><strong>Point d’attention :</strong> L’identifiant ne doit comprendre ni caractère accentué, ni virgule, ni apostrophe, ni parenthèse, ni espace, ni slash, ni élément de ponctuation, ou tout autre caractère spécial. Ne sont autorisés que l’underscore et le tiret comme séparateurs.</p>
 </section>
 <section id="id3">
-<h5><span class="section-number">9.3.2.2.2. </span>Dans la solution logicielle Vitam<a class="headerlink" href="#id3" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.3.2.2.2. </span>Dans la solution logicielle Vitam<a class="headerlink" href="#id3" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Les griffons sont enregistrés dans la base de données MongoDB, dans la collection « Griffin », sous la forme d’enregistrements au format JSON.
 Chaque enregistrement est modélisé comme suit[^17] :</p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Champ</p></th>
-<th class="text-left head"><p>Description</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Champ</p></th>
+<th class="head text-left"><p>Description</p></th>
 </tr>
 </thead>
 <tbody>
@@ -1056,18 +1058,18 @@ Chaque enregistrement est modélisé comme suit[^17] :</p>
 </section>
 </section>
 <section id="id4">
-<h4><span class="section-number">9.3.2.3. </span>Mécanismes mis en œuvre dans la solution logicielle Vitam<a class="headerlink" href="#id4" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">9.3.2.3. </span>Mécanismes mis en œuvre dans la solution logicielle Vitam<a class="headerlink" href="#id4" title="Lien permanent vers cette rubrique"></a></h4>
 <section id="implementation-des-griffons">
-<h5><span class="section-number">9.3.2.3.1. </span>Implémentation des griffons<a class="headerlink" href="#implementation-des-griffons" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.3.2.3.1. </span>Implémentation des griffons<a class="headerlink" href="#implementation-des-griffons" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Un griffon est avant tout un outil logiciel existant sur le marché, customisé et paramétré pour être interfacé, utilisé avec la solution logicielle Vitam et identifié dans le référentiel des griffons. Au moyen d’une interface fichier simple, ce griffon prend un lot d’objets binaires de formats donnés à traiter ainsi que les arguments spécifiant comment les traiter et fournit un résultat au regard de ces éléments.<br>
 Un griffon peut effectuer plusieurs actions de préservation, en fonction de ses capacités et du paramétrage choisi. Les griffons peuvent être programmés facilement, sans connaissance approfondie de la solution logicielle Vitam, dans n’importe quel langage informatique.<br>
 À ce stade, les griffons développés par l’équipe Vitam sont tous dans un environnement Linux[^18], à l’exception de l’un d’entre eux dont l’environnement Windows a été émulé sous Linux[^19].</p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Griffon</p></th>
-<th class="text-left head"><p>Langage de programmation</p></th>
-<th class="text-left head"><p>Environnement</p></th>
-<th class="text-left head"><p>Commentaires</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Griffon</p></th>
+<th class="head text-left"><p>Langage de programmation</p></th>
+<th class="head text-left"><p>Environnement</p></th>
+<th class="head text-left"><p>Commentaires</p></th>
 </tr>
 </thead>
 <tbody>
@@ -1131,16 +1133,16 @@ L’installation et l’exploitation des griffons constituent un acte d’admini
 </ul>
 </section>
 <section id="gestion-du-referentiel-des-griffons">
-<h5><span class="section-number">9.3.2.3.2. </span>Gestion du référentiel des griffons<a class="headerlink" href="#gestion-du-referentiel-des-griffons" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.3.2.3.2. </span>Gestion du référentiel des griffons<a class="headerlink" href="#gestion-du-referentiel-des-griffons" title="Lien permanent vers cette rubrique"></a></h5>
 <p>L’ensemble des griffons implémentés et supportés par la solution logicielle Vitam doivent être référencés dans le référentiel des griffons.<br>
 Ce référentiel est multi-tenant. Il est administrable et journalisé depuis le tenant d’administration.</p>
 <section id="id5">
-<h6><span class="section-number">9.3.2.3.2.1. </span>Import<a class="headerlink" href="#id5" title="Lien permanent vers ce titre"></a></h6>
+<h6><span class="section-number">9.3.2.3.2.1. </span>Import<a class="headerlink" href="#id5" title="Lien permanent vers cette rubrique"></a></h6>
 <p>Dans la solution logicielle Vitam, il est possible d’importer un référentiel des griffons, fonctionnant en mode « esclave ».<br>
 Il s’agit d’une opération d’administration (« MASTERDATA »), tracée dans le journal des opérations de la solution logicielle Vitam sur le tenant d’administration[^22].</p>
 </section>
 <section id="id6">
-<h6><span class="section-number">9.3.2.3.2.2. </span>Ré-import et mise à jour<a class="headerlink" href="#id6" title="Lien permanent vers ce titre"></a></h6>
+<h6><span class="section-number">9.3.2.3.2.2. </span>Ré-import et mise à jour<a class="headerlink" href="#id6" title="Lien permanent vers cette rubrique"></a></h6>
 <p>La modification du référentiel des griffons s’effectue par un réimport du fichier au format JSON, en mode « annule et remplace », depuis le tenant d’administration. De fait, la solution logicielle Vitam permet de :</p>
 <ul class="simple">
 <li><p>ajouter un nouveau griffon ;</p></li>
@@ -1150,10 +1152,10 @@ Cette action provoque la création d’une nouvelle version du référentiel. Le
 Elle fait l’objet d’une journalisation dans le journal des opérations du tenant d’administration (opération d’administration de type « MASTERDATA »)[^23].<br></p></li>
 </ul>
 <p>Lors de ce ré-import ou de cette mise à jour, l’opération peut aboutir aux statuts suivants :</p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Statut</p></th>
-<th class="text-left head"><p>Motifs</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Statut</p></th>
+<th class="head text-left"><p>Motifs</p></th>
 </tr>
 </thead>
 <tbody>
@@ -1175,10 +1177,10 @@ Elle fait l’objet d’une journalisation dans le journal des opérations du te
 </section>
 </section>
 <section id="id7">
-<h4><span class="section-number">9.3.2.4. </span>Conseils de mise en œuvre<a class="headerlink" href="#id7" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">9.3.2.4. </span>Conseils de mise en œuvre<a class="headerlink" href="#id7" title="Lien permanent vers cette rubrique"></a></h4>
 <p>À l’issue de cette phase de réalisation de fonctionnalités concernant le référentiel des griffons, l’équipe projet Vitam est en mesure de fournir quelques recommandations de mise en œuvre.</p>
 <section id="a-quoi-sert-le-referentiel-des-griffons">
-<h5><span class="section-number">9.3.2.4.1. </span>À quoi sert le référentiel des griffons ?<a class="headerlink" href="#a-quoi-sert-le-referentiel-des-griffons" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.3.2.4.1. </span>À quoi sert le référentiel des griffons ?<a class="headerlink" href="#a-quoi-sert-le-referentiel-des-griffons" title="Lien permanent vers cette rubrique"></a></h5>
 <p>L’objectif du référentiel est de :</p>
 <ul class="simple">
 <li><p>connaître l’ensemble des griffons installés, gérés et utilisables dans la solution logicielle Vitam ;</p></li>
@@ -1186,9 +1188,9 @@ Elle fait l’objet d’une journalisation dans le journal des opérations du te
 </ul>
 </section>
 <section id="quand-et-comment-creer-un-referentiel-des-griffons">
-<h5><span class="section-number">9.3.2.4.2. </span>Quand et comment créer un référentiel des griffons ?<a class="headerlink" href="#quand-et-comment-creer-un-referentiel-des-griffons" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.3.2.4.2. </span>Quand et comment créer un référentiel des griffons ?<a class="headerlink" href="#quand-et-comment-creer-un-referentiel-des-griffons" title="Lien permanent vers cette rubrique"></a></h5>
 <section id="au-moment-de-linstallation-de-la-solution-logicielle-vitam">
-<h6><span class="section-number">9.3.2.4.2.1. </span>Au moment de l’installation de la solution logicielle Vitam<a class="headerlink" href="#au-moment-de-linstallation-de-la-solution-logicielle-vitam" title="Lien permanent vers ce titre"></a></h6>
+<h6><span class="section-number">9.3.2.4.2.1. </span>Au moment de l’installation de la solution logicielle Vitam<a class="headerlink" href="#au-moment-de-linstallation-de-la-solution-logicielle-vitam" title="Lien permanent vers cette rubrique"></a></h6>
 <p>La solution logicielle Vitam permet, au moyen d’un paramétrage technique, d’installer un certain nombre de griffons, au moment de l’installation de la plate-forme[^25]. Elle met, en effet, à disposition les griffons suivants[^26] :</p>
 <ul class="simple">
 <li><p>ImageMagick ;</p></li>
@@ -1210,11 +1212,11 @@ Elle fait l’objet d’une journalisation dans le journal des opérations du te
 </ul>
 <p>Cette opération relève d’un acte technique. Elle doit être suivie de la déclaration du griffon installé dans le référentiel des griffons, afin que le griffon puisse être utilisé lors d’une opération de préservation.<br>
 De fait, au moment de l’initialisation de la plate-forme, il est recommandé de suivre les étapes suivantes :</p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Qui ?</p></th>
-<th class="text-left head"><p>Quoi ?</p></th>
-<th class="text-left head"><p>Via l’IHM démo Vitam ?</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Qui ?</p></th>
+<th class="head text-left"><p>Quoi ?</p></th>
+<th class="head text-left"><p>Via l’IHM démo Vitam ?</p></th>
 </tr>
 </thead>
 <tbody>
@@ -1234,14 +1236,14 @@ De fait, au moment de l’initialisation de la plate-forme, il est recommandé d
 </table>
 </section>
 <section id="apres-installation-de-la-solution-logicielle-vitam">
-<h6><span class="section-number">9.3.2.4.2.2. </span>Après installation de la solution logicielle Vitam<a class="headerlink" href="#apres-installation-de-la-solution-logicielle-vitam" title="Lien permanent vers ce titre"></a></h6>
+<h6><span class="section-number">9.3.2.4.2.2. </span>Après installation de la solution logicielle Vitam<a class="headerlink" href="#apres-installation-de-la-solution-logicielle-vitam" title="Lien permanent vers cette rubrique"></a></h6>
 <p>Tout paramétrage d’une opération de préservation passant par l’administration des scénarios de préservation nécessite l’installation préalable d’au moins un griffon dans la solution logicielle Vitam et sa déclaration dans le référentiel des griffons.<br>
 De fait, avant toute opération de préservation, il est recommandé de suivre les étapes suivantes :</p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Qui ?</p></th>
-<th class="text-left head"><p>Quoi ?</p></th>
-<th class="text-left head"><p>Via l’IHM démo Vitam ?</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Qui ?</p></th>
+<th class="head text-left"><p>Quoi ?</p></th>
+<th class="head text-left"><p>Via l’IHM démo Vitam ?</p></th>
 </tr>
 </thead>
 <tbody>
@@ -1266,7 +1268,7 @@ De fait, avant toute opération de préservation, il est recommandé de suivre l
 </section>
 </section>
 <section id="comment-nommer-un-executable">
-<h5><span class="section-number">9.3.2.4.3. </span>Comment nommer un exécutable ?<a class="headerlink" href="#comment-nommer-un-executable" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.3.2.4.3. </span>Comment nommer un exécutable ?<a class="headerlink" href="#comment-nommer-un-executable" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Chaque griffon définit un nom technique faisant référence à l’outil exécutable par la solution logicielle Vitam (champ « ExecutableName »).<br>
 Afin que l’outil soit exécuté :</p>
 <ul class="simple">
@@ -1277,7 +1279,7 @@ jhove-griffin</p></li>
 </ul>
 </section>
 <section id="quand-et-comment-re-importer-et-mettre-a-jour-le-referentiel-des-griffons">
-<h5><span class="section-number">9.3.2.4.4. </span>Quand et comment ré-importer et mettre à jour le référentiel des griffons ?<a class="headerlink" href="#quand-et-comment-re-importer-et-mettre-a-jour-le-referentiel-des-griffons" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.3.2.4.4. </span>Quand et comment ré-importer et mettre à jour le référentiel des griffons ?<a class="headerlink" href="#quand-et-comment-re-importer-et-mettre-a-jour-le-referentiel-des-griffons" title="Lien permanent vers cette rubrique"></a></h5>
 <p>La mise à jour du référentiel des griffons s’avère nécessaire pour répondre aux besoins suivants :</p>
 <ul class="simple">
 <li><p>mise à jour des informations relatives à un ou plusieurs griffons (ex : modification de la description) ;</p></li>
@@ -1293,13 +1295,13 @@ jhove-griffin</p></li>
 </ul>
 </section>
 <section id="comment-proceder-lors-dune-mise-a-jour-du-referentiel-des-griffons">
-<h5><span class="section-number">9.3.2.4.5. </span>Comment procéder lors d’une mise à jour du référentiel des griffons ?<a class="headerlink" href="#comment-proceder-lors-dune-mise-a-jour-du-referentiel-des-griffons" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.3.2.4.5. </span>Comment procéder lors d’une mise à jour du référentiel des griffons ?<a class="headerlink" href="#comment-proceder-lors-dune-mise-a-jour-du-referentiel-des-griffons" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Pour mettre à jour le référentiel des griffons, il est recommandé de suivre les étapes suivantes :</p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Qui ?</p></th>
-<th class="text-left head"><p>Quoi ?</p></th>
-<th class="text-left head"><p>Via l’IHM démo Vitam ?</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Qui ?</p></th>
+<th class="head text-left"><p>Quoi ?</p></th>
+<th class="head text-left"><p>Via l’IHM démo Vitam ?</p></th>
 </tr>
 </thead>
 <tbody>
@@ -1319,7 +1321,7 @@ jhove-griffin</p></li>
 </table>
 </section>
 <section id="quand-et-comment-supprimer-un-griffon">
-<h5><span class="section-number">9.3.2.4.6. </span>Quand et comment supprimer un griffon ?<a class="headerlink" href="#quand-et-comment-supprimer-un-griffon" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.3.2.4.6. </span>Quand et comment supprimer un griffon ?<a class="headerlink" href="#quand-et-comment-supprimer-un-griffon" title="Lien permanent vers cette rubrique"></a></h5>
 <p>La solution logicielle Vitam ne permet pas de désinstaller un griffon, au sens technique du terme. Si on souhaite ne plus utiliser un griffon, il faut l’ôter du référentiel des griffons. Ainsi, il ne peut plus être utilisé dans un scénario de préservation.<br>
 Les raisons pouvant amener à supprimer un griffon sont les suivantes :</p>
 <ul class="simple">
@@ -1330,12 +1332,12 @@ Les raisons pouvant amener à supprimer un griffon sont les suivantes :</p>
 <p><strong>Point d’attention :</strong> quand on supprime un griffon, il est recommandé de vérifier s’il est utilisé par un ou plusieurs scénario(s) de préservation et de modifier au préalable ces derniers avant de procéder à la suppression du griffon.</p>
 </section>
 <section id="comment-utiliser-le-referentiel-des-griffons">
-<h5><span class="section-number">9.3.2.4.7. </span>Comment utiliser le référentiel des griffons ?<a class="headerlink" href="#comment-utiliser-le-referentiel-des-griffons" title="Lien permanent vers ce titre"></a></h5>
-<table class="colwidths-auto docutils align-default">
+<h5><span class="section-number">9.3.2.4.7. </span>Comment utiliser le référentiel des griffons ?<a class="headerlink" href="#comment-utiliser-le-referentiel-des-griffons" title="Lien permanent vers cette rubrique"></a></h5>
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Intitulé</p></th>
-<th class="text-left head"><p>Description</p></th>
-<th class="text-left head"><p>Niveau de recommandation</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Intitulé</p></th>
+<th class="head text-left"><p>Description</p></th>
+<th class="head text-left"><p>Niveau de recommandation</p></th>
 </tr>
 </thead>
 <tbody>
@@ -1381,14 +1383,14 @@ Les raisons pouvant amener à supprimer un griffon sont les suivantes :</p>
 </section>
 </section>
 <section id="scenarios-de-preservation">
-<h3><span class="section-number">9.3.3. </span>Scénarios de préservation<a class="headerlink" href="#scenarios-de-preservation" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">9.3.3. </span>Scénarios de préservation<a class="headerlink" href="#scenarios-de-preservation" title="Lien permanent vers cette rubrique"></a></h3>
 <section id="id8">
-<h4><span class="section-number">9.3.3.1. </span>Définition<a class="headerlink" href="#id8" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">9.3.3.1. </span>Définition<a class="headerlink" href="#id8" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Un scénario de préservation décrit, pour une liste de formats donnée et un griffon donné, les actions de préservation à lancer (génération de binaires, analyse, identification, extraction de métadonnées). Pour chaque griffon, il définit des paramètres (arguments et conditions d’appel), permettant ainsi d’affiner l’action de préservation et d’aller au-delà, par exemple d’une simple génération d’objet binaire. En effet, un scénario de préservation peut avoir pour finalité les actions suivantes :</p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Action de préservation</p></th>
-<th class="text-left head"><p>Exemples</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Action de préservation</p></th>
+<th class="head text-left"><p>Exemples</p></th>
 </tr>
 </thead>
 <tbody>
@@ -1437,9 +1439,9 @@ Les raisons pouvant amener à supprimer un griffon sont les suivantes :</p>
 </ul>
 </section>
 <section id="id9">
-<h4><span class="section-number">9.3.3.2. </span>Formalisation<a class="headerlink" href="#id9" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">9.3.3.2. </span>Formalisation<a class="headerlink" href="#id9" title="Lien permanent vers cette rubrique"></a></h4>
 <section id="id10">
-<h5><span class="section-number">9.3.3.2.1. </span>Dans un fichier JSON<a class="headerlink" href="#id10" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.3.3.2.1. </span>Dans un fichier JSON<a class="headerlink" href="#id10" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Un référentiel des scénarios de préservation liste l’ensemble des scénarios de préservation pouvant être utilisés par la solution logicielle Vitam. Ce référentiel est importé sous la forme d’un fichier JSON, contenant systématiquement l’ensemble des scénarios de préservation utilisés[^30].</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;Identifier&quot;</span><span class="p">:</span> <span class="s2">&quot;PSC-000001&quot;</span><span class="p">,</span>
@@ -1509,7 +1511,7 @@ Les raisons pouvant amener à supprimer un griffon sont les suivantes :</p>
 <p><strong>Point d’attention :</strong> L’identifiant d’un scénario ne doit comprendre ni caractère accentué, ni virgule, ni apostrophe, ni parenthèse, ni espace, ni slash, ni élément de ponctuation, ou tout autre caractère spécial. Ne sont autorisés que l’underscore et le tiret comme séparateurs.</p>
 </section>
 <section id="id11">
-<h5><span class="section-number">9.3.3.2.2. </span>Dans la solution logicielle Vitam<a class="headerlink" href="#id11" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.3.3.2.2. </span>Dans la solution logicielle Vitam<a class="headerlink" href="#id11" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Les scénarios de préservation sont enregistrés dans la base de données MongoDB, dans la collection « PreservationScenario », sous la forme d’enregistrements au format JSON.
 Chaque enregistrement est modélisé comme suit[^31] :</p>
 <ul class="simple">
@@ -1585,14 +1587,14 @@ Chacun de ces blocs comprend les éléments suivants :</p></li>
 </section>
 </section>
 <section id="id12">
-<h4><span class="section-number">9.3.3.3. </span>Mécanismes mis en œuvre dans la solution logicielle Vitam<a class="headerlink" href="#id12" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">9.3.3.3. </span>Mécanismes mis en œuvre dans la solution logicielle Vitam<a class="headerlink" href="#id12" title="Lien permanent vers cette rubrique"></a></h4>
 <section id="id13">
-<h5><span class="section-number">9.3.3.3.1. </span>Import<a class="headerlink" href="#id13" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.3.3.3.1. </span>Import<a class="headerlink" href="#id13" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Dans la solution logicielle Vitam, il est possible d’importer un référentiel des scénarios de préservation, fonctionnant en mode « esclave », tenant par tenant.
 Il s’agit d’une opération d’administration (« MASTERDATA »), tracée dans le journal des opérations de la solution logicielle Vitam[^34].</p>
 </section>
 <section id="id14">
-<h5><span class="section-number">9.3.3.3.2. </span>Ré-import et mise à jour<a class="headerlink" href="#id14" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.3.3.3.2. </span>Ré-import et mise à jour<a class="headerlink" href="#id14" title="Lien permanent vers cette rubrique"></a></h5>
 <p>La modification du référentiel des scénarios de préservation s’effectue par un réimport du fichier JSON, en mode « annule et remplace ». De fait, la solution logicielle Vitam permet de :</p>
 <ul class="simple">
 <li><p>ajouter un nouveau scénario ;</p></li>
@@ -1602,10 +1604,10 @@ Il s’agit d’une opération d’administration (« MASTERDATA »), tracée 
 <p>Cette action provoque la création d’une nouvelle version du référentiel. Les différentes versions du référentiel font l’objet d’une sauvegarde sur les offres de stockage utilisées par la solution logicielle Vitam.<br>
 Elle fait l’objet d’une journalisation dans le journal des opérations (opération d’administration de type « MASTERDATA »)[^35].
 Lors de ce ré-import ou de cette mise à jour, l’opération peut aboutir aux statuts suivants :</p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Statut</p></th>
-<th class="text-left head"><p>Motifs</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Statut</p></th>
+<th class="head text-left"><p>Motifs</p></th>
 </tr>
 </thead>
 <tbody>
@@ -1623,10 +1625,10 @@ Lors de ce ré-import ou de cette mise à jour, l’opération peut aboutir aux 
 </section>
 </section>
 <section id="id15">
-<h4><span class="section-number">9.3.3.4. </span>Conseils de mise en œuvre<a class="headerlink" href="#id15" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">9.3.3.4. </span>Conseils de mise en œuvre<a class="headerlink" href="#id15" title="Lien permanent vers cette rubrique"></a></h4>
 <p>À l’issue de cette phase de réalisation de fonctionnalités concernant le référentiel des scénarios de préservation, l’équipe projet Vitam est en mesure de fournir quelques recommandations de mise en œuvre :</p>
 <section id="a-quoi-sert-le-referentiel-des-scenarios-de-preservation">
-<h5><span class="section-number">9.3.3.4.1. </span>À quoi sert le référentiel des scénarios de préservation ?<a class="headerlink" href="#a-quoi-sert-le-referentiel-des-scenarios-de-preservation" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.3.3.4.1. </span>À quoi sert le référentiel des scénarios de préservation ?<a class="headerlink" href="#a-quoi-sert-le-referentiel-des-scenarios-de-preservation" title="Lien permanent vers cette rubrique"></a></h5>
 <p>L’objectif du référentiel est de :</p>
 <ul class="simple">
 <li><p>connaître l’ensemble des scénarios de préservation disponibles et utilisables dans la solution logicielle Vitam ;</p></li>
@@ -1635,7 +1637,7 @@ Lors de ce ré-import ou de cette mise à jour, l’opération peut aboutir aux 
 </ul>
 </section>
 <section id="quand-et-comment-creer-un-referentiel-des-scenarios-de-preservation">
-<h5><span class="section-number">9.3.3.4.2. </span>Quand et comment créer un référentiel des scénarios de préservation ?<a class="headerlink" href="#quand-et-comment-creer-un-referentiel-des-scenarios-de-preservation" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.3.3.4.2. </span>Quand et comment créer un référentiel des scénarios de préservation ?<a class="headerlink" href="#quand-et-comment-creer-un-referentiel-des-scenarios-de-preservation" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Créer un scénario de préservation est un pré-requis obligatoire pour lancer n’importe quelle opération de préservation.
 La création d’un scénario de préservation nécessite :</p>
 <ul class="simple">
@@ -1643,11 +1645,11 @@ La création d’un scénario de préservation nécessite :</p>
 <li><p>l’installation préalable d’un référentiel des formats contenant les formats destinés à être référencés dans un scénario de préservation.</p></li>
 </ul>
 <p>De fait, afin de créer un scénario de préservation, il est recommandé de suivre les étapes suivantes :</p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p>Qui ?</p></th>
-<th class="text-left head"><p>Quoi ?</p></th>
-<th class="text-center head"><p>Via l’IHM démo Vitam ?</p></th>
+<tr class="row-odd"><th class="head text-center"><p>Qui ?</p></th>
+<th class="head text-left"><p>Quoi ?</p></th>
+<th class="head text-center"><p>Via l’IHM démo Vitam ?</p></th>
 </tr>
 </thead>
 <tbody>
@@ -1679,7 +1681,7 @@ La création d’un scénario de préservation nécessite :</p>
 </table>
 </section>
 <section id="quand-et-comment-re-importer-et-mettre-a-jour-le-referentiel-des-scenarios-de-preservation">
-<h5><span class="section-number">9.3.3.4.3. </span>Quand et comment ré-importer et mettre à jour le référentiel des scénarios de préservation ?<a class="headerlink" href="#quand-et-comment-re-importer-et-mettre-a-jour-le-referentiel-des-scenarios-de-preservation" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.3.3.4.3. </span>Quand et comment ré-importer et mettre à jour le référentiel des scénarios de préservation ?<a class="headerlink" href="#quand-et-comment-re-importer-et-mettre-a-jour-le-referentiel-des-scenarios-de-preservation" title="Lien permanent vers cette rubrique"></a></h5>
 <p>La mise à jour du référentiel des scénarios de préservation s’avère nécessaire pour répondre aux besoins suivants :</p>
 <ul class="simple">
 <li><p>mise à jour des informations relatives à un ou plusieurs scénario(s) de préservation (ex : ajout d’un format dans un scénario, correction de la description, etc.) ;</p></li>
@@ -1690,14 +1692,14 @@ La création d’un scénario de préservation nécessite :</p>
 <p><strong>Points d’attention :</strong> La solution logicielle Vitam effectue des contrôles sur l’existence des griffons et formats déclarés dans un scénario de préservation. En d’autres termes, il faut veiller à ce que les griffons et formats déclarés dans un scénario existent dans le référentiel des griffons pour les uns et dans le référentiel des formats pour les autres, avant de procéder à la mise à jour du référentiel des scénarios de préservation, sans quoi cette opération échouera.</p>
 </section>
 <section id="quand-et-comment-creer-un-scenario-de-preservation">
-<h5><span class="section-number">9.3.3.4.4. </span>Quand et comment créer un scénario de préservation ?<a class="headerlink" href="#quand-et-comment-creer-un-scenario-de-preservation" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.3.3.4.4. </span>Quand et comment créer un scénario de préservation ?<a class="headerlink" href="#quand-et-comment-creer-un-scenario-de-preservation" title="Lien permanent vers cette rubrique"></a></h5>
 <section id="reflexion-autour-des-besoins-en-termes-de-preservation">
-<h6><span class="section-number">9.3.3.4.4.1. </span>Réflexion autour des besoins en termes de préservation<a class="headerlink" href="#reflexion-autour-des-besoins-en-termes-de-preservation" title="Lien permanent vers ce titre"></a></h6>
+<h6><span class="section-number">9.3.3.4.4.1. </span>Réflexion autour des besoins en termes de préservation<a class="headerlink" href="#reflexion-autour-des-besoins-en-termes-de-preservation" title="Lien permanent vers cette rubrique"></a></h6>
 <p>Avant de créer un scénario de préservation et de l’ajouter au référentiel des scénarios de préservation, il faut réfléchir aux actions de préservation que l’on souhaite mener :</p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Action</p></th>
-<th class="text-left head"><p>Questions</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Action</p></th>
+<th class="head text-left"><p>Questions</p></th>
 </tr>
 </thead>
 <tbody>
@@ -1723,7 +1725,7 @@ La création d’un scénario de préservation nécessite :</p>
 </ul>
 </section>
 <section id="redaction-dun-scenario-de-preservation">
-<h6><span class="section-number">9.3.3.4.4.2. </span>Rédaction d’un scénario de préservation<a class="headerlink" href="#redaction-dun-scenario-de-preservation" title="Lien permanent vers ce titre"></a></h6>
+<h6><span class="section-number">9.3.3.4.4.2. </span>Rédaction d’un scénario de préservation<a class="headerlink" href="#redaction-dun-scenario-de-preservation" title="Lien permanent vers cette rubrique"></a></h6>
 <p>La création d’un nouveau scénario de préservation s’effectue par un réimport complet du référentiel, auquel a été ajouté un scénario supplémentaire.<br>
 Elle obéit à des règles strictes :</p>
 <ul class="simple">
@@ -1830,7 +1832,7 @@ Elle obéit à des règles strictes :</p>
 </section>
 </section>
 <section id="quand-et-comment-supprimer-un-scenario-de-preservation">
-<h5><span class="section-number">9.3.3.4.5. </span>Quand et comment supprimer un scénario de préservation ?<a class="headerlink" href="#quand-et-comment-supprimer-un-scenario-de-preservation" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.3.3.4.5. </span>Quand et comment supprimer un scénario de préservation ?<a class="headerlink" href="#quand-et-comment-supprimer-un-scenario-de-preservation" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Si on ne souhaite plus utiliser un scénario de préservation, il faut l’ôter du référentiel des scénarios de préservation.<br> Ainsi, il ne peut plus être utilisé dans une opération de préservation.</p>
 <p>Les raisons pouvant amener à supprimer un scénario sont les suivantes :</p>
 <ul class="simple">
@@ -1842,7 +1844,7 @@ Elle obéit à des règles strictes :</p>
 <p><strong>Point d’attention :</strong> avant de supprimer tout scénario de préservation, il est recommandé de vérifier qu’il n’est pas utilisé dans le cadre d’une opération de préservation en cours de réalisation.</p>
 </section>
 <section id="comment-elaborer-et-structurer-un-referentiel-des-scenarios-de-preservation">
-<h5><span class="section-number">9.3.3.4.6. </span>Comment élaborer et structurer un référentiel des scénarios de préservation ?<a class="headerlink" href="#comment-elaborer-et-structurer-un-referentiel-des-scenarios-de-preservation" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.3.3.4.6. </span>Comment élaborer et structurer un référentiel des scénarios de préservation ?<a class="headerlink" href="#comment-elaborer-et-structurer-un-referentiel-des-scenarios-de-preservation" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Le référentiel des scénarios de préservation peut être alimenté de manière très modulaire :</p>
 <ul class="simple">
 <li><p>d’une manière très générique, en réduisant le nombre de scénarios au nombre d’actions de préservation possibles : validation, conversion, identification, extraction ;</p></li>
@@ -1864,12 +1866,12 @@ Cette troisième solution, modulaire, permet de disposer de scénarios génériq
 <img alt="Cas 3" src="../_images/cas3.png" /></p>
 </section>
 <section id="comment-utiliser-le-referentiel-des-scenarios-de-preservation">
-<h5><span class="section-number">9.3.3.4.7. </span>Comment utiliser le référentiel des scénarios de préservation ?<a class="headerlink" href="#comment-utiliser-le-referentiel-des-scenarios-de-preservation" title="Lien permanent vers ce titre"></a></h5>
-<table class="colwidths-auto docutils align-default">
+<h5><span class="section-number">9.3.3.4.7. </span>Comment utiliser le référentiel des scénarios de préservation ?<a class="headerlink" href="#comment-utiliser-le-referentiel-des-scenarios-de-preservation" title="Lien permanent vers cette rubrique"></a></h5>
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Intitulé</p></th>
-<th class="text-left head"><p>Description</p></th>
-<th class="text-center head"><p>Niveau de recommandation</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Intitulé</p></th>
+<th class="head text-left"><p>Description</p></th>
+<th class="head text-center"><p>Niveau de recommandation</p></th>
 </tr>
 </thead>
 <tbody>
@@ -1900,14 +1902,14 @@ Cette troisième solution, modulaire, permet de disposer de scénarios génériq
 </section>
 </section>
 <section id="entrees-et-preservation">
-<h2><span class="section-number">9.4. </span>Entrées et préservation<a class="headerlink" href="#entrees-et-preservation" title="Lien permanent vers ce titre"></a></h2>
+<h2><span class="section-number">9.4. </span>Entrées et préservation<a class="headerlink" href="#entrees-et-preservation" title="Lien permanent vers cette rubrique"></a></h2>
 <p>En entrée dans le système, la solution logicielle Vitam permet de :</p>
 <ul class="simple">
 <li><p>paramétrer des filtres au moyen des contrats d’entrée afin de contraindre les objets binaires pouvant y entrer ;</p></li>
 <li><p>effectuer des contrôles génériques, notamment d’identification, dans le cadre d’opérations d’entrée dans le système.</p></li>
 </ul>
 <section id="id16">
-<h3><span class="section-number">9.4.1. </span>Définition<a class="headerlink" href="#id16" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">9.4.1. </span>Définition<a class="headerlink" href="#id16" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Assurer la préservation et garantir un archivage pérenne commence dès l’entrée des objets binaires dans le système. Afin d’atteindre cet objectif, et ce en fonction du degré de contrôle souhaité, il peut être envisagé de :</p>
 <ul class="simple">
 <li><p>imposer ou non une liste de formats autorisés ;</p></li>
@@ -1922,9 +1924,9 @@ Pour ce faire, dans le cadre du processus d’entrée d’un ensemble d’archiv
 </ul>
 </section>
 <section id="mecanismes-mis-en-oeuvre-par-la-solution-logicielle-vitam">
-<h3><span class="section-number">9.4.2. </span>Mécanismes mis en œuvre par la solution logicielle Vitam<a class="headerlink" href="#mecanismes-mis-en-oeuvre-par-la-solution-logicielle-vitam" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">9.4.2. </span>Mécanismes mis en œuvre par la solution logicielle Vitam<a class="headerlink" href="#mecanismes-mis-en-oeuvre-par-la-solution-logicielle-vitam" title="Lien permanent vers cette rubrique"></a></h3>
 <section id="filtres-sur-les-entrees">
-<h4><span class="section-number">9.4.2.1. </span>Filtres sur les entrées<a class="headerlink" href="#filtres-sur-les-entrees" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">9.4.2.1. </span>Filtres sur les entrées<a class="headerlink" href="#filtres-sur-les-entrees" title="Lien permanent vers cette rubrique"></a></h4>
 <p>La solution logicielle offre la possibilité de paramétrer des filtres à appliquer sur les bordereaux de transfert et les objets binaires qu’ils référencent au moyen des contrats d’entrée.<br>
 En effet, un contrat d’entrée permet d’effectuer des contrôles sur les groupes d’objets techniques transférés dans la solution logicielle Vitam au moyen de quatre options[^41] :</p>
 <ul class="simple">
@@ -1958,9 +1960,9 @@ En effet, un contrat d’entrée permet d’effectuer des contrôles sur les gro
 </ul>
 </section>
 <section id="controles-sur-les-entrees">
-<h4><span class="section-number">9.4.2.2. </span>Contrôles sur les entrées<a class="headerlink" href="#controles-sur-les-entrees" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">9.4.2.2. </span>Contrôles sur les entrées<a class="headerlink" href="#controles-sur-les-entrees" title="Lien permanent vers cette rubrique"></a></h4>
 <section id="service-didentification">
-<h5><span class="section-number">9.4.2.2.1. </span>Service d’identification<a class="headerlink" href="#service-didentification" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.4.2.2.1. </span>Service d’identification<a class="headerlink" href="#service-didentification" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Dans le cadre d’un transfert d’archives, la solution logicielle Vitam :</p>
 <ul class="simple">
 <li><p>demande à l’outil d’identification de formats Siegfried de procéder à l’identification des fichiers qui sont transférés dans un Submission Information Package (SIP) ;</p></li>
@@ -1984,7 +1986,7 @@ Si le contrat d’entrée autorise le transfert d’objets binaires au format in
 </ul>
 </section>
 <section id="service-supplementaire">
-<h5><span class="section-number">9.4.2.2.2. </span>Service supplémentaire<a class="headerlink" href="#service-supplementaire" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.4.2.2.2. </span>Service supplémentaire<a class="headerlink" href="#service-supplementaire" title="Lien permanent vers cette rubrique"></a></h5>
 <p>En plus de ce processus d’identification générique, la solution logicielle offre la possibilité d’intégrer d’autres outils que celui qu’elle utilise nativement (Siegfried) via des plug-in.<br />
 Les API mises en place permettent de dialoguer avec ces outils au moyen de trois types de requêtes :</p>
 <ul class="simple">
@@ -2002,10 +2004,10 @@ Les API mises en place permettent de dialoguer avec ces outils au moyen de trois
 </section>
 </section>
 <section id="id17">
-<h3><span class="section-number">9.4.3. </span>Conseils de mise en œuvre<a class="headerlink" href="#id17" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">9.4.3. </span>Conseils de mise en œuvre<a class="headerlink" href="#id17" title="Lien permanent vers cette rubrique"></a></h3>
 <p>À l’issue de cette phase de réalisation de fonctionnalités, l’équipe projet Vitam est en mesure de fournir quelques recommandations de mise en œuvre :</p>
 <section id="quand-et-comment-ajouter-des-controles-sur-les-entrees">
-<h4><span class="section-number">9.4.3.1. </span>Quand et comment ajouter des contrôles sur les entrées ?<a class="headerlink" href="#quand-et-comment-ajouter-des-controles-sur-les-entrees" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">9.4.3.1. </span>Quand et comment ajouter des contrôles sur les entrées ?<a class="headerlink" href="#quand-et-comment-ajouter-des-controles-sur-les-entrees" title="Lien permanent vers cette rubrique"></a></h4>
 <p>La solution logicielle Vitam permet d’ajouter des plug-in et de créer en parallèle de nouvelle(s) étape(s) dans le workflow, faisant état du traitement opéré par ce(s) plug-in(s)[^42]. Le paramétrage de ces deux fonctionnalités relève d’un acte technique, réalisé :</p>
 <ul class="simple">
 <li><p>soit au moment de l’installation de la plate-forme,</p></li>
@@ -2029,12 +2031,12 @@ On peut envisager d’ajouter un plug-in et une étape au workflow d’entrée p
 </ul>
 </section>
 <section id="comment-parametrer-les-filtres-sur-les-entrees">
-<h4><span class="section-number">9.4.3.2. </span>Comment paramétrer les filtres sur les entrées ?<a class="headerlink" href="#comment-parametrer-les-filtres-sur-les-entrees" title="Lien permanent vers ce titre"></a></h4>
-<table class="colwidths-auto docutils align-default">
+<h4><span class="section-number">9.4.3.2. </span>Comment paramétrer les filtres sur les entrées ?<a class="headerlink" href="#comment-parametrer-les-filtres-sur-les-entrees" title="Lien permanent vers cette rubrique"></a></h4>
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Intitulé</p></th>
-<th class="text-left head"><p>Description</p></th>
-<th class="text-center head"><p>Niveau de recommandation</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Intitulé</p></th>
+<th class="head text-left"><p>Description</p></th>
+<th class="head text-center"><p>Niveau de recommandation</p></th>
 </tr>
 </thead>
 <tbody>
@@ -2068,16 +2070,16 @@ On peut envisager d’ajouter un plug-in et une étape au workflow d’entrée p
 </section>
 </section>
 <section id="gestion-des-archives-et-preservation">
-<h2><span class="section-number">9.5. </span>Gestion des archives et préservation<a class="headerlink" href="#gestion-des-archives-et-preservation" title="Lien permanent vers ce titre"></a></h2>
+<h2><span class="section-number">9.5. </span>Gestion des archives et préservation<a class="headerlink" href="#gestion-des-archives-et-preservation" title="Lien permanent vers cette rubrique"></a></h2>
 <p>La solution logicielle Vitam offre plusieurs fonctionnalités permettant de gérer la pérennité des archives :</p>
 <ul class="simple">
 <li><p>des traitements sur les objets binaires au moyen d’une opération générique de préservation ;</p></li>
 <li><p>des audits vérifiant l’existence et l’intégrité des objets binaires, la cohérence des unités archivistiques et des objets binaires par rapport aux différents journaux produits dans la solution logicielle Vitam, et permettant leur correction en cas d’anomalie.</p></li>
 </ul>
 <section id="preservation">
-<h3><span class="section-number">9.5.1. </span>Préservation<a class="headerlink" href="#preservation" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">9.5.1. </span>Préservation<a class="headerlink" href="#preservation" title="Lien permanent vers cette rubrique"></a></h3>
 <section id="id18">
-<h4><span class="section-number">9.5.1.1. </span>Définition<a class="headerlink" href="#id18" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">9.5.1.1. </span>Définition<a class="headerlink" href="#id18" title="Lien permanent vers cette rubrique"></a></h4>
 <p>La solution logicielle Vitam intègre des fonctionnalités de préservation. Celles-ci consistent à appliquer un traitement sur un lot d’objets binaires définis par leur usage (BinaryMaster, Dissemination, Thumbnail, TextContent) et leur numéro de version (première version ou dernière version).<br>
 Ce traitement correspond à quatre types d’actions de préservation :</p>
 <ul class="simple">
@@ -2095,10 +2097,10 @@ Ces nouvelles métadonnées sont enregistrées et indexées en tant que métadon
 <li><p>l’identification de format : il s’agit d’identifier ou de réidentifier a posteriori des fichiers déjà transférés dans la solution logicielle Vitam.</p></li>
 </ul>
 <p>Exemples :</p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Action de préservation</p></th>
-<th class="text-left head"><p>Exemples</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Action de préservation</p></th>
+<th class="head text-left"><p>Exemples</p></th>
 </tr>
 </thead>
 <tbody>
@@ -2127,9 +2129,9 @@ Ces nouvelles métadonnées sont enregistrées et indexées en tant que métadon
 </table>
 </section>
 <section id="id19">
-<h4><span class="section-number">9.5.1.2. </span>Mécanismes mis en œuvre dans la solution logicielle Vitam<a class="headerlink" href="#id19" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">9.5.1.2. </span>Mécanismes mis en œuvre dans la solution logicielle Vitam<a class="headerlink" href="#id19" title="Lien permanent vers cette rubrique"></a></h4>
 <section id="definition-parametrage-de-loperation-de-preservation">
-<h5><span class="section-number">9.5.1.2.1. </span>Définition/Paramétrage de l’opération de préservation<a class="headerlink" href="#definition-parametrage-de-loperation-de-preservation" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.5.1.2.1. </span>Définition/Paramétrage de l’opération de préservation<a class="headerlink" href="#definition-parametrage-de-loperation-de-preservation" title="Lien permanent vers cette rubrique"></a></h5>
 <p>La solution logicielle Vitam permet de réaliser une opération de préservation en associant à un lot d’archives plusieurs critères :</p>
 <ul class="simple">
 <li><p>des critères déterminés dans un scénario de préservation qui définit une ou plusieurs actions à exécuter, avec l’aide d’un griffon, sur un à plusieurs formats ;</p></li>
@@ -2143,7 +2145,7 @@ Ces nouvelles métadonnées sont enregistrées et indexées en tant que métadon
 </ul>
 </section>
 <section id="operation-de-preservation">
-<h5><span class="section-number">9.5.1.2.2. </span>Opération de préservation<a class="headerlink" href="#operation-de-preservation" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.5.1.2.2. </span>Opération de préservation<a class="headerlink" href="#operation-de-preservation" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Dans le cadre du processus de préservation d’un ensemble d’archives, suite à la réception d’une requête, la solution logicielle Vitam effectue les tâches et traitements de contrôles internes suivants[^44] :</p>
 <ul class="simple">
 <li><p>préparation du traitement avec vérification des seuils de limitation des traitements portant sur les unités archivistiques et récupération des groupes d’objets techniques et du scénario de préservation ;</p></li>
@@ -2211,17 +2213,17 @@ Ces nouvelles métadonnées sont enregistrées et indexées en tant que métadon
 </ul>
 </section>
 <section id="resultats-dune-operation-de-preservation">
-<h5><span class="section-number">9.5.1.2.3. </span>Résultats d’une opération de préservation<a class="headerlink" href="#resultats-dune-operation-de-preservation" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.5.1.2.3. </span>Résultats d’une opération de préservation<a class="headerlink" href="#resultats-dune-operation-de-preservation" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Quelle que soit l’action de préservation effectuée, la solution logicielle Vitam produit un rapport listant les objets binaires ayant fait l’objet de l’opération, ainsi que, pour chacun d’eux, le résultat de cette opération[^47].
 En plus de ce rapport, la solution logicielle Vitam met en œuvre des mécanismes variant en fonction de l’action de préservation qui a été lancée :</p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p></p></th>
-<th class="text-center head"><p>Création d’un objet binaire</p></th>
-<th class="text-center head"><p>Mise à jour du groupe d’objets techniques</p></th>
-<th class="text-center head"><p>Mise à jour de l’unité archivistique</p></th>
-<th class="text-center head"><p>Mise à jour du registre des fonds</p></th>
-<th class="text-center head"><p>Rapport</p></th>
+<tr class="row-odd"><th class="head text-left"><p></p></th>
+<th class="head text-center"><p>Création d’un objet binaire</p></th>
+<th class="head text-center"><p>Mise à jour du groupe d’objets techniques</p></th>
+<th class="head text-center"><p>Mise à jour de l’unité archivistique</p></th>
+<th class="head text-center"><p>Mise à jour du registre des fonds</p></th>
+<th class="head text-center"><p>Rapport</p></th>
 </tr>
 </thead>
 <tbody>
@@ -2284,12 +2286,12 @@ L’opération s’accompagne d’une journalisation dans les journaux de cycle 
 </section>
 </section>
 <section id="id20">
-<h4><span class="section-number">9.5.1.3. </span>Conseils de mise en œuvre<a class="headerlink" href="#id20" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">9.5.1.3. </span>Conseils de mise en œuvre<a class="headerlink" href="#id20" title="Lien permanent vers cette rubrique"></a></h4>
 <p>À l’issue de cette phase de réalisation de fonctionnalités concernant la préservation, l’équipe projet Vitam est en mesure de fournir quelques recommandations de mise en œuvre.</p>
 <section id="quel-acces-a-la-gestion-de-la-preservation">
-<h5><span class="section-number">9.5.1.3.1. </span>Quel accès à la gestion de la préservation ?<a class="headerlink" href="#quel-acces-a-la-gestion-de-la-preservation" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.5.1.3.1. </span>Quel accès à la gestion de la préservation ?<a class="headerlink" href="#quel-acces-a-la-gestion-de-la-preservation" title="Lien permanent vers cette rubrique"></a></h5>
 <section id="gestion-des-droits">
-<h6><span class="section-number">9.5.1.3.1.1. </span>Gestion des droits<a class="headerlink" href="#gestion-des-droits" title="Lien permanent vers ce titre"></a></h6>
+<h6><span class="section-number">9.5.1.3.1.1. </span>Gestion des droits<a class="headerlink" href="#gestion-des-droits" title="Lien permanent vers cette rubrique"></a></h6>
 <p>En fonction de l’organisation adoptée, les opérations de préservation seront effectuées :</p>
 <ul class="simple">
 <li><p>soit par l’ensemble des utilisateurs de la solution logicielle Vitam,</p></li>
@@ -2304,7 +2306,7 @@ Un administrateur fonctionnel et/ou technique a accès à l’ensemble des servi
 </ul>
 </section>
 <section id="restitution-sur-une-ihm">
-<h6><span class="section-number">9.5.1.3.1.2. </span>Restitution sur une IHM<a class="headerlink" href="#restitution-sur-une-ihm" title="Lien permanent vers ce titre"></a></h6>
+<h6><span class="section-number">9.5.1.3.1.2. </span>Restitution sur une IHM<a class="headerlink" href="#restitution-sur-une-ihm" title="Lien permanent vers cette rubrique"></a></h6>
 <p>La solution logicielle Vitam propose de lancer les opérations de préservation depuis l’IHM démo en procédant comme suit :</p>
 <ul class="simple">
 <li><p>sélection d’unités archivistiques suivant des critères associés à celles-ci ;</p></li>
@@ -2337,14 +2339,14 @@ Un administrateur fonctionnel et/ou technique a accès à l’ensemble des servi
 </section>
 </section>
 <section id="comment-utiliser-et-gerer-la-preservation">
-<h5><span class="section-number">9.5.1.3.2. </span>Comment utiliser et gérer la préservation ?<a class="headerlink" href="#comment-utiliser-et-gerer-la-preservation" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.5.1.3.2. </span>Comment utiliser et gérer la préservation ?<a class="headerlink" href="#comment-utiliser-et-gerer-la-preservation" title="Lien permanent vers cette rubrique"></a></h5>
 <section id="gestion-des-droits-associes-a-la-preservation">
-<h6><span class="section-number">9.5.1.3.2.1. </span>Gestion des droits associés à la préservation<a class="headerlink" href="#gestion-des-droits-associes-a-la-preservation" title="Lien permanent vers ce titre"></a></h6>
-<table class="colwidths-auto docutils align-default">
+<h6><span class="section-number">9.5.1.3.2.1. </span>Gestion des droits associés à la préservation<a class="headerlink" href="#gestion-des-droits-associes-a-la-preservation" title="Lien permanent vers cette rubrique"></a></h6>
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Intitulé</p></th>
-<th class="text-left head"><p>Description</p></th>
-<th class="text-left head"><p>Niveau de recommandation</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Intitulé</p></th>
+<th class="head text-left"><p>Description</p></th>
+<th class="head text-left"><p>Niveau de recommandation</p></th>
 </tr>
 </thead>
 <tbody>
@@ -2368,12 +2370,12 @@ Un administrateur fonctionnel et/ou technique a accès à l’ensemble des servi
 </table>
 </section>
 <section id="id21">
-<h6><span class="section-number">9.5.1.3.2.2. </span>Restitution sur une IHM<a class="headerlink" href="#id21" title="Lien permanent vers ce titre"></a></h6>
-<table class="colwidths-auto docutils align-default">
+<h6><span class="section-number">9.5.1.3.2.2. </span>Restitution sur une IHM<a class="headerlink" href="#id21" title="Lien permanent vers cette rubrique"></a></h6>
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Intitulé</p></th>
-<th class="text-left head"><p>Description</p></th>
-<th class="text-left head"><p>Niveau de recommandation</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Intitulé</p></th>
+<th class="head text-left"><p>Description</p></th>
+<th class="head text-left"><p>Niveau de recommandation</p></th>
 </tr>
 </thead>
 <tbody>
@@ -2385,12 +2387,12 @@ Un administrateur fonctionnel et/ou technique a accès à l’ensemble des servi
 </table>
 </section>
 <section id="analyse-de-formats">
-<h6><span class="section-number">9.5.1.3.2.3. </span>Analyse de formats<a class="headerlink" href="#analyse-de-formats" title="Lien permanent vers ce titre"></a></h6>
-<table class="colwidths-auto docutils align-default">
+<h6><span class="section-number">9.5.1.3.2.3. </span>Analyse de formats<a class="headerlink" href="#analyse-de-formats" title="Lien permanent vers cette rubrique"></a></h6>
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Intitulé</p></th>
-<th class="text-left head"><p>Description</p></th>
-<th class="text-left head"><p>Niveau de recommandation</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Intitulé</p></th>
+<th class="head text-left"><p>Description</p></th>
+<th class="head text-left"><p>Niveau de recommandation</p></th>
 </tr>
 </thead>
 <tbody>
@@ -2410,12 +2412,12 @@ Un administrateur fonctionnel et/ou technique a accès à l’ensemble des servi
 </table>
 </section>
 <section id="generation-dobjets-binaires-conversion-de-formats">
-<h6><span class="section-number">9.5.1.3.2.4. </span>Génération d’objets binaires / Conversion de formats<a class="headerlink" href="#generation-dobjets-binaires-conversion-de-formats" title="Lien permanent vers ce titre"></a></h6>
-<table class="colwidths-auto docutils align-default">
+<h6><span class="section-number">9.5.1.3.2.4. </span>Génération d’objets binaires / Conversion de formats<a class="headerlink" href="#generation-dobjets-binaires-conversion-de-formats" title="Lien permanent vers cette rubrique"></a></h6>
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Intitulé</p></th>
-<th class="text-left head"><p>Description</p></th>
-<th class="text-left head"><p>Niveau de recommandation</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Intitulé</p></th>
+<th class="head text-left"><p>Description</p></th>
+<th class="head text-left"><p>Niveau de recommandation</p></th>
 </tr>
 </thead>
 <tbody>
@@ -2463,12 +2465,12 @@ Un administrateur fonctionnel et/ou technique a accès à l’ensemble des servi
 </table>
 </section>
 <section id="identification-reidentification-de-formats">
-<h6><span class="section-number">9.5.1.3.2.5. </span>Identification / réidentification de formats<a class="headerlink" href="#identification-reidentification-de-formats" title="Lien permanent vers ce titre"></a></h6>
-<table class="colwidths-auto docutils align-default">
+<h6><span class="section-number">9.5.1.3.2.5. </span>Identification / réidentification de formats<a class="headerlink" href="#identification-reidentification-de-formats" title="Lien permanent vers cette rubrique"></a></h6>
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Intitulé</p></th>
-<th class="text-left head"><p>Description</p></th>
-<th class="text-left head"><p>Niveau de recommandation</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Intitulé</p></th>
+<th class="head text-left"><p>Description</p></th>
+<th class="head text-left"><p>Niveau de recommandation</p></th>
 </tr>
 </thead>
 <tbody>
@@ -2496,12 +2498,12 @@ Un administrateur fonctionnel et/ou technique a accès à l’ensemble des servi
 </table>
 </section>
 <section id="extraction-de-metadonnees">
-<h6><span class="section-number">9.5.1.3.2.6. </span>Extraction de métadonnées<a class="headerlink" href="#extraction-de-metadonnees" title="Lien permanent vers ce titre"></a></h6>
-<table class="colwidths-auto docutils align-default">
+<h6><span class="section-number">9.5.1.3.2.6. </span>Extraction de métadonnées<a class="headerlink" href="#extraction-de-metadonnees" title="Lien permanent vers cette rubrique"></a></h6>
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Intitulé</p></th>
-<th class="text-left head"><p>Description</p></th>
-<th class="text-left head"><p>Niveau de recommandation</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Intitulé</p></th>
+<th class="head text-left"><p>Description</p></th>
+<th class="head text-left"><p>Niveau de recommandation</p></th>
 </tr>
 </thead>
 <tbody>
@@ -2540,18 +2542,18 @@ Un administrateur fonctionnel et/ou technique a accès à l’ensemble des servi
 </section>
 </section>
 <section id="application-dune-politique-de-preservation">
-<h3><span class="section-number">9.5.2. </span>Application d’une politique de préservation<a class="headerlink" href="#application-dune-politique-de-preservation" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">9.5.2. </span>Application d’une politique de préservation<a class="headerlink" href="#application-dune-politique-de-preservation" title="Lien permanent vers cette rubrique"></a></h3>
 <section id="id22">
-<h4><span class="section-number">9.5.2.1. </span>Définition<a class="headerlink" href="#id22" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">9.5.2.1. </span>Définition<a class="headerlink" href="#id22" title="Lien permanent vers cette rubrique"></a></h4>
 <p>La norme NF Z 42-013 recommande de conserver la version originale d’un objet, l’exemplaire converti et, dans le cas de conversions successives, au moins d’avant-dernière version.
 Au terme de la version 7.0, la solution logicielle Vitam intègre un service permettant d’appliquer une suppression de versions d’objets sur un lot d’objets binaires définis par leur usage (BinaryMaster, PhysicalMaster, Dissemination, Thumbnail, TextContent) et leur numéro de version.</p>
 </section>
 <section id="id23">
-<h4><span class="section-number">9.5.2.2. </span>Mécanismes mis en œuvre dans la solution logicielle Vitam<a class="headerlink" href="#id23" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">9.5.2.2. </span>Mécanismes mis en œuvre dans la solution logicielle Vitam<a class="headerlink" href="#id23" title="Lien permanent vers cette rubrique"></a></h4>
 <section id="suppression-de-versions-dobjets-a-la-demande">
-<h5><span class="section-number">9.5.2.2.1. </span>suppression de versions d’objets à la demande<a class="headerlink" href="#suppression-de-versions-dobjets-a-la-demande" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.5.2.2.1. </span>suppression de versions d’objets à la demande<a class="headerlink" href="#suppression-de-versions-dobjets-a-la-demande" title="Lien permanent vers cette rubrique"></a></h5>
 <section id="definition-parametrage-de-loperation-de-suppression-de-versions-dobjets">
-<h6><span class="section-number">9.5.2.2.1.1. </span>Définition/Paramétrage de l’opération de suppression de versions d’objets<a class="headerlink" href="#definition-parametrage-de-loperation-de-suppression-de-versions-dobjets" title="Lien permanent vers ce titre"></a></h6>
+<h6><span class="section-number">9.5.2.2.1.1. </span>Définition/Paramétrage de l’opération de suppression de versions d’objets<a class="headerlink" href="#definition-parametrage-de-loperation-de-suppression-de-versions-dobjets" title="Lien permanent vers cette rubrique"></a></h6>
 <p>La solution logicielle Vitam permet de réaliser une opération de suppression de versions d’objets en associant à un lot d’archives plusieurs critères déterminant sur quelle version et usage des objets binaires doit intervenir l’opération. Il peut s’agir de :</p>
 <ul class="simple">
 <li><p>n’importe quel usage (original numérique, original physique, vignette, texte brut, version de diffusion) ;</p></li>
@@ -2566,7 +2568,7 @@ Au terme de la version 7.0, la solution logicielle Vitam intègre un service per
 </ul>
 </section>
 <section id="operation-de-suppression-de-versions-dobjets">
-<h6><span class="section-number">9.5.2.2.1.2. </span>Opération de suppression de versions d’objets<a class="headerlink" href="#operation-de-suppression-de-versions-dobjets" title="Lien permanent vers ce titre"></a></h6>
+<h6><span class="section-number">9.5.2.2.1.2. </span>Opération de suppression de versions d’objets<a class="headerlink" href="#operation-de-suppression-de-versions-dobjets" title="Lien permanent vers cette rubrique"></a></h6>
 <p>Dans le cadre du processus de suppression de versions d’objets d’un ensemble d’archives, suite à la réception d’une requête, la solution logicielle Vitam effectue les tâches et traitements de contrôles internes suivants[^52] :</p>
 <ul class="simple">
 <li><p>préparation du traitement avec vérification des seuils de limitation des traitements portant sur les unités archivistiques et récupération des groupes d’objets techniques ;</p></li>
@@ -2588,19 +2590,19 @@ Au terme de la version 7.0, la solution logicielle Vitam intègre un service per
 </ul>
 </section>
 <section id="resultats-dune-operation-de-suppression-dobjets">
-<h6><span class="section-number">9.5.2.2.1.3. </span>Résultats d’une opération de suppression d’objets<a class="headerlink" href="#resultats-dune-operation-de-suppression-dobjets" title="Lien permanent vers ce titre"></a></h6>
+<h6><span class="section-number">9.5.2.2.1.3. </span>Résultats d’une opération de suppression d’objets<a class="headerlink" href="#resultats-dune-operation-de-suppression-dobjets" title="Lien permanent vers cette rubrique"></a></h6>
 <p>La solution logicielle Vitam produit un rapport listant les objets ayant fait l’objet de l’opération, ainsi que, pour chacun d’eux, le résultat de cette opération[^54].<br>
 En plus de ce rapport, la solution logicielle Vitam met à jour le registre des fonds.</p>
 </section>
 </section>
 </section>
 <section id="id24">
-<h4><span class="section-number">9.5.2.3. </span>Conseils de mise en œuvre<a class="headerlink" href="#id24" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">9.5.2.3. </span>Conseils de mise en œuvre<a class="headerlink" href="#id24" title="Lien permanent vers cette rubrique"></a></h4>
 <p>À l’issue de cette phase de réalisation de fonctionnalités concernant l’application de la suppression de versions d’objets, l’équipe projet Vitam est en mesure de fournir quelques recommandations de mise en œuvre.</p>
 <section id="quel-acces-a-la-suppression-de-versions-dobjets">
-<h5><span class="section-number">9.5.2.3.1. </span>Quel accès à la suppression de versions d’objets ?<a class="headerlink" href="#quel-acces-a-la-suppression-de-versions-dobjets" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.5.2.3.1. </span>Quel accès à la suppression de versions d’objets ?<a class="headerlink" href="#quel-acces-a-la-suppression-de-versions-dobjets" title="Lien permanent vers cette rubrique"></a></h5>
 <section id="id25">
-<h6><span class="section-number">9.5.2.3.1.1. </span>Gestion des droits<a class="headerlink" href="#id25" title="Lien permanent vers ce titre"></a></h6>
+<h6><span class="section-number">9.5.2.3.1.1. </span>Gestion des droits<a class="headerlink" href="#id25" title="Lien permanent vers cette rubrique"></a></h6>
 <p>En fonction de l’organisation adoptée, les opérations de suppression de versions d’objets seront effectuées :</p>
 <ul class="simple">
 <li><p>soit par l’ensemble des utilisateurs de la solution logicielle Vitam,</p></li>
@@ -2615,7 +2617,7 @@ En plus de ce rapport, la solution logicielle Vitam met à jour le registre des 
 </ul>
 </section>
 <section id="id26">
-<h6><span class="section-number">9.5.2.3.1.2. </span>Restitution sur une IHM<a class="headerlink" href="#id26" title="Lien permanent vers ce titre"></a></h6>
+<h6><span class="section-number">9.5.2.3.1.2. </span>Restitution sur une IHM<a class="headerlink" href="#id26" title="Lien permanent vers cette rubrique"></a></h6>
 <p>La solution logicielle Vitam propose de lancer les opérations de suppression de versions d’objets au moyen des API.<br>
 S’il y a conception d’écrans, il est conseillé de privilégier des interfaces propres à ce type d’opération, permettant :</p>
 <ul class="simple">
@@ -2642,14 +2644,14 @@ S’il y a conception d’écrans, il est conseillé de privilégier des interfa
 </section>
 </section>
 <section id="comment-utiliser-et-gerer-la-suppression-de-versions-dobjets">
-<h5><span class="section-number">9.5.2.3.2. </span>Comment utiliser et gérer la suppression de versions d’objets ?<a class="headerlink" href="#comment-utiliser-et-gerer-la-suppression-de-versions-dobjets" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.5.2.3.2. </span>Comment utiliser et gérer la suppression de versions d’objets ?<a class="headerlink" href="#comment-utiliser-et-gerer-la-suppression-de-versions-dobjets" title="Lien permanent vers cette rubrique"></a></h5>
 <section id="gestion-des-droits-associes-a-la-suppression-de-versions-dobjets">
-<h6><span class="section-number">9.5.2.3.2.1. </span>Gestion des droits associés à la suppression de versions d’objets<a class="headerlink" href="#gestion-des-droits-associes-a-la-suppression-de-versions-dobjets" title="Lien permanent vers ce titre"></a></h6>
-<table class="colwidths-auto docutils align-default">
+<h6><span class="section-number">9.5.2.3.2.1. </span>Gestion des droits associés à la suppression de versions d’objets<a class="headerlink" href="#gestion-des-droits-associes-a-la-suppression-de-versions-dobjets" title="Lien permanent vers cette rubrique"></a></h6>
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Intitulé</p></th>
-<th class="text-left head"><p>Description</p></th>
-<th class="text-left head"><p>Niveau de recommandation</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Intitulé</p></th>
+<th class="head text-left"><p>Description</p></th>
+<th class="head text-left"><p>Niveau de recommandation</p></th>
 </tr>
 </thead>
 <tbody>
@@ -2673,12 +2675,12 @@ S’il y a conception d’écrans, il est conseillé de privilégier des interfa
 </table>
 </section>
 <section id="id27">
-<h6><span class="section-number">9.5.2.3.2.2. </span>Restitution sur une IHM<a class="headerlink" href="#id27" title="Lien permanent vers ce titre"></a></h6>
-<table class="colwidths-auto docutils align-default">
+<h6><span class="section-number">9.5.2.3.2.2. </span>Restitution sur une IHM<a class="headerlink" href="#id27" title="Lien permanent vers cette rubrique"></a></h6>
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Intitulé</p></th>
-<th class="text-left head"><p>Description</p></th>
-<th class="text-left head"><p>Niveau de recommandation</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Intitulé</p></th>
+<th class="head text-left"><p>Description</p></th>
+<th class="head text-left"><p>Niveau de recommandation</p></th>
 </tr>
 </thead>
 <tbody>
@@ -2693,7 +2695,7 @@ S’il y a conception d’écrans, il est conseillé de privilégier des interfa
 </section>
 </section>
 <section id="audit">
-<h3><span class="section-number">9.5.3. </span>Audit<a class="headerlink" href="#audit" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">9.5.3. </span>Audit<a class="headerlink" href="#audit" title="Lien permanent vers cette rubrique"></a></h3>
 <p>La préservation numérique consiste en un ensemble de processus visant à maintenir un accès aux fichiers numériques et à leurs métadonnées sur le très long terme. En plus d’assurer un moyen de représenter ces fichiers dans le temps, cela implique de vérifier la disponibilité des fichiers numériques et des métadonnées associées dans la solution logicielle Vitam, ainsi que de maintenir leur intégrité.<br>
 Pour ce faire, la solution logicielle Vitam propose des fonctionnalités permettant d’assurer les audits suivants :</p>
 <ul class="simple">
@@ -2701,10 +2703,10 @@ Pour ce faire, la solution logicielle Vitam propose des fonctionnalités permett
 <li><p>audit portant en plus sur les journaux sécurisés[^55] : audit de cohérence et audit correctif.</p></li>
 </ul>
 <section id="objet-de-laudit-les-archives-transferees">
-<h4><span class="section-number">9.5.3.1. </span>Objet de l’audit : les archives transférées<a class="headerlink" href="#objet-de-laudit-les-archives-transferees" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">9.5.3.1. </span>Objet de l’audit : les archives transférées<a class="headerlink" href="#objet-de-laudit-les-archives-transferees" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Avant d’évoquer les fonctionnalités d’audit, il convient de préciser quelques éléments sur les archives transférées dans la solution logicielle Vitam et qui font l’objet de ces audits.</p>
 <section id="enregistrement-et-stockage">
-<h5><span class="section-number">9.5.3.1.1. </span>Enregistrement et stockage<a class="headerlink" href="#enregistrement-et-stockage" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.5.3.1.1. </span>Enregistrement et stockage<a class="headerlink" href="#enregistrement-et-stockage" title="Lien permanent vers cette rubrique"></a></h5>
 <p>En entrée du système, les archives contenues dans un bordereau de versement sont contrôlées, puis, sauf cas d’erreur, enregistrées au fur et à mesure dans la solution logicielle Vitam comme suit :</p>
 <ul class="simple">
 <li><p>si le bordereau de transfert contient des fichiers numériques :</p>
@@ -2751,11 +2753,11 @@ Pour ce faire, la solution logicielle Vitam propose des fonctionnalités permett
 </ul>
 </li>
 </ul>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p></p></th>
-<th class="text-left head"><p>MongoDB</p></th>
-<th class="text-left head"><p>Offre de stockage</p></th>
+<tr class="row-odd"><th class="head text-left"><p></p></th>
+<th class="head text-left"><p>MongoDB</p></th>
+<th class="head text-left"><p>Offre de stockage</p></th>
 </tr>
 </thead>
 <tbody>
@@ -2775,7 +2777,7 @@ Pour ce faire, la solution logicielle Vitam propose des fonctionnalités permett
 </table>
 </section>
 <section id="cycle-de-vie-des-archives-stockees">
-<h5><span class="section-number">9.5.3.1.2. </span>Cycle de vie des archives stockées<a class="headerlink" href="#cycle-de-vie-des-archives-stockees" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.5.3.1.2. </span>Cycle de vie des archives stockées<a class="headerlink" href="#cycle-de-vie-des-archives-stockees" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Les unités archivistiques, ainsi que les groupes d’objets techniques peuvent faire l’objet de traitements dans la solution logicielle Vitam. Il peut s’agir des traitements suivants :</p>
 <ul class="simple">
 <li><p>pour une unité archivistique :</p>
@@ -2804,7 +2806,7 @@ Les conséquences sont les suivantes :</p></li>
 </li>
 </ul>
 <section id="unite-archivistique-enregistree-dans-la-base-de-donnees-mongo-db">
-<h6><span class="section-number">9.5.3.1.2.1. </span>Unité archivistique enregistrée dans la base de données Mongo DB<a class="headerlink" href="#unite-archivistique-enregistree-dans-la-base-de-donnees-mongo-db" title="Lien permanent vers ce titre"></a></h6>
+<h6><span class="section-number">9.5.3.1.2.1. </span>Unité archivistique enregistrée dans la base de données Mongo DB<a class="headerlink" href="#unite-archivistique-enregistree-dans-la-base-de-donnees-mongo-db" title="Lien permanent vers cette rubrique"></a></h6>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{
     &quot;_id&quot;: &quot;aeaqaaaaaehnbxf7abrfyalmxbmg7zyaaaea&quot;,
     &quot;_og&quot;: &quot;aebaaaaaaehnbxf7abrfyalmxbmg6eaaaabq&quot;,
@@ -2876,7 +2878,7 @@ Les conséquences sont les suivantes :</p></li>
 <p>Suite à une mise à jour de ses métadonnées, l’unité archivistique enregistrée dans la base de données Mongo DB contient : une description supplémentaire (« Description »), une opération supplémentaire correspondant à l’identifiant de l’opération de mise à jour (« _ops »), et sa version a été mise à jour (« _v »).</p>
 </section>
 <section id="journal-du-cycle-de-vie-dune-unite-archivistique-enregistre-dans-la-base-de-donnees-mongo-db">
-<h6><span class="section-number">9.5.3.1.2.2. </span>Journal du cycle de vie d’une unité archivistique enregistré dans la base de données Mongo DB<a class="headerlink" href="#journal-du-cycle-de-vie-dune-unite-archivistique-enregistre-dans-la-base-de-donnees-mongo-db" title="Lien permanent vers ce titre"></a></h6>
+<h6><span class="section-number">9.5.3.1.2.2. </span>Journal du cycle de vie d’une unité archivistique enregistré dans la base de données Mongo DB<a class="headerlink" href="#journal-du-cycle-de-vie-dune-unite-archivistique-enregistre-dans-la-base-de-donnees-mongo-db" title="Lien permanent vers cette rubrique"></a></h6>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{
     &quot;_id&quot;: &quot;aeaqaaaaaehnbxf7abrfyalmxbmg7yqaaabq&quot;,
     &quot;evId&quot;: &quot;aedqaaaaaghnbxf7abrfyalmxbmhsoqaaaaq&quot;,
@@ -3002,7 +3004,7 @@ Les conséquences sont les suivantes :</p></li>
 <p>À la suite d’une action sur une unité archivistique, son journal de cycle de vie se voit ajouter un à plusieurs événements supplémentaires. Sa version est mise à jour (« _v »).</p>
 </section>
 <section id="fichier-json-correspondant-a-lunite-archivistique-et-a-son-journal-du-cycle-de-vie-dans-loffre-de-stockage">
-<h6><span class="section-number">9.5.3.1.2.3. </span>Fichier JSON correspondant à l’unité archivistique et à son journal du cycle de vie dans l’offre de stockage<a class="headerlink" href="#fichier-json-correspondant-a-lunite-archivistique-et-a-son-journal-du-cycle-de-vie-dans-loffre-de-stockage" title="Lien permanent vers ce titre"></a></h6>
+<h6><span class="section-number">9.5.3.1.2.3. </span>Fichier JSON correspondant à l’unité archivistique et à son journal du cycle de vie dans l’offre de stockage<a class="headerlink" href="#fichier-json-correspondant-a-lunite-archivistique-et-a-son-journal-du-cycle-de-vie-dans-loffre-de-stockage" title="Lien permanent vers cette rubrique"></a></h6>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{
 &quot;lfc&quot;:
 {&quot;_id&quot;:&quot;aeaqaaaaaehnbxf7abrfyalmxbmg7uaaaaaq&quot;,&quot;_lastPersistedDate&quot;:&quot;2019-08-22T08:02:56.275&quot;,&quot;_tenant&quot;:1,&quot;_v&quot;:5,&quot;agId&quot;:&quot;{\&quot;Name\&quot;:\&quot;vitam-env-int-worker-01.vitam-env\&quot;,\&quot;Role\&quot;:\&quot;worker\&quot;,\&quot;ServerId\&quot;:1053875391,\&quot;SiteId\&quot;:1,\&quot;GlobalPlatformId\&quot;:248569023}&quot;,&quot;evDateTime&quot;:&quot;2019-08-22T08:01:41.007&quot;,&quot;evDetData&quot;:null,&quot;evId&quot;:&quot;aedqaaaaaghnbxf7abrfyalmxbmhndyaaabq&quot;,&quot;evIdProc&quot;:&quot;aeeaaaaaaghnjq2naaf52almxbmfsoiaaaaq&quot;,&quot;evParentId&quot;:null,&quot;evType&quot;:&quot;LFC.LFC_CREATION&quot;,&quot;evTypeProc&quot;:&quot;INGEST&quot;,&quot;events&quot;:[{&quot;_lastPersistedDate&quot;:&quot;2019-08-22T08:02:56.275&quot;,&quot;agId&quot;:&quot;{\&quot;Name\&quot;:\&quot;vitam-env-int-worker-01.vitam-env\&quot;,\&quot;Role\&quot;:\&quot;worker\&quot;,\&quot;ServerId\&quot;:1053875391,\&quot;SiteId\&quot;:1,\&quot;GlobalPlatformId\&quot;:248569023}&quot;,&quot;evDateTime&quot;:&quot;2019-08-22T08:01:41.007&quot;,&quot;evDetData&quot;:&quot;{ }&quot;,&quot;evId&quot;:&quot;aedqaaaaaghnbxf7abrfyalmxbmhndyaaaca&quot;,&quot;evIdProc&quot;:&quot;aeeaaaaaaghnjq2naaf52almxbmfsoiaaaaq&quot;,&quot;evParentId&quot;:null,&quot;evType&quot;:&quot;LFC.CHECK_MANIFEST&quot;,&quot;evTypeProc&quot;:&quot;INGEST&quot;,&quot;obId&quot;:&quot;aeaqaaaaaehnbxf7abrfyalmxbmg7uaaaaaq&quot;,&quot;outDetail&quot;:&quot;LFC.CHECK_MANIFEST.OK&quot;,&quot;outMessg&quot;:&quot;Succ\u00e8s de la v\u00e9rification de la coh\u00e9rence du bordereau de transfert&quot;,&quot;outcome&quot;:&quot;OK&quot;},
@@ -3028,7 +3030,7 @@ Les conséquences sont les suivantes :</p></li>
 <p>Le fichier JSON enregistré dans l’offre de stockage reprend l’ensemble des mises à jour effectuées aussi bien dans l’unité archivistique que dans son journal de cycle de vie.</p>
 </section>
 <section id="groupe-dobjets-techniques-enregistres-dans-la-base-de-donnees-mongo-db">
-<h6><span class="section-number">9.5.3.1.2.4. </span>Groupe d’objets techniques enregistrés dans la base de données Mongo DB<a class="headerlink" href="#groupe-dobjets-techniques-enregistres-dans-la-base-de-donnees-mongo-db" title="Lien permanent vers ce titre"></a></h6>
+<h6><span class="section-number">9.5.3.1.2.4. </span>Groupe d’objets techniques enregistrés dans la base de données Mongo DB<a class="headerlink" href="#groupe-dobjets-techniques-enregistres-dans-la-base-de-donnees-mongo-db" title="Lien permanent vers cette rubrique"></a></h6>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;_id&quot;</span><span class="p">:</span> <span class="s2">&quot;aebaaaaaaehnbxf7abrfyalmxbmg55aaaaaq&quot;</span><span class="p">,</span>
     <span class="s2">&quot;_tenant&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
@@ -3208,7 +3210,7 @@ Les conséquences sont les suivantes :</p></li>
 <p>Suite à une génération de nouveau binaire, le groupe d’objets techniques enregistré dans la base de données Mongo DB contient : un objet décrit  supplémentaire, une opération supplémentaire correspondant à l’identifiant de l’opération de mise à jour (« _ops »), et sa version a été mise à jour (« _v »).</p>
 </section>
 <section id="journal-du-cycle-de-vie-dun-groupe-dobjets-techniques-enregistre-dans-la-base-de-donnees-mongo-db">
-<h6><span class="section-number">9.5.3.1.2.5. </span>Journal du cycle de vie d’un groupe d’objets techniques enregistré dans la base de données Mongo DB<a class="headerlink" href="#journal-du-cycle-de-vie-dun-groupe-dobjets-techniques-enregistre-dans-la-base-de-donnees-mongo-db" title="Lien permanent vers ce titre"></a></h6>
+<h6><span class="section-number">9.5.3.1.2.5. </span>Journal du cycle de vie d’un groupe d’objets techniques enregistré dans la base de données Mongo DB<a class="headerlink" href="#journal-du-cycle-de-vie-dun-groupe-dobjets-techniques-enregistre-dans-la-base-de-donnees-mongo-db" title="Lien permanent vers cette rubrique"></a></h6>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{
     &quot;_id&quot;: &quot;aebaaaaaaehnbxf7abrfyalmxbmg55aaaaaq&quot;,
     &quot;evId&quot;: &quot;aedqaaaaaghnbxf7abrfyalmxbmhewyaaadq&quot;,
@@ -3350,7 +3352,7 @@ Les conséquences sont les suivantes :</p></li>
 <p>À la suite d’une action sur groupe d’objets techniques, son journal de cycle de vie se voit ajouter un à plusieurs événements supplémentaires. Sa version est mise à jour (« _v »).</p>
 </section>
 <section id="fichier-json-correspondant-au-groupe-dobjets-techniques-et-a-son-journal-du-cycle-de-vie-dans-loffre-de-stockage">
-<h6><span class="section-number">9.5.3.1.2.6. </span>Fichier JSON correspondant au groupe d’objets techniques et à son journal du cycle de vie dans l’offre de stockage<a class="headerlink" href="#fichier-json-correspondant-au-groupe-dobjets-techniques-et-a-son-journal-du-cycle-de-vie-dans-loffre-de-stockage" title="Lien permanent vers ce titre"></a></h6>
+<h6><span class="section-number">9.5.3.1.2.6. </span>Fichier JSON correspondant au groupe d’objets techniques et à son journal du cycle de vie dans l’offre de stockage<a class="headerlink" href="#fichier-json-correspondant-au-groupe-dobjets-techniques-et-a-son-journal-du-cycle-de-vie-dans-loffre-de-stockage" title="Lien permanent vers cette rubrique"></a></h6>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{&quot;got&quot;:
 {&quot;FileInfo&quot;:{},&quot;_id&quot;:&quot;aebaaaaaaehnbxf7abrfyalmxbmg55aaaaaq&quot;,&quot;_nbc&quot;:1,&quot;_opi&quot;:&quot;aeeaaaaaaghnjq2naaf52almxbmfsoiaaaaq&quot;,&quot;_ops&quot;:[&quot;aeeaaaaaaghnjq2naaf52almxbmfsoiaaaaq&quot;],&quot;_profil&quot;:&quot;&quot;,&quot;_qualifiers&quot;:[{&quot;_nbc&quot;:1,&quot;qualifier&quot;:&quot;BinaryMaster&quot;,&quot;versions&quot;:[
 {&quot;Algorithm&quot;:&quot;SHA-512&quot;,&quot;DataObjectGroupId&quot;:&quot;aebaaaaaaehnbxf7abrfyalmxbmg55aaaaaq&quot;,&quot;DataObjectVersion&quot;:&quot;BinaryMaster_1&quot;,&quot;FileInfo&quot;:{&quot;Filename&quot;:&quot;ID37.doc&quot;,&quot;LastModified&quot;:&quot;2018-02-09T13:05:50Z&quot;},&quot;FormatIdentification&quot;:{&quot;FormatId&quot;:&quot;fmt/40&quot;,&quot;FormatLitteral&quot;:&quot;Microsoft Word Document&quot;,&quot;MimeType&quot;:&quot;application/msword&quot;},&quot;MessageDigest&quot;:&quot;daecba36cff7d20d36b05a76f30831b4e512a6b2454281ceacd99811d0d3736beebeb27efa24c4f4baf475b75c2dac9b7364d75de5bdd6728758774b0b99b1d0&quot;,&quot;Size&quot;:35840,&quot;Uri&quot;:&quot;content/ID206.doc&quot;,&quot;_id&quot;:&quot;aeaaaaaaaahnbxf7abrfyalmxbmg54yaaaca&quot;,&quot;_opi&quot;:&quot;aeeaaaaaaghnjq2naaf52almxbmfsoiaaaaq&quot;,&quot;_storage&quot;:{&quot;_nbc&quot;:2,&quot;offerIds&quot;:[&quot;offer-fs-1.service.int.consul&quot;,&quot;offer-fs-2.service.int.consul&quot;],&quot;strategyId&quot;:&quot;default&quot;}}]}],&quot;_sp&quot;:&quot;Service_producteur&quot;,&quot;_storage&quot;:{&quot;_nbc&quot;:2,&quot;offerIds&quot;:[&quot;offer-fs-1.service.int.consul&quot;,&quot;offer-fs-2.service.int.consul&quot;],&quot;strategyId&quot;:&quot;default&quot;},&quot;_tenant&quot;:1,&quot;_up&quot;:[&quot;aeaqaaaaaehnbxf7abrfyalmxbmg7yaaaaba&quot;],&quot;_v&quot;:1
@@ -3386,7 +3388,7 @@ Les conséquences sont les suivantes :</p></li>
 </section>
 </section>
 <section id="production-de-journaux-securises">
-<h5><span class="section-number">9.5.3.1.3. </span>Production de journaux sécurisés<a class="headerlink" href="#production-de-journaux-securises" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.5.3.1.3. </span>Production de journaux sécurisés<a class="headerlink" href="#production-de-journaux-securises" title="Lien permanent vers cette rubrique"></a></h5>
 <p>En plus du stockage des archives transférées, la solution logicielle Vitam procède régulièrement à une sécurisation des données, tenant par tenant, basée sur ses différents journaux :</p>
 <ul class="simple">
 <li><p>journal des opérations,</p></li>
@@ -3443,9 +3445,9 @@ Ces journaux sécurisés ont plusieurs utilités :</p>
 </section>
 </section>
 <section id="audit-dexistence-et-dintegrite-des-objets">
-<h4><span class="section-number">9.5.3.2. </span>Audit d’existence et d’intégrité des objets<a class="headerlink" href="#audit-dexistence-et-dintegrite-des-objets" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">9.5.3.2. </span>Audit d’existence et d’intégrité des objets<a class="headerlink" href="#audit-dexistence-et-dintegrite-des-objets" title="Lien permanent vers cette rubrique"></a></h4>
 <section id="id28">
-<h5><span class="section-number">9.5.3.2.1. </span>Définition<a class="headerlink" href="#id28" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.5.3.2.1. </span>Définition<a class="headerlink" href="#id28" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Audit d’existence et d’intégrité : une comparaison des objets présents en base et sur les offres de stockage</p>
 <p><img alt="Audit d'existence et d'intégrité" src="../_images/audit.png" /></p>
 <p>Dans l’audit d’existence des objets : pour chaque objet (ou fichier numérique) défini dans une liste, la solution logicielle Vitam vérifie :</p>
@@ -3461,9 +3463,9 @@ Ces journaux sécurisés ont plusieurs utilités :</p>
 <p>Ces audits consistent en des actions d’évaluation, de vérification de l’existence et, le cas échéant, de l’intégrité d’une liste de fichiers numériques. Suite à cette analyse, une action corrective peut être lancée afin de rétablir l’accessibilité des fichiers absents ou corrompus, et ce à des fins de préservation numérique.</p>
 </section>
 <section id="id29">
-<h5><span class="section-number">9.5.3.2.2. </span>Mécanismes mis en œuvre dans la solution logicielle Vitam<a class="headerlink" href="#id29" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.5.3.2.2. </span>Mécanismes mis en œuvre dans la solution logicielle Vitam<a class="headerlink" href="#id29" title="Lien permanent vers cette rubrique"></a></h5>
 <section id="selection-de-lobjet-a-auditer">
-<h6><span class="section-number">9.5.3.2.2.1. </span>Sélection de l’objet à auditer<a class="headerlink" href="#selection-de-lobjet-a-auditer" title="Lien permanent vers ce titre"></a></h6>
+<h6><span class="section-number">9.5.3.2.2.1. </span>Sélection de l’objet à auditer<a class="headerlink" href="#selection-de-lobjet-a-auditer" title="Lien permanent vers cette rubrique"></a></h6>
 <p>La solution logicielle Vitam permet de réaliser une opération d’audit :</p>
 <ul class="simple">
 <li><p>soit sur un tenant donné,</p></li>
@@ -3480,7 +3482,7 @@ Il est possible de réaliser deux audits :</p>
 <p><strong>Point d’attention :</strong> en fonction du nombre d’objets binaires (ou fichiers numériques) conservés dans la solution logicielle Vitam, une opération d’audit peut prendre du temps et avoir un impact en termes de performance. Avant de lancer un audit, il est recommandé de bien prendre en considération le périmètre qui doit faire l’objet de cette opération.</p>
 </section>
 <section id="operation-daudit">
-<h6><span class="section-number">9.5.3.2.2.2. </span>Opération d’audit<a class="headerlink" href="#operation-daudit" title="Lien permanent vers ce titre"></a></h6>
+<h6><span class="section-number">9.5.3.2.2.2. </span>Opération d’audit<a class="headerlink" href="#operation-daudit" title="Lien permanent vers cette rubrique"></a></h6>
 <p>Dans le cadre du processus d’audit d’un ensemble d’archives, suite à la réception d’une requête, la solution logicielle Vitam effectue les tâches et traitements de contrôles internes suivants[^58] :</p>
 <ul class="simple">
 <li><p>préparation du traitement avec :</p>
@@ -3506,10 +3508,10 @@ Il est possible de réaliser deux audits :</p>
 <li><p>l’audit porte par défaut sur l’ensemble des objets contenus dans un groupe d’objets techniques, usage par usage, version par version.
 À l’issue de l’audit, l’opération peut aboutir aux statuts suivants :</p></li>
 </ul>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Statut</p></th>
-<th class="text-left head"><p>Motifs</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Statut</p></th>
+<th class="head text-left"><p>Motifs</p></th>
 </tr>
 </thead>
 <tbody>
@@ -3529,7 +3531,7 @@ Il est possible de réaliser deux audits :</p>
 </table>
 </section>
 <section id="resultat-dune-operation-daudit">
-<h6><span class="section-number">9.5.3.2.2.3. </span>Résultat d’une opération d’audit<a class="headerlink" href="#resultat-dune-operation-daudit" title="Lien permanent vers ce titre"></a></h6>
+<h6><span class="section-number">9.5.3.2.2.3. </span>Résultat d’une opération d’audit<a class="headerlink" href="#resultat-dune-operation-daudit" title="Lien permanent vers cette rubrique"></a></h6>
 <p>Quelle que soit l’action d’audit effectuée, la solution logicielle Vitam produit systématiquement un rapport au format JSONL énumérant[^59] :
 Ce rapport se décompose en plusieurs parties[^60] :</p>
 <ul class="simple">
@@ -3632,14 +3634,14 @@ Ce rapport se décompose en plusieurs parties[^60] :</p>
 </section>
 </section>
 <section id="id30">
-<h5><span class="section-number">9.5.3.2.3. </span>Conseils de mise en œuvre<a class="headerlink" href="#id30" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.5.3.2.3. </span>Conseils de mise en œuvre<a class="headerlink" href="#id30" title="Lien permanent vers cette rubrique"></a></h5>
 <section id="a-quoi-servent-laudit-dexistence-et-laudit-dintegrite-des-objets">
-<h6><span class="section-number">9.5.3.2.3.1. </span>À quoi servent l’audit d’existence et l’audit d’intégrité des objets ?<a class="headerlink" href="#a-quoi-servent-laudit-dexistence-et-laudit-dintegrite-des-objets" title="Lien permanent vers ce titre"></a></h6>
+<h6><span class="section-number">9.5.3.2.3.1. </span>À quoi servent l’audit d’existence et l’audit d’intégrité des objets ?<a class="headerlink" href="#a-quoi-servent-laudit-dexistence-et-laudit-dintegrite-des-objets" title="Lien permanent vers cette rubrique"></a></h6>
 <p>L’audit d’existence des objets permet de vérifier la présence effective des objets binaires (ou fichiers numériques) préalablement transférés et conservés dans la solution logicielle Vitam. Il assure que ces objets binaires sont toujours disponibles et qu’aucune de leurs copies, stockées dans différentes offres de stockage, conformément à la stratégie de stockage, n’a disparu des différentes offres suite à une erreur technique.</p>
 <p>L’audit d’intégrité des objets binaires (ou fichiers numériques) permet de vérifier, outre l’existence des objets, que ces objets conservés au moyen de la solution logicielle Vitam sont intègres, c’est-à-dire qu’ils n’ont pas été modifiés dans la plate-forme d’archivage utilisant la solution logicielle Vitam, et ce par contrôle et comparaison d’empreintes relatives aux groupes d’objets techniques.</p>
 </section>
 <section id="quand-et-comment-lancer-un-audit-dexistence-et-un-audit-dintegrite-des-objets">
-<h6><span class="section-number">9.5.3.2.3.2. </span>Quand et comment lancer un audit d’existence et un audit d’intégrité des objets ?<a class="headerlink" href="#quand-et-comment-lancer-un-audit-dexistence-et-un-audit-dintegrite-des-objets" title="Lien permanent vers ce titre"></a></h6>
+<h6><span class="section-number">9.5.3.2.3.2. </span>Quand et comment lancer un audit d’existence et un audit d’intégrité des objets ?<a class="headerlink" href="#quand-et-comment-lancer-un-audit-dexistence-et-un-audit-dintegrite-des-objets" title="Lien permanent vers cette rubrique"></a></h6>
 <p>La solution logicielle Vitam permet de lancer des opérations d’audit d’existence et/ou d’intégrité :</p>
 <ul class="simple">
 <li><p>depuis l’IHM démo sur l’ensemble d’un tenant ou en sélectionnant un service producteur en particulier ;</p></li>
@@ -3665,14 +3667,14 @@ Ce rapport se décompose en plusieurs parties[^60] :</p>
 </ul>
 </section>
 <section id="comment-utiliser-laudit-dexistence-et-dintegrite-des-objets">
-<h6><span class="section-number">9.5.3.2.3.3. </span>Comment utiliser l’audit d’existence et d’intégrité des objets ?<a class="headerlink" href="#comment-utiliser-laudit-dexistence-et-dintegrite-des-objets" title="Lien permanent vers ce titre"></a></h6>
+<h6><span class="section-number">9.5.3.2.3.3. </span>Comment utiliser l’audit d’existence et d’intégrité des objets ?<a class="headerlink" href="#comment-utiliser-laudit-dexistence-et-dintegrite-des-objets" title="Lien permanent vers cette rubrique"></a></h6>
 <p>À l’issue de cette phase de réalisation de fonctionnalités concernant le référentiel Vitam, l’équipe projet Vitam est en mesure de fournir quelques recommandations de mise en œuvre :</p>
 <p><strong>Audit d’existence des objets</strong></p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Intitulé</p></th>
-<th class="text-left head"><p>Description</p></th>
-<th class="text-left head"><p>Niveau de recommandation</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Intitulé</p></th>
+<th class="head text-left"><p>Description</p></th>
+<th class="head text-left"><p>Niveau de recommandation</p></th>
 </tr>
 </thead>
 <tbody>
@@ -3695,11 +3697,11 @@ Ce rapport se décompose en plusieurs parties[^60] :</p>
 </tbody>
 </table>
 <p><strong>Audit d’intégrité des objets</strong></p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Intitulé</p></th>
-<th class="text-left head"><p>Description</p></th>
-<th class="text-left head"><p>Niveau de recommandation</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Intitulé</p></th>
+<th class="head text-left"><p>Description</p></th>
+<th class="head text-left"><p>Niveau de recommandation</p></th>
 </tr>
 </thead>
 <tbody>
@@ -3733,9 +3735,9 @@ Ce rapport se décompose en plusieurs parties[^60] :</p>
 </section>
 </section>
 <section id="audit-de-releve-de-valeur-probante">
-<h4><span class="section-number">9.5.3.3. </span>Audit de relevé de valeur probante<a class="headerlink" href="#audit-de-releve-de-valeur-probante" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">9.5.3.3. </span>Audit de relevé de valeur probante<a class="headerlink" href="#audit-de-releve-de-valeur-probante" title="Lien permanent vers cette rubrique"></a></h4>
 <section id="id31">
-<h5><span class="section-number">9.5.3.3.1. </span>Définition<a class="headerlink" href="#id31" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.5.3.3.1. </span>Définition<a class="headerlink" href="#id31" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Éléments comparés lors d’un audit de relevé de valeur probante :
 <img alt="Valeur probante" src="../_images/valeur_probante.png" /></p>
 <p>Dans un audit de relevé de valeur probante, pour chaque objet (ou fichier numérique) défini dans une liste, la solution logicielle Vitam vérifie :</p>
@@ -3749,9 +3751,9 @@ Ce rapport se décompose en plusieurs parties[^60] :</p>
 <p><strong>Point d’attention :</strong> l’audit de relevé de valeur probante s’effectue sur la base des versions des groupes d’objets techniques, ainsi que de leurs objets binaires, de la même manière qu’il les compare aux journaux sécurisés à disposition concernant les journaux du cycle de vie des groupes d’objets techniques, au moment supposé de la création des objets.</p>
 </section>
 <section id="id32">
-<h5><span class="section-number">9.5.3.3.2. </span>Mécanismes mis en œuvre dans la solution logicielle Vitam<a class="headerlink" href="#id32" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.5.3.3.2. </span>Mécanismes mis en œuvre dans la solution logicielle Vitam<a class="headerlink" href="#id32" title="Lien permanent vers cette rubrique"></a></h5>
 <section id="id33">
-<h6><span class="section-number">9.5.3.3.2.1. </span>Sélection de l’objet à auditer<a class="headerlink" href="#id33" title="Lien permanent vers ce titre"></a></h6>
+<h6><span class="section-number">9.5.3.3.2.1. </span>Sélection de l’objet à auditer<a class="headerlink" href="#id33" title="Lien permanent vers cette rubrique"></a></h6>
 <p>La solution logicielle Vitam permet de réaliser une opération d’audit de relevé de valeur probante à partir d’un lot d’archives préalablement sélectionnées. Cette opération peut porter :</p>
 <ul class="simple">
 <li><p>sur un usage d’objet particulier (original numérique, copie de diffusion, texte brut, vignette) ;</p></li>
@@ -3760,7 +3762,7 @@ Ce rapport se décompose en plusieurs parties[^60] :</p>
 <p><strong>Point d’attention :</strong> en fonction du nombre d’objets conservés dans la solution logicielle Vitam, une opération d’audit peut prendre du temps et avoir un impact en termes de performance. Avant de lancer un audit, il est recommandé de bien prendre en considération le périmètre qui doit faire l’objet de cette opération.</p>
 </section>
 <section id="id34">
-<h6><span class="section-number">9.5.3.3.2.2. </span>Opération d’audit<a class="headerlink" href="#id34" title="Lien permanent vers ce titre"></a></h6>
+<h6><span class="section-number">9.5.3.3.2.2. </span>Opération d’audit<a class="headerlink" href="#id34" title="Lien permanent vers cette rubrique"></a></h6>
 <p>Dans le cadre du processus d’audit de relevé de valeur probante d’un ensemble d’archives, suite à la réception d’une requête, la solution logicielle Vitam effectue les tâches et traitements de contrôles internes suivants[^61] :</p>
 <ul class="simple">
 <li><p>préparation du traitement avec :</p>
@@ -3774,10 +3776,10 @@ Ce rapport se décompose en plusieurs parties[^60] :</p>
 <li><p>finalisation de l’audit et de la création du relevé de valeur probante, faisant état de la conservation des archives dans le système.</p></li>
 </ul>
 <p>À l’issue de l’audit, l’opération peut aboutir aux statuts suivants[^62] :</p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Statut</p></th>
-<th class="text-left head"><p>Motifs</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Statut</p></th>
+<th class="head text-left"><p>Motifs</p></th>
 </tr>
 </thead>
 <tbody>
@@ -3795,10 +3797,10 @@ Ce rapport se décompose en plusieurs parties[^60] :</p>
 </tr>
 </tbody>
 </table>
-<p>Pour chaque objet, l’audit de relevé de valeur probante effectue les contrôles suivants : <span class="xref myst">fichier à télécharger</span></p>
+<p>Pour chaque objet, l’audit de relevé de valeur probante effectue les contrôles suivants : <a class="reference download internal" download="" href="../_downloads/50e0bf4a18c763944f9505ae9867c064/audit_contr%C3%B4le.ods"><span class="xref download myst">fichier à télécharger</span></a></p>
 </section>
 <section id="id35">
-<h6><span class="section-number">9.5.3.3.2.3. </span>Résultat d’une opération d’audit<a class="headerlink" href="#id35" title="Lien permanent vers ce titre"></a></h6>
+<h6><span class="section-number">9.5.3.3.2.3. </span>Résultat d’une opération d’audit<a class="headerlink" href="#id35" title="Lien permanent vers cette rubrique"></a></h6>
 <p>Lors d’un audit de relevé de valeur probante, la solution logicielle Vitam produit systématiquement un rapport au format JSON[^63].</p>
 <p>Ce rapport se décompose en plusieurs parties[^64] :</p>
 <ul class="simple">
@@ -3876,10 +3878,10 @@ Dans le cas présent, le rapport précise l’identifiant du contrat d’accès 
 </ul>
 <p><strong>Point d’attention :</strong> Cette structure très riche et détaillée n’est pas faite pour être lue directement, mais pour apporter tous les éléments utiles à la construction d’un document lisible selon la forme souhaitée par le demandeur, au niveau du front-office.</p>
 <p>Pour un objet, l’opération peut aboutir aux statuts suivants[^65] :</p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Statut</p></th>
-<th class="text-left head"><p>Motifs</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Statut</p></th>
+<th class="head text-left"><p>Motifs</p></th>
 </tr>
 </thead>
 <tbody>
@@ -3900,14 +3902,14 @@ Dans le cas présent, le rapport précise l’identifiant du contrat d’accès 
 </section>
 </section>
 <section id="id36">
-<h5><span class="section-number">9.5.3.3.3. </span>Conseils de mise en œuvre<a class="headerlink" href="#id36" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.5.3.3.3. </span>Conseils de mise en œuvre<a class="headerlink" href="#id36" title="Lien permanent vers cette rubrique"></a></h5>
 <section id="a-quoi-sert-laudit-de-releve-de-valeur-probante">
-<h6><span class="section-number">9.5.3.3.3.1. </span>À quoi sert l’audit de relevé de valeur probante ?<a class="headerlink" href="#a-quoi-sert-laudit-de-releve-de-valeur-probante" title="Lien permanent vers ce titre"></a></h6>
+<h6><span class="section-number">9.5.3.3.3.1. </span>À quoi sert l’audit de relevé de valeur probante ?<a class="headerlink" href="#a-quoi-sert-laudit-de-releve-de-valeur-probante" title="Lien permanent vers cette rubrique"></a></h6>
 <p>L’audit de relevé de valeur probante permet de vérifier la conformité globale des objets binaires (fichiers numériques), et de leurs journaux dans l’ensemble du système, au moment de leur création (versement ou préservation).<br>
 Il offre une garantie supplémentaire en prouvant, au moyen de son rapport, que le système ou, du moins, le périmètre audité n’a pas subi d’altération depuis sa création jusqu’à l’instant où est lancé l’audit.</p>
 </section>
 <section id="quand-et-comment-lancer-un-audit-de-releve-de-valeur-probante">
-<h6><span class="section-number">9.5.3.3.3.2. </span>Quand et comment lancer un audit de relevé de valeur probante ?<a class="headerlink" href="#quand-et-comment-lancer-un-audit-de-releve-de-valeur-probante" title="Lien permanent vers ce titre"></a></h6>
+<h6><span class="section-number">9.5.3.3.3.2. </span>Quand et comment lancer un audit de relevé de valeur probante ?<a class="headerlink" href="#quand-et-comment-lancer-un-audit-de-releve-de-valeur-probante" title="Lien permanent vers cette rubrique"></a></h6>
 <p>La solution logicielle Vitam permet de lancer des opérations d’audit de relevé valeur probante à partir d’un lot d’archives préalablement sélectionné. L’opération peut s’effectuer :</p>
 <ul class="simple">
 <li><p>depuis le panier de l’IHM démo sur un lot d’archives ;</p></li>
@@ -3922,9 +3924,9 @@ Les raisons pouvant amener à réaliser un relevé de valeur probante sont les s
 </section>
 </section>
 <section id="audit-de-coherence">
-<h4><span class="section-number">9.5.3.4. </span>Audit de cohérence<a class="headerlink" href="#audit-de-coherence" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">9.5.3.4. </span>Audit de cohérence<a class="headerlink" href="#audit-de-coherence" title="Lien permanent vers cette rubrique"></a></h4>
 <section id="id37">
-<h5><span class="section-number">9.5.3.4.1. </span>Définition<a class="headerlink" href="#id37" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.5.3.4.1. </span>Définition<a class="headerlink" href="#id37" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Éléments comparés lors d’un audit de cohérence :
 <img alt="Audit - éléments comparés" src="../_images/audit_comparaison.png" /></p>
 <p>Dans un audit de cohérence, la solution logicielle Vitam vérifie, pour chaque unité archivistique définie dans une liste, que :</p>
@@ -3960,14 +3962,14 @@ Les raisons pouvant amener à réaliser un relevé de valeur probante sont les s
 <p>Cet audit consiste en des actions d’évaluation, de vérification de l’existence et, le cas échéant, de l’intégrité d’une liste d’objets binaires, de groupes d’objets techniques et d’unités archivistiques, de leurs journaux de cycle de vie, ainsi que de leur cohérence par rapport aux journaux sécurisés. Suite à cette analyse, une action corrective peut être lancée afin de rétablir l’accessibilité des objets absents ou corrompus, et ce à des fins de préservation numérique.</p>
 </section>
 <section id="id38">
-<h5><span class="section-number">9.5.3.4.2. </span>Mécanismes mis en œuvre dans la solution logicielle Vitam<a class="headerlink" href="#id38" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.5.3.4.2. </span>Mécanismes mis en œuvre dans la solution logicielle Vitam<a class="headerlink" href="#id38" title="Lien permanent vers cette rubrique"></a></h5>
 <section id="id39">
-<h6><span class="section-number">9.5.3.4.2.1. </span>Sélection de l’objet à auditer<a class="headerlink" href="#id39" title="Lien permanent vers ce titre"></a></h6>
+<h6><span class="section-number">9.5.3.4.2.1. </span>Sélection de l’objet à auditer<a class="headerlink" href="#id39" title="Lien permanent vers cette rubrique"></a></h6>
 <p>La solution logicielle Vitam permet de réaliser une opération d’audit de cohérence à partir d’un lot d’archives.</p>
 <p><strong>Point d’attention :</strong> en fonction du nombre d’objets conservés dans la solution logicielle Vitam, une opération d’audit peut prendre du temps et avoir un impact en termes de performance. Avant de lancer un audit, il est recommandé de bien prendre en considération le périmètre qui doit faire l’objet de cette opération.</p>
 </section>
 <section id="id40">
-<h6><span class="section-number">9.5.3.4.2.2. </span>Opération d’audit<a class="headerlink" href="#id40" title="Lien permanent vers ce titre"></a></h6>
+<h6><span class="section-number">9.5.3.4.2.2. </span>Opération d’audit<a class="headerlink" href="#id40" title="Lien permanent vers cette rubrique"></a></h6>
 <p>Dans le cadre du processus d’audit de cohérence d’un ensemble d’archives, suite à la réception d’une requête, la solution logicielle Vitam effectue les tâches et traitements de contrôles internes suivants[^67] :</p>
 <ul class="simple">
 <li><p>préparation du traitement avec :</p>
@@ -3983,10 +3985,10 @@ Les raisons pouvant amener à réaliser un relevé de valeur probante sont les s
 <li><p>finalisation de l’audit et création d’un rapport, faisant état de l’opération d’audit ayant été exécutée.</p></li>
 </ul>
 <p>À l’issue de l’audit, l’opération peut aboutir aux statuts suivants :</p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Statut</p></th>
-<th class="text-left head"><p>Motifs</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Statut</p></th>
+<th class="head text-left"><p>Motifs</p></th>
 </tr>
 </thead>
 <tbody>
@@ -4006,7 +4008,7 @@ Les raisons pouvant amener à réaliser un relevé de valeur probante sont les s
 </table>
 </section>
 <section id="id41">
-<h6><span class="section-number">9.5.3.4.2.3. </span>Résultat d’une opération d’audit<a class="headerlink" href="#id41" title="Lien permanent vers ce titre"></a></h6>
+<h6><span class="section-number">9.5.3.4.2.3. </span>Résultat d’une opération d’audit<a class="headerlink" href="#id41" title="Lien permanent vers cette rubrique"></a></h6>
 <p>Lors d’un audit de cohérence, la solution logicielle Vitam produit systématiquement un rapport au format JSONL[^68].<br>
 Ce rapport se décompose en plusieurs parties[^69] :</p>
 <ul class="simple">
@@ -4072,9 +4074,9 @@ La partie suivante récapitule le résultat de l’opération d’audit et préc
 </section>
 </section>
 <section id="id42">
-<h5><span class="section-number">9.5.3.4.3. </span>Conseils de mise en œuvre<a class="headerlink" href="#id42" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.5.3.4.3. </span>Conseils de mise en œuvre<a class="headerlink" href="#id42" title="Lien permanent vers cette rubrique"></a></h5>
 <section id="a-quoi-sert-laudit-de-coherence">
-<h6><span class="section-number">9.5.3.4.3.1. </span>À quoi sert l’audit de cohérence ?<a class="headerlink" href="#a-quoi-sert-laudit-de-coherence" title="Lien permanent vers ce titre"></a></h6>
+<h6><span class="section-number">9.5.3.4.3.1. </span>À quoi sert l’audit de cohérence ?<a class="headerlink" href="#a-quoi-sert-laudit-de-coherence" title="Lien permanent vers cette rubrique"></a></h6>
 <p>L’audit de cohérence permet de vérifier la conformité globale des unités archivistiques, des groupes d’objets techniques et des objets binaires (fichiers numériques), et de leurs journaux dans l’ensemble du système, puisqu’il croise :</p>
 <ul class="simple">
 <li><p>empreintes des unités archivistiques et des groupes d’objets techniques, ainsi que de leurs journaux, présents dans la base de données MongoDB,</p></li>
@@ -4084,7 +4086,7 @@ La partie suivante récapitule le résultat de l’opération d’audit et préc
 <p>Il offre une garantie supplémentaire en prouvant, au moyen de son rapport, que le système ou, du moins, le périmètre audité n’a pas subi d’altération à l’instant où est lancé l’audit.</p>
 </section>
 <section id="quand-et-comment-lancer-un-audit-de-coherence">
-<h6><span class="section-number">9.5.3.4.3.2. </span>Quand et comment lancer un audit de cohérence ?<a class="headerlink" href="#quand-et-comment-lancer-un-audit-de-coherence" title="Lien permanent vers ce titre"></a></h6>
+<h6><span class="section-number">9.5.3.4.3.2. </span>Quand et comment lancer un audit de cohérence ?<a class="headerlink" href="#quand-et-comment-lancer-un-audit-de-coherence" title="Lien permanent vers cette rubrique"></a></h6>
 <p>La solution logicielle Vitam permet de lancer des opérations d’audit de cohérence à partir d’un lot d’archives préalablement sélectionné. L’opération peut s’effectuer :</p>
 <ul class="simple">
 <li><p>depuis le panier de l’IHM démo sur un lot d’archives ;</p></li>
@@ -4106,14 +4108,14 @@ La partie suivante récapitule le résultat de l’opération d’audit et préc
 </ul>
 </section>
 <section id="comment-utiliser-laudit-de-coherence">
-<h6><span class="section-number">9.5.3.4.3.3. </span>Comment utiliser l’audit de cohérence ?<a class="headerlink" href="#comment-utiliser-laudit-de-coherence" title="Lien permanent vers ce titre"></a></h6>
+<h6><span class="section-number">9.5.3.4.3.3. </span>Comment utiliser l’audit de cohérence ?<a class="headerlink" href="#comment-utiliser-laudit-de-coherence" title="Lien permanent vers cette rubrique"></a></h6>
 <p>À l’issue de cette phase de réalisation de fonctionnalités concernant le référentiel Vitam, l’équipe projet Vitam est en mesure de fournir quelques recommandations de mise en œuvre :</p>
 <p><strong>Audit de cohérence</strong></p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Intitulé</p></th>
-<th class="text-left head"><p>Description</p></th>
-<th class="text-left head"><p>Niveau de recommandation</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Intitulé</p></th>
+<th class="head text-left"><p>Description</p></th>
+<th class="head text-left"><p>Niveau de recommandation</p></th>
 </tr>
 </thead>
 <tbody>
@@ -4143,9 +4145,9 @@ La partie suivante récapitule le résultat de l’opération d’audit et préc
 </section>
 </section>
 <section id="audit-correctif">
-<h4><span class="section-number">9.5.3.5. </span>Audit correctif<a class="headerlink" href="#audit-correctif" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">9.5.3.5. </span>Audit correctif<a class="headerlink" href="#audit-correctif" title="Lien permanent vers cette rubrique"></a></h4>
 <section id="id43">
-<h5><span class="section-number">9.5.3.5.1. </span>Définition<a class="headerlink" href="#id43" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.5.3.5.1. </span>Définition<a class="headerlink" href="#id43" title="Lien permanent vers cette rubrique"></a></h5>
 <p>L’audit correctif comprend deux phases :</p>
 <ul class="simple">
 <li><p>un audit de cohérence :</p>
@@ -4178,9 +4180,9 @@ La partie suivante récapitule le résultat de l’opération d’audit et préc
 <p><strong>Point d’attention :</strong> l’audit correctif ne rétablit qu’une anomalie à la fois. S’il existe plus d’une anomalie sur un objet audité, aucune correction ne sera effectuée.</p>
 </section>
 <section id="id44">
-<h5><span class="section-number">9.5.3.5.2. </span>Mécanismes mis en œuvre dans la solution logicielle Vitam<a class="headerlink" href="#id44" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.5.3.5.2. </span>Mécanismes mis en œuvre dans la solution logicielle Vitam<a class="headerlink" href="#id44" title="Lien permanent vers cette rubrique"></a></h5>
 <section id="id45">
-<h6><span class="section-number">9.5.3.5.2.1. </span>Sélection de l’objet à auditer<a class="headerlink" href="#id45" title="Lien permanent vers ce titre"></a></h6>
+<h6><span class="section-number">9.5.3.5.2.1. </span>Sélection de l’objet à auditer<a class="headerlink" href="#id45" title="Lien permanent vers cette rubrique"></a></h6>
 <p>La solution logicielle Vitam permet de réaliser une opération d’audit correctif à partir d’une opération d’audit de cohérence sur un tenant donné. De fait, il faut préalablement avoir réalisé un audit de cohérence avant de lancer un audit correctif.</p>
 <p><strong>Point d’attention :</strong></p>
 <ul class="simple">
@@ -4190,7 +4192,7 @@ La partie suivante récapitule le résultat de l’opération d’audit et préc
 </ul>
 </section>
 <section id="id46">
-<h6><span class="section-number">9.5.3.5.2.2. </span>Opération d’audit<a class="headerlink" href="#id46" title="Lien permanent vers ce titre"></a></h6>
+<h6><span class="section-number">9.5.3.5.2.2. </span>Opération d’audit<a class="headerlink" href="#id46" title="Lien permanent vers cette rubrique"></a></h6>
 <p>Dans le cadre du processus d’audit correctif d’un ensemble d’archives, suite à la réception d’une requête, la solution logicielle Vitam effectue les tâches et traitements de contrôles internes suivants[^71] :</p>
 <ul class="simple">
 <li><p>préparation du traitement avec :</p>
@@ -4208,10 +4210,10 @@ La partie suivante récapitule le résultat de l’opération d’audit et préc
 <li><p>finalisation des corrections des signatures sur les données du/des fichier(s) auprès de la base de données ou d’une offre de stockage valide.</p></li>
 </ul>
 <p>À l’issue de l’audit, l’opération peut aboutir aux statuts suivants :</p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Statut</p></th>
-<th class="text-left head"><p>Motifs</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Statut</p></th>
+<th class="head text-left"><p>Motifs</p></th>
 </tr>
 </thead>
 <tbody>
@@ -4231,7 +4233,7 @@ La partie suivante récapitule le résultat de l’opération d’audit et préc
 </table>
 </section>
 <section id="id47">
-<h6><span class="section-number">9.5.3.5.2.3. </span>Résultat d’une opération d’audit<a class="headerlink" href="#id47" title="Lien permanent vers ce titre"></a></h6>
+<h6><span class="section-number">9.5.3.5.2.3. </span>Résultat d’une opération d’audit<a class="headerlink" href="#id47" title="Lien permanent vers cette rubrique"></a></h6>
 <p>Lors d’un audit correctif, la solution logicielle Vitam ne produit un rapport que dans les cas d’erreurs corrigées[^72].<br>
 Chaque section du rapport correspond au résultat de l’audit pour chaque objet binaire ou groupe d’objets techniques ou unité archivistique audité en erreur. On y trouve les informations suivantes :</p>
 <ul class="simple">
@@ -4251,14 +4253,14 @@ Chaque section du rapport correspond au résultat de l’audit pour chaque objet
 </section>
 </section>
 <section id="id48">
-<h5><span class="section-number">9.5.3.5.3. </span>Conseils de mise en œuvre<a class="headerlink" href="#id48" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.5.3.5.3. </span>Conseils de mise en œuvre<a class="headerlink" href="#id48" title="Lien permanent vers cette rubrique"></a></h5>
 <section id="a-quoi-sert-laudit-correctif">
-<h6><span class="section-number">9.5.3.5.3.1. </span>À quoi sert l’audit correctif ?<a class="headerlink" href="#a-quoi-sert-laudit-correctif" title="Lien permanent vers ce titre"></a></h6>
+<h6><span class="section-number">9.5.3.5.3.1. </span>À quoi sert l’audit correctif ?<a class="headerlink" href="#a-quoi-sert-laudit-correctif" title="Lien permanent vers cette rubrique"></a></h6>
 <p>L’audit correctif permet de vérifier la conformité globale du système, en procédant à un nouvel audit de cohérence. Mais il va au-delà en rétablissant les éléments manquants trouvés par cet audit. De fait, il garantit que la solution logicielle Vitam conserve toujours les mêmes archives.</p>
 <p><strong>Point d’attention :</strong> la solution logicielle Vitam ne rétablit que l’objet présent sur une offre non corrompue. En revanche, elle ne rétablit pas les incohérences présentes dans la base de données.</p>
 </section>
 <section id="quand-et-comment-lancer-un-audit-correctif">
-<h6><span class="section-number">9.5.3.5.3.2. </span>Quand et comment lancer un audit correctif ?<a class="headerlink" href="#quand-et-comment-lancer-un-audit-correctif" title="Lien permanent vers ce titre"></a></h6>
+<h6><span class="section-number">9.5.3.5.3.2. </span>Quand et comment lancer un audit correctif ?<a class="headerlink" href="#quand-et-comment-lancer-un-audit-correctif" title="Lien permanent vers cette rubrique"></a></h6>
 <p>Un audit correctif ne peut être lancé qu’à la suite d’un audit de cohérence dont le rapport contient au moins une anomalie. En d’autres termes, l’audit correctif a pour but de corriger les erreurs de l’audit de cohérence, préalablement lancé.<br>
 Avant correction des anomalies, il rejoue un audit de cohérence, afin de revérifier la présence d’anomalies et d’identifier leur nature.<br>
 Si l’audit de cohérence n’a montré aucune anomalie, il n’est pas nécessaire de lancer un audit correctif.<br>
@@ -4275,13 +4277,13 @@ L’audit correctif s’effectue depuis l’IHM recette mise à disposition.<br>
 </ul>
 </section>
 <section id="comment-utiliser-laudit-correctif">
-<h6><span class="section-number">9.5.3.5.3.3. </span>Comment utiliser l’audit correctif ?<a class="headerlink" href="#comment-utiliser-laudit-correctif" title="Lien permanent vers ce titre"></a></h6>
+<h6><span class="section-number">9.5.3.5.3.3. </span>Comment utiliser l’audit correctif ?<a class="headerlink" href="#comment-utiliser-laudit-correctif" title="Lien permanent vers cette rubrique"></a></h6>
 <p>À l’issue de cette phase de réalisation de fonctionnalités concernant le référentiel Vitam, l’équipe projet Vitam est en mesure de fournir quelques recommandations de mise en œuvre :</p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Intitulé</p></th>
-<th class="text-left head"><p>Description</p></th>
-<th class="text-left head"><p>Niveau de recommandation</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Intitulé</p></th>
+<th class="head text-left"><p>Description</p></th>
+<th class="head text-left"><p>Niveau de recommandation</p></th>
 </tr>
 </thead>
 <tbody>
@@ -4309,12 +4311,12 @@ L’audit correctif s’effectue depuis l’IHM recette mise à disposition.<br>
 </section>
 </section>
 <section id="annexes">
-<h2><span class="section-number">9.6. </span>Annexes<a class="headerlink" href="#annexes" title="Lien permanent vers ce titre"></a></h2>
+<h2><span class="section-number">9.6. </span>Annexes<a class="headerlink" href="#annexes" title="Lien permanent vers cette rubrique"></a></h2>
 <section id="annexe-1-exemples-de-referentiels-de-preservation">
-<h3><span class="section-number">9.6.1. </span>Annexe 1 : exemples de référentiels de préservation<a class="headerlink" href="#annexe-1-exemples-de-referentiels-de-preservation" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">9.6.1. </span>Annexe 1 : exemples de référentiels de préservation<a class="headerlink" href="#annexe-1-exemples-de-referentiels-de-preservation" title="Lien permanent vers cette rubrique"></a></h3>
 <p><em>Nota bene :</em> les cas présentés ci-dessous sont des exemples fictifs et visent simplement à vérifier la bonne mise en œuvre des mécanismes relatifs aux habilitations dans la solution logicielle Vitam.</p>
 <section id="griffons">
-<h4><span class="section-number">9.6.1.1. </span>Griffons<a class="headerlink" href="#griffons" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">9.6.1.1. </span>Griffons<a class="headerlink" href="#griffons" title="Lien permanent vers cette rubrique"></a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
   <span class="p">{</span>
     <span class="s2">&quot;Identifier&quot;</span><span class="p">:</span> <span class="s2">&quot;GRI-000001&quot;</span><span class="p">,</span>
@@ -4335,7 +4337,7 @@ L’audit correctif s’effectue depuis l’IHM recette mise à disposition.<br>
 </div>
 </section>
 <section id="id49">
-<h4><span class="section-number">9.6.1.2. </span>Scénarios de préservation<a class="headerlink" href="#id49" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">9.6.1.2. </span>Scénarios de préservation<a class="headerlink" href="#id49" title="Lien permanent vers cette rubrique"></a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;Identifier&quot;</span><span class="p">:</span> <span class="s2">&quot;PSC-000001&quot;</span><span class="p">,</span>
     <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;Tranformation en GIF (fmt/43)&quot;</span><span class="p">,</span>
@@ -4398,16 +4400,16 @@ L’audit correctif s’effectue depuis l’IHM recette mise à disposition.<br>
 </section>
 </section>
 <section id="annexe-2-messages-derreur-relatifs-aux-referentiels-utilises-pour-la-preservation">
-<h3><span class="section-number">9.6.2. </span>Annexe 2 : messages d’erreur relatifs aux référentiels utilisés pour la préservation<a class="headerlink" href="#annexe-2-messages-derreur-relatifs-aux-referentiels-utilises-pour-la-preservation" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">9.6.2. </span>Annexe 2 : messages d’erreur relatifs aux référentiels utilisés pour la préservation<a class="headerlink" href="#annexe-2-messages-derreur-relatifs-aux-referentiels-utilises-pour-la-preservation" title="Lien permanent vers cette rubrique"></a></h3>
 <p><em>Nota bene :</em> les cas présentés ci-dessous n’ont pas vocation à être exhaustif.</p>
 <section id="import-ou-mise-a-jour-dun-referentiel-des-griffons">
-<h4><span class="section-number">9.6.2.1. </span>Import ou mise à jour d’un référentiel des griffons<a class="headerlink" href="#import-ou-mise-a-jour-dun-referentiel-des-griffons" title="Lien permanent vers ce titre"></a></h4>
-<table class="colwidths-auto docutils align-default">
+<h4><span class="section-number">9.6.2.1. </span>Import ou mise à jour d’un référentiel des griffons<a class="headerlink" href="#import-ou-mise-a-jour-dun-referentiel-des-griffons" title="Lien permanent vers cette rubrique"></a></h4>
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p></p></th>
-<th class="text-left head"><p>Message retourné par la solution logicielle Vitam</p></th>
-<th class="text-left head"><p>Explication</p></th>
-<th class="text-left head"><p>Résolution</p></th>
+<tr class="row-odd"><th class="head text-center"><p></p></th>
+<th class="head text-left"><p>Message retourné par la solution logicielle Vitam</p></th>
+<th class="head text-left"><p>Explication</p></th>
+<th class="head text-left"><p>Résolution</p></th>
 </tr>
 </thead>
 <tbody>
@@ -4455,13 +4457,13 @@ L’audit correctif s’effectue depuis l’IHM recette mise à disposition.<br>
 </table>
 </section>
 <section id="import-ou-mise-a-jour-dun-referentiel-des-scenarios-de-preservation">
-<h4><span class="section-number">9.6.2.2. </span>Import ou mise à jour d’un référentiel des scénarios de préservation<a class="headerlink" href="#import-ou-mise-a-jour-dun-referentiel-des-scenarios-de-preservation" title="Lien permanent vers ce titre"></a></h4>
-<table class="colwidths-auto docutils align-default">
+<h4><span class="section-number">9.6.2.2. </span>Import ou mise à jour d’un référentiel des scénarios de préservation<a class="headerlink" href="#import-ou-mise-a-jour-dun-referentiel-des-scenarios-de-preservation" title="Lien permanent vers cette rubrique"></a></h4>
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p></p></th>
-<th class="text-left head"><p>Message retourné par la solution logicielle Vitam</p></th>
-<th class="text-left head"><p>Explication</p></th>
-<th class="text-left head"><p>Résolution</p></th>
+<tr class="row-odd"><th class="head text-center"><p></p></th>
+<th class="head text-left"><p>Message retourné par la solution logicielle Vitam</p></th>
+<th class="head text-left"><p>Explication</p></th>
+<th class="head text-left"><p>Résolution</p></th>
 </tr>
 </thead>
 <tbody>
@@ -4510,18 +4512,18 @@ L’audit correctif s’effectue depuis l’IHM recette mise à disposition.<br>
 </section>
 </section>
 <section id="annexe-3-parametrages-des-scenarios-de-preservation">
-<h3><span class="section-number">9.6.3. </span>Annexe 3 : paramétrages des scénarios de préservation<a class="headerlink" href="#annexe-3-parametrages-des-scenarios-de-preservation" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">9.6.3. </span>Annexe 3 : paramétrages des scénarios de préservation<a class="headerlink" href="#annexe-3-parametrages-des-scenarios-de-preservation" title="Lien permanent vers cette rubrique"></a></h3>
 <p>En fonction des griffons utilisés, un scénario pourra exécuter des actions de préservation en particulier et des arguments propres au griffon.<br>
 Ces arguments doivent être rédigés conformément au langage JSON et prennent la forme de chaînes de caractères enregistrées entre des doubles quotes dans un tableau de chaînes de caractères.</p>
 <section id="imagemagick">
-<h4><span class="section-number">9.6.3.1. </span>ImageMagick<a class="headerlink" href="#imagemagick" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">9.6.3.1. </span>ImageMagick<a class="headerlink" href="#imagemagick" title="Lien permanent vers cette rubrique"></a></h4>
 <p>ImageMagick est un outil permettant de valider des formats, de générer des objets binaires et d’extraire des métadonnées techniques. <br>
 Il couvre pas moins de 200 types de formats de fichier[^73].</p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Type d’opération</p></th>
-<th class="text-left head"><p>Précisions sur l’action de préservation</p></th>
-<th class="text-left head"><p>Commentaires</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Type d’opération</p></th>
+<th class="head text-left"><p>Précisions sur l’action de préservation</p></th>
+<th class="head text-left"><p>Commentaires</p></th>
 </tr>
 </thead>
 <tbody>
@@ -4553,14 +4555,14 @@ Il couvre pas moins de 200 types de formats de fichier[^73].</p>
 </table>
 </section>
 <section id="jhove">
-<h4><span class="section-number">9.6.3.2. </span>JHOVE<a class="headerlink" href="#jhove" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">9.6.3.2. </span>JHOVE<a class="headerlink" href="#jhove" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Jhove est un outil permettant uniquement de valider des formats. <br>
 Avec ce griffon, il n’est possible que de vérifier la validité des formats suivants : AIFF, ASCII, GIF, HTML, JPEG, JPEG 2000, PDF, TIFF, UTF-8, WAVE, XML, GZIP, PNG, WARC.</p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Type d’opération</p></th>
-<th class="text-left head"><p>Précisions sur l’action de préservation</p></th>
-<th class="text-left head"><p>Commentaires</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Type d’opération</p></th>
+<th class="head text-left"><p>Précisions sur l’action de préservation</p></th>
+<th class="head text-left"><p>Commentaires</p></th>
 </tr>
 </thead>
 <tbody>
@@ -4576,13 +4578,13 @@ Avec ce griffon, il n’est possible que de vérifier la validité des formats s
 </table>
 </section>
 <section id="siegfried">
-<h4><span class="section-number">9.6.3.3. </span>Siegfried<a class="headerlink" href="#siegfried" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">9.6.3.3. </span>Siegfried<a class="headerlink" href="#siegfried" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Siegfried[^75] est un outil permettant uniquement d’identifier des formats.</p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Type d’opération</p></th>
-<th class="text-left head"><p>Précisions sur l’action de préservation</p></th>
-<th class="text-left head"><p>Commentaires</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Type d’opération</p></th>
+<th class="head text-left"><p>Précisions sur l’action de préservation</p></th>
+<th class="head text-left"><p>Commentaires</p></th>
 </tr>
 </thead>
 <tbody>
@@ -4594,13 +4596,13 @@ Avec ce griffon, il n’est possible que de vérifier la validité des formats s
 </table>
 </section>
 <section id="odfvalidator">
-<h4><span class="section-number">9.6.3.4. </span>ODFvalidator<a class="headerlink" href="#odfvalidator" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">9.6.3.4. </span>ODFvalidator<a class="headerlink" href="#odfvalidator" title="Lien permanent vers cette rubrique"></a></h4>
 <p>ODFvalidator[^76] est un outil qui permet de valider des objets binaires au format Open Document.</p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Type d’opération</p></th>
-<th class="text-left head"><p>Précisions sur l’action de préservation</p></th>
-<th class="text-left head"><p>Commentaires</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Type d’opération</p></th>
+<th class="head text-left"><p>Précisions sur l’action de préservation</p></th>
+<th class="head text-left"><p>Commentaires</p></th>
 </tr>
 </thead>
 <tbody>
@@ -4612,13 +4614,13 @@ Avec ce griffon, il n’est possible que de vérifier la validité des formats s
 </table>
 </section>
 <section id="verapdf">
-<h4><span class="section-number">9.6.3.5. </span>VeraPDF<a class="headerlink" href="#verapdf" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">9.6.3.5. </span>VeraPDF<a class="headerlink" href="#verapdf" title="Lien permanent vers cette rubrique"></a></h4>
 <p>VeraPDF est un outil qui permet de valider des objets binaires au format PDF/A.</p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Type d’opération</p></th>
-<th class="text-left head"><p>Précisions sur l’action de préservation</p></th>
-<th class="text-left head"><p>Commentaires</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Type d’opération</p></th>
+<th class="head text-left"><p>Précisions sur l’action de préservation</p></th>
+<th class="head text-left"><p>Commentaires</p></th>
 </tr>
 </thead>
 <tbody>
@@ -4630,14 +4632,14 @@ Avec ce griffon, il n’est possible que de vérifier la validité des formats s
 </table>
 </section>
 <section id="libreoffice">
-<h4><span class="section-number">9.6.3.6. </span>LibreOffice<a class="headerlink" href="#libreoffice" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">9.6.3.6. </span>LibreOffice<a class="headerlink" href="#libreoffice" title="Lien permanent vers cette rubrique"></a></h4>
 <p>LibreOffice[^77] est un outil qui permet de convertir des fichiers bureautiques, notamment en PDF.<br>
 En fonction des formats générés, l’outil propose une liste d’arguments spécifiques[^78].</p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Type d’opération</p></th>
-<th class="text-left head"><p>Précisions sur l’action de préservation</p></th>
-<th class="text-left head"><p>Commentaires</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Type d’opération</p></th>
+<th class="head text-left"><p>Précisions sur l’action de préservation</p></th>
+<th class="head text-left"><p>Commentaires</p></th>
 </tr>
 </thead>
 <tbody>
@@ -4657,13 +4659,13 @@ En fonction des formats générés, l’outil propose une liste d’arguments sp
 </table>
 </section>
 <section id="tesseract">
-<h4><span class="section-number">9.6.3.7. </span>Tesseract<a class="headerlink" href="#tesseract" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">9.6.3.7. </span>Tesseract<a class="headerlink" href="#tesseract" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Tesseract[^81] est un outil qui permet d’extraire des métadonnées techniques et de générer un fichier texte destiné à contenir ces métadonnées extraites.</p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Type d’opération</p></th>
-<th class="text-left head"><p>Précisions sur l’action de préservation</p></th>
-<th class="text-left head"><p>Commentaires</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Type d’opération</p></th>
+<th class="head text-left"><p>Précisions sur l’action de préservation</p></th>
+<th class="head text-left"><p>Commentaires</p></th>
 </tr>
 </thead>
 <tbody>
@@ -4683,13 +4685,13 @@ En fonction des formats générés, l’outil propose une liste d’arguments sp
 </table>
 </section>
 <section id="ffmpeg">
-<h4><span class="section-number">9.6.3.8. </span>FFmpeg<a class="headerlink" href="#ffmpeg" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">9.6.3.8. </span>FFmpeg<a class="headerlink" href="#ffmpeg" title="Lien permanent vers cette rubrique"></a></h4>
 <p>FFmpeg[^82] est une compilation de logiciels libres destinés au traitement de flux audio et/ou vidéo (enregistrement, lecture ou conversion d’un format à un autre).</p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Type d’opération</p></th>
-<th class="text-left head"><p>Précisions sur l’action de préservation</p></th>
-<th class="text-left head"><p>Commentaires</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Type d’opération</p></th>
+<th class="head text-left"><p>Précisions sur l’action de préservation</p></th>
+<th class="head text-left"><p>Commentaires</p></th>
 </tr>
 </thead>
 <tbody>
@@ -4702,13 +4704,13 @@ En fonction des formats générés, l’outil propose une liste d’arguments sp
 </section>
 </section>
 <section id="annexe-4-griffons-disponibles-dans-la-solution-logicielle-vitam">
-<h3><span class="section-number">9.6.4. </span>Annexe 4 : griffons disponibles dans la solution logicielle Vitam<a class="headerlink" href="#annexe-4-griffons-disponibles-dans-la-solution-logicielle-vitam" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">9.6.4. </span>Annexe 4 : griffons disponibles dans la solution logicielle Vitam<a class="headerlink" href="#annexe-4-griffons-disponibles-dans-la-solution-logicielle-vitam" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Le tableau ci-dessus liste les griffons mis à disposition dans la solution logicielle Vitam. Il indique également à partir de quelle version de cette dernière ils sont livrés, ainsi que la première version du paquet « griffons » qui les référence.</p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p>Griffon</p></th>
-<th class="text-center head"><p>Livraison</p></th>
-<th class="text-center head"><p>Version du package « griffon »</p></th>
+<tr class="row-odd"><th class="head text-center"><p>Griffon</p></th>
+<th class="head text-center"><p>Livraison</p></th>
+<th class="head text-center"><p>Version du package « griffon »</p></th>
 </tr>
 </thead>
 <tbody>
@@ -4752,11 +4754,11 @@ En fonction des formats générés, l’outil propose une liste d’arguments sp
 </table>
 </section>
 <section id="annexe-5-exemples-de-rapport-daudit">
-<h3><span class="section-number">9.6.5. </span>Annexe 5 : exemples de rapport d’audit<a class="headerlink" href="#annexe-5-exemples-de-rapport-daudit" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">9.6.5. </span>Annexe 5 : exemples de rapport d’audit<a class="headerlink" href="#annexe-5-exemples-de-rapport-daudit" title="Lien permanent vers cette rubrique"></a></h3>
 <section id="rapport-daudit-dexistence-et-ou-dintegrite">
-<h4><span class="section-number">9.6.5.1. </span>Rapport d’audit d’existence et/ou d’intégrité<a class="headerlink" href="#rapport-daudit-dexistence-et-ou-dintegrite" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">9.6.5.1. </span>Rapport d’audit d’existence et/ou d’intégrité<a class="headerlink" href="#rapport-daudit-dexistence-et-ou-dintegrite" title="Lien permanent vers cette rubrique"></a></h4>
 <section id="en-succes">
-<h5><span class="section-number">9.6.5.1.1. </span>En succès<a class="headerlink" href="#en-succes" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.6.5.1.1. </span>En succès<a class="headerlink" href="#en-succes" title="Lien permanent vers cette rubrique"></a></h5>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="s2">&quot;tenant&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
 <span class="s2">&quot;evId&quot;</span><span class="p">:</span><span class="s2">&quot;aeeaaaaaaghnjq2nab3jaalmxhex5tiaaaaq&quot;</span><span class="p">,</span>
@@ -4798,7 +4800,7 @@ En fonction des formats générés, l’outil propose une liste d’arguments sp
 </div>
 </section>
 <section id="en-avertissement">
-<h5><span class="section-number">9.6.5.1.2. </span>En avertissement<a class="headerlink" href="#en-avertissement" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.6.5.1.2. </span>En avertissement<a class="headerlink" href="#en-avertissement" title="Lien permanent vers cette rubrique"></a></h5>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="s2">&quot;tenant&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
 <span class="s2">&quot;evId&quot;</span><span class="p">:</span><span class="s2">&quot;aeeaaaaaaghbpaixabwacalmxzqrneyaaaaq&quot;</span><span class="p">,</span>
@@ -4834,7 +4836,7 @@ En fonction des formats générés, l’outil propose une liste d’arguments sp
 </div>
 </section>
 <section id="en-echec">
-<h5><span class="section-number">9.6.5.1.3. </span>En échec<a class="headerlink" href="#en-echec" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.6.5.1.3. </span>En échec<a class="headerlink" href="#en-echec" title="Lien permanent vers cette rubrique"></a></h5>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="s2">&quot;tenant&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
 <span class="s2">&quot;evId&quot;</span><span class="p">:</span><span class="s2">&quot;aeeaaaaaaghbpaixabwacalmx2mjgcyaaaaq&quot;</span><span class="p">,</span>
@@ -4898,9 +4900,9 @@ En fonction des formats générés, l’outil propose une liste d’arguments sp
 </section>
 </section>
 <section id="rapport-daudit-de-coherence">
-<h4><span class="section-number">9.6.5.2. </span>Rapport d’audit de cohérence<a class="headerlink" href="#rapport-daudit-de-coherence" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">9.6.5.2. </span>Rapport d’audit de cohérence<a class="headerlink" href="#rapport-daudit-de-coherence" title="Lien permanent vers cette rubrique"></a></h4>
 <section id="id50">
-<h5><span class="section-number">9.6.5.2.1. </span>En avertissement<a class="headerlink" href="#id50" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.6.5.2.1. </span>En avertissement<a class="headerlink" href="#id50" title="Lien permanent vers cette rubrique"></a></h5>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="s2">&quot;tenant&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
 <span class="s2">&quot;evId&quot;</span><span class="p">:</span><span class="s2">&quot;aeeaaaaaaghnjq2naaugwalmvhkwuhqaaaaq&quot;</span><span class="p">,</span>
@@ -4954,7 +4956,7 @@ En fonction des formats générés, l’outil propose une liste d’arguments sp
 </div>
 </section>
 <section id="id51">
-<h5><span class="section-number">9.6.5.2.2. </span>En échec<a class="headerlink" href="#id51" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.6.5.2.2. </span>En échec<a class="headerlink" href="#id51" title="Lien permanent vers cette rubrique"></a></h5>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="s2">&quot;tenant&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
 <span class="s2">&quot;evId&quot;</span><span class="p">:</span><span class="s2">&quot;aeeaaaaaaghnjq2naaugwalmvhntvtqaaaaq&quot;</span><span class="p">,</span>
@@ -4998,9 +5000,9 @@ En fonction des formats générés, l’outil propose une liste d’arguments sp
 </section>
 </section>
 <section id="releve-de-valeur-probante">
-<h4><span class="section-number">9.6.5.3. </span>Relevé de valeur probante<a class="headerlink" href="#releve-de-valeur-probante" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">9.6.5.3. </span>Relevé de valeur probante<a class="headerlink" href="#releve-de-valeur-probante" title="Lien permanent vers cette rubrique"></a></h4>
 <section id="id52">
-<h5><span class="section-number">9.6.5.3.1. </span>En avertissement<a class="headerlink" href="#id52" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">9.6.5.3.1. </span>En avertissement<a class="headerlink" href="#id52" title="Lien permanent vers cette rubrique"></a></h5>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="s2">&quot;operationSummary&quot;</span> <span class="p">:</span> <span class="p">{</span>
     <span class="s2">&quot;tenant&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
@@ -5562,16 +5564,16 @@ En fonction des formats générés, l’outil propose une liste d’arguments sp
 </section>
 </section>
 <section id="annexe-6-messages-derreur-relatifs-aux-audits">
-<h3><span class="section-number">9.6.6. </span>Annexe 6 : messages d’erreur relatifs aux audits<a class="headerlink" href="#annexe-6-messages-derreur-relatifs-aux-audits" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">9.6.6. </span>Annexe 6 : messages d’erreur relatifs aux audits<a class="headerlink" href="#annexe-6-messages-derreur-relatifs-aux-audits" title="Lien permanent vers cette rubrique"></a></h3>
 <p><em>Nota bene :</em> les cas présentés ci-dessous n’ont pas vocation à être exhaustif.</p>
 <section id="id53">
-<h4><span class="section-number">9.6.6.1. </span>Relevé de valeur probante<a class="headerlink" href="#id53" title="Lien permanent vers ce titre"></a></h4>
-<table class="colwidths-auto docutils align-default">
+<h4><span class="section-number">9.6.6.1. </span>Relevé de valeur probante<a class="headerlink" href="#id53" title="Lien permanent vers cette rubrique"></a></h4>
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p></p></th>
-<th class="text-left head"><p>Message retourné par la solution logicielle Vitam</p></th>
-<th class="text-left head"><p>Explication</p></th>
-<th class="text-left head"><p>Résolution</p></th>
+<tr class="row-odd"><th class="head text-center"><p></p></th>
+<th class="head text-left"><p>Message retourné par la solution logicielle Vitam</p></th>
+<th class="head text-left"><p>Explication</p></th>
+<th class="head text-left"><p>Résolution</p></th>
 </tr>
 </thead>
 <tbody>
@@ -5611,32 +5613,32 @@ En fonction des formats générés, l’outil propose une liste d’arguments sp
 <p>[^12] Pour plus d’informations, consulter <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/html/installation/">Document d’installation</a>, chapitre 6.1.4 « Post-installation : administration fonctionnelle ».</p>
 <p>[^13] La procédure est expliquée dans <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/html/exploitation/">Documentation d’exploitation</a>, chapitre 5.10 « Montée de version du fichier de signature de Siegfried ».</p>
 <p>[^14] Les demandes peuvent être soumises à l’adresse suivante : https://www.nationalarchives.gov.uk/contact-us/submit-information-for-pronom/ (Lien consulté le : 22 février 2023).</p>
-<p>[^15] L’<a class="reference external" href="#annexe-4--griffons-disponibles-dans-la-solution-logicielle-vitam">annexe 4 « Griffons disponibles dans la solution logicielle Vitam »</a> du présent document liste les griffons disponibles en fonction des différentes publications de la solution logicielle Vitam.</p>
-<p>[^16] Des exemples sont présentés dans l’<a class="reference external" href="#annexe-1--exemples-de-r%C3%A9f%C3%A9rentiels-de-pr%C3%A9servation">annexe 1 du présent document</a>.</p>
+<p>[^15] L’<span class="xref myst">annexe 4 « Griffons disponibles dans la solution logicielle Vitam »</span> du présent document liste les griffons disponibles en fonction des différentes publications de la solution logicielle Vitam.</p>
+<p>[^16] Des exemples sont présentés dans l’<span class="xref myst">annexe 1 du présent document</span>.</p>
 <p>[^17]  Pour plus d’informations, consulter <a class="reference internal" href="modele_de_donnees.html"><span class="doc std std-doc">VITAM. Modèle de données</span></a>, chapitre 10, « Collection Griffin ».</p>
-<p>[^18] L’<a class="reference external" href="#annexe-4--griffons-disponibles-dans-la-solution-logicielle-vitam">annexe 4 « Griffons disponibles dans la solution logicielle Vitam »</a> du présent document liste les griffons disponibles en fonction des différentes publications de la solution logicielle Vitam.</p>
+<p>[^18] L’<span class="xref myst">annexe 4 « Griffons disponibles dans la solution logicielle Vitam »</span> du présent document liste les griffons disponibles en fonction des différentes publications de la solution logicielle Vitam.</p>
 <p>[^19] Une réflexion est en cours pour gérer sur des Workers Windows des griffons conçus pour fonctionner sur un environnement Windows.</p>
 <p>[^20] Outil non implémenté.</p>
 <p>[^21] Outil non implémenté.</p>
 <p>[^22] Pour plus d’informations sur le processus d’import du référentiel, consulter le <a class="reference internal" href="modele_de_workflow.html"><span class="doc std std-doc">document VITAM. Modèle de workflow</span></a>, chapitre 5.12 « Workflow d’administration d’un référentiel des griffons ».</p>
 <p>[^23] Pour plus d’informations sur le processus d’import du référentiel, consulter le <a class="reference internal" href="modele_de_workflow.html"><span class="doc std std-doc">document VITAM. Modèle de workflow</span></a>, chapitre 5.12 « Workflow d’administration d’un référentiel des griffons ».</p>
-<p>[^24] Des précisions sur les messages d’erreur sont apportées dans l’<a class="reference external" href="#annexe-2--messages-derreur-relatifs-aux-r%C3%A9f%C3%A9rentiels-utilis%C3%A9s-pour-la-pr%C3%A9servation">annexe 2 « Messages d’erreur »</a> du présent document.</p>
+<p>[^24] Des précisions sur les messages d’erreur sont apportées dans l’<span class="xref myst">annexe 2 « Messages d’erreur »</span> du présent document.</p>
 <p>[^25] Pour plus d’informations, se référer à <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/html/installation">Documentation d’installation</a>, chapitre 4.2.4.2 « Installation des greffons ».</p>
-<p>[^26] L’<a class="reference external" href="#annexe-4--griffons-disponibles-dans-la-solution-logicielle-vitam">annexe 4 « Griffons disponibles dans la solution logicielle Vitam »</a> du présent document liste les griffons disponibles en fonction des différentes publications de la solution logicielle Vitam.</p>
+<p>[^26] L’<span class="xref myst">annexe 4 « Griffons disponibles dans la solution logicielle Vitam »</span> du présent document liste les griffons disponibles en fonction des différentes publications de la solution logicielle Vitam.</p>
 <p>[^27] L’installation de griffons supplémentaires intervient après installation de la plate-forme. Sa mise en œuvre est expliquée dans <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/html/exploitation">Documentation d’exploitation</a>, chapitre 5.11 « Griffins ».</p>
 <p>[^28] L’installation de griffons supplémentaires intervient après installation de la plate-forme. Sa mise en œuvre est expliquée dans <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/html/exploitation">Documentation d’exploitation</a>, chapitre 5.11 « Griffins ».</p>
 <p>[^29] Une réflexion est en cours afin de pouvoir désinstaller un griffon.</p>
-<p>[^30] Des exemples sont présentés dans l’<a class="reference external" href="#annexe-1--exemples-de-r%C3%A9f%C3%A9rentiels-de-pr%C3%A9servation">annexe 1 du présent document</a>.</p>
+<p>[^30] Des exemples sont présentés dans l’<span class="xref myst">annexe 1 du présent document</span>.</p>
 <p>[^31]  Pour plus d’informations, consulter <a class="reference internal" href="modele_de_donnees.html"><span class="doc std std-doc">VITAM. Modèle de données</span></a>, chapitre 13 « Collection PreservationScenario ».</p>
 <p>[^32] Les anomalies rencontrées proviennent du griffon. Elles émanent soit de l’outil en tant que tel, soit d’un mauvais paramétrage de l’utilisateur.</p>
-<p>[^33] Différents cas de figure concernant les commandes possibles à exécuter sont présentés dans l’<a class="reference external" href="#annexe-3--param%C3%A9trages-des-sc%C3%A9narios-de-pr%C3%A9servation">annexe 3 « Paramétrages des scénarios de préservation »</a> du présent document.</p>
+<p>[^33] Différents cas de figure concernant les commandes possibles à exécuter sont présentés dans l’<span class="xref myst">annexe 3 « Paramétrages des scénarios de préservation »</span> du présent document.</p>
 <p>[^34] Pour plus d’informations sur le processus d’import du référentiel, consulter le <a class="reference internal" href="modele_de_workflow.html"><span class="doc std std-doc">document VITAM. Modèle de workflow</span></a>, chapitre 5.13 « Workflow d’administration d’un référentiel des scénarios de préservation ».</p>
 <p>[^35] Pour plus d’informations sur le processus d’import du référentiel, consulter le <a class="reference internal" href="modele_de_workflow.html"><span class="doc std std-doc">document VITAM. Modèle de workflow</span></a>, chapitre 5.13 « Workflow d’administration d’un référentiel des scénarios de préservation ».</p>
-<p>[^36] Des précisions sur les messages d’erreur sont apportées dans l’<a class="reference external" href="#annexe-2--messages-derreur-relatifs-aux-r%C3%A9f%C3%A9rentiels-utilis%C3%A9s-pour-la-pr%C3%A9servation">annexe 2 « Messages d’erreur »</a> du présent document.</p>
+<p>[^36] Des précisions sur les messages d’erreur sont apportées dans l’<span class="xref myst">annexe 2 « Messages d’erreur »</span> du présent document.</p>
 <p>[^37] L’installation de griffons supplémentaires intervient après installation de la plate-forme. Sa mise en œuvre est expliquée dans <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/html/exploitation">Documentation d’exploitation</a>, chapitre 5.11 « Griffins ».</p>
 <p>[^38] Les anomalies rencontrées proviennent du griffon. Elles émanent soit de l’outil en tant que tel, soit d’un mauvais paramétrage de l’utilisateur.</p>
-<p>[^39] Les commandes possibles sont listées dans l’<a class="reference external" href="#annexe-3--param%C3%A9trages-des-sc%C3%A9narios-de-pr%C3%A9servation">annexe 3 « Paramétrages des scénarios de préservation »</a> du présent document.</p>
-<p>[^40] Les commandes possibles sont listées dans l’<a class="reference external" href="#annexe-3--param%C3%A9trages-des-sc%C3%A9narios-de-pr%C3%A9servation">annexe 3 « Paramétrages des scénarios de préservation »</a> du présent document.</p>
+<p>[^39] Les commandes possibles sont listées dans l’<span class="xref myst">annexe 3 « Paramétrages des scénarios de préservation »</span> du présent document.</p>
+<p>[^40] Les commandes possibles sont listées dans l’<span class="xref myst">annexe 3 « Paramétrages des scénarios de préservation »</span> du présent document.</p>
 <p>[^41] Dans le cadre des prochains travaux de réalisation, il est prévu de pouvoir paramétrer et activer des scénarios de préservation au moyen des contrats d’entrée.</p>
 <p>[^42] L’ajout d’un plug-in dans la solution logicielle Vitam, ainsi que la modification du workflow sont expliqués dans <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/html/exploitation">Documentation d’exploitation</a>, chapitre 8.2.7 « Hello Word Plugin ».</p>
 <p>[^43] Dans le cadre des prochains travaux de réalisation, il est prévu de pouvoir paramétrer et activer des scénarios de préservation en fonction des besoins en termes de préservation et du niveau de service souhaité.</p>
@@ -5656,16 +5658,16 @@ En fonction des formats générés, l’outil propose une liste d’arguments sp
 <p>[^57] Pour plus d’informations, consulter le <a class="reference internal" href="valeur_probante.html"><span class="doc std std-doc">document VITAM. Conservation de la valeur probante</span></a>.</p>
 <p>[^58] Pour plus d’informations sur l’opération d’audit, consulter le <a class="reference internal" href="modele_de_workflow.html"><span class="doc std std-doc">document VITAM. Modèle de workflow</span></a>, chapitre 2.2 « Workflow de l’audit de l’existence et de l’intégrité des fichiers ».</p>
 <p>[^59] Pour plus d’informations sur l’opération d’audit, consulter le <a class="reference internal" href="modele_de_workflow.html"><span class="doc std std-doc">document VITAM. Modèle de workflow</span></a>, chapitre 2.3 « Rapport d’audit ».</p>
-<p>[^60] Le contenu du rapport d’audit de cohérence est décrit dans le <a class="reference internal" href="modele_de_workflow.html"><span class="doc std std-doc">document VITAM. Modèle de workflow</span></a>, chapitre 2.2 « Workflow de l’audit d’existence et de l’intégrité des fichiers ». Des exemples sont fournis dans l’<a class="reference external" href="#annexe-5--exemples-de-rapport-daudit">annexe 5 « Exemples de rapport d’audit »</a> du présent document.</p>
+<p>[^60] Le contenu du rapport d’audit de cohérence est décrit dans le <a class="reference internal" href="modele_de_workflow.html"><span class="doc std std-doc">document VITAM. Modèle de workflow</span></a>, chapitre 2.2 « Workflow de l’audit d’existence et de l’intégrité des fichiers ». Des exemples sont fournis dans l’<span class="xref myst">annexe 5 « Exemples de rapport d’audit »</span> du présent document.</p>
 <p>[^61] Pour plus d’informations sur l’opération d’audit, consulter le <a class="reference internal" href="modele_de_workflow.html"><span class="doc std std-doc">document VITAM. Modèle de workflow</span></a>, chapitre 2.4 « Workflow d’audit de cohérence des fichiers ».</p>
-<p>[^62] Des précisions sur les erreurs pouvant être rencontrées sont présentées dans l’<a class="reference external" href="#annexe-6--messages-derreur-relatifs-aux-audits">annexe 6 du présent document</a>.</p>
+<p>[^62] Des précisions sur les erreurs pouvant être rencontrées sont présentées dans l’<span class="xref myst">annexe 6 du présent document</span>.</p>
 <p>[^63] Pour plus d’informations sur l’opération d’audit, consulter le <a class="reference internal" href="modele_de_workflow.html"><span class="doc std std-doc">document VITAM. Modèle de workflow</span></a>, chapitre 14.7 « Rapport du relevé de valeur probante », ou le document Conservation de la valeur probante, chapitre 5.2 « Forme du relevé ».</p>
 <p>[^64] Le contenu du rapport d’audit de cohérence est décrit dans le <a class="reference internal" href="modele_de_workflow.html"><span class="doc std std-doc">document VITAM. Modèle de workflow</span></a>, chapitre 14.7 « Rapport d’audit du relevé de valeur probante ». Des exemples sont fournis dans l’annexe 5 « Exemples de rapport d’audit » du présent document.</p>
-<p>[^65] Des précisions sur les erreurs pouvant être rencontrées sont présentées dans l’<a class="reference external" href="#annexe-6--messages-derreur-relatifs-aux-audits">annexe 6 du présent document</a>.</p>
+<p>[^65] Des précisions sur les erreurs pouvant être rencontrées sont présentées dans l’<span class="xref myst">annexe 6 du présent document</span>.</p>
 <p>[^66] Pour plus d’informations sur les journaux sécurisés, consulter le <a class="reference internal" href="valeur_probante.html"><span class="doc std std-doc">document VITAM. Conservation de la valeur probante</span></a>.</p>
 <p>[^67] Pour plus d’informations sur l’opération d’audit, consulter le <a class="reference internal" href="modele_de_workflow.html"><span class="doc std std-doc">document VITAM. Modèle de workflow</span></a>, chapitre 2.4 « Workflow d’audit de cohérence des fichiers ».</p>
 <p>[^68]Pour plus d’informations sur l’opération d’audit, consulter le <a class="reference internal" href="modele_de_workflow.html"><span class="doc std std-doc">document VITAM. Modèle de workflow</span></a>, chapitre 2.5 « Rapport d’audit de cohérence ».</p>
-<p>[^69] Le contenu du rapport d’audit de cohérence est décrit dans le <a class="reference internal" href="modele_de_workflow.html"><span class="doc std std-doc">document VITAM. Modèle de workflow</span></a>, chapitre 2.5 « Rapport d’audit de cohérence ». Des exemples sont fournis dans l’<a class="reference external" href="#annexe-5--exemples-de-rapport-daudit">annexe 5 « Exemples de rapport d’audit » du présent document</a>.</p>
+<p>[^69] Le contenu du rapport d’audit de cohérence est décrit dans le <a class="reference internal" href="modele_de_workflow.html"><span class="doc std std-doc">document VITAM. Modèle de workflow</span></a>, chapitre 2.5 « Rapport d’audit de cohérence ». Des exemples sont fournis dans l’<span class="xref myst">annexe 5 « Exemples de rapport d’audit » du présent document</span>.</p>
 <p>[^70] Pour plus d’informations sur les journaux sécurisés, consulter le <a class="reference internal" href="valeur_probante.html"><span class="doc std std-doc">document VITAM. Conservation de la valeur probante</span></a>.</p>
 <p>[^71] Pour plus d’informations sur l’opération d’audit, consulter le <a class="reference internal" href="modele_de_workflow.html"><span class="doc std std-doc">document VITAM. Modèle de workflow</span></a>, chapitre 2.6 « Workflow de l’audit correctif ».</p>
 <p>[^72] Pour plus d’informations sur l’opération d’audit, consulter le <a class="reference internal" href="modele_de_workflow.html"><span class="doc std std-doc">document VITAM. Modèle de workflow</span></a>, chapitre 2.5 « Rapport d’audit de cohérence ».</p>

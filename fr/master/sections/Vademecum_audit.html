@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="fr" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>4. Les audits dans la solution logicielle Vitam &mdash; Vitam documentation fonctionnelle</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
   
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/translations.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -48,6 +47,8 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="guide_lecture.html">1. Documentation Vitam - guide de lecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="presentation_programme.html">2. Présentation du programme Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_prise_en_main.html">3. Guide de prise en main de la solution logicielle Vitam – Vitam UI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_prise_en_main.html#realiser-une-premiere-entree">4. <em>Réaliser une première entrée</em></a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">documentation métier</span></p>
 <ul>
@@ -67,7 +68,8 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">documentation Vitam UI</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="VitamUI_Arbres_Plans.html">1. APP Arbres et plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Autoprovisionning.html">1. Vitam UI : présentation de la fonctionnalité d’auto-provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Arbres_Plans.html">2. APP Arbres et plans</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">outils connexes</span></p>
 <ul>
@@ -143,36 +145,36 @@
 
            <div itemprop="articleBody">
              
-  <section class="tex2jax_ignore mathjax_ignore" id="les-audits-dans-la-solution-logicielle-vitam">
-<h1><span class="section-number">4. </span>Les audits dans la solution logicielle Vitam<a class="headerlink" href="#les-audits-dans-la-solution-logicielle-vitam" title="Lien permanent vers ce titre"></a></h1>
+  <section id="les-audits-dans-la-solution-logicielle-vitam">
+<h1><span class="section-number">4. </span>Les audits dans la solution logicielle Vitam<a class="headerlink" href="#les-audits-dans-la-solution-logicielle-vitam" title="Lien permanent vers cette rubrique"></a></h1>
 <p>La solution logicielle Vitam offre des fonctionnalités d’audit permettant de vérifier la disponibilité des objets métier (unités archivistiques, groupes d’objets techniques) dans la solution logicielle ainsi que le maintien de leur intégrité.</p>
 <section id="presentation-des-audits">
-<h2><span class="section-number">4.1. </span>Présentation des audits<a class="headerlink" href="#presentation-des-audits" title="Lien permanent vers ce titre"></a></h2>
+<h2><span class="section-number">4.1. </span>Présentation des audits<a class="headerlink" href="#presentation-des-audits" title="Lien permanent vers cette rubrique"></a></h2>
 <section id="perimetre-des-audits">
-<h3><span class="section-number">4.1.1. </span>Périmètre des audits<a class="headerlink" href="#perimetre-des-audits" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">4.1.1. </span>Périmètre des audits<a class="headerlink" href="#perimetre-des-audits" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Un audit est lancé sur un tenant donné.
 Il peut être réalisé sur tout le tenant, sur un service producteur en particulier ou à partir d’une requête destinée à sélectionner un lot d’archives, pour les audits d’existence, d’intégrité et de cohérence.
 L’audit correctif se lance à partir de l’identifiant d’opération d’un audit de cohérence.</p>
 </section>
 <section id="audit-dexistence">
-<h3><span class="section-number">4.1.2. </span>Audit d’existence<a class="headerlink" href="#audit-dexistence" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">4.1.2. </span>Audit d’existence<a class="headerlink" href="#audit-dexistence" title="Lien permanent vers cette rubrique"></a></h3>
 <p>L’audit d’existence permet de vérifier la présence effective des objets techniques (fichiers) dans la solution logicielle Vitam. Il assure que ces objets techniques sont toujours disponibles et que toutes leurs copies, stockées sur les différentes offres de stockage, conformément à la stratégie de stockage, sont bien présentes.</p>
 <p>À l’issue de l’opération d’audit, un rapport est produit indiquant le périmètre audité et, le cas échéant, les objets en échec (au moins un objet absent par rapport au nombre de copies déclarées dans la stratégie de stockage) ou en avertissement (pas d’objets techniques à traiter dans le lot d’archives audité).</p>
 </section>
 <section id="audit-dintegrite">
-<h3><span class="section-number">4.1.3. </span>Audit d’intégrité<a class="headerlink" href="#audit-dintegrite" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">4.1.3. </span>Audit d’intégrité<a class="headerlink" href="#audit-dintegrite" title="Lien permanent vers cette rubrique"></a></h3>
 <p>L’audit d’intégrité permet de vérifier, outre l’existence des objets techniques, que ces objets sont intègres, c’est-à-dire qu’ils n’ont pas été modifiés au sein de la solution logicielle Vitam.</p>
 <p>La vérification de l’intégrité est basée sur une comparaison des empreintes des objets techniques fournies par les offres de stockage avec l’empreinte enregistrée en base de données au moment de la prise en charge des objets techniques.</p>
 <p>À l’issue de l’opération d’audit, un rapport est produit indiquant les objets en échec (au moins un objet absent par rapport au nombre de copies déclarées dans la stratégie de stockage, au moins une empreinte non identique entre l’offre de stockage et la base de données) ou en avertissement (pas d’objets techniques à traiter dans le lot d’archives audité).</p>
 </section>
 <section id="audit-de-coherence">
-<h3><span class="section-number">4.1.4. </span>Audit de cohérence<a class="headerlink" href="#audit-de-coherence" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">4.1.4. </span>Audit de cohérence<a class="headerlink" href="#audit-de-coherence" title="Lien permanent vers cette rubrique"></a></h3>
 <p>L’audit de cohérence permet de vérifier la conformité globale du système. Il croise les empreintes des unités archivistiques, des groupes d’objets techniques et des fichiers, ainsi que de leurs journaux en base de données et sur les offres de stockage avec celle du journal sécurisé.</p>
 <p>Il offre une garantie supplémentaire par rapport aux audits d’existence et d’intégrité et permet de démontrer que le périmètre audité n’a pas été altéré sur l’ensemble des offres et pour tous les objets métier considérés (journaux…).</p>
 <p>Lors d’un audit de cohérence, la solution logicielle Vitam ne produit de rapport que dans les cas d’erreurs avérées (l’une des empreintes vérifiée est non conforme) ou en l’absence de journal sécurisé (l’opération est alors en avertissement).</p>
 </section>
 <section id="audit-correctif">
-<h3><span class="section-number">4.1.5. </span>Audit correctif<a class="headerlink" href="#audit-correctif" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">4.1.5. </span>Audit correctif<a class="headerlink" href="#audit-correctif" title="Lien permanent vers cette rubrique"></a></h3>
 <p>L’audit correctif se lance à partir de l’identifiant d’opération d’un audit de cohérence et comprend :</p>
 <ul class="simple">
 <li><p>une phase de réalisation d’un nouvel audit de cohérence qui permet de vérifier la conformité globale du système,</p></li>
@@ -184,7 +186,7 @@ Lors d’un audit correctif, la solution logicielle Vitam ne produit un rapport 
 </section>
 </section>
 <section id="mise-en-oeuvre-dune-operation-daudit">
-<h2><span class="section-number">4.2. </span>Mise en œuvre d’une opération d’audit<a class="headerlink" href="#mise-en-oeuvre-dune-operation-daudit" title="Lien permanent vers ce titre"></a></h2>
+<h2><span class="section-number">4.2. </span>Mise en œuvre d’une opération d’audit<a class="headerlink" href="#mise-en-oeuvre-dune-operation-daudit" title="Lien permanent vers cette rubrique"></a></h2>
 <p>L’administrateur pourra souhaiter réaliser un audit d’existence :</p>
 <ul class="simple">
 <li><p>de manière ponctuelle, sur un échantillon,</p></li>

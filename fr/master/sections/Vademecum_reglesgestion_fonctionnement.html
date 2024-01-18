@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="fr" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Positionner des règles de gestion dans la solution logicielle Vitam &mdash; Vitam documentation fonctionnelle</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
   
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/translations.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -46,6 +45,8 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="guide_lecture.html">1. Documentation Vitam - guide de lecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="presentation_programme.html">2. Présentation du programme Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_prise_en_main.html">3. Guide de prise en main de la solution logicielle Vitam – Vitam UI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_prise_en_main.html#realiser-une-premiere-entree">4. <em>Réaliser une première entrée</em></a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">documentation métier</span></p>
 <ul>
@@ -65,7 +66,8 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">documentation Vitam UI</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="VitamUI_Arbres_Plans.html">1. APP Arbres et plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Autoprovisionning.html">1. Vitam UI : présentation de la fonctionnalité d’auto-provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Arbres_Plans.html">2. APP Arbres et plans</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">outils connexes</span></p>
 <ul>
@@ -130,25 +132,25 @@
 
            <div itemprop="articleBody">
              
-  <section class="tex2jax_ignore mathjax_ignore" id="positionner-des-regles-de-gestion-dans-la-solution-logicielle-vitam">
-<h1>Positionner des règles de gestion dans la solution logicielle Vitam<a class="headerlink" href="#positionner-des-regles-de-gestion-dans-la-solution-logicielle-vitam" title="Lien permanent vers ce titre"></a></h1>
+  <section id="positionner-des-regles-de-gestion-dans-la-solution-logicielle-vitam">
+<h1>Positionner des règles de gestion dans la solution logicielle Vitam<a class="headerlink" href="#positionner-des-regles-de-gestion-dans-la-solution-logicielle-vitam" title="Lien permanent vers cette rubrique"></a></h1>
 <p>Les archives sont soumises à des règles pour la gestion de leur cycle de vie, leur communication, leur diffusion ou leur réutilisation. Le standard d’échange de données pour l’archivage (SEDA) permet d’exprimer ces règles sous forme de métadonnées de gestion.</p>
 <section id="presentation-des-regles-de-gestion-et-des-mecanismes-dheritage">
-<h2>Présentation des règles de gestion et des mécanismes d’héritage<a class="headerlink" href="#presentation-des-regles-de-gestion-et-des-mecanismes-dheritage" title="Lien permanent vers ce titre"></a></h2>
+<h2>Présentation des règles de gestion et des mécanismes d’héritage<a class="headerlink" href="#presentation-des-regles-de-gestion-et-des-mecanismes-dheritage" title="Lien permanent vers cette rubrique"></a></h2>
 <section id="declaration-des-regles-de-gestion">
-<h3>Déclaration des règles de gestion<a class="headerlink" href="#declaration-des-regles-de-gestion" title="Lien permanent vers ce titre"></a></h3>
+<h3>Déclaration des règles de gestion<a class="headerlink" href="#declaration-des-regles-de-gestion" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Les règles de gestion peuvent être associées dans la solution logicielle Vitam unitairement aux unités archivistiques standard ou de plan de classement ou à l’ensemble d’un SIP.
 Il est ainsi possible de définir des règles valables pour une unité archivistique en particulier, pour une unité archivistique et ses filles ou pour l’ensemble des unités archivistiques transférées.</p>
 </section>
 <section id="structure-des-regles-de-gestion">
-<h3>Structure des règles de gestion<a class="headerlink" href="#structure-des-regles-de-gestion" title="Lien permanent vers ce titre"></a></h3>
+<h3>Structure des règles de gestion<a class="headerlink" href="#structure-des-regles-de-gestion" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Sept catégories de règles de gestion peuvent s’appliquer aux archives et ont été modélisées dans le SEDA :</p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p>Catégorie de règle</p></th>
-<th class="text-left head"><p>Description de la règle</p></th>
-<th class="text-left head"><p>Réglementation associée</p></th>
-<th class="text-center head"><p>Dénomination de la catégorie dans le SEDA</p></th>
+<tr class="row-odd"><th class="head text-center"><p>Catégorie de règle</p></th>
+<th class="head text-left"><p>Description de la règle</p></th>
+<th class="head text-left"><p>Réglementation associée</p></th>
+<th class="head text-center"><p>Dénomination de la catégorie dans le SEDA</p></th>
 </tr>
 </thead>
 <tbody>
@@ -218,7 +220,7 @@ Ainsi, pour une unité archivistique qui bloque tout héritage dans la catégori
 <p>Pour les archives soumises à des conditions particulières d’application des règles de communicabilité ou de gestion, comme les archives versées sous protocole ou avec un contrat de don ou de dépôt, il est possible d’indiquer que la mise en œuvre des règles de gestion est soumise à autorisation via la balise <NeedAuthorization>.</p>
 </section>
 <section id="mecanisme-general-dheritage-des-regles-et-des-proprietes">
-<h3>Mécanisme général d’héritage des règles et des propriétés<a class="headerlink" href="#mecanisme-general-dheritage-des-regles-et-des-proprietes" title="Lien permanent vers ce titre"></a></h3>
+<h3>Mécanisme général d’héritage des règles et des propriétés<a class="headerlink" href="#mecanisme-general-dheritage-des-regles-et-des-proprietes" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Pour chaque catégorie de règles, les règles spécifiques et les propriétés ou attributs portés par une unité archivistique sont héritées par ses filles, sauf cas particuliers de blocage de l’héritage.</p>
 <p>Une unité archivistique hérite des propriétés des unités parentes, sauf :</p>
 <ul class="simple">
@@ -263,7 +265,7 @@ Quand aucune règle n’est définie par les unités archivistiques parentes, il
 Pour donner une date de départ différente pour une même règle, la redéclaration de la règle par l’unité archivistique fille sans blocage de l’héritage suffit.</p>
 </section>
 <section id="calcul-des-regles-et-proprietes-applicables-a-une-unite-archivistique">
-<h3>Calcul des règles et propriétés applicables à une unité archivistique<a class="headerlink" href="#calcul-des-regles-et-proprietes-applicables-a-une-unite-archivistique" title="Lien permanent vers ce titre"></a></h3>
+<h3>Calcul des règles et propriétés applicables à une unité archivistique<a class="headerlink" href="#calcul-des-regles-et-proprietes-applicables-a-une-unite-archivistique" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Dans la solution logicielle Vitam, seules les unités archivistiques déclarant une règle sont concernées par le calcul de l’échéance et l’enregistrement des informations sur les règles en base.<br>
 Les autres unités archivistiques n’ont pas de règles en propre enregistrées en base. Les règles qui leur sont applicables, héritées des unités archivistiques parentes, sont calculées lorsque des opérations qui les concernent sont mises en œuvre (demande de consultation, mise en œuvre des sorts finaux), sans être conservées en base.<br>
 Quand les règles sont déclarées au niveau du SIP (bloc <ManagementMetadata>) pour toutes les archives transférées, seules les unités archivistiques à la racine du SIP porteront ces règles en base. Dans le cas particulier où la même règle est déclarée par les unités archivistiques racines avec des dates de départ différentes, leur date de départ respective l’emporte sur celle déclarée dans le bloc <ManagementMetadata>.</p>
@@ -272,7 +274,7 @@ Ceci permet de connaître le service producteur à l’origine d’une règle de
 <p>Il est possible de demander l’indexation en base des règles et propriétés portées en propre comme héritées par une unité archivistique afin de faciliter par la suite le filtrage des unités archivistiques en fonction des règles de gestion qui leur sont applicables. Le niveau des informations indexées dépend du paramétrage de la plate-forme (cf. vademecum <a class="reference internal" href="Vademecum_parametrages_pf.html"><span class="doc std std-doc">Le paramétrage fonctionnel d’une plate-forme utilisant la solution logicielle Vitam</span></a>).</p>
 </section>
 <section id="definition-dun-sort-final-implicite-pour-la-duree-dutilite-administrative">
-<h3>Définition d’un sort final implicite pour la durée d’utilité administrative<a class="headerlink" href="#definition-dun-sort-final-implicite-pour-la-duree-dutilite-administrative" title="Lien permanent vers ce titre"></a></h3>
+<h3>Définition d’un sort final implicite pour la durée d’utilité administrative<a class="headerlink" href="#definition-dun-sort-final-implicite-pour-la-duree-dutilite-administrative" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Dans le cas spécifique de la durée d’utilité administrative, si l’unité archivistique ne déclare pas de sort final et ne l’hérite pas non plus, elle est implicitement considérée par la solution logicielle Vitam comme devant être conservée et cette propriété implicite peut être héritée par ses descendants.<br>
 Ainsi, le premier niveau d’un SIP (unité racine), sauf s’il définit une information contraire, est considéré comme devant implicitement être conservé (propriété « KEEP » implicite). Cette propriété implicite est alors définie localement par la solution logicielle Vitam et est héritée par les éventuelles unités archivistiques filles de l’unité racine.</p>
 <p>Cette propriété implicite est calculée à l’affichage des règles de gestion, mais n’est pas enregistrée en base. Elle ne sera donc pas exportée lors de la génération d’un DIP par exemple.</p>
@@ -292,9 +294,9 @@ Un quatrième SIP (AU 30, AU 31 et AU 32) a pour service producteur SP 3 et une 
 </section>
 </section>
 <section id="positionnement-des-regles-de-gestion-dans-la-solution-logicielle-vitam">
-<h2>Positionnement des règles de gestion dans la solution logicielle Vitam<a class="headerlink" href="#positionnement-des-regles-de-gestion-dans-la-solution-logicielle-vitam" title="Lien permanent vers ce titre"></a></h2>
+<h2>Positionnement des règles de gestion dans la solution logicielle Vitam<a class="headerlink" href="#positionnement-des-regles-de-gestion-dans-la-solution-logicielle-vitam" title="Lien permanent vers cette rubrique"></a></h2>
 <section id="ou-positionner-les-regles-de-gestion">
-<h3>Où positionner les règles de gestion ?<a class="headerlink" href="#ou-positionner-les-regles-de-gestion" title="Lien permanent vers ce titre"></a></h3>
+<h3>Où positionner les règles de gestion ?<a class="headerlink" href="#ou-positionner-les-regles-de-gestion" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Les règles peuvent être déclarées à des niveaux différents de l’arborescence d’unités archivistiques, en fonction des résultats attendus pour les traitements à échéance : traitement identique de toute une entrée, traitement identique de toutes les pièces d’un dossier, traitement spécifique de chaque document.<br>
 Dans le bordereau de transfert, les règles sont positionnées dans le bloc <ManagementMetadata> si elles doivent s’appliquer à l’ensemble du SIP ou dans le bloc <Management> des différentes unités archivistiques si elles sont spécifiques à ces unités.</p>
 <p>Dans l’univers papier, les règles étaient positionnées au plus haut niveau possible de l’arborescence et les niveaux inférieurs déclaraient leur date de départ pour le calcul de l’échéance des règles. Dans le modèle SEDA, la date de départ du calcul de l’échéance ne peut être exprimée sans déclaration de l’identifiant de la règle. Il n’est donc pas possible de déclarer au niveau d’une unité archivistique une règle qui serait héritée par ses filles qui déclareraient à leur niveau uniquement les dates de départ spécifiques du calcul de l’échéance.<br></p>
@@ -304,7 +306,7 @@ Dans le bordereau de transfert, les règles sont positionnées dans le bloc <Man
 </ul>
 </section>
 <section id="peut-on-positionner-des-regles-de-gestion-sur-des-unites-de-plan-de-classement">
-<h3>Peut-on positionner des règles de gestion sur des unités de plan de classement ?<a class="headerlink" href="#peut-on-positionner-des-regles-de-gestion-sur-des-unites-de-plan-de-classement" title="Lien permanent vers ce titre"></a></h3>
+<h3>Peut-on positionner des règles de gestion sur des unités de plan de classement ?<a class="headerlink" href="#peut-on-positionner-des-regles-de-gestion-sur-des-unites-de-plan-de-classement" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Dans le cas d’une implémentation qui intègre un plan de classement auquel sont rattachées les unités archivistiques standard, le plan de classement peut porter des règles de gestion qui seront héritées par les unités rattachées.
 Dans les pratiques de records management, il est d’usage de faire porter sur le plan de classement les règles applicables aux pièces qui seront classées dans cette rubrique.<br>
 Toutefois, dans la solution logicielle Vitam, dans cette configuration une date de départ commune pour toutes les archives rattachées doit être portée par le plan de classement pour permettre la mise en œuvre des actions à échéance. Dès lors qu’une unité archivistique rattachée doit avoir une date de départ de calcul de la règle différente, la règle devra être redéclarée sur cette unité archivistique. Mettre la règle de gestion sur une unité archivistique de plan de classement n’est donc envisageable que dans des cas d’unités archivistiques très homogènes.</p>
@@ -313,13 +315,13 @@ Il n’est donc pas recommandé de porter des règles sur une unité archivistiq
 Il peut rester intéressant d’associer intellectuellement une règle à un niveau de plan à titre de contrôle par l’archiviste des valeurs déclarées dans les unités rattachées.</p>
 </section>
 <section id="quand-declarer-une-regle-au-niveau-du-dossier">
-<h3>Quand déclarer une règle au niveau du dossier ?<a class="headerlink" href="#quand-declarer-une-regle-au-niveau-du-dossier" title="Lien permanent vers ce titre"></a></h3>
+<h3>Quand déclarer une règle au niveau du dossier ?<a class="headerlink" href="#quand-declarer-une-regle-au-niveau-du-dossier" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Lorsqu’une arborescence d’unités archivistiques a une même règle applicable à l’issue d’un délai calculé à partir de la date de clôture du dossier, la règle sera portée par l’unité archivistique de niveau dossier et héritée par les unités archivistiques filles. La date de départ pour le calcul de la règle peut être ajoutée ultérieurement, si elle n’est pas connue lors des premiers versements, pour permettre le calcul de l’échéance.</p>
 <p><em>Cas d’usage</em> : un dossier de personnel est ouvert dès la prise de fonction d’un agent et est alimenté au fur et à mesure par les pièces du dossier. Lorsque le dossier ne sera plus actif, sa date de clôture sera portée sur l’unité archivistique du dossier, permettant le calcul du délai de communicabilité qui sera appliqué par héritage à toutes les pièces.</p>
 <p><strong>Attention</strong>, tant que le dossier ne sera pas clos et ne déclarera pas de date de départ pour le calcul de l’échéance de la règle, le calcul du délai de communicabilité ne sera pas possible. Dans le cas d’une durée d’utilité administrative, même si un sort final « Détruire » est déclaré, le dossier et ses pièces ne seront pas considérés comme éliminables tant que la date de départ de la règle n’aura pas été déclarée dans le système, permettant le calcul de la date d’échéance.</p>
 </section>
 <section id="quand-declarer-une-regle-au-niveau-de-la-piece">
-<h3>Quand déclarer une règle au niveau de la pièce ?<a class="headerlink" href="#quand-declarer-une-regle-au-niveau-de-la-piece" title="Lien permanent vers ce titre"></a></h3>
+<h3>Quand déclarer une règle au niveau de la pièce ?<a class="headerlink" href="#quand-declarer-une-regle-au-niveau-de-la-piece" title="Lien permanent vers cette rubrique"></a></h3>
 <p><strong>Cas 1</strong>: Lorsque les unités archivistiques sont soumises à une même règle pour toute l’arborescence, mais que cette règle doit s’appliquer pour chaque pièce en fonction de la date du document et non au niveau du dossier ou du sous-dossier, chaque pièce devra déclarer la règle et la date de départ du calcul de l’échéance.</p>
 <p>Cette configuration permet d’assurer que l’échéance sera calculée au plus juste et que les actions à échéance pourront être mises en œuvre sans tarder, qu’il s’agisse de communication, d’élimination ou de transfert.
 Cas d’usage : dans un dossier de captation de la Hadopi, chaque document est éliminé à la date anniversaire de la captation. Le dossier auquel les captations sont rattachées est conservé sans date d’échéance.
@@ -333,7 +335,7 @@ Cas d’usage : dans un dossier d’affaires composé de sous-dossier a la mêm
 <strong>Attention</strong> : si une règle spécifique est bloquée dans une catégorie qui nécessite la déclaration d’une propriété (sort final de la durée d’utilité administrative par exemple), la propriété définie obligatoirement localement à l’occasion de l’utilisation de la balise RefNonRuleId bloquera l’héritage de la propriété des unités parentes, bien que des règles puissent être héritées de ces unités parentes dans cette catégorie. Cela pourra conduire à la non application de certaines règles héritées ou à une application d’un sort final contraire à celui porté par l’unité parente. Les annulations de règle ou d’héritage dans une catégorie doivent donc faire l’objet d’une étude précise pour chaque cas afin de bien s’assurer que les règles applicables à l’unité correspondent aux besoins métier.</p>
 </section>
 <section id="quel-niveau-de-granularite-adopter">
-<h3>Quel niveau de granularité adopter ?<a class="headerlink" href="#quel-niveau-de-granularite-adopter" title="Lien permanent vers ce titre"></a></h3>
+<h3>Quel niveau de granularité adopter ?<a class="headerlink" href="#quel-niveau-de-granularite-adopter" title="Lien permanent vers cette rubrique"></a></h3>
 <p>En sus des cas présentés ci-dessus, le choix du meilleur niveau pour déclarer les règles de gestion pourra prendre en compte les possibilités offertes au service d’archives pour positionner des règles de gestion en fonction des modalités de génération du SIP.<br>
 Dans le cas de versements applicatifs, il est possible de prévoir que l’application productrice réalise des exports associant à chaque pièce la ou les règles applicables et la date de départ du calcul des échéances en fonction d’événements connus du système (date de validation du document, date de clôture d’une procédure…).<br>
 Pour des versements manuels, le renseignement des règles de gestion à la pièce peut se révéler chronophage. On favorisera en ce cas la déclaration au niveau du dossier ou du sous-dossier, et donc le traitement des archives par lot homogène pour l’application des règles de gestion.</p>
@@ -341,7 +343,7 @@ Pour des versements manuels, le renseignement des règles de gestion à la pièc
 Cas d’usage : dans le cas d’un organisme qui produit quotidiennement un très grand nombre de dossiers de remboursement, on pourra porter la DUA sur chaque dossier de remboursement pour éliminer quotidiennement les dossiers arrivés à échéance ou sur un nœud regroupant les dossiers produits chaque mois pour éliminer mensuellement les dossiers arrivés à échéance ou sur un nœud regroupant les dossiers produits chaque année pour éliminer annuellement les dossiers arrivés à échéance.</p>
 </section>
 <section id="precautions-a-prendre-dans-les-heritages-de-regles-pour-la-mise-en-oeuvre-du-sort-final">
-<h3>Précautions à prendre dans les héritages de règles pour la mise en œuvre du sort final<a class="headerlink" href="#precautions-a-prendre-dans-les-heritages-de-regles-pour-la-mise-en-oeuvre-du-sort-final" title="Lien permanent vers ce titre"></a></h3>
+<h3>Précautions à prendre dans les héritages de règles pour la mise en œuvre du sort final<a class="headerlink" href="#precautions-a-prendre-dans-les-heritages-de-regles-pour-la-mise-en-oeuvre-du-sort-final" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Dans le cas d’une élimination, si une unité archivistique a hérité une règle pour un service producteur sans avoir également une propriété de sort final au titre de ce même service producteur, la règle pourra ne pas s’appliquer.</p>
 <p><em>Exemple</em> : une unité archivistique A de service producteur X porte une règle de DUA 1 et une règle de DUA 2 avec comme sort final « Conserver ».
 Sa fille, l’unité archivistique B, annule l’héritage de la règle de DUA 1 et doit pour cela redéclarer un sort final. Elle déclare le sort final « Détruire ».<br>
@@ -360,7 +362,7 @@ L’unité archivistique AU B ne pourra ainsi pas être éliminée, puisqu’ell
 </section>
 </section>
 <section id="modification-des-regles-de-gestion">
-<h2>Modification des règles de gestion<a class="headerlink" href="#modification-des-regles-de-gestion" title="Lien permanent vers ce titre"></a></h2>
+<h2>Modification des règles de gestion<a class="headerlink" href="#modification-des-regles-de-gestion" title="Lien permanent vers cette rubrique"></a></h2>
 <p>Les règles de gestion peuvent être modifiées dans le cadre d’une modification unitaire, d’une modification de masse ou à la suite de la mise à jour du référentiel des règles de gestion.</p>
 <p>Dans le cadre d’une modification unitaire, il est possible de modifier les règles d’héritage, les règles déclarées par l’unité archivistique (identifiant de la règle, date de départ du calcul de l’échéance) et les propriétés ou attributs, d’ajouter des règles et des propriétés ou attributs ou de les supprimer. Ces modifications seront héritées par les unités archivistiques filles, sauf blocage de l’héritage.</p>
 <p>Dans le cadre d’une modification de masse sur un lot donné, les mêmes éléments peuvent être modifiés, ajoutés ou supprimés. Ces modifications doivent respecter la structure des règles de gestion : ainsi, si un blocage de règle pour la catégorie de durée d’utilité administrative est posé sur un lot d’unités archivistiques sans être accompagné de la définition d’un sort final, seules celles qui portent en propre un sort final pour cette catégorie pourront être modifiées, les autres ne pourront pas l’être puisque le sort final est obligatoire pour cette catégorie de règle.</p>

@@ -853,7 +853,10 @@ Ce document s’articule autour des axes suivants :
 
 ### Domaine : Organisation et droits utilisateurs
 ####  Organisation
-**Présentation :** Le document permet de créer une nouvelle organisation et de lui associer un ou plusieurs coffre(s).
+**Présentation :** Le document permet de savoir comment :
+- Paramétrer les organisations,
+- Paramétrer les propriétaires des organisations et leurs coffres.
+
 
 **Ordre d’exécution :** 1 – obligatoire
 
@@ -861,8 +864,7 @@ Ce document s’articule autour des axes suivants :
 
 **Lien vers le document :** Organisation
 **Public cible :** 
--  Administrateur du service (si vous exposez VITAM UI en tant que service pour d'autres utilisateurs)
--  Administrateur technique VitamUI (si vous utilisez VITAM UI hébergé en propre)
+-  Opérateur d'instance
       
 ####  Subrogation
 **Présentation :** Le document permet de créer le compte nominatif de l’administrateur fonctionnel d’une organisation à des fins d’activation et de prendre la main sur la session d’un utilisateur à des fins de support. Cette APP permet à un utilisateur support d’instance, de subroger les droits d’un utilisateur générique de l’organisation (administration pour compte de tiers) ou d’un utilisateur nominatif, après autorisation de celui-ci.
@@ -911,7 +913,9 @@ Ce document s’articule autour des axes suivants :
 **Public cible :** Administrateur fonctionnel VITAM UI
 
 ####  Profils APP Paramétrages externes
-**Présentation :** Le document permet de paramétrer des profils de droits et des les associer un contrat d’accès à un groupe de profils utilisateurs.
+**Présentation :** Le document permet de savoir
+- Paramétrer des profils de droits permettant d’associer un contrat d’accès à un groupe de profils utilisateurs,
+- Paramétrer des profils de droits autorisés à dépasser les seuils de plateforme.
 
 **Ordre d’exécution :** N/A
 
@@ -945,7 +949,12 @@ Ce document s’articule autour des axes suivants :
 **Public cible :** Administrateur fonctionnel VITAM UI
 
 #### Référentiel des règles de gestion
-**Présentation :** Le document permet de déclarer des nouvelles règles de gestion.
+**Présentation :** Le document permet de savoir :
+- Créer une règle de gestion,
+- Consulter une règle de gestion,
+- Mettre à jour une règle de gestion,
+- Supprimer une règle de gestion,
+- Importer ou exporter le référentiel des règles de gestion.
 
 **Ordre d’exécution :** 2 – obligatoire
 
@@ -953,10 +962,17 @@ Ce document s’articule autour des axes suivants :
 
 **Lien vers le document :** Règles de gestion
 
-**Public cible :** Administrateur fonctionnel VITAM UI
+**Public cible :** 
+- Administrateur métier de l’organisation
+- Archiviste de l’organisation (accès en consultation)
 
 #### Formats de fichiers
-**Présentation :** Le document permet de déclarer un nouveau format non présent dans le référentiel PRONOM. 
+**Présentation :** Le document permet de savoir comment:
+- Créer un format,
+- Consulter un format,
+- Importer un référentiel de format, 
+- Mettre à jour un format non issu du référentiel PRONOM,
+- Supprimer un format non issu du référentiel PRONOM. 
 
 **Ordre d’exécution :** 2 – facultatif
 
@@ -964,7 +980,9 @@ Ce document s’articule autour des axes suivants :
 
 **Lien vers le document :** Formats de fichiers
 
-**Public cible :** Administrateur technique VITAM UI
+**Public cible :** 
+- Administrateur technique de l’organisation
+- Administrateur métier de l’organisation (accès en consultation)
 
 ####  Ontologie
 **Présentation :** Le document permet de déclarer un nouveau vocabulaire non présent dans l’ontologie SEDA.
@@ -1012,7 +1030,10 @@ Ce document s’articule autour des axes suivants :
 
 ### Domaine : Sécurité et droits applicatifs
 ####  Contrat d’entrée
-**Présentation :** Le document permet de paramétrer des droits pour le versement d'archives dans un coffre par une application.
+**Présentation :** Le document permet de savoir comment :
+- Rechercher et consulter un contrat d’entrée,
+- Créer un contrat d’entrée,
+- Mettre à jour un contrat d’entrée.
 
 **Ordre d’exécution :** 1 - Obligatoire sauf si le contrat est inchangé
 
@@ -1092,7 +1113,9 @@ Ce document s’articule autour des axes suivants :
 **Public cible :** Administrateur technique VITAM UI
 
 ####  Audit
-**Présentation :** Le document permet de vérifier la conformité de la conservation des archives.
+**Présentation :** Le document permet savoir comment :
+- Lancer un audit,
+- Consulter / Télécharger un rapport d’audit.
 
 **Ordre d’exécution :** NA
 
@@ -1101,8 +1124,9 @@ Ce document s’articule autour des axes suivants :
 **Lien vers le document :** Audit
 
 **Public cible :** 
--  Administrateur fonctionnel VITAM UI
--  Super-archiviste
+- Administrateur métier de l’organisation
+- Administrateur technique de l’organisation.
+
       
 #### Relevé de valeur probante
 **Présentation :** Le document permet de produire un relevé de valeur probante sur une ou plusieurs des archives électroniques.
@@ -1129,7 +1153,12 @@ Ce document s’articule autour des axes suivants :
 
 ### Domaine : Versement et consultation
 #### Collecte et préparation des versements
-**Présentation :** Le document permet de créer un projet de versement, consulter et rechercher les unités archivistiques liées à un versement, ajouter des métadonnées descriptives et de gestion des unités archivistiques, consulter, valider, transférer les versements liés à un projet
+**Présentation :** Le document permet de savoir :
+- Créer un projet de versement manuel ou de flux automatique,
+- Modifier les informations de contexte ou de description d’un projet,
+- Consulter et rechercher les unités archivistiques liées à un versement,
+- Ajouter des métadonnées descriptives et de gestion aux unités archivistiques,
+- Consulter, valider, transférer les versements liés à un projet.
 
 **Ordre d’exécution :** NA
 
@@ -1152,7 +1181,11 @@ Ce document s’articule autour des axes suivants :
 **Public cible :** Archiviste
 
 #### Recherche et consultation des archives
-**Présentation :** Le document permet de rechercher et télécharger des unités archivistiques contenues dans le SAE.
+**Présentation :** Le document permet savoir comment :
+- Rechercher des unités archivistiques (recherche simple et avancée),
+- Consulter des unités archivistiques et télécharger des fichiers (objet associé),
+- Lancer des opérations sur des unités archivistiques (export DIP, élimination, mise à jour des métadonnées, reclassement, calcul d’héritage, transfert d’archives),
+
 
 **Ordre d’exécution :** NA
 
@@ -1160,10 +1193,17 @@ Ce document s’articule autour des axes suivants :
 
 **Lien vers le document :** Recherche et consultation des archives
 
-**Public cible :** Archiviste
+**Public cible :** 
+- Administrateur métier de l’organisation
+- Archiviste au sein de l’organisation
+- Agent d’un service producteur au sein de l’organisation
 
 ####  Registre des fonds
-**Présentation :** Le document permet de consulter le registre des fonds et rechercher dans le registre des fonds.
+**Présentation :** Le document permet de savoir :
+- Consulter le registre des fonds,
+- Consulter le détail d’une entrée,
+- Rechercher dans le registre des fonds,
+- Exporter le résultat au format csv.
 
 **Ordre d’exécution :** NA
 

@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="fr" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>9. Le calcul des héritages des règles de gestion et l’indexation des échéances dans la solution logicielle Vitam &mdash; Vitam documentation fonctionnelle</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
   
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/translations.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -48,6 +47,8 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="guide_lecture.html">1. Documentation Vitam - guide de lecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="presentation_programme.html">2. Présentation du programme Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_prise_en_main.html">3. Guide de prise en main de la solution logicielle Vitam – Vitam UI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_prise_en_main.html#realiser-une-premiere-entree">4. <em>Réaliser une première entrée</em></a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">documentation métier</span></p>
 <ul>
@@ -67,7 +68,8 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">documentation Vitam UI</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="VitamUI_Arbres_Plans.html">1. APP Arbres et plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Autoprovisionning.html">1. Vitam UI : présentation de la fonctionnalité d’auto-provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Arbres_Plans.html">2. APP Arbres et plans</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">outils connexes</span></p>
 <ul>
@@ -158,20 +160,20 @@
 
            <div itemprop="articleBody">
              
-  <section class="tex2jax_ignore mathjax_ignore" id="le-calcul-des-heritages-des-regles-de-gestion-et-lindexation-des-echeances-dans-la-solution-logicielle-vitam">
-<h1><span class="section-number">9. </span>Le calcul des héritages des règles de gestion et l’indexation des échéances dans la solution logicielle Vitam<a class="headerlink" href="#le-calcul-des-heritages-des-regles-de-gestion-et-lindexation-des-echeances-dans-la-solution-logicielle-vitam" title="Lien permanent vers ce titre"></a></h1>
+  <section id="le-calcul-des-heritages-des-regles-de-gestion-et-lindexation-des-echeances-dans-la-solution-logicielle-vitam">
+<h1><span class="section-number">9. </span>Le calcul des héritages des règles de gestion et l’indexation des échéances dans la solution logicielle Vitam<a class="headerlink" href="#le-calcul-des-heritages-des-regles-de-gestion-et-lindexation-des-echeances-dans-la-solution-logicielle-vitam" title="Lien permanent vers cette rubrique"></a></h1>
 <p>La solution logicielle Vitam offre des fonctionnalités de calcul des règles de gestion applicables à une unité archivistique, que celle-ci porte la règle en propre ou en hérite, et d’indexation des échéances calculées par catégorie de règles.</p>
 <p>L’indexation des échéances facilite les recherches d’unités archivistiques en fonction des règles qui leur sont applicables.</p>
 <section id="presentation-du-calcul-des-heritages-des-regles-de-gestion">
-<h2><span class="section-number">9.1. </span>Présentation du calcul des héritages des règles de gestion<a class="headerlink" href="#presentation-du-calcul-des-heritages-des-regles-de-gestion" title="Lien permanent vers ce titre"></a></h2>
+<h2><span class="section-number">9.1. </span>Présentation du calcul des héritages des règles de gestion<a class="headerlink" href="#presentation-du-calcul-des-heritages-des-regles-de-gestion" title="Lien permanent vers cette rubrique"></a></h2>
 <section id="lenregistrement-a-lentree-des-echeances-applicables-a-une-unite-archivistique">
-<h3><span class="section-number">9.1.1. </span>L’enregistrement à l’entrée des échéances applicables à une unité archivistique<a class="headerlink" href="#lenregistrement-a-lentree-des-echeances-applicables-a-une-unite-archivistique" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">9.1.1. </span>L’enregistrement à l’entrée des échéances applicables à une unité archivistique<a class="headerlink" href="#lenregistrement-a-lentree-des-echeances-applicables-a-une-unite-archivistique" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Lors du processus d’entrée, la solution logicielle Vitam enregistre en base les règles portées en propre par une unité archivistique (c’est-à-dire les règles déclarées pour cette unité archivistique dans le bordereau de transfert) et l’échéance de cette règle si la date de départ de son calcul est connue.</p>
 <p>Les unités archivistiques qui ne déclarent pas de règle de gestion n’ont pas de règles en base.</p>
 <p>Lorsque les règles applicables à un transfert ont été déclarées dans le bloc ManagementMetadata, seules les unités archivistiques à la racine du bordereau de transfert porteront ces règles en base.</p>
 </section>
 <section id="le-calcul-a-la-consultation-des-regles-et-des-echeances-applicables-a-une-unite-archivistique">
-<h3><span class="section-number">9.1.2. </span>Le calcul à la consultation des règles et des échéances applicables à une unité archivistique<a class="headerlink" href="#le-calcul-a-la-consultation-des-regles-et-des-echeances-applicables-a-une-unite-archivistique" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">9.1.2. </span>Le calcul à la consultation des règles et des échéances applicables à une unité archivistique<a class="headerlink" href="#le-calcul-a-la-consultation-des-regles-et-des-echeances-applicables-a-une-unite-archivistique" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Lors d’une demande de consultation des métadonnées d’une unité archivistique, la solution logicielle Vitam retourne :</p>
 <ul class="simple">
 <li><p>les règles déclarées par cette unité archivistique, y compris l’échéance de la règle si la date de départ de son calcul est connue ;</p></li>
@@ -179,17 +181,17 @@
 </ul>
 </section>
 <section id="le-calcul-a-la-mise-en-oeuvre-dune-operation-de-gestion-des-regles-et-des-echeances-applicables-a-une-unite-archivistique-le-cas-de-lelimination">
-<h3><span class="section-number">9.1.3. </span>Le calcul à la mise en œuvre d’une opération de gestion des règles et des échéances applicables à une unité archivistique : le cas de l’élimination<a class="headerlink" href="#le-calcul-a-la-mise-en-oeuvre-dune-operation-de-gestion-des-regles-et-des-echeances-applicables-a-une-unite-archivistique-le-cas-de-lelimination" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">9.1.3. </span>Le calcul à la mise en œuvre d’une opération de gestion des règles et des échéances applicables à une unité archivistique : le cas de l’élimination<a class="headerlink" href="#le-calcul-a-la-mise-en-oeuvre-dune-operation-de-gestion-des-regles-et-des-echeances-applicables-a-une-unite-archivistique-le-cas-de-lelimination" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Lors du lancement d’une analyse d’élimination ou d’une opération d’élimination, la solution logicielle Vitam calcule les règles de durée d’utilité administrative applicables aux unités archivistiques faisant l’objet de l’opération, que ces unités archivistiques portent ces règles en propre ou en hérite.
 Les conflits (héritage de sorts finaux contradictoires) sont retournés à l’utilisateur applicatif pour permettre un traitement humain.</p>
 <p>Pour en savoir plus, consulter le <a class="reference internal" href="Vademecum_eliminations.html"><span class="doc std std-doc">vademecum Réaliser des éliminations avec la solution logicielle Vitam</span></a>.</p>
 </section>
 <section id="le-calcul-sur-un-ensemble-donne-avec-indexation-des-resultats">
-<h3><span class="section-number">9.1.4. </span>Le calcul sur un ensemble donné avec indexation des résultats<a class="headerlink" href="#le-calcul-sur-un-ensemble-donne-avec-indexation-des-resultats" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">9.1.4. </span>Le calcul sur un ensemble donné avec indexation des résultats<a class="headerlink" href="#le-calcul-sur-un-ensemble-donne-avec-indexation-des-resultats" title="Lien permanent vers cette rubrique"></a></h3>
 <p>La solution logicielle Vitam offre la possibilité d’indexer les résultats du calcul des règles applicables à un ensemble d’unités archivistiques donné.
 Selon le paramétrage de la plate-forme, cette indexation sera plus ou moins riche (cf. fiche Le paramétrage fonctionnel d’une plate-forme utilisant la solution logicielle Vitam).</p>
 <section id="indexation-des-echeances-par-categorie-de-regles">
-<h4><span class="section-number">9.1.4.1. </span>Indexation des échéances par catégorie de règles<a class="headerlink" href="#indexation-des-echeances-par-categorie-de-regles" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">9.1.4.1. </span>Indexation des échéances par catégorie de règles<a class="headerlink" href="#indexation-des-echeances-par-categorie-de-regles" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Pour chaque unité archivistique, sont indexées :</p>
 <ul class="simple">
 <li><p>les propriétés de chaque catégorie de règle (ex : sort final, niveau de classification) ;</p></li>
@@ -201,7 +203,7 @@ Selon le paramétrage de la plate-forme, cette indexation sera plus ou moins ric
 Si une unité archivistique déclare ou hérite une règle sans date de départ associée pour le calcul de l’échéance, la solution logicielle ne pourra pas indexer d’échéance pour cette catégorie de règle.</p>
 </section>
 <section id="indexation-des-echeances-par-regle-au-sein-de-chaque-categorie">
-<h4><span class="section-number">9.1.4.2. </span>Indexation des échéances par règle au sein de chaque catégorie<a class="headerlink" href="#indexation-des-echeances-par-regle-au-sein-de-chaque-categorie" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">9.1.4.2. </span>Indexation des échéances par règle au sein de chaque catégorie<a class="headerlink" href="#indexation-des-echeances-par-regle-au-sein-de-chaque-categorie" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Pour chaque unité archivistique, sont indexées :</p>
 <ul class="simple">
 <li><p>les propriétés de chaque catégorie de règle (ex : sort final, niveau de classification) ;</p></li>
@@ -213,7 +215,7 @@ Si une unité archivistique déclare ou hérite une règle sans date de départ 
 <p>Si une unité archivistique déclare ou hérite une règle sans date de départ associée pour le calcul de l’échéance, la solution logicielle ne pourra pas indexer d’échéance pour cette catégorie de règle.</p>
 </section>
 <section id="indexation-de-toutes-les-informations-disponibles-concernant-les-regles-de-gestion-applicables">
-<h4><span class="section-number">9.1.4.3. </span>Indexation de toutes les informations disponibles concernant les règles de gestion applicables<a class="headerlink" href="#indexation-de-toutes-les-informations-disponibles-concernant-les-regles-de-gestion-applicables" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">9.1.4.3. </span>Indexation de toutes les informations disponibles concernant les règles de gestion applicables<a class="headerlink" href="#indexation-de-toutes-les-informations-disponibles-concernant-les-regles-de-gestion-applicables" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Pour chaque unité archivistique, sont indexées, en plus de l’indexation des échéances par règle, l’ensemble des informations relatives aux règles de gestion qui lui sont applicables :</p>
 <ul class="simple">
 <li><p>pour chaque catégorie de règle, les règles applicables, le cas échéant avec leur date de départ et leur date de fin, le chemin d’héritage de la règle (les nœuds par lesquels la règle est héritée) et les propriétés associées ;</p></li>
@@ -224,22 +226,22 @@ Si une unité archivistique déclare ou hérite une règle sans date de départ 
 </section>
 </section>
 <section id="modalites-de-calcul-des-heritages-avec-indexation-des-echeances">
-<h2><span class="section-number">9.2. </span>Modalités de calcul des héritages avec indexation des échéances<a class="headerlink" href="#modalites-de-calcul-des-heritages-avec-indexation-des-echeances" title="Lien permanent vers ce titre"></a></h2>
+<h2><span class="section-number">9.2. </span>Modalités de calcul des héritages avec indexation des échéances<a class="headerlink" href="#modalites-de-calcul-des-heritages-avec-indexation-des-echeances" title="Lien permanent vers cette rubrique"></a></h2>
 <section id="a-la-demande">
-<h3><span class="section-number">9.2.1. </span>À la demande<a class="headerlink" href="#a-la-demande" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">9.2.1. </span>À la demande<a class="headerlink" href="#a-la-demande" title="Lien permanent vers cette rubrique"></a></h3>
 <p>La solution logicielle Vitam permet de calculer les règles applicables à une ou plusieurs unités archivistiques et d’indexer les échéances associées à la demande.
 Le résultat des l’indexation à la demande est immédiatement disponible.</p>
 </section>
 <section id="en-entree">
-<h3><span class="section-number">9.2.2. </span>En entrée<a class="headerlink" href="#en-entree" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">9.2.2. </span>En entrée<a class="headerlink" href="#en-entree" title="Lien permanent vers cette rubrique"></a></h3>
 <p>La solution logicielle Vitam permet de paramétrer le contrat d’entrée pour spécifier si les unités archivistiques entrées en déclarant ce contrat doivent faire l’objet d’un calcul des héritages avec indexation des échéances.
 Si ce paramétrage est activé, les unités archivistiques sont marquées lors du processus d’entrée pour que l’indexation de leurs échéances soit réalisée par traitement automatique programmé (batch). Le résultat de l’indexation n’est donc pas immédiatement disponible.</p>
 </section>
 </section>
 <section id="utilisation-de-lindexation-des-echeances-en-recherche-et-en-acces">
-<h2><span class="section-number">9.3. </span>Utilisation de l’indexation des échéances en recherche et en accès<a class="headerlink" href="#utilisation-de-lindexation-des-echeances-en-recherche-et-en-acces" title="Lien permanent vers ce titre"></a></h2>
+<h2><span class="section-number">9.3. </span>Utilisation de l’indexation des échéances en recherche et en accès<a class="headerlink" href="#utilisation-de-lindexation-des-echeances-en-recherche-et-en-acces" title="Lien permanent vers cette rubrique"></a></h2>
 <section id="recherche">
-<h3><span class="section-number">9.3.1. </span>Recherche<a class="headerlink" href="#recherche" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">9.3.1. </span>Recherche<a class="headerlink" href="#recherche" title="Lien permanent vers cette rubrique"></a></h3>
 <p>L’indexation des échéances permet de faire des requêtes sur les unités archivistiques en fonction des règles qui leur sont applicables.
 On peut par exemple rechercher :</p>
 <ul class="simple">
@@ -249,7 +251,7 @@ On peut par exemple rechercher :</p>
 </ul>
 </section>
 <section id="acces">
-<h3><span class="section-number">9.3.2. </span>Accès<a class="headerlink" href="#acces" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">9.3.2. </span>Accès<a class="headerlink" href="#acces" title="Lien permanent vers cette rubrique"></a></h3>
 <p>L’indexation des échéances peut être utilisée en accès si le paramétrage correspondant est activé dans le contrat d’accès.
 En ce cas, les résultats remontés à l’utilisateur sont filtrés pour ne lui donner accès qu’aux unités archivistiques dont l’échéance pour la(les) catégorie(s) de règle de gestion concernée(s) est dans le passé par rapport à la date de la requête.</p>
 <p>Le filtre s’applique uniquement aux échéances indexées. Ainsi, si une unité archivistique porte en propre une règle de communicabilité échue, mais qu’elle n’a pas fait l’objet d’une indexation des échéances, elle ne sera pas accessible avec un contrat d’accès filtrant sur la règle de communicabilité.
@@ -257,7 +259,7 @@ Les unités archivistiques d’arbre, qui ne portent pas de règles de gestion, 
 </section>
 </section>
 <section id="invalidation-des-echeances-calculees">
-<h2><span class="section-number">9.4. </span>Invalidation des échéances calculées<a class="headerlink" href="#invalidation-des-echeances-calculees" title="Lien permanent vers ce titre"></a></h2>
+<h2><span class="section-number">9.4. </span>Invalidation des échéances calculées<a class="headerlink" href="#invalidation-des-echeances-calculees" title="Lien permanent vers cette rubrique"></a></h2>
 <p>L’indexation des échéances est automatiquement invalidée dans les cas suivant :</p>
 <ul class="simple">
 <li><p>mise à jour des métadonnées de gestion d’une unité archivistique ;</p></li>
@@ -270,7 +272,7 @@ Dans le cas du reclassement d’une unité archivistique, l’invalidation conce
 <p>L’indexation invalidée sera recalculée par traitement automatique programmé (batch).</p>
 </section>
 <section id="suppression-des-echeances-calculees">
-<h2><span class="section-number">9.5. </span>Suppression des échéances calculées<a class="headerlink" href="#suppression-des-echeances-calculees" title="Lien permanent vers ce titre"></a></h2>
+<h2><span class="section-number">9.5. </span>Suppression des échéances calculées<a class="headerlink" href="#suppression-des-echeances-calculees" title="Lien permanent vers cette rubrique"></a></h2>
 <p>La suppression de l’indexation des unités archivistiques peut être lancée sur requête par une application utilisant la solution logicielle Vitam.</p>
 <p>Pour en savoir plus, consulter le <a class="reference internal" href="regles_gestion.html"><span class="doc std std-doc">document VITAM. Règles de gestion</span></a>.</p>
 </section>

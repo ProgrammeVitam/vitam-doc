@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="fr" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>10. Profils d’archivage &mdash; Vitam documentation fonctionnelle</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
   
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/translations.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -48,6 +47,8 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="guide_lecture.html">1. Documentation Vitam - guide de lecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="presentation_programme.html">2. Présentation du programme Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_prise_en_main.html">3. Guide de prise en main de la solution logicielle Vitam – Vitam UI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_prise_en_main.html#realiser-une-premiere-entree">4. <em>Réaliser une première entrée</em></a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">documentation métier</span></p>
 <ul class="current">
@@ -168,7 +169,8 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">documentation Vitam UI</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="VitamUI_Arbres_Plans.html">1. APP Arbres et plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Autoprovisionning.html">1. Vitam UI : présentation de la fonctionnalité d’auto-provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Arbres_Plans.html">2. APP Arbres et plans</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">outils connexes</span></p>
 <ul>
@@ -233,17 +235,17 @@
 
            <div itemprop="articleBody">
              
-  <section class="tex2jax_ignore mathjax_ignore" id="profils-d-archivage">
-<h1><span class="section-number">10. </span>Profils d’archivage<a class="headerlink" href="#profils-d-archivage" title="Lien permanent vers ce titre"></a></h1>
+  <section id="profils-d-archivage">
+<h1><span class="section-number">10. </span>Profils d’archivage<a class="headerlink" href="#profils-d-archivage" title="Lien permanent vers cette rubrique"></a></h1>
 <section id="introduction">
-<h2><span class="section-number">10.1. </span>Introduction<a class="headerlink" href="#introduction" title="Lien permanent vers ce titre"></a></h2>
+<h2><span class="section-number">10.1. </span>Introduction<a class="headerlink" href="#introduction" title="Lien permanent vers cette rubrique"></a></h2>
 <section id="documents-de-reference">
-<h3><span class="section-number">10.1.1. </span>Documents de référence<a class="headerlink" href="#documents-de-reference" title="Lien permanent vers ce titre"></a></h3>
-<table class="colwidths-auto docutils align-default">
+<h3><span class="section-number">10.1.1. </span>Documents de référence<a class="headerlink" href="#documents-de-reference" title="Lien permanent vers cette rubrique"></a></h3>
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p>Document</p></th>
-<th class="text-center head"><p>Date de la version</p></th>
-<th class="text-center head"><p>Remarques</p></th>
+<tr class="row-odd"><th class="head text-center"><p>Document</p></th>
+<th class="head text-center"><p>Date de la version</p></th>
+<th class="head text-center"><p>Remarques</p></th>
 </tr>
 </thead>
 <tbody>
@@ -275,7 +277,7 @@
 </table>
 </section>
 <section id="presentation-du-document">
-<h3><span class="section-number">10.1.2. </span>Présentation du document<a class="headerlink" href="#presentation-du-document" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">10.1.2. </span>Présentation du document<a class="headerlink" href="#presentation-du-document" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Le présent document décrit les fonctionnalités associées à la prise en compte de la notion de profil d’archivage dans la solution logicielle Vitam.</p>
 <p>Il s’articule autour des axes suivants :</p>
 <ul class="simple">
@@ -289,9 +291,9 @@
 </section>
 </section>
 <section id="presentation-de-la-notion-de-profil-darchivage">
-<h2><span class="section-number">10.2. </span>Présentation de la notion de profil d’archivage<a class="headerlink" href="#presentation-de-la-notion-de-profil-darchivage" title="Lien permanent vers ce titre"></a></h2>
+<h2><span class="section-number">10.2. </span>Présentation de la notion de profil d’archivage<a class="headerlink" href="#presentation-de-la-notion-de-profil-darchivage" title="Lien permanent vers cette rubrique"></a></h2>
 <section id="quest-ce-quun-profil-darchivage">
-<h3><span class="section-number">10.2.1. </span>Qu’est-ce qu’un profil d’archivage ?<a class="headerlink" href="#quest-ce-quun-profil-darchivage" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">10.2.1. </span>Qu’est-ce qu’un profil d’archivage ?<a class="headerlink" href="#quest-ce-quun-profil-darchivage" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Un profil d’archivage permet de définir précisément la manière dont des archives destinées à être transférées dans un système d’archivage électronique doivent être structurées et décrites. Il constitue une déclinaison du modèle de description propre au Standard d’échanges de données pour l’archivage (SEDA).</p>
 <p>Pour un ensemble de données à transférer, archiver et conserver par un service d’archives, un profil d’archivage précise :</p>
 <ul class="simple">
@@ -306,7 +308,7 @@
 <p>En revanche, un bordereau de transfert pour lequel un profil d’archivage aura été défini ne pourra contenir que les métadonnées décrivant les unités archivistiques et les objets imposées par celui-ci. Si le profil d’archivage est, par exemple, spécifique au transfert de dossiers de marchés, le bordereau de transfert devra décrire ce type d’archives pour être en conformité avec le profil.</p>
 </section>
 <section id="pourquoi-elaborer-un-profil-darchivage">
-<h3><span class="section-number">10.2.2. </span>Pourquoi élaborer un profil d’archivage ?<a class="headerlink" href="#pourquoi-elaborer-un-profil-darchivage" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">10.2.2. </span>Pourquoi élaborer un profil d’archivage ?<a class="headerlink" href="#pourquoi-elaborer-un-profil-darchivage" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Définir un profil d’archivage permet de :</p>
 <ul class="simple">
 <li><p>faciliter, voire automatiser, les contrôles sur les transferts d’archives d’un service producteur à un service d’archives, depuis un service externe vers la solution logicielle Vitam ;</p></li>
@@ -317,7 +319,7 @@
 </ul>
 </section>
 <section id="quand-et-comment-elaborer-un-profil-darchivage">
-<h3><span class="section-number">10.2.3. </span>Quand et comment élaborer un profil d’archivage ?<a class="headerlink" href="#quand-et-comment-elaborer-un-profil-darchivage" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">10.2.3. </span>Quand et comment élaborer un profil d’archivage ?<a class="headerlink" href="#quand-et-comment-elaborer-un-profil-darchivage" title="Lien permanent vers cette rubrique"></a></h3>
 <p>L’élaboration d’un profil d’archivage précède l’ouverture d’un transfert à destination d’un système d’archivage électronique. Elle doit être envisagée dans les cas suivants :</p>
 <ul class="simple">
 <li><p>transferts de flux applicatifs, afin de les automatiser ;</p></li>
@@ -339,9 +341,9 @@
 </section>
 </section>
 <section id="formalisation-des-profils-darchivage">
-<h2><span class="section-number">10.3. </span>Formalisation des profils d’archivage<a class="headerlink" href="#formalisation-des-profils-darchivage" title="Lien permanent vers ce titre"></a></h2>
+<h2><span class="section-number">10.3. </span>Formalisation des profils d’archivage<a class="headerlink" href="#formalisation-des-profils-darchivage" title="Lien permanent vers cette rubrique"></a></h2>
 <section id="dans-un-fichier-propre">
-<h3><span class="section-number">10.3.1. </span>Dans un fichier propre<a class="headerlink" href="#dans-un-fichier-propre" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">10.3.1. </span>Dans un fichier propre<a class="headerlink" href="#dans-un-fichier-propre" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Les profils d’archivage prennent la forme de fichiers au format XSD ou Relax NG. Les deux formats diffèrent en termes de syntaxe et de grammaire, mais leur finalité est identique : permettre de valider un fichier écrit en XML[^1].</p>
 <p>Les profils d’archivage doivent être élaborés conformément au schéma imposé par le Standard d’échange de données pour l’archivage (SEDA).</p>
 <p>Ils peuvent :</p>
@@ -352,7 +354,7 @@
 </ul>
 </section>
 <section id="dans-le-standard-dechange-de-donnees-pour-larchivage-seda">
-<h3><span class="section-number">10.3.2. </span>Dans le Standard d’échange de données pour l’archivage (SEDA)<a class="headerlink" href="#dans-le-standard-dechange-de-donnees-pour-larchivage-seda" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">10.3.2. </span>Dans le Standard d’échange de données pour l’archivage (SEDA)<a class="headerlink" href="#dans-le-standard-dechange-de-donnees-pour-larchivage-seda" title="Lien permanent vers cette rubrique"></a></h3>
 <p>La manière de déclarer un profil d’archivage est définie dans la norme NF Z44-022 et dans sa déclinaison pour les acteurs du service public, le Standard d’échanges de données pour l’archivage (SEDA).</p>
 <p>La norme NF Z44-022 offre la possibilité de déclarer un profil d’archivage dans un bordereau de transfert, au moment de la demande de transfert à un service d’archives (message ArchiveTransfer, bloc DataObjectPackage) dans le bloc ManagementMetadata pour toute une entrée.
 Dans le sous-bloc ArchivalProfile, est indiqué l’identifiant du profil d’archivage utilisé par le bordereau de transfert. Cet identifiant renvoie au référentiel des profils d’archivage dans la solution logicielle Vitam et correspond à l’identifiant de la notice détaillée du profil d’archivage qui doit être associée au bordereau de transfert, si celui-ci a vocation à être contrôlé par un profil d’archivage[^2].</p>
@@ -361,7 +363,7 @@ Dans le sous-bloc ArchivalProfile, est indiqué l’identifiant du profil d’ar
 </section>
 </section>
 <section id="mecanismes-mis-en-oeuvre-dans-la-solution-logicielle-vitam">
-<h2><span class="section-number">10.4. </span>Mécanismes mis en œuvre dans la solution logicielle Vitam<a class="headerlink" href="#mecanismes-mis-en-oeuvre-dans-la-solution-logicielle-vitam" title="Lien permanent vers ce titre"></a></h2>
+<h2><span class="section-number">10.4. </span>Mécanismes mis en œuvre dans la solution logicielle Vitam<a class="headerlink" href="#mecanismes-mis-en-oeuvre-dans-la-solution-logicielle-vitam" title="Lien permanent vers cette rubrique"></a></h2>
 <p>La solution logicielle Vitam offre à un service d’archives ou à un service externe plusieurs fonctionnalités lui permettant de mettre en œuvre des profils d’archivage :</p>
 <ul class="simple">
 <li><p>l’administration d’un référentiel des profils d’archivage, ainsi que sa préservation ;</p></li>
@@ -374,15 +376,15 @@ Dans le sous-bloc ArchivalProfile, est indiqué l’identifiant du profil d’ar
 </li>
 </ul>
 <section id="administration-dun-referentiel-des-profils-darchivage">
-<h3><span class="section-number">10.4.1. </span>Administration d’un référentiel des profils d’archivage<a class="headerlink" href="#administration-dun-referentiel-des-profils-darchivage" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">10.4.1. </span>Administration d’un référentiel des profils d’archivage<a class="headerlink" href="#administration-dun-referentiel-des-profils-darchivage" title="Lien permanent vers cette rubrique"></a></h3>
 <p>La solution logicielle Vitam intègre un référentiel des profils d’archivage, administrable par un utilisateur doté des droits adéquats (administrateur fonctionnel) et géré dans une collection particulière[^3].</p>
 <p>Ce référentiel est propre à chaque tenant de la solution logicielle Vitam.</p>
 <p>Il se compose de notices descriptives au format JSON, auxquelles il est possible d’associer un profil d’archivage au format XSD ou RNG.
 Il est possible de réaliser les opérations présentées ci-dessous.</p>
 <section id="import-de-la-notice-descriptive-du-profil-darchivage">
-<h4><span class="section-number">10.4.1.1. </span>Import de la notice descriptive du profil d’archivage<a class="headerlink" href="#import-de-la-notice-descriptive-du-profil-darchivage" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">10.4.1.1. </span>Import de la notice descriptive du profil d’archivage<a class="headerlink" href="#import-de-la-notice-descriptive-du-profil-darchivage" title="Lien permanent vers cette rubrique"></a></h4>
 <section id="dans-un-fichier-json">
-<h5><span class="section-number">10.4.1.1.1. </span>Dans un fichier JSON<a class="headerlink" href="#dans-un-fichier-json" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">10.4.1.1.1. </span>Dans un fichier JSON<a class="headerlink" href="#dans-un-fichier-json" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Il est possible d’importer 1 à n notice(s) descriptive(s) de profil(s) d’archivage sous la forme d’un fichier JSON depuis les API ou l’IHM standard fournies avec la solution logicielle Vitam.</p>
 <p>L’APP « Profils documentaires » accessible depuis l’IHM VitamUI permet quant à elle de créer une notice depuis ses interfaces.
 Exemple : notice descriptive de profil d’archivage contenant uniquement les informations obligatoires pour être importée avec succès.</p>
@@ -408,10 +410,10 @@ Exemple : notice descriptive de profil d’archivage contenant uniquement les i
 <p>D’autres informations, facultatives, peuvent venir compléter ces informations. Elles sont détaillées dans la section suivante du présent document.</p>
 <p>Il s’agit d’une opération d’administration (« MASTERDATA »), tracée dans le journal des opérations du tenant sur lequel a eu lieu l’opération[^4].</p>
 <p>Lors de cet import, l’opération peut aboutir aux statuts suivants :</p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Statut</p></th>
-<th class="text-left head"><p>Motifs</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Statut</p></th>
+<th class="head text-left"><p>Motifs</p></th>
 </tr>
 </thead>
 <tbody>
@@ -431,13 +433,13 @@ Exemple : notice descriptive de profil d’archivage contenant uniquement les i
 </ul>
 </section>
 <section id="dans-la-solution-logicielle-vitam">
-<h5><span class="section-number">10.4.1.1.2. </span>Dans la solution logicielle Vitam<a class="headerlink" href="#dans-la-solution-logicielle-vitam" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">10.4.1.1.2. </span>Dans la solution logicielle Vitam<a class="headerlink" href="#dans-la-solution-logicielle-vitam" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Les notices de profil d’archivage sont enregistrées dans la base de données MongoDB, dans la collection « Profile », sous la forme d’enregistrements au format JSON.</p>
 <p>Une notice descriptive peut comprendre les informations suivantes pour un profil d’archivage donné[^9] :</p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Champ</p></th>
-<th class="text-left head"><p>Description</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Champ</p></th>
+<th class="head text-left"><p>Description</p></th>
 </tr>
 </thead>
 <tbody>
@@ -485,7 +487,7 @@ Exemple : notice descriptive de profil d’archivage contenant uniquement les i
 </section>
 </section>
 <section id="import-du-profil-darchivage-lui-meme">
-<h4><span class="section-number">10.4.1.2. </span>Import du profil d’archivage lui-même<a class="headerlink" href="#import-du-profil-darchivage-lui-meme" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">10.4.1.2. </span>Import du profil d’archivage lui-même<a class="headerlink" href="#import-du-profil-darchivage-lui-meme" title="Lien permanent vers cette rubrique"></a></h4>
 <p>À chaque notice descriptive, il n’est possible d’associer qu’un seul profil d’archivage depuis les API ou l’IHM standard fournies avec la solution logicielle Vitam.</p>
 <p>L’APP « Profils documentaires » accessible depuis l’IHM VitamUI permet quant à elle d’importer un profil d’archivage depuis son poste ou de le créer depuis ses interfaces.</p>
 <p>Le profil d’archivage doit être conforme au format déclaré dans la notice et doit prendre la forme de :</p>
@@ -498,7 +500,7 @@ Exemple : notice descriptive de profil d’archivage contenant uniquement les i
 Cette action provoque la création d’une nouvelle version de la notice modifiée. Elle fait l’objet d’une journalisation dans le journal des opérations du tenant sur lequel a eu lieu l’opération (opération d’administration de type « MASTERDATA »)[^10].</p>
 </section>
 <section id="modification-de-la-notice-descriptive-dun-profil-darchivage">
-<h4><span class="section-number">10.4.1.3. </span>Modification de la notice descriptive d’un profil d’archivage<a class="headerlink" href="#modification-de-la-notice-descriptive-dun-profil-darchivage" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">10.4.1.3. </span>Modification de la notice descriptive d’un profil d’archivage<a class="headerlink" href="#modification-de-la-notice-descriptive-dun-profil-darchivage" title="Lien permanent vers cette rubrique"></a></h4>
 <p>La modification des champs des notices décrivant les profils d’archivage est possible au moyen :</p>
 <ul class="simple">
 <li><p>des API,</p></li>
@@ -536,10 +538,10 @@ Cette action provoque la création d’une nouvelle version de la notice modifi�
 Elle fait l’objet d’une journalisation dans le journal des opérations du tenant sur lequel a eu lieu l’opération (opération d’administration de type « MASTERDATA »)[^11].
 Lors de cette mise à jour, l’opération peut aboutir aux statuts suivants :</p></li>
 </ul>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Statut</p></th>
-<th class="text-left head"><p>Motifs</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Statut</p></th>
+<th class="head text-left"><p>Motifs</p></th>
 </tr>
 </thead>
 <tbody>
@@ -553,7 +555,7 @@ Lors de cette mise à jour, l’opération peut aboutir aux statuts suivants :<
 </table>
 </section>
 <section id="activation-desactivation-dun-profil-darchivage">
-<h4><span class="section-number">10.4.1.4. </span>Activation / Désactivation d’un profil d’archivage<a class="headerlink" href="#activation-desactivation-dun-profil-darchivage" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">10.4.1.4. </span>Activation / Désactivation d’un profil d’archivage<a class="headerlink" href="#activation-desactivation-dun-profil-darchivage" title="Lien permanent vers cette rubrique"></a></h4>
 <p>La solution logicielle Vitam permet de rendre active ou inactive une notice détaillant un profil d’archivage.
 Cette action est possible depuis :</p>
 <ul class="simple">
@@ -562,13 +564,13 @@ Cette action est possible depuis :</p>
 <li><p>l’APP « Profils documentaires » accessible depuis l’IHM VitamUI.</p></li>
 </ul>
 <p>En fonction du statut du contexte applicatif, de celui du contrat d’entrée et du profil d’archivage associé, le versement de SIP déclarant un profil d’archivage sera autorisé ou non :</p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p></p></th>
-<th class="text-left head"><p>Contexte</p></th>
-<th class="text-left head"><p>Contrat d’entrée</p></th>
-<th class="text-left head"><p>Profil</p></th>
-<th class="text-left head"><p>Résultat</p></th>
+<tr class="row-odd"><th class="head text-left"><p></p></th>
+<th class="head text-left"><p>Contexte</p></th>
+<th class="head text-left"><p>Contrat d’entrée</p></th>
+<th class="head text-left"><p>Profil</p></th>
+<th class="head text-left"><p>Résultat</p></th>
 </tr>
 </thead>
 <tbody>
@@ -621,7 +623,7 @@ Cette action est possible depuis :</p>
 </ul>
 </section>
 <section id="audit-dintegrite-du-referentiel">
-<h4><span class="section-number">10.4.1.5. </span>Audit d’intégrité du référentiel<a class="headerlink" href="#audit-dintegrite-du-referentiel" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">10.4.1.5. </span>Audit d’intégrité du référentiel<a class="headerlink" href="#audit-dintegrite-du-referentiel" title="Lien permanent vers cette rubrique"></a></h4>
 <p>La solution logicielle Vitam permet de réaliser un audit sur le référentiel des profils d’archivage. Cet audit se lance depuis un tenant donné et vérifie que les profils d’archivage déclarés dans la base de données sont bien stockés dans les offres de stockage[^13].</p>
 <p>Il s’agit d’un acte technique. Il donne lieu à un log et non pas à une opération journalisée.
 À l’issue de l’audit, le log peut aboutir aux statuts suivants :
@@ -642,15 +644,15 @@ Au moins un profil d’archivage est incohérent entre la base de données Mongo
 </section>
 </section>
 <section id="processus-dentree">
-<h3><span class="section-number">10.4.2. </span>Processus d’entrée<a class="headerlink" href="#processus-dentree" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">10.4.2. </span>Processus d’entrée<a class="headerlink" href="#processus-dentree" title="Lien permanent vers cette rubrique"></a></h3>
 <section id="declaration-dun-profil-darchivage-dans-un-contrat-dentree">
-<h4><span class="section-number">10.4.2.1. </span>Déclaration d’un profil d’archivage dans un contrat d’entrée<a class="headerlink" href="#declaration-dun-profil-darchivage-dans-un-contrat-dentree" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">10.4.2.1. </span>Déclaration d’un profil d’archivage dans un contrat d’entrée<a class="headerlink" href="#declaration-dun-profil-darchivage-dans-un-contrat-dentree" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Pour contrôler, au moyen d’un profil d’archivage, la conformité des bordereaux de transfert qui lui sont adressés, la solution logicielle Vitam rend obligatoire la déclaration de ce profil d’archivage dans le contrat d’entrée utilisé.</p>
 <p>Un contrat d’entrée permet de déclarer 0 à n profils d’archivage.</p>
 <p>Ce contrat devra être déclaré dans le bordereau de transfert, de même que le profil d’archivage utilisé.</p>
 </section>
 <section id="processus-de-controles-dune-entree">
-<h4><span class="section-number">10.4.2.2. </span>Processus de contrôles d’une entrée<a class="headerlink" href="#processus-de-controles-dune-entree" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">10.4.2.2. </span>Processus de contrôles d’une entrée<a class="headerlink" href="#processus-de-controles-dune-entree" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Dans le cadre du processus d’entrée d’un ensemble d’archives, suite à la réception d’un bordereau de transfert (message ArchiveTransfer du SEDA), la solution logicielle Vitam effectue les tâches et traitements internes suivants pour les archives déclarant ce contrat d’entrée :</p>
 <ul class="simple">
 <li><p>authentification de l’application versante à la solution logicielle Vitam par l’intermédiaire d’un certificat qui vérifie la validité de son contexte ;</p></li>
@@ -754,9 +756,9 @@ alors le transfert du SIP échouera à la tâche de vérification entre le contr
 </section>
 </section>
 <section id="etapes-delaboration-dun-profil-darchivage">
-<h2><span class="section-number">10.5. </span>Étapes d’élaboration d’un profil d’archivage<a class="headerlink" href="#etapes-delaboration-dun-profil-darchivage" title="Lien permanent vers ce titre"></a></h2>
+<h2><span class="section-number">10.5. </span>Étapes d’élaboration d’un profil d’archivage<a class="headerlink" href="#etapes-delaboration-dun-profil-darchivage" title="Lien permanent vers cette rubrique"></a></h2>
 <section id="analyse-des-donnees">
-<h3><span class="section-number">10.5.1. </span>Analyse des données<a class="headerlink" href="#analyse-des-donnees" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">10.5.1. </span>Analyse des données<a class="headerlink" href="#analyse-des-donnees" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Un profil d’archivage nécessite une analyse et une modélisation préalables des données à archiver. Cette étape est un prérequis essentiel permettant d’aboutir à la structuration d’un bordereau de transfert type.</p>
 <p>Il s’agit de connaître :</p>
 <ul class="simple">
@@ -765,10 +767,10 @@ alors le transfert du SIP échouera à la tâche de vérification entre le contr
 <li><p>le contenu de données, à savoir la nature des données à archiver (catégorie ou typologie d’archives).</p></li>
 </ul>
 <p>En prenant l’exemple d’un projet de dématérialisation d’archives, il est recommandé, lors de ce travail préparatoire, de se poser les questions suivantes[^16] :</p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p></p></th>
-<th class="text-left head"><p></p></th>
+<tr class="row-odd"><th class="head text-left"><p></p></th>
+<th class="head text-left"><p></p></th>
 </tr>
 </thead>
 <tbody>
@@ -797,14 +799,14 @@ alors le transfert du SIP échouera à la tâche de vérification entre le contr
 <li><p>les règles de gestion associées.
 Le résultat de ce travail peut prendre la forme du tableau suivant :</p></li>
 </ul>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Structure de la description</p></th>
-<th class="text-left head"><p></p></th>
-<th class="text-left head"><p>Métadonnées</p></th>
-<th class="text-left head"><p></p></th>
-<th class="text-left head"><p></p></th>
-<th class="text-left head"><p>Contenu de données</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Structure de la description</p></th>
+<th class="head text-left"><p></p></th>
+<th class="head text-left"><p>Métadonnées</p></th>
+<th class="head text-left"><p></p></th>
+<th class="head text-left"><p></p></th>
+<th class="head text-left"><p>Contenu de données</p></th>
 </tr>
 </thead>
 <tbody>
@@ -825,15 +827,15 @@ Le résultat de ce travail peut prendre la forme du tableau suivant :</p></li>
 </tbody>
 </table>
 <p>La liste des métadonnées peut prendre la forme du tableau suivant :</p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Nom de la métadonnée</p></th>
-<th class="text-left head"><p>Type</p></th>
-<th class="text-left head"><p>Cardinalité</p></th>
-<th class="text-left head"><p>Obligatoire ?</p></th>
-<th class="text-left head"><p>Valeurs imposées</p></th>
-<th class="text-left head"><p>Commentaires</p></th>
-<th class="text-left head"><p>À récupérer ?</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Nom de la métadonnée</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Cardinalité</p></th>
+<th class="head text-left"><p>Obligatoire ?</p></th>
+<th class="head text-left"><p>Valeurs imposées</p></th>
+<th class="head text-left"><p>Commentaires</p></th>
+<th class="head text-left"><p>À récupérer ?</p></th>
 </tr>
 </thead>
 <tbody>
@@ -858,7 +860,7 @@ Le résultat de ce travail peut prendre la forme du tableau suivant :</p></li>
 <p>Il est nécessaire de bien évaluer les informations à retenir dans le profil d’archivage, leur degré de précision (formes, valeurs, cardinalités) et leur structuration, afin de faciliter les recherches et la gestion futures des données dans la solution logicielle Vitam.</p>
 </section>
 <section id="structuration-des-donnees-a-verser">
-<h3><span class="section-number">10.5.2. </span>Structuration des données à verser<a class="headerlink" href="#structuration-des-donnees-a-verser" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">10.5.2. </span>Structuration des données à verser<a class="headerlink" href="#structuration-des-donnees-a-verser" title="Lien permanent vers cette rubrique"></a></h3>
 <p>À partir de ce travail préliminaire, il est désormais possible de réaliser un bordereau de transfert type et un profil d’archivage propre aux données à archiver, tous deux conformes au SEDA.</p>
 <p>Il est conseillé de procéder par étape :</p>
 <ul class="simple">
@@ -874,9 +876,9 @@ Le résultat de ce travail peut prendre la forme du tableau suivant :</p></li>
 <li><p>génération d’un bordereau conforme au SEDA et conforme au profil d’archivage préalablement réalisé.</p></li>
 </ul>
 <section id="redaction-dun-profil-darchivage-avec-sherpa">
-<h4><span class="section-number">10.5.2.1. </span>Rédaction d’un profil d’archivage avec SHERPA<a class="headerlink" href="#redaction-dun-profil-darchivage-avec-sherpa" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">10.5.2.1. </span>Rédaction d’un profil d’archivage avec SHERPA<a class="headerlink" href="#redaction-dun-profil-darchivage-avec-sherpa" title="Lien permanent vers cette rubrique"></a></h4>
 <section id="etapes-de-redaction-dun-profil-darchivage">
-<h5><span class="section-number">10.5.2.1.1. </span>Étapes de rédaction d’un profil d’archivage<a class="headerlink" href="#etapes-de-redaction-dun-profil-darchivage" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">10.5.2.1.1. </span>Étapes de rédaction d’un profil d’archivage<a class="headerlink" href="#etapes-de-redaction-dun-profil-darchivage" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Pour rédiger un profil d’archivage, il est possible d’utiliser le Service hébergé pour la rédaction de profils d’archivage (SHERPA)[^18]. L’outil permet de générer des profils d’archivage au format Relax NG, ainsi qu’une documentation au format HTML.</p>
 <p><em>Étape 1</em> - l’outil requiert dans un premier temps de créer :</p>
 <ul class="simple">
@@ -913,7 +915,7 @@ Si l’outil SHERPA n’est pas intégré au système d’archivage électroniqu
 </ul>
 </section>
 <section id="corrections-dun-profil-darchivage">
-<h5><span class="section-number">10.5.2.1.2. </span>Corrections d’un profil d’archivage<a class="headerlink" href="#corrections-dun-profil-darchivage" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">10.5.2.1.2. </span>Corrections d’un profil d’archivage<a class="headerlink" href="#corrections-dun-profil-darchivage" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Une fois la rédaction du profil d’archivage réalisée, il est possible de l’exporter au format Relax NG depuis la page racine du profil d’archivage.</p>
 <p><strong>Point d’attention :</strong> SHERPA, s’il est utilisé hors système intégré d’archivage, ne livre pas un profil d’archivage complètement utilisable et conforme au schéma attendu par la solution logicielle Vitam, car :</p>
 <ul class="simple">
@@ -922,7 +924,7 @@ Si l’outil SHERPA n’est pas intégré au système d’archivage électroniqu
 <li><p>il ne génère pas certains éléments (notamment les extensions que l’outil ne connaît pas a priori, les éléments ArchivalProfile et ArchiveUnitProfile).</p></li>
 </ul>
 <section id="corrections">
-<h6><span class="section-number">10.5.2.1.2.1. </span>Corrections<a class="headerlink" href="#corrections" title="Lien permanent vers ce titre"></a></h6>
+<h6><span class="section-number">10.5.2.1.2.1. </span>Corrections<a class="headerlink" href="#corrections" title="Lien permanent vers cette rubrique"></a></h6>
 <p>Il faut apporter quelques corrections au fichier exporté.
 Pour ce faire, il faut :</p>
 <ul class="simple">
@@ -1012,7 +1014,7 @@ Pour ce faire, il faut :</p>
         <span class="o">&lt;/</span><span class="n">rng</span><span class="p">:</span><span class="n">element</span><span class="o">&gt;</span>
 </pre></div>
 </div>
-<p>À cette fin, il est possible de copier l’<a class="reference external" href="#annexe-3--d%C3%A9claration-des-r%C3%A9f%C3%A9rences-aux-listes-de-codes-codelistversions">annexe 3</a> de ce document et de l’insérer dans le profil d’archivage en lieu et place de l’élément englobant &lt;rng:element name= »CodeListVersions »&gt;…&lt;/rng:element&gt;.</p>
+<p>À cette fin, il est possible de copier l’<span class="xref myst">annexe 3</span> de ce document et de l’insérer dans le profil d’archivage en lieu et place de l’élément englobant &lt;rng:element name= »CodeListVersions »&gt;…&lt;/rng:element&gt;.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- Corrections au niveau des règles de gestion
 </pre></div>
 </div>
@@ -1095,7 +1097,7 @@ Pour ce faire, il faut :</p>
 </div>
 </section>
 <section id="ajouts">
-<h6><span class="section-number">10.5.2.1.2.2. </span>Ajouts<a class="headerlink" href="#ajouts" title="Lien permanent vers ce titre"></a></h6>
+<h6><span class="section-number">10.5.2.1.2.2. </span>Ajouts<a class="headerlink" href="#ajouts" title="Lien permanent vers cette rubrique"></a></h6>
 <p>La solution logicielle Vitam impose des règles par rapport au modèle initial du SEDA. Ces règles ne sont pas gérées dans SHERPA. De fait, il faut intégrer au profil d’archivage la déclaration des éléments suivants :</p>
 <ul class="simple">
 <li><p>Mention du profil d’archivage</p></li>
@@ -1547,9 +1549,9 @@ Pour ce faire, il faut :</p>
 </section>
 </section>
 <section id="redaction-dun-profil-darchivage-avec-pastis">
-<h4><span class="section-number">10.5.2.2. </span>Rédaction d’un profil d’archivage avec PASTIS<a class="headerlink" href="#redaction-dun-profil-darchivage-avec-pastis" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">10.5.2.2. </span>Rédaction d’un profil d’archivage avec PASTIS<a class="headerlink" href="#redaction-dun-profil-darchivage-avec-pastis" title="Lien permanent vers cette rubrique"></a></h4>
 <section id="etapes-de-redaction">
-<h5><span class="section-number">10.5.2.2.1. </span>Étapes de rédaction<a class="headerlink" href="#etapes-de-redaction" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">10.5.2.2.1. </span>Étapes de rédaction<a class="headerlink" href="#etapes-de-redaction" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Pour rédiger un profil d’archivage, il est également possible d’utiliser l’outil PASTIS (Profil d’Archivage Simple pour le Traitement de l’Information en SEDA), qui permet de générer des profils d’archivage au format Relax NG. Cet outil est utilisable sous forme d’exécutable ou d’APP intégrée aux interfaces de VitamUI (APP Profils documentaires),</p>
 <p><strong>Étape 1</strong> - l’outil requiert dans un premier temps de créer un profil d’archivage (PA).</p>
 <p><strong>Étape 2</strong> - lors de la rédaction du profil d’archivage :</p>
@@ -1602,7 +1604,7 @@ Pour ce faire, il faut :</p>
 </ul>
 </section>
 <section id="corrections-et-ajouts">
-<h5><span class="section-number">10.5.2.2.2. </span>Corrections et ajouts<a class="headerlink" href="#corrections-et-ajouts" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">10.5.2.2.2. </span>Corrections et ajouts<a class="headerlink" href="#corrections-et-ajouts" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Une fois la rédaction du profil d’archivage réalisée, il est possible de :</p>
 <ul class="simple">
 <li><p>l’exporter au format Relax NG depuis l’exécutable ou depuis l’APP Profils documentaires,</p></li>
@@ -1884,21 +1886,21 @@ Au terme de la version 7.0, l’APP Profils documentaires ne permet pas de dépo
 </section>
 </section>
 <section id="documentation-dun-profil-darchivage">
-<h4><span class="section-number">10.5.2.3. </span>Documentation d’un profil d’archivage<a class="headerlink" href="#documentation-dun-profil-darchivage" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">10.5.2.3. </span>Documentation d’un profil d’archivage<a class="headerlink" href="#documentation-dun-profil-darchivage" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Il est fortement recommandé de documenter le profil d’archivage réalisé :</p>
 <ul class="simple">
 <li><p>soit en utilisant l’export HTML du profil d’archivage proposé par SHERPA. Ce document est très exhaustif ;</p></li>
 <li><p>soit en réalisant sa propre modélisation26, au moyen d’un schéma UML et d’un tableau récapitulatif :</p></li>
 </ul>
 <p><strong>ArchiveTransfer</strong></p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Élément</p></th>
-<th class="text-left head"><p>Cardinalité</p></th>
-<th class="text-left head"><p>Type</p></th>
-<th class="text-left head"><p>Définitions et commentaires</p></th>
-<th class="text-left head"><p>Exemple</p></th>
-<th class="text-left head"><p>Obligatoire / Recommandé</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Élément</p></th>
+<th class="head text-left"><p>Cardinalité</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Définitions et commentaires</p></th>
+<th class="head text-left"><p>Exemple</p></th>
+<th class="head text-left"><p>Obligatoire / Recommandé</p></th>
 </tr>
 </thead>
 <tbody>
@@ -1926,14 +1928,14 @@ Au terme de la version 7.0, l’APP Profils documentaires ne permet pas de dépo
 </tbody>
 </table>
 <p><strong>ArchiveUnit 1</strong></p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Élément</p></th>
-<th class="text-left head"><p>Cardinalité</p></th>
-<th class="text-left head"><p>Type</p></th>
-<th class="text-left head"><p>Définitions et commentaires</p></th>
-<th class="text-left head"><p>Exemple</p></th>
-<th class="text-left head"><p>Obligatoire / Recommandé</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Élément</p></th>
+<th class="head text-left"><p>Cardinalité</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Définitions et commentaires</p></th>
+<th class="head text-left"><p>Exemple</p></th>
+<th class="head text-left"><p>Obligatoire / Recommandé</p></th>
 </tr>
 </thead>
 <tbody>
@@ -1961,14 +1963,14 @@ Au terme de la version 7.0, l’APP Profils documentaires ne permet pas de dépo
 </tbody>
 </table>
 <p><strong>Objet rattaché à ArchiveUnit 1</strong></p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Élément</p></th>
-<th class="text-left head"><p>Cardinalité</p></th>
-<th class="text-left head"><p>Type</p></th>
-<th class="text-left head"><p>Définitions et commentaires</p></th>
-<th class="text-left head"><p>Exemple</p></th>
-<th class="text-left head"><p>Obligatoire / Recommandé</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Élément</p></th>
+<th class="head text-left"><p>Cardinalité</p></th>
+<th class="head text-left"><p>Type</p></th>
+<th class="head text-left"><p>Définitions et commentaires</p></th>
+<th class="head text-left"><p>Exemple</p></th>
+<th class="head text-left"><p>Obligatoire / Recommandé</p></th>
 </tr>
 </thead>
 <tbody>
@@ -1990,7 +1992,7 @@ Au terme de la version 7.0, l’APP Profils documentaires ne permet pas de dépo
 </table>
 </section>
 <section id="realisation-dun-bordereau-de-transfert-conforme-au-profil-darchivage">
-<h4><span class="section-number">10.5.2.4. </span>Réalisation d’un bordereau de transfert conforme au profil d’archivage<a class="headerlink" href="#realisation-dun-bordereau-de-transfert-conforme-au-profil-darchivage" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">10.5.2.4. </span>Réalisation d’un bordereau de transfert conforme au profil d’archivage<a class="headerlink" href="#realisation-dun-bordereau-de-transfert-conforme-au-profil-darchivage" title="Lien permanent vers cette rubrique"></a></h4>
 <p>À des fins de recette, il est conseillé de réaliser un bordereau de transfert conforme au profil d’archivage ou de demander au prestataire en charge de concevoir des exports de le faire.</p>
 <p>Ce travail permet de :</p>
 <ul class="simple">
@@ -2002,10 +2004,10 @@ Point d’attention : La forme du bordereau de transfert devra nécessairement 
 </section>
 </section>
 <section id="conseils-de-mise-en-oeuvre">
-<h2><span class="section-number">10.6. </span>Conseils de mise en œuvre<a class="headerlink" href="#conseils-de-mise-en-oeuvre" title="Lien permanent vers ce titre"></a></h2>
+<h2><span class="section-number">10.6. </span>Conseils de mise en œuvre<a class="headerlink" href="#conseils-de-mise-en-oeuvre" title="Lien permanent vers cette rubrique"></a></h2>
 <p>À l’issue de cette première phase de réalisation de fonctionnalités concernant les profils d’archivage, l’équipe projet Vitam est en mesure de fournir quelques recommandations de mise en œuvre.</p>
 <section id="comment-nommer-les-differentes-notices-de-profil-darchivage">
-<h3><span class="section-number">10.6.1. </span>Comment nommer les différentes notices de profil d’archivage ?<a class="headerlink" href="#comment-nommer-les-differentes-notices-de-profil-darchivage" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">10.6.1. </span>Comment nommer les différentes notices de profil d’archivage ?<a class="headerlink" href="#comment-nommer-les-differentes-notices-de-profil-darchivage" title="Lien permanent vers cette rubrique"></a></h3>
 <p>La solution logicielle Vitam met à disposition un référentiel des profils d’archivage. Afin de distinguer les différents profils contenus dans ce référentiel, il est recommandé d’adopter des règles de nommage, en utilisant, par exemple, les éléments suivants :</p>
 <ul class="simple">
 <li><p>nom de l’application versante faisant l’objet du profil d’archives,</p></li>
@@ -2018,12 +2020,12 @@ En sachant que :</p></li>
 </ul>
 </section>
 <section id="comment-parametrer-les-identifiants-des-notices-de-profil-darchivage">
-<h3><span class="section-number">10.6.2. </span>Comment paramétrer les identifiants des notices de profil d’archivage ?<a class="headerlink" href="#comment-parametrer-les-identifiants-des-notices-de-profil-darchivage" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">10.6.2. </span>Comment paramétrer les identifiants des notices de profil d’archivage ?<a class="headerlink" href="#comment-parametrer-les-identifiants-des-notices-de-profil-darchivage" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Par défaut, la solution logicielle Vitam génère les identifiants des notices de profil d’archivage de la manière suivante (mode « maître) :</p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p>Type d’habilitation</p></th>
-<th class="text-center head"><p>Paramétrage de l’identifiant</p></th>
+<tr class="row-odd"><th class="head text-center"><p>Type d’habilitation</p></th>
+<th class="head text-center"><p>Paramétrage de l’identifiant</p></th>
 </tr>
 </thead>
 <tbody>
@@ -2053,7 +2055,7 @@ Points d’attention :</p></li>
 </ul>
 </section>
 <section id="quand-et-comment-mettre-a-jour-le-referentiel-des-profils-darchivage">
-<h3><span class="section-number">10.6.3. </span>Quand et comment mettre à jour le référentiel des profils d’archivage ?<a class="headerlink" href="#quand-et-comment-mettre-a-jour-le-referentiel-des-profils-darchivage" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">10.6.3. </span>Quand et comment mettre à jour le référentiel des profils d’archivage ?<a class="headerlink" href="#quand-et-comment-mettre-a-jour-le-referentiel-des-profils-darchivage" title="Lien permanent vers cette rubrique"></a></h3>
 <p>La mise à jour du référentiel des profils d’archivage s’avère nécessaire pour répondre aux besoins suivants :</p>
 <ul class="simple">
 <li><p>mise à jour des informations relatives à une ou plusieurs notices descriptives (ex : modification d’une description, ajout d’un fichier XSD ou RNG28, etc.) ;</p></li>
@@ -2065,7 +2067,7 @@ Points d’attention : il est possible d’importer en une seule fois un réfé
 </ul>
 </section>
 <section id="quand-et-comment-mettre-a-jour-un-profil-darchivage">
-<h3><span class="section-number">10.6.4. </span>Quand et comment mettre à jour un profil d’archivage ?<a class="headerlink" href="#quand-et-comment-mettre-a-jour-un-profil-darchivage" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">10.6.4. </span>Quand et comment mettre à jour un profil d’archivage ?<a class="headerlink" href="#quand-et-comment-mettre-a-jour-un-profil-darchivage" title="Lien permanent vers cette rubrique"></a></h3>
 <p>La solution logicielle Vitam permet de mettre à jour un fichier XSD ou RNG associé à une notice descriptive.
 La mise à jour d’un profil d’archivage s’avère nécessaire pour répondre aux besoins suivants :</p>
 <ul class="simple">
@@ -2077,11 +2079,11 @@ Points d’attention :</p></li>
 <li><p>Le nouveau profil d’archivage, remplaçant un profil d’archivage déjà présent dans une notice, devra obligatoirement être au même format que le profil qu’il remplace.
 Pour mettre à jour un profil d’archivage, il est recommandé de suivre les étapes suivantes :</p></li>
 </ul>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p>Qui ?</p></th>
-<th class="text-left head"><p>Quoi ?</p></th>
-<th class="text-center head"><p>Via l’IHM démo Vitam ?</p></th>
+<tr class="row-odd"><th class="head text-center"><p>Qui ?</p></th>
+<th class="head text-left"><p>Quoi ?</p></th>
+<th class="head text-center"><p>Via l’IHM démo Vitam ?</p></th>
 </tr>
 </thead>
 <tbody>
@@ -2113,7 +2115,7 @@ Pour mettre à jour un profil d’archivage, il est recommandé de suivre les é
 </table>
 </section>
 <section id="quand-et-comment-supprimer-un-profil-darchivage">
-<h3><span class="section-number">10.6.5. </span>Quand et comment supprimer un profil d’archivage ?<a class="headerlink" href="#quand-et-comment-supprimer-un-profil-darchivage" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">10.6.5. </span>Quand et comment supprimer un profil d’archivage ?<a class="headerlink" href="#quand-et-comment-supprimer-un-profil-darchivage" title="Lien permanent vers cette rubrique"></a></h3>
 <p>La solution logicielle Vitam ne permet pas de supprimer un profil d’archivage, que ce soit la notice descriptive ou le fichier XSD ou RNG associé à cette dernière.
 Si on souhaite ne plus utiliser un profil d’archivage, il faut :</p>
 <ul class="simple">
@@ -2124,9 +2126,9 @@ Ainsi, il n’est plus utilisé et utilisable dans une opération d’entrée.
 </ul>
 </section>
 <section id="quel-acces-au-referentiel-des-profils-darchivage">
-<h3><span class="section-number">10.6.6. </span>Quel accès au référentiel des profils d’archivage ?<a class="headerlink" href="#quel-acces-au-referentiel-des-profils-darchivage" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">10.6.6. </span>Quel accès au référentiel des profils d’archivage ?<a class="headerlink" href="#quel-acces-au-referentiel-des-profils-darchivage" title="Lien permanent vers cette rubrique"></a></h3>
 <section id="gestion-des-droits">
-<h4><span class="section-number">10.6.6.1. </span>Gestion des droits<a class="headerlink" href="#gestion-des-droits" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">10.6.6.1. </span>Gestion des droits<a class="headerlink" href="#gestion-des-droits" title="Lien permanent vers cette rubrique"></a></h4>
 <p>La gestion du référentiel des profils d’archivage relève d’opérations d’administration. Il est donc recommandé d’en limiter l’accès :</p>
 <ul class="simple">
 <li><p>un administrateur fonctionnel et/ou technique peut avoir accès à l’exhaustivité de ce référentiel et le mettre à jour ;</p></li>
@@ -2136,7 +2138,7 @@ Point d’attention : la création d’un profil d’archivage nécessitant des
 </ul>
 </section>
 <section id="restitution-sur-une-ihm">
-<h4><span class="section-number">10.6.6.2. </span>Restitution sur une IHM<a class="headerlink" href="#restitution-sur-une-ihm" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">10.6.6.2. </span>Restitution sur une IHM<a class="headerlink" href="#restitution-sur-une-ihm" title="Lien permanent vers cette rubrique"></a></h4>
 <p>La solution logicielle Vitam propose  :</p>
 <ul class="simple">
 <li><p>depuis l’IHM démo, de consulter le référentiel des profils d’archivage, d’accéder à une notice de profil d’archivage et de lui associer un fichier RNG ou XSD depuis l’IHM démo ;</p></li>
@@ -2152,7 +2154,7 @@ Elle propose d’associer un identifiant de profil d’archivage dans un contrat
 </section>
 </section>
 <section id="comment-proceder-pour-parametrer-un-controle-au-moyen-dun-profil-darchivage">
-<h3><span class="section-number">10.6.7. </span>Comment procéder pour paramétrer un contrôle au moyen d’un profil d’archivage ?<a class="headerlink" href="#comment-proceder-pour-parametrer-un-controle-au-moyen-dun-profil-darchivage" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">10.6.7. </span>Comment procéder pour paramétrer un contrôle au moyen d’un profil d’archivage ?<a class="headerlink" href="#comment-proceder-pour-parametrer-un-controle-au-moyen-dun-profil-darchivage" title="Lien permanent vers cette rubrique"></a></h3>
 <p><img alt="contrôle" src="../_images/controle.png" />
 Pour réaliser un profil d’archivage et un bordereau de transfert conforme à celui-ci, voici quelques recommandations sur les étapes à suivre pour les intégrer dans la solution logicielle Vitam :</p>
 <ul class="simple">
@@ -2178,13 +2180,13 @@ Pour réaliser un profil d’archivage et un bordereau de transfert conforme à 
 </ul>
 </section>
 <section id="comment-utiliser-les-profils-darchivage">
-<h3><span class="section-number">10.6.8. </span>Comment utiliser les profils d’archivage ?<a class="headerlink" href="#comment-utiliser-les-profils-darchivage" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">10.6.8. </span>Comment utiliser les profils d’archivage ?<a class="headerlink" href="#comment-utiliser-les-profils-darchivage" title="Lien permanent vers cette rubrique"></a></h3>
 <p><strong>Élaboration d’une notice descriptive de profil d’archivage</strong></p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p>Intitulé</p></th>
-<th class="text-left head"><p>Description</p></th>
-<th class="text-center head"><p>Niveau de recommandation</p></th>
+<tr class="row-odd"><th class="head text-center"><p>Intitulé</p></th>
+<th class="head text-left"><p>Description</p></th>
+<th class="head text-center"><p>Niveau de recommandation</p></th>
 </tr>
 </thead>
 <tbody>
@@ -2255,11 +2257,11 @@ Pour réaliser un profil d’archivage et un bordereau de transfert conforme à 
 </tbody>
 </table>
 <p><strong>Besoin d’un profil d’archivage</strong></p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p>Intitulé</p></th>
-<th class="text-left head"><p>Description</p></th>
-<th class="text-center head"><p>Niveau de recommandation</p></th>
+<tr class="row-odd"><th class="head text-center"><p>Intitulé</p></th>
+<th class="head text-left"><p>Description</p></th>
+<th class="head text-center"><p>Niveau de recommandation</p></th>
 </tr>
 </thead>
 <tbody>
@@ -2282,11 +2284,11 @@ Pour réaliser un profil d’archivage et un bordereau de transfert conforme à 
 </tbody>
 </table>
 <p><strong>Élaboration d’un profil d’archivage</strong></p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p>Intitulé</p></th>
-<th class="text-left head"><p>Description</p></th>
-<th class="text-center head"><p>Niveau de recommandation</p></th>
+<tr class="row-odd"><th class="head text-center"><p>Intitulé</p></th>
+<th class="head text-left"><p>Description</p></th>
+<th class="head text-center"><p>Niveau de recommandation</p></th>
 </tr>
 </thead>
 <tbody>
@@ -2307,9 +2309,9 @@ Pour réaliser un profil d’archivage et un bordereau de transfert conforme à 
 </section>
 </section>
 <section id="annexes">
-<h2><span class="section-number">10.7. </span>Annexes<a class="headerlink" href="#annexes" title="Lien permanent vers ce titre"></a></h2>
+<h2><span class="section-number">10.7. </span>Annexes<a class="headerlink" href="#annexes" title="Lien permanent vers cette rubrique"></a></h2>
 <section id="annexe-1-exemple-de-notice-detaillee-dun-profil-darchivage">
-<h3><span class="section-number">10.7.1. </span>Annexe 1 : Exemple de notice détaillée d’un profil d’archivage<a class="headerlink" href="#annexe-1-exemple-de-notice-detaillee-dun-profil-darchivage" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">10.7.1. </span>Annexe 1 : Exemple de notice détaillée d’un profil d’archivage<a class="headerlink" href="#annexe-1-exemple-de-notice-detaillee-dun-profil-darchivage" title="Lien permanent vers cette rubrique"></a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 		<span class="s2">&quot;Name&quot;</span><span class="p">:</span><span class="s2">&quot;Matrice&quot;</span><span class="p">,</span>
 		<span class="s2">&quot;Description&quot;</span><span class="p">:</span><span class="s2">&quot;Ce contrat d&#39;entrée attend un profil RNG et est actif&quot;</span><span class="p">,</span>
@@ -2320,10 +2322,10 @@ Pour réaliser un profil d’archivage et un bordereau de transfert conforme à 
 </div>
 </section>
 <section id="annexe-2-exemples-de-profil-darchivage">
-<h3><span class="section-number">10.7.2. </span>Annexe 2 : Exemples de profil d’archivage<a class="headerlink" href="#annexe-2-exemples-de-profil-darchivage" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">10.7.2. </span>Annexe 2 : Exemples de profil d’archivage<a class="headerlink" href="#annexe-2-exemples-de-profil-darchivage" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Nota bene : les cas présentés ci-dessous sont des exemples fictifs.</p>
 <section id="profil-darchivage-sans-profil-dunite-archivistique">
-<h4><span class="section-number">10.7.2.1. </span>Profil d’archivage sans profil d’unité archivistique<a class="headerlink" href="#profil-darchivage-sans-profil-dunite-archivistique" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">10.7.2.1. </span>Profil d’archivage sans profil d’unité archivistique<a class="headerlink" href="#profil-darchivage-sans-profil-dunite-archivistique" title="Lien permanent vers cette rubrique"></a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;?xml version=&#39;1.0&#39; encoding=&#39;utf-8&#39; standalone=&#39;no&#39;?&gt;
 &lt;rng:grammar xmlns:a=&quot;http://relaxng.org/ns/compatibility/annotations/1.0&quot;
   xmlns:rng=&quot;http://relaxng.org/ns/structure/1.0&quot;
@@ -3275,7 +3277,7 @@ Pour réaliser un profil d’archivage et un bordereau de transfert conforme à 
 </div>
 </section>
 <section id="profil-darchivage-avec-profil-dunite-archivistique">
-<h4><span class="section-number">10.7.2.2. </span>Profil d’archivage avec profil d’unité archivistique<a class="headerlink" href="#profil-darchivage-avec-profil-dunite-archivistique" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">10.7.2.2. </span>Profil d’archivage avec profil d’unité archivistique<a class="headerlink" href="#profil-darchivage-avec-profil-dunite-archivistique" title="Lien permanent vers cette rubrique"></a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;?xml version=&#39;1.0&#39; encoding=&#39;utf-8&#39; standalone=&#39;no&#39;?&gt;
 &lt;rng:grammar xmlns:a=&quot;http://relaxng.org/ns/compatibility/annotations/1.0&quot;
   xmlns:rng=&quot;http://relaxng.org/ns/structure/1.0&quot;
@@ -4152,7 +4154,7 @@ Pour réaliser un profil d’archivage et un bordereau de transfert conforme à 
 </section>
 </section>
 <section id="annexe-3-declaration-des-references-aux-listes-de-codes-codelistversions">
-<h3><span class="section-number">10.7.3. </span>Annexe 3 : Déclaration des références aux listes de codes (CodeListVersions)<a class="headerlink" href="#annexe-3-declaration-des-references-aux-listes-de-codes-codelistversions" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">10.7.3. </span>Annexe 3 : Déclaration des références aux listes de codes (CodeListVersions)<a class="headerlink" href="#annexe-3-declaration-des-references-aux-listes-de-codes-codelistversions" title="Lien permanent vers cette rubrique"></a></h3>
 <p>La portion de code RNG ci-dessous fait référence aux listes de codes (CodeListVersions) qui doivent être déclarées dans un profil d’archivage. Cette portion est générique et correspond aux attentes de la solution logicielle Vitam. De fait, elle est reproductible à l’identique dans n’importe quel profil d’archivage utilisé dans la solution logicielle Vitam.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
             <span class="o">&lt;</span><span class="n">rng</span><span class="p">:</span><span class="n">element</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;CodeListVersions&quot;</span><span class="o">&gt;</span>
@@ -4766,7 +4768,7 @@ Pour réaliser un profil d’archivage et un bordereau de transfert conforme à 
 </div>
 </section>
 <section id="annexe-4-liste-de-messages-derreur">
-<h3><span class="section-number">10.7.4. </span>Annexe 4 : Liste de messages d’erreur<a class="headerlink" href="#annexe-4-liste-de-messages-derreur" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">10.7.4. </span>Annexe 4 : Liste de messages d’erreur<a class="headerlink" href="#annexe-4-liste-de-messages-derreur" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Liste des messages d’erreur remontés par la solution logicielle Vitam lors :</p>
 <ul class="simple">
 <li><p>de l’import ou de la mise à jour d’une notice de profil d’archivage ;</p></li>
@@ -4775,14 +4777,14 @@ Pour réaliser un profil d’archivage et un bordereau de transfert conforme à 
 <p>Nota bene : Cette liste n’est pas forcément exhaustive.
 Messages d’erreur concernant le référentiel des profils d’archivage</p>
 <section id="message-retourne-par-la-solution-logicielle-vitam">
-<h4><span class="section-number">10.7.4.1. </span>Message retourné par la solution logicielle Vitam<a class="headerlink" href="#message-retourne-par-la-solution-logicielle-vitam" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">10.7.4.1. </span>Message retourné par la solution logicielle Vitam<a class="headerlink" href="#message-retourne-par-la-solution-logicielle-vitam" title="Lien permanent vers cette rubrique"></a></h4>
 <p><strong>Import d’une notice de profil d’archivage</strong></p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p></p></th>
-<th class="text-left head"><p>Message retourné par la solution logicielle Vitam</p></th>
-<th class="text-left head"><p>Explication</p></th>
-<th class="text-left head"><p>Résolution</p></th>
+<tr class="row-odd"><th class="head text-center"><p></p></th>
+<th class="head text-left"><p>Message retourné par la solution logicielle Vitam</p></th>
+<th class="head text-left"><p>Explication</p></th>
+<th class="head text-left"><p>Résolution</p></th>
 </tr>
 </thead>
 <tbody>
@@ -4809,12 +4811,12 @@ Messages d’erreur concernant le référentiel des profils d’archivage</p>
 </tbody>
 </table>
 <p><strong>Mise à jour d’une notice de profil d’archivage</strong></p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p></p></th>
-<th class="text-left head"><p>Message retourné par la solution logicielle Vitam</p></th>
-<th class="text-left head"><p>Explication</p></th>
-<th class="text-left head"><p>Résolution</p></th>
+<tr class="row-odd"><th class="head text-center"><p></p></th>
+<th class="head text-left"><p>Message retourné par la solution logicielle Vitam</p></th>
+<th class="head text-left"><p>Explication</p></th>
+<th class="head text-left"><p>Résolution</p></th>
 </tr>
 </thead>
 <tbody>
@@ -4823,7 +4825,7 @@ Messages d’erreur concernant le référentiel des profils d’archivage</p>
 <td class="text-left"><p></p></td>
 <td class="text-left"><p></p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p>« outMessg »: « Échec du processus d’import du profil d’archivage »<br> »evDetData »:<br>{ « profileCheck » : « Profile file validate error :  » }</p></td>
+<tr class="row-odd"><td class="text-center"><p>« outMessg »: « Échec du processus d’import du profil d’archivage »<br> »evDetData »:<br>{ « profileCheck » : « Profile file validate error : «  }</p></td>
 <td class="text-left"><p>Le fichier téléchargé n’est pas au format XSD ou RNG.</p></td>
 <td class="text-left"><p>Télécharger un fichier XSD ou RNG.</p></td>
 <td class="text-left"><p></p></td>
@@ -4842,13 +4844,13 @@ Messages d’erreur concernant le référentiel des profils d’archivage</p>
 </table>
 </section>
 <section id="messages-derreur-concernant-le-versement-dun-bordereau-de-transfert">
-<h4><span class="section-number">10.7.4.2. </span>Messages d’erreur concernant le versement d’un bordereau de transfert<a class="headerlink" href="#messages-derreur-concernant-le-versement-dun-bordereau-de-transfert" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">10.7.4.2. </span>Messages d’erreur concernant le versement d’un bordereau de transfert<a class="headerlink" href="#messages-derreur-concernant-le-versement-dun-bordereau-de-transfert" title="Lien permanent vers cette rubrique"></a></h4>
 <p><strong>Tâche de contrôle de relation entre le contrat d’entrée et le profil d’archivage</strong></p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p>Cas rencontré</p></th>
-<th class="text-left head"><p>Détails des données de l’événement</p></th>
-<th class="text-left head"><p>Résolution du problème</p></th>
+<tr class="row-odd"><th class="head text-center"><p>Cas rencontré</p></th>
+<th class="head text-left"><p>Détails des données de l’événement</p></th>
+<th class="head text-left"><p>Résolution du problème</p></th>
 </tr>
 </thead>
 <tbody>
@@ -4871,11 +4873,11 @@ Messages d’erreur concernant le référentiel des profils d’archivage</p>
 </tbody>
 </table>
 <p><strong>Tâche de contrôle de conformité au profil d’archivage</strong></p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p>Cas rencontré</p></th>
-<th class="text-left head"><p>Détails des données de l’événement</p></th>
-<th class="text-left head"><p>Résolution du problème</p></th>
+<tr class="row-odd"><th class="head text-center"><p>Cas rencontré</p></th>
+<th class="head text-left"><p>Détails des données de l’événement</p></th>
+<th class="head text-left"><p>Résolution du problème</p></th>
 </tr>
 </thead>
 <tbody>
@@ -4892,10 +4894,10 @@ Messages d’erreur concernant le référentiel des profils d’archivage</p>
 </section>
 </section>
 <section id="annexe-5-controle-de-conformite-a-un-profil-darchivage-avec-resip">
-<h3><span class="section-number">10.7.5. </span>Annexe 5 : Contrôle de conformité à un profil d’archivage avec ReSIP<a class="headerlink" href="#annexe-5-controle-de-conformite-a-un-profil-darchivage-avec-resip" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">10.7.5. </span>Annexe 5 : Contrôle de conformité à un profil d’archivage avec ReSIP<a class="headerlink" href="#annexe-5-controle-de-conformite-a-un-profil-darchivage-avec-resip" title="Lien permanent vers cette rubrique"></a></h3>
 <p>ReSIP permet de contrôler le manifeste chargé sur l’interface par rapport à un profil d’archivage au format XSD ou RNG. La présente annexe a pour vocation à expliquer comment réaliser ce contrôle de conformité avec ReSIP et quels sont les écueils à éviter lorsque l’on manipule un profil d’archivage au format RNG.</p>
 <section id="procedure-de-controle">
-<h4><span class="section-number">10.7.5.1. </span>Procédure de contrôle<a class="headerlink" href="#procedure-de-controle" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">10.7.5.1. </span>Procédure de contrôle<a class="headerlink" href="#procedure-de-controle" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Afin de vérifier la conformité d’une structure arborescente d’archives et de sa description par rapport à un profil d’archivage conforme au SEDA 2.1., il convient, dans la moulinette ReSIP, de cliquer sur l’action « Traiter » puis sur la sous-action « Vérifier la conformité à un profil SEDA 2.1 » (cf. copie d’écran ci-dessous).
 <img alt="reSIP" src="../_images/ReSIP1.png" />
 Le clic sur la sous-action « Vérifier la conformité à un profil SEDA 2.1 », ouvre l’explorateur Windows de l’utilisateur et permet à celui-ci de sélectionner un fichier correspondant à un profil d’archivage – au format XSD ou RNG – et de l’importer dans la moulinette ReSIP en cliquant sur le bouton d’action « Ouvrir » (cf. copie d’écran ci-dessous).
@@ -4910,9 +4912,9 @@ Le clic sur le bouton d’action « Ouvrir » lance une fenêtre de dialogue �
 </ul>
 </section>
 <section id="recommandations">
-<h4><span class="section-number">10.7.5.2. </span>Recommandations<a class="headerlink" href="#recommandations" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">10.7.5.2. </span>Recommandations<a class="headerlink" href="#recommandations" title="Lien permanent vers cette rubrique"></a></h4>
 <section id="dans-la-redaction-du-profil-darchivage">
-<h5><span class="section-number">10.7.5.2.1. </span>Dans la rédaction du profil d’archivage<a class="headerlink" href="#dans-la-redaction-du-profil-darchivage" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">10.7.5.2.1. </span>Dans la rédaction du profil d’archivage<a class="headerlink" href="#dans-la-redaction-du-profil-darchivage" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Il est recommandé de créer un profil d’archivage à l’aide du Service hébergé pour la rédaction de profils d’archivage (SHERPA)32, mis à disposition par le Service interministériel des Archives de France, ou depuis un éditeur XML, puis de procéder à des modifications manuelles sur le profil d’archivage extrait de SHERPA, à l’aide d’un éditeur XML33.
 Pour utiliser le profil d’archivage dans ReSIP, il faut prendre en compte deux spécificités :
 <strong>La déclaration des groupes d’objets techniques</strong>
@@ -5002,7 +5004,7 @@ Le contrôle de conformité par rapport à un profil d’archivage ne fonctionne
 </ul>
 </section>
 <section id="dans-resip">
-<h5><span class="section-number">10.7.5.2.2. </span>Dans ReSIP<a class="headerlink" href="#dans-resip" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">10.7.5.2.2. </span>Dans ReSIP<a class="headerlink" href="#dans-resip" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Dans ReSIP, il faut veiller à paramétrer le mode d’enregistrement des unités archivistiques avant leur import dans l’outil.
 Pour ce faire, depuis l’interface d’édition des paramètres, ouverte par un clic sur la sous-action « Préférences », depuis l’onglet « Export » (cf. copie d’écran ci-dessous) :</p>
 <ul class="simple">
@@ -5013,7 +5015,7 @@ Pour ce faire, depuis l’interface d’édition des paramètres, ouverte par un
 </section>
 </section>
 <section id="messages-derreur-rencontres">
-<h4><span class="section-number">10.7.5.3. </span>Messages d’erreur rencontrés<a class="headerlink" href="#messages-derreur-rencontres" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">10.7.5.3. </span>Messages d’erreur rencontrés<a class="headerlink" href="#messages-derreur-rencontres" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Lors d’un contrôle de conformité à un profil d’archivage, les erreurs retournées par ReSIP peuvent provenir :</p>
 <ul class="simple">
 <li><p>du manifeste chargé dans ReSIP : au moins un élément n’est pas conforme au profil d’archivage ;</p></li>
@@ -6087,21 +6089,21 @@ erreur brute: character content of element « Comment » invalid; must be equa
 &lt;/rng:grammar&gt;
 </pre></div>
 </div>
-<p>[^1] Un exemple de profil d’archivage est présenté dans l’<a class="reference external" href="#annexe-2--exemples-de-profil-darchivage">annexe 2 « Exemples de profil d’archivage »</a> du présent document.</p>
-<p>[^2] Pour plus d’informations sur le référentiel des profils d’archivage, consulter le <a class="reference external" href="#administration-dun-r%C3%A9f%C3%A9rentiel-des-profils-darchivage">chapitre « 4.1. Administration d’un référentiel des profils d’archivage »</a>.</p>
+<p>[^1] Un exemple de profil d’archivage est présenté dans l’<span class="xref myst">annexe 2 « Exemples de profil d’archivage »</span> du présent document.</p>
+<p>[^2] Pour plus d’informations sur le référentiel des profils d’archivage, consulter le <span class="xref myst">chapitre « 4.1. Administration d’un référentiel des profils d’archivage »</span>.</p>
 <p>[^3] Pour plus d’informations sur la modélisation de cette collection, consulter le <a class="reference internal" href="modele_de_donnees.html"><span class="doc std std-doc">document VITAM. Modèle de données</span></a>, chapitre 5.14 « Collection Profile ».</p>
 <p>[^4] Pour plus d’informations sur le processus d’import du référentiel, consulter le <a class="reference internal" href="modele_de_workflow.html"><span class="doc std std-doc">document VITAM. Modèle de workflow</span></a>, chapitre 5.7 « Workflow d’administration d’un référentiel des profils d’archivage ».</p>
-<p>[^5] Des précisions sur les messages d’erreur sont apportées dans l’<a class="reference external" href="#annexe-4--liste-de-messages-derreur">annexe 4 « Liste de messages d’erreur »</a> du présent document.</p>
+<p>[^5] Des précisions sur les messages d’erreur sont apportées dans l’<span class="xref myst">annexe 4 « Liste de messages d’erreur »</span> du présent document.</p>
 <p>[^6] Ce champ est obligatoire seulement s’il est généré par l’application à l’origine de sa création.</p>
 <p>[^7] Seulement quand l’identifiant est généré par l’application à l’origine de la création de la notice de profil d’archivage.</p>
-<p>[^8] Cf <a class="reference external" href="#import-du-profil-darchivage-lui-m%C3%AAme">chapitre 4.1.2 « Import du profil d’archivage lui-même »</a> du présent document.</p>
+<p>[^8] Cf <span class="xref myst">chapitre 4.1.2 « Import du profil d’archivage lui-même »</span> du présent document.</p>
 <p>[^9] Pour plus d’informations sur la modélisation de cette collection, consulter le <a class="reference internal" href="modele_de_donnees.html"><span class="doc std std-doc">document VITAM. Modèle de données</span></a>, chapitre « 5.14. Collection Profile ».</p>
 <p>[^10] Pour plus d’informations sur le processus d’import du référentiel, consulter le <a class="reference internal" href="modele_de_workflow.html"><span class="doc std std-doc">document VITAM. Modèle de workflow</span></a>, chapitre 5.7 « Workflow d’administration d’un référentiel des profils d’archivage ».</p>
 <p>[^11] Pour plus d’informations sur le processus d’import du référentiel, consulter le <a class="reference internal" href="modele_de_workflow.html"><span class="doc std std-doc">document VITAM. Modèle de workflow</span></a>, chapitre 5.7 « Workflow d’administration d’un référentiel des profils d’archivage ».</p>
-<p>[^12] Des précisions sur les messages d’erreur sont apportées dans l’<a class="reference external" href="#annexe-4--liste-de-messages-derreur">annexe 4 « Liste des messages d’erreur »</a> du présent document.</p>
+<p>[^12] Des précisions sur les messages d’erreur sont apportées dans l’<span class="xref myst">annexe 4 « Liste des messages d’erreur »</span> du présent document.</p>
 <p>[^13] Pour plus d’informations sur cet audit, consulter le document Documentation d’exploitation, chapitre 6.5.2 « Audit sur les collections d’administration ».</p>
-<p>[^14] L’<a class="reference external" href="#annexe-4--liste-de-messages-derreur">annexe 4 de ce document</a> précise les messages d’erreur remontés par la solution logicielle Vitam lors de ce contrôle.</p>
-<p>[^15] L’<a class="reference external" href="#annexe-4--liste-de-messages-derreur">annexe 4 de ce document</a> précise les messages d’erreur remontés par la solution logicielle Vitam lors de ce contrôle.</p>
+<p>[^14] L’<span class="xref myst">annexe 4 de ce document</span> précise les messages d’erreur remontés par la solution logicielle Vitam lors de ce contrôle.</p>
+<p>[^15] L’<span class="xref myst">annexe 4 de ce document</span> précise les messages d’erreur remontés par la solution logicielle Vitam lors de ce contrôle.</p>
 <p>[^16] Le tableau suivant est une libre adaptation du tableau présenté dans « Fiche pratique n°13 : positionnement de l’archiviste face à un projet de dématérialisation », Association des archivistes français – Groupe AM&#64;E</p>
 <p>[^17] Le service et sa documentation sont disponibles à l’adresse suivante : https://sherpa.francearchives.fr/ (Lien consulté le 16 février 2023).</p>
 <p>[^18] Le service est disponible en ligne à l’adresse suivante : https://sherpa.francearchives.fr/ (Lien consulté le 16 février 2023).</p>
@@ -6109,12 +6111,12 @@ erreur brute: character content of element « Comment » invalid; must be equa
 <p>[^20] Néanmoins, le service prend en compte les nouveautés présentes dans le SEDA 2.1 et, de fait, produit des fichiers compatibles avec le SEDA 2.1.</p>
 <p>[^21] Pour plus d’informations sur les profils d’unité archivistique, consulter le <span class="xref myst">document VITAM. Profil d’unité archivistique</span>.</p>
 <p>[^22] Cf. <a class="reference internal" href="ontologie.html"><span class="doc std std-doc">document VITAM. Ontologie</span></a>, chapitre 3.2 « Dans le Standard d’échange des données pour l’archivage (SEDA) ».</p>
-<p>[^23] Se référer à la <a class="reference external" href="#corrections-et-ajouts">section « Corrections au niveau des références aux listes de codes »</a> du chapitre 5.2.2.2 « Corrections et ajouts » pour plus de précisions.</p>
+<p>[^23] Se référer à la <span class="xref myst">section « Corrections au niveau des références aux listes de codes »</span> du chapitre 5.2.2.2 « Corrections et ajouts » pour plus de précisions.</p>
 <p>[^24] Pour plus d’informations sur les profils d’unité archivistique, consulter le <span class="xref myst">document VITAM. Profil d’unité archivistique</span>.</p>
 <p>[^25] Cf. <a class="reference internal" href="ontologie.html"><span class="doc std std-doc">document VITAM. Ontologie</span></a>, chapitre 3.2 « Dans le Standard d’échange des données pour l’archivage (SEDA) ».</p>
 <p>[^26] On peut se référer aux profils d’archivage mis en ligne sur le site des Archives de France : https://francearchives.fr/seda/profils.html (Lien consulté le 9 février 2021).</p>
 <p>[^27] Cf. Documentation d’exploitation, chapitre 8.2.6.2.2 « Passage des identifiants des référentiels en mode esclave ».</p>
-<p>[^28] Le cas particulier de la modification du fichier RNG ou XSD est traité dans le <a class="reference external" href="#quand-et-comment-mettre-%C3%A0-jour-un-profil-darchivage">chapitre 6.4 « Quand et comment mettre à jour un profil d’archivage »</a> du présent document.</p>
+<p>[^28] Le cas particulier de la modification du fichier RNG ou XSD est traité dans le <span class="xref myst">chapitre 6.4 « Quand et comment mettre à jour un profil d’archivage »</span> du présent document.</p>
 <p>[^29] Le service et sa documentation sont disponibles à l’adresse suivante : https://sherpa.francearchives.fr/ (Lien consulté le  18 février 2022 ).</p>
 <p>[^30] Le service et sa documentation sont disponibles à l’adresse suivante : https://sherpa.francearchives.fr/ (Lien consulté le 18 février 2022 ).</p>
 </section>

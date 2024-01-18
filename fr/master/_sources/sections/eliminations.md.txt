@@ -7,12 +7,12 @@ Introduction
 
 ### Documents de référence
 
------------------------------------------------------------------- -------------------- --------------------------------------------------------------------------------------------------
-  Document                                                           Date de la version   Remarques
-  NF Z 44022 – MEDONA – Modélisation des données pour l’archivage    18/01/2014           
-  Standard d’échange de données pour l’archivage – SEDA – v. 2.1     06/2018              
-  Standard d’échange de données pour l’archivage – SEDA – v. 2.2     02/2022              Cette nouvelle version du SEDA est intégrée à la solution logicielle Vitam à partir de la V6.RC.          
-  ------------------------------------------------------------------ -------------------- --------------------------------------------------------------------------------------------------
+
+|**Document**||**Date de la version**|**Remarques**|
+|:---------------:|:-----:|:-----:|
+|NF Z 44022 – MEDONA – Modélisation des données pour l’archivage|18/01/2014||
+|Standard d’échange de données pour l’archivage – SEDA – v. 2.1|06/2018||            
+|Standard d’échange de données pour l’archivage – SEDA – v. 2.2|02/2022|Cette nouvelle version du SEDA est intégrée à la solution logicielle Vitam à partir de la V6.RC.|
 
 ### Présentation du document
 

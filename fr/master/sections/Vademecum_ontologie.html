@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="fr" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>14. L’ontologie dans la solution logicielle Vitam &mdash; Vitam documentation fonctionnelle</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
   
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/translations.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -48,6 +47,8 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="guide_lecture.html">1. Documentation Vitam - guide de lecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="presentation_programme.html">2. Présentation du programme Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_prise_en_main.html">3. Guide de prise en main de la solution logicielle Vitam – Vitam UI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_prise_en_main.html#realiser-une-premiere-entree">4. <em>Réaliser une première entrée</em></a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">documentation métier</span></p>
 <ul>
@@ -67,7 +68,8 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">documentation Vitam UI</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="VitamUI_Arbres_Plans.html">1. APP Arbres et plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Autoprovisionning.html">1. Vitam UI : présentation de la fonctionnalité d’auto-provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Arbres_Plans.html">2. APP Arbres et plans</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">outils connexes</span></p>
 <ul>
@@ -153,18 +155,18 @@
 
            <div itemprop="articleBody">
              
-  <section class="tex2jax_ignore mathjax_ignore" id="lontologie-dans-la-solution-logicielle-vitam">
-<h1><span class="section-number">14. </span>L’ontologie dans la solution logicielle Vitam<a class="headerlink" href="#lontologie-dans-la-solution-logicielle-vitam" title="Lien permanent vers ce titre"></a></h1>
+  <section id="lontologie-dans-la-solution-logicielle-vitam">
+<h1><span class="section-number">14. </span>L’ontologie dans la solution logicielle Vitam<a class="headerlink" href="#lontologie-dans-la-solution-logicielle-vitam" title="Lien permanent vers cette rubrique"></a></h1>
 <p>L’ontologie référence l’ensemble des vocabulaires (ou métadonnées) acceptés dans la solution logicielle Vitam. Pour chacun de ces vocabulaires, elle définit un intitulé et un type d’indexation particulier, ainsi que la ou les collections de la base de données de la solution logicielle Vitam qui l’utilise.</p>
 <p>L’ontologie regroupe toutes les façons de nommer un même objet intellectuel. Elle permet d’éviter la multiplication des vocabulaires faisant référence à une même notion et de fiabiliser la manière dont ces vocabulaires et métadonnées sont indexés dans la solution logicielle Vitam pour optimiser les facultés de recherche.</p>
 <section id="presentation-de-lontologie">
-<h2><span class="section-number">14.1. </span>Présentation de l’ontologie<a class="headerlink" href="#presentation-de-lontologie" title="Lien permanent vers ce titre"></a></h2>
+<h2><span class="section-number">14.1. </span>Présentation de l’ontologie<a class="headerlink" href="#presentation-de-lontologie" title="Lien permanent vers cette rubrique"></a></h2>
 <section id="perimetre-de-lontologie">
-<h3><span class="section-number">14.1.1. </span>Périmètre de l’ontologie<a class="headerlink" href="#perimetre-de-lontologie" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">14.1.1. </span>Périmètre de l’ontologie<a class="headerlink" href="#perimetre-de-lontologie" title="Lien permanent vers cette rubrique"></a></h3>
 <p>L’ontologie est valable pour la plate-forme. Elle est dite trans-tenant.</p>
 </section>
 <section id="composition-de-lontologie">
-<h3><span class="section-number">14.1.2. </span>Composition de l’ontologie<a class="headerlink" href="#composition-de-lontologie" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">14.1.2. </span>Composition de l’ontologie<a class="headerlink" href="#composition-de-lontologie" title="Lien permanent vers cette rubrique"></a></h3>
 <p>L’ontologie référence :</p>
 <ul class="simple">
 <li><p>les vocabulaires définis dans le SEDA, inclus par défaut,</p></li>
@@ -175,7 +177,7 @@
 <p>L’ontologie définit pour chaque vocabulaire un type d’indexation qui correspond à la manière dont l’information doit être renseignée : attend-on une date, une chaîne de caractères, un mot-clé, un nombre entier, un nombre décimal, un booléen ?</p>
 </section>
 <section id="controles-effectues-a-partir-de-lontologie">
-<h3><span class="section-number">14.1.3. </span>Contrôles effectués à partir de l’ontologie<a class="headerlink" href="#controles-effectues-a-partir-de-lontologie" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">14.1.3. </span>Contrôles effectués à partir de l’ontologie<a class="headerlink" href="#controles-effectues-a-partir-de-lontologie" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Lors de la création ou de la mise à jour d’un profil d’unité archivistique, la solution logicielle Vitam vérifie que les vocabulaires déclarés dans les profils existent dans l’ontologie.</p>
 <p>La solution logicielle Vitam n’effectue pas de contrôle sur la conformité des vocabulaires par rapport à leur type d’indexation dans l’ontologie lors de la création de profils d’unité archivistique. Néanmoins, il est obligatoire que le type du vocabulaire défini dans le schéma de contrôle corresponde au type d’indexation du vocabulaire tel qu’il est défini dans l’ontologie.</p>
 <p>Lors d’une entrée, la solution logicielle Vitam vérifie que :</p>
@@ -190,7 +192,7 @@
 </ul>
 </section>
 <section id="utilisation-de-lontologie-pour-gerer-les-affichages-dans-linterface-graphique">
-<h3><span class="section-number">14.1.4. </span>Utilisation de l’ontologie pour gérer les affichages dans l’interface graphique<a class="headerlink" href="#utilisation-de-lontologie-pour-gerer-les-affichages-dans-linterface-graphique" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">14.1.4. </span>Utilisation de l’ontologie pour gérer les affichages dans l’interface graphique<a class="headerlink" href="#utilisation-de-lontologie-pour-gerer-les-affichages-dans-linterface-graphique" title="Lien permanent vers cette rubrique"></a></h3>
 <p>L’ontologie contenant la traduction des différents vocabulaires supportés par la solution logicielle Vitam, il est possible, en accès :</p>
 <ul class="simple">
 <li><p>d’utiliser ce référentiel comme un fichier de propriétés pour récupérer les traductions, plutôt que de faire porter par l’interface graphique ces informations. Ainsi, cela évitera de constater des absences de traduction des vocabulaires externes récemment créés ;</p></li>
@@ -199,9 +201,9 @@
 </section>
 </section>
 <section id="configuration-de-lontologie">
-<h2><span class="section-number">14.2. </span>Configuration de l’ontologie<a class="headerlink" href="#configuration-de-lontologie" title="Lien permanent vers ce titre"></a></h2>
+<h2><span class="section-number">14.2. </span>Configuration de l’ontologie<a class="headerlink" href="#configuration-de-lontologie" title="Lien permanent vers cette rubrique"></a></h2>
 <section id="constitution-de-lontologie">
-<h3><span class="section-number">14.2.1. </span>Constitution de l’ontologie<a class="headerlink" href="#constitution-de-lontologie" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">14.2.1. </span>Constitution de l’ontologie<a class="headerlink" href="#constitution-de-lontologie" title="Lien permanent vers cette rubrique"></a></h3>
 <p>La création d’une ontologie est un préalable à l’utilisation des vocabulaires dans la solution logicielle Vitam, c’est pourquoi lors de l’installation de la solution logicielle Vitam une ontologie est configurée par défaut. Cette ontologie contient l’ensemble des vocabulaires de type interne, c’est-à-dire les vocabulaires issus du SEDA et les vocabulaires propres à la solution.
 Un administrateur fonctionnel n’a donc pas besoin, a priori, de créer une ontologie. Il s’agit d’un acte d’exploitation technique.
 Néanmoins, dans certains cas, l’administrateur fonctionnel pourra être amené à vouloir enrichir l’ontologie par de nouveaux vocabulaires pour décrire des éléments propres aux archives qu’il souhaite prendre en charge qui ne figurent pas dans l’ontologie par défaut de la solution logicielle Vitam.</p>
@@ -213,21 +215,21 @@ Néanmoins, dans certains cas, l’administrateur fonctionnel pourra être amen�
 </ul>
 </section>
 <section id="transposition-des-outils-existants-dans-une-ontologie-conforme-aux-attendus-de-la-solution-logicielle-vitam">
-<h3><span class="section-number">14.2.2. </span>Transposition des outils existants dans une ontologie conforme aux attendus de la solution logicielle Vitam<a class="headerlink" href="#transposition-des-outils-existants-dans-une-ontologie-conforme-aux-attendus-de-la-solution-logicielle-vitam" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">14.2.2. </span>Transposition des outils existants dans une ontologie conforme aux attendus de la solution logicielle Vitam<a class="headerlink" href="#transposition-des-outils-existants-dans-une-ontologie-conforme-aux-attendus-de-la-solution-logicielle-vitam" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Pour étudier son besoin de créer ou non de nouveaux vocabulaires dans l’ontologie, l’administrateur fonctionnel peut examiner les différents modèles de bordereaux de transfert utilisés dans son service pour étudier les notions métier décrites et leurs valeurs attendues (date, texte, nombre…) et déterminer ainsi son besoin en vocabulaires spécifiques non pris en charge dans le SEDA et leur type d’indexation.</p>
 <section id="illustration-pour-un-versement-de-dossier-de-personnel">
-<h4><span class="section-number">14.2.2.1. </span>Illustration pour un versement de dossier de personnel<a class="headerlink" href="#illustration-pour-un-versement-de-dossier-de-personnel" title="Lien permanent vers ce titre"></a></h4>
-<table class="colwidths-auto docutils align-default">
+<h4><span class="section-number">14.2.2.1. </span>Illustration pour un versement de dossier de personnel<a class="headerlink" href="#illustration-pour-un-versement-de-dossier-de-personnel" title="Lien permanent vers cette rubrique"></a></h4>
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Nom</p></th>
-<th class="text-left head"><p>Prénom</p></th>
-<th class="text-left head"><p>Date de naissance</p></th>
-<th class="text-left head"><p>Matricule</p></th>
-<th class="text-left head"><p>Corps</p></th>
-<th class="text-left head"><p>Grade</p></th>
-<th class="text-left head"><p>Nombre d’enfants</p></th>
-<th class="text-left head"><p>Date de départ en retraite</p></th>
-<th class="text-left head"><p>Décorations</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Nom</p></th>
+<th class="head text-left"><p>Prénom</p></th>
+<th class="head text-left"><p>Date de naissance</p></th>
+<th class="head text-left"><p>Matricule</p></th>
+<th class="head text-left"><p>Corps</p></th>
+<th class="head text-left"><p>Grade</p></th>
+<th class="head text-left"><p>Nombre d’enfants</p></th>
+<th class="head text-left"><p>Date de départ en retraite</p></th>
+<th class="head text-left"><p>Décorations</p></th>
 </tr>
 </thead>
 </table>
@@ -236,15 +238,15 @@ La « Date de départ en retraite » pourra soit être exprimée à l’aide d
 Les « Corps », « Grade », « Nombre d’enfants » et « Décorations » ne correspondent à aucune notion présente dans le SEDA. Il conviendra donc de créer des vocabulaires spécifiques. Leur type d’indexation sera une chaîne de caractères, sauf pour le « Nombre d’enfants » où un nombre entier est attendu.</p>
 </section>
 <section id="illustration-pour-un-versement-de-dossiers-de-marche">
-<h4><span class="section-number">14.2.2.2. </span>Illustration pour un versement de dossiers de marché<a class="headerlink" href="#illustration-pour-un-versement-de-dossiers-de-marche" title="Lien permanent vers ce titre"></a></h4>
-<table class="colwidths-auto docutils align-default">
+<h4><span class="section-number">14.2.2.2. </span>Illustration pour un versement de dossiers de marché<a class="headerlink" href="#illustration-pour-un-versement-de-dossiers-de-marche" title="Lien permanent vers cette rubrique"></a></h4>
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Type de marché</p></th>
-<th class="text-left head"><p>Numéro attribué aux marchés</p></th>
-<th class="text-left head"><p>Titulaire</p></th>
-<th class="text-left head"><p>Intitulé des marchés</p></th>
-<th class="text-left head"><p>Date de notification</p></th>
-<th class="text-left head"><p>Date de liquidation</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Type de marché</p></th>
+<th class="head text-left"><p>Numéro attribué aux marchés</p></th>
+<th class="head text-left"><p>Titulaire</p></th>
+<th class="head text-left"><p>Intitulé des marchés</p></th>
+<th class="head text-left"><p>Date de notification</p></th>
+<th class="head text-left"><p>Date de liquidation</p></th>
 </tr>
 </thead>
 </table>
@@ -257,11 +259,11 @@ L’intitulé du marché pourra correspondre à la balise <Title>.</p>
 </section>
 </section>
 <section id="gestion-des-identifiants-de-lontologie">
-<h3><span class="section-number">14.2.3. </span>Gestion des identifiants de l’ontologie<a class="headerlink" href="#gestion-des-identifiants-de-lontologie" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">14.2.3. </span>Gestion des identifiants de l’ontologie<a class="headerlink" href="#gestion-des-identifiants-de-lontologie" title="Lien permanent vers cette rubrique"></a></h3>
 <p>L’ontologie fonctionne en mode « esclave ». Ce référentiel interne à la solution logicielle Vitam a vocation à être une copie locale d’un référentiel administré dans le front-office des plates-formes d’archivage, de façon à permettre le partage des vocabulaires entre applications ou entre archives physiques et électroniques. C’est donc le front office qui fournit les identifiants, pour les vocabulaires externes uniquement.</p>
 </section>
 <section id="formalisation-de-lontologie">
-<h3><span class="section-number">14.2.4. </span>Formalisation de l’ontologie<a class="headerlink" href="#formalisation-de-lontologie" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">14.2.4. </span>Formalisation de l’ontologie<a class="headerlink" href="#formalisation-de-lontologie" title="Lien permanent vers cette rubrique"></a></h3>
 <p>L’ontologie est importée dans la solution logicielle Vitam sous la forme d’un fichier au format JSON.
 Un vocabulaire doit comporter les éléments suivants :</p>
 <ul class="simple">
@@ -282,7 +284,7 @@ Un vocabulaire doit comporter les éléments suivants :</p>
 </section>
 </section>
 <section id="modification-de-lontologie">
-<h2><span class="section-number">14.3. </span>Modification de l’ontologie<a class="headerlink" href="#modification-de-lontologie" title="Lien permanent vers ce titre"></a></h2>
+<h2><span class="section-number">14.3. </span>Modification de l’ontologie<a class="headerlink" href="#modification-de-lontologie" title="Lien permanent vers cette rubrique"></a></h2>
 <p>La modification de l’ontologie s’effectue par un ré-import de l’ontologie, en mode « annule et remplace ». C’est un acte d’administration lourd, car il peut nécessiter à la suite du ré-import une réindexation potentiellement longue. Cette réindexation est un acte d’administration technique.</p>
 <p>La solution logicielle Vitam permet :</p>
 <ul class="simple">

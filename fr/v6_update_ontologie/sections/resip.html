@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="fr" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>1. RESIP &mdash; Vitam documentation fonctionnelle</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
   
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/translations.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -293,13 +292,13 @@
 
            <div itemprop="articleBody">
              
-  <section class="tex2jax_ignore mathjax_ignore" id="resip">
-<h1><span class="section-number">1. </span>RESIP<a class="headerlink" href="#resip" title="Lien permanent vers ce titre"></a></h1>
+  <section id="resip">
+<h1><span class="section-number">1. </span>RESIP<a class="headerlink" href="#resip" title="Lien permanent vers cette rubrique"></a></h1>
 <section id="resume">
-<h2><span class="section-number">1.1. </span>Résumé<a class="headerlink" href="#resume" title="Lien permanent vers ce titre"></a></h2>
+<h2><span class="section-number">1.1. </span>Résumé<a class="headerlink" href="#resume" title="Lien permanent vers cette rubrique"></a></h2>
 <section id="documents-de-reference">
-<h3><span class="section-number">1.1.1. </span>Documents de référence<a class="headerlink" href="#documents-de-reference" title="Lien permanent vers ce titre"></a></h3>
-<table class="colwidths-auto docutils align-default">
+<h3><span class="section-number">1.1.1. </span>Documents de référence<a class="headerlink" href="#documents-de-reference" title="Lien permanent vers cette rubrique"></a></h3>
+<table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Document</p></th>
 <th class="head"><p>Date de la version</p></th>
@@ -327,7 +326,7 @@
 </table>
 </section>
 <section id="presentation-du-document">
-<h3><span class="section-number">1.1.2. </span>Présentation du document<a class="headerlink" href="#presentation-du-document" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">1.1.2. </span>Présentation du document<a class="headerlink" href="#presentation-du-document" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Le présent document présente la moulinette ReSIP construite autour d’une
 bibliothèque JAVA appelée Sedalib et fédérant les moulinettes
 précédemment développées et mises à disposition par l’équipe Vitam :</p>
@@ -350,13 +349,13 @@ SIAF daté du 30 septembre 2019 et intitulé « Trois outils contribuant à
 l’archivage numérique » : il vous permettra de voir d’un seul coup d’œil
 les fonctionnalités de ReSIP en lien avec deux autres outils,
 Archifiltre et Octave. Ce billet est consultable en suivant ce lien :
-<a class="reference external" href="https://siaf.hypotheses.org/1033">https://siaf.hypotheses.org/1033</a><a class="footnote-reference brackets" href="#id22" id="id1">1</a>.</p>
+<a class="reference external" href="https://siaf.hypotheses.org/1033">https://siaf.hypotheses.org/1033</a><a class="footnote-reference brackets" href="#id22" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
 </section>
 </section>
 <section id="presentation-installation-lancement-et-parametrage-de-la-moulinette-resip">
-<h2><span class="section-number">1.2. </span>Présentation, installation, lancement et paramétrage de la moulinette ReSIP<a class="headerlink" href="#presentation-installation-lancement-et-parametrage-de-la-moulinette-resip" title="Lien permanent vers ce titre"></a></h2>
+<h2><span class="section-number">1.2. </span>Présentation, installation, lancement et paramétrage de la moulinette ReSIP<a class="headerlink" href="#presentation-installation-lancement-et-parametrage-de-la-moulinette-resip" title="Lien permanent vers cette rubrique"></a></h2>
 <section id="presentation-de-la-moulinette-resip-et-de-la-formalisation-de-linformation">
-<h3><span class="section-number">1.2.1. </span>Présentation de la moulinette ReSIP et de la formalisation de l’information<a class="headerlink" href="#presentation-de-la-moulinette-resip-et-de-la-formalisation-de-linformation" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">1.2.1. </span>Présentation de la moulinette ReSIP et de la formalisation de l’information<a class="headerlink" href="#presentation-de-la-moulinette-resip-et-de-la-formalisation-de-linformation" title="Lien permanent vers cette rubrique"></a></h3>
 <p>La moulinette ReSIP, conçue et développée par l’équipe Vitam, a pour
 objectifs :</p>
 <ul class="simple">
@@ -419,10 +418,10 @@ règles propres.</p></li>
 <p><strong>La documentation accompagnant le standard SEDA 2.1. est accessible sur
 le site internet du Service interministériel des Archives de France et
 est consultable à l’adresse suivante :
-https://francearchives.fr/seda/<a class="footnote-reference brackets" href="#id23" id="id2">2</a>.</strong></p>
+https://francearchives.fr/seda/<a class="footnote-reference brackets" href="#id23" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>.</strong></p>
 </section>
 <section id="installation-de-la-moulinette-resip">
-<h3><span class="section-number">1.2.2. </span>Installation de la moulinette ReSIP<a class="headerlink" href="#installation-de-la-moulinette-resip" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">1.2.2. </span>Installation de la moulinette ReSIP<a class="headerlink" href="#installation-de-la-moulinette-resip" title="Lien permanent vers cette rubrique"></a></h3>
 <p>La moulinette ReSIP est téléchargeable sur le site internet du programme
 Vitam à l’adresse suivante :
 <a class="reference external" href="http://www.programmevitam.fr/pages/ressources/resip/">http://www.programmevitam.fr/pages/ressources/resip/</a>.</p>
@@ -439,7 +438,7 @@ lancer la moulinette ReSIP en ligne de commande.</p>
 peut compléter ce dossier après plusieurs utilisations.</p>
 </section>
 <section id="lancement-de-la-moulinette-resip">
-<h3><span class="section-number">1.2.3. </span>Lancement de la moulinette ReSIP<a class="headerlink" href="#lancement-de-la-moulinette-resip" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">1.2.3. </span>Lancement de la moulinette ReSIP<a class="headerlink" href="#lancement-de-la-moulinette-resip" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Une fois dézippée, la moulinette ReSIP peut être lancée de 3 manières
 différentes :</p>
 <ul>
@@ -454,7 +453,7 @@ arborescence et la retravailler dans l’interface.</p>
 </li>
 </ul>
 <section id="glisser-deposer-drag-and-drop">
-<h4><span class="section-number">1.2.3.1. </span>Glisser/déposer (<em>drag and drop</em>)<a class="headerlink" href="#glisser-deposer-drag-and-drop" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">1.2.3.1. </span>Glisser/déposer (<em>drag and drop</em>)<a class="headerlink" href="#glisser-deposer-drag-and-drop" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Comme avec le générateur SEDA, il est possible de générer
 automatiquement un SIP à partir d’une structure arborescente d’archives
 en faisant glisser un répertoire sur le fichier Resip.bat du répertoire
@@ -471,11 +470,11 @@ Une fois l’opération de génération du SIP terminée, la fenêtre de dialogu
 </ul>
 </section>
 <section id="execution-en-ligne-de-commande">
-<h4><span class="section-number">1.2.3.2. </span>Exécution en ligne de commande<a class="headerlink" href="#execution-en-ligne-de-commande" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">1.2.3.2. </span>Exécution en ligne de commande<a class="headerlink" href="#execution-en-ligne-de-commande" title="Lien permanent vers cette rubrique"></a></h4>
 <p>En ligne de commande, la moulinette ReSIP permet d’effectuer les mêmes
 traitements qu’au moyen de l’interface graphique.</p>
 <p>Les commandes disponibles sont les suivantes :</p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Argument</p></th>
 <th class="head"><p>Description</p></th>
@@ -522,7 +521,7 @@ traitements qu’au moyen de l’interface graphique.</p>
 </table>
 </section>
 <section id="lancement-de-linterface-graphique">
-<h4><span class="section-number">1.2.3.3. </span>Lancement de l’interface graphique<a class="headerlink" href="#lancement-de-linterface-graphique" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">1.2.3.3. </span>Lancement de l’interface graphique<a class="headerlink" href="#lancement-de-linterface-graphique" title="Lien permanent vers cette rubrique"></a></h4>
 <p>L’interface graphique de la moulinette ReSIP peut être ouverte en double-cliquant sur le fichier exécutable portable Resip.exe (cf. copie
 d’écran ci-dessous) :</p>
 <p><img alt="" src="../_images/1000000000000265000000B3C336D2F0D5D1FD78.png" />
@@ -530,13 +529,13 @@ Cette interface permet d’effectuer l’ensemble des opérations possibles (imp
 </section>
 </section>
 <section id="parametrage-du-referentiel-des-formats-utilise">
-<h3><span class="section-number">1.2.4. </span>Paramétrage du référentiel des formats utilisé<a class="headerlink" href="#parametrage-du-referentiel-des-formats-utilise" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">1.2.4. </span>Paramétrage du référentiel des formats utilisé<a class="headerlink" href="#parametrage-du-referentiel-des-formats-utilise" title="Lien permanent vers cette rubrique"></a></h3>
 <p>La moulinette ReSIP procède à une identification du format des fichiers traités en utilisant l’application DROID ainsi que les fichiers de signatures DROID publiés par The National Archives (UK).</p>
 <p>Les fichiers de signature DROID faisant l’objet de mises à jour régulières par The National Archives (UK), ils doivent être mis à jour pour utiliser de manière optimale la moulinette ReSIP.</p>
 <p>Pour mettre à jour des fichiers, il suffit de :</p>
 <ul class="simple">
 <li><p>télécharger ces fichiers sur le site de The National Archives (UK), à l’adresse suivante :
-<a class="reference external" href="https://www.nationalarchives.gov.uk/aboutapps/pronom/droid-signature-files.htm">https://www.nationalarchives.gov.uk/aboutapps/pronom/droid-signature-files.htm</a><a class="footnote-reference brackets" href="#id24" id="id3">3</a>;</p></li>
+<a class="reference external" href="https://www.nationalarchives.gov.uk/aboutapps/pronom/droid-signature-files.htm">https://www.nationalarchives.gov.uk/aboutapps/pronom/droid-signature-files.htm</a><a class="footnote-reference brackets" href="#id24" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>;</p></li>
 <li><p>substituer, dans le répertoire config du répertoire ReSIP, les fichiers existants par les fichiers plus récents précédemment téléchargés (cf. copie d’écran ci-dessous).</p></li>
 </ul>
 <p><img alt="" src="../_images/100000000000029D000000D32F9D3732CA9940C1.png" /></p>
@@ -544,11 +543,11 @@ Cette interface permet d’effectuer l’ensemble des opérations possibles (imp
 </section>
 </section>
 <section id="presentation-de-linterface-graphique-de-la-moulinette-resip">
-<h2><span class="section-number">1.3. </span>Présentation de l’interface graphique de la moulinette ReSIP<a class="headerlink" href="#presentation-de-linterface-graphique-de-la-moulinette-resip" title="Lien permanent vers ce titre"></a></h2>
+<h2><span class="section-number">1.3. </span>Présentation de l’interface graphique de la moulinette ReSIP<a class="headerlink" href="#presentation-de-linterface-graphique-de-la-moulinette-resip" title="Lien permanent vers cette rubrique"></a></h2>
 <section id="interface-xml-expert-4">
-<h3><span class="section-number">1.3.1. </span>Interface « XML-expert »<a class="footnote-reference brackets" href="#id25" id="id4">4</a><a class="headerlink" href="#interface-xml-expert-4" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">1.3.1. </span>Interface « XML-expert »<a class="footnote-reference brackets" href="#id25" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a><a class="headerlink" href="#interface-xml-expert-4" title="Lien permanent vers cette rubrique"></a></h3>
 <section id="fenetre-principale">
-<h4><span class="section-number">1.3.1.1. </span>Fenêtre principale<a class="headerlink" href="#fenetre-principale" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">1.3.1.1. </span>Fenêtre principale<a class="headerlink" href="#fenetre-principale" title="Lien permanent vers cette rubrique"></a></h4>
 <p>L’interface graphique de la moulinette ReSIP, paramétrée comme
 « XML-expert » et lancée après double-clic sur le fichier Resip.exe se
 présente de la manière suivante (cf. copie d’écran ci-dessous) :</p>
@@ -575,7 +574,7 @@ de modification des métadonnées de l’objet binaire sélectionné.</p></li>
 </ul>
 </section>
 <section id="le-panneau-de-visualisation-et-de-modification-de-la-structure-arborescente-darchives">
-<h4><span class="section-number">1.3.1.2. </span>Le panneau de visualisation et de modification de la structure arborescente d’archives<a class="headerlink" href="#le-panneau-de-visualisation-et-de-modification-de-la-structure-arborescente-darchives" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">1.3.1.2. </span>Le panneau de visualisation et de modification de la structure arborescente d’archives<a class="headerlink" href="#le-panneau-de-visualisation-et-de-modification-de-la-structure-arborescente-darchives" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Ce panneau permet de visualiser et de modifier la structure arborescente
 des archives.</p>
 <p>Il comporte les éléments suivants :</p>
@@ -628,7 +627,7 @@ copie d’écran ci-dessous).</p>
 <p><img alt="" src="../_images/1000000000000556000003007F3D347D66B423AC.png" /></p>
 </section>
 <section id="le-panneau-de-visualisation-et-de-modification-des-metadonnees-dune-unite-archivistique">
-<h4><span class="section-number">1.3.1.3. </span>Le panneau de visualisation et de modification des métadonnées d’une unité archivistique<a class="headerlink" href="#le-panneau-de-visualisation-et-de-modification-des-metadonnees-dune-unite-archivistique" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">1.3.1.3. </span>Le panneau de visualisation et de modification des métadonnées d’une unité archivistique<a class="headerlink" href="#le-panneau-de-visualisation-et-de-modification-des-metadonnees-dune-unite-archivistique" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Ce panneau permet de visualiser et de modifier les métadonnées de
 l’unité archivistique sélectionnée dans le panneau de visualisation et
 de modification de la structure arborescente d’archives.</p>
@@ -662,7 +661,7 @@ ci-dessous).</p></li>
 <p><img alt="" src="../_images/100000000000055600000300737CF8FDC2EB31A6.png" /></p>
 </section>
 <section id="le-panneau-de-visualisation-de-la-liste-des-objets">
-<h4><span class="section-number">1.3.1.4. </span>Le panneau de visualisation de la liste des objets<a class="headerlink" href="#le-panneau-de-visualisation-de-la-liste-des-objets" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">1.3.1.4. </span>Le panneau de visualisation de la liste des objets<a class="headerlink" href="#le-panneau-de-visualisation-de-la-liste-des-objets" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Ce panneau permet de visualiser la liste des objets, tant physiques
 comme binaires, composant le groupe d’objets techniques représentant
 l’unité archivistique sélectionnée dans le panneau de visualisation et
@@ -698,7 +697,7 @@ ci-dessous).
 </ul>
 </section>
 <section id="le-panneau-de-visualisation-et-de-modification-des-metadonnees-dun-objet">
-<h4><span class="section-number">1.3.1.5. </span>Le panneau de visualisation et de modification des métadonnées d’un objet<a class="headerlink" href="#le-panneau-de-visualisation-et-de-modification-des-metadonnees-dun-objet" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">1.3.1.5. </span>Le panneau de visualisation et de modification des métadonnées d’un objet<a class="headerlink" href="#le-panneau-de-visualisation-et-de-modification-des-metadonnees-dun-objet" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Ce panneau permet de visualiser et de modifier les métadonnées de
 l’objet, binaire comme physique, sélectionné dans le panneau de
 visualisation de la liste des objets.</p>
@@ -721,9 +720,9 @@ l’objet (cf. copie d’écran ci-dessous) ;</p>
 </section>
 </section>
 <section id="interface-structuree">
-<h3><span class="section-number">1.3.2. </span>Interface « structurée »<a class="headerlink" href="#interface-structuree" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">1.3.2. </span>Interface « structurée »<a class="headerlink" href="#interface-structuree" title="Lien permanent vers cette rubrique"></a></h3>
 <section id="id5">
-<h4><span class="section-number">1.3.2.1. </span>Fenêtre principale<a class="headerlink" href="#id5" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">1.3.2.1. </span>Fenêtre principale<a class="headerlink" href="#id5" title="Lien permanent vers cette rubrique"></a></h4>
 <p>L’interface graphique de la moulinette ReSIP, paramétrée par défaut
 comme « structurée » et lancée après double-clic sur le fichier
 Resip.exe se présente de la manière suivante (cf. copie d’écran
@@ -749,7 +748,7 @@ l’(les) objet(s) binaire(s) associé(s).</p></li>
 </ul>
 </section>
 <section id="id6">
-<h4><span class="section-number">1.3.2.2. </span>Le panneau de visualisation et de modification de la structure arborescente d’archives<a class="headerlink" href="#id6" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">1.3.2.2. </span>Le panneau de visualisation et de modification de la structure arborescente d’archives<a class="headerlink" href="#id6" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Ce panneau permet de visualiser et de modifier la structure arborescente des archives.</p>
 <p>Il comporte les éléments suivants :</p>
 <ul class="simple">
@@ -799,7 +798,7 @@ titre, ses unités archivistiques filles apparaissent ou disparaissent
 <p><img alt="" src="../_images/1000020100000553000002D9AF96C827873DD556.png" /></p>
 </section>
 <section id="id7">
-<h4><span class="section-number">1.3.2.3. </span>Le panneau de visualisation et de modification des métadonnées d’une unité archivistique<a class="headerlink" href="#id7" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">1.3.2.3. </span>Le panneau de visualisation et de modification des métadonnées d’une unité archivistique<a class="headerlink" href="#id7" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Ce panneau permet de visualiser et de modifier les métadonnées de
 l’unité archivistique sélectionnée dans le panneau de visualisation et
 de modification de la structure arborescente d’archives.</p>
@@ -852,7 +851,7 @@ archivistique (cf. copie d’écran ci-dessous).</p></li>
 <p><img alt="" src="../_images/1000020100000555000002D8BEAF687D2EE72F34.png" /></p>
 </section>
 <section id="le-panneau-de-visualisation-et-de-modification-des-metadonnees-dun-groupe-dobjets-techniques">
-<h4><span class="section-number">1.3.2.4. </span>Le panneau de visualisation et de modification des métadonnées d’un groupe d’objets techniques<a class="headerlink" href="#le-panneau-de-visualisation-et-de-modification-des-metadonnees-dun-groupe-dobjets-techniques" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">1.3.2.4. </span>Le panneau de visualisation et de modification des métadonnées d’un groupe d’objets techniques<a class="headerlink" href="#le-panneau-de-visualisation-et-de-modification-des-metadonnees-dun-groupe-dobjets-techniques" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Ce panneau permet de :</p>
 <ul class="simple">
 <li><p>visualiser et de modifier les métadonnées d’un groupe d’objets,
@@ -906,7 +905,7 @@ groupe d’objets techniques (cf. copie d’écran ci-dessous).</p>
 </section>
 </section>
 <section id="connaitre-la-version-de-la-moulinette-resip-utilisee">
-<h3><span class="section-number">1.3.3. </span>Connaître la version de la moulinette ReSIP utilisée<a class="headerlink" href="#connaitre-la-version-de-la-moulinette-resip-utilisee" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">1.3.3. </span>Connaître la version de la moulinette ReSIP utilisée<a class="headerlink" href="#connaitre-la-version-de-la-moulinette-resip-utilisee" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Afin de connaître la version de la moulinette ReSIP utilisée, il
 convient, dans le menu de la moulinette ReSIP, de cliquer sur l’action
 « ? », puis sur « À propos de Resip » qui fait apparaître une fenêtre de
@@ -915,7 +914,7 @@ ci-dessous).</p>
 <p><img alt="" src="../_images/100000000000077D0000042386A1CD30DBA23232.png" /></p>
 </section>
 <section id="parametrer-la-moulinette-resip">
-<h3><span class="section-number">1.3.4. </span>Paramétrer la moulinette ReSIP<a class="headerlink" href="#parametrer-la-moulinette-resip" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">1.3.4. </span>Paramétrer la moulinette ReSIP<a class="headerlink" href="#parametrer-la-moulinette-resip" title="Lien permanent vers cette rubrique"></a></h3>
 <p>La moulinette ReSIP est fournie avec un paramétrage par défaut de son
 interface et de ses fonctionnalités d’import, d’export et de traitement
 de structures arborescentes d’archives. Il est possible :</p>
@@ -928,7 +927,7 @@ paramétrage par défaut ;</p></li>
 <li><p>de réinitialiser le paramétrage par défaut.</p></li>
 </ul>
 <section id="choisir-le-mode-daffichage-de-linterface">
-<h4><span class="section-number">1.3.4.1. </span>Choisir le mode d’affichage de l’interface<a class="headerlink" href="#choisir-le-mode-daffichage-de-linterface" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">1.3.4.1. </span>Choisir le mode d’affichage de l’interface<a class="headerlink" href="#choisir-le-mode-daffichage-de-linterface" title="Lien permanent vers cette rubrique"></a></h4>
 <p>La moulinette ReSIP peut être utilisée avec deux interfaces
 différentes :</p>
 <ul class="simple">
@@ -949,7 +948,7 @@ dite « XML-expert » est utilisée.</p></li>
 « XML-expert », il suffit de cliquer sur « Editeur structuré ».</p>
 </section>
 <section id="activer-le-mode-debug">
-<h4><span class="section-number">1.3.4.2. </span>Activer le mode « debug »<a class="headerlink" href="#activer-le-mode-debug" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">1.3.4.2. </span>Activer le mode « debug »<a class="headerlink" href="#activer-le-mode-debug" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Afin d’activer le mode « debug », il convient, dans le menu de la
 moulinette ReSIP, de cliquer sur l’action « ? ».</p>
 <ul class="simple">
@@ -962,7 +961,7 @@ n’est pas activé.</p></li>
 suffit de cliquer sur « Mode débug ».</p>
 </section>
 <section id="exporter-le-fichier-de-parametrage-par-defaut">
-<h4><span class="section-number">1.3.4.3. </span>Exporter le fichier de paramétrage par défaut<a class="headerlink" href="#exporter-le-fichier-de-parametrage-par-defaut" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">1.3.4.3. </span>Exporter le fichier de paramétrage par défaut<a class="headerlink" href="#exporter-le-fichier-de-parametrage-par-defaut" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Afin d’exporter le fichier de paramétrage par défaut, il convient :</p>
 <ul>
 <li><p>dans le menu de la moulinette ReSIP, de cliquer sur l’action « ? »,
@@ -987,7 +986,7 @@ paramétrage par défaut. La fenêtre de dialogue se ferme automatiquement
 dès l’enregistrement réalisé.</p>
 </section>
 <section id="modifier-le-fichier-de-parametrage-par-defaut">
-<h4><span class="section-number">1.3.4.4. </span>Modifier le fichier de paramétrage par défaut<a class="headerlink" href="#modifier-le-fichier-de-parametrage-par-defaut" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">1.3.4.4. </span>Modifier le fichier de paramétrage par défaut<a class="headerlink" href="#modifier-le-fichier-de-parametrage-par-defaut" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Afin de modifier le fichier de paramétrage par défaut, il convient
 d’ouvrir le fichier ResipPreferences.properties avec un éditeur de texte
 de type Bloc-notes ou Notepad ++.</p>
@@ -1148,7 +1147,7 @@ sémantique utilisées dans le fichier afin d’éviter les problèmes
 d’import.</p>
 </section>
 <section id="importer-un-fichier-de-parametrage-different-du-fichier-de-parametrage-par-defaut">
-<h4><span class="section-number">1.3.4.5. </span>Importer un fichier de paramétrage différent du fichier de paramétrage par défaut<a class="headerlink" href="#importer-un-fichier-de-parametrage-different-du-fichier-de-parametrage-par-defaut" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">1.3.4.5. </span>Importer un fichier de paramétrage différent du fichier de paramétrage par défaut<a class="headerlink" href="#importer-un-fichier-de-parametrage-different-du-fichier-de-parametrage-par-defaut" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Afin d’importer un fichier de paramétrage différent du fichier de
 paramétrage par défaut, il convient :</p>
 <ul>
@@ -1171,7 +1170,7 @@ de la moulinette ReSIP, de cliquer sur l’action « Fichier » puis sur la
 sous-action « Préférences » (voir section 4.6. ci-dessous).</p>
 </section>
 <section id="reinitialiser-le-parametrage-par-defaut">
-<h4><span class="section-number">1.3.4.6. </span>Réinitialiser le paramétrage par défaut<a class="headerlink" href="#reinitialiser-le-parametrage-par-defaut" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">1.3.4.6. </span>Réinitialiser le paramétrage par défaut<a class="headerlink" href="#reinitialiser-le-parametrage-par-defaut" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Afin de réinitialiser le paramétrage par défaut, il convient :</p>
 <ul>
 <li><p>dans le menu de la moulinette ReSIP, de cliquer sur l’action « ? »,
@@ -1193,7 +1192,7 @@ cliquer sur l’action « Fichier » puis sur la sous-action « Préférences
 </section>
 </section>
 <section id="import-de-structures-arborescentes-darchives-dans-la-moulinette-resip">
-<h2><span class="section-number">1.4. </span>Import de structures arborescentes d’archives dans la moulinette ReSIP<a class="headerlink" href="#import-de-structures-arborescentes-darchives-dans-la-moulinette-resip" title="Lien permanent vers ce titre"></a></h2>
+<h2><span class="section-number">1.4. </span>Import de structures arborescentes d’archives dans la moulinette ReSIP<a class="headerlink" href="#import-de-structures-arborescentes-darchives-dans-la-moulinette-resip" title="Lien permanent vers cette rubrique"></a></h2>
 <p>Il est possible d’importer dans la moulinette ReSIP plusieurs types de
 structures arborescentes d’archives enregistrées sur l’environnement de
 travail de l’utilisateur :</p>
@@ -1212,7 +1211,7 @@ traitement a déjà été commencé et sauvegardé via la moulinette ReSIP
 (réouverture de session) (section 4.8.).</p></li>
 </ul>
 <section id="import-dune-arborescence-de-fichiers">
-<h3><span class="section-number">1.4.1. </span>Import d’une arborescence de fichiers<a class="headerlink" href="#import-dune-arborescence-de-fichiers" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">1.4.1. </span>Import d’une arborescence de fichiers<a class="headerlink" href="#import-dune-arborescence-de-fichiers" title="Lien permanent vers cette rubrique"></a></h3>
 <p>L’import d’une structure arborescente d’archives représentée par une
 arborescence de fichiers est réalisable sous deux formes :</p>
 <ul class="simple">
@@ -1223,7 +1222,7 @@ supplémentaires de métadonnées (section 4.1.3.).</p></li>
 </ul>
 <p>L’import est paramétrable (section 4.1.1.).</p>
 <section id="parametrage-de-limport">
-<h4><span class="section-number">1.4.1.1. </span>Paramétrage de l’import<a class="headerlink" href="#parametrage-de-limport" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">1.4.1.1. </span>Paramétrage de l’import<a class="headerlink" href="#parametrage-de-limport" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Afin de paramétrer l’import d’une structure arborescente d’archives
 représentée par une arborescence de fichiers pour traitement, il
 convient, dans le menu de la moulinette ReSIP, de cliquer sur l’action
@@ -1272,7 +1271,7 @@ ainsi que l’encodage des caractères retenus, au moyen de sélecteurs
 </ul>
 </section>
 <section id="import-dune-arborescence-de-fichiers-sans-fichier-supplementaire-de-metadonnees">
-<h4><span class="section-number">1.4.1.2. </span>Import d’une arborescence de fichiers sans fichier supplémentaire de métadonnées<a class="headerlink" href="#import-dune-arborescence-de-fichiers-sans-fichier-supplementaire-de-metadonnees" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">1.4.1.2. </span>Import d’une arborescence de fichiers sans fichier supplémentaire de métadonnées<a class="headerlink" href="#import-dune-arborescence-de-fichiers-sans-fichier-supplementaire-de-metadonnees" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Afin d’importer une structure arborescente d’archives représentée par
 une arborescence de fichiers pour traitement, il convient, dans le menu
 de la moulinette ReSIP, de cliquer sur l’action « Import » puis sur la
@@ -1328,7 +1327,7 @@ ne doivent pas changer d’emplacement sur le disque pendant tout le temps
 de leur traitement avec la moulinette ReSIP</strong>.</p>
 </section>
 <section id="import-dune-arborescence-de-fichiers-avec-fichier-supplementaire-de-metadonnees">
-<h4><span class="section-number">1.4.1.3. </span>Import d’une arborescence de fichiers avec fichier supplémentaire de métadonnées<a class="headerlink" href="#import-dune-arborescence-de-fichiers-avec-fichier-supplementaire-de-metadonnees" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">1.4.1.3. </span>Import d’une arborescence de fichiers avec fichier supplémentaire de métadonnées<a class="headerlink" href="#import-dune-arborescence-de-fichiers-avec-fichier-supplementaire-de-metadonnees" title="Lien permanent vers cette rubrique"></a></h4>
 <p>L’import simple d’une arborescence de fichiers (section 4.1.1.) avec la
 moulinette ReSIP crée un contexte de travail reprenant les métadonnées
 par défaut disponibles dans l’arborescence de fichiers :</p>
@@ -1370,7 +1369,7 @@ recommandé d’exporter des exemples de SIP déjà constitués en utilisant
 la fonction « Exporter la hiérarchie sur disque » pour visualiser les
 différents fichiers spéciaux associés (cf. section 6.3.).</p>
 <section id="metadonnees-de-len-tete-du-manifeste">
-<h5><span class="section-number">1.4.1.3.1. </span>Métadonnées de l’en-tête du manifeste<a class="headerlink" href="#metadonnees-de-len-tete-du-manifeste" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">1.4.1.3.1. </span>Métadonnées de l’en-tête du manifeste<a class="headerlink" href="#metadonnees-de-len-tete-du-manifeste" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Les métadonnées de l’en-tête du manifeste (intitulé et identifiant du
 SIP, contrat d’entrées, versions des référentiels utilisés, identifiant
 du service d’archives et identifiant du service de transfert) peuvent
@@ -1415,7 +1414,7 @@ le répertoire destiné à être importé à la racine.</p>
 équivalent dans le schéma associé au standard SEDA 2.1.</p>
 </section>
 <section id="metadonnees-de-gestion-du-bloc-managementmetadata">
-<h5><span class="section-number">1.4.1.3.2. </span>Métadonnées de gestion du bloc ManagementMetadata<a class="headerlink" href="#metadonnees-de-gestion-du-bloc-managementmetadata" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">1.4.1.3.2. </span>Métadonnées de gestion du bloc ManagementMetadata<a class="headerlink" href="#metadonnees-de-gestion-du-bloc-managementmetadata" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Les métadonnées du bloc ManagementMetadata du manifeste (profil
 d’archivage, niveau de service, mode d’entrée, statut juridique, règles
 de gestion applicables à l’ensemble du SIP, service producteur de
@@ -1446,7 +1445,7 @@ dans le répertoire destiné à être importé à la racine.</p>
 équivalent dans le schéma associé au standard SEDA 2.1.</p>
 </section>
 <section id="metadonnees-dune-unite-archivistique">
-<h5><span class="section-number">1.4.1.3.3. </span>Métadonnées d’une unité archivistique<a class="headerlink" href="#metadonnees-dune-unite-archivistique" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">1.4.1.3.3. </span>Métadonnées d’une unité archivistique<a class="headerlink" href="#metadonnees-dune-unite-archivistique" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Les métadonnées d’une unité archivistique (métadonnées de gestion comme
 de description) peuvent être renseignées dans un fichier nommé
 __ArchiveUnitMetadata.xml qui se présente comme suit :</p>
@@ -1485,7 +1484,7 @@ le fichier __ArchiveUnitMetadata.xml et le fichier concerné.</p>
 équivalent dans le schéma associé au standard SEDA 2.1.</p>
 </section>
 <section id="metadonnees-dun-objet-binaire">
-<h5><span class="section-number">1.4.1.3.4. </span>Métadonnées d’un objet binaire<a class="headerlink" href="#metadonnees-dun-objet-binaire" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">1.4.1.3.4. </span>Métadonnées d’un objet binaire<a class="headerlink" href="#metadonnees-dun-objet-binaire" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Les métadonnées d’un objet binaire (métadonnées techniques) peuvent être
 renseignées dans un fichier nommé __« usage » [BinaryMaster,
 Dissemination, Thumbnail,
@@ -1529,7 +1528,7 @@ d’objet, et plus précisément la première version.</p></li>
 </ul>
 </section>
 <section id="metadonnees-dun-objet-physique">
-<h5><span class="section-number">1.4.1.3.5. </span>Métadonnées d’un objet physique<a class="headerlink" href="#metadonnees-dun-objet-physique" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">1.4.1.3.5. </span>Métadonnées d’un objet physique<a class="headerlink" href="#metadonnees-dun-objet-physique" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Les métadonnées d’un objet physique (métadonnées techniques) peuvent
 être renseignées dans un fichier nommé __« usage » [PhysicalMaster,
 Dissemination]_« version »_PhysicalDataObjectMetadata.xml et qui se
@@ -1554,7 +1553,7 @@ d’objet, et plus précisément la première version.</p></li>
 </ul>
 </section>
 <section id="groupe-dobjets-techniques-contenant-plusieurs-objets">
-<h5><span class="section-number">1.4.1.3.6. </span>Groupe d’objets techniques contenant plusieurs objets<a class="headerlink" href="#groupe-dobjets-techniques-contenant-plusieurs-objets" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">1.4.1.3.6. </span>Groupe d’objets techniques contenant plusieurs objets<a class="headerlink" href="#groupe-dobjets-techniques-contenant-plusieurs-objets" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Il est possible d’importer plusieurs objets, qu’ils soient physiques ou
 binaires, représentant une même unité archivistique et constituant
 ensemble un groupe d’objets.</p>
@@ -1587,7 +1586,7 @@ techniques, et plus précisément la première version.</p>
 </section>
 </section>
 <section id="import-d-un-sip-deja-constitue">
-<h3><span class="section-number">1.4.2. </span>Import d’un SIP déjà constitué<a class="headerlink" href="#import-d-un-sip-deja-constitue" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">1.4.2. </span>Import d’un SIP déjà constitué<a class="headerlink" href="#import-d-un-sip-deja-constitue" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Afin d’importer pour traitement une structure arborescente d’archives
 représentée par un SIP déjà constitué, il convient, dans le menu de la
 moulinette ReSIP, de cliquer sur l’action « Import » puis sur la
@@ -1607,7 +1606,7 @@ structure arborescente d’archives dans le panneau de visualisation et de
 modification de la structure arborescente d’archives.</p>
 </section>
 <section id="import-d-un-dip-deja-constitue">
-<h3><span class="section-number">1.4.3. </span>Import d’un DIP déjà constitué<a class="headerlink" href="#import-d-un-dip-deja-constitue" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">1.4.3. </span>Import d’un DIP déjà constitué<a class="headerlink" href="#import-d-un-dip-deja-constitue" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Afin d’importer pour traitement une structure arborescente d’archives
 représentée par un DIP déjà constitué, il convient, dans le menu de la
 moulinette ReSIP, de cliquer sur l’action « Import » puis sur la
@@ -1629,7 +1628,7 @@ ci-dessous).
 <img alt="" src="../_images/1000020100000555000002D965EE2B9839A413AC.png" /></p>
 </section>
 <section id="import-dune-arborescence-de-fichiers-sous-forme-de-fichier-zip">
-<h3><span class="section-number">1.4.4. </span>Import d’une arborescence de fichiers sous forme de fichier .zip<a class="headerlink" href="#import-dune-arborescence-de-fichiers-sous-forme-de-fichier-zip" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">1.4.4. </span>Import d’une arborescence de fichiers sous forme de fichier .zip<a class="headerlink" href="#import-dune-arborescence-de-fichiers-sous-forme-de-fichier-zip" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Afin d’importer pour traitement une structure arborescente d’archives
 représentée par un fichier .zip pour traitement, il convient, dans le
 menu de la moulinette ReSIP, de cliquer sur l’action « Import » puis sur
@@ -1652,13 +1651,13 @@ visualisation et de modification de la structure arborescente d’archives
 <img alt="" src="../_images/1000020100000555000002D9798EE6A00ABDF450.png" /></p>
 </section>
 <section id="import-dun-arbre-de-positionnement-ou-dun-plan-de-classement-sous-forme-de-fichier-csv">
-<h3><span class="section-number">1.4.5. </span>Import d’un arbre de positionnement ou d’un plan de classement sous forme de fichier .csv<a class="headerlink" href="#import-dun-arbre-de-positionnement-ou-dun-plan-de-classement-sous-forme-de-fichier-csv" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">1.4.5. </span>Import d’un arbre de positionnement ou d’un plan de classement sous forme de fichier .csv<a class="headerlink" href="#import-dun-arbre-de-positionnement-ou-dun-plan-de-classement-sous-forme-de-fichier-csv" title="Lien permanent vers cette rubrique"></a></h3>
 <p>La moulinette ReSIP permet d’importer une structure arborescente
 d’archives correspondant à un arbre de positionnement ou à un plan de
 classement au sens de la solution logicielle Vitam sous la forme d’un
 fichier csv.</p>
 <section id="presentation-du-fichier-dimport">
-<h4><span class="section-number">1.4.5.1. </span>Présentation du fichier d’import<a class="headerlink" href="#presentation-du-fichier-dimport" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">1.4.5.1. </span>Présentation du fichier d’import<a class="headerlink" href="#presentation-du-fichier-dimport" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Le fichier d’import prend la forme d’un fichier au format .csv composé
 de cinq colonnes :</p>
 <ul class="simple">
@@ -1753,10 +1752,10 @@ présente comme suit :</p>
 <p>L’annexe « Préparer un fichier .csv » apporte quelques conseils pour
 effectuer cette opération.</p>
 <p><strong>Attention :</strong> ce type d’import ne permet pas d’importer des objets
-numériques au côté du fichier .csv<a class="footnote-reference brackets" href="#id26" id="id8">5</a>.</p>
+numériques au côté du fichier .csv<a class="footnote-reference brackets" href="#id26" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a>.</p>
 </section>
 <section id="presentation-du-processus-dimport">
-<h4><span class="section-number">1.4.5.2. </span>Présentation du processus d’import<a class="headerlink" href="#presentation-du-processus-dimport" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">1.4.5.2. </span>Présentation du processus d’import<a class="headerlink" href="#presentation-du-processus-dimport" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Afin d’importer une structure arborescente d’archives correspondant à un
 arbre de positionnement ou à un plan de classement décrite sous la forme
 d’un fichier .csv, il convient, dans le menu de la moulinette ReSIP, de
@@ -1797,11 +1796,11 @@ section 4.1.1.).</p>
 </section>
 </section>
 <section id="import-depuis-un-fichier-csv-decrivant-une-structure-arborescente-darchives-et-ou-de-fichiers">
-<h3><span class="section-number">1.4.6. </span>Import depuis un fichier .csv décrivant une structure arborescente d’archives et/ou de fichiers<a class="headerlink" href="#import-depuis-un-fichier-csv-decrivant-une-structure-arborescente-darchives-et-ou-de-fichiers" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">1.4.6. </span>Import depuis un fichier .csv décrivant une structure arborescente d’archives et/ou de fichiers<a class="headerlink" href="#import-depuis-un-fichier-csv-decrivant-une-structure-arborescente-darchives-et-ou-de-fichiers" title="Lien permanent vers cette rubrique"></a></h3>
 <p>La moulinette ReSIP permet d’importer une structure arborescente
 d’archives et/ou de fichiers sous la forme d’un fichier .csv.</p>
 <section id="id9">
-<h4><span class="section-number">1.4.6.1. </span>Présentation du fichier d’import<a class="headerlink" href="#id9" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">1.4.6.1. </span>Présentation du fichier d’import<a class="headerlink" href="#id9" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Le fichier d’import prend la forme d’un fichier au format .csv composé
 de x colonnes :</p>
 <ul class="simple">
@@ -1880,7 +1879,7 @@ doivent être formatées conformément à la norme ISO 8601
 (AAAA-MM-JJ).</p></li>
 </ul>
 <p>Le fichier d’import utilisé pour la rédaction du présent manuel se
-présente comme suit<a class="footnote-reference brackets" href="#id27" id="id10">6</a> :</p>
+présente comme suit<a class="footnote-reference brackets" href="#id27" id="id10" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a> :</p>
 <div class="highlight-csv notranslate"><div class="highlight"><pre><span></span>ID;ParentID;File;Content.DescriptionLevel;Content.Title;Content.ArchivalAgencyArchiveUnitIdentifier;Content.TransactedDate
 1;;documentation;RecordGrp;documentation;;
 2;1;documentation\preuve;RecordGrp;preuve;;
@@ -1973,7 +1972,7 @@ devant être référencé par la même unité archivistique.</p></li>
 </ul>
 </section>
 <section id="id11">
-<h4><span class="section-number">1.4.6.2. </span>Présentation du processus d’import<a class="headerlink" href="#id11" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">1.4.6.2. </span>Présentation du processus d’import<a class="headerlink" href="#id11" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Afin d’importer une structure arborescente d’archives et/ou de fichiers
 sous la forme d’un fichier csv, il convient, dans le menu de la
 moulinette ReSIP, de cliquer sur l’action « Import » puis sur la
@@ -2000,7 +1999,7 @@ structure arborescente d’archives (cf. copie d’écran ci-dessous) :
 </section>
 </section>
 <section id="import-dune-structure-arborescente-darchives-correspondant-a-une-messagerie-electronique">
-<h3><span class="section-number">1.4.7. </span>Import d’une structure arborescente d’archives correspondant à une messagerie électronique<a class="headerlink" href="#import-dune-structure-arborescente-darchives-correspondant-a-une-messagerie-electronique" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">1.4.7. </span>Import d’une structure arborescente d’archives correspondant à une messagerie électronique<a class="headerlink" href="#import-dune-structure-arborescente-darchives-correspondant-a-une-messagerie-electronique" title="Lien permanent vers cette rubrique"></a></h3>
 <p>La moulinette ReSIP permet d’importer une structure arborescente
 d’archives correspondant à une messagerie électronique se présentant
 sous la forme :</p>
@@ -2012,7 +2011,7 @@ sous la forme :</p>
 </ul>
 <p>L’import est paramétrable.</p>
 <section id="id12">
-<h4><span class="section-number">1.4.7.1. </span>Paramétrage de l’import<a class="headerlink" href="#id12" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">1.4.7.1. </span>Paramétrage de l’import<a class="headerlink" href="#id12" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Afin de paramétrer pour traitement l’import d’une structure arborescente
 d’archives correspondant à une messagerie électronique, il convient,
 dans le menu de la moulinette ReSIP, de cliquer sur l’action « Fichier »
@@ -2038,7 +2037,7 @@ messages électroniques et de leurs pièces jointes.</p></li>
 </ul>
 </section>
 <section id="id13">
-<h4><span class="section-number">1.4.7.2. </span>Présentation du processus d’import<a class="headerlink" href="#id13" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">1.4.7.2. </span>Présentation du processus d’import<a class="headerlink" href="#id13" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Afin d’importer une structure arborescente d’archives correspondant à un
 conteneur de messagerie ou à un message électronique, il convient, dans
 le menu de la moulinette ReSIP, de cliquer sur l’action « Import » puis
@@ -2100,7 +2099,7 @@ structure arborescente d’archives (cf. copie d’écran ci-dessous).
 <img alt="" src="../_images/1000020100000555000002D875915EA7EDDCDF3D.png" /></p>
 </section>
 <section id="presentation-de-la-structure-arborescente-darchives-creee">
-<h4><span class="section-number">1.4.7.3. </span>Présentation de la structure arborescente d’archives créée<a class="headerlink" href="#presentation-de-la-structure-arborescente-darchives-creee" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">1.4.7.3. </span>Présentation de la structure arborescente d’archives créée<a class="headerlink" href="#presentation-de-la-structure-arborescente-darchives-creee" title="Lien permanent vers cette rubrique"></a></h4>
 <p>La structure arborescente créée lors du processus d’import comprend :</p>
 <ul class="simple">
 <li><p>l’arborescence des messages électroniques ;</p></li>
@@ -2173,7 +2172,7 @@ document&gt; joint au message &lt;identifiant du message&gt;.</p></li>
 </section>
 </section>
 <section id="reouverture-dune-structure-arborescente-darchives-en-cours-de-traitement">
-<h3><span class="section-number">1.4.8. </span>Réouverture d’une structure arborescente d’archives en cours de traitement<a class="headerlink" href="#reouverture-dune-structure-arborescente-darchives-en-cours-de-traitement" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">1.4.8. </span>Réouverture d’une structure arborescente d’archives en cours de traitement<a class="headerlink" href="#reouverture-dune-structure-arborescente-darchives-en-cours-de-traitement" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Afin de rouvrir une structure arborescente d’archives déjà en cours de
 traitement et sauvegardée par l’utilisateur, il convient, dans le menu
 de la moulinette ReSIP, de cliquer sur l’action « Fichier » puis sur la
@@ -2193,7 +2192,7 @@ arborescente d’archives (cf. copie d’écran ci-dessous).
 </section>
 </section>
 <section id="traitement-des-structures-arborescentes-darchives-importees-dans-la-moulinette-resip">
-<h2><span class="section-number">1.5. </span>Traitement des structures arborescentes d’archives importées dans la moulinette ReSIP<a class="headerlink" href="#traitement-des-structures-arborescentes-darchives-importees-dans-la-moulinette-resip" title="Lien permanent vers ce titre"></a></h2>
+<h2><span class="section-number">1.5. </span>Traitement des structures arborescentes d’archives importées dans la moulinette ReSIP<a class="headerlink" href="#traitement-des-structures-arborescentes-darchives-importees-dans-la-moulinette-resip" title="Lien permanent vers cette rubrique"></a></h2>
 <p>Une fois une structure arborescente d’archives importée dans la
 moulinette ReSIP, il est possible d’effectuer les traitements suivants :</p>
 <ul class="simple">
@@ -2215,7 +2214,7 @@ d’archives par rapport au SEDA 2.1. (section 5.8.) ;</p></li>
 <li><p>nettoyage de l’espace de travail (section 5.10.).</p></li>
 </ul>
 <section id="trier-alphabetiquement-les-differents-niveaux-de-la-structure-arborescente-darchives">
-<h3><span class="section-number">1.5.1. </span>Trier alphabétiquement les différents niveaux de la structure arborescente d’archives<a class="headerlink" href="#trier-alphabetiquement-les-differents-niveaux-de-la-structure-arborescente-darchives" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">1.5.1. </span>Trier alphabétiquement les différents niveaux de la structure arborescente d’archives<a class="headerlink" href="#trier-alphabetiquement-les-differents-niveaux-de-la-structure-arborescente-darchives" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Afin de trier alphabétiquement la structure arborescente d’archives il
 convient, dans le menu de la moulinette ReSIP, de cliquer sur l’action
 « Traiter » puis sur la sous-action « Trier l’arbre de visualisation »
@@ -2227,7 +2226,7 @@ l’ensemble des éléments composant la structure arborescente d’archives
 <img alt="" src="../_images/1000020100000555000002D8AC9D176C6320FB8A.png" /></p>
 </section>
 <section id="rechercher-des-unites-archivistiques-et-des-objets-dans-la-structure-arborescente-darchives">
-<h3><span class="section-number">1.5.2. </span>Rechercher des unités archivistiques et des objets dans la structure arborescente d’archives<a class="headerlink" href="#rechercher-des-unites-archivistiques-et-des-objets-dans-la-structure-arborescente-darchives" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">1.5.2. </span>Rechercher des unités archivistiques et des objets dans la structure arborescente d’archives<a class="headerlink" href="#rechercher-des-unites-archivistiques-et-des-objets-dans-la-structure-arborescente-darchives" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Il est possible de rechercher, dans la structure arborescente d’archives
 importée dans la moulinette ReSIP :</p>
 <ul class="simple">
@@ -2237,7 +2236,7 @@ métadonnées de description ou de gestion (section 5.2.1.) ;</p></li>
 taille (section 5.2.2.).</p></li>
 </ul>
 <section id="recherche-dunites-archivistiques">
-<h4><span class="section-number">1.5.2.1. </span>Recherche d’unités archivistiques<a class="headerlink" href="#recherche-dunites-archivistiques" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">1.5.2.1. </span>Recherche d’unités archivistiques<a class="headerlink" href="#recherche-dunites-archivistiques" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Afin d’effectuer des recherches d’unités archivistiques dans une
 structure arborescente d’archives importée, il convient, dans le menu de
 la moulinette ReSIP, de :</p>
@@ -2287,7 +2286,7 @@ arborescente d’archives (cf. copie d’écran ci-dessous).</p>
 </ul>
 </section>
 <section id="recherche-dobjets">
-<h4><span class="section-number">1.5.2.2. </span>Recherche d’objets<a class="headerlink" href="#recherche-dobjets" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">1.5.2.2. </span>Recherche d’objets<a class="headerlink" href="#recherche-dobjets" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Afin d’effectuer des recherches d’objets dans une structure arborescente
 d’archives importée, il convient, dans le menu de la moulinette ReSIP,
 de :</p>
@@ -2333,9 +2332,9 @@ archivistique (voir section 5.2.1.).</p>
 </section>
 </section>
 <section id="detection-et-traitement-de-doublons">
-<h3><span class="section-number">1.5.3. </span>Détection et traitement de doublons<a class="headerlink" href="#detection-et-traitement-de-doublons" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">1.5.3. </span>Détection et traitement de doublons<a class="headerlink" href="#detection-et-traitement-de-doublons" title="Lien permanent vers cette rubrique"></a></h3>
 <section id="parametrage-du-traitement-des-doublons">
-<h4><span class="section-number">1.5.3.1. </span>Paramétrage du traitement des doublons<a class="headerlink" href="#parametrage-du-traitement-des-doublons" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">1.5.3.1. </span>Paramétrage du traitement des doublons<a class="headerlink" href="#parametrage-du-traitement-des-doublons" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Afin de paramétrer le traitement des doublons dans une structure
 arborescente d’archives, il convient, dans le menu de la moulinette
 ReSIP, de cliquer sur l’action « Fichier » puis sur la sous-action
@@ -2348,7 +2347,7 @@ disponible dans l’onglet « Traitement » (cf. copie d’écran ci-dessous).
 traitable dans une opération de dédoublonnage.</p>
 </section>
 <section id="identification-et-traitement-des-doublons">
-<h4><span class="section-number">1.5.3.2. </span>Identification et traitement des doublons<a class="headerlink" href="#identification-et-traitement-des-doublons" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">1.5.3.2. </span>Identification et traitement des doublons<a class="headerlink" href="#identification-et-traitement-des-doublons" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Afin d’identifier et de traiter les doublons présents dans une structure
 arborescente d’archives importée, il convient, dans le menu de la
 moulinette ReSIP, de :</p>
@@ -2438,7 +2437,7 @@ copie d’écran ci-dessous).
 </section>
 </section>
 <section id="detection-et-traitement-delements-inutiles">
-<h3><span class="section-number">1.5.4. </span>Détection et traitement d’éléments inutiles<a class="headerlink" href="#detection-et-traitement-delements-inutiles" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">1.5.4. </span>Détection et traitement d’éléments inutiles<a class="headerlink" href="#detection-et-traitement-delements-inutiles" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Afin d’identifier et de traiter les éléments inutiles, que ce soient des
 unités archivistiques isolées sans descendance ou des fichiers vides
 (taille : 0 Ko), dans une structure arborescente d’archives importée, il
@@ -2493,7 +2492,7 @@ contenaient qu’un seul fichier vide.</p></li>
 <p><img alt="" src="../_images/1000020100000555000002D90D65E159885AE482.png" /></p>
 </section>
 <section id="regenerer-des-identifiants-continus">
-<h3><span class="section-number">1.5.5. </span>Régénérer des identifiants continus<a class="headerlink" href="#regenerer-des-identifiants-continus" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">1.5.5. </span>Régénérer des identifiants continus<a class="headerlink" href="#regenerer-des-identifiants-continus" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Afin de régénérer des identifiants continus, il convient, dans le menu
 de la moulinette ReSIP, de cliquer sur l’action « Traiter » puis sur la
 sous-action « Régénérer des ID continus » (cf. copie d’écran
@@ -2504,7 +2503,7 @@ ci-dessous).</p>
 <p><img alt="" src="../_images/1000020100000555000002D8740AE03E95D83F11.png" /></p>
 </section>
 <section id="recuperation-de-statistiques-sur-les-objets">
-<h3><span class="section-number">1.5.6. </span>Récupération de statistiques sur les objets<a class="headerlink" href="#recuperation-de-statistiques-sur-les-objets" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">1.5.6. </span>Récupération de statistiques sur les objets<a class="headerlink" href="#recuperation-de-statistiques-sur-les-objets" title="Lien permanent vers cette rubrique"></a></h3>
 <p>La moulinette ReSIP permet de générer des statistiques sur les objets
 présents dans une structure arborescente d’archives. Ces statistiques
 indiquent, pour chaque catégorie de formats telle que définie dans la
@@ -2574,7 +2573,7 @@ ci-dessous).</p>
 </ul>
 </section>
 <section id="reorganiser-larborescence">
-<h3><span class="section-number">1.5.7. </span>Réorganiser l’arborescence<a class="headerlink" href="#reorganiser-larborescence" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">1.5.7. </span>Réorganiser l’arborescence<a class="headerlink" href="#reorganiser-larborescence" title="Lien permanent vers cette rubrique"></a></h3>
 <p>La réorganisation de l’arborescence d’une structure arborescente
 d’archives importée dans la moulinette ReSIP est réalisable, dans le
 panneau de visualisation et de modification de la structure arborescente
@@ -2588,7 +2587,7 @@ d’archives sous quatre formes :</p>
 archivistique parente (section 5.7.4.).</p></li>
 </ul>
 <section id="creation-et-rajout-dunites-archivistiques">
-<h4><span class="section-number">1.5.7.1. </span>Création et rajout d’unités archivistiques<a class="headerlink" href="#creation-et-rajout-dunites-archivistiques" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">1.5.7.1. </span>Création et rajout d’unités archivistiques<a class="headerlink" href="#creation-et-rajout-dunites-archivistiques" title="Lien permanent vers cette rubrique"></a></h4>
 <p>La moulinette ReSIP permet de :</p>
 <ul class="simple">
 <li><p>créer une nouvelle unité archivistique à la racine ou à n’importe
@@ -2597,7 +2596,7 @@ quel endroit de la structure arborescente d’archives ;</p></li>
 glisser/déposer depuis l’explorateur Windows de l’utilisateur.</p></li>
 </ul>
 <section id="creer-une-nouvelle-unite-archivistique-a-la-racine-ou-a-nimporte-quel-endroit-de-la-structure-arborescente-darchives">
-<h5><span class="section-number">1.5.7.1.1. </span>Créer une nouvelle unité archivistique à la racine ou à n’importe quel endroit de la structure arborescente d’archives<a class="headerlink" href="#creer-une-nouvelle-unite-archivistique-a-la-racine-ou-a-nimporte-quel-endroit-de-la-structure-arborescente-darchives" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">1.5.7.1.1. </span>Créer une nouvelle unité archivistique à la racine ou à n’importe quel endroit de la structure arborescente d’archives<a class="headerlink" href="#creer-une-nouvelle-unite-archivistique-a-la-racine-ou-a-nimporte-quel-endroit-de-la-structure-arborescente-darchives" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Afin de créer une nouvelle unité archivistique dans la structure
 arborescente d’archives, il convient, dans le panneau de visualisation
 et de modification de la structure arborescente d’archives, de :</p>
@@ -2632,7 +2631,7 @@ un fichier enregistré dans l’explorateur de l’utilisateur. La moulinette
 ReSIP crée alors une unité archivistique correspondant à ce fichier.</p>
 </section>
 <section id="rajouter-une-structure-arborescente-de-fichiers-par-simple-glisser-deposer-depuis-lexplorateur-windows-de-lutilisateur">
-<h5><span class="section-number">1.5.7.1.2. </span>Rajouter une structure arborescente de fichiers par simple glisser/déposer depuis l’explorateur Windows de l’utilisateur<a class="headerlink" href="#rajouter-une-structure-arborescente-de-fichiers-par-simple-glisser-deposer-depuis-lexplorateur-windows-de-lutilisateur" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">1.5.7.1.2. </span>Rajouter une structure arborescente de fichiers par simple glisser/déposer depuis l’explorateur Windows de l’utilisateur<a class="headerlink" href="#rajouter-une-structure-arborescente-de-fichiers-par-simple-glisser-deposer-depuis-lexplorateur-windows-de-lutilisateur" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Afin de rajouter une structure arborescente de fichiers ou un fichier à
 la structure arborescente d’archives existante, il convient, dans le
 panneau de visualisation et de modification de la structure arborescente
@@ -2657,7 +2656,7 @@ correspondante (cf. section 5.6.).</p>
 </section>
 </section>
 <section id="deplacement-dunites-archivistiques">
-<h4><span class="section-number">1.5.7.2. </span>Déplacement d’unités archivistiques<a class="headerlink" href="#deplacement-dunites-archivistiques" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">1.5.7.2. </span>Déplacement d’unités archivistiques<a class="headerlink" href="#deplacement-dunites-archivistiques" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Afin de déplacer tout ou partie de la structure arborescente d’archives,
 il convient, dans le panneau de visualisation et de modification de la
 structure arborescente d’archives, de :</p>
@@ -2679,7 +2678,7 @@ définie (cf. copie d’écran ci-dessous).</p>
 <p><img alt="" src="../_images/1000020100000555000002D9FA678860EF029A7C.png" /></p>
 </section>
 <section id="extraction-des-elements-contenus-dans-un-fichier-conteneur-au-format-zip-tar-tarbz2-ou-targz2">
-<h4><span class="section-number">1.5.7.3. </span>Extraction des éléments contenus dans un fichier conteneur au format .zip, .tar, .tarbz2 ou .targz2<a class="headerlink" href="#extraction-des-elements-contenus-dans-un-fichier-conteneur-au-format-zip-tar-tarbz2-ou-targz2" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">1.5.7.3. </span>Extraction des éléments contenus dans un fichier conteneur au format .zip, .tar, .tarbz2 ou .targz2<a class="headerlink" href="#extraction-des-elements-contenus-dans-un-fichier-conteneur-au-format-zip-tar-tarbz2-ou-targz2" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Afin d’extraire les éléments contenus dans un fichier conteneur au
 format .zip, .tar, .tarbz2 ou .targz2, il convient, dans le panneau de
 visualisation et de modification de la structure arborescente
@@ -2715,7 +2714,7 @@ bouton d’action « Fermer » (cf. copie d’écran ci-dessous).</p>
 d’arborescente d’archives.</p>
 </section>
 <section id="suppression-dunites-archivistiques">
-<h4><span class="section-number">1.5.7.4. </span>Suppression d’unités archivistiques<a class="headerlink" href="#suppression-dunites-archivistiques" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">1.5.7.4. </span>Suppression d’unités archivistiques<a class="headerlink" href="#suppression-dunites-archivistiques" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Afin de déplacer tout ou partie de la structure arborescente d’archives,
 il convient, dans le panneau de visualisation et de modification de la
 structure arborescente d’archives, de :</p>
@@ -2733,7 +2732,7 @@ copie d’écran ci-dessous).</p>
 <p>Cette action déclenche le processus de suppression de la structure arborescente à supprimer.</p>
 </section>
 <section id="rattachement-dune-unite-archivistique-a-une-deuxieme-unite-archivistique-parente">
-<h4><span class="section-number">1.5.7.5. </span>Rattachement d’une unité archivistique à une deuxième unité archivistique parente<a class="headerlink" href="#rattachement-dune-unite-archivistique-a-une-deuxieme-unite-archivistique-parente" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">1.5.7.5. </span>Rattachement d’une unité archivistique à une deuxième unité archivistique parente<a class="headerlink" href="#rattachement-dune-unite-archivistique-a-une-deuxieme-unite-archivistique-parente" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Afin de rattacher une unité archivistique ayant déjà une unité
 archivistique parente à une deuxième unité archivistique parente, il
 convient, dans le panneau de visualisation et de modification de la
@@ -2755,9 +2754,9 @@ dans l’arborescence (cf. copie d’écran ci-dessous).</p>
 </section>
 </section>
 <section id="traiter-les-unites-archivistiques">
-<h3><span class="section-number">1.5.8. </span>Traiter les unités archivistiques<a class="headerlink" href="#traiter-les-unites-archivistiques" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">1.5.8. </span>Traiter les unités archivistiques<a class="headerlink" href="#traiter-les-unites-archivistiques" title="Lien permanent vers cette rubrique"></a></h3>
 <section id="dans-linterface-xml-expert">
-<h4><span class="section-number">1.5.8.1. </span>Dans l’interface « XML-expert »<a class="headerlink" href="#dans-linterface-xml-expert" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">1.5.8.1. </span>Dans l’interface « XML-expert »<a class="headerlink" href="#dans-linterface-xml-expert" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Le traitement des unités archivistiques importées dans la moulinette
 ReSIP est réalisable, dans le panneau de visualisation et d’édition des
 métadonnées de l’unité d’archives, sous deux formes :</p>
@@ -2768,7 +2767,7 @@ archivistique (section 5.8.1.1.) ;</p></li>
 5.8.1.2.).</p></li>
 </ul>
 <section id="modification-libre-et-complete-des-metadonnees-de-lunite-archivistique">
-<h5><span class="section-number">1.5.8.1.1. </span>Modification libre et complète des métadonnées de l’unité archivistique<a class="headerlink" href="#modification-libre-et-complete-des-metadonnees-de-lunite-archivistique" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">1.5.8.1.1. </span>Modification libre et complète des métadonnées de l’unité archivistique<a class="headerlink" href="#modification-libre-et-complete-des-metadonnees-de-lunite-archivistique" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Afin de modifier toutes les métadonnées de description et de gestion
 d’une unité archivistique sélectionnée dans le panneau de visualisation
 et de modification de la structure arborescente d’archives, il convient,
@@ -2813,7 +2812,7 @@ telles que modifiées (cf. copie d’écran ci-dessous).</p>
 XML défini par le SEDA 2.1. n’est réalisé.</p>
 </section>
 <section id="ajout-guide-dune-metadonnee-clairement-identifiee">
-<h5><span class="section-number">1.5.8.1.2. </span>Ajout guidé d’une métadonnée clairement identifiée<a class="headerlink" href="#ajout-guide-dune-metadonnee-clairement-identifiee" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">1.5.8.1.2. </span>Ajout guidé d’une métadonnée clairement identifiée<a class="headerlink" href="#ajout-guide-dune-metadonnee-clairement-identifiee" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Afin de rajouter de manière guidée une métadonnée de description ou de
 gestion à une unité archivistique sélectionnée dans le panneau de
 visualisation et de modification de la structure arborescente
@@ -2856,7 +2855,7 @@ et à la sémantique du schéma XML défini par le SEDA 2.1. n’est réalisé.<
 </section>
 </section>
 <section id="dans-linterface-structuree">
-<h4><span class="section-number">1.5.8.2. </span>Dans l’interface « structurée »<a class="headerlink" href="#dans-linterface-structuree" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">1.5.8.2. </span>Dans l’interface « structurée »<a class="headerlink" href="#dans-linterface-structuree" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Le traitement des unités archivistiques importées dans la moulinette
 ReSIP est réalisable, dans le panneau de visualisation et d’édition des
 métadonnées de l’unité d’archives, sous plusieurs formes :</p>
@@ -2873,7 +2872,7 @@ valeurs (section 5.8.2.2.) ;</p></li>
 <li><p>la navigation dans les métadonnées (section 5.8.2.7.)</p></li>
 </ul>
 <section id="modification-de-metadonnees-textuelles">
-<h5><span class="section-number">1.5.8.2.1. </span>Modification de métadonnées textuelles<a class="headerlink" href="#modification-de-metadonnees-textuelles" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">1.5.8.2.1. </span>Modification de métadonnées textuelles<a class="headerlink" href="#modification-de-metadonnees-textuelles" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Afin de modifier des métadonnées d’une unité archivistique sélectionnée
 dans le panneau de visualisation et de modification de la structure
 arborescente d’archives, il convient de :</p>
@@ -2911,7 +2910,7 @@ métadonnées saisies.</p>
 </ul>
 </section>
 <section id="modification-de-metadonnees-presentes-dans-une-liste">
-<h5><span class="section-number">1.5.8.2.2. </span>Modification de métadonnées présentes dans une liste<a class="headerlink" href="#modification-de-metadonnees-presentes-dans-une-liste" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">1.5.8.2.2. </span>Modification de métadonnées présentes dans une liste<a class="headerlink" href="#modification-de-metadonnees-presentes-dans-une-liste" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Afin de modifier des métadonnées d’une unité archivistique sélectionnée
 dans le panneau de visualisation et de modification de la structure
 arborescente d’archives, il convient de :</p>
@@ -2934,7 +2933,7 @@ gestion de l’unité archivistique chargées initialement ou sauvegardées
 dernièrement (cf. section 5.8.2.1.).</p>
 </section>
 <section id="modification-de-date">
-<h5><span class="section-number">1.5.8.2.3. </span>Modification de date<a class="headerlink" href="#modification-de-date" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">1.5.8.2.3. </span>Modification de date<a class="headerlink" href="#modification-de-date" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Afin de modifier des métadonnées d’une unité archivistique sélectionnée
 dans le panneau de visualisation et de modification de la structure
 arborescente d’archives, il convient de :</p>
@@ -2967,7 +2966,7 @@ gestion de l’unité archivistique chargées initialement ou sauvegardées
 dernièrement (cf. section 5.8.2.1.).</p>
 </section>
 <section id="ajout-et-suppression-dattribut">
-<h5><span class="section-number">1.5.8.2.4. </span>Ajout et suppression d’attribut<a class="headerlink" href="#ajout-et-suppression-dattribut" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">1.5.8.2.4. </span>Ajout et suppression d’attribut<a class="headerlink" href="#ajout-et-suppression-dattribut" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Afin d’ajouter un attribut à des métadonnées d’une unité archivistique
 sélectionnée dans le panneau de visualisation et de modification de la
 structure arborescente d’archives, il convient de :</p>
@@ -2991,7 +2990,7 @@ gestion de l’unité archivistique chargées initialement ou sauvegardées
 dernièrement (cf. section 5.8.2.1.).</p>
 </section>
 <section id="ajout-et-suppression-de-metadonnees-existantes">
-<h5><span class="section-number">1.5.8.2.5. </span>Ajout et suppression de métadonnées existantes<a class="headerlink" href="#ajout-et-suppression-de-metadonnees-existantes" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">1.5.8.2.5. </span>Ajout et suppression de métadonnées existantes<a class="headerlink" href="#ajout-et-suppression-de-metadonnees-existantes" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Afin d’ajouter des métadonnées existantes dans une unité archivistique
 sélectionnée dans le panneau de visualisation et de modification de la
 structure arborescente d’archives, il convient de :</p>
@@ -3035,7 +3034,7 @@ gestion de l’unité archivistique chargées initialement ou sauvegardées
 dernièrement (cf. section 5.8.2.1.).</p>
 </section>
 <section id="ajout-guide-de-metadonnees">
-<h5><span class="section-number">1.5.8.2.6. </span>Ajout guidé de métadonnées<a class="headerlink" href="#ajout-guide-de-metadonnees" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">1.5.8.2.6. </span>Ajout guidé de métadonnées<a class="headerlink" href="#ajout-guide-de-metadonnees" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Afin d’ajouter des métadonnées dans une unité archivistique sélectionnée
 dans le panneau de visualisation et de modification de la structure
 arborescente d’archives, il convient de :</p>
@@ -3071,7 +3070,7 @@ description et de gestion de l’unité archivistique chargées initialement
 ou sauvegardées dernièrement (cf. section 5.8.2.1.).</p>
 </section>
 <section id="navigation-dans-les-metadonnees">
-<h5><span class="section-number">1.5.8.2.7. </span>Navigation dans les métadonnées<a class="headerlink" href="#navigation-dans-les-metadonnees" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">1.5.8.2.7. </span>Navigation dans les métadonnées<a class="headerlink" href="#navigation-dans-les-metadonnees" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Afin de mieux comprendre les informations présentes dans le panneau de
 visualisation et d’édition d’une unité archivistique, des explications
 sont données au moyen du survol de la souris sur un chacun des boutons
@@ -3097,9 +3096,9 @@ ci-dessous).</p>
 </section>
 </section>
 <section id="traiter-les-objets-et-leurs-metadonnees">
-<h3><span class="section-number">1.5.9. </span>Traiter les objets et leurs métadonnées<a class="headerlink" href="#traiter-les-objets-et-leurs-metadonnees" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">1.5.9. </span>Traiter les objets et leurs métadonnées<a class="headerlink" href="#traiter-les-objets-et-leurs-metadonnees" title="Lien permanent vers cette rubrique"></a></h3>
 <section id="id14">
-<h4><span class="section-number">1.5.9.1. </span>Dans l’interface « XML-expert »<a class="headerlink" href="#id14" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">1.5.9.1. </span>Dans l’interface « XML-expert »<a class="headerlink" href="#id14" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Le traitement des objets, tant binaires que physiques, importés dans la
 moulinette ReSIP est réalisable, dans le panneau de visualisation de la
 liste des objets et dans le panneau de visualisation et d’édition des
@@ -3113,7 +3112,7 @@ autre fichier (section 5.9.1.1.) ;</p></li>
 5.9.1.3.).</p></li>
 </ul>
 <section id="remplacement-du-fichier-correspondant-a-un-objet-binaire">
-<h5><span class="section-number">1.5.9.1.1. </span>Remplacement du fichier correspondant à un objet binaire<a class="headerlink" href="#remplacement-du-fichier-correspondant-a-un-objet-binaire" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">1.5.9.1.1. </span>Remplacement du fichier correspondant à un objet binaire<a class="headerlink" href="#remplacement-du-fichier-correspondant-a-un-objet-binaire" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Afin de remplacer le fichier correspondant à un objet binaire par un
 autre fichier, il convient, dans le panneau de visualisation de la liste
 des objets, de :</p>
@@ -3135,7 +3134,7 @@ l’objet binaire sont mises à jour dans le panneau de visualisation et
 d’édition des métadonnées de l’objet sélectionné.</p>
 </section>
 <section id="modification-complete-des-metadonnees-de-lobjet">
-<h5><span class="section-number">1.5.9.1.2. </span>Modification complète des métadonnées de l’objet<a class="headerlink" href="#modification-complete-des-metadonnees-de-lobjet" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">1.5.9.1.2. </span>Modification complète des métadonnées de l’objet<a class="headerlink" href="#modification-complete-des-metadonnees-de-lobjet" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Afin de modifier toutes les métadonnées de l’objet sélectionné dans le
 panneau de visualisation de la liste des objets, il convient, dans le
 panneau de visualisation et d’édition des métadonnées de l’objet
@@ -3148,7 +3147,7 @@ décrit dans la section 5.6.1.</p>
 et à la sémantique du schéma XML défini par le SEDA 2.1. n’est réalisé.</p>
 </section>
 <section id="ajout-dun-objet">
-<h5><span class="section-number">1.5.9.1.3. </span>Ajout d’un objet<a class="headerlink" href="#ajout-dun-objet" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">1.5.9.1.3. </span>Ajout d’un objet<a class="headerlink" href="#ajout-dun-objet" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Afin de rajouter un fichier au groupe d’objets techniques existant ou de
 créer un groupe d’objets techniques par l’ajout d’un fichier, il
 convient, dans le panneau de visualisation et d’édition des métadonnées
@@ -3168,7 +3167,7 @@ utilisant la fonction correspondante (cf. section 5.9.1.2).</p>
 </section>
 </section>
 <section id="id15">
-<h4><span class="section-number">1.5.9.2. </span>Dans l’interface « structurée »<a class="headerlink" href="#id15" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">1.5.9.2. </span>Dans l’interface « structurée »<a class="headerlink" href="#id15" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Le traitement des objets, tant binaires que physiques, importés dans la
 moulinette ReSIP est réalisable, dans le panneau de visualisation de la
 liste des objets et dans le panneau de visualisation et d’édition des
@@ -3181,7 +3180,7 @@ autre fichier (section 5.9.2.1.) ;</p></li>
 5.9.2.3.).</p></li>
 </ul>
 <section id="id16">
-<h5><span class="section-number">1.5.9.2.1. </span>Remplacement du fichier correspondant à un objet binaire<a class="headerlink" href="#id16" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">1.5.9.2.1. </span>Remplacement du fichier correspondant à un objet binaire<a class="headerlink" href="#id16" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Afin de remplacer le fichier correspondant à un objet binaire par un
 autre fichier, il convient, dans le panneau de visualisation des
 métadonnées des objets, de :</p>
@@ -3207,7 +3206,7 @@ ci-dessous).</p>
 <p><img alt="" src="../_images/1000020100000555000002D8509CAB520B42B00F.png" /></p>
 </section>
 <section id="modification-des-metadonnees-de-lobjet">
-<h5><span class="section-number">1.5.9.2.2. </span>Modification des métadonnées de l’objet<a class="headerlink" href="#modification-des-metadonnees-de-lobjet" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">1.5.9.2.2. </span>Modification des métadonnées de l’objet<a class="headerlink" href="#modification-des-metadonnees-de-lobjet" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Afin modifier toutes les métadonnées de l’objet sélectionné dans le
 panneau de visualisation et d’édition des métadonnées de l’objet, il
 convient de cliquer sur le chevron dirigé vers la droite et présent à
@@ -3224,7 +3223,7 @@ d’écran ci-dessous).</p>
 décrit dans la section 5.6.2.</p>
 </section>
 <section id="id17">
-<h5><span class="section-number">1.5.9.2.3. </span>Ajout d’un objet<a class="headerlink" href="#id17" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">1.5.9.2.3. </span>Ajout d’un objet<a class="headerlink" href="#id17" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Afin d’ajouter un groupe d’objets techniques à une unité archivistique
 sans objet associé, il convient, dans le panneau de visualisation et
 d’édition des métadonnées de l’objet, de cliquer sur le bouton d’action
@@ -3284,9 +3283,9 @@ fonction correspondante (cf. section 5.9.2.2).</p>
 </section>
 </section>
 <section id="verification-de-la-conformite-de-la-structure-arborescente-darchives-par-rapport-au-seda-2-1">
-<h3><span class="section-number">1.5.10. </span>Vérification de la conformité de la structure arborescente d’archives par rapport au SEDA 2.1.<a class="headerlink" href="#verification-de-la-conformite-de-la-structure-arborescente-darchives-par-rapport-au-seda-2-1" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">1.5.10. </span>Vérification de la conformité de la structure arborescente d’archives par rapport au SEDA 2.1.<a class="headerlink" href="#verification-de-la-conformite-de-la-structure-arborescente-darchives-par-rapport-au-seda-2-1" title="Lien permanent vers cette rubrique"></a></h3>
 <section id="verification-par-rapport-au-schema-par-defaut">
-<h4><span class="section-number">1.5.10.1. </span>Vérification par rapport au schéma par défaut<a class="headerlink" href="#verification-par-rapport-au-schema-par-defaut" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">1.5.10.1. </span>Vérification par rapport au schéma par défaut<a class="headerlink" href="#verification-par-rapport-au-schema-par-defaut" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Afin de vérifier la conformité d’une structure arborescente d’archives
 et de sa description par rapport au schéma par défaut proposé par le
 SEDA 2.1., il convient, dans la moulinette ReSIP, de cliquer sur
@@ -3312,7 +3311,7 @@ d’action « Fermer » (cf. copie d’écran ci-dessous).</p>
 <p><img alt="" src="../_images/1000020100000555000002DCCBBC08B54A0698D6.png" /></p>
 </section>
 <section id="verification-par-rapport-a-un-profil-darchivage-specifique">
-<h4><span class="section-number">1.5.10.2. </span>Vérification par rapport à un profil d’archivage spécifique<a class="headerlink" href="#verification-par-rapport-a-un-profil-darchivage-specifique" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">1.5.10.2. </span>Vérification par rapport à un profil d’archivage spécifique<a class="headerlink" href="#verification-par-rapport-a-un-profil-darchivage-specifique" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Afin de vérifier la conformité d’une structure arborescente d’archives
 et de sa description par rapport à un profil d’archivage conforme au
 SEDA 2.1., il convient, dans la moulinette ReSIP, de cliquer sur
@@ -3332,7 +3331,7 @@ fenêtre de dialogue « Vérification profil SEDA 2.1 », indiquant que
 l’opération de vérification est lancée. Cette opération peut être
 annulée en cliquant sur le bouton d’action « Annuler » de la fenêtre de
 dialogue. Une fois l’opération de vérification, la fenêtre de dialogue
-indique son résultat et les éventuelles non conformités identifiées<a class="footnote-reference brackets" href="#id28" id="id18">7</a>.
+indique son résultat et les éventuelles non conformités identifiées<a class="footnote-reference brackets" href="#id28" id="id18" role="doc-noteref"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></a>.
 La fenêtre de dialogue peut être fermée en cliquant sur le bouton
 d’action « Fermer » (cf. copie d’écran ci-dessous).</p>
 <p><img alt="" src="../_images/1000020100000555000002D833A237C9C9697976.png" /></p>
@@ -3349,7 +3348,7 @@ moulinette ReSIP.</p></li>
 </section>
 </section>
 <section id="consulter-le-manifeste">
-<h3><span class="section-number">1.5.11. </span>Consulter le manifeste<a class="headerlink" href="#consulter-le-manifeste" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">1.5.11. </span>Consulter le manifeste<a class="headerlink" href="#consulter-le-manifeste" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Afin de consulter le manifeste au format .xml correspondant à la
 structure arborescente d’archives en cours de traitement dans la
 moulinette ReSIP, il convient, dans le menu de la moulinette ReSIP, de
@@ -3362,7 +3361,7 @@ XML et d’y faire des recherches (cf. copie d’écran ci-dessous).</p>
 <p><img alt="" src="../_images/1000020100000555000002D6DA0B75D2BABC474C.png" /></p>
 </section>
 <section id="sauvegarder-le-contexte-de-travail-en-cours-de-traitement">
-<h3><span class="section-number">1.5.12. </span>Sauvegarder le contexte de travail en cours de traitement<a class="headerlink" href="#sauvegarder-le-contexte-de-travail-en-cours-de-traitement" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">1.5.12. </span>Sauvegarder le contexte de travail en cours de traitement<a class="headerlink" href="#sauvegarder-le-contexte-de-travail-en-cours-de-traitement" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Afin de sauvegarder un contexte de travail en cours sur une structure
 arborescente d’archives pour reprendre le traitement ultérieurement, il
 convient, dans le menu de la moulinette ReSIP, de cliquer sur l’action
@@ -3383,7 +3382,7 @@ traitement du contexte de travail sauvegardé, la moulinette ReSIP sera
 incapable de recharger ce dernier.</p>
 </section>
 <section id="nettoyer-lespace-de-travail">
-<h3><span class="section-number">1.5.13. </span>Nettoyer l’espace de travail<a class="headerlink" href="#nettoyer-lespace-de-travail" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">1.5.13. </span>Nettoyer l’espace de travail<a class="headerlink" href="#nettoyer-lespace-de-travail" title="Lien permanent vers cette rubrique"></a></h3>
 <p>La moulinette ReSIP opère ses traitements en sauvegardant un certain
 nombre d’informations dans un espace de travail par défaut intitulé
 « Resip », localisé dans le répertoire « Documents » de l’utilisateur.</p>
@@ -3421,7 +3420,7 @@ d’action « Fermer » (cf. copie d’écran ci-dessous).</p>
 </section>
 </section>
 <section id="export-des-donnees">
-<h2><span class="section-number">1.6. </span>Export des données<a class="headerlink" href="#export-des-donnees" title="Lien permanent vers ce titre"></a></h2>
+<h2><span class="section-number">1.6. </span>Export des données<a class="headerlink" href="#export-des-donnees" title="Lien permanent vers cette rubrique"></a></h2>
 <p>Il est possible d’exporter, depuis la moulinette ReSIP, une structure
 arborescente d’archives sous plusieurs formes différentes :</p>
 <ul class="simple">
@@ -3436,7 +3435,7 @@ métadonnées au format .csv, zippée ou non (section 6.5.) ;</p></li>
 </ul>
 <p>L’export est paramétrable (section 6.1.).</p>
 <section id="parametrage-des-exports">
-<h3><span class="section-number">1.6.1. </span>Paramétrage des exports<a class="headerlink" href="#parametrage-des-exports" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">1.6.1. </span>Paramétrage des exports<a class="headerlink" href="#parametrage-des-exports" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Les modalités d’export des structures arborescentes d’archives peuvent
 être paramétrées :</p>
 <ul class="simple">
@@ -3459,7 +3458,7 @@ globales » et « Métadonnées globales étendues ») (section 6.1.1.) ;</p
 manifeste (onglet « import/export ») (section 6.1.2.).</p></li>
 </ul>
 <section id="parametrage-des-metadonnees-de-len-tete-et-du-bloc-managementmetadata-du-manifeste">
-<h4><span class="section-number">1.6.1.1. </span>Paramétrage des métadonnées de l’en-tête et du bloc ManagementMetadata du manifeste<a class="headerlink" href="#parametrage-des-metadonnees-de-len-tete-et-du-bloc-managementmetadata-du-manifeste" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">1.6.1.1. </span>Paramétrage des métadonnées de l’en-tête et du bloc ManagementMetadata du manifeste<a class="headerlink" href="#parametrage-des-metadonnees-de-len-tete-et-du-bloc-managementmetadata-du-manifeste" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Peuvent être paramétrés depuis l’interface d’édition des paramètres par
 défaut ouverts par un clic sur la sous-action « Préférences » :</p>
 <ul>
@@ -3513,7 +3512,7 @@ onglets de la fenêtre de dialogue.</p></li>
 </ul>
 </section>
 <section id="parametrage-des-modalites-de-structuration-du-fichier-xml-correspondant-au-manifeste">
-<h4><span class="section-number">1.6.1.2. </span>Paramétrage des modalités de structuration du fichier XML correspondant au manifeste<a class="headerlink" href="#parametrage-des-modalites-de-structuration-du-fichier-xml-correspondant-au-manifeste" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">1.6.1.2. </span>Paramétrage des modalités de structuration du fichier XML correspondant au manifeste<a class="headerlink" href="#parametrage-des-modalites-de-structuration-du-fichier-xml-correspondant-au-manifeste" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Peuvent être paramétrées depuis l’interface d’édition des paramètres par
 défaut ouverte par un clic sur la sous-action « Préférences », depuis
 l’onglet « Export » (cf. copie d’écran ci-dessous) :</p>
@@ -3540,7 +3539,7 @@ archivistique.</p>
 la structure arborescente d’archives en cours de traitement.</p>
 </section>
 <section id="parametrage-des-modalites-de-structuration-du-fichier-csv-exporte">
-<h4><span class="section-number">1.6.1.3. </span>Paramétrage des modalités de structuration du fichier CSV exporté<a class="headerlink" href="#parametrage-des-modalites-de-structuration-du-fichier-csv-exporte" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">1.6.1.3. </span>Paramétrage des modalités de structuration du fichier CSV exporté<a class="headerlink" href="#parametrage-des-modalites-de-structuration-du-fichier-csv-exporte" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Peuvent être paramétrées depuis l’interface d’édition des paramètres par
 défaut ouverte par un clic sur la sous-action « Préférences », depuis
 l’onglet « Export » (cf. copie d’écran ci-dessous) :</p>
@@ -3559,7 +3558,7 @@ la structure arborescente d’archives en cours de traitement et du CSV.</p>
 </section>
 </section>
 <section id="export-de-la-structure-arborescente-darchives-sous-la-forme-dun-sip">
-<h3><span class="section-number">1.6.2. </span>Export de la structure arborescente d’archives sous la forme d’un SIP<a class="headerlink" href="#export-de-la-structure-arborescente-darchives-sous-la-forme-dun-sip" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">1.6.2. </span>Export de la structure arborescente d’archives sous la forme d’un SIP<a class="headerlink" href="#export-de-la-structure-arborescente-darchives-sous-la-forme-dun-sip" title="Lien permanent vers cette rubrique"></a></h3>
 <p>La moulinette ReSIP permet d’exporter une structure arborescente
 d’archives en cours de traitement sous la forme d’un SIP conforme au
 SEDA 2.1. et aux spécifications particulières de la solution logicielle
@@ -3596,7 +3595,7 @@ défaut, il conviendra de les modifier dans un éditeur XML ou dans un
 logicielle Vitam.</p>
 </section>
 <section id="export-de-la-structure-arborescente-darchives-sous-la-forme-dun-manifeste-xml">
-<h3><span class="section-number">1.6.3. </span>Export de la structure arborescente d’archives sous la forme d’un manifeste XML<a class="headerlink" href="#export-de-la-structure-arborescente-darchives-sous-la-forme-dun-manifeste-xml" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">1.6.3. </span>Export de la structure arborescente d’archives sous la forme d’un manifeste XML<a class="headerlink" href="#export-de-la-structure-arborescente-darchives-sous-la-forme-dun-manifeste-xml" title="Lien permanent vers cette rubrique"></a></h3>
 <p>La moulinette ReSIP permet d’exporter une structure arborescente
 d’archives en cours de traitement sous la forme d’un manifeste de SIP
 conforme au SEDA 2.1. et aux spécifications particulières de la solution
@@ -3617,7 +3616,7 @@ cliquant sur le bouton d’action « Enregistrer ».</p>
 consultable dans le répertoire défini.</p>
 </section>
 <section id="export-sous-forme-darborescence-de-fichiers">
-<h3><span class="section-number">1.6.4. </span>Export sous forme d’arborescence de fichiers<a class="headerlink" href="#export-sous-forme-darborescence-de-fichiers" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">1.6.4. </span>Export sous forme d’arborescence de fichiers<a class="headerlink" href="#export-sous-forme-darborescence-de-fichiers" title="Lien permanent vers cette rubrique"></a></h3>
 <p>La moulinette ReSIP permet d’exporter une structure arborescente
 d’archives en cours de traitement, qu’elle ait été importée sous forme
 d’arborescence de fichiers, de SIP ou de DIP, sous la forme d’une
@@ -3677,7 +3676,7 @@ l’action « Traiter » puis sur la sous-action « Régénérer des ID
 continus ».</p>
 </section>
 <section id="export-sous-forme-darborescence-de-fichiers-accompagnee-dun-fichier-csv-decrivant-une-structure-arborescente-darchives-et-ou-de-fichiers">
-<h3><span class="section-number">1.6.5. </span>Export sous forme d’arborescence de fichiers accompagnée d’un fichier .csv décrivant une structure arborescente d’archives et/ou de fichiers<a class="headerlink" href="#export-sous-forme-darborescence-de-fichiers-accompagnee-dun-fichier-csv-decrivant-une-structure-arborescente-darchives-et-ou-de-fichiers" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">1.6.5. </span>Export sous forme d’arborescence de fichiers accompagnée d’un fichier .csv décrivant une structure arborescente d’archives et/ou de fichiers<a class="headerlink" href="#export-sous-forme-darborescence-de-fichiers-accompagnee-dun-fichier-csv-decrivant-une-structure-arborescente-darchives-et-ou-de-fichiers" title="Lien permanent vers cette rubrique"></a></h3>
 <p>La moulinette ReSIP permet d’exporter une structure arborescente
 d’archives en cours de traitement, qu’elle ait été importée sous forme
 d’arborescence de fichiers, de SIP ou de DIP, sous la forme d’une
@@ -3726,7 +3725,7 @@ chacun des objets.</p></li>
 </ul>
 </section>
 <section id="export-sous-forme-dun-fichier-csv-decrivant-une-structure-arborescente-darchives-et-ou-de-fichiers">
-<h3><span class="section-number">1.6.6. </span>Export sous forme d’un fichier .csv décrivant une structure arborescente d’archives et/ou de fichiers<a class="headerlink" href="#export-sous-forme-dun-fichier-csv-decrivant-une-structure-arborescente-darchives-et-ou-de-fichiers" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">1.6.6. </span>Export sous forme d’un fichier .csv décrivant une structure arborescente d’archives et/ou de fichiers<a class="headerlink" href="#export-sous-forme-dun-fichier-csv-decrivant-une-structure-arborescente-darchives-et-ou-de-fichiers" title="Lien permanent vers cette rubrique"></a></h3>
 <p>La moulinette ReSIP permet d’exporter une structure arborescente
 d’archives en cours de traitement, qu’elle ait été importée sous forme
 d’arborescence de fichiers, de SIP ou de DIP, sous la forme d’un fichier
@@ -3741,7 +3740,7 @@ des métadonnées » (cf. copie d’écran ci-dessous).</p>
 </section>
 </section>
 <section id="annexe-preparer-un-fichier-csv">
-<h2><span class="section-number">1.7. </span>Annexe. Préparer un fichier CSV<a class="headerlink" href="#annexe-preparer-un-fichier-csv" title="Lien permanent vers ce titre"></a></h2>
+<h2><span class="section-number">1.7. </span>Annexe. Préparer un fichier CSV<a class="headerlink" href="#annexe-preparer-un-fichier-csv" title="Lien permanent vers cette rubrique"></a></h2>
 <p>La solution logicielle Vitam permet d’importer deux référentiels
 correspondant à des fichiers CSV :</p>
 <ul class="simple">
@@ -3758,7 +3757,7 @@ logicielle Vitam.</p>
 <li><p>émettre des recommandations sur les règles à respecter.</p></li>
 </ul>
 <section id="caracteristiques-dun-fichier-csv">
-<h3><span class="section-number">1.7.1. </span>Caractéristiques d’un fichier CSV<a class="headerlink" href="#caracteristiques-dun-fichier-csv" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">1.7.1. </span>Caractéristiques d’un fichier CSV<a class="headerlink" href="#caracteristiques-dun-fichier-csv" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Un fichier CSV représente des données tabulaires sous forme de valeurs
 séparées par :</p>
 <ul class="simple">
@@ -3776,7 +3775,7 @@ supporte pas. Il est interdit de les utiliser.</p>
 </pre></div>
 </div>
 <p>Équivalent sous forme de tableau :</p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Identifier</p></th>
 <th class="head"><p>Name</p></th>
@@ -3815,7 +3814,7 @@ attendus du titre de colonne.</p></li>
 </ul>
 </section>
 <section id="recommandations">
-<h3><span class="section-number">1.7.2. </span>Recommandations<a class="headerlink" href="#recommandations" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">1.7.2. </span>Recommandations<a class="headerlink" href="#recommandations" title="Lien permanent vers cette rubrique"></a></h3>
 <p>La rédaction d’un fichier CSV obéit à un certain nombre de règles à
 suivre :</p>
 <ul class="simple">
@@ -3825,7 +3824,7 @@ par la solution logicielle Vitam ;</p></li>
 <li><p>afin, finalement, de pouvoir être parsé et importé sans erreur dans
 la solution logicielle Vitam.</p></li>
 </ul>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Intitulé</p></th>
 <th class="head"><p>Description</p></th>
@@ -3933,9 +3932,9 @@ la solution logicielle Vitam.</p></li>
 </table>
 </section>
 <section id="gestion-dun-fichier-au-format-csv">
-<h3><span class="section-number">1.7.3. </span>Gestion d’un fichier au format CSV<a class="headerlink" href="#gestion-dun-fichier-au-format-csv" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">1.7.3. </span>Gestion d’un fichier au format CSV<a class="headerlink" href="#gestion-dun-fichier-au-format-csv" title="Lien permanent vers cette rubrique"></a></h3>
 <section id="conversion-dun-fichier-au-format-csv">
-<h4><span class="section-number">1.7.3.1. </span>Conversion d’un fichier au format CSV<a class="headerlink" href="#conversion-dun-fichier-au-format-csv" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">1.7.3.1. </span>Conversion d’un fichier au format CSV<a class="headerlink" href="#conversion-dun-fichier-au-format-csv" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Les référentiels des règles de gestion et des services agents doivent
 être au format CSV et encodés en UTF 8.</p>
 <p>Si le fichier d’origine n’est pas au format CSV, il faut suivre la
@@ -3971,7 +3970,7 @@ modifications ;</p></li>
 </ul>
 </section>
 <section id="modification-dun-fichier-au-format-csv">
-<h4><span class="section-number">1.7.3.2. </span>Modification d’un fichier au format CSV<a class="headerlink" href="#modification-dun-fichier-au-format-csv" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">1.7.3.2. </span>Modification d’un fichier au format CSV<a class="headerlink" href="#modification-dun-fichier-au-format-csv" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Les référentiels des règles de gestion et des services agents doivent
 être au format CSV et encodés en UTF 8.</p>
 <p>Pour modifier un fichier de ce format, il faut suivre la procédure
@@ -4011,7 +4010,7 @@ lequel il est ouvert à des fins de visualisation.</p></li>
 Vitam</p>
 <p><strong>Import initial d’un référentiel des services agents</strong></p>
 <p>(<strong>Attention</strong>, le tableau ci-dessous dispose d’une colonne « Commentaire » à droite)</p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p></p></th>
 <th class="head"><p>Résultat</p></th>
@@ -4076,23 +4075,23 @@ Vitam</p>
 </section>
 </section>
 <section id="annexe-controle-de-conformite-a-un-profil-darchivage">
-<h2><span class="section-number">1.8. </span>Annexe. Contrôle de conformité à un profil d’archivage<a class="headerlink" href="#annexe-controle-de-conformite-a-un-profil-darchivage" title="Lien permanent vers ce titre"></a></h2>
+<h2><span class="section-number">1.8. </span>Annexe. Contrôle de conformité à un profil d’archivage<a class="headerlink" href="#annexe-controle-de-conformite-a-un-profil-darchivage" title="Lien permanent vers cette rubrique"></a></h2>
 <p>ReSIP permet de contrôler le manifeste chargé sur l’interface par
 rapport à un profil d’archivage au format XSD ou RNG.</p>
 <section id="id19">
-<h3><span class="section-number">1.8.1. </span>Recommandations<a class="headerlink" href="#id19" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">1.8.1. </span>Recommandations<a class="headerlink" href="#id19" title="Lien permanent vers cette rubrique"></a></h3>
 <section id="dans-la-redaction-du-profil-darchivage">
-<h4><span class="section-number">1.8.1.1. </span>Dans la rédaction du profil d’archivage<a class="headerlink" href="#dans-la-redaction-du-profil-darchivage" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">1.8.1.1. </span>Dans la rédaction du profil d’archivage<a class="headerlink" href="#dans-la-redaction-du-profil-darchivage" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Il est recommandé de créer un profil d’archivage à l’aide du Service
-hébergé pour la rédaction de profils d’archivage (SHERPA)<a class="footnote-reference brackets" href="#id29" id="id20">8</a>, mis à
+hébergé pour la rédaction de profils d’archivage (SHERPA)<a class="footnote-reference brackets" href="#id29" id="id20" role="doc-noteref"><span class="fn-bracket">[</span>8<span class="fn-bracket">]</span></a>, mis à
 disposition par le Service interministériel des Archives de France, ou
 depuis un éditeur XML, puis de procéder à des modifications manuelles
 sur le profil d’archivage extrait de SHERPA, à l’aide d’un éditeur
-XML<a class="footnote-reference brackets" href="#id30" id="id21">9</a>.</p>
+XML<a class="footnote-reference brackets" href="#id30" id="id21" role="doc-noteref"><span class="fn-bracket">[</span>9<span class="fn-bracket">]</span></a>.</p>
 <p>Pour utiliser le profil d’archivage dans ReSIP, il faut prendre en
 compte deux spécificités :</p>
 <section id="la-declaration-des-groupes-dobjets-techniques">
-<h5><span class="section-number">1.8.1.1.1. </span>La déclaration des groupes d’objets techniques<a class="headerlink" href="#la-declaration-des-groupes-dobjets-techniques" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">1.8.1.1.1. </span>La déclaration des groupes d’objets techniques<a class="headerlink" href="#la-declaration-des-groupes-dobjets-techniques" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Le SEDA permet de déclarer les <strong>objets techniques</strong> de deux manières :</p>
 <ul class="simple">
 <li><p>soit une liste d’objets techniques qui déclarent chacun leur
@@ -4178,7 +4177,7 @@ une non conformité entre le manifeste chargé et le profil d’archivage.</p>
 </div>
 </section>
 <section id="la-hierarchisation-des-unites-archivistiques">
-<h5><span class="section-number">1.8.1.1.2. </span>La hiérarchisation des unités archivistiques<a class="headerlink" href="#la-hierarchisation-des-unites-archivistiques" title="Lien permanent vers ce titre"></a></h5>
+<h5><span class="section-number">1.8.1.1.2. </span>La hiérarchisation des unités archivistiques<a class="headerlink" href="#la-hierarchisation-des-unites-archivistiques" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Le SEDA permet également de reproduire la <strong>hiérarchie entre les unités
 archivistiques</strong> de deux manières :</p>
 <ul class="simple">
@@ -4195,7 +4194,7 @@ c’est-à-dire emboîtées les unes à la suite des autres.</p>
 </section>
 </section>
 <section id="dans-resip">
-<h4><span class="section-number">1.8.1.2. </span>Dans ReSIP<a class="headerlink" href="#dans-resip" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">1.8.1.2. </span>Dans ReSIP<a class="headerlink" href="#dans-resip" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Dans ReSIP, il faut veiller à paramétrer le mode d’enregistrement des
 unités archivistiques avant leur import dans l’outil.</p>
 <p>Pour ce faire, depuis l’interface d’édition des paramètres, ouverte par
@@ -4216,7 +4215,7 @@ forme <strong>linéaire</strong> et non pas indentée.
 </section>
 </section>
 <section id="messages-derreur-rencontres">
-<h3><span class="section-number">1.8.2. </span>Messages d’erreur rencontrés<a class="headerlink" href="#messages-derreur-rencontres" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">1.8.2. </span>Messages d’erreur rencontrés<a class="headerlink" href="#messages-derreur-rencontres" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Lors d’un contrôle de conformité à un profil d’archivage, les erreurs
 retournées par ReSIP peuvent provenir :</p>
 <ul class="simple">
@@ -4230,7 +4229,7 @@ métadonnées importées.</p></li>
 vérifier le contenu du manifeste et celui du profil d’archivage.</p>
 <p><strong>Nota bene</strong> : Cette liste n’est pas forcément exhaustive.</p>
 <section id="erreur-1">
-<h4><span class="section-number">1.8.2.1. </span>Erreur 1<a class="headerlink" href="#erreur-1" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">1.8.2.1. </span>Erreur 1<a class="headerlink" href="#erreur-1" title="Lien permanent vers cette rubrique"></a></h4>
 <p><strong>Message retourné par ReSIP:</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>position de l&#39;erreur identifiée: ligne 1, colonne 334
 ligne: &lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;?&gt;&lt;ArchiveTransfer xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xmlns:pr=&quot;info:lc/xmlns/premis-v2&quot; xmlns=&quot;fr:gouv:culture:archivesdefrance:seda:v2.1&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;fr:gouv:culture:archivesdefrance:seda:v2.1 seda-2.1-main.xsd&quot; xml:id=&quot;ID1&quot;&gt;
@@ -4257,7 +4256,7 @@ Dans le profil d’archivage, rajouter un attribut correspondant au namespace :
 </div>
 </section>
 <section id="erreur-2">
-<h4><span class="section-number">1.8.2.2. </span>Erreur 2<a class="headerlink" href="#erreur-2" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">1.8.2.2. </span>Erreur 2<a class="headerlink" href="#erreur-2" title="Lien permanent vers cette rubrique"></a></h4>
 <p><strong>Message retourné par ReSIP:</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">position</span> <span class="n">de</span> <span class="n">l</span><span class="s1">&#39;erreur identifiée: ligne 24, colonne 32</span>
 <span class="n">ligne</span><span class="p">:</span>     <span class="o">&lt;</span><span class="n">DataObjectGroup</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;ID15&quot;</span><span class="o">&gt;</span>
@@ -4272,7 +4271,7 @@ Pour rappel, ReSIP génère des objets binaires encapsulés dans un groupe d’o
 Il est recommandé d’ouvrir le manifeste pour vérifier comment sont déclarés les groupes d’objets techniques, puis de faire de même dans le profil d’archivage et de corriger l’erreur.</p>
 </section>
 <section id="erreur-3">
-<h4><span class="section-number">1.8.2.3. </span>Erreur 3<a class="headerlink" href="#erreur-3" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">1.8.2.3. </span>Erreur 3<a class="headerlink" href="#erreur-3" title="Lien permanent vers cette rubrique"></a></h4>
 <p><strong>Message retourné par ReSIP:</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">position</span> <span class="n">de</span> <span class="n">l</span><span class="s1">&#39;erreur identifiée: ligne 7, colonne 27</span>
 <span class="n">ligne</span><span class="p">:</span>     <span class="o">&lt;</span><span class="n">ReplyCodeListVersion</span><span class="o">&gt;</span><span class="n">ReplyCodeListVersion0</span><span class="o">&lt;/</span><span class="n">ReplyCodeListVersion</span><span class="o">&gt;</span>
@@ -4287,7 +4286,7 @@ Pour rappel, ReSIP génère des objets binaires encapsulés dans un groupe d’o
 Il est recommandé d’ouvrir le manifeste pour vérifier comment sont déclarés les groupes d’objets techniques, puis de faire de même dans le profil d’archivage et de corriger l’erreur.</p>
 </section>
 <section id="erreur-4">
-<h4><span class="section-number">1.8.2.4. </span>Erreur 4<a class="headerlink" href="#erreur-4" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">1.8.2.4. </span>Erreur 4<a class="headerlink" href="#erreur-4" title="Lien permanent vers cette rubrique"></a></h4>
 <p><strong>Message retourné par ReSIP:</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">position</span> <span class="n">de</span> <span class="n">l</span><span class="s1">&#39;erreur identifiée: ligne 7, colonne 27</span>
 <span class="n">ligne</span><span class="p">:</span>     <span class="o">&lt;</span><span class="n">ReplyCodeListVersion</span><span class="o">&gt;</span><span class="n">ReplyCodeListVersion0</span><span class="o">&lt;/</span><span class="n">ReplyCodeListVersion</span><span class="o">&gt;</span>
@@ -4301,7 +4300,7 @@ Il faut vérifier si ReplyCodeListVersion n’est pas un champ obligatoire du SE
 S’il n’est pas obligatoire, ce qui est le cas pour cet élément-là, retirer le champ de la liste des champs contextuels générés par ReSIP, en cliquant sur Contexte &gt; Editer les informations d’export &gt; Métadonnées globales étendues.</p>
 </section>
 <section id="erreur-5">
-<h4><span class="section-number">1.8.2.5. </span>Erreur 5<a class="headerlink" href="#erreur-5" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">1.8.2.5. </span>Erreur 5<a class="headerlink" href="#erreur-5" title="Lien permanent vers cette rubrique"></a></h4>
 <p><strong>Message retourné par ReSIP:</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">position</span> <span class="n">de</span> <span class="n">l</span><span class="s1">&#39;erreur identifiée: ligne 6, colonne 22</span>
 <span class="n">ligne</span><span class="p">:</span>   <span class="o">&lt;</span><span class="n">DataObjectPackage</span><span class="o">&gt;</span>
@@ -4317,7 +4316,7 @@ L’élément CodeListVersions, obligatoire dans le SEDA, est absent.</p>
 </ul>
 </section>
 <section id="erreur-6">
-<h4><span class="section-number">1.8.2.6. </span>Erreur 6<a class="headerlink" href="#erreur-6" title="Lien permanent vers ce titre"></a></h4>
+<h4><span class="section-number">1.8.2.6. </span>Erreur 6<a class="headerlink" href="#erreur-6" title="Lien permanent vers cette rubrique"></a></h4>
 <p><strong>Message retourné par ReSIP:</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">position</span> <span class="n">de</span> <span class="n">l</span><span class="s1">&#39;erreur identifiée: ligne 2, colonne 78</span>
 <span class="n">ligne</span><span class="p">:</span>   <span class="o">&lt;</span><span class="n">Comment</span><span class="o">&gt;</span><span class="n">Matrice</span><span class="o">&lt;/</span><span class="n">Comment</span><span class="o">&gt;</span>
@@ -4331,7 +4330,7 @@ Dans le manifeste, il faut corriger la valeur de l’élément Comment par la va
 </section>
 </section>
 <section id="exemple-de-profil-darchivage">
-<h3><span class="section-number">1.8.3. </span>Exemple de profil d’archivage<a class="headerlink" href="#exemple-de-profil-darchivage" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">1.8.3. </span>Exemple de profil d’archivage<a class="headerlink" href="#exemple-de-profil-darchivage" title="Lien permanent vers cette rubrique"></a></h3>
 <p><strong>Nota bene</strong>: le cas présenté ci-dessous est un exemple fictif, ne comportant pas de référence à un groupe d’objets techniques.</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&#39;1.0&#39; encoding=&#39;utf-8&#39; standalone=&#39;no&#39;?&gt;</span>
 <span class="nt">&lt;rng:grammar</span><span class="w"> </span><span class="na">xmlns:a=</span><span class="s">&quot;http://relaxng.org/ns/compatibility/annotations/1.0&quot;</span><span class="w"> </span><span class="na">xmlns:rng=</span><span class="s">&quot;http://relaxng.org/ns/structure/1.0&quot;</span><span class="w"> </span><span class="na">xmlns:seda=</span><span class="s">&quot;fr:gouv:culture:archivesdefrance:seda:v2.1&quot;</span><span class="w"> </span><span class="na">xmlns:xlink=</span><span class="s">&quot;http://www.w3.org/1999/xlink&quot;</span><span class="w"> </span><span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;fr:gouv:culture:archivesdefrance:seda:v2.1&quot;</span><span class="w"> </span><span class="na">datatypeLibrary=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-datatypes&quot;</span><span class="w"> </span><span class="na">ns=</span><span class="s">&quot;fr:gouv:culture:archivesdefrance:seda:v2.1&quot;</span><span class="nt">&gt;</span>
@@ -5354,47 +5353,56 @@ Dans le manifeste, il faut corriger la valeur de l’élément Comment par la va
 </section>
 </section>
 <section id="renvois">
-<h2><span class="section-number">1.9. </span>Renvois<a class="headerlink" href="#renvois" title="Lien permanent vers ce titre"></a></h2>
+<h2><span class="section-number">1.9. </span>Renvois<a class="headerlink" href="#renvois" title="Lien permanent vers cette rubrique"></a></h2>
 <hr class="footnotes docutils" />
-<dl class="footnote brackets">
-<dt class="label" id="id22"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>Lien vérifié le 02/03/2022.</p>
-</dd>
-<dt class="label" id="id23"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
-<dd><p><strong>Lien vérifié le 09/08/2021</strong></p>
-</dd>
-<dt class="label" id="id24"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
-<dd><p>Lien vérifié le 09/08/2021</p>
-</dd>
-<dt class="label" id="id25"><span class="brackets"><a class="fn-backref" href="#id4">4</a></span></dt>
-<dd><p>Voir également partie 5.1 du présent document.</p>
-</dd>
-<dt class="label" id="id26"><span class="brackets"><a class="fn-backref" href="#id8">5</a></span></dt>
-<dd><p>Si on souhaite importer un fichier .csv avec des objets
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id22" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Lien vérifié le 02/03/2022.</p>
+</aside>
+<aside class="footnote brackets" id="id23" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p><strong>Lien vérifié le 09/08/2021</strong></p>
+</aside>
+<aside class="footnote brackets" id="id24" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">3</a><span class="fn-bracket">]</span></span>
+<p>Lien vérifié le 09/08/2021</p>
+</aside>
+<aside class="footnote brackets" id="id25" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">4</a><span class="fn-bracket">]</span></span>
+<p>Voir également partie 5.1 du présent document.</p>
+</aside>
+<aside class="footnote brackets" id="id26" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id8">5</a><span class="fn-bracket">]</span></span>
+<p>Si on souhaite importer un fichier .csv avec des objets
 numériques associés, se référer au chapitre 4.6 « Import depuis un
 fichier .csv décrivant une structure arborescente d’archives et/ou
 de fichiers » du présent document.</p>
-</dd>
-<dt class="label" id="id27"><span class="brackets"><a class="fn-backref" href="#id10">6</a></span></dt>
-<dd><p>L’annexe « Préparer un fichier .csv » apporte quelques conseils
+</aside>
+<aside class="footnote brackets" id="id27" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id10">6</a><span class="fn-bracket">]</span></span>
+<p>L’annexe « Préparer un fichier .csv » apporte quelques conseils
 pour effectuer cette opération.</p>
-</dd>
-<dt class="label" id="id28"><span class="brackets"><a class="fn-backref" href="#id18">7</a></span></dt>
-<dd><p>Pour plus de précisions sur les contrôles de conformité,
+</aside>
+<aside class="footnote brackets" id="id28" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id18">7</a><span class="fn-bracket">]</span></span>
+<p>Pour plus de précisions sur les contrôles de conformité,
 consulter l’annexe « Contrôle de conformité à un profil
 d’archivage » du présent document.</p>
-</dd>
-<dt class="label" id="id29"><span class="brackets"><a class="fn-backref" href="#id20">8</a></span></dt>
-<dd><p>Le service et sa documentation sont disponibles à l’adresse
+</aside>
+<aside class="footnote brackets" id="id29" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id20">8</a><span class="fn-bracket">]</span></span>
+<p>Le service et sa documentation sont disponibles à l’adresse
 suivante : <a class="reference external" href="https://www.francearchives.fr/sherpa/">https://www.francearchives.fr/sherpa/</a> (Lien consulté le
 24 novembre 2019).</p>
-</dd>
-<dt class="label" id="id30"><span class="brackets"><a class="fn-backref" href="#id21">9</a></span></dt>
-<dd><p>Se référer à la documentation <em>Profils d’archivage</em> et, plus
+</aside>
+<aside class="footnote brackets" id="id30" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id21">9</a><span class="fn-bracket">]</span></span>
+<p>Se référer à la documentation <em>Profils d’archivage</em> et, plus
 particulièrement, au chapitre 5.2 « Structuration des données à
 verser » de ce document.</p>
-</dd>
-</dl>
+</aside>
+</aside>
 </section>
 </section>
 

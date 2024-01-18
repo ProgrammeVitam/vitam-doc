@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="fr" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>1. Conservation de la valeur probante &mdash; Vitam documentation fonctionnelle</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
   
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/translations.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
     <link rel="next" title="2. Les éliminations avec la solution logicielle Vitam" href="eliminations.html" />
-    <link rel="prev" title="2. Présentation du programme Vitam" href="presentation_programme.html" /> 
+    <link rel="prev" title="3. Guide de prise en main de la solution logicielle Vitam – Vitam UI" href="guide_prise_en_main.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -48,6 +47,8 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="guide_lecture.html">1. Documentation Vitam - guide de lecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="presentation_programme.html">2. Présentation du programme Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_prise_en_main.html">3. Guide de prise en main de la solution logicielle Vitam – Vitam UI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_prise_en_main.html#realiser-une-premiere-entree">4. <em>Réaliser une première entrée</em></a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">documentation métier</span></p>
 <ul class="current">
@@ -95,7 +96,8 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">documentation Vitam UI</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="VitamUI_Arbres_Plans.html">1. APP Arbres et plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Autoprovisionning.html">1. Vitam UI : présentation de la fonctionnalité d’auto-provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Arbres_Plans.html">2. APP Arbres et plans</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">outils connexes</span></p>
 <ul>
@@ -160,17 +162,17 @@
 
            <div itemprop="articleBody">
              
-  <section class="tex2jax_ignore mathjax_ignore" id="conservation-de-la-valeur-probante">
-<h1><span class="section-number">1. </span>Conservation de la valeur probante<a class="headerlink" href="#conservation-de-la-valeur-probante" title="Lien permanent vers ce titre"></a></h1>
+  <section id="conservation-de-la-valeur-probante">
+<h1><span class="section-number">1. </span>Conservation de la valeur probante<a class="headerlink" href="#conservation-de-la-valeur-probante" title="Lien permanent vers cette rubrique"></a></h1>
 <section id="introduction">
-<h2><span class="section-number">1.1. </span>Introduction<a class="headerlink" href="#introduction" title="Lien permanent vers ce titre"></a></h2>
+<h2><span class="section-number">1.1. </span>Introduction<a class="headerlink" href="#introduction" title="Lien permanent vers cette rubrique"></a></h2>
 <section id="documents-de-reference">
-<h3><span class="section-number">1.1.1. </span>Documents de référence<a class="headerlink" href="#documents-de-reference" title="Lien permanent vers ce titre"></a></h3>
-<table class="colwidths-auto docutils align-default">
+<h3><span class="section-number">1.1.1. </span>Documents de référence<a class="headerlink" href="#documents-de-reference" title="Lien permanent vers cette rubrique"></a></h3>
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p>Document</p></th>
-<th class="text-center head"><p>Date de la version</p></th>
-<th class="text-center head"><p>Remarques</p></th>
+<tr class="row-odd"><th class="head text-center"><p>Document</p></th>
+<th class="head text-center"><p>Date de la version</p></th>
+<th class="head text-center"><p>Remarques</p></th>
 </tr>
 </thead>
 <tbody>
@@ -194,14 +196,14 @@
 </table>
 </section>
 <section id="presentation-du-document">
-<h3><span class="section-number">1.1.2. </span>Présentation du document<a class="headerlink" href="#presentation-du-document" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">1.1.2. </span>Présentation du document<a class="headerlink" href="#presentation-du-document" title="Lien permanent vers cette rubrique"></a></h3>
 <p>La conservation de la valeur probante est un sujet central d’un système d’archivage électronique. L’objectif est de rendre prouvable toute opération effectuée sur toute unité archivistique ou tout objet qui lui est associé. Toutefois, vu les volumétries envisagées dans les implémentations de la solution logicielle Vitam, il est illusoire de gérer ceci objet par objet, en mettant en œuvre des principes cryptographiques (signatures des objets, des actions unitaires, etc.) ; cela induirait une gestion lourde et porterait même des risques d’écroulement de confiance en cas de corruption de quelques clés. La sécurité d’un SAE doit être systémique, c’est-à-dire reposer sur un faisceau d’éléments redondants dont la modification simultanée et cohérente est impossible, ou plus exactement non réalisable en pratique. Les journaux constituent un élément central de cette sécurité systémique.
 Le cadre fourni pour la conservation de la valeur probante par les normes NF Z 42‑013, NF Z 42‑020 mais aussi le guide d’application GA Z42-019, a été pris en compte et complété dans la solution logicielle Vitam.
 Ce document présente rapidement, d’un point de vue fonctionnel, le mécanisme de journalisation métier et de sécurisation de ces journaux qui est une brique essentielle de la conservation de la valeur probante dans la solution logicielle Vitam . Il décrit aussi le « relevé de valeur probante », attestation au sens de la NF Z 42‑013 de la conservation de la valeur probante qui peut être obtenue via une API. Ce document devra être enrichi au fur et à mesure de l’avancement des travaux sur la gestion de la preuve.</p>
 </section>
 </section>
 <section id="journaux">
-<h2><span class="section-number">1.2. </span>Journaux<a class="headerlink" href="#journaux" title="Lien permanent vers ce titre"></a></h2>
+<h2><span class="section-number">1.2. </span>Journaux<a class="headerlink" href="#journaux" title="Lien permanent vers cette rubrique"></a></h2>
 <p>La solution logicielle Vitam enregistre les événements signifiants contribuant à la conservation de la valeur probante dans trois journaux métier :</p>
 <ul class="simple">
 <li><p>Le journal des opérations, qui a pour objectif d’enregistrer toutes les opérations effectuées par la solution logicielle et ayant un impact significatif dans le système ou sur les unités archivistiques, groupes d’objets et objets pris en charge par celle-ci ;</p></li>
@@ -212,7 +214,7 @@ Ce document présente rapidement, d’un point de vue fonctionnel, le mécanisme
 Il y a un décalage dans les appellations des journaux par rapport à la norme NF Z 42‑013. Alors que la 42-013 parle de journal de cycle de vie des archives sans distinction de type d’évènements, la solution logicielle Vitam a fait le choix d’avoir des informations journalisées de type micro, pour chaque élément d’archives, et d’autres de type macro, pour les actions du système comme les entrées de SIP, les éliminations, les transferts…  Il a été décidé que le niveau de journal le plus fin devait garder l’appellation de « journal du cycle de vie des archives ». Par contre, les événements de niveau plus macro du système sont enregistrés dans le « journal des opérations »[^1].</p>
 </section>
 <section id="preuve-systemique">
-<h2><span class="section-number">1.3. </span>Preuve systémique<a class="headerlink" href="#preuve-systemique" title="Lien permanent vers ce titre"></a></h2>
+<h2><span class="section-number">1.3. </span>Preuve systémique<a class="headerlink" href="#preuve-systemique" title="Lien permanent vers cette rubrique"></a></h2>
 <p>Comme dit en introduction la sécurité d’un SAE doit être systémique, c’est-à-dire reposer sur un faisceau d’éléments redondants dont la modification simultanée et cohérente est impossible, ou plus exactement non réalisable en pratique. La preuve systémique de la bonne conservation de la valeur probante vient de la sécurisation de ces trois journaux (opérations, cycle de vie, écriture) dont les informations croisées permettent d’assurer la traçabilité de tout événement, et d’en apporter la preuve, parfois par plusieurs voies.</p>
 <p>À titre d’exemple, l’entrée d’un objet, avec les éléments métiers utiles, peut être prouvée via :</p>
 <ul class="simple">
@@ -223,9 +225,9 @@ Il y a un décalage dans les appellations des journaux par rapport à la norme N
 <p>Cette réflexion initiale devra être précisée au fur et à mesure des travaux sur les relevés de preuve à apporter et avec la détermination des événements précis que l’on voudra pouvoir prouver. Les éléments figurant actuellement dans les journaux doivent permettre par composition de prouver tous les types d’événements et l’état du système.</p>
 </section>
 <section id="securisation-des-journaux">
-<h2><span class="section-number">1.4. </span>Sécurisation des journaux<a class="headerlink" href="#securisation-des-journaux" title="Lien permanent vers ce titre"></a></h2>
+<h2><span class="section-number">1.4. </span>Sécurisation des journaux<a class="headerlink" href="#securisation-des-journaux" title="Lien permanent vers cette rubrique"></a></h2>
 <section id="contexte-de-securisation">
-<h3><span class="section-number">1.4.1. </span>Contexte de sécurisation<a class="headerlink" href="#contexte-de-securisation" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">1.4.1. </span>Contexte de sécurisation<a class="headerlink" href="#contexte-de-securisation" title="Lien permanent vers cette rubrique"></a></h3>
 <p>La sécurisation des journaux consiste à apporter de la sécurité cryptographique sur l’objet journal en tant que tel et permet de renforcer l’enregistrement des événements.</p>
 <p>Voici quelques éléments pris en compte dans la conception de cette sécurisation :</p>
 <ol class="arabic simple">
@@ -237,7 +239,7 @@ De fait, la conjonction du chaînage et de l’arbre de Merkle constituent des p
 </ol>
 </section>
 <section id="procedure-de-securisation">
-<h3><span class="section-number">1.4.2. </span>Procédure de sécurisation<a class="headerlink" href="#procedure-de-securisation" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">1.4.2. </span>Procédure de sécurisation<a class="headerlink" href="#procedure-de-securisation" title="Lien permanent vers cette rubrique"></a></h3>
 <p>La sécurisation des journaux est opérée, tenant par tenant, par la génération puis la sauvegarde sur l’offre de stockage d’un fichier selon la procédure suivante :</p>
 <ul class="simple">
 <li><p>extraction de l’ensemble des éléments du journal à raison d’une ligne par élément et en partant de la ligne la plus ancienne non sécurisée ;
@@ -259,7 +261,7 @@ De fait, la conjonction du chaînage et de l’arbre de Merkle constituent des p
 <p>À noter, le format de sécurisation mis dans le fichier « additional_information.txt » est mis à titre conservatoire pour permettre la mise en place de nouveaux formats qui seront pris en compte dans les traitements ultérieurs d’audit ou de génération de relevé de valeur probante. À ce jour seul le format « V1 » est utilisé.</p>
 </section>
 <section id="mise-en-oeuvre-sur-le-journal-des-operations">
-<h3><span class="section-number">1.4.3. </span>Mise en œuvre sur le journal des opérations<a class="headerlink" href="#mise-en-oeuvre-sur-le-journal-des-operations" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">1.4.3. </span>Mise en œuvre sur le journal des opérations<a class="headerlink" href="#mise-en-oeuvre-sur-le-journal-des-operations" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Le journal des opérations recense l’ensemble des opérations possibles dans le système : entrée, mise à jour unitaire ou en masse des métadonnées descriptives et des métadonnées de gestion,  élimination (des métadonnées ou des objets) et audit.
 Le journal des opérations correspond à une table dans laquelle chaque enregistrement est une opération :</p>
 <ul class="simple">
@@ -274,7 +276,7 @@ Le journal des opérations correspond à une table dans laquelle chaque enregist
 <p><strong>Nota bene :</strong> comme la sécurisation est aussi une opération, en général[^4], le fichier de sécurisation du journal des opérations se finit par une opération de sécurisation non finalisée (celle en cours).</p>
 </section>
 <section id="mise-en-oeuvre-sur-les-journaux-du-cycle-de-vie">
-<h3><span class="section-number">1.4.4. </span>Mise en œuvre sur les journaux du cycle de vie<a class="headerlink" href="#mise-en-oeuvre-sur-les-journaux-du-cycle-de-vie" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">1.4.4. </span>Mise en œuvre sur les journaux du cycle de vie<a class="headerlink" href="#mise-en-oeuvre-sur-les-journaux-du-cycle-de-vie" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Chaque unité archivistique et chaque groupe d’objets techniques dispose de son propre journal du cycle de vie qui trace tous les événements qui les concernent. Cette masse très importante de fichiers est stockée, comme les objets et les métadonnées, sur les offres de stockage pour en garantir la conservation optimale. Ces fichiers contiennent de nombreuses informations qui peuvent être signifiantes (par exemple la mention des changements de métadonnées et le différentiel des métadonnées lors d’une opération de mise à jour). Il faut donc être sélectif dans ce qui sera sécurisé, non seulement pour assurer suffisamment de traces sûres, mais aussi pour ne pas avoir dans les fichiers de sécurisation des journaux des informations qui devraient être effacées lors de l’élimination ou qui seraient couvertes par la protection du secret de la Défense nationale.</p>
 <p>Pour la sécurisation, il a donc été choisi de faire une ligne par journal du cycle de vie ayant été affecté par une opération (une ligne est donc un couple cycle de vie/opération) pendant la période de sécurisation. Cette ligne portera des informations sur l’opération ayant généré l’événement de cycle de vie, des informations issues du journal du cycle de vie, le hachage des métadonnées et du journal du cycle de vie en base, le hachage du fichier contenant le couple métadonnées/journal du cycle de vie stocké sur disque et enfin, dans le cas des groupes d’objets techniques, la liste des objets et de leur hachage (voir le détail ci-dessous).</p>
 <p>Pour les journaux du cycle de vie comme pour les journaux d’opérations, les éléments pris en compte pour la construction du fichier « data.txt » sont sélectionnés en fonction du moment de dernière modification en base des journaux à sécuriser, en partant du moment de dernière sécurisation jusqu’au moment présent moins une période de temps paramétrable5 (par défaut 5 minutes). Si le nombre d’éléments est supérieur à une limite paramétrable (par défaut 100 000), l’extraction est limitée à ce nombre d’éléments et une nouvelle sécurisation est lancée pour prendre en compte le reste, et ceci jusqu’à épuisement.
@@ -360,7 +362,7 @@ Par exemple, on aura pour une ligne de journal du cycle de vie d’un DataObject
 <p>Les journaux sécurisés comportent toutes les informations nécessaires à la construction automatique des relevés de valeur probante. Par ailleurs, pour des raisons de gestion des volumétries, la sécurisation des journaux du cycle de vie des unités archivistiques et des groupes d’objets techniques a été séparée en opérations distinctes, et donc dans des fichiers séparés et chaînés sur deux files distinctes.</p>
 </section>
 <section id="mise-en-oeuvre-sur-le-journal-des-ecritures">
-<h3><span class="section-number">1.4.5. </span>Mise en œuvre sur le journal des écritures<a class="headerlink" href="#mise-en-oeuvre-sur-le-journal-des-ecritures" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">1.4.5. </span>Mise en œuvre sur le journal des écritures<a class="headerlink" href="#mise-en-oeuvre-sur-le-journal-des-ecritures" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Chaque écriture sur les offres de stockage donne lieu à une ligne dans un journal des écritures. Cette ligne comporte :</p>
 <ul class="simple">
 <li><p>la date de l’écriture</p></li>
@@ -397,9 +399,9 @@ Ce journal est une sécurité supplémentaire par rapport aux journaux métiers 
 </section>
 </section>
 <section id="releve-de-valeur-probante">
-<h2><span class="section-number">1.5. </span>Relevé de valeur probante<a class="headerlink" href="#releve-de-valeur-probante" title="Lien permanent vers ce titre"></a></h2>
+<h2><span class="section-number">1.5. </span>Relevé de valeur probante<a class="headerlink" href="#releve-de-valeur-probante" title="Lien permanent vers cette rubrique"></a></h2>
 <section id="principe">
-<h3><span class="section-number">1.5.1. </span>Principe<a class="headerlink" href="#principe" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">1.5.1. </span>Principe<a class="headerlink" href="#principe" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Le relevé de valeur probante vise à apporter la preuve de la bonne existence d’un fichier dans le système à la date supposée de son apparition dans celui-ci. L’objet peut provenir de l’extérieur du SAE dans le cadre d’une opération d’entrée ou avoir été généré par le SAE dans le cadre d’une opération de préservation.</p>
 <p>Partons de l’hypothèse que nous établissons le relevé de valeur probante pour un objet binaire. Nous disposons :</p>
 <ul class="simple">
@@ -435,7 +437,7 @@ Sur chaque objet sont faites les vérifications de cohérences suivantes :</p>
 Le relevé de valeur probante va en fait un cran plus loin que la simple preuve de l’existence de l’objet au moment, car outre la garantie de la date de création de l’objet dans le système, c’est tout le journal du cycle de vie du groupe d’objets au moment de la création de l’objet dans le système qui peut être attesté.</strong></p>
 </section>
 <section id="forme-du-releve">
-<h3><span class="section-number">1.5.2. </span>Forme du relevé<a class="headerlink" href="#forme-du-releve" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">1.5.2. </span>Forme du relevé<a class="headerlink" href="#forme-du-releve" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Le relevé de valeur probante, émis sous la forme d’un fichier JSON, réunit les éléments permettant de fournir à un auditeur externe une présomption de confiance sur la valeur probante des objets qui lui sont communiqués (par exemple un magistrat dans le cadre d’une commission rogatoire).</p>
 <p>Le relevé est construit sur le modèle des rapports utilisés pour les opérations de traitement de masse (élimination, modification en masse de métadonnées…). Outre la mention du format du rapport, « ReportVersion », il contient les éléments suivants :</p>
 <ul class="simple">
@@ -508,7 +510,7 @@ Le relevé de valeur probante va en fait un cran plus loin que la simple preuve 
 <p>Cette structure très riche et détaillée n’est pas faite pour être lue directement, mais pour apporter tous les éléments utiles à la construction d’un document lisible selon la forme souhaitée par le demandeur, au niveau du front-office.</p>
 </section>
 <section id="generation-du-releve">
-<h3><span class="section-number">1.5.3. </span>Génération du relevé<a class="headerlink" href="#generation-du-releve" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">1.5.3. </span>Génération du relevé<a class="headerlink" href="#generation-du-releve" title="Lien permanent vers cette rubrique"></a></h3>
 <p>La solution logicielle Vitam permet de lancer des opérations de génération de relevé de valeur probante :</p>
 <ul class="simple">
 <li><p>depuis le panier de l’IHM démo sur un lot d’archives ;</p></li>
@@ -523,9 +525,9 @@ Le relevé de valeur probante va en fait un cran plus loin que la simple preuve 
 </section>
 </section>
 <section id="annexes">
-<h2><span class="section-number">1.6. </span>Annexes<a class="headerlink" href="#annexes" title="Lien permanent vers ce titre"></a></h2>
+<h2><span class="section-number">1.6. </span>Annexes<a class="headerlink" href="#annexes" title="Lien permanent vers cette rubrique"></a></h2>
 <section id="annexe-1-exemple-de-releve-de-valeur-probante">
-<h3><span class="section-number">1.6.1. </span>Annexe 1 : Exemple de relevé de valeur probante<a class="headerlink" href="#annexe-1-exemple-de-releve-de-valeur-probante" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">1.6.1. </span>Annexe 1 : Exemple de relevé de valeur probante<a class="headerlink" href="#annexe-1-exemple-de-releve-de-valeur-probante" title="Lien permanent vers cette rubrique"></a></h3>
 <p>En avertissement</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="s2">&quot;operationSummary&quot;</span> <span class="p">:</span> <span class="p">{</span>
@@ -1086,8 +1088,8 @@ Le relevé de valeur probante va en fait un cran plus loin que la simple preuve 
 </div>
 </section>
 <section id="annexe-2-liste-des-verifications-presentes-dans-le-releve-de-valeur-probante">
-<h3><span class="section-number">1.6.2. </span>Annexe 2 : Liste des vérifications présentes dans le relevé de valeur probante<a class="headerlink" href="#annexe-2-liste-des-verifications-presentes-dans-le-releve-de-valeur-probante" title="Lien permanent vers ce titre"></a></h3>
-<p><span class="xref myst">Liste des vérifications présentes dans le relevé de valeur probante</span></p>
+<h3><span class="section-number">1.6.2. </span>Annexe 2 : Liste des vérifications présentes dans le relevé de valeur probante<a class="headerlink" href="#annexe-2-liste-des-verifications-presentes-dans-le-releve-de-valeur-probante" title="Lien permanent vers cette rubrique"></a></h3>
+<p><a class="reference download internal" download="" href="../_downloads/cdc66b966742e0e24d750e88591b0a1e/annexe2.ods"><span class="xref download myst">Liste des vérifications présentes dans le relevé de valeur probante</span></a></p>
 <p>[^1] Pour une description fine des journaux, voir le document VITAM. Organisation de l’information.</p>
 <p>[^2] Pour une explication de l’arbre de Merkle et de son utilisation pour la preuve d’une partie des éléments voir https://www.certificate-transparency.org/log-proofs-work</p>
 <p>[^3] Ce délai est nécessaire pour tenir compte de la latence de la base NoSQL au cœur de Vitam.</p>
@@ -1101,7 +1103,7 @@ Le relevé de valeur probante va en fait un cran plus loin que la simple preuve 
           </div>
 
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
-        <a href="presentation_programme.html" class="btn btn-neutral float-left" title="2. Présentation du programme Vitam" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="guide_prise_en_main.html" class="btn btn-neutral float-left" title="3. Guide de prise en main de la solution logicielle Vitam – Vitam UI" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
         <a href="eliminations.html" class="btn btn-neutral float-right" title="2. Les éliminations avec la solution logicielle Vitam" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

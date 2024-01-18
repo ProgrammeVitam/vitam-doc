@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="fr" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>24. Le référentiel des règles de gestion dans la solution logicielle Vitam &mdash; Vitam documentation fonctionnelle</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
   
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/translations.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -48,6 +47,8 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="guide_lecture.html">1. Documentation Vitam - guide de lecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="presentation_programme.html">2. Présentation du programme Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_prise_en_main.html">3. Guide de prise en main de la solution logicielle Vitam – Vitam UI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_prise_en_main.html#realiser-une-premiere-entree">4. <em>Réaliser une première entrée</em></a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">documentation métier</span></p>
 <ul>
@@ -67,7 +68,8 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">documentation Vitam UI</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="VitamUI_Arbres_Plans.html">1. APP Arbres et plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Autoprovisionning.html">1. Vitam UI : présentation de la fonctionnalité d’auto-provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Arbres_Plans.html">2. APP Arbres et plans</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">outils connexes</span></p>
 <ul>
@@ -148,19 +150,19 @@
 
            <div itemprop="articleBody">
              
-  <section class="tex2jax_ignore mathjax_ignore" id="le-referentiel-des-regles-de-gestion-dans-la-solution-logicielle-vitam">
-<h1><span class="section-number">24. </span>Le référentiel des règles de gestion dans la solution logicielle Vitam<a class="headerlink" href="#le-referentiel-des-regles-de-gestion-dans-la-solution-logicielle-vitam" title="Lien permanent vers ce titre"></a></h1>
+  <section id="le-referentiel-des-regles-de-gestion-dans-la-solution-logicielle-vitam">
+<h1><span class="section-number">24. </span>Le référentiel des règles de gestion dans la solution logicielle Vitam<a class="headerlink" href="#le-referentiel-des-regles-de-gestion-dans-la-solution-logicielle-vitam" title="Lien permanent vers cette rubrique"></a></h1>
 <p>Le référentiel des règles de gestion recense toutes les règles applicables aux archives. C’est un outil  structurant et essentiel pour la mise en œuvre dans le SAE de la politique d’archivage.<br>
 En effet, il permet le calcul automatique des dates d’échéance ainsi que la mise en œuvre des traitements d’élimination, de transfert ou de déclassification.<br>
 Il est structuré autour des six catégories de règles applicables aux archives définies par le SEDA : durée d’utilité courante (StorageRule), durée d’utilité administrative (AppraisalRule), délai de communicabilité (AccessRule), délai de réutilisation (ReuseRule), délai de diffusion (DisseminationRule), durée de classification (ClassificationRule), auxquelles s’ajoute le gel (HoldRule).</p>
 <section id="presentation-du-referentiel-des-regles-de-gestion">
-<h2><span class="section-number">24.1. </span>Présentation du référentiel des règles de gestion<a class="headerlink" href="#presentation-du-referentiel-des-regles-de-gestion" title="Lien permanent vers ce titre"></a></h2>
+<h2><span class="section-number">24.1. </span>Présentation du référentiel des règles de gestion<a class="headerlink" href="#presentation-du-referentiel-des-regles-de-gestion" title="Lien permanent vers cette rubrique"></a></h2>
 <section id="perimetre-du-referentiel-des-regles-de-gestion">
-<h3><span class="section-number">24.1.1. </span>Périmètre du référentiel des règles de gestion<a class="headerlink" href="#perimetre-du-referentiel-des-regles-de-gestion" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">24.1.1. </span>Périmètre du référentiel des règles de gestion<a class="headerlink" href="#perimetre-du-referentiel-des-regles-de-gestion" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Un référentiel des règles de gestion est propre au tenant sur lequel il a été importé.</p>
 </section>
 <section id="controles-effectues-a-partir-du-referentiel-des-regles-de-gestion">
-<h3><span class="section-number">24.1.2. </span>Contrôles effectués à partir du référentiel des règles de gestion<a class="headerlink" href="#controles-effectues-a-partir-du-referentiel-des-regles-de-gestion" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">24.1.2. </span>Contrôles effectués à partir du référentiel des règles de gestion<a class="headerlink" href="#controles-effectues-a-partir-du-referentiel-des-regles-de-gestion" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Lors d’une entrée, la solution logicielle Vitam vérifie que les règles de gestion déclarées dans le bordereau, au niveau global ou au niveau de chaque unité archivistique, sont bien décrites dans le référentiel et relèvent de la bonne catégorie.
 Si une date de départ pour le calcul de la règle est présente, la solution logicielle calcule automatiquement la date d’échéance.</p>
 <p><em>Point d’attention :</em> Si des règles de gestion sont déclarées dans le bordereau de transfert, un référentiel des règles de gestion permettant de les contrôler est obligatoire. En cas d’absence de ce référentiel, la vérification de la conformité des identifiants de règle présents dans le bordereau de transfert ne pourra être réalisée et l’entrée sera rejetée.</p>
@@ -173,9 +175,9 @@ Si une date de départ pour le calcul de la règle est présente, la solution lo
 </section>
 </section>
 <section id="configuration-du-referentiel-des-regles-de-gestion">
-<h2><span class="section-number">24.2. </span>Configuration du référentiel des règles de gestion<a class="headerlink" href="#configuration-du-referentiel-des-regles-de-gestion" title="Lien permanent vers ce titre"></a></h2>
+<h2><span class="section-number">24.2. </span>Configuration du référentiel des règles de gestion<a class="headerlink" href="#configuration-du-referentiel-des-regles-de-gestion" title="Lien permanent vers cette rubrique"></a></h2>
 <section id="constitution-du-referentiel-des-regles-de-gestion">
-<h3><span class="section-number">24.2.1. </span>Constitution du référentiel des règles de gestion<a class="headerlink" href="#constitution-du-referentiel-des-regles-de-gestion" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">24.2.1. </span>Constitution du référentiel des règles de gestion<a class="headerlink" href="#constitution-du-referentiel-des-regles-de-gestion" title="Lien permanent vers cette rubrique"></a></h3>
 <p>L’administrateur fonctionnel constitue le référentiel des règles de gestion à partir du recensement des règles applicables dans son entité.
 Par exemple :</p>
 <ul class="simple">
@@ -201,7 +203,7 @@ Par exemple :</p>
 <p>La première solution présente l’avantage de limiter le nombre de règles à administrer ; la seconde, de permettre d’effectuer des mises à jour de règles plus ciblées et de faciliter l’évaluation d’archives éliminables.</p>
 </section>
 <section id="transposition-dun-referentiel-existant-dans-un-referentiel-des-regles-de-gestion-conforme-aux-attendus-de-la-solution-logicielle-vitam">
-<h3><span class="section-number">24.2.2. </span>Transposition d’un référentiel existant dans un référentiel des règles de gestion conforme aux attendus de la solution logicielle Vitam<a class="headerlink" href="#transposition-dun-referentiel-existant-dans-un-referentiel-des-regles-de-gestion-conforme-aux-attendus-de-la-solution-logicielle-vitam" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">24.2.2. </span>Transposition d’un référentiel existant dans un référentiel des règles de gestion conforme aux attendus de la solution logicielle Vitam<a class="headerlink" href="#transposition-dun-referentiel-existant-dans-un-referentiel-des-regles-de-gestion-conforme-aux-attendus-de-la-solution-logicielle-vitam" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Pour constituer son référentiel des règles de gestion, l’administrateur fonctionnel peut reprendre, pour la catégorie « Durée d’utilité administrative », les tableaux de gestion/référentiels de conservation existants dans son entité.</p>
 <p><em>Exemple avec un extrait du tableau de gestion publié par le Service interministériel des archives de France « Préconisations relatives au tri et à la conservation des archives produites par les communes et structures intercommunales dans leurs domaines d’activité spécifiques » (DGP/SIAF/2014/006).</em>
 <img alt="exemple" src="../_images/referentiel_rg.png" /></p>
@@ -225,11 +227,11 @@ Le service d’archives peut également attribuer des identifiants signifiants a
 <p><em>Nota bene :</em> Pour les délais de communicabilité, un référentiel validé par le Service interministériel des archives de France a été établi. Pour les délais de réutilisation et de diffusion, d’autres référentiels sont actuellement en cours de finalisation.</p>
 </section>
 <section id="gestion-des-identifiants-des-regles-de-gestion">
-<h3><span class="section-number">24.2.3. </span>Gestion des identifiants des règles de gestion<a class="headerlink" href="#gestion-des-identifiants-des-regles-de-gestion" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">24.2.3. </span>Gestion des identifiants des règles de gestion<a class="headerlink" href="#gestion-des-identifiants-des-regles-de-gestion" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Le référentiel des règles de gestion fonctionne en mode « esclave ». Le plus souvent en effet, le référentiel du SAE sera constitué d’un export du référentiel maître applicable aux archives papier comme électroniques piloté par le SIA. Cela permet de garder une unité dans la dénomination (identifiant) des règles, quel que soit le support auquel elles s’appliquent.</p>
 </section>
 <section id="configuration-dune-duree-minimale-acceptable-pour-une-categorie-de-regle-sur-un-tenant">
-<h3><span class="section-number">24.2.4. </span>Configuration d’une durée minimale acceptable pour une catégorie de règle sur un tenant<a class="headerlink" href="#configuration-dune-duree-minimale-acceptable-pour-une-categorie-de-regle-sur-un-tenant" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">24.2.4. </span>Configuration d’une durée minimale acceptable pour une catégorie de règle sur un tenant<a class="headerlink" href="#configuration-dune-duree-minimale-acceptable-pour-une-categorie-de-regle-sur-un-tenant" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Afin de se prémunir contre une alimentation du référentiel des règles de gestion avec des durées trop courtes susceptibles de déclencher des actions indésirables sur la plate-forme (ex. éliminations), la solution logicielle Vitam vérifie que la durée de chaque règle est supérieure ou égale à une durée minimale définie lors du paramétrage de la plate-forme, dans un fichier de configuration.
 Cette configuration, optionnelle, est établie par les administrateurs – fonctionnel pour la définition du besoin et technique pour la saisie réelle des informations – de chaque implémentation de la solution logicielle Vitam et définit, pour chaque tenant et pour chaque catégorie de règle, les durées minimales acceptables.
 Le fichier de configuration se présente comme suit (exemple fictif) :</p>
@@ -249,14 +251,14 @@ Sur le tenant 3, les contrôles portent sur les catégories « Durée d’utili
 <p>La tentative d’import ou de mise à jour d’un référentiel déclarant des règles dont la durée est inférieure ou égale aux données minimales saisies dans le fichier de configuration, déclenchera une alerte de sécurité qui sera transmise à l’administrateur technique de la plate-forme. L’import et la mise à jour seront alors rejetés.</p>
 </section>
 <section id="formalisation-du-referentiel-des-regles-de-gestion">
-<h3><span class="section-number">24.2.5. </span>Formalisation du référentiel des règles de gestion<a class="headerlink" href="#formalisation-du-referentiel-des-regles-de-gestion" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">24.2.5. </span>Formalisation du référentiel des règles de gestion<a class="headerlink" href="#formalisation-du-referentiel-des-regles-de-gestion" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Le référentiel des règles de gestion est importé dans la solution logicielle Vitam sous la forme d’un fichier .csv comportant les colonnes suivantes :</p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Nom de la colonne</p></th>
-<th class="text-left head"><p>Description de la colonne</p></th>
-<th class="text-left head"><p>Valeurs possibles</p></th>
-<th class="text-left head"><p>Observations</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Nom de la colonne</p></th>
+<th class="head text-left"><p>Description de la colonne</p></th>
+<th class="head text-left"><p>Valeurs possibles</p></th>
+<th class="head text-left"><p>Observations</p></th>
 </tr>
 </thead>
 <tbody>
@@ -307,7 +309,7 @@ Sur le tenant 3, les contrôles portent sur les catégories « Durée d’utili
 </section>
 </section>
 <section id="modification-du-referentiel-des-regles-de-gestion">
-<h2><span class="section-number">24.3. </span>Modification du référentiel des règles de gestion<a class="headerlink" href="#modification-du-referentiel-des-regles-de-gestion" title="Lien permanent vers ce titre"></a></h2>
+<h2><span class="section-number">24.3. </span>Modification du référentiel des règles de gestion<a class="headerlink" href="#modification-du-referentiel-des-regles-de-gestion" title="Lien permanent vers cette rubrique"></a></h2>
 <p>Le référentiel des règles de gestion ne peut pas être mis à jour unitairement (pour une règle uniquement). Il convient d’importer un nouveau fichier .csv contenant l’ensemble des règles de gestion en mode « annule et remplace ».</p>
 <p>Lors d’une mise à jour du référentiel, des contrôles sont effectués sur les règles déjà utilisées dans la solution logicielle Vitam, c’est-à-dire les règles déclarées par des unités archivistiques.
 Sont appliqués les cas suivants :</p>

@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="fr" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Services producteurs &mdash; Vitam documentation fonctionnelle</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
   
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/translations.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -91,17 +90,17 @@
 
            <div itemprop="articleBody">
              
-  <section class="tex2jax_ignore mathjax_ignore" id="services-producteurs">
-<h1>Services producteurs<a class="headerlink" href="#services-producteurs" title="Lien permanent vers ce titre"></a></h1>
+  <section id="services-producteurs">
+<h1>Services producteurs<a class="headerlink" href="#services-producteurs" title="Lien permanent vers cette rubrique"></a></h1>
 <section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Lien permanent vers ce titre"></a></h2>
+<h2>Introduction<a class="headerlink" href="#introduction" title="Lien permanent vers cette rubrique"></a></h2>
 <section id="documents-de-reference">
-<h3>Documents de référence<a class="headerlink" href="#documents-de-reference" title="Lien permanent vers ce titre"></a></h3>
-<table class="colwidths-auto docutils align-default">
+<h3>Documents de référence<a class="headerlink" href="#documents-de-reference" title="Lien permanent vers cette rubrique"></a></h3>
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p>Document</p></th>
-<th class="text-center head"><p>Date de la version</p></th>
-<th class="text-center head"><p>Remarques</p></th>
+<tr class="row-odd"><th class="head text-center"><p>Document</p></th>
+<th class="head text-center"><p>Date de la version</p></th>
+<th class="head text-center"><p>Remarques</p></th>
 </tr>
 </thead>
 <tbody>
@@ -121,7 +120,7 @@
 </table>
 </section>
 <section id="presentation-du-document">
-<h3>Présentation du document<a class="headerlink" href="#presentation-du-document" title="Lien permanent vers ce titre"></a></h3>
+<h3>Présentation du document<a class="headerlink" href="#presentation-du-document" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Le présent document présente les fonctionnalités associées à la prise en compte de la notion de service producteur dans la solution logicielle Vitam.
 Il s’articule autour des axes suivants :</p>
 <ul class="simple">
@@ -133,9 +132,9 @@ Il s’articule autour des axes suivants :</p>
 </section>
 </section>
 <section id="presentation-de-la-notion-de-service-producteur">
-<h2>Présentation de la notion de service producteur<a class="headerlink" href="#presentation-de-la-notion-de-service-producteur" title="Lien permanent vers ce titre"></a></h2>
+<h2>Présentation de la notion de service producteur<a class="headerlink" href="#presentation-de-la-notion-de-service-producteur" title="Lien permanent vers cette rubrique"></a></h2>
 <section id="description-de-la-notion-de-service-producteur">
-<h3>Description de la notion de service producteur<a class="headerlink" href="#description-de-la-notion-de-service-producteur" title="Lien permanent vers ce titre"></a></h3>
+<h3>Description de la notion de service producteur<a class="headerlink" href="#description-de-la-notion-de-service-producteur" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Le code du patrimoine, dans son article L211-1, définit les archives comme « l’ensemble des documents, y compris les données, quels que soient leur date, leur lieu de conservation, leur forme et leur support, produits ou reçus par toute personne physique ou morale et par tout service ou organisme public ou privé dans l’exercice de leur activité ».<br />
 La notion de service producteur correspond à la personne physique ou morale ayant produit ou reçu des documents et des données dans l’exercice de son activité.<br />
 Quand l’activité exercée par le service producteur correspond à une mission de service public, ce dernier a, en application de la réglementation en vigueur, un certain nombre de droits et de devoirs sur ses archives, entendues comme les documents et données qu’il a produits ou reçus dans le cadre de son activité :</p>
@@ -148,7 +147,7 @@ Quand l’activité exercée par le service producteur correspond à une mission
 <p>Au moment de la demande de transfert à un service d’archives, en cas de suppression du service producteur ou de transfert de tout ou partie de ses activités à une autre entité, c’est l’entité détentrice des archives ou responsable des activités transférées qui exerce les droits et devoirs assignés au service producteur par le code du patrimoine. Cette entité est désignée sous l’expression de service versant.</p>
 </section>
 <section id="formalisation-de-la-notion-de-service-producteur-dans-le-seda">
-<h3>Formalisation de la notion de service producteur dans le SEDA<a class="headerlink" href="#formalisation-de-la-notion-de-service-producteur-dans-le-seda" title="Lien permanent vers ce titre"></a></h3>
+<h3>Formalisation de la notion de service producteur dans le SEDA<a class="headerlink" href="#formalisation-de-la-notion-de-service-producteur-dans-le-seda" title="Lien permanent vers cette rubrique"></a></h3>
 <p>La manière de déclarer les services producteurs est définie dans la norme NF Z 44‑022 et dans sa déclinaison pour les acteurs du service public, le Standard d’échanges de données pour l’archivage (SEDA).
 La norme NF Z 44‑022 définit cinq acteurs intervenant dans les transactions occasionnées par les échanges de données pour l’archivage :</p>
 <ul class="simple">
@@ -183,7 +182,7 @@ Le schéma ci-dessous figure l’emplacement de ce bloc « Content » dans le 
 <img alt="emplacement du bloc « Content » dans le schéma XSD" src="../_images/emplacement_bloc_content_schema_XSD.png" /></p>
 </section>
 <section id="extension-du-schema-seda-pour-prendre-en-compte-la-notion-de-service-producteur">
-<h3>Extension du schéma SEDA pour prendre en compte la notion de service producteur<a class="headerlink" href="#extension-du-schema-seda-pour-prendre-en-compte-la-notion-de-service-producteur" title="Lien permanent vers ce titre"></a></h3>
+<h3>Extension du schéma SEDA pour prendre en compte la notion de service producteur<a class="headerlink" href="#extension-du-schema-seda-pour-prendre-en-compte-la-notion-de-service-producteur" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Ni la norme NF Z 44‑022 ni le SEDA 2.1. ou 2.2. ne prévoient à ce jour que le service producteur constitue un acteur de la transaction de transfert d’archives à un service d’archives. Or, comme il a été indiqué précédemment, le service producteur joue un rôle important dans les autres transactions concernant les archives.<br />
 Le message ArchiveTransfer défini par la norme NF Z 44‑022 et précisé par le SEDA 2.1. et le SEDA 2.2., dans son état actuel, offre cependant deux possibilités pour déclarer un service producteur responsable de l’ensemble des archives transférées dans ce cadre :</p>
 <ul class="simple">
@@ -205,7 +204,7 @@ Le message ArchiveTransfer défini par la norme NF Z 44‑022 et précisé par
 </section>
 </section>
 <section id="mecanismes-mis-en-oeuvre-dans-la-solution-logicielle-vitam">
-<h2>Mécanismes mis en œuvre dans la solution logicielle Vitam<a class="headerlink" href="#mecanismes-mis-en-oeuvre-dans-la-solution-logicielle-vitam" title="Lien permanent vers ce titre"></a></h2>
+<h2>Mécanismes mis en œuvre dans la solution logicielle Vitam<a class="headerlink" href="#mecanismes-mis-en-oeuvre-dans-la-solution-logicielle-vitam" title="Lien permanent vers cette rubrique"></a></h2>
 <p>La solution logicielle Vitam offre à un service d’archives plusieurs fonctionnalités lui permettant de prendre en compte la notion de service producteur :</p>
 <ul class="simple">
 <li><p>en administration, l’existence d’un référentiel des services agents ;</p></li>
@@ -214,16 +213,16 @@ Le message ArchiveTransfer défini par la norme NF Z 44‑022 et précisé par
 <li><p>en accès, le contrôle des droits sur les archives via un filtre par service producteur.</p></li>
 </ul>
 <section id="import-dun-referentiel-des-services-agents">
-<h3>Import d’un référentiel des services agents<a class="headerlink" href="#import-dun-referentiel-des-services-agents" title="Lien permanent vers ce titre"></a></h3>
+<h3>Import d’un référentiel des services agents<a class="headerlink" href="#import-dun-referentiel-des-services-agents" title="Lien permanent vers cette rubrique"></a></h3>
 <p>La solution logicielle Vitam intègre un référentiel des services agents (qu’ils agissent comme services producteurs ou services versants) administrable (import initial ou mise à jour) par un utilisateur doté des droits adéquats (<strong>administrateur fonctionnel</strong>). Ce référentiel interne à la solution logicielle Vitam a pour vocation d’être une copie locale d’un référentiel administré dans le front office des plate-formes d’archivage implémentant cette dernière. Il n’a pas vocation à gérer la hiérarchie et l’historique des services producteurs, contrairement à la version administrée dans un front office et structurée conformément à la norme ISAAR (CPF).<br />
 Ce référentiel a pour vocation d’être utilisé par la solution logicielle Vitam pour effectuer localement les contrôles des services déclarés par les administrateurs et les utilisateurs en entrée et en accès. Il est propre à chaque tenant de la plate-forme.
 Il est importé dans la solution logicielle Vitam sous la forme d’un fichier CSV comprenant les colonnes suivantes :</p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Nom de la colonne</p></th>
-<th class="text-center head"><p>Description de la colonne</p></th>
-<th class="text-center head"><p>Valeurs possibles</p></th>
-<th class="text-center head"><p>Observations</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Nom de la colonne</p></th>
+<th class="head text-center"><p>Description de la colonne</p></th>
+<th class="head text-center"><p>Valeurs possibles</p></th>
+<th class="head text-center"><p>Observations</p></th>
 </tr>
 </thead>
 <tbody>
@@ -265,7 +264,7 @@ Pour plus de précisions sur l’élaboration des fichiers CSV, consulter l’an
 Les différentes versions du référentiel font l’objet d’une sauvegarde sur les offres de stockage gérées par la solution logicielle Vitam et peuvent être récupérées depuis le front-office via un service particulier (cf. RAML).</p>
 </section>
 <section id="entrees">
-<h3>Entrées<a class="headerlink" href="#entrees" title="Lien permanent vers ce titre"></a></h3>
+<h3>Entrées<a class="headerlink" href="#entrees" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Dans le cadre du processus d’entrée d’un ensemble d’archives, suite à la réception d’un message ArchiveTransfer du SEDA, la solution logicielle Vitam effectue les tâches et traitements suivants pour les archives :</p>
 <ul class="simple">
 <li><p>vérification de la déclaration d’un service producteur dans le message ArchiveTransfer ;</p></li>
@@ -293,7 +292,7 @@ Les différentes versions du référentiel font l’objet d’une sauvegarde sur
 </ul>
 </section>
 <section id="registre-des-fonds">
-<h3>Registre des fonds<a class="headerlink" href="#registre-des-fonds" title="Lien permanent vers ce titre"></a></h3>
+<h3>Registre des fonds<a class="headerlink" href="#registre-des-fonds" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Afin de permettre aux services d’archives de disposer d’une vue globale sur les fonds d’archives qu’ils ont en charge, la solution logicielle Vitam propose un état récapitulatif correspondant à un registre des fonds.
 Le registre des fonds enregistre les archives prises en charge par tout service producteur :</p>
 <ul class="simple">
@@ -419,9 +418,9 @@ Elle autorise également :</p>
 Au terme de la version 5, l’APP VitamUI « Registre des fonds » fait appel uniquement aux traitements ayant trait aux opérations d’entrée et ne prend pas en compte les traitements relatifs aux opérations de préservation et de suppression de versions d’objets.</p>
 </section>
 <section id="acces">
-<h3>Accès<a class="headerlink" href="#acces" title="Lien permanent vers ce titre"></a></h3>
+<h3>Accès<a class="headerlink" href="#acces" title="Lien permanent vers cette rubrique"></a></h3>
 <section id="recherche">
-<h4>Recherche<a class="headerlink" href="#recherche" title="Lien permanent vers ce titre"></a></h4>
+<h4>Recherche<a class="headerlink" href="#recherche" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Une application connectée et authentifiée à la solution logicielle Vitam peut effectuer des recherches sur les services producteurs déclarés dans les unités archivistiques, dans la limite des droits et des filtres qui lui sont définis, en utilisant les différentes notions existantes :</p>
 <ul class="simple">
 <li><p>services producteurs déclarés par chaque unité archivistique dans ses métadonnées descriptives (bloc <OriginatingAgency>) ;</p></li>
@@ -431,7 +430,7 @@ Au terme de la version 5, l’APP VitamUI « Registre des fonds » fait appel 
 <p>Depuis l’APP VitamUI « Recherche et consultation des archives », il est possible de rechercher les unités archivistiques à partir de l’identifiant ou de l’intitulé du service producteur référencé dans le référentiel des services agents, correspondant, dans l’unité archivistique, à la métadonnée propre au service producteur ayant transféré l’unité archivistique (information correspondant au champ OriginatingAgencyIdentifier du bloc ManagementMetadata).</p>
 </section>
 <section id="filtrage-des-resultats-au-moyen-des-contrats-dacces">
-<h4>Filtrage des résultats au moyen des contrats d’accès<a class="headerlink" href="#filtrage-des-resultats-au-moyen-des-contrats-dacces" title="Lien permanent vers ce titre"></a></h4>
+<h4>Filtrage des résultats au moyen des contrats d’accès<a class="headerlink" href="#filtrage-des-resultats-au-moyen-des-contrats-dacces" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Une application connectée et authentifiée à la solution logicielle Vitam, si elle dispose des droits de recherche et de consultation d’archives, peut voir le périmètre de ses droits restreint à un nombre précis de services producteurs en vertu de son contrat d’accès.<br />
 Dans ce cas, lorsque cette application effectue une recherche d’archives dans la solution logicielle Vitam, lui sont seulement retournées en résultat les unités archivistiques transférées par l’un des services producteurs autorisés dans son contrat d’accès, ou qui sont rattachées symboliquement à ce service. Les unités archivistiques transférées par d’autres services producteurs que ceux autorisés dans le contrat d’accès ne lui seront pas retournées en réponse à sa requête.<br />
 Deux options sont possibles dans le contrat d’accès :</p>
@@ -474,15 +473,15 @@ Ce filtrage s’applique également à l’accès au registre des fonds. Ne sero
 </section>
 </section>
 <section id="conseils-de-mise-en-oeuvre">
-<h2>Conseils de mise en œuvre<a class="headerlink" href="#conseils-de-mise-en-oeuvre" title="Lien permanent vers ce titre"></a></h2>
+<h2>Conseils de mise en œuvre<a class="headerlink" href="#conseils-de-mise-en-oeuvre" title="Lien permanent vers cette rubrique"></a></h2>
 <p>L’équipe projet Vitam recommande les modalités de mise en œuvre ci-dessous.</p>
 <section id="comment-decouper-ses-sip">
-<h3>Comment découper ses SIP ?<a class="headerlink" href="#comment-decouper-ses-sip" title="Lien permanent vers ce titre"></a></h3>
-<table class="colwidths-auto docutils align-default">
+<h3>Comment découper ses SIP ?<a class="headerlink" href="#comment-decouper-ses-sip" title="Lien permanent vers cette rubrique"></a></h3>
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Intitulé</p></th>
-<th class="text-center head"><p>Description</p></th>
-<th class="text-center head"><p>Niveau de recommandation</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Intitulé</p></th>
+<th class="head text-center"><p>Description</p></th>
+<th class="head text-center"><p>Niveau de recommandation</p></th>
 </tr>
 </thead>
 <tbody>
@@ -510,12 +509,12 @@ Ce filtrage s’applique également à l’accès au registre des fonds. Ne sero
 </table>
 </section>
 <section id="comment-gerer-les-droits-dacces-a-la-solution-logicielle-vitam">
-<h3>Comment gérer les droits d’accès à la solution logicielle Vitam ?<a class="headerlink" href="#comment-gerer-les-droits-dacces-a-la-solution-logicielle-vitam" title="Lien permanent vers ce titre"></a></h3>
-<table class="colwidths-auto docutils align-default">
+<h3>Comment gérer les droits d’accès à la solution logicielle Vitam ?<a class="headerlink" href="#comment-gerer-les-droits-dacces-a-la-solution-logicielle-vitam" title="Lien permanent vers cette rubrique"></a></h3>
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Intitulé</p></th>
-<th class="text-center head"><p>Description</p></th>
-<th class="text-center head"><p>Niveau de recommandation</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Intitulé</p></th>
+<th class="head text-center"><p>Description</p></th>
+<th class="head text-center"><p>Niveau de recommandation</p></th>
 </tr>
 </thead>
 <tbody>
@@ -547,12 +546,12 @@ Ce filtrage s’applique également à l’accès au registre des fonds. Ne sero
 </table>
 </section>
 <section id="comment-gerer-les-droits-dacces-au-referentiel-des-services-agents">
-<h3>Comment gérer les droits d’accès au référentiel des services agents ?<a class="headerlink" href="#comment-gerer-les-droits-dacces-au-referentiel-des-services-agents" title="Lien permanent vers ce titre"></a></h3>
-<table class="colwidths-auto docutils align-default">
+<h3>Comment gérer les droits d’accès au référentiel des services agents ?<a class="headerlink" href="#comment-gerer-les-droits-dacces-au-referentiel-des-services-agents" title="Lien permanent vers cette rubrique"></a></h3>
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Intitulé</p></th>
-<th class="text-center head"><p>Description</p></th>
-<th class="text-center head"><p>Niveau de recommandation</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Intitulé</p></th>
+<th class="head text-center"><p>Description</p></th>
+<th class="head text-center"><p>Niveau de recommandation</p></th>
 </tr>
 </thead>
 <tbody>
@@ -581,9 +580,9 @@ Ce filtrage s’applique également à l’accès au registre des fonds. Ne sero
 </section>
 </section>
 <section id="annexes">
-<h2>Annexes<a class="headerlink" href="#annexes" title="Lien permanent vers ce titre"></a></h2>
+<h2>Annexes<a class="headerlink" href="#annexes" title="Lien permanent vers cette rubrique"></a></h2>
 <section id="annexe-preparer-un-fichier-csv">
-<h3>Annexe : préparer un fichier CSV<a class="headerlink" href="#annexe-preparer-un-fichier-csv" title="Lien permanent vers ce titre"></a></h3>
+<h3>Annexe : préparer un fichier CSV<a class="headerlink" href="#annexe-preparer-un-fichier-csv" title="Lien permanent vers cette rubrique"></a></h3>
 <p>La solution logicielle Vitam permet d’importer deux référentiels correspondant à des fichiers CSV :</p>
 <ul class="simple">
 <li><p>le référentiel des règles de gestion,</p></li>
@@ -596,7 +595,7 @@ La présente annexe a vocation à :</p>
 <li><p>émettre des recommandations sur les règles à respecter.</p></li>
 </ul>
 <section id="caracteristiques-dun-fichier-csv">
-<h4>Caractéristiques d’un fichier CSV<a class="headerlink" href="#caracteristiques-dun-fichier-csv" title="Lien permanent vers ce titre"></a></h4>
+<h4>Caractéristiques d’un fichier CSV<a class="headerlink" href="#caracteristiques-dun-fichier-csv" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Un fichier CSV représente des données tabulaires sous forme de valeurs séparées par :</p>
 <ul class="simple">
 <li><p>un séparateur de champ : virgule,</p></li>
@@ -609,11 +608,11 @@ Il existe d’autres séparateurs de champ (point virgule, deux points, tabulati
 « FRAN_NP_009941 », »Veil Simone (1927-2017) », »Née à Nice en 1927,  […] milieu des années 1970. »
 « FRAN_NP_050500 », »Galliffet (famille de) », »La famille de Galliffet était originaire du Dauphiné. Les principaux représentants de la branche aînée sont : Alexandre […] y exercèrent le commerce du sucre. »<br></p>
 <p>Équivalent sous forme de tableau :<br></p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Identifier</p></th>
-<th class="text-center head"><p>Name</p></th>
-<th class="text-center head"><p>Description</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Identifier</p></th>
+<th class="head text-center"><p>Name</p></th>
+<th class="head text-center"><p>Description</p></th>
 </tr>
 </thead>
 <tbody>
@@ -647,18 +646,18 @@ Il existe d’autres séparateurs de champ (point virgule, deux points, tabulati
 </ul>
 </section>
 <section id="recommandations">
-<h4>Recommandations<a class="headerlink" href="#recommandations" title="Lien permanent vers ce titre"></a></h4>
+<h4>Recommandations<a class="headerlink" href="#recommandations" title="Lien permanent vers cette rubrique"></a></h4>
 <p>La rédaction d’un fichier CSV obéit à un certain nombre de règles à suivre :</p>
 <ul class="simple">
 <li><p>afin de se conformer au format CSV et à l’encodage UTF-8 ;</p></li>
 <li><p>afin de respecter le formalisme du référentiel tel qu’il est défini par la solution logicielle Vitam ;</p></li>
 <li><p>afin, finalement, de pouvoir être parsé et importé sans erreur dans la solution logicielle Vitam.</p></li>
 </ul>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Intitulé</p></th>
-<th class="text-center head"><p>Description</p></th>
-<th class="text-center head"><p>Niveau de recommandation</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Intitulé</p></th>
+<th class="head text-center"><p>Description</p></th>
+<th class="head text-center"><p>Niveau de recommandation</p></th>
 </tr>
 </thead>
 <tbody>
@@ -742,9 +741,9 @@ Il existe d’autres séparateurs de champ (point virgule, deux points, tabulati
 </table>
 </section>
 <section id="gestion-dun-fichier-au-format-csv">
-<h4>Gestion d’un fichier au format CSV<a class="headerlink" href="#gestion-dun-fichier-au-format-csv" title="Lien permanent vers ce titre"></a></h4>
+<h4>Gestion d’un fichier au format CSV<a class="headerlink" href="#gestion-dun-fichier-au-format-csv" title="Lien permanent vers cette rubrique"></a></h4>
 <section id="conversion-dun-fichier-au-format-csv">
-<h5>Conversion d’un fichier au format CSV<a class="headerlink" href="#conversion-dun-fichier-au-format-csv" title="Lien permanent vers ce titre"></a></h5>
+<h5>Conversion d’un fichier au format CSV<a class="headerlink" href="#conversion-dun-fichier-au-format-csv" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Les référentiels des règles de gestion et des services agents doivent être au format CSV et encodés en UTF 8.
 Si le fichier d’origine n’est pas au format CSV, il faut suivre la procédure suivante :</p>
 <ul class="simple">
@@ -771,7 +770,7 @@ Si le fichier d’origine n’est pas au format CSV, il faut suivre la procédur
 </ul>
 </section>
 <section id="modification-dun-fichier-au-format-csv">
-<h5>Modification d’un fichier au format CSV<a class="headerlink" href="#modification-dun-fichier-au-format-csv" title="Lien permanent vers ce titre"></a></h5>
+<h5>Modification d’un fichier au format CSV<a class="headerlink" href="#modification-dun-fichier-au-format-csv" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Les référentiels des règles de gestion et des services agents doivent être au format CSV et encodés en UTF 8.
 Pour modifier un fichier de ce format, il faut suivre la procédure suivante :</p>
 <ul class="simple">
@@ -800,17 +799,17 @@ Si le fichier est « enregistré », au lieu d’être « enregistré sous �
 </ul>
 </section>
 <section id="exemples-de-fichier-csv-et-messages-retournes-par-la-solution-logicielle-vitam">
-<h5>Exemples de fichier CSV et messages retournés par la solution logicielle Vitam<a class="headerlink" href="#exemples-de-fichier-csv-et-messages-retournes-par-la-solution-logicielle-vitam" title="Lien permanent vers ce titre"></a></h5>
+<h5>Exemples de fichier CSV et messages retournés par la solution logicielle Vitam<a class="headerlink" href="#exemples-de-fichier-csv-et-messages-retournes-par-la-solution-logicielle-vitam" title="Lien permanent vers cette rubrique"></a></h5>
 <p><strong>Import initial d’un référentiel des services agents</strong></p>
 <ul class="simple">
 <li><p>Tous les services agents comprennent un identifiant, un intitulé et une description
 « Identifier », »Name », »Description »<br> »FRAN_NP_009913 », »Présidence sous Valéry Giscard d’Estaing », »Successeur de Pompidou […] »<br> »FRAN_NP_009941 », »Veil Simone (1927-2017) », »Née à Nice en 1927,  […] »</p></li>
 </ul>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p>Résultat</p></th>
-<th class="text-center head"><p>Message retourné par la solution logicielle Vitam</p></th>
-<th class="text-center head"><p>Commentaires</p></th>
+<tr class="row-odd"><th class="head text-center"><p>Résultat</p></th>
+<th class="head text-center"><p>Message retourné par la solution logicielle Vitam</p></th>
+<th class="head text-center"><p>Commentaires</p></th>
 </tr>
 </thead>
 <tbody>
@@ -824,11 +823,11 @@ Si le fichier est « enregistré », au lieu d’être « enregistré sous �
 <li><p>Au moins un identifiant de service agent n’est pas renseigné<br />
 « Identifier », »Name », »Description »<br> »FRAN_NP_009913 », »Présidence sous Valéry Giscard d’Estaing », »Successeur de Pompidou […] »<br> » », »Veil Simone (1927-2017) », »Née à Nice en 1927, […] »</p></li>
 </ul>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p>Résultat</p></th>
-<th class="text-center head"><p>Message retourné par la solution logicielle Vitam</p></th>
-<th class="text-center head"><p>Commentaires</p></th>
+<tr class="row-odd"><th class="head text-center"><p>Résultat</p></th>
+<th class="head text-center"><p>Message retourné par la solution logicielle Vitam</p></th>
+<th class="head text-center"><p>Commentaires</p></th>
 </tr>
 </thead>
 <tbody>
@@ -844,11 +843,11 @@ Si le fichier est « enregistré », au lieu d’être « enregistré sous �
 « FRAN_NP_009913 », » », »Successeur de Pompidou […] »<br>
 « FRAN_NP_009941 », »Veil Simone (1927-2017) », »Née à Nice en 1927, […] »</p></li>
 </ul>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p>Résultat</p></th>
-<th class="text-center head"><p>Message retourné par la solution logicielle Vitam</p></th>
-<th class="text-center head"><p>Commentaires</p></th>
+<tr class="row-odd"><th class="head text-center"><p>Résultat</p></th>
+<th class="head text-center"><p>Message retourné par la solution logicielle Vitam</p></th>
+<th class="head text-center"><p>Commentaires</p></th>
 </tr>
 </thead>
 <tbody>
@@ -864,11 +863,11 @@ Si le fichier est « enregistré », au lieu d’être « enregistré sous �
 « FRAN_NP_009913 », »Présidence sous Valéry Giscard d’Estaing », » »<br />
 « FRAN_NP_009941 », »Veil Simone (1927-2017) », »Née à Nice en 1927, […] »</p></li>
 </ul>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p>Résultat</p></th>
-<th class="text-center head"><p>Message retourné par la solution logicielle Vitam</p></th>
-<th class="text-center head"><p>Commentaires</p></th>
+<tr class="row-odd"><th class="head text-center"><p>Résultat</p></th>
+<th class="head text-center"><p>Message retourné par la solution logicielle Vitam</p></th>
+<th class="head text-center"><p>Commentaires</p></th>
 </tr>
 </thead>
 <tbody>
@@ -888,11 +887,11 @@ Si le fichier est « enregistré », au lieu d’être « enregistré sous �
 « FRAN_NP_009913 », »Présidence sous Valéry Giscard d’Estaing », »Successeur de Pompidou […] »<br />
 « FRAN_NP_009941 », »Veil Simone (1927-2017) », »Née à Nice en 1927, […] »</p></li>
 </ul>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p>Résultat</p></th>
-<th class="text-center head"><p>Message retourné par la solution logicielle Vitam</p></th>
-<th class="text-center head"><p>Commentaires</p></th>
+<tr class="row-odd"><th class="head text-center"><p>Résultat</p></th>
+<th class="head text-center"><p>Message retourné par la solution logicielle Vitam</p></th>
+<th class="head text-center"><p>Commentaires</p></th>
 </tr>
 </thead>
 <tbody>
@@ -904,15 +903,15 @@ Si le fichier est « enregistré », au lieu d’être « enregistré sous �
 </table>
 <ul class="simple">
 <li><p>La ligne de titre déclare « Identifier » précédé d’un espace blanc / vide<br />
- » Identifier », »Name », »Description »<br />
+«  Identifier », »Name », »Description »<br />
 « FRAN_NP_009913 », »Présidence sous Valéry Giscard d’Estaing », »Successeur de Pompidou […] »<br />
 « FRAN_NP_009941 », »Veil Simone (1927-2017) », »Née à Nice en 1927, […] »</p></li>
 </ul>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p>Résultat</p></th>
-<th class="text-center head"><p>Message retourné par la solution logicielle Vitam</p></th>
-<th class="text-center head"><p>Commentaires</p></th>
+<tr class="row-odd"><th class="head text-center"><p>Résultat</p></th>
+<th class="head text-center"><p>Message retourné par la solution logicielle Vitam</p></th>
+<th class="head text-center"><p>Commentaires</p></th>
 </tr>
 </thead>
 <tbody>
@@ -928,11 +927,11 @@ Si le fichier est « enregistré », au lieu d’être « enregistré sous �
 « FRAN_NP_009913 », »Présidence sous Valéry Giscard d’Estaing », »Successeur de Pompidou […] »<br />
 « FRAN_NP_009941 », »Veil Simone (1927-2017) », »Née à Nice en 1927, […] »</p></li>
 </ul>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p>Résultat</p></th>
-<th class="text-center head"><p>Message retourné par la solution logicielle Vitam</p></th>
-<th class="text-center head"><p>Commentaires</p></th>
+<tr class="row-odd"><th class="head text-center"><p>Résultat</p></th>
+<th class="head text-center"><p>Message retourné par la solution logicielle Vitam</p></th>
+<th class="head text-center"><p>Commentaires</p></th>
 </tr>
 </thead>
 <tbody>
@@ -948,11 +947,11 @@ Si le fichier est « enregistré », au lieu d’être « enregistré sous �
 « FRAN_NP_009913 », »Présidence sous Valéry Giscard d’Estaing », »Successeur de Pompidou […] »<br />
 « FRAN_NP_009941 », »Veil Simone (1927-2017) », »Née à Nice en 1927, […] »</p></li>
 </ul>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p>Résultat</p></th>
-<th class="text-center head"><p>Message retourné par la solution logicielle Vitam</p></th>
-<th class="text-center head"><p>Commentaires</p></th>
+<tr class="row-odd"><th class="head text-center"><p>Résultat</p></th>
+<th class="head text-center"><p>Message retourné par la solution logicielle Vitam</p></th>
+<th class="head text-center"><p>Commentaires</p></th>
 </tr>
 </thead>
 <tbody>
@@ -968,11 +967,11 @@ Si le fichier est « enregistré », au lieu d’être « enregistré sous �
 « FRAN_NP_009913 », »Présidence sous Valéry Giscard d’Estaing », »Successeur de Pompidou […] »<br />
 « FRAN_NP_009941 », »Veil Simone (1927-2017) », »Née à Nice en 1927, […] »</p></li>
 </ul>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p>Résultat</p></th>
-<th class="text-center head"><p>Message retourné par la solution logicielle Vitam</p></th>
-<th class="text-center head"><p>Commentaires</p></th>
+<tr class="row-odd"><th class="head text-center"><p>Résultat</p></th>
+<th class="head text-center"><p>Message retourné par la solution logicielle Vitam</p></th>
+<th class="head text-center"><p>Commentaires</p></th>
 </tr>
 </thead>
 <tbody>
@@ -988,11 +987,11 @@ Si le fichier est « enregistré », au lieu d’être « enregistré sous �
 « FRAN_NP_009913 », »Présidence sous Valéry Giscard d’Estaing », »Successeur de Pompidou […] »<br />
 « FRAN_NP_009941 », »Veil Simone (1927-2017) », »Née à Nice en 1927, […] »</p></li>
 </ul>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-center head"><p>Résultat</p></th>
-<th class="text-center head"><p>Message retourné par la solution logicielle Vitam</p></th>
-<th class="text-center head"><p>Commentaires</p></th>
+<tr class="row-odd"><th class="head text-center"><p>Résultat</p></th>
+<th class="head text-center"><p>Message retourné par la solution logicielle Vitam</p></th>
+<th class="head text-center"><p>Commentaires</p></th>
 </tr>
 </thead>
 <tbody>

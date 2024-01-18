@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="fr" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>18. La préservation dans la solution logicielle Vitam &mdash; Vitam documentation fonctionnelle</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
   
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/translations.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -48,6 +47,8 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="guide_lecture.html">1. Documentation Vitam - guide de lecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="presentation_programme.html">2. Présentation du programme Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_prise_en_main.html">3. Guide de prise en main de la solution logicielle Vitam – Vitam UI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_prise_en_main.html#realiser-une-premiere-entree">4. <em>Réaliser une première entrée</em></a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">documentation métier</span></p>
 <ul>
@@ -67,7 +68,8 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">documentation Vitam UI</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="VitamUI_Arbres_Plans.html">1. APP Arbres et plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Autoprovisionning.html">1. Vitam UI : présentation de la fonctionnalité d’auto-provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Arbres_Plans.html">2. APP Arbres et plans</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">outils connexes</span></p>
 <ul>
@@ -147,13 +149,13 @@
 
            <div itemprop="articleBody">
              
-  <section class="tex2jax_ignore mathjax_ignore" id="la-preservation-dans-la-solution-logicielle-vitam">
-<h1><span class="section-number">18. </span>La préservation dans la solution logicielle Vitam<a class="headerlink" href="#la-preservation-dans-la-solution-logicielle-vitam" title="Lien permanent vers ce titre"></a></h1>
+  <section id="la-preservation-dans-la-solution-logicielle-vitam">
+<h1><span class="section-number">18. </span>La préservation dans la solution logicielle Vitam<a class="headerlink" href="#la-preservation-dans-la-solution-logicielle-vitam" title="Lien permanent vers cette rubrique"></a></h1>
 <p>La préservation numérique consiste en un ensemble de processus visant à maintenir un accès aux objets numériques sur le long terme. Elle implique un moyen de représenter ces objets dans le temps et de vérifier la disponibilité et l’intégrité des objets dans la solution logicielle Vitam.</p>
 <section id="presentation-de-la-preservation">
-<h2><span class="section-number">18.1. </span>Présentation de la préservation<a class="headerlink" href="#presentation-de-la-preservation" title="Lien permanent vers ce titre"></a></h2>
+<h2><span class="section-number">18.1. </span>Présentation de la préservation<a class="headerlink" href="#presentation-de-la-preservation" title="Lien permanent vers cette rubrique"></a></h2>
 <section id="definition">
-<h3><span class="section-number">18.1.1. </span>Définition<a class="headerlink" href="#definition" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">18.1.1. </span>Définition<a class="headerlink" href="#definition" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Au-delà des services de sécurisation des journaux, d’audit et de génération de relevé de valeur probante, la préservation numérique intègre les services suivants :</p>
 <ul class="simple">
 <li><p>la réalisation de traitements de masse sur les fichiers pour :</p>
@@ -174,7 +176,7 @@
 </ul>
 </section>
 <section id="les-types-daction-de-preservation">
-<h3><span class="section-number">18.1.2. </span>Les types d’action de préservation<a class="headerlink" href="#les-types-daction-de-preservation" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">18.1.2. </span>Les types d’action de préservation<a class="headerlink" href="#les-types-daction-de-preservation" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Une action de préservation s’applique sur un objet donné (fichier numérique), caractérisé par un usage et une version relative, c’est-à-dire la première ou la dernière version disponible pour cet usage).</p>
 <p>Il existe quatre types d’action élémentaire.</p>
 <p>L’<em>analyse</em> traite la conformité d’un objet par rapport aux spécifications de son format (validation de format) ou encore par rapport à des critères émis pour des besoins de conservation et en déduit une valeur  contenue dans une énumération ; le résultat est exprimé dans un rapport d’analyse.
@@ -197,7 +199,7 @@ Exemples :</p>
 <p>L’<em>identification de formats</em> permet d’identifier ou de ré-identifier a posteriori des fichiers déjà transférés dans la solution logicielle Vitam.</p>
 </section>
 <section id="mecanismes-mis-en-oeuvre-en-fonction-de-laction-de-preservation-lancee">
-<h3><span class="section-number">18.1.3. </span>Mécanismes mis en œuvre en fonction de l’action de préservation lancée<a class="headerlink" href="#mecanismes-mis-en-oeuvre-en-fonction-de-laction-de-preservation-lancee" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">18.1.3. </span>Mécanismes mis en œuvre en fonction de l’action de préservation lancée<a class="headerlink" href="#mecanismes-mis-en-oeuvre-en-fonction-de-laction-de-preservation-lancee" title="Lien permanent vers cette rubrique"></a></h3>
 <p>||Création d’un objet|Mise à jour du groupe d’objets techniques|Mise à jour de l’unité archivistique|Mise à jour du registre des fonds|Rapport|
 |:—-|:—-|:—-|:—-|:—-|
 |Génération de binaire|oui|oui||oui|oui|
@@ -208,36 +210,36 @@ Exemples :</p>
 </section>
 </section>
 <section id="mise-en-place-dune-politique-de-preservation">
-<h2><span class="section-number">18.2. </span>Mise en place d’une politique de préservation<a class="headerlink" href="#mise-en-place-dune-politique-de-preservation" title="Lien permanent vers ce titre"></a></h2>
+<h2><span class="section-number">18.2. </span>Mise en place d’une politique de préservation<a class="headerlink" href="#mise-en-place-dune-politique-de-preservation" title="Lien permanent vers cette rubrique"></a></h2>
 <section id="definition-dune-politique-de-preservation">
-<h3><span class="section-number">18.2.1. </span>Définition d’une politique de préservation<a class="headerlink" href="#definition-dune-politique-de-preservation" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">18.2.1. </span>Définition d’une politique de préservation<a class="headerlink" href="#definition-dune-politique-de-preservation" title="Lien permanent vers cette rubrique"></a></h3>
 <p>La politique de préservation d’une entité ne se limite pas à la question des formats des fichiers pris en charge, même si c’est en général le premier point qui est évoqué lorsqu’on parle de conservation des données numériques.</p>
 <p>Une étude pilotée par le Service interministériel, en partenariat avec l’équipe Vitam et les ministères de la Culture, de l’Europe et des Affaires étrangères et des Armées au deuxième semestre 2018 a porté sur la définition du périmètre des services à prendre en compte dans le cadre d’une politique de préservation. Au-delà des aspects de conservation à proprement parler (politique de conservation et planification de la préservation, processus de pérennisation, restauration), la politique de préservation concerne également les fonctions d’entrée et d’accès aux archives.</p>
 <p>L’étude, dont les résultats sont disponibles sur le site internet France Archives, propose une modélisation des processus, sous-processus et actions à mettre en œuvre pour assurer la pérennisation des données versées dans un système d’archivage électronique. Cette modélisation est accompagnée des profils à mobiliser pour chacun des processus (archiviste, développeur, administrateur système…), détaillés sous forme de schéma et de tableau, afin de faciliter dans un contexte donné le recensement des compétences indispensables à la mise en œuvre d’une stratégie de pérennisation des données numériques.</p>
 <p>Ces livrables proposent un socle de réflexion sur la pérennisation des données numériques qui peut servir de référence pour identifier dans une structure quels processus sont ou non mis en œuvre, quelles compétences sont mobilisables mais aussi à quels risques s’expose une structure en l’absence de stratégie de pérennisation, autant d’éléments qui peuvent constituer un argumentaire précieux auprès des instances de décision.</p>
 </section>
 <section id="choix-des-outils-a-mettre-en-oeuvre">
-<h3><span class="section-number">18.2.2. </span>Choix des outils à mettre en œuvre<a class="headerlink" href="#choix-des-outils-a-mettre-en-oeuvre" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">18.2.2. </span>Choix des outils à mettre en œuvre<a class="headerlink" href="#choix-des-outils-a-mettre-en-oeuvre" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Dans la solution logicielle Vitam, les actions de préservation sont réalisées par des outils logiciels interfacés avec la solution logicielle Vitam appelés griffons. Ces griffons sont capables de prendre un lot d’objets et de retourner un fichier de résultat ou un lot d’objets générés.</p>
 <p>Plusieurs griffons sont proposés avec la solution logicielle Vitam et peuvent être installés à l’initialisation de la plate-forme. Il est également possible à un service d’installer ses propres griffons, en fonction de ses besoins de préservation et de la nature des objets techniques à préserver (fichiers bureautiques, fichiers 2D ou 3D, fichiers son ou vidéo…).</p>
 <p>L’installation des griffons est une opération d’administration technique.</p>
 <p>Les griffons sont référencés et administrés au moyen du référentiel des griffons.</p>
 </section>
 <section id="definition-de-scenarios-de-preservation">
-<h3><span class="section-number">18.2.3. </span>Définition de scénarios de préservation<a class="headerlink" href="#definition-de-scenarios-de-preservation" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">18.2.3. </span>Définition de scénarios de préservation<a class="headerlink" href="#definition-de-scenarios-de-preservation" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Les scénarios de préservation permettent de spécifier une action de préservation à mettre en œuvre, le griffon à utiliser en fonction des formats d’objets techniques à traiter et les traitements à exécuter par le griffon.</p>
 <p>Un scénario de préservation peut être comparé à une recette de cuisine qui indique, en fonction du type d’ingrédient, l’instrument à utiliser et la méthode de cuisson à retenir.</p>
 <p>Les scénarios de préservation sont référencés et administrés au moyen du référentiel des scénarios de préservation.</p>
 </section>
 <section id="tests-des-fonctionnalites-de-preservation">
-<h3><span class="section-number">18.2.4. </span>Tests des fonctionnalités de préservation<a class="headerlink" href="#tests-des-fonctionnalites-de-preservation" title="Lien permanent vers ce titre"></a></h3>
+<h3><span class="section-number">18.2.4. </span>Tests des fonctionnalités de préservation<a class="headerlink" href="#tests-des-fonctionnalites-de-preservation" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Les griffons proposés avec la solution logicielle Vitam ont été jugés intéressants en termes de fonctionnalités couvertes, tant sur les actions de préservation que sur les formats pris en charge. Pour autant, le résultat des traitements effectués avec ces griffons doit systématiquement être évalué sur des données réelles avant toute généralisation de leur utilisation en production.</p>
 <p>Une opération de préservation a des conséquences lourdes. Elle ne doit pas être lancée sans avoir fait au préalable l’objet de tests sur des échantillons représentatifs des données réelles qui seront traitées dans la solution logicielle Vitam.</p>
 <p>Avant toute opération de préservation, il est recommandé que :</p>
-<table class="colwidths-auto docutils align-default">
+<table class="docutils align-default">
 <thead>
-<tr class="row-odd"><th class="text-left head"><p>Qui ?</p></th>
-<th class="text-left head"><p>Quoi ?</p></th>
+<tr class="row-odd"><th class="head text-left"><p>Qui ?</p></th>
+<th class="head text-left"><p>Quoi ?</p></th>
 </tr>
 </thead>
 <tbody>
