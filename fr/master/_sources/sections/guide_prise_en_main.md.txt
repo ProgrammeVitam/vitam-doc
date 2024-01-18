@@ -1,5 +1,4 @@
-Guide de prise en main de la solution logicielle Vitam – Vitam UI
-=====
+Guide de prise en main de la solution logicielle Vitam – Vitam UI<br>
 *Réaliser une première entrée*
 ====
 
