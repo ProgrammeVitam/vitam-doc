@@ -12,6 +12,7 @@ Première approche
 
    sections/guide_lecture.md
    sections/presentation_programme.md
+   sections/presentation_solution_logicielle.md
    sections/guide_prise_en_main.md
 
 Documentation métier
@@ -24,6 +25,7 @@ Documentation métier
    sections/valeur_probante.md
    sections/eliminations.md
    sections/gel.md
+   sections/gestion_archives_arbo.md
    sections/gestion_habilitations.md
    sections/modele_de_donnees.md
    sections/modele_de_workflow.md
