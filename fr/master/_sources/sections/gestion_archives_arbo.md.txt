@@ -758,82 +758,82 @@ Exemple d’enregistrement dans un journal du cycle de vie d’une trace externe
 
 ![](./medias/archives_arbo/journal_cycle_vie.png)
 
-[^1] Les principes retenus par l’équipe du programme Vitam dans la spécification des SIP sont détaillés dans le document intitulé : [VITAM - Structuration des Submission Information Package (SIP)](./structuration_SIP). 
+[^1] Les principes retenus par l’équipe du programme Vitam dans la spécification des SIP sont détaillés dans le document intitulé : [VITAM - Structuration des Submission Information Package (SIP)]:(./structuration_SIP). 
 
-[^2] Pour plus d’informations, consulter le document [VITAM - Structuration des Submission Information Package (SIP)](./structuration_SIP). 
+[^2]: Pour plus d’informations, consulter le document [VITAM - Structuration des Submission Information Package (SIP)](./structuration_SIP). 
 
-[^3] Le fonctionnement des rattachements est précisé dans la [section « Rattachement déclaré dans un bordereau de transfert »](#rattachement-déclaré-dans-un-bordereau-de-transfert) du présent document.
+[^3]: Le fonctionnement des rattachements est précisé dans la [section « Rattachement déclaré dans un bordereau de transfert »](#rattachement-déclaré-dans-un-bordereau-de-transfert) du présent document.
 
-[^4] Pour plus d’informations, consulter le document [VITAM - Structuration des Dissemination Information Package (DIP)](./structuration_DIP). 
+[^4]: Pour plus d’informations, consulter le document [VITAM - Structuration des Dissemination Information Package (DIP)](./structuration_DIP). 
 
-[^5] Cette valeur peut être modifiée en configuration.
+[^5]: Cette valeur peut être modifiée en configuration.
 
-[^6] Pour plus d’informations, consulter le document [VITAM - Structuration des  Submission Information Package (SIP)](.structuration_SIP). 
+[^6]: Pour plus d’informations, consulter le document [VITAM - Structuration des  Submission Information Package (SIP)](.structuration_SIP). 
 
-[^7] Pour plus d’informations, consulter [VITAM - Modèle de données](./modele_de_donnees.md), chapitre 4.1, « Collection Unit ».
+[^7]: Pour plus d’informations, consulter [VITAM - Modèle de données](./modele_de_donnees.md), chapitre 4.1, « Collection Unit ».
 
-[^8] Pour plus d’informations, consulter [VITAM - Modèle de données](./modele_de_donnees.md), chapitre 3.2, « Collection LogbookLifeCycleUnit ».
+[^8]: Pour plus d’informations, consulter [VITAM - Modèle de données](./modele_de_donnees.md), chapitre 3.2, « Collection LogbookLifeCycleUnit ».
 
-[^9] Pour plus d’informations, consulter [VITAM - Modèle de données](./modele_de_donnees.md), chapitre 4.2, « Collection ObjectGroup ».
+[^9]: Pour plus d’informations, consulter [VITAM - Modèle de données](./modele_de_donnees.md), chapitre 4.2, « Collection ObjectGroup ».
 
-[^10] Pour plus d’informations sur le module de collecte, consulter le document [VITAM – Module de collecte](./module_de_collecte.md).
+[^10]: Pour plus d’informations sur le module de collecte, consulter le document [VITAM – Module de collecte](./module_de_collecte.md).
 
-[^11] Pour plus d’informations sur la déclaration d’un rattachement dans un SIP, consulter la [section « Rattachement déclaré dans un bordereau de transfert »](#rattachement-déclaré-dans-un-bordereau-de-transfert) du présent document ou le document [VITAM - Structuration des Submission Information Packages (SIP)](./structuration_SIP). Concernant les étapes à réaliser, consulter VITAM- Cahier de tests.
+[^11]: Pour plus d’informations sur la déclaration d’un rattachement dans un SIP, consulter la [section « Rattachement déclaré dans un bordereau de transfert »](#rattachement-déclaré-dans-un-bordereau-de-transfert) du présent document ou le document [VITAM - Structuration des Submission Information Packages (SIP)](./structuration_SIP). Concernant les étapes à réaliser, consulter VITAM- Cahier de tests.
 
-[^12] Ce service, davantage technique, est détaillé dans les documentations : Documentation d’exploitation, chapitre 8.2.10.2.2.1 « Fichier ingest-external.conf » ; Documentation d’API externes, chapitre « Ingest ».
+[^12]: Ce service, davantage technique, est détaillé dans les documentations : Documentation d’exploitation, chapitre 8.2.10.2.2.1 « Fichier ingest-external.conf » ; Documentation d’API externes, chapitre « Ingest ».
 
-[^13] Pour plus d’informations, consulter la documentation [VITAM - Gestion des habilitations](./gestion_habilitations.md), chapitre « Contrat d’entrée ».
+[^13]: Pour plus d’informations, consulter la documentation [VITAM - Gestion des habilitations](./gestion_habilitations.md), chapitre « Contrat d’entrée ».
 
-[^14]  Pour plus d’informations, consulter le document [VITAM - Structuration des Dissemination Information Package (DIP)](./structuration_DIP). 
+[^14]:  Pour plus d’informations, consulter le document [VITAM - Structuration des Dissemination Information Package (DIP)](./structuration_DIP). 
 
-[^15] Les étapes liées à cette opération sont décrites dans la documentation [VITAM - Modèle de workflow](./modele_de_workflow.md), chapitre « Export d’un DIP ».
+[^15]: Les étapes liées à cette opération sont décrites dans la documentation [VITAM - Modèle de workflow](./modele_de_workflow.md), chapitre « Export d’un DIP ».
 
-[^16] Ce service fonctionne uniquement avec les règles de gestion indexées au moyen du calcul des règles de gestion héritées.
+[^16]: Ce service fonctionne uniquement avec les règles de gestion indexées au moyen du calcul des règles de gestion héritées.
 
-[^17] Pour plus d’informations, consulter la documentation [VITAM - Gestion des habilitations](./gestion_habilitations.md), chapitre « Contrat d’accès ».
+[^17]: Pour plus d’informations, consulter la documentation [VITAM - Gestion des habilitations](./gestion_habilitations.md), chapitre « Contrat d’accès ».
 
-[^18] Pour plus d’informations sur le registre des fonds, consulter la documentation [VITAM - Services producteurs](./services_prod.md), chapitre « Registre des fonds ».
+[^18]: Pour plus d’informations sur le registre des fonds, consulter la documentation [VITAM - Services producteurs](./services_prod.md), chapitre « Registre des fonds ».
 
-[^19] La date de l’opération d’entrée, le contrat d’entrée, le service producteur et l’identifiant du message, obligatoires dans le bordereau de transfert, sont systématiquement enregistrés dans le registre des fonds. Y figurent également commentaires, profil d’archivage, modalités d’entrée, statut des archives, s’ils sont présents dans le bordereau de transfert.
+[^19]: La date de l’opération d’entrée, le contrat d’entrée, le service producteur et l’identifiant du message, obligatoires dans le bordereau de transfert, sont systématiquement enregistrés dans le registre des fonds. Y figurent également commentaires, profil d’archivage, modalités d’entrée, statut des archives, s’ils sont présents dans le bordereau de transfert.
 
-[^20] Pour plus d’informations sur le registre des fonds, consulter la documentation [VITAM - Services producteurs](./services_prod.md), chapitre « Registre des fonds ».
+[^20]: Pour plus d’informations sur le registre des fonds, consulter la documentation [VITAM - Services producteurs](./services_prod.md), chapitre « Registre des fonds ».
 
-[^21] Les étapes liées à cette opération sont décrites dans la documentation [VITAM - Modèle de workflow](./modele_de_workflow.md), chapitre « Mise à jour unitaire ».
+[^21]: Les étapes liées à cette opération sont décrites dans la documentation [VITAM - Modèle de workflow](./modele_de_workflow.md), chapitre « Mise à jour unitaire ».
 
-[^22] Les étapes liées à cette opération sont décrites dans la documentation [VITAM - Modèle de workflow](./modele_de_workflow.md), chapitre « Mise à jour de masse (Mass Update) ».
+[^22]: Les étapes liées à cette opération sont décrites dans la documentation [VITAM - Modèle de workflow](./modele_de_workflow.md), chapitre « Mise à jour de masse (Mass Update) ».
 
-[^23] Les étapes liées à cette opération sont décrites dans la documentation [VITAM - Modèle de workflow](./modele_de_workflow.md), chapitre « Mise à jour de masse (Mass Update) ».
+[^23]: Les étapes liées à cette opération sont décrites dans la documentation [VITAM - Modèle de workflow](./modele_de_workflow.md), chapitre « Mise à jour de masse (Mass Update) ».
 
-[^24] Les étapes liées à cette opération sont décrites dans la documentation [VITAM - Modèle de workflow](./modele_de_workflow.md), chapitre « Mise à jour unitaire  de masse (Bulk Update) ».
+[^24]: Les étapes liées à cette opération sont décrites dans la documentation [VITAM - Modèle de workflow](./modele_de_workflow.md), chapitre « Mise à jour unitaire  de masse (Bulk Update) ».
 
-[^25] Pour plus d’informations, consulter le document [VITAM - Règles de gestion](./regles_gestion.md).
+[^25]: Pour plus d’informations, consulter le document [VITAM - Règles de gestion](./regles_gestion.md).
 
-[^26] Les étapes liées à cette opération sont décrites dans la documentation [VITAM - Modèle de workflow](./modele_de_workflow.md), chapitre « Workflow de calcul des règles de gestion héritées des unités archivistiques pour faciliter les requêtes ».
+[^26]: Les étapes liées à cette opération sont décrites dans la documentation [VITAM - Modèle de workflow](./modele_de_workflow.md), chapitre « Workflow de calcul des règles de gestion héritées des unités archivistiques pour faciliter les requêtes ».
 
-[^27] Pour plus d’informations, consulter le document Document d’installation, chapitres 4.2.5.10 « Paramétrage du batch de calcul pour l’indexation des règles héritées » et 4.2.5.12 « Fichiers complémentaires » ; « Document d’exploitation », chapitre 8.2.6.2.3 « Paramétrage du batch de calcul pour l’indexation des règles héritées ».
+[^27]: Pour plus d’informations, consulter le document Document d’installation, chapitres 4.2.5.10 « Paramétrage du batch de calcul pour l’indexation des règles héritées » et 4.2.5.12 « Fichiers complémentaires » ; « Document d’exploitation », chapitre 8.2.6.2.3 « Paramétrage du batch de calcul pour l’indexation des règles héritées ».
 
-[^28] Les étapes liées à cette opération sont décrites dans la documentation [VITAM - Modèle de workflow](./modele_de_workflow.md), chapitre « Workflow de suppression des règles de gestion héritées et calculées des unités archivistiques ».
+[^28]: Les étapes liées à cette opération sont décrites dans la documentation [VITAM - Modèle de workflow](./modele_de_workflow.md), chapitre « Workflow de suppression des règles de gestion héritées et calculées des unités archivistiques ».
 
-[^29] Cette opération est réalisable depuis l’IHM de recette de la solution logicielle Vitam et l’APP « Recherche et consultation des archives » de Vitam UI.
+[^29]: Cette opération est réalisable depuis l’IHM de recette de la solution logicielle Vitam et l’APP « Recherche et consultation des archives » de Vitam UI.
 
-[^30] Les étapes liées à cette opération sont décrites dans la documentation [VITAM - Modèle de workflow](./modele_de_workflow.md), chapitre « Modification d’arborescence ».
+[^30]: Les étapes liées à cette opération sont décrites dans la documentation [VITAM - Modèle de workflow](./modele_de_workflow.md), chapitre « Modification d’arborescence ».
 
-[^31] Pour plus d’informations, consulter la documentation [VITAM - Les éliminations avec la solution logicielle Vitam](./eliminations.md).
+[^31]: Pour plus d’informations, consulter la documentation [VITAM - Les éliminations avec la solution logicielle Vitam](./eliminations.md).
 
-[^32] Pour plus d’informations, consulter la documentation [VITAM - Les éliminations avec la solution logicielle Vitam](./eliminations.md).
+[^32]: Pour plus d’informations, consulter la documentation [VITAM - Les éliminations avec la solution logicielle Vitam](./eliminations.md).
 
-[^33] Pour plus d’informations, consulter les documents [VITAM - Structuration des Dissemination Information Package (DIP)](./structuration_DIP) et [Le transfert avec la solution logicielle Vitam](./transfert.md).
+[^33]: Pour plus d’informations, consulter les documents [VITAM - Structuration des Dissemination Information Package (DIP)](./structuration_DIP) et [Le transfert avec la solution logicielle Vitam](./transfert.md).
 
-[^34] Les étapes liées à cette opération sont décrites dans la documentation [VITAM - Modèle de workflow](./modele_de_workflow.md), chapitre « Transfert ». Pour plus d’informations sur le transfert, consulter la documentation [VITAM - Le transfert avec la solution logicielle Vitam](./transfert.md).
+[^34]: Les étapes liées à cette opération sont décrites dans la documentation [VITAM - Modèle de workflow](./modele_de_workflow.md), chapitre « Transfert ». Pour plus d’informations sur le transfert, consulter la documentation [VITAM - Le transfert avec la solution logicielle Vitam](./transfert.md).
 
-[^35] Les étapes liées à cette opération sont décrites dans la documentation [VITAM - Modèle de workflow](./modele_de_workflow.md), chapitre « Transfert ». Pour plus d’informations sur le transfert, consulter la documentation [VITAM - Le transfert avec la solution logicielle Vitam](./transfert.md).
+[^35]: Les étapes liées à cette opération sont décrites dans la documentation [VITAM - Modèle de workflow](./modele_de_workflow.md), chapitre « Transfert ». Pour plus d’informations sur le transfert, consulter la documentation [VITAM - Le transfert avec la solution logicielle Vitam](./transfert.md).
 
-[^36] Pour plus d’informations, consulter le document [VITAM - Gestion de la préservation](./preservation.md).
+[^36]: Pour plus d’informations, consulter le document [VITAM - Gestion de la préservation](./preservation.md).
 
-[^37] Les étapes liées à cette opération sont décrites dans la documentation [VITAM - Modèle de workflow](./modele_de_workflow.md), chapitre « Workflow d’audit de cohérence des fichiers » et chapitre « Workflow de l’audit correctif ».
+[^37]: Les étapes liées à cette opération sont décrites dans la documentation [VITAM - Modèle de workflow](./modele_de_workflow.md), chapitre « Workflow d’audit de cohérence des fichiers » et chapitre « Workflow de l’audit correctif ».
 
-[^38] Les étapes liées à cette opération sont décrites dans la documentation [VITAM - Modèle de workflow](./modele_de_workflow.md), chapitre « Workflow d’audit de cohérence des fichiers » et chapitre « Workflow de l’audit correctif ».
+[^38]: Les étapes liées à cette opération sont décrites dans la documentation [VITAM - Modèle de workflow](./modele_de_workflow.md), chapitre « Workflow d’audit de cohérence des fichiers » et chapitre « Workflow de l’audit correctif ».
 
-[^39] Pour plus d’informations, consulter le document [VITAM - Gestion de la préservation](./preservation.md).
+[^39]: Pour plus d’informations, consulter le document [VITAM - Gestion de la préservation](./preservation.md).
 
-[^40] Les étapes liées à cette opération sont décrites dans la documentation [VITAM - Modèle de workflow](/modele_de_workflow.md), chapitre « Préservation ».
+[^40]: Les étapes liées à cette opération sont décrites dans la documentation [VITAM - Modèle de workflow](/modele_de_workflow.md), chapitre « Préservation ».

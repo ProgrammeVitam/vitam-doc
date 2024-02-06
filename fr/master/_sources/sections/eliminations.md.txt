@@ -8,7 +8,7 @@ Introduction
 ### Documents de référence
 
 
-|**Document**||**Date de la version**|**Remarques**|
+|**Document**|**Date de la version**|**Remarques**|
 |:---------------:|:-----:|:-----:|
 |NF Z 44022 – MEDONA – Modélisation des données pour l’archivage|18/01/2014||
 |Standard d’échange de données pour l’archivage – SEDA – v. 2.1|06/2018||            
@@ -450,5 +450,5 @@ Les seuils mis à disposition par la solution logicielle Vitam fonctionne de la 
     - si le nombre d’unités archivistiques sélectionnées est inférieur ou égal au seuil de plate-forme alors l'opération est lancée et aura un statut en succès en cas de réussite
     - sinon elle est lancée mais aura un statut en erreur.
 
-[^1] Des précisions sur les seuils sont apportées dans le présent document, [chapitre « Quelles sont les limitations pour les opérations d’analyse et d’action d’élimination ? »](#quelles-sont-les-limitations-pour-les-opérations-danalyse-et-daction-délimination).
-[^2] Des précisions sur les seuils sont apportées dans le présent document, [chapitre « Quelles sont les limitations pour les opérations d’analyse et d’action d’élimination ? »](#quelles-sont-les-limitations-pour-les-opérations-danalyse-et-daction-délimination).
+[^1]: Des précisions sur les seuils sont apportées dans le présent document, [chapitre « Quelles sont les limitations pour les opérations d’analyse et d’action d’élimination ? »](#quelles-sont-les-limitations-pour-les-opérations-danalyse-et-daction-délimination).
+[^2]: Des précisions sur les seuils sont apportées dans le présent document, [chapitre « Quelles sont les limitations pour les opérations d’analyse et d’action d’élimination ? »](#quelles-sont-les-limitations-pour-les-opérations-danalyse-et-daction-délimination).

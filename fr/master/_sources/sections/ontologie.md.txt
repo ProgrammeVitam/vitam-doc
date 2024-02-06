@@ -7,13 +7,14 @@ Introduction
 
 ### Documents de référence
 
-|**Document**||**Date de la version**|**Remarques**|
-|:---------------:|:-----:|:-----:|
+|**Document**|**Date de la version**|**Remarques**|
+|:-----------:|:-----:|:-----:|
 |NF Z 44022 – MEDONA - Modélisation des données pour l’archivage|18/01/2014||
 |Standard d’échange de données pour l’archivage – SEDA – v. 2.1|06/2018||
 |Vitam – Structuration des *Submission Information Package* (SIP)|2023||
 |Vitam – Profils d’unité archivistiqu|2023|Ce document est complémentaire du présent document qui fait référence, ponctuellement, aux profils d’unité archivistique.|
-|Vitam – Documentation d’exploitation|2023||               
+|Vitam – Documentation d’exploitation|2023||
+
 
 ### Présentation du document
 

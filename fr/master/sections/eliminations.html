@@ -186,11 +186,28 @@
 <h2><span class="section-number">2.1. </span>Introduction<a class="headerlink" href="#introduction" title="Lien permanent vers cette rubrique"></a></h2>
 <section id="documents-de-reference">
 <h3><span class="section-number">2.1.1. </span>Documents de référence<a class="headerlink" href="#documents-de-reference" title="Lien permanent vers cette rubrique"></a></h3>
-<p>|<strong>Document</strong>||<strong>Date de la version</strong>|<strong>Remarques</strong>|
-|:—————:|:—–:|:—–:|
-|NF Z 44022 – MEDONA – Modélisation des données pour l’archivage|18/01/2014||
-|Standard d’échange de données pour l’archivage – SEDA – v. 2.1|06/2018||<br />
-|Standard d’échange de données pour l’archivage – SEDA – v. 2.2|02/2022|Cette nouvelle version du SEDA est intégrée à la solution logicielle Vitam à partir de la V6.RC.|</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p><strong>Document</strong></p></th>
+<th class="head text-center"><p><strong>Date de la version</strong></p></th>
+<th class="head text-center"><p><strong>Remarques</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>NF Z 44022 – MEDONA – Modélisation des données pour l’archivage</p></td>
+<td class="text-center"><p>18/01/2014</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Standard d’échange de données pour l’archivage – SEDA – v. 2.1</p></td>
+<td class="text-center"><p>06/2018</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>Standard d’échange de données pour l’archivage – SEDA – v. 2.2</p></td>
+<td class="text-center"><p>02/2022</p></td>
+<td class="text-center"><p>Cette nouvelle version du SEDA est intégrée à la solution logicielle Vitam à partir de la V6.RC.</p></td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="presentation-du-document">
 <h3><span class="section-number">2.1.2. </span>Présentation du document<a class="headerlink" href="#presentation-du-document" title="Lien permanent vers cette rubrique"></a></h3>
@@ -295,7 +312,7 @@ Il est possible d’ajouter dans le rapport, pour chaque unité archivistique, l
 </ul>
 <p>La date par rapport à laquelle se fait l’analyse peut se situer dans le passé ou le futur ou être la date du jour.<br />
 Il est possible d’indiquer un seuil d’unités archivistiques traitées au cours de l’opération. Si ce seuil est dépassé (par exemple, le seuil est de 15 alors que l’analyse est lancée sur 17 unités archivistiques), l’opération sera en échec.<br />
-En analyse, il est recommandé d’avoir un seuil maximal de 100 000 unités archivistiques parcourues[^1].</p>
+En analyse, il est recommandé d’avoir un seuil maximal de 100 000 unités archivistiques parcourues<a class="footnote-reference brackets" href="#id3" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
 <p>L’analyse permet de définir le statut des unités archivistiques concernées :</p>
 <ul class="simple">
 <li><p>KEEP (à conserver),</p></li>
@@ -465,7 +482,7 @@ Cette opération peut être lancée indépendamment d’une campagne d’évalua
 <p>L’opération d’élimination peut être lancée par rapport à une date située dans le passé ou à la date du jour. Elle ne peut pas être lancée par rapport à une date située dans le futur.<br />
 Pour des raisons liées aux problématiques de calcul de graphe, il n’est pas possible de lancer cette action si une autre action d’élimination est en cours (ou en pause) ou en parallèle d’une action de modification d’arborescence. La solution logicielle vérifie si des processus concurrents ne sont pas en cours au lancement du processus d’élimination.<br />
 Il est possible d’indiquer un seuil d’unités archivistiques traitées au cours de l’opération. Si ce seuil est dépassé (par exemple, le seuil est de 15 alors que l’analyse est lancée sur 17 unités archivistiques), l’opération sera en échec.<br />
-En mise en œuvre de l’élimination, il est recommandé d’avoir un seuil maximal de 10 000 unités archivistiques parcourues[^2].<br />
+En mise en œuvre de l’élimination, il est recommandé d’avoir un seuil maximal de 10 000 unités archivistiques parcourues<a class="footnote-reference brackets" href="#id4" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>.<br />
 Seules les unités archivistiques dont la solution logicielle peut déterminer le sort final applicable, en fonction des règles de gestion portées par les unités archivistiques (échéance expirée et sort final « détruire »), sont effectivement éliminées.<br />
 L’opération d’élimination implique donc que la mise en œuvre de l’élimination proprement dite soit immédiatement précédée dans la solution logicielle d’une phase d’analyse du caractère éliminable des unités archivistiques. Cette phase d’analyse systématique calcule les mêmes statuts qu’une campagne d’évaluation des unités archivistiques éliminables (cf. ci-dessus), mais sans indexation des résultats dans les métadonnées des unités archivistiques :</p>
 <ul class="simple">
@@ -663,8 +680,17 @@ Les seuils de plate-forme sont définis dans un fichier de configuration. Par d�
 </ul>
 </li>
 </ul>
-<p>[^1] Des précisions sur les seuils sont apportées dans le présent document, <span class="xref myst">chapitre « Quelles sont les limitations pour les opérations d’analyse et d’action d’élimination ? »</span>.
-[^2] Des précisions sur les seuils sont apportées dans le présent document, <span class="xref myst">chapitre « Quelles sont les limitations pour les opérations d’analyse et d’action d’élimination ? »</span>.</p>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id3" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Des précisions sur les seuils sont apportées dans le présent document, <span class="xref myst">chapitre « Quelles sont les limitations pour les opérations d’analyse et d’action d’élimination ? »</span>.</p>
+</aside>
+<aside class="footnote brackets" id="id4" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>Des précisions sur les seuils sont apportées dans le présent document, <span class="xref myst">chapitre « Quelles sont les limitations pour les opérations d’analyse et d’action d’élimination ? »</span>.</p>
+</aside>
+</aside>
 </section>
 </section>
 </section>

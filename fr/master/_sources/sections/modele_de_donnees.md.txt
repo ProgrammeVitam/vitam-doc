@@ -10337,6 +10337,3 @@ Le champs « _uds » n’est pas accessible en externe.
 | #score                     | _score |
 | #version                   | _v |
 | #tenant                    | _tenant |
-
-
-

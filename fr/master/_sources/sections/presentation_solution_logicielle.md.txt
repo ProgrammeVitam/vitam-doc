@@ -1,16 +1,4 @@
 # Présentation de la solution logicielle Vitam
-
-## Contexte
-Dans la dynamique actuelle de développement numérique (dématérialisation des processus administratifs), de plus en plus de décisions concernant directement les citoyens et plus largement les actions de l’État, existent uniquement sous forme numérique. Par conséquent, il est impératif d’accompagner la transition numérique de l’État en garantissant la préservation de son patrimoine informationnel et donc sa continuité numérique. Le ministère des Armées, le ministère de l’Europe et des Affaires étrangères et le ministère de la Culture, investis chacun d’une mission d'archivage historique (définitif), ont saisi l’opportunité de concevoir ensemble une solution d’archivage numérique à implémenter dans leur contexte propre. Le programme Vitam a été lancé officiellement le 9 mars 2015. Il est porté par une équipe interministérielle, pilotée par la Direction interministérielle du Numérique (DINum), en adéquation avec les décisions du Comité interministériel aux Archives de France (CIAF).
-
-![Gouvernance du Programme Vitam](./medias/presentation_solution_logicielle/gouvernance.jpg)
-
-Le programme Vitam a pour objectifs :
--  la conception, la réalisation et la maintenance mutualisées d’une solution logicielle générique d’archivage électronique. Cette solution logicielle est appelée Vitam. Elle est l’objet du document ;
--  la mise en place, dans chacun des trois ministères porteurs, de plates-formes d’archivage utilisant la solution logicielle Vitam ;
--  la réutilisation de la solution logicielle Vitam par le plus grand nombre d’acteurs publics possible, publics comme privés, en veillant à sa capacité d'usage dans des contextes divers. 
-
-![CLub utilisateurs du Programme Vitam](./medias/presentation_solution_logicielle/202401_utilisateurs.jpg)
       
 ## Solution logicielle Vitam
 
