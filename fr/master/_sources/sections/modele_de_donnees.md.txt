@@ -4858,6 +4858,15 @@ Cette transposition se fait comme suit :
 
 -   Cardinalité : 1-1
 
+**« AutomaticIngest » :** paramètre permettant d'automatiser l'envoi de transaction(s) vers la solution logicielle Vitam.
+
+-   Il s’agit d’un booléen.
+
+-   Cardinalité : 0-1
+
+AutomaticIngest: true
+
+
 Base MasterData
 ---------------
 

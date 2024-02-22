@@ -282,7 +282,8 @@ La deuxième partie « reportSummary » est constituée du résumé du rapport
 La troisième partie « context » est constituée des éléments de requête qui permettent de connaître les critères de recherche et sélection des objets :
 - « dslQuery » : la requête DSL de définition des unités archivistiques cibles ;
 - « usage » : le type d’objets ciblés – via leur usage au sens de la solution logicielle Vitam, la plupart du temps BinaryMaster ;
-- « version » : la version des objets ciblés, la plupart du temps cela sera la version 1, mais dans le cas d’objets générés à l’occasion d’opérations de préservation, le numéro de version pourra être différent.
+- « version » : la version des objets ciblés, la plupart du temps cela sera la version 1, mais dans le cas d’objets générés à l’occasion d’opérations de préservation, le numéro de version pourra être différent ;
+- « includeDetachedSigningInformation » : l'inclusion des documents associés à un contexte de signature détachée.
 
 La quatrième et dernière partie « reportEntries » rend compte des vérifications faites sur chaque objet binaire concerné, avec, pour chacun, un objet json contenant :
 - « unitIds » : le tableau des unités archivistiques sélectionnées par la requête et contenant cet objet binaire (dans le cas général un seul) ;

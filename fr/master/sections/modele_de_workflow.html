@@ -7606,7 +7606,8 @@ Toutes les étapes, tâches et traitement sont journalisées dans le journal des
       <span class="s2">&quot;$projection&quot;</span> <span class="p">:</span> <span class="p">{</span> <span class="p">}</span>
     <span class="p">},</span>
     <span class="s2">&quot;usage&quot;</span> <span class="p">:</span> <span class="s2">&quot;BinaryMaster&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;version&quot;</span> <span class="p">:</span> <span class="s2">&quot;1&quot;</span>
+    <span class="s2">&quot;version&quot;</span> <span class="p">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;includeDetachedSigningInformation&quot;</span> <span class="p">:</span> <span class="n">false</span>
   <span class="p">},</span>
 
   <span class="s2">&quot;reportEntries&quot;</span> <span class="p">:</span> <span class="p">[</span> <span class="p">{</span>
@@ -7902,8 +7903,17 @@ Toutes les étapes, tâches et traitement sont journalisées dans le journal des
 <li><p>« evStartDateTime » : la date de l’enregistrement du premier statut dans le rapport ;</p></li>
 <li><p>« evStartDateTime »: la date de l’enregistrement du dernier statut dans le rapport, postérieure à la d’enregistrement du premier statut dans le rapport ;</p></li>
 <li><p>« reportType »: le type de rapport, ici PROBATIVE_VALUE</p></li>
-<li><p>« vitamResults » : la liste des valeurs de statut d’exécution sur chaque objet, ici OK, KO et WARNING, ainsi que le total
-La quatrième et dernière partie « reportEntries » rend compte des vérifications faites sur chaque objet binaire concerné, avec, pour chacun, un objet json contenant :</p></li>
+<li><p>« vitamResults » : la liste des valeurs de statut d’exécution sur chaque objet, ici OK, KO et WARNING, ainsi que le total</p></li>
+</ul>
+<p>La troisième partie « context » est constituée des éléments de requête qui permettent de connaître les critères de recherche et sélection des objets :</p>
+<ul class="simple">
+<li><p>« dslQuery » : la requête DSL de définition des unités archivistiques cibles ;</p></li>
+<li><p>« usage » : le type d’objets ciblés – via leur usage au sens de la solution logicielle Vitam, la plupart du temps BinaryMaster ;</p></li>
+<li><p>« version » : la version des objets ciblés, la plupart du temps cela sera la version 1, mais dans le cas d’objets générés à l’occasion d’opérations de préservation, le numéro de version pourra être différent ;</p></li>
+<li><p>« includeDetachedSigningInformation » : l’inclusion des documents associés à un contexte de signature détachée.</p></li>
+</ul>
+<p>La quatrième et dernière partie « reportEntries » rend compte des vérifications faites sur chaque objet binaire concerné, avec, pour chacun, un objet json contenant :</p>
+<ul class="simple">
 <li><p>« unitIds » : le tableau des unités archivistiques sélectionnées par la requête et contenant cet objet binaire (dans le cas général un seul) ;</p></li>
 <li><p>« objectGroupId » : l’identifiant unique du groupe d’objets techniques contenant cet objet binaire (GUID du GOT)</p></li>
 <li><p>« objectId » : l’identifiant unique de l’objet binaire concerné (GUID d’objet)</p></li>

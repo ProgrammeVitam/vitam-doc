@@ -2705,6 +2705,7 @@ Liste des permissions qui peuvent être associées à :
 ||Lister le contenu du référentiel détails des registres des fonds|accessionregisterdetails:read|
 |Unités archivistiques et objets|Récupérer la liste des unités archivistiques|units:read|
 ||Récupérer une liste de plus de 10 000 unités archivistiques|units:stream|
+||Récupérer une unité archivistique par identifiant pérenne|units:unitsbypersistentidentifier:id:read|
 ||Récupérer la liste des unités archivistiques avec leurs règles de gestion héritées|unitsWithInheritedRules:read|
 ||Lancer le processus de calcul des règles héritées à des fins de recherche|computeInheritedRules:action|
 ||Lancer la suppression du calcul des règles héritées à des fins de recherche|computeInheritedRules:delete|
@@ -2720,6 +2721,8 @@ Liste des permissions qui peuvent être associées à :
 ||Reclassification d'unités archivistiques|reclassification:update|
 ||Télécharger le groupe d'objets techniques de l'unité archivistique donnée|units:id:objects:read:json|
 ||Télécharger un objet binaire|units:id:objects:read:binary|
+||Télécharger un objet binaire avec l'identifiant pérenne d'une unité archivistique|objects:unitsbypersistentidentifier:id:objects:read:binary|
+||Télécharger un objet binaire avec identifiant pérenne|objects:objectsbypersistentidentifier:id:read:binary|
 ||Créer une demande d'accès à un objet persisté sur une offre froide (bande magnétique)|
 units:id:objects:accessrequests:create|
 ||Vérifier l'état d'un ensemble de demandes d'accès sur une offre froide (bande magnétique)|

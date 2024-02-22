@@ -4788,254 +4788,266 @@ La déclaration du nœud est obligatoire, sans quoi l’application accéderait 
 <td class="text-left"><p>units:stream</p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p></p></td>
+<td class="text-left"><p>Récupérer une unité archivistique par identifiant pérenne</p></td>
+<td class="text-left"><p>units:unitsbypersistentidentifier:id:read</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Récupérer la liste des unités archivistiques avec leurs règles de gestion héritées</p></td>
 <td class="text-left"><p>unitsWithInheritedRules:read</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p></p></td>
+<tr class="row-even"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Lancer le processus de calcul des règles héritées à des fins de recherche</p></td>
 <td class="text-left"><p>computeInheritedRules:action</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p></p></td>
+<tr class="row-odd"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Lancer la suppression du calcul des règles héritées à des fins de recherche</p></td>
 <td class="text-left"><p>computeInheritedRules:delete</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p></p></td>
+<tr class="row-even"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Récupérer la liste des unités archivistiques avec leurs règles de gestion héritées</p></td>
 <td class="text-left"><p>unitsWithInheritedRules:read</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p></p></td>
+<tr class="row-odd"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Récupérer la liste des groupes d’objets techniques</p></td>
 <td class="text-left"><p>objects:read</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p></p></td>
+<tr class="row-even"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Obtenir le détail d’une unité archivistique au format JSON</p></td>
 <td class="text-left"><p>units:id:read:json</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p></p></td>
+<tr class="row-odd"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Réaliser la mise à jour d’une unité archivistique</p></td>
 <td class="text-left"><p>units:id:update</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p></p></td>
+<tr class="row-even"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Mise à jour en masse des unités archivistiques</p></td>
 <td class="text-left"><p>units:update</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p></p></td>
+<tr class="row-odd"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Mise à jour en masse des règles de gestion des unités archivistiques</p></td>
 <td class="text-left"><p>units:rules:update</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p></p></td>
+<tr class="row-even"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Restauration des métadonnées essentielles</p></td>
 <td class="text-left"><p>units:update:revert</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p></p></td>
+<tr class="row-odd"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Mise à jour unitaire des métadonnées descriptives au moyen d’une opération de masse</p></td>
 <td class="text-left"><p>units:bulk:update</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p></p></td>
+<tr class="row-even"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Téléchargement de rapports liés aux mises à jour de masse</p></td>
 <td class="text-left"><p>distributionreport:id:read</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p></p></td>
+<tr class="row-odd"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Reclassification d’unités archivistiques</p></td>
 <td class="text-left"><p>reclassification:update</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p></p></td>
+<tr class="row-even"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Télécharger le groupe d’objets techniques de l’unité archivistique donnée</p></td>
 <td class="text-left"><p>units:id:objects:read:json</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p></p></td>
+<tr class="row-odd"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Télécharger un objet binaire</p></td>
 <td class="text-left"><p>units:id:objects:read:binary</p></td>
 </tr>
+<tr class="row-even"><td class="text-left"><p></p></td>
+<td class="text-left"><p>Télécharger un objet binaire avec l’identifiant pérenne d’une unité archivistique</p></td>
+<td class="text-left"><p>objects:unitsbypersistentidentifier:id:objects:read:binary</p></td>
+</tr>
 <tr class="row-odd"><td class="text-left"><p></p></td>
+<td class="text-left"><p>Télécharger un objet binaire avec identifiant pérenne</p></td>
+<td class="text-left"><p>objects:objectsbypersistentidentifier:id:read:binary</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Créer une demande d’accès à un objet persisté sur une offre froide (bande magnétique)</p></td>
 <td class="text-left"><p></p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>units:id:objects:accessrequests:create</p></td>
+<tr class="row-odd"><td class="text-left"><p>units:id:objects:accessrequests:create</p></td>
 <td class="text-left"><p></p></td>
 <td class="text-left"><p></p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p></p></td>
+<tr class="row-even"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Vérifier l’état d’un ensemble de demandes d’accès sur une offre froide (bande magnétique)</p></td>
 <td class="text-left"><p></p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>accessrequests:check</p></td>
+<tr class="row-odd"><td class="text-left"><p>accessrequests:check</p></td>
 <td class="text-left"><p></p></td>
 <td class="text-left"><p></p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p></p></td>
+<tr class="row-even"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Supprimer une demande d’accès à un objet persisté sur une offre froide (bande magnétique)</p></td>
 <td class="text-left"><p></p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>accessrequests:remove</p></td>
+<tr class="row-odd"><td class="text-left"><p>accessrequests:remove</p></td>
 <td class="text-left"><p></p></td>
 <td class="text-left"><p></p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>DIP</p></td>
+<tr class="row-even"><td class="text-left"><p>DIP</p></td>
 <td class="text-left"><p>Générer le DIP à partir d’un DSL</p></td>
 <td class="text-left"><p>dipexport:create</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p></p></td>
+<tr class="row-odd"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Récupérer le DIP</p></td>
 <td class="text-left"><p>dipexport:id:dip:read</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>Journaux</p></td>
+<tr class="row-even"><td class="text-left"><p>Journaux</p></td>
 <td class="text-left"><p>Créer une opération externe</p></td>
 <td class="text-left"><p>logbookoperations:create</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p></p></td>
+<tr class="row-odd"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Lister toutes les opérations</p></td>
 <td class="text-left"><p>logbookoperations:read</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p></p></td>
+<tr class="row-even"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Récupérer le journal de cycle de vie d’une unité archivistique</p></td>
 <td class="text-left"><p>logbookunitlifecycles:id:read</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p></p></td>
+<tr class="row-odd"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Récupérer le journal de cycle de vie d’un groupe d’objets techniques</p></td>
 <td class="text-left"><p>logbookobjectslifecycles:id:read</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p></p></td>
+<tr class="row-even"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Récupérer le journal d’une opération donnée</p></td>
 <td class="text-left"><p>logbookoperations:id:read</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p></p></td>
+<tr class="row-odd"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Télécharger les journaux d’accès</p></td>
 <td class="text-left"><p>storageaccesslog:read:binary</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>Traçabilité</p></td>
+<tr class="row-even"><td class="text-left"><p>Traçabilité</p></td>
 <td class="text-left"><p>Télécharger le logbook sécurisé attaché à une opération de sécurisation</p></td>
 <td class="text-left"><p>traceability:id:read</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p></p></td>
+<tr class="row-odd"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Tester l’intégrité d’un journal sécurisé</p></td>
 <td class="text-left"><p>traceabilitychecks:create</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p></p></td>
+<tr class="row-even"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Audit de vérification des journaux sécurisés</p></td>
 <td class="text-left"><p>traceabilitylinkedchecks:create</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p></p></td>
+<tr class="row-odd"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Génère un relevé de valeur probante</p></td>
 <td class="text-left"><p>probativevalue:create</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>Audit</p></td>
+<tr class="row-even"><td class="text-left"><p>Audit</p></td>
 <td class="text-left"><p>Lancer un audit de l’existence des objets binaires</p></td>
 <td class="text-left"><p>audits:create</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p></p></td>
+<tr class="row-odd"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Audit de traçabilité d’unités archivistiques</p></td>
 <td class="text-left"><p>evidenceaudit:check</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p></p></td>
+<tr class="row-even"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Rectification de données suite à un audit</p></td>
 <td class="text-left"><p>rectificationaudit:check</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p></p></td>
+<tr class="row-odd"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Télécharger le rapport d’audit</p></td>
 <td class="text-left"><p>batchreport:id:read</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p></p></td>
+<tr class="row-even"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Lancer un audit de l’existence de référentiel</p></td>
 <td class="text-left"><p>referentialaudit:check</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>Élimination</p></td>
+<tr class="row-odd"><td class="text-left"><p>Élimination</p></td>
 <td class="text-left"><p>Lance la phase d’analyse dans le cadre d’une élimination</p></td>
 <td class="text-left"><p>elimination:analysis</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p></p></td>
+<tr class="row-even"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Lance la phase d’action dans le cadre d’une élimination</p></td>
 <td class="text-left"><p>elimination:action</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p></p></td>
+<tr class="row-odd"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Télécharger le rapport d’élimination</p></td>
 <td class="text-left"><p>batchreport:id:read</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>Suppression d’objets</p></td>
+<tr class="row-even"><td class="text-left"><p>Suppression d’objets</p></td>
 <td class="text-left"><p>Supprimer des versions d’usage d’objets</p></td>
 <td class="text-left"><p>objects:deleteGotVersions</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>Transfert</p></td>
+<tr class="row-odd"><td class="text-left"><p>Transfert</p></td>
 <td class="text-left"><p>Générer le SIP à transférer à partir d’une requête DSL</p></td>
 <td class="text-left"><p>transfers:create</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p></p></td>
+<tr class="row-even"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Récupérer le SIP transféré</p></td>
 <td class="text-left"><p>transfers:id:sip:read</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p></p></td>
+<tr class="row-odd"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Lance un acquittement de transfert</p></td>
 <td class="text-left"><p>transfers:reply</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>Griffons</p></td>
+<tr class="row-even"><td class="text-left"><p>Griffons</p></td>
 <td class="text-left"><p>Importer un référentiel des griffons</p></td>
 <td class="text-left"><p>griffins:create</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p></p></td>
+<tr class="row-odd"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Récupérer la liste des griffons</p></td>
 <td class="text-left"><p>griffins:read</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p></p></td>
+<tr class="row-even"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Lire un griffon donné</p></td>
 <td class="text-left"><p>griffin:read</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>Scénarios de préservation</p></td>
+<tr class="row-odd"><td class="text-left"><p>Scénarios de préservation</p></td>
 <td class="text-left"><p>Importer un référentiel des scénarios de préservation</p></td>
 <td class="text-left"><p>preservationScenarios:create</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p></p></td>
+<tr class="row-even"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Récupérer la liste des scénarios de préservation</p></td>
 <td class="text-left"><p>preservationScenarios:read</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p></p></td>
+<tr class="row-odd"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Lire un scénario de préservation donné</p></td>
 <td class="text-left"><p>preservationScenario:read</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>Préservation</p></td>
+<tr class="row-even"><td class="text-left"><p>Préservation</p></td>
 <td class="text-left"><p>Lance le processus de préservation</p></td>
 <td class="text-left"><p>preservation:update</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p></p></td>
+<tr class="row-odd"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Télécharger le rapport de préservation</p></td>
 <td class="text-left"><p>batchreport:id:read</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>Gestion des opérations</p></td>
+<tr class="row-even"><td class="text-left"><p>Gestion des opérations</p></td>
 <td class="text-left"><p>Récupérer les informations sur une opération donnée</p></td>
 <td class="text-left"><p>operations:read</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p></p></td>
+<tr class="row-odd"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Récupérer le code HTTP d’une opération donnée</p></td>
 <td class="text-left"><p>operations:id:read:status</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p></p></td>
+<tr class="row-even"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Récupérer le statut d’une opération donnée</p></td>
 <td class="text-left"><p>operations:id:read</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p></p></td>
+<tr class="row-odd"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Changer le statut d’une opération donnée</p></td>
 <td class="text-left"><p>operations:id:update</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p></p></td>
+<tr class="row-even"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Annuler une opération donnée</p></td>
 <td class="text-left"><p>operations:id:delete</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p></p></td>
+<tr class="row-odd"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Récupérer la liste des tâches des workflows</p></td>
 <td class="text-left"><p>workflows:read</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p></p></td>
+<tr class="row-even"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Force la pause sur un type d’opération et/ou sur un tenant</p></td>
 <td class="text-left"><p>forcepause:check</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p></p></td>
+<tr class="row-odd"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Retire la pause sur un type d’opération et/ou sur un tenant</p></td>
 <td class="text-left"><p>removeforcepause:check</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>Index</p></td>
+<tr class="row-even"><td class="text-left"><p>Index</p></td>
 <td class="text-left"><p>Réindexer une collection</p></td>
 <td class="text-left"><p>reindex:create</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p></p></td>
+<tr class="row-odd"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Switch indexes</p></td>
 <td class="text-left"><p>switchindex:create</p></td>
 </tr>

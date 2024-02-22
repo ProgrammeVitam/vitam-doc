@@ -178,6 +178,7 @@ Un projet de versement peut comporter les éléments suivants[^1] :
 |  UnitUps                      | Liste de conditions permettant un rattachement automatisé de l’(des) unité(s) racine(s).<br> A une métadonnée (MetadataKey) définissant une valeur spécifique (MetadataValue) peut être associée une unité archivistique de rattachement (UnitUp) (champs facultatifs).|
 |  AcquisitionInformation       | Modalité d’entrée.<br>  Champ destiné à alimenter le champ AcquisitionInformation du message ArchiveTransfer (champ facultatif).|
 |  LegalStatus                  | Statut légal des archives, destiné à alimenter le champ LegalStatus du message ArchiveTransfer (champ facultatif). <br> Si le champ est renseigné, les valeurs attendues sont : « Public Archive », « Private Archive », « Public and Private Archive ».|
+|  AutomaticIngest              | paramètre permettant d'automatiser l'envoi de transaction(s) vers la solution logicielle Vitam (champ facultatif).|
 
 ***Point d’attention :*** Au terme de la version 6 :
 
@@ -272,6 +273,7 @@ L’APP « Collecte et préparation des versements » du front-office VitamUI 
 
     -   d’un possible rattachement à un nœud d’arbre de positionnement ou de plan de classement,
     -   d’un possible rattachement automatique en fonction de conditions devant être respectées dans les unités racines envoyées dans le module de collecte,
+	-   d’un possible envoi automatique des transactions associées au projet après leur validation,
     -   d’informations décrivant le versement (intitulé du message, description, service producteur et service versant),
     -   d’informations contextuelles (service d’archives et service responsable du transfert des archives, contrat d’entrée, profil d’archivage, modalité d’entrée, statut légal des versements).
 

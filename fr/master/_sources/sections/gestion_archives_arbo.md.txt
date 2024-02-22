@@ -309,12 +309,14 @@ La solution logicielle Vitam permet également de rechercher au-delà de 10 000 
 
 **Point d’attention :** le seuil de résultats supporté par le moteur d’indexation Elastic Search est de 10 000 unités archivistiques. Il est de fait recommandé d’utiliser des requêtes ne dépassant pas les 10 000 résultats.
 
+Il est également possible de rechercher des archives en fournissant leur identifiant pérenne en paramètre de recherche.
+
 L’affichage des unités archivistiques dans l’IHM standard fournie avec la solution logicielle Vitam ne diffère en rien à ce jour de celui des autres unités archivistiques. L’IHM indique seulement leur type spécifique :
 -  « Standard » pour les unités archivistiques issues d’un SIP ;
 -  « Arbre de positionnement » pour les arbres de positionnement ;
 -  « Plan de classement » pour les plans de classement.
 
-Au terme de la Version 6, l’APP Vitam UI« Recherche et consultation des archives » fournie avec la solution logicielle Vitam propose un affichage différent et une gestion différente en fonction du type des unités archivistiques :
+Au terme de la Version 6, l’APP Vitam UI « Recherche et consultation des archives » fournie avec la solution logicielle Vitam propose un affichage différent et une gestion différente en fonction du type des unités archivistiques :
 -  les unités archivistiques de type « Standard » (avec ou sans groupe d’objets techniques associé), « Plan de classement » et « Arbre de positionnement » peuvent être recherchées au moyen des filtres de recherche et s’affichent sous forme de liste de résultats ;
 -  les unités archivistiques de type « Arbre de positionnement » et « Plan de classement » sont restituées sous forme arborescentes et sont utilisables pour une recherche par facette ;
 -  les unités archivistiques de type « Standard », précédées de leur unité archivistique parente de type « Arbre de positionnement » ou « plan de classement » sont restituées sous forme arborescentes et sont utilisables pour une recherche par facette.

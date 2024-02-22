@@ -2079,7 +2079,8 @@ Dans un audit de relevé de valeur probante, pour chaque objet (ou fichier numé
 ###### Sélection de l’objet à auditer
 La solution logicielle Vitam permet de réaliser une opération d’audit de relevé de valeur probante à partir d’un lot d’archives préalablement sélectionnées. Cette opération peut porter :
 - sur un usage d’objet particulier (original numérique, copie de diffusion, texte brut, vignette) ;
-- sur une version d’objet particulière.
+- sur une version d’objet particulière ;
+- sur des documents liés à un contexte de signature détachée.
 
 **Point d’attention :** en fonction du nombre d’objets conservés dans la solution logicielle Vitam, une opération d’audit peut prendre du temps et avoir un impact en termes de performance. Avant de lancer un audit, il est recommandé de bien prendre en considération le périmètre qui doit faire l’objet de cette opération.
 
@@ -2138,7 +2139,8 @@ La partie suivante récapitule le résultat de l’opération d’audit et préc
 - « context » : partie constituée des éléments de requête qui permettent de connaître les critères de recherche et sélection des objets :
   - « dslQuery » : la requête DSL de définition des unités archivistiques cibles ;
   - « usage » : le type d’objets ciblés – via leur usage au sens de la solution logicielle Vitam, la plupart du temps « BinaryMaster » ;
-  - « version » : la version des objets ciblés, la plupart du temps cela sera la version 1, mais dans le cas d’objets générés à l’occasion d’opérations de préservation, le numéro de version pourra être différent .
+  - « version » : la version des objets ciblés, la plupart du temps cela sera la version 1, mais dans le cas d’objets générés à l’occasion d’opérations de préservation, le numéro de version pourra être différent ;
+  - « includeDetachedSigningInformation » : l'inclusion des documents associés à un contexte de signature détachée.
 
 La dernière partie « reportEntries » correspond au résultat du relevé de valeur probante pour chaque objet. On y trouve les informations suivantes :
 - « unitIds » : le tableau des unités archivistiques sélectionnées par la requête et contenant cet objet binaire (dans le cas général un seul) ;
