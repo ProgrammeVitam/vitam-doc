@@ -2695,6 +2695,7 @@ Liste des permissions qui peuvent être associées à :
 ||Insérer un objet binaire|transaction:binary:upsert|
 ||Récupère un groupe d’objets techniques|transaction:object:read|
 ||Télécharge un usage/version du binaire d'un groupe d'objets|transaction:binary:read|
+||Mise à jour unitaire en masse des métadonnées descriptives|transaction:id:units:bulk:update|
 |Entrées|Récupérer l'accusé de réception pour une opération d'entrée donnée|ingests:id:archivetransfertreply:read|
 ||Récupérer le bordereau de versement pour une opération d'entrée donnée|ingests:id:manifests:read|
 ||Envoyer un SIP à Vitam afin qu'il en réalise l'entrée|ingests:create|
