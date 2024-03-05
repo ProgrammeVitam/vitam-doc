@@ -1,0 +1,1576 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Structuration des Dissemination Information Packages (DIP) &mdash; Vitam documentation fonctionnelle</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: white" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/Vitam_Logo-CMJN.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">première approche</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="guide_lecture.html">1. Documentation Vitam - guide de lecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="presentation_programme.html">2. Présentation du programme Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="presentation_solution_logicielle.html">3. Présentation de la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_prise_en_main.html">4. Guide de prise en main de la solution logicielle Vitam – Vitam UI<br>
+<em>Réaliser une première entrée</em></a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">documentation métier</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="valeur_probante.html">1. Conservation de la valeur probante</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eliminations.html">2. Les éliminations avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gel.html">3. Le gel d’archives avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gestion_archives_arbo.html">4. Gestion des archives et des arborescences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gestion_habilitations.html">5. Gestion des habilitations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_donnees.html">6. Modèle de données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_workflow.html">7. Description des workflows et des opérations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_de_collecte.html">8. Module de collecte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ontologie.html">9. Ontologie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preservation.html">10. Gestion de la préservation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_archivage.html">11. Profils d’archivage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regles_gestion.html">12. Règles de gestion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services_prod.html">13. Services producteurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transfert.html">14. Le transfert avec la solution logicielle Vitam</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">documentation Vitam UI</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Autoprovisionning.html">1. Vitam UI : présentation de la fonctionnalité d’auto-provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Arbres_Plans.html">2. APP Arbres et plans</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">outils connexes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="resip.html">1. RESIP</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Vademecum</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_sommaire.html">1. Vademecum: sommaire thématique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_glossaire.html">2. Notions utilisées dans la solution logicielle Vitam et lien vers la fiche qui les définit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_arbre.html">3. L’arbre de positionnement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_audit.html">4. Les audits dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_classification.html">5. La gestion des archives classifiées avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_acces.html">6. Le contrat d’accès dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_entree.html">7. Le contrat d’entrée dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_gestion.html">8. Le contrat de gestion dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_echeances.html">9. Le calcul des héritages des règles de gestion et l’indexation des échéances dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_eliminations.html">10. Réaliser des éliminations d’archives avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_habilitations.html">11. La gestion des droits et permissions des utilisateurs applicatifs dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_identifiants.html">12. L’attribution des identifiants dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_journalisation.html">13. La journalisation et la conservation de la valeur probante dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_ontologie.html">14. L’ontologie dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_pa.html">15. Les profils d’archivage dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_parametrages_pf.html">16. Le paramétrage fonctionnel d’une plate-forme utilisant la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_plan.html">17. Le plan de classement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_preservation.html">18. La préservation dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_pua.html">19. Les profils d’unité archivistique dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_rattachement.html">20. Faire un rattachement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_formats.html">21. Le référentiel des formats dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_griffons.html">22. Le référentiel des griffons dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_preservation.html">23. Le référentiel des scénarios de préservation dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_rg.html">24. Le référentiel des règles de gestion dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_sa.html">25. Le référentiel des services agents dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_registre_fonds.html">26. Le registre des fonds dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_structuration_information.html">27. La structuration des informations dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_suivi_acces.html">28. Le suivi des accès dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_tenant.html">29. Les tenants dans la solution logicielle Vitam</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: white" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Documentation utilisateur Vitam</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Structuration des <em>Dissemination Information Packages</em> (DIP)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/sections/DIP.md.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+
+           <div itemprop="articleBody">
+             
+  <section id="structuration-des-dissemination-information-packages-dip">
+<h1>Structuration des <em>Dissemination Information Packages</em> (DIP)<a class="headerlink" href="#structuration-des-dissemination-information-packages-dip" title="Lien permanent vers cette rubrique"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Lien permanent vers cette rubrique"></a></h2>
+<section id="documents-de-reference">
+<h3>Documents de référence<a class="headerlink" href="#documents-de-reference" title="Lien permanent vers cette rubrique"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p><strong>Document</strong></p></th>
+<th class="head text-center"><p><strong>Date de la version</strong></p></th>
+<th class="head text-center"><p><strong>Remarques</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>NF Z 44022 – MEDONA – Modélisation des données pour l’archivage</p></td>
+<td class="text-center"><p>18/01/2014</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Standard d’échange de données pour l’archivage – SEDA – v. 2.1</p></td>
+<td class="text-center"><p>06/2018</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>Standard d’échange de données pour l’archivage – SEDA – v. 2.2</p></td>
+<td class="text-center"><p>02/2022</p></td>
+<td class="text-center"><p>Cette nouvelle version du SEDA est intégrée à la solution logicielle Vitam à partir de la V6.RC.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Référentiel général de sécurité (RGS) – v. 2.0</p></td>
+<td class="text-center"><p>10/06/2015</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>ISO 14 721:2012 – Systèmes de transfert des informations et données spatiales – Système ouvert d’archivage d’information (SOAI) – Modèle de référence</p></td>
+<td class="text-center"><p>01/09/2012</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="presentation-du-document">
+<h3>Présentation du document<a class="headerlink" href="#presentation-du-document" title="Lien permanent vers cette rubrique"></a></h3>
+<p>Le présent document constitue une présentation des fonctionnalités associées au Dissemination Information Package dans la solution logicielle Vitam.<br />
+Il décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 6 (mars 2023). Il a vocation à être amendé, complété et enrichi au fur et à mesure des développements de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.</p>
+</section>
+</section>
+<section id="presentation-du-dip">
+<h2>Présentation du DIP<a class="headerlink" href="#presentation-du-dip" title="Lien permanent vers cette rubrique"></a></h2>
+<section id="definition-et-cas-dusage">
+<h3>Définition et cas d’usage<a class="headerlink" href="#definition-et-cas-dusage" title="Lien permanent vers cette rubrique"></a></h3>
+<p>L’archivage a pour finalité la conservation de l’information en raison de sa valeur (administrative, juridique, historique, patrimoniale…), mais également sa mise à disposition. Ce processus permet au service d’archives de mettre à disposition de tiers (services producteurs, autres services d’archives, usagers sur place et à distance, etc.) les archives qu’il conserve, si besoin après vérification des droits des demandeurs.</p>
+<p>Dans l’univers numérique, peuvent être mis à disposition les documents eux-mêmes et leurs métadonnées.</p>
+<p>Les services ainsi délivrés sont de plusieurs ordres :</p>
+<ul class="simple">
+<li><p>transmission d’ensembles de métadonnées à partir desquelles le service d’archives pourra élaborer des instruments de recherche pour faire connaître les ressources dont il dispose,</p></li>
+<li><p>communication des archives pour consultation ou diffusion,</p></li>
+<li><p>réutilisation des archives sur les portails des services d’archives ou par des tiers,</p></li>
+<li><p>restitution d’archives au service producteur (sortie définitive en cas de réactivation d’un dossier ou de changement de prestataire d’archivage),</p></li>
+<li><p>transfert de responsabilité à un autre service d’archives, notamment à l’issue d’une phase d’archivage intermédiaire.</p></li>
+</ul>
+<p>Tous ces services se traduisent par la constitution d’un lot d’archives à partir des éléments gérés par le service d’archives et la mise à disposition de ce lot. La solution logicielle Vitam offre plusieurs possibilités pour délivrer ces services :</p>
+<ul class="simple">
+<li><p>téléchargement des fichiers uniquement lorsque le demandeur n’a pas besoin des métadonnées associées,</p></li>
+<li><p>export des métadonnées lorsque le demandeur n’a pas besoin des objets binaires,</p></li>
+<li><p>constitution d’un lot d’archives (le Dissemination Information Package ou DIP) pour transmettre concomitamment les métadonnées et les objets binaires, notamment en cas de besoin de prise de responsabilité sur le paquet mis à disposition.</p></li>
+</ul>
+<p>Le présent document décrit la manière de préparer ces paquets et de les mettre à disposition dans une plate-forme utilisant la solution logicielle Vitam.</p>
+</section>
+<section id="contexte-normatif">
+<h3>Contexte normatif<a class="headerlink" href="#contexte-normatif" title="Lien permanent vers cette rubrique"></a></h3>
+<p>La constitution d’un paquet pour mise à disposition par une plate-forme utilisant la solution logicielle Vitam doit être réalisée conformément aux deux normes suivantes.</p>
+<section id="loais-open-archival-information-system">
+<h4>L’OAIS (Open Archival Information System)<a class="headerlink" href="#loais-open-archival-information-system" title="Lien permanent vers cette rubrique"></a></h4>
+<p>L’OAIS est un modèle conceptuel de références décrivant dans les grandes lignes les fonctions, les responsabilités et l’organisation d’un système qui voudrait préserver sur le long terme de l’information, en particulier des données numériques.</p>
+<p>Le modèle OAIS repose sur l’idée que l’information constitue des paquets, et que ces paquets ne sont pas les mêmes suivant qu’on est en train de produire l’information, de mettre en œuvre des opérations pour la conserver, ou de la communiquer à un utilisateur.</p>
+<p>Il existe d’après cette norme trois sortes de paquets :</p>
+<ul class="simple">
+<li><p>les paquets pris en charge par le système ou Submission Information Packages (SIP) préparés par les producteurs à destination de la solution logicielle Vitam ;</p></li>
+<li><p>les paquets gérés par le système ou Archival Information Packages (AIP) transformés par la solution logicielle Vitam à partir du SIP dans une forme plus facile à conserver et à gérer dans le temps ;</p></li>
+<li><p>les paquets communiqués par le système ou Dissemination Information Packages (DIP) transformés par la solution logicielle Vitam à partir d’un ou plusieurs AIP.</p></li>
+</ul>
+<p>Un paquet d’archives destiné à être mis à disposition de tiers par une plate-forme utilisant la solution logicielle Vitam constitue un DIP au sens du modèle OAIS.</p>
+</section>
+<section id="le-seda-standard-dechange-de-donnees-pour-larchivage-et-la-norme-medona-modele-dechange-de-donnees-pour-larchivage">
+<h4>Le SEDA (Standard d’Échange de Données pour l’Archivage) et la norme MEDONA (Modèle d’Échange de DONnées pour l’Archivage)<a class="headerlink" href="#le-seda-standard-dechange-de-donnees-pour-larchivage-et-la-norme-medona-modele-dechange-de-donnees-pour-larchivage" title="Lien permanent vers cette rubrique"></a></h4>
+<p>La norme MEDONA et le standard SEDA constituent des modèles standards pour les transactions d’échanges entre les acteurs de l’archivage, et notamment entre le service d’archives et le demandeur d’une communication.<br />
+La norme AFNOR NF Z 44‑022, intitulée « Modèle d’Échange de DONnées pour l’Archivage » ou MEDONA a été publiée en 2014. Elle apporte un cadre normatif pour les différents échanges d’informations (données comme métadonnées) entre le service d’archives et ses partenaires comme le demandeur (toute personne physique ou morale qui souhaite consulter les informations conservées par le service d’archives dans le respect des conditions légales, réglementaires ou contractuelles en vigueur) et la façon dont s’organisent ces échanges. Elle définit des diagrammes d’activités et des modèles de données selon le formalisme UML. Les échanges se traduisent par des messages formalisés par des schémas XML.</p>
+<p>Le SEDA est le « Standard d’Échange de Données pour l’Archivage » relatif aux données d’archives publiques. Créé en 2006 par la Direction des Archives de France et la Direction Générale pour la Modernisation de L’État, il a été révisé en 2010 (v0.2), en 2012 (v1.0), en 2015 (v2.0) pour assurer sa compatibilité avec la norme MEDONA et plus récemment en 2018 (v2.1) et 2022 (v.2.2). Il comporte à la fois le modèle fonctionnel et un modèle de données pour les échanges de données d’archives entre acteurs de la sphère publique : description, acteurs, règles de gestion, référentiels métier et techniques.</p>
+<p>Selon ce standard, les fonctions de mise à disposition couvertes par le DIP correspondent à deux cas d’utilisation : la communication et la restitution.</p>
+<ul class="simple">
+<li><p>La communication<br />
+La demande de communication d’archives (ArchiveDeliveryRequest) est effectuée par un demandeur (le producteur de ces informations, ou un tiers) qui souhaite consulter des informations. La communication peut concerner tant les données elles-mêmes que leurs métadonnées.<br />
+À réception de la demande de communication, le service d’archives peut émettre un accusé de réception en direction du demandeur (Acknowledgement).<br />
+Après instruction de la demande et, si nécessaire, une phase de demande d’autorisations, une réponse (ArchiveDeliveryRequestReply) est envoyée par le service d’archives au demandeur. Cette réponse peut être négative (par exemple dans le cas où l’information demandée n’existe pas ou si le service de contrôle s’y oppose) ou être positive, auquel cas elle comprend les données demandées accompagnées de leurs métadonnées.
+Une fois la réponse reçue, le demandeur peut émettre un message d’accusé de réception (Acknowledgement).
+Le schéma ci-dessous modélise les échanges associés à la requête et au transfert d’un ensemble d’archives à communiquer – le DIP au sens de la norme OAIS.<br />
+<img alt="" src="../_images/comm.png" /><br />
+<strong>Point d’attention :</strong> la phase de demande d’autorisation est du ressort du front-office et non du back-office.</p></li>
+<li><p>La restitution<br />
+La transaction de restitution est découpée en deux séquences : une séquence de demande de restitution suivie d’une séquence de transfert.<br />
+La demande de restitution (ArchiveRestitutionRequest) peut être à l’initiative soit du service d’archives qui détient les informations à restituer, soit du service producteur.<br />
+La demande s’effectue en mentionnant les identifiants des données concernées (éventuellement accompagnées de leurs métadonnées). Le service qui reçoit la demande, en accuse la réception. S’ensuit l’envoi de sa réponse (acceptation ou refus de la demande de restitution – ArchiveRestitutionRequestReply) dont l’initiateur de la demande accuse la réception  (Acknowledgement).<br />
+En cas d’acceptation de la demande de restitution, le transfert effectif des informations entre les acteurs suit le modèle normal d’un transfert (ArchiveTransfer).<br />
+<img alt="" src="../_images/restitution.png" />
+Cette transaction peut également s’appliquer pour des transferts entre deux SAE.</p></li>
+</ul>
+<p>Si le SEDA explique de manière générale à quoi ressemblent les processus de communication ou de restitution de données numériques, ce standard ne spécifie pas les règles de constitution du paquet à mettre à disposition.</p>
+<p>C’est pourquoi le présent document vise à :</p>
+<ul class="simple">
+<li><p>apporter des précisions sur la constitution des DIP qui seront mis à disposition par une plate-forme utilisant la solution logicielle Vitam ;</p></li>
+<li><p>expliciter les choix faits par l’équipe projet Vitam quand le standard SEDA en laissait la responsabilité aux implémentations.</p></li>
+</ul>
+<p>À défaut de précision apportée par le présent document, la documentation accompagnant le standard SEDA  dans ses versions 2.1. et 2.2. et accessible sur le site internet du Service interministériel des Archives de France s’applique[^1].</p>
+</section>
+</section>
+</section>
+<section id="presentation-du-dissemination-information-package-dip">
+<h2>Présentation du Dissemination Information Package (DIP)<a class="headerlink" href="#presentation-du-dissemination-information-package-dip" title="Lien permanent vers cette rubrique"></a></h2>
+<p>D’après le SEDA, un DIP est constitué d’un bordereau et d’un ou plusieurs objets qui font l’objet de la demande de communication. Il peut être uniquement composé d’un bordereau, quand seules les métadonnées sont mises à disposition du demandeur. Toutefois, l’équipe Vitam recommande de ne pas passer par le DIP pour communiquer uniquement des métadonnées s’il n’y a pas de prise de responsabilité sur le paquet (par exemple, communication des métadonnées en vue de l’élaboration d’un instrument de recherche).</p>
+<p>Le DIP exporté par une plate-forme utilisant la solution logicielle Vitam répond aux caractéristiques suivantes.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Intitulé</p></th>
+<th class="head text-left"><p>Description</p></th>
+<th class="head text-center"><p>Niveau de recommandation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Structuration du DIP</p></td>
+<td class="text-left"><p>Un DIP se compose :<br>- d’un bordereau nommé « manifest.xml »,<br>- d’un répertoire nommé « Content » rassemblant le cas échéant les objets numériques à transférer au demandeur ; chaque objet est nommé par son identifiant dans Vitam (GUID).<br>En l’absence d’objet (par exemple si la demande ne porte que sur des unités archivistiques sans groupes d’objets techniques associés), la présence du répertoire « Content » n’est pas obligatoire.</p></td>
+<td class="text-center"><p>Obligatoire</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Type de format du DIP</p></td>
+<td class="text-left"><p>ZIP.</p></td>
+<td class="text-center"><p>Obligatoire</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Taille du DIP</p></td>
+<td class="text-left"><p>La taille maximale du DIP est de 10 000 unités archivistiques.</p></td>
+<td class="text-center"><p>Obligatoire</p></td>
+</tr>
+</tbody>
+</table>
+<p>Selon les options choisies (cf. infra), les informations contenues dans le manifeste différeront.</p>
+<p>Il est possible d’exporter dans le manifeste les journaux du cycle de vie des unités archivistiques et des groupes d’objets techniques.</p>
+<p>Si pour un usage donné le groupe d’objets techniques comprend plusieurs versions, c’est l’objet technique correspondant à la dernière version qui sera exporté.</p>
+</section>
+<section id="le-dip-minimal">
+<h2>Le DIP minimal<a class="headerlink" href="#le-dip-minimal" title="Lien permanent vers cette rubrique"></a></h2>
+<p>La solution logicielle Vitam permet d’exporter un DIP dit minimal, composé du répertoire contenant les objets numériques demandés et d’un manifeste simplifié, constitué autour du DataObjectPackage.</p>
+<p>Ce bordereau minimal peut être enrichi par la suite par l’utilisateur applicatif qui l’a demandé pour constituer l’une des demandes d’autorisation prévues par le SEDA (AuthorizationOriginatingAgencyRequest, AuthorizationOriginatingAgencyRequestReply, AuthorizationControlAuthorityRequest et AuthorizationControlAuthorityRequestReply).</p>
+<section id="les-modalites-de-lancement-de-loperation-de-mise-a-disposition-du-dip-minimal">
+<h3>Les modalités de lancement de l’opération de mise à disposition du DIP minimal<a class="headerlink" href="#les-modalites-de-lancement-de-loperation-de-mise-a-disposition-du-dip-minimal" title="Lien permanent vers cette rubrique"></a></h3>
+<p>Depuis l’IHM standard accompagnant la solution logicielle Vitam, à partir de la page de détail d’une unité archivistique, il est possible de demander à générer un DIP minimal de l’unité archivistique uniquement ou de l’unité archivistique et de ses filles, ou bien un DIP correspondant à l’opération d’entrée (ingest) initiale.</p>
+<p>Le DIP peut être filtré sur un type d’usage. Le ou les usages retenus doivent être cohérents avec les droits octroyés par le contrat d’accès associé à la demande de génération du DIP.</p>
+<p><img alt="" src="../_images/ihm.png" /></p>
+<p>Depuis l’IHM standard, il est également possible de demander à générer un DIP du panier ou d’une sélection présente dans le panier. Le panier permet de constituer un DIP avec des unités archivistiques de services producteurs différents ; par défaut, le nom du service producteur figurant dans le bordereau du DIP (balise ManagementMetadata) sera une valeur définie par configuration.</p>
+<p><img alt="" src="../_images/ihm2.png" /></p>
+<p>Dans l’état actuel des développements de la solution logicielle, la fonctionnalité de filtre du DIP sur un type d’usage n’est pas présente dans le panier. Tous les usages autorisés par le contrat d’accès associé à la demande de génération du DIP sont exportés.</p>
+<p>Via les API aux bornes de la solution logicielle Vitam, plusieurs critères de constitution du DIP sont utilisables : identifiant d’une opération d’entrée, unité archivistique précise, ensemble des unités archivistiques dépendant d’une unité archivistique précise, etc. Des filtres supplémentaires peuvent être demandés sur :</p>
+<ul class="simple">
+<li><p>les usages. Ce filtre sera contrôlé par rapport aux droits octroyés par le contrat accès ;</p></li>
+<li><p>la version du SEDA. Ce filtre fonctionne de la manière suivante :</p>
+<ul>
+<li><p>S’il n’est pas utilisé, le DIP généré sera déclaré en SEDA 2.2 ;</p></li>
+<li><p>Un contrôle de compatibilité est effectué entre la version du SEDA demandée dans le DIP et celle des unités archivistiques devant intégrer ce dernier.</p></li>
+</ul>
+</li>
+</ul>
+<p>Au lancement de l’opération, la solution logicielle Vitam génère un identifiant de l’opération. Le DIP constitué a pour nom cet identifiant d’opération.</p>
+<p>L’opération est journalisée. Suivant l’activation ou non de la fonctionnalité dans le contrat d’accès associé à la demande de génération du DIP, l’opération sera tracée dans les logs d’accès.</p>
+<p>Elle peut aboutir aux statuts suivants :</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Statut</p></th>
+<th class="head text-left"><p>Motifs</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Succès</p></td>
+<td class="text-left"><p>Opération réalisée sans rencontrer de problèmes particuliers.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Avertissement</p></td>
+<td class="text-left"><p>- Le lot d’archives sélectionné n’a pas d’objets binaires.<br>- Le poids du DIP est supérieur ou égal au seuil de tenant qui a été défini avec autorisation d’être dépassé.<br>- Le poids du DIP est supérieur ou égal au seuil de plate-forme qui a été défini sans qu’aucun seuil de tenant n’ait été défini.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Erreur</p></td>
+<td class="text-left"><p>- Le poids du DIP est supérieur au seuil de requête.<br>- Le poids du DIP est supérieur ou égal au seuil de tenant qui a été défini sans autorisation d’être dépassé et dépasse le seuil de plate-forme.<br>- La version du SEDA des unités archivistiques est incompatible avec celle demandée pour le DIP.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Erreur technique</p></td>
+<td class="text-left"><p>Erreur technique lors du déplacement des objets binaires de l’offre de stockage vers l’espace de travail interne.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Point d’attention :</strong></p>
+<ul class="simple">
+<li><p>Dans le cas d’un DIP correspondant à une opération d’entrée, le paquet comprendra toutes les unités importées dans le système via cette opération d’entrée dans leur état au moment de la demande d’export du DIP : certaines unités archivistiques pourront avoir été modifiées ou éliminées depuis l’opération d’entrée initiale.</p></li>
+<li><p>Si pour un usage donné le groupe d’objets techniques comprend plusieurs versions, c’est l’objet technique correspondant à la dernière version qui sera exporté.</p></li>
+</ul>
+</section>
+<section id="les-modalites-de-recuperation-du-dip-minimal">
+<h3>Les modalités de récupération du DIP minimal<a class="headerlink" href="#les-modalites-de-recuperation-du-dip-minimal" title="Lien permanent vers cette rubrique"></a></h3>
+<p>Lorsque l’opération d’export du DIP est terminée, le DIP peut être récupéré :</p>
+<ul class="simple">
+<li><p>depuis l’IHM standard, à partir du journal des opérations en cliquant sur la ligne de l’opération d’export du DIP pour accéder à l’écran de détail, puis en affichant le champ « rapport » (via le sélecteur « Informations supplémentaires »),</p></li>
+</ul>
+<p><img alt="" src="../_images/ihm3.png" /></p>
+<p><img alt="" src="../_images/ihm4.png" /></p>
+<ul class="simple">
+<li><p>par API, en utilisant le service fourni par le endpoint access-external/v1/dipexport, au moyen de l’identifiant de l’opération d’export ;</p></li>
+<li><p>depuis VitamUI, à partir de l’APP Journal des opérations.</p></li>
+</ul>
+<p>Il est également possible de récupérer l’empreinte du DIP générée depuis le journal des opérations et disponible à la tâche de Création de l’archive et de son déplacement vers l’espace de stockage.</p>
+</section>
+<section id="le-bordereau-du-dip-minimal">
+<h3>Le bordereau du DIP minimal<a class="headerlink" href="#le-bordereau-du-dip-minimal" title="Lien permanent vers cette rubrique"></a></h3>
+<p>À la racine du DIP se trouve le bordereau de mise à disposition qui décrit l’ensemble des métadonnées du paquet. Il est composé :</p>
+<ul class="simple">
+<li><p>d’une déclaration des objets binaires (DataObjectPackage &gt; BinaryDataObject) ou des objets physiques (DataObjectPackage &gt; PhysicalDataObject), le cas échéant avec les journaux du cycle de vie des objets ;</p></li>
+<li><p>d’une déclaration des unités archivistiques représentées par ces objets (DataObjectPackage &gt; DescriptiveMetadata) :</p>
+<ul>
+<li><p>avec leurs métadonnées de gestion, avec, le cas échéant, les journaux du cycle de vie associés ;</p></li>
+<li><p>avec leurs métadonnées descriptives ;</p></li>
+</ul>
+</li>
+<li><p>de métadonnées communes à toute l’arborescence d’unités archivistiques : déclaration du service producteur (hérité de la balise OriginatingAgencyIdentifier présente dans le ManagementMetadata du SIP à l’origine de l’entrée pour les DIP mono-producteurs ; pour les DIP multi-producteurs, la valeur de ce champ est « Export VITAM »[^2]).</p></li>
+</ul>
+</section>
+</section>
+<section id="le-dip-complet">
+<h2>Le DIP complet<a class="headerlink" href="#le-dip-complet" title="Lien permanent vers cette rubrique"></a></h2>
+<p>La solution logicielle Vitam permet d’exporter un DIP dit complet, composé du répertoire contenant les objets numériques demandés et d’un manifeste correspondant au message SEDA  ArchiveDeliveryRequestReply.</p>
+<section id="les-modalites-de-lancement-de-loperation-de-mise-a-disposition-du-dip-complet">
+<h3>Les modalités de lancement de l’opération de mise à disposition du DIP complet<a class="headerlink" href="#les-modalites-de-lancement-de-loperation-de-mise-a-disposition-du-dip-complet" title="Lien permanent vers cette rubrique"></a></h3>
+<p>Depuis l’IHM standard accompagnant la solution logicielle Vitam, à partir de la page de détail d’une unité archivistique, il est possible de demander à générer un DIP complet de l’unité archivistique uniquement ou de l’unité archivistique et de ses filles, ou bien un DIP complet correspondant à l’opération d’entrée (ingest) initiale.</p>
+<p>Le DIP complet peut être filtré sur un type d’usage. Le ou les usages retenus doivent être cohérents avec les droits octroyés par le contrat d’accès associé à la demande de génération du DIP.</p>
+<p><img alt="" src="../_images/ihm5.png" /></p>
+<p>Dans l’état actuel des développements, il n’est pas possible, depuis l’IHM standard, de demander à générer un DIP complet du panier ou d’une sélection présente dans le panier.</p>
+<p>Depuis VitamUI, il est également possible de demander à générer un DIP dans l’APP Recherche et consultation des archives, après avoir préalablement sélectionné un lot d’archives.</p>
+<p>Via les API aux bornes de la solution logicielle Vitam, plusieurs critères de constitution du DIP complet sont utilisables : identifiant d’une opération d’entrée, unité archivistique précise, ensemble des unités archivistiques dépendant d’une unité archivistique précise, etc. Des filtres supplémentaires peuvent être demandés sur :</p>
+<ul class="simple">
+<li><p>les usages. Ce filtre sera contrôlé par rapport aux droits octroyés par le contrat accès ;</p></li>
+<li><p>la version du SEDA. Ce filtre fonctionne de la manière suivante :</p>
+<ul>
+<li><p>S’il n’est pas utilisé, le DIP généré sera déclaré en SEDA 2.2 ;</p></li>
+<li><p>Un contrôle de compatibilité est effectué entre la version du SEDA demandée dans le DIP et celle des unités archivistiques devant intégrer ce dernier.</p></li>
+</ul>
+</li>
+</ul>
+<p>La constitution du DIP complet nécessite de définir plusieurs paramètres qui seront utilisés pour renseigner le manifeste :</p>
+<ul class="simple">
+<li><p>informations obligatoires :</p>
+<ul>
+<li><p>identifiant du service d’archives (sous-bloc Identifier inclus dans le bloc ArchivalAgency),</p></li>
+<li><p>identifiant de la demande (MessageRequestIdentifier),</p></li>
+<li><p>identifiant du demandeur (sous-bloc Identifier inclus dans le bloc Requester),</p></li>
+</ul>
+</li>
+<li><p>informations facultatives :</p>
+<ul>
+<li><p>identifiant de la réponse à une demande d’autorisation (AuthorizationRequestReply),</p></li>
+<li><p>intitulé (Comment),</p></li>
+<li><p>identifiant du service versant (SubmissionAgencyIdentifier).</p></li>
+</ul>
+</li>
+</ul>
+<p>Les valeurs de ces paramètres ne sont pas contrôlées par rapport aux référentiels présents dans la solution logicielle Vitam. Ainsi, il est tout à fait possible, par exemple, d’indiquer un identifiant de service d’archives qui ne figure pas dans le référentiel des services agents.</p>
+<p>Au lancement de l’opération, la solution logicielle Vitam génère un identifiant de l’opération. Le DIP constitué a pour nom cet identifiant d’opération.</p>
+<p>L’opération est journalisée. Suivant l’activation ou non de la fonctionnalité dans le contrat d’accès associé à la demande de génération du DIP, l’opération sera tracée dans les logs d’accès.</p>
+<p>Elle peut aboutir aux statuts suivants :</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Statut</p></th>
+<th class="head text-left"><p>Motifs</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Succès</p></td>
+<td class="text-left"><p>Opération réalisée sans rencontrer de problèmes particuliers.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Avertissement</p></td>
+<td class="text-left"><p>- Le lot d’archives sélectionné n’a pas d’objets binaires.<br>- Le poids du DIP est supérieur ou égal au seuil de tenant qui a été défini avec autorisation d’être dépassé.<br>- Le poids du DIP est supérieur ou égal au seuil de plate-forme qui a été défini sans qu’aucun seuil de tenant n’ait été défini.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Échec</p></td>
+<td class="text-left"><p>- Au moins un des champs obligatoires (Requester, ArchivalAgency, MessageRequestIdentifier) n’a pas été renseigné.<br>- Le poids du DIP est supérieur au seuil de requête.<br>- Le poids du DIP est supérieur ou égal au seuil de tenant qui a été défini sans autorisation d’être dépassé et dépasse le seuil de plate-forme.<br>- La version du SEDA des unités archivistiques est incompatible avec celle demandée pour le DIP.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Erreur technique</p></td>
+<td class="text-left"><p>Erreur technique lors du déplacement des objets binaires de l’offre de stockage vers l’espace de travail interne.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Point d’attention :</strong></p>
+<ul class="simple">
+<li><p>Dans le cas d’un DIP correspondant à une opération d’entrée, le paquet comprendra toutes les unités importées dans le système via cette opération d’entrée dans leur état au moment de la demande d’export du DIP : certaines unités archivistiques pourront avoir été modifiées ou éliminées depuis l’opération d’entrée initiale.</p></li>
+<li><p>Si pour un usage donné le groupe d’objets techniques comprend plusieurs versions, c’est l’objet technique correspondant à la dernière version qui sera exporté.</p></li>
+</ul>
+</section>
+<section id="les-modalites-de-recuperation-du-dip-complet">
+<h3>Les modalités de récupération du DIP complet<a class="headerlink" href="#les-modalites-de-recuperation-du-dip-complet" title="Lien permanent vers cette rubrique"></a></h3>
+<p>Lorsque l’opération d’export du DIP complet est terminée, le DIP peut être récupéré :</p>
+<ul class="simple">
+<li><p>depuis l’IHM standard, à partir du journal des opérations en cliquant sur la ligne de l’opération d’export du DIP pour accéder à l’écran de détail, puis en affichant le champ « rapport » (via le sélecteur « Informations supplémentaires »),</p></li>
+</ul>
+<p><img alt="" src="../_images/ihm6.png" /><br />
+<img alt="" src="../_images/ihm7.png" /></p>
+<ul class="simple">
+<li><p>par API, en utilisant le service fourni par le endpoint access-external/v2/dipexport, au moyen de l’identifiant de l’opération d’export ;</p></li>
+<li><p>depuis VitamUI, à partir de l’APP Journal des opérations.</p></li>
+</ul>
+<p>Il est également possible de récupérer l’empreinte du DIP générée depuis le journal des opérations et disponible à la tâche de Création de l’archive et de son déplacement vers l’espace de stockage.</p>
+</section>
+<section id="le-bordereau-du-dip-complet">
+<h3>Le bordereau du DIP complet<a class="headerlink" href="#le-bordereau-du-dip-complet" title="Lien permanent vers cette rubrique"></a></h3>
+<p>À la racine du DIP se trouve le bordereau de mise à disposition qui décrit l’ensemble des métadonnées du paquet. Ce bordereau répond aux caractéristiques définies par le SEDA pour le message ArchiveDeliveryRequestReply.</p>
+<p>Il est composé :</p>
+<ul class="simple">
+<li><p>d’un en-tête comprenant un intitulé (Comment) alimenté à partir des informations fournies lors de la demande de constitution du DIP ; une date correspondant à la date de génération du DIP ; un identifiant (MessageIdentifier) correspondant à l’opération de constitution du DIP ; la référence aux listes de codes (CodeListVersions) ;</p></li>
+<li><p>d’une déclaration des objets binaires (DataObjectPackage &gt; BinaryDataObject) ou des objets physiques (DataObjectPackage &gt; PhysicalDataObject), le cas échéant avec les journaux du cycle de vie des objets ;</p></li>
+<li><p>d’une déclaration des unités archivistiques représentées par ces objets (DataObjectPackage &gt; DescriptiveMetadata) :</p>
+<ul>
+<li><p>avec leurs métadonnées de gestion, avec, le cas échéant, les journaux du cycle de vie associés ;</p></li>
+<li><p>avec leurs métadonnées descriptives ;</p></li>
+</ul>
+</li>
+<li><p>de métadonnées communes à toute l’arborescence d’unités archivistiques : déclaration du service producteur (hérité de la balise OriginatingAgencyIdentifier présente dans le ManagementMetadata du SIP à l’origine de l’entrée pour les DIP mono-producteurs ; pour les DIP multi-producteurs, la valeur de ce champ est « Export VITAM »[^3]; déclaration du service versant (SubmissionAgencyIdentifier), identifiant de la demande (MessageRequestIdentifier), identifiant du demandeur (sous-bloc Identifier inclus dans le bloc Requester) et identifiant du service d’archives (sous-bloc Identifier inclus dans le bloc ArchivalAgency) alimentés à partir des informations fournies lors de la demande de constitution du DIP.</p></li>
+</ul>
+</section>
+</section>
+<section id="le-dip-de-transfert">
+<h2>Le DIP de transfert<a class="headerlink" href="#le-dip-de-transfert" title="Lien permanent vers cette rubrique"></a></h2>
+<p>Le DIP généré dans le cadre du transfert doit pouvoir être pris en charge sur une autre plate-forme utilisant la solution logicielle Vitam. Le bordereau correspond donc au message ArchiveTransfer du SEDA.</p>
+<section id="les-modalites-de-lancement-de-loperation-de-mise-a-disposition-du-dip-de-transfert">
+<h3>Les modalités de lancement de l’opération de mise à disposition du DIP de transfert<a class="headerlink" href="#les-modalites-de-lancement-de-loperation-de-mise-a-disposition-du-dip-de-transfert" title="Lien permanent vers cette rubrique"></a></h3>
+<p>Depuis l’IHM standard accompagnant la solution logicielle Vitam, à partir de la page de détail d’une unité archivistique, il est possible de demander à générer un DIP de transfert de l’unité archivistique uniquement ou de l’unité archivistique et de ses filles, ou bien un DIP de transfert correspondant à l’opération d’entrée (ingest) initiale[^4].</p>
+<ul class="simple">
+<li><p>Le DIP de transfert peut être filtré sur un type d’usage. Le ou les usages retenus doivent être cohérents avec les droits octroyés par le contrat d’accès associé à la demande de génération du DIP.<br />
+<img alt="" src="../_images/ihm8.png" /><br />
+Dans l’état actuel des développements, il n’est pas possible, depuis l’IHM standard, de demander à générer un DIP de transfert du panier ou d’une sélection présente dans le panier.</p></li>
+<li><p>Depuis VitamUI, il est également possible de demander à générer un DIP de transfert dans l’APP Recherche et consultation des archives, après avoir préalablement sélectionné un lot d’archives.</p></li>
+<li><p>Via les API aux bornes de la solution logicielle Vitam, plusieurs critères de constitution du DIP complet sont utilisables : identifiant d’une opération d’entrée, unité archivistique précise, ensemble des unités archivistiques dépendant d’une unité archivistique précise, etc. Des filtres supplémentaires peuvent être demandés sur :</p>
+<ul>
+<li><p>les usages. Ce filtre sera contrôlé par rapport aux droits octroyés par le contrat accès ;</p></li>
+<li><p>la version du SEDA. Ce filtre fonctionne de la manière suivante :</p>
+<ul>
+<li><p>S’il n’est pas utilisé, le DIP généré sera déclaré en SEDA 2.2 ;</p></li>
+<li><p>Un contrôle de compatibilité est effectué entre la version du SEDA demandée dans le DIP et celle des unités archivistiques devant intégrer ce dernier.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>La constitution du DIP de transfert nécessite de définir plusieurs paramètres qui seront utilisés pour renseigner le manifeste :</p>
+<ul class="simple">
+<li><p>informations obligatoires :</p>
+<ul>
+<li><p>contrat d’entrée à utiliser pour la prise en charge dans la plate-forme de destination (ArchivalAgreement),</p></li>
+<li><p>identifiant du service d’archives (sous-bloc Identifier du bloc ArchivalAgency),</p></li>
+<li><p>identifiant du service producteur (OriginatingAgencyIdentifier),</p></li>
+</ul>
+</li>
+<li><p>informations facultatives :</p>
+<ul>
+<li><p>intitulé (Comment),</p></li>
+<li><p>identifiant du service versant (SubmissionAgencyIdentifier),</p></li>
+<li><p>identifiant d’un transfert associé (RelatedTransferReference),</p></li>
+<li><p>identifiant de la réponse à une demande de transfert (TransferRequestReplyIdentifier),</p></li>
+<li><p>identifiant du service de transfert (sous-bloc Identifier du bloc TransferringAgency). Si ce bloc obligatoire n’est pas renseigné, il sera automatiquement incrémenté par la valeur « Vitam ».</p></li>
+</ul>
+</li>
+</ul>
+<p>Les valeurs de ces paramètres ne sont pas contrôlées par rapport aux référentiels présents dans la solution logicielle Vitam. Ainsi, il est tout à fait possible, par exemple, d’indiquer un identifiant de service d’archives qui ne figure pas dans le référentiel des services agents.</p>
+<p>Au lancement de l’opération, la solution logicielle Vitam génère un identifiant de l’opération. Le DIP de transfert constitué a pour nom cet identifiant d’opération.</p>
+<p>L’opération est journalisée. Suivant l’activation ou non de la fonctionnalité dans le contrat d’accès associé à la demande de génération du DIP, l’opération sera tracée dans les logs d’accès.</p>
+<p>Elle peut aboutir aux statuts suivants :</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Statut</p></th>
+<th class="head text-left"><p>Motifs</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Succès</p></td>
+<td class="text-left"><p>Opération réalisée sans rencontrer de problèmes particuliers.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Avertissement</p></td>
+<td class="text-left"><p>- Le lot d’archives sélectionné n’a pas d’objets binaires.<br>- Au moins une des unités archivistiques sélectionnées a déjà fait l’objet d’une opération de demande de transfert.<br>- Le poids du DIP est supérieur ou égal au seuil de tenant qui a été défini avec autorisation d’être dépassé.<br>- Le poids du DIP est supérieur ou égal au seuil de plate-forme qui a été défini sans qu’aucun seuil de tenant n’ait été défini.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Échec</p></td>
+<td class="text-left"><p>- Au moins un des champs obligatoires (ArchivalAgreement, ArchivalAgency, OriginatingAgencyIdentifier) n’a pas été renseigné.<br>- Le poids du DIP est supérieur au seuil de requête.<br>- Le poids du DIP est supérieur ou égal au seuil de tenant qui a été défini sans autorisation d’être dépassé et dépasse le seuil de plate-forme.<br>- La version du SEDA des unités archivistiques est incompatible avec celle demandée pour le DIP.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Erreur technique</p></td>
+<td class="text-left"><p>Erreur technique lors du déplacement des objets binaires de l’offre de stockage vers l’espace de travail interne.</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Point d’attention :</strong></p>
+<ul class="simple">
+<li><p>Dans le cas d’un DIP de transfert correspondant à une opération d’entrée, le paquet comprendra toutes les unités importées dans le système via cette opération d’entrée dans leur état au moment de la demande d’export du DIP : certaines unités archivistiques pourront avoir été modifiées ou éliminées depuis l’opération d’entrée initiale.</p></li>
+<li><p>Si pour un usage donné le groupe d’objets techniques comprend plusieurs versions, c’est l’objet technique correspondant à la dernière version qui sera exporté.</p></li>
+</ul>
+</section>
+<section id="les-modalites-de-recuperation-du-dip-de-transfert">
+<h3>Les modalités de récupération du DIP de transfert<a class="headerlink" href="#les-modalites-de-recuperation-du-dip-de-transfert" title="Lien permanent vers cette rubrique"></a></h3>
+<p>Lorsque l’opération d’export du DIP de transfert est terminée, le DIP peut être récupéré :</p>
+<ul class="simple">
+<li><p>depuis l’IHM standard, à partir du journal des opérations en cliquant sur la ligne de l’opération d’export du DIP pour accéder à l’écran de détail, puis en affichant le champ « rapport » (via le sélecteur « Informations supplémentaires »),<br />
+<img alt="" src="../_images/ihm9.png" /><br />
+<img alt="" src="../_images/ihm10.png" /></p></li>
+<li><p>par API, en utilisant le service fourni par le endpoint access-external/v1/transfers, au moyen de l’identifiant de l’opération d’export.</p></li>
+<li><p>depuis VitamUI, à partir de l’APP Journal des opérations.</p></li>
+</ul>
+<p>Il est également possible de récupérer l’empreinte du DIP générée depuis le journal des opérations et disponible à la tâche de Création de l’archive et de son déplacement vers l’espace de stockage.</p>
+</section>
+<section id="le-bordereau-du-dip-de-transfert">
+<h3>Le bordereau du DIP de transfert<a class="headerlink" href="#le-bordereau-du-dip-de-transfert" title="Lien permanent vers cette rubrique"></a></h3>
+<p>À la racine du DIP de transfert se trouve le bordereau de mise à disposition qui décrit l’ensemble des métadonnées du paquet. Ce bordereau répond aux caractéristiques définies par le SEDA pour le message ArchiveTransfer, de manière à pouvoir être pris en charge par une plate-forme utilisant la solution logicielle Vitam.</p>
+<p>Il est composé :</p>
+<ul class="simple">
+<li><p>d’un en-tête comprenant un intitulé (Comment) alimenté à partir des informations fournies lors de la demande de constitution du DIP ; une date correspondant à la date de génération du DIP ; un contrat d’entrée à utiliser lors de la prise en charge du DIP de transfert dans le SAE cible alimenté à partir des informations fournies lors de la demande de constitution du DIP ; un identifiant (MessageIdentifier) correspondant à l’opération de constitution du DIP ; la référence aux listes de codes ;</p></li>
+<li><p>d’une déclaration des objets binaires (DataObjectPackage &gt; BinaryDataObject) ou des objets physiques (DataObjectPackage &gt; PhysicalDataObject), le cas échéant avec les journaux du cycle de vie des objets ;</p></li>
+<li><p>d’une déclaration des unités archivistiques représentées par ces objets (DataObjectPackage &gt; DescriptiveMetadata) :</p>
+<ul>
+<li><p>avec leurs métadonnées de gestion, avec, le cas échéant, les journaux du cycle de vie associés ;</p></li>
+<li><p>avec leurs métadonnées descriptives ;</p></li>
+</ul>
+</li>
+<li><p>de métadonnées communes à toute l’arborescence d’unités archivistiques alimentées à partir des informations fournies lors de la demande de constitution du DIP : identifiant du service producteur (OriginatingAgencyIdentifier) ; identifiant du service versant (SubmissionAgencyIdentifier) ; identifiant d’un transfert associé (RelatedTransferReference) ; identifiant de la réponse à une demande de transfert (TransferRequestReplyIdentifier) ; identifiant du service d’archives (sous-bloc Identifier inclus dans le bloc ArchivalAgency) ; identifiant du service de transfert (sous-bloc Identifier inclus dans le bloc TransferringAgency).</p></li>
+</ul>
+</section>
+</section>
+<section id="configuration-du-service">
+<h2>Configuration du service<a class="headerlink" href="#configuration-du-service" title="Lien permanent vers cette rubrique"></a></h2>
+<section id="suppression-des-dip">
+<h3>Suppression des DIP<a class="headerlink" href="#suppression-des-dip" title="Lien permanent vers cette rubrique"></a></h3>
+<p>Les DIP générés dans le cadre d’une demande de communication et les SIP générés dans le cadre d’une demande de transfert sont stockés dans des dossiers spécifiques.</p>
+<p>Ils sont purgés automatiquement à l’expiration d’un délai paramétrable par l’administrateur technique.</p>
+<p>Par défaut, la solution logicielle Vitam retient les DIP, quel que soit leur type :</p>
+<ul class="simple">
+<li><p>durant 7 jours, et les efface au moyen d’un batch qui est lancé chaque jour à 2h20 si l’espace libre du workspace représente plus de 25% de la taille totale du workspace ;</p></li>
+<li><p>durant 1 jour si ce dernier représente moins de 25% de la taille totale du workspace, et les efface au moyen d’un batch qui est lancé chaque heure à 0 minute 0 seconde.</p></li>
+</ul>
+<p>Cette configuration par défaut peut être modifiée lors du paramétrage initial de la plate-forme par les administrateurs – fonctionnel pour la définition du besoin et technique[^5] pour la saisie réelle des informations – de chaque implémentation de la solution logicielle Vitam et définit, pour tous les tenants et pour chaque type de DIP – DIP générés dans le cadre d’une demande de communication et SIP générés dans le cadre d’une demande de transfert –  la durée de rétention minimale et maximale dans l’espace de stockage et la fréquence du batch permettant de les purger du système.</p>
+<p>Le fichier de configuration[^6] se présente comme suit (paramétrage par défaut) :</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>### global ###
+[...]
+vitam_timers:
+[...]
+    metadata:
+        [...]
+        - name: vitam-metadata-purge-dip
+          frequency: &quot;*-*-* *:00:00&quot;
+        - name: vitam-metadata-purge-transfers-SIP
+          frequency: &quot;*-*-* 02:25:00&quot;
+### Composants Vitam ###
+vitam:
+    [...]
+    metadata :
+     [...]
+     # DIP cleanup delay (in minutes)
+        dipTimeToLiveInMinutes: 10080 # 7 days
+        criticalDipTimeToLiveInMinutes: 1440 # 1 day
+        transfersSIPTimeToLiveInMinutes: 10080 # 7 days
+        workspaceFreespaceThreshold: 25 # when below use critical time to live when above use normal time to live
+</pre></div>
+</div>
+</section>
+<section id="limitation-du-poids-des-dip">
+<h3>Limitation du poids des DIP<a class="headerlink" href="#limitation-du-poids-des-dip" title="Lien permanent vers cette rubrique"></a></h3>
+<p>Afin de se prémunir contre une surcharge de l’espace de stockage, il est possible de configurer un seuil de plate-forme et un seuil propre à chaque tenant, en plus d’inclure un seuil dans la requête demandant à générer un DIP. La solution logicielle Vitam vérifie alors que le poids des DIP est inférieur ou égal au seuil défini.</p>
+<p>Cette configuration, optionnelle, est établie lors du paramétrage initial de la plate-forme par les administrateurs – fonctionnel pour la définition du besoin et technique[^7] pour la saisie réelle des informations – de chaque implémentation de la solution logicielle Vitam et définit, pour la plate-forme et/ou chaque tenant, les seuils acceptables.</p>
+<p>Le fichier de configuration[^8] se présente comme suit (exemple fictif) :</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>binarySizePlatformThreshold:
+ limit: 1
+ sizeUnit: GIGABYTE
+
+binarySizeTenantThreshold:
+   - tenant: 0
+      limit: 20
+      sizeUnit: MEGABYTE
+      authorize: false
+   - tenant: 1
+      limit: 100
+      sizeUnit: MEGABYTE
+      authorize: true
+</pre></div>
+</div>
+<p>Dans l’exemple ci-dessus :</p>
+<ul class="simple">
+<li><p>au niveau de la plate-forme :</p>
+<ul>
+<li><p>aucun DIP ne pourra dépasser 1 gigabytes ;</p></li>
+</ul>
+</li>
+<li><p>sur le tenant 0 :</p>
+<ul>
+<li><p>aucun DIP ne pourra dépasser 20 megabytes ;</p></li>
+<li><p>l’utilisateur n’est pas autorisé à dépasser ce seuil ;</p></li>
+</ul>
+</li>
+<li><p>sur le tenant 1 :</p>
+<ul>
+<li><p>les DIP sont limités à 100 megabytes ;</p></li>
+<li><p>l’utilisateur est autorisé à dépasser ce seuil, mais sera averti de son dépassement.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="annexe-1-exemple-de-bordereau-de-mise-a-disposition-pour-un-dip-mono-producteur-dip-minimal">
+<h2>Annexe 1 : Exemple de bordereau de mise à disposition pour un DIP mono-producteur (DIP minimal)<a class="headerlink" href="#annexe-1-exemple-de-bordereau-de-mise-a-disposition-pour-un-dip-mono-producteur-dip-minimal" title="Lien permanent vers cette rubrique"></a></h2>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&lt;ArchiveRestitutionRequest xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;
+    xmlns:pr=&quot;info:lc/xmlns/premis-v2&quot; xmlns=&quot;fr:gouv:culture:archivesdefrance:seda:v2.1&quot;
+    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xsi:schemaLocation=&quot;fr:gouv:culture:archivesdefrance:seda:v2.1 seda-vitam-2.1-main.xsd&quot;&gt;
+    &lt;DataObjectPackage&gt;
+        &lt;DataObjectGroup id=&quot;aebaaaaaayhjq73zabr2oaldu4kqq4qaaabq&quot;&gt;
+            &lt;BinaryDataObject id=&quot;aeaaaaaaaahjq73zabr2oaldu4kqq4qaaaba&quot;&gt;
+                &lt;DataObjectVersion&gt;BinaryMaster_1&lt;/DataObjectVersion&gt;
+                &lt;Uri&gt;Content/aeaaaaaaaahjq73zabr2oaldu4kqq4qaaaba&lt;/Uri&gt;
+                &lt;MessageDigest algorithm=&quot;SHA-512&quot;
+                    &gt;664ac614a819df2a97d2a5df57dcad91d6ec38b0fffc793e80c56b4553a14ac7a5f0bce3bb71af419b0bb8f151ad3d512867454eeb818e01818a31989c13319b&lt;/MessageDigest&gt;
+                &lt;Size&gt;6&lt;/Size&gt;
+                &lt;FormatIdentification&gt;
+                    &lt;FormatLitteral&gt;Plain Text File&lt;/FormatLitteral&gt;
+                    &lt;MimeType&gt;text/plain&lt;/MimeType&gt;
+                    &lt;FormatId&gt;x-fmt/111&lt;/FormatId&gt;
+                &lt;/FormatIdentification&gt;
+                &lt;FileInfo&gt;
+                    &lt;Filename&gt;Pereire.txt&lt;/Filename&gt;
+                    &lt;LastModified&gt;2017-04-04T08:07:27.825+02:00&lt;/LastModified&gt;
+                &lt;/FileInfo&gt;
+            &lt;/BinaryDataObject&gt;
+        &lt;/DataObjectGroup&gt;
+        &lt;DescriptiveMetadata&gt;
+            &lt;ArchiveUnit id=&quot;aeaqaaaaayhjq73zabr2oaldu4kqq6iaaaga&quot;&gt;
+                &lt;Management&gt;
+                    &lt;DisseminationRule&gt;
+                        &lt;Rule&gt;DIS-00002&lt;/Rule&gt;
+                        &lt;StartDate&gt;2000-01-01&lt;/StartDate&gt;
+                        &lt;RefNonRuleId&gt;DIS-00001&lt;/RefNonRuleId&gt;
+                    &lt;/DisseminationRule&gt;
+                &lt;/Management&gt;
+                &lt;Content&gt;
+                    &lt;DescriptionLevel&gt;RecordGrp&lt;/DescriptionLevel&gt;
+                    &lt;Title&gt;Gare du Nord&lt;/Title&gt;
+                    &lt;Description&gt;Cette unité de description hérite de son parent de la règle
+                        ACC-00003 avec pour StartDate 01/01/2000, bloque l&#39;héritage de la règle
+                        DIS-00001 mais déclare la règle DIS-00002 avec pour StartDate
+                        01/01/2000&lt;/Description&gt;
+                    &lt;StartDate&gt;2017-04-05T08:11:56&lt;/StartDate&gt;
+                    &lt;EndDate&gt;2017-04-05T08:11:56&lt;/EndDate&gt;
+                &lt;/Content&gt;
+                &lt;ArchiveUnit id=&quot;aeaaaaaaaahi3waqabrz6aldwa2nx5iaaaaq&quot;&gt;
+                    &lt;ArchiveUnitRefId&gt;aeaqaaaaayhjq73zabr2oaldu4kqq6aaaada&lt;/ArchiveUnitRefId&gt;
+                &lt;/ArchiveUnit&gt;
+            &lt;/ArchiveUnit&gt;
+            &lt;ArchiveUnit id=&quot;aeaqaaaaayhjq73zabr2oaldu4kqq6aaaaea&quot;&gt;
+                &lt;Management/&gt;
+                &lt;Content&gt;
+                    &lt;DescriptionLevel&gt;Item&lt;/DescriptionLevel&gt;
+                    &lt;Title&gt;Pereire.txt&lt;/Title&gt;
+                    &lt;Description/&gt;
+                    &lt;TransactedDate&gt;2017-04-04T08:07:27&lt;/TransactedDate&gt;
+                &lt;/Content&gt;
+                &lt;DataObjectReference&gt;
+                    &lt;DataObjectGroupReferenceId&gt;aebaaaaaayhjq73zabr2oaldu4kqq4qaaabq&lt;/DataObjectGroupReferenceId&gt;
+                &lt;/DataObjectReference&gt;
+            &lt;/ArchiveUnit&gt;
+            &lt;ArchiveUnit id=&quot;aeaqaaaaayhjq73zabr2oaldu4kqq6aaaada&quot;&gt;
+                &lt;Management&gt;
+                    &lt;AccessRule&gt;
+                        &lt;Rule&gt;ACC-00001&lt;/Rule&gt;
+                        &lt;StartDate&gt;2000-01-01&lt;/StartDate&gt;
+                        &lt;PreventInheritance&gt;true&lt;/PreventInheritance&gt;
+                    &lt;/AccessRule&gt;
+                    &lt;DisseminationRule&gt;
+                        &lt;Rule&gt;DIS-00001&lt;/Rule&gt;
+                        &lt;StartDate&gt;2000-01-01&lt;/StartDate&gt;
+                        &lt;RefNonRuleId&gt;DIS-00002&lt;/RefNonRuleId&gt;
+                    &lt;/DisseminationRule&gt;
+                &lt;/Management&gt;
+                &lt;Content&gt;
+                    &lt;DescriptionLevel&gt;RecordGrp&lt;/DescriptionLevel&gt;
+                    &lt;Title&gt;Réaumur&lt;/Title&gt;
+                    &lt;Description&gt;Cette unité de description bloque l&#39;héritage de toutes les règles
+                        AccessRule et de la DIS-00002 mais déclare ACC-00001 avec pour StartDate
+                        01/01/2000 et DIS-00001 avec pour StartDate 01/01/2000&lt;/Description&gt;
+                    &lt;StartDate&gt;2017-04-04T08:07:27&lt;/StartDate&gt;
+                    &lt;EndDate&gt;2017-04-04T08:07:27&lt;/EndDate&gt;
+                &lt;/Content&gt;
+                &lt;ArchiveUnit id=&quot;aeaaaaaaaahi3waqabrz6aldwa2nx6iaaaaq&quot;&gt;
+                    &lt;ArchiveUnitRefId&gt;aeaqaaaaayhjq73zabr2oaldu4kqq6aaaaea&lt;/ArchiveUnitRefId&gt;
+                &lt;/ArchiveUnit&gt;
+            &lt;/ArchiveUnit&gt;
+            &lt;ArchiveUnit id=&quot;aeaqaaaaayhjq73zabr2oaldu4kqq6iaaaeq&quot;&gt;
+                &lt;Management&gt;
+                    &lt;AccessRule&gt;
+                        &lt;Rule&gt;ACC-00003&lt;/Rule&gt;
+                        &lt;StartDate&gt;2000-01-01&lt;/StartDate&gt;
+                        &lt;PreventInheritance&gt;true&lt;/PreventInheritance&gt;
+                    &lt;/AccessRule&gt;
+                &lt;/Management&gt;
+                &lt;Content&gt;
+                    &lt;DescriptionLevel&gt;RecordGrp&lt;/DescriptionLevel&gt;
+                    &lt;Title&gt;Château Rouge&lt;/Title&gt;
+                    &lt;Description&gt;Cette unité de description bloque l&#39;héritage des règles AccessRule
+                        mais déclare la règle ACC-00003 avec pour StartDate 01/01/2000 et hérite de
+                        la règle DIS-00001 avec pour StartDate 01/01/2000&lt;/Description&gt;
+                    &lt;StartDate&gt;2017-04-05T08:11:56&lt;/StartDate&gt;
+                    &lt;EndDate&gt;2017-04-05T08:11:56&lt;/EndDate&gt;
+                &lt;/Content&gt;
+                &lt;ArchiveUnit id=&quot;aeaaaaaaaahi3waqabrz6aldwa2nx7aaaaaq&quot;&gt;
+                    &lt;ArchiveUnitRefId&gt;aeaqaaaaayhjq73zabr2oaldu4kqq6iaaaga&lt;/ArchiveUnitRefId&gt;
+                &lt;/ArchiveUnit&gt;
+            &lt;/ArchiveUnit&gt;
+        &lt;/DescriptiveMetadata&gt;
+        &lt;ManagementMetadata&gt;
+            &lt;OriginatingAgencyIdentifier&gt;RATP&lt;/OriginatingAgencyIdentifier&gt;
+        &lt;/ManagementMetadata&gt;
+    &lt;/DataObjectPackage&gt;
+&lt;/ArchiveRestitutionRequest&gt;
+</pre></div>
+</div>
+</section>
+<section id="annexe-2-exemple-de-bordereau-de-mise-a-disposition-pour-un-dip-multi-producteurs-dip-minimal">
+<h2>Annexe 2 : Exemple de bordereau de mise à disposition pour un DIP multi-producteurs (DIP minimal)<a class="headerlink" href="#annexe-2-exemple-de-bordereau-de-mise-a-disposition-pour-un-dip-multi-producteurs-dip-minimal" title="Lien permanent vers cette rubrique"></a></h2>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&lt;ArchiveRestitutionRequest xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;
+    xmlns:pr=&quot;info:lc/xmlns/premis-v2&quot; xmlns=&quot;fr:gouv:culture:archivesdefrance:seda:v2.1&quot;
+    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xsi:schemaLocation=&quot;fr:gouv:culture:archivesdefrance:seda:v2.1 seda-vitam-2.1-main.xsd&quot;&gt;
+    &lt;DataObjectPackage&gt;
+        &lt;DataObjectGroup id=&quot;aebaaaaaayhi3waqabrz6aldu4mgbeiaaaaq&quot;&gt;
+            &lt;BinaryDataObject id=&quot;aeaaaaaaaahi3waqabrz6aldu4mgbeiaaaba&quot;&gt;
+                &lt;DataObjectVersion&gt;Dissemination_1&lt;/DataObjectVersion&gt;
+                &lt;Uri&gt;Content/aeaaaaaaaahi3waqabrz6aldu4mgbeiaaaba&lt;/Uri&gt;
+                &lt;MessageDigest algorithm=&quot;SHA-512&quot;
+                    &gt;461071d0c6f721ca8b9aeed434811293b987e6106cb25594072b3c2cd02f8fd9bb5ecf7d75f06b609ae74f253e2fb81bc81dfc4997eefd075a1fab78a9cdb8ff&lt;/MessageDigest&gt;
+                &lt;Size&gt;5779643&lt;/Size&gt;
+                &lt;FormatIdentification&gt;
+                    &lt;FormatLitteral&gt;Exchangeable Image File Format (Compressed)&lt;/FormatLitteral&gt;
+                    &lt;MimeType&gt;image/jpeg&lt;/MimeType&gt;
+                    &lt;FormatId&gt;fmt/645&lt;/FormatId&gt;
+                &lt;/FormatIdentification&gt;
+                &lt;FileInfo&gt;
+                    &lt;Filename&gt;chirac-zuchowic.JPG&lt;/Filename&gt;
+                    &lt;LastModified&gt;2007-06-08T11:30:30.000+02:00&lt;/LastModified&gt;
+                &lt;/FileInfo&gt;
+            &lt;/BinaryDataObject&gt;
+            &lt;BinaryDataObject id=&quot;aeaaaaaaaahi3waqabrz6aldu4mgbeaaaabq&quot;&gt;
+                &lt;DataObjectVersion&gt;BinaryMaster_1&lt;/DataObjectVersion&gt;
+                &lt;Uri&gt;Content/aeaaaaaaaahi3waqabrz6aldu4mgbeaaaabq&lt;/Uri&gt;
+                &lt;MessageDigest algorithm=&quot;SHA-512&quot;
+                    &gt;461071d0c6f721ca8b9aeed434811293b987e6106cb25594072b3c2cd02f8fd9bb5ecf7d75f06b609ae74f253e2fb81bc81dfc4997eefd075a1fab78a9cdb8ff&lt;/MessageDigest&gt;
+                &lt;Size&gt;5779643&lt;/Size&gt;
+                &lt;FormatIdentification&gt;
+                    &lt;FormatLitteral&gt;Exchangeable Image File Format (Compressed)&lt;/FormatLitteral&gt;
+                    &lt;MimeType&gt;image/jpeg&lt;/MimeType&gt;
+                    &lt;FormatId&gt;fmt/645&lt;/FormatId&gt;
+                &lt;/FormatIdentification&gt;
+                &lt;FileInfo&gt;
+                    &lt;Filename&gt;chirac-zuchowicz.JPG&lt;/Filename&gt;
+                    &lt;LastModified&gt;2007-06-08T11:30:30.000+02:00&lt;/LastModified&gt;
+                &lt;/FileInfo&gt;
+            &lt;/BinaryDataObject&gt;
+        &lt;/DataObjectGroup&gt;
+        &lt;DataObjectGroup id=&quot;aebaaaaaayhjq73zabr2oaldu4kqq4yaaabq&quot;&gt;
+            &lt;BinaryDataObject id=&quot;aeaaaaaaaahjq73zabr2oaldu4kqq4yaaaba&quot;&gt;
+                &lt;DataObjectVersion&gt;BinaryMaster_1&lt;/DataObjectVersion&gt;
+                &lt;Uri&gt;Content/aeaaaaaaaahjq73zabr2oaldu4kqq4yaaaba&lt;/Uri&gt;
+                &lt;MessageDigest algorithm=&quot;SHA-512&quot;
+                    &gt;86c0bc701ef6b5dd21b080bc5bb2af38097baa6237275da83a52f092c9eae3e4e4b0247391620bd732fe824d18bd3bb6c37e62ec73a8cf3585c6a799399861b1&lt;/MessageDigest&gt;
+                &lt;Size&gt;6&lt;/Size&gt;
+                &lt;FormatIdentification&gt;
+                    &lt;FormatLitteral&gt;Plain Text File&lt;/FormatLitteral&gt;
+                    &lt;MimeType&gt;text/plain&lt;/MimeType&gt;
+                    &lt;FormatId&gt;x-fmt/111&lt;/FormatId&gt;
+                &lt;/FormatIdentification&gt;
+                &lt;FileInfo&gt;
+                    &lt;Filename&gt;Bolivar.txt&lt;/Filename&gt;
+                    &lt;LastModified&gt;2017-04-04T08:07:06.487+02:00&lt;/LastModified&gt;
+                &lt;/FileInfo&gt;
+            &lt;/BinaryDataObject&gt;
+        &lt;/DataObjectGroup&gt;
+        &lt;DescriptiveMetadata&gt;
+            &lt;ArchiveUnit id=&quot;aeaqaaaaayhjq73zabr2oaldu4kqq6yaaahq&quot;&gt;
+                &lt;Management/&gt;
+                &lt;Content&gt;
+                    &lt;DescriptionLevel&gt;Item&lt;/DescriptionLevel&gt;
+                    &lt;Title&gt;Bolivar.txt&lt;/Title&gt;
+                    &lt;Description/&gt;
+                    &lt;TransactedDate&gt;2017-04-04T08:07:06&lt;/TransactedDate&gt;
+                &lt;/Content&gt;
+                &lt;DataObjectReference&gt;
+                    &lt;DataObjectGroupReferenceId&gt;aebaaaaaayhjq73zabr2oaldu4kqq4yaaabq&lt;/DataObjectGroupReferenceId&gt;
+                &lt;/DataObjectReference&gt;
+            &lt;/ArchiveUnit&gt;
+            &lt;ArchiveUnit id=&quot;aeaqaaaaayhjq73zabr2oaldu4kqq6yaaagq&quot;&gt;
+                &lt;Management/&gt;
+                &lt;Content&gt;
+                    &lt;DescriptionLevel&gt;RecordGrp&lt;/DescriptionLevel&gt;
+                    &lt;Title&gt;Buttes-Chaumont&lt;/Title&gt;
+                    &lt;Description&gt;Cette unité de description hérite de la même règle (DIS-00001 avec
+                        pour StartDate 01/01/2000 par 2 chemins) et hérite de 2 règles
+                        contradictoires de ses 2 parents (ACC-00001 et ACC-00036 toutes deux avec
+                        pour StartDate 01/01/2000)&lt;/Description&gt;
+                    &lt;StartDate&gt;2017-04-04T08:07:06&lt;/StartDate&gt;
+                    &lt;EndDate&gt;2017-04-04T08:07:06&lt;/EndDate&gt;
+                &lt;/Content&gt;
+                &lt;ArchiveUnit id=&quot;aeaaaaaaaahi3waqabrz6aldwa46kgaaaaaq&quot;&gt;
+                    &lt;ArchiveUnitRefId&gt;aeaqaaaaayhjq73zabr2oaldu4kqq6yaaahq&lt;/ArchiveUnitRefId&gt;
+                &lt;/ArchiveUnit&gt;
+            &lt;/ArchiveUnit&gt;
+            &lt;ArchiveUnit id=&quot;aeaqaaaaayhi3waqabrz6aldu4mgbfqaaaeq&quot;&gt;
+                &lt;Management/&gt;
+                &lt;Content&gt;
+                    &lt;DescriptionLevel&gt;Item&lt;/DescriptionLevel&gt;
+                    &lt;Title xml:lang=&quot;fr&quot;&gt;Jacques Chirac et Xavier de Zuchowicz&lt;/Title&gt;
+                    &lt;Title/&gt;
+                    &lt;Description xml:lang=&quot;fr&quot;&gt;Jacques Chirac serrant la main de Xavier de&amp;#xa;
+                        Zuchowicz, gouverneur militaire de Paris.&lt;/Description&gt;
+                    &lt;Description/&gt;
+                    &lt;OriginatingAgency&gt;
+                        &lt;Identifier&gt;FRAN_NP_009915&lt;/Identifier&gt;
+                    &lt;/OriginatingAgency&gt;
+                    &lt;SubmissionAgency&gt;
+                        &lt;Identifier&gt;FRAN_NP_005061&lt;/Identifier&gt;
+                    &lt;/SubmissionAgency&gt;
+                    &lt;TransactedDate&gt;2007-06-08T11:30:30&lt;/TransactedDate&gt;
+                &lt;/Content&gt;
+                &lt;DataObjectReference&gt;
+                    &lt;DataObjectGroupReferenceId&gt;aebaaaaaayhi3waqabrz6aldu4mgbeiaaaaq&lt;/DataObjectGroupReferenceId&gt;
+                &lt;/DataObjectReference&gt;
+            &lt;/ArchiveUnit&gt;
+        &lt;/DescriptiveMetadata&gt;
+        &lt;ManagementMetadata&gt;
+            &lt;OriginatingAgencyIdentifier&gt;Export VITAM&lt;/OriginatingAgencyIdentifier&gt;
+        &lt;/ManagementMetadata&gt;
+    &lt;/DataObjectPackage&gt;
+&lt;/ArchiveRestitutionRequest&gt;
+</pre></div>
+</div>
+</section>
+<section id="annexe-3-exemple-de-bordereau-de-mise-a-disposition-pour-un-dip-complet-sans-les-journaux-de-cycle-de-vie">
+<h2>Annexe 3 : Exemple de bordereau de mise à disposition pour un DIP complet sans les journaux de cycle de vie<a class="headerlink" href="#annexe-3-exemple-de-bordereau-de-mise-a-disposition-pour-un-dip-complet-sans-les-journaux-de-cycle-de-vie" title="Lien permanent vers cette rubrique"></a></h2>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&lt;ArchiveDeliveryRequestReply xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;
+            xmlns:pr=&quot;info:lc/xmlns/premis-v2&quot; xmlns=&quot;fr:gouv:culture:archivesdefrance:seda:v2.1&quot;
+            xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+            xsi:schemaLocation=&quot;fr:gouv:culture:archivesdefrance:seda:v2.1 seda-vitam-2.1-main.xsd&quot;&gt;
+            &lt;Comment&gt;DIP pour documentation&lt;/Comment&gt;
+            &lt;Date&gt;2019-11-21T15:37:53&lt;/Date&gt;
+            &lt;MessageIdentifier&gt;aeeaaaaaa2hfcj4xaar5ealor2onliiaaaaq&lt;/MessageIdentifier&gt;
+            &lt;CodeListVersions&gt;
+                        &lt;ReplyCodeListVersion&gt;ReplyCodeListVersion6&lt;/ReplyCodeListVersion&gt;
+&lt;MessageDigestAlgorithmCodeListVersion&gt;MessageDigestAlgorithmCodeListVersion6&lt;/MessageDigestAlgorithmCodeListVersion&gt;
+                        &lt;MimeTypeCodeListVersion&gt;MimeTypeCodeListVersion6&lt;/MimeTypeCodeListVersion&gt;
+                        &lt;EncodingCodeListVersion&gt;EncodingCodeListVersion6&lt;/EncodingCodeListVersion&gt;
+                        &lt;FileFormatCodeListVersion&gt;FileFormatCodeListVersion6&lt;/FileFormatCodeListVersion&gt;
+&lt;CompressionAlgorithmCodeListVersion&gt;CompressionAlgorithmCodeListVersion6&lt;/CompressionAlgorithmCodeListVersion&gt;
+&lt;DataObjectVersionCodeListVersion&gt;DataObjectVersionCodeListVersion6&lt;/DataObjectVersionCodeListVersion&gt;
+&lt;StorageRuleCodeListVersion&gt;StorageRuleCodeListVersion6&lt;/StorageRuleCodeListVersion&gt;
+&lt;AppraisalRuleCodeListVersion&gt;AppraisalRuleCodeListVersion6&lt;/AppraisalRuleCodeListVersion&gt;
+&lt;AccessRuleCodeListVersion&gt;AccessRuleCodeListVersion6&lt;/AccessRuleCodeListVersion&gt;
+&lt;DisseminationRuleCodeListVersion&gt;DisseminationRuleCodeListVersion6&lt;/DisseminationRuleCodeListVersion&gt;
+&lt;ReuseRuleCodeListVersion&gt;ReuseRuleCodeListVersion6&lt;/ReuseRuleCodeListVersion&gt;
+&lt;ClassificationRuleCodeListVersion&gt;ClassificationRuleCodeListVersion6&lt;/ClassificationRuleCodeListVersion&gt;
+&lt;AuthorizationReasonCodeListVersion&gt;AuthorizationReasonCodeListVersion6&lt;/AuthorizationReasonCodeListVersion&gt;
+&lt;RelationshipCodeListVersion&gt;RelationshipCodeListVersion6&lt;/RelationshipCodeListVersion&gt;
+            &lt;/CodeListVersions&gt;
+            &lt;DataObjectPackage&gt;
+                        &lt;DataObjectGroup id=&quot;aebaaaaaayhnbfxgaavmgalonijd4rqaaaaq&quot;&gt;
+                                    &lt;BinaryDataObject id=&quot;aeaaaaaaaahnbfxgaavmgalonijd4riaaaba&quot;&gt;
+                                                &lt;DataObjectVersion&gt;BinaryMaster_1&lt;/DataObjectVersion&gt;
+                                                &lt;Uri&gt;Content/aeaaaaaaaahnbfxgaavmgalonijd4riaaaba.odt&lt;/Uri&gt;
+                                                &lt;MessageDigest algorithm=&quot;SHA-512&quot;&gt;59cca81fb1b51e80f27b644f959e7e0c2a9cabca6c5e437ada8b6f6517d845da99059c4fabb8e59ac6dd791c7bd2c251149708b141f9a734cd144c5dfa0f4f70&lt;/MessageDigest&gt;
+                                                &lt;Size&gt;7405&lt;/Size&gt;
+                                                &lt;FormatIdentification&gt;
+                                                  &lt;FormatLitteral&gt;OpenDocument Text&lt;/FormatLitteral&gt;
+                                                  &lt;MimeType&gt;application/vnd.oasis.opendocument.text&lt;/MimeType&gt;
+                                                  &lt;FormatId&gt;fmt/291&lt;/FormatId&gt;
+                                                &lt;/FormatIdentification&gt;
+                                                &lt;FileInfo&gt;
+                                                  &lt;Filename&gt;Campagne_2018.odt&lt;/Filename&gt;
+                                                  &lt;LastModified&gt;2018-10-04T16:45:18.430+02:00&lt;/LastModified&gt;
+                                                &lt;/FileInfo&gt;
+                                    &lt;/BinaryDataObject&gt;
+                        &lt;/DataObjectGroup&gt;
+                        &lt;DataObjectGroup id=&quot;aebaaaaaayhnbfxgaavmgalonijd4saaaaba&quot;&gt;
+                                    &lt;BinaryDataObject id=&quot;aeaaaaaaaahnbfxgaavmgalonijd4saaaaaq&quot;&gt;
+                                                &lt;DataObjectVersion&gt;BinaryMaster_1&lt;/DataObjectVersion&gt;
+                                                &lt;Uri&gt;Content/aeaaaaaaaahnbfxgaavmgalonijd4saaaaaq.odt&lt;/Uri&gt;
+                                                &lt;MessageDigest algorithm=&quot;SHA-512&quot;&gt;59cca81fb1b51e80f27b644f959e7e0c2a9cabca6c5e437ada8b6f6517d845da99059c4fabb8e59ac6dd791c7bd2c251149708b141f9a734cd144c5dfa0f4f70&lt;/MessageDigest&gt;
+                                                &lt;Size&gt;7405&lt;/Size&gt;
+                                                &lt;FormatIdentification&gt;
+                                                  &lt;FormatLitteral&gt;OpenDocument Text&lt;/FormatLitteral&gt;
+                                                  &lt;MimeType&gt;application/vnd.oasis.opendocument.text&lt;/MimeType&gt;
+                                                  &lt;FormatId&gt;fmt/291&lt;/FormatId&gt;
+                                                &lt;/FormatIdentification&gt;
+                                                &lt;FileInfo&gt;
+                                                  &lt;Filename&gt;Rapport_2018_01.odt&lt;/Filename&gt;
+                                                  &lt;LastModified&gt;2018-10-04T16:35:53.757+02:00&lt;/LastModified&gt;
+                                                &lt;/FileInfo&gt;
+                                    &lt;/BinaryDataObject&gt;
+                        &lt;/DataObjectGroup&gt;
+                        &lt;DataObjectGroup id=&quot;aebaaaaaayhnbfxgaavmgalonijd4siaaaba&quot;&gt;
+                                    &lt;BinaryDataObject id=&quot;aeaaaaaaaahnbfxgaavmgalonijd4siaaaaq&quot;&gt;
+                                                &lt;DataObjectVersion&gt;BinaryMaster_1&lt;/DataObjectVersion&gt;
+                                                &lt;Uri&gt;Content/aeaaaaaaaahnbfxgaavmgalonijd4siaaaaq.odt&lt;/Uri&gt;
+                                                &lt;MessageDigest algorithm=&quot;SHA-512&quot;&gt;59cca81fb1b51e80f27b644f959e7e0c2a9cabca6c5e437ada8b6f6517d845da99059c4fabb8e59ac6dd791c7bd2c251149708b141f9a734cd144c5dfa0f4f70&lt;/MessageDigest&gt;
+                                                &lt;Size&gt;7405&lt;/Size&gt;
+                                                &lt;FormatIdentification&gt;
+                                                  &lt;FormatLitteral&gt;OpenDocument Text&lt;/FormatLitteral&gt;
+                                                  &lt;MimeType&gt;application/vnd.oasis.opendocument.text&lt;/MimeType&gt;
+                                                  &lt;FormatId&gt;fmt/291&lt;/FormatId&gt;
+                                                &lt;/FormatIdentification&gt;
+                                                &lt;FileInfo&gt;
+                                                  &lt;Filename&gt;Rapport_2018_03.odt&lt;/Filename&gt;
+                                                  &lt;LastModified&gt;2018-10-04T16:35:34.737+02:00&lt;/LastModified&gt;
+                                                &lt;/FileInfo&gt;
+                                    &lt;/BinaryDataObject&gt;
+                        &lt;/DataObjectGroup&gt;
+                        &lt;DataObjectGroup id=&quot;aebaaaaaayhnbfxgaavmgalonijd4riaaaaq&quot;&gt;
+                                    &lt;BinaryDataObject id=&quot;aeaaaaaaaahnbfxgaavmgalonijd4raaaaaq&quot;&gt;
+                                                &lt;DataObjectVersion&gt;BinaryMaster_1&lt;/DataObjectVersion&gt;
+                                                &lt;Uri&gt;Content/aeaaaaaaaahnbfxgaavmgalonijd4raaaaaq.odt&lt;/Uri&gt;
+                                                &lt;MessageDigest algorithm=&quot;SHA-512&quot;&gt;59cca81fb1b51e80f27b644f959e7e0c2a9cabca6c5e437ada8b6f6517d845da99059c4fabb8e59ac6dd791c7bd2c251149708b141f9a734cd144c5dfa0f4f70&lt;/MessageDigest&gt;
+                                                &lt;Size&gt;7405&lt;/Size&gt;
+                                                &lt;FormatIdentification&gt;
+                                                  &lt;FormatLitteral&gt;OpenDocument Text&lt;/FormatLitteral&gt;
+                                                  &lt;MimeType&gt;application/vnd.oasis.opendocument.text&lt;/MimeType&gt;
+                                                  &lt;FormatId&gt;fmt/291&lt;/FormatId&gt;
+                                                &lt;/FormatIdentification&gt;
+                                                &lt;FileInfo&gt;
+                                                  &lt;Filename&gt;Rapport_2018_02.odt&lt;/Filename&gt;
+                                                  &lt;LastModified&gt;2018-10-04T16:35:34.737+02:00&lt;/LastModified&gt;
+                                                &lt;/FileInfo&gt;
+                                    &lt;/BinaryDataObject&gt;
+                        &lt;/DataObjectGroup&gt;
+                        &lt;DataObjectGroup id=&quot;aebaaaaaayhnbfxgaavmgalonijd4ryaaaaq&quot;&gt;
+                                    &lt;BinaryDataObject id=&quot;aeaaaaaaaahnbfxgaavmgalonijd4rqaaaba&quot;&gt;
+                                                &lt;DataObjectVersion&gt;BinaryMaster_1&lt;/DataObjectVersion&gt;
+                                                &lt;Uri&gt;Content/aeaaaaaaaahnbfxgaavmgalonijd4rqaaaba.odt&lt;/Uri&gt;
+                                                &lt;MessageDigest algorithm=&quot;SHA-512&quot;&gt;59cca81fb1b51e80f27b644f959e7e0c2a9cabca6c5e437ada8b6f6517d845da99059c4fabb8e59ac6dd791c7bd2c251149708b141f9a734cd144c5dfa0f4f70&lt;/MessageDigest&gt;
+                                                &lt;Size&gt;7405&lt;/Size&gt;
+                                                &lt;FormatIdentification&gt;
+                                                  &lt;FormatLitteral&gt;OpenDocument Text&lt;/FormatLitteral&gt;
+                                                  &lt;MimeType&gt;application/vnd.oasis.opendocument.text&lt;/MimeType&gt;
+                                                  &lt;FormatId&gt;fmt/291&lt;/FormatId&gt;
+                                                &lt;/FormatIdentification&gt;
+                                                &lt;FileInfo&gt;
+                                                  &lt;Filename&gt;Liste_membres.odt&lt;/Filename&gt;
+                                                  &lt;LastModified&gt;2018-10-04T16:43:27.623+02:00&lt;/LastModified&gt;
+                                                &lt;/FileInfo&gt;
+                                    &lt;/BinaryDataObject&gt;
+                        &lt;/DataObjectGroup&gt;
+                        &lt;DataObjectGroup id=&quot;aebaaaaaayhnbfxgaavmgalonijd4ryaaabq&quot;&gt;
+                                    &lt;BinaryDataObject id=&quot;aeaaaaaaaahnbfxgaavmgalonijd4ryaaaba&quot;&gt;
+                                                &lt;DataObjectVersion&gt;BinaryMaster_1&lt;/DataObjectVersion&gt;
+                                                &lt;Uri&gt;Content/aeaaaaaaaahnbfxgaavmgalonijd4ryaaaba.odp&lt;/Uri&gt;
+                                                &lt;MessageDigest algorithm=&quot;SHA-512&quot;&gt;773db3fc2960832db44821c9b72a5178a843335724153058c6a257daad9790d86d5cd14dec51698dc4f6ed299390cb0fd2057af198cef387dde3f9367e8e4474&lt;/MessageDigest&gt;
+                                                &lt;Size&gt;8893&lt;/Size&gt;
+                                                &lt;FormatIdentification&gt;
+                                                  &lt;FormatLitteral&gt;OpenDocument
+                                                  Presentation&lt;/FormatLitteral&gt;
+                                                  &lt;MimeType&gt;application/vnd.oasis.opendocument.presentation&lt;/MimeType&gt;
+                                                  &lt;FormatId&gt;fmt/293&lt;/FormatId&gt;
+                                                &lt;/FormatIdentification&gt;
+                                                &lt;FileInfo&gt;
+                                                  &lt;Filename&gt;Biographie_Bidule.odp&lt;/Filename&gt;
+                                                  &lt;LastModified&gt;2018-10-04T16:39:43.124+02:00&lt;/LastModified&gt;
+                                                &lt;/FileInfo&gt;
+                                    &lt;/BinaryDataObject&gt;
+                        &lt;/DataObjectGroup&gt;
+                        &lt;DescriptiveMetadata&gt;
+                                    &lt;ArchiveUnit id=&quot;aeaqaaaaayhnbfxgaavmgalonijd6liaaaba&quot;&gt;
+                                                &lt;Management/&gt;
+                                                &lt;Content&gt;
+                                                  &lt;DescriptionLevel&gt;RecordGrp&lt;/DescriptionLevel&gt;
+                                                  &lt;Title&gt;Service consulaire&lt;/Title&gt;
+                                                  &lt;Description&gt;C:\Users\mehdi.afnai\Desktop\Test Keep implicite\Test Keep implicite\Direction_des_français_à_l&#39;étranger\Service consulaire&lt;/Description&gt;
+                                                  &lt;StartDate&gt;2018-10-04T16:45:18&lt;/StartDate&gt;
+                                                  &lt;EndDate&gt;2018-10-04T16:45:18&lt;/EndDate&gt;
+                                                &lt;/Content&gt;
+                                                &lt;ArchiveUnit
+                                                  id=&quot;aeaaaaaaaahnbfxgaavmgalor2onspyaaaaq&quot;&gt;
+&lt;ArchiveUnitRefId&gt;aeaqaaaaayhnbfxgaavmgalonijd4yaaaaba&lt;/ArchiveUnitRefId&gt;
+                                                &lt;/ArchiveUnit&gt;
+                                    &lt;/ArchiveUnit&gt;
+                                    &lt;ArchiveUnit id=&quot;aeaqaaaaayhnbfxgaavmgalonijd5naaaaca&quot;&gt;
+                                                &lt;Management/&gt;
+                                                &lt;Content&gt;
+                                                  &lt;DescriptionLevel&gt;RecordGrp&lt;/DescriptionLevel&gt;
+                                                  &lt;Title&gt;Rapports mensuels&lt;/Title&gt;
+                                                  &lt;Description&gt;C:\Users\mehdi.afnai\Desktop\Test Keep implicite\Test Keep implicite\Service économique\Rapports mensuels&lt;/Description&gt;
+                                                  &lt;StartDate&gt;2018-10-04T16:35:34&lt;/StartDate&gt;
+                                                  &lt;EndDate&gt;2018-10-04T16:35:53&lt;/EndDate&gt;
+                                                &lt;/Content&gt;
+                                                &lt;ArchiveUnit
+                                                  id=&quot;aeaaaaaaaahnbfxgaavmgalor2onsqqaaaaq&quot;&gt;
+&lt;ArchiveUnitRefId&gt;aeaqaaaaayhnbfxgaavmgalonijd5viaaaaq&lt;/ArchiveUnitRefId&gt;
+                                                &lt;/ArchiveUnit&gt;
+                                                &lt;ArchiveUnit
+                                                  id=&quot;aeaaaaaaaahnbfxgaavmgalor2onsqqaaaba&quot;&gt;
+&lt;ArchiveUnitRefId&gt;aeaqaaaaayhnbfxgaavmgalonijd57iaaaaq&lt;/ArchiveUnitRefId&gt;
+                                                &lt;/ArchiveUnit&gt;
+                                                &lt;ArchiveUnit
+                                                  id=&quot;aeaaaaaaaahnbfxgaavmgalor2onsqqaaabq&quot;&gt;
+&lt;ArchiveUnitRefId&gt;aeaqaaaaayhnbfxgaavmgalonijd5pqaaaaq&lt;/ArchiveUnitRefId&gt;
+                                                &lt;/ArchiveUnit&gt;
+                                    &lt;/ArchiveUnit&gt;
+                                    &lt;ArchiveUnit id=&quot;aeaqaaaaayhnbfxgaavmgalonijd4vaaaaba&quot;&gt;
+                                                &lt;Management/&gt;
+                                                &lt;Content&gt;
+                                                  &lt;DescriptionLevel&gt;RecordGrp&lt;/DescriptionLevel&gt;
+                                                  &lt;Title&gt;Pouvoir législatif&lt;/Title&gt;
+                                                  &lt;Description&gt;C:\Users\mehdi.afnai\Desktop\Test Keep implicite\Test Keep implicite\Pouvoir législatif&lt;/Description&gt;
+                                                  &lt;StartDate&gt;2018-10-04T16:43:27&lt;/StartDate&gt;
+                                                  &lt;EndDate&gt;2018-10-04T16:43:27&lt;/EndDate&gt;
+                                                &lt;/Content&gt;
+                                                &lt;ArchiveUnit
+                                                  id=&quot;aeaaaaaaaahnbfxgaavmgalor2onsqyaaaaq&quot;&gt;
+&lt;ArchiveUnitRefId&gt;aeaqaaaaayhnbfxgaavmgalonijd52qaaaba&lt;/ArchiveUnitRefId&gt;
+                                                &lt;/ArchiveUnit&gt;
+                                    &lt;/ArchiveUnit&gt;
+                                    &lt;ArchiveUnit id=&quot;aeaqaaaaayhnbfxgaavmgalonijd44iaaaaq&quot;&gt;
+                                                &lt;Management/&gt;
+                                                &lt;Content&gt;
+                                                  &lt;DescriptionLevel&gt;Item&lt;/DescriptionLevel&gt;
+                                                  &lt;Title&gt;Liste des membres&lt;/Title&gt;
+                                                  &lt;Description&gt;Pseudo Archive Unit du fichier :C:\Users\mehdi.afnai\Desktop\Test Keep implicite\Test Keep implicite\Pouvoir législatif\Assemblée Parlementaire\Composition\Liste_membres.odt&lt;/Description&gt;
+                                                  &lt;TransactedDate&gt;2018-10-04T16:43:27&lt;/TransactedDate&gt;
+                                                &lt;/Content&gt;
+                                                &lt;DataObjectReference&gt;
+&lt;DataObjectGroupReferenceId&gt;aebaaaaaayhnbfxgaavmgalonijd4ryaaaaq&lt;/DataObjectGroupReferenceId&gt;
+                                                &lt;/DataObjectReference&gt;
+                                    &lt;/ArchiveUnit&gt;
+                                    &lt;ArchiveUnit id=&quot;aeaqaaaaayhnbfxgaavmgalonijd5kaaaaba&quot;&gt;
+                                                &lt;Management/&gt;
+                                                &lt;Content&gt;
+                                                  &lt;DescriptionLevel&gt;RecordGrp&lt;/DescriptionLevel&gt;
+                                                  &lt;Title&gt;Gouvernement&lt;/Title&gt;
+                                                  &lt;Description&gt;C:\Users\mehdi.afnai\Desktop\Test Keep implicite\Test Keep implicite\Ambassade_de_France_en_Ruritanie\Service_politique\Pouvoir_executif\Gouvernement&lt;/Description&gt;
+                                                  &lt;StartDate&gt;2018-10-04T16:39:43&lt;/StartDate&gt;
+                                                  &lt;EndDate&gt;2018-10-04T16:39:43&lt;/EndDate&gt;
+                                                &lt;/Content&gt;
+                                                &lt;ArchiveUnit
+                                                  id=&quot;aeaaaaaaaahnbfxgaavmgalor2onsrqaaaaq&quot;&gt;
+&lt;ArchiveUnitRefId&gt;aeaqaaaaayhnbfxgaavmgalonijd6niaaaba&lt;/ArchiveUnitRefId&gt;
+                                                &lt;/ArchiveUnit&gt;
+                                    &lt;/ArchiveUnit&gt;
+                                    &lt;ArchiveUnit id=&quot;aeaqaaaaayhnbfxgaavmgalonijd52qaaaba&quot;&gt;
+                                                &lt;Management/&gt;
+                                                &lt;Content&gt;
+                                                  &lt;DescriptionLevel&gt;RecordGrp&lt;/DescriptionLevel&gt;
+                                                  &lt;Title&gt;Assemblée Parlementaire&lt;/Title&gt;
+                                                  &lt;Description&gt;C:\Users\mehdi.afnai\Desktop\Test Keep implicite\Test Keep implicite\Pouvoir législatif\Assemblée Parlementaire&lt;/Description&gt;
+                                                  &lt;StartDate&gt;2018-10-04T16:43:27&lt;/StartDate&gt;
+                                                  &lt;EndDate&gt;2018-10-04T16:43:27&lt;/EndDate&gt;
+                                                &lt;/Content&gt;
+                                                &lt;ArchiveUnit
+                                                  id=&quot;aeaaaaaaaahnbfxgaavmgalor2onsryaaaaq&quot;&gt;
+&lt;ArchiveUnitRefId&gt;aeaqaaaaayhnbfxgaavmgalonijd5hiaaaba&lt;/ArchiveUnitRefId&gt;
+                                                &lt;/ArchiveUnit&gt;
+                                    &lt;/ArchiveUnit&gt;
+                                    &lt;ArchiveUnit id=&quot;aeaqaaaaayhnbfxgaavmgalonijd5viaaaaq&quot;&gt;
+                                                &lt;Management/&gt;
+                                                &lt;Content&gt;
+                                                  &lt;DescriptionLevel&gt;Item&lt;/DescriptionLevel&gt;
+                                                  &lt;Title&gt;Rapport 2018_02&lt;/Title&gt;
+                                                  &lt;Description&gt;Pseudo Archive Unit du fichier :C:\Users\mehdi.afnai\Desktop\Test Keep implicite\Test Keep implicite\Service économique\Rapports mensuels\Rapport_2018_02.odt&lt;/Description&gt;
+                                                  &lt;TransactedDate&gt;2018-10-04T16:35:34&lt;/TransactedDate&gt;
+                                                &lt;/Content&gt;
+                                                &lt;DataObjectReference&gt;
+&lt;DataObjectGroupReferenceId&gt;aebaaaaaayhnbfxgaavmgalonijd4riaaaaq&lt;/DataObjectGroupReferenceId&gt;
+                                                &lt;/DataObjectReference&gt;
+                                    &lt;/ArchiveUnit&gt;
+                                    &lt;ArchiveUnit id=&quot;aeaqaaaaayhnbfxgaavmgalonijd6hyaaaaq&quot;&gt;
+                                                &lt;Management/&gt;
+                                                &lt;Content&gt;
+                                                  &lt;DescriptionLevel&gt;Item&lt;/DescriptionLevel&gt;
+                                                  &lt;Title&gt;Biographie Bidule&lt;/Title&gt;
+                                                  &lt;Description&gt;Pseudo Archive Unit du fichier :C:\Users\mehdi.afnai\Desktop\Test Keep implicite\Test Keep implicite\Ambassade_de_France_en_Ruritanie\Service_politique\Pouvoir_executif\Gouvernement\Biographie_du_ministre_du_commerce\Biographie_Bidule.odp&lt;/Description&gt;
+                                                  &lt;TransactedDate&gt;2018-10-04T16:39:43&lt;/TransactedDate&gt;
+                                                &lt;/Content&gt;
+                                                &lt;DataObjectReference&gt;
+&lt;DataObjectGroupReferenceId&gt;aebaaaaaayhnbfxgaavmgalonijd4ryaaabq&lt;/DataObjectGroupReferenceId&gt;
+                                                &lt;/DataObjectReference&gt;
+                                    &lt;/ArchiveUnit&gt;
+                                    &lt;ArchiveUnit id=&quot;aeaqaaaaayhnbfxgaavmgalonijd4yaaaaba&quot;&gt;
+                                                &lt;Management/&gt;
+                                                &lt;Content&gt;
+                                                  &lt;DescriptionLevel&gt;RecordGrp&lt;/DescriptionLevel&gt;
+                                                  &lt;Title&gt;Attribution des bourses scolaires&lt;/Title&gt;
+                                                  &lt;Description&gt;C:\Users\mehdi.afnai\Desktop\Test Keep implicite\Test Keep implicite\Direction_des_français_à_l&#39;étranger\Service consulaire\Attribution des bourses scolaires&lt;/Description&gt;
+                                                  &lt;StartDate&gt;2018-10-04T16:45:18&lt;/StartDate&gt;
+                                                  &lt;EndDate&gt;2018-10-04T16:45:18&lt;/EndDate&gt;
+                                                &lt;/Content&gt;
+                                                &lt;ArchiveUnit
+                                                  id=&quot;aeaaaaaaaahnbfxgaavmgalor2onstiaaaaq&quot;&gt;
+&lt;ArchiveUnitRefId&gt;aeaqaaaaayhnbfxgaavmgalonijd5tiaaaaq&lt;/ArchiveUnitRefId&gt;
+                                                &lt;/ArchiveUnit&gt;
+                                    &lt;/ArchiveUnit&gt;
+                                    &lt;ArchiveUnit id=&quot;aeaqaaaaayhnbfxgaavmgalonijd57iaaaaq&quot;&gt;
+                                                &lt;Management/&gt;
+                                                &lt;Content&gt;
+                                                  &lt;DescriptionLevel&gt;Item&lt;/DescriptionLevel&gt;
+                                                  &lt;Title&gt;Rapport 2018_03&lt;/Title&gt;
+                                                  &lt;Description&gt;Pseudo Archive Unit du fichier :C:\Users\mehdi.afnai\Desktop\Test Keep implicite\Test Keep implicite\Service économique\Rapports mensuels\Rapport_2018_03.odt&lt;/Description&gt;
+                                                  &lt;TransactedDate&gt;2018-10-04T16:35:34&lt;/TransactedDate&gt;
+                                                &lt;/Content&gt;
+                                                &lt;DataObjectReference&gt;
+&lt;DataObjectGroupReferenceId&gt;aebaaaaaayhnbfxgaavmgalonijd4siaaaba&lt;/DataObjectGroupReferenceId&gt;
+                                                &lt;/DataObjectReference&gt;
+                                    &lt;/ArchiveUnit&gt;
+                                    &lt;ArchiveUnit id=&quot;aeaqaaaaayhnbfxgaavmgalonijd5tiaaaaq&quot;&gt;
+                                                &lt;Management/&gt;
+                                                &lt;Content&gt;
+                                                  &lt;DescriptionLevel&gt;Item&lt;/DescriptionLevel&gt;
+                                                  &lt;Title&gt;Campagne 2018&lt;/Title&gt;
+                                                  &lt;Description&gt;Pseudo Archive Unit du fichier :C:\Users\mehdi.afnai\Desktop\Test Keep implicite\Test Keep implicite\Direction_des_français_à_l&#39;étranger\Service consulaire\Attribution des bourses scolaires\Campagne_2018.odt&lt;/Description&gt;
+                                                  &lt;TransactedDate&gt;2018-10-04T16:45:18&lt;/TransactedDate&gt;
+                                                &lt;/Content&gt;
+                                                &lt;DataObjectReference&gt;
+&lt;DataObjectGroupReferenceId&gt;aebaaaaaayhnbfxgaavmgalonijd4rqaaaaq&lt;/DataObjectGroupReferenceId&gt;
+                                                &lt;/DataObjectReference&gt;
+                                    &lt;/ArchiveUnit&gt;
+                                    &lt;ArchiveUnit id=&quot;aeaqaaaaayhnbfxgaavmgalonijd5pqaaaaq&quot;&gt;
+                                                &lt;Management/&gt;
+                                                &lt;Content&gt;
+                                                  &lt;DescriptionLevel&gt;Item&lt;/DescriptionLevel&gt;
+                                                  &lt;Title&gt;Rapport 2018_01&lt;/Title&gt;
+                                                  &lt;Description&gt;Pseudo Archive Unit du fichier :C:\Users\mehdi.afnai\Desktop\Test Keep implicite\Test Keep implicite\Service économique\Rapports mensuels\Rapport_2018_01.odt&lt;/Description&gt;
+                                                  &lt;TransactedDate&gt;2018-10-04T16:35:53&lt;/TransactedDate&gt;
+                                                &lt;/Content&gt;
+                                                &lt;DataObjectReference&gt;
+&lt;DataObjectGroupReferenceId&gt;aebaaaaaayhnbfxgaavmgalonijd4saaaaba&lt;/DataObjectGroupReferenceId&gt;
+                                                &lt;/DataObjectReference&gt;
+                                    &lt;/ArchiveUnit&gt;
+                                    &lt;ArchiveUnit id=&quot;aeaqaaaaayhnbfxgaavmgalonijd6niaaaba&quot;&gt;
+                                                &lt;Management/&gt;
+                                                &lt;Content&gt;
+                                                  &lt;DescriptionLevel&gt;RecordGrp&lt;/DescriptionLevel&gt;
+                                                  &lt;Title&gt;Biographie du ministre du commerce&lt;/Title&gt;
+                                                  &lt;Description&gt;C:\Users\mehdi.afnai\Desktop\Test Keep implicite\Test Keep implicite\Ambassade_de_France_en_Ruritanie\Service_politique\Pouvoir_executif\Gouvernement\Biographie_du_ministre_du_commerce&lt;/Description&gt;
+                                                  &lt;StartDate&gt;2018-10-04T16:39:43&lt;/StartDate&gt;
+                                                  &lt;EndDate&gt;2018-10-04T16:39:43&lt;/EndDate&gt;
+                                                &lt;/Content&gt;
+                                                &lt;ArchiveUnit
+                                                  id=&quot;aeaaaaaaaahnbfxgaavmgalor2onsxiaaaaq&quot;&gt;
+&lt;ArchiveUnitRefId&gt;aeaqaaaaayhnbfxgaavmgalonijd6hyaaaaq&lt;/ArchiveUnitRefId&gt;
+                                                &lt;/ArchiveUnit&gt;
+                                    &lt;/ArchiveUnit&gt;
+                                    &lt;ArchiveUnit id=&quot;aeaqaaaaayhnbfxgaavmgalonijd5hiaaaba&quot;&gt;
+                                                &lt;Management/&gt;
+                                                &lt;Content&gt;
+                                                  &lt;DescriptionLevel&gt;RecordGrp&lt;/DescriptionLevel&gt;
+                                                  &lt;Title&gt;Composition&lt;/Title&gt;
+                                                  &lt;Description&gt;C:\Users\mehdi.afnai\Desktop\Test Keep implicite\Test Keep implicite\Pouvoir législatif\Assemblée Parlementaire\Composition&lt;/Description&gt;
+                                                  &lt;StartDate&gt;2018-10-04T16:43:27&lt;/StartDate&gt;
+                                                  &lt;EndDate&gt;2018-10-04T16:43:27&lt;/EndDate&gt;
+                                                &lt;/Content&gt;
+                                                &lt;ArchiveUnit
+                                                  id=&quot;aeaaaaaaaahnbfxgaavmgalor2onsxqaaaaq&quot;&gt;
+&lt;ArchiveUnitRefId&gt;aeaqaaaaayhnbfxgaavmgalonijd44iaaaaq&lt;/ArchiveUnitRefId&gt;
+                                                &lt;/ArchiveUnit&gt;
+                                    &lt;/ArchiveUnit&gt;
+                                    &lt;ArchiveUnit id=&quot;aeaqaaaaayhnbfxgaavmgalonijd6paaaaba&quot;&gt;
+                                                &lt;Management/&gt;
+                                                &lt;Content&gt;
+                                                  &lt;DescriptionLevel&gt;RecordGrp&lt;/DescriptionLevel&gt;
+                                                  &lt;Title&gt;Pouvoir exécutif&lt;/Title&gt;
+                                                  &lt;Description&gt;C:\Users\mehdi.afnai\Desktop\Test Keep implicite\Test Keep implicite\Ambassade_de_France_en_Ruritanie\Service_politique\Pouvoir_executif&lt;/Description&gt;
+                                                  &lt;StartDate&gt;2018-10-04T16:39:43&lt;/StartDate&gt;
+                                                  &lt;EndDate&gt;2018-10-04T16:39:43&lt;/EndDate&gt;
+                                                &lt;/Content&gt;
+                                                &lt;ArchiveUnit
+                                                  id=&quot;aeaaaaaaaahnbfxgaavmgalor2onsyaaaaaq&quot;&gt;
+&lt;ArchiveUnitRefId&gt;aeaqaaaaayhnbfxgaavmgalonijd5kaaaaba&lt;/ArchiveUnitRefId&gt;
+                                                &lt;/ArchiveUnit&gt;
+                                    &lt;/ArchiveUnit&gt;
+                                    &lt;ArchiveUnit id=&quot;aeaqaaaaayhnbfxgaavmgalonijd6diaaabq&quot;&gt;
+                                                &lt;Management/&gt;
+                                                &lt;Content&gt;
+                                                  &lt;DescriptionLevel&gt;RecordGrp&lt;/DescriptionLevel&gt;
+                                                  &lt;Title&gt;Service politique&lt;/Title&gt;
+                                                  &lt;Description&gt;C:\Users\mehdi.afnai\Desktop\Test Keep implicite\Test Keep implicite\Ambassade_de_France_en_Ruritanie\Service_politique&lt;/Description&gt;
+                                                  &lt;StartDate&gt;2018-10-04T16:39:43&lt;/StartDate&gt;
+                                                  &lt;EndDate&gt;2018-10-04T16:39:43&lt;/EndDate&gt;
+                                                &lt;/Content&gt;
+                                                &lt;ArchiveUnit
+                                                  id=&quot;aeaaaaaaaahnbfxgaavmgalor2onsyqaaaaq&quot;&gt;
+&lt;ArchiveUnitRefId&gt;aeaqaaaaayhnbfxgaavmgalonijd4vaaaaba&lt;/ArchiveUnitRefId&gt;
+                                                &lt;/ArchiveUnit&gt;
+                                                &lt;ArchiveUnit
+                                                  id=&quot;aeaaaaaaaahnbfxgaavmgalor2onsyqaaaba&quot;&gt;
+&lt;ArchiveUnitRefId&gt;aeaqaaaaayhnbfxgaavmgalonijd6paaaaba&lt;/ArchiveUnitRefId&gt;
+                                                &lt;/ArchiveUnit&gt;
+                                    &lt;/ArchiveUnit&gt;
+                                    &lt;ArchiveUnit id=&quot;aeaqaaaaayhnbfxgaavmgalonijd6raaaaca&quot;&gt;
+                                                &lt;Management/&gt;
+                                                &lt;Content&gt;
+                                                  &lt;DescriptionLevel&gt;RecordGrp&lt;/DescriptionLevel&gt;
+                                                  &lt;Title&gt;Ambassade de France en Ruritanie&lt;/Title&gt;
+                                                  &lt;Description&gt;C:\Users\mehdi.afnai\Desktop\Test Keep implicite\Test Keep implicite\Ambassade_de_France_en_Ruritanie&lt;/Description&gt;
+                                                  &lt;StartDate&gt;2018-10-04T16:39:43&lt;/StartDate&gt;
+                                                  &lt;EndDate&gt;2018-10-04T16:39:43&lt;/EndDate&gt;
+                                                &lt;/Content&gt;
+                                                &lt;ArchiveUnit
+                                                  id=&quot;aeaaaaaaaahnbfxgaavmgalor2onsyyaaaaq&quot;&gt;
+&lt;ArchiveUnitRefId&gt;aeaqaaaaayhnbfxgaavmgalonijd6liaaaba&lt;/ArchiveUnitRefId&gt;
+                                                &lt;/ArchiveUnit&gt;
+                                                &lt;ArchiveUnit
+                                                  id=&quot;aeaaaaaaaahnbfxgaavmgalor2onsyyaaaba&quot;&gt;
+&lt;ArchiveUnitRefId&gt;aeaqaaaaayhnbfxgaavmgalonijd6diaaabq&lt;/ArchiveUnitRefId&gt;
+                                                &lt;/ArchiveUnit&gt;
+                                                &lt;ArchiveUnit
+                                                  id=&quot;aeaaaaaaaahnbfxgaavmgalor2onsyyaaabq&quot;&gt;
+&lt;ArchiveUnitRefId&gt;aeaqaaaaayhnbfxgaavmgalonijd42aaaaba&lt;/ArchiveUnitRefId&gt;
+                                                &lt;/ArchiveUnit&gt;
+                                    &lt;/ArchiveUnit&gt;
+                                    &lt;ArchiveUnit id=&quot;aeaqaaaaayhnbfxgaavmgalonijd42aaaaba&quot;&gt;
+                                                &lt;Management/&gt;
+                                                &lt;Content&gt;
+                                                  &lt;DescriptionLevel&gt;RecordGrp&lt;/DescriptionLevel&gt;
+                                                  &lt;Title&gt;Service économique&lt;/Title&gt;
+                                                  &lt;Description&gt;C:\Users\mehdi.afnai\Desktop\Test Keep implicite\Test Keep implicite\Service économique&lt;/Description&gt;
+                                                  &lt;StartDate&gt;2018-10-04T16:35:34&lt;/StartDate&gt;
+                                                  &lt;EndDate&gt;2018-10-04T16:35:53&lt;/EndDate&gt;
+                                                &lt;/Content&gt;
+                                                &lt;ArchiveUnit
+                                                  id=&quot;aeaaaaaaaahnbfxgaavmgalor2onsziaaaaq&quot;&gt;
+&lt;ArchiveUnitRefId&gt;aeaqaaaaayhnbfxgaavmgalonijd5naaaaca&lt;/ArchiveUnitRefId&gt;
+                                                &lt;/ArchiveUnit&gt;
+                                    &lt;/ArchiveUnit&gt;
+                        &lt;/DescriptiveMetadata&gt;
+                        &lt;ManagementMetadata&gt;
+                                    &lt;OriginatingAgencyIdentifier&gt;Vitam&lt;/OriginatingAgencyIdentifier&gt;
+                        &lt;/ManagementMetadata&gt;
+            &lt;/DataObjectPackage&gt;
+            &lt;MessageRequestIdentifier&gt;test de la fonctionnalité&lt;/MessageRequestIdentifier&gt;
+            &lt;UnitIdentifier&gt;Not Implemented&lt;/UnitIdentifier&gt;
+            &lt;ArchivalAgency&gt;
+                        &lt;Identifier&gt;Vitam&lt;/Identifier&gt;
+            &lt;/ArchivalAgency&gt;
+            &lt;Requester&gt;
+                        &lt;Identifier&gt;archiviste Vitam&lt;/Identifier&gt;
+            &lt;/Requester&gt;
+&lt;/ArchiveDeliveryRequestReply&gt;
+</pre></div>
+</div>
+</section>
+<section id="annexe-4-exemple-de-bordereau-de-mise-a-disposition-avec-export-du-journal-du-cycle-de-vie-de-lunite-archivistique-dip-minimal">
+<h2>Annexe 4 : Exemple de bordereau de mise à disposition avec export du journal du cycle de vie de l’unité archivistique (DIP minimal)<a class="headerlink" href="#annexe-4-exemple-de-bordereau-de-mise-a-disposition-avec-export-du-journal-du-cycle-de-vie-de-lunite-archivistique-dip-minimal" title="Lien permanent vers cette rubrique"></a></h2>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&lt;ArchiveDeliveryRequestReply xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;
+    xmlns:pr=&quot;info:lc/xmlns/premis-v2&quot; xmlns=&quot;fr:gouv:culture:archivesdefrance:seda:v2.1&quot;
+    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xsi:schemaLocation=&quot;fr:gouv:culture:archivesdefrance:seda:v2.1 seda-vitam-2.1-main.xsd&quot;&gt;
+    &lt;DataObjectPackage&gt;
+        &lt;DescriptiveMetadata&gt;
+            &lt;ArchiveUnit id=&quot;aeaqaaaaayhnbfxgaavmgalonijd6raaaaca&quot;&gt;
+                &lt;Management&gt;
+                    &lt;LogBook&gt;
+                        &lt;Event&gt;
+                            &lt;EventIdentifier&gt;aedqaaaaa2hnbfxgaavmgalonijd6ziaaaba&lt;/EventIdentifier&gt;
+                            &lt;EventTypeCode&gt;INGEST&lt;/EventTypeCode&gt;
+                            &lt;EventType&gt;LFC.CHECK_MANIFEST&lt;/EventType&gt;
+                            &lt;EventDateTime&gt;2019-11-14T13:20:11.109&lt;/EventDateTime&gt;
+                            &lt;Outcome&gt;OK&lt;/Outcome&gt;
+                            &lt;OutcomeDetail&gt;LFC.CHECK_MANIFEST.OK&lt;/OutcomeDetail&gt;
+                            &lt;OutcomeDetailMessage&gt;Succès de la vérification de la cohérence du
+                                bordereau de transfert&lt;/OutcomeDetailMessage&gt;
+                            &lt;EventDetailData&gt;{ }&lt;/EventDetailData&gt;
+                            &lt;AgentIdentifier&gt;{&quot;Name&quot;:&quot;vitam-env-itrec-processing-01.vitam-env&quot;,&quot;Role&quot;:&quot;worker&quot;,&quot;ServerId&quot;:1053857510,&quot;SiteId&quot;:1,&quot;GlobalPlatformId&quot;:248551142}&lt;/AgentIdentifier&gt;
+                            &lt;ObjectIdentifier&gt;aeaqaaaaayhnbfxgaavmgalonijd6raaaaca&lt;/ObjectIdentifier&gt;
+                        &lt;/Event&gt;
+                        &lt;Event&gt;
+                            &lt;EventIdentifier&gt;aedqaaaaa2hnbfxgaavmgalonijd6ziaaabq&lt;/EventIdentifier&gt;
+                            &lt;EventTypeCode&gt;INGEST&lt;/EventTypeCode&gt;
+                            &lt;EventType&gt;LFC.CHECK_MANIFEST.LFC_CREATION&lt;/EventType&gt;
+                            &lt;EventDateTime&gt;2019-11-14T13:20:11.109&lt;/EventDateTime&gt;
+                            &lt;Outcome&gt;OK&lt;/Outcome&gt;
+                            &lt;OutcomeDetail&gt;LFC.CHECK_MANIFEST.LFC_CREATION.OK&lt;/OutcomeDetail&gt;
+                            &lt;OutcomeDetailMessage&gt;Succès de la création du journal du cycle de
+                                vie&lt;/OutcomeDetailMessage&gt;
+                            &lt;AgentIdentifier&gt;{&quot;Name&quot;:&quot;vitam-env-itrec-processing-01.vitam-env&quot;,&quot;Role&quot;:&quot;worker&quot;,&quot;ServerId&quot;:1053857510,&quot;SiteId&quot;:1,&quot;GlobalPlatformId&quot;:248551142}&lt;/AgentIdentifier&gt;
+                            &lt;ObjectIdentifier&gt;aeaqaaaaayhnbfxgaavmgalonijd6raaaaca&lt;/ObjectIdentifier&gt;
+                        &lt;/Event&gt;
+                        &lt;Event&gt;
+                            &lt;EventIdentifier&gt;aeaaaaaaaahnbfxgaavmgalonijd6ziaaaca&lt;/EventIdentifier&gt;
+                            &lt;EventTypeCode&gt;INGEST&lt;/EventTypeCode&gt;
+                            &lt;EventType&gt;LFC.EXTERNAL_LOGBOOK&lt;/EventType&gt;
+                            &lt;EventDateTime&gt;2019-11-14T13:20:11.109&lt;/EventDateTime&gt;
+                            &lt;Outcome&gt;OK&lt;/Outcome&gt;
+                            &lt;OutcomeDetail&gt;LFC.EXTERNAL_LOGBOOK.OK&lt;/OutcomeDetail&gt;
+                            &lt;OutcomeDetailMessage&gt;Succès de la récupération des journaux de cycle de
+                                vie de l’archive transférée&lt;/OutcomeDetailMessage&gt;
+                            &lt;AgentIdentifier&gt;{&quot;Name&quot;:&quot;vitam-env-itrec-processing-01.vitam-env&quot;,&quot;Role&quot;:&quot;worker&quot;,&quot;ServerId&quot;:1053857510,&quot;SiteId&quot;:1,&quot;GlobalPlatformId&quot;:248551142}&lt;/AgentIdentifier&gt;
+                            &lt;ObjectIdentifier&gt;aeaqaaaaayhnbfxgaavmgalonijd6raaaaca&lt;/ObjectIdentifier&gt;
+                        &lt;/Event&gt;
+                        &lt;Event&gt;
+                            &lt;EventIdentifier&gt;aedqaaaaa2hnbfxgaavmgalonev5ygiaaaaq&lt;/EventIdentifier&gt;
+                            &lt;EventTypeCode&gt;INGEST&lt;/EventTypeCode&gt;
+                            &lt;EventType&gt;LFC.CHECK_MANIFEST&lt;/EventType&gt;
+                            &lt;EventDateTime&gt;2019-11-14T09:08:32.409&lt;/EventDateTime&gt;
+                            &lt;Outcome&gt;OK&lt;/Outcome&gt;
+                            &lt;OutcomeDetail&gt;LFC.CHECK_MANIFEST.OK&lt;/OutcomeDetail&gt;
+                            &lt;OutcomeDetailMessage&gt;Succès de la vérification de la cohérence du
+                                bordereau de transfert&lt;/OutcomeDetailMessage&gt;
+                            &lt;AgentIdentifier&gt;{&quot;Name&quot;:&quot;vitam-env-itrec-processing-01.vitam-env&quot;,&quot;Role&quot;:&quot;worker&quot;,&quot;ServerId&quot;:1053857510,&quot;SiteId&quot;:1,&quot;GlobalPlatformId&quot;:248551142}&lt;/AgentIdentifier&gt;
+                            &lt;ObjectIdentifier&gt;aeaqaaaaayhnbfxgaavmgalonev5x2qaaaba&lt;/ObjectIdentifier&gt;
+                        &lt;/Event&gt;
+                        &lt;Event&gt;
+                            &lt;EventIdentifier&gt;aedqaaaaa2hnbfxgaavmgalonev5ygiaaaba&lt;/EventIdentifier&gt;
+                            &lt;EventTypeCode&gt;INGEST&lt;/EventTypeCode&gt;
+                            &lt;EventType&gt;LFC.CHECK_MANIFEST.LFC_CREATION&lt;/EventType&gt;
+                            &lt;EventDateTime&gt;2019-11-14T09:08:32.409&lt;/EventDateTime&gt;
+                            &lt;Outcome&gt;OK&lt;/Outcome&gt;
+                            &lt;OutcomeDetail&gt;LFC.CHECK_MANIFEST.LFC_CREATION.OK&lt;/OutcomeDetail&gt;
+                            &lt;OutcomeDetailMessage&gt;Succès de la création du journal du cycle de
+                                vie&lt;/OutcomeDetailMessage&gt;
+                            &lt;AgentIdentifier&gt;{&quot;Name&quot;:&quot;vitam-env-itrec-processing-01.vitam-env&quot;,&quot;Role&quot;:&quot;worker&quot;,&quot;ServerId&quot;:1053857510,&quot;SiteId&quot;:1,&quot;GlobalPlatformId&quot;:248551142}&lt;/AgentIdentifier&gt;
+                            &lt;ObjectIdentifier&gt;aeaqaaaaayhnbfxgaavmgalonev5x2qaaaba&lt;/ObjectIdentifier&gt;
+                        &lt;/Event&gt;
+                        &lt;Event&gt;
+                            &lt;EventIdentifier&gt;aedqaaaaa2hnbfxgaavmgalonev6ijyaaaaq&lt;/EventIdentifier&gt;
+                            &lt;EventTypeCode&gt;INGEST&lt;/EventTypeCode&gt;
+                            &lt;EventType&gt;LFC.CHECK_UNIT_SCHEMA&lt;/EventType&gt;
+                            &lt;EventDateTime&gt;2019-11-14T09:08:34.477&lt;/EventDateTime&gt;
+                            &lt;Outcome&gt;OK&lt;/Outcome&gt;
+                            &lt;OutcomeDetail&gt;LFC.CHECK_UNIT_SCHEMA.OK&lt;/OutcomeDetail&gt;
+                            &lt;OutcomeDetailMessage&gt;Succès de la vérification globale de l&#39;unité
+                                archivistique&lt;/OutcomeDetailMessage&gt;
+                            &lt;AgentIdentifier&gt;{&quot;Name&quot;:&quot;vitam-env-itrec-processing-01.vitam-env&quot;,&quot;Role&quot;:&quot;worker&quot;,&quot;ServerId&quot;:1053857510,&quot;SiteId&quot;:1,&quot;GlobalPlatformId&quot;:248551142}&lt;/AgentIdentifier&gt;
+                            &lt;ObjectIdentifier&gt;aeaqaaaaayhnbfxgaavmgalonev5x2qaaaba&lt;/ObjectIdentifier&gt;
+                        &lt;/Event&gt;
+                        &lt;Event&gt;
+                            &lt;EventIdentifier&gt;aedqaaaaa2hnbfxgaavmgalonev6ikyaaaaq&lt;/EventIdentifier&gt;
+                            &lt;EventTypeCode&gt;INGEST&lt;/EventTypeCode&gt;
+                            &lt;EventType&gt;LFC.CHECK_ARCHIVE_UNIT_PROFILE&lt;/EventType&gt;
+                            &lt;EventDateTime&gt;2019-11-14T09:08:34.477&lt;/EventDateTime&gt;
+                            &lt;Outcome&gt;OK&lt;/Outcome&gt;
+                            &lt;OutcomeDetail&gt;LFC.CHECK_ARCHIVE_UNIT_PROFILE.OK&lt;/OutcomeDetail&gt;
+                            &lt;OutcomeDetailMessage&gt;Succès de la vérification de la conformité aux
+                                profils d&#39;unité archivistique&lt;/OutcomeDetailMessage&gt;
+                            &lt;AgentIdentifier&gt;{&quot;Name&quot;:&quot;vitam-env-itrec-processing-01.vitam-env&quot;,&quot;Role&quot;:&quot;worker&quot;,&quot;ServerId&quot;:1053857510,&quot;SiteId&quot;:1,&quot;GlobalPlatformId&quot;:248551142}&lt;/AgentIdentifier&gt;
+                            &lt;ObjectIdentifier&gt;aeaqaaaaayhnbfxgaavmgalonev5x2qaaaba&lt;/ObjectIdentifier&gt;
+                        &lt;/Event&gt;
+                        &lt;Event&gt;
+                            &lt;EventIdentifier&gt;aedqaaaaa2hnbfxgaavmgalonev6ikyaaaba&lt;/EventIdentifier&gt;
+                            &lt;EventTypeCode&gt;INGEST&lt;/EventTypeCode&gt;
+                            &lt;EventType&gt;LFC.CHECK_CLASSIFICATION_LEVEL&lt;/EventType&gt;
+                            &lt;EventDateTime&gt;2019-11-14T09:08:34.477&lt;/EventDateTime&gt;
+                            &lt;Outcome&gt;OK&lt;/Outcome&gt;
+                            &lt;OutcomeDetail&gt;LFC.CHECK_CLASSIFICATION_LEVEL.OK&lt;/OutcomeDetail&gt;
+                            &lt;OutcomeDetailMessage&gt;Succès de la vérification du niveau de
+                                classification&lt;/OutcomeDetailMessage&gt;
+                            &lt;AgentIdentifier&gt;{&quot;Name&quot;:&quot;vitam-env-itrec-processing-01.vitam-env&quot;,&quot;Role&quot;:&quot;worker&quot;,&quot;ServerId&quot;:1053857510,&quot;SiteId&quot;:1,&quot;GlobalPlatformId&quot;:248551142}&lt;/AgentIdentifier&gt;
+                            &lt;ObjectIdentifier&gt;aeaqaaaaayhnbfxgaavmgalonev5x2qaaaba&lt;/ObjectIdentifier&gt;
+                        &lt;/Event&gt;
+                        &lt;Event&gt;
+                            &lt;EventIdentifier&gt;aedqaaaaa2hnbfxgaavmgalonev6ilaaaaaq&lt;/EventIdentifier&gt;
+                            &lt;EventTypeCode&gt;INGEST&lt;/EventTypeCode&gt;
+                            &lt;EventType&gt;LFC.UNITS_RULES_COMPUTE&lt;/EventType&gt;
+                            &lt;EventDateTime&gt;2019-11-14T09:08:34.477&lt;/EventDateTime&gt;
+                            &lt;Outcome&gt;OK&lt;/Outcome&gt;
+                            &lt;OutcomeDetail&gt;LFC.UNITS_RULES_COMPUTE.OK&lt;/OutcomeDetail&gt;
+                            &lt;OutcomeDetailMessage&gt;Succès de l&#39;application des règles de gestion et
+                                du calcul des dates d&#39;échéance&lt;/OutcomeDetailMessage&gt;
+                            &lt;AgentIdentifier&gt;{&quot;Name&quot;:&quot;vitam-env-itrec-processing-01.vitam-env&quot;,&quot;Role&quot;:&quot;worker&quot;,&quot;ServerId&quot;:1053857510,&quot;SiteId&quot;:1,&quot;GlobalPlatformId&quot;:248551142}&lt;/AgentIdentifier&gt;
+                            &lt;ObjectIdentifier&gt;aeaqaaaaayhnbfxgaavmgalonev5x2qaaaba&lt;/ObjectIdentifier&gt;
+                        &lt;/Event&gt;
+                        &lt;Event&gt;
+                            &lt;EventIdentifier&gt;aedqaaaaa2hnbfxgaavmgalonev66kqaaaaq&lt;/EventIdentifier&gt;
+                            &lt;EventTypeCode&gt;INGEST&lt;/EventTypeCode&gt;
+                            &lt;EventType&gt;LFC.UNIT_METADATA_INDEXATION&lt;/EventType&gt;
+                            &lt;EventDateTime&gt;2019-11-14T09:08:37.293&lt;/EventDateTime&gt;
+                            &lt;Outcome&gt;OK&lt;/Outcome&gt;
+                            &lt;OutcomeDetail&gt;LFC.UNIT_METADATA_INDEXATION.OK&lt;/OutcomeDetail&gt;
+                            &lt;OutcomeDetailMessage&gt;Succès de l&#39;indexation des métadonnées de l&#39;unité
+                                archivistique&lt;/OutcomeDetailMessage&gt;
+                            &lt;AgentIdentifier&gt;{&quot;Name&quot;:&quot;vitam-env-itrec-processing-01.vitam-env&quot;,&quot;Role&quot;:&quot;worker&quot;,&quot;ServerId&quot;:1053857510,&quot;SiteId&quot;:1,&quot;GlobalPlatformId&quot;:248551142}&lt;/AgentIdentifier&gt;
+                            &lt;ObjectIdentifier&gt;aeaqaaaaayhnbfxgaavmgalonev5x2qaaaba&lt;/ObjectIdentifier&gt;
+                        &lt;/Event&gt;
+                        &lt;Event&gt;
+                            &lt;EventIdentifier&gt;aedqaaaaa2hnbfxgaavmgalonev5ygaaaada&lt;/EventIdentifier&gt;
+                            &lt;EventTypeCode&gt;INGEST&lt;/EventTypeCode&gt;
+                            &lt;EventType&gt;LFC.LFC_CREATION&lt;/EventType&gt;
+                            &lt;EventDateTime&gt;2019-11-14T09:08:32.408&lt;/EventDateTime&gt;
+                            &lt;Outcome&gt;OK&lt;/Outcome&gt;
+                            &lt;OutcomeDetail&gt;LFC.LFC_CREATION.OK&lt;/OutcomeDetail&gt;
+                            &lt;OutcomeDetailMessage&gt;Succès de l&#39;alimentation du journal du cycle de
+                                vie&lt;/OutcomeDetailMessage&gt;
+                            &lt;AgentIdentifier&gt;{&quot;Name&quot;:&quot;vitam-env-itrec-processing-01.vitam-env&quot;,&quot;Role&quot;:&quot;worker&quot;,&quot;ServerId&quot;:1053857510,&quot;SiteId&quot;:1,&quot;GlobalPlatformId&quot;:248551142}&lt;/AgentIdentifier&gt;
+                            &lt;ObjectIdentifier&gt;aeaqaaaaayhnbfxgaavmgalonev5x2qaaaba&lt;/ObjectIdentifier&gt;
+                        &lt;/Event&gt;
+                        &lt;Event&gt;
+                            &lt;EventIdentifier&gt;aedqaaaaa2hnbfxgaavmgalonijerxiaaaaq&lt;/EventIdentifier&gt;
+                            &lt;EventTypeCode&gt;INGEST&lt;/EventTypeCode&gt;
+                            &lt;EventType&gt;LFC.CHECK_UNIT_SCHEMA&lt;/EventType&gt;
+                            &lt;EventDateTime&gt;2019-11-14T13:20:13.543&lt;/EventDateTime&gt;
+                            &lt;Outcome&gt;OK&lt;/Outcome&gt;
+                            &lt;OutcomeDetail&gt;LFC.CHECK_UNIT_SCHEMA.OK&lt;/OutcomeDetail&gt;
+                            &lt;OutcomeDetailMessage&gt;Succès de la vérification globale de l&#39;unité
+                                archivistique&lt;/OutcomeDetailMessage&gt;
+                            &lt;EventDetailData&gt;{}&lt;/EventDetailData&gt;
+                            &lt;AgentIdentifier&gt;{&quot;Name&quot;:&quot;vitam-env-itrec-processing-01.vitam-env&quot;,&quot;Role&quot;:&quot;worker&quot;,&quot;ServerId&quot;:1053857510,&quot;SiteId&quot;:1,&quot;GlobalPlatformId&quot;:248551142}&lt;/AgentIdentifier&gt;
+                            &lt;ObjectIdentifier&gt;aeaqaaaaayhnbfxgaavmgalonijd6raaaaca&lt;/ObjectIdentifier&gt;
+                        &lt;/Event&gt;
+                        &lt;Event&gt;
+                            &lt;EventIdentifier&gt;aedqaaaaa2hnbfxgaavmgalonijeryyaaaaq&lt;/EventIdentifier&gt;
+                            &lt;EventTypeCode&gt;INGEST&lt;/EventTypeCode&gt;
+                            &lt;EventType&gt;LFC.CHECK_ARCHIVE_UNIT_PROFILE&lt;/EventType&gt;
+                            &lt;EventDateTime&gt;2019-11-14T13:20:13.543&lt;/EventDateTime&gt;
+                            &lt;Outcome&gt;OK&lt;/Outcome&gt;
+                            &lt;OutcomeDetail&gt;LFC.CHECK_ARCHIVE_UNIT_PROFILE.OK&lt;/OutcomeDetail&gt;
+                            &lt;OutcomeDetailMessage&gt;Succès de la vérification de la conformité aux
+                                profils d&#39;unité archivistique&lt;/OutcomeDetailMessage&gt;
+                            &lt;EventDetailData&gt;{}&lt;/EventDetailData&gt;
+                            &lt;AgentIdentifier&gt;{&quot;Name&quot;:&quot;vitam-env-itrec-processing-01.vitam-env&quot;,&quot;Role&quot;:&quot;worker&quot;,&quot;ServerId&quot;:1053857510,&quot;SiteId&quot;:1,&quot;GlobalPlatformId&quot;:248551142}&lt;/AgentIdentifier&gt;
+                            &lt;ObjectIdentifier&gt;aeaqaaaaayhnbfxgaavmgalonijd6raaaaca&lt;/ObjectIdentifier&gt;
+                        &lt;/Event&gt;
+                        &lt;Event&gt;
+                            &lt;EventIdentifier&gt;aedqaaaaa2hnbfxgaavmgalonijerzaaaaaq&lt;/EventIdentifier&gt;
+                            &lt;EventTypeCode&gt;INGEST&lt;/EventTypeCode&gt;
+                            &lt;EventType&gt;LFC.CHECK_CLASSIFICATION_LEVEL&lt;/EventType&gt;
+                            &lt;EventDateTime&gt;2019-11-14T13:20:13.543&lt;/EventDateTime&gt;
+                            &lt;Outcome&gt;OK&lt;/Outcome&gt;
+                            &lt;OutcomeDetail&gt;LFC.CHECK_CLASSIFICATION_LEVEL.OK&lt;/OutcomeDetail&gt;
+                            &lt;OutcomeDetailMessage&gt;Succès de la vérification du niveau de
+                                classification&lt;/OutcomeDetailMessage&gt;
+                            &lt;EventDetailData&gt;{}&lt;/EventDetailData&gt;
+                            &lt;AgentIdentifier&gt;{&quot;Name&quot;:&quot;vitam-env-itrec-processing-01.vitam-env&quot;,&quot;Role&quot;:&quot;worker&quot;,&quot;ServerId&quot;:1053857510,&quot;SiteId&quot;:1,&quot;GlobalPlatformId&quot;:248551142}&lt;/AgentIdentifier&gt;
+                            &lt;ObjectIdentifier&gt;aeaqaaaaayhnbfxgaavmgalonijd6raaaaca&lt;/ObjectIdentifier&gt;
+                        &lt;/Event&gt;
+                        &lt;Event&gt;
+                            &lt;EventIdentifier&gt;aedqaaaaa2hnbfxgaavmgalonijerzaaaaba&lt;/EventIdentifier&gt;
+                            &lt;EventTypeCode&gt;INGEST&lt;/EventTypeCode&gt;
+                            &lt;EventType&gt;LFC.UNITS_RULES_COMPUTE&lt;/EventType&gt;
+                            &lt;EventDateTime&gt;2019-11-14T13:20:13.543&lt;/EventDateTime&gt;
+                            &lt;Outcome&gt;OK&lt;/Outcome&gt;
+                            &lt;OutcomeDetail&gt;LFC.UNITS_RULES_COMPUTE.OK&lt;/OutcomeDetail&gt;
+                            &lt;OutcomeDetailMessage&gt;Succès de l&#39;application des règles de gestion et
+                                du calcul des dates d&#39;échéance&lt;/OutcomeDetailMessage&gt;
+                            &lt;EventDetailData&gt;{}&lt;/EventDetailData&gt;
+                            &lt;AgentIdentifier&gt;{&quot;Name&quot;:&quot;vitam-env-itrec-processing-01.vitam-env&quot;,&quot;Role&quot;:&quot;worker&quot;,&quot;ServerId&quot;:1053857510,&quot;SiteId&quot;:1,&quot;GlobalPlatformId&quot;:248551142}&lt;/AgentIdentifier&gt;
+                            &lt;ObjectIdentifier&gt;aeaqaaaaayhnbfxgaavmgalonijd6raaaaca&lt;/ObjectIdentifier&gt;
+                        &lt;/Event&gt;
+                        &lt;Event&gt;
+                            &lt;EventIdentifier&gt;aedqaaaaa2hnbfxgaavmgalonijfk7qaaaaq&lt;/EventIdentifier&gt;
+                            &lt;EventTypeCode&gt;INGEST&lt;/EventTypeCode&gt;
+                            &lt;EventType&gt;LFC.UNIT_METADATA_INDEXATION&lt;/EventType&gt;
+                            &lt;EventDateTime&gt;2019-11-14T13:20:16.770&lt;/EventDateTime&gt;
+                            &lt;Outcome&gt;OK&lt;/Outcome&gt;
+                            &lt;OutcomeDetail&gt;LFC.UNIT_METADATA_INDEXATION.OK&lt;/OutcomeDetail&gt;
+                            &lt;OutcomeDetailMessage&gt;Succès de l&#39;indexation des métadonnées de l&#39;unité
+                                archivistique&lt;/OutcomeDetailMessage&gt;
+                            &lt;EventDetailData&gt;{}&lt;/EventDetailData&gt;
+                            &lt;AgentIdentifier&gt;{&quot;Name&quot;:&quot;vitam-env-itrec-processing-01.vitam-env&quot;,&quot;Role&quot;:&quot;worker&quot;,&quot;ServerId&quot;:1053857510,&quot;SiteId&quot;:1,&quot;GlobalPlatformId&quot;:248551142}&lt;/AgentIdentifier&gt;
+                            &lt;ObjectIdentifier&gt;aeaqaaaaayhnbfxgaavmgalonijd6raaaaca&lt;/ObjectIdentifier&gt;
+                        &lt;/Event&gt;
+                        &lt;Event&gt;
+                            &lt;EventIdentifier&gt;aedqaaaaa2hnbfxgaavmgalonijd6ziaaaaq&lt;/EventIdentifier&gt;
+                            &lt;EventTypeCode&gt;INGEST&lt;/EventTypeCode&gt;
+                            &lt;EventType&gt;LFC.LFC_CREATION&lt;/EventType&gt;
+                            &lt;EventDateTime&gt;2019-11-14T13:20:11.109&lt;/EventDateTime&gt;
+                            &lt;Outcome&gt;OK&lt;/Outcome&gt;
+                            &lt;OutcomeDetail&gt;LFC.LFC_CREATION.OK&lt;/OutcomeDetail&gt;
+                            &lt;OutcomeDetailMessage&gt;Succès de l&#39;alimentation du journal du cycle de
+                                vie&lt;/OutcomeDetailMessage&gt;
+                            &lt;AgentIdentifier&gt;{&quot;Name&quot;:&quot;vitam-env-itrec-processing-01.vitam-env&quot;,&quot;Role&quot;:&quot;worker&quot;,&quot;ServerId&quot;:1053857510,&quot;SiteId&quot;:1,&quot;GlobalPlatformId&quot;:248551142}&lt;/AgentIdentifier&gt;
+                            &lt;ObjectIdentifier&gt;aeaqaaaaayhnbfxgaavmgalonijd6raaaaca&lt;/ObjectIdentifier&gt;
+                        &lt;/Event&gt;
+                    &lt;/LogBook&gt;
+                &lt;/Management&gt;
+                &lt;Content&gt;
+                    &lt;DescriptionLevel&gt;RecordGrp&lt;/DescriptionLevel&gt;
+                    &lt;Title&gt;Ambassade de France en Ruritanie&lt;/Title&gt;
+                    &lt;Description&gt;C:\Users\mehdi.afnai\Desktop\Test Keep implicite\Test Keep
+                        implicite\Ambassade_de_France_en_Ruritanie&lt;/Description&gt;
+                    &lt;StartDate&gt;2018-10-04T16:39:43&lt;/StartDate&gt;
+                    &lt;EndDate&gt;2018-10-04T16:39:43&lt;/EndDate&gt;
+                &lt;/Content&gt;
+            &lt;/ArchiveUnit&gt;
+        &lt;/DescriptiveMetadata&gt;
+        &lt;ManagementMetadata&gt;
+            &lt;OriginatingAgencyIdentifier&gt;Vitam&lt;/OriginatingAgencyIdentifier&gt;
+        &lt;/ManagementMetadata&gt;
+    &lt;/DataObjectPackage&gt;
+&lt;/ArchiveDeliveryRequestReply&gt;
+</pre></div>
+</div>
+<p>[^1] : Disponible à l’adresse suivante (lien vérifié le 14/02/2023): <a class="reference external" href="https://francearchives.fr/seda/">pour le SEDA 2.1</a> et <a class="reference external" href="https://github.com/culturecommunication/seda">pour le SEDA 2.2</a>.</p>
+<p>[^2] : Cette valeur peut être modifiée en configuration.</p>
+<p>[^3] : Cette valeur peut être modifiée en configuration.</p>
+<p>[^4] : Pour plus d’information sur l’opération de transfert, consulter le <a class="reference internal" href="transfert.html"><span class="doc std std-doc">document VITAM - Le transfert avec la solution logicielle Vitam</span></a>.</p>
+<p>[^5] :  Pour plus d’informations, consulter le document Document d’installation, chapitre 4.2.5.12 « Fichiers complémentaires » ; Document d’architecture, chapitre 5.13.2 « Stockage », Document d’exploitation, chapitre 5.25 « Suppression des DIP et des fichiers de transfert ».</p>
+<p>[^6] : Il s’agit du fichier de configuration intitulé « environments /group_vars/all/vitam_vars.yml ».</p>
+<p>[^7] : Pour plus d’informations, consulter le document  Document d’exploitation, chapitre 8.2.1.8 « Fichier /vitam/conf/<composant>/vitam.conf ».</p>
+<p>[^8] : Il s’agit du fichier de configuration intitulé « vitam.conf ».</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Programme Vitam.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: master
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Branches</dt>
+      <dd><a href="DIP.html">master</a></dd>
+      <dd><a href="../../master_6.rc.x/index.html">master_6.rc.x</a></dd>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>
