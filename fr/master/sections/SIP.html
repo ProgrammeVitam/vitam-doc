@@ -1,0 +1,1663 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Structuration des Submission Information Packages (SIP) &mdash; Vitam documentation fonctionnelle</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: white" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/Vitam_Logo-CMJN.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">première approche</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="guide_lecture.html">1. Documentation Vitam - guide de lecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="presentation_programme.html">2. Présentation du programme Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="presentation_solution_logicielle.html">3. Présentation de la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_prise_en_main.html">4. Guide de prise en main de la solution logicielle Vitam – Vitam UI<br>
+<em>Réaliser une première entrée</em></a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">documentation métier</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="valeur_probante.html">1. Conservation de la valeur probante</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eliminations.html">2. Les éliminations avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gel.html">3. Le gel d’archives avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gestion_archives_arbo.html">4. Gestion des archives et des arborescences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gestion_habilitations.html">5. Gestion des habilitations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_donnees.html">6. Modèle de données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_workflow.html">7. Description des workflows et des opérations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_de_collecte.html">8. Module de collecte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ontologie.html">9. Ontologie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preservation.html">10. Gestion de la préservation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_archivage.html">11. Profils d’archivage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regles_gestion.html">12. Règles de gestion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services_prod.html">13. Services producteurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transfert.html">14. Le transfert avec la solution logicielle Vitam</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">documentation Vitam UI</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Autoprovisionning.html">1. Vitam UI : présentation de la fonctionnalité d’auto-provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Arbres_Plans.html">2. APP Arbres et plans</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">outils connexes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="resip.html">1. RESIP</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Vademecum</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_sommaire.html">1. Vademecum: sommaire thématique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_glossaire.html">2. Notions utilisées dans la solution logicielle Vitam et lien vers la fiche qui les définit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_arbre.html">3. L’arbre de positionnement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_audit.html">4. Les audits dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_classification.html">5. La gestion des archives classifiées avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_acces.html">6. Le contrat d’accès dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_entree.html">7. Le contrat d’entrée dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_gestion.html">8. Le contrat de gestion dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_echeances.html">9. Le calcul des héritages des règles de gestion et l’indexation des échéances dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_eliminations.html">10. Réaliser des éliminations d’archives avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_habilitations.html">11. La gestion des droits et permissions des utilisateurs applicatifs dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_identifiants.html">12. L’attribution des identifiants dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_journalisation.html">13. La journalisation et la conservation de la valeur probante dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_ontologie.html">14. L’ontologie dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_pa.html">15. Les profils d’archivage dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_parametrages_pf.html">16. Le paramétrage fonctionnel d’une plate-forme utilisant la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_plan.html">17. Le plan de classement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_preservation.html">18. La préservation dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_pua.html">19. Les profils d’unité archivistique dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_rattachement.html">20. Faire un rattachement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_formats.html">21. Le référentiel des formats dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_griffons.html">22. Le référentiel des griffons dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_preservation.html">23. Le référentiel des scénarios de préservation dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_rg.html">24. Le référentiel des règles de gestion dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_sa.html">25. Le référentiel des services agents dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_registre_fonds.html">26. Le registre des fonds dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_structuration_information.html">27. La structuration des informations dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_suivi_acces.html">28. Le suivi des accès dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_tenant.html">29. Les tenants dans la solution logicielle Vitam</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: white" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Documentation utilisateur Vitam</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Structuration des <em>Submission Information Packages</em> (SIP)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/sections/SIP.md.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+
+           <div itemprop="articleBody">
+             
+  <section id="structuration-des-submission-information-packages-sip">
+<h1>Structuration des <em>Submission Information Packages</em> (SIP)<a class="headerlink" href="#structuration-des-submission-information-packages-sip" title="Lien permanent vers cette rubrique"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Lien permanent vers cette rubrique"></a></h2>
+<section id="documents-de-reference">
+<h3>Documents de référence<a class="headerlink" href="#documents-de-reference" title="Lien permanent vers cette rubrique"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p><strong>Document</strong></p></th>
+<th class="head text-center"><p><strong>Date de la version</strong></p></th>
+<th class="head text-center"><p><strong>Remarques</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>NF Z 44022 – MEDONA – Modélisation des données pour l’archivage</p></td>
+<td class="text-center"><p>18/01/2014</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Standard d’échange de données pour l’archivage – SEDA – v. 2.1</p></td>
+<td class="text-center"><p>06/2018</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>Standard d’échange de données pour l’archivage – SEDA – v. 2.2</p></td>
+<td class="text-center"><p>02/2022</p></td>
+<td class="text-center"><p>Cette nouvelle version du SEDA est intégrée à la solution logicielle Vitam à partir de la V6.RC.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Référentiel général de sécurité (RGS) – v. 2.0.</p></td>
+<td class="text-center"><p>10/06/2015</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>ISO 14 721:2012 – Systèmes de transfert des informations et données spatiales – Système ouvert d’archivage d’information (SOAI) – Modèle de référence</p></td>
+<td class="text-center"><p>01/09/2012</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><a class="reference internal" href="profil_archivage.html"><span class="doc std std-doc">Vitam – Profils d’archivage</span></a></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><a class="reference internal" href="profil_unite_archivistique.html"><span class="doc std std-doc">Vitam – Profils d’unité archivistique</span></a></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><a class="reference internal" href="ontologie.html"><span class="doc std std-doc">Vitam – Ontologie</span></a></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="presentation-du-document">
+<h3>Présentation du document<a class="headerlink" href="#presentation-du-document" title="Lien permanent vers cette rubrique"></a></h3>
+<p>Dans le milieu archivistique, le processus d’entrée d’archives au sein d’un service d’archives s’effectue traditionnellement par la rédaction d’un bordereau de versement accompagné des archives référencées dans ce dernier.</p>
+<p>Dans l’univers numérique, peuvent être transférées à un service d’archives des archives nativement numériques, des versions numérisées d’archives papier, mais aussi des références à des archives physiques, chacune d’elles accompagnées de leurs métadonnées.</p>
+<p>Le présent document décrit la manière de préparer des entrées d’archives destinées à être transférées dans une plate-forme utilisant la solution logicielle Vitam.</p>
+</section>
+<section id="contexte-normatif">
+<h3>Contexte normatif<a class="headerlink" href="#contexte-normatif" title="Lien permanent vers cette rubrique"></a></h3>
+<p>Une entrée destinée à être transférée dans une plate-forme utilisant la solution logicielle Vitam doit être réalisée conformément aux deux normes suivantes.</p>
+<section id="loais-open-archival-information-system">
+<h4>L’OAIS (Open Archival Information System)<a class="headerlink" href="#loais-open-archival-information-system" title="Lien permanent vers cette rubrique"></a></h4>
+<p>L’OAIS est un modèle conceptuel de référence décrivant dans les grandes lignes les fonctions, les responsabilités et l’organisation d’un système qui voudrait préserver sur le long terme de l’information, en particulier des données numériques.</p>
+<p>Le modèle OAIS repose sur l’idée que l’information constitue des paquets, et que ces paquets ne sont pas les mêmes suivant qu’on est en train de produire l’information, de mettre en œuvre des opérations pour la conserver, ou de la communiquer à un utilisateur.</p>
+<p>Il existe d’après cette norme trois sortes de paquets :</p>
+<ul class="simple">
+<li><p>les paquets pris en charge par le système ou Submission Information Packages (SIP) préparés par les producteurs à destination de la solution logicielle Vitam ;</p></li>
+<li><p>les paquets gérés par le système ou Archival Information Packages (AIP) transformés par la solution logicielle Vitam à partir du SIP dans une forme plus facile à conserver et à gérer dans le temps ;</p></li>
+<li><p>les paquets communiqués par le système ou Dissemination Information Packages (DIP) transformés par la solution logicielle Vitam à partir d’un ou plusieurs AIP.</p></li>
+</ul>
+<p>Une entrée destinée à être transférée dans une plate-forme utilisant la solution logicielle Vitam constitue un SIP au sens du modèle OAIS.</p>
+</section>
+<section id="le-seda-standard-dechange-de-donnees-pour-larchivage-et-la-norme-medona-modele-dechange-de-donnees-pour-l-archivage">
+<h4>Le SEDA (Standard d’Échange de Données pour l’Archivage) et la norme MEDONA (Modèle d’Échange de DONnées pour l’Archivage)<a class="headerlink" href="#le-seda-standard-dechange-de-donnees-pour-larchivage-et-la-norme-medona-modele-dechange-de-donnees-pour-l-archivage" title="Lien permanent vers cette rubrique"></a></h4>
+<p>La norme MEDONA et le standard SEDA constituent des modèles standards pour les transactions d’échanges entre les acteurs de l’archivage, et notamment entre une entité souhaitant transférer une entrée à un service d’archives et le service d’archives lui-même.</p>
+<p>La norme AFNOR NF Z 44‑022, intitulée « Modèle d’Échange de DONnées pour l’Archivage » ou MEDONA a été publiée en 2014. Elle apporte un cadre normatif pour les différents échanges d’informations (données comme métadonnées) entre le service d’archives et ses partenaires comme le service versant (entité qui transfère un ensemble d’informations) et la façon dont s’organisent ces échanges. Elle définit des diagrammes d’activités et des modèles de données selon le formalisme UML. Les échanges se traduisent par des messages formalisés par des schémas XML.</p>
+<p>Le schéma ci-dessous modélise les échanges associés au transfert à un service d’archives d’un ensemble d’archives – un SIP au sens de la norme OAIS.</p>
+<p><img alt="" src="../_images/transfert_OAIS.png" /></p>
+<p>Le SEDA est le « Standard d’Échange de Données pour l’Archivage » relatif aux données d’archives publiques. Créé en 2006 par la Direction des Archives de France et la Direction Générale pour la Modernisation de l’État, il a été révisé en 2010 (v0.2), en 2012 (v1.0), en 2015 (2.0.) pour assurer sa compatibilité avec la norme MEDONA, et plus récemment en 2018 (v2.1.) et 2022 (v2.2.). Il comporte à la fois le modèle fonctionnel et un modèle de données pour les échanges de données d’archives entre acteurs de la sphère publique : description, acteurs, règles de gestion, référentiels métier et techniques.</p>
+<p>Cependant, si le SEDA explique de manière générale à quoi ressemble le processus de transfert de données numériques, ce standard ne spécifie pas les règles de constitution du paquet à transférer.</p>
+<p>C’est pourquoi le présent document vise à :</p>
+<ul class="simple">
+<li><p>apporter des recommandations complémentaires pour constituer les SIP qui entreront dans une plate-forme utilisant la solution logicielle Vitam ;</p></li>
+<li><p>expliciter les choix faits par l’équipe chargée de la réalisation de la solution logicielle Vitam quand le standard SEDA en laissait la responsabilité aux implémentations.</p></li>
+</ul>
+<p>À défaut de précision apportée par le présent document, la documentation accompagnant le standard SEDA dans ses versions 2.1. et 2.2. et accessible sur le site internet du Service interministériel des Archives de France s’applique[^1].</p>
+</section>
+</section>
+</section>
+<section id="constitution-dun-submission-information-package-sip-pour-une-plate-forme-utilisant-la-solution-logicielle-vitam">
+<h2>Constitution d’un Submission Information Package (SIP) pour une plate-forme utilisant la solution logicielle Vitam<a class="headerlink" href="#constitution-dun-submission-information-package-sip-pour-une-plate-forme-utilisant-la-solution-logicielle-vitam" title="Lien permanent vers cette rubrique"></a></h2>
+<section id="le-paquet-a-archiver">
+<h3>Le paquet à archiver<a class="headerlink" href="#le-paquet-a-archiver" title="Lien permanent vers cette rubrique"></a></h3>
+<p>D’après le SEDA, un SIP est constitué d’un bordereau de transfert et d’un ou plusieurs objets à archiver, qu’ils soient physiques ou numériques. Il peut être uniquement composé d’un bordereau, notamment dans le cadre d’un enrichissement de métadonnées ou d’un versement d’archives physiques.</p>
+<p>Les directives de l’équipe projet Vitam sur l’implémentation sont les suivantes :</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Intitulé</p></th>
+<th class="head text-left"><p>Description</p></th>
+<th class="head text-center"><p>Niveau de recommandation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Structuration du SIP</p></td>
+<td class="text-left"><p>Un SIP se compose :<br>- d’un bordereau de transfert suffixé « _manifest.xml » rassemblant les informations relatives aux objets numériques et aux unités archivistiques à transférer au service d’archives ;<br>- d’un répertoire nommé « content » (avec ou sans majuscules) rassemblant les objets numériques à transférer au service d’archives.</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>En l’absence d’objet, la présence du répertoire « content » n’est pas obligatoire.</p></td>
+<td class="text-left"><p>Obligatoire</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Type de format du SIP</p></td>
+<td class="text-left"><p>ZIP ou TAR (tar, tar.gz, tar.bz21).</p></td>
+<td class="text-center"><p>Obligatoire</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Taille du SIP</p></td>
+<td class="text-left"><p>La taille des SIP dépendra du mode de transfert (protocole https ou API)<br>- Poids (en octets) :<br>-&gt; inférieur à 1 Go par SIP en cas d’utilisation du protocole https ;<br>-&gt; supérieur à 1 Go par SIP en cas d’utilisation de transfert par API ;<br>- Taille (en nombre d’unités archivistiques et d’objets) : optimale à calculer en fonction du dimensionnement de la plate-forme, mais dans tous les cas, inférieure à 100 000 unités archivistiques et objets par SIP.</p></td>
+<td class="text-center"><p>Recommandation</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Nommage du SIP</p></td>
+<td class="text-left"><p>Il est recommandé de reporter dans le champ <MessageIdentifier> du bordereau de transfert le nom du fichier correspondant au SIP.<br>Le nom du fichier doit respecter la REGEX (expression régulière) suivante : [a-zA-Z0-9.-\/+=&#64;_ ]*$</p></td>
+<td class="text-center"><p>Recommandation</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Formatage du ZIP</p></td>
+<td class="text-left"><p>Si le format ZIP est utilisé, il est recommandé de faire le zip à l’intérieur du répertoire contenant le bordereau et le répertoire des objets (et non pas en faisant un zip du répertoire les contenant).<br>À l’unzip, le bordereau et le répertoire des objets seront directement visibles.</p></td>
+<td class="text-center"><p>Recommandation</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Formatage du TAR</p></td>
+<td class="text-left"><p>Si le format TAR est utilisé (tar, tar.gz, tar.bz2), il est recommandé d’alimenter le conteneur dans l’ordre suivant :<br>1/ écriture du bordereau ;<br>2/ création du répertoire content avec les objets.<br>Cet ordre permettra d’accéder directement au bordereau. La commande sera du type tar cf SIP.tar manifest.xml content.<br>Tout comme le ZIP, à l’untar, le bordereau et le répertoire des objets seront directement visibles.</p></td>
+<td class="text-center"><p>Recommandation</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="le-bordereau">
+<h3>Le bordereau<a class="headerlink" href="#le-bordereau" title="Lien permanent vers cette rubrique"></a></h3>
+<p>À la racine du SIP se trouve le bordereau qui décrit l’ensemble des métadonnées du paquet à archiver. Il est composé :</p>
+<ul class="simple">
+<li><p>d’un en-tête (Identifiant du lot d’archives et celui de la convention de transfert) ;</p></li>
+<li><p>d’une déclaration des objets binaires (DataObjectPackage &gt; BinaryDataObject) ou des objets physiques (DataObjectPackage &gt; PhysicalDataObject) ;</p></li>
+<li><p>d’une description des archives représentées par ces objets :</p>
+<ul>
+<li><p>métadonnées descriptives et métadonnées de gestion applicables à une partie seulement des archives archivées : DescriptiveMetadata contenant l’arborescence intellectuelle sous forme d’ArchiveUnits ;</p></li>
+<li><p>métadonnées de gestion applicables à l’ensemble des archives archivées : ManagementMetadata ;</p></li>
+</ul>
+</li>
+<li><p>des déclarations du service versant et du service d’archives (fin de message où figurent les identités du service d’archives et du service versant).</p></li>
+</ul>
+<p>Ce bordereau est formalisé conformément au SEDA. Il est néanmoins possible d’ajouter des champs supplémentaires non définis par le standard. Les extensions possibles ainsi que celles utilisées dans la solution logicielle Vitam sont présentées dans la partie <span class="xref myst">annexe 1 du présent document</span>.</p>
+<section id="la-notion-de-groupe-dobjets-dans-le-seda">
+<h4>La notion de groupe d’objets dans le SEDA<a class="headerlink" href="#la-notion-de-groupe-dobjets-dans-le-seda" title="Lien permanent vers cette rubrique"></a></h4>
+<p>Un même document peut être représenté par plusieurs fichiers et prendre ainsi plusieurs formes tout en conservant une cohérence intellectuelle, par exemple :</p>
+<ul class="simple">
+<li><p>une photographie peut être transférée à un service d’archives sous deux formes différentes :</p>
+<ul>
+<li><p>un fichier en basse définition pour des besoins de diffusion rapide,</p></li>
+<li><p>un fichier ou master de conservation en haute définition.
+Ces deux fichiers correspondant à la même photographie répondent à deux usages différents de cette dernière ;</p></li>
+</ul>
+</li>
+<li><p>le format des fichiers correspondant à la photographie peut avoir fait l’objet de transformations au cours du temps, via des migrations de formats. Il pourra être nécessaire de transférer au service d’archives tous les fichiers créés à l’occasion des différentes opérations de migration, en fonction de la politique de conservation du service, même si ces deux fichiers correspondent à la même photographie.</p></li>
+</ul>
+<p>D’après le SEDA, ces différentes formes (fichiers) prises par une même archive doivent être regroupées dans un groupe d’objets représentant l’unité intellectuelle.</p>
+<p>Le SEDA 2.1. représente ce groupe d’objets de deux manières différentes :</p>
+<ul class="simple">
+<li><p>création du groupe d’objets (DataObjectGroup) en utilisant la balise <DataObjectGroup> et création, dans cette balise <DataObjectGroup>, des objets qui le constituent. Chaque objet doit déclarer la version ou l’usage auquel il correspond via la balise <DataObjectVersion> (méthode propre au SEDA 2.1.) ;</p></li>
+<li><p>déclaration dans le bordereau du groupe d’objets (DataObjectGroup) par un seul des objets lui appartenant via la balise <DataObjectGroupId>, l’autre objet y fera référence via la balise <DataObjectGroupReferenceId>. Chaque objet doit déclarer la version ou l’usage auquel il correspond via la balise <DataObjectVersion> (méthode héritée du SEDA 2.0. mais dépréciée).</p></li>
+</ul>
+<p><strong>Nota Bene :</strong>
+Il est obligatoire de déclarer un groupe d’objets dans le bordereau d’entrée si une archive est représentée par plusieurs fichiers. Quand l’archive n’est représentée que par un seul fichier, la déclaration d’un groupe d’objets n’est que recommandée.</p>
+<p>À titre d’exemple, un répertoire d’une arborescence de fichiers contient 4 fichiers :</p>
+<ul class="simple">
+<li><p>si les 4 fichiers correspondent à des archives différentes, lors de la génération du bordereau à intégrer dans le SIP, une ArchiveUnit (ou unité archivistique) devra être créée pour le répertoire et 4 ArchiveUnits pour chacun des fichiers enregistrés dans le répertoire. Les ArchiveUnits correspondant aux fichiers référenceront dans le bordereau les BinaryDataObjects correspondant aux fichiers ;</p></li>
+<li><p>si 2 des fichiers correspondent à une même archive (par exemple une même photographie enregistrée en haute et basse définition), lors de la génération du bordereau à intégrer dans le SIP, une ArchiveUnit (ou unité archivistique) devra être créée pour le répertoire et seulement 2 ArchiveUnits pour les fichiers différents. Pour les 2 fichiers correspondant à la même archive, une seule ArchiveUnit pourra être créée et les fichiers seront regroupés dans un groupe d’objets techniques qui sera référencé par celle-ci.</p></li>
+</ul>
+</section>
+<section id="les-outils-de-controle-des-descriptions">
+<h4>Les outils de contrôle des descriptions<a class="headerlink" href="#les-outils-de-controle-des-descriptions" title="Lien permanent vers cette rubrique"></a></h4>
+<p>Pour automatiser les transferts de SIP depuis une application d’un service producteur au service d’archives et mettre en place un contrôle de la structure de l’entrée et/ou de la description des archives, il sera utile d’établir un profil d’archivage ou des profils d’unité archivistique SEDA[^2]. Le profil d’archivage permettra d’identifier les documents à transférer au service d’archives, de déterminer des métadonnées utiles, de définir les règles de gestion à associer aux archives (durées d’utilité administrative, délai de communicabilité, etc.) et de structurer l’information dans chaque versement. Lors de l’entrée, la structure du paquet et/ou les métadonnées décrivant les archives feront l’objet d’un contrôle au regard des exigences formulées par ces profils : en cas d’absence dans le bordereau d’un élément requis par le profil (ex. : une métadonnée particulière ou une valeur précise dans une énumération), l’entrée sera rejetée.</p>
+<p>Le profil d’unité archivistique permettra d’identifier la manière de décrire une unité archivistique particulière (ex. : une facture), de déterminer ses métadonnées utiles, de définir les règles de gestion qui s’appliquent à elle (durée d’utilité administrative, délai de communicabilité, etc.). Lors de l’entrée, les unités archivistiques déclarant le profil d’unité archivistique feront l’objet d’un contrôle au regard des exigences formulées par celui-ci : en cas d’absence dans le bordereau d’un élément requis par le profil (ex. : une métadonnée particulière ou une valeur précise dans une énumération), l’entrée sera rejetée.</p>
+<p>Les directives de l’équipe projet Vitam sur l’implémentation d’un bordereau de transfert sont les suivantes.</p>
+<section id="bordereau">
+<h5>Bordereau<a class="headerlink" href="#bordereau" title="Lien permanent vers cette rubrique"></a></h5>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Intitulé</p></th>
+<th class="head text-left"><p>Description</p></th>
+<th class="head text-center"><p>Niveau de recommandation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Nom du bordereau</p></td>
+<td class="text-left"><p>Un fichier intitulé manifest.xml ou suffixé <em>manifest.xml.<br>Le nom du fichier doit respecter la REGEX (expression régulière) suivante : ^([a-zA-Z0-9</em>-]{0,56}[_-]{1}){0,1}(manifest.xml)\b »</p></td>
+<td class="text-center"><p>Obligatoire</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Format du bordereau</p></td>
+<td class="text-left"><p>xml</p></td>
+<td class="text-center"><p>Obligatoire</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Version du SEDA</p></td>
+<td class="text-left"><p>SEDA 2.1 ou SEDA 2.2[^3].</p></td>
+<td class="text-center"><p>Obligatoire</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Nombre de bordereaux par SIP</p></td>
+<td class="text-left"><p>Un seul bordereau</p></td>
+<td class="text-center"><p>Obligatoire</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Taille du SIP</p></td>
+<td class="text-left"><p>La taille des SIP dépendra du mode de transfert (protocole https ou API)<br>- Poids (en octets) :<br>-&gt; inférieur à 1 Go par SIP en cas d’utilisation du protocole https ;<br>-&gt; supérieur à 1 Go par SIP en cas d’utilisation de transfert par API ;<br>- Taille (en nombre d’unités archivistiques et d’objets) : optimale à calculer en fonction du dimensionnement de la plate-forme, mais dans tous les cas, inférieure à 100 000 unités archivistiques et objets par SIP.</p></td>
+<td class="text-center"><p>Recommandation</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Normalisation des champs</p></td>
+<td class="text-left"><p>Les champs « date » doivent être au format AAAA-MM-JJ.<br>Les champs « datetime » doivent être au format AAAA-MM-JJThh:mm:ss,nnnZ[^4] (format ISO 8601) ou l’équivalent en remplaçant Z par le décalage de fuseau horaire (+/-hh:mm).<br>Les noms des champs respectent la casse UpperCamelCase (Majuscule à chaque début de mot), uniquement avec des lettres de A à Z, de a à z et des chiffres de 0 à 9.<br>Aucun champ ne doit contenir de balise ou de caractère encodé html[^5].<br>Aucun champ et aucune valeur dans un champ ne doivent commencer par un underscore « _ » ou un dièse « # ».</p></td>
+<td class="text-center"><p>Obligatoire</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Encodage</p></td>
+<td class="text-left"><p>L’encodage des contenus à privilégier est l’UTF-8.</p></td>
+<td class="text-center"><p>Recommandation</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Taille des champs</p></td>
+<td class="text-left"><p>Les champs ne doivent pas dépasser 32 000 caractères.</p></td>
+<td class="text-center"><p>Obligatoire</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Métadonnées libres</p></td>
+<td class="text-left"><p>Les champs libres du bordereau (ex. : ceux qui utilisent l’extension &lt; ObjectGroupExtensionAbstract &gt;) doivent respecter un certain nombre de règles :<br><strong>1/ Syntaxe et sémantique</strong><br>Ils doivent respecter la syntaxe et la sémantique définies pour eux lors de leur première utilisation.<br>À titre d’exemple, si la balise <Mabalise> est utilisée de la façon suivante lors de sa première utilisation :<br>&lt; MaBalise &gt;MonTexte&lt;/ MaBalise &gt;<br>Alors, cette balise devra toujours comporter un texte simple.<br>Si, dans une nouvelle entrée, elle est renseignée de la manière suivante :<br>&lt; MaBalise &gt;<br>	&lt; MaSousBalise &gt;MonTexte</MaSousBalise><br>&lt; /MaBalise &gt;<br>Alors, l’opération d’entrée échouerait en erreur fatale.<br><strong>2/ Nommage des balises</strong><br>Il est fortement recommandé de ne pas utiliser les caractères suivants dans le nommage des balises :<br>- en préfixe (1er caractère de la balise), les caractères underscore (« _ ») ou (« # »)<br>- à quelque endroit que ce soit du nom de la balise, le caractère point (« . »)<br><strong>3/ Ajout préalable des champs libres dans l’ontologie</strong><br>Il est fortement recommandé de créer d’abord la métadonnée dans l’ontologie intégrée à la solution logicielle Vitam avant de l’utiliser dans un bordereau.</p></td>
+<td class="text-center"><p>Obligatoire</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Attributs supportés par la solution logicielle Vitam</p></td>
+<td class="text-left"><p>Il est obligatoire de restreindre l’utilisation des attributs associés aux champs dans le SEDA aux attributs suivants, seuls supportés :<br>- Algorithme de hachage utilisé pour calculer l’empreinte d’un objet Attribut « algorithm » de type DigestAlgorithmCodeType dans la balise &lt; MessageDigest &gt; dans un &lt; BinaryDataObject &gt;<br>Exemple : &lt; MessageDigest algorithm= »SHA-512 » &gt;<br>- Algorithme de hachage utilisé pour calculer l’empreinte d’un objet signé<br>Attribut « algorithm » de type DigestAlgorithmCodeType dans la balise &lt; SignedObjectDigest &gt;, elle-même située dans un &lt; ReferencedObject &gt; d’une &lt; Signature&gt; dans le &lt; Content &gt; d’un objet<br>Exemple : &lt; SignedObjectDigest algorithm= »SHA-512 » &gt;<br>- Toutes les unités de mesure de poids et de dimensions des objets physiques<br>Attribut « unit » de type MeasurementType dans les balises &lt; Width &gt;, &lt; Height &gt;, &lt; Depth &gt;, <Diameter>, &lt; Length &gt;, &lt; Thickness &gt; et &lt; Weight &gt; situés dans la balise <PhysicalDimensions> elle-même dans <PhysicalDataObject><br>Exemples :&lt; Width unit= »CMT » &gt;<br>&lt; Height unit= »INH » &gt;<br>- Langage du titre d’une unité archivistique<br>Attribut « xml:lang » de type « union of(xs:language, restriction of xs:string) » dans la balise<br>&lt; Title &gt;, elle-même dans la balise &lt; Content &gt; de la balise &lt; ArchiveUnit &gt;<br>Exemple : &lt; Title xml:lang= »fr » &gt;<br>- Langage d’une description d’une unité archivistique<br>Attribut « xml:lang » de type « union of(xs:language, restriction of xs:string) » dans la balise &lt; Description &gt;, elle-même dans la balise &lt; Content &gt; de la balise &lt; ArchiveUnit &gt;<br>Exemple : &lt; Description xml:lang= »en » &gt;<br>Les attributs présents dans les autres balises ne sont pas enregistrés dans la solution logicielle Vitam.</p></td>
+<td class="text-center"><p>Obligatoire</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="en-tete-du-bordereau">
+<h5>En-tête du bordereau<a class="headerlink" href="#en-tete-du-bordereau" title="Lien permanent vers cette rubrique"></a></h5>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Intitulé</p></th>
+<th class="head text-left"><p>Description</p></th>
+<th class="head text-center"><p>Niveau de recommandation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Identifiant du message</p></td>
+<td class="text-left"><p>Il est obligatoire d’indiquer l’identifiant du message.</p></td>
+<td class="text-center"><p>Obligatoire</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Comment</p></td>
+<td class="text-left"><p>Il est recommandé d’utiliser le champ Comment pour attribuer un intitulé intelligible humainement au transfert réalisé.</p></td>
+<td class="text-center"><p>Recommandation</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>ArchivalAgreement</p></td>
+<td class="text-left"><p>Il est obligatoire d’indiquer l’identifiant du contrat d’entrée applicable au transfert réalisé (valeur du champ Identifier du contrat d’entrée).<br>Le contrat déclaré doit exister dans le référentiel interne de la solution logicielle Vitam et être au statut « actif ».</p></td>
+<td class="text-center"><p>Obligatoire</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>CodeList Version</p></td>
+<td class="text-left"><p>Il est recommandé d’utiliser le bloc CodeListVersion pour lister les identifiants et les versions de référentiels utilisés par l’implémentation de la solution logicielle dans le cadre des différentes transactions.<br>Néanmoins, à ce jour, ce bloc n’est pas géré dans la solution logicielle Vitam.</p></td>
+<td class="text-center"><p>Recommandation</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="objets-darchives-dataobjectpackage">
+<h5>Objets d’archives (DataObjectPackage)<a class="headerlink" href="#objets-darchives-dataobjectpackage" title="Lien permanent vers cette rubrique"></a></h5>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Intitulé</p></th>
+<th class="head text-left"><p>Description</p></th>
+<th class="head text-center"><p>Niveau de recommandation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Type de version ou d’usage correspondant au BinaryData Object ou PhysicalData Object</p></td>
+<td class="text-left"><p>Lorsque plusieurs usages d’une même archive (un usage papier et un usage numérique par exemple) ou plusieurs versions d’un même usage (plusieurs originaux numériques résultant de différentes générations de conversion) doivent être transférés dans la plate-forme et qu’un groupe d’objets doit être créé, il est obligatoire d’utiliser les nomenclatures définies par l’implémentation de la solution logicielle Vitam.<br>Par défaut, la solution logicielle Vitam a défini les nomenclatures suivantes :<br><em>Valeurs possibles pour la notion d’usage :</em><br>- conservation papier : PhysicalMaster,<br>- conservation numérique : BinaryMaster,<br>- diffusion : Dissemination,<br>- vignette : Thumbnail,<br>- contenu brut : TextContent.<br><em>Valeurs possibles pour les versions :</em><br>- version initiale : 1,<br>- version suivante (après migration) : 2.<br>La notation dans le champ « DataObjectVersion » doit avoir la forme suivante :<br>- usage :<br>    - La version est implicitement à 1,<br>    - Exemple : PhysicalMaster,<br>- usage_version :<br>    - Exemple : BinaryMaster_1.<br><strong>Point d’attention :</strong> il n’est possible de ne transférer à la fois qu’une version par usage. Il ne peut en conséquence pas y avoir deux versions de diffusion (Dissemination_1 et Dissemination_2) dans le même SIP.</p></td>
+<td class="text-center"><p>Obligatoire</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Création des groupes d’objets techniques (archivage de plusieurs usages d’une même archive)</p></td>
+<td class="text-left"><p>Dans le cas où une archive est transférée sous plusieurs formes, il est obligatoire de créer un groupe d’objets (DataObjectGroup), selon l’une des deux méthodes suivantes.<br><strong>Point d’attention :</strong><br>- il est obligatoire de n’utiliser qu’une seule méthode par SIP. A noter qu’il est fortement recommandé d’utiliser la première méthode, dans la mesure où la seconde est en cours de dépréciation.<br>- seule une version par usage est acceptée dans un SIP créant un groupe d’objets techniques<br><strong>Méthode 1 :</strong><br>Une balise &lt; DataObjectGroup &gt; est créée dans le manifeste et comprend les autres DataObject.<br><strong>Méthode 2 :</strong><br>Un des DataObject doit déclarer le groupe d’objets auquel seront rattachés les autres fichiers, en utilisant la balise &lt; DataObjectGroupId &gt;. Les autres DataObject référenceront alors le groupe d’objets en utilisant la balise &lt; DataObjectGroupReferenceId &gt;.<br><strong>Point d’attention :</strong><br>- cette méthode risque d’être dépréciée dans une version ultérieure du SEDA. Il n’est pas recommandé de l’utiliser.<br><span class="xref myst">Exemples en annexe 5</span></p></td>
+<td class="text-center"><p>Obligatoire</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Création des groupes d’objets techniques (archivage d’un seul usage pour une archive)</p></td>
+<td class="text-left"><p>Dans le cas où un seul usage est transféré pour un document, la création d’un groupe d’objets (DataObjectGroup) est recommandée.</p></td>
+<td class="text-center"><p>Recommandation</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Rattachement d’un objet à un groupe d’objets existant</p></td>
+<td class="text-left"><p>Afin de déclarer dans le bordereau le rattachement d’un nouvel objet (fichier binaire ou référence à un objet physique) à un groupe d’objets (DataObjectGroup) déjà présent dans la plate-forme utilisant la solution logicielle Vitam, il est obligatoire de :<br>- utiliser un contrat d’entrée autorisant l’ajout d’objets à un groupe d’objets existant ;<br>- créer les objets dans le bordereau, en veillant à ce que les types d’usages soient conformes à ceux décrits dans la ligne du présent tableau « Type de version ou d’usage correspondant au BinaryDataObject ou PhysicalDataObject » ;<br>- demander la mise à jour de l’ArchiveUnit déclarant le DataObjectGroup auquel rattacher l’objet dans la plate-forme (cf. sous-section « Description des archives »).<br><strong>Point d’attention :</strong> seul le service producteur ayant provoqué la création du groupe d’objets dans la plate-forme utilisant la solution logicielle Vitam a le droit de rajouter des objets à ce groupe d’objets.</p></td>
+<td class="text-center"><p>Obligatoire</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Journalisation</p></td>
+<td class="text-left"><p>Le contenu du bloc <Logbook> doit correspondre à une extraction des journaux du cycle de vie depuis une instance Vitam.<br>L’utilisation de ce bloc est recommandé dans le cadre de transferts d’archives depuis une instance Vitam. Celle-ci génère alors le contenu de ce bloc.<br>Il n’est donc pas possible d’alimenter soi-même ce bloc.</p></td>
+<td class="text-center"><p>Obligatoire</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Description des objets appartenant à un groupe d’objets</p></td>
+<td class="text-left"><p>Si une entité transfère deux usages ou deux versions d’un même objet intellectuel, il est obligatoire que celui-ci soit décrit dans une seule ArchiveUnit référençant un groupe d’objets.<br>Si un même objet est versé par deux entités distinctes, il est obligatoire de le décrire dans deux ArchiveUnit qui référenceront le même groupe d’objets techniques.</p></td>
+<td class="text-center"><p>Obligatoire</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Emplacement de l’objet binaire</p></td>
+<td class="text-left"><p>Il est obligatoire d’utiliser la balise <Uri> plutôt que la balise <Attachment>. Il n’est donc pas possible d’utiliser la balise <Attachment>.</p></td>
+<td class="text-center"><p>Obligatoire</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Format de l’Uri</p></td>
+<td class="text-left"><p>L’Uri doit correspondre à un chemin relatif au format Unix (à l’intérieur du SIP) et non pas à un chemin absolu à partir de la racine.<br>Constitution du chemin :<br>- content/nomdufichier.extension,<br>- et non C:[…]\content\nomdufichier.extension.<br>Le nommage du chemin doit suivre les recommandations de nommage des répertoires : il ne doit comprendre ni caractère accentué, ni virgule, ni apostrophe, ni parenthèse, ni espace. Il doit respecter la REGEX (expression régulière) suivante : ^[a-zA-Z0-9-<em>&#64;]+(.[a-zA-Z0-9-</em>&#64;]+)*$<br><strong>Point d’attention :</strong> l’orthographe du répertoire content doit être la même que celle du répertoire présente dans le SIP (avec ou sans majuscules).</p></td>
+<td class="text-center"><p>Obligatoire</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Empreinte</p></td>
+<td class="text-left"><p>Il est obligatoire de fournir dans le bordereau une empreinte pour chaque objet présent dans le SIP, calculée lors de la phase de préparation des entrées. Cette empreinte doit être exprimée en minuscules.<br>Conformément aux recommandations actuelles du Référentiel général de sécurité, il est recommandé pour le calcul de cette empreinte l’utilisation des algorithmes suivants :<br>- MD5<br>- SHA-256 (préconisation actuelle du RGS)<br>- SHA-384<br>- SHA-512<br>Pour les objets destinés à être conservés plus de 10 ans, le SHA-512 est recommandé.<br>Les algorithmes d’empreinte doivent être déclarés de la manière suivante :<br>- « MD5 »<br>- « SHA-256 »<br>- « SHA-384 »<br>- « SHA-512 »</p></td>
+<td class="text-center"><p>Recommandation</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Profil d’objet</p></td>
+<td class="text-left"><p>Il est fortement recommandé de ne pas référencer de profil d’objet introduit par le SEDA 2.2 à ce stade des développements.</p></td>
+<td class="text-center"><p>Recommandation</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Métadonnées libres</p></td>
+<td class="text-left"><p>Il est fortement recommandé de ne pas utiliser les extensions permises par le SEDA à ce stade des développements de la solution logicielle Vitam pour décrire les groupes d’objets.</p></td>
+<td class="text-center"><p>Recommandation</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="gestion-des-archives-managementmetadata">
+<h5>Gestion des archives (ManagementMetadata)<a class="headerlink" href="#gestion-des-archives-managementmetadata" title="Lien permanent vers cette rubrique"></a></h5>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Intitulé</p></th>
+<th class="head text-left"><p>Description</p></th>
+<th class="head text-center"><p>Niveau de recommandation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Service producteur</p></td>
+<td class="text-left"><p>Afin de faciliter le référencement de l’opération d’entrée, notamment dans le cas où plusieurs ArchiveUnits sont à la racine du bloc DescriptiveMetadata, le champ &lt; OriginatingAgencyIdentifier &gt; est obligatoire.<br><strong>Point d’attention :</strong> le service producteur déclaré dans le bordereau est l’un des filtres utilisés pour restreindre les accès des utilisateurs applicatifs.<br>La valeur saisie dans le champ doit correspondre à celle de l’identifiant du service concerné dans le référentiel des services agents de la solution logicielle Vitam.</p></td>
+<td class="text-center"><p>Obligatoire</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Service versant</p></td>
+<td class="text-left"><p>Afin de faciliter le référencement de l’opération d’entrée, notamment dans le cas où plusieurs ArchiveUnit sont à la racine du bloc DescriptiveMetadata, il est recommandé de placer cette information au niveau des métadonnées de gestion en utilisant le champ <SubmissionAgencyIdentifier>.<br>La valeur saisie dans le champ doit correspondre à celle de l’identifiant du service concerné dans le référentiel des services agents de la solution logicielle Vitam.</p></td>
+<td class="text-center"><p>Recommandation</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Journalisation</p></td>
+<td class="text-left"><p>L’utilisation du bloc <Logbook> est déconseillée à ce jour, car la solution logicielle Vitam ne les enregistre pas.</p></td>
+<td class="text-center"><p>Déconseillé</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Demandes d’autorisation</p></td>
+<td class="text-left"><p>Il est recommandé de renseigner ce champ NeedAuthorization avec la valeur « true » quand l’accès, la réutilisation, la diffusion ou la gestion du niveau de protection au titre du secret de la défense nationale nécessitent des demandes d’autorisation auprès du service producteur, du service émetteur, du service d’archives ou d’un titulaire de droits de propriété intellectuelle.</p></td>
+<td class="text-center"><p>Recommandé</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="description-des-archives-descriptivemetadata-archiveunit">
+<h5>Description des archives (DescriptiveMetadata/ArchiveUnit)<a class="headerlink" href="#description-des-archives-descriptivemetadata-archiveunit" title="Lien permanent vers cette rubrique"></a></h5>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Intitulé</p></th>
+<th class="head text-left"><p>Description</p></th>
+<th class="head text-center"><p>Niveau de recommandation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Métadonnées de gestion (bloc Management)</p></td>
+<td class="text-left"><p>Par défaut une ArchiveUnit hérite des règles de gestion déclarées dans l’ArchiveUnit dont elle dépend.<br>Pour éviter que ces règles ne s’appliquent à une ArchiveUnit, deux solutions existent :<br>1/ annuler, pour une même catégorie de règle (StorageRule, AccessRule, AppraisalRule, DisseminationRule, ReuseRule, ClassificationRule, HoldRule), toutes les règles héritées. Dans ce cas, il convient de mettre la valeur « true » dans le champ PreventInheritance disponible dans chaque catégorie de règle ;<br>2/ annuler, pour une catégorie de règle donnée (StorageRule, AccessRule, AppraisalRule, DisseminationRule, ReuseRule, ClassificationRule, HoldRule), une règle en particulier. Dans ce cas, il convient d’indiquer l’identifiant de la règle concernée dans le champ RefNonRuleId disponible dans chaque catégorie de règle.<br><strong>Point d’attention :</strong> la valeur saisie dans le champ doit correspondre à celle de l’identifiant de la règle concernée, pour la catégorie de règle concernée, dans le référentiel des règles de gestion de la solution logicielle Vitam.<br>Pour toute question complémentaire sur les règles de gestion, il est recommandé de consulter le document spécifique rédigé par l’équipe Vitam. (Vitam. Règles de gestion).</p></td>
+<td class="text-center"><p>Obligatoire</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Règle de classification (bloc Management)</p></td>
+<td class="text-left"><p>Le champ niveau de classification (ClassificationLevel) du bloc ManagementMetadata ou des blocs Management des ArchiveUnits doit nécessairement :<br>- avoir une valeur quand la configuration de l’implémentation de la solution logicielle Vitam rend obligatoire la déclaration d’une règle de classification dans les ArchiveUnit.<br>- correspondre à l’une des valeurs déclarée dans la configuration, que la déclaration d’une règle de classification dans les ArchiveUnits soit rendue obligatoire ou non par cette même configuration.</p></td>
+<td class="text-center"><p>Obligatoire</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Journalisation (bloc Management)</p></td>
+<td class="text-left"><p>Le contenu du bloc &lt; Logbook &gt; doit correspondre à une extraction des journaux du cycle de vie de chaque unité archivistique depuis une instance Vitam.<br>L’utilisation de ce bloc est recommandée dans le cadre de transferts d’archives depuis une instance Vitam. Celle-ci génère alors le contenu de ce bloc.<br>Il n’est donc pas possible d’alimenter soi-même ce bloc.</p></td>
+<td class="text-center"><p>Déconseillé</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Métadonnées descriptives (bloc Content)</p></td>
+<td class="text-left"><p>Les métadonnées descriptives de chaque ArchiveUnit doivent utiliser les éléments présents dans l’ontologie SEDA (bloc Content de l’ArchiveUnit).<br>Ce bloc peut être étendu, pour répondre aux besoins propres des utilisateurs (cf. documentation accompagnant le SEDA 2.1. et <span class="xref myst">Annexe 1 du présent document</span>). La déclaration de ces vocabulaires complémentaires est obligatoire dans le cas de l’utilisation d’un profil d’unité archivistique et recommandé dans le cas contraire (cf. documentations Vitam relatives à l’ontologie et au profil d’unité archivistique).</p></td>
+<td class="text-center"><p>Obligatoire</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Titre (bloc Content)</p></td>
+<td class="text-left"><p>Le champ titre (Title) est obligatoire, à tous les niveaux de description. Il doit donc être systématiquement renseigné.<br>Il est recommandé de ne déclarer plusieurs champs Titre que dans le cas de traduction dans différentes langues de ce titre, en utilisant l’attribut lang de la balise Title.<br>En fonction de la présence ou non de l’attribut lang, le champ Title est enregistré de manière différente dans la base de données de la solution logicielle Vitam :<br>- si le champ Title est unique et n’a pas d’attribut lang, il est enregistré sous forme de chaîne de caractères ;<br>- si le champ Title est unique et a un attribut lang et/ou est répété et dispose à chaque fois d’un attribut lang, il est enregistré sous forme d’objet et comprend les attributs comme propriétés (title.lang).<br>La solution logicielle Vitam ne permet pas de gérer plusieurs Title d’une unité archivistique ayant un attribut lang identique. Si un bordereau déclare 2 Titles ayant un attribut lang identique, seul l’un des deux sera enregistré dans la description de l’ArchiveUnit correspondante.<br>Cas particuliers :<br>1/ SIP constitué à partir d’une arborescence de fichiers bureautiques : le nom du fichier peut être récupéré pour alimenter le champ Title, même s’il est également récupéré pour alimenter le champ FileInfo/FileName du bloc des métadonnées techniques.<br>2/ Dans le cas où le profil d’archivage ou le profil d’unité archivistique prévoient une récupération riche de métadonnées dans le bloc Content (par exemple pour des dossiers individuels), il est recommandé de prêter une attention particulière à la manière dont ce champ doit être alimenté pour pouvoir être affiché dans des listes de résultats basées sur lui.</p></td>
+<td class="text-center"><p>Obligatoire</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Description (bloc Content)</p></td>
+<td class="text-left"><p>Il est recommandé de ne déclarer plusieurs champs Description que dans le cas de traduction dans différentes langues de cette description, en utilisant l’attribut lang de la balise Description.</p></td>
+<td class="text-center"><p>En fonction de la présence ou non de l’attribut lang, le champ Description est enregistré de manière différente dans la base de données de la solution logicielle Vitam :<br>- si le champ Description est unique et n’a pas d’attribut lang, il est enregistré sous forme de chaîne de caractères ;<br>- si le champ Description est unique et a un attribut lang et/ou est répété et dispose à chaque fois d’un attribut lang, il est enregistré sous forme d’objet et comprend les attributs comme propriétés (description.lang).<br>Dans le cas où le profil d’archivage ou le profil d’unité archivistique prévoient une récupération riche de métadonnées dans le bloc Content, il est recommandé de prêter une attention particulière à la manière dont ce champ doit être alimenté pour pouvoir être affiché dans des listes de résultats basées sur lui.<br>La solution logicielle Vitam ne permet pas de gérer plusieurs Descriptions d’une unité archivistique ayant un attribut lang identique. Si un bordereau d’entrée déclare 2 Descriptions ayant un attribut lang identique, seul l’une des deux sera enregistrée dans la description de l’ArchiveUnit correspondante.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Déclaration d’agents (AgentAbstract et Agent de type AgentType) (bloc Content)</p></td>
+<td class="text-left"><p>Il est obligatoire de déclarer des agents supplémentaires sous forme d’extension au bloc Content.<br>Dans la version 2.2 du SEDA, il est obligatoire d’utiliser le bloc Agent, le bloc extensible AgentAbstract ayant été déprécié.</p></td>
+<td class="text-center"><p>Obligatoire</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Events (bloc Content)</p></td>
+<td class="text-left"><p>Il est obligatoire de formaliser la valeur du champ EventDetailData au format json.</p></td>
+<td class="text-center"><p>Obligatoire</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Création de liens hiérarchiques entre ArchiveUnits et entre ArchiveUnits et groupes d’objets  (bloc Content)</p></td>
+<td class="text-left"><p>Le bloc References (RelatedObjectReference) correspond à des métadonnées descriptives. Il peut par exemple être utilisé pour indiquer un lien entre 2 ArchiveUnits correspondant à des messages électroniques (champ ReplyTo des outils de messagerie).<br>Il ne permet en conséquence pas de créer un lien hiérarchique entre deux ArchiveUnits ou entre une ArchiveUnit et un groupe d’objets.<br>Afin de créer des liens hiérarchiques entre différents ArchiveUnits et groupes d’objets, il est obligatoire d’utiliser les méthodes suivantes :<br>- créer un lien hiérarchique entre deux ArchiveUnits à transférer : utiliser les balises <ArchiveUnit>, selon une des deux méthodes proposées par le SEDA 2.1. ;<br>- créer un lien hiérarchique entre une ArchiveUnit et un groupe d’objets : utiliser les balises &lt; DataObjectReference &gt; ;<br>- créer un lien hiérarchique entre une ArchiveUnit à transférer et une ArchiveUnit déjà prise en charge dans le système : utiliser les mécanismes de rattachement ci-dessous.</p></td>
+<td class="text-center"><p>Obligatoire</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Lien entre métadonnées descriptives et métadonnées techniques (ArchiveUnit et Groupe d’objets)</p></td>
+<td class="text-left"><p>Il est obligatoire de référencer dans l’ArchiveUnit les objets physiques ou numériques accompagnant l’archive.<br>Le SEDA 2.1. offre la possibilité de référencer depuis l’ArchiveUnit :<br>- soit les groupes d’objets ;<br>- soit les objets eux-mêmes.<br>Si une archive est transférée avec plusieurs usages, l’ArchiveUnit doit référencer un groupe d’objets (utilisation de la balise &lt; DataObjectGroupReferenceId &gt;).<br>Si l’archive est transférée sous la forme d’un seul usage, deux implémentations sont possibles :<br>- implémentation 1 : un groupe d’objets a été systématiquement créé pour chaque objet (option recommandée) : dans ce cas, il est obligatoire de référencer le groupe d’objets en utilisant la balise &lt; DataObjectGroupReferenceId &gt;.<br> Exemple dans l”<span class="xref myst">annexe 8</span><br>- implémentation 2 : un groupe d’objets n’a pas été systématiquement créé pour chaque objet : dans ce cas, il est obligatoire de référencer l’objet en utilisant la balise &lt; DataObjectReferenceId &gt;.<br>Exemple dans l”<span class="xref myst">annexe 8</span></p></td>
+<td class="text-center"><p>Obligatoire</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Rattachement à une ArchiveUnit déjà présente  dans une plate-forme utilisant la solution logicielle Vitam</p></td>
+<td class="text-left"><p>Afin de rattacher une ArchiveUnit présente dans le bordereau à une ArchiveUnit déjà présente dans la plate-forme utilisant la solution logicielle Vitam, il est obligatoire de :<br>- créer dans le bordereau une ArchiveUnit correspondant à l’ArchiveUnit déjà présente dans le système, renseignée avec les champs obligatoires dans le SEDA (Title, DescriptionLevel) et correspondant à ceux de l’ArchiveUnit déjà présente dans le système. Cette création est indispensable afin de respecter la logique du standard SEDA ;<br>- insérer dans le sous-bloc Management de l’ArchiveUnit correspondant à l’ArchiveUnit déjà présente dans le système un sous-bloc UpdateOperation (extension du schéma SEDA) ;<br>- déclarer dans ce sous-bloc la méthode qui permettra à la solution logicielle Vitam d’identifier l’ArchiveUnit déjà présente dans le système. Cette déclaration peut être faite selon 2 méthodes :<br>    - méthode 1 : insérer dans le sous-bloc &lt; UpdateOperation&gt; une balise &lt; SystemId &gt; comprenant l’identifiant unique attribué par la solution logicielle Vitam à l’ArchiveUnit déjà présente dans le système ;<br>    - méthode 2 : insérer dans le sous-bloc &lt; UpdateOperation&gt; un bloc &lt; ArchiveUnitIdentifierKey&gt; qui comprend lui-même 2 balises : &lt; MetadataName &gt; qui doit correspondre à une balise du bloc Content du schéma SEDA 2.1, et une balise &lt; MetadataValue&gt; qui doit correspondre à la valeur du champ pour l’ArchiveUnit à laquelle on veut rattacher l’ArchiveUnit du SIP ;<br>- faire la liste des ArchiveUnits à rattacher à cette ArchiveUnit déjà présente dans le système en utilisant les balises &lt; ArchiveUnitRefId &gt;.<br>Exemples pour les 2 méthodes dans l”<span class="xref myst">annexe 7</span><br><strong>Points d’attention :</strong><br>- le rattachement ne peut être réalisé qu’entre ArchiveUnits du même tenant de la plate-forme ;<br>- en cas d’utilisation de la méthode 1, l’identifiant attribué par la solution logicielle Vitam aux ArchiveUnits déjà présentes dans le système est fourni dans l’ArchiveTransferReply. Cette information est également récupérable via une requête ;<br>- en cas d’utilisation de la méthode 2, la balise et la valeur déclarées pour identifier l’ArchiveUnit à laquelle rattacher celle du bordereau doivent renvoyer un résultat unique dans la plate-forme ;<br>- l’ArchiveUnit déjà présente dans le système et la déclaration des ArchiveUnits à rattacher doivent avoir leurs propres xml Id ;<br>- la déclaration de l’ArchiveUnit déjà présente dans le système et signalée dans le bordereau n’entraîne que sa mise à jour dans le système ; <br>- le point de rattachement et le service producteur de celui-ci constituent deux des filtres utilisés pour restreindre les accès des utilisateurs applicatifs. Un rattachement peut donc avoir des conséquences sur l’accès ou non aux ArchiveUnits.<br>L’<span class="xref myst">annexe 4</span> donne un exemple de bordereau présentant les mécanismes de rattachement mis en œuvre par la solution logicielle Vitam.</p></td>
+<td class="text-center"><p>Obligatoire</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Ajout d’un objet à un groupe d’objets existant dans une plate-forme utilisant la solution logicielle Vitam</p></td>
+<td class="text-left"><p>Afin de mettre à jour une ArchiveUnit présente dans la plate-forme utilisant la solution logicielle Vitam en rajoutant un objet au groupe d’objets que cette ArchiveUnit déclare, il est obligatoire de :<br>- créer dans le bordereau une ArchiveUnit correspondant à l’ArchiveUnit dont le groupe d’objets doit être mis à jour, renseignée avec les champs obligatoires dans le SEDA (Title, DescriptionLevel) et correspondant à ceux de l’ArchiveUnit déjà présente dans le système. Cette création est indispensable afin de respecter la logique du standard SEDA ;<br>- insérer dans le sous-bloc Management de l’ArchiveUnit correspondant à l’ArchiveUnit déjà présente dans le système un sous-bloc UpdateOperation (extension du schéma SEDA) ;<br>- déclarer dans ce bloc l’ArchiveUnit déjà présente dans le système à mettre à jour. Cette déclaration peut être faite selon 2 méthodes :<br>    - méthode 1 en utilisant le GUID attribué par Vitam : insérer dans le sous-bloc <UpdateOperation> une balise <SystemId> comprenant l’identifiant unique attribué par la solution logicielle Vitam à l’ArchiveUnit déjà présente dans le système ;<br>    - méthode 2 en utilisant d’autres éléments de description de l’AU : insérer dans le sous-bloc &lt; UpdateOperation &gt; un bloc <ArchiveUnitIdentifierKey> qui comprend lui-même 2 balises : &lt; MetadataName &gt; qui doit correspondre à une balise du bloc Content du schéma SEDA 2.1., et une balise <MetadataValue> qui doit correspondre à la valeur du champ pour l’ArchiveUnit à laquelle on veut rattacher l’ArchiveUnit du SIP ;<br>          Ex : mettre à jour en utilisant une balise correspondant à un identifiant ainsi que  son contenu (unique). Il est recommandé d’utiliser des champs et des valeurs uniques dans le système. L’utilisation du champ Titre est ainsi fortement déconseillé ;<br>- déclarer les objets à rajouter conformément aux spécifications de la ligne du présent tableau « Rattachement d’un objet à un groupe d’objet existants » de la section groupe d’objets.<br>Exemples en <span class="xref myst">annexe 9</span><br><strong>Points d’attention :</strong><br>- en cas d’utilisation de la méthode 1, l’identifiant attribué par la solution logicielle Vitam aux ArchiveUnits déjà présentes dans le système est fourni dans l’ArchiveTransferReply. Cette information est également récupérable via une requête ;<br>- en cas d’utilisation de la méthode 2, la balise et la valeur déclarées pour identifier l’ArchiveUnit à laquelle rattacher l’objet doivent cibler un résultat unique dans la plate-forme ;<br>- l’ArchiveUnit déjà présente dans le système doit avoir son propre xml Id dans le bordereau.<br>- le service producteur du bordereau doit être le même que celui du groupe d’objets déjà existant.<br>L’annexe 4 donne un exemple de bordereau présentant les mécanismes de rattachement mis en œuvre par la solution logicielle Vitam.</p></td>
+<td class="text-center"><p>Obligatoire</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Création d’un lien entre une ArchiveUnit transféré et un groupe d’objets techniques déjà présent dans une plate-forme utilisant la solution logicielle Vitam</p></td>
+<td class="text-left"><p>Afin de créer un lien entre une ArchiveUnit présente dans le bordereau et un groupe d’objets déjà présent dans la plate-forme utilisant la solution logicielle Vitam, il est obligatoire de :<br>- ajouter un sous-bloc DataObjectGroup à l’ArchiveUnit (extension du schéma SEDA) ;<br>- ajouter dans ce bloc un élément <DataObjectGroupExistingReferenceId><br>- insérer dans l’élément &lt; DataObjectGroupExistingReferenceId&gt; une balise <SystemId> comprenant l’identifiant unique attribué par la solution logicielle Vitam au groupe d’objets déjà présent dans la solution logicielle Vitam.<br>&lt; ArchiveUnit id= »ID6 »&gt;<br>    &lt; Content&gt;<br>                &lt; DescriptionLevel&gt;Item&lt; /DescriptionLevel&gt;<br>                &lt; Title&gt;20170125_tnr_KO_a_determiner.odt&lt; /Title&gt;<br>        &lt; /Content&gt;<br>        &lt; DataObjectGroup&gt;<br>                &lt; DataObjectGroupExistingReferenceId&gt;ExistingGUID</DataObjectGroupExistingReferenceId><br>        &lt; /DataObjectGroup&gt;<br>&lt; /ArchiveUnit&gt;<br>L’<span class="xref myst">annexe 4</span> donne un exemple de bordereau présentant les mécanismes de rattachement mis en œuvre par la solution logicielle Vitam.</p></td>
+<td class="text-center"><p>Obligatoire</p></td>
+</tr>
+</tbody>
+</table>
+<p>Trois exemples de bordereaux sont proposés en annexe :</p>
+<ul class="simple">
+<li><p><span class="xref myst">annexe 2 : un exemple de bordereau correspondant à une arborescence de fichiers, avec quelques métadonnées descriptives et aucune métadonnée de gestion</span> ;</p></li>
+<li><p><span class="xref myst">annexe 3 : un exemple de bordereau complexe qui comprend 4 versions d’un même objet intellectuel (groupe d’objets), des métadonnées techniques riches, et quelques métadonnées de description et de gestion</span> ;</p></li>
+<li><p><span class="xref myst">annexe 4 : un exemple de bordereau permettant le rattachement d’une ArchiveUnit à une ArchiveUnit existant dans le système et à un groupe d’objets existant dans le système</span>.</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="le-repertoire-et-ses-objets">
+<h3>Le répertoire et ses objets<a class="headerlink" href="#le-repertoire-et-ses-objets" title="Lien permanent vers cette rubrique"></a></h3>
+<p>À la racine du SIP se trouve un répertoire nommé « Content » qui regroupe un ou plusieurs objets numériques.</p>
+<p>Les directives de l’équipe projet Vitam sur son implémentation sont les suivantes :</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Intitulé</p></th>
+<th class="head text-left"><p>Description</p></th>
+<th class="head text-center"><p>Niveau de recommandation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Nom du répertoire</p></td>
+<td class="text-left"><p>Content</p></td>
+<td class="text-center"><p>Obligatoire</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Nombre de répertoires à la racine du SIP</p></td>
+<td class="text-left"><p>Un seul répertoire</p></td>
+<td class="text-center"><p>Obligatoire</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Structuration du répertoire</p></td>
+<td class="text-left"><p>Il est recommandé de mettre tous les fichiers à plat dans le répertoire Content.<br>Répertoire portant une arborescence de sous-répertoires :<br>Si le répertoire Content porte une arborescence de sous-répertoires contenant des fichiers, cette arborescence sera ignorée lors de la prise en charge du SIP par le SAE.<br>C’est en effet l’arborescence décrite dans la partie DescriptiveMetadata du bordereau qui porte l’arborescence intellectuelle des fichiers, qui fait le lien entre les niveaux de description intellectuelle et les fichiers présents dans le SIP et qui permet a posteriori de reconstituer la structuration des fichiers définie par l’utilisateur ou l’archiviste avant la constitution du SIP. Dans cette optique, le maintien d’une structuration des fichiers dans le répertoire Content s’avère inutile.<br>Il est par ailleurs recommandé de limiter la profondeur des sous-répertoires pour éviter les problèmes de limitation de longueur des noms de fichiers sous certaines versions de Windows – limitation de la longueur des noms de fichier (répertoire + nom) à 256 caractères.<br>Le nommage des répertoires ne doit comprendre ni caractère accentué, ni virgule, ni apostrophe, ni parenthèse, ni espace. Il doit respecter la REGEX (expression régulière) suivante : ^[a-zA-Z0-9-<em>&#64;]+(.[a-zA-Z0-9-</em>&#64;]+)*$<br><strong>Point d’attention :</strong> en cas d’utilisation d’une structure arborescente du répertoire Content, il est obligatoire de répercuter cette arborescence dans les valeurs saisies dans le champ Uri, afin que le lien entre les fichiers et le bordereau transférés se fasse bien.</p></td>
+<td class="text-center"><p>Recommandation</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Nommage des fichiers</p></td>
+<td class="text-left"><p>Il est obligatoire de renommer les fichiers en utilisant une règle systématique et « neutre » d’un point de vue transfert, pour :<br>- faciliter le transfert des fichiers,<br>- assurer une spécification d’emplacement sûre dans la balise Uri présente dans le bordereau,<br>- éviter les problèmes liés à la longueur de leur nom et à l’encodage des caractères de leur nom.<br>Le nommage utilisé pour le transfert des fichiers ne sera pas conservé par la solution logicielle Vitam.<br>Le nommage des fichiers ne doit comprendre ni caractère accentué, ni virgule, ni apostrophe, ni parenthèse, ni espace. Il doit respecter la REGEX (expression régulière) suivante : ^[a-zA-Z0-9-<em>&#64;]+(.[a-zA-Z0-9-</em>&#64;]+)*$</p></td>
+<td class="text-center"><p>Obligatoire</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Mode de renommage des fichiers</p></td>
+<td class="text-left"><p>Deux solutions sont recommandées :<br>1/ utiliser l’empreinte du fichier, plus son extension native. Cette solution a l’avantage de permettre un dédoublonnage automatique des objets numériques au moment de la constitution du SIP, une fois et une fois seulement le bordereau élaboré. Cette solution doit néanmoins être utilisée avec précaution dans le cas où des groupes d’objets doivent être générés lors de la phase de préparation du SIP, pour éviter des conflits :<br>- dans le cas de groupes d’objets différents utilisant partiellement de mêmes objets,<br>- dans le cas d’un même objet utilisé à la fois dans un groupe d’objets et hors groupe d’objets ;<br>2/ utiliser l’xml Id attribué au BinaryDataObject dans le bordereau. Il convient de signaler, cependant que le SEDA 2.1.et le SEDA 2.2. ne rendent pas cet identifiant obligatoire.</p></td>
+<td class="text-center"><p>Recommandation</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Formats de fichier</p></td>
+<td class="text-left"><p>Au sein du répertoire, tous les formats de fichiers sont potentiellement acceptés, en fonction des options retenues dans le contrat d’entrée. Ainsi, on pourra trouver des formats bureautiques (PDF), des exports XML de bases de données, des images d’une GED (dossiers numérisés), etc.<br>Cependant, il est recommandé aux implémentations de restreindre les formats de fichiers acceptés en fonction de la politique du service d’archives.</p></td>
+<td class="text-center"><p>Recommandation</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Taille des objets</p></td>
+<td class="text-left"><p>Si la taille d’un objet est supérieure à 10 Go, il est obligatoire de le transférer dans un SIP propre.</p></td>
+<td class="text-center"><p>Obligation</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="import-dans-vitam">
+<h2>Import dans Vitam<a class="headerlink" href="#import-dans-vitam" title="Lien permanent vers cette rubrique"></a></h2>
+<p>Les SIP peuvent être transférés dans la plate-forme utilisant la solution logicielle Vitam :</p>
+<ul class="simple">
+<li><p>manuellement depuis le poste d’un utilisateur ou d’un administrateur ;</p></li>
+<li><p>par flux automatisés.</p></li>
+</ul>
+<p>Les directives de l’équipe projet Vitam sur l’implémentation sont les suivantes :</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Intitulé</p></th>
+<th class="head text-left"><p>Description</p></th>
+<th class="head text-center"><p>Niveau de recommandation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Flux technique si SIP &lt; 1 Go</p></td>
+<td class="text-left"><p>Si le SIP est inférieur à 1 Go (zippé), l’utilisation d’un flux https est possible. Si le SIP est supérieur à 1 Go (zippé), l’utilisation d’un flux https est déconseillée.</p></td>
+<td class="text-center"><p>Possible<br>Recommandation</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Flux technique si SIP &gt; 1 Go</p></td>
+<td class="text-left"><p>Si le SIP est supérieur à 1 Go (zippé), il est recommandé d’utiliser l’API permettant l’entrée de fichiers volumineux dans la solution logicielle Vitam. Le SIP doit être enregistré sur un point de montage accessible par le serveur ingest external de la solution logicielle Vitam.<br>Le transport vers cet emplacement se fait par tout moyen de transfert (FTPS, SFTP, Waarp, etc.), à charge des implémentations d’utiliser ceux qui conviennent le mieux, en fonction de leurs contraintes de sécurité et des outils déployés sur leur système d’information.</p></td>
+<td class="text-center"><p>Recommandation</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="annexes">
+<h2>Annexes<a class="headerlink" href="#annexes" title="Lien permanent vers cette rubrique"></a></h2>
+<section id="annexe-1-extensions-du-schema-seda">
+<h3>Annexe 1 : extensions du schéma SEDA<a class="headerlink" href="#annexe-1-extensions-du-schema-seda" title="Lien permanent vers cette rubrique"></a></h3>
+<p>Les extensions techniquement possibles sont les suivantes :</p>
+<ul class="simple">
+<li><p>les extensions dont la définition est obligatoire pour que le schéma soit valide (extensions par substitution, de type abstract). Sont concernées :</p></li>
+</ul>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Bloc concerné</p></th>
+<th class="head text-left"><p>Balise</p></th>
+<th class="head text-left"><p>Signification / usage</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Métadonnées techniques</p></td>
+<td class="text-left"><p><OtherDimensionsAbstract></p></td>
+<td class="text-left"><p>Autres dimensions possibles pour un objet physique</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p></p></td>
+<td class="text-left"><p><OtherCoreTechnicalMetadataAbstract></p></td>
+<td class="text-left"><p>Métadonnées techniques essentielles ne correspondant :<br>- ni à des fichiers de type texte,<br>- ni à des fichiers de type document,<br>- ni à des fichiers de type image,<br>- ni à des fichiers de type audio,<br>- ni à des fichiers de type vidéo<br>Ex. : bases de données, plans 2D, plans 3D</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Métadonnées descriptives</p></td>
+<td class="text-left"><p><ObjectGroupExtensionAbstract></p></td>
+<td class="text-left"><p>Métadonnées descriptives complémentaires</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p></p></td>
+<td class="text-left"><p><ArchiveUnitReferenceAbstract></p></td>
+<td class="text-left"><p>Requêtes permettant de gérer la récursivité et de pointer vers un objet-archives supposé être déjà géré par le SAE</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Métadonnées de gestion</p></td>
+<td class="text-left"><p><OtherManagementAbstract></p></td>
+<td class="text-left"><p>Autres métadonnées de gestion</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>les extensions dont la définition n’est pas obligatoire pour que le schéma soit valide (extensions par redéfinition, de type OpenType). Leur type peut être défini selon les besoins des utilisateurs qui peuvent y mettre ce qu’ils veulent. Aucune vérification sur ces extensions ne pourra être faite lors des transactions tant que le type de ces extensions n’est pas défini. Sont concernées :</p></li>
+</ul>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Bloc concerné</p></th>
+<th class="head text-left"><p>Balise</p></th>
+<th class="head text-left"><p>Signification / usage</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Noyau du schéma (main)</p></td>
+<td class="text-left"><p><OrganizationDescriptiveMetadataType></p></td>
+<td class="text-left"><p>Métadonnées descriptives pour une organisation</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p></p></td>
+<td class="text-left"><p><SignatureType></p></td>
+<td class="text-left"><p>Signature utilisée lors des échanges de messages</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Métadonnées techniques</p></td>
+<td class="text-left"><p><XXXTechnicalMetadataType></p></td>
+<td class="text-left"><p>Métadonnées techniques essentielles correspondant à des fichiers de types texte, document, image, audio et vidéo</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p></p></td>
+<td class="text-left"><p><DescriptiveTechnicalMetadataType></p></td>
+<td class="text-left"><p>Autres métadonnées techniques</p></td>
+</tr>
+</tbody>
+</table>
+<p>Le schéma utilisé dans la solution logicielle Vitam utilise à la date de publication de ce document les extensions suivantes :</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Bloc concerné</p></th>
+<th class="head text-left"><p>Balise</p></th>
+<th class="head text-left"><p>Signification / usage</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Métadonnées descriptives</p></td>
+<td class="text-left"><p><ObjectGroupExtensionAbstract></p></td>
+<td class="text-left"><p>Ajout de métadonnées descriptives complémentaires, y compris un agent.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p></p></td>
+<td class="text-left"><p><ArchiveUnitReferenceAbstract></p></td>
+<td class="text-left"><p>Déclaration d’une unité archivistique pouvant déjà être présente dans une plate-forme utilisant la solution logicielle Vitam</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Métadonnées de gestion</p></td>
+<td class="text-left"><p><OtherManagementAbstract></p></td>
+<td class="text-left"><p>Modification d’ArchiveUnit déjà présentes dans une plate-forme utilisant la solution logicielle Vitam via un bloc UpdateOperation.<br>Ajout d’une règle de gel en vue de pouvoir déclarer des archives gelées.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="annexe-2-exemple-de-bordereau-simple-realise-pour-un-jeu-de-test-vitam">
+<h3>Annexe 2 : exemple de bordereau « simple » réalisé pour un jeu de test Vitam<a class="headerlink" href="#annexe-2-exemple-de-bordereau-simple-realise-pour-un-jeu-de-test-vitam" title="Lien permanent vers cette rubrique"></a></h3>
+<p><strong>Nota bene :</strong> cet exemple a été généré à partir d’une arborescence de fichiers, en utilisant le générateur de SIP développé par l’équipe Vitam. Il n’a été procédé à aucun enrichissement des métadonnées de gestion, ce qui ne signifie aucunement qu’il ne soit pas possible de le faire.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&lt;?xml version=&quot;1.0&quot; ?&gt;
+&lt;ArchiveTransfer xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xmlns:pr=&quot;info:lc/xmlns/premis-v2&quot;
+    xmlns=&quot;fr:gouv:culture:archivesdefrance:seda:v2.1&quot;
+    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xsi:schemaLocation=&quot;fr:gouv:culture:archivesdefrance:seda:v2.1 seda-2.1-main.xsd&quot; xml:id=&quot;ID1&quot;&gt;
+    &lt;Comment&gt;Documentation sur la description archivistique&lt;/Comment&gt;
+    &lt;Date&gt;2016-09-28T11:17:34&lt;/Date&gt;
+    &lt;MessageIdentifier&gt;20160928001&lt;/MessageIdentifier&gt;
+    &lt;ArchivalAgreement&gt;ArchivalAgreement0&lt;/ArchivalAgreement&gt;
+    &lt;CodeListVersions&gt;
+        &lt;ReplyCodeListVersion&gt;ReplyCodeListVersion0&lt;/ReplyCodeListVersion&gt;
+        &lt;MessageDigestAlgorithmCodeListVersion&gt;MessageDigestAlgorithmCodeListVersion0&lt;/MessageDigestAlgorithmCodeListVersion&gt;
+        &lt;MimeTypeCodeListVersion&gt;MimeTypeCodeListVersion0&lt;/MimeTypeCodeListVersion&gt;
+        &lt;EncodingCodeListVersion&gt;EncodingCodeListVersion0&lt;/EncodingCodeListVersion&gt;
+        &lt;FileFormatCodeListVersion&gt;FileFormatCodeListVersion0&lt;/FileFormatCodeListVersion&gt;
+        &lt;CompressionAlgorithmCodeListVersion&gt;CompressionAlgorithmCodeListVersion0&lt;/CompressionAlgorithmCodeListVersion&gt;
+        &lt;DataObjectVersionCodeListVersion&gt;DataObjectVersionCodeListVersion0&lt;/DataObjectVersionCodeListVersion&gt;
+        &lt;StorageRuleCodeListVersion&gt;StorageRuleCodeListVersion0&lt;/StorageRuleCodeListVersion&gt;
+        &lt;AppraisalRuleCodeListVersion&gt;AppraisalRuleCodeListVersion0&lt;/AppraisalRuleCodeListVersion&gt;
+        &lt;AccessRuleCodeListVersion&gt;AccessRuleCodeListVersion0&lt;/AccessRuleCodeListVersion&gt;
+        &lt;DisseminationRuleCodeListVersion&gt;DisseminationRuleCodeListVersion0&lt;/DisseminationRuleCodeListVersion&gt;
+        &lt;ReuseRuleCodeListVersion&gt;ReuseRuleCodeListVersion0&lt;/ReuseRuleCodeListVersion&gt;
+        &lt;ClassificationRuleCodeListVersion&gt;ClassificationRuleCodeListVersion0&lt;/ClassificationRuleCodeListVersion&gt;
+        &lt;AuthorizationReasonCodeListVersion&gt;AuthorizationReasonCodeListVersion0&lt;/AuthorizationReasonCodeListVersion&gt;
+        &lt;RelationshipCodeListVersion&gt;RelationshipCodeListVersion0&lt;/RelationshipCodeListVersion&gt;
+    &lt;/CodeListVersions&gt;
+    &lt;DataObjectPackage xml:id=&quot;ID2&quot;&gt;
+        &lt;BinaryDataObject id=&quot;ID7&quot;&gt;
+            &lt;DataObjectGroupId&gt;ID6&lt;/DataObjectGroupId&gt;
+            &lt;DataObjectVersion&gt;BinaryMaster&lt;/DataObjectVersion&gt;
+            &lt;Uri&gt;Content/ID7.pdf&lt;/Uri&gt;
+            &lt;MessageDigest algorithm=&quot;SHA-512&quot;
+                &gt;064b19fbfb4d8e8975a2c0fb8d4f50e06f75595af72b3faffa381a128bf582b7e6cf4858ab338af195c120e1530c49579da335ac593d4b52d8d141405b671329&lt;/MessageDigest&gt;
+            &lt;Size&gt;1831135&lt;/Size&gt;
+            &lt;FormatIdentification&gt;
+                &lt;FormatLitteral&gt;Acrobat PDF 1.6 - Portable Document Format&lt;/FormatLitteral&gt;
+                &lt;MimeType&gt;application/pdf&lt;/MimeType&gt;
+                &lt;FormatId&gt;fmt/20&lt;/FormatId&gt;
+            &lt;/FormatIdentification&gt;
+            &lt;FileInfo&gt;
+                &lt;Filename&gt;TagLibrary-VersionEAD3.pdf&lt;/Filename&gt;
+                &lt;LastModified&gt;2015-09-23T18:18:20.900+02:00&lt;/LastModified&gt;
+            &lt;/FileInfo&gt;
+        &lt;/BinaryDataObject&gt;
+        &lt;BinaryDataObject id=&quot;ID13&quot;&gt;
+            &lt;DataObjectGroupId&gt;ID12&lt;/DataObjectGroupId&gt;
+            &lt;DataObjectVersion&gt;BinaryMaster_1&lt;/DataObjectVersion&gt;
+            &lt;Uri&gt;Content/ID13.pdf&lt;/Uri&gt;
+            &lt;MessageDigest algorithm=&quot;SHA-512&quot;
+                &gt;8293e8e6dbcb0d215119c15ce200ec4bf9ab65b9c828850368e7d5b708849490189c50d7d7f1fe7ea773b6751449c0f9bc9c5382bf822c31fcc507710218da8c&lt;/MessageDigest&gt;
+            &lt;Size&gt;397820&lt;/Size&gt;
+            &lt;FormatIdentification&gt;
+                &lt;FormatLitteral&gt;Acrobat PDF 1.5 - Portable Document Format&lt;/FormatLitteral&gt;
+                &lt;MimeType&gt;application/pdf&lt;/MimeType&gt;
+                &lt;FormatId&gt;fmt/19&lt;/FormatId&gt;
+            &lt;/FormatIdentification&gt;
+            &lt;FileInfo&gt;
+                &lt;Filename&gt;CBPS_Guidelines_ISAAR_Second-edition_FR[1].pdf&lt;/Filename&gt;
+                &lt;LastModified&gt;2013-12-19T16:05:10.000+01:00&lt;/LastModified&gt;
+            &lt;/FileInfo&gt;
+        &lt;/BinaryDataObject&gt;
+        &lt;BinaryDataObject id=&quot;ID17&quot;&gt;
+            &lt;DataObjectGroupId&gt;ID16&lt;/DataObjectGroupId&gt;
+            &lt;DataObjectVersion&gt;BinaryMaster_1&lt;/DataObjectVersion&gt;
+            &lt;Uri&gt;Content/ID17.pdf&lt;/Uri&gt;
+            &lt;MessageDigest algorithm=&quot;SHA-512&quot;
+                &gt;226d69afccc3a801ad7ef8ec9028b16b7fd7527ce035a4cda36fb4b062a416704e8d7baa958597f5840b9b6d2c17b60c0744fa1d97efebb9dc01382ebb41d56a&lt;/MessageDigest&gt;
+            &lt;Size&gt;166112&lt;/Size&gt;
+            &lt;FormatIdentification&gt;
+                &lt;FormatLitteral&gt;Acrobat PDF 1.4 - Portable Document Format&lt;/FormatLitteral&gt;
+                &lt;MimeType&gt;application/pdf&lt;/MimeType&gt;
+                &lt;FormatId&gt;fmt/18&lt;/FormatId&gt;
+            &lt;/FormatIdentification&gt;
+            &lt;FileInfo&gt;
+                &lt;Filename&gt;ifla.pdf&lt;/Filename&gt;
+                &lt;LastModified&gt;2005-10-20T13:53:16.000+02:00&lt;/LastModified&gt;
+            &lt;/FileInfo&gt;
+        &lt;/BinaryDataObject&gt;
+        &lt;BinaryDataObject id=&quot;ID23&quot;&gt;
+            &lt;DataObjectGroupId&gt;ID22&lt;/DataObjectGroupId&gt;
+            &lt;DataObjectVersion&gt;BinaryMaster_1&lt;/DataObjectVersion&gt;
+            &lt;Uri&gt;Content/ID23.pdf&lt;/Uri&gt;
+            &lt;MessageDigest algorithm=&quot;SHA-512&quot;
+                &gt;a27064d3a0db9c1ef9277c82a7a619b0867b8913a5c4829cf86bbddd2ee1e3dfb38d81f22b67a5b56465fc0ef6fe11302ac8e853c94821bce4bb1dff9bc40497&lt;/MessageDigest&gt;
+            &lt;Size&gt;484496&lt;/Size&gt;
+            &lt;FormatIdentification&gt;
+                &lt;FormatLitteral&gt;Acrobat PDF 1.2 - Portable Document Format&lt;/FormatLitteral&gt;
+                &lt;MimeType&gt;application/pdf&lt;/MimeType&gt;
+                &lt;FormatId&gt;fmt/16&lt;/FormatId&gt;
+            &lt;/FormatIdentification&gt;
+            &lt;FileInfo&gt;
+                &lt;Filename&gt;ISAD(G).pdf&lt;/Filename&gt;
+                &lt;LastModified&gt;2013-12-19T16:06:04.000+01:00&lt;/LastModified&gt;
+            &lt;/FileInfo&gt;
+        &lt;/BinaryDataObject&gt;
+        &lt;BinaryDataObject id=&quot;ID29&quot;&gt;
+            &lt;DataObjectGroupId&gt;ID28&lt;/DataObjectGroupId&gt;
+            &lt;DataObjectVersion&gt;BinaryMaster_1&lt;/DataObjectVersion&gt;
+            &lt;Uri&gt;Content/ID29.pdf&lt;/Uri&gt;
+            &lt;MessageDigest algorithm=&quot;SHA-512&quot;
+                &gt;d179c65e5af63121c33d94414064fefa4cab8c846604a67a520cce20efbe2c6d0470338a3eeb6da19a2510001be481a11d1f053d2ad95feec2d5c20de199cca3&lt;/MessageDigest&gt;
+            &lt;Size&gt;396788&lt;/Size&gt;
+            &lt;FormatIdentification&gt;
+                &lt;FormatLitteral&gt;Acrobat PDF 1.4 - Portable Document Format&lt;/FormatLitteral&gt;
+                &lt;MimeType&gt;application/pdf&lt;/MimeType&gt;
+                &lt;FormatId&gt;fmt/18&lt;/FormatId&gt;
+            &lt;/FormatIdentification&gt;
+            &lt;FileInfo&gt;
+                &lt;Filename&gt;CBPS_2007_Guidelines_ISDF_First-edition_FR[1].pdf&lt;/Filename&gt;
+                &lt;LastModified&gt;2013-12-19T16:05:44.000+01:00&lt;/LastModified&gt;
+            &lt;/FileInfo&gt;
+        &lt;/BinaryDataObject&gt;
+        &lt;DescriptiveMetadata&gt;
+            &lt;ArchiveUnit id=&quot;ID3&quot;&gt;
+                &lt;Content&gt;
+                    &lt;DescriptionLevel&gt;File&lt;/DescriptionLevel&gt;
+                    &lt;Title&gt;Description archivistique&lt;/Title&gt;
+                    &lt;StartDate&gt;2005-10-20T13:53:16&lt;/StartDate&gt;
+                    &lt;EndDate&gt;2015-09-23T18:18:20&lt;/EndDate&gt;
+                &lt;/Content&gt;
+                &lt;ArchiveUnit id=&quot;ID5&quot;&gt;
+                    &lt;ArchiveUnitRefId&gt;ID4&lt;/ArchiveUnitRefId&gt;
+                &lt;/ArchiveUnit&gt;
+                &lt;ArchiveUnit id=&quot;ID11&quot;&gt;
+                    &lt;ArchiveUnitRefId&gt;ID10&lt;/ArchiveUnitRefId&gt;
+                &lt;/ArchiveUnit&gt;
+                &lt;ArchiveUnit id=&quot;ID21&quot;&gt;
+                    &lt;ArchiveUnitRefId&gt;ID20&lt;/ArchiveUnitRefId&gt;
+                &lt;/ArchiveUnit&gt;
+                &lt;ArchiveUnit id=&quot;ID27&quot;&gt;
+                    &lt;ArchiveUnitRefId&gt;ID26&lt;/ArchiveUnitRefId&gt;
+                &lt;/ArchiveUnit&gt;
+            &lt;/ArchiveUnit&gt;
+            &lt;ArchiveUnit id=&quot;ID4&quot;&gt;
+                &lt;Content&gt;
+                    &lt;DescriptionLevel&gt;File&lt;/DescriptionLevel&gt;
+                    &lt;Title&gt;Documentation relative à l&#39;Encoded Archival Description (EAD)&lt;/Title&gt;
+                    &lt;EndDate&gt;2015-09-23T18:18:20&lt;/EndDate&gt;
+                &lt;/Content&gt;
+                &lt;ArchiveUnit id=&quot;ID9&quot;&gt;
+                    &lt;ArchiveUnitRefId&gt;ID8&lt;/ArchiveUnitRefId&gt;
+                &lt;/ArchiveUnit&gt;
+            &lt;/ArchiveUnit&gt;
+            &lt;ArchiveUnit id=&quot;ID8&quot;&gt;
+                &lt;Content&gt;
+                    &lt;DescriptionLevel&gt;Item&lt;/DescriptionLevel&gt;
+                    &lt;Title&gt;Tag Library&lt;/Title&gt;
+                    &lt;TransactedDate&gt;2015-09-23T18:18:20&lt;/TransactedDate&gt;
+                &lt;/Content&gt;
+                &lt;DataObjectReference&gt;
+                    &lt;DataObjectGroupReferenceId&gt;ID6&lt;/DataObjectGroupReferenceId&gt;
+                &lt;/DataObjectReference&gt;
+            &lt;/ArchiveUnit&gt;
+            &lt;ArchiveUnit id=&quot;ID10&quot;&gt;
+                &lt;Content&gt;
+                    &lt;DescriptionLevel&gt;File&lt;/DescriptionLevel&gt;
+                    &lt;Title&gt;Documentation relative à la norme ISAAR (CPF)&lt;/Title&gt;
+                    &lt;StartDate&gt;2005-10-20T13:53:16&lt;/StartDate&gt;
+                    &lt;EndDate&gt;2013-12-19T16:05:10&lt;/EndDate&gt;
+                &lt;/Content&gt;
+                &lt;ArchiveUnit id=&quot;ID15&quot;&gt;
+                    &lt;ArchiveUnitRefId&gt;ID14&lt;/ArchiveUnitRefId&gt;
+                &lt;/ArchiveUnit&gt;
+                &lt;ArchiveUnit id=&quot;ID19&quot;&gt;
+                    &lt;ArchiveUnitRefId&gt;ID18&lt;/ArchiveUnitRefId&gt;
+                &lt;/ArchiveUnit&gt;
+            &lt;/ArchiveUnit&gt;
+            &lt;ArchiveUnit id=&quot;ID14&quot;&gt;
+                &lt;Content&gt;
+                    &lt;DescriptionLevel&gt;Item&lt;/DescriptionLevel&gt;
+                    &lt;Title&gt;Norme ISAAR (CPF) - 2e édition&lt;/Title&gt;
+                    &lt;TransactedDate&gt;2013-12-19T16:05:10&lt;/TransactedDate&gt;
+                &lt;/Content&gt;
+                &lt;DataObjectReference&gt;
+                    &lt;DataObjectGroupReferenceId&gt;ID12&lt;/DataObjectGroupReferenceId&gt;
+                &lt;/DataObjectReference&gt;
+            &lt;/ArchiveUnit&gt;
+            &lt;ArchiveUnit id=&quot;ID18&quot;&gt;
+                &lt;Content&gt;
+                    &lt;DescriptionLevel&gt;Item&lt;/DescriptionLevel&gt;
+                    &lt;Title&gt;Présentation de la norme ISAAR (CPF) élaborée par l&#39;IFLA&lt;/Title&gt;
+                    &lt;TransactedDate&gt;2005-10-20T13:53:16&lt;/TransactedDate&gt;
+                &lt;/Content&gt;
+                &lt;DataObjectReference&gt;
+                    &lt;DataObjectGroupReferenceId&gt;ID16&lt;/DataObjectGroupReferenceId&gt;
+                &lt;/DataObjectReference&gt;
+            &lt;/ArchiveUnit&gt;
+            &lt;ArchiveUnit id=&quot;ID20&quot;&gt;
+                &lt;Content&gt;
+                    &lt;DescriptionLevel&gt;File&lt;/DescriptionLevel&gt;
+                    &lt;Title&gt;Documentation relative à la norme ISAD(G)&lt;/Title&gt;
+                    &lt;StartDate&gt;2013-12-19T16:06:04&lt;/StartDate&gt;
+                    &lt;EndDate&gt;2013-12-19T16:06:04&lt;/EndDate&gt;
+                &lt;/Content&gt;
+                &lt;ArchiveUnit id=&quot;ID25&quot;&gt;
+                    &lt;ArchiveUnitRefId&gt;ID24&lt;/ArchiveUnitRefId&gt;
+                &lt;/ArchiveUnit&gt;
+            &lt;/ArchiveUnit&gt;
+            &lt;ArchiveUnit id=&quot;ID24&quot;&gt;
+                &lt;Content&gt;
+                    &lt;DescriptionLevel&gt;Item&lt;/DescriptionLevel&gt;
+                    &lt;Title&gt;Norme ISAD(G) - 2e édition&lt;/Title&gt;
+                    &lt;TransactedDate&gt;2013-12-19T16:06:04&lt;/TransactedDate&gt;
+                &lt;/Content&gt;
+                &lt;DataObjectReference&gt;
+                    &lt;DataObjectGroupReferenceId&gt;ID22&lt;/DataObjectGroupReferenceId&gt;
+                &lt;/DataObjectReference&gt;
+            &lt;/ArchiveUnit&gt;
+            &lt;ArchiveUnit id=&quot;ID26&quot;&gt;
+                &lt;Content&gt;
+                    &lt;DescriptionLevel&gt;File&lt;/DescriptionLevel&gt;
+                    &lt;Title&gt;Documentation relative à la norme ISDF&lt;/Title&gt;
+                    &lt;StartDate&gt;2013-12-19T16:05:44&lt;/StartDate&gt;
+                    &lt;EndDate&gt;2013-12-19T16:05:44&lt;/EndDate&gt;
+                &lt;/Content&gt;
+                &lt;ArchiveUnit id=&quot;ID31&quot;&gt;
+                    &lt;ArchiveUnitRefId&gt;ID30&lt;/ArchiveUnitRefId&gt;
+                &lt;/ArchiveUnit&gt;
+            &lt;/ArchiveUnit&gt;
+            &lt;ArchiveUnit id=&quot;ID30&quot;&gt;
+                &lt;Content&gt;
+                    &lt;DescriptionLevel&gt;Item&lt;/DescriptionLevel&gt;
+                    &lt;Title&gt;Norme ISDF - 1e édition&lt;/Title&gt;
+                    &lt;TransactedDate&gt;2013-12-19T16:05:44&lt;/TransactedDate&gt;
+                &lt;/Content&gt;
+                &lt;DataObjectReference&gt;
+                    &lt;DataObjectGroupReferenceId&gt;ID28&lt;/DataObjectGroupReferenceId&gt;
+                &lt;/DataObjectReference&gt;
+            &lt;/ArchiveUnit&gt;
+        &lt;/DescriptiveMetadata&gt;
+        &lt;ManagementMetadata&gt;
+            &lt;ArchivalProfile&gt;ArchivalProfile0&lt;/ArchivalProfile&gt;
+            &lt;ServiceLevel&gt;ServiceLevel0&lt;/ServiceLevel&gt;
+            &lt;OriginatingAgencyIdentifier&gt;OriginatingAgencyIdentifier 0&lt;/OriginatingAgencyIdentifier&gt;
+        &lt;/ManagementMetadata&gt;
+    &lt;/DataObjectPackage&gt;
+    &lt;ArchivalAgency&gt;
+        &lt;Identifier&gt;Identifier4&lt;/Identifier&gt;
+    &lt;/ArchivalAgency&gt;
+    &lt;TransferringAgency&gt;
+        &lt;Identifier&gt;Identifier5&lt;/Identifier&gt;
+    &lt;/TransferringAgency&gt;
+&lt;/ArchiveTransfer&gt;
+</pre></div>
+</div>
+</section>
+<section id="annexe-3-exemple-de-bordereau-complexe-realise-pour-un-jeu-de-test-vitam">
+<h3>Annexe 3 : exemple de bordereau « complexe » réalisé pour un jeu de test Vitam<a class="headerlink" href="#annexe-3-exemple-de-bordereau-complexe-realise-pour-un-jeu-de-test-vitam" title="Lien permanent vers cette rubrique"></a></h3>
+<p><strong>Nota bene :</strong> cet exemple a été généré manuellement en utilisant un éditeur XML. Le bordereau est conforme au schéma SEDA 2.1. même si les valeurs ne sont pas représentatives.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&lt;ArchiveTransfer xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;
+    xmlns:pr=&quot;info:lc/xmlns/premis-v2&quot;
+    xmlns=&quot;fr:gouv:culture:archivesdefrance:seda:v2.1&quot;
+    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xsi:schemaLocation=&quot;fr:gouv:culture:archivesdefrance:seda:v2.1 seda-2.1-main.xsd&quot; xml:id=&quot;ID002&quot;&gt;
+    &lt;Date&gt;2016-06-23T09:45:51.0&lt;/Date&gt;
+    &lt;MessageIdentifier&gt;Entrée_avec_groupe_d_objet&lt;/MessageIdentifier&gt;
+    &lt;ArchivalAgreement&gt;ArchivalAgreement0&lt;/ArchivalAgreement&gt;
+    &lt;CodeListVersions xml:id=&quot;ID005&quot;&gt;
+        &lt;ReplyCodeListVersion&gt;ReplyCodeListVersion0&lt;/ReplyCodeListVersion&gt;
+        &lt;MessageDigestAlgorithmCodeListVersion&gt;MessageDigestAlgorithmCodeListVersion0&lt;/MessageDigestAlgorithmCodeListVersion&gt;
+        &lt;MimeTypeCodeListVersion&gt;MimeTypeCodeListVersion0&lt;/MimeTypeCodeListVersion&gt;      &lt;EncodingCodeListVersion&gt;EncodingCodeListVersion0&lt;/EncodingCodeListVersion&gt;      &lt;FileFormatCodeListVersion&gt;FileFormatCodeListVersion0&lt;/FileFormatCodeListVersion&gt;        &lt;CompressionAlgorithmCodeListVersion&gt;CompressionAlgorithmCodeListVersion0&lt;/CompressionAlgorithmCodeListVersion&gt;      &lt;DataObjectVersionCodeListVersion&gt;DataObjectVersionCodeListVersion0&lt;/DataObjectVersionCodeListVersion&gt;     &lt;StorageRuleCodeListVersion&gt;StorageRuleCodeListVersion0&lt;/StorageRuleCodeListVersion&gt;     &lt;AppraisalRuleCodeListVersion&gt;AppraisalRuleCodeListVersion0&lt;/AppraisalRuleCodeListVersion&gt;    &lt;AccessRuleCodeListVersion&gt;AccessRuleCodeListVersion0&lt;/AccessRuleCodeListVersion&gt;      &lt;DisseminationRuleCodeListVersion&gt;DisseminationRuleCodeListVersion0&lt;/DisseminationRuleCodeListVersion&gt;    &lt;ReuseRuleCodeListVersion&gt;ReuseRuleCodeListVersion0&lt;/ReuseRuleCodeListVersion&gt;      &lt;ClassificationRuleCodeListVersion&gt;ClassificationRuleCodeListVersion0&lt;/ClassificationRuleCodeListVersion&gt;  &lt;AuthorizationReasonCodeListVersion&gt;AuthorizationReasonCodeListVersion0&lt;/AuthorizationReasonCodeListVersion&gt;
+     &lt;RelationshipCodeListVersion&gt;RelationshipCodeListVersion0&lt;/RelationshipCodeListVersion&gt;
+    &lt;/CodeListVersions&gt;
+    
+    &lt;DataObjectPackage xml:id=&quot;ID007&quot;&gt;
+        &lt;PhysicalDataObject id=&quot;ID009&quot;&gt;
+            &lt;DataObjectGroupReferenceId&gt;ID006&lt;/DataObjectGroupReferenceId&gt;
+            &lt;DataObjectVersion&gt;PhysicalMaster&lt;/DataObjectVersion&gt;
+            &lt;PhysicalId&gt;1500W03&lt;/PhysicalId&gt;
+            &lt;PhysicalDimensions&gt;
+				&lt;NumberOfPage&gt;23&lt;/NumberOfPage&gt;
+            &lt;/PhysicalDimensions&gt;
+        &lt;/PhysicalDataObject&gt;
+        
+        &lt;BinaryDataObject id=&quot;ID011&quot;&gt;
+            &lt;DataObjectGroupId&gt;ID006&lt;/DataObjectGroupId&gt;
+            &lt;DataObjectVersion&gt;BinaryMaster_1&lt;/DataObjectVersion&gt;
+            &lt;Uri&gt;content/e726e114f302c871b64569a00acb3a19badb7ee8ce4aef72cc2a043ace4905b8e8fca6f4771f8d6f67e221a53a4bbe170501af318c8f2c026cc8ea60f66fa804.odp&lt;/Uri&gt;
+            &lt;MessageDigest algorithm=&quot;SHA-512&quot;&gt;e726e114f302c871b64569a00acb3a19badb7ee8ce4aef72cc2a043ace4905b8e8fca6f4771f8d6f67e221a53a4bbe170501af318c8f2c026cc8ea60f66fa804&lt;/MessageDigest&gt;
+            &lt;Size&gt;100646&lt;/Size&gt;
+
+            &lt;FormatIdentification&gt;
+                &lt;FormatLitteral&gt;OpenDocument Presentation&lt;/FormatLitteral&gt;
+                &lt;MimeType&gt;application/vnd.oasis.opendocument.presentation&lt;/MimeType&gt;
+                &lt;FormatId&gt;fmt/293&lt;/FormatId&gt;
+            &lt;/FormatIdentification&gt;
+            &lt;FileInfo&gt;
+                &lt;Filename&gt;Vitam-Sensibilisation-API-V1.0.odp&lt;/Filename&gt;
+                &lt;CreatingApplicationName&gt;LibreOffice/Impress&lt;/CreatingApplicationName&gt;
+                &lt;CreatingApplicationVersion&gt;5.0.5.2&lt;/CreatingApplicationVersion&gt;
+                &lt;CreatingOs&gt;Windows_X86_64&lt;/CreatingOs&gt;
+                &lt;CreatingOsVersion&gt;10&lt;/CreatingOsVersion&gt;
+                &lt;LastModified&gt;2016-05-05T20:45:20&lt;/LastModified&gt;
+            &lt;/FileInfo&gt;
+            &lt;Metadata&gt;
+                &lt;Document&gt;&lt;!--  --&gt;&lt;/Document&gt;
+            &lt;/Metadata&gt;
+            &lt;OtherMetadata&gt;&lt;!--  --&gt;&lt;/OtherMetadata&gt;
+        &lt;/BinaryDataObject&gt;
+        &lt;BinaryDataObject id=&quot;ID012&quot;&gt;
+            &lt;DataObjectGroupReferenceId&gt;ID006&lt;/DataObjectGroupReferenceId&gt;
+            &lt;DataObjectVersion&gt;Dissemination_1&lt;/DataObjectVersion&gt;
+            &lt;Uri&gt;content/abead17e841c937187270cb95b0656bf3f7a9e71c8ca95e7fc8efa38cfffcab9889f353a95136fa3073a422d825175bf1bef24dc355bfa081f7e48b106070fd5.pdf&lt;/Uri&gt;
+            &lt;MessageDigest algorithm=&quot;SHA-512&quot;&gt;abead17e841c937187270cb95b0656bf3f7a9e71c8ca95e7fc8efa38cfffcab9889f353a95136fa3073a422d825175bf1bef24dc355bfa081f7e48b106070fd5&lt;/MessageDigest&gt;
+            &lt;Size&gt;186536&lt;/Size&gt;
+            &lt;FormatIdentification&gt;
+                &lt;FormatLitteral&gt;Acrobat PDF 1.4 - Portable Document Format&lt;/FormatLitteral&gt;
+                &lt;MimeType&gt;application/pdf&lt;/MimeType&gt;
+                &lt;FormatId&gt;fmt/18&lt;/FormatId&gt;
+            &lt;/FormatIdentification&gt;
+            &lt;FileInfo&gt;
+                &lt;Filename&gt;Vitam-Sensibilisation-API-V1.0.pdf&lt;/Filename&gt;
+                &lt;CreatingApplicationName&gt;LibreOffice 5.0/Impress&lt;/CreatingApplicationName&gt;
+                &lt;CreatingApplicationVersion&gt;5.0.5.2&lt;/CreatingApplicationVersion&gt;
+                &lt;CreatingOs&gt;Windows_X86_64&lt;/CreatingOs&gt;
+                &lt;CreatingOsVersion&gt;10&lt;/CreatingOsVersion&gt;
+                &lt;LastModified&gt;2016-05-05T20:45:32&lt;/LastModified&gt;
+            &lt;/FileInfo&gt;
+            &lt;Metadata&gt;
+                &lt;Document&gt;&lt;!--  --&gt;&lt;/Document&gt;
+            &lt;/Metadata&gt;
+            &lt;OtherMetadata&gt;&lt;!--  --&gt;&lt;/OtherMetadata&gt;
+        &lt;/BinaryDataObject&gt;
+        &lt;BinaryDataObject id=&quot;ID013&quot;&gt;
+            &lt;DataObjectGroupReferenceId&gt;ID006&lt;/DataObjectGroupReferenceId&gt;
+            &lt;DataObjectVersion&gt;Thumbnail_1&lt;/DataObjectVersion&gt;
+            &lt;Uri&gt;content/fe2b0664fc66afd85f839be6ee4b6433b60a06b9a4481e0743c9965394fa0b8aa51b30df11f3281fef3d7f6c86a35cd2925351076da7abc064ad89369edf44f0.png&lt;/Uri&gt;
+            &lt;MessageDigest algorithm=&quot;SHA-512&quot;&gt;fe2b0664fc66afd85f839be6ee4b6433b60a06b9a4481e0743c9965394fa0b8aa51b30df11f3281fef3d7f6c86a35cd2925351076da7abc064ad89369edf44f0&lt;/MessageDigest&gt;
+            &lt;Size&gt;40740&lt;/Size&gt;
+            &lt;FormatIdentification&gt;
+                &lt;FormatLitteral&gt;Portable Network Graphics&lt;/FormatLitteral&gt;
+                &lt;MimeType&gt;image/png&lt;/MimeType&gt;
+                &lt;FormatId&gt;fmt/11&lt;/FormatId&gt;
+            &lt;/FormatIdentification&gt;
+            &lt;FileInfo&gt;
+                &lt;Filename&gt;Vitam-Sensibilisation-API-V1.0.png&lt;/Filename&gt;
+                &lt;CreatingApplicationName&gt;LibreOffice/Impress&lt;/CreatingApplicationName&gt;
+                &lt;CreatingApplicationVersion&gt;5.0.5.2&lt;/CreatingApplicationVersion&gt;
+                &lt;CreatingOs&gt;Windows_X86_64&lt;/CreatingOs&gt;
+                &lt;CreatingOsVersion&gt;10&lt;/CreatingOsVersion&gt;
+                &lt;LastModified&gt;2016-06-23T12:45:20&lt;/LastModified&gt;
+            &lt;/FileInfo&gt;
+            &lt;Metadata&gt;
+                &lt;Image&gt;&lt;!--  --&gt;&lt;/Image&gt;
+            &lt;/Metadata&gt;
+            &lt;OtherMetadata&gt;&lt;!--  --&gt;&lt;/OtherMetadata&gt;
+        &lt;/BinaryDataObject&gt;
+        &lt;BinaryDataObject id=&quot;ID014&quot;&gt;
+            &lt;DataObjectGroupReferenceId&gt;ID006&lt;/DataObjectGroupReferenceId&gt;
+            &lt;DataObjectVersion&gt;TextContent&lt;/DataObjectVersion&gt;
+            &lt;Uri&gt;content/cb27754e97d86e44dd5ac063afd8d25c4ebd89aa7c0f3e89ad72b5d4b0ccfea142ce505e231e8a3c56391546eaa4ea46a71869e59a6e07be01e1abb1f057feee.txt&lt;/Uri&gt;
+            &lt;MessageDigest algorithm=&quot;SHA-512&quot;&gt;cb27754e97d86e44dd5ac063afd8d25c4ebd89aa7c0f3e89ad72b5d4b0ccfea142ce505e231e8a3c56391546eaa4ea46a71869e59a6e07be01e1abb1f057feee&lt;/MessageDigest&gt;
+            &lt;Size&gt;17120&lt;/Size&gt;
+            &lt;FormatIdentification&gt;
+                &lt;FormatLitteral&gt;Plain Text File&lt;/FormatLitteral&gt;
+                &lt;MimeType&gt;text/plain&lt;/MimeType&gt;
+                &lt;FormatId&gt;x-fmt/111&lt;/FormatId&gt;
+                &lt;Encoding&gt;UTF-8&lt;/Encoding&gt;
+            &lt;/FormatIdentification&gt;
+            &lt;FileInfo&gt;
+                &lt;Filename&gt;Vitam-Sensibilisation-API-V1.0.txt&lt;/Filename&gt;
+                &lt;LastModified&gt;2016-06-23T12:50:20&lt;/LastModified&gt;
+            &lt;/FileInfo&gt;
+            &lt;Metadata&gt;
+                &lt;Text&gt;&lt;!--  --&gt;&lt;/Text&gt;
+            &lt;/Metadata&gt;
+            &lt;OtherMetadata&gt;&lt;!--  --&gt;&lt;/OtherMetadata&gt;
+        &lt;/BinaryDataObject&gt;
+        
+        &lt;DescriptiveMetadata&gt;
+            &lt;ArchiveUnit id=&quot;ID015&quot;&gt;
+                &lt;ArchiveUnitProfile&gt;PresentationType&lt;/ArchiveUnitProfile&gt;
+                &lt;Management&gt;
+                    &lt;StorageRule&gt;
+                        &lt;Rule id=&quot;ID017&quot;&gt;Rule0&lt;/Rule&gt;
+                        &lt;FinalAction&gt;RestrictAccess&lt;/FinalAction&gt;
+                    &lt;/StorageRule&gt;
+                    &lt;AppraisalRule&gt;
+                        &lt;Rule id=&quot;ID018&quot;&gt;Rule2&lt;/Rule&gt;
+                        &lt;FinalAction&gt;Keep&lt;/FinalAction&gt;
+                    &lt;/AppraisalRule&gt;
+                    &lt;AccessRule&gt;
+                        &lt;Rule id=&quot;ID019&quot;&gt;Rule4&lt;/Rule&gt;
+                    &lt;/AccessRule&gt;
+                    &lt;DisseminationRule&gt;
+                        &lt;Rule id=&quot;ID020&quot;&gt;Rule6&lt;/Rule&gt;
+                    &lt;/DisseminationRule&gt;
+                    &lt;ReuseRule&gt;
+                        &lt;Rule id=&quot;ID022&quot;&gt;Rule8&lt;/Rule&gt;
+                        &lt;Rule id=&quot;ID023&quot;&gt;Rule9&lt;/Rule&gt;
+                    &lt;/ReuseRule&gt;
+                    &lt;ClassificationRule&gt;
+                        &lt;Rule id=&quot;ID024&quot;&gt;Rule10&lt;/Rule&gt;
+                        &lt;Rule id=&quot;ID025&quot;&gt;Rule11&lt;/Rule&gt;
+                        &lt;ClassificationLevel&gt;ClassificationLevel0&lt;/ClassificationLevel&gt;
+                        &lt;ClassificationOwner&gt;ClassificationOwner0&lt;/ClassificationOwner&gt;
+                    &lt;/ClassificationRule&gt;
+                    &lt;NeedAuthorization&gt;false&lt;/NeedAuthorization&gt;
+                &lt;/Management&gt;
+                &lt;Content xml:id=&quot;ID026&quot;&gt;
+                    &lt;DescriptionLevel&gt;Item&lt;/DescriptionLevel&gt;
+                    &lt;Title&gt;Sensibilisation API&lt;/Title&gt;
+                    &lt;FilePlanPosition&gt;FilePlanPosition0&lt;/FilePlanPosition&gt;
+                    &lt;OriginatingSystemId&gt;OriginatingSystemId0&lt;/OriginatingSystemId&gt;
+                    &lt;ArchivalAgencyArchiveUnitIdentifier&gt;ArchivalAgencyArchiveUnitIdentifier0&lt;/ArchivalAgencyArchiveUnitIdentifier&gt;
+                    &lt;OriginatingAgencyArchiveUnitIdentifier&gt;OriginatingAgencyArchiveUnitIdentifier0&lt;/OriginatingAgencyArchiveUnitIdentifier&gt;
+                    &lt;TransferringAgencyArchiveUnitIdentifier&gt;TransferringAgencyArchiveUnitIdentifier0&lt;/TransferringAgencyArchiveUnitIdentifier&gt;
+                    &lt;Description&gt;Sensibilisation au Technical Design et à l&#39;API Design Java et REST de la solution logicielle Vitam&lt;/Description&gt;
+                    &lt;Language&gt;fr-FR&lt;/Language&gt;
+                    &lt;OriginatingAgency&gt;
+                        &lt;Identifier&gt;Identifier0&lt;/Identifier&gt;
+                    &lt;/OriginatingAgency&gt;
+                    &lt;SubmissionAgency&gt;
+                        &lt;Identifier&gt;Identifier1&lt;/Identifier&gt;
+                    &lt;/SubmissionAgency&gt;
+                    &lt;Writer&gt;
+                        &lt;FirstName&gt;FirstName0&lt;/FirstName&gt;
+                        &lt;BirthName&gt;BirthName0&lt;/BirthName&gt;
+                    &lt;/Writer&gt;
+                    &lt;CreatedDate&gt;2016-05-05T20:45:20&lt;/CreatedDate&gt;
+                    &lt;TransactedDate&gt;2016-05-05&lt;/TransactedDate&gt;
+                &lt;/Content&gt;
+                &lt;DataObjectReference&gt;
+                    &lt;DataObjectGroupReferenceId&gt;ID006&lt;/DataObjectGroupReferenceId&gt;
+                &lt;/DataObjectReference&gt;
+            &lt;/ArchiveUnit&gt;
+        &lt;/DescriptiveMetadata&gt;
+        &lt;ManagementMetadata xml:id=&quot;ID030&quot;&gt;
+            &lt;ArchivalProfile&gt;ArchivalProfile0&lt;/ArchivalProfile&gt;
+            &lt;ServiceLevel&gt;ServiceLevel0&lt;/ServiceLevel&gt;
+            &lt;OriginatingAgencyIdentifier&gt;OriginatingAgencyIdentifier 0&lt;/OriginatingAgencyIdentifier&gt;
+        &lt;/ManagementMetadata&gt;
+    &lt;/DataObjectPackage&gt;
+
+    &lt;ArchivalAgency xml:id=&quot;ID031&quot;&gt;
+        &lt;Identifier&gt;ArchivalAgency1&lt;/Identifier&gt;
+    &lt;/ArchivalAgency&gt;
+    &lt;TransferringAgency xml:id=&quot;ID032&quot;&gt;
+        &lt;Identifier&gt;TransferringAgency1&lt;/Identifier&gt;
+    &lt;/TransferringAgency&gt;
+&lt;/ArchiveTransfer&gt;
+</pre></div>
+</div>
+</section>
+<section id="annexe-4-exemple-de-bordereau-complexe-permettant-le-rattachement-darchiveunits-a-des-elements-deja-presents-dans-le-systeme">
+<h3>Annexe 4 : exemple de bordereau « complexe » permettant le rattachement d’ArchiveUnits à des éléments déjà présents dans le système<a class="headerlink" href="#annexe-4-exemple-de-bordereau-complexe-permettant-le-rattachement-darchiveunits-a-des-elements-deja-presents-dans-le-systeme" title="Lien permanent vers cette rubrique"></a></h3>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;ArchiveTransfer xmlns=&quot;fr:gouv:culture:archivesdefrance:seda:v2.1&quot;
+    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xsi:schemaLocation=&quot;fr:gouv:culture:archivesdefrance:seda:v2.1 file:/C:/Users/edouard.vasseur/Desktop/Documentation/SEDA/SEDA_2-1_draft_0.6/seda-2.1-main.xsd&quot;&gt;
+   &lt;Comment&gt;SIP montrant les différentes possibilités de rattachement offertes par la solution logicielle Vitam&lt;/Comment&gt;
+	&lt;Date&gt;2018-05-29T08:42:47&lt;/Date&gt;
+	&lt;MessageIdentifier&gt;MessageIdentifier0&lt;/MessageIdentifier&gt;
+	&lt;ArchivalAgreement&gt;IC-000001&lt;/ArchivalAgreement&gt;
+	&lt;CodeListVersions&gt;
+		&lt;ReplyCodeListVersion&gt;ReplyCodeListVersion0&lt;/ReplyCodeListVersion&gt;
+		&lt;MessageDigestAlgorithmCodeListVersion&gt;MessageDigestAlgorithmCodeListVersion0&lt;/MessageDigestAlgorithmCodeListVersion&gt;
+		&lt;MimeTypeCodeListVersion&gt;MimeTypeCodeListVersion0&lt;/MimeTypeCodeListVersion&gt;
+		&lt;EncodingCodeListVersion&gt;EncodingCodeListVersion0&lt;/EncodingCodeListVersion&gt;
+		&lt;FileFormatCodeListVersion&gt;FileFormatCodeListVersion0&lt;/FileFormatCodeListVersion&gt;
+		&lt;CompressionAlgorithmCodeListVersion&gt;CompressionAlgorithmCodeListVersion0&lt;/CompressionAlgorithmCodeListVersion&gt;
+		&lt;DataObjectVersionCodeListVersion&gt;DataObjectVersionCodeListVersion0&lt;/DataObjectVersionCodeListVersion&gt;
+		&lt;StorageRuleCodeListVersion&gt;StorageRuleCodeListVersion0&lt;/StorageRuleCodeListVersion&gt;
+		&lt;AppraisalRuleCodeListVersion&gt;AppraisalRuleCodeListVersion0&lt;/AppraisalRuleCodeListVersion&gt;
+		&lt;AccessRuleCodeListVersion&gt;AccessRuleCodeListVersion0&lt;/AccessRuleCodeListVersion&gt;
+		&lt;DisseminationRuleCodeListVersion&gt;DisseminationRuleCodeListVersion0&lt;/DisseminationRuleCodeListVersion&gt;
+		&lt;ReuseRuleCodeListVersion&gt;ReuseRuleCodeListVersion0&lt;/ReuseRuleCodeListVersion&gt;
+		&lt;ClassificationRuleCodeListVersion&gt;ClassificationRuleCodeListVersion0&lt;/ClassificationRuleCodeListVersion&gt;
+		&lt;AuthorizationReasonCodeListVersion&gt;AuthorizationReasonCodeListVersion0&lt;/AuthorizationReasonCodeListVersion&gt;
+		&lt;RelationshipCodeListVersion&gt;RelationshipCodeListVersion0&lt;/RelationshipCodeListVersion&gt;
+	&lt;/CodeListVersions&gt;
+	&lt;DataObjectPackage xml:id=&quot;ID2&quot;&gt;
+		&lt;BinaryDataObject id=&quot;ID17&quot;&gt;
+			&lt;DataObjectGroupId&gt;ID16&lt;/DataObjectGroupId&gt;
+			&lt;DataObjectVersion&gt;BinaryMaster&lt;/DataObjectVersion&gt;
+			&lt;Uri&gt;Content/ID17.txt&lt;/Uri&gt;
+			&lt;MessageDigest algorithm=&quot;SHA-512&quot;&gt;ee26b0dd4af7e749aa1a8ee3c10ae9923f618980772e473f8819a5d4940e0db27ac185f8a0e1d5f84f88bc887fd67b143732c304cc5fa9ad8e6f57f50028a8ff&lt;/MessageDigest&gt;
+			&lt;Size&gt;4&lt;/Size&gt;
+			&lt;FormatIdentification&gt;
+				&lt;FormatLitteral&gt;Plain Text File&lt;/FormatLitteral&gt;
+				&lt;MimeType&gt;text/plain&lt;/MimeType&gt;
+				&lt;FormatId&gt;x-fmt/111&lt;/FormatId&gt;
+			&lt;/FormatIdentification&gt;
+			&lt;FileInfo&gt;
+				&lt;Filename&gt;vignette.txt&lt;/Filename&gt;
+				&lt;LastModified&gt;2018-05-29T08:41:16.284+02:00&lt;/LastModified&gt;
+			&lt;/FileInfo&gt;
+		&lt;/BinaryDataObject&gt;
+		&lt;DescriptiveMetadata&gt;
+			
+			&lt;!-- Unité archivistique 1 existante dans le système à laquelle il faut rattacher l&#39;unité archivistique correspondant à l&#39;ID6 --&gt;
+			
+			&lt;ArchiveUnit id=&quot;ID4&quot;&gt;
+				&lt;Management&gt;
+					
+					&lt;!-- Mécanisme à utiliser pour déclarer l&#39;unité archivistique à laquelle rattacher l&#39;unité archivistique correspondant à l&#39;ID6 (déclarer le GUID de l&#39;unité archivistique 1 présente dans le système) --&gt;
+					
+					&lt;UpdateOperation&gt;
+						&lt;SystemId&gt;aeaqaaaaauhi3waqabrz6aldsmvti4qaaaia&lt;/SystemId&gt;
+					&lt;/UpdateOperation&gt;
+				&lt;/Management&gt;
+				&lt;Content&gt;
+					&lt;DescriptionLevel&gt;RecordGrp&lt;/DescriptionLevel&gt;
+					&lt;Title&gt;Titre de l&#39;unité archivistique 1 existante dans le système&lt;/Title&gt;
+				&lt;/Content&gt;
+				&lt;ArchiveUnit id=&quot;ID7&quot;&gt;
+					&lt;ArchiveUnitRefId&gt;ID6&lt;/ArchiveUnitRefId&gt;
+				&lt;/ArchiveUnit&gt;
+			&lt;/ArchiveUnit&gt;
+			
+			&lt;!-- Unité archivistique à rattacher à une unité archivistique présente dans le système (unité archivistique 1) via l&#39;identifiant de cette unité dans le système --&gt;
+			
+			&lt;ArchiveUnit id=&quot;ID6&quot;&gt;
+				&lt;Content&gt;
+					&lt;DescriptionLevel&gt;RecordGrp&lt;/DescriptionLevel&gt;
+					&lt;Title&gt;Titre de l&#39;unité archivistique à rattacher à l&#39;unité archivistique 1 présente dans le système&lt;/Title&gt;
+					&lt;StartDate&gt;2018-05-29T08:42:47&lt;/StartDate&gt;
+					&lt;EndDate&gt;2018-05-29T08:42:47&lt;/EndDate&gt;
+				&lt;/Content&gt;
+				&lt;ArchiveUnit id=&quot;ID9&quot;&gt;
+					&lt;ArchiveUnitRefId&gt;ID8&lt;/ArchiveUnitRefId&gt;
+				&lt;/ArchiveUnit&gt;
+			&lt;/ArchiveUnit&gt;
+			
+			&lt;!-- Unité archivistique représentée par un groupe d&#39;objets déjà présent dans le système --&gt;
+			
+			&lt;ArchiveUnit id=&quot;ID8&quot;&gt;
+				&lt;Content&gt;
+					&lt;DescriptionLevel&gt;RecordGrp&lt;/DescriptionLevel&gt;
+					&lt;Title&gt;Titre de l&#39;unité archivistique représentée par un groupe d&#39;objet déjà présent dans le SAE&lt;/Title&gt;
+					&lt;StartDate&gt;2018-05-29T08:42:47&lt;/StartDate&gt;
+					&lt;EndDate&gt;2018-05-29T08:42:47&lt;/EndDate&gt;
+				&lt;/Content&gt;
+				
+				&lt;!-- Mécanisme à utiliser pour déclarer le groupe d&#39;objets déjà présent dans le système et qui représente l&#39;unité archivitique présente dans le SIP (déclarer le GUID du groupe d&#39;objets présent dans le système) --&gt;
+				
+				&lt;DataObjectGroup&gt;
+                    &lt;DataObjectGroupExistingReferenceId&gt;aebaaaaaa4hjioeaabpgialca36skkqaaaaq&lt;/DataObjectGroupExistingReferenceId&gt;
+                &lt;/DataObjectGroup&gt;
+			&lt;/ArchiveUnit&gt;
+			
+			&lt;!-- Unité archivistique 2 existante dans le système à laquelle il faut rattacher l&#39;unité archivistique correspondant à l&#39;ID12 --&gt;
+			
+			&lt;ArchiveUnit id=&quot;ID10&quot;&gt;
+				&lt;Management&gt;
+					
+					&lt;!-- Mécanisme à utiliser pour déclarer l&#39;unité archivistique à laquelle rattacher l&#39;unité archivistique correspondant à l&#39;ID12 (déclarer l&#39;intitulé du champ et la valeur du champ de l&#39;unité archivistique 2 présente dans le système) --&gt;
+					
+					&lt;UpdateOperation&gt;
+						&lt;ArchiveUnitIdentifierKey&gt;
+							&lt;MetadataName&gt;Intitulé du champ de l&#39;unité archivistique 2 présente dans le système&lt;/MetadataName&gt;
+							&lt;MetadataValue&gt;Valeur du champ de l&#39;unité archivistique 2 présente dans le système&lt;/MetadataValue&gt;
+						&lt;/ArchiveUnitIdentifierKey&gt;
+					&lt;/UpdateOperation&gt;
+				&lt;/Management&gt;
+				&lt;Content&gt;
+					&lt;DescriptionLevel&gt;RecordGrp&lt;/DescriptionLevel&gt;
+					&lt;Title&gt;Titre de l&#39;unité archivistique 2 présente dans le système&lt;/Title&gt;
+				&lt;/Content&gt;
+				&lt;ArchiveUnit id=&quot;ID13&quot;&gt;
+					&lt;ArchiveUnitRefId&gt;ID12&lt;/ArchiveUnitRefId&gt;
+				&lt;/ArchiveUnit&gt;
+			&lt;/ArchiveUnit&gt;
+			
+			&lt;!-- Unité archivistique à rattacher à une unité archivistique présente dans le système (unité archivistique 2) via une recherche sur la valeur d&#39;un champ --&gt;
+			
+			&lt;ArchiveUnit id=&quot;ID12&quot;&gt;
+				&lt;Content&gt;
+					&lt;DescriptionLevel&gt;RecordGrp&lt;/DescriptionLevel&gt;
+					&lt;Title&gt;Titre de l&#39;unité archivistique à rattacher à l&#39;unité archivistique 2 présente dans le système&lt;/Title&gt;
+					&lt;StartDate&gt;2018-05-29T08:41:16&lt;/StartDate&gt;
+					&lt;EndDate&gt;2018-05-29T08:41:16&lt;/EndDate&gt;
+				&lt;/Content&gt;
+			&lt;/ArchiveUnit&gt;
+			
+			&lt;!-- Unité archivistique présente dans le système (unité archivistique 3), mais dont le groupe d&#39;objets doit être complété par un objet présent dans le SIP --&gt;
+			
+		&lt;ArchiveUnit id=&quot;ID14&quot;&gt;
+			
+			&lt;!-- Mécanisme à utiliser pour déclarer l&#39;unité archivistique dont le groupe d&#39;objets doit être mis à jour (déclarer le GUID de l&#39;unité archivistique 3 présente dans le système) --&gt;
+			
+			&lt;Management&gt;
+				&lt;UpdateOperation&gt;
+					&lt;SystemId&gt;aeaqaaaaauhi3waqabrz6aldsmxjmkqaaaba&lt;/SystemId&gt;
+				&lt;/UpdateOperation&gt;
+			&lt;/Management&gt;
+			&lt;Content&gt;
+				&lt;DescriptionLevel&gt;RecordGrp&lt;/DescriptionLevel&gt;
+				&lt;Title&gt;Titre de l&#39;unité archivistique 3 présente dans le système&lt;/Title&gt;
+				&lt;StartDate&gt;2018-05-29T08:41:16&lt;/StartDate&gt;
+				&lt;EndDate&gt;2018-05-29T08:41:16&lt;/EndDate&gt;
+			&lt;/Content&gt;
+			&lt;DataObjectReference&gt;
+				&lt;DataObjectGroupReferenceId&gt;ID16&lt;/DataObjectGroupReferenceId&gt;
+			&lt;/DataObjectReference&gt;
+		&lt;/ArchiveUnit&gt;
+		&lt;/DescriptiveMetadata&gt;
+		&lt;ManagementMetadata&gt;
+			&lt;OriginatingAgencyIdentifier&gt;Vitam&lt;/OriginatingAgencyIdentifier&gt;
+			&lt;SubmissionAgencyIdentifier&gt;Vitam&lt;/SubmissionAgencyIdentifier&gt;
+		&lt;/ManagementMetadata&gt;
+	&lt;/DataObjectPackage&gt;
+	&lt;ArchivalAgency&gt;
+		&lt;Identifier&gt;Identifier4&lt;/Identifier&gt;
+	&lt;/ArchivalAgency&gt;
+	&lt;TransferringAgency&gt;
+		&lt;Identifier&gt;Identifier5&lt;/Identifier&gt;
+	&lt;/TransferringAgency&gt;
+&lt;/ArchiveTransfer&gt;  
+</pre></div>
+</div>
+</section>
+<section id="annexe-5-creation-des-groupes-dobjets-techniques-archivage-de-plusieurs-usages-dune-meme-archive">
+<h3>Annexe 5 : création des groupes d’objets techniques (archivage de plusieurs usages d’une même archive)<a class="headerlink" href="#annexe-5-creation-des-groupes-dobjets-techniques-archivage-de-plusieurs-usages-dune-meme-archive" title="Lien permanent vers cette rubrique"></a></h3>
+<section id="methode-1-une-balise-dataobjectgroup-est-creee-dans-le-manifeste-et-comprend-les-autres-dataobject">
+<h4>Méthode 1 :Une balise &lt; DataObjectGroup &gt; est créée dans le manifeste et comprend les autres DataObject.<a class="headerlink" href="#methode-1-une-balise-dataobjectgroup-est-creee-dans-le-manifeste-et-comprend-les-autres-dataobject" title="Lien permanent vers cette rubrique"></a></h4>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&lt;DataObjectGroup id=&quot;DOG8&quot;&gt;
+ &lt;BinaryDataObject id=&quot;ID011&quot;&gt;
+ &lt;DataObjectVersion&gt;BinaryMaster_1&lt;/DataObjectVersion&gt;
+            &lt;Uri&gt;content/e726e114f302c871b64569a00acb3a19badb7ee8ce4aef72cc2a043ace4905b8e8fca6f4771f8d6f67e221a53a4bbe170501af318c8f2c026cc8ea60f66fa804.odp&lt;/Uri&gt;
+            &lt;MessageDigest algorithm=&quot;SHA-512&quot;&gt;e726e114f302c871b64569a00acb3a19badb7ee8ce4aef72cc2a043ace4905b8e8fca6f4771f8d6f67e221a53a4bbe170501af318c8f2c026cc8ea60f66fa804&lt;/MessageDigest&gt;
+            &lt;Size&gt;100646&lt;/Size&gt;
+            &lt;FormatIdentification&gt;
+                &lt;FormatLitteral&gt;OpenDocument Presentation&lt;/FormatLitteral&gt;
+                &lt;MimeType&gt;application/vnd.oasis.opendocument.presentation&lt;/MimeType&gt;
+                &lt;FormatId&gt;fmt/293&lt;/FormatId&gt;
+            &lt;/FormatIdentification&gt;
+            &lt;FileInfo&gt;
+                &lt;Filename&gt;Vitam-Sensibilisation-API-V1.0.odp&lt;/Filename&gt;
+                &lt;CreatingApplicationName&gt;LibreOffice/Impress&lt;/CreatingApplicationName&gt;
+                &lt;CreatingApplicationVersion&gt;5.0.5.2&lt;/CreatingApplicationVersion&gt;
+                &lt;CreatingOs&gt;Windows_X86_64&lt;/CreatingOs&gt;
+                &lt;CreatingOsVersion&gt;10&lt;/CreatingOsVersion&gt;
+                &lt;LastModified&gt;2016-05-05T20:45:20&lt;/LastModified&gt;
+            &lt;/FileInfo&gt;
+        &lt;/BinaryDataObject&gt;
+        &lt;BinaryDataObject id=&quot;ID012&quot;&gt;
+            &lt;DataObjectVersion&gt;Dissemination_1&lt;/DataObjectVersion&gt;
+            &lt;Uri&gt;content/abead17e841c937187270cb95b0656bf3f7a9e71c8ca95e7fc8efa38cfffcab9889f353a95136fa3073a422d825175bf1bef24dc355bfa081f7e48b106070fd5.pdf&lt;/Uri&gt;
+            &lt;MessageDigest algorithm=&quot;SHA-512&quot;&gt;abead17e841c937187270cb95b0656bf3f7a9e71c8ca95e7fc8efa38cfffcab9889f353a95136fa3073a422d825175bf1bef24dc355bfa081f7e48b106070fd5&lt;/MessageDigest&gt;
+            &lt;Size&gt;186536&lt;/Size&gt;
+            &lt;FormatIdentification&gt;
+                &lt;FormatLitteral&gt;Acrobat PDF 1.4 - Portable Document Format&lt;/FormatLitteral&gt;
+                &lt;MimeType&gt;application/pdf&lt;/MimeType&gt;
+                &lt;FormatId&gt;fmt/18&lt;/FormatId&gt;
+            &lt;/FormatIdentification&gt;
+            &lt;FileInfo&gt;
+                &lt;Filename&gt;Vitam-Sensibilisation-API-V1.0.pdf&lt;/Filename&gt;
+                &lt;CreatingApplicationName&gt;LibreOffice 5.0/Impress&lt;/CreatingApplicationName&gt;
+                &lt;CreatingApplicationVersion&gt;5.0.5.2&lt;/CreatingApplicationVersion&gt;
+                &lt;CreatingOs&gt;Windows_X86_64&lt;/CreatingOs&gt;
+                &lt;CreatingOsVersion&gt;10&lt;/CreatingOsVersion&gt;
+                &lt;LastModified&gt;2016-05-05T20:45:32&lt;/LastModified&gt;
+            &lt;/FileInfo&gt;
+        &lt;/BinaryDataObject&gt;
+&lt;/DataObjectGroup&gt;
+</pre></div>
+</div>
+</section>
+<section id="methode-2-un-des-dataobject-doit-declarer-le-groupe-dobjets-auquel-seront-rattaches-les-autres-fichiers-en-utilisant-la-balise">
+<h4>Méthode 2 : Un des DataObject doit déclarer le groupe d’objets auquel seront rattachés les autres fichiers, en utilisant la balise<a class="headerlink" href="#methode-2-un-des-dataobject-doit-declarer-le-groupe-dobjets-auquel-seront-rattaches-les-autres-fichiers-en-utilisant-la-balise" title="Lien permanent vers cette rubrique"></a></h4>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span> &lt;BinaryDataObject id=&quot;ID011&quot;&gt;
+            &lt;DataObjectGroupId&gt;ID006&lt;/DataObjectGroupId&gt;
+            &lt;DataObjectVersion&gt;BinaryMaster_1&lt;/DataObjectVersion&gt;
+            &lt;Uri&gt;content/e726e114f302c871b64569a00acb3a19badb7ee8ce4aef72cc2a043ace4905b8e8fca6f4771f8d6f67e221a53a4bbe170501af318c8f2c026cc8ea60f66fa804.odp&lt;/Uri&gt;
+            &lt;MessageDigest algorithm=&quot;SHA-512&quot;&gt;e726e114f302c871b64569a00acb3a19badb7ee8ce4aef72cc2a043ace4905b8e8fca6f4771f8d6f67e221a53a4bbe170501af318c8f2c026cc8ea60f66fa804&lt;/MessageDigest&gt;
+            &lt;Size&gt;100646&lt;/Size&gt;
+            &lt;FormatIdentification&gt;
+                &lt;FormatLitteral&gt;OpenDocument Presentation&lt;/FormatLitteral&gt;
+                &lt;MimeType&gt;application/vnd.oasis.opendocument.presentation&lt;/MimeType&gt;
+                &lt;FormatId&gt;fmt/293&lt;/FormatId&gt;
+            &lt;/FormatIdentification&gt;
+            &lt;FileInfo&gt;
+                &lt;Filename&gt;Vitam-Sensibilisation-API-V1.0.odp&lt;/Filename&gt;
+                &lt;CreatingApplicationName&gt;LibreOffice/Impress&lt;/CreatingApplicationName&gt;
+                &lt;CreatingApplicationVersion&gt;5.0.5.2&lt;/CreatingApplicationVersion&gt;
+                &lt;CreatingOs&gt;Windows_X86_64&lt;/CreatingOs&gt;
+                &lt;CreatingOsVersion&gt;10&lt;/CreatingOsVersion&gt;
+                &lt;LastModified&gt;2016-05-05T20:45:20&lt;/LastModified&gt;
+            &lt;/FileInfo&gt;
+        &lt;/BinaryDataObject&gt;
+        &lt;BinaryDataObject id=&quot;ID012&quot;&gt;
+            &lt;DataObjectGroupReferenceId&gt;ID006&lt;/DataObjectGroupReferenceId&gt;
+            &lt;DataObjectVersion&gt;Dissemination_1&lt;/DataObjectVersion&gt;
+            &lt;Uri&gt;content/abead17e841c937187270cb95b0656bf3f7a9e71c8ca95e7fc8efa38cfffcab9889f353a95136fa3073a422d825175bf1bef24dc355bfa081f7e48b106070fd5.pdf&lt;/Uri&gt;
+            &lt;MessageDigest algorithm=&quot;SHA-512&quot;&gt;abead17e841c937187270cb95b0656bf3f7a9e71c8ca95e7fc8efa38cfffcab9889f353a95136fa3073a422d825175bf1bef24dc355bfa081f7e48b106070fd5&lt;/MessageDigest&gt;
+            &lt;Size&gt;186536&lt;/Size&gt;
+            &lt;FormatIdentification&gt;
+                &lt;FormatLitteral&gt;Acrobat PDF 1.4 - Portable Document Format&lt;/FormatLitteral&gt;
+                &lt;MimeType&gt;application/pdf&lt;/MimeType&gt;
+                &lt;FormatId&gt;fmt/18&lt;/FormatId&gt;
+            &lt;/FormatIdentification&gt;
+            &lt;FileInfo&gt;
+                &lt;Filename&gt;Vitam-Sensibilisation-API-V1.0.pdf&lt;/Filename&gt;
+                &lt;CreatingApplicationName&gt;LibreOffice 5.0/Impress&lt;/CreatingApplicationName&gt;
+                &lt;CreatingApplicationVersion&gt;5.0.5.2&lt;/CreatingApplicationVersion&gt;
+                &lt;CreatingOs&gt;Windows_X86_64&lt;/CreatingOs&gt;
+                &lt;CreatingOsVersion&gt;10&lt;/CreatingOsVersion&gt;
+                &lt;LastModified&gt;2016-05-05T20:45:32&lt;/LastModified&gt;
+            &lt;/FileInfo&gt;
+        &lt;/BinaryDataObject&gt;
+</pre></div>
+</div>
+</section>
+</section>
+<section id="annexe-6-rattachement-a-une-archiveunit-deja-presente-dans-une-plate-forme-utilisant-la-solution-logicielle-vitam">
+<h3>Annexe 6 : rattachement à une ArchiveUnit déjà présente  dans une plate-forme utilisant la solution logicielle Vitam<a class="headerlink" href="#annexe-6-rattachement-a-une-archiveunit-deja-presente-dans-une-plate-forme-utilisant-la-solution-logicielle-vitam" title="Lien permanent vers cette rubrique"></a></h3>
+<section id="methode-1">
+<h4>Méthode 1<a class="headerlink" href="#methode-1" title="Lien permanent vers cette rubrique"></a></h4>
+<p>Exemple pour la méthode 1 (demande de rattachement de l’ID3 à l’ArchiveUnit déjà présente dans le système et dont le GUID est aeaqaaaaaihnjdarabzvqak3m2b3qoqaaaaq) :</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&lt;ArchiveUnit id=&quot;ID4&quot;&gt;
+        &lt;Management&gt;
+                &lt;UpdateOperation&gt;
+                            &lt;SystemId&gt;aeaqaaaaaihnjdarabzvqak3m2b3qoqaaaaq&lt;/SystemId&gt;
+                &lt;/UpdateOperation&gt;
+        &lt;/Management&gt;
+        &lt;Content&gt;
+                &lt;DescriptionLevel&gt;RecordGrp&lt;/DescriptionLevel&gt;
+                &lt;Title xml:lang=&quot;fr&quot;&gt;Sénat&lt;/Title&gt;
+        &lt;/Content&gt;
+        &lt;ArchiveUnit id=&quot;ID20&quot;&gt;
+                &lt;ArchiveUnitRefId&gt;ID3&lt;/ArchiveUnitRefId&gt;
+        &lt;/ArchiveUnit&gt;
+&lt;/ArchiveUnit&gt;
+&lt;ArchiveUnit id=&quot;ID3&quot;&gt;
+        &lt;Content&gt;
+                &lt;DescriptionLevel&gt;RecordGrp&lt;/DescriptionLevel&gt;
+                &lt;Title&gt;Discours et interventions de Michel Mercier, garde des sceaux de 2010 à 2012&lt;/Title&gt;
+                &lt;ArchivalAgencyArchiveUnitIdentifier&gt;20130456&lt;/ArchivalAgencyArchiveUnitIdentifier&gt;
+                &lt;OriginatingAgency&gt;
+                          &lt;Identifier&gt;FRAN_NP_009734&lt;/Identifier&gt;
+                &lt;/OriginatingAgency&gt;
+                &lt;StartDate&gt;2010-11-25&lt;/StartDate&gt;
+                &lt;EndDate&gt;2012-05-02&lt;/EndDate&gt;
+        &lt;/Content&gt;
+        &lt;ArchiveUnit id=&quot;ID5&quot;&gt;
+                &lt;ArchiveUnitRefId&gt;ID4&lt;/ArchiveUnitRefId&gt;
+        &lt;/ArchiveUnit&gt;
+        &lt;ArchiveUnit id=&quot;ID619&quot;&gt;
+                &lt;ArchiveUnitRefId&gt;ID618&lt;/ArchiveUnitRefId&gt;
+        &lt;/ArchiveUnit&gt;
+&lt;/ArchiveUnit&gt;
+</pre></div>
+</div>
+</section>
+<section id="methode-2">
+<h4>Méthode 2<a class="headerlink" href="#methode-2" title="Lien permanent vers cette rubrique"></a></h4>
+<p>Exemple pour la méthode 2 (demande de rattachement de l’ID3 à l’ArchiveUnit déjà présente dans le système et dont la valeur du champ FilePlanPosition est « 2.5.1.2. ») :</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&lt;ArchiveUnit id=&quot;ID4&quot;&gt;
+        &lt;Management&gt;
+                &lt;UpdateOperation&gt;
+                            &lt;ArchiveUnitIdentifierKey&gt;
+                                     &lt;MetadataName&gt;FilePlanPoition&lt;/MetadataName&gt;
+                                     &lt;MetadataValue&gt;2.5.1.2.&lt;/MetadataValue&gt;
+                            &lt;/ArchiveUnitIdentifierKey&gt;
+                &lt;/UpdateOperation&gt;
+        &lt;/Management&gt;
+        &lt;Content&gt;
+                &lt;DescriptionLevel&gt;RecordGrp&lt;/DescriptionLevel&gt;
+                &lt;Title&gt;Sénat&lt;/Title&gt;
+        &lt;/Content&gt;
+        &lt;ArchiveUnit id=&quot;ID9&quot;&gt;
+                &lt;ArchiveUnitRefId&gt;ID3&lt;/ArchiveUnitRefId&gt;
+        &lt;/ArchiveUnit&gt;
+&lt;/ArchiveUnit&gt;
+&lt;ArchiveUnit id=&quot;ID3&quot;&gt;
+        &lt;Content&gt;
+                &lt;DescriptionLevel&gt;RecordGrp&lt;/DescriptionLevel&gt;
+                &lt;Title&gt;Discours et interventions de Michel Mercier, garde des sceaux de 2010 à 2012&lt;/Title&gt;
+                &lt;ArchivalAgencyArchiveUnitIdentifier&gt;20130456&lt;/ArchivalAgencyArchiveUnitIdentifier&gt;
+                &lt;OriginatingAgency&gt;
+                          &lt;Identifier&gt;FRAN_NP_009734&lt;/Identifier&gt;
+                &lt;/OriginatingAgency&gt;
+                &lt;StartDate&gt;2010-11-25&lt;/StartDate&gt;
+                &lt;EndDate&gt;2012-05-02&lt;/EndDate&gt;
+        &lt;/Content&gt;
+        &lt;ArchiveUnit id=&quot;ID5&quot;&gt;
+                &lt;ArchiveUnitRefId&gt;ID4&lt;/ArchiveUnitRefId&gt;
+        &lt;/ArchiveUnit&gt;
+        &lt;ArchiveUnit id=&quot;ID619&quot;&gt;
+                &lt;ArchiveUnitRefId&gt;ID618&lt;/ArchiveUnitRefId&gt;
+        &lt;/ArchiveUnit&gt;
+&lt;/ArchiveUnit&gt;
+</pre></div>
+</div>
+</section>
+</section>
+<section id="annexe-7-lien-entre-metadonnees-descriptives-et-metadonnees-techniques-archiveunit-et-groupe-dobjets">
+<h3>Annexe 7 : lien entre métadonnées descriptives et métadonnées techniques (ArchiveUnit et Groupe d’objets)<a class="headerlink" href="#annexe-7-lien-entre-metadonnees-descriptives-et-metadonnees-techniques-archiveunit-et-groupe-dobjets" title="Lien permanent vers cette rubrique"></a></h3>
+<section id="exemple-d-implementation-1">
+<h4>Exemple d’implémentation 1 :<a class="headerlink" href="#exemple-d-implementation-1" title="Lien permanent vers cette rubrique"></a></h4>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&lt;BinaryDataObject id=&quot;ID011&quot;&gt;
+            &lt;DataObjectGroupId&gt;ID006&lt;/DataObjectGroupId&gt;
+            &lt;DataObjectVersion&gt;BinaryMaster&lt;/DataObjectVersion&gt;
+            &lt;Uri&gt;content/BAD0431E2C5E80E5BD42D547A3ED5966.odt&lt;/Uri&gt;
+            &lt;MessageDigest algorithm=&quot;MD5&quot;&gt;BAD0431E2C5E80E5BD42D547A3ED5966&lt;/MessageDigest&gt;
+            &lt;Size&gt;251686&lt;/Size&gt;
+            &lt;FormatIdentification&gt;
+            &lt;/FormatIdentification&gt;
+            &lt;FileInfo&gt;
+                &lt;Filename&gt;manuel_utilisateur_IHM.odt&lt;/Filename&gt;
+            &lt;/FileInfo&gt;
+        &lt;/BinaryDataObject&gt;
+&lt;DescriptiveMetadata&gt;
+            &lt;ArchiveUnit id=&quot;ID015&quot;&gt;
+                &lt;Content&gt;
+                    &lt;DescriptionLevel&gt;Item&lt;/DescriptionLevel&gt;
+                    &lt;Title&gt;manuel utilisateur&lt;/Title&gt;
+                    &lt;Description&gt;Il existe une version papier et une version électronique du manuel utilisateur pour l&#39;IHM minimale de la solution logicielle Vitam&lt;/Description&gt;
+                    &lt;TransactedDate&gt;2016-06-23&lt;/TransactedDate&gt;
+                &lt;/Content&gt;
+                &lt;DataObjectReference&gt; &lt;DataObjectGroupReferenceId&gt;ID006&lt;/DataObjectGroupReferenceId&gt;
+                &lt;/DataObjectReference&gt;
+            &lt;/ArchiveUnit&gt;
+        &lt;/DescriptiveMetadata&gt;
+</pre></div>
+</div>
+</section>
+<section id="exemple-d-implementation-2">
+<h4>Exemple d’implémentation 2 :<a class="headerlink" href="#exemple-d-implementation-2" title="Lien permanent vers cette rubrique"></a></h4>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&lt;BinaryDataObject id=&quot;ID011&quot;&gt;
+&lt;Uri&gt;content/BAD0431E2C5E80E5BD42D547A3ED5966.odt&lt;/Uri&gt;
+            &lt;MessageDigest algorithm=&quot;MD5&quot;&gt;BAD0431E2C5E80E5BD42D547A3ED5966&lt;/MessageDigest&gt;
+            &lt;Size&gt;251686&lt;/Size&gt;
+            &lt;FormatIdentification&gt;
+            &lt;/FormatIdentification&gt;
+            &lt;FileInfo&gt;
+                &lt;Filename&gt;manuel_utilisateur_IHM.odt&lt;/Filename&gt;
+            &lt;/FileInfo&gt;
+        &lt;/BinaryDataObject&gt;
+&lt;DescriptiveMetadata&gt;
+            &lt;ArchiveUnit id=&quot;ID015&quot;&gt;
+                &lt;Content&gt;
+                    &lt;DescriptionLevel&gt;Item&lt;/DescriptionLevel&gt;
+                    &lt;Title&gt;manuel utilisateur&lt;/Title&gt;
+                    &lt;Description&gt;Il existe une version papier et une version électronique du manuel utilisateur pour l&#39;IHM minimale de la solution logicielle Vitam&lt;/Description&gt;
+                    &lt;TransactedDate&gt;2016-06-23&lt;/TransactedDate&gt;
+                &lt;/Content&gt;
+                &lt;DataObjectReference&gt; &lt;DataObjectReferenceId&gt;ID011&lt;/DataObjectReferenceId&gt;
+                &lt;/DataObjectReference&gt;
+            &lt;/ArchiveUnit&gt;
+        &lt;/DescriptiveMetadata&gt;
+</pre></div>
+</div>
+</section>
+</section>
+<section id="annexe-8-ajout-dun-objet-a-un-groupe-dobjets-existant-dans-une-plate-forme-utilisant-la-solution-logicielle-vitam">
+<h3>Annexe 8 : Ajout d’un objet à un groupe d’objets existant dans une plate-forme utilisant la solution logicielle Vitam<a class="headerlink" href="#annexe-8-ajout-dun-objet-a-un-groupe-dobjets-existant-dans-une-plate-forme-utilisant-la-solution-logicielle-vitam" title="Lien permanent vers cette rubrique"></a></h3>
+<section id="exemple-pour-la-methode-1">
+<h4>Exemple pour la méthode 1 :<a class="headerlink" href="#exemple-pour-la-methode-1" title="Lien permanent vers cette rubrique"></a></h4>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&lt;ArchiveUnit id=&quot;ID4&quot;&gt;
+        &lt;Management&gt;
+                &lt;UpdateOperation&gt;
+                            &lt;SystemId&gt;aeaqaaaaaihnjdarabzvqak3m2b3qoqaaaaq&lt;/SystemId&gt;
+                &lt;/UpdateOperation&gt;
+        &lt;/Management&gt;
+        &lt;Content&gt;
+                &lt;DescriptionLevel&gt;Item&lt;/DescriptionLevel&gt;
+                &lt;Title xml:lang=&quot;fr&quot;&gt;Discours prononcé lors de la discussion générale en deuxième lecture de la proposition de loi Warsmann de simplification et d&#39;amélioration de la qualité du droit&lt;/Title&gt;
+        &lt;/Content&gt;
+        &lt;DataObjectReference&gt;
+                &lt;DataObjectGroupReferenceId&gt;ID4&lt;/DataObjectGroupReferenceId&gt;
+        &lt;/DataObjectReference&gt;
+&lt;/ArchiveUnit&gt;
+</pre></div>
+</div>
+</section>
+<section id="exemple-pour-la-methode-2">
+<h4>Exemple pour la méthode 2 :<a class="headerlink" href="#exemple-pour-la-methode-2" title="Lien permanent vers cette rubrique"></a></h4>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&lt;ArchiveUnit id=&quot;ID4&quot;&gt;
+        &lt;Management&gt;
+                &lt;UpdateOperation&gt;
+                            &lt;ArchiveUnitIdentifierKey&gt;
+                                     &lt;MetadataName&gt;FilePlanPosition&lt;/MetadataName&gt;
+                                     &lt;MetadataValue&gt;2.5.1.2.&lt;/MetadataValue&gt;
+                            &lt;/ArchiveUnitIdentifierKey&gt;
+                &lt;/UpdateOperation&gt;
+        &lt;/Management&gt;
+        &lt;Content&gt;
+                &lt;DescriptionLevel&gt;RecordGrp&lt;/DescriptionLevel&gt;
+                &lt;Title&gt;Sénat&lt;/Title&gt;
+        &lt;/Content&gt;
+        &lt;DataObjectReference&gt;
+                &lt;DataObjectGroupReferenceId&gt;ID4&lt;/DataObjectGroupReferenceId&gt;
+        &lt;/DataObjectReference&gt;
+&lt;/ArchiveUnit&gt;
+</pre></div>
+</div>
+<p>[^1] : Disponible à l’adresse suivante (lien vérifié le 15/02/2023) : <a class="reference external" href="https://francearchives.fr/seda/">pour le SEDA 2.1</a> et <a class="reference external" href="https://github.com/culturecommunication/seda">pour le SEDA 2.2</a>.</p>
+<p>[^2] : Voir la documentation spécifique aux profils d’archivage et/ou aux profils d’unité archivistique. À noter que le SEDA 2.2. introduit la notion de profil d’objet, non implémentée par la solution logicielle Vitam au terme de la version 6.</p>
+<p>[^3] : Pour les projets en phase d’initialisation, il est recommandé d’utiliser la version 2.2. du SEDA.</p>
+<p>[^4] : Pour tous les formats acceptés dans la norme ISO 8601, il est possible de spécifier le fuseau horaire : https://fr.wikipedia.org/wiki/ISO_8601#Fuseau_horaire</p>
+<p>[^5] : Si elles sont présentes et selon leur formalisation, les séquences de type « &lt; !– », « – !&gt; », « &lt;– » ou encore « –&gt; » provoqueront un rejet du SIP en entrée ou seront ignorées.</p>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Programme Vitam.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: master
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Branches</dt>
+      <dd><a href="SIP.html">master</a></dd>
+      <dd><a href="../../master_6.rc.x/index.html">master_6.rc.x</a></dd>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>
