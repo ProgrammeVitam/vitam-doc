@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>9. Ontologie &mdash; Vitam documentation fonctionnelle</title>
+  <title>8. Ontologie &mdash; Vitam documentation fonctionnelle</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
@@ -19,8 +19,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
-    <link rel="next" title="10. Gestion de la préservation" href="preservation.html" />
-    <link rel="prev" title="8. Module de collecte" href="module_de_collecte.html" /> 
+    <link rel="next" title="9. Gestion de la préservation" href="preservation.html" />
+    <link rel="prev" title="7. Module de collecte" href="module_de_collecte.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -53,73 +53,75 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">documentation métier</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="valeur_probante.html">1. Conservation de la valeur probante</a></li>
-<li class="toctree-l1"><a class="reference internal" href="eliminations.html">2. Les éliminations avec la solution logicielle Vitam</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gel.html">3. Le gel d’archives avec la solution logicielle Vitam</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gestion_archives_arbo.html">4. Gestion des archives et des arborescences</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gestion_habilitations.html">5. Gestion des habilitations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modele_de_donnees.html">6. Modèle de données</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modele_de_workflow.html">7. Description des workflows et des opérations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="module_de_collecte.html">8. Module de collecte</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">9. Ontologie</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#introduction">9.1. Introduction</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#documents-de-reference">9.1.1. Documents de référence</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#presentation-du-document">9.1.2. Présentation du document</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eliminations.html">1. Les éliminations avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gel.html">2. Le gel d’archives avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gestion_archives_arbo.html">3. Gestion des archives et des arborescences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gestion_habilitations.html">4. Gestion des habilitations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_donnees.html">5. Modèle de données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_workflow.html">6. Description des workflows et des opérations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_de_collecte.html">7. Module de collecte</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">8. Ontologie</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">8.1. Introduction</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#documents-de-reference">8.1.1. Documents de référence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#presentation-du-document">8.1.2. Présentation du document</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#presentation-de-la-notion-dontologie">9.2. Présentation de la notion d’ontologie</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#quest-ce-quune-ontologie">9.2.1. Qu’est-ce qu’une ontologie ?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#pourquoi-une-ontologie">9.2.2. Pourquoi une ontologie ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#presentation-de-la-notion-dontologie">8.2. Présentation de la notion d’ontologie</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#quest-ce-quune-ontologie">8.2.1. Qu’est-ce qu’une ontologie ?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pourquoi-une-ontologie">8.2.2. Pourquoi une ontologie ?</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#formalisation-des-vocabulaires-ontologiques">9.3. Formalisation des vocabulaires ontologiques</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#dans-un-fichier-json">9.3.1. Dans un fichier JSON</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#dans-la-solution-logicielle-vitam">9.3.2. Dans la solution logicielle Vitam</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#dans-le-standard-dechange-de-donnees-pour-larchivage-seda">9.3.3. Dans le Standard d’échange de données pour l’archivage (SEDA)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#mecanismes-mis-en-oeuvre-dans-la-solution-logicielle-vitam">9.3.4. Mécanismes mis en œuvre dans la solution logicielle Vitam</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#administration-de-l-ontologie">9.3.5. Administration de l’ontologie</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#import-de-lontologie">9.3.5.1. Import de l’ontologie</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#modification-de-l-ontologie">9.3.5.2. Modification de l’ontologie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#formalisation-des-vocabulaires-ontologiques">8.3. Formalisation des vocabulaires ontologiques</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#dans-un-fichier-json">8.3.1. Dans un fichier JSON</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dans-la-solution-logicielle-vitam">8.3.2. Dans la solution logicielle Vitam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dans-le-standard-dechange-de-donnees-pour-larchivage-seda">8.3.3. Dans le Standard d’échange de données pour l’archivage (SEDA)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mecanismes-mis-en-oeuvre-dans-la-solution-logicielle-vitam">8.3.4. Mécanismes mis en œuvre dans la solution logicielle Vitam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#administration-de-l-ontologie">8.3.5. Administration de l’ontologie</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#import-de-lontologie">8.3.5.1. Import de l’ontologie</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#modification-de-l-ontologie">8.3.5.2. Modification de l’ontologie</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#controle-de-l-ontologie-sur-les-profils-dunite-archivistique">9.3.6. Contrôle de l’ontologie sur les profils d’unité archivistique</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#processus-dentree">9.3.6.1. Processus d’entrée</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#controle-de-l-ontologie-sur-les-profils-dunite-archivistique">8.3.6. Contrôle de l’ontologie sur les profils d’unité archivistique</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#processus-dentree">8.3.6.1. Processus d’entrée</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#acces">9.3.7. Accès</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#affichage-dynamique-des-traductions">9.3.7.1. Affichage dynamique des traductions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#optimisation-de-la-recherche">9.3.7.2. Optimisation de la recherche</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#controle-lors-de-la-mise-a-jour-des-unites-archivistiques">9.3.7.3. Contrôle lors de la mise à jour des unités archivistiques</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#acces">8.3.7. Accès</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#affichage-dynamique-des-traductions">8.3.7.1. Affichage dynamique des traductions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#optimisation-de-la-recherche">8.3.7.2. Optimisation de la recherche</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controle-lors-de-la-mise-a-jour-des-unites-archivistiques">8.3.7.3. Contrôle lors de la mise à jour des unités archivistiques</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#conseils-de-mise-en-oeuvre">9.4. Conseils de mise en œuvre</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#quand-et-comment-creer-une-ontologie">9.4.1. Quand et comment créer une ontologie ?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#quand-et-comment-creer-un-vocabulaire">9.4.2. Quand et comment créer un vocabulaire ?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#quand-et-comment-modifier-un-type-dindexation">9.4.3. Quand et comment modifier un type d’indexation ?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#quels-sont-les-types-dindexation-compatibles-entre-un-profil-dunite-archivistique-et-des-vocabulaires-ontologiques">9.4.4. Quels sont les types d’indexation compatibles entre un profil d’unité archivistique et des vocabulaires ontologiques ?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#quand-et-comment-supprimer-un-vocabulaire">9.4.5. Quand et comment supprimer un vocabulaire ?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#comment-mettre-a-jour-une-unite-archivistique-associee-ou-non-a-un-profil-dunite-archivistique">9.4.6. Comment mettre à jour une unité archivistique associée ou non à un profil d’unité archivistique ?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#quand-et-comment-modifier-des-vocabulaires-internes">9.4.7. Quand et comment modifier des vocabulaires internes ?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#quel-acces-a-lontologie">9.4.8. Quel accès à l’ontologie ?</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#gestion-des-droits">9.4.8.1. Gestion des droits</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#restitution-sur-une-ihm">9.4.8.2. Restitution sur une IHM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#conseils-de-mise-en-oeuvre">8.4. Conseils de mise en œuvre</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#quand-et-comment-creer-une-ontologie">8.4.1. Quand et comment créer une ontologie ?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#quand-et-comment-creer-un-vocabulaire">8.4.2. Quand et comment créer un vocabulaire ?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#quand-et-comment-modifier-un-type-dindexation">8.4.3. Quand et comment modifier un type d’indexation ?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#quels-sont-les-types-dindexation-compatibles-entre-un-profil-dunite-archivistique-et-des-vocabulaires-ontologiques">8.4.4. Quels sont les types d’indexation compatibles entre un profil d’unité archivistique et des vocabulaires ontologiques ?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#quand-et-comment-supprimer-un-vocabulaire">8.4.5. Quand et comment supprimer un vocabulaire ?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#comment-mettre-a-jour-une-unite-archivistique-associee-ou-non-a-un-profil-dunite-archivistique">8.4.6. Comment mettre à jour une unité archivistique associée ou non à un profil d’unité archivistique ?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#quand-et-comment-modifier-des-vocabulaires-internes">8.4.7. Quand et comment modifier des vocabulaires internes ?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#quel-acces-a-lontologie">8.4.8. Quel accès à l’ontologie ?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#gestion-des-droits">8.4.8.1. Gestion des droits</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#restitution-sur-une-ihm">8.4.8.2. Restitution sur une IHM</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#comment-utiliser-lontologie">9.4.9. Comment utiliser l’ontologie ?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#comment-utiliser-lontologie">8.4.9. Comment utiliser l’ontologie ?</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#annexe-1-vocabulaires-internes-de-lontologie">9.5. Annexe 1 : Vocabulaires internes de l’ontologie</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#annexe-2-types-json-conformes-au-type-dindexation-des-vocabulaires-internes">9.6. Annexe 2 : Types JSON conformes au type d’indexation des vocabulaires internes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#notes">9.7. Notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#annexe-1-vocabulaires-internes-de-lontologie">8.5. Annexe 1 : Vocabulaires internes de l’ontologie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#annexe-2-types-json-conformes-au-type-dindexation-des-vocabulaires-internes">8.6. Annexe 2 : Types JSON conformes au type d’indexation des vocabulaires internes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#notes">8.7. Notes</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="preservation.html">10. Gestion de la préservation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="profil_archivage.html">11. Profils d’archivage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preservation.html">9. Gestion de la préservation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_archivage.html">10. Profils d’archivage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_unite_archivistique.html">11. Profils d’unité archivistique</a></li>
 <li class="toctree-l1"><a class="reference internal" href="regles_gestion.html">12. Règles de gestion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="services_prod.html">13. Services producteurs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="transfert.html">14. Le transfert avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stockage.html">14. Gestion de multiples stratégies de stockage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transfert.html">15. Le transfert avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="valeur_probante.html">16. Conservation de la valeur probante</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">documentation Vitam UI</span></p>
 <ul>
@@ -129,6 +131,10 @@
 <p class="caption" role="heading"><span class="caption-text">outils connexes</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="resip.html">1. RESIP</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Chantier préservation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="chantier_preservation_validation_format.html">1. Validation du format des fichiers</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Vademecum</span></p>
 <ul>
@@ -177,7 +183,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active"><span class="section-number">9. </span>Ontologie</li>
+      <li class="breadcrumb-item active"><span class="section-number">8. </span>Ontologie</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/sections/ontologie.md.txt" rel="nofollow"> Afficher la source de la page</a>
       </li>
@@ -190,11 +196,11 @@
            <div itemprop="articleBody">
              
   <section id="ontologie">
-<span id="target-ontologie"></span><h1><span class="section-number">9. </span>Ontologie<a class="headerlink" href="#ontologie" title="Lien permanent vers cette rubrique"></a></h1>
+<span id="target-ontologie"></span><h1><span class="section-number">8. </span>Ontologie<a class="headerlink" href="#ontologie" title="Lien permanent vers cette rubrique"></a></h1>
 <section id="introduction">
-<h2><span class="section-number">9.1. </span>Introduction<a class="headerlink" href="#introduction" title="Lien permanent vers cette rubrique"></a></h2>
+<h2><span class="section-number">8.1. </span>Introduction<a class="headerlink" href="#introduction" title="Lien permanent vers cette rubrique"></a></h2>
 <section id="documents-de-reference">
-<h3><span class="section-number">9.1.1. </span>Documents de référence<a class="headerlink" href="#documents-de-reference" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">8.1.1. </span>Documents de référence<a class="headerlink" href="#documents-de-reference" title="Lien permanent vers cette rubrique"></a></h3>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p><strong>Document</strong></p></th>
@@ -227,7 +233,7 @@
 </table>
 </section>
 <section id="presentation-du-document">
-<h3><span class="section-number">9.1.2. </span>Présentation du document<a class="headerlink" href="#presentation-du-document" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">8.1.2. </span>Présentation du document<a class="headerlink" href="#presentation-du-document" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Le document présente les fonctionnalités associées à la prise en compte
 de la notion d’ontologie dans la solution logicielle Vitam.</p>
 <p>Il s’articule autour des axes suivants :</p>
@@ -248,9 +254,9 @@ programme.</p>
 </section>
 </section>
 <section id="presentation-de-la-notion-dontologie">
-<h2><span class="section-number">9.2. </span>Présentation de la notion d’ontologie<a class="headerlink" href="#presentation-de-la-notion-dontologie" title="Lien permanent vers cette rubrique"></a></h2>
+<h2><span class="section-number">8.2. </span>Présentation de la notion d’ontologie<a class="headerlink" href="#presentation-de-la-notion-dontologie" title="Lien permanent vers cette rubrique"></a></h2>
 <section id="quest-ce-quune-ontologie">
-<h3><span class="section-number">9.2.1. </span>Qu’est-ce qu’une ontologie ?<a class="headerlink" href="#quest-ce-quune-ontologie" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">8.2.1. </span>Qu’est-ce qu’une ontologie ?<a class="headerlink" href="#quest-ce-quune-ontologie" title="Lien permanent vers cette rubrique"></a></h3>
 <p>L’ontologie référence l’<strong>ensemble des vocabulaires</strong> ou métadonnées acceptés dans la solution logicielle Vitam. Pour chacun de ces vocabulaires, elle définit un intitulé et un type d’indexation particulier (par exemple : texte, décimal, entier), ainsi que la(les) collection(s) de la solution logicielle Vitam qui l”(les) utilise(nt)<a class="footnote-reference brackets" href="#id50" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
 <p><img alt="Illustration 1: Les éléments dans l’ontologie" src="../_images/10000000000004630000031AB5C0593816E680A7.jpg" /></p>
 <ul class="simple">
@@ -333,7 +339,7 @@ programme.</p>
 <p>En d’autres termes, l’ontologie <strong>référence seulement les vocabulaires pouvant contenir des valeurs</strong> (ou métadonnées) quand ils sont utilisés.</p>
 </section>
 <section id="pourquoi-une-ontologie">
-<h3><span class="section-number">9.2.2. </span>Pourquoi une ontologie ?<a class="headerlink" href="#pourquoi-une-ontologie" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">8.2.2. </span>Pourquoi une ontologie ?<a class="headerlink" href="#pourquoi-une-ontologie" title="Lien permanent vers cette rubrique"></a></h3>
 <p>L’ontologie répond à plusieurs besoins :</p>
 <ul class="simple">
 <li><p>regrouper toutes les façons de nommer un même objet intellectuel et disposer d’une liste de l’ensemble des vocabulaires gérés nativement par la solution logicielle Vitam, précisant :</p>
@@ -358,9 +364,9 @@ programme.</p>
 </section>
 </section>
 <section id="formalisation-des-vocabulaires-ontologiques">
-<h2><span class="section-number">9.3. </span>Formalisation des vocabulaires ontologiques<a class="headerlink" href="#formalisation-des-vocabulaires-ontologiques" title="Lien permanent vers cette rubrique"></a></h2>
+<h2><span class="section-number">8.3. </span>Formalisation des vocabulaires ontologiques<a class="headerlink" href="#formalisation-des-vocabulaires-ontologiques" title="Lien permanent vers cette rubrique"></a></h2>
 <section id="dans-un-fichier-json">
-<h3><span class="section-number">9.3.1. </span>Dans un fichier JSON<a class="headerlink" href="#dans-un-fichier-json" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">8.3.1. </span>Dans un fichier JSON<a class="headerlink" href="#dans-un-fichier-json" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Un référentiel ontologique, ou ontologie, liste l’ensemble des vocabulaires pouvant être utilisés par la solution logicielle Vitam. Ce référentiel est importé sous la forme d’un fichier JSON, contenant systématiquement l’ensemble des vocabulaires utilisés.</p>
 <p>Exemple : deux vocabulaires contenant uniquement les informations obligatoires pour être importés avec succès.                                                                                                                                                                                                                                                                                                                                                                                                    |</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
@@ -390,7 +396,7 @@ programme.</p>
 </ul>
 </section>
 <section id="dans-la-solution-logicielle-vitam">
-<h3><span class="section-number">9.3.2. </span>Dans la solution logicielle Vitam<a class="headerlink" href="#dans-la-solution-logicielle-vitam" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">8.3.2. </span>Dans la solution logicielle Vitam<a class="headerlink" href="#dans-la-solution-logicielle-vitam" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Les vocabulaires sont enregistrés dans la base de données MongoDB, dans la collection « Ontology », sous la forme d’enregistrements au format JSON.</p>
 <p>Chaque enregistrement est modélisé comme suit<a class="footnote-reference brackets" href="#id54" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a> :</p>
 <table class="docutils align-default">
@@ -428,7 +434,7 @@ programme.</p>
 </table>
 </section>
 <section id="dans-le-standard-dechange-de-donnees-pour-larchivage-seda">
-<h3><span class="section-number">9.3.3. </span>Dans le Standard d’échange de données pour l’archivage (SEDA)<a class="headerlink" href="#dans-le-standard-dechange-de-donnees-pour-larchivage-seda" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">8.3.3. </span>Dans le Standard d’échange de données pour l’archivage (SEDA)<a class="headerlink" href="#dans-le-standard-dechange-de-donnees-pour-larchivage-seda" title="Lien permanent vers cette rubrique"></a></h3>
 <p>L’ontologie reprend des éléments définis dans la norme NF Z 44‑022 et dans sa déclinaison pour les acteurs du service public, le Standard d’échanges de données pour l’archivage (SEDA).</p>
 <p>Un bordereau de transfert utilise de fait les vocabulaires définis dans l’ontologie de la solution logicielle Vitam.</p>
 <p>La norme NF Z 44‑022 offre la possibilité d’ajouter des éléments supplémentaires, appelés « extensions » :</p>
@@ -497,7 +503,7 @@ programme.</p>
 <p>Ces extensions doivent être qualifiées d’origine « EXTERNAL » dans l’ontologie.</p>
 </section>
 <section id="mecanismes-mis-en-oeuvre-dans-la-solution-logicielle-vitam">
-<h3><span class="section-number">9.3.4. </span>Mécanismes mis en œuvre dans la solution logicielle Vitam<a class="headerlink" href="#mecanismes-mis-en-oeuvre-dans-la-solution-logicielle-vitam" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">8.3.4. </span>Mécanismes mis en œuvre dans la solution logicielle Vitam<a class="headerlink" href="#mecanismes-mis-en-oeuvre-dans-la-solution-logicielle-vitam" title="Lien permanent vers cette rubrique"></a></h3>
 <p>La solution logicielle Vitam offre à un service d’archives ou à un service externe plusieurs fonctionnalités lui permettant de mettre en œuvre des vocabulaires ontologiques :</p>
 <ul class="simple">
 <li><p>en termes d’administration :</p>
@@ -517,19 +523,19 @@ programme.</p>
 </ul>
 </section>
 <section id="administration-de-l-ontologie">
-<h3><span class="section-number">9.3.5. </span>Administration de l’ontologie<a class="headerlink" href="#administration-de-l-ontologie" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">8.3.5. </span>Administration de l’ontologie<a class="headerlink" href="#administration-de-l-ontologie" title="Lien permanent vers cette rubrique"></a></h3>
 <p>La solution logicielle Vitam intègre une ontologie, administrable par un utilisateur doté des droits adéquats (<strong>administrateur fonctionnel et administrateur technique</strong>) et gérée dans une collection particulière<a class="footnote-reference brackets" href="#id56" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></a>.</p>
 <p>Ce référentiel interne à la solution logicielle Vitam a pour vocation d’être une copie locale d’un référentiel administré dans le front office des plates-formes d’archivage implémentant cette dernière.</p>
 <p>L’ontologie est multi-tenant. Elle est administrable et journalisée depuis le <strong>tenant d’administration</strong>.</p>
 <p>Il est possible de réaliser les opérations présentées ci-dessous.</p>
 <section id="import-de-lontologie">
-<h4><span class="section-number">9.3.5.1. </span>Import de l’ontologie<a class="headerlink" href="#import-de-lontologie" title="Lien permanent vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.3.5.1. </span>Import de l’ontologie<a class="headerlink" href="#import-de-lontologie" title="Lien permanent vers cette rubrique"></a></h4>
 <p>La solution logicielle Vitam intègre une ontologie, <strong>automatiquement importée lors de l’initialisation de la plate-forme,</strong> et comportant les vocabulaires internes à la solution.</p>
 <p>Il est possible d’importer l’ontologie sous la forme d’un fichier JSON, fonctionnant en mode « esclave », depuis le tenant d’administration. Cette opération peut s’effectuer depuis l’APP VitamUI «  Ontologie ».</p>
 <p>Il s’agit d’une opération d’administration (« MASTERDATA »), tracée dans le journal des opérations de la solution logicielle Vitam<a class="footnote-reference brackets" href="#id57" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>8<span class="fn-bracket">]</span></a>.</p>
 </section>
 <section id="modification-de-l-ontologie">
-<h4><span class="section-number">9.3.5.2. </span>Modification de l’ontologie<a class="headerlink" href="#modification-de-l-ontologie" title="Lien permanent vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.3.5.2. </span>Modification de l’ontologie<a class="headerlink" href="#modification-de-l-ontologie" title="Lien permanent vers cette rubrique"></a></h4>
 <p>La modification de l’ontologie est possible :</p>
 <ul class="simple">
 <li><p>au moyen des API et de l’IHM standard fournie avec la solution logicielle Vitam et s’effectue par un réimport complet de l’ontologie, en mode « annule et remplace ». De fait, la solution logicielle Vitam permet de :</p>
@@ -593,7 +599,7 @@ programme.</p>
 </section>
 </section>
 <section id="controle-de-l-ontologie-sur-les-profils-dunite-archivistique">
-<h3><span class="section-number">9.3.6. </span>Contrôle de l’ontologie sur les profils d’unité archivistique<a class="headerlink" href="#controle-de-l-ontologie-sur-les-profils-dunite-archivistique" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">8.3.6. </span>Contrôle de l’ontologie sur les profils d’unité archivistique<a class="headerlink" href="#controle-de-l-ontologie-sur-les-profils-dunite-archivistique" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Lors de la création ou de la mise à jour de profils d’unité archivistique (ou documents type), la solution logicielle Vitam vérifie que les profils d’unité archivistique déclarent des vocabulaires existant dans l’ontologie.</p>
 <p>L’import ou la mise à jour d’un profil d’unité archivistique peut échouer pour les motifs suivants :</p>
 <ul class="simple">
@@ -605,7 +611,7 @@ programme.</p>
 <li><p>La solution logicielle Vitam n’effectue pas de contrôle sur la conformité des vocabulaires par rapport à leur type d’indexation dans l’ontologie, lors de la création de profils d’unité archivistique. Néanmoins, il est obligatoire que le type du vocabulaire défini dans le schéma de contrôle corresponde au type d’indexation du vocabulaire tel qu’il est défini dans l’ontologie<a class="footnote-reference brackets" href="#id65" id="id16" role="doc-noteref"><span class="fn-bracket">[</span>16<span class="fn-bracket">]</span></a>.</p></li>
 </ul>
 <section id="processus-dentree">
-<h4><span class="section-number">9.3.6.1. </span>Processus d’entrée<a class="headerlink" href="#processus-dentree" title="Lien permanent vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.3.6.1. </span>Processus d’entrée<a class="headerlink" href="#processus-dentree" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Dans le cadre du processus d’entrée d’un ensemble d’archives, suite à la réception d’un message ArchiveTransfer du SEDA, parmi les tâches et traitements internes qu’elle effectue, la solution logicielle Vitam <strong>vérifie :</strong></p>
 <ul>
 <li><p>pour les unités archivistiques, que :</p>
@@ -629,9 +635,9 @@ programme.</p>
 </section>
 </section>
 <section id="acces">
-<h3><span class="section-number">9.3.7. </span>Accès<a class="headerlink" href="#acces" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">8.3.7. </span>Accès<a class="headerlink" href="#acces" title="Lien permanent vers cette rubrique"></a></h3>
 <section id="affichage-dynamique-des-traductions">
-<h4><span class="section-number">9.3.7.1. </span>Affichage dynamique des traductions<a class="headerlink" href="#affichage-dynamique-des-traductions" title="Lien permanent vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.3.7.1. </span>Affichage dynamique des traductions<a class="headerlink" href="#affichage-dynamique-des-traductions" title="Lien permanent vers cette rubrique"></a></h4>
 <p>L’ontologie contenant la traduction des différents vocabulaires supportés par la solution logicielle Vitam, il est possible, en accès :</p>
 <ul class="simple">
 <li><p>d’utiliser ce référentiel comme un fichier de propriétés pour récupérer les traductions, plutôt que ce soit l’IHM qui porte ces informations. Ainsi, cela évitera de constater des absences de traduction des vocabulaires externes récemment créés ;</p></li>
@@ -643,11 +649,11 @@ programme.</p>
 <p><img alt="illustration 2" src="../_images/10000201000002AB00000168AC1949D42C34E522.png" /></p>
 </section>
 <section id="optimisation-de-la-recherche">
-<h4><span class="section-number">9.3.7.2. </span>Optimisation de la recherche<a class="headerlink" href="#optimisation-de-la-recherche" title="Lien permanent vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.3.7.2. </span>Optimisation de la recherche<a class="headerlink" href="#optimisation-de-la-recherche" title="Lien permanent vers cette rubrique"></a></h4>
 <p>L’ontologie définit les types d’indexation des différents vocabulaires, sur lesquels il faut s’appuyer afin de pouvoir optimiser les modalités de recherche.</p>
 </section>
 <section id="controle-lors-de-la-mise-a-jour-des-unites-archivistiques">
-<h4><span class="section-number">9.3.7.3. </span>Contrôle lors de la mise à jour des unités archivistiques<a class="headerlink" href="#controle-lors-de-la-mise-a-jour-des-unites-archivistiques" title="Lien permanent vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.3.7.3. </span>Contrôle lors de la mise à jour des unités archivistiques<a class="headerlink" href="#controle-lors-de-la-mise-a-jour-des-unites-archivistiques" title="Lien permanent vers cette rubrique"></a></h4>
 <p>La solution logicielle Vitam permet en outre de modifier :</p>
 <ul class="simple">
 <li><p>les métadonnées d’une <strong>unité archivistique déclarant un profil d’unité archivistique</strong>, à la condition que l’unité archivistique reste conforme à ce profil d’unité archivistique et, de fait, aux vocabulaires définis dans le profil d’unité archivistique. Cette conformité vaut aussi bien pour les vocabulaires utilisés que pour les valeurs utilisées<a class="footnote-reference brackets" href="#id66" id="id17" role="doc-noteref"><span class="fn-bracket">[</span>17<span class="fn-bracket">]</span></a>. Par exemple, un vocabulaire de type « entier » tel que « AgeDuCapitaine » ne peut être mis à jour pour inclure une valeur textuelle s’il est
@@ -664,15 +670,15 @@ indexé comme entier ;</p></li>
 </section>
 </section>
 <section id="conseils-de-mise-en-oeuvre">
-<h2><span class="section-number">9.4. </span>Conseils de mise en œuvre<a class="headerlink" href="#conseils-de-mise-en-oeuvre" title="Lien permanent vers cette rubrique"></a></h2>
+<h2><span class="section-number">8.4. </span>Conseils de mise en œuvre<a class="headerlink" href="#conseils-de-mise-en-oeuvre" title="Lien permanent vers cette rubrique"></a></h2>
 <p>À l’issue de cette première phase de réalisation de fonctionnalités concernant l’ontologie, l’équipe projet Vitam est en mesure de fournir quelques recommandations de mise en œuvre :</p>
 <section id="quand-et-comment-creer-une-ontologie">
-<h3><span class="section-number">9.4.1. </span>Quand et comment créer une ontologie ?<a class="headerlink" href="#quand-et-comment-creer-une-ontologie" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">8.4.1. </span>Quand et comment créer une ontologie ?<a class="headerlink" href="#quand-et-comment-creer-une-ontologie" title="Lien permanent vers cette rubrique"></a></h3>
 <p>La création d’une ontologie est un préalable à l’utilisation des vocabulaires dans la solution logicielle Vitam. C’est pourquoi, lors de l’installation de la solution logicielle Vitam, une ontologie est initialisée par défaut. Elle contient l’ensemble des vocabulaires supportés par la solution logicielle Vitam, c’est-à-dire des vocabulaires internes. Leur type d’indexation est conforme à l’indexation réalisée dans le moteur de recherche Elastic Search.</p>
 <p><strong>Un administrateur fonctionnel n’a pas besoin, <em><strong><strong>a priori</strong></strong></em>, de créer une ontologie</strong>. Il s’agit d’un acte d’exploitation technique.</p>
 </section>
 <section id="quand-et-comment-creer-un-vocabulaire">
-<h3><span class="section-number">9.4.2. </span>Quand et comment créer un vocabulaire ?<a class="headerlink" href="#quand-et-comment-creer-un-vocabulaire" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">8.4.2. </span>Quand et comment créer un vocabulaire ?<a class="headerlink" href="#quand-et-comment-creer-un-vocabulaire" title="Lien permanent vers cette rubrique"></a></h3>
 <p>La création d’un nouveau vocabulaire s’effectue :</p>
 <ul>
 <li><p>au moyen des l’API et de l’IHM standard fournie avec la solution logicielle Vitam, par un réimport complet du référentiel, auquel a été ajouté un vocabulaire supplémentaire, d’origine externe.</p></li>
@@ -806,7 +812,7 @@ indexé comme entier ;</p></li>
 </table>
 </section>
 <section id="quand-et-comment-modifier-un-type-dindexation">
-<h3><span class="section-number">9.4.3. </span>Quand et comment modifier un type d’indexation ?<a class="headerlink" href="#quand-et-comment-modifier-un-type-dindexation" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">8.4.3. </span>Quand et comment modifier un type d’indexation ?<a class="headerlink" href="#quand-et-comment-modifier-un-type-dindexation" title="Lien permanent vers cette rubrique"></a></h3>
 <p>La mise à jour du type d’indexation d’un vocabulaire s’effectue, depuis le tenant d’administration :</p>
 <ul class="simple">
 <li><p>de l’IHM standard par un réimport complet du référentiel, après avoir modifié le type d’indexation d’un à plusieurs vocabulaires ;</p></li>
@@ -931,7 +937,7 @@ indexé comme entier ;</p></li>
 </table>
 </section>
 <section id="quels-sont-les-types-dindexation-compatibles-entre-un-profil-dunite-archivistique-et-des-vocabulaires-ontologiques">
-<h3><span class="section-number">9.4.4. </span>Quels sont les types d’indexation compatibles entre un profil d’unité archivistique et des vocabulaires ontologiques ?<a class="headerlink" href="#quels-sont-les-types-dindexation-compatibles-entre-un-profil-dunite-archivistique-et-des-vocabulaires-ontologiques" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">8.4.4. </span>Quels sont les types d’indexation compatibles entre un profil d’unité archivistique et des vocabulaires ontologiques ?<a class="headerlink" href="#quels-sont-les-types-dindexation-compatibles-entre-un-profil-dunite-archivistique-et-des-vocabulaires-ontologiques" title="Lien permanent vers cette rubrique"></a></h3>
 <p>La solution logicielle Vitam n’effectue pas de contrôles de conformité entre un vocabulaire défini dans l’ontologie et la manière dont il est décrit dans un profil d’unité archivistique au moment de la création de celui-ci.</p>
 <p>Mais elle effectue des contrôles en entrée et à la mise à jour des unités archivistiques, ce qui rend nécessaire de maintenir une cohérence entre les types définis dans l’ontologie et ceux définis dans un profil d’unité archivistique.</p>
 <p>De fait, en fonction de son type d’indexation, il est fortement recommandé de décrire un vocabulaire dans un schéma de contrôle avec les types suivants<a class="footnote-reference brackets" href="#id74" id="id25" role="doc-noteref"><span class="fn-bracket">[</span>25<span class="fn-bracket">]</span></a> :</p>
@@ -989,7 +995,7 @@ indexé comme entier ;</p></li>
 </section>
 <hr class="docutils" />
 <section id="quand-et-comment-supprimer-un-vocabulaire">
-<h3><span class="section-number">9.4.5. </span>Quand et comment supprimer un vocabulaire ?<a class="headerlink" href="#quand-et-comment-supprimer-un-vocabulaire" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">8.4.5. </span>Quand et comment supprimer un vocabulaire ?<a class="headerlink" href="#quand-et-comment-supprimer-un-vocabulaire" title="Lien permanent vers cette rubrique"></a></h3>
 <p>La suppression d’un vocabulaire s’effectue :</p>
 <ul class="simple">
 <li><p>depuis l’IHM standard et les API, par un réimport complet du référentiel, duquel a été supprimé ce vocabulaire ;</p></li>
@@ -1048,7 +1054,7 @@ indexé comme entier ;</p></li>
 </table>
 </section>
 <section id="comment-mettre-a-jour-une-unite-archivistique-associee-ou-non-a-un-profil-dunite-archivistique">
-<h3><span class="section-number">9.4.6. </span>Comment mettre à jour une unité archivistique associée ou non à un profil d’unité archivistique ?<a class="headerlink" href="#comment-mettre-a-jour-une-unite-archivistique-associee-ou-non-a-un-profil-dunite-archivistique" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">8.4.6. </span>Comment mettre à jour une unité archivistique associée ou non à un profil d’unité archivistique ?<a class="headerlink" href="#comment-mettre-a-jour-une-unite-archivistique-associee-ou-non-a-un-profil-dunite-archivistique" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Les métadonnées d’une unité archivistique déclarant un profil d’unité archivistique sont modifiables, à la condition que l’unité archivistique reste conforme à ce profil d’unité archivistique et, de fait, aux vocabulaires définis dans le profil d’unité archivistique. Cette conformité vaut aussi bien pour les vocabulaires utilisés que pour les valeurs utilisées. En d’autres termes :</p>
 <ul class="simple">
 <li><p>le vocabulaire utilisé, mis à jour ou ajouté, doit être présent dans le profil d’unité archivistique associé à l’unité archivistique ;</p></li>
@@ -1143,7 +1149,7 @@ indexé comme entier ;</p></li>
 <p>Dans le cas d’une réindexation a posteriori des vocabulaires, cela peut engendrer des conflits.</p>
 </section>
 <section id="quand-et-comment-modifier-des-vocabulaires-internes">
-<h3><span class="section-number">9.4.7. </span>Quand et comment modifier des vocabulaires internes ?<a class="headerlink" href="#quand-et-comment-modifier-des-vocabulaires-internes" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">8.4.7. </span>Quand et comment modifier des vocabulaires internes ?<a class="headerlink" href="#quand-et-comment-modifier-des-vocabulaires-internes" title="Lien permanent vers cette rubrique"></a></h3>
 <p>La solution logicielle Vitam permet d’ajouter, de modifier ou de supprimer des vocabulaires internes, de transformer des vocabulaires externes en vocabulaires internes, de modifier leur indexation par un réimport complet du référentiel au moyen d’un <strong>acte d’exploitation</strong>, ou suite à une procédure de montée de version de la solution logicielle VITAM. L’import de l’ontologie à cet étape ne remet pas à jour les vocabulaires externes et veille à ce que cet import réussisse sans conflits entre les
 deux vocabulaires internes et externes <a class="footnote-reference brackets" href="#id76" id="id27" role="doc-noteref"><span class="fn-bracket">[</span>27<span class="fn-bracket">]</span></a>. En d’autres termes, cet acte ne met à jour que les vocabulaires internes et pas les vocabulaires externes.</p>
 <p>Cette procédure d’exploitation peut avoir lieu dans les cas suivants :</p>
@@ -1155,9 +1161,9 @@ deux vocabulaires internes et externes <a class="footnote-reference brackets" hr
 <p><em><strong>Point d’attention :</strong></em> Suite à un import par acte d’exploitation ou par procédure de montée de version une phase préliminaire permet de vérifier d’éventuelles incohérences entre les vocabulaires internes et les vocabulaires externes. En cas de présence d’erreurs, il reviendra à l’exploitant de les analyser et de les corriger avant de procéder à la montée de version de l’ontologie<a class="footnote-reference brackets" href="#id78" id="id29" role="doc-noteref"><span class="fn-bracket">[</span>29<span class="fn-bracket">]</span></a>.</p>
 </section>
 <section id="quel-acces-a-lontologie">
-<h3><span class="section-number">9.4.8. </span>Quel accès à l’ontologie ?<a class="headerlink" href="#quel-acces-a-lontologie" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">8.4.8. </span>Quel accès à l’ontologie ?<a class="headerlink" href="#quel-acces-a-lontologie" title="Lien permanent vers cette rubrique"></a></h3>
 <section id="gestion-des-droits">
-<h4><span class="section-number">9.4.8.1. </span>Gestion des droits<a class="headerlink" href="#gestion-des-droits" title="Lien permanent vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.4.8.1. </span>Gestion des droits<a class="headerlink" href="#gestion-des-droits" title="Lien permanent vers cette rubrique"></a></h4>
 <p>La gestion de l’ontologie relève d’opérations d’administration technico-fonctionnelle. Il est donc recommandé d’en limiter l’accès de la manière suivante :</p>
 <ul class="simple">
 <li><p>des administrateurs fonctionnel et technique peuvent avoir accès à l’ontologie et la mettre à jour (Create, Read, Update, Delete) ;</p></li>
@@ -1166,7 +1172,7 @@ deux vocabulaires internes et externes <a class="footnote-reference brackets" hr
 </ul>
 </section>
 <section id="restitution-sur-une-ihm">
-<h4><span class="section-number">9.4.8.2. </span>Restitution sur une IHM<a class="headerlink" href="#restitution-sur-une-ihm" title="Lien permanent vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.4.8.2. </span>Restitution sur une IHM<a class="headerlink" href="#restitution-sur-une-ihm" title="Lien permanent vers cette rubrique"></a></h4>
 <p>La solution logicielle Vitam propose une IHM pour représenter l’ontologie. Elle permet :</p>
 <ul class="simple">
 <li><p>depuis l’IHM démo, d’importer une ontologie et de la consulter, d’accéder à un vocabulaire ;</p></li>
@@ -1183,7 +1189,7 @@ deux vocabulaires internes et externes <a class="footnote-reference brackets" hr
 </section>
 </section>
 <section id="comment-utiliser-lontologie">
-<h3><span class="section-number">9.4.9. </span>Comment utiliser l’ontologie ?<a class="headerlink" href="#comment-utiliser-lontologie" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">8.4.9. </span>Comment utiliser l’ontologie ?<a class="headerlink" href="#comment-utiliser-lontologie" title="Lien permanent vers cette rubrique"></a></h3>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Intitulé</p></th>
@@ -1293,7 +1299,7 @@ deux vocabulaires internes et externes <a class="footnote-reference brackets" hr
 </section>
 </section>
 <section id="annexe-1-vocabulaires-internes-de-lontologie">
-<h2><span class="section-number">9.5. </span>Annexe 1 : Vocabulaires internes de l’ontologie<a class="headerlink" href="#annexe-1-vocabulaires-internes-de-lontologie" title="Lien permanent vers cette rubrique"></a></h2>
+<h2><span class="section-number">8.5. </span>Annexe 1 : Vocabulaires internes de l’ontologie<a class="headerlink" href="#annexe-1-vocabulaires-internes-de-lontologie" title="Lien permanent vers cette rubrique"></a></h2>
 <p>Liste des vocabulaires internes présents dans l’ontologie.</p>
 <p><em>Nota bene</em> : cette liste n’est pas forcément exhaustive.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
@@ -4644,7 +4650,7 @@ deux vocabulaires internes et externes <a class="footnote-reference brackets" hr
 </div>
 </section>
 <section id="annexe-2-types-json-conformes-au-type-dindexation-des-vocabulaires-internes">
-<h2><span class="section-number">9.6. </span>Annexe 2 : Types JSON conformes au type d’indexation des vocabulaires internes<a class="headerlink" href="#annexe-2-types-json-conformes-au-type-dindexation-des-vocabulaires-internes" title="Lien permanent vers cette rubrique"></a></h2>
+<h2><span class="section-number">8.6. </span>Annexe 2 : Types JSON conformes au type d’indexation des vocabulaires internes<a class="headerlink" href="#annexe-2-types-json-conformes-au-type-dindexation-des-vocabulaires-internes" title="Lien permanent vers cette rubrique"></a></h2>
 <p>Pour les éléments propres au SEDA, le tableau suivant précise les types de certains d’entre eux, tels qu’ils doivent être dans un schéma de contrôle, conformément au type d’indexation du vocabulaire déclaré dans l’ontologie :</p>
 <table class="docutils align-default">
 <thead>
@@ -5648,7 +5654,7 @@ deux vocabulaires internes et externes <a class="footnote-reference brackets" hr
 </table>
 </section>
 <section id="notes">
-<h2><span class="section-number">9.7. </span>Notes<a class="headerlink" href="#notes" title="Lien permanent vers cette rubrique"></a></h2>
+<h2><span class="section-number">8.7. </span>Notes<a class="headerlink" href="#notes" title="Lien permanent vers cette rubrique"></a></h2>
 <hr class="footnotes docutils" />
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="id50" role="note">
@@ -5856,8 +5862,8 @@ deux vocabulaires internes et externes <a class="footnote-reference brackets" hr
           </div>
 
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
-        <a href="module_de_collecte.html" class="btn btn-neutral float-left" title="8. Module de collecte" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
-        <a href="preservation.html" class="btn btn-neutral float-right" title="10. Gestion de la préservation" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="module_de_collecte.html" class="btn btn-neutral float-left" title="7. Module de collecte" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="preservation.html" class="btn btn-neutral float-right" title="9. Gestion de la préservation" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

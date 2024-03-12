@@ -22,7 +22,6 @@ Documentation métier
    :caption: documentation métier
    :numbered:
 
-   sections/valeur_probante.md
    sections/eliminations.md
    sections/gel.md
    sections/gestion_archives_arbo.md
@@ -33,9 +32,12 @@ Documentation métier
    sections/ontologie.md
    sections/preservation.md
    sections/profil_archivage.md
+   sections/profil_unite_archivistique.md
    sections/regles_gestion.md
    sections/services_prod.md
+   sections/stockage.md
    sections/transfert.md
+   sections/valeur_probante.md
 
 Documentation Vitam UI
 ======================
@@ -55,6 +57,17 @@ Outils connexes
    :numbered:
 
    sections/resip.md
+
+Chantier préservation
+======
+
+.. toctree::
+   :caption: Chantier préservation
+   :numbered:
+
+   sections/chantier_preservation_validation_format.md
+   sections/chantier_preservation_identification_format.md
+   sections/chantier_preservation_extraction_MD.md
 
 Vademecum
 =======
