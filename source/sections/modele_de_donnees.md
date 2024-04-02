@@ -6282,9 +6282,9 @@ Les champs à renseigner obligatoirement à la création d’un contexte applica
 
 -   Il s’agit d’un tableau.
 
--   Peut être vide.
+-   Peut être vide ou nul.
 
--   Cardinalité : 1-1
+-   Cardinalité : 0-N
 
 -   pour un tenant donné, il contient un objet JSON contenant les champs suivants :
 
