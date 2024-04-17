@@ -29,6 +29,7 @@ Documentation métier
    sections/modele_de_donnees.md
    sections/modele_de_workflow.md
    sections/module_de_collecte.md
+   sections/organisation_information.md
    sections/ontologie.md
    sections/preservation.md
    sections/profil_archivage.md

@@ -8,7 +8,7 @@ combinant légalement mission d’archivage définitif et expertise
 archivistique associée, ont choisi d’unir leurs efforts, sous le
 pilotage de la Direction interministérielle du numérique (DINum), pour
 faire face à ces enjeux. Ils ont décidé de lancer un programme nommé
-Vitam [^1] (Valeurs Immatérielles Transmises aux Archives Pour Mémoire) qui
+Vitam[^1] (Valeurs Immatérielles Transmises aux Archives Pour Mémoire) qui
 couvre plus précisément les opérations suivantes :
 
 -   la conception, la réalisation et la maintenance mutualisées d’une
