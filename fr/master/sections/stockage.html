@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>14. Gestion de multiples stratégies de stockage &mdash; Vitam documentation fonctionnelle</title>
+  <title>17. Gestion de multiples stratégies de stockage &mdash; Vitam documentation fonctionnelle</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
@@ -19,8 +19,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
-    <link rel="next" title="15. Le transfert avec la solution logicielle Vitam" href="transfert.html" />
-    <link rel="prev" title="13. Services producteurs" href="services_prod.html" /> 
+    <link rel="next" title="18. Le transfert avec la solution logicielle Vitam" href="transfert.html" />
+    <link rel="prev" title="16. Structuration des Dissemination Information Packages (DIP)" href="DIP.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -61,45 +61,48 @@
 <li class="toctree-l1"><a class="reference internal" href="modele_de_workflow.html">6. Description des workflows et des opérations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="module_de_collecte.html">7. Module de collecte</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ontologie.html">8. Ontologie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="preservation.html">9. Gestion de la préservation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="profil_archivage.html">10. Profils d’archivage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="profil_unite_archivistique.html">11. Profils d’unité archivistique</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regles_gestion.html">12. Règles de gestion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="services_prod.html">13. Services producteurs</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">14. Gestion de multiples stratégies de stockage</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#introduction">14.1. Introduction</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#documents-de-reference">14.1.1. Documents de référence</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#presentation-du-document">14.1.2. Présentation du document</a></li>
+<li class="toctree-l1"><a class="reference internal" href="organisation_information.html">9. Organisation de l’information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preservation.html">10. Gestion de la préservation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_archivage.html">11. Profils d’archivage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_unite_archivistique.html">12. Profils d’unité archivistique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regles_gestion.html">13. Règles de gestion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services_prod.html">14. Services producteurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SIP.html">15. Structuration des <em>Submission Information Packages</em> (SIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DIP.html">16. Structuration des <em>Dissemination Information Packages</em> (DIP)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">17. Gestion de multiples stratégies de stockage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">17.1. Introduction</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#documents-de-reference">17.1.1. Documents de référence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#presentation-du-document">17.1.2. Présentation du document</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#gestion-des-donnees-sur-vitam">14.2. Gestion des données sur Vitam</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#mecanismes-mis-en-place-pour-le-stockage">14.2.1. Mécanismes mis en place pour le stockage</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#les-donnees-stockees">14.2.2. Les données stockées</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#utilisation-des-donnees-stockees">14.2.3. Utilisation des données stockées</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#reconstruction">14.2.3.1. Reconstruction</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#resynchronisation-dune-offre">14.2.3.2. Resynchronisation d’une offre</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gestion-des-donnees-sur-vitam">17.2. Gestion des données sur Vitam</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#mecanismes-mis-en-place-pour-le-stockage">17.2.1. Mécanismes mis en place pour le stockage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#les-donnees-stockees">17.2.2. Les données stockées</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#utilisation-des-donnees-stockees">17.2.3. Utilisation des données stockées</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#reconstruction">17.2.3.1. Reconstruction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#resynchronisation-dune-offre">17.2.3.2. Resynchronisation d’une offre</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#metadonnees-des-unites-archivistiques-et-des-groupes-dobjets-techniques">14.2.4. Métadonnées des unités archivistiques et des groupes d’objets techniques</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#metadonnees-des-unites-archivistiques-et-des-groupes-dobjets-techniques">17.2.4. Métadonnées des unités archivistiques et des groupes d’objets techniques</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#mecanismes-pour-lutilisation-de-vitam-avec-une-seule-strategie-de-stockage">14.3. Mécanismes pour l’utilisation de Vitam avec une seule stratégie de stockage</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#deploiement-de-la-strategie-par-defaut">14.3.1. Déploiement de la stratégie par défaut</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#scenario-strategie-de-plate-forme-en-dual-site">14.3.2. Scénario : stratégie de plate-forme en dual-site</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mecanismes-pour-lutilisation-de-vitam-avec-une-seule-strategie-de-stockage">17.3. Mécanismes pour l’utilisation de Vitam avec une seule stratégie de stockage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#deploiement-de-la-strategie-par-defaut">17.3.1. Déploiement de la stratégie par défaut</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scenario-strategie-de-plate-forme-en-dual-site">17.3.2. Scénario : stratégie de plate-forme en dual-site</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#mecanismes-pour-lutilisation-de-vitam-avec-plusieurs-strategies">14.4. Mécanismes pour l’utilisation de Vitam avec plusieurs stratégies</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#deploiement-des-strategies">14.4.1. Déploiement des stratégies</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#le-referentiel-des-contrats-de-gestion">14.4.2. Le référentiel des contrats de gestion</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#lutilisation-du-contrat-de-gestion">14.4.3. L’utilisation du contrat de gestion</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#scenario-qualite-de-service">14.4.4. Scénario : qualité de service</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#scenario-offres-objets">14.4.5. Scénario : offres objets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mecanismes-pour-lutilisation-de-vitam-avec-plusieurs-strategies">17.4. Mécanismes pour l’utilisation de Vitam avec plusieurs stratégies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#deploiement-des-strategies">17.4.1. Déploiement des stratégies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#le-referentiel-des-contrats-de-gestion">17.4.2. Le référentiel des contrats de gestion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lutilisation-du-contrat-de-gestion">17.4.3. L’utilisation du contrat de gestion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scenario-qualite-de-service">17.4.4. Scénario : qualité de service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scenario-offres-objets">17.4.5. Scénario : offres objets</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="transfert.html">15. Le transfert avec la solution logicielle Vitam</a></li>
-<li class="toctree-l1"><a class="reference internal" href="valeur_probante.html">16. Conservation de la valeur probante</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transfert.html">18. Le transfert avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="valeur_probante.html">19. Conservation de la valeur probante</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">documentation Vitam UI</span></p>
 <ul>
@@ -161,7 +164,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active"><span class="section-number">14. </span>Gestion de multiples stratégies de stockage</li>
+      <li class="breadcrumb-item active"><span class="section-number">17. </span>Gestion de multiples stratégies de stockage</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/sections/stockage.md.txt" rel="nofollow"> Afficher la source de la page</a>
       </li>
@@ -174,11 +177,11 @@
            <div itemprop="articleBody">
              
   <section id="gestion-de-multiples-strategies-de-stockage">
-<h1><span class="section-number">14. </span>Gestion de multiples stratégies de stockage<a class="headerlink" href="#gestion-de-multiples-strategies-de-stockage" title="Lien permanent vers cette rubrique"></a></h1>
+<h1><span class="section-number">17. </span>Gestion de multiples stratégies de stockage<a class="headerlink" href="#gestion-de-multiples-strategies-de-stockage" title="Lien permanent vers cette rubrique"></a></h1>
 <section id="introduction">
-<h2><span class="section-number">14.1. </span>Introduction<a class="headerlink" href="#introduction" title="Lien permanent vers cette rubrique"></a></h2>
+<h2><span class="section-number">17.1. </span>Introduction<a class="headerlink" href="#introduction" title="Lien permanent vers cette rubrique"></a></h2>
 <section id="documents-de-reference">
-<h3><span class="section-number">14.1.1. </span>Documents de référence<a class="headerlink" href="#documents-de-reference" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">17.1.1. </span>Documents de référence<a class="headerlink" href="#documents-de-reference" title="Lien permanent vers cette rubrique"></a></h3>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p><strong>Document</strong></p></th>
@@ -187,15 +190,15 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-center"><p>Vitam – Documentation d’installation</p></td>
+<tr class="row-even"><td class="text-center"><p><a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/html/installation">Vitam – Documentation d’installation</a></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p>Vitam – Documentation d’exploitation</p></td>
+<tr class="row-odd"><td class="text-center"><p><a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/html/exploitation">Vitam – Documentation d’exploitation</a></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 </tr>
-<tr class="row-even"><td class="text-center"><p>Vitam – Gestion des habilitations</p></td>
+<tr class="row-even"><td class="text-center"><p><a class="reference internal" href="gestion_habilitations.html"><span class="doc std std-doc">Vitam – Gestion des habilitations</span></a></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 </tr>
@@ -203,7 +206,7 @@
 </table>
 </section>
 <section id="presentation-du-document">
-<h3><span class="section-number">14.1.2. </span>Présentation du document<a class="headerlink" href="#presentation-du-document" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">17.1.2. </span>Présentation du document<a class="headerlink" href="#presentation-du-document" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Le document présente les fonctionnalités associées à la gestion et à la réalisation d’opérations de préservation numérique dans la solution logicielle Vitam.
 Il s’articule autour des axes suivants :</p>
 <ul class="simple">
@@ -219,10 +222,10 @@ Le présent document décrit les fonctionnalités qui sont offertes par la trois
 </section>
 </section>
 <section id="gestion-des-donnees-sur-vitam">
-<h2><span class="section-number">14.2. </span>Gestion des données sur Vitam<a class="headerlink" href="#gestion-des-donnees-sur-vitam" title="Lien permanent vers cette rubrique"></a></h2>
+<h2><span class="section-number">17.2. </span>Gestion des données sur Vitam<a class="headerlink" href="#gestion-des-donnees-sur-vitam" title="Lien permanent vers cette rubrique"></a></h2>
 <p>Le moteur de stockage de la solution logicielle Vitam est en charge du stockage des archives (métadonnées et objets binaires) mais également des données nécessaires au bon fonctionnement d’une plate-forme Vitam dans le cadre du respect des normes définies par la solution logicielle Vitam.</p>
 <section id="mecanismes-mis-en-place-pour-le-stockage">
-<h3><span class="section-number">14.2.1. </span>Mécanismes mis en place pour le stockage<a class="headerlink" href="#mecanismes-mis-en-place-pour-le-stockage" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">17.2.1. </span>Mécanismes mis en place pour le stockage<a class="headerlink" href="#mecanismes-mis-en-place-pour-le-stockage" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Le stockage se base sur plusieurs notions :</p>
 <ul class="simple">
 <li><p>moteur de stockage : module en charge de la gestion des offres de stockage à l’aide des éléments suivants :</p>
@@ -239,7 +242,7 @@ Le présent document décrit les fonctionnalités qui sont offertes par la trois
 <p>Le support du stockage sur bandes magnétiques (offres froides) a été étendu pour la release v5 (mars 2022).</p>
 </section>
 <section id="les-donnees-stockees">
-<h3><span class="section-number">14.2.2. </span>Les données stockées<a class="headerlink" href="#les-donnees-stockees" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">17.2.2. </span>Les données stockées<a class="headerlink" href="#les-donnees-stockees" title="Lien permanent vers cette rubrique"></a></h3>
 <p>L’objectif de la solution logicielle Vitam est le stockage et la conservation des archives. Dans l’atteinte de cet objectif, d’autres données vont être également stockées pour répondre aux besoins de robustesse de la solution logicielle Vitam.</p>
 <p>Les données stockées dans les offres par Vitam sont donc diverses et se séparent en plusieurs types :</p>
 <ul class="simple">
@@ -254,7 +257,7 @@ Le présent document décrit les fonctionnalités qui sont offertes par la trois
 </ul>
 </section>
 <section id="utilisation-des-donnees-stockees">
-<h3><span class="section-number">14.2.3. </span>Utilisation des données stockées<a class="headerlink" href="#utilisation-des-donnees-stockees" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">17.2.3. </span>Utilisation des données stockées<a class="headerlink" href="#utilisation-des-donnees-stockees" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Les données stockées sur les offres sont à la source de certaines procédures de résilience et de robustesse de la solution logicielle Vitam.</p>
 <p>Ces procédures sont les suivantes :</p>
 <ul class="simple">
@@ -264,7 +267,7 @@ Le présent document décrit les fonctionnalités qui sont offertes par la trois
 Ces procédures induisent des limites qui doivent être respectées dans le cas d’un déploiement avec plusieurs stratégies.</p></li>
 </ul>
 <section id="reconstruction">
-<h4><span class="section-number">14.2.3.1. </span>Reconstruction<a class="headerlink" href="#reconstruction" title="Lien permanent vers cette rubrique"></a></h4>
+<h4><span class="section-number">17.2.3.1. </span>Reconstruction<a class="headerlink" href="#reconstruction" title="Lien permanent vers cette rubrique"></a></h4>
 <p>La procédure de reconstruction utilise la notion d’offre dite « référente ». Il s’agit d’un groupe d’offres qui doivent contenir TOUTES les données nécessaires à la reconstruction d’un site Vitam à partir des données des offres.</p>
 <p>Les données nécessaires à la reconstruction des bases de données sont :</p>
 <ul class="simple">
@@ -276,13 +279,13 @@ Ces procédures induisent des limites qui doivent être respectées dans le cas 
 <p>Une offre dite « référente » peut être offre synchrone (offre « chaude »), ou bien, une offre asynchrone (offre « froide »).</p>
 </section>
 <section id="resynchronisation-dune-offre">
-<h4><span class="section-number">14.2.3.2. </span>Resynchronisation d’une offre<a class="headerlink" href="#resynchronisation-dune-offre" title="Lien permanent vers cette rubrique"></a></h4>
+<h4><span class="section-number">17.2.3.2. </span>Resynchronisation d’une offre<a class="headerlink" href="#resynchronisation-dune-offre" title="Lien permanent vers cette rubrique"></a></h4>
 <p>La procédure de resynchronisation d’une offre permet de remettre en cohérence le contenu d’une offre à partir d’une autre offre. Pour que ce mécanisme marche il est nécessaire que les offres source et cible de la resynchronisation soient configurées pour être des copies : elles doivent être configurées pour contenir les mêmes données.</p>
 <p>Il est donc obligatoire de garder une plate-forme Vitam proposant des stratégies permettant d’avoir pour chaque offre une copie effective pour garantir la resynchronisation.</p>
 </section>
 </section>
 <section id="metadonnees-des-unites-archivistiques-et-des-groupes-dobjets-techniques">
-<h3><span class="section-number">14.2.4. </span>Métadonnées des unités archivistiques et des groupes d’objets techniques<a class="headerlink" href="#metadonnees-des-unites-archivistiques-et-des-groupes-dobjets-techniques" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">17.2.4. </span>Métadonnées des unités archivistiques et des groupes d’objets techniques<a class="headerlink" href="#metadonnees-des-unites-archivistiques-et-des-groupes-dobjets-techniques" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Les métadonnées des unités archivistiques et les métadonnées des groupes d’objets techniques contiennent une référence à la manière dont elles sont stockées. De plus les métadonnées des groupes d’objets techniques contiennent également une référence pour chaque objet technique qu’ils définissent.</p>
 <p>Les stratégies définies dans les métadonnées sont immuables : un processus d’exploitation ne pourra pas changer l’identifiant de ces stratégies, définies dans le champ « storage.strategyId ». Les autres données présentes dans l’objet JSON « _storage » sont obsolètes et ne seront plus renseignées. Les audits mis à disposition par la solution logicielle Vitam utilisent la définition de la stratégie déployée sur la plate-forme.</p>
 <p>Exemple de métadonnées d’unité archivistique</p>
@@ -349,10 +352,10 @@ Ces procédures induisent des limites qui doivent être respectées dans le cas 
 </section>
 </section>
 <section id="mecanismes-pour-lutilisation-de-vitam-avec-une-seule-strategie-de-stockage">
-<h2><span class="section-number">14.3. </span>Mécanismes pour l’utilisation de Vitam avec une seule stratégie de stockage<a class="headerlink" href="#mecanismes-pour-lutilisation-de-vitam-avec-une-seule-strategie-de-stockage" title="Lien permanent vers cette rubrique"></a></h2>
+<h2><span class="section-number">17.3. </span>Mécanismes pour l’utilisation de Vitam avec une seule stratégie de stockage<a class="headerlink" href="#mecanismes-pour-lutilisation-de-vitam-avec-une-seule-strategie-de-stockage" title="Lien permanent vers cette rubrique"></a></h2>
 <p>La solution logicielle Vitam a été mise en place dès la version Bêta avec une unique stratégie dite de « plate-forme », utilisée pour stocker toutes les données.</p>
 <section id="deploiement-de-la-strategie-par-defaut">
-<h3><span class="section-number">14.3.1. </span>Déploiement de la stratégie par défaut<a class="headerlink" href="#deploiement-de-la-strategie-par-defaut" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">17.3.1. </span>Déploiement de la stratégie par défaut<a class="headerlink" href="#deploiement-de-la-strategie-par-defaut" title="Lien permanent vers cette rubrique"></a></h3>
 <p>La solution logicielle Vitam déployée avec une seule stratégie configure la stratégie dite « de plate-forme » ou encore « default ». Celle-ci définit plusieurs offres sur lesquelles seront stockées des données. Dans un déploiement avec une seule stratégie, les offres contiennent donc les même données et sont donc des copies les unes des autres.</p>
 <p>La définition de cette stratégie est un acte d’exploitation de la plate-forme Vitam :</p>
 <ul class="simple">
@@ -364,7 +367,7 @@ Ces procédures induisent des limites qui doivent être respectées dans le cas 
 <p>Toute modification de cette stratégie est un acte d’exploitation dont il convient de suivre les processus et limites décrites dans le DEX.</p>
 </section>
 <section id="scenario-strategie-de-plate-forme-en-dual-site">
-<h3><span class="section-number">14.3.2. </span>Scénario : stratégie de plate-forme en dual-site<a class="headerlink" href="#scenario-strategie-de-plate-forme-en-dual-site" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">17.3.2. </span>Scénario : stratégie de plate-forme en dual-site<a class="headerlink" href="#scenario-strategie-de-plate-forme-en-dual-site" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Il s’agit du mode par défaut de la solution logicielle Vitam. Dans ce cas nous avons uniquement la stratégie dite « default », déclarant deux offres de stockage avec deux sites.</p>
 <p><img alt="Configuration des stratégies déployée sur le site primaire" src="sections/medias/stockage/site_primaire.png" /></p>
 <p><img alt="Configuration des stratégies déployée sur le site secondaire" src="sections/medias/stockage/site_secondaire.png" /></p>
@@ -377,7 +380,7 @@ Ces procédures induisent des limites qui doivent être respectées dans le cas 
 </section>
 </section>
 <section id="mecanismes-pour-lutilisation-de-vitam-avec-plusieurs-strategies">
-<h2><span class="section-number">14.4. </span>Mécanismes pour l’utilisation de Vitam avec plusieurs stratégies<a class="headerlink" href="#mecanismes-pour-lutilisation-de-vitam-avec-plusieurs-strategies" title="Lien permanent vers cette rubrique"></a></h2>
+<h2><span class="section-number">17.4. </span>Mécanismes pour l’utilisation de Vitam avec plusieurs stratégies<a class="headerlink" href="#mecanismes-pour-lutilisation-de-vitam-avec-plusieurs-strategies" title="Lien permanent vers cette rubrique"></a></h2>
 <p>La solution logicielle Vitam permet, à partir de la release 12, l’utilisation de plusieurs stratégies pour répondre à des besoins spécifiques tels que :</p>
 <ul class="simple">
 <li><p>stocker des objets binaires uniquement en offres dites « objets »,</p></li>
@@ -391,7 +394,7 @@ Ces procédures induisent des limites qui doivent être respectées dans le cas 
 </ul>
 <p>Il s’agit d’une extension du mode standard de Vitam avec une stratégie unique « default » : celle-ci reste obligatoire et unique sur la plate-forme.</p>
 <section id="deploiement-des-strategies">
-<h3><span class="section-number">14.4.1. </span>Déploiement des stratégies<a class="headerlink" href="#deploiement-des-strategies" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">17.4.1. </span>Déploiement des stratégies<a class="headerlink" href="#deploiement-des-strategies" title="Lien permanent vers cette rubrique"></a></h3>
 <p>En mode multi-stratégies, un acte d’exploitation permet d’ajouter des stratégies supplémentaires à une plate-forme Vitam. Les offres de ces stratégies prennent aussi en compte la notion d’offre dite « référente » et leur identifiant doit être différent de « default ».</p>
 <p>L’identifiant d’une stratégie étant présent dans les métadonnées des unités archivistiques, les métadonnées des groupes d’objets techniques (un identifiant pour le groupe d’objets techniques et pour chaque objet technique défini), il est nécessaire de pouvoir trouver ces stratégies sur les deux sites, et ce même si leurs offres déclarées ne sont pas les mêmes.</p>
 <p>Dans le cas du mode multi-stratégies la reconstruction au fil de l’eau des métadonnées se fera à partir de toutes les offres référentes définies par les stratégies déployées sur la plate-forme. Pour rester performant sur cette reconstruction il est faut être vigilant sur la configuration de plate-forme pour éviter de reconstruire plusieurs fois les mêmes métadonnées. De ce fait il est nécessaire de s’assurer de respecter les règles suivantes :</p>
@@ -405,7 +408,7 @@ Ces procédures induisent des limites qui doivent être respectées dans le cas 
 </ul>
 </section>
 <section id="le-referentiel-des-contrats-de-gestion">
-<h3><span class="section-number">14.4.2. </span>Le référentiel des contrats de gestion<a class="headerlink" href="#le-referentiel-des-contrats-de-gestion" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">17.4.2. </span>Le référentiel des contrats de gestion<a class="headerlink" href="#le-referentiel-des-contrats-de-gestion" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Le contrat de gestion est un référentiel permettant la définition de stratégies autres que « default » pour :</p>
 <ul class="simple">
 <li><p>les métadonnées décrivant des « unités archivistiques », constituant une archive numérique, et leur journal de cycle de vie,</p></li>
@@ -470,13 +473,13 @@ Ces procédures induisent des limites qui doivent être respectées dans le cas 
 </div>
 </section>
 <section id="lutilisation-du-contrat-de-gestion">
-<h3><span class="section-number">14.4.3. </span>L’utilisation du contrat de gestion<a class="headerlink" href="#lutilisation-du-contrat-de-gestion" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">17.4.3. </span>L’utilisation du contrat de gestion<a class="headerlink" href="#lutilisation-du-contrat-de-gestion" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Un contrat de gestion peut être défini dans un contrat d’entrée pour être utilisé lors de l’exécution d’un processus de transfert d’un SIP dans la solution logicielle Vitam.</p>
 <p>Si les stratégies spécifiques définies dans le contrat de gestion sont valides, alors ces stratégies spécifiques seront utilisées lors de l’exécution d’un processus de transfert (opération d’INGEST), et plus exactement lors du stockage des métadonnées (des unités archivistiques et des groupes d’objets techniques, avec leur journal de cycle de vie) et des objets binaires.</p>
 <p>Les stratégies, ainsi que le contrat de gestion, seront également indiquées dans les métadonnées associées au stockage. Elles seront ensuite utilisées pour l’accès aux fichiers stockés lors des différentes opérations réalisables dans la solution logicielle Vitam (accès aux archives, élimination, préservation, etc.) et nécessitant l’accès aux métadonnées ou aux objets binaires.</p>
 </section>
 <section id="scenario-qualite-de-service">
-<h3><span class="section-number">14.4.4. </span>Scénario : qualité de service<a class="headerlink" href="#scenario-qualite-de-service" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">17.4.4. </span>Scénario : qualité de service<a class="headerlink" href="#scenario-qualite-de-service" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Le but d’un déploiement orienté « Qualité de service » de la solution logicielle Vitam est de fournir la possibilité de proposer un nombre de copies stockées différemment en fonction des applications utilisatrices de la plate-forme Vitam.</p>
 <p><img alt="Configuration des stratégies déployées sur le site primaire" src="sections/medias/stockage/qualite_primaire.png" /></p>
 <p><img alt="Configuration des stratégies déployées sur le site secondaire" src="sections/medias/stockage/qualite_secondaire.png" /></p>
@@ -539,7 +542,7 @@ La stratégie est ensuite déclarée dans un contrat de gestion avec la surcharg
 <p><img alt="" src="sections/medias/stockage/offres_systeme2.png" /></p>
 </section>
 <section id="scenario-offres-objets">
-<h3><span class="section-number">14.4.5. </span>Scénario : offres objets<a class="headerlink" href="#scenario-offres-objets" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">17.4.5. </span>Scénario : offres objets<a class="headerlink" href="#scenario-offres-objets" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Le but d’un déploiement orienté « Offres objets » de la solution logicielle Vitam est de fournir la possibilité de stocker les objets numériques uniquement sur des offres séparées dites « objets » pour certaines ou toutes les applications utilisatrices de la plate-forme Vitam.</p>
 <p>Ce type de déploiement offre également la possibilité de stocker les objets binaires uniquement sur des offres dites « froides » (sur bande par exemple), mais il est fortement conseillé d’y stocker également les métadonnées associées aux objets.</p>
 <p>Dans le cas présenté ci-dessous, deux nouvelles offres dites « objets » (offre 3 et offre 4) et une stratégie supplémentaire permettant de stocker les objets binaires et leurs métadonnées associées est ajoutée. Il n’y a pas d’offre dite « froide » représenté dans ce cas d’exemple.</p>
@@ -610,8 +613,8 @@ La stratégie est ensuite déclarée dans un contrat de gestion avec la surcharg
           </div>
 
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
-        <a href="services_prod.html" class="btn btn-neutral float-left" title="13. Services producteurs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
-        <a href="transfert.html" class="btn btn-neutral float-right" title="15. Le transfert avec la solution logicielle Vitam" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="DIP.html" class="btn btn-neutral float-left" title="16. Structuration des Dissemination Information Packages (DIP)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="transfert.html" class="btn btn-neutral float-right" title="18. Le transfert avec la solution logicielle Vitam" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

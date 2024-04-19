@@ -1,18 +1,17 @@
 Le transfert avec la solution logicielle Vitam
 ====
+
 Introduction
 ----
+
 ### Documents de référence
 
-
-  |Document |Date de la version|Remarques|
-  |:---------------:|:-----:|:-----:|
-  |  NF Z 44022 – MEDONA – Modélisation des données pour l’archivage|18/01/2014||
-  |Standard d’échange de données pour l’archivage – SEDA – v. 2.1|06/2018||
-  |Standard d’échange de données pour l’archivage – SEDA – v. 2.2|02/2022|Cette nouvelle version du SEDA est intégrée à la solution logicielle Vitam à partir de la V6.RC.|
-  |Vitam – Modèle de workflow|31/03/2023|
-
-
+|Document |Date de la version|Remarques|
+|:---------------:|:-----:|:-----:|
+|  NF Z 44022 – MEDONA – Modélisation des données pour l’archivage|18/01/2014||
+|Standard d’échange de données pour l’archivage – SEDA – v. 2.1|06/2018||
+|Standard d’échange de données pour l’archivage – SEDA – v. 2.2|02/2022|Cette nouvelle version du SEDA est intégrée à la solution logicielle Vitam à partir de la V6.RC.|
+|[Vitam – Modèle de workflow](./modele_de_workflow.md)||
 
 ### Présentation du document
 
@@ -45,6 +44,7 @@ Détermination du caractère transférable d’une unité archivistique avec la 
 ----
 
 ### Une durée d’utilité arrivée à échéance
+
 Pour être transférable, une unité archivistique peut ou doit définir ou hériter des règles suivantes :
 - une règle de durée d’utilité courante dont la date d’échéance est dans le passé par rapport à une date donnée et un sort final « transfer ».
 - une règle de durée d’utilité administrative dont la date d’échéance est dans le passé par rapport à une date donnée et un sort final « keep ».  
@@ -55,6 +55,7 @@ Si l’unité archivistique n’a qu’un sort final « transfer » ou « kee
 Que ce soit dans le premier ou dans le second cas, la solution logicielle Vitam n’effectue aucun contrôle sur les archives identifiées comme transférables. En d’autres termes, il n’existe pas actuellement de service d’analyse tel qu’il existe pour les opérations d’élimination, qui ne retient que les archives à éliminer en raison de l’arrivée à échéance de leur règle de gestion. Il revient à l’utilisateur de faire les contrôles nécessaires en vue de transférer uniquement les archives dont la durée de conservation dans le système d’archivage électronique d’origine est arrivée à échéance, sans inclure dans le lot d’archives à transférer des archives qui ne doivent pas l’être.  
 
 ### Un fonds à restituer dans sa complétude
+
 Une unité archivistique ou un lot d’archives peuvent être transférables sans tenir compte des règles de gestion qui leur sont associées dans les cas suivants :
 - le service producteur demande une restitution complète de tout ou partie de ses fonds conservés dans le système d’archivage électronique, même si les règles de gestion associées à ses archives ne sont pas échues ;
 - le service d’archivage électronique prend fin. L’opérateur d’archivage doit alors assurer la réversibilité des données en :
@@ -63,6 +64,7 @@ Une unité archivistique ou un lot d’archives peuvent être transférables san
     - les migrant vers un nouveau système d’archivage électronique.
 
 **Point d’attention :** 
+
 Après confirmation de la réception de ces archives par le système d’archivage électronique de destination, il faudra veiller à procéder à leur purge dans le système d’archivage électronique d’origine, afin que ne subsiste pas deux copies de ces archives dans deux systèmes différents. Cette purge est automatisable.  
 3.3.  Cas où l’utilisation de la fonctionnalité de transfert est déconseillée
 La constitution d’un lot d’archives à transférer et la fonctionnalité de transfert doivent être utilisées lorsque l’on veut transmettre à la fois des archives et la responsabilité de leur conservation avec une traçabilité des événements ayant concerné ces archives dans le système d’archivage d’origine. Après acquittement du transfert, le lot d’archives est supprimé du système d’origine.  
@@ -112,6 +114,7 @@ L’utilisateur autorisé doit renseigner un certain nombre de paramètres qui p
       Par exemple, dans le cas d’un transfert regroupant les divers versements faits par les bureaux d’une sous-direction, c’est cette sous-direction qui pourra être désignée comme producteur des archives transférées. Les services producteurs d’origine pourront figurer dans les descriptions des unités archivistiques.
 
 #### Consultation des résultats de la demande de transfert
+
 Le résultat de l’opération de demande de transfert (ARCHIVE_TRANSFER / Transfert des unités archivistiques et des groupes d'objets) peut être consulté :
 - en allant dans le menu « Opérations », sur l’IHM de démonstration ;
 - depuis l’APP « Journal des opérations » de l’IHM VitamUI ;
@@ -146,12 +149,13 @@ Un DIP dit de « transfert » dont l’intitulé correspond au préfixe « TR
 - À ce stade-là, la solution logicielle Vitam ne vérifie pas si l’unité archivistique à transférer contient des unités archivistiques enfants. Il revient à l’utilisateur de préparer son paquet d’archives à transférer avec précaution, en veillant à ne pas transférer une unité archivistique sans ses enfants, de manière à ne pas obtenir par la suite des refus de transfert pour cause d’unité non supprimable au risque de créer des incohérences dans le graphe.
 
 ### Consultation des résultats de la demande de transfert en base de données
+
 L’appartenance d’une unité archivistique à une opération de transfert est enregistrée dans les métadonnées de celle-ci.  
 En effet, l’identifiant de l’opération de transfert est indexé dans les métadonnées des unités archivistiques concernées (champ « _opts). Cela permet de rechercher les unités archivistiques faisant l’objet d’une demande de transfert en général ou en particulier.  
 
 Exemple d’unité archivistique ayant fait l’objet d’une demande de transfert :  
 
-``````
+```json
 {
     "_id": "aeaqaaaabahftfesaab6yalqlwe54laaaaba",
     "DescriptionLevel": "RecordGrp",
@@ -189,7 +193,7 @@ Exemple d’unité archivistique ayant fait l’objet d’une demande de transfe
         "aeeaaaaabchhfmwoaanoualqlwr54ayaaaaq"
     ]
 }
-``````
+```
 
 ### Transfert d’archives vers un autre système (INGEST)
 
@@ -197,12 +201,14 @@ Le DIP dit « de transfert » peut être alors transféré :
 - soit sur un autre tenant de la même plate-forme d’archivage utilisant la solution logicielle Vitam ;
 - soit sur une autre plate-forme utilisant la solution logicielle Vitam ;
 - soit dans un autre système d’archivage électronique.
-**Points d’attention :**
+
+**Points d’attention :**  
 - les paramètres obligatoires saisis doivent être référencés dans la plate-forme de destination, sans quoi le transfert sera en échec ;
 - il en va de même pour les règles de gestion. Celles-ci doivent être référencées dans la plate-forme de destination. Les règles de gel, en particulier, doivent être déclarées à l’identique (avec ou sans mesure), afin que le transfert n’échoue pas ;
 - dans le cas d’un transfert vers un autre système, ce dernier doit être en mesure d’accepter un message « ArchiveTransfer » et renvoyer un message « ArchiveTransferReply » tous deux conformes au SEDA 2.1 ou au SEDA 2.2 et aux attendus de la solution logicielle Vitam. Si ce n’est pas le cas, il faudra veiller à prévoir une interopérabilité des données entre la solution logicielle Vitam et le système destinataire des données.
 
 ### Finalisation du transfert dans la solution logicielle Vitam (TRANSFER_REPLY)
+
 La solution logicielle ne permet pas de confirmer et d’acquitter un transfert depuis l’IHM de démonstration. Cette opération est réalisable :
 - au moyen des API ;
 - depuis l’APP « Recherche, consultation et gestion des archives » de l’IHM VitamUI.
@@ -231,14 +237,15 @@ L’opération d’acquittement du transfert produit un rapport au format JSONL 
 
 Exemple de rapport au format JSONL :
 
-``````
+```json
 {"tenant":8,"evId":"aeeaaaaabchhfmwoaanoualqlx7lbiyaaaaq","evType":"","outcome":"","outDetail":"","outMsg":"","rightsStatementIdentifier":{},"evDetData":{}}
 {"evEndDateTime":"2020-02-19T15:09:03.566","reportType":"TRANSFER_REPLY","vitamResults":{},"extendedInfo":{}}
 {}
 {"id":"aeaqaaaabahi7u6oaabzialqlwgjp3aaaaba","params":{"id":"aeaqaaaabahi7u6oaabzialqlwgjp3aaaaba","type":"Unit","status":"DELETED","opi":"aeeaaaaabchhfmwoaaxhialqlwgg66qaaaaq","originatingAgency":"RATP","objectGroupId":"aebaaaaabahi7u6oaabzialqlwgjppyaaaba"}}
 {"id":"aeaqaaaabahi7u6oaabzialqlwgjp2yaaabq","params":{"id":"aeaqaaaabahi7u6oaabzialqlwgjp2yaaabq","type":"Unit","status":"DELETED","opi":"aeeaaaaabchhfmwoaaxhialqlwgg66qaaaaq","originatingAgency":"RATP"}}
 {"id":"aebaaaaabahi7u6oaabzialqlwgjppyaaaba","params":{"id":"aebaaaaabahi7u6oaabzialqlwgjppyaaaba","type":"ObjectGroup","status":"PARTIAL_DETACHMENT","opi":"aeeaaaaabchhfmwoaaxhialqlwgg66qaaaaq","originatingAgency":"RATP","deletedParentUnitIds":["aeaqaaaabahi7u6oaabzialqlwgjp3aaaaba"]}}
-``````
+```
+
 Pour chaque unité archivistique et groupe d’objets techniques, l’opération de purge peut aboutir aux statuts suivants :
 - DELETED : l’unité et/ou le groupe d’objets techniques a été supprimé ;
 - NON_DESTROYABLE_HAS_CHILD_UNITS : l’unité archivistique ne peut être supprimée, car elle comporte des enfants et sa suppression entraînerait des incohérences dans le graphe du système d’archivage électronique d’origine ;
@@ -249,7 +256,6 @@ Si une unité archivistique ne peut pas être purgée, un événement est enregi
 Exemple d’événement enregistré dans le journal du cycle de vie d’une unité archivistique :
 ![exemple d’événement enregistré dans le journal du cycle de vie d’une unité archivistique](./medias/transfert/exemple_evenement_journal_cycledevie.png)
 
-
 ### Mise à jour du registre des fonds
 
 Le transfert d’unités archivistiques a des conséquences sur le registre des fonds propres et symboliques.  
@@ -258,9 +264,10 @@ Pour les fonds propres, les totaux d’unités archivistiques (AU), groupes d’
 - Dans l’IHM VitamUI, ces opérations de transfert sont visibles en cliquant sur la ligne de cette opération au terme de la version 6.RC.
 
 Pour les fonds symboliques, au moment du calcul périodique des fonds symboliques de la base, les unités archivistiques (AU), groupes d’objets techniques (GOT), objets techniques (OT) transférés et éliminés du système d’origine seront décomptés et la volumétrie sera mise à jour. Depuis la notice du service agent, l’utilisateur peut accéder à l’historique des rattachements et consulter sur une période donnée les variations à la hausse ou à la baisse des fonds symboliques pour ce producteur.  
+
 Exemple d’entrée impactée par un transfert d’archives dans le registre des fonds :
 
-``````
+```json
 {
     "_id": "aehaaaaabahi7u6oaabzialqlwhptjiaaaaq",
     "ObjectSize": {
@@ -321,7 +328,8 @@ Exemple d’entrée impactée par un transfert d’archives dans le registre des
     "_tenant": 8,
     "_v": 1
 }
-``````
+```
+
 **Point d’attention :** 
 
 Le calcul des unités archivistiques (AU), groupes d’objets techniques (GOT), objets techniques (OT) rattachés à un producteur au titre de son fonds symbolique n’est effectué qu’une fois par vingt-quatre heures (sauf paramétrage différent de la plate-forme). Dans ces conditions, si sur la même période de vingt-quatre heures l’archiviste effectue une entrée pour 3 unités archivistiques et un transfert acquitté pour 3 unités archivistiques, le total des symboliques entre deux calculs n’aura pas évolué.

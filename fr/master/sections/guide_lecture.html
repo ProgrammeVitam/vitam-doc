@@ -122,7 +122,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#referentiel-des-services-agents">1.10.3.1. Référentiel des services agents</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#referentiel-des-regles-de-gestion">1.10.3.2. Référentiel des règles de gestion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#formats-de-fichiers">1.10.3.3. Formats de fichiers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id1">1.10.3.4. Ontologie</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">1.10.3.4. Ontologie</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#arbres-et-plans">1.10.3.5. Arbres et plans</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#profils-documentaires">1.10.3.6. Profils documentaires</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#contrat-de-gestion">1.10.3.7. Contrat de gestion</a></li>
@@ -170,14 +170,17 @@
 <li class="toctree-l1"><a class="reference internal" href="modele_de_workflow.html">6. Description des workflows et des opérations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="module_de_collecte.html">7. Module de collecte</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ontologie.html">8. Ontologie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="preservation.html">9. Gestion de la préservation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="profil_archivage.html">10. Profils d’archivage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="profil_unite_archivistique.html">11. Profils d’unité archivistique</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regles_gestion.html">12. Règles de gestion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="services_prod.html">13. Services producteurs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="stockage.html">14. Gestion de multiples stratégies de stockage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="transfert.html">15. Le transfert avec la solution logicielle Vitam</a></li>
-<li class="toctree-l1"><a class="reference internal" href="valeur_probante.html">16. Conservation de la valeur probante</a></li>
+<li class="toctree-l1"><a class="reference internal" href="organisation_information.html">9. Organisation de l’information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preservation.html">10. Gestion de la préservation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_archivage.html">11. Profils d’archivage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_unite_archivistique.html">12. Profils d’unité archivistique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regles_gestion.html">13. Règles de gestion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services_prod.html">14. Services producteurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SIP.html">15. Structuration des <em>Submission Information Packages</em> (SIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DIP.html">16. Structuration des <em>Dissemination Information Packages</em> (DIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stockage.html">17. Gestion de multiples stratégies de stockage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transfert.html">18. Le transfert avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="valeur_probante.html">19. Conservation de la valeur probante</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">documentation Vitam UI</span></p>
 <ul>
@@ -275,10 +278,10 @@ Il est conseillé de consulter les documents du général au particulier, dans l
 <h3><span class="section-number">1.2.2. </span>La documentation Vitam UI<a class="headerlink" href="#la-documentation-vitam-ui" title="Lien permanent vers cette rubrique"></a></h3>
 <p>En plus des documents pour les développeurs et intégrateurs et des présentations des différentes APP (pour application) métier, deux documents font le point sur des sujets techniques :</p>
 <ul class="simple">
-<li><p>présentation de la fonctionnalité d’auto-provisioning,</p></li>
+<li><p><a class="reference internal" href="VitamUI_Autoprovisionning.html"><span class="doc std std-doc">présentation de la fonctionnalité d’auto-provisioning</span></a>,</p></li>
 <li><p>authentification, administration et habilitation des utilisateurs et cloisonnement des données.</p></li>
 </ul>
-<p>Un guide de prise en main de Vitam UI pour premier versement a également été initié.</p>
+<p>Un <a class="reference internal" href="guide_prise_en_main.html"><span class="doc std std-doc">guide de prise en main de Vitam UI pour premier versement a également été initié</span></a>.</p>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>Ordre d’exécution</p></th>
@@ -465,8 +468,8 @@ Il est conseillé de consulter les documents du général au particulier, dans l
 <h2><span class="section-number">1.3. </span>Découvrir la solution logicielle Vitam<a class="headerlink" href="#decouvrir-la-solution-logicielle-vitam" title="Lien permanent vers cette rubrique"></a></h2>
 <section id="presentation-du-projet-solution-logicielle">
 <h3><span class="section-number">1.3.1. </span>Présentation du projet solution logicielle<a class="headerlink" href="#presentation-du-projet-solution-logicielle" title="Lien permanent vers cette rubrique"></a></h3>
-<p><strong>Présentation :</strong> ce document présente de manière assez générale la solution logicielle : mode de développement, vision générale fonctionnelle et technique de la solution.<br />
-<strong>Lien vers le document :</strong> Présentation de la solution logicielle</p>
+<p><strong>Présentation :</strong> ce document présente de manière assez générale la solution logicielle : mode de développement, vision générale fonctionnelle et technique de la solution.</p>
+<p><strong>Lien vers le document :</strong> <a class="reference internal" href="presentation_solution_logicielle.html"><span class="doc std std-doc">Présentation de la solution logicielle</span></a></p>
 <p><strong>Public cible :</strong> toute personne voulant découvrir la solution logicielle Vitam, tant profil technique que fonctionnel.</p>
 <p><strong>Sommaire :</strong></p>
 <ul class="simple">
@@ -478,8 +481,8 @@ Il est conseillé de consulter les documents du général au particulier, dans l
 <section id="guide-de-prise-en-main-de-la-solution-logicielle-vitam-1er-transfert">
 <h3><span class="section-number">1.3.2. </span>Guide de prise en main de la solution logicielle Vitam (1er transfert)<a class="headerlink" href="#guide-de-prise-en-main-de-la-solution-logicielle-vitam-1er-transfert" title="Lien permanent vers cette rubrique"></a></h3>
 <p><strong>Présentation :</strong> ce document décrit comment effectuer une première entrée dans la solution logicielle Vitam avec l’IHM Vitam UI. Il explicite les étapes obligatoires de paramétrage et de préparation des lots d’archives. Un lexique en annexe explicite et détaille les principaux objets métiers avec une description, un statut (obligatoire ou facultatif) pour l’opération d’entrée et renvoie vers la documentation permettant d’approfondir cette notion.<br />
-Le document est accompagné d’un « kit » comportant les fichiers d’exemple utiles (référentiels, SIP).<br />
-<strong>Lien vers le document :</strong> Guide de prise en main</p>
+Le document est accompagné d’un « kit » comportant les fichiers d’exemple utiles (référentiels, SIP).</p>
+<p><strong>Lien vers le document :</strong> <a class="reference internal" href="guide_prise_en_main.html"><span class="doc std std-doc">Guide de prise en main</span></a></p>
 <p><strong>Public cible :</strong> toute personne voulant découvrir et tester la solution logicielle Vitam.</p>
 <p><strong>Sommaire :</strong></p>
 <ul class="simple">
@@ -502,8 +505,8 @@ Il s’articule autour de trois grands axes :</p>
 <li><p>l’organisation de l’information dans la solution logicielle Vitam en tant que telle.</p></li>
 </ul>
 <p>Il doit permettre à tout projet d’implémentation de la solution logicielle Vitam d’alimenter le dossier de description technique du système tel qu’exigé par les normes NF Z 42‑013 et NF Z 42‑020.
-Il contextualise le modèle de données fourni comme documentation de la solution logicielle.<br />
-<strong>Lien vers le document :</strong> Organisation de l’information</p>
+Il contextualise le modèle de données fourni comme documentation de la solution logicielle.</p>
+<p><strong>Lien vers le document :</strong> <a class="reference internal" href="organisation_information.html"><span class="doc std std-doc">Organisation de l’information</span></a></p>
 <p><strong>Public cible :</strong> archivistes</p>
 <p><strong>Sommaire :</strong></p>
 <ul class="simple">
@@ -590,7 +593,7 @@ Chaque action peut avoir les modèles d’exécution suivants (toutes les étape
 <section id="dossier-darchitecture-technique-dat">
 <h3><span class="section-number">1.4.4. </span>Dossier d’architecture technique (DAT)<a class="headerlink" href="#dossier-darchitecture-technique-dat" title="Lien permanent vers cette rubrique"></a></h3>
 <p><strong>Présentation :</strong> Le document présente une vision d’ensemble des problématiques structurantes de la solution logicielle Vitam (d’un point de vue applicatif et technique). Il explicite également les choix structurants de principes et composants de réalisation de la solution logicielle, ainsi que les raisons de ces choix.</p>
-<p><strong>Lien vers le document :</strong> Documentation d’architecture</p>
+<p><strong>Lien vers le document :</strong> <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/html/archi/">Documentation d’architecture</a></p>
 <p><strong>Public cible :</strong> architectes applicatifs et techniques de projets désirant intégrer la solution logicielle Vitam, développeurs, exploitants</p>
 <p><strong>Sommaire :</strong></p>
 <ul class="simple">
@@ -608,7 +611,7 @@ Chaque action peut avoir les modèles d’exécution suivants (toutes les étape
 <section id="documentation-dinstallation-din">
 <h3><span class="section-number">1.5.1. </span>Documentation d’installation (DIN)<a class="headerlink" href="#documentation-dinstallation-din" title="Lien permanent vers cette rubrique"></a></h3>
 <p><strong>Présentation :</strong> Le document a pour but de fournir à une équipe d’exploitants de la solution logicielle Vitam les procédures et informations nécessaires pour l’installation de celle-ci.</p>
-<p><strong>Lien vers le document :</strong> Documentation d’installation</p>
+<p><strong>Lien vers le document :</strong> <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/html/installation">Documentation d’installation</a></p>
 <p><strong>Public cible :</strong> informaticiens, exploitants ayant de bonnes connaissances en environnement Linux.</p>
 <p><strong>Sommaire :</strong></p>
 <ul class="simple">
@@ -623,7 +626,7 @@ Chaque action peut avoir les modèles d’exécution suivants (toutes les étape
 <section id="documentation-dexploitation-dex">
 <h3><span class="section-number">1.5.2. </span>Documentation d’exploitation (DEX)<a class="headerlink" href="#documentation-dexploitation-dex" title="Lien permanent vers cette rubrique"></a></h3>
 <p><strong>Présentation :</strong> Le document a pour but de fournir à une équipe d’exploitants de la solution logicielle Vitam les procédures et informations nécessaires au bon fonctionnement de celle-ci.</p>
-<p><strong>Lien vers le document :</strong> Documentation d’exploitation</p>
+<p><strong>Lien vers le document :</strong> <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/html/exploitation">Documentation d’exploitation</a></p>
 <p><strong>Public cible :</strong> informaticiens, exploitants ayant de bonnes connaissances en environnement Linux.</p>
 <p><strong>Sommaire :</strong></p>
 <ul class="simple">
@@ -642,7 +645,7 @@ Chaque action peut avoir les modèles d’exécution suivants (toutes les étape
 <section id="documentation-de-montees-de-version-dmv">
 <h3><span class="section-number">1.5.3. </span>Documentation de montées de version (DMV)<a class="headerlink" href="#documentation-de-montees-de-version-dmv" title="Lien permanent vers cette rubrique"></a></h3>
 <p><strong>Présentation :</strong> Le document a pour but de fournir à une équipe d’exploitants de la solution logicielle Vitam les procédures et informations utiles pour réaliser les montées de version de la solution logicielle. Il décrit les chemins de montées de versions supportés.</p>
-<p><strong>Lien vers le document :</strong> Documentation de montées de version</p>
+<p><strong>Lien vers le document :</strong> <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/html/migration">Documentation de montées de version</a></p>
 <p><strong>Public cible :</strong></p>
 <ul class="simple">
 <li><p>Les architectes techniques des projets désirant intégrer la solution logicielle Vitam ;</p></li>
@@ -661,7 +664,7 @@ Chaque action peut avoir les modèles d’exécution suivants (toutes les étape
 <section id="manuel-dintegration-applicative">
 <h3><span class="section-number">1.6.1. </span>Manuel d’intégration applicative<a class="headerlink" href="#manuel-dintegration-applicative" title="Lien permanent vers cette rubrique"></a></h3>
 <p><strong>Présentation :</strong> Le document présente comment interfacer la solution logicielle Vitam avec une application métier : comment développer un connecteur Vitam, et instaurer un dialogue entre l’application et la solution logicielle Vitam, développer des plugin…</p>
-<p><strong>Lien vers le document :</strong> Manuel d’intégration applicative</p>
+<p><strong>Lien vers le document :</strong> <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/html/manuel-integration/">Manuel d’intégration applicative</a></p>
 <p><strong>Public cible :</strong> développeurs</p>
 <p><strong>Sommaire :</strong></p>
 <ul class="simple">
@@ -675,7 +678,7 @@ Chaque action peut avoir les modèles d’exécution suivants (toutes les étape
 <section id="javadoc">
 <h3><span class="section-number">1.6.2. </span>JAVADOC<a class="headerlink" href="#javadoc" title="Lien permanent vers cette rubrique"></a></h3>
 <p><strong>Présentation :</strong> Le document présente la documentation interne du code de la solution logicielle Vitam, notamment la documentation associée aux clients java externes de celle-ci. Ces éléments de code peuvent être utilisés pour associer une application à la solution logicielle Vitam.</p>
-<p><strong>Lien vers le document :</strong> Javadoc</p>
+<p><strong>Lien vers le document :</strong> <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/javadoc/">Javadoc</a></p>
 <p><strong>Public cible :</strong> développeurs, mainteneurs de la solution logicielle Vitam</p>
 <ul class="simple">
 <li><p>Ihm Demo</p></li>
@@ -699,7 +702,7 @@ Chaque action peut avoir les modèles d’exécution suivants (toutes les étape
 <section id="documentation-des-api-externes">
 <h3><span class="section-number">1.6.3. </span>Documentation des API externes<a class="headerlink" href="#documentation-des-api-externes" title="Lien permanent vers cette rubrique"></a></h3>
 <p><strong>Présentation :</strong> Le document présente, sous forme de RAML, les API REST, exposées aux applications métiers.</p>
-<p><strong>Lien vers le document :</strong> Documentation des API externes</p>
+<p><strong>Lien vers le document :</strong> <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/raml/externe/">Documentation des API externes</a></p>
 <p><strong>Public cible :</strong> Développeurs</p>
 <p><strong>Sommaire :</strong></p>
 <ul class="simple">
@@ -721,7 +724,7 @@ Chaque action peut avoir les modèles d’exécution suivants (toutes les étape
 <li><p>Les tests manuels permettent de tester un large spectre de fonctionnalités de la solution logicielle Vitam lors des développements.</p></li>
 <li><p>Les tests automatisés permettent de vérifier de manière régulière qu’une régression n’est pas survenue et que tout fonctionne correctement.</p></li>
 </ul>
-<p><strong>Lien vers le document :</strong> Manuel d’utilisation de l’IHM recette</p>
+<p><strong>Lien vers le document :</strong> <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/autres/fonctionnel/VITAM_IHM_Recette.pdf">Manuel d’utilisation de l’IHM recette</a></p>
 <p><strong>Public cible :</strong> archivistes, Exploitants, Développeurs pour la partie DSL.</p>
 <p><strong>Sommaire :</strong></p>
 <ul class="simple">
@@ -755,7 +758,7 @@ Chaque action peut avoir les modèles d’exécution suivants (toutes les étape
 <li><p>Test non automatisé : indique par un OUI ou NON si le cas de test doit être testé uniquement manuellement ou si, il peut être couvert par un TNR,</p></li>
 <li><p>Résultat de la dernière recette : indique par un OK ou KO le résultat de la dernière recette faite par l’équipe Vitam.</p></li>
 </ul>
-<p><strong>Lien vers le document :</strong> Cahier de tests métiers (version Excel) ou (version Open Document)</p>
+<p><strong>Lien vers le document :</strong> Cahier de tests métiers (<a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/autres/fonctionnel/VITAM_cahier_de_recette_fonctionnel.xlsx">version Excel</a>) ou (<a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/autres/fonctionnel/VITAM_cahier_de_recette_fonctionnel.ods">version Open Document</a>)</p>
 <p><strong>Public cible :</strong> archivistes</p>
 <p><strong>Sommaire :</strong></p>
 <ul class="simple">
@@ -800,9 +803,9 @@ Chaque action peut avoir les modèles d’exécution suivants (toutes les étape
 <h2><span class="section-number">1.8. </span>Utiliser la solution logicielle<a class="headerlink" href="#utiliser-la-solution-logicielle" title="Lien permanent vers cette rubrique"></a></h2>
 <section id="manuel-utilisateur-de-lihm-de-demonstration">
 <h3><span class="section-number">1.8.1. </span>Manuel utilisateur de l’IHM de démonstration<a class="headerlink" href="#manuel-utilisateur-de-lihm-de-demonstration" title="Lien permanent vers cette rubrique"></a></h3>
-<p><strong>Présentation :</strong> Le document[^1] présente pas à pas l’utilisation de la solution logicielle Vitam au travers des Interfaces standard (IHM) fournies, dites de démonstration. Il a pour objectif de guider l’utilisateur de la solution logicielle Vitam dans la gestion de ses archives, tout en lui permettant de se familiariser avec les principales fonctionnalités.</p>
+<p><strong>Présentation :</strong> Le document<a class="footnote-reference brackets" href="#id4" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> présente pas à pas l’utilisation de la solution logicielle Vitam au travers des Interfaces standard (IHM) fournies, dites de démonstration. Il a pour objectif de guider l’utilisateur de la solution logicielle Vitam dans la gestion de ses archives, tout en lui permettant de se familiariser avec les principales fonctionnalités.</p>
 <p><strong>Public cible :</strong> archivistes</p>
-<p><strong>Lien vers le document :</strong> Manuel utilisateur de l’IHM de démonstration</p>
+<p><strong>Lien vers le document :</strong> <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/autres/fonctionnel/VITAM_Manuel_utilisateur.pdf">Manuel utilisateur de l’IHM de démonstration</a></p>
 <p><strong>Sommaire :</strong></p>
 <ul class="simple">
 <li><p>Généralités</p></li>
@@ -845,7 +848,7 @@ Chaque action peut avoir les modèles d’exécution suivants (toutes les étape
 <section id="structuration-des-submission-information-packages-sip">
 <h3><span class="section-number">1.8.3. </span>Structuration des Submission Information Packages (SIP)<a class="headerlink" href="#structuration-des-submission-information-packages-sip" title="Lien permanent vers cette rubrique"></a></h3>
 <p><strong>Présentation :</strong> Le document décrit la manière de préparer des entrées d’archives destinées à être transférées dans une plate-forme utilisant la solution logicielle Vitam. L’entrée doit être réalisée conformément aux deux normes et standard suivants : OAIS (Open Archival Information System) et SEDA (Standard d’Échanges de Données pour l’Archivage).</p>
-<p><strong>Lien vers le document :</strong> Structuration des SIP</p>
+<p><strong>Lien vers le document :</strong> <a class="reference internal" href="SIP.html"><span class="doc std std-doc">Structuration des SIP</span></a></p>
 <p><strong>Public cible :</strong> archivistes, utilisateurs et administrateurs fonctionnels</p>
 <p><strong>Sommaire :</strong></p>
 <ul class="simple">
@@ -880,9 +883,9 @@ Chaque action peut avoir les modèles d’exécution suivants (toutes les étape
 <ul class="simple">
 <li><p>présentation des règles de gestion associées aux archives et de la manière dont le Standard d’échanges de données pour l’archivage (SEDA) et la solution logicielle Vitam les formalisent ;</p></li>
 <li><p>présentation des mécanismes mis en œuvre dans la solution logicielle Vitam pour gérer ces règles de gestion, en application du SEDA ;</p></li>
-<li><p>recommandations aux ministères porteurs, partenaires et utilisateurs de la solution logicielle Vitam sur la manière d’utiliser les fonctionnalités associées aux règles de gestion.
-<strong>Lien vers le document :</strong> <a class="reference internal" href="regles_gestion.html"><span class="doc std std-doc">Règles de gestion</span></a></p></li>
+<li><p>recommandations aux ministères porteurs, partenaires et utilisateurs de la solution logicielle Vitam sur la manière d’utiliser les fonctionnalités associées aux règles de gestion.</p></li>
 </ul>
+<p><strong>Lien vers le document :</strong> <a class="reference internal" href="regles_gestion.html"><span class="doc std std-doc">Règles de gestion</span></a></p>
 <p><strong>Public cible :</strong> archivistes</p>
 <p><strong>Sommaire :</strong></p>
 <ul class="simple">
@@ -961,14 +964,14 @@ Chaque action peut avoir les modèles d’exécution suivants (toutes les étape
 </section>
 <section id="gestion-des-archives-et-des-arborescences">
 <h3><span class="section-number">1.8.6. </span>Gestion des archives et des arborescences<a class="headerlink" href="#gestion-des-archives-et-des-arborescences" title="Lien permanent vers cette rubrique"></a></h3>
-<p><strong>Présentation :</strong> Le document[^2] présente les fonctionnalités associées à l’utilisation des arbres de positionnement et plans de classement par rapport à des unités archivistiques « standard » dans la solution logicielle Vitam.
+<p><strong>Présentation :</strong> Le document<a class="footnote-reference brackets" href="#id5" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> présente les fonctionnalités associées à l’utilisation des arbres de positionnement et plans de classement par rapport à des unités archivistiques « standard » dans la solution logicielle Vitam.
 Il s’articule autour des axes suivants :</p>
 <ul class="simple">
 <li><p>une présentation des arbres de positionnement et plans de classement et de la manière dont le Standard d’échanges de données pour l’archivage (SEDA) est utilisé pour les formaliser ;</p></li>
 <li><p>une présentation des mécanismes mis en œuvre dans la solution logicielle Vitam pour gérer ces arbres et plans ;</p></li>
 <li><p>des recommandations aux ministères porteurs, partenaires et utilisateurs de la solution logicielle Vitam sur la manière d’utiliser les fonctionnalités associées aux arbres et plans.</p></li>
 </ul>
-<p><strong>Lien vers le document :</strong> Gestion des archives et des arborescences</p>
+<p><strong>Lien vers le document :</strong> <a class="reference internal" href="gestion_archives_arbo.html"><span class="doc std std-doc">Gestion des archives et des arborescences</span></a></p>
 <p><strong>Public cible :</strong> archivistes</p>
 <p><strong>Sommaire :</strong></p>
 <ul class="simple">
@@ -997,7 +1000,7 @@ Il s’articule autour des axes suivants :</p>
 <section id="structuration-des-dissemination-information-packages-dip">
 <h3><span class="section-number">1.8.7. </span>Structuration des Dissemination Information Packages (DIP)<a class="headerlink" href="#structuration-des-dissemination-information-packages-dip" title="Lien permanent vers cette rubrique"></a></h3>
 <p><strong>Présentation :</strong> Le document présente les fonctionnalités associées au Dissemination Information Package dans la solution logicielle Vitam. Le DIP est un moyen de mettre à disposition de tiers (services producteurs, autres services d’archives, usagers sur place et à distance…) les archives et leurs métadonnées conservées par le service d’archives, si besoin après vérification des droits des demandeurs. Le document décrit la manière de préparer des paquets et de les mettre à disposition dans une plate-forme utilisant la solution logicielle Vitam.</p>
-<p><strong>Lien vers le document :</strong> Structuration des DIP</p>
+<p><strong>Lien vers le document :</strong> <a class="reference internal" href="DIP.html"><span class="doc std std-doc">Structuration des DIP</span></a></p>
 <p><strong>Public cible :</strong> Archivistes, utilisateurs et administrateurs fonctionnels</p>
 <p><strong>Sommaire :</strong></p>
 <ul class="simple">
@@ -1082,7 +1085,7 @@ Ce document s’articule autour des axes suivants :</p>
 <li><p>une présentation des mécanismes mis en œuvre dans la solution logicielle Vitam pour gérer et réaliser des opérations de préservation numérique ;</p></li>
 <li><p>des recommandations aux utilisateurs de la solution logicielle Vitam sur la manière d’utiliser les fonctionnalités associées à ces outils de préservation numérique.</p></li>
 </ul>
-<p><strong>Lien vers le document :</strong> Gestion de la préservation</p>
+<p><strong>Lien vers le document :</strong> <a class="reference internal" href="preservation.html"><span class="doc std std-doc">Gestion de la préservation</span></a></p>
 <p><strong>Public cible :</strong> archivistes, développeurs</p>
 <p><strong>Sommaire :</strong></p>
 <ul class="simple">
@@ -1158,7 +1161,7 @@ Ce document s’articule autour des axes suivants :</p>
 <li><p>une présentation des mécanismes mis en œuvre dans la solution logicielle Vitam pour gérer ces habilitations ;</p></li>
 <li><p>des recommandations aux ministères porteurs, partenaires et utilisateurs de la solution logicielle Vitam sur la manière d’utiliser les fonctionnalités associées à ces habilitations.</p></li>
 </ul>
-<p><strong>Lien vers le document :</strong> Gestion des habilitations</p>
+<p><strong>Lien vers le document :</strong> <a class="reference internal" href="gestion_habilitations.html"><span class="doc std std-doc">Gestion des habilitations</span></a></p>
 <p><strong>Public cible :</strong> archivistes, exploitants</p>
 <p><strong>Sommaire :</strong></p>
 <ul class="simple">
@@ -1264,7 +1267,7 @@ Ce document s’articule autour des axes suivants :</p>
 <li><p>des recommandations aux utilisateurs de la solution logicielle Vitam sur l’élaboration d’un profil d’unité archivistique ;</p></li>
 <li><p>quelques conseils complémentaires de mise en œuvre.</p></li>
 </ul>
-<p><strong>Lien vers le document :</strong> Profil d’unité archivistique</p>
+<p><strong>Lien vers le document :</strong> <a class="reference internal" href="profil_unite_archivistique.html"><span class="doc std std-doc">Profil d’unité archivistique</span></a></p>
 <p><strong>Public cible :</strong> archivistes, développeurs</p>
 <p><strong>Sommaire :</strong></p>
 <ul class="simple">
@@ -1320,7 +1323,7 @@ Ce document s’articule autour des axes suivants :</p>
 <li><p>une présentation des mécanismes mis en œuvre dans la solution logicielle Vitam pour prendre en compte cette notion ;</p></li>
 <li><p>quelques conseils complémentaires de mise en œuvre.</p></li>
 </ul>
-<p><strong>Lien vers le document :</strong> Ontologie</p>
+<p><strong>Lien vers le document :</strong> <a class="reference internal" href="ontologie.html"><span class="doc std std-doc">Ontologie</span></a></p>
 <p><strong>Public cible :</strong> archivistes, développeurs</p>
 <p><strong>Sommaire :</strong></p>
 <ul class="simple">
@@ -1377,7 +1380,7 @@ Ce document s’articule autour des axes suivants :</p>
 </ul>
 </li>
 </ul>
-<p><strong>Lien vers le document :</strong> Gestion de multiples stratégies de stockage</p>
+<p><strong>Lien vers le document :</strong> <a class="reference internal" href="stockage.html"><span class="doc std std-doc">Gestion de multiples stratégies de stockage</span></a></p>
 <p><strong>Public cible :</strong> archivistes, développeurs</p>
 <p><strong>Sommaire :</strong></p>
 <ul class="simple">
@@ -1409,7 +1412,7 @@ Dans un contexte d’archivage électronique, cette fonctionnalité est mise en 
 <section id="manuel-de-developpement">
 <h3><span class="section-number">1.9.1. </span>Manuel de développement<a class="headerlink" href="#manuel-de-developpement" title="Lien permanent vers cette rubrique"></a></h3>
 <p><strong>Présentation :</strong> Le document explicite les règles et points durs de développement de la réalisation de la solution logicielle Vitam (code interne).</p>
-<p><strong>Lien vers le document :</strong> Manuel de développement</p>
+<p><strong>Lien vers le document :</strong> <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/html/manuel-dev/">Manuel de développement</a></p>
 <p><strong>Public cible :</strong> développeurs, mainteneurs de la solution logicielle Vitam</p>
 <p><strong>Sommaire :</strong></p>
 <ul class="simple">
@@ -1425,7 +1428,7 @@ Dans un contexte d’archivage électronique, cette fonctionnalité est mise en 
 <section id="documentation-des-api-internes">
 <h3><span class="section-number">1.9.2. </span>Documentation des API internes<a class="headerlink" href="#documentation-des-api-internes" title="Lien permanent vers cette rubrique"></a></h3>
 <p><strong>Présentation :</strong> Le document présente, sous forme de RAML, la documentation associée aux API REST, exposées entre les composants de la solution logicielle Vitam.</p>
-<p><strong>Lien vers le document :</strong> Documentation des API internes</p>
+<p><strong>Lien vers le document :</strong> <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/raml/interne/">Documentation des API internes</a></p>
 <p><strong>Public cible :</strong> développeurs, mainteneurs de la solution logicielle Vitam</p>
 <p><strong>Sommaire :</strong></p>
 <ul class="simple">
@@ -1448,7 +1451,7 @@ Dans un contexte d’archivage électronique, cette fonctionnalité est mise en 
 <section id="documentation-produit-authentification-administration-et-habilitation-des-utilisateurs-et-cloisonnement-des-donnees">
 <h3><span class="section-number">1.10.1. </span>Documentation produit : authentification, administration et habilitation des utilisateurs et cloisonnement des données<a class="headerlink" href="#documentation-produit-authentification-administration-et-habilitation-des-utilisateurs-et-cloisonnement-des-donnees" title="Lien permanent vers cette rubrique"></a></h3>
 <p><strong>Présentation :</strong> Cette documentation produit concerne le périmètre fonctionnel portail et les APPs permettant d’utiliser ce périmètre.</p>
-<p><strong>Lien vers le document :</strong> Documentation produit</p>
+<p><strong>Lien vers le document :</strong> <span class="xref myst">Documentation produit</span></p>
 <p><strong>Public cible :</strong> elle est dédiée aux équipes chargées d’implémenter VitamUI.</p>
 <p><strong>Sommaire :</strong></p>
 <ul class="simple">
@@ -1468,8 +1471,8 @@ Dans un contexte d’archivage électronique, cette fonctionnalité est mise en 
 </ul>
 <p><strong>Ordre d’exécution :</strong> 1 – obligatoire</p>
 <p><strong>Nom de l’APP Vitam UI :</strong> Organisation</p>
-<p><strong>Lien vers le document :</strong> Organisation
-<strong>Public cible :</strong></p>
+<p><strong>Lien vers le document :</strong> <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/autres/fonctionnel/VitamUI_DocAPP_Organisation.pdf">Organisation</a></p>
+<p><strong>Public cible :</strong></p>
 <ul class="simple">
 <li><p>Opérateur d’instance</p></li>
 </ul>
@@ -1479,7 +1482,7 @@ Dans un contexte d’archivage électronique, cette fonctionnalité est mise en 
 <p><strong>Présentation :</strong> Le document permet de créer le compte nominatif de l’administrateur fonctionnel d’une organisation à des fins d’activation et de prendre la main sur la session d’un utilisateur à des fins de support. Cette APP permet à un utilisateur support d’instance, de subroger les droits d’un utilisateur générique de l’organisation (administration pour compte de tiers) ou d’un utilisateur nominatif, après autorisation de celui-ci.</p>
 <p><strong>Ordre d’exécution :</strong> 2 – obligatoire</p>
 <p><strong>Nom de l’APP Vitam UI :</strong> Subrogation</p>
-<p><strong>Lien vers le document :</strong> Subrogation</p>
+<p><strong>Lien vers le document :</strong> <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/autres/fonctionnel/VitamUI_DocAPP_Subrogation.pdf">Subrogation</a></p>
 <p><strong>Public cible :</strong></p>
 <ul class="simple">
 <li><p>Administrateur du service (si vous exposez VITAM UI en tant que service pour d’autres utilisateurs)</p></li>
@@ -1491,7 +1494,7 @@ Dans un contexte d’archivage électronique, cette fonctionnalité est mise en 
 <p><strong>Présentation :</strong> Le document permet de définir des droits fins sur la gestion des utilisateurs de l’organisation en créant un nouveau profil de droits(*) pour cette APP. Elle permet, selon le profil de l’administrateur, de créer, modifier, désactiver et anonymiser un utilisateur.</p>
 <p><strong>Ordre d’exécution :</strong> 3 – facultatif</p>
 <p><strong>Nom de l’APP Vitam UI :</strong> Profil APP Utilisateurs</p>
-<p><strong>Lien vers le document :</strong> Profil APP Utilisateurs</p>
+<p><strong>Lien vers le document :</strong> <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/autres/fonctionnel/VitamUI_DocAPP_Profil_APP_Utilisateur.pdf">Profil APP Utilisateurs</a></p>
 <p><strong>Public cible :</strong> administrateur fonctionnel VITAM UI</p>
 </section>
 <section id="groupes-de-profils">
@@ -1499,7 +1502,7 @@ Dans un contexte d’archivage électronique, cette fonctionnalité est mise en 
 <p><strong>Présentation :</strong> Le document permet de définir des regroupements de droits sur une ou plusieurs APPs du portail pour les utilisateurs. Chaque APP intégrée dans l’écosystème dispose d’un ou plusieurs profils d’autorisations. Cette APP permet de regrouper les profils afin de simplifier l’administration des utilisateurs ainsi que le portage des autorisations vers un IDP tiers (provisioning d’utilisateurs automatisé).</p>
 <p><strong>Ordre d’exécution :</strong> 4 – obligatoire sauf si le groupe existe déjà</p>
 <p><strong>Nom de l’APP Vitam UI :</strong> Groupes de profils</p>
-<p><strong>Lien vers le document :</strong> Groupes de profils</p>
+<p><strong>Lien vers le document :</strong> <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/autres/fonctionnel/VitamUI_DocAPP_Groupe_profil.pdf">Groupes de profils</a></p>
 <p><strong>Public cible :</strong> Administrateur fonctionnel VITAM UI</p>
 </section>
 <section id="utilisateur">
@@ -1507,7 +1510,7 @@ Dans un contexte d’archivage électronique, cette fonctionnalité est mise en 
 <p><strong>Présentation :</strong> Le document permet de créer mes utilisateurs et leur attribuer des droits.</p>
 <p><strong>Ordre d’exécution :</strong> 5 – obligatoire</p>
 <p><strong>Nom de l’APP Vitam UI :</strong> Utilisateur</p>
-<p><strong>Lien vers le document :</strong> Utilisateur</p>
+<p><strong>Lien vers le document :</strong> <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/autres/fonctionnel/VitamUI_DocAPP_Utilisateur.pdf">Utilisateur</a></p>
 <p><strong>Public cible :</strong> Administrateur fonctionnel VITAM UI</p>
 </section>
 <section id="profils-app-parametrages-externes">
@@ -1519,7 +1522,7 @@ Dans un contexte d’archivage électronique, cette fonctionnalité est mise en 
 </ul>
 <p><strong>Ordre d’exécution :</strong> N/A</p>
 <p><strong>Nom de l’APP Vitam UI :</strong> Profils APP Paramétrages externes</p>
-<p><strong>Lien vers le document :</strong> Profils APP Paramétrages externes</p>
+<p><strong>Lien vers le document :</strong> <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/autres/fonctionnel/VitamUI_DocAPP_Profil_APP_Parametrages_externes.pdf">Profils APP Paramétrages externes</a></p>
 <p><strong>Public cible :</strong> Administrateur fonctionnel VITAM UI</p>
 </section>
 <section id="hierarchisation-des-profils">
@@ -1527,7 +1530,7 @@ Dans un contexte d’archivage électronique, cette fonctionnalité est mise en 
 <p><strong>Présentation :</strong> Le document permet de limiter l’attribution de profils à une portée d’utilisateurs et d’activer la séparation des rôles pour éviter d’attribuer des profils avec des privilèges supérieurs aux siens.</p>
 <p><strong>Ordre d’exécution :</strong> N/A</p>
 <p><strong>Nom de l’APP Vitam UI :</strong> Hiérarchisation des profils</p>
-<p><strong>Lien vers le document :</strong> Hiérarchisation des profils</p>
+<p><strong>Lien vers le document :</strong> <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/autres/fonctionnel/VitamUI_DocAPP_Hierarchisation_profils.pdf">Hiérarchisation des profils</a></p>
 <p><strong>Public cible :</strong> Opérateur d’instance</p>
 </section>
 </section>
@@ -1538,7 +1541,7 @@ Dans un contexte d’archivage électronique, cette fonctionnalité est mise en 
 <p><strong>Présentation :</strong> Le document permet de déclarer un nouveau service producteur ou un nouveau service versant.</p>
 <p><strong>Ordre d’exécution :</strong> 1 – obligatoire</p>
 <p><strong>Nom de l’APP Vitam UI :</strong> Contrat service agent</p>
-<p><strong>Lien vers le document :</strong> Services agents</p>
+<p><strong>Lien vers le document :</strong> <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/autres/fonctionnel/VitamUI_DocAPP_Services_agents.pdf">Services agents</a></p>
 <p><strong>Public cible :</strong> Administrateur fonctionnel VITAM UI</p>
 </section>
 <section id="referentiel-des-regles-de-gestion">
@@ -1553,7 +1556,7 @@ Dans un contexte d’archivage électronique, cette fonctionnalité est mise en 
 </ul>
 <p><strong>Ordre d’exécution :</strong> 2 – obligatoire</p>
 <p><strong>Nom de l’APP Vitam UI :</strong> Règles de gestion</p>
-<p><strong>Lien vers le document :</strong> Règles de gestion</p>
+<p><strong>Lien vers le document :</strong> <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/autres/fonctionnel/VitamUI_DocAPP_Regles_gestion.pdf">Règles de gestion</a></p>
 <p><strong>Public cible :</strong></p>
 <ul class="simple">
 <li><p>Administrateur métier de l’organisation</p></li>
@@ -1572,19 +1575,19 @@ Dans un contexte d’archivage électronique, cette fonctionnalité est mise en 
 </ul>
 <p><strong>Ordre d’exécution :</strong> 2 – facultatif</p>
 <p><strong>Nom de l’APP Vitam UI :</strong> Formats de fichiers</p>
-<p><strong>Lien vers le document :</strong> Formats de fichiers</p>
+<p><strong>Lien vers le document :</strong> <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/autres/fonctionnel/VitamUI_DocAPP_Formats_fichiers.pdf">Formats de fichiers</a></p>
 <p><strong>Public cible :</strong></p>
 <ul class="simple">
 <li><p>Administrateur technique de l’organisation</p></li>
 <li><p>Administrateur métier de l’organisation (accès en consultation)</p></li>
 </ul>
 </section>
-<section id="id1">
-<h4><span class="section-number">1.10.3.4. </span>Ontologie<a class="headerlink" href="#id1" title="Lien permanent vers cette rubrique"></a></h4>
+<section id="id3">
+<h4><span class="section-number">1.10.3.4. </span>Ontologie<a class="headerlink" href="#id3" title="Lien permanent vers cette rubrique"></a></h4>
 <p><strong>Présentation :</strong> Le document permet de déclarer un nouveau vocabulaire non présent dans l’ontologie SEDA.</p>
 <p><strong>Ordre d’exécution :</strong> 3 – facultatif</p>
 <p><strong>Nom de l’APP Vitam UI :</strong> Ontologie</p>
-<p><strong>Lien vers le document :</strong> Ontologie</p>
+<p><strong>Lien vers le document :</strong> <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/autres/fonctionnel/VitamUI_DocAPP_Ontologie.pdf">Ontologie</a></p>
 <p><strong>Public cible :</strong> Administrateur technique VITAM UI</p>
 </section>
 <section id="arbres-et-plans">
@@ -1592,7 +1595,7 @@ Dans un contexte d’archivage électronique, cette fonctionnalité est mise en 
 <p><strong>Présentation :</strong> Le document permet d’importer un arbre de positionnement ou un plan de classement.</p>
 <p><strong>Ordre d’exécution :</strong> 4 – facultatif</p>
 <p><strong>Nom de l’APP Vitam UI :</strong> Arbres et plans</p>
-<p><strong>Lien vers le document :</strong> Arbres et plans</p>
+<p><strong>Lien vers le document :</strong> <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/autres/fonctionnel/VitamUI_DocAPP_Arbres_plans.pdf">Arbres et plans</a></p>
 <p><strong>Public cible :</strong> Administrateur fonctionnel VITAM UI</p>
 </section>
 <section id="profils-documentaires">
@@ -1600,7 +1603,7 @@ Dans un contexte d’archivage électronique, cette fonctionnalité est mise en 
 <p><strong>Présentation :</strong> Le document permet de créer et modifier un profil d’archivage (PA) ou un profil d’unité archivistique (PUA), créer et modifier une notice d’un profil, importer et exporter un profil d’archivage.</p>
 <p><strong>Ordre d’exécution :</strong> NA</p>
 <p><strong>Nom de l’APP Vitam UI :</strong> Profils documentaires</p>
-<p><strong>Lien vers le document :</strong> Profils documentaires</p>
+<p><strong>Lien vers le document :</strong> <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/autres/fonctionnel/VitamUI_DocAPP_Profils_documentaires.pdf">Profils documentaires</a></p>
 <p><strong>Public cible :</strong> Administrateur fonctionnel VITAM UI</p>
 </section>
 <section id="contrat-de-gestion">
@@ -1608,7 +1611,7 @@ Dans un contexte d’archivage électronique, cette fonctionnalité est mise en 
 <p><strong>Présentation :</strong> Le document permet d’utiliser des stratégies de stockage spécifiques (autre que celle mise en place par défaut) configurées par l’opérateur d’instance et définissant le nombre de copies et les offres de stockage sur lesquelles ces copies seront faites.</p>
 <p><strong>Ordre d’exécution :</strong> NA</p>
 <p><strong>Nom de l’APP Vitam UI :</strong> Contrat de gestion</p>
-<p><strong>Lien vers le document :</strong> Contrats de gestion</p>
+<p><strong>Lien vers le document :</strong> <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/autres/fonctionnel/VitamUI_DocAPP_Contrat_gestion.pdf">Contrats de gestion</a></p>
 <p><strong>Public cible :</strong> Administrateur fonctionnel VITAM UI</p>
 </section>
 </section>
@@ -1624,7 +1627,7 @@ Dans un contexte d’archivage électronique, cette fonctionnalité est mise en 
 </ul>
 <p><strong>Ordre d’exécution :</strong> 1 - Obligatoire sauf si le contrat est inchangé</p>
 <p><strong>Nom de l’APP Vitam UI :</strong> Contrat d’entrée</p>
-<p><strong>Lien vers le document :</strong> Contrat d’entrée</p>
+<p><strong>Lien vers le document :</strong> <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/autres/fonctionnel/VitamUI_DocAPP_Contrat_entree.pdf">Contrat d’entrée</a></p>
 <p><strong>Public cible :</strong> Administrateur fonctionnel VITAM UI</p>
 </section>
 <section id="contrat-dacces">
@@ -1632,15 +1635,15 @@ Dans un contexte d’archivage électronique, cette fonctionnalité est mise en 
 <p><strong>Présentation :</strong> Le document permet de paramétrer des droits pour la consultation ou mise à jour d’archives dans un coffre par une application.</p>
 <p><strong>Ordre d’exécution :</strong> 2 - Obligatoire sauf si le contrat est inchangé</p>
 <p><strong>Nom de l’APP Vitam UI :</strong> Contrat d’accès</p>
-<p><strong>Lien vers le document :</strong> Contrat d’accès
-<strong>Public cible :</strong> Administrateur fonctionnel VITAM UI</p>
+<p><strong>Lien vers le document :</strong> <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/autres/fonctionnel/VitamUI_DocAPP_Contrat_acces.pdf">Contrat d’accès</a></p>
+<p><strong>Public cible :</strong> Administrateur fonctionnel VITAM UI</p>
 </section>
 <section id="profil-de-securite">
 <h4><span class="section-number">1.10.4.3. </span>Profil de sécurité<a class="headerlink" href="#profil-de-securite" title="Lien permanent vers cette rubrique"></a></h4>
 <p><strong>Présentation :</strong> Le document permet de définir les droits d’une application sur les services VITAM.</p>
 <p><strong>Ordre d’exécution :</strong> 3 - Obligatoire sauf si le profil est inchangé</p>
 <p><strong>Nom de l’APP Vitam UI :</strong> Profil de sécurité</p>
-<p><strong>Lien vers le document :</strong> Profil de sécurité</p>
+<p><strong>Lien vers le document :</strong> <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/autres/fonctionnel/VitamUI_DocAPP_Profil_securite.pdf">Profil de sécurité</a></p>
 <p><strong>Public cible :</strong> Administrateur technique VITAM UI</p>
 </section>
 <section id="contexte-applicatif">
@@ -1648,7 +1651,7 @@ Dans un contexte d’archivage électronique, cette fonctionnalité est mise en 
 <p><strong>Présentation :</strong> Le document permet d’authentifier une application interconnectée avec VITAM et lui attribuer des droits.</p>
 <p><strong>Ordre d’exécution :</strong> 4 - Obligatoire sauf si le contexte est inchangé</p>
 <p><strong>Nom de l’APP Vitam UI :</strong> Contexte applicatif</p>
-<p><strong>Lien vers le document :</strong> Contexte applicatif</p>
+<p><strong>Lien vers le document :</strong> <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/autres/fonctionnel/VitamUI_DocAPP_Contexte_applicatif.pdf">Contexte applicatif</a></p>
 <p><strong>Public cible :</strong> Administrateur technique VITAM UI</p>
 </section>
 </section>
@@ -1659,7 +1662,7 @@ Dans un contexte d’archivage électronique, cette fonctionnalité est mise en 
 <p><strong>Présentation :</strong> Le document permet de consulter le journal des opérations VITAM (entrées, éliminations et données de base).</p>
 <p><strong>Ordre d’exécution :</strong> NA</p>
 <p><strong>Nom de l’APP Vitam UI :</strong> Journal des opérations</p>
-<p><strong>Lien vers le document :</strong> Journal des opérations</p>
+<p><strong>Lien vers le document :</strong> <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/autres/fonctionnel/VitamUI_DocAPP_Journal_operations.pdf">Journal des opérations</a></p>
 <p><strong>Public cible :</strong></p>
 <ul class="simple">
 <li><p>Administrateur fonctionnel VITAM UI</p></li>
@@ -1672,7 +1675,7 @@ Dans un contexte d’archivage électronique, cette fonctionnalité est mise en 
 <p><strong>Présentation :</strong> Le document permet de visualiser les opérations de sécurisation et accéder aux journaux du cycle de vie des objets.</p>
 <p><strong>Ordre d’exécution :</strong> NA</p>
 <p><strong>Nom de l’APP Vitam UI :</strong> Opérations de sécurisations</p>
-<p><strong>Lien vers le document :</strong> Opérations de sécurisation</p>
+<p><strong>Lien vers le document :</strong> <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/autres/fonctionnel/VitamUI_DocAPP_Operations_securisation.pdf">Opérations de sécurisation</a></p>
 <p><strong>Public cible :</strong> Administrateur technique VITAM UI</p>
 </section>
 <section id="requetes-dsl">
@@ -1680,7 +1683,7 @@ Dans un contexte d’archivage électronique, cette fonctionnalité est mise en 
 <p><strong>Présentation :</strong> Le document permet d’effectuer des requêtes complexes sur les bases de données documentaires en vue de retrouver des objets.</p>
 <p><strong>Ordre d’exécution :</strong> NA</p>
 <p><strong>Nom de l’APP Vitam UI :</strong> Requêtes DSL</p>
-<p><strong>Lien vers le document :</strong> Requêtes DSL</p>
+<p><strong>Lien vers le document :</strong> <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/autres/fonctionnel/VitamUI_DocAPP_RequetesDSL.pdf">Requêtes DSL</a></p>
 <p><strong>Public cible :</strong> Administrateur technique VITAM UI</p>
 </section>
 <section id="audit">
@@ -1692,7 +1695,7 @@ Dans un contexte d’archivage électronique, cette fonctionnalité est mise en 
 </ul>
 <p><strong>Ordre d’exécution :</strong> NA</p>
 <p><strong>Nom de l’APP Vitam UI :</strong> Audit</p>
-<p><strong>Lien vers le document :</strong> Audit</p>
+<p><strong>Lien vers le document :</strong> <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/autres/fonctionnel/VitamUI_DocAPP_Audit.pdf">Audit</a></p>
 <p><strong>Public cible :</strong></p>
 <ul class="simple">
 <li><p>Administrateur métier de l’organisation</p></li>
@@ -1704,7 +1707,7 @@ Dans un contexte d’archivage électronique, cette fonctionnalité est mise en 
 <p><strong>Présentation :</strong> Le document permet de produire un relevé de valeur probante sur une ou plusieurs des archives électroniques.</p>
 <p><strong>Ordre d’exécution :</strong> NA</p>
 <p><strong>Nom de l’APP Vitam UI :</strong> Relevé de valeur probante</p>
-<p><strong>Lien vers le document :</strong> Relevé de valeur probante</p>
+<p><strong>Lien vers le document :</strong> <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/autres/fonctionnel/VitamUI_DocAPP_Releve_valeur_probante.pdf">Relevé de valeur probante</a></p>
 <p><strong>Public cible :</strong></p>
 <ul class="simple">
 <li><p>Administrateur fonctionnel VITAM UI</p></li>
@@ -1716,7 +1719,7 @@ Dans un contexte d’archivage électronique, cette fonctionnalité est mise en 
 <p><strong>Présentation :</strong> Le document permet de gérer des opérations et interagir sur les étapes du workflow des opérations.</p>
 <p><strong>Ordre d’exécution :</strong> NA</p>
 <p><strong>Nom de l’APP Vitam UI :</strong> Gestion des opérations</p>
-<p><strong>Lien vers le document :</strong> Gestion des opérations</p>
+<p><strong>Lien vers le document :</strong> <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/autres/fonctionnel/VitamUI_DocAPP_Gestion_operations.pdf">Gestion des opérations</a></p>
 <p><strong>Public cible :</strong> Administrateur technique VITAM UI</p>
 </section>
 </section>
@@ -1734,7 +1737,7 @@ Dans un contexte d’archivage électronique, cette fonctionnalité est mise en 
 </ul>
 <p><strong>Ordre d’exécution :</strong> NA</p>
 <p><strong>Nom de l’APP Vitam UI :</strong> Collecte et préparation des versements</p>
-<p><strong>Lien vers le document :</strong> Collecte et préparation des versements</p>
+<p><strong>Lien vers le document :</strong> <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/autres/fonctionnel/VitamUI_DocAPP_Collecte_et_preparation_des_versements.pdf">Collecte et préparation des versements</a></p>
 <p><strong>Public cible :</strong> Archiviste / service versant</p>
 </section>
 <section id="depot-et-suivi-des-versements">
@@ -1742,7 +1745,7 @@ Dans un contexte d’archivage électronique, cette fonctionnalité est mise en 
 <p><strong>Présentation :</strong> Le document permet de déposer un lot d’archives dans le SAE et en visualiser l’entrée.</p>
 <p><strong>Ordre d’exécution :</strong> NA</p>
 <p><strong>Nom de l’APP Vitam UI :</strong> Dépôt et suivi des versements</p>
-<p><strong>Lien vers le document :</strong> Dépôt et suivi des versements</p>
+<p><strong>Lien vers le document :</strong> <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/autres/fonctionnel/VitamUI_DocAPP_Depot_et_suivi_versements.pdf">Dépôt et suivi des versements</a></p>
 <p><strong>Public cible :</strong> Archiviste</p>
 </section>
 <section id="recherche-et-consultation-des-archives">
@@ -1755,7 +1758,7 @@ Dans un contexte d’archivage électronique, cette fonctionnalité est mise en 
 </ul>
 <p><strong>Ordre d’exécution :</strong> NA</p>
 <p><strong>Nom de l’APP Vitam UI :</strong> Recherche et consultation des archives</p>
-<p><strong>Lien vers le document :</strong> Recherche et consultation des archives</p>
+<p><strong>Lien vers le document :</strong> <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/autres/fonctionnel/VitamUI_DocAPP_Recherche_et_consultation.pdf">Recherche et consultation des archives</a></p>
 <p><strong>Public cible :</strong></p>
 <ul class="simple">
 <li><p>Administrateur métier de l’organisation</p></li>
@@ -1774,10 +1777,19 @@ Dans un contexte d’archivage électronique, cette fonctionnalité est mise en 
 </ul>
 <p><strong>Ordre d’exécution :</strong> NA</p>
 <p><strong>Nom de l’APP Vitam UI :</strong> Registre des fonds</p>
-<p><strong>Lien vers le document :</strong> Registre des fonds</p>
+<p><strong>Lien vers le document :</strong> <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/autres/fonctionnel/VitamUI_DocAPP_Registre_des_fonds.pdf">Registre des fonds</a></p>
 <p><strong>Public cible :</strong> Administrateur fonctionnel</p>
-<p>[^1] Ce document ne sera plus maintenu au-delà de la version 6.RC de la solution logicielle Vitam. Les <span class="xref myst">documents décrivant l’IHM Vitam UI</span> ont vocation à le remplacer.</p>
-<p>[^2] Renommage de cette documentation et dépréciation de la documentation « Arbre de positionnement et plans de classement », en vue d’élargir son périmètre.</p>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id4" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Ce document ne sera plus maintenu au-delà de la version 6.RC de la solution logicielle Vitam. Les <span class="xref myst">documents décrivant l’IHM Vitam UI</span> ont vocation à le remplacer.</p>
+</aside>
+<aside class="footnote brackets" id="id5" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>Renommage de cette documentation et dépréciation de la documentation « Arbre de positionnement et plans de classement », en vue d’élargir son périmètre.</p>
+</aside>
+</aside>
 </section>
 </section>
 </section>

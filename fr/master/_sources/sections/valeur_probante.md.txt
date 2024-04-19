@@ -1,24 +1,23 @@
 Conservation de la valeur probante
 ====
+
 Introduction
 ----
+
 ### Documents de référence
 
-
-  |Document |Date de la version|Remarques|
-  |:---------------:|:-----:|:-----:|
-  |NF Z 42‑013 – Archivage électronique – recommandations et exigences|30/09/2020||
-  |NF Z 42‑020 – Spécifications fonctionnelles d’un composant Coffre-Fort Numérique destiné à la conservation d’informations numériques dans des conditions de nature à en garantir leur intégrité dans le temps|07/2012||
-  |GA Z42-019 – Guide d’application de la NF Z 42‑013 (Archivage électronique – Spécifications relatives à la conception et à l'exploitation de systèmes informatiques en vue d’assurer la conservation et l’intégrité des documents stockés dans ces systèmes)|06/2010|Cette nouvelle version du SEDA est intégrée à la solution logicielle Vitam à partir de la V6.RC.|
-  |Vitam – Gestion de la préservation|31/03/2023|Le document apporte des précisions sur le comportement de l’opération permettant de générer un relevé de valeur probante.|
-  
+|Document |Date de la version|Remarques|
+|:---------------:|:-----:|:-----:|
+|NF Z 42‑013 – Archivage électronique – recommandations et exigences|30/09/2020||
+|NF Z 42‑020 – Spécifications fonctionnelles d’un composant Coffre-Fort Numérique destiné à la conservation d’informations numériques dans des conditions de nature à en garantir leur intégrité dans le temps|07/2012||
+|GA Z42-019 – Guide d’application de la NF Z 42‑013 (Archivage électronique – Spécifications relatives à la conception et à l'exploitation de systèmes informatiques en vue d’assurer la conservation et l’intégrité des documents stockés dans ces systèmes)|06/2010|Cette nouvelle version du SEDA est intégrée à la solution logicielle Vitam à partir de la V6.RC.|
+|[Vitam – Gestion de la préservation](./preservation.md)||Le document apporte des précisions sur le comportement de l’opération permettant de générer un relevé de valeur probante.|
 
 ### Présentation du document
 
 La conservation de la valeur probante est un sujet central d’un système d’archivage électronique. L’objectif est de rendre prouvable toute opération effectuée sur toute unité archivistique ou tout objet qui lui est associé. Toutefois, vu les volumétries envisagées dans les implémentations de la solution logicielle Vitam, il est illusoire de gérer ceci objet par objet, en mettant en œuvre des principes cryptographiques (signatures des objets, des actions unitaires, etc.) ; cela induirait une gestion lourde et porterait même des risques d’écroulement de confiance en cas de corruption de quelques clés. La sécurité d’un SAE doit être systémique, c’est-à-dire reposer sur un faisceau d’éléments redondants dont la modification simultanée et cohérente est impossible, ou plus exactement non réalisable en pratique. Les journaux constituent un élément central de cette sécurité systémique.
 Le cadre fourni pour la conservation de la valeur probante par les normes NF Z 42‑013, NF Z 42‑020 mais aussi le guide d’application GA Z42-019, a été pris en compte et complété dans la solution logicielle Vitam.
 Ce document présente rapidement, d’un point de vue fonctionnel, le mécanisme de journalisation métier et de sécurisation de ces journaux qui est une brique essentielle de la conservation de la valeur probante dans la solution logicielle Vitam . Il décrit aussi le « relevé de valeur probante », attestation au sens de la NF Z 42‑013 de la conservation de la valeur probante qui peut être obtenue via une API. Ce document devra être enrichi au fur et à mesure de l’avancement des travaux sur la gestion de la preuve.
-
 
 Journaux
 -----
@@ -48,6 +47,7 @@ Sécurisation des journaux
 -----
 
 ### Contexte de sécurisation
+
 La sécurisation des journaux consiste à apporter de la sécurité cryptographique sur l’objet journal en tant que tel et permet de renforcer l’enregistrement des événements.
 
 Voici quelques éléments pris en compte dans la conception de cette sécurisation :
@@ -58,6 +58,7 @@ Voici quelques éléments pris en compte dans la conception de cette sécurisati
 De fait, la conjonction du chaînage et de l’arbre de Merkle constituent des principes des blockchains dont l’usage grandissant permet de garantir l’efficacité.  
 
 ### Procédure de sécurisation  
+
 La sécurisation des journaux est opérée, tenant par tenant, par la génération puis la sauvegarde sur l’offre de stockage d’un fichier selon la procédure suivante :
 - extraction de l’ensemble des éléments du journal à raison d’une ligne par élément et en partant de la ligne la plus ancienne non sécurisée ;
 → écriture dans un fichier nommé « data.txt »;
@@ -81,6 +82,7 @@ Cette procédure est lancée régulièrement sur les différents journaux, tenan
 À noter, le format de sécurisation mis dans le fichier « additional_information.txt » est mis à titre conservatoire pour permettre la mise en place de nouveaux formats qui seront pris en compte dans les traitements ultérieurs d’audit ou de génération de relevé de valeur probante. À ce jour seul le format « V1 » est utilisé.
 
 ### Mise en œuvre sur le journal des opérations
+
 Le journal des opérations recense l’ensemble des opérations possibles dans le système : entrée, mise à jour unitaire ou en masse des métadonnées descriptives et des métadonnées de gestion,  élimination (des métadonnées ou des objets) et audit.
 Le journal des opérations correspond à une table dans laquelle chaque enregistrement est une opération :
 - chaque opération est composée d’une série d’événements (le premier étant un événement parmi les autres, sauf que c’est le premier, appelé ici bloc maître) ;
@@ -97,6 +99,7 @@ Le fichier correspondant à l’extraction du journal des opérations est constr
 **Nota bene :** comme la sécurisation est aussi une opération, en général[^4], le fichier de sécurisation du journal des opérations se finit par une opération de sécurisation non finalisée (celle en cours).
 
 ### Mise en œuvre sur les journaux du cycle de vie
+
 Chaque unité archivistique et chaque groupe d’objets techniques dispose de son propre journal du cycle de vie qui trace tous les événements qui les concernent. Cette masse très importante de fichiers est stockée, comme les objets et les métadonnées, sur les offres de stockage pour en garantir la conservation optimale. Ces fichiers contiennent de nombreuses informations qui peuvent être signifiantes (par exemple la mention des changements de métadonnées et le différentiel des métadonnées lors d’une opération de mise à jour). Il faut donc être sélectif dans ce qui sera sécurisé, non seulement pour assurer suffisamment de traces sûres, mais aussi pour ne pas avoir dans les fichiers de sécurisation des journaux des informations qui devraient être effacées lors de l’élimination ou qui seraient couvertes par la protection du secret de la Défense nationale.
 
 Pour la sécurisation, il a donc été choisi de faire une ligne par journal du cycle de vie ayant été affecté par une opération (une ligne est donc un couple cycle de vie/opération) pendant la période de sécurisation. Cette ligne portera des informations sur l’opération ayant généré l’événement de cycle de vie, des informations issues du journal du cycle de vie, le hachage des métadonnées et du journal du cycle de vie en base, le hachage du fichier contenant le couple métadonnées/journal du cycle de vie stocké sur disque et enfin, dans le cas des groupes d’objets techniques, la liste des objets et de leur hachage (voir le détail ci-dessous).
@@ -105,7 +108,7 @@ Pour les journaux du cycle de vie comme pour les journaux d’opérations, les �
 À ce jour, les opérations laissant une trace dans le journal du cycle de vie des unités archivistiques et des groupes d’objets sont : entrée, mise à jour unitaire ou en masse des métadonnées descriptives et des métadonnées de gestion, reclassement, préservation, élimination (des métadonnées ou des objets), transfert et audit (en cas d’erreur détectée).
 Par exemple, on aura pour une ligne de journal du cycle de vie d’un DataObjectGroup la structure suivante (mise à plat sans retour chariot) :
 
-````
+```json
 {
 	"hGlobalDetails":{
 		"offerIds":["offer-fs-1.service.itrec.consul"],
@@ -133,11 +136,11 @@ Par exemple, on aura pour une ligne de journal du cycle de vie d’un DataObject
 	"up": ["aeaqaaaaaahdpurfabzhsald2t4c4paaaaaq", "aeaqaaaaaahdpurfabzhsald2t3xoiiaaaba"],
 	"version": 9
 }
-``````
+```
 
 Par exemple, on aura pour une ligne de journal du cycle de vie d’une unité archivistique la structure suivante (mise à plat sans retour chariot) :
 
-````
+```json
 {
 	"hGlobalDetails":{
 		"offerIds":["offer-fs-1.service.itrec.consul"],
@@ -157,7 +160,7 @@ Par exemple, on aura pour une ligne de journal du cycle de vie d’une unité ar
 	"up": ["aeaqaaaaaahdpurfabzhsald2tjah3iaaaba"],
 	"version": 5
 }
-``````
+```
 
 Pour reprendre en détail chaque champ, on a :
 - hGlobalDetails : définit la stratégie de stockage mise en œuvre pour les éléments hors objets
@@ -184,6 +187,7 @@ Pour reprendre en détail chaque champ, on a :
 Les journaux sécurisés comportent toutes les informations nécessaires à la construction automatique des relevés de valeur probante. Par ailleurs, pour des raisons de gestion des volumétries, la sécurisation des journaux du cycle de vie des unités archivistiques et des groupes d’objets techniques a été séparée en opérations distinctes, et donc dans des fichiers séparés et chaînés sur deux files distinctes.
 
 ### Mise en œuvre sur le journal des écritures
+
 Chaque écriture sur les offres de stockage donne lieu à une ligne dans un journal des écritures. Cette ligne comporte :
 - la date de l’écriture
 - le tenant concerné
@@ -203,22 +207,23 @@ Le fait de ne pas s’appuyer sur une persistance en base et la volumétrie de c
 - la sécurisation ne reprend pas comme ligne à protéger par l’arbre de Merkle les lignes des journaux d’écriture, mais construit une seule et unique ligne par fichier de journal d’écriture sur chaque serveur d’offre de stockage. Cette ligne contient le hachage du fichier de journal d’écriture à sécuriser. Le journal sécurisé des écritures prend ainsi en compte l’ensemble des journaux d’écritures, et fait référence aux journaux des écritures eux-mêmes stockés par ailleurs.
 - Le chaînage n’est fait qu’avec le précédent journal sécurisé.
 Hors ces différences, la structure est respectée et vérifiable de la même façon que les autres fichiers de sécurisation de journaux. Par exemple sur une ligne du fichier « data.txt » pour un fichier de journal d’écriture d’un serveur d’offre de stockage, on aura :
-``````
+```json
 {
   "FileName": "0_storage_logbook_20180306132033436_20180306132514628_aecaaaaaacfdgbvvaamrealb7n6msayaaaaq.log",
   "Hash": "kPvTdzVoWKk7QE4U+1y03qjzICz6HynE3Febm5OE0hY2eThlLyqJ5\/GaEesFqHb\/hSGA+fJRjrqOAFanklBfUQ=="
 }
-``````
+```
+
 Pour reprendre en détail chaque champ, on a :
 - FileName : nom du fichier contenant le journal des écritures,
 - Hash : hachage du fichier.
 Ce journal est une sécurité supplémentaire par rapport aux journaux métiers standards (journal des opérations et journal du cycle de vie). Il peut servir d’ultime recours pour s’assurer de la présence d’un fichier dans le système à un moment donné.
 
-
 Relevé de valeur probante
 ----
 
 ### Principe
+
 Le relevé de valeur probante vise à apporter la preuve de la bonne existence d’un fichier dans le système à la date supposée de son apparition dans celui-ci. L’objet peut provenir de l’extérieur du SAE dans le cadre d’une opération d’entrée ou avoir été généré par le SAE dans le cadre d’une opération de préservation.
 
 Partons de l’hypothèse que nous établissons le relevé de valeur probante pour un objet binaire. Nous disposons :
@@ -236,7 +241,6 @@ Sur chaque objet sont faites les vérifications de cohérences suivantes :
 - le tampon d’horodatage de la sécurisation de l’opération de création est bien issu du calcul avec, entre autres, les éléments vérifiés de la racine de l’arbre de Merkle et le tampon d’horodatage précédent.
 
 **Cette suite, ci-dessus, de vérifications atteste que la sécurisation du journal de l’opération de création de l’objet est bien faite et chaînée.**
-
 
 - les tampons d’horodatage de la sécurisation du journal du cycle de vie de l’objet au moment supposé de sa création en base et dans le fichier de sécurisation sont les mêmes et sont bien des tampons valides ;
 - la racine de l’arbre de Merkle de la sécurisation du journal du cycle de vie de l’objet au moment supposé de la création en base, dans le fichier de sécurisation et celle recalculée sont les mêmes ;
@@ -326,15 +330,13 @@ Il s’agit d’une opération d’audit, tracée dans le journal des opération
 - disponible au format JSON depuis l’IHM démo ou l’API,
 - formaté en PDF depuis l’APP Relevé de valeur probante de VitamUI.
 
-
 Annexes
 ----
-
 
 ### Annexe 1 : Exemple de relevé de valeur probante
 
 En avertissement
-``````
+```json
 {
   "operationSummary" : {
     "tenant" : 1,
@@ -890,17 +892,17 @@ En avertissement
   } ],
   "ReportVersion" : 2
 }
-``````
+```
 
 
 ### Annexe 2 : Liste des vérifications présentes dans le relevé de valeur probante
 
 [Liste des vérifications présentes dans le relevé de valeur probante](./medias/valeur_probante/annexe2.ods)
 
-[^1] Pour une description fine des journaux, voir le document VITAM. Organisation de l’information.
+[^1]: Pour une description fine des journaux, voir le [document VITAM. Organisation de l’information](./organisation_information.md).
 
-[^2] Pour une explication de l’arbre de Merkle et de son utilisation pour la preuve d’une partie des éléments voir https://www.certificate-transparency.org/log-proofs-work
+[^2]: Pour une explication de l’arbre de Merkle et de son utilisation pour la preuve d’une partie des éléments voir https://www.certificate-transparency.org/log-proofs-work
 
-[^3] Ce délai est nécessaire pour tenir compte de la latence de la base NoSQL au cœur de Vitam.
+[^3]: Ce délai est nécessaire pour tenir compte de la latence de la base NoSQL au cœur de Vitam.
 
-[^4] Si d’autres opérations ont été journalisées après le déclenchement de la journalisation mais avant sa fin, il peut y avoir des événements concurrents qui s’intercalent, et la période prise en compte assure un léger recouvrement pour éviter toute perte dans un environnement fortement distribué et donc non strictement synchrone.
+[^4]: Si d’autres opérations ont été journalisées après le déclenchement de la journalisation mais avant sa fin, il peut y avoir des événements concurrents qui s’intercalent, et la période prise en compte assure un léger recouvrement pour éviter toute perte dans un environnement fortement distribué et donc non strictement synchrone.

@@ -67,21 +67,14 @@ Les champs des fichiers JSON présents dans les collections peuvent être
 nommés de deux manières :
 
 -   « champ » : un champ sans underscore est modifiable via les API,
-
--   « _champ » : un champ commençant par un underscore n’est pas
-    > modifiable via les API. Une fois renseigné dans la solution
-    > logicielle Vitam par le bordereau de transfert ou la solution
-    > logicielle Vitam, il ne pourra plus être modifié depuis
-    > l’extérieur.
+-   « _champ » : un champ commençant par un underscore n’est pas modifiable via les API. Une fois renseigné dans la solution logicielle Vitam par le bordereau de transfert ou la solution logicielle Vitam, il ne pourra plus être modifié depuis l’extérieur.
 
 #### Identifiants
 
 Il existe plusieurs types d’identifiants :
 
 -   GUID : identifiant unique de 36 caractères généré par la solution logicielle Vitam,
-
 -   PUID : identifiant des formats dans le référentiel Pronom,
-
 -   PID : identifiant de processus Unix.
 
 #### Dates
@@ -101,14 +94,9 @@ document sont, sauf mention contraire, sans limite de caractères.
 Les champs peuvent être indexés de deux façons différentes dans
 ElasticSearch :
 
--   **les champs analysés :** les informations contenues dans ces champs
-    > peuvent être retrouvées par une recherche full-text. Par exemple,
-    > les champs *Description*, *Name*.
+-   **les champs analysés :** les informations contenues dans ces champs peuvent être retrouvées par une recherche full-text. Par exemple, les champs *Description*, *Name*.
 
--   **les champs non analysés :** les informations contenues dans ces
-    > champs peuvent être retrouvées par une recherche exacte
-    > uniquement. Par exemple, les champs *Identifier* ou
-    > *OriginatingAgency*.
+-   **les champs non analysés :** les informations contenues dans ces champs peuvent être retrouvées par une recherche exacte uniquement. Par exemple, les champs *Identifier* ou *OriginatingAgency*.
 
 Base Identity
 -------------
@@ -164,8 +152,7 @@ certificat applicatif.
 **« ContextId » :** identifiant signifiant (Identifier) du contexte
 utilisant le certificat applicatif.
 
--   Il s’agit d’une chaîne de caractères correspondant à l’identifiant
-    > signifiant d’un contexte applicatif.
+-   Il s’agit d’une chaîne de caractères correspondant à l’identifiant signifiant d’un contexte applicatif.
 
 -   Cardinalité : 1-1
 
@@ -177,8 +164,7 @@ utilisant le certificat applicatif.
 
 **« Certificate » :** certificat.
 
--   Il s’agit d’une chaîne de caractères correspondant au binaire du
-    > certificat suivant la norme X509.
+-   Il s’agit d’une chaîne de caractères correspondant au binaire du certificat suivant la norme X509.
 
 -   Cardinalité : 1-1
 
@@ -197,8 +183,7 @@ de certification.
 
 **« ExpirationDate » :** date d’expiration du certificat.
 
--   Il s’agit d’une date au format ISO8601 AAAA-MM-JJ+"T"+hh:mm:ss:\[3
-    > digits de millisecondes\]
+-   Il s’agit d’une date au format ISO8601 AAAA-MM-JJ+"T"+hh:mm:ss:\[3 digits de millisecondes\]
 
     Exemple : "2016-08-17T08:26:04.227"
 
@@ -331,7 +316,7 @@ Les valeurs correspondant à ces opérations dans les journaux sont détaillées
 
 Extrait d’un enregistrement JSON correspondant à une opération d’entrée terminée avec succès.
 
-```
+```json
 {
     "_id": "aeeaaaaabchgzebuaafzaalj4nng5paaaaaq",
     "evId": "aeeaaaaabchgzebuaafzaalj4nng5paaaaaq",
@@ -613,11 +598,9 @@ de l’initialisation de l’opération.
 
 -   Il s’agit d’une chaîne de caractères.
 
--   C’est un message intelligible destiné à être lu par un être humain
-    > en tant que détail de l’événement.
+-   C’est un message intelligible destiné à être lu par un être humain en tant que détail de l’événement.
 
--   Correspond à la traduction du code présent dans outDetail, issue du
-    > fichier vitam-logbook-message-fr.properties.
+-   Correspond à la traduction du code présent dans outDetail, issue du fichier vitam-logbook-message-fr.properties.
 
 -   Cardinalité : 1-1
 
@@ -625,15 +608,14 @@ de l’initialisation de l’opération.
 
 **« agId » (agent Identifier):** identifiant de l’agent interne réalisant l’évènement.
 
--   Il s’agit de plusieurs chaînes de caractères indiquant le nom, le
-    > rôle et l’identifiant du serveur, du site et de la plateforme. Ce
-    > champ est calculé par le journal à partir de ServerIdentifier et
-    > en s’appuyant sur des fichiers de configuration.
+-   Il s’agit de plusieurs chaînes de caractères indiquant le nom, le rôle et l’identifiant du serveur, du site et de la plateforme. Ce champ est calculé par le journal à partir de ServerIdentifier et en s’appuyant sur des fichiers de configuration.
 
-    Exemple :
-    ```
+Exemple :
+    
+```json
     "{\"Name\":\"vitam-env-itrec-external-01.vitam-env\",\"Role\":\"ingest-external\",\"ServerId\":1045466546,\"SiteId\":1,\"GlobalPlatformId\":240160178}",
-    ``` 
+```
+
 -   Cardinalité : 1-1
 
 -   Ce champ existe pour les structures incluantes et incluses.
@@ -1004,12 +986,9 @@ tous les événements qui impactent celle-ci dès sa prise en charge dans
 le système. Il doit être conservé aussi longtemps que l’unité
 archivistique est gérée par le système.
 
--   dès la réception d’une unité archivistique, l’ensemble des
-    > opérations qui lui sont appliquées est tracé.
+-   dès la réception d’une unité archivistique, l’ensemble des opérations qui lui sont appliquées est tracé.
 
--   les journaux du cycle de vie sont « committés » une fois le stockage
-    > des objets et l’indexation des métadonnées effectués sans échec,
-    > avant l’envoi d’une notification au service versant.
+-   les journaux du cycle de vie sont « committés » une fois le stockage des objets et l’indexation des métadonnées effectués sans échec, avant l’envoi d’une notification au service versant.
 
 Chaque unité archivistique possède une et une seule entrée dans la
 collection LogbookLifeCycleUnit.
@@ -1271,10 +1250,12 @@ opération.
 
 Exemple de données stockées dans le champ evDetData :
 
+```json
 "evDetData": "{"diff": "- \"Title_.en\" : \"Reboisement du montVentoux - Enqu\\u00EAtes photographiques de l'Inspection des Eaux et for\\u00EAts d'Avignon\"\n+ \"Title_.en\" : \"Title Anglais\"\n- \"_ops\" : [
     \"aeeaaaaaachprzmjab7xealwm2wyc5yaaaaq\" ]\n+ \"_ops\" : [
         \"aeeaaaaaachprzmjab7xealwm2wyc5yaaaaq\",
         \"aeeaaaaaachprzmjabpaualwnpe7vpiaaaaq\" ]\n- \"_v\" : 0\n-"_av\" : 0\n+ \"_v\" : 1\n+ \"_av\" : 1", "version": 1}",
+```
 
 Dans le cas d’une mise à jour de métadonnées d’une unité archivistique (ArchiveUnit), le champ **« evDetData »** de l’événement final est composé du champ suivant :
 
@@ -1372,12 +1353,9 @@ Chaque groupe d’objets possède une et une seule entrée dans la collection *L
 **« \_id » :** identifiant donné par le système lors de l’initialisation
 du journal du cycle de vie.
 
--   Il est constitué d’une chaîne de 36 caractères correspondant à un
-    > GUID. Il reprend la valeur du champ \_id du groupe d’objets
-    > enregistré dans la collection ObjectGroup.
+-   Il est constitué d’une chaîne de 36 caractères correspondant à un GUID. Il reprend la valeur du champ \_id du groupe d’objets enregistré dans la collection ObjectGroup.
 
--   Cet identifiant constitue la clé primaire du journal du cycle de vie
-    > du groupe d’objets.
+-   Cet identifiant constitue la clé primaire du journal du cycle de vie du groupe d’objets.
 
 -   Cardinalité : 1-1
 
@@ -1385,8 +1363,7 @@ du journal du cycle de vie.
 
 **« evId » (event Identifier):** identifiant de l’événement.
 
--   Il est constitué d’une chaîne de 36 caractères correspondant à un
-    > GUID.
+-   Il est constitué d’une chaîne de 36 caractères correspondant à un GUID.
 
 -   Il identifie l’événement de manière unique dans la base.
 
@@ -1397,15 +1374,11 @@ du journal du cycle de vie.
 **« evParentId » (event Parent Identifier):** identifiant de l’événement
 parent.
 
--   Il est constitué d’une chaîne de 36 caractères correspondant à un
-    > GUID.
+-   Il est constitué d’une chaîne de 36 caractères correspondant à un GUID.
 
--   Il identifie l’événement parent. Par exemple pour l’événement
-    > LFC.CHECK\_MANIFEST.LFC\_CREATION, ce champ fera référence au GUID
-    > de l’évènement LFC.CHECK\_MANIFEST.
+-   Il identifie l’événement parent. Par exemple pour l’événement LFC.CHECK\_MANIFEST.LFC\_CREATION, ce champ fera référence au GUID de l’évènement LFC.CHECK\_MANIFEST.
 
--   La valeur du champ est toujours « null » pour la structure incluante
-    > et les tâches principales.
+-   La valeur du champ est toujours « null » pour la structure incluante et les tâches principales.
 
 -   Cardinalité : 1-1
 
@@ -1415,10 +1388,7 @@ parent.
 
 -   Il s’agit d’une chaîne de caractères.
 
--   La liste des valeurs possibles pour ce champ se trouve en annexe.
-    > Seul le code doit être stocké dans ce champ, la traduction doit se
-    > faire via le fichier properties
-    > (vitam-logbook-message-fr.properties).
+-   La liste des valeurs possibles pour ce champ se trouve en annexe. Seul le code doit être stocké dans ce champ, la traduction doit se faire via le fichier properties (vitam-logbook-message-fr.properties).
 
 -   Cardinalité : 1-1
 
@@ -1426,8 +1396,7 @@ parent.
 
 **« evDateTime » (event DateTime):** date de l’événement.
 
--   Il s’agit d’une date au format ISO8601 AAAA-MM-JJ+"T"+hh:mm:ss:\[3
-    > digits de millisecondes\]
+-   Il s’agit d’une date au format ISO8601 AAAA-MM-JJ+"T"+hh:mm:ss:\[3 digits de millisecondes\]
 
 -   Ce champ est positionné par le client LogBook.
 
@@ -1441,10 +1410,7 @@ parent.
 
 -   Il s’agit d’une chaîne de 36 caractères.
 
--   Toutes les occurrences de ce champ pour un même document du journal
-    > du cycle de vie partagent la même valeur, qui est celle du champ
-    > « \_id » de l’opération enregistrée dans la collection
-    > LogbookOperation.
+-   Toutes les occurrences de ce champ pour un même document du journal du cycle de vie partagent la même valeur, qui est celle du champ « \_id » de l’opération enregistrée dans la collection LogbookOperation.
 
 -   Cardinalité : 1-1
 
@@ -1454,8 +1420,7 @@ parent.
 
 -   Il s’agit d’une chaîne de caractères.
 
--   Nom du processus parmi une liste de processus possibles fixée. Cette
-    > liste est disponible en annexe.
+-   Nom du processus parmi une liste de processus possibles fixée. Cette liste est disponible en annexe.
 
 -   Cardinalité : 1-1
 
@@ -1463,8 +1428,7 @@ parent.
 
 **« outcome » :** statut de l’événement.
 
--   Il s’agit d’une chaîne de caractères devant correspondre à une
-    > valeur de la liste suivante :
+-   Il s’agit d’une chaîne de caractères devant correspondre à une valeur de la liste suivante :
 
     -   STARTED (Début de l’événement)
 
@@ -1484,10 +1448,7 @@ parent.
 
 -   Il s’agit d’une chaîne de caractères.
 
--   Il contient le code fin de l’événement, incluant le statut. La liste
-    > des valeurs possibles pour ce champ se trouve en annexe. Seul le
-    > code est stocké dans ce champ, la traduction doit se faire via le
-    > fichier properties (vitam-logbook-message-fr.properties)
+-   Il contient le code fin de l’événement, incluant le statut. La liste des valeurs possibles pour ce champ se trouve en annexe. Seul le code est stocké dans ce champ, la traduction doit se faire via le fichier properties (vitam-logbook-message-fr.properties)
 
 -   Cardinalité : 1-1
 
@@ -1498,11 +1459,9 @@ l’événement.
 
 -   Il s’agit d’une chaîne de caractères.
 
--   C’est un message intelligible destiné à être lu par un être humain
-    > en tant que détail du résultat de l’événement.
+-   C’est un message intelligible destiné à être lu par un être humain en tant que détail du résultat de l’événement.
 
--   Traduction du code présent dans outDetail, issue du fichier
-    > vitam-logbook-message-fr.properties.
+-   Traduction du code présent dans outDetail, issue du fichier vitam-logbook-message-fr.properties.
 
 -   Cardinalité : 1-1
 
@@ -1511,8 +1470,7 @@ l’événement.
 **« agId » (agent Identifier):** identifiant de l’agent réalisant
 l’événement.
 
--   Il s’agit d’un objet JSON contenant plusieurs chaînes de caractères
-    > indiquant le nom, le rôle et le PID de l’agent.
+-   Il s’agit d’un objet JSON contenant plusieurs chaînes de caractères indiquant le nom, le rôle et le PID de l’agent.
 
 -   Ce champ est calculé par le journal à partir de ServerIdentifier.
 
@@ -1527,10 +1485,7 @@ l’événement.
 Vitam du lot d’objets auquel s’applique l’opération (lot correspondant à
 une liste).
 
--   Si l’événement touche tout le groupe d’objets, alors le champ
-    > contiendra l’identifiant de ce groupe d’objets. S’il ne touche
-    > qu’un seul objet du groupe d’objets, alors il ne contiendra que
-    > celui de l’objet en question.
+-   Si l’événement touche tout le groupe d’objets, alors le champ contiendra l’identifiant de ce groupe d’objets. S’il ne touche qu’un seul objet du groupe d’objets, alors il ne contiendra que celui de l’objet en question.
 
 -   Cardinalité : 1-1
 
@@ -1541,26 +1496,15 @@ l’événement.
 
 -   Donne plus de détails sur l’événement ou son résultat.
 
--   Par exemple, pour l’événement LFC.CHECK\_DIGEST, lorsque l’empreinte
-    > d’un objet inscrite dans le bordereau de transfert n’est pas
-    > calculée en SHA-512, ce champ précise l’empreinte d’origine et
-    > celle réalisée ensuite par la solution logicielle Vitam. Dans la
-    > structure incluse correspondant à cet événement, il contient un
-    > objet JSON composé des champs suivants :
+-   Par exemple, pour l’événement LFC.CHECK\_DIGEST, lorsque l’empreinte d’un objet inscrite dans le bordereau de transfert n’est pas calculée en SHA-512, ce champ précise l’empreinte d’origine et celle réalisée ensuite par la solution logicielle Vitam. Dans la structure incluse correspondant à cet événement, il contient un objet JSON composé des champs suivants :
 
-    -   MessageDigest : empreinte de l’objet dans le bordereau de
-        > transfert. Chaîne de caractères, reprenant le champ
-        > « MessageDigest » du message ArchiveTransfer.
+    -   MessageDigest : empreinte de l’objet dans le bordereau de transfert. Chaîne de caractères, reprenant le champ « MessageDigest » du message ArchiveTransfer.
 
-    -   Algorithm : algorithme de hachage utilisé dans le bordereau de
-        > transfert. Chaîne de caractères, reprenant l’attribut de champ
-        > « MessageDigest » du message ArchiveTransfer.
+    -   Algorithm : algorithme de hachage utilisé dans le bordereau de transfert. Chaîne de caractères, reprenant l’attribut de champ « MessageDigest » du message ArchiveTransfer.
 
-    -   SystemMessageDigest : empreinte de l’objet réalisée par la
-        > solution logicielle Vitam. Chaîne de caractères.
+    -   SystemMessageDigest : empreinte de l’objet réalisée par la solution logicielle Vitam. Chaîne de caractères.
 
-    -   SystemAlgorithm : algorithme de hachage utilisé par la solution
-        > logicielle Vitam. Chaîne de caractères.
+    -   SystemAlgorithm : algorithme de hachage utilisé par la solution logicielle Vitam. Chaîne de caractères.
 
 -   Cardinalité : 1-1
 
@@ -1568,13 +1512,11 @@ l’événement.
 
 **« events » :** tableau de structure.
 
--   Pour la structure incluante, le tableau contient n structures
-    > incluses dans l’ordre des événements (date).
+-   Pour la structure incluante, le tableau contient n structures incluses dans l’ordre des événements (date).
 
 -   Cardinalité : 1-1
 
--   S’agissant d’un tableau, les structures incluses ont pour
-    > cardinalité 1-n.
+-   S’agissant d’un tableau, les structures incluses ont pour cardinalité 1-n.
 
 -   Ce champ existe uniquement pour la structure incluante.
 
@@ -1588,8 +1530,7 @@ l’événement.
 
 -   Il s’agit d’un entier.
 
--   Si le numéro est supérieur à 0, alors il s’agit du numéro de version
-    > de l’enregistrement.
+-   Si le numéro est supérieur à 0, alors il s’agit du numéro de version de l’enregistrement.
 
 -   Cardinalité : 1-1
 
@@ -1597,8 +1538,7 @@ l’événement.
 
 **« \_lastPersistedDate » :** date technique de sauvegarde en base.
 
--   Il s’agit d’une date au format ISO8601 AAAA-MM-JJ+"T"+hh:mm:ss:\[3
-    > digits de millisecondes\]
+-   Il s’agit d’une date au format ISO8601 AAAA-MM-JJ+"T"+hh:mm:ss:\[3 digits de millisecondes\]
 
 -   Elle est renseignée par le serveur Logbook.
 
@@ -2778,9 +2718,7 @@ dépend
 
                 -   Cardinalité : 0-1
 
-            -   **« NeedReassessingAuthorization »** : indique si une
-                > autorisation humaine est nécessaire pour réévaluer la
-                > classification.
+            -   **« NeedReassessingAuthorization »** : indique si une autorisation humaine est nécessaire pour réévaluer la classification.
 
                 -   Il s’agit d’un booléen. Si la valeur est à « true », une autorisation humaine sera nécessaire pour réévaluer la classification.
 
@@ -4371,9 +4309,7 @@ Extrait d’une unité archivistique ayant un bloc « _mgt » possédant des r
 
 -   Champ peuplé par la solution logicielle Vitam.
 
--   0 correspond à l’enregistrement d’origine. Si le numéro est
-    > supérieur à 0, alors il s’agit du numéro de version de
-    > l’enregistrement.
+-   0 correspond à l’enregistrement d’origine. Si le numéro est supérieur à 0, alors il s’agit du numéro de version de l’enregistrement.
 
 -   Cardinalité : 1-1
 
@@ -8106,8 +8042,7 @@ liste de formats.
 
                         -   Cardinalité : 0-1
 
-                -   pour l’action EXTRACT, c’est un objet possédant un
-                    > champ :
+                -   pour l’action EXTRACT, c’est un objet possédant un champ :
 
                     -   **« FilteredExtractedObjectGroupData »** : liste de métadonnées à extraire.
 

@@ -11,9 +11,9 @@ Introduction
 |NF Z 44022 – MEDONA – Modélisation des données pour l’archivage|18/01/2014||
 |Standard d’échange de données pour l’archivage – SEDA – v. 2.1|06/2018||
 |Standard d’échange de données pour l’archivage – SEDA – v. 2.2|02/2022|Cette nouvelle version du SEDA est intégrée  à la solution logicielle Vitam à partir de la V6.RC.|
-|Vitam – Structuration des Submission Information Package (SIP)|||
-|Vitam – Ontologie||Ce document doit être lu en préalable au présent document.|
-|Vitam – Profils d’archivage||Ce document doit être lu dans les cas où, en phase d’analyse, on souhaite évaluer quel est le meilleur type de profil à utiliser.|
+|[Vitam – Structuration des Submission Information Package (SIP)](./SIP.md)|||
+|[Vitam – Ontologie](./ontologie.md)||Ce document doit être lu en préalable au présent document.|
+|[Vitam – Profils d’archivage](./profil_archivage.md)||Ce document doit être lu dans les cas où, en phase d’analyse, on souhaite évaluer quel est le meilleur type de profil à utiliser.|
 
 ### Présentation du document
 Le document présente les fonctionnalités associées à la prise en compte de la notion de profil d’unité archivistique dans la solution logicielle Vitam.
@@ -40,7 +40,7 @@ En d’autres termes, pour une unité archivistique, il précise :
 
 *Exemple :* le profil d’unité archivistique « photographie » précise qu’une unité archivistique présente dans un SIP et déclarant ce profil devra contenir au moins un titre, le cas échéant une date de création et un âge. Ce profil d’unité archivistique peut lui-même être déclaré dans un profil d’archivage.
 
-![Exemple de PUA photohraphie](./medias/PUA/exemple_photo.png)
+![Exemple de PUA photographie](./medias/PUA/exemple_photo.png)
 
 À titre d’exemple, un bordereau de transfert conforme au SEDA et non associé à un profil d’archivage ou à des profils d’unité archivistique n’aura ses métadonnées contrôlées que par rapport au schéma par défaut associé au SEDA et pourra présenter une grande hétérogénéité de description, même pour une même catégorie d’archives (ex : photographies numériques, dossiers de subventions, comptes rendus de réunion, etc.).  
 En revanche, un bordereau de transfert pour lequel des profils d’unité archivistique auront été définis disposera d’unités archivistiques dont la description sera homogène et propre à un type d’archives ou à une typologie documentaire en particulier, par exemple : des photographies numériques.  
@@ -130,7 +130,7 @@ Il est possible d’importer 1 à n notice(s) descriptive(s) de profil(s) d’un
 L’APP « Profils documentaires » accessible depuis l’IHM VitamUI permet quant à elle de créer une notice depuis ses interfaces.
 
 *Exemple :* notice descriptive de profil d’archivage contenant uniquement les informations obligatoires pour être importée avec succès.
-```
+```json
 [
 	{
 		"Name":"ProfilJSON_mail",
@@ -138,6 +138,7 @@ L’APP « Profils documentaires » accessible depuis l’IHM VitamUI permet q
 	}
 ]
 ```
+
 Une notice de profil d’archivage doit obligatoirement comporter les informations suivantes :
 -  identifiant signifiant (Identifier). Ce champ est obligatoire seulement s’il est généré par l’application à l’origine de sa création. Si cet identifiant est généré par la solution logicielle Vitam, il n’est pas nécessaire de le renseigner dans le fichier JSON ;
 -  nom de la notice (Name) ;
@@ -183,6 +184,7 @@ Si la notice importée ne contient pas de statut, la solution logicielle Vitam e
 |Fields|liste des vocabulaires de l’ontologie référencés dans le schéma de contrôle, générée par la solution logicielle Vitam quand le schéma de contrôle contient des informations à contrôler (champ facultatif)|
 
 #### Ajout du profil d’unité archivistique lui-même
+
 À chaque notice descriptive, il est possible d’associer un seul profil d’unité archivistique ou schéma de contrôle.
 -  Dès son import, la notice détaillée peut inclure un schéma de contrôle détaillé, dans la mesure où tous deux sont au format JSON. Il s’agit d’une opération d’import (opération d’administration de type « MASTERDATA »).
 -  Néanmoins, la notice peut être importée sans schéma détaillé. Il est alors possible, a posteriori, de lui adjoindre ce schéma de contrôle et de vérifier sa validité par rapport au format JSON. Il s’agit alors d’une opération de mise à jour (opération d’administration de type « MASTERDATA »).
@@ -695,7 +697,7 @@ Comme dans un fichier au format XML, le schéma de contrôle JSON comporte des �
 Après l’en-tête, viennent les propriétés associées au schéma de contrôle. Ces propriétés correspondent à une liste d’éléments, clés ou vocabulaires que l’on souhaite contrôler.
 Si certains éléments du SEDA ne doivent pas faire l’objet d’un contrôle, il n’est pas nécessaire de les référencer dans le profil d’unité archivistique.
 
-Généralités
+*Généralités*
 
 Un élément (ou vocabulaire) présent dans un schéma de contrôle doit toujours avoir été préalablement créé dans l’ontologie. Dans un schéma de contrôle, il est désigné par son nom, qui peut être explicité par un titre et/ou une description, tous deux facultatifs et, s’ils sont utilisés, devant obligatoirement contenir des éléments textuels.  
 *Exemple :* l’élément suivant se nomme Description. Il dispose d’un titre et d’une description apportant des précisions sur son origine.
@@ -722,7 +724,7 @@ Un élément (ou vocabulaire) présent dans un schéma de contrôle doit toujour
     - « EventDetailData » en « evDetData ».
 -  les éléments Title et Description, s’ils contiennent des attributs, seront intitulés « Title_ » et « Description_ » et devront définir des propriétés.
 
-Types
+*Types*
 
 L’élément (ou vocabulaire) est associé à un type particulier[^28].
 *Exemple :* l’élément Description attend une chaîne de caractères, car il est de type string.
@@ -821,7 +823,7 @@ Les éléments de type « array » et « object » ont une structuration plu
     }
 ```
 
-Règles
+*Règles*
 
 Un élément peut également définir les règles suivantes :
 -  $ref : référence à une définition déclarée dans l’en-tête du schéma de contrôle[^31]. Cette règle permet de pointer exactement vers une expression pouvant caractériser :
@@ -939,7 +941,7 @@ La solution logicielle Vitam ne supporte actuellement pas les règles suivantes�
 -  oneOf : liste imposant que les données soient exactement conformes à l’une des configurations proposées.
 -  not : liste déclarant des éléments ne devant pas être présent dans l’unité archivistique déclarant le profil d’unité archivistique ou excluant un paramétrage en particulier.
 
-Cardinalités
+*Cardinalités*
 
 La gestion des cardinalités diffère en fonction du type de l’élément :
 
@@ -1118,6 +1120,7 @@ Après avoir rédigé le schéma de contrôle, conforme à une unité archivisti
 -  création et import d’une notice descriptive de profil d’unité archivistique ;
 -  le cas échéant, mise à jour de l’ontologie avec création de nouveaux vocabulaires ;
 -  dans la notice descriptive du profil d’unité archivistique, ajout du schéma de contrôle ayant fait l’objet du précédent travail.  
+
 **Point d’attention :** si cela n’a pas déjà été fait, il faudra veiller à ajouter un élément ArchiveUnitProfile dans les propriétés du schéma de contrôle ;
 -  mise à jour du bordereau de transfert pour renseigner, au niveau de chaque unité archivistique devant faire l’objet d’un contrôle, l’élément ArchiveUnitProfile avec l’identifiant attribué à ce dernier par la solution logicielle Vitam ;
 -  transfert du bordereau dans la solution logicielle Vitam.
@@ -1243,7 +1246,8 @@ Si on souhaite ne plus utiliser une notice descriptive de profil d’unité arch
 Ainsi, la notice et le schéma ne sont plus utilisés et utilisables dans une opération d’entrée ou de mise à jour.
 À des fins de clarté, il peut être envisagé de signaler dans le titre de la notice que la notice de profil d’unité archivistique a été décommissionnée (ex : ajout de la mention « [supprimé] » dans un titre de notice).
 
-**Point d’attention :** On pourrait envisager de seulement désactiver la notice descriptive afin de plus réaliser de contrôles sur les unités archivistiques associées au profil d’unité archivistique. Cependant, cette action a un impact sur la gestion des unités archivistiques qui ne peuvent alors plus être modifiées, en raison du caractère inactif de leur profil d’unité archivistique.
+**Point d’attention :**  
+On pourrait envisager de seulement désactiver la notice descriptive afin de plus réaliser de contrôles sur les unités archivistiques associées au profil d’unité archivistique. Cependant, cette action a un impact sur la gestion des unités archivistiques qui ne peuvent alors plus être modifiées, en raison du caractère inactif de leur profil d’unité archivistique.
 
 -  Il est recommandé de seulement désactiver la notice descriptive, si on souhaite ne plus intervenir sur les unités archivistiques.
 -  En revanche, si on souhaite continuer à modifier les unités archivistiques, il est recommandé de retirer préalablement le profil d’unité archivistique qui leur est associé, avant de désactiver sa notice.
@@ -2524,6 +2528,7 @@ Si l’on sait que les modifications à apporter seront importantes, il est reco
 ```
 
 ### Notice incluant un schéma de contrôle
+
 ```json
 { 	"Identifier":"AUP_NoticeANDschema_1", 
 		"Name":"AUP_NoticeANDschema", 

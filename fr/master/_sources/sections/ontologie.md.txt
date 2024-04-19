@@ -1,4 +1,3 @@
-(target_ONTOLOGIE)=
 Ontologie
 =========
 
@@ -11,10 +10,9 @@ Introduction
 |:-----------:|:-----:|:-----:|
 |NF Z 44022 – MEDONA - Modélisation des données pour l’archivage|18/01/2014||
 |Standard d’échange de données pour l’archivage – SEDA – v. 2.1|06/2018||
-|Vitam – Structuration des *Submission Information Package* (SIP)|2023||
-|Vitam – Profils d’unité archivistiqu|2023|Ce document est complémentaire du présent document qui fait référence, ponctuellement, aux profils d’unité archivistique.|
-|Vitam – Documentation d’exploitation|2023||
-
+|[Vitam – Structuration des *Submission Information Package* (SIP)](./SIP.md)|||
+|[Vitam – Profils d’unité archivistique](./profil_unite_archivistique.md)||Ce document est complémentaire du présent document qui fait référence, ponctuellement, aux profils d’unité archivistique.|
+|[Vitam – Documentation d’exploitation](https://www.programmevitam.fr/ressources/DocCourante/html/exploitation_VitamUI/)|||
 
 ### Présentation du document
 

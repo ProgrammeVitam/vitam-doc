@@ -4,7 +4,6 @@ Module de collecte
 Introduction
 ------------
 
-
 ### Documents de référence
 
 |Document |Date de la version|Remarques|
@@ -12,19 +11,17 @@ Introduction
 |NF Z 44022 – MEDONA – Modélisation des données pour l’archivage|18/01/2014||
 |Standard d’échange de données pour l’archivage – SEDA – v. 2.1|06/2018||
 |Standard d’échange de données pour l’archivage – SEDA – v. 2.2|02/2022|Cette nouvelle version du SEDA est intégrée à la solution logicielle Vitam à partir de la V6.RC.|
-|Vitam – Structuration des *Submission Information Package* (SIP)|31/03/2023||           
-|Vitam – [Modèle de données](./modele_de_donnees.md)|||
-|Vitam – [Ontologie](./ontologie.md)|||           
-|Vitam – Profils d’archivage|31/03/2023||
-|Vitam – Profils d’unité archivistiques|31/03/2023||  
-
+|[Vitam – Structuration des *Submission Information Package* (SIP)](./SIP.md)|||           
+|[Vitam – Modèle de données](./modele_de_donnees.md)|||
+|[Vitam – Ontologie](./ontologie.md)|||           
+|[Vitam – Profils d’archivage](./profil_archivage.md)|31/03/2023||
+|[Vitam – Profils d’unité archivistiques](./profil_unite_archivistique.md)|||
 
 ### Présentation du document
 
 Le document présente les fonctionnalités associées à l’utilisation du module de collecte dans la solution logicielle Vitam.
 
 Il s’articule autour des axes suivants :
-
 -   une présentation du module de collecte ;
 -   une présentation des mécanismes mis en œuvre dans la solution logicielle Vitam pour prendre en compte les opérations de collecte, en application du SEDA ;
 -   des conseils de mise en œuvre.
@@ -83,7 +80,7 @@ Il permet de :
 | | |
 |:-: |--- |
 | **Configurer des versements**     | Définir un projet de versement et un rattachement automatisé à une position dans l’arborescence, avec ou sans paramétrages de conditions de rattachement.| 
-| **(Pré-)Verser les archives**     |Collecter depuis l’extérieur un ensemble d’archives, caractérisées par des métadonnées et des fichiers numériques, et constituer :<br>- des (pré-)versements (ou transactions) automatisés émanant d’un système d’information externe <br>- des (pré-)versements (ou transactions) manuels et unitaires: <br>a) constitués par exemple d’arborescences bureautiques ou de messageries,<br>b) réalisés depuis des interfaces, notamment celles de l’APP « Collecte et préparation des versements » du front-office VitamUI|
+| **(Pré-)Verser les archives**     |Collecter depuis l’extérieur un ensemble d’archives, caractérisées par des métadonnées et des fichiers numériques, et constituer :<br>- des (pré-)versements (ou transactions) automatisés émanant d’un système d’information externe <br>- des (pré-)versements (ou transactions) manuels et unitaires : <br>a) constitués par exemple d’arborescences bureautiques ou de messageries,<br>b) réalisés depuis des interfaces, notamment celles de l’APP « Collecte et préparation des versements » du front-office VitamUI|
 | **Consulter les (pré-)versement** | Consulter :<br>- la liste des projets de versement et des (pré-)versements (ou transactions) en attente,<br>- un projet de versement en particulier, c’est-à-dire sa description, les informations contextuelles et la position de rattachement dans le tenant de destination,<br>- le contenu d’un (pré-)versement (ou transaction), c’est-à-dire la liste des archives associées, une unité archivistique en particulier et, le cas échéant, l’objet numérique associé. |
 | **Traiter les archives**          | Procéder à des traitements archivistiques tels que :<br>- définition de métadonnées contextuelles ,<br>- identification de format,<br>- calcul d’empreintes,<br>- calcul du poids de l’objet numérique,<br>- réorganisation d’arborescence *(service* *non* *implémenté)*,<br>- mise à jour de métadonnées descriptives et de gestion,<br>- tri, dédoublonnage, suppression unitaire d’objets numériques *(services non implémentés),*<br>- gestion de statuts (ex. réouverture d’un (pré-)versement en erreur),<br>- suppression de projets et de (pré-)versements,<br>- etc. |
 | **Transférer les archives**       | - Générer un SIP conforme au Standard d’échanges de données pour l’archivage (SEDA) et le transférer dans le système d’archivage électronique pour conservation.<br>- Suppression  automatisée d’un (pré-)versement |

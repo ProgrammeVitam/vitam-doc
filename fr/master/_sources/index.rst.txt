@@ -30,11 +30,14 @@ Documentation métier
    sections/modele_de_workflow.md
    sections/module_de_collecte.md
    sections/ontologie.md
+   sections/organisation_information.md
    sections/preservation.md
    sections/profil_archivage.md
    sections/profil_unite_archivistique.md
    sections/regles_gestion.md
    sections/services_prod.md
+   sections/SIP.md
+   sections/DIP.md
    sections/stockage.md
    sections/transfert.md
    sections/valeur_probante.md

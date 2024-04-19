@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Structuration des Dissemination Information Packages (DIP) &mdash; Vitam documentation fonctionnelle</title>
+  <title>16. Structuration des Dissemination Information Packages (DIP) &mdash; Vitam documentation fonctionnelle</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
@@ -18,7 +18,9 @@
         <script src="../_static/translations.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Recherche" href="../search.html" /> 
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="17. Gestion de multiples stratégies de stockage" href="stockage.html" />
+    <link rel="prev" title="15. Structuration des Submission Information Packages (SIP)" href="SIP.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -50,7 +52,7 @@
 <em>Réaliser une première entrée</em></a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">documentation métier</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="eliminations.html">1. Les éliminations avec la solution logicielle Vitam</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gel.html">2. Le gel d’archives avec la solution logicielle Vitam</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gestion_archives_arbo.html">3. Gestion des archives et des arborescences</a></li>
@@ -59,14 +61,61 @@
 <li class="toctree-l1"><a class="reference internal" href="modele_de_workflow.html">6. Description des workflows et des opérations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="module_de_collecte.html">7. Module de collecte</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ontologie.html">8. Ontologie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="preservation.html">9. Gestion de la préservation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="profil_archivage.html">10. Profils d’archivage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="profil_unite_archivistique.html">11. Profils d’unité archivistique</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regles_gestion.html">12. Règles de gestion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="services_prod.html">13. Services producteurs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="stockage.html">14. Gestion de multiples stratégies de stockage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="transfert.html">15. Le transfert avec la solution logicielle Vitam</a></li>
-<li class="toctree-l1"><a class="reference internal" href="valeur_probante.html">16. Conservation de la valeur probante</a></li>
+<li class="toctree-l1"><a class="reference internal" href="organisation_information.html">9. Organisation de l’information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preservation.html">10. Gestion de la préservation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_archivage.html">11. Profils d’archivage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_unite_archivistique.html">12. Profils d’unité archivistique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regles_gestion.html">13. Règles de gestion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services_prod.html">14. Services producteurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SIP.html">15. Structuration des <em>Submission Information Packages</em> (SIP)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">16. Structuration des <em>Dissemination Information Packages</em> (DIP)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">16.1. Introduction</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#documents-de-reference">16.1.1. Documents de référence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#presentation-du-document">16.1.2. Présentation du document</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#presentation-du-dip">16.2. Présentation du DIP</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#definition-et-cas-dusage">16.2.1. Définition et cas d’usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#contexte-normatif">16.2.2. Contexte normatif</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#loais-open-archival-information-system">16.2.2.1. L’OAIS (Open Archival Information System)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#le-seda-standard-dechange-de-donnees-pour-larchivage-et-la-norme-medona-modele-dechange-de-donnees-pour-larchivage">16.2.2.2. Le SEDA (Standard d’Échange de Données pour l’Archivage) et la norme MEDONA (Modèle d’Échange de DONnées pour l’Archivage)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#presentation-du-dissemination-information-package-dip">16.3. Présentation du Dissemination Information Package (DIP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#le-dip-minimal">16.4. Le DIP minimal</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#les-modalites-de-lancement-de-loperation-de-mise-a-disposition-du-dip-minimal">16.4.1. Les modalités de lancement de l’opération de mise à disposition du DIP minimal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#les-modalites-de-recuperation-du-dip-minimal">16.4.2. Les modalités de récupération du DIP minimal</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#le-bordereau-du-dip-minimal">16.4.3. Le bordereau du DIP minimal</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#le-dip-complet">16.5. Le DIP complet</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#les-modalites-de-lancement-de-loperation-de-mise-a-disposition-du-dip-complet">16.5.1. Les modalités de lancement de l’opération de mise à disposition du DIP complet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#les-modalites-de-recuperation-du-dip-complet">16.5.2. Les modalités de récupération du DIP complet</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#le-bordereau-du-dip-complet">16.5.3. Le bordereau du DIP complet</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#le-dip-de-transfert">16.6. Le DIP de transfert</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#les-modalites-de-lancement-de-loperation-de-mise-a-disposition-du-dip-de-transfert">16.6.1. Les modalités de lancement de l’opération de mise à disposition du DIP de transfert</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#les-modalites-de-recuperation-du-dip-de-transfert">16.6.2. Les modalités de récupération du DIP de transfert</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#le-bordereau-du-dip-de-transfert">16.6.3. Le bordereau du DIP de transfert</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#configuration-du-service">16.7. Configuration du service</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#suppression-des-dip">16.7.1. Suppression des DIP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#limitation-du-poids-des-dip">16.7.2. Limitation du poids des DIP</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#annexe-1-exemple-de-bordereau-de-mise-a-disposition-pour-un-dip-mono-producteur-dip-minimal">16.8. Annexe 1 : Exemple de bordereau de mise à disposition pour un DIP mono-producteur (DIP minimal)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#annexe-2-exemple-de-bordereau-de-mise-a-disposition-pour-un-dip-multi-producteurs-dip-minimal">16.9. Annexe 2 : Exemple de bordereau de mise à disposition pour un DIP multi-producteurs (DIP minimal)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#annexe-3-exemple-de-bordereau-de-mise-a-disposition-pour-un-dip-complet-sans-les-journaux-de-cycle-de-vie">16.10. Annexe 3 : Exemple de bordereau de mise à disposition pour un DIP complet sans les journaux de cycle de vie</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#annexe-4-exemple-de-bordereau-de-mise-a-disposition-avec-export-du-journal-du-cycle-de-vie-de-lunite-archivistique-dip-minimal">16.11. Annexe 4 : Exemple de bordereau de mise à disposition avec export du journal du cycle de vie de l’unité archivistique (DIP minimal)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="stockage.html">17. Gestion de multiples stratégies de stockage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transfert.html">18. Le transfert avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="valeur_probante.html">19. Conservation de la valeur probante</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">documentation Vitam UI</span></p>
 <ul>
@@ -128,7 +177,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Structuration des <em>Dissemination Information Packages</em> (DIP)</li>
+      <li class="breadcrumb-item active"><span class="section-number">16. </span>Structuration des <em>Dissemination Information Packages</em> (DIP)</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/sections/DIP.md.txt" rel="nofollow"> Afficher la source de la page</a>
       </li>
@@ -141,11 +190,11 @@
            <div itemprop="articleBody">
              
   <section id="structuration-des-dissemination-information-packages-dip">
-<h1>Structuration des <em>Dissemination Information Packages</em> (DIP)<a class="headerlink" href="#structuration-des-dissemination-information-packages-dip" title="Lien permanent vers cette rubrique"></a></h1>
+<h1><span class="section-number">16. </span>Structuration des <em>Dissemination Information Packages</em> (DIP)<a class="headerlink" href="#structuration-des-dissemination-information-packages-dip" title="Lien permanent vers cette rubrique"></a></h1>
 <section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Lien permanent vers cette rubrique"></a></h2>
+<h2><span class="section-number">16.1. </span>Introduction<a class="headerlink" href="#introduction" title="Lien permanent vers cette rubrique"></a></h2>
 <section id="documents-de-reference">
-<h3>Documents de référence<a class="headerlink" href="#documents-de-reference" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">16.1.1. </span>Documents de référence<a class="headerlink" href="#documents-de-reference" title="Lien permanent vers cette rubrique"></a></h3>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p><strong>Document</strong></p></th>
@@ -178,15 +227,15 @@
 </table>
 </section>
 <section id="presentation-du-document">
-<h3>Présentation du document<a class="headerlink" href="#presentation-du-document" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">16.1.2. </span>Présentation du document<a class="headerlink" href="#presentation-du-document" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Le présent document constitue une présentation des fonctionnalités associées au Dissemination Information Package dans la solution logicielle Vitam.<br />
 Il décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 6 (mars 2023). Il a vocation à être amendé, complété et enrichi au fur et à mesure des développements de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.</p>
 </section>
 </section>
 <section id="presentation-du-dip">
-<h2>Présentation du DIP<a class="headerlink" href="#presentation-du-dip" title="Lien permanent vers cette rubrique"></a></h2>
+<h2><span class="section-number">16.2. </span>Présentation du DIP<a class="headerlink" href="#presentation-du-dip" title="Lien permanent vers cette rubrique"></a></h2>
 <section id="definition-et-cas-dusage">
-<h3>Définition et cas d’usage<a class="headerlink" href="#definition-et-cas-dusage" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">16.2.1. </span>Définition et cas d’usage<a class="headerlink" href="#definition-et-cas-dusage" title="Lien permanent vers cette rubrique"></a></h3>
 <p>L’archivage a pour finalité la conservation de l’information en raison de sa valeur (administrative, juridique, historique, patrimoniale…), mais également sa mise à disposition. Ce processus permet au service d’archives de mettre à disposition de tiers (services producteurs, autres services d’archives, usagers sur place et à distance, etc.) les archives qu’il conserve, si besoin après vérification des droits des demandeurs.</p>
 <p>Dans l’univers numérique, peuvent être mis à disposition les documents eux-mêmes et leurs métadonnées.</p>
 <p>Les services ainsi délivrés sont de plusieurs ordres :</p>
@@ -206,10 +255,10 @@ Il décrit les fonctionnalités qui sont offertes par la solution logicielle Vit
 <p>Le présent document décrit la manière de préparer ces paquets et de les mettre à disposition dans une plate-forme utilisant la solution logicielle Vitam.</p>
 </section>
 <section id="contexte-normatif">
-<h3>Contexte normatif<a class="headerlink" href="#contexte-normatif" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">16.2.2. </span>Contexte normatif<a class="headerlink" href="#contexte-normatif" title="Lien permanent vers cette rubrique"></a></h3>
 <p>La constitution d’un paquet pour mise à disposition par une plate-forme utilisant la solution logicielle Vitam doit être réalisée conformément aux deux normes suivantes.</p>
 <section id="loais-open-archival-information-system">
-<h4>L’OAIS (Open Archival Information System)<a class="headerlink" href="#loais-open-archival-information-system" title="Lien permanent vers cette rubrique"></a></h4>
+<h4><span class="section-number">16.2.2.1. </span>L’OAIS (Open Archival Information System)<a class="headerlink" href="#loais-open-archival-information-system" title="Lien permanent vers cette rubrique"></a></h4>
 <p>L’OAIS est un modèle conceptuel de références décrivant dans les grandes lignes les fonctions, les responsabilités et l’organisation d’un système qui voudrait préserver sur le long terme de l’information, en particulier des données numériques.</p>
 <p>Le modèle OAIS repose sur l’idée que l’information constitue des paquets, et que ces paquets ne sont pas les mêmes suivant qu’on est en train de produire l’information, de mettre en œuvre des opérations pour la conserver, ou de la communiquer à un utilisateur.</p>
 <p>Il existe d’après cette norme trois sortes de paquets :</p>
@@ -221,7 +270,7 @@ Il décrit les fonctionnalités qui sont offertes par la solution logicielle Vit
 <p>Un paquet d’archives destiné à être mis à disposition de tiers par une plate-forme utilisant la solution logicielle Vitam constitue un DIP au sens du modèle OAIS.</p>
 </section>
 <section id="le-seda-standard-dechange-de-donnees-pour-larchivage-et-la-norme-medona-modele-dechange-de-donnees-pour-larchivage">
-<h4>Le SEDA (Standard d’Échange de Données pour l’Archivage) et la norme MEDONA (Modèle d’Échange de DONnées pour l’Archivage)<a class="headerlink" href="#le-seda-standard-dechange-de-donnees-pour-larchivage-et-la-norme-medona-modele-dechange-de-donnees-pour-larchivage" title="Lien permanent vers cette rubrique"></a></h4>
+<h4><span class="section-number">16.2.2.2. </span>Le SEDA (Standard d’Échange de Données pour l’Archivage) et la norme MEDONA (Modèle d’Échange de DONnées pour l’Archivage)<a class="headerlink" href="#le-seda-standard-dechange-de-donnees-pour-larchivage-et-la-norme-medona-modele-dechange-de-donnees-pour-larchivage" title="Lien permanent vers cette rubrique"></a></h4>
 <p>La norme MEDONA et le standard SEDA constituent des modèles standards pour les transactions d’échanges entre les acteurs de l’archivage, et notamment entre le service d’archives et le demandeur d’une communication.<br />
 La norme AFNOR NF Z 44‑022, intitulée « Modèle d’Échange de DONnées pour l’Archivage » ou MEDONA a été publiée en 2014. Elle apporte un cadre normatif pour les différents échanges d’informations (données comme métadonnées) entre le service d’archives et ses partenaires comme le demandeur (toute personne physique ou morale qui souhaite consulter les informations conservées par le service d’archives dans le respect des conditions légales, réglementaires ou contractuelles en vigueur) et la façon dont s’organisent ces échanges. Elle définit des diagrammes d’activités et des modèles de données selon le formalisme UML. Les échanges se traduisent par des messages formalisés par des schémas XML.</p>
 <p>Le SEDA est le « Standard d’Échange de Données pour l’Archivage » relatif aux données d’archives publiques. Créé en 2006 par la Direction des Archives de France et la Direction Générale pour la Modernisation de L’État, il a été révisé en 2010 (v0.2), en 2012 (v1.0), en 2015 (v2.0) pour assurer sa compatibilité avec la norme MEDONA et plus récemment en 2018 (v2.1) et 2022 (v.2.2). Il comporte à la fois le modèle fonctionnel et un modèle de données pour les échanges de données d’archives entre acteurs de la sphère publique : description, acteurs, règles de gestion, référentiels métier et techniques.</p>
@@ -254,7 +303,7 @@ Cette transaction peut également s’appliquer pour des transferts entre deux S
 </section>
 </section>
 <section id="presentation-du-dissemination-information-package-dip">
-<h2>Présentation du Dissemination Information Package (DIP)<a class="headerlink" href="#presentation-du-dissemination-information-package-dip" title="Lien permanent vers cette rubrique"></a></h2>
+<h2><span class="section-number">16.3. </span>Présentation du Dissemination Information Package (DIP)<a class="headerlink" href="#presentation-du-dissemination-information-package-dip" title="Lien permanent vers cette rubrique"></a></h2>
 <p>D’après le SEDA, un DIP est constitué d’un bordereau et d’un ou plusieurs objets qui font l’objet de la demande de communication. Il peut être uniquement composé d’un bordereau, quand seules les métadonnées sont mises à disposition du demandeur. Toutefois, l’équipe Vitam recommande de ne pas passer par le DIP pour communiquer uniquement des métadonnées s’il n’y a pas de prise de responsabilité sur le paquet (par exemple, communication des métadonnées en vue de l’élaboration d’un instrument de recherche).</p>
 <p>Le DIP exporté par une plate-forme utilisant la solution logicielle Vitam répond aux caractéristiques suivantes.</p>
 <table class="docutils align-default">
@@ -284,11 +333,11 @@ Cette transaction peut également s’appliquer pour des transferts entre deux S
 <p>Si pour un usage donné le groupe d’objets techniques comprend plusieurs versions, c’est l’objet technique correspondant à la dernière version qui sera exporté.</p>
 </section>
 <section id="le-dip-minimal">
-<h2>Le DIP minimal<a class="headerlink" href="#le-dip-minimal" title="Lien permanent vers cette rubrique"></a></h2>
+<h2><span class="section-number">16.4. </span>Le DIP minimal<a class="headerlink" href="#le-dip-minimal" title="Lien permanent vers cette rubrique"></a></h2>
 <p>La solution logicielle Vitam permet d’exporter un DIP dit minimal, composé du répertoire contenant les objets numériques demandés et d’un manifeste simplifié, constitué autour du DataObjectPackage.</p>
 <p>Ce bordereau minimal peut être enrichi par la suite par l’utilisateur applicatif qui l’a demandé pour constituer l’une des demandes d’autorisation prévues par le SEDA (AuthorizationOriginatingAgencyRequest, AuthorizationOriginatingAgencyRequestReply, AuthorizationControlAuthorityRequest et AuthorizationControlAuthorityRequestReply).</p>
 <section id="les-modalites-de-lancement-de-loperation-de-mise-a-disposition-du-dip-minimal">
-<h3>Les modalités de lancement de l’opération de mise à disposition du DIP minimal<a class="headerlink" href="#les-modalites-de-lancement-de-loperation-de-mise-a-disposition-du-dip-minimal" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">16.4.1. </span>Les modalités de lancement de l’opération de mise à disposition du DIP minimal<a class="headerlink" href="#les-modalites-de-lancement-de-loperation-de-mise-a-disposition-du-dip-minimal" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Depuis l’IHM standard accompagnant la solution logicielle Vitam, à partir de la page de détail d’une unité archivistique, il est possible de demander à générer un DIP minimal de l’unité archivistique uniquement ou de l’unité archivistique et de ses filles, ou bien un DIP correspondant à l’opération d’entrée (ingest) initiale.</p>
 <p>Le DIP peut être filtré sur un type d’usage. Le ou les usages retenus doivent être cohérents avec les droits octroyés par le contrat d’accès associé à la demande de génération du DIP.</p>
 <p><img alt="" src="../_images/ihm.png" /></p>
@@ -336,7 +385,7 @@ Cette transaction peut également s’appliquer pour des transferts entre deux S
 </ul>
 </section>
 <section id="les-modalites-de-recuperation-du-dip-minimal">
-<h3>Les modalités de récupération du DIP minimal<a class="headerlink" href="#les-modalites-de-recuperation-du-dip-minimal" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">16.4.2. </span>Les modalités de récupération du DIP minimal<a class="headerlink" href="#les-modalites-de-recuperation-du-dip-minimal" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Lorsque l’opération d’export du DIP est terminée, le DIP peut être récupéré :</p>
 <ul class="simple">
 <li><p>depuis l’IHM standard, à partir du journal des opérations en cliquant sur la ligne de l’opération d’export du DIP pour accéder à l’écran de détail, puis en affichant le champ « rapport » (via le sélecteur « Informations supplémentaires »),</p></li>
@@ -350,7 +399,7 @@ Cette transaction peut également s’appliquer pour des transferts entre deux S
 <p>Il est également possible de récupérer l’empreinte du DIP générée depuis le journal des opérations et disponible à la tâche de Création de l’archive et de son déplacement vers l’espace de stockage.</p>
 </section>
 <section id="le-bordereau-du-dip-minimal">
-<h3>Le bordereau du DIP minimal<a class="headerlink" href="#le-bordereau-du-dip-minimal" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">16.4.3. </span>Le bordereau du DIP minimal<a class="headerlink" href="#le-bordereau-du-dip-minimal" title="Lien permanent vers cette rubrique"></a></h3>
 <p>À la racine du DIP se trouve le bordereau de mise à disposition qui décrit l’ensemble des métadonnées du paquet. Il est composé :</p>
 <ul class="simple">
 <li><p>d’une déclaration des objets binaires (DataObjectPackage &gt; BinaryDataObject) ou des objets physiques (DataObjectPackage &gt; PhysicalDataObject), le cas échéant avec les journaux du cycle de vie des objets ;</p></li>
@@ -365,10 +414,10 @@ Cette transaction peut également s’appliquer pour des transferts entre deux S
 </section>
 </section>
 <section id="le-dip-complet">
-<h2>Le DIP complet<a class="headerlink" href="#le-dip-complet" title="Lien permanent vers cette rubrique"></a></h2>
+<h2><span class="section-number">16.5. </span>Le DIP complet<a class="headerlink" href="#le-dip-complet" title="Lien permanent vers cette rubrique"></a></h2>
 <p>La solution logicielle Vitam permet d’exporter un DIP dit complet, composé du répertoire contenant les objets numériques demandés et d’un manifeste correspondant au message SEDA  ArchiveDeliveryRequestReply.</p>
 <section id="les-modalites-de-lancement-de-loperation-de-mise-a-disposition-du-dip-complet">
-<h3>Les modalités de lancement de l’opération de mise à disposition du DIP complet<a class="headerlink" href="#les-modalites-de-lancement-de-loperation-de-mise-a-disposition-du-dip-complet" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">16.5.1. </span>Les modalités de lancement de l’opération de mise à disposition du DIP complet<a class="headerlink" href="#les-modalites-de-lancement-de-loperation-de-mise-a-disposition-du-dip-complet" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Depuis l’IHM standard accompagnant la solution logicielle Vitam, à partir de la page de détail d’une unité archivistique, il est possible de demander à générer un DIP complet de l’unité archivistique uniquement ou de l’unité archivistique et de ses filles, ou bien un DIP complet correspondant à l’opération d’entrée (ingest) initiale.</p>
 <p>Le DIP complet peut être filtré sur un type d’usage. Le ou les usages retenus doivent être cohérents avec les droits octroyés par le contrat d’accès associé à la demande de génération du DIP.</p>
 <p><img alt="" src="../_images/ihm5.png" /></p>
@@ -433,7 +482,7 @@ Cette transaction peut également s’appliquer pour des transferts entre deux S
 </ul>
 </section>
 <section id="les-modalites-de-recuperation-du-dip-complet">
-<h3>Les modalités de récupération du DIP complet<a class="headerlink" href="#les-modalites-de-recuperation-du-dip-complet" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">16.5.2. </span>Les modalités de récupération du DIP complet<a class="headerlink" href="#les-modalites-de-recuperation-du-dip-complet" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Lorsque l’opération d’export du DIP complet est terminée, le DIP peut être récupéré :</p>
 <ul class="simple">
 <li><p>depuis l’IHM standard, à partir du journal des opérations en cliquant sur la ligne de l’opération d’export du DIP pour accéder à l’écran de détail, puis en affichant le champ « rapport » (via le sélecteur « Informations supplémentaires »),</p></li>
@@ -447,7 +496,7 @@ Cette transaction peut également s’appliquer pour des transferts entre deux S
 <p>Il est également possible de récupérer l’empreinte du DIP générée depuis le journal des opérations et disponible à la tâche de Création de l’archive et de son déplacement vers l’espace de stockage.</p>
 </section>
 <section id="le-bordereau-du-dip-complet">
-<h3>Le bordereau du DIP complet<a class="headerlink" href="#le-bordereau-du-dip-complet" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">16.5.3. </span>Le bordereau du DIP complet<a class="headerlink" href="#le-bordereau-du-dip-complet" title="Lien permanent vers cette rubrique"></a></h3>
 <p>À la racine du DIP se trouve le bordereau de mise à disposition qui décrit l’ensemble des métadonnées du paquet. Ce bordereau répond aux caractéristiques définies par le SEDA pour le message ArchiveDeliveryRequestReply.</p>
 <p>Il est composé :</p>
 <ul class="simple">
@@ -464,10 +513,10 @@ Cette transaction peut également s’appliquer pour des transferts entre deux S
 </section>
 </section>
 <section id="le-dip-de-transfert">
-<h2>Le DIP de transfert<a class="headerlink" href="#le-dip-de-transfert" title="Lien permanent vers cette rubrique"></a></h2>
+<h2><span class="section-number">16.6. </span>Le DIP de transfert<a class="headerlink" href="#le-dip-de-transfert" title="Lien permanent vers cette rubrique"></a></h2>
 <p>Le DIP généré dans le cadre du transfert doit pouvoir être pris en charge sur une autre plate-forme utilisant la solution logicielle Vitam. Le bordereau correspond donc au message ArchiveTransfer du SEDA.</p>
 <section id="les-modalites-de-lancement-de-loperation-de-mise-a-disposition-du-dip-de-transfert">
-<h3>Les modalités de lancement de l’opération de mise à disposition du DIP de transfert<a class="headerlink" href="#les-modalites-de-lancement-de-loperation-de-mise-a-disposition-du-dip-de-transfert" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">16.6.1. </span>Les modalités de lancement de l’opération de mise à disposition du DIP de transfert<a class="headerlink" href="#les-modalites-de-lancement-de-loperation-de-mise-a-disposition-du-dip-de-transfert" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Depuis l’IHM standard accompagnant la solution logicielle Vitam, à partir de la page de détail d’une unité archivistique, il est possible de demander à générer un DIP de transfert de l’unité archivistique uniquement ou de l’unité archivistique et de ses filles, ou bien un DIP de transfert correspondant à l’opération d’entrée (ingest) initiale[^4].</p>
 <ul class="simple">
 <li><p>Le DIP de transfert peut être filtré sur un type d’usage. Le ou les usages retenus doivent être cohérents avec les droits octroyés par le contrat d’accès associé à la demande de génération du DIP.<br />
@@ -537,7 +586,7 @@ Dans l’état actuel des développements, il n’est pas possible, depuis l’I
 </ul>
 </section>
 <section id="les-modalites-de-recuperation-du-dip-de-transfert">
-<h3>Les modalités de récupération du DIP de transfert<a class="headerlink" href="#les-modalites-de-recuperation-du-dip-de-transfert" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">16.6.2. </span>Les modalités de récupération du DIP de transfert<a class="headerlink" href="#les-modalites-de-recuperation-du-dip-de-transfert" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Lorsque l’opération d’export du DIP de transfert est terminée, le DIP peut être récupéré :</p>
 <ul class="simple">
 <li><p>depuis l’IHM standard, à partir du journal des opérations en cliquant sur la ligne de l’opération d’export du DIP pour accéder à l’écran de détail, puis en affichant le champ « rapport » (via le sélecteur « Informations supplémentaires »),<br />
@@ -549,7 +598,7 @@ Dans l’état actuel des développements, il n’est pas possible, depuis l’I
 <p>Il est également possible de récupérer l’empreinte du DIP générée depuis le journal des opérations et disponible à la tâche de Création de l’archive et de son déplacement vers l’espace de stockage.</p>
 </section>
 <section id="le-bordereau-du-dip-de-transfert">
-<h3>Le bordereau du DIP de transfert<a class="headerlink" href="#le-bordereau-du-dip-de-transfert" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">16.6.3. </span>Le bordereau du DIP de transfert<a class="headerlink" href="#le-bordereau-du-dip-de-transfert" title="Lien permanent vers cette rubrique"></a></h3>
 <p>À la racine du DIP de transfert se trouve le bordereau de mise à disposition qui décrit l’ensemble des métadonnées du paquet. Ce bordereau répond aux caractéristiques définies par le SEDA pour le message ArchiveTransfer, de manière à pouvoir être pris en charge par une plate-forme utilisant la solution logicielle Vitam.</p>
 <p>Il est composé :</p>
 <ul class="simple">
@@ -566,9 +615,9 @@ Dans l’état actuel des développements, il n’est pas possible, depuis l’I
 </section>
 </section>
 <section id="configuration-du-service">
-<h2>Configuration du service<a class="headerlink" href="#configuration-du-service" title="Lien permanent vers cette rubrique"></a></h2>
+<h2><span class="section-number">16.7. </span>Configuration du service<a class="headerlink" href="#configuration-du-service" title="Lien permanent vers cette rubrique"></a></h2>
 <section id="suppression-des-dip">
-<h3>Suppression des DIP<a class="headerlink" href="#suppression-des-dip" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">16.7.1. </span>Suppression des DIP<a class="headerlink" href="#suppression-des-dip" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Les DIP générés dans le cadre d’une demande de communication et les SIP générés dans le cadre d’une demande de transfert sont stockés dans des dossiers spécifiques.</p>
 <p>Ils sont purgés automatiquement à l’expiration d’un délai paramétrable par l’administrateur technique.</p>
 <p>Par défaut, la solution logicielle Vitam retient les DIP, quel que soit leur type :</p>
@@ -602,7 +651,7 @@ vitam:
 </div>
 </section>
 <section id="limitation-du-poids-des-dip">
-<h3>Limitation du poids des DIP<a class="headerlink" href="#limitation-du-poids-des-dip" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">16.7.2. </span>Limitation du poids des DIP<a class="headerlink" href="#limitation-du-poids-des-dip" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Afin de se prémunir contre une surcharge de l’espace de stockage, il est possible de configurer un seuil de plate-forme et un seuil propre à chaque tenant, en plus d’inclure un seuil dans la requête demandant à générer un DIP. La solution logicielle Vitam vérifie alors que le poids des DIP est inférieur ou égal au seuil défini.</p>
 <p>Cette configuration, optionnelle, est établie lors du paramétrage initial de la plate-forme par les administrateurs – fonctionnel pour la définition du besoin et technique[^7] pour la saisie réelle des informations – de chaque implémentation de la solution logicielle Vitam et définit, pour la plate-forme et/ou chaque tenant, les seuils acceptables.</p>
 <p>Le fichier de configuration[^8] se présente comme suit (exemple fictif) :</p>
@@ -644,7 +693,7 @@ binarySizeTenantThreshold:
 </section>
 </section>
 <section id="annexe-1-exemple-de-bordereau-de-mise-a-disposition-pour-un-dip-mono-producteur-dip-minimal">
-<h2>Annexe 1 : Exemple de bordereau de mise à disposition pour un DIP mono-producteur (DIP minimal)<a class="headerlink" href="#annexe-1-exemple-de-bordereau-de-mise-a-disposition-pour-un-dip-mono-producteur-dip-minimal" title="Lien permanent vers cette rubrique"></a></h2>
+<h2><span class="section-number">16.8. </span>Annexe 1 : Exemple de bordereau de mise à disposition pour un DIP mono-producteur (DIP minimal)<a class="headerlink" href="#annexe-1-exemple-de-bordereau-de-mise-a-disposition-pour-un-dip-mono-producteur-dip-minimal" title="Lien permanent vers cette rubrique"></a></h2>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&lt;ArchiveRestitutionRequest xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;
     xmlns:pr=&quot;info:lc/xmlns/premis-v2&quot; xmlns=&quot;fr:gouv:culture:archivesdefrance:seda:v2.1&quot;
     xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
@@ -760,7 +809,7 @@ binarySizeTenantThreshold:
 </div>
 </section>
 <section id="annexe-2-exemple-de-bordereau-de-mise-a-disposition-pour-un-dip-multi-producteurs-dip-minimal">
-<h2>Annexe 2 : Exemple de bordereau de mise à disposition pour un DIP multi-producteurs (DIP minimal)<a class="headerlink" href="#annexe-2-exemple-de-bordereau-de-mise-a-disposition-pour-un-dip-multi-producteurs-dip-minimal" title="Lien permanent vers cette rubrique"></a></h2>
+<h2><span class="section-number">16.9. </span>Annexe 2 : Exemple de bordereau de mise à disposition pour un DIP multi-producteurs (DIP minimal)<a class="headerlink" href="#annexe-2-exemple-de-bordereau-de-mise-a-disposition-pour-un-dip-multi-producteurs-dip-minimal" title="Lien permanent vers cette rubrique"></a></h2>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&lt;ArchiveRestitutionRequest xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;
     xmlns:pr=&quot;info:lc/xmlns/premis-v2&quot; xmlns=&quot;fr:gouv:culture:archivesdefrance:seda:v2.1&quot;
     xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
@@ -878,7 +927,7 @@ binarySizeTenantThreshold:
 </div>
 </section>
 <section id="annexe-3-exemple-de-bordereau-de-mise-a-disposition-pour-un-dip-complet-sans-les-journaux-de-cycle-de-vie">
-<h2>Annexe 3 : Exemple de bordereau de mise à disposition pour un DIP complet sans les journaux de cycle de vie<a class="headerlink" href="#annexe-3-exemple-de-bordereau-de-mise-a-disposition-pour-un-dip-complet-sans-les-journaux-de-cycle-de-vie" title="Lien permanent vers cette rubrique"></a></h2>
+<h2><span class="section-number">16.10. </span>Annexe 3 : Exemple de bordereau de mise à disposition pour un DIP complet sans les journaux de cycle de vie<a class="headerlink" href="#annexe-3-exemple-de-bordereau-de-mise-a-disposition-pour-un-dip-complet-sans-les-journaux-de-cycle-de-vie" title="Lien permanent vers cette rubrique"></a></h2>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&lt;ArchiveDeliveryRequestReply xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;
             xmlns:pr=&quot;info:lc/xmlns/premis-v2&quot; xmlns=&quot;fr:gouv:culture:archivesdefrance:seda:v2.1&quot;
             xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
@@ -1286,7 +1335,7 @@ binarySizeTenantThreshold:
 </div>
 </section>
 <section id="annexe-4-exemple-de-bordereau-de-mise-a-disposition-avec-export-du-journal-du-cycle-de-vie-de-lunite-archivistique-dip-minimal">
-<h2>Annexe 4 : Exemple de bordereau de mise à disposition avec export du journal du cycle de vie de l’unité archivistique (DIP minimal)<a class="headerlink" href="#annexe-4-exemple-de-bordereau-de-mise-a-disposition-avec-export-du-journal-du-cycle-de-vie-de-lunite-archivistique-dip-minimal" title="Lien permanent vers cette rubrique"></a></h2>
+<h2><span class="section-number">16.11. </span>Annexe 4 : Exemple de bordereau de mise à disposition avec export du journal du cycle de vie de l’unité archivistique (DIP minimal)<a class="headerlink" href="#annexe-4-exemple-de-bordereau-de-mise-a-disposition-avec-export-du-journal-du-cycle-de-vie-de-lunite-archivistique-dip-minimal" title="Lien permanent vers cette rubrique"></a></h2>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&lt;ArchiveDeliveryRequestReply xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;
     xmlns:pr=&quot;info:lc/xmlns/premis-v2&quot; xmlns=&quot;fr:gouv:culture:archivesdefrance:seda:v2.1&quot;
     xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
@@ -1540,7 +1589,10 @@ binarySizeTenantThreshold:
            </div>
           </div>
 
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="SIP.html" class="btn btn-neutral float-left" title="15. Structuration des Submission Information Packages (SIP)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="stockage.html" class="btn btn-neutral float-right" title="17. Gestion de multiples stratégies de stockage" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 
