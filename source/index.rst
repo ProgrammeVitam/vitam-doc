@@ -60,6 +60,7 @@ Outils connexes
    :numbered:
 
    sections/resip.md
+   sections/resip_faq.md
 
 Chantier préservation
 ======
