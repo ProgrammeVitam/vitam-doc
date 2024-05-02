@@ -11,7 +11,7 @@ Introduction
 |**Document**|**Date de la version**|**Remarques**|
 |:---------------:|:-----:|:-----:|
 |Vitam – Gestion de la préservation|||
-|Vitam – Identification des formats de fichiers|||
+|[Vitam – Identification des formats de fichiers](./chantier_identification_format.md)|||
 |Vitam – Extraction des métadonnées techniques|||
 
 
@@ -123,8 +123,8 @@ Une des difficultés de la préservation numérique réside dans la difficulté 
 
 ##### ExifTool
 
-Site web : http://owl.phy.queensu.ca/~phil/exiftool/  
-Dépôt du code : https://sourceforge.net/p/exiftool/code/ci/master/tree/  
+Site web : (http://owl.phy.queensu.ca/~phil/exiftool/)  
+Dépôt du code : (https://sourceforge.net/p/exiftool/code/ci/master/tree/)  
 Licence : GNU GPL ou Artistic License  
 Dernière mise à jour du code : 5 décembre 2019 (version 11.78)
 
@@ -132,8 +132,8 @@ Exiftool est avant tout un outil spécialisé dans l’extraction de métadonné
 
 ##### File Information Tool Set (FITS)
 
-Site web : https://projects.iq.harvard.edu/fits/home
-Dépôt du code : https://github.com/harvard-lts/fits
+Site web : (https://projects.iq.harvard.edu/fits/home)
+Dépôt du code : (https://github.com/harvard-lts/fits)
 Langage : JAVA 1.7 et au-delà
 Licence : GNU LGPL
 Dernière mise à jour : 10 septembre 2019 (version 1.5.0.)
@@ -167,8 +167,8 @@ Les résultats tirés de l’analyse de cet outil sont consolidés dans un fichi
 
 ##### JHOVE
 
-Site web : http://jhove.openpreservation.org/  
-Dépôt du code : https://github.com/openpreserve/jhove  
+Site web : (http://jhove.openpreservation.org/)  
+Dépôt du code : (https://github.com/openpreserve/jhove)  
 Langage : JAVA  
 Licence : GNU LGPL  
 Dernière mise à jour : 18 avril 2019 (version 1.22.)  
@@ -226,8 +226,8 @@ Ces études ne remettent pas fondamentalement en cause la pertinence de JHOVE et
 
 **MediaConch (CONformance CHecking for audiovisual files)**
 
-Site web : https://mediaarea.net/MediaConch/  
-Dépôt du code : https://github.com/MediaArea/MediaConch  
+Site web : (https://mediaarea.net/MediaConch/)  
+Dépôt du code : (https://github.com/MediaArea/MediaConch)  
 Dernière mise à jour : 10 avril 2018 (version 18.03.2.)  
 Licence : GNU GPL 3.0 ou plus récente, MPLv2 ou plus récente
 
@@ -237,7 +237,7 @@ MediaConch est un outil développé pour les institutions culturelles dans le ca
 
 **BFFValidator**
 
-Site web : https://msdn.microsoft.com/en-us/library/office/gg649868(v=office.14).aspx  
+Site web : (https://msdn.microsoft.com/en-us/library/office/gg649868(v=office.14).aspx)  
 Dernière mise à jour : 7 juillet 2011  
 Licence : à préciser (possible usage libre, mais code propriétaire)
 
@@ -246,8 +246,8 @@ Le code n’étant pas public, l’usage de l’outil est conditionné au mainti
 
 **OpenXML SDK**
 
-Site web : https://blogs.msdn.microsoft.com/officeinteroperability/2018/01/05/open-xml-sdk-version-2-8-1-is-available/  
-Dépôt du code : https://github.com/OfficeDev/Open-XML-SDK  
+Site web : (https://blogs.msdn.microsoft.com/officeinteroperability/2018/01/05/open-xml-sdk-version-2-8-1-is-available/)  
+Dépôt du code : (https://github.com/OfficeDev/Open-XML-SDK)  
 Dernière mise à jour : 13 mars 2019 (version 2.9.1.)  
 Licence : MIT License
 
@@ -256,8 +256,8 @@ Il convient de noter qu’elle ne valide pas le format OpenXML2003 qui a existé
 
 **ODF Validator**
 
-Site web : https://incubator.apache.org/odftoolkit/conformance/ODFValidator.html  
-Dépôt du code : http://svn.apache.org/viewvc/incubator/odf/trunk/ (dépôt Apache)  
+Site web : (https://incubator.apache.org/odftoolkit/conformance/ODFValidator.html)  
+Dépôt du code : (http://svn.apache.org/viewvc/incubator/odf/trunk/) (dépôt Apache)  
 Langage : JAVA  
 Dernière mise à jour : 10 avril 2017  
 Licence : Apache License version 2.0.
@@ -268,11 +268,11 @@ Il convient de noter qu’elle ne prend pas en compte les anciens formats d’Op
 
 **Le format ePub**
 
-Le format ePub dispose de plusieurs outils de validation, dont un est disponible en ligne : http://validator.idpf.org/.
+Le format ePub dispose de plusieurs outils de validation, dont un est disponible en ligne : (http://validator.idpf.org/).
 
 **EpubCheck**
 
-Dépôt du code : https://github.com/idpf/epubcheck  
+Dépôt du code : (https://github.com/idpf/epubcheck)  
 Dernière mise à jour : 19 juillet 2019 (4.2.2.)  
 Licence : GNU GPL 3.0 ou plus récente, MPLv2 ou plus récente
 
@@ -284,19 +284,19 @@ Il existe de nombreux outils utilisés pour valider les fichiers aux formats ima
 
 **DPF Manager**
 
-Site web : http://dpfmanager.org/ et http://www.preforma-project.eu/dpf-manager.html  
-Dépôt du code : https://github.com/EasyinnovaSL/DPFManager  
+Site web : (http://dpfmanager.org/ et http://www.preforma-project.eu/dpf-manager.html)  
+Dépôt du code : (https://github.com/EasyinnovaSL/DPFManager)  
 Dernière mise à jour : 1er septembre 2017 (version 3.5.1.)  
 Licences : GNU GPL 3.0 ou plus récente, MPLv2 ou plus récente
 
 DPF Manager est un outil open source destiné à valider la conformité des fichiers au format TIFF, en se basant sur la TIFF Baseline Specification Revision 6. Il a été développé par Easy Innova, le laboratoire d’humanités numériques de l’université de Bâle, en parallèle avec la réalisation de la bibliothèque JAVA TIFF Library 4J. Il a bénéficié du soutien du projet PREFORMA.
 
-DPF Manager est utilisable comme application autonome, en mode client-serveur ou ligne de commande. Il permet d’utiliser des profils de validation préenregistrés ou de créer son propre profil. Une interface de test est disponible en ligne à l’adresse suivante : http://dpfmanager.org/application.html. L’outil est jugé rapide et performant, avec des résultats disponibles sous forme HTML, METS ou XML. Il peut être un sérieux candidat à concurrencer JHOVE pour la validation de ce format de fichier[^45].
+DPF Manager est utilisable comme application autonome, en mode client-serveur ou ligne de commande. Il permet d’utiliser des profils de validation préenregistrés ou de créer son propre profil. Une interface de test est disponible en ligne à l’adresse suivante : (http://dpfmanager.org/application.html). L’outil est jugé rapide et performant, avec des résultats disponibles sous forme HTML, METS ou XML. Il peut être un sérieux candidat à concurrencer JHOVE pour la validation de ce format de fichier[^45].
 
 **ImageMagick**
 
-Site web : https://www.imagemagick.org/script/index.php  
-Dépôt du code : https://github.com/ImageMagick  
+Site web : (https://www.imagemagick.org/script/index.php)  
+Dépôt du code : (https://github.com/ImageMagick)  
 Dernière mise à jour du code : 1er janvier 2020 (version 7.0.9-13.)  
 Licence : compatible GPL 3.0.  
 Clients : CINES
@@ -307,8 +307,8 @@ Les résultats obtenus avec cet outil sont légèrement meilleurs que ceux obten
 
 **Jpylyzer**
 
-Site web : http://jpylyzer.openpreservation.org/  
-Dépôt du code : https://github.com/openpreserve/jpylyzer  
+Site web : (http://jpylyzer.openpreservation.org/)  
+Dépôt du code : (https://github.com/openpreserve/jpylyzer)  
 Dernière mise à jour : 21 novembre 2019 (version 2.0.)  
 Licence : GNU LGPL 3.0.
 
@@ -325,8 +325,8 @@ Les outils de validation de fichiers au format PDF sont nombreux, notamment pour
 
 **veraPDF**
 
-Site web: http://docs.verapdf.org/cli/validation/  
-Dépôt du code : https://github.com/verapdf  
+Site web: (http://docs.verapdf.org/cli/validation/)  
+Dépôt du code : (https://github.com/verapdf)  
 Dernière mise à jour : 10 décembre 2019 (pour le module contenant des outils)  
 Licence : GPL 3.0. ou plus récente, MPLv2 ou plus récente
 
@@ -667,154 +667,154 @@ La mise en place d’une cellule nationale de veille dans le cadre du groupe PIN
 Annexe : bibliographie
 ---
 
-Boumda Frankin, Granier Alexandre, Parker Nick. Guide méthodologique. Les outils de validation du format pdf/a. Paris/Montpellier : Numen/SIAF/Humanum/CINES, 2015. 28 p. Consultable à l’adresse suivante : https://francearchives.fr/file/595088560e531d3836eaf6cedee639c45f36e883/static_8196.pdf. Lien consulté le 12 décembre 2019
+Boumda Frankin, Granier Alexandre, Parker Nick. Guide méthodologique. Les outils de validation du format pdf/a. Paris/Montpellier : Numen/SIAF/Humanum/CINES, 2015. 28 p. Consultable à l’adresse suivante : (https://francearchives.fr/file/595088560e531d3836eaf6cedee639c45f36e883/static_8196.pdf). Lien consulté le 12 décembre 2019
 
 Brown Adrian. Practical Digital Preservation : a how-to guide for organizations of any side. Londres : Facet Publishing, 2013. 336 p.
 
 Corrado Edward M., Sandy Heather Moulaison. Digital Preservation for Librairies, Archives & Museums. New York, London : Rowman & Littlefiels, 2017. 402 p.
 
-Digital Preservation Coalition. Digital Preservation Handbook. Londres : DPC, 2016. Consultable à l’adresse suivante : http://www.dpconline.org/handbook. Lien consulté le 12 décembre 2019
+Digital Preservation Coalition. Digital Preservation Handbook. Londres : DPC, 2016. Consultable à l’adresse suivante : (http://www.dpconline.org/handbook). Lien consulté le 12 décembre 2019
 
-Endignoux Guillaume, Levillain Olivier, Migeon Jean-Yves. « Caradoc: A Pragmatic Approach to PDF Parsing and Validation », dans 2016 IEEE Security and Privacy Workshops (SPW), 2016, p. 126–139. Consultable à l’adresse suivante : https://doi.org/10.1109/SPW.2016.39. Lien consulté le 12 décembre 2019
+Endignoux Guillaume, Levillain Olivier, Migeon Jean-Yves. « Caradoc: A Pragmatic Approach to PDF Parsing and Validation », dans 2016 IEEE Security and Privacy Workshops (SPW), 2016, p. 126–139. Consultable à l’adresse suivante : (https://doi.org/10.1109/SPW.2016.39). Lien consulté le 12 décembre 2019
 
-Endignoux Guillaume, Levillain Olivier. « Caradoc : une boîte à outils pour décortiquer et analyser sereinement les fichiers PDF ». Consultable à l’adresse suivante : https://www.sstic.org/media/SSTIC2017/SSTIC-actes/caradoc/SSTIC2017-Article-caradoc-endignoux_levillain.pdf. Lien consulté le 12 décembre 2019
+Endignoux Guillaume, Levillain Olivier. « Caradoc : une boîte à outils pour décortiquer et analyser sereinement les fichiers PDF ». Consultable à l’adresse suivante : (https://www.sstic.org/media/SSTIC2017/SSTIC-actes/caradoc/SSTIC2017-Article-caradoc-endignoux_levillain.pdf). Lien consulté le 12 décembre 2019
 
-Friese Yvonne. « Ensuring long-term access : Pdf validation with JHOVE ? », PDF Association Blog Post, 2014. Consultable à l’adresse suivante : https://www.pdfa.org/ensuring-long-term-access-pdf-validation-with-jhove/. Lien consulté le 12 décembre 2019
+Friese Yvonne. « Ensuring long-term access : Pdf validation with JHOVE ? », PDF Association Blog Post, 2014. Consultable à l’adresse suivante : (https://www.pdfa.org/ensuring-long-term-access-pdf-validation-with-jhove/). Lien consulté le 12 décembre 2019
 
 Klindt Marco. « PDF/A considered harmful for digital preservation », Proceedings of iPRES Conference, Kyoto, Japan, September 2017 (iPRES 2017), p. 122-131. Consultable à l’adresse suivante : https://ipres2017.jp/wp-content/uploads/ver09.pdf. Lien consulté le 12 décembre 2019
 
-Lindlar Michelle, Tunnat Yvonne, Wilson Carl. « A PDF Test-Set for Well-Formedness Validation in JHOVE – The Good, the Bad and the Ugly », Proceedings of iPRES Conference, Kyoto, Japan, September 2017 (iPRES 2017), p. 111-121. Consultable à l’adresse suivante : https://ipres2017.jp/wp-content/uploads/35.pdf. Lien consulté le 12 décembre 2019
+Lindlar Michelle, Tunnat Yvonne, Wilson Carl. « A PDF Test-Set for Well-Formedness Validation in JHOVE – The Good, the Bad and the Ugly », Proceedings of iPRES Conference, Kyoto, Japan, September 2017 (iPRES 2017), p. 111-121. Consultable à l’adresse suivante : (https://ipres2017.jp/wp-content/uploads/35.pdf). Lien consulté le 12 décembre 2019
 
-Lindlar Michelle, Tunnat Yvonne. « How valid is your validation ? A closer look behind the curtain of JHOVE », Internation Journal of Digital Curation, 2017, vol. 12, n°2, p. 268-298. Consultable à l’adresse suivante : http://www.ijdc.net/article/view/578/505. Lien consulté le 12 décembre 2019
+Lindlar Michelle, Tunnat Yvonne. « How valid is your validation ? A closer look behind the curtain of JHOVE », Internation Journal of Digital Curation, 2017, vol. 12, n°2, p. 268-298. Consultable à l’adresse suivante : (http://www.ijdc.net/article/view/578/505). Lien consulté le 12 décembre 2019
 
-Lindlar Michelle. « How valid is your validation ? JHOVE as the go-to validator within Rosetta », Rosetta Advisory Group Meeting, 13 mai 2017. Consultable à l’adresse suivante : https://knowledge.exlibrisgroup.com/@api/deki/files/57261/10_How_Valid_is_your_Validation_-_JHOVE_as_the_Go-to-Validator_within_Rosetta_-_Michelle_Lindlar.pptx.pdf?revision=1/. Lien consulté le 12 décembre 2019
+Lindlar Michelle. « How valid is your validation ? JHOVE as the go-to validator within Rosetta », Rosetta Advisory Group Meeting, 13 mai 2017. Consultable à l’adresse suivante : (https://knowledge.exlibrisgroup.com/@api/deki/files/57261/10_How_Valid_is_your_Validation_-_JHOVE_as_the_Go-to-Validator_within_Rosetta_-_Michelle_Lindlar.pptx.pdf?revision=1/). Lien consulté le 12 décembre 2019
 
-May Peter. « Testing JHOVE PDF Module : the good, the bad, and the not well-formed », OPF Blog Post, 10 mars 2017. Consultable à l’adresse suivante : http://openpreservation.org/blog/2017/03/10/testing-jhove-pdf-module-the-good-the-bad-and-the-not-well-formed. Lien consulté le 12 décembre 2019
+May Peter. « Testing JHOVE PDF Module : the good, the bad, and the not well-formed », OPF Blog Post, 10 mars 2017. Consultable à l’adresse suivante : (http://openpreservation.org/blog/2017/03/10/testing-jhove-pdf-module-the-good-the-bad-and-the-not-well-formed). Lien consulté le 12 décembre 2019
 
-McGuinness, Wilson C., Johnson D., Doubrov B., « veraPDF : open source PDF/A validation through pragmatic partneship », Proceedings of iPRES Conference, Kyoto, Japan, September 2017 (iPRES 2017), p. 151-154. Consultable à l’adresse suivante : https://ipres2017.jp/wp-content/uploads/ver09.pdf. Lien consulté le 12 décembre 2019
+McGuinness, Wilson C., Johnson D., Doubrov B., « veraPDF : open source PDF/A validation through pragmatic partneship », Proceedings of iPRES Conference, Kyoto, Japan, September 2017 (iPRES 2017), p. 151-154. Consultable à l’adresse suivante : (https://ipres2017.jp/wp-content/uploads/ver09.pdf). Lien consulté le 12 décembre 2019
 
-Nichele Baptiste. « Préparation des versements : identification et validation des formats de fichiers », 18 août 2016. Consultable à l’adresse suivante : http://siaf.hypotheses.org/676. Lien consulté le 12 décembre 2019
+Nichele Baptiste. « Préparation des versements : identification et validation des formats de fichiers », 18 août 2016. Consultable à l’adresse suivante : (http://siaf.hypotheses.org/676). Lien consulté le 12 décembre 2019
 
-Shala Lavdërim, Shala Ahmet. « File Formats – Characterization and Validation », dans Kopacek Peter, Hajrizi Edmond [dir.], 17th IFAC Conference on International Stability, Technology and Culture TECIS 2016 [Dürres, Albanie, 26-28 octobre 2016]. Consultable à l’adresse suivante :  http://www.sciencedirect.com/science/article/pii/S2405896316324880. Lien consulté le 12 décembre 2019
+Shala Lavdërim, Shala Ahmet. « File Formats – Characterization and Validation », dans Kopacek Peter, Hajrizi Edmond [dir.], 17th IFAC Conference on International Stability, Technology and Culture TECIS 2016 [Dürres, Albanie, 26-28 octobre 2016]. Consultable à l’adresse suivante :  (http://www.sciencedirect.com/science/article/pii/S2405896316324880). Lien consulté le 12 décembre 2019
 
-Töwe Matthias, Geisser Franziska, Suri Roland E.. « To Act ou Not to Act. Handling File Format Identification Issues in Practice », iPRES 2016 Proceedings, p. 288-289. Consultable à l’adresse suivante : https://ipr16.organizers-congress.org/ipr16.organizers-congress.org/frontend/organizers/media/iPRES2016/_PDF/IPR16.Proceedings_4_Web_Broschuere_Link.pdf. Lien consulté le 12 décembre 2019
+Töwe Matthias, Geisser Franziska, Suri Roland E.. « To Act ou Not to Act. Handling File Format Identification Issues in Practice », iPRES 2016 Proceedings, p. 288-289. Consultable à l’adresse suivante : (https://ipr16.organizers-congress.org/ipr16.organizers-congress.org/frontend/organizers/media/iPRES2016/_PDF/IPR16.Proceedings_4_Web_Broschuere_Link.pdf). Lien consulté le 12 décembre 2019
 
-Tunnat Yvonne, « Error detection of JPEG files with JHOVE and Bad Peggy – so who’s the real Sherlock Holmes here? », OPF Blog Post, 29 novembre 2016. Consultable à l’adresse suivante : http://openpreservation.org/blog/2016/11/29/jpegvalidation/. Lien consulté le 12 décembre 2019
+Tunnat Yvonne, « Error detection of JPEG files with JHOVE and Bad Peggy – so who’s the real Sherlock Holmes here? », OPF Blog Post, 29 novembre 2016. Consultable à l’adresse suivante : (http://openpreservation.org/blog/2016/11/29/jpegvalidation/). Lien consulté le 12 décembre 2019
 
-Tunnat Yvonne, « Good GIF hunting: JHOVE’s GIF validation skills », OPF Blog Post, 5 décembre 2017. Consultable à l’adresse suivante : http://openpreservation.org/blog/2017/12/05/good-gif-hunting/. Lien consulté le 12 décembre 2019
+Tunnat Yvonne, « Good GIF hunting: JHOVE’s GIF validation skills », OPF Blog Post, 5 décembre 2017. Consultable à l’adresse suivante : (http://openpreservation.org/blog/2017/12/05/good-gif-hunting/). Lien consulté le 12 décembre 2019
 
-Tunnat Yvonne, « JHOVE – the one and only PDF validator », OPF Blog Post, 17 décembre 2017. Consultable à l’adresse suivante : http://openpreservation.org/blog/2017/12/19/jhove-the-one-and-only-pdf-validator/. Lien consulté le 12 décembre 2019
+Tunnat Yvonne, « JHOVE – the one and only PDF validator », OPF Blog Post, 17 décembre 2017. Consultable à l’adresse suivante : (http://openpreservation.org/blog/2017/12/19/jhove-the-one-and-only-pdf-validator/). Lien consulté le 12 décembre 2019
 
-Tunnat Yvonne, « TIFF format validation: easy-peasy ? », OPF Blog Post, 17 janvier 2017. Consultable à l’adresse suivante : http://openpreservation.org/blog/2017/01/17/tiff-format-validation-easy-peasy/. Lien consulté le 12 décembre 2019
+Tunnat Yvonne, « TIFF format validation: easy-peasy ? », OPF Blog Post, 17 janvier 2017. Consultable à l’adresse suivante : (http://openpreservation.org/blog/2017/01/17/tiff-format-validation-easy-peasy/). Lien consulté le 12 décembre 2019
 
-Van der Knijff Johan. « Breaking WAVEs (and some FLACs) », OPF Blog Post, 4 janvier 2017. Consultable à l’adresse suivante :  http://openpreservation.org/blog/2017/01/04/breaking-waves-and-some-flacs/. Lien consulté le 12 décembre 2019
+Van der Knijff Johan. « Breaking WAVEs (and some FLACs) », OPF Blog Post, 4 janvier 2017. Consultable à l’adresse suivante :  (http://openpreservation.org/blog/2017/01/04/breaking-waves-and-some-flacs/). Lien consulté le 12 décembre 2019
 
-[^1] : Il s’agit d’une constante numérique ou d’un ensemble de caractères propre à un format de fichier, embarquée dans un fichier numérique, généralement positionnée à un endroit déterminé de celui-ci (souvent à son début mais pas uniquement) et utilisée pour désigner le format ou le protocole à utiliser.
+[^1]: Il s’agit d’une constante numérique ou d’un ensemble de caractères propre à un format de fichier, embarquée dans un fichier numérique, généralement positionnée à un endroit déterminé de celui-ci (souvent à son début mais pas uniquement) et utilisée pour désigner le format ou le protocole à utiliser.
 
-[^2] : Lindlar Michelle, Tunnat Yvonne. « How valid is your validation? A closer look behind the curtain of JHOVE », dans 12th International Digital Curation Conference: Upstream, Downstream: embedding digital curation workflows for data science, scholarship and society, 2017, 2.1.
+[^2]: Lindlar Michelle, Tunnat Yvonne. « How valid is your validation? A closer look behind the curtain of JHOVE », dans 12th International Digital Curation Conference: Upstream, Downstream: embedding digital curation workflows for data science, scholarship and society, 2017, 2.1.
 
-[^3] : Shala Lavdërim, Shala Ahmet. « File Formats – Characterization and Validation », dans Kopacek Peter, Hajrizi Edmond [dir.], 17th IFAC Conference on International Stability, Technology and Culture TECIS 2016 [Dürres, Albanie, 26-28 octobre 2016].
+[^3]: Shala Lavdërim, Shala Ahmet. « File Formats – Characterization and Validation », dans Kopacek Peter, Hajrizi Edmond [dir.], 17th IFAC Conference on International Stability, Technology and Culture TECIS 2016 [Dürres, Albanie, 26-28 octobre 2016].
 
-[^4] : World Wide Web Consortium
+[^4]: World Wide Web Consortium
 
-[^5] : Lindlar Michelle, Tunnat Yvonne. « How valid is your validation? A closer look behind the curtain of JHOVE », dans 12th International Digital Curation Conference: Upstream, Downstream: embedding digital curation workflows for data science, scholarship and society, 2017, 2.1. et page Wikipedia consacrée au XML : https://fr.wikipedia.org/wiki/Extensible_Markup_Language#Composants_et_syntaxe.
+[^5]: Lindlar Michelle, Tunnat Yvonne. « How valid is your validation? A closer look behind the curtain of JHOVE », dans 12th International Digital Curation Conference: Upstream, Downstream: embedding digital curation workflows for data science, scholarship and society, 2017, 2.1. et page Wikipedia consacrée au XML : (https://fr.wikipedia.org/wiki/Extensible_Markup_Language#Composants_et_syntaxe).
 
-[^6] : Tunnat  Yvonne, « Good GIF hunting: JHOVE’s GIF validation skills », OPF Blog Post, 5 décembre 2017.
+[^6]: Tunnat  Yvonne, « Good GIF hunting: JHOVE’s GIF validation skills », OPF Blog Post, 5 décembre 2017.
 
-[^7] : Lindlar Michelle, Tunnat Yvonne. « How valid is your validation? A closer look behind the curtain of JHOVE », dans 12th International Digital Curation Conference: Upstream, Downstream: embedding digital curation workflows for data science, scholarship and society, 2017, 4.1.
+[^7]: Lindlar Michelle, Tunnat Yvonne. « How valid is your validation? A closer look behind the curtain of JHOVE », dans 12th International Digital Curation Conference: Upstream, Downstream: embedding digital curation workflows for data science, scholarship and society, 2017, 4.1.
 
-[^8] : Töwe Matthias, Geisser Franziska, Suri Roland E.. « To Act ou Not to Act. Handling File Format Identification Issues in Practice », iPRES 2016 Proceedings, p. 289.
+[^8]: Töwe Matthias, Geisser Franziska, Suri Roland E.. « To Act ou Not to Act. Handling File Format Identification Issues in Practice », iPRES 2016 Proceedings, p. 289.
 
-[^9] : Boumda Frankin, Granier Alexandre, Parker Nick. Guide méthodologique. Les outils de validation du format pdf/a. Paris/Montpellier : Numen/SIAF/Humanum/CINES, 2015. p. 16 et 21.
+[^9]: Boumda Frankin, Granier Alexandre, Parker Nick. Guide méthodologique. Les outils de validation du format pdf/a. Paris/Montpellier : Numen/SIAF/Humanum/CINES, 2015. p. 16 et 21.
 
-[^10] : Shala Lavdërim, Shala Ahmet. « File Formats – Characterization and Validation », dans Kopacek Peter, Hajrizi Edmond [dir.], 17th IFAC Conference on International Stability, Technology and Culture TECIS 2016 [Dürres, Albanie, 26-28 octobre 2016], p. 255.
+[^10]: Shala Lavdërim, Shala Ahmet. « File Formats – Characterization and Validation », dans Kopacek Peter, Hajrizi Edmond [dir.], 17th IFAC Conference on International Stability, Technology and Culture TECIS 2016 [Dürres, Albanie, 26-28 octobre 2016], p. 255.
 
-[^11] : Shala Lavdërim, Shala Ahmet. « File Formats – Characterization and Validation », dans Kopacek Peter, Hajrizi Edmond [dir.], 17th IFAC Conference on International Stability, Technology and Culture TECIS 2016 [Dürres, Albanie, 26-28 octobre 2016], p. 256.
+[^11]: Shala Lavdërim, Shala Ahmet. « File Formats – Characterization and Validation », dans Kopacek Peter, Hajrizi Edmond [dir.], 17th IFAC Conference on International Stability, Technology and Culture TECIS 2016 [Dürres, Albanie, 26-28 octobre 2016], p. 256.
 
-[^12] : Tunnat  Yvonne, « TIFF format validation: easy-peasy? », OPF Blog Post, 17 janvier 2017.
+[^12]: Tunnat  Yvonne, « TIFF format validation: easy-peasy? », OPF Blog Post, 17 janvier 2017.
 
-[^13] : http://adlnet.github.io/xAPI-SCORM-Profile/dev/adl-tools.html. Lien vérifié le 12 décembre 2019.
+[^13]: (http://adlnet.github.io/xAPI-SCORM-Profile/dev/adl-tools.html). Lien vérifié le 12 décembre 2019.
 
-[^14] : https://tika.apache.org/. Lien vérifié le 12 décembre 2019.
+[^14]: (https://tika.apache.org/). Lien vérifié le 12 décembre 2019.
 
-[^15] : http://digital-preservation.github.io/droid/. Lien vérifié le 12 décembre 2019.
+[^15]: (http://digital-preservation.github.io/droid/). Lien vérifié le 12 décembre 2019.
 
-[^16] : https://exiftool.org/. Lien vérifié le 12 décembre 2019.
+[^16]: (https://exiftool.org/). Lien vérifié le 12 décembre 2019.
 
-[^17] : https://github.com/gmcgath/ffident. Lien vérifié le 12 décembre 2019.
+[^17]: (https://github.com/gmcgath/ffident). Lien vérifié le 12 décembre 2019.
 
-[^18] : http://darwinsys.com/file/. Lien vérifié le 12 décembre 2019.
+[^18]: (http://darwinsys.com/file/). Lien vérifié le 12 décembre 2019.
 
-[^19] : https://github.com/openpreserve/jhove. Lien vérifié le 12 décembre 2019.
+[^19]: (https://github.com/openpreserve/jhove). Lien vérifié le 12 décembre 2019.
 
-[^20] : https://mediaarea.net/en/MediaInfo. Lien vérifié le 12 décembre 2019.
+[^20]: (https://mediaarea.net/en/MediaInfo). Lien vérifié le 12 décembre 2019.
 
-[^21] : http://meta-extractor.sourceforge.net/. Lien vérifié le 12 décembre 2019.
+[^21]: (http://meta-extractor.sourceforge.net/). Lien vérifié le 12 décembre 2019.
 
-[^22] : https://projects.iq.harvard.edu/fits/tools#ois_audio. Lien vérifié le 12 décembre 2019.
+[^22]: (https://projects.iq.harvard.edu/fits/tools#ois_audio). Lien vérifié le 12 décembre 2019.
 
-[^23] : https://projects.iq.harvard.edu/fits/tools#ois_file. Lien vérifié le 12 décembre 2019.
+[^23]: (https://projects.iq.harvard.edu/fits/tools#ois_file). Lien vérifié le 12 décembre 2019.
 
-[^24] : https://projects.iq.harvard.edu/fits/tools#ois_xml. Lien vérifié le 12 décembre 2019.
+[^24]: (https://projects.iq.harvard.edu/fits/tools#ois_xml). Lien vérifié le 12 décembre 2019.
 
-[^25] : http://www.jdom.org/. Lien vérifié le 12 décembre 2019.
+[^25]: (http://www.jdom.org/). Lien vérifié le 12 décembre 2019.
 
-[^26] : https://github.com/FasterXML/StaxMate. Lien vérifié le 12 décembre 2019.
+[^26]: (https://github.com/FasterXML/StaxMate). Lien vérifié le 12 décembre 2019.
 
-[^27] : https://github.com/FasterXML/stax2-api. Lien vérifié le 12 décembre 2019.
+[^27]: (https://github.com/FasterXML/stax2-api). Lien vérifié le 12 décembre 2019.
 
-[^28] : https://github.com/FasterXML/woodstox. Lien vérifié le 12 décembre 2019.
+[^28]: (https://github.com/FasterXML/woodstox). Lien vérifié le 12 décembre 2019.
 
-[^29] : http://xerces.apache.org/xerces2-j/. Lien vérifié le 12 décembre 2019.
+[^29]: (http://xerces.apache.org/xerces2-j/). Lien vérifié le 12 décembre 2019.
 
-[^30] : http://xerces.apache.org/xml-commons/. Lien vérifié le 12 décembre 2019.
+[^30]: (http://xerces.apache.org/xml-commons/). Lien vérifié le 12 décembre 2019.
 
-[^31] : http://xerces.apache.org/xml-commons/. Lien vérifié le 12 décembre 2019.
+[^31]: (http://xerces.apache.org/xml-commons/). Lien vérifié le 12 décembre 2019.
 
-[^32] : https://github.com/java-native-access/jna. Lien vérifié le 12 décembre 2019.
+[^32]: (https://github.com/java-native-access/jna). Lien vérifié le 12 décembre 2019.
 
-[^33] : Lindlar Michelle, Tunnat Yvonne, Wilson Carl. « A PDF Test-Set for Well-Formedness Validation in JHOVE – The Good, the Bad and the Ugly », Proceedings of iPRES Conference, Kyoto, Japan, September 2017 (iPRES 2017) , p. 113.
+[^33]: Lindlar Michelle, Tunnat Yvonne, Wilson Carl. « A PDF Test-Set for Well-Formedness Validation in JHOVE – The Good, the Bad and the Ugly », Proceedings of iPRES Conference, Kyoto, Japan, September 2017 (iPRES 2017) , p. 113.
 
-[^34] : Shala Lavdërim, Shala Ahmet. « File Formats – Characterization and Validation », dans Kopacek Peter, Hajrizi Edmond [dir.], 17th IFAC Conference on International Stability, Technology and Culture TECIS 2016 [Dürres, Albanie, 26-28 octobre 2016], p. 255.
+[^34]: Shala Lavdërim, Shala Ahmet. « File Formats – Characterization and Validation », dans Kopacek Peter, Hajrizi Edmond [dir.], 17th IFAC Conference on International Stability, Technology and Culture TECIS 2016 [Dürres, Albanie, 26-28 octobre 2016], p. 255.
 
-[^35] : https://github.com/opf-labs/jhove2. Lien vérifié le  12 décembre 2019.
+[^35]: (https://github.com/opf-labs/jhove2). Lien vérifié le  12 décembre 2019.
 
-[^36] : Digital Preservation Coalition. Digital Preservation Handbook. Londres : DPC, 2016. Voir http://www.dpconline.org/handbook/technical-solutions-and-tools/file-formats-and-standards. Lien vérifié le 12 décembre 2019.
+[^36]: Digital Preservation Coalition. Digital Preservation Handbook. Londres : DPC, 2016. Voir (http://www.dpconline.org/handbook/technical-solutions-and-tools/file-formats-and-standards). Lien vérifié le 12 décembre 2019.
 
-[^37] : Tunnat Yvonne, « Good GIF hunting: JHOVE’s GIF validation skills », OPF Blog Post, 5 décembre 2017.
+[^37]: Tunnat Yvonne, « Good GIF hunting: JHOVE’s GIF validation skills », OPF Blog Post, 5 décembre 2017.
 
-[^38] : Tunnat Yvonne, « Error detection of JPEG files with JHOVE and Bad Peggy – so who’s the real Sherlock Holmes here? », OPF Blog Post, 29 novembre 2016.
+[^38]: Tunnat Yvonne, « Error detection of JPEG files with JHOVE and Bad Peggy – so who’s the real Sherlock Holmes here? », OPF Blog Post, 29 novembre 2016.
 
-[^39] : Friese Yvonne. « Ensuring long-term access : Pdf validation with JHOVE ? », PDF Association Blog Post, 2014.
+[^39]: Friese Yvonne. « Ensuring long-term access : Pdf validation with JHOVE ? », PDF Association Blog Post, 2014.
 
-[^40] : Lindlar Michelle. « How valid is your validation? JHOVE as the go-to validator within Rosetta », Rosetta Advisory Group Meeting, 13 mai 2017. Lindlar Michelle, Tunnat Yvonne, Wilson Carl. « A PDF Test-Set for Well-Formedness Validation in JHOVE – The Good, the Bad and the Ugly », Proceedings of iPRES Conference, Kyoto, Japan, September 2017 (iPRES 2017) , p. 115-121.
+[^40]: Lindlar Michelle. « How valid is your validation? JHOVE as the go-to validator within Rosetta », Rosetta Advisory Group Meeting, 13 mai 2017. Lindlar Michelle, Tunnat Yvonne, Wilson Carl. « A PDF Test-Set for Well-Formedness Validation in JHOVE – The Good, the Bad and the Ugly », Proceedings of iPRES Conference, Kyoto, Japan, September 2017 (iPRES 2017) , p. 115-121.
 
-[^41] : Tunnat Yvonne, « TIFF format validation: easy-peasy? », OPF Blog Post, 17 janvier 2017.
+[^41]: Tunnat Yvonne, « TIFF format validation: easy-peasy? », OPF Blog Post, 17 janvier 2017.
 
-[^42] : Tunnat Yvonne, « TIFF format validation: easy-peasy? », OPF Blog Post, 17 janvier 2017.
+[^42]: Tunnat Yvonne, « TIFF format validation: easy-peasy? », OPF Blog Post, 17 janvier 2017.
 
-[^43] : Lindlar Michelle, Tunnat Yvonne, Wilson Carl. « A PDF Test-Set for Well-Formedness Validation in JHOVE – The Good, the Bad and the Ugly », Proceedings of iPRES Conference, Kyoto, Japan, September 2017 (iPRES 2017), p. 113-115.
+[^43]: Lindlar Michelle, Tunnat Yvonne, Wilson Carl. « A PDF Test-Set for Well-Formedness Validation in JHOVE – The Good, the Bad and the Ugly », Proceedings of iPRES Conference, Kyoto, Japan, September 2017 (iPRES 2017), p. 113-115.
 
-[^44] : « BFF Validator Tool goes public », https://blogs.msdn.microsoft.com/openspecification/2011/07/13/bffvalidator-tool-goes-public/. Lien vérifié le 12 décembre 2019.
+[^44]: « BFF Validator Tool goes public », (https://blogs.msdn.microsoft.com/openspecification/2011/07/13/bffvalidator-tool-goes-public/). Lien vérifié le 12 décembre 2019.
 
-[^45] : Tunnat Yvonne, « TIFF format validation: easy-peasy? », OPF Blog Post, 17 janvier 2017.
+[^45]: Tunnat Yvonne, « TIFF format validation: easy-peasy? », OPF Blog Post, 17 janvier 2017.
 
-[^46] : Tunnat Yvonne, « TIFF format validation: easy-peasy? », OPF Blog Post, 17 janvier 2017. Tunnat Yvonne, « Good GIF hunting: JHOVE’s GIF validation skills », OPF Blog Post, 5 décembre 2017.
+[^46]: Tunnat Yvonne, « TIFF format validation: easy-peasy? », OPF Blog Post, 17 janvier 2017. Tunnat Yvonne, « Good GIF hunting: JHOVE’s GIF validation skills », OPF Blog Post, 5 décembre 2017.
 
-[^47] : Boumda Frankin, Granier Alexandre, Parker Nick. Guide méthodologique. Les outils de validation du format pdf/a. Paris/Montpellier : Numen/SIAF/Humanum/CINES, 2015.
+[^47]: Boumda Frankin, Granier Alexandre, Parker Nick. Guide méthodologique. Les outils de validation du format pdf/a. Paris/Montpellier : Numen/SIAF/Humanum/CINES, 2015.
 
-[^48] : McGuinness, Wilson C., Johnson D., Doubrov B., « veraPDF : open source PDF/A validation through pragmatic partneship », Proceedings of iPRES Conference, Kyoto, Japan, September 2017 (iPRES 2017), p. 151-154
+[^48]: McGuinness, Wilson C., Johnson D., Doubrov B., « veraPDF : open source PDF/A validation through pragmatic partneship », Proceedings of iPRES Conference, Kyoto, Japan, September 2017 (iPRES 2017), p. 151-154
 
-[^49] : https://validator.w3.org/. Lien vérifié le 12 décembre 2019.
+[^49]: (https://validator.w3.org/). Lien vérifié le 12 décembre 2019.
 
-[^50] : https://github.com/FasterXML/woodstox. Lien vérifié le 12 décembre 2019.
+[^50]: (https://github.com/FasterXML/woodstox). Lien vérifié le 12 décembre 2019.
 
-[^51] : https://xerces.apache.org/. Lien vérifié le 12 décembre 2019.
+[^51]: (https://xerces.apache.org/). Lien vérifié le 12 décembre 2019.
 
-[^52] : Boumda Frankin, Granier Alexandre, Parker Nick. Guide méthodologique. Les outils de validation du format pdf/a. Paris/Montpellier : Numen/SIAF/Humanum/CINES, 2015.
+[^52]: Boumda Frankin, Granier Alexandre, Parker Nick. Guide méthodologique. Les outils de validation du format pdf/a. Paris/Montpellier : Numen/SIAF/Humanum/CINES, 2015.
 
-[^53] : Tunnat Yvonne, « TIFF format validation: easy-peasy? », OPF Blog Post, 17 janvier 2017.
+[^53]: Tunnat Yvonne, « TIFF format validation: easy-peasy? », OPF Blog Post, 17 janvier 2017.
 
-[^54] : Tunnat Yvonne, « Error detection of JPEG files with JHOVE and Bad Peggy – so who’s the real Sherlock Holmes here? », OPF Blog Post, 29 novembre 2016.
+[^54]: Tunnat Yvonne, « Error detection of JPEG files with JHOVE and Bad Peggy – so who’s the real Sherlock Holmes here? », OPF Blog Post, 29 novembre 2016.
 
-[^55] : Pour en savoir plus sur les opérations de traitement de masse des fichiers numériques (opérations de préservation, consulter la documentation spécifique consacrée à la préservation).
+[^55]: Pour en savoir plus sur les opérations de traitement de masse des fichiers numériques (opérations de préservation, consulter la documentation spécifique consacrée à la préservation).

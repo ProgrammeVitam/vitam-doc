@@ -19,7 +19,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
-    <link rel="next" title="2. RESIP :foire aux questions" href="resip_faq.html" />
+    <link rel="next" title="2. RESIP : foire aux questions" href="resip_faq.html" />
     <link rel="prev" title="2. APP Arbres et plans" href="VitamUI_Arbres_Plans.html" /> 
 </head>
 
@@ -290,7 +290,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="resip_faq.html">2. RESIP :foire aux questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resip_faq.html">2. RESIP : foire aux questions</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Chantier préservation</span></p>
 <ul>
@@ -478,11 +478,13 @@ Resip (cf. copie d’écran ci-dessous).</p>
 <p><img alt="" src="../_images/1000000000000555000002F9FA0C89A3602DFEA9.png" />
 Une fois l’opération de génération du SIP terminée, la fenêtre de dialogue invite l’utilisateur à appuyer sur la touche « Entrée » pour la fermer. Le SIP généré est enregistré dans le répertoire Resip, sous la forme d’un fichier dont l’extension est .zip (cf. copie d’écran ci-dessous).</p>
 <p><img alt="" src="../_images/1000000000000551000002FFE621CD7C8ABCEB06.png" /></p>
-<p><strong>Attention</strong> :</p>
+<blockquote>
+<div><p>[!WARNING]</p>
 <ul class="simple">
 <li><p>l’opération ne pourra pas s’exécuter si le fichier nommé « ExportContext.config » est absent du répertoire nommé « config » ;</p></li>
 <li><p>l’en-tête du manifeste reprend les options et métadonnées déclarées dans le fichier nommé « ExportContext.config ». Les valeurs des champs de l’en-tête peuvent être directement modifiées dans ce fichier.</p></li>
 </ul>
+</div></blockquote>
 </section>
 <section id="execution-en-ligne-de-commande">
 <h4><span class="section-number">1.2.3.2. </span>Exécution en ligne de commande<a class="headerlink" href="#execution-en-ligne-de-commande" title="Lien permanent vers cette rubrique"></a></h4>
@@ -1181,9 +1183,12 @@ treatmentParameters.dupMax=1000
 <hr class="docutils" />
 <p>Une fois le fichier ouvert, il est possible de modifier l’ensemble des
 paramètres et de sauvegarder les modifications apportées.</p>
-<p>**Attention **: il convient de bien conserver la syntaxe et la
+<blockquote>
+<div><p>[!WARNING]
+Il convient de bien conserver la syntaxe et la
 sémantique utilisées dans le fichier afin d’éviter les problèmes
 d’import.</p>
+</div></blockquote>
 </section>
 <section id="importer-un-fichier-de-parametrage-different-du-fichier-de-parametrage-par-defaut">
 <h4><span class="section-number">1.3.4.7. </span>Importer un fichier de paramétrage différent du fichier de paramétrage par défaut<a class="headerlink" href="#importer-un-fichier-de-parametrage-different-du-fichier-de-parametrage-par-defaut" title="Lien permanent vers cette rubrique"></a></h4>
@@ -1206,7 +1211,7 @@ sélectionner le fichier de paramétrage (cf. copie d’écran ci-dessous).</p>
 l’explorateur lance la mise à jour des paramètres de la moulinette
 ReSIP. Pour consulter les paramètres définis, il convient, dans le menu
 de la moulinette ReSIP, de cliquer sur l’action « Fichier » puis sur la
-sous-action « Préférences » (voir <span class="xref myst">section ci-dessous</span>).</p>
+sous-action « Préférences » (voir <span class="xref myst">section</span> ci-dessous).</p>
 </section>
 <section id="reinitialiser-le-parametrage-par-defaut">
 <h4><span class="section-number">1.3.4.8. </span>Réinitialiser le paramétrage par défaut<a class="headerlink" href="#reinitialiser-le-parametrage-par-defaut" title="Lien permanent vers cette rubrique"></a></h4>
@@ -1226,7 +1231,7 @@ préférences » de la fenêtre de dialogue lance la mise à jour des
 paramètres de la moulinette ReSIP. Pour consulter les paramètres
 réinitialisés, il convient, dans le menu de la moulinette ReSIP, de
 cliquer sur l’action « Fichier » puis sur la sous-action « Préférences »
-(voir <span class="xref myst">section ci-dessous</span>).</p>
+(voir [section] (#import-depuis-un-fichier-csv-décrivant-une-structure-arborescente-darchives-etou-de-fichiers)ci-dessous).</p>
 </section>
 </section>
 </section>
@@ -1297,7 +1302,7 @@ guillemets) ;</p></li>
 <li><p>définir, pour les imports depuis un fichier .csv décrivant une
 structure arborescente d’archives et/ou de fichiers, le séparateur
 ainsi que l’encodage des caractères retenus, au moyen de sélecteurs
-(<span class="xref myst">voir section</span>).</p>
+(voir <span class="xref myst">section</span>).</p>
 <p><img alt="" src="../_images/1000020100000554000002D66BA03109BD5E5F1E.png" /></p>
 </li>
 </ul>
@@ -1351,7 +1356,7 @@ groupes d’objets techniques et des objets binaires comme physiques,
 ainsi que la localisation des fichiers sur l’environnement de travail de
 l’utilisateur. Ce contexte de travail nécessite d’être sauvegardé si le
 traitement de la structure arborescente de fichiers doit être interrompu
-et repris ultérieurement (<span class="xref myst">cf. section</span>).</p>
+et repris ultérieurement (cf. <span class="xref myst">section</span>).</p>
 <p><strong>Attention</strong> : pour des raisons de taille, les fichiers représentant
 les archives ne sont pas sauvegardés dans le contexte de travail. Seul
 leur chemin sur le disque est sauvegardé. <strong>En conséquence, les fichiers
@@ -1409,11 +1414,14 @@ plusieurs objets, par exemple un objet physique et un objet binaire,
 ou un objet binaire de type BinaryMaster et un objet binaire de type
 Thumbnail.</p></li>
 </ul>
-<p><strong>À noter</strong> : pour comprendre au mieux cette façon de structurer
+<blockquote>
+<div><p>[!NOTE]<br />
+pour comprendre au mieux cette façon de structurer
 l’arborescence de fichiers avec tous les fichiers spéciaux, il est
 recommandé d’exporter des exemples de SIP déjà constitués en utilisant
 la fonction « Exporter la hiérarchie sur disque » pour visualiser les
-différents fichiers spéciaux associés (<span class="xref myst">cf. section</span>).</p>
+différents fichiers spéciaux associés (<span class="xref myst">section</span>).</p>
+</div></blockquote>
 <section id="metadonnees-de-len-tete-du-manifeste">
 <h5><span class="section-number">1.4.1.3.1. </span>Métadonnées de l’en-tête du manifeste<a class="headerlink" href="#metadonnees-de-len-tete-du-manifeste" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Les métadonnées de l’en-tête du manifeste (intitulé et identifiant du
@@ -1644,7 +1652,7 @@ sélectionner le SIP et de l’importer dans la moulinette ReSIP en
 cliquant sur le bouton d’action « Ouvrir » (cf. copie d’écran
 ci-dessous).
 <img alt="" src="../_images/1000020100000555000002D7070E739B9B5EFF01.png" /></p>
-<p>L’opération d’import se déroule ensuite <span class="xref myst">comme décrit dans la section</span>. La moulinette ReSIP ouvre le SIP, décompresse les
+<p>L’opération d’import se déroule ensuite comme décrit dans la <span class="xref myst">section</span>. La moulinette ReSIP ouvre le SIP, décompresse les
 fichiers dans un répertoire nommé « nom du SIP »-tmpdir créé dans le
 répertoire de travail et exploite le manifeste pour restituer la
 structure arborescente d’archives dans le panneau de visualisation et de
@@ -1663,7 +1671,7 @@ sélectionner le DIP et de l’importer dans la moulinette ReSIP en
 cliquant sur le bouton d’action « Ouvrir » (cf. copie d’écran
 ci-dessous).</p>
 <p><img alt="" src="../_images/1000020100000555000002D9A24E1C973CE33972.png" /></p>
-<p>L’opération d’import se déroule ensuite <span class="xref myst">comme décrit dans la section</span>. La moulinette ReSIP ouvre le DIP, décompresse les fichiers dans un
+<p>L’opération d’import se déroule ensuite comme décrit dans la <span class="xref myst">section</span>. La moulinette ReSIP ouvre le DIP, décompresse les fichiers dans un
 répertoire nommé « nom du DIP »-tmpdir créé dans le répertoire de
 travail et exploite le manifeste pour restituer la structure
 arborescente d’archives dans le panneau de visualisation et de
@@ -1690,7 +1698,7 @@ sélectionner le fichier .zip et de l’importer dans la moulinette ReSIP
 en cliquant sur le bouton d’action « Ouvrir » (cf. copie d’écran
 ci-dessous).
 <img alt="" src="../_images/1000020100000555000002D7944E3842EC63F773.png" /></p>
-<p>L’opération d’import se déroule ensuite <span class="xref myst">comme décrit dans la section</span>. La moulinette ReSIP ouvre le fichier .zip,
+<p>L’opération d’import se déroule ensuite comme décrit dans la <span class="xref myst">section</span>. La moulinette ReSIP ouvre le fichier .zip,
 décompresse les fichiers dans un répertoire nommé « nom du ZIP »-tmpdir
 créé dans le répertoire de travail et exploite le manifeste pour
 restituer la structure arborescente d’archives dans le panneau de
@@ -1723,7 +1731,7 @@ l’utilisateur ;</p></li>
 <li><p>une première ligne d’en-tête donnant le nom des colonnes doit être
 présente, chaque ligne décrivant ensuite une unité archivistique ;</p></li>
 <li><p>le séparateur entre les colonnes doit être le « ; » ou le séparateur
-défini dans les Préférences (<span class="xref myst">voir section</span>). Ce caractère ne
+défini dans les Préférences (voir <span class="xref myst">section</span>). Ce caractère ne
 doit donc pas être utilisé dans les différents champs ;</p></li>
 <li><p>Les colonnes « série » et « cote » sont complémentaires et
 permettent de définir l’identifiant de l’unité archivistique (champ
@@ -1816,7 +1824,7 @@ permet à celui-ci de sélectionner le fichier correspondant et de
 l’importer dans la moulinette ReSIP en cliquant sur le bouton d’action
 « Ouvrir ».</p>
 <p><img alt="" src="../_images/1000020100000554000002D93828CF46DF46FBEC.png" /></p>
-<p>L’opération d’import se déroule ensuite <span class="xref myst">comme décrit dans la section</span>.</p>
+<p>L’opération d’import se déroule ensuite comme décrit dans la <span class="xref myst">section</span>.</p>
 <p>Au terme du processus d’import, la structure arborescente d’archives est
 restituée dans le panneau de visualisation et de modification de la
 structure arborescente d’archives (cf. copie d’écran ci-dessous) :</p>
@@ -1838,7 +1846,7 @@ et « cote » du fichier d’import.</p></li>
 <p>**Attention **: en cas de problème d’encodage de caractères à
 l’affichage dans le panneau de visualisation et de modification de la
 structure arborescente d’archives, il convient de renouveler l’import en
-changeant le type d’encodage sélectionné dans les Préférences (<span class="xref myst">voir section</span>).</p>
+changeant le type d’encodage sélectionné dans les Préférences (voir <span class="xref myst">section</span>).</p>
 </section>
 </section>
 <section id="import-depuis-un-fichier-csv-decrivant-une-structure-arborescente-darchives-et-ou-de-fichiers">
@@ -1908,7 +1916,7 @@ séparateurs ;</p></li>
 <li><p>le séparateur entre les colonnes est par défaut le « ; » et
 l’encodage par défaut est « windows-1252 ». Ces paramètres peuvent
 être modifiées dans l’écran de gestion des préférences, onglet
-import (<span class="xref myst">voir section</span>) ;</p></li>
+import (voir <span class="xref myst">section</span>) ;</p></li>
 <li><p>pour les colonnes correspondant à des champs du standard SEDA,
 l’intitulé de la colonne doit correspondre à celui du champ dans le
 standard SEDA, précédé de « Management. » s’il s’agit d’une
@@ -2053,7 +2061,7 @@ trouver dans le même répertoire que le répertoire correspondant à la
 racine de la structure arborescente de fichiers à importer. Dans le cas
 ci-dessus, le fichier MetadataCSV.csv décrit la structure arborescente
 de fichier dont le répertoire racine a pour intitulé « preuve ».</p>
-<p>L’opération d’import se déroule ensuite <span class="xref myst">comme décrit dans la section</span>.</p>
+<p>L’opération d’import se déroule ensuite comme décrit dans la <span class="xref myst">section</span>.</p>
 <p>Au terme du processus d’import, la structure arborescente d’archives est
 restituée dans le panneau de visualisation et de modification de la
 structure arborescente d’archives (cf. copie d’écran ci-dessous) :
@@ -2128,7 +2136,7 @@ d’action « Ouvrir » (cf. copie d’écran ci-dessous).</p>
 répertoire.</p>
 <p><img alt="" src="../_images/1000020100000555000002D8F88F6EDCE2C9611C.png" /></p>
 <p>Le clic sur le bouton « Ouvrir » ouvre une fenêtre de
-dialogue affichant les paramètres d’import <span class="xref myst">comme décrit dans la section</span> (cf. copie d’écran ci-dessous) et permettant de les modifier :</p>
+dialogue affichant les paramètres d’import comme décrit dans la <span class="xref myst">section</span> (cf. copie d’écran ci-dessous) et permettant de les modifier :</p>
 <ul class="simple">
 <li><p>protocole d’extraction des messageries : la moulinette ReSIP
 identifie par défaut le protocole à employer en fonction du type de
@@ -2152,7 +2160,7 @@ cliquant sur le bouton d’action « Annuler » de la fenêtre de dialogue
 notamment si le nombre de répertoires et de messages à importer est
 important.</p>
 <p><img alt="" src="../_images/1000020100000555000002D81C9C735B218AD375.png" /></p>
-<p>L’opération d’import se déroule ensuite <span class="xref myst">comme décrit dans la section</span>. Une fois celle-ci terminée, il est possible de naviguer
+<p>L’opération d’import se déroule ensuite comme décrit dans la <span class="xref myst">section</span>. Une fois celle-ci terminée, il est possible de naviguer
 dans la structure arborescente d’archives correspondant à la messagerie
 importée dans le panneau de visualisation et de modification de la
 structure arborescente d’archives (cf. copie d’écran ci-dessous).
@@ -2391,7 +2399,7 @@ archivistique (voir section 5.2.1.).</p>
 <p>Afin de paramétrer le traitement des doublons dans une structure
 arborescente d’archives, il convient, dans le menu de la moulinette
 ReSIP, de cliquer sur l’action « Fichier » puis sur la sous-action
-« Préférences » (<span class="xref myst">cf. section</span>).</p>
+« Préférences » (cf. <span class="xref myst">section</span>).</p>
 <p>Le clic sur la sous-action « Préférences » ouvre une fenêtre de dialogue
 composée de cinq onglets. Le paramétrage du traitement des doublons est
 disponible dans l’onglet « Traitement » (cf. copie d’écran ci-dessous).
@@ -2559,7 +2567,7 @@ ci-dessous).</p>
 <h3><span class="section-number">1.5.6. </span>Récupération de statistiques sur les objets<a class="headerlink" href="#recuperation-de-statistiques-sur-les-objets" title="Lien permanent vers cette rubrique"></a></h3>
 <p>La moulinette ReSIP permet de générer des statistiques sur les objets
 présents dans une structure arborescente d’archives. Ces statistiques
-indiquent, pour chaque catégorie de formats <span class="xref myst">telle que définie dans la section</span> :</p>
+indiquent, pour chaque catégorie de formats telle que définie dans la <span class="xref myst">section</span> :</p>
 <ul class="simple">
 <li><p>le nombre d’objets présents dans la structure arborescente
 d’archives ;</p></li>
@@ -2611,7 +2619,7 @@ réouverture du contexte, le recalcul est automatique.</p>
 <p><img alt="" src="../_images/1000020100000555000002D96C002A31B628FD1E.png" /></p>
 <ul>
 <li><p>basculer, en double-cliquant sur une ligne du tableau (cf. copie
-d’écran ci-dessous), sur la fenêtre de dialogue permettant de rechercher des objets (<span class="xref myst">cf. section</span>) ;
+d’écran ci-dessous), sur la fenêtre de dialogue permettant de rechercher des objets (cf. <span class="xref myst">section</span>) ;
 <img alt="" src="../_images/1000020100000555000002D7B12715D0190119A8.png" /></p></li>
 <li><p>identifier les fichiers dont la taille est égale à
 0 (fichiers vides) qui ne sont pas acceptés dans le SIP. En cas de
@@ -2694,13 +2702,13 @@ ci-dessous) ;
 vers l’unité archivistique parente (cf. copie d’écran ci-dessous).</p></li>
 </ul>
 <p><img alt="" src="../_images/100002010000033E000001BCBB50A95C85712D0B.png" /></p>
-<p>Cette action déclenche le processus d’import <span class="xref myst">tel que décrit dans la section</span> à son terme, la structure arborescente de
+<p>Cette action déclenche le processus d’import tel que décrit dans la <span class="xref myst">section</span> à son terme, la structure arborescente de
 fichiers ou le fichier déposés sont rajoutés à la structure arborescente
 d’archives en cours de traitement (cf. copie d’écran ci-dessous).</p>
 <p><img alt="" src="../_images/1000020100000555000002D7E7E7502C3C5F861D.png" /></p>
 <p>Les métadonnées de description et de gestion de cette
 unité archivistique peuvent être modifiées en utilisant la fonction
-correspondante (<span class="xref myst">cf. section</span>).</p>
+correspondante (cf. <span class="xref myst">section</span>).</p>
 </section>
 </section>
 <section id="deplacement-dunites-archivistiques">
@@ -2912,7 +2920,7 @@ d’action « Nettoyer » (cf. copie d’écran ci-dessous).</p>
 </li>
 </ul>
 <p>La modification de métadonnées se poursuit ensuite selon le processus
-<span class="xref myst">décrit dans la section</span>.</p>
+décrit dans la <span class="xref myst">section</span>.</p>
 <p><strong>Attention</strong> : aucun contrôle de conformité par rapport à la structure
 et à la sémantique du schéma XML défini par le SEDA 2.1. n’est réalisé.</p>
 </section>
@@ -2990,7 +2998,7 @@ copie d’écran ci-dessous) ;</p>
 <p>En cas d’erreur, il suffit de cliquer sur le bouton d’action « Recharger
 unité d’archive » pour restaurer les métadonnées de description et de
 gestion de l’unité archivistique chargées initialement ou sauvegardées
-dernièrement (<span class="xref myst">cf. section</span>).</p>
+dernièrement (cf. <span class="xref myst">section</span>).</p>
 </section>
 <section id="modification-de-date">
 <h5><span class="section-number">1.5.8.2.3. </span>Modification de date<a class="headerlink" href="#modification-de-date" title="Lien permanent vers cette rubrique"></a></h5>
@@ -3023,7 +3031,7 @@ copie d’écran ci-dessous) ;</p>
 <p>En cas d’erreur, il suffit de cliquer sur le bouton d’action « Recharger
 unité d’archive » pour restaurer les métadonnées de description et de
 gestion de l’unité archivistique chargées initialement ou sauvegardées
-dernièrement (<span class="xref myst">cf. section</span>).</p>
+dernièrement (cf. <span class="xref myst">section</span>).</p>
 </section>
 <section id="ajout-et-suppression-dattribut">
 <h5><span class="section-number">1.5.8.2.4. </span>Ajout et suppression d’attribut<a class="headerlink" href="#ajout-et-suppression-dattribut" title="Lien permanent vers cette rubrique"></a></h5>
@@ -3047,7 +3055,7 @@ ci-dessous) ;</p>
 <p>En cas d’erreur, il suffit de cliquer sur le bouton d’action « Recharger
 unité d’archive » pour restaurer les métadonnées de description et de
 gestion de l’unité archivistique chargées initialement ou sauvegardées
-dernièrement (<span class="xref myst">cf. section</span>).</p>
+dernièrement (cf. <span class="xref myst">section</span>).</p>
 </section>
 <section id="ajout-et-suppression-de-metadonnees-existantes">
 <h5><span class="section-number">1.5.8.2.5. </span>Ajout et suppression de métadonnées existantes<a class="headerlink" href="#ajout-et-suppression-de-metadonnees-existantes" title="Lien permanent vers cette rubrique"></a></h5>
@@ -3091,7 +3099,7 @@ supprimée.</p>
 <p>En cas d’erreur, il suffit de cliquer sur le bouton d’action « Recharger
 unité d’archive » pour restaurer les métadonnées de description et de
 gestion de l’unité archivistique chargées initialement ou sauvegardées
-dernièrement (<span class="xref myst">cf. section</span>).</p>
+dernièrement (cf. <span class="xref myst">section</span>).</p>
 </section>
 <section id="ajout-guide-de-metadonnees">
 <h5><span class="section-number">1.5.8.2.6. </span>Ajout guidé de métadonnées<a class="headerlink" href="#ajout-guide-de-metadonnees" title="Lien permanent vers cette rubrique"></a></h5>
@@ -3127,7 +3135,7 @@ bleu (cf. copie d’écran ci-dessous).</p>
 <p>En cas d’erreur, il suffit de cliquer sur le bouton
 d’action « Recharger unité d’archive » pour restaurer les métadonnées de
 description et de gestion de l’unité archivistique chargées initialement
-ou sauvegardées dernièrement (<span class="xref myst">cf. section</span>).</p>
+ou sauvegardées dernièrement (cf. <span class="xref myst">section</span>).</p>
 </section>
 <section id="navigation-dans-les-metadonnees">
 <h5><span class="section-number">1.5.8.2.7. </span>Navigation dans les métadonnées<a class="headerlink" href="#navigation-dans-les-metadonnees" title="Lien permanent vers cette rubrique"></a></h5>
@@ -3199,7 +3207,7 @@ sélectionné, de cliquer sur le bouton d’action « Editer le DataObject »
 (cf. copie d’écran ci-dessous).</p>
 <p><img alt="" src="../_images/1000020100000555000002D96A493403B3D2AA57.png" /></p>
 <p>La modification de métadonnées se poursuit ensuite selon le processus
-<span class="xref myst">décrit dans la section</span>.</p>
+décrit dans la <span class="xref myst">section</span>.</p>
 <p><strong>Attention</strong> : aucun contrôle de conformité par rapport à la structure
 et à la sémantique du schéma XML défini par le SEDA 2.1. n’est réalisé.</p>
 </section>
@@ -3220,7 +3228,7 @@ d’objets sélectionné (cf. copie d’écran ci-dessous).</p>
 <p>Cette action déclenche le processus d’import (cf. copie d’écran ci-dessous).</p>
 <p><img alt="" src="../_images/1000020100000555000002D85DB55E88BE0707D7.png" />
 Les métadonnées de cet objet peuvent être modifiées en
-utilisant la fonction correspondante (<span class="xref myst">cf. section</span>).</p>
+utilisant la fonction correspondante (cf. <span class="xref myst">section</span>).</p>
 </section>
 </section>
 <section id="id17">
@@ -3275,7 +3283,7 @@ d’écran ci-dessous).</p>
 </li>
 </ul>
 <p>La modification de métadonnées se poursuit ensuite selon le processus
-<span class="xref myst">décrit dans la section</span>.</p>
+décrit dans la <span class="xref myst">section</span>.</p>
 </section>
 <section id="id19">
 <h5><span class="section-number">1.5.9.2.3. </span>Ajout d’un objet<a class="headerlink" href="#id19" title="Lien permanent vers cette rubrique"></a></h5>
@@ -3330,9 +3338,9 @@ d’action « Sauver groupe d’objets » pour sauvegarder les métadonnées
 saisies (cf. copie d’écran ci-dessous).</p>
 <p>En cas d’erreur, il suffit de cliquer sur le bouton d’action « Recharger
 groupe d’objets » pour restaurer les métadonnées du groupe d’objets
-chargées initialement ou sauvegardées dernièrement (<span class="xref myst">cf. section</span>).</p>
+chargées initialement ou sauvegardées dernièrement (cf. <span class="xref myst">section</span>).</p>
 <p>Les métadonnées de cet objet peuvent être modifiées en utilisant la
-fonction correspondante (<span class="xref myst">cf. section</span>).</p>
+fonction correspondante (cf. <span class="xref myst">section</span>).</p>
 </section>
 </section>
 </section>
@@ -3358,7 +3366,7 @@ concernée.</p>
 l’unité archivistique concernée par la non-conformité, il convient de
 cocher la case placée sous le panneau de visualisation et de
 modification de la structure arborescente d’archives, ce qui permettra
-d’afficher l’identifiant XML de toutes les unités archivistiques (<span class="xref myst">voir section</span>).</p>
+d’afficher l’identifiant XML de toutes les unités archivistiques (voir <span class="xref myst">section</span>).</p>
 <p>La fenêtre de dialogue peut être fermée en cliquant sur le bouton
 d’action « Fermer » (cf. copie d’écran ci-dessous).</p>
 <p><img alt="" src="../_images/1000020100000555000002DCCBBC08B54A0698D6.png" /></p>
@@ -3754,7 +3762,7 @@ manifeste, de renommer le fichier à créer sous la forme
 « nomdufichier.xml » – sachant que le nommage par défaut est
 « manifest.xml » – et de l’exporter depuis la moulinette ReSIP en
 cliquant sur le bouton d’action « Enregistrer ».</p>
-<p>L’export se poursuit ensuite selon le processus <span class="xref myst">décrit dans la section</span>. Au terme de ce processus, le fichier correspond au manifeste est
+<p>L’export se poursuit ensuite selon le processus décrit dans la <span class="xref myst">section</span>. Au terme de ce processus, le fichier correspond au manifeste est
 consultable dans le répertoire défini.</p>
 </section>
 <section id="export-sous-forme-darborescence-de-fichiers">
@@ -3774,7 +3782,7 @@ fichier à exporter, de nommer le répertoire à créer et de l’exporter
 depuis la moulinette ReSIP en cliquant sur le bouton d’action
 « Enregistrer » (cf. copie d’écran ci-dessous).</p>
 <p><img alt="" src="../_images/1000020100000555000002DA6804C9F222757E3C.png" /></p>
-<p>L’export se poursuit ensuite selon le processus <span class="xref myst">décrit dans la section</span>.</p>
+<p>L’export se poursuit ensuite selon le processus décrit dans la <span class="xref myst">section</span>.</p>
 <p>La structure arborescente d’archives exportée est désormais consultable
 dans le répertoire cible défini par l’utilisateur, sous la forme d’une
 arborescence de fichiers construite comme suit :</p>
@@ -3830,7 +3838,7 @@ ReSIP, sur l’action « Export » puis sur la sous-action « Exporter la
 hiérarchie simplifiée et le csv sur disque » ou « Exporter la hiérarchie
 simplifiée et le csv en .zip » (cf. copie d’écran ci-dessous).</p>
 <p><img alt="" src="../_images/1000020100000346000001C0B628722720AD09BE.png" /></p>
-<p>L’export se poursuit ensuite selon le processus <span class="xref myst">décrit dans la section</span>.</p>
+<p>L’export se poursuit ensuite selon le processus décrit dans la <span class="xref myst">section</span>.</p>
 <p>La structure arborescente d’archives exportée est désormais consultable
 dans le répertoire cible défini par l’utilisateur, sous la forme de :</p>
 <ul class="simple">
@@ -3876,7 +3884,7 @@ l’import (<span class="xref myst">section</span>).</p>
 ReSIP, sur l’action « Export » puis sur la sous-action « Exporter le csv
 des métadonnées » (cf. copie d’écran ci-dessous).</p>
 <p><img alt="" src="../_images/1000020100000345000001BEF3532CDA4A5CA16F.png" /></p>
-<p>L’export se poursuit ensuite selon le processus <span class="xref myst">décrit dans la section</span>.</p>
+<p>L’export se poursuit ensuite selon le processus décrit dans la <span class="xref myst">section</span>.</p>
 </section>
 </section>
 <section id="annexe-preparer-un-fichier-csv">
@@ -5553,7 +5561,7 @@ verser » de ce document.</p>
 
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
         <a href="VitamUI_Arbres_Plans.html" class="btn btn-neutral float-left" title="2. APP Arbres et plans" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
-        <a href="resip_faq.html" class="btn btn-neutral float-right" title="2. RESIP :foire aux questions" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="resip_faq.html" class="btn btn-neutral float-right" title="2. RESIP : foire aux questions" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

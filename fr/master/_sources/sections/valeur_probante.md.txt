@@ -79,7 +79,8 @@ La sécurisation des journaux est opérée, tenant par tenant, par la générati
 
 Cette procédure est lancée régulièrement sur les différents journaux, tenant par tenant. La périodicité de cette sécurisation est définie lors de l’installation de la plateforme et doit être définie pour lisser la charge de sécurisation. Elle doit, pour être conforme à la NF Z 42‑013, rester inférieure à 24 heures.  
 
-À noter, le format de sécurisation mis dans le fichier « additional_information.txt » est mis à titre conservatoire pour permettre la mise en place de nouveaux formats qui seront pris en compte dans les traitements ultérieurs d’audit ou de génération de relevé de valeur probante. À ce jour seul le format « V1 » est utilisé.
+> [!NOTE]
+> Le format de sécurisation mis dans le fichier « additional_information.txt » est mis à titre conservatoire pour permettre la mise en place de nouveaux formats qui seront pris en compte dans les traitements ultérieurs d’audit ou de génération de relevé de valeur probante. À ce jour seul le format « V1 » est utilisé.
 
 ### Mise en œuvre sur le journal des opérations
 
@@ -901,7 +902,7 @@ En avertissement
 
 [^1]: Pour une description fine des journaux, voir le [document VITAM. Organisation de l’information](./organisation_information.md).
 
-[^2]: Pour une explication de l’arbre de Merkle et de son utilisation pour la preuve d’une partie des éléments voir https://www.certificate-transparency.org/log-proofs-work
+[^2]: Pour une explication de l’arbre de Merkle et de son utilisation pour la preuve d’une partie des éléments voir (https://www.certificate-transparency.org/log-proofs-work)
 
 [^3]: Ce délai est nécessaire pour tenir compte de la latence de la base NoSQL au cœur de Vitam.
 

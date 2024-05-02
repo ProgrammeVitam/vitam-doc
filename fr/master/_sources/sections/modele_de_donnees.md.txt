@@ -310,7 +310,7 @@ Ces opérations sont :
 
 -   Journalisation externe (enregistrement d’opérations extérieures dans la solution logicielle Vitam)
 
-Les valeurs correspondant à ces opérations dans les journaux sont détaillées dans [l’annexe 3](#annexe-3-valeurs-possibles-pour-le-champ-evtypeproc-type-de-processus)
+Les valeurs correspondant à ces opérations dans les journaux sont détaillées dans [l’annexe 3](#annexe-3-valeurs-possibles-pour-le-champ-evtypeproc-type-de-processus).
 
 #### Exemple de JSON stocké en base comprenant l’exhaustivité des champs de la collection LogbookOperation
 
@@ -974,12 +974,9 @@ Exemple de données stockées par l’opération de sécurisation des journaux d
 
 -   Cardinalité : 1-1
 
-
-
 ### Collection LogbookLifeCycleUnit
 
-
-#### Utilisation de la collection LogbookLifeCycleUnit
+#### Utilisation de la collection LogbookLifeCycleUnit
 
 Le journal du cycle de vie d’une unité archivistique (ArchiveUnit) trace
 tous les événements qui impactent celle-ci dès sa prise en charge dans
