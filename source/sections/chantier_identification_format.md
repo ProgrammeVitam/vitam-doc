@@ -150,7 +150,7 @@ Chaque format de fichier dispose d’un identifiant unique, le PRONOM Unique IDe
 - les propriétés du format.
 Les fiches correspondant aux formats de fichier[^12] sont :
 - consultables sur le site internet de The National Archives (UK) ;
-- récupérables dans leur intégralité uniquement en utilisant le script publié à l’adresse suivante : https://github.com/exponential-decay/pronom-xml-export [^13].
+- récupérables dans leur intégralité uniquement en utilisant le script publié à l’adresse suivante : <https://github.com/exponential-decay/pronom-xml-export> [^13].
 
 Le registre est principalement alimenté par le département de la conservation de The National Archives (UK). Mais The National Archives (UK) reçoit et suscite des contributions de nombreux acteurs extérieurs, que ce soit en termes de documentation des formats de fichier, des produits logiciels ou de génération des « signatures » permettant de mieux identifier les formats de fichiers[^14]. Plusieurs fois par an, le registre est mis à jour, de la même manière que sont publiés des fichiers XML annexes au registre, dits « fichiers de signatures », décrivant les formats de fichiers existant dans le registre et leurs moyens d’identification (signatures)[^15].
 
@@ -226,7 +226,7 @@ Les travaux du groupe de travail ont commencé en novembre 2012 par la définiti
 
 Deux projets de registres, initiés dans les années 2000 aux États-Unis, ont été abandonnés par les organismes qui les avaient initiés :
 - le Global Digital Format Registry (GDFR) avait été lancé en 2005 par les Harvard University Libraries pour appuyer les services de préservation numérique qu’elles étaient en train de mettre en œuvre. Ce projet, réalisé avec l’appui du Online Computer Library Center (OCLC), a cependant été abandonné en 2008. La documentation élaborée reste néanmoins accessible[^22] ;
-- l’Unified Digital Format Registry (UDFR) a été développé par l’University of California Curation Center (UC3) pour combiner les ressources de GDFR et de PRONOM dans une plate-forme open source. Livré en production en juillet 2012 sur le site http://udfr.org [^23], il a été abandonné en avril 2016 par la California Digital Library (CDL), sponsor du projet, faute d’implication suffisante de la communauté initialement réunie et suite à la volonté de la CDL de limiter le nombre de ressources disponibles sur son site. Le service expérimental a été supprimé du site de la CDL. Ce projet avait reçu le soutien de la Bibliothèque du Congrès dans le cadre de son National Digital Information Infrastructure Preservation Program (NDIIPP). La CDL recommande désormais l’utilisation de PRONOM.
+- l’Unified Digital Format Registry (UDFR) a été développé par l’University of California Curation Center (UC3) pour combiner les ressources de GDFR et de PRONOM dans une plate-forme open source. Livré en production en juillet 2012 sur le site <http://udfr.org> [^23], il a été abandonné en avril 2016 par la California Digital Library (CDL), sponsor du projet, faute d’implication suffisante de la communauté initialement réunie et suite à la volonté de la CDL de limiter le nombre de ressources disponibles sur son site. Le service expérimental a été supprimé du site de la CDL. Ce projet avait reçu le soutien de la Bibliothèque du Congrès dans le cadre de son National Digital Information Infrastructure Preservation Program (NDIIPP). La CDL recommande désormais l’utilisation de PRONOM.
 
 #### Les outils d’identification
 
@@ -234,7 +234,7 @@ Plusieurs outils logiciels, présentés ci-dessous, ont été développés pour 
 
 **Apache Tika**
 
-Site web : http://tika.apache.org/  
+Site web : <http://tika.apache.org/>  
 Langage : JAVA  
 Dernière mise à jour : 6 décembre 2019 (version 1.23., 3 à 4 mises à jour par an)  
 Licence : Apache License (version 2.0.), compatible avec la licence GPL  
@@ -254,8 +254,8 @@ Apache Tika est un logiciel open source lancé en mars 2007 et maintenu par The 
 
 **Digital Record Object Identification (DROID)**
 
-Site web : http://www.nationalarchives.gov.uk/information-management/manage-information/preserving-digital-records/droid/  
-Github : http://digital-preservation.github.io/droid/  
+Site web : <http://www.nationalarchives.gov.uk/information-management/manage-information/preserving-digital-records/droid/>  
+Github : <http://digital-preservation.github.io/droid/>  
 Langage : JAVA 7 ou 8 à partir de la version 6.1.5.  
 Dernière mise à jour : 13 novembre 2018 (version 6.4.)  
 Licence : New BSD License  
@@ -294,8 +294,8 @@ DROID a été intégré dans de multiples produits de préservation numérique, 
 
 **Format Identification for Digital Objects (FIDO)**
 
-Site web : http://openpreservation.org/technology/products/fido/  
-Github : https://github.com/openpreserve/fido/releases  
+Site web : <http://openpreservation.org/technology/products/fido/>  
+Github : <https://github.com/openpreserve/fido/releases>  
 Langage : Python  
 Dernière mise à jour : 23 décembre 2019 (version 1.4.0.)  
 Licence : Apache License (version 2.0.)  
@@ -305,8 +305,8 @@ FIDO est une application open source destinée à identifier le format des fichi
 
 **File Information Tool Set (FITS)**
 
-Site web : https://projects.iq.harvard.edu/fits/home  
-Github : https://github.com/harvard-lts/fits  
+Site web : <https://projects.iq.harvard.edu/fits/home>  
+Github : <https://github.com/harvard-lts/fits>  
 Langage : JAVA 1.8 et au-delà  
 Dernière mise à jour : 10 septembre 2019 (version 1.5.0.)  
 Licence : GNU LGPL  
@@ -329,8 +329,8 @@ Les résultats de l’analyse sont consolidés dans un fichier XML décomposé e
 
 **JHOVE**
 
-Site web : http://jhove.openpreservation.org/  
-Github : https://github.com/openpreserve/jhove/  
+Site web : <http://jhove.openpreservation.org/>  
+Github : <https://github.com/openpreserve/jhove/>  
 Langage : JAVA  
 Dernière mise à jour : 18 avril 2019 (version 1.22.)  
 Licence : GNU LGPL  
@@ -342,7 +342,7 @@ Un projet de refonte de l’outil a été mené par la California Digital Librar
 
 **Nanite**
 
-Github : https://github.com/openpreserve/nanite  
+Github : <https://github.com/openpreserve/nanite>  
 Langage : JAVA  
 Dernière mise à jour : 22 septembre 2018 (version 1.3.2.-94)  
 Licence : non disponible
@@ -351,8 +351,8 @@ Développé grâce au soutien du programme européen SCAPE, basé sur Apache Tik
 
 **NZ Metadata Extraction Tool**
 
-Site web : http://meta-extractor.sourceforge.net/  
-Github : https://sourceforge.net/projects/meta-extractor  
+Site web : <http://meta-extractor.sourceforge.net/>  
+Github : <https://sourceforge.net/projects/meta-extractor>  
 Langage : JAVA  
 Dernière mise à jour : 11 février 2016 (version 3.6.)  
 Licence : Apache Public License (version 2.0.)
@@ -361,8 +361,8 @@ Développé par la National Library of New Zealand à partir de 2003, le NZ Meta
 
 **Siegfried**
 
-Site web : https://www.itforarchivists.com/siegfried  
-Github: https://github.com/richardlehane/siegfried  
+Site web : <https://www.itforarchivists.com/siegfried>  
+Github: <https://github.com/richardlehane/siegfried>  
 Langage : Go  
 Version actuelle : 18 août 2019 (version 1.7.13.)  
 Licence : Apache License (version 2.0.)  
@@ -722,29 +722,29 @@ Annexes
 
 ### Annexe 1 : Bibliographie
 
-« File format identification at Norfolk Record Office ». Consultable à l’adresse suivante : http://digital-archiving.blogspot.fr/2016/09/file-format-identification-at-norfolk.html. Lien consulté le 16 décembre 2019
+« File format identification at Norfolk Record Office ». Consultable à l’adresse suivante : <http://digital-archiving.blogspot.fr/2016/09/file-format-identification-at-norfolk.html>. Lien consulté le 16 décembre 2019
 
-Digital Preservation Coalition. « File formats and standards » dans Digital Preservation Handbook. Consultable à l’adresse suivante : http://www.dpconline.org/handbook/technical-solutions-and-tools/file-formats-and-standards. Lien consulté le 16 décembre 2019
+Digital Preservation Coalition. « File formats and standards » dans Digital Preservation Handbook. Consultable à l’adresse suivante : <http://www.dpconline.org/handbook/technical-solutions-and-tools/file-formats-and-standards>. Lien consulté le 16 décembre 2019
 
-« File-format analysis tools for archivists ». Consultable à l’adresse suivante : https://lwn.net/Articles/688396/. Lien consulté le 16 décembre 2019
+« File-format analysis tools for archivists ». Consultable à l’adresse suivante : <https://lwn.net/Articles/688396/>. Lien consulté le 16 décembre 2019
 
 « Magic Number Definition », http://www.linfo.org/magic_number.html. Lien vérifié le 16 décembre 2019
 
-« Siegfried – a PRONOM-based, file format identification tool ». Consultable à l’adresse suivante :  http://openpreservation.org/blog/2014/09/27/siegfried-pronom-based-file-format-identification-tool/. Lien consulté le 16 décembre 2019
+« Siegfried – a PRONOM-based, file format identification tool ». Consultable à l’adresse suivante :  <http://openpreservation.org/blog/2014/09/27/siegfried-pronom-based-file-format-identification-tool/>. Lien consulté le 16 décembre 2019
 
-Clipsham David, Krabbenhoeft Nick, Peltzmann Shira, Simpson Justin, Wilson Carl. « PRONOM in Practice: Creating File Format/System Signatures for Submission to PRONOM Technical Registry ». iPRES 2019. Consultable à l’adresse suivante : https://osf.io/2jbpe/. Lien consulté le 16 décembre 2019
+Clipsham David, Krabbenhoeft Nick, Peltzmann Shira, Simpson Justin, Wilson Carl. « PRONOM in Practice: Creating File Format/System Signatures for Submission to PRONOM Technical Registry ». iPRES 2019. Consultable à l’adresse suivante : <https://osf.io/2jbpe/>. Lien consulté le 16 décembre 2019
 
 Corrado Edward M., Sandy Heather Moulaison. Digital Preservation for Librairies, Archives & Museums. New York, London : Rowman & Littlefiels, 2017
 
-Hoppenheit Martin. « Minimizing the DROID signature file », 8 janvier 2017. Consultable à l’adresse suivante : https://martin.hoppenheit.info/blog/2017/minimizing-the-droid-signature-file/. Lien consulté le 16 décembre 2019
+Hoppenheit Martin. « Minimizing the DROID signature file », 8 janvier 2017. Consultable à l’adresse suivante : <https://martin.hoppenheit.info/blog/2017/minimizing-the-droid-signature-file/>. Lien consulté le 16 décembre 2019
 
-Kessler Gary. « File signatures table », 22 juin 2017. Consultable à l’adresse suivante : http://www.garykessler.net/library/file_sigs.html. Lien consulté le 16 décembre 2019
+Kessler Gary. « File signatures table », 22 juin 2017. Consultable à l’adresse suivante : <http://www.garykessler.net/library/file_sigs.html>. Lien consulté le 16 décembre 2019
 
-McGath Gary. « The Format Registry Problem », The code{4}lib Journal, n° 19, 15 janvier 2013. Consultable à l’adresse suivante : http://journal.code4lib.org/articles/8029. Lien consulté le 16 décembre 2019
+McGath Gary. « The Format Registry Problem », The code{4}lib Journal, n° 19, 15 janvier 2013. Consultable à l’adresse suivante : <http://journal.code4lib.org/articles/8029>. Lien consulté le 16 décembre 2019
 
-Nichele Baptiste. « Préparation des versements : identification et validation des formats de fichiers », 18 août 2016. Consultable à l’adresse suivante : http://siaf.hypotheses.org/676. Lien consulté le 16 décembre 2019
+Nichele Baptiste. « Préparation des versements : identification et validation des formats de fichiers », 18 août 2016. Consultable à l’adresse suivante : <http://siaf.hypotheses.org/676>. Lien consulté le 16 décembre 2019
 
-« Unified Digital Format Registry (UDFR) : a semantic registry for digital preservation ». Consultable à l’adresse suivante :  http://www.udfr.org/. Lien consulté le 16 décembre 2019
+« Unified Digital Format Registry (UDFR) : a semantic registry for digital preservation ». Consultable à l’adresse suivante :  <http://www.udfr.org/>. Lien consulté le 16 décembre 2019
 
 ### Annexe 2 : Description d’un format par différents registres
  
@@ -1394,7 +1394,7 @@ Dans le cas des fichiers au format FreeMind Mind Map, nous avons identifié deux
 
 *Vérifier si la signature est partagée avec d’autres formats de fichiers*
 
-Avant de créer le fichier de signature au moyen des utilitaires mis à disposition par The National Archives (UK), il est recommandé de vérifier si les séquences identifiées et exprimées selon la grammaire proposée par The National Archives (UK) sont partagées par d’autres formats de fichiers. Cette vérification peut être effectuée au moyen d’une recherche en plein texte dans les fichiers de signatures publiés à l’adresse suivante : https://www.nationalarchives.gov.uk/aboutapps/pronom/droid-signature-files.htm [^73].
+Avant de créer le fichier de signature au moyen des utilitaires mis à disposition par The National Archives (UK), il est recommandé de vérifier si les séquences identifiées et exprimées selon la grammaire proposée par The National Archives (UK) sont partagées par d’autres formats de fichiers. Cette vérification peut être effectuée au moyen d’une recherche en plein texte dans les fichiers de signatures publiés à l’adresse suivante : <https://www.nationalarchives.gov.uk/aboutapps/pronom/droid-signature-files.htm> [^73].
 
 Les résultats pour les deux séquences identifiées, suite à une recherche plein texte dans la version 94 du référentiel PRONOM, sont les suivants :
 - la séquence identifiée pour le début du fichier n’est pas utilisée à ce jour :
@@ -1415,7 +1415,7 @@ Dans le cas des fichiers au format FreeMind Mind Map, les deux séquences identi
 
 *Saisir les signatures dans l’utilitaire PRONOM pour obtenir un fichier de signature testable avec le logiciel DROID*
 
-The National Archives (UK) fournit un utilitaire (Signature Development Utility) permettant de créer un fichier de signature correspondant au format à identifier, disponible à l’adresse suivante : PRONOM :  http://www.nationalarchives.gov.uk/pronom/sigdev/index.htm [^74]. Cet utilitaire permet de :
+The National Archives (UK) fournit un utilitaire (Signature Development Utility) permettant de créer un fichier de signature correspondant au format à identifier, disponible à l’adresse suivante : PRONOM :  <http://www.nationalarchives.gov.uk/pronom/sigdev/index.htm> [^74]. Cet utilitaire permet de :
 - nommer le format de fichier faisant l’objet de la description et de la production de moyens d’identification (champ Name) ; 
 - indiquer la version de ce format (champ Version) ;
 - indiquer l’extension de ce format (champ Extension) ;
@@ -1522,117 +1522,117 @@ Résultat de l’identification des trois fichiers par DROID : les fichiers son
 
 [^1]: Corrado Edward M., Sandy Heather Moulaison. Digital Preservation for Librairies, Archives & Museums. New York, London : Rowman & Littlefiels, 2017.
 
-[^2]: http://file-extension.net/seeker/. Lien vérifié le 16 décembre 2019.
+[^2]: <http://file-extension.net/seeker/>. Lien vérifié le 16 décembre 2019.
 
-[^3]: http://filext.com/. Lien vérifié le 16 décembre 2019.
+[^3]: <http://filext.com/>. Lien vérifié le 16 décembre 2019.
 
-[^4]: https://fileinfo.com/. Lien vérifié le 16 décembre 2019.
+[^4]: <https://fileinfo.com/>. Lien vérifié le 16 décembre 2019.
 
-[^5]: https://www.file-extensions.org/. Lien vérifié le 16 décembre 2019.
+[^5]: <https://www.file-extensions.org/>. Lien vérifié le 16 décembre 2019.
 
-[^6]: Voir par exemple http://openpreservation.org/blog/2016/06/14/five-star-file-format-signature-development/. Lien vérifié le 16 décembre 2019.
+[^6]: Voir par exemple <http://openpreservation.org/blog/2016/06/14/five-star-file-format-signature-development/>. Lien vérifié le 16 décembre 2019.
 
-[^7]: https://en.wikipedia.org/wiki/List_of_file_signatures. Lien vérifié le 16 décembre 2019.
+[^7]: <https://en.wikipedia.org/wiki/List_of_file_signatures>. Lien vérifié le 16 décembre 2019.
 
-[^8]: http://www.filesignatures.net/index.php?page=search. Lien vérifié le 16 décembre 2019.
+[^8]: <http://www.filesignatures.net/index.php?page=search>. Lien vérifié le 16 décembre 2019.
 
-[^9]: http://www.garykessler.net/library/file_sigs.html. Lien vérifié le 16 décembre 2019.
+[^9]: <http://www.garykessler.net/library/file_sigs.html>. Lien vérifié le 16 décembre 2019.
 
 [^10]: L’annexe 2 « Description d’un format par différents registres » du présent document présente des exemples issus de plusieurs registres de formats.
 
-[^11]: http://www.nationalarchives.gov.uk/PRONOM/Default.aspx. Lien vérifié le 16 décembre 2019.
+[^11]: <http://www.nationalarchives.gov.uk/PRONOM/Default.aspx>. Lien vérifié le 16 décembre 2019.
 
 [^12]: Un exemple de fiche est fourni dans l’annexe 2 « Description d’un format par différents registres » du présent document.
 
 [^13]: Lien vérifié le 16 décembre 2019.
 
-[^14]: http://www.nationalarchives.gov.uk/documents/information-management/pronom-file-signature-research.pdf. Lien vérifié le 16 décembre 2019. Une présentation de la méthodologie utilisable pour créer une « signature » est disponible dans l’annexe 4 « Identifier un format inconnu du référentiel PRONOM » du présent document.
+[^14]: <http://www.nationalarchives.gov.uk/documents/information-management/pronom-file-signature-research.pdf>. Lien vérifié le 16 décembre 2019. Une présentation de la méthodologie utilisable pour créer une « signature » est disponible dans l’annexe 4 « Identifier un format inconnu du référentiel PRONOM » du présent document.
 
-[^15]: https://www.nationalarchives.gov.uk/aboutapps/pronom/droid-signature-files.htm. Lien vérifié le 16 décembre 2019.
+[^15]: <https://www.nationalarchives.gov.uk/aboutapps/pronom/droid-signature-files.htm>. Lien vérifié le 16 décembre 2019.
 
-[^16]: https://www.loc.gov/preservation/digital/formats/fdd/descriptions.shtml. Lien vérifié le 16 décembre 2019.
+[^16]: <https://www.loc.gov/preservation/digital/formats/fdd/descriptions.shtml>. Lien vérifié le 16 décembre 2019.
 
-[^17]: http://wikidp.org/ . Lien vérifié le 16 décembre 2019.
+[^17]: <http://wikidp.org/> . Lien vérifié le 16 décembre 2019.
 
-[^18]: http://the-fr.org/, https://github.com/exponential-decay/the-format-registry. Liens vérifiés le 16 décembre 2019.
+[^18]: http://the-fr.org/, https://github.com/exponential-decay/the-format-registry>. Liens vérifiés le 16 décembre 2019.
 
-[^19]: http://justsolve.archiveteam.org/wiki/Planets_Core_Registry. Lien vérifié le 16 décembre 2019.
+[^19]: <http://justsolve.archiveteam.org/wiki/Planets_Core_Registry>. Lien vérifié le 16 décembre 2019.
 
-[^20]: https://digitalpreservation.natlib.govt.nz/current-projects/technical-registry/. Lien vérifié le 31 juillet 2017.
+[^20]: <https://digitalpreservation.natlib.govt.nz/current-projects/technical-registry/>. Lien vérifié le 31 juillet 2017.
 
-[^21]: https://digitalpreservation.natlib.govt.nz/assets/NDHA/Publications/2014/NSLA-Format-Model-NRIN-redraft.pdf. Lien vérifié le 16 décembre 2019.
+[^21]: <https://digitalpreservation.natlib.govt.nz/assets/NDHA/Publications/2014/NSLA-Format-Model-NRIN-redraft.pdf>. Lien vérifié le 16 décembre 2019.
 
-[^22]: https://en.wikipedia.org/wiki/Global_Digital_Format_Registry et http://library.harvard.edu/preservation/digital-preservation_gdfr.html. Liens vérifiés le 31 juillet 2017.
+[^22]: <https://en.wikipedia.org/wiki/Global_Digital_Format_Registry> et <http://library.harvard.edu/preservation/digital-preservation_gdfr.html>. Liens vérifiés le 31 juillet 2017.
 
 [^23]: Lien vérifié le 16 décembre 2019.
 
-[^24]: http://openpreservation.org/blog/2012/02/23/identification-tools-evaluation/. Lien vérifié le 16 décembre 2019.
+[^24]: <http://openpreservation.org/blog/2012/02/23/identification-tools-evaluation/>. Lien vérifié le 16 décembre 2019.
 
-[^25]: Les liens vers ces outils sont listés à la page suivante : https://projects.iq.harvard.edu/fits/tools#adl_tool. Lien vérifié le 16 décembre 2019.
+[^25]: Les liens vers ces outils sont listés à la page suivante : <https://projects.iq.harvard.edu/fits/tools#adl_tool>. Lien vérifié le 16 décembre 2019.
 
-[^26]: http://adlnet.github.io/xAPI-SCORM-Profile/dev/adl-tools.html. Lien vérifié le 16 décembre 2019.
+[^26]: <http://adlnet.github.io/xAPI-SCORM-Profile/dev/adl-tools.html>. Lien vérifié le 16 décembre 2019.
 
-[^27]: https://tika.apache.org/. Lien vérifié le 16 décembre 2019.
+[^27]: <https://tika.apache.org/>. Lien vérifié le 16 décembre 2019.
 
-[^28]: http://digital-preservation.github.io/droid/. Lien vérifié le 16 décembre 2019.
+[^28]: <http://digital-preservation.github.io/droid/>. Lien vérifié le 16 décembre 2019.
 
-[^29]: https://exiftool.org/. Lien vérifié le 16 décembre 2019.
+[^29]: <https://exiftool.org/>. Lien vérifié le 16 décembre 2019.
 
-[^30]: https://github.com/gmcgath/ffident. Lien vérifié le 16 décembre 2019.
+[^30]: <https://github.com/gmcgath/ffident>. Lien vérifié le 16 décembre 2019.
 
-[^31]: http://darwinsys.com/file/. Lien vérifié le 16 décembre 2019.
+[^31]: <http://darwinsys.com/file/>. Lien vérifié le 16 décembre 2019.
 
-[^32]: https://github.com/openpreserve/jhove. Lien vérifié le 16 décembre 2019.
+[^32]: <https://github.com/openpreserve/jhove>. Lien vérifié le 16 décembre 2019.
 
-[^33]: https://mediaarea.net/en/MediaInfo. Lien vérifié le 16 décembre 2019.
+[^33]: <https://mediaarea.net/en/MediaInfo>. Lien vérifié le 16 décembre 2019.
 
-[^34]: http://meta-extractor.sourceforge.net/. Lien vérifié le 16 décembre 2019.
+[^34]: <http://meta-extractor.sourceforge.net/>. Lien vérifié le 16 décembre 2019.
 
-[^35]: https://projects.iq.harvard.edu/fits/tools#ois_audio. Lien vérifié le 16 décembre 2019.
+[^35]: <https://projects.iq.harvard.edu/fits/tools#ois_audio>. Lien vérifié le 16 décembre 2019.
 
-[^36]: https://projects.iq.harvard.edu/fits/tools#ois_file. Lien vérifié le 16 décembre 2019.
+[^36]: <https://projects.iq.harvard.edu/fits/tools#ois_file>. Lien vérifié le 16 décembre 2019.
 
-[^37]: https://projects.iq.harvard.edu/fits/tools#ois_xml. Lien vérifié le 16 décembre 2019.
+[^37]: <https://projects.iq.harvard.edu/fits/tools#ois_xml>. Lien vérifié le 16 décembre 2019.
 
-[^38]: https://github.com/opf-labs/jhove2. Lien vérifié le 16 décembre 2019.
+[^38]: <https://github.com/opf-labs/jhove2>. Lien vérifié le 16 décembre 2019.
 
-[^39]: https://tika.apache.org/. Lien vérifié le 16 décembre 2019.
+[^39]: <https://tika.apache.org/>. Lien vérifié le 16 décembre 2019.
 
-[^40]: http://digital-preservation.github.io/droid/. Lien vérifié le 16 décembre 2019.
+[^40]: <http://digital-preservation.github.io/droid/>. Lien vérifié le 16 décembre 2019.
 
-[^41]: https://www.loc.gov/preservation/digital/formats/index.html. Lien consulté le 16 décembre 2019.
+[^41]: <https://www.loc.gov/preservation/digital/formats/index.html>. Lien consulté le 16 décembre 2019.
 
-[^42]: https://facile.cines.fr/. Lien vérifié le 16 décembre 2019.
+[^42]: <https://facile.cines.fr/>. Lien vérifié le 16 décembre 2019.
 
-[^43]: Matthias Töwe, Franziska Geisser, Roland E. Suri, « To Act ou Not to Act. Handling File Format Identification Issues in Practice », iPRES 2016 Proceedings, p. 288-289. Voir également https://www.ethz.ch/services/en/service/communication/corporate-design/templates-for-creative-design/research-poster.html. Lien vérifié le 16 décembre 2019.
+[^43]: Matthias Töwe, Franziska Geisser, Roland E. Suri, « To Act ou Not to Act. Handling File Format Identification Issues in Practice », iPRES 2016 Proceedings, p. 288-289. Voir également <https://www.ethz.ch/services/en/service/communication/corporate-design/templates-for-creative-design/research-poster.html>. Lien vérifié le 16 décembre 2019.
 
-[^44]: http://digital-archiving.blogspot.com/. Lien vérifié le 16 décembre 2019.
+[^44]: <http://digital-archiving.blogspot.com/>. Lien vérifié le 16 décembre 2019.
 
-[^45]: http://digital-archiving.blogspot.fr/2017/02/what-have-we-got-in-our-digital-archive.html. Lien vérifié le 16 décembre 2019.
+[^45]: <http://digital-archiving.blogspot.fr/2017/02/what-have-we-got-in-our-digital-archive.html>. Lien vérifié le 16 décembre 2019.
 
-[^46]: http://digital-archiving.blogspot.fr/2016/11/every-little-bit-helps-file-format.html. Lien vérifié le 16 décembre 2019.
+[^46]: <http://digital-archiving.blogspot.fr/2016/11/every-little-bit-helps-file-format.html>. Lien vérifié le 16 décembre 2019.
 
-[^47]: http://digital-archiving.blogspot.fr/2016/09/file-format-identification-at-norfolk.html. Lien vérifié le 16 décembre 2019.
+[^47]: <http://digital-archiving.blogspot.fr/2016/09/file-format-identification-at-norfolk.html>. Lien vérifié le 16 décembre 2019.
 
-[^48]: http://digital-archiving.blogspot.fr/2016/08/research-data-is-different.html. Lien vérifié le 16 décembre 2019.
+[^48]: <http://digital-archiving.blogspot.fr/2016/08/research-data-is-different.html>. Lien vérifié le 16 décembre 2019.
 
-[^49]: http://archival-integration.blogspot.fr/2016/06/born-digital-data-what-does-it-really.html. Lien vérifié le 16 décembre 2019.
+[^49]: <http://archival-integration.blogspot.fr/2016/06/born-digital-data-what-does-it-really.html>. Lien vérifié le 16 décembre 2019.
 
-[^50]: http://digital-archiving.blogspot.fr/2016/05/research-data-what-does-it-really-look.html. Lien vérifié le 16 décembre 2019.
+[^50]: <http://digital-archiving.blogspot.fr/2016/05/research-data-what-does-it-really-look.html>. Lien vérifié le 16 décembre 2019.
 
-[^51]: http://digital-archiving.blogspot.fr/2016/08/my-first-file-format-signature.html. Lien vérifié le 16 décembre 2019.
+[^51]: <http://digital-archiving.blogspot.fr/2016/08/my-first-file-format-signature.html>. Lien vérifié le 16 décembre 2019.
 
 [^52]: Voir annexe 4 « Identifier un format inconnu du référentiel PRONOM ».
 
 [^53]: Les catégories identifiées dans le registre PRONOM sont les suivantes : Aggregate, Audio, Database, Dataset, Email, GIS, Image (Raster), Image (Vector), Model, Page Description, Presentation, Spreadsheet, Text (Mark-up), Text (Structured), Text (Unstructured), Video, Word Processor.
 
-[^54]: Les catégories identifiées dans le registre de la Bibliothèque du Congrès (https://www.loc.gov/preservation/digital/formats/fdd/descriptions.shtml, lien vérifié le 16 décembre) sont les suivantes : Dataset, Generic, Geospatial, Moving Image, Sound, Still Image, Textual, Web Archive.
+[^54]: Les catégories identifiées dans le registre de la Bibliothèque du Congrès (<https://www.loc.gov/preservation/digital/formats/fdd/descriptions.shtml>, lien vérifié le 16 décembre) sont les suivantes : Dataset, Generic, Geospatial, Moving Image, Sound, Still Image, Textual, Web Archive.
 
 [^55]: Pour en savoir plus sur le mécanisme d’administration du référentiel des formats de la solution logicielle Vitam, consulter la [documentation VITAM.Gestion de la préservation](./preservation.md).
 
-[^56]: Le résultat des études est disponible à l’adresse suivante :https://francearchives.fr/fr/article/88482504. Lien consulté le 16 décembre 2019.
+[^56]: Le résultat des études est disponible à l’adresse suivante :<https://francearchives.fr/fr/article/88482504>. Lien consulté le 16 décembre 2019.
 
-[^57]: http://openpreservation.org/blog/2014/09/27/siegfried-pronom-based-file-format-identification-tool/. Lien consulté le 16 décembre 2019.
+[^57]: <http://openpreservation.org/blog/2014/09/27/siegfried-pronom-based-file-format-identification-tool/>. Lien consulté le 16 décembre 2019.
 
 [^58]: Pour en savoir plus sur le mécanisme de plug-in dans la solution logicielle Vitam, consulter les documentations suivantes : [Gestion de la préservation](./preservation.md), [Documentation d’installation](https://www.programmevitam.fr/ressources/DocCourante/html/installation), [Documentation d’exploitation](https://www.programmevitam.fr/ressources/DocCourante/html/exploitation).
 
@@ -1652,17 +1652,17 @@ Résultat de l’identification des trois fichiers par DROID : les fichiers son
 
 [^66]: Lien vérifié le 16 décembre 2019.
 
-[^67]: L’outil est librement téléchargeable à l’adresse suivante : https://mh-nexus.de/en/hxd/ (Lien vérifié le 16 décembre 2019).
+[^67]: L’outil est librement téléchargeable à l’adresse suivante : <https://mh-nexus.de/en/hxd/> (Lien vérifié le 16 décembre 2019).
 
-[^68]: L’outil est librement téléchargeable à l’adresse suivante : http://ridiculousfish.com/hexfiend/ (Lien vérifié le 16 décembre 2019).
+[^68]: L’outil est librement téléchargeable à l’adresse suivante : <http://ridiculousfish.com/hexfiend/> (Lien vérifié le 16 décembre 2019).
 
-[^69]: L’éditeur est disponible en ligne à l’adresse suivante : https://github.com/bwrsandman/Bless (lien vérifié le 16 décembre 2019).
+[^69]: L’éditeur est disponible en ligne à l’adresse suivante : <https://github.com/bwrsandman/Bless> (lien vérifié le 16 décembre 2019).
 
-[^70]: L’éditeur est disponible en ligne à l’adresse suivante : http://binvis.io (Lien vérifié le 16 décembre 2019).
+[^70]: L’éditeur est disponible en ligne à l’adresse suivante : <http://binvis.io> (Lien vérifié le 16 décembre 2019).
 
-[^71]: L’éditeur est disponible en ligne à l’adresse suivante : https://hexed.it/ (Lien vérifié le 16 décembre 2019).
+[^71]: L’éditeur est disponible en ligne à l’adresse suivante : <https://hexed.it/> (Lien vérifié le 16 décembre 2019).
 
-[^72]: L’éditeur est disponible en ligne à l’adresse suivante : http://icebuddha.com/ (Lien vérifié le 16 décembre 2019).
+[^72]: L’éditeur est disponible en ligne à l’adresse suivante : <http://icebuddha.com/> (Lien vérifié le 16 décembre 2019).
 
 [^73]: Lien vérifié le 16 décembre 2019.
 

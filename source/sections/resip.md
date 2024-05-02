@@ -110,10 +110,9 @@ Une fois l’opération de génération du SIP terminée, la fenêtre de dialogu
 
 ![](medias/resip/Pictures/1000000000000551000002FFE621CD7C8ABCEB06.png)
 
-**Attention** :
-
--   l’opération ne pourra pas s’exécuter si le fichier nommé « ExportContext.config » est absent du répertoire nommé « config » ;
--   l’en-tête du manifeste reprend les options et métadonnées déclarées dans le fichier nommé « ExportContext.config ». Les valeurs des champs de l’en-tête peuvent être directement modifiées dans ce fichier.
+> [!WARNING]
+> -   l’opération ne pourra pas s’exécuter si le fichier nommé « ExportContext.config » est absent du répertoire nommé « config » ;
+>-   l’en-tête du manifeste reprend les options et métadonnées déclarées dans le fichier nommé « ExportContext.config ». Les valeurs des champs de l’en-tête peuvent être directement modifiées dans ce fichier.
 
 #### Exécution en ligne de commande
 
@@ -798,7 +797,8 @@ treatmentParameters.dupMax=1000
 Une fois le fichier ouvert, il est possible de modifier l’ensemble des
 paramètres et de sauvegarder les modifications apportées.
 
-**Attention **: il convient de bien conserver la syntaxe et la
+> [!WARNING]
+> Il convient de bien conserver la syntaxe et la
 sémantique utilisées dans le fichier afin d’éviter les problèmes
 d’import.
 
@@ -824,7 +824,7 @@ Le clic sur le bouton d’action « Ouvrir » de
 l’explorateur lance la mise à jour des paramètres de la moulinette
 ReSIP. Pour consulter les paramètres définis, il convient, dans le menu
 de la moulinette ReSIP, de cliquer sur l’action « Fichier » puis sur la
-sous-action « Préférences » (voir [section ci-dessous](#import-depuis-un-fichier-csv-décrivant-une-structure-arborescente-darchives-etou-de-fichiers)).
+sous-action « Préférences » (voir [section](#import-depuis-un-fichier-csv-décrivant-une-structure-arborescente-darchives-etou-de-fichiers) ci-dessous).
 
 #### Réinitialiser le paramétrage par défaut
 
@@ -844,7 +844,7 @@ préférences » de la fenêtre de dialogue lance la mise à jour des
 paramètres de la moulinette ReSIP. Pour consulter les paramètres
 réinitialisés, il convient, dans le menu de la moulinette ReSIP, de
 cliquer sur l’action « Fichier » puis sur la sous-action « Préférences »
-(voir [section ci-dessous](#import-depuis-un-fichier-csv-décrivant-une-structure-arborescente-darchives-etou-de-fichiers)).
+(voir [section] (#import-depuis-un-fichier-csv-décrivant-une-structure-arborescente-darchives-etou-de-fichiers)ci-dessous).
 
 Import de structures arborescentes d’archives dans la moulinette ReSIP
 ----------------------------------------------------------------------
@@ -914,7 +914,7 @@ Il permet de :
 -   définir, pour les imports depuis un fichier .csv décrivant une
     structure arborescente d’archives et/ou de fichiers, le séparateur
     ainsi que l’encodage des caractères retenus, au moyen de sélecteurs
-    ([voir section](#import-dun-arbre-de-positionnement-ou-dun-plan-de-classement-sous-forme-de-fichier-csv)).
+    (voir [section](#import-dun-arbre-de-positionnement-ou-dun-plan-de-classement-sous-forme-de-fichier-csv)).
 
     ![](medias/resip/Pictures/1000020100000554000002D66BA03109BD5E5F1E.png)
 
@@ -977,7 +977,7 @@ groupes d’objets techniques et des objets binaires comme physiques,
 ainsi que la localisation des fichiers sur l’environnement de travail de
 l’utilisateur. Ce contexte de travail nécessite d’être sauvegardé si le
 traitement de la structure arborescente de fichiers doit être interrompu
-et repris ultérieurement ([cf. section](#traiter-les-unités-archivistiques)).
+et repris ultérieurement (cf. [section](#traiter-les-unités-archivistiques)).
 
 **Attention** : pour des raisons de taille, les fichiers représentant
 les archives ne sont pas sauvegardés dans le contexte de travail. Seul
@@ -1032,11 +1032,12 @@ d’une structure arborescente d’archives enrichie avec :
     ou un objet binaire de type BinaryMaster et un objet binaire de type
     Thumbnail.
 
-**À noter** : pour comprendre au mieux cette façon de structurer
+> [!NOTE]  
+> pour comprendre au mieux cette façon de structurer
 l’arborescence de fichiers avec tous les fichiers spéciaux, il est
 recommandé d’exporter des exemples de SIP déjà constitués en utilisant
 la fonction « Exporter la hiérarchie sur disque » pour visualiser les
-différents fichiers spéciaux associés ([cf. section](#export-de-la-structure-arborescente-darchives-sous-la-forme-dun-manifeste-xml)).
+différents fichiers spéciaux associés ([section](#export-de-la-structure-arborescente-darchives-sous-la-forme-dun-manifeste-xml)).
 
 ##### Métadonnées de l’en-tête du manifeste
 
@@ -1285,7 +1286,7 @@ cliquant sur le bouton d’action « Ouvrir » (cf. copie d’écran
 ci-dessous).
 ![](medias/resip/Pictures/1000020100000555000002D7070E739B9B5EFF01.png)
 
-L’opération d’import se déroule ensuite [comme décrit dans la section](#import-dune-arborescence-de-fichiers). La moulinette ReSIP ouvre le SIP, décompresse les
+L’opération d’import se déroule ensuite comme décrit dans la [section](#import-dune-arborescence-de-fichiers). La moulinette ReSIP ouvre le SIP, décompresse les
 fichiers dans un répertoire nommé « nom du SIP »-tmpdir créé dans le
 répertoire de travail et exploite le manifeste pour restituer la
 structure arborescente d’archives dans le panneau de visualisation et de
@@ -1308,7 +1309,7 @@ ci-dessous).
 
 ![](medias/resip/Pictures/1000020100000555000002D9A24E1C973CE33972.png)
 
-L’opération d’import se déroule ensuite [comme décrit dans la section](#import-dune-arborescence-de-fichiers). La moulinette ReSIP ouvre le DIP, décompresse les fichiers dans un
+L’opération d’import se déroule ensuite comme décrit dans la [section](#import-dune-arborescence-de-fichiers). La moulinette ReSIP ouvre le DIP, décompresse les fichiers dans un
 répertoire nommé « nom du DIP »-tmpdir créé dans le répertoire de
 travail et exploite le manifeste pour restituer la structure
 arborescente d’archives dans le panneau de visualisation et de
@@ -1337,7 +1338,7 @@ en cliquant sur le bouton d’action « Ouvrir » (cf. copie d’écran
 ci-dessous).
 ![](medias/resip/Pictures/1000020100000555000002D7944E3842EC63F773.png)
 
-L’opération d’import se déroule ensuite [comme décrit dans la section](#import-dune-arborescence-de-fichiers). La moulinette ReSIP ouvre le fichier .zip,
+L’opération d’import se déroule ensuite comme décrit dans la [section](#import-dune-arborescence-de-fichiers). La moulinette ReSIP ouvre le fichier .zip,
 décompresse les fichiers dans un répertoire nommé « nom du ZIP »-tmpdir
 créé dans le répertoire de travail et exploite le manifeste pour
 restituer la structure arborescente d’archives dans le panneau de
@@ -1371,7 +1372,7 @@ de cinq colonnes :
 -   une première ligne d’en-tête donnant le nom des colonnes doit être
     présente, chaque ligne décrivant ensuite une unité archivistique ;
 -   le séparateur entre les colonnes doit être le « ; » ou le séparateur
-    défini dans les Préférences ([voir section](#paramétrage-de-limport)). Ce caractère ne
+    défini dans les Préférences (voir [section](#paramétrage-de-limport)). Ce caractère ne
     doit donc pas être utilisé dans les différents champs ;
 -   Les colonnes « série » et « cote » sont complémentaires et
     permettent de définir l’identifiant de l’unité archivistique (champ
@@ -1468,7 +1469,7 @@ l’importer dans la moulinette ReSIP en cliquant sur le bouton d’action
 
 ![](medias/resip/Pictures/1000020100000554000002D93828CF46DF46FBEC.png)
 
-L’opération d’import se déroule ensuite [comme décrit dans la section](#import-dune-arborescence-de-fichiers).
+L’opération d’import se déroule ensuite comme décrit dans la [section](#import-dune-arborescence-de-fichiers).
 
 Au terme du processus d’import, la structure arborescente d’archives est
 restituée dans le panneau de visualisation et de modification de la
@@ -1492,7 +1493,7 @@ Chaque unité archivistique dispose des métadonnées suivantes :
 **Attention **: en cas de problème d’encodage de caractères à
 l’affichage dans le panneau de visualisation et de modification de la
 structure arborescente d’archives, il convient de renouveler l’import en
-changeant le type d’encodage sélectionné dans les Préférences ([voir section](#paramétrage-de-limport)).
+changeant le type d’encodage sélectionné dans les Préférences (voir [section](#paramétrage-de-limport)).
 
 ### Import depuis un fichier .csv décrivant une structure arborescente d’archives et/ou de fichiers
 
@@ -1566,7 +1567,7 @@ ci-dessous) :
 -   le séparateur entre les colonnes est par défaut le « ; » et
     l’encodage par défaut est « windows-1252 ». Ces paramètres peuvent
     être modifiées dans l’écran de gestion des préférences, onglet
-    import ([voir section](#paramétrage-de-limport)) ;
+    import (voir [section](#paramétrage-de-limport)) ;
 -   pour les colonnes correspondant à des champs du standard SEDA,
     l’intitulé de la colonne doit correspondre à celui du champ dans le
     standard SEDA, précédé de « Management. » s’il s’agit d’une
@@ -1713,7 +1714,7 @@ racine de la structure arborescente de fichiers à importer. Dans le cas
 ci-dessus, le fichier MetadataCSV.csv décrit la structure arborescente
 de fichier dont le répertoire racine a pour intitulé « preuve ».
 
-L’opération d’import se déroule ensuite [comme décrit dans la section](#import-dune-arborescence-de-fichiers).
+L’opération d’import se déroule ensuite comme décrit dans la [section](#import-dune-arborescence-de-fichiers).
 
 Au terme du processus d’import, la structure arborescente d’archives est
 restituée dans le panneau de visualisation et de modification de la
@@ -1794,7 +1795,7 @@ répertoire.
 ![](medias/resip/Pictures/1000020100000555000002D8F88F6EDCE2C9611C.png)
 
 Le clic sur le bouton « Ouvrir » ouvre une fenêtre de
-dialogue affichant les paramètres d’import [comme décrit dans la section](#import-depuis-un-fichier-csv-décrivant-une-structure-arborescente-darchives-etou-de-fichiers) (cf. copie d’écran ci-dessous) et permettant de les modifier :
+dialogue affichant les paramètres d’import comme décrit dans la [section](#import-depuis-un-fichier-csv-décrivant-une-structure-arborescente-darchives-etou-de-fichiers) (cf. copie d’écran ci-dessous) et permettant de les modifier :
 
 -   protocole d’extraction des messageries : la moulinette ReSIP
     identifie par défaut le protocole à employer en fonction du type de
@@ -1822,7 +1823,7 @@ important.
 
 ![](medias/resip/Pictures/1000020100000555000002D81C9C735B218AD375.png)
 
-L’opération d’import se déroule ensuite [comme décrit dans la section](#import-dune-arborescence-de-fichiers). Une fois celle-ci terminée, il est possible de naviguer
+L’opération d’import se déroule ensuite comme décrit dans la [section](#import-dune-arborescence-de-fichiers). Une fois celle-ci terminée, il est possible de naviguer
 dans la structure arborescente d’archives correspondant à la messagerie
 importée dans le panneau de visualisation et de modification de la
 structure arborescente d’archives (cf. copie d’écran ci-dessous).
@@ -2062,7 +2063,7 @@ archivistique (voir section 5.2.1.).
 Afin de paramétrer le traitement des doublons dans une structure
 arborescente d’archives, il convient, dans le menu de la moulinette
 ReSIP, de cliquer sur l’action « Fichier » puis sur la sous-action
-« Préférences » ([cf. section](#import-dune-structure-arborescente-darchives-correspondant-à-une-messagerie-électronique)).
+« Préférences » (cf. [section](#import-dune-structure-arborescente-darchives-correspondant-à-une-messagerie-électronique)).
 
 Le clic sur la sous-action « Préférences » ouvre une fenêtre de dialogue
 composée de cinq onglets. Le paramétrage du traitement des doublons est
@@ -2235,7 +2236,7 @@ Une fois l’opération terminée, les nouveaux identifiants sont générés
 
 La moulinette ReSIP permet de générer des statistiques sur les objets
 présents dans une structure arborescente d’archives. Ces statistiques
-indiquent, pour chaque catégorie de formats [telle que définie dans la section](#recherche-dobjets) :
+indiquent, pour chaque catégorie de formats telle que définie dans la [section](#recherche-dobjets) :
 
 -   le nombre d’objets présents dans la structure arborescente
     d’archives ;
@@ -2290,7 +2291,7 @@ réouverture du contexte, le recalcul est automatique.
 ![](medias/resip/Pictures/1000020100000555000002D96C002A31B628FD1E.png)
 
 -   basculer, en double-cliquant sur une ligne du tableau (cf. copie
-    d’écran ci-dessous), sur la fenêtre de dialogue permettant de rechercher des objets ([cf. section](#recherche-dobjets)) ;
+    d’écran ci-dessous), sur la fenêtre de dialogue permettant de rechercher des objets (cf. [section](#recherche-dobjets)) ;
     ![](medias/resip/Pictures/1000020100000555000002D7B12715D0190119A8.png)
 
 -   identifier les fichiers dont la taille est égale à
@@ -2376,7 +2377,7 @@ d’archives, de :
 
 ![](medias/resip/Pictures/100002010000033E000001BCBB50A95C85712D0B.png)
 
-Cette action déclenche le processus d’import [tel que décrit dans la section](#import-dune-arborescence-de-fichiers) à son terme, la structure arborescente de
+Cette action déclenche le processus d’import tel que décrit dans la [section](#import-dune-arborescence-de-fichiers) à son terme, la structure arborescente de
 fichiers ou le fichier déposés sont rajoutés à la structure arborescente
 d’archives en cours de traitement (cf. copie d’écran ci-dessous).
 
@@ -2384,7 +2385,7 @@ d’archives en cours de traitement (cf. copie d’écran ci-dessous).
 
 Les métadonnées de description et de gestion de cette
 unité archivistique peuvent être modifiées en utilisant la fonction
-correspondante ([cf. section](#traiter-les-objets-et-leurs-métadonnées)).
+correspondante (cf. [section](#traiter-les-objets-et-leurs-métadonnées)).
 
 #### Déplacement d’unités archivistiques
 
@@ -2608,7 +2609,7 @@ des métadonnées de l’unité d’archives, de :
     ![](medias/resip/Pictures/1000020100000555000002D85D6CFC22BF866AA8.png)
 
 La modification de métadonnées se poursuit ensuite selon le processus
-[décrit dans la section](#dans-linterface-«-xml-expert-»).
+décrit dans la [section](#dans-linterface-«-xml-expert-»).
 
 **Attention** : aucun contrôle de conformité par rapport à la structure
 et à la sémantique du schéma XML défini par le SEDA 2.1. n’est réalisé.
@@ -2690,7 +2691,7 @@ arborescente d’archives, il convient de :
 En cas d’erreur, il suffit de cliquer sur le bouton d’action « Recharger
 unité d’archive » pour restaurer les métadonnées de description et de
 gestion de l’unité archivistique chargées initialement ou sauvegardées
-dernièrement ([cf. section](#modification-de-métadonnées-textuelles)).
+dernièrement (cf. [section](#modification-de-métadonnées-textuelles)).
 
 ##### Modification de date
 
@@ -2727,7 +2728,7 @@ arborescente d’archives, il convient de :
 En cas d’erreur, il suffit de cliquer sur le bouton d’action « Recharger
 unité d’archive » pour restaurer les métadonnées de description et de
 gestion de l’unité archivistique chargées initialement ou sauvegardées
-dernièrement ([cf. section](#modification-de-métadonnées-textuelles)).
+dernièrement (cf. [section](#modification-de-métadonnées-textuelles)).
 
 ##### Ajout et suppression d’attribut
 
@@ -2752,7 +2753,7 @@ structure arborescente d’archives, il convient de :
 En cas d’erreur, il suffit de cliquer sur le bouton d’action « Recharger
 unité d’archive » pour restaurer les métadonnées de description et de
 gestion de l’unité archivistique chargées initialement ou sauvegardées
-dernièrement ([cf. section](#modification-de-métadonnées-textuelles)).
+dernièrement (cf. [section](#modification-de-métadonnées-textuelles)).
 
 ##### Ajout et suppression de métadonnées existantes
 
@@ -2800,7 +2801,7 @@ supprimée.
 En cas d’erreur, il suffit de cliquer sur le bouton d’action « Recharger
 unité d’archive » pour restaurer les métadonnées de description et de
 gestion de l’unité archivistique chargées initialement ou sauvegardées
-dernièrement ([cf. section](#modification-de-métadonnées-textuelles)).
+dernièrement (cf. [section](#modification-de-métadonnées-textuelles)).
 
 ##### Ajout guidé de métadonnées
 
@@ -2840,7 +2841,7 @@ bleu (cf. copie d’écran ci-dessous).
 En cas d’erreur, il suffit de cliquer sur le bouton
 d’action « Recharger unité d’archive » pour restaurer les métadonnées de
 description et de gestion de l’unité archivistique chargées initialement
-ou sauvegardées dernièrement ([cf. section](#modification-de-métadonnées-textuelles)).
+ou sauvegardées dernièrement (cf. [section](#modification-de-métadonnées-textuelles)).
 
 ##### Navigation dans les métadonnées
 
@@ -2914,7 +2915,7 @@ sélectionné, de cliquer sur le bouton d’action « Editer le DataObject »
 ![](medias/resip/Pictures/1000020100000555000002D96A493403B3D2AA57.png)
 
 La modification de métadonnées se poursuit ensuite selon le processus
-[décrit dans la section](#modification-de-métadonnées-textuelles).
+décrit dans la [section](#modification-de-métadonnées-textuelles).
 
 **Attention** : aucun contrôle de conformité par rapport à la structure
 et à la sémantique du schéma XML défini par le SEDA 2.1. n’est réalisé.
@@ -2937,7 +2938,7 @@ Cette action déclenche le processus d’import (cf. copie d’écran ci-dessous
 
 ![](medias/resip/Pictures/1000020100000555000002D85DB55E88BE0707D7.png)
 Les métadonnées de cet objet peuvent être modifiées en
-utilisant la fonction correspondante ([cf. section](#dans-linterface-«-xml-expert-»)).
+utilisant la fonction correspondante (cf. [section](#dans-linterface-«-xml-expert-»)).
 
 #### Dans l’interface « structurée »
 
@@ -2994,7 +2995,7 @@ gauche du bloc de métadonnées de l’objet (cf. copie d’écran ci-dessous).
     ![](medias/resip/Pictures/1000020100000555000002D8416F3000D400BBD6.png)
 
 La modification de métadonnées se poursuit ensuite selon le processus
-[décrit dans la section](#traiter-les-objets-et-leurs-métadonnées).
+décrit dans la [section](#traiter-les-objets-et-leurs-métadonnées).
 
 ##### Ajout d’un objet
 
@@ -3060,10 +3061,10 @@ saisies (cf. copie d’écran ci-dessous).
 
 En cas d’erreur, il suffit de cliquer sur le bouton d’action « Recharger
 groupe d’objets » pour restaurer les métadonnées du groupe d’objets
-chargées initialement ou sauvegardées dernièrement ([cf. section](#modification-de-métadonnées-textuelles)).
+chargées initialement ou sauvegardées dernièrement (cf. [section](#modification-de-métadonnées-textuelles)).
 
 Les métadonnées de cet objet peuvent être modifiées en utilisant la
-fonction correspondante ([cf. section](#modification-des-métadonnées-de-lobjet)).
+fonction correspondante (cf. [section](#modification-des-métadonnées-de-lobjet)).
 
 ### Vérification de la conformité de la structure arborescente d’archives par rapport au SEDA 2.1. et 2.2.
 
@@ -3090,7 +3091,7 @@ Attention : pour identifier dans la structure arborescente d’archives
 l’unité archivistique concernée par la non-conformité, il convient de
 cocher la case placée sous le panneau de visualisation et de
 modification de la structure arborescente d’archives, ce qui permettra
-d’afficher l’identifiant XML de toutes les unités archivistiques ([voir section](#présentation-de-linterface-graphique-de-la-moulinette-resip)).
+d’afficher l’identifiant XML de toutes les unités archivistiques (voir [section](#présentation-de-linterface-graphique-de-la-moulinette-resip)).
 
 La fenêtre de dialogue peut être fermée en cliquant sur le bouton
 d’action « Fermer » (cf. copie d’écran ci-dessous).
@@ -3481,7 +3482,7 @@ manifeste, de renommer le fichier à créer sous la forme
 « manifest.xml » – et de l’exporter depuis la moulinette ReSIP en
 cliquant sur le bouton d’action « Enregistrer ».
 
-L’export se poursuit ensuite selon le processus [décrit dans la section](#paramétrage-des-exports). Au terme de ce processus, le fichier correspond au manifeste est
+L’export se poursuit ensuite selon le processus décrit dans la [section](#paramétrage-des-exports). Au terme de ce processus, le fichier correspond au manifeste est
 consultable dans le répertoire défini.
 
 ### Export sous forme d’arborescence de fichiers
@@ -3506,7 +3507,7 @@ depuis la moulinette ReSIP en cliquant sur le bouton d’action
 
 ![](medias/resip/Pictures/1000020100000555000002DA6804C9F222757E3C.png)
 
-L’export se poursuit ensuite selon le processus [décrit dans la section](#paramétrage-des-exports).
+L’export se poursuit ensuite selon le processus décrit dans la [section](#paramétrage-des-exports).
 
 La structure arborescente d’archives exportée est désormais consultable
 dans le répertoire cible défini par l’utilisateur, sous la forme d’une
@@ -3567,7 +3568,7 @@ simplifiée et le csv en .zip » (cf. copie d’écran ci-dessous).
 
 ![](medias/resip/Pictures/1000020100000346000001C0B628722720AD09BE.png)
 
-L’export se poursuit ensuite selon le processus [décrit dans la section](#paramétrage-des-exports).
+L’export se poursuit ensuite selon le processus décrit dans la [section](#paramétrage-des-exports).
 
 La structure arborescente d’archives exportée est désormais consultable
 dans le répertoire cible défini par l’utilisateur, sous la forme de :
@@ -3615,7 +3616,7 @@ des métadonnées » (cf. copie d’écran ci-dessous).
 
 ![](medias/resip/Pictures/1000020100000345000001BEF3532CDA4A5CA16F.png)
 
-L’export se poursuit ensuite selon le processus [décrit dans la section](#paramétrage-des-exports).
+L’export se poursuit ensuite selon le processus décrit dans la [section](#paramétrage-des-exports).
 
 Annexe. Préparer un fichier CSV
 -------------------------------

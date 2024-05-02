@@ -1,4 +1,4 @@
-RESIP :foire aux questions
+RESIP : foire aux questions
 =====
 
 Résumé
