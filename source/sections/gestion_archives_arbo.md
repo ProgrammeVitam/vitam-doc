@@ -273,7 +273,8 @@ La solution logicielle Vitam permet également de :
 
 Toutes ces opérations sont tracées dans le journal des opérations (opération de type « MASTERDATA » ou « INGEST »).
 
-**Point d’attention :** Pour les SIP volumineux, la solution logicielle Vitam propose une API spécifique permettant d’importer ce type de SIP[^12].
+**Point d’attention :**  
+Pour les SIP volumineux, la solution logicielle Vitam propose une API spécifique permettant d’importer ce type de SIP[^12].
 
 #### Gestion des imports
 
@@ -471,7 +472,8 @@ Ce DIP prend la forme d’un message ArchiveTransfer[^33], contenant métadonné
 
 Il s’agit d’une opération d’administration de type « ARCHIVE_TRANSFER », tracée dans le journal des opérations de la solution logicielle Vitam[^34]. Au terme de la version 6, cette opération inclut l’empreinte du DIP calculée en SHA-512.
 
-**Point d’attention :** Il est possible de limiter le poids des DIP de transfert au moyen de la définition d’un seuil au niveau de la requête ou au moyen d’un paramétrage de seuil de plate-forme et/ou de tenant dans un fichier de configuration.  
+**Point d’attention :** 
+Il est possible de limiter le poids des DIP de transfert au moyen de la définition d’un seuil au niveau de la requête ou au moyen d’un paramétrage de seuil de plate-forme et/ou de tenant dans un fichier de configuration.  
 Le transfert génère un accusé de prise en charge dans le système d’archivage de destination et un effacement des données dans le système d’origine.  
 Il s’agit d’une opération d’administration de type « TRANSFER_REPLY », tracée dans le journal des opérations de la solution logicielle Vitam[^35].
 
@@ -575,7 +577,7 @@ Cette opération peut s’effectuer par l’import d’un SIP de plan de classem
 -  soit un SystemId correspondant au GUID de l’unité archivistique de rattachement ;
 -  soit un ArchiveUnitIdentifierKey indiquant le champ d’une unité archivistique (par exemple le champ title) et sa valeur, sur lesquels on souhaite se baser pour associer une unité archivistique à une unité archivistique de niveau supérieur.
 
-Consulter la [documentation « Structuration des SIP »](./structuration_SIP) pour plus d’exemples sur les déclarations de rattachements dans un bordereau de transfert.
+Consulter la [documentation « Structuration des SIP »](./SIP.md) pour plus d’exemples sur les déclarations de rattachements dans un bordereau de transfert.
 
 Dans l’exemple ci-dessous, on ajoute au plan de classement deux sous-niveaux « 2017 ». Cette opération s’effectue par l’import d’un plan de classement dans lequel on déclare un nœud de rattachement, au moyen d’un identifiant ou en indiquant un rattachement à une unité dont le titre est égal à « Recette ».
 
@@ -761,17 +763,17 @@ Exemple d’enregistrement dans un journal du cycle de vie d’une trace externe
 
 ![](./medias/archives_arbo/journal_cycle_vie.png)
 
-[^1] Les principes retenus par l’équipe du programme Vitam dans la spécification des SIP sont détaillés dans le document intitulé : [VITAM - Structuration des Submission Information Package (SIP)]:(./structuration_SIP). 
+[^1]: Les principes retenus par l’équipe du programme Vitam dans la spécification des SIP sont détaillés dans le document intitulé : [VITAM - Structuration des Submission Information Package (SIP)](./SIP.md)). 
 
-[^2]: Pour plus d’informations, consulter le document [VITAM - Structuration des Submission Information Package (SIP)](./structuration_SIP). 
+[^2]: Pour plus d’informations, consulter le document [VITAM - Structuration des Submission Information Package (SIP)](./SIP.md). 
 
-[^3]: Le fonctionnement des rattachements est précisé dans la [section « Rattachement déclaré dans un bordereau de transfert »](#rattachement-déclaré-dans-un-bordereau-de-transfert) du présent document.
+[^3]: Le fonctionnement des rattachements est précisé dans la [section « Rattachement déclaré dans un bordereau de transfert »](https://www.programmevitam.fr/vitam-doc/fr/master/sections/gestion_archives_arbo.html#rattachement-declare-dans-un-bordereau-de-transfert) du présent document.
 
-[^4]: Pour plus d’informations, consulter le document [VITAM - Structuration des Dissemination Information Package (DIP)](./structuration_DIP). 
+[^4]: Pour plus d’informations, consulter le document [VITAM - Structuration des Dissemination Information Package (DIP)](./DIP.md). 
 
 [^5]: Cette valeur peut être modifiée en configuration.
 
-[^6]: Pour plus d’informations, consulter le document [VITAM - Structuration des  Submission Information Package (SIP)](.structuration_SIP). 
+[^6]: Pour plus d’informations, consulter le document [VITAM - Structuration des  Submission Information Package (SIP)](./SIP.md). 
 
 [^7]: Pour plus d’informations, consulter [VITAM - Modèle de données](./modele_de_donnees.md), chapitre 4.1, « Collection Unit ».
 
@@ -781,13 +783,13 @@ Exemple d’enregistrement dans un journal du cycle de vie d’une trace externe
 
 [^10]: Pour plus d’informations sur le module de collecte, consulter le document [VITAM – Module de collecte](./module_de_collecte.md).
 
-[^11]: Pour plus d’informations sur la déclaration d’un rattachement dans un SIP, consulter la [section « Rattachement déclaré dans un bordereau de transfert »](#rattachement-déclaré-dans-un-bordereau-de-transfert) du présent document ou le document [VITAM - Structuration des Submission Information Packages (SIP)](./structuration_SIP). Concernant les étapes à réaliser, consulter VITAM- Cahier de tests.
+[^11]: Pour plus d’informations sur la déclaration d’un rattachement dans un SIP, consulter la [section « Rattachement déclaré dans un bordereau de transfert »](https://www.programmevitam.fr/vitam-doc/fr/master/sections/gestion_archives_arbo.html#rattachement-declare-dans-un-bordereau-de-transfert) du présent document ou le document [VITAM - Structuration des Submission Information Packages (SIP)](./SIP.md). Concernant les étapes à réaliser, consulter VITAM- Cahier de tests.
 
 [^12]: Ce service, davantage technique, est détaillé dans les documentations : Documentation d’exploitation, chapitre 8.2.10.2.2.1 « Fichier ingest-external.conf » ; Documentation d’API externes, chapitre « Ingest ».
 
 [^13]: Pour plus d’informations, consulter la documentation [VITAM - Gestion des habilitations](./gestion_habilitations.md), chapitre « Contrat d’entrée ».
 
-[^14]:  Pour plus d’informations, consulter le document [VITAM - Structuration des Dissemination Information Package (DIP)](./structuration_DIP). 
+[^14]:  Pour plus d’informations, consulter le document [VITAM - Structuration des Dissemination Information Package (DIP)](./DIP.md). 
 
 [^15]: Les étapes liées à cette opération sont décrites dans la documentation [VITAM - Modèle de workflow](./modele_de_workflow.md), chapitre « Export d’un DIP ».
 
@@ -825,7 +827,7 @@ Exemple d’enregistrement dans un journal du cycle de vie d’une trace externe
 
 [^32]: Pour plus d’informations, consulter la documentation [VITAM - Les éliminations avec la solution logicielle Vitam](./eliminations.md).
 
-[^33]: Pour plus d’informations, consulter les documents [VITAM - Structuration des Dissemination Information Package (DIP)](./structuration_DIP) et [Le transfert avec la solution logicielle Vitam](./transfert.md).
+[^33]: Pour plus d’informations, consulter les documents [VITAM - Structuration des Dissemination Information Package (DIP)](./DIP.md) et [Le transfert avec la solution logicielle Vitam](./transfert.md).
 
 [^34]: Les étapes liées à cette opération sont décrites dans la documentation [VITAM - Modèle de workflow](./modele_de_workflow.md), chapitre « Transfert ». Pour plus d’informations sur le transfert, consulter la documentation [VITAM - Le transfert avec la solution logicielle Vitam](./transfert.md).
 

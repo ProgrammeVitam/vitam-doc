@@ -1,7 +1,7 @@
 Le gel d’archives avec la solution logicielle Vitam
 ===================================================
 
-Résumé
+Introduction
 ------
 
 Jusqu’à présent, pour la gestion, la conservation, la préservation et la
@@ -12,6 +12,15 @@ situation évolue désormais rapidement et les acteurs du secteur public
 étatique doivent se mettre en capacité de traiter les volumes croissants
 d’archives numériques qui doivent être archivés, grâce à un saut
 technologique.
+
+### Documents de référence
+
+|Document|Date|Remarques|
+|:---|:---:|:---|
+|NF Z44-022 – MEDONA - Modélisation des données pour l’archivage|18/01/2014||
+|Standard d’échange de données pour l’archivage – SEDA – v. 2.1|06/2018||
+|Standard d’échange de données pour l’archivage – SEDA – v. 2.2|02/2022|Cette nouvelle version du SEDA est intégrée à la solution logicielle Vitam à partir de la V6.RC.|
+|[Vitam – Règles de gestion](./regles_gestion.md)|||
 
 ### Présentation du document
 
@@ -37,10 +46,7 @@ la réalisation de la solution logicielle Vitam et des retours et
 commentaires formulés par les ministères porteurs et les partenaires du
 programme.
 
-
-Definitions
------------
-
+### Definitions
 
 Le gel d’archives consiste en une opération visant à interdire
 l’élimination d’archives, quand bien même celles-ci seraient
@@ -121,7 +127,6 @@ moment de la demande de transfert à un service d’archives (message
 
 -   dans le bloc **ManagementMetadata** pour toute une entrée ;
 
-
 -   dans le sous-bloc **Management de chaque unité archivistique** pour
     une unité archivistique ou un ensemble d’unités archivistiques
     décrites dans le bloc *DescriptiveMetadata*.
@@ -193,7 +198,7 @@ utilisables pour l’expression des règles de gestion et conforme au SEDA
 
 ### Formalisation du gel dans la solution logicielle Vitam
 
-Enregistrement générique
+#### Enregistrement générique
 
 Les règles de gel déclarées dans une unité archivistique sont
 enregistrées, au même titre que les métadonnées décrivant cette unité,
@@ -264,7 +269,6 @@ Cette catégorie peut contenir :
     -   la **date de début du calcul de l’échéance**
         (StartDate – facultatif) ;
 
-
 -   -   la **date de fin d’application de la règle**
         (EndDate – facultatif). Cette valeur est issue
         d’un calcul réalisé par la solution logicielle Vitam. Celui-ci
@@ -299,7 +303,7 @@ Cette catégorie peut contenir :
         (PreventRulesId – obligatoire, mais pouvant être
         vide).
 
-Enregistrement paramétrable
+#### Enregistrement paramétrable
 
 La solution logicielle Vitam enregistre également en base à la demande
 pour chaque unité archivistique les règles de gel applicables et les
@@ -330,7 +334,6 @@ Elle peut contenir :
         (Hold ReassessingDate – facultatif),
     -   **blocage du reclassement** de l’archives gelée
         (PreventRearrangement – facultatif).
-
 
 Exemple d’enregistrement par défaut des catégories de règle de gestion :
 
@@ -440,7 +443,6 @@ Cette catégorie peut contenir :
     caractérisée(s) par son(leur) identifiant et ayant pour
     valeur associée la date de fin de validité la plus longue.
 
-
 -   des données spécifiques à la règle de gel :
 
     -   la **date de fin de gel**, pour les règles de gel ne déclarant
@@ -454,7 +456,6 @@ Cette catégorie peut contenir :
         (Hold ReassessingDate – facultatif),
     -   **blocage du reclassement** de l’archives gelée
         (****PreventRearrangement**** – facultatif).****
-
 
 Exemple d’enregistrement par défaut des catégories de règle de gestion :
 
@@ -537,7 +538,7 @@ Cette catégorie peut contenir :
 -   une à plusieurs règles de gel (Rules –
     obligatoire, mais pouvant être vide).
 
-    ****Chacune d’elle est modélisée comme suit :****
+    **Chacune d’elle est modélisée comme suit :**
 
     -   -   **identifiant unique de l’unité archivistique**, généré
             par la solution logicielle Vitam (UnitId –
@@ -578,7 +579,6 @@ Cette catégorie peut contenir :
 
     Ces propriétés sont spécifiques à la catégorie « HoldRule »
     uniquement :
-
 
 -   -   -   la **date de fin de gel**, pour les règles de gel ne
             déclarant pas de durée générique (HoldEndDate –
@@ -750,7 +750,8 @@ Exemple d’enregistrement par défaut des catégories de règle de gestion :
     }
 ```
 
-## Mécanismes mis en œuvre dans la solution logicielle Vitam
+Mécanismes mis en œuvre dans la solution logicielle Vitam
+----
 
 La solution logicielle Vitam offre à un service d’archives plusieurs
 fonctionnalités lui permettant de gérer les règles de gel associées aux
@@ -807,7 +808,7 @@ utilisables : identifiant d’une opération d’entrée, unité(s)
 archivistique(s) précise(s), ensemble des unités archivistiques
 dépendant d’une unité archivistique précise, etc.
 
-Point d’attention :
+**Point d’attention :**
 
 -   La sélection est réalisée en fonction des droits octroyés par le
     contrat d’accès utilisé.
@@ -829,7 +830,8 @@ Il est également possible d’ajouter des informations liées à l’émetteur
 et à la raison du gel du lot d’archives, une date de révision de la
 règle, mais aussi de bloquer tout reclassement du lot d’archives.
 
-***Point d’attention :*** Il n’est pas possible d’ajouter une règle de
+**Point d’attention :**  
+Il n’est pas possible d’ajouter une règle de
 gel au moyen d’une opération de mise à jour unitaire de règle de
 gestion. Ce service fourni par la solution logicielle Vitam est en cours
 de dépréciation.
@@ -849,7 +851,8 @@ l’issue de la mise en œuvre du gel pourra être :
 Elle donne lieu à un enregistrement dans le journal du cycle de vie de
 l’(des) unité(s) archivistique(s) ayant fait l’objet d’un gel.
 
-**Point d’attention :** L’information n’est enregistrée que dans le
+**Point d’attention :**  
+L’information n’est enregistrée que dans le
 journal du cycle de vie de l’(des) unité(s) archivistique(s) racine(s).
 
 #### Impacts du gel sur les traitements de masse
@@ -912,7 +915,7 @@ La réorganisation d’arborescence reste possible dans les cas suivants :
 -   l’archives gelée, pouvant disposer d’un blocage actif, a une date de
     fin, calculée ou renseignée, arrivée à échéance.
 
-***Point d’attention :***: il est recommandé d’activer le blocage de tout reclassement d’archives gelées.
+**Point d’attention :**: il est recommandé d’activer le blocage de tout reclassement d’archives gelées.
 En effet, activé, ce paramètre permet d’éviter de dégeler des archives héritant d’une règle de gel à la suite d’une réorganisation d’arborescence. 
 
 ### Réalisation du dégel d’archives
@@ -994,7 +997,6 @@ Elle poursuit à nouveau son cycle de vie.
 Conseils de mise en œuvre
 -------------------------
 
-
 À l’issue de la réalisation de fonctionnalités concernant les règles de
 gel associées aux unités archivistiques, l’équipe projet Vitam est en
 mesure de fournir quelques recommandations de mise en œuvre[^7].
@@ -1057,8 +1059,10 @@ il est :
 -   conseillé, dans le cas d’une règle ne déclarant ni durée ni mesure,
     d’indiquer une date de réévaluation de la règle de gel.
 
-Annexe 1 : Exemple de message ArchiveTransfer mettant en œuvre les différentes possibilités d’utilisation des règles de gestion
--------------------------------------------------------------------------------------------------------------------------------
+Annexes
+-----
+
+### Annexe 1 : Exemple de message ArchiveTransfer mettant en œuvre les différentes possibilités d’utilisation des règles de gestion
 
 **Nota bene** : le cas présenté ci-dessous est un exemple
 fictif qui vise simplement à vérifier la bonne mise en œuvre des
@@ -1252,9 +1256,7 @@ mécanismes relatifs aux règles de gel dans la solution logicielle Vitam.
 </ArchiveTransfer>
 ```
 
-
-Annexe 2 : Exemple de requête pour geler et dégeler des archives
-----------------------------------------------------------------
+### Annexe 2 : Exemple de requête pour geler et dégeler des archives
 
 Requête permettant d’ajouter une règle de gel (la règle n’a pas de durée
 ni de mesure) :
@@ -1315,7 +1317,6 @@ ni de mesure) :
   
   }
 ```
-
 
 Requête permettant d’ajouter une règle de gel (la règle a une durée et
 une mesure) :
@@ -1424,22 +1425,16 @@ Requête permettant de supprimer une règle de gel :
   }
 ```
 
-[^1]:  Au terme de la release 16, le gel est implémenté dans la solution
-    logicielle Vitam comme une extension du schéma SEDA.
+[^1]:  Au terme de la release 16, le gel est implémenté dans la solution logicielle Vitam comme une extension du schéma SEDA.
 
-[^2]:  Pour plus d’informations, consulter *Modèle de données*, chapitre
-    4.1, « Collection Unit ».
+[^2]:  Pour plus d’informations, consulter [VITAM.Modèle de données](./modele_de_donnees.md), chapitre 4.1, « Collection Unit ».
 
-[^3]:  À noter que ce calcul automatique n’est pas effectué pour les
-    seules règles de gel ne déclarant pas de durée.
+[^3]:  À noter que ce calcul automatique n’est pas effectué pour les seules règles de gel ne déclarant pas de durée.
 
 [^4]:  Ce champ n’est pas formalisé dans le SEDA.
 
-[^5]: Pour plus de précisions, consulter la documentation *VITAM.
-    Organisation de l’information.*
+[^5]: Pour plus de précisions, consulter la documentation [VITAM. Organisation de l’information](./organisation_information.md).
 
-[^6]:  Pour plus de précisions, consulter la documentation *VITAM. Les
-    éliminations avec la solution logicielle Vitam.*
+[^6]:  Pour plus de précisions, consulter la documentation [VITAM. Les éliminations avec la solution logicielle Vitam](./eliminations.md).
 
-[^7]:  D’autres conseils d’utilisation sont proposés dans la
-    documentation *VITAM. Règles de gestion.*
+[^7]:  D’autres conseils d’utilisation sont proposés dans la documentation [VITAM. Règles de gestion](./regles_gestion.md).
