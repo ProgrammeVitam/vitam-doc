@@ -2,24 +2,25 @@ Guide de prise en main de la solution logicielle Vitam – Vitam UI<br>
 *Réaliser une première entrée*
 ====
 
-### Introduction
+Introduction
+----
 
-#### Documents de référence
+### Documents de référence
 
 |Document|Date de la version|Remarques|
 |:---|:----|:----|
 |NF Z 44022 – MEDONA – Modélisation des données pour l’archivage|18/01/2014||
 |Standard d’échange de données pour l’archivage – SEDA – v. 2.1|06/2018||
 |Standard d’échange de données pour l’archivage – SEDA – v. 2.2|02/2022|Cette nouvelle version du SEDA est intégrée à la solution logicielle Vitam à partir de la V6.RC.|
-|Vitam – Organisation de l’information|Décembre 2023||
-|Vitam – Manuel Utilisateur|Décembre 2023||
-|[Vitam – Services producteurs](./services_prod.md)|Décembre 2023||
-|[Vitam – Règles de gestion](./regles_gestion.md)|Décembre 2023||
-|[Vitam – Gestion des habilitations](./gestion_habilitations.md)|Décembre 2023||
-|Vitam – Structuration des Submission Information Package (SIP)|Décembre 2023||
-|Vitam – Structuration des Dissemination Information Package (DIP)|Décembre 2023||
+|[Vitam – Organisation de l’information](./organisation_information.md)|||
+|[Vitam – Manuel Utilisateur|Décembre 2023||
+|[Vitam – Services producteurs](./services_prod.md)|||
+|[Vitam – Règles de gestion](./regles_gestion.md)|||
+|[Vitam – Gestion des habilitations](./gestion_habilitations.md)|||
+|[Vitam – Structuration des Submission Information Package (SIP)](./SIP.md)|||
+|[Vitam – Structuration des Dissemination Information Package (DIP)](./DIP.md)|||
 
-#### Présentation du document
+### Présentation du document
 
 Le présent document décrit comment effectuer une première entrée dans la solution logicielle Vitam adossée au front-office Vitam UI. Il explicite les étapes obligatoires de paramétrage et de préparation des lots d’archives pour un utilisateur archiviste. Le pré-requis est que les actes d’installation et d’administration technique aient été réalisés pour configurer la plateforme et les coffres (tenants), comme par exemple sur les environnements partenaires de Vitam.
 
@@ -55,22 +56,24 @@ Il existe des tenants d’administration, dont le numéro varie selon le paramé
 #### Contrats d’entrée* et contrat d’accès*
 Les contrats d’entrée et d’accès diffèrent suivant le paramétrage initial de la plate-forme (et l’utilisation ou non d’un tenant d’administration). En effet, l’identifiant de ces contrats peut être généré par la solution logicielle Vitam, ou défini par les utilisateurs lors de leur création dans Vitam UI. Par défaut, les jeux de tests cités dans le présent document comportent des identifiants dont la forme est celle fixée par la solution logicielle Vitam. Les environnements partenaires sont aussi paramétrés dans ce mode-là.
 
-### Utilisation des interfaces
+Utilisation des interfaces
+---
 
-#### Le portail d’APPs Vitam UI
+### Le portail d’APPs Vitam UI
 
 ![](./medias/guide_prise_en_main/portail1.png)
 
 La solution front-office Vitam UI propose une interface modulaire composée de différentes APP  dont chacune porte une des fonctionnalités métiers proposées par le système. Afin de faciliter la navigation des utilisateurs, une catégorisation métier a été proposée à partir de la page d’accueil du portail.  
 Chaque APP dispose d’un documentation d’utilisation disponible sur le site du Programme Vitam.  
 
-#### Launcher de navigation entre les APPs
+### Launcher de navigation entre les APPs
 
 Le Launcher, situé en haut à droite, permet d’accéder à la visualisation de la catégorisation des APPs à tout moment et d’améliorer la navigation entre les APPs sans avoir à passer systématiquement par l’accueil du portail.
 
 ![](./medias/guide_prise_en_main/portail2.png)
 
-### Processus
+Processus
+---
 
 Étapes du processus de premier import dans une plate-forme utilisant la solution logicielle Vitam.
 
@@ -78,7 +81,7 @@ Le Launcher, situé en haut à droite, permet d’accéder à la visualisation d
 
 Sur les environnements partenaires, les étapes 1 et 2 sont réalisées par l’équipe Vitam. Les jeux de tests mis à disposition permettent de réaliser les étapes 3 à 5.
 
-#### Etape 1 : Installation de la plateforme
+### Etape 1 : Installation de la plateforme
 
 L’étape d’installation et de paramétrage de Vitam et de Vitam UI est réalisée par un administrateur technique ou un exploitant.
 
@@ -88,7 +91,7 @@ Le contexte applicatif est obligatoire, mais un contexte « type », dit « d
 
 L’ontologie est obligatoire, mais une ontologie est configurée par défaut dans la solution logicielle Vitam. Cette ontologie contient l’ensemble des vocabulaires de type interne, c’est-à-dire les vocabulaires issus du SEDA et les vocabulaires propres à la solution. Elle est valable pour l’ensemble de la plate-forme.
 
-#### Etape 2 : Paramétrage des organisations et coffres associés
+### Etape 2 : Paramétrage des organisations et coffres associés
 
 Suite à l’installation du logiciel, l’opérateur d’instance procède à la création des organisations et de leurs coffres associés (tenant). Plusieurs coffres peuvent être associés à une organisation.
 La présence d’un contrat d’accès est nécessaire pour accéder aux données des unités archivistiques versées dans la solution logicielle Vitam. Des contrats par défaut sont générés par la solution front office Vitam UI lors de la création du coffre d’une organisation (IC-000001 et IC-000002). 
@@ -101,11 +104,11 @@ Pour cela il réalise :
 
 Suite à cette dernière étape, un mail automatique est transmis à l’utilisateur qui lui permet de configurer son mot de passe et d’accéder directement au coffre principal de son organisation.
 
-#### Etape 3 : Pré-requis fonctionnels : import des référentiels métiers
+### Etape 3 : Pré-requis fonctionnels : import des référentiels métiers
 
 Avant de pouvoir importer un paquet d’information à archiver (SIP) dans la solution logicielle Vitam, l’utilisateur doit, dans un premier temps, importer les référentiels métiers et contrats qui permettront le contrôle du SIP.
 
-##### Import du référentiel des règles de gestion*
+#### Import du référentiel des règles de gestion*
 L’utilisateur doit importer un référentiel des règles de gestion via l’APP Règles de gestion. Le référentiel des règles de gestion est propre à chaque coffre de la plate-forme.
 
 ![](./medias/guide_prise_en_main/RG.png)
@@ -114,7 +117,7 @@ L’utilisateur doit importer un référentiel des règles de gestion via l’AP
 - L’utilisateur peut également constituer son propre référentiel des règles de gestion au format .csv sur le même modèle. 
 - Il peut également créer unitairement une règle de gestion en cliquant sur le bouton « Créer une règle de gestion » et en renseignant les champs obligatoires.
 
-##### Import d’un référentiel des services agents*
+#### Import d’un référentiel des services agents*
 La deuxième étape consiste à importer un référentiel des services agents* au format .csv dans la solution logicielle Vitam via l’APP Services agents. Ce référentiel a pour vocation d’être utilisé par la solution logicielle Vitam pour effectuer localement les contrôles des services (producteurs ou versants) déclarés par les administrateurs et les utilisateurs en entrée et en accès. Le référentiel des services agents est propre à chaque coffre de la plate-forme.
 
 ![](./medias/guide_prise_en_main/SA.png)
@@ -123,7 +126,7 @@ La deuxième étape consiste à importer un référentiel des services agents* a
 - L’utilisateur peut également constituer son propre référentiel des services agents au format .csv sur le même modèle. 
 - Il peut également créer unitairement un service agent en cliquant sur le bouton « Créer un service agent » et en renseignant les champs obligatoires.
  
-##### Import d’un arbre de positionnement et/ou d’un plan de classement*
+#### Import d’un arbre de positionnement et/ou d’un plan de classement*
 Dans un troisième temps, il est nécessaire d’importer un référentiel d’arbre de positionnement* et/ou de plan de classement* au format .zip  via l’APP VitamUI « Arbres et plans ». L’arbre de positionnement et/ou le plan de classement importés sont propres à chaque coffre.
 
 ![](./medias/guide_prise_en_main/arbre_plan.png)
@@ -131,7 +134,7 @@ Dans un troisième temps, il est nécessaire d’importer un référentiel d’a
 -  Pour les tests effectués à partir du jeu de données « Jeu_de_tests_Guide_de_prise_en_main_V7 », il faut importer successivement le fichier nommé « Import_arbre.zip » et le fichier intitulé « Import_plan.zip » 5  en cliquant respectivement sur les boutons « Nouvel arbre de positionnement » et « Nouveau plan de classement » puis en téléchargeant les jeux de tests fournis.
 -  L’utilisateur peut également constituer son propre arbre de positionnement et/ou son propre plan de classement au format .xml.
 
-##### Création du contrat d’entrée*
+#### Création du contrat d’entrée*
 
 Enfin, ce dernier point, facultatif, consiste à créer un contrat d’entrée* via l’APP VitamUI « Contrats d’entrée ». Un contrat d’entrée est propre à un coffre.
 
@@ -151,7 +154,7 @@ Certains SIP fournis dans les jeux de tests (Jeux_de_tests_fonctionnels_V7.zip) 
 
 Dans l’APP Vitam UI « Contrats d’entrée », le statut du contrat d’entrée utilisé doit être actif. Le contrat d’entrée permet de définir des contrôles supplémentaires à l’entrée (sur les usages et/ou formats de fichiers attendus, sur le périmètre de rattachement déclaré dans le SIP) ou de définir une position de rattachement systématique sans qu’elle soit déclarée dans le SIP. Ces éléments sont à paramétrer dans les différentes étapes du contrat d’entrée.
 
-#### Etape 4 : Construire un SIP* grâce à ReSIP
+### Etape 4 : Construire un SIP* grâce à ReSIP
 
 La moulinette ReSIP conçue et développée par l’équipe programme Vitam, a pour objectifs :
 - d’importer des structures arborescentes d’archives et les fichiers qui les représentent ;
@@ -164,7 +167,7 @@ Pour en savoir plus sur l’utilisation de la moulinette ReSIP, se référer à 
 
 ReSIP permet également d’importer des SIP déjà créés pour les modifier. Il est donc possible de modifier ou compléter les jeux de tests joints. 
 
-#### Etape 5 : Versement d’un SIP* dans la solution logicielle Vitam
+### Etape 5 : Versement d’un SIP* dans la solution logicielle Vitam
 
 L’utilisateur peut ensuite importer le SIP dans la solution logicielle Vitam, via l’APP « Dépôt et suivi des versements ».
 - En cliquant sur le bouton « Dépôt d’un versement » ;
@@ -190,7 +193,7 @@ Les causes les plus fréquentes d’échec de l’import peuvent être les suiva
 - déclaration de règles de gestion qui ne sont pas présentes dans le référentiel des règles de gestion,
 - absence d’un exemplaire « original » (master), alors que le contrat d’entrée le rend obligatoire.
 
-#### Etape 6 : Effectuer une recherche
+### Etape 6 : Effectuer une recherche
 
 Afin de rechercher une archive, l’utilisateur doit accéder à l’APP « Recherche, consultation et gestion des archives ». 
 ![](./medias/guide_prise_en_main/entree_blanc.png)
@@ -199,7 +202,8 @@ L’utilisateur saisit un ou plusieurs critère(s) de recherche (par exemple l�
 **Point important :**
 Dans le détail du contrat d’accès, le statut du contrat doit être actif, les producteurs sélectionnés et des droits autorisés, sans quoi la recherche dans les archives ne retournera aucun résultat.
 
-## Lexique
+Lexique
+---
 
 |Objet|Définition|Obligatoire/facultatif|Renvois vers la documentation Vitam|
 |:----|:----|:----|:----|

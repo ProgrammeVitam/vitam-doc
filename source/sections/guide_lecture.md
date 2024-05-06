@@ -1,6 +1,9 @@
-# Documentation Vitam - guide de lecture
+Documentation Vitam - guide de lecture
+====
 
-## Présentation du document
+Présentation du document
+---
+
 Le présent document constitue un guide permettant de s’orienter au sein de la documentation produite par le Programme Vitam. 
 Il s’articule autour des axes suivants :
 - qui sont les utilisateurs ? : archivistes, informaticiens (développeurs, architectes)
@@ -10,17 +13,20 @@ Il s’articule autour des axes suivants :
 Le document comporte une carte apportant une vision globale croisant ces trois axes (utilisateur/besoin/documentation) et une fiche signalétique de chaque document produit par le Programme Vitam, comportant sa description, le public ciblé, le lien pour consulter le document et une extraction du sommaire.
 Il est conseillé de consulter les documents du général au particulier, dans l’ordre de la démarche présentée par le schéma suivant. Par exemple, pour un développeur, il est conseillé de consulter le document d’architecture avant le manuel d’intégration.
 
-## Lire la documentation  : à chaque besoin, sa documentation…
+Lire la documentation  : à chaque besoin, sa documentation…
+---
 
 ### La documentation générale
+
 ![](./medias/guide_lecture_doc/schema_doc.jpg)
 
 ### La documentation Vitam UI
+
 En plus des documents pour les développeurs et intégrateurs et des présentations des différentes APP (pour application) métier, deux documents font le point sur des sujets techniques :
-- présentation de la fonctionnalité d’auto-provisioning,
+- [présentation de la fonctionnalité d’auto-provisioning](./VitamUI_Autoprovisionning.md),
 - authentification, administration et habilitation des utilisateurs et cloisonnement des données.
 
-Un guide de prise en main de Vitam UI pour premier versement a également été initié.
+Un [guide de prise en main de Vitam UI pour premier versement a également été initié](./guide_prise_en_main.md).
 
 |Ordre d'exécution|Je souhaite ?|APP VITAM UI|Rôle|Documentation|
 |:---------------:|:-----:|:-----:|:-----:|:-----:|
@@ -53,11 +59,12 @@ Un guide de prise en main de Vitam UI pour premier versement a également été 
 |NA|Rechercher et télécharger des unités archivistiques contenues dans le SAE|Recherche et consultation des archives|Archiviste|	VitamUI_DocAPP_Recherche_consultation|
 |NA|Consulter le registre des fonds et rechercher dans le registre des fonds|Registre des fonds|Administrateur fonctionnel VITAM UI|VitamUI_DocAPP_Registre_des_fonds|
 
-## Découvrir la solution logicielle Vitam
+Découvrir la solution logicielle Vitam
+---
 
 ### Présentation du projet solution logicielle
 
-**Présentation :** ce document présente de manière assez générale la solution logicielle : mode de développement, vision générale fonctionnelle et technique de la solution.
+**Présentation :** ce document présente de manière assez générale la solution logicielle : mode de développement, vision générale fonctionnelle et technique de la solution.  
 
 **Lien vers le document :** [Présentation de la solution logicielle](./presentation_solution_logicielle.md)
 
@@ -71,6 +78,7 @@ Un guide de prise en main de Vitam UI pour premier versement a également été 
 ### Guide de prise en main de la solution logicielle Vitam (1er transfert)
 
 **Présentation :** ce document décrit comment effectuer une première entrée dans la solution logicielle Vitam avec l’IHM Vitam UI. Il explicite les étapes obligatoires de paramétrage et de préparation des lots d’archives. Un lexique en annexe explicite et détaille les principaux objets métiers avec une description, un statut (obligatoire ou facultatif) pour l’opération d’entrée et renvoie vers la documentation permettant d’approfondir cette notion.  
+
 Le document est accompagné d’un « kit » comportant les fichiers d’exemple utiles (référentiels, SIP).
 
 **Lien vers le document :** [Guide de prise en main](./guide_prise_en_main.md)  
@@ -82,8 +90,9 @@ Le document est accompagné d’un « kit » comportant les fichiers d’exemp
 -  Avertissements
 -  Présentation du portail Vitam UI
 -  Processus
-      
-## Comprendre et approfondir les concepts Vitam
+
+Comprendre et approfondir les concepts Vitam
+---
 
 ### Organisation de l’information
 
@@ -175,7 +184,9 @@ Chaque action peut avoir les modèles d’exécution suivants (toutes les étape
 -  Transfert
 -  Nettoyage d’entrées en erreur
 -  Workflow de suppression d’objets
+
 ### Dossier d’architecture technique (DAT)
+
 **Présentation :** Le document présente une vision d’ensemble des problématiques structurantes de la solution logicielle Vitam (d’un point de vue applicatif et technique). Il explicite également les choix structurants de principes et composants de réalisation de la solution logicielle, ainsi que les raisons de ces choix.
 
 **Lien vers le document :** [Documentation d'architecture](https://www.programmevitam.fr/ressources/DocCourante/html/archi/)
@@ -865,7 +876,8 @@ Ce document s’articule autour des axes suivants :
 -  Mécanismes mis en œuvre dans la solution logicielle Vitam
 -  Conseils de mise en œuvre
       
-## Maintenir la solution logicielle
+Maintenir la solution logicielle
+----
 
 ### Manuel de développement
 
@@ -905,7 +917,8 @@ Ce document s’articule autour des axes suivants :
 -  Worker
 -  Workspace
 
-## Utiliser Vitam UI
+Utiliser Vitam UI
+---
 
 #### Documentation produit : authentification, administration et habilitation des utilisateurs et cloisonnement des données
 
@@ -1106,6 +1119,18 @@ Ce document s’articule autour des axes suivants :
 
 **Public cible :** Administrateur fonctionnel VITAM UI
 
+#### Profils documentaires
+
+**Présentation :** Le document permet de créer et modifier un profil d’archivage (PA) ou un profil d’unité archivistique (PUA), créer et modifier une notice d’un profil, importer et exporter un profil d’archivage.
+
+**Ordre d’exécution :** NA
+
+**Nom de l’APP Vitam UI :** Profils documentaires
+
+**Lien vers le document :** [Profils documentaires](https://www.programmevitam.fr/ressources/DocCourante/autres/fonctionnel/VitamUI_DocAPP_Profils_documentaires.pdf)
+
+**Public cible :** Administrateur fonctionnel VITAM UI
+
 ####  Contrat de gestion
 
 **Présentation :** Le document permet d’utiliser des stratégies de stockage spécifiques (autre que celle mise en place par défaut) configurées par l’opérateur d’instance et définissant le nombre de copies et les offres de stockage sur lesquelles ces copies seront faites.
@@ -1136,6 +1161,7 @@ Ce document s’articule autour des axes suivants :
 **Public cible :** Administrateur fonctionnel VITAM UI
 
 ####  Contrat d’accès
+
 **Présentation :** Le document permet de paramétrer des droits pour la consultation ou mise à jour d'archives dans un coffre par une application.
 
 **Ordre d’exécution :** 2 - Obligatoire sauf si le contrat est inchangé

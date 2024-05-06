@@ -10,9 +10,9 @@ Introduction
 
 |**Document**|**Date de la version**|**Remarques**|
 |:---------------:|:-----:|:-----:|
-|Vitam – Documentation d’installation|||
-|Vitam – Documentation d’exploitation|||
-|Vitam – Gestion des habilitations|||
+|[Vitam – Documentation d’installation](https://www.programmevitam.fr/ressources/DocCourante/html/installation)|||
+|[Vitam – Documentation d’exploitation](https://www.programmevitam.fr/ressources/DocCourante/html/exploitation)|||
+|[Vitam – Gestion des habilitations](./gestion_habilitations.md)|||
 
 
 ### Présentation du document

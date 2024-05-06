@@ -1,5 +1,4 @@
-
-Les éliminations avec la solution logicielle Vitam
+Organisation de l'information
 =====
 
 Introduction

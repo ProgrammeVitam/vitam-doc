@@ -11,12 +11,13 @@ Introduction
 |NF Z 44022 – MEDONA – Modélisation des données pour l’archivage|18/01/2014||
 |Standard d’échange de données pour l’archivage – SEDA – v. 2.1|06/2018||
 |Standard d’échange de données pour l’archivage – SEDA – v. 2.2|02/2022|Cette nouvelle version du SEDA est intégrée à la solution logicielle Vitam à partir de la V6.RC.|
-|Vitam – Structuration des Submission Information Package (SIP)|31/03/2023||
-|Vitam – Ontologie|31/03/2023|Ce document doit être lu dans le cas où un profil d’archivage doit contenir des extensions au SEDA.|
-|Vitam – Profils d’unité archivistique|31/03/2023|Ce document doit être lu dans les cas où :<br>- un profil d’archivage doit contenir des profils d’unité archivistique ;<br>- en phase d’analyse, on souhaite évaluer quel est le meilleur type de profil à utiliser.|
+|[Vitam – Structuration des Submission Information Package (SIP)](./SIP.md)|||
+|[Vitam – Ontologie](./ontologie.md)||Ce document doit être lu dans le cas où un profil d’archivage doit contenir des extensions au SEDA.|
+|[Vitam – Profils d’unité archivistique](./profil_unite_archivistique.md)||Ce document doit être lu dans les cas où :<br>- un profil d’archivage doit contenir des profils d’unité archivistique ;<br>- en phase d’analyse, on souhaite évaluer quel est le meilleur type de profil à utiliser.|
 
 
 ### Présentation du document
+
 Le présent document décrit les fonctionnalités associées à la prise en compte de la notion de profil d’archivage dans la solution logicielle Vitam. 
 
 Il s’articule autour des axes suivants :
@@ -32,6 +33,7 @@ Présentation de la notion de profil d’archivage
 ----
 
 ### Qu’est-ce qu’un profil d’archivage ?
+
 Un profil d’archivage permet de définir précisément la manière dont des archives destinées à être transférées dans un système d’archivage électronique doivent être structurées et décrites. Il constitue une déclinaison du modèle de description propre au Standard d’échanges de données pour l’archivage (SEDA).
 
 Pour un ensemble de données à transférer, archiver et conserver par un service d’archives, un profil d’archivage précise :
@@ -49,6 +51,7 @@ Pour un ensemble de données à transférer, archiver et conserver par un servic
 En revanche, un bordereau de transfert pour lequel un profil d’archivage aura été défini ne pourra contenir que les métadonnées décrivant les unités archivistiques et les objets imposées par celui-ci. Si le profil d’archivage est, par exemple, spécifique au transfert de dossiers de marchés, le bordereau de transfert devra décrire ce type d’archives pour être en conformité avec le profil.
 
 ### Pourquoi élaborer un profil d’archivage ?
+
 Définir un profil d’archivage permet de :
 - faciliter, voire automatiser, les contrôles sur les transferts d'archives d'un service producteur à un service d'archives, depuis un service externe vers la solution logicielle Vitam ;
 - effectuer un contrôle supplémentaire sur les transferts reçus et leur contenu, s’ajoutant à l’ensemble des tâches visant à s’assurer de la conformité des données reçues par rapport à celles qui ont été transférées. Toutes ces actions sont gages de qualité des données, au moment de leur réception dans un système d’archivage électronique ;
@@ -57,6 +60,7 @@ Définir un profil d’archivage permet de :
 - le cas échéant, structurer de manière identique des lots d’archives produits dans différents contextes, mais correspondant à des séries de dossiers homogènes (ex. : dossiers de carrières, structurés conformément à l’arrêté de 2011 pour un transfert aux Archives nationales, indépendamment de la manière dont ils ont été produits dans leur système d’information d’origine).
 
 ### Quand et comment élaborer un profil d’archivage ?
+
 L’élaboration d’un profil d’archivage précède l’ouverture d’un transfert à destination d’un système d’archivage électronique. Elle doit être envisagée dans les cas suivants :
 - transferts de flux applicatifs, afin de les automatiser ;
 - transferts de dossiers ou de documents dits « sériels », obéissant strictement à des règles de classement, de nommage et de description uniforme (par exemple, des images numérisées par un service d’archives) ;
@@ -77,6 +81,7 @@ Formalisation des profils d’archivage
 ----
 
 ### Dans un fichier propre
+
 Les profils d’archivage prennent la forme de fichiers au format XSD ou Relax NG. Les deux formats diffèrent en termes de syntaxe et de grammaire, mais leur finalité est identique : permettre de valider un fichier écrit en XML[^1].
 
 Les profils d’archivage doivent être élaborés conformément au schéma imposé par le Standard d’échange de données pour l’archivage (SEDA). 
@@ -87,23 +92,17 @@ Ils peuvent :
 - imposer une structure hiérarchique des données (ex : un dossier doit contenir deux sous-dossiers, et non trois).
 
 ### Dans le Standard d’échange de données pour l’archivage (SEDA)
+
 La manière de déclarer un profil d’archivage est définie dans la norme NF Z44-022 et dans sa déclinaison pour les acteurs du service public, le Standard d’échanges de données pour l’archivage (SEDA).
 
 La norme NF Z44-022 offre la possibilité de déclarer un profil d’archivage dans un bordereau de transfert, au moment de la demande de transfert à un service d’archives (message ArchiveTransfer, bloc DataObjectPackage) dans le bloc ManagementMetadata pour toute une entrée.
 Dans le sous-bloc ArchivalProfile, est indiqué l’identifiant du profil d’archivage utilisé par le bordereau de transfert. Cet identifiant renvoie au référentiel des profils d’archivage dans la solution logicielle Vitam et correspond à l’identifiant de la notice détaillée du profil d’archivage qui doit être associée au bordereau de transfert, si celui-ci a vocation à être contrôlé par un profil d’archivage[^2].
 
-
-
-
-
-
 Le schéma ci-dessous précise le positionnement du sous-bloc ArchivalProfile dans le bloc ManagementMetadata :
 ![positionnement du sous-bloc ArchivalProfile dans le bloc ManagementMetadata](./medias/PA/position_ArchivalProfile.png)
 
-
 Mécanismes mis en œuvre dans la solution logicielle Vitam
 -----
-
 
 La solution logicielle Vitam offre à un service d’archives ou à un service externe plusieurs fonctionnalités lui permettant de mettre en œuvre des profils d’archivage :
 - l’administration d’un référentiel des profils d’archivage, ainsi que sa préservation ;
@@ -113,6 +112,7 @@ La solution logicielle Vitam offre à un service d’archives ou à un service e
     - vérification que le bordereau de transfert est conforme à son profil d’archivage.
 
 ### Administration d’un référentiel des profils d’archivage
+
 La solution logicielle Vitam intègre un référentiel des profils d’archivage, administrable par un utilisateur doté des droits adéquats (administrateur fonctionnel) et géré dans une collection particulière[^3].
 
 Ce référentiel est propre à chaque tenant de la solution logicielle Vitam.
@@ -121,19 +121,22 @@ Il se compose de notices descriptives au format JSON, auxquelles il est possible
 Il est possible de réaliser les opérations présentées ci-dessous.
 
 #### Import de la notice descriptive du profil d’archivage
+
 ##### Dans un fichier JSON
+
 Il est possible d’importer 1 à n notice(s) descriptive(s) de profil(s) d’archivage sous la forme d’un fichier JSON depuis les API ou l’IHM standard fournies avec la solution logicielle Vitam.
 
 L’APP « Profils documentaires » accessible depuis l’IHM VitamUI permet quant à elle de créer une notice depuis ses interfaces.
 Exemple : notice descriptive de profil d’archivage contenant uniquement les informations obligatoires pour être importée avec succès.
-``````
+
+```json
 [
 	{
 		"Name":"ProfilRNG_mail",
 		"Format":"RNG"
 	}
 ]
-``````
+```
 
 Une notice de profil d’archivage doit obligatoirement comporter les informations suivantes :
 - identifiant signifiant (Identifier). Ce champ est obligatoire seulement s’il est généré par l’application à l’origine de sa création. Si cet identifiant est généré par la solution logicielle Vitam, il n’est pas nécessaire de le renseigner dans le fichier JSON ;
@@ -158,6 +161,7 @@ Lors de cet import, l’opération peut aboutir aux statuts suivants :
 - S’il est généré par une application externe, l’identifiant de la notice ne doit comprendre ni caractère accentué, ni virgule, ni apostrophe, ni parenthèse, ni espace, ni slash, ni élément de ponctuation, ou tout autre caractère spécial. Ne sont recommandés que l’underscore et le tiret comme séparateurs.
 
 ##### Dans la solution logicielle Vitam
+
 Les notices de profil d’archivage sont enregistrées dans la base de données MongoDB, dans la collection « Profile », sous la forme d’enregistrements au format JSON.
 
 Une notice descriptive peut comprendre les informations suivantes pour un profil d’archivage donné[^9] :
@@ -178,8 +182,8 @@ Une notice descriptive peut comprendre les informations suivantes pour un profil
 |_v|version du profil d’archivage, fournie par la solution logicielle Vitam (champ obligatoire).|
 |Path|chemin d’accès au profil d’archivage associé à la notice détaillée (champ facultatif).|
 
-
 #### Import du profil d’archivage lui-même
+
 À chaque notice descriptive, il n’est possible d’associer qu’un seul profil d’archivage depuis les API ou l’IHM standard fournies avec la solution logicielle Vitam.
 
 L’APP « Profils documentaires » accessible depuis l’IHM VitamUI permet quant à elle d’importer un profil d’archivage depuis son poste ou de le créer depuis ses interfaces.
@@ -194,6 +198,7 @@ L’import d’un profil d’archivage dans la collection est un des prérequis 
 Cette action provoque la création d’une nouvelle version de la notice modifiée. Elle fait l’objet d’une journalisation dans le journal des opérations du tenant sur lequel a eu lieu l’opération (opération d’administration de type « MASTERDATA »)[^10].
 
 #### Modification de la notice descriptive d’un profil d’archivage
+
 La modification des champs des notices décrivant les profils d’archivage est possible au moyen :
 - des API,
 - de l’IHM standard fournies avec la solution logicielle Vitam,
@@ -211,14 +216,15 @@ Les champs modifiables sont :
 **Points d’attention :**
 - Le statut de la notice descriptive doit être « Actif » (« ACTIVE ») pour pouvoir procéder à des transferts de SIP devant se conformer au profil d’archivage associé ;
 - La solution logicielle Vitam permet de modifier le fichier au format XSD ou Relax RNG correspondant au profil d’archivage. Néanmoins, cette action requiert des précautions d’usage, dans la mesure où le profil d’archivage peut être utilisé pour des transferts en cours. Avant de modifier un profil d’archivage dans une notice descriptive, il est recommandé de :
-            ▪ vérifier qu’aucun transfert nécessitant ce profil d’archivage n’est en cours ou programmé ;
-            ▪ désactiver la notice descriptive ;
-            ▪ modifier le profil d’archivage en téléchargeant un nouveau profil qui prend la forme :
-                • d’un fichier XSD si la notice déclare un format XSD,
-                • d’un fichier RNG si la notice déclare un format Relax NG ;
-            ▪ rétablir les services désactivés.
+  - vérifier qu’aucun transfert nécessitant ce profil d’archivage n’est en cours ou programmé ;
+  - désactiver la notice descriptive ;
+  - modifier le profil d’archivage en téléchargeant un nouveau profil qui prend la forme :
+    - d’un fichier XSD si la notice déclare un format XSD,
+    - d’un fichier RNG si la notice déclare un format Relax NG ;
+  - rétablir les services désactivés.
 - Il est possible de modifier le format exprimé, mais il est fortement recommandé de le faire avant d’avoir téléchargé un profil d’archivage dans la notice.
 Cette action provoque la création d’une nouvelle version de la notice modifiée. Les différentes versions du référentiel font l’objet d’une sauvegarde sur les offres de stockage utilisées par la solution logicielle Vitam.
+
 Elle fait l’objet d’une journalisation dans le journal des opérations du tenant sur lequel a eu lieu l’opération (opération d’administration de type « MASTERDATA »)[^11].
 Lors de cette mise à jour, l’opération peut aboutir aux statuts suivants :
 
@@ -227,8 +233,8 @@ Lors de cette mise à jour, l’opération peut aboutir aux statuts suivants :
 |Succès|Opération réalisée sans rencontrer de problèmes particuliers.|
 |Échec[^12]|- téléchargement d’un profil d’archivage qui n’est ni au format XSD ni au format RNG ;<br>- mise à jour du format par une valeur ne correspondant ni à « XSD » ni à « RNG » ;<br>- mise à jour du statut par une valeur ne correspondant ni à « ACTIVE » ni à « INACTIVE ».|
 
-
 #### Activation / Désactivation d’un profil d’archivage
+
 La solution logicielle Vitam permet de rendre active ou inactive une notice détaillant un profil d’archivage.
 Cette action est possible depuis :
 - les API,
@@ -245,7 +251,6 @@ En fonction du statut du contexte applicatif, de celui du contrat d’entrée et
 |CAS 4|INACTIF|INACTIF|ACTIF|Transfert de SIP dans le système non autorisé.|
 |CAS 5|ACTIF|ACTIF|INACTIF|Transfert de SIP dans le système non autorisé.|
 
-
 La modification du statut engendre la mise à jour des champs :
 - date de mise à jour ;
 - date d'activation OU date de désactivation.
@@ -259,26 +264,22 @@ La date de désactivation correspond à la date où la notice et par conséquent
 - la date correspondant à l'action de désactivation, si celle-ci est postérieure à l’import de la notice dans la solution logicielle Vitam.
 
 #### Audit d’intégrité du référentiel
+
 La solution logicielle Vitam permet de réaliser un audit sur le référentiel des profils d’archivage. Cet audit se lance depuis un tenant donné et vérifie que les profils d’archivage déclarés dans la base de données sont bien stockés dans les offres de stockage[^13].
 
 Il s’agit d’un acte technique. Il donne lieu à un log et non pas à une opération journalisée.
 À l’issue de l’audit, le log peut aboutir aux statuts suivants :
-Statut
-Motifs
-Succès
-opération réalisée sans rencontrer de problèmes particuliers.
-Avertissement
-opération réalisée, présentant une incohérence, notamment :
-- quand un fichier est absent sur au moins une des offres,
-- quand l'empreinte n'est pas conforme sur une des offres,
-- quand un fichier (avec la même empreinte qu'en base) présent sur au moins une des offres à été recopié sur les offres,
-- quand au moins un fichier est manquant ou son empreinte est différente.
-Échec
-Au moins un profil d’archivage est incohérent entre la base de données MongoDB et toutes les offres de stockage.
+
+|Statut|Motifs|
+|:---|:---|
+|Succès|opération réalisée sans rencontrer de problèmes particuliers.|
+|Avertissement|opération réalisée, présentant une incohérence, notamment :<br>- quand un fichier est absent sur au moins une des offres,<br>- quand l'empreinte n'est pas conforme sur une des offres,<br>- quand un fichier (avec la même empreinte qu'en base) présent sur au moins une des offres à été recopié sur les offres,<br>- quand au moins un fichier est manquant ou son empreinte est différente.|
+|Échec|Au moins un profil d’archivage est incohérent entre la base de données MongoDB et toutes les offres de stockage.|
    
 ### Processus d’entrée
 
 #### Déclaration d’un profil d’archivage dans un contrat d’entrée
+
 Pour contrôler, au moyen d’un profil d’archivage, la conformité des bordereaux de transfert qui lui sont adressés, la solution logicielle Vitam rend obligatoire la déclaration de ce profil d’archivage dans le contrat d’entrée utilisé.
 
 Un contrat d’entrée permet de déclarer 0 à n profils d’archivage.
@@ -286,6 +287,7 @@ Un contrat d’entrée permet de déclarer 0 à n profils d’archivage.
 Ce contrat devra être déclaré dans le bordereau de transfert, de même que le profil d’archivage utilisé.
 
 #### Processus de contrôles d’une entrée
+
 Dans le cadre du processus d’entrée d’un ensemble d’archives, suite à la réception d’un bordereau de transfert (message ArchiveTransfer du SEDA), la solution logicielle Vitam effectue les tâches et traitements internes suivants pour les archives déclarant ce contrat d’entrée :
 - authentification de l’application versante à la solution logicielle Vitam par l’intermédiaire d’un certificat qui vérifie la validité de son contexte ;
 - vérification que le contrat d’entrée déclaré dans le SIP est conforme au contexte applicatif qui le déclare dans le référentiel des contextes applicatifs ;
@@ -302,7 +304,8 @@ Lors de l’étape de vérification de la conformité entre le profil d’archiv
           alors le transfert du SIP échouera à la tâche de vérification entre le contrat d’entrée et le profil d’archivage et ne passera pas à la tâche suivante[^14].
 
 Exemple : message d’erreur sur la tâche de contrôle de conformité entre un contrat d’entrée et un profil d’archivage.
-``````
+
+```json
 <Operation>
         <Event>
             <EventTypeCode>STP_INGEST_CONTROL_SIP</EventTypeCode>
@@ -338,14 +341,15 @@ Exemple : message d’erreur sur la tâche de contrôle de conformité entre un
                 KO:1</OutcomeDetailMessage>
         </Event>
     </Operation>
-``````
+```
 
 Lors de l’étape de vérification de la conformité du bordereau de transfert à son profil d’archivage :
 - si le bordereau de transfert est conforme à son profil d’archivage, c’est-à-dire s’il correspond au modèle de données défini dans le profil d’archivage, la tâche de vérification de la conformité au profil d’archivage aura un statut « OK » et la solution logicielle Vitam passera au traitement suivant, à savoir la vérification de la conformité du SIP au SEDA ;
 - si le bordereau de transfert n’est pas conforme à son profil d’archivage ou si la notice de profil d’archivage ne contient pas de profil d’archivage au format RNG ou XSD, son transfert dans la solution logicielle Vitam n’aboutira pas. Un message de réponse (ArchiveTransferReply ou ATR) indique que le transfert a échoué à la tâche de vérification de la conformité au profil d’archivage et précise la première erreur rencontrée dans le détail de l’événement (EventDetailData)[^15].
 
 Exemple : message d’erreur sur la tâche de contrôle de conformité entre un bordereau de transfert et un profil d’archivage.
-``````
+
+```json
 <Operation>
         <Event>
             <EventTypeCode>STP_INGEST_CONTROL_SIP</EventTypeCode>
@@ -378,7 +382,7 @@ Exemple : message d’erreur sur la tâche de contrôle de conformité entre un
                 Detail= KO:1</OutcomeDetailMessage>
         </Event>
     </Operation>
-``````
+```
 
 **Point d’attention :** le profil d’archivage ne sert pas à générer automatiquement le contenu d’un bordereau de transfert lors de son transfert dans la solution logicielle Vitam. Il n’est utilisé que pour effectuer des contrôles de conformité du bordereau par rapport à ses attentes. De facto, le bordereau de transfert, associé à un profil d’archivage, doit avoir été conçu, en amont du transfert, conformément aux attentes du profil d’archivage.
 
@@ -386,6 +390,7 @@ Exemple : message d’erreur sur la tâche de contrôle de conformité entre un
 ----
 
 ### Analyse des données
+
 Un profil d’archivage nécessite une analyse et une modélisation préalables des données à archiver. Cette étape est un prérequis essentiel permettant d’aboutir à la structuration d’un bordereau de transfert type.
 
 Il s’agit de connaître :
@@ -402,7 +407,6 @@ En prenant l’exemple d’un projet de dématérialisation d’archives, il est
 |Identifier les documents dématérialisés|Quelles sont les typologies concernées ? Quels sont les usages ? Les documents et données sont-ils nativement numériques ou ont-ils été numérisés ? Une impression papier est-elle prévue en fin de procédure ? De quelle(s) base(s) de données les données et documents sont-ils issus ? Quels sont les formats des documents ? Quelles sont les possibilités d’exports et le modèle des données ? Les documents ont-ils une valeur probante (ex. signature électronique) ?|
 |Identifier les outils techniques|Dans le cadre d’une numérisation, s’agit-il d’une opération interne ? Le recours à un prestataire externe est-il prévu ? Une reprise du stock a-t-elle été envisagée ? L’application a-t-elle été développée en interne ? L’acquisition d’un logiciel est-elle prévue ? Quelles métadonnées ont été intégrées ? Quelles métadonnées peut-on extraire de l’application ? L’organisation a-t-elle recours à un tiers de télétransmission ? Un parapheur électronique est-il en place ? Les agents disposent-ils de la signature électronique ? Est-elle systématiquement utilisée ?|
 |Stockage, archivage et sort final|Quelles sont les règles de gestion et plus particulièrement les règles de conservation et le sort final des documents ? Comment sont conservées les pièces dématérialisées ? Où ? Par qui (organisation, tiers archiveur)? Existe-t-il un système d’archivage électronique ? Un coffre-fort ? Des serveurs répliqués ? Un système de gestion électronique de documents ? Quelles sont les modalités d’accès ? La destruction est-elle possible ? Quelles sont les modalités ?|
-
 
 À l’issue de cette première analyse, l’archiviste doit être en mesure d’avoir à sa disposition :
 - un plan de classement ou une structure hiérarchique des données ;
@@ -427,6 +431,7 @@ La liste des métadonnées peut prendre la forme du tableau suivant :
 Il est nécessaire de bien évaluer les informations à retenir dans le profil d’archivage, leur degré de précision (formes, valeurs, cardinalités) et leur structuration, afin de faciliter les recherches et la gestion futures des données dans la solution logicielle Vitam.
 
 ### Structuration des données à verser
+
 À partir de ce travail préliminaire, il est désormais possible de réaliser un bordereau de transfert type et un profil d’archivage propre aux données à archiver, tous deux conformes au SEDA.
 
 Il est conseillé de procéder par étape :
@@ -468,9 +473,11 @@ Si l’outil SHERPA n’est pas intégré au système d’archivage électroniqu
     - Ensuite, il faut se positionner sur l’unité d’archives à laquelle on souhaite rattacher l’objet.
 
 ##### Corrections d’un profil d’archivage
+
 Une fois la rédaction du profil d’archivage réalisée, il est possible de l’exporter au format Relax NG depuis la page racine du profil d’archivage.
 
-**Point d’attention :** SHERPA, s’il est utilisé hors système intégré d’archivage, ne livre pas un profil d’archivage complètement utilisable et conforme au schéma attendu par la solution logicielle Vitam, car :
+**Point d’attention :**  
+SHERPA, s’il est utilisé hors système intégré d’archivage, ne livre pas un profil d’archivage complètement utilisable et conforme au schéma attendu par la solution logicielle Vitam, car :
 - il ne gère pas d’export de fichier RNG au SEDA 2.1[^20] ou au SEDA 2.2 ;
 - il génère des liens vers des listes d’autorité non supportées par cette dernière ;
 - il ne génère pas certains éléments (notamment les extensions que l’outil ne connaît pas a priori, les éléments ArchivalProfile et ArchiveUnitProfile).
@@ -489,25 +496,25 @@ Au niveau de l’en-tête, déclarant les espaces de nom et autres références,
 *Exemple : modifications à apporter au niveau de l’en-tête.*
 
 *Ancienne version :*
-``````
+```xml
 <?xml version='1.0' encoding='utf-8' standalone='no'?>
 <rng:grammar xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:seda="fr:gouv:culture:archivesdefrance:seda:v2.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="fr:gouv:culture:archivesdefrance:seda:v2.0" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes" ns="fr:gouv:culture:archivesdefrance:seda:v2.0" seda:warnings="">
 [...]
-``````
+```
 
 *Nouvelle Version :*
-``````
+```xml
 <?xml version='1.0' encoding='utf-8' standalone='no'?>
 <rng:grammar xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:seda="fr:gouv:culture:archivesdefrance:seda:v2.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="fr:gouv:culture:archivesdefrance:seda:v2.1" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes" ns="fr:gouv:culture:archivesdefrance:seda:v2.1" seda:warnings="">
 […]
-``````
+```
 
 OU
-``````
+```xml
 <?xml version='1.0' encoding='utf-8' standalone='no'?>
 <rng:grammar xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:seda="fr:gouv:culture:archivesdefrance:seda:v2.2" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="fr:gouv:culture:archivesdefrance:seda:v2.2" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes" ns="fr:gouv:culture:archivesdefrance:seda:v2.2" seda:warnings="">
 [...]
-``````
+```
 
     - Corrections au niveau des références aux listes de codes
 Au niveau des références aux listes de codes (CodeListVersions), il faut remplacer les mentions de liens externes (url) par des valeurs textuelles standardisées. 
@@ -515,7 +522,7 @@ Au niveau des références aux listes de codes (CodeListVersions), il faut rempl
 *Exemple : modifications à apporter au niveau des références aux listes de codes.*
 
 *Ancienne version :*
-````
+```json
 <rng:element name="MessageDigestAlgorithmCodeListVersion">
           <rng:optional>
             <rng:attribute name="listName"><rng:data type="string"/></rng:attribute>
@@ -540,9 +547,9 @@ Au niveau des références aux listes de codes (CodeListVersions), il faut rempl
           </rng:optional>
           <rng:value type="token">https://francearchives.fr/sherpa/43214</rng:value>
         </rng:element>
-``````
+```
 *Nouvelle version :*
-``````
+```json
 <rng:element name="MessageDigestAlgorithmCodeListVersion">
           <rng:optional>
             <rng:attribute name="listName"><rng:data type="string"/></rng:attribute>
@@ -567,7 +574,8 @@ Au niveau des références aux listes de codes (CodeListVersions), il faut rempl
           </rng:optional>
           <rng:value type="token">MessageDigestAlgorithmCodeListVersion0</rng:value>
         </rng:element>
-``````
+```
+
 À cette fin, il est possible de copier l’[annexe 3](#annexe-3--déclaration-des-références-aux-listes-de-codes-codelistversions) de ce document et de l’insérer dans le profil d’archivage en lieu et place de l’élément englobant <rng:element name="CodeListVersions">…</rng:element>.
 
     - Corrections au niveau des règles de gestion
@@ -577,7 +585,7 @@ Au niveau des règles de gestion, si aucun référentiel des règles de gestion 
 *Exemple : modifications à apporter au niveau des règles de gestion.*
 
 *Ancienne version :*
-``````
+```json
                         <rng:element name="Rule">
                           <rng:value type="token">P20Y</rng:value>
                         </rng:element>
@@ -591,9 +599,10 @@ Au niveau des règles de gestion, si aucun référentiel des règles de gestion 
                         <rng:element name="RefNonRuleId">
                           <rng:value type="token">AR038</rng:value>
                         </rng:element>
-``````
+```
+
 *Nouvelle version :*
-``````
+```json
                         <rng:element name="Rule">
                           <rng:value type="token">DIS-00001</rng:value>
                         </rng:element>
@@ -607,7 +616,7 @@ Au niveau des règles de gestion, si aucun référentiel des règles de gestion 
                         <rng:element name="RefNonRuleId">
                           <rng:value type="token">ACC-00006</rng:value>
                         </rng:element>
-``````
+```
 
     - Corrections au niveau des acteurs
 
@@ -616,7 +625,7 @@ Au niveau des acteurs – service d’archives (ArchivalAgency), service versant
 *Exemple : modifications à apporter au niveau des acteurs.*
 
 *Ancienne version :*
-``````
+```json
        <rng:element name="ArchivalAgency">
         <rng:element name="Identifier">
           <rng:value>https://demo.logilab.fr/seda/174489</rng:value>
@@ -633,11 +642,11 @@ Au niveau des acteurs – service d’archives (ArchivalAgency), service versant
                         <rng:value>https://demo.logilab.fr/seda/213139</rng:value>
                       </rng:element>
                     </rng:element>
-````````
+```
 
 *Nouvelle version :*
 
-````
+```json
        <rng:element name="ArchivalAgency">
         <rng:element name="Identifier">
           <rng:value>FRAD-0000001</rng:value>
@@ -654,7 +663,7 @@ Au niveau des acteurs – service d’archives (ArchivalAgency), service versant
                         <rng:value>FR-EAC-0034009</rng:value>
                       </rng:element>
                     </rng:element>
-``````
+```
 
 ###### Ajouts
 
@@ -663,8 +672,10 @@ La solution logicielle Vitam impose des règles par rapport au modèle initial d
 - Mention du profil d’archivage
 
 Dans le bloc ManagementMetadata, il faut ajouter l’identifiant du profil d’archivage ou, du moins, la mention de l’existence du profil d’archivage, en fonction du contrôle que l’on souhaite effectuer.
+
 *Exemple : ajout de la mention du profil d’archivage.*
-``````
+
+```json
  < !-- Élément précédent et englogant --> 
                 <rng:element name="ManagementMetadata">
                     <rng:optional>
@@ -698,14 +709,15 @@ Dans le bloc ManagementMetadata, il faut ajouter l’identifiant du profil d’a
                     </rng:element>
                 </rng:element>
             </rng:element>
-``````
+```
 
 - Mention du profil d’unité archivistique
 
 Si l’on souhaite contrôler une unité archivistique au moyen d’un profil d’unité archivistique, il faut ajouter dans le profil d’archivage l’identifiant du profil d’unité archivistique ou, du moins, la mention de l’existence du profil d’unité archivistique[^21].
 
 *Exemple : ajout de la mention du profil d’unité archivistique.*
-``````
+
+```json
  < !-- Élément précédent et englogant --> 
                 <rng:element name="ArchiveUnit">
                     <rng:attribute name="id">
@@ -783,14 +795,15 @@ Si l’on souhaite contrôler une unité archivistique au moyen d’un profil d�
   </rng:define>
 < !-- Élément suivant -->
 </rng:grammar>
-``````
+```
 
 - Mention du groupe d’objets
 
 Il peut s’avérer nécessaire, dans le cas où l’on souhaite contrôler un groupe d’objets d’ajouter l’identifiant du groupe d’objets dans le profil d’archivage.
 
 *Exemple : ajout de la mention du groupe d’objets au moyen d’un identifiant.*
-``````
+
+```json
  < !-- Élément précédent et englogant --> 
                     <rng:element name="BinaryDataObject">
                         <xsd:annotation>
@@ -815,12 +828,13 @@ Il peut s’avérer nécessaire, dans le cas où l’on souhaite contrôler un g
                                 <rng:data type="anyURI"/>
                             </rng:element>
                         </rng:choice>
-``````
+```
 
 Il est possible de mentionner le groupe d’objets techniques d’une autre manière, non pas par son identifiant, mais en déclarant directement le groupe dans le profil d’archivage.
 
 *Exemple : ajout de la mention du groupe d’objets, englobant un objet technique.*
-``````
+
+```json
  < !-- Option 1 : Élément obligatoire englogant -->
              <rng:element name="DataObjectGroup">
             <rng:attribute name="id" seda:profid="id2940711">
@@ -870,9 +884,10 @@ Il est possible de mentionner le groupe d’objets techniques d’une autre mani
                       </rng:element>
              </rng:element>
     </rng:zeroOrMore>
-``````
+```
 
 **Points d’attention :**
+
 - La mention d’un groupe d’objets techniques englobant est nécessaire quand on compte vérifier la conformité d’un bordereau de transfert à un profil d’archivage en utilisant l’outil ReSIP, car ce dernier génère des bordereaux contenant des objets techniques englobés dans des groupes d’objets techniques.
 
 - Mention de l’usage de l’objet
@@ -880,7 +895,8 @@ Il est possible de mentionner le groupe d’objets techniques d’une autre mani
 En cas de présence d’objets, il faut également vérifier la présence d’un contrôle sur l’usage de l’objet : archives physiques (PhysicalMaster), archives numériques originales (BinaryMaster), copies de diffusion (Dissemination), contenu textuel (TextContent), vignettes (Thumbnail).
 
 *Exemple : ajout de la mention de l’usage de l’objet.*
-``````
+
+```json
  < !-- Élément précédent et englogant --> 
                     <rng:element name="BinaryDataObject">
                         <xsd:annotation>
@@ -923,14 +939,14 @@ En cas de présence d’objets, il faut également vérifier la présence d’un
                                 <rng:data type="anyURI"/>
                             </rng:element>
                         </rng:choice>
-``````
+```
 
 - Mention de vocabulaires externes
 
-En cas de présence de vocabulaires externes, c’est-à-dire de métadonnées non gérées nativement par le SEDA22, il faut les ajouter dans le profil SEDA, en les positionnant aux endroits permis par le standard.
+En cas de présence de vocabulaires externes, c’est-à-dire de métadonnées non gérées nativement par le SEDA[^22], il faut les ajouter dans le profil SEDA, en les positionnant aux endroits permis par le standard.
 
 *Exemple : ajout de la mention d’un vocabulaire externe intitulé « TOTO ».*
-``````
+```json
 < !-- Option 1 : on rend obligatoire et on impose sa valeur -->
                     <rng:element name="TOTO">
                         <rng:value>TOTO</rng:value>
@@ -951,7 +967,8 @@ En cas de présence de vocabulaires externes, c’est-à-dire de métadonnées n
                             <rng:value>TOTO</rng:value>
                         </rng:element>
                     </rng:optional> 
-``````
+```
+
 **Point d’attention :** il est recommandé de vérifier que le(s) vocabulaire(s) externe(s) mentionné(s) dans le profil d’archivage sont référencés dans l’ontologie. Si ce n’est pas le cas, il est recommandé d’ajouter ces vocabulaires à l’ontologie, en tant que vocabulaires externes.
 
 - Mention de règles de gel
@@ -959,7 +976,7 @@ En cas de présence de vocabulaires externes, c’est-à-dire de métadonnées n
 En cas d’archives gelées, il faut ajouter les références à la règle de gel dans le profil SEDA, en positionnant la catégorie à l’endroit autorisé par le standard pour étendre les règles dans les éléments <rng:element name="Management"> ou <rng:element name="ManagementMetadata">.
 
 *Exemple : modélisation d’une règle de gel au format RNG*
-``````
+```json
 <rng:element name="HoldRule">
             <rng:group>
               <rng:element name="Rule">
@@ -973,7 +990,7 @@ En cas d’archives gelées, il faut ajouter les références à la règle de ge
               <rng:value>true</rng:value>
             </rng:element>
           </rng:element>
-``````
+```
    
 - Mention d’un agent générique
 
@@ -983,7 +1000,8 @@ Le bloc Agent doit être positionné :
     - entre les blocs SubmissionAgency et AuthorizedAgent, s’ils sont présents dans la version 5 de la solution,
 
 *Exemple : positionnement du bloc Agent dans la version 5*
-``````
+
+```json
                   <rng:element name="Content">
 
                     <rng:element name="DescriptionLevel">
@@ -1029,11 +1047,12 @@ Le bloc Agent doit être positionné :
                       </rng:element>
                     </rng:zeroOrMore>
                   </rng:element>
-``````
+```
+
     - en fin de bloc Content dans les versions antérieures à la version 5.
 
 *Exemple : positionnement du bloc Agent dans les versions antérieures à la version 5*
-``````
+```json
                   <rng:element name="Content">
 
                     <rng:element name="DescriptionLevel">
@@ -1074,7 +1093,8 @@ Le bloc Agent doit être positionné :
                     </rng:element></rng:optional>
 
                   </rng:element>
-``````
+```
+
 **Point d’attention :** il est recommandé de vérifier que le(s) vocabulaire(s) externe(s) mentionné(s) dans le profil d’archivage sont indexés dans le moteur d’indexation Elastic Search. Si ce n’est pas le cas, il est recommandé de les indexer.
 
 Il est recommandé aux utilisateurs de :
@@ -1084,7 +1104,8 @@ Il est recommandé aux utilisateurs de :
 *Exemple : modifications à apporter au niveau  du bloc Agent.*
 
 *Ancienne version :*
-``````
+
+```json
                         <rng:element name="AuthorizedAgent">
                       <rng:group>
                         <rng:element name="FirstName">
@@ -1098,10 +1119,11 @@ Il est recommandé aux utilisateurs de :
                         </rng:element>
                       </rng:group>
                     </rng:element>
-``````
+```
 
 *Nouvelle version :*
-``````
+
+```json
                         <rng:element name="Agent">
                       <rng:group>
                         <rng:element name="FirstName">
@@ -1115,24 +1137,24 @@ Il est recommandé aux utilisateurs de :
                         </rng:element>
                       </rng:group>
                     </rng:element>
-``````
+```
 
 #### Rédaction d’un profil d’archivage avec PASTIS
 
 ##### Étapes de rédaction
-Pour rédiger un profil d’archivage, il est également possible d’utiliser l’outil PASTIS (Profil d’Archivage Simple pour le Traitement de l’Information en SEDA), qui permet de générer des profils d’archivage au format Relax NG. Cet outil est utilisable sous forme d’exécutable ou d’APP intégrée aux interfaces de VitamUI (APP Profils documentaires),
 
+Pour rédiger un profil d’archivage, il est également possible d’utiliser l’outil PASTIS (Profil d’Archivage Simple pour le Traitement de l’Information en SEDA), qui permet de générer des profils d’archivage au format Relax NG. Cet outil est utilisable sous forme d’exécutable ou d’APP intégrée aux interfaces de VitamUI (APP Profils documentaires),
 
 **Étape 1** - l’outil requiert dans un premier temps de créer un profil d’archivage (PA).
 
 **Étape 2** - lors de la rédaction du profil d’archivage :
-- PASTIS auto-incrémente un certain nombre de champs qu’il n’est pas nécessaire, de fait, saisir.
-
-**Point d’attention :** Cette auto-incrémentation ne prend pas en compte les champs rendus obligatoires par la solution logicielle Vitam ou qu’il s’avère nécessaire de spécifier dans un profil d’archivage. De fait, il est recommandé :<br>
+- PASTIS auto-incrémente un certain nombre de champs qu’il n’est pas nécessaire, de fait, saisir.  
+**Point d’attention :**  
+Cette auto-incrémentation ne prend pas en compte les champs rendus obligatoires par la solution logicielle Vitam ou qu’il s’avère nécessaire de spécifier dans un profil d’archivage. De fait, il est recommandé :<br>
     - d’ajouter les champs suivants :<br>
         - dans l’onglet « En-tête » : <br>
             - ArchivalAgreement (Contrat d’entrée), obligatoire dans la solution logicielle Vitam (cardinalité : 1-1) ;<br>
-            - tous les sous-éléments au bloc CodeListVersions, uniquement dans le cas d’un usage du profil depuis le module de collecte. S’il n’y a pas usage du module de collecte, il n’est pas nécessaire de déclarer des sous-éléments au bloc CodeListVersions23 ;<br>
+            - tous les sous-éléments au bloc CodeListVersions, uniquement dans le cas d’un usage du profil depuis le module de collecte. S’il n’y a pas usage du module de collecte, il n’est pas nécessaire de déclarer des sous-éléments au bloc CodeListVersions[^23] ;<br>
         - dans l’onglet « Règles » :<br>
             - ArchivalProfile (Profil d’archivage), pouvant être facultatif ou obligatoire ;<br>
     - de modifier les cardinalités des champs suivants :
@@ -1160,6 +1182,7 @@ Pour rédiger un profil d’archivage, il est également possible d’utiliser l
         - ne pas signaler dans le bloc DataObjectGroupReferenceId la référence à l’objet (que ce soit un titre ou un identifiant).
 
 ##### Corrections et ajouts
+
 Une fois la rédaction du profil d’archivage réalisée, il est possible de :
 - l’exporter au format Relax NG depuis l’exécutable ou depuis l’APP Profils documentaires,
 - finaliser le processus de création d’un profil d’archivage et d’insertion dans le référentiel des profils d’archivage de la solution logicielle Vitam.
@@ -1179,17 +1202,21 @@ Au niveau de l’en-tête, déclarant les espaces de nom et autres références,
 *Exemple : modifications à apporter au niveau de l’en-tête.*
 
 *Ancienne version :*
-``````
+
+```json
 <rng:grammar datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes" ns="fr:gouv:culture:archivesdefrance:seda:v2.1" xmlns="fr:gouv:culture:archivesdefrance:seda:v2.1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns:seda="fr:gouv:culture:archivesdefrance:seda:v2.1" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink">
 [...]
-``````
+```
+
 *Nouvelle Version :*
-``````
+
+```json
 <rng:grammar datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes" ns="fr:gouv:culture:archivesdefrance:seda:v2.1" xmlns="fr:gouv:culture:archivesdefrance:seda:v2.2" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns:seda="fr:gouv:culture:archivesdefrance:seda:v2.2" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink">
 [...]
-``````
+```
 
-**Point d’attention :** Au terme de la version 6, l’APP Profils documentaires ne permet pas d’importer un fichier RNG référençant le SEDA 2.2. Il est recommandé de réimporter le fichier depuis l’IHM de démonstration.
+**Point d’attention :**  
+Au terme de la version 6, l’APP Profils documentaires ne permet pas d’importer un fichier RNG référençant le SEDA 2.2. Il est recommandé de réimporter le fichier depuis l’IHM de démonstration.
     
 **Mention du profil d’unité archivistique**
 
@@ -1198,7 +1225,9 @@ Au terme de la version 7.0, l’APP Profils documentaires ne permet pas de dépo
 
 Si on souhaite déporter le contrôle vers le profil d’unité archivistique, il faudra modifier les éléments suivant dans le fichier RNG :
 *Exemple : ajout de la mention du profil d’unité archivistique.*
-``````
+
+```json
+
 < !-- Élément précédent et englogant --> 
                 <rng:element name="ArchiveUnit">
                     <rng:attribute name="id">
@@ -1258,14 +1287,15 @@ Si on souhaite déporter le contrôle vers le profil d’unité archivistique, i
   </rng:define>
 < !-- Élément suivant -->
 </rng:grammar>
-``````
+```
 
 **Mention de vocabulaires externes**
 
-En cas de présence de vocabulaires externes, c’est-à-dire de métadonnées non gérées nativement par le SEDA25, il faut les ajouter dans le profil SEDA, en les positionnant aux endroits permis par le standard.
+En cas de présence de vocabulaires externes, c’est-à-dire de métadonnées non gérées nativement par le SEDA[^25], il faut les ajouter dans le profil SEDA, en les positionnant aux endroits permis par le standard.
+
 *Exemple : ajout de la mention d’un vocabulaire externe intitulé « TOTO ».*
 
-``````
+```json
 < !-- Option 1 : on rend obligatoire et on impose sa valeur -->
                     <rng:element name="TOTO">
                         <rng:value>TOTO</rng:value>
@@ -1286,7 +1316,7 @@ En cas de présence de vocabulaires externes, c’est-à-dire de métadonnées n
                             <rng:value>TOTO</rng:value>
                         </rng:element>
                     </rng:optional> 
-``````
+```
 
 **Point d’attention :** il est recommandé de vérifier que le(s) vocabulaire(s) externe(s) mentionné(s) dans le profil d’archivage sont référencés dans l’ontologie. Si ce n’est pas le cas, il est recommandé d’ajouter ces vocabulaires à l’ontologie, en tant que vocabulaires externes.
 
@@ -1295,7 +1325,8 @@ En cas de présence de vocabulaires externes, c’est-à-dire de métadonnées n
 En cas d’archives gelées, il faut ajouter les références à la règle de gel dans le profil SEDA, en positionnant la catégorie à l’endroit autorisé par le standard pour étendre les règles dans les éléments <rng:element name="Management"> ou <rng:element name="ManagementMetadata">.
 
 *Exemple : modélisation d’une règle de gel au format RNG*
-``````
+
+```json
 <rng:element name="HoldRule">
             <rng:group>
               <rng:element name="Rule">
@@ -1309,7 +1340,7 @@ En cas d’archives gelées, il faut ajouter les références à la règle de ge
               <rng:value>true</rng:value>
             </rng:element>
           </rng:element>
-``````
+```
 
 **Mention d’un agent générique**
 
@@ -1319,7 +1350,7 @@ Le bloc Agent doit être positionné :
 - entre les blocs SubmissionAgency et AuthorizedAgent, s’ils sont présents dans la version 5 de la solution,
 
 *Exemple : positionnement du bloc Agent dans la version 5*
-``````
+```json
                   <rng:element name="Content">
 
                     <rng:element name="DescriptionLevel">
@@ -1365,12 +1396,13 @@ Le bloc Agent doit être positionné :
                       </rng:element>
                     </rng:zeroOrMore>
                   </rng:element>
-``````
+```
 
 - en fin de bloc Content dans les versions antérieures à la version 5.
 
 *Exemple : positionnement du bloc Agent dans les versions antérieures à la version 5*
-``````
+
+```json
                   <rng:element name="Content">
 
                     <rng:element name="DescriptionLevel">
@@ -1411,7 +1443,8 @@ Le bloc Agent doit être positionné :
                     </rng:element></rng:optional>
 
                   </rng:element>
-``````
+```
+
 **Point d’attention :** il est recommandé de vérifier que le(s) vocabulaire(s) externe(s) mentionné(s) dans le profil d’archivage sont indexés dans le moteur d’indexation Elastic Search. Si ce n’est pas le cas, il est recommandé de les indexer.
 
 Il est recommandé aux utilisateurs de :
@@ -1421,7 +1454,8 @@ Il est recommandé aux utilisateurs de :
 *Exemple : modifications à apporter au niveau  du bloc Agent.*
 
 *Ancienne version :*
-``````
+
+```json
                         <rng:element name="AuthorizedAgent">
                       <rng:group>
                         <rng:element name="FirstName">
@@ -1435,9 +1469,11 @@ Il est recommandé aux utilisateurs de :
                         </rng:element>
                       </rng:group>
                     </rng:element>
-``````
+```
+
 *Nouvelle version :*
-``````
+
+```json
                         <rng:element name="Agent">
                       <rng:group>
                         <rng:element name="FirstName">
@@ -1451,7 +1487,8 @@ Il est recommandé aux utilisateurs de :
                         </rng:element>
                       </rng:group>
                     </rng:element>
-``````
+```
+
 #### Documentation d’un profil d’archivage
 
 Il est fortement recommandé de documenter le profil d’archivage réalisé :
@@ -1478,9 +1515,8 @@ Il est fortement recommandé de documenter le profil d’archivage réalisé :
 |...|||||
 |Filename|1.1|string|Journal_Transmission|||
 
-
-
 #### Réalisation d’un bordereau de transfert conforme au profil d’archivage
+
 À des fins de recette, il est conseillé de réaliser un bordereau de transfert conforme au profil d’archivage ou de demander au prestataire en charge de concevoir des exports de le faire.
 
 Ce travail permet de :
@@ -1490,6 +1526,7 @@ Point d’attention : La forme du bordereau de transfert devra nécessairement 
 
 Conseils de mise en œuvre
 ----
+
 À l’issue de cette première phase de réalisation de fonctionnalités concernant les profils d’archivage, l’équipe projet Vitam est en mesure de fournir quelques recommandations de mise en œuvre.
 
 ### Comment nommer les différentes notices de profil d’archivage ?
@@ -1502,7 +1539,9 @@ La solution logicielle Vitam met à disposition un référentiel des profils d�
 En sachant que :
 - un service producteur peut avoir plusieurs profils d’archivage différents ;
 - une application versante peut détenir plusieurs profils d’archivage.
+
 ### Comment paramétrer les identifiants des notices de profil d’archivage ?
+
 Par défaut, la solution logicielle Vitam génère les identifiants des notices de profil d’archivage de la manière suivante (mode « maître) :
 
 |Type d’habilitation|Paramétrage de l’identifiant|
@@ -1513,7 +1552,6 @@ Il est, néanmoins, possible de paramétrer ces identifiants, afin qu’ils soie
 - soit au moment de l’installation de la plate-forme,
 - soit après installation, sur une plate-forme en activité. Dans ce cas-là, une interruption temporaire de service sera à prévoir.
 Pour ce faire, il faut modifier le fichier de configuration « functional-administration.conf », qui définit, entre autres, par tenant, les collections dont la solution logicielle Vitam ne génère pas d’identifiant[^27].
-
 
 *Exemple : fichier de configuration « functional-administration.conf ».*
 ![Exemple : fichier de configuration « functional-administration.conf ».](./medias/PA/config.png)
@@ -1527,15 +1565,19 @@ Points d’attention :
 - En mode « esclave », il est fortement recommandé de faire débuter les référentiels avec d’autres chaînes de caractères que celle définies en mode « maître ».
 - Cette chaîne de caractères ne doit comprendre ni caractère accentué, ni virgule, ni apostrophe, ni parenthèse, ni espace, ni slash, ni élément de ponctuation, ou tout autre caractère spécial. Ne sont recommandés que l’underscore et le tiret comme séparateurs.
 - Il ne faut pas oublier de répercuter cette modification sur le site secondaire.
+
 ### Quand et comment mettre à jour le référentiel des profils d’archivage ?
+
 La mise à jour du référentiel des profils d’archivage s’avère nécessaire pour répondre aux besoins suivants :
-- mise à jour des informations relatives à une ou plusieurs notices descriptives (ex : modification d’une description, ajout d’un fichier XSD ou RNG28, etc.) ;
+- mise à jour des informations relatives à une ou plusieurs notices descriptives (ex : modification d’une description, ajout d’un fichier XSD ou RNG[^28], etc.) ;
 - ajout d’une nouvelle notice.
 La solution logicielle Vitam permet de mettre à jour le référentiel, en procédant à :
 - une opération de mise à jour unitaire d’une notice descriptive en particulier ;
 - une opération d’import d’une à plusieurs notices descriptives.
 Points d’attention : il est possible d’importer en une seule fois un référentiel complet, comprenant plusieurs notices décrivant chacune un profil d’archivage. La solution logicielle Vitam ne comptabilisera qu’une seule opération, et ne prendra pas en compte dans le journal des opérations la création unitaire des différents items compris dans le référentiel importé. Afin d’optimiser la traçabilité de la création des différentes notices, il est recommandé de créer ces dernières une par une.
+
 ### Quand et comment mettre à jour un profil d’archivage ?
+
 La solution logicielle Vitam permet de mettre à jour un fichier XSD ou RNG associé à une notice descriptive.
 La mise à jour d’un profil d’archivage s’avère nécessaire pour répondre aux besoins suivants :
 - le profil d’archivage est obsolète et nécessite l’import d’une version plus récente. Plutôt que de créer une deuxième notice pour y insérer cette nouvelle version et, de fait, de maintenir deux notices contenant deux versions différentes d’un même profil d’archivage dans le référentiel, on préfère remplacer la version initiale du fichier par une nouvelle version dans la notice d’origine ;
@@ -1556,20 +1598,26 @@ Pour mettre à jour un profil d’archivage, il est recommandé de suivre les é
 |Administrateur technique|s’ils ont été arrêtés, rétablit les transferts concernés dans la solution logicielle Vitam.|Non|
 
 ### Quand et comment supprimer un profil d’archivage ?
+
 La solution logicielle Vitam ne permet pas de supprimer un profil d’archivage, que ce soit la notice descriptive ou le fichier XSD ou RNG associé à cette dernière.
 Si on souhaite ne plus utiliser un profil d’archivage, il faut :
 - l’ôter du(des) contrat(s) d’entrée au(x)quel(s) il est associé ;
 - désactiver la notice descriptive du profil d’archivage.
 Ainsi, il n’est plus utilisé et utilisable dans une opération d’entrée.
 À des fins de clarté, il peut être envisagé de signaler dans le titre de la notice que le profil d’archivage a été décommissionné (ex : ajout de la mention « [supprimé] » dans un titre de notice).
+
 ### Quel accès au référentiel des profils d’archivage ?
+
 #### Gestion des droits
+
 La gestion du référentiel des profils d’archivage relève d’opérations d’administration. Il est donc recommandé d’en limiter l’accès :
 - un administrateur fonctionnel et/ou technique peut avoir accès à l’exhaustivité de ce référentiel et le mettre à jour ;
 - un archiviste en charge de la collecte peut être amené à consulter le référentiel des profils d’archivage, voire à créer une notice et à y insérer un profil d’archivage ;
 - une application versante pourra, le cas échéant, avoir accès aux seuls profils la concernant, en lecture seule.
 Point d’attention : la création d’un profil d’archivage nécessitant des tests préalables, il est recommandé de proposer l’alimentation du référentiel à des utilisateurs avertis, agissant de concert avec l’administrateur fonctionnel et/ou technique de la plate-forme.
+
 #### Restitution sur une IHM
+
 La solution logicielle Vitam propose  :
 - depuis l’IHM démo, de consulter le référentiel des profils d’archivage, d’accéder à une notice de profil d’archivage et de lui associer un fichier RNG ou XSD depuis l’IHM démo ;
 - depuis l’APP « Profils documentaires » de VitamUI, de :
@@ -1577,8 +1625,11 @@ La solution logicielle Vitam propose  :
     - créer, modifier et accéder à une notice et associer à cette dernière un fichier RNG,
     - créer, importer, modifier, exporter et accéder à un profil d’archivage depuis des interfaces dédiées.
 Elle propose d’associer un identifiant de profil d’archivage dans un contrat d’entrée. S’il y a conception d’écrans pour les contrats d’entrée, il est conseillé que cet écran permette de sélectionner la notice descriptive au moyen d’un sélecteur affichant les intitulés des notices descriptives de profil d’archivage.
+
 ### Comment procéder pour paramétrer un contrôle au moyen d’un profil d’archivage ?
+
 ![contrôle](./medias/PA/controle.png)
+
 Pour réaliser un profil d’archivage et un bordereau de transfert conforme à celui-ci, voici quelques recommandations sur les étapes à suivre pour les intégrer dans la solution logicielle Vitam :
 - dans la solution logicielle Vitam :
     - créer un contrat d’entrée ;
@@ -1590,6 +1641,7 @@ Pour réaliser un profil d’archivage et un bordereau de transfert conforme à 
 - dans le bordereau de transfert :
     - reporter l’identifiant du contrat d’entrée dans le champ <ArchivalAgreement> ;
     - reporter l’identifiant du profil d’archivage dans le champ <ArchivalProfile>.
+
 ### Comment utiliser les profils d’archivage ?
 
 **Élaboration d’une notice descriptive de profil d’archivage**
@@ -1627,28 +1679,29 @@ Cette action n’est pas recommandée quand le profil est en cours d’utilisati
 |Intitulé|Description|Niveau de recommandation|
 |:---:|:-----|:-----:|
 |Analyse des données|Avant de concevoir un profil d’archivage, il est recommandé d’avoir préalablement analysé :<br>- l’organisation structurelle des données à archiver (plan de classement) ;<br>- les métadonnées associées à ces données ;<br>- le contenu de données, à savoir la nature des données à archiver (catégorie ou type d’archives).|Recommandé|
-|Structuration des données à verser|Il est recommandé de procéder par étape dans le but de rédiger un bordereau de transfert et un profil d’archivage :<br>- création d’un profil d’archivage :<br>    - à l’aide du Service hébergé pour la rédaction de profils d’archivage (SHERPA)29, mis à disposition par le Service interministériel des Archives de France, <br>    - en utilisant l’outil PASTIS (Profil d’Archivage Simple pour le Traitement de l’Information en SEDA),<br>    - depuis l’APP « Profils documentaires » de VitamUI qui intègre l’outil PASTIS,<br>    - depuis un éditeur XML,<br>- le cas échéant, en parallèle, documentation du profil d’archivage sous forme de tableur ou de document,<br>- modifications manuelles sur le profil d’archivage extrait de SHERPA ou de PASTIS, à l’aide d’un éditeur XML,<br>- génération d’un bordereau conforme au SEDA et conforme au profil d’archivage préalablement réalisé.|Recommandé|
-|Rédaction d’un profil d’archivage|Pour rédiger un profil d’archivage, il est recommandé d’utiliser :<br>- le Service hébergé pour la rédaction de profils d’archivage (SHERPA)30, mis à disposition par le Service interministériel des Archives de France, <br>- en utilisant l’outil PASTIS (Profil d’Archivage Simple pour le Traitement de l’Information en SEDA),<br>- depuis l’APP « Profils documentaires » de VitamUI qui intègre l’outil PASTIS,<br>- depuis un éditeur XML, <br>puis un éditeur XML afin d’apporter manuellement les modifications nécessaires au profil d’archivage.|Recommandé|
-
+|Structuration des données à verser|Il est recommandé de procéder par étape dans le but de rédiger un bordereau de transfert et un profil d’archivage :<br>- création d’un profil d’archivage :<br>    - à l’aide du Service hébergé pour la rédaction de profils d’archivage (SHERPA)[^29], mis à disposition par le Service interministériel des Archives de France, <br>    - en utilisant l’outil PASTIS (Profil d’Archivage Simple pour le Traitement de l’Information en SEDA),<br>    - depuis l’APP « Profils documentaires » de VitamUI qui intègre l’outil PASTIS,<br>    - depuis un éditeur XML,<br>- le cas échéant, en parallèle, documentation du profil d’archivage sous forme de tableur ou de document,<br>- modifications manuelles sur le profil d’archivage extrait de SHERPA ou de PASTIS, à l’aide d’un éditeur XML,<br>- génération d’un bordereau conforme au SEDA et conforme au profil d’archivage préalablement réalisé.|Recommandé|
+|Rédaction d’un profil d’archivage|Pour rédiger un profil d’archivage, il est recommandé d’utiliser :<br>- le Service hébergé pour la rédaction de profils d’archivage (SHERPA)[^30], mis à disposition par le Service interministériel des Archives de France, <br>- en utilisant l’outil PASTIS (Profil d’Archivage Simple pour le Traitement de l’Information en SEDA),<br>- depuis l’APP « Profils documentaires » de VitamUI qui intègre l’outil PASTIS,<br>- depuis un éditeur XML, <br>puis un éditeur XML afin d’apporter manuellement les modifications nécessaires au profil d’archivage.|Recommandé|
 
 Annexes
 ----
 ### Annexe 1 : Exemple de notice détaillée d’un profil d’archivage
-``````
+
+```json
 {
 		"Name":"Matrice",
 		"Description":"Ce contrat d'entrée attend un profil RNG et est actif",
 		"Status":"ACTIVE",
 		"Format":"RNG"
 }
-```````
+```
 
 ### Annexe 2 : Exemples de profil d’archivage
 
 Nota bene : les cas présentés ci-dessous sont des exemples fictifs.
 
 #### Profil d’archivage sans profil d’unité archivistique
-``````
+
+```json
 <?xml version='1.0' encoding='utf-8' standalone='no'?>
 <rng:grammar xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
   xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -2596,10 +2649,11 @@ Nota bene : les cas présentés ci-dessous sont des exemples fictifs.
     </rng:zeroOrMore>
   </rng:define>
 </rng:grammar>
-```````
+```
 
 #### Profil d’archivage avec profil d’unité archivistique
-``````
+
+```json
 <?xml version='1.0' encoding='utf-8' standalone='no'?>
 <rng:grammar xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
   xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -3471,18 +3525,13 @@ Nota bene : les cas présentés ci-dessous sont des exemples fictifs.
     </rng:zeroOrMore>
   </rng:define>
 </rng:grammar>
-``````
-
-
-
-
-
+```
 
 ### Annexe 3 : Déclaration des références aux listes de codes (CodeListVersions)
 
 La portion de code RNG ci-dessous fait référence aux listes de codes (CodeListVersions) qui doivent être déclarées dans un profil d’archivage. Cette portion est générique et correspond aux attentes de la solution logicielle Vitam. De fait, elle est reproductible à l’identique dans n’importe quel profil d’archivage utilisé dans la solution logicielle Vitam.
 
-``````
+```json
 
             <rng:element name="CodeListVersions">
                 <rng:optional>
@@ -4091,7 +4140,7 @@ La portion de code RNG ci-dessous fait référence aux listes de codes (CodeList
                     </rng:element>
                 </rng:optional>
             </rng:element>
-``````
+```
 
 ### Annexe 4 : Liste de messages d’erreur
 
@@ -4102,10 +4151,10 @@ Liste des messages d’erreur remontés par la solution logicielle Vitam lors :
 Nota bene : Cette liste n’est pas forcément exhaustive.
 Messages d’erreur concernant le référentiel des profils d’archivage
 
-
 #### Message retourné par la solution logicielle Vitam
 
 **Import d’une notice de profil d’archivage**
+
 ||Message retourné par la solution logicielle Vitam|Explication|Résolution|
 |:-----:|:----|:----|:----|
 |1|"outDetail":<br>"STP_IMPORT_PROFILE_JSON.<br>IDENTIFIER_DUPLICATION.KO",<br>"outMessg":<br>"Échec du processus d'import du profil d'archivage : l'identifiant est déjà utilisé"<br>"evDetData":<br>{ "Duplicate Field" : "The profile ProfilRNG_mail already exists in database" }|L’utilisateur a importé à deux reprises une notice descriptive ayant le même identifiant, sur une plateforme où l’identifiant est géré par le front-office.|Modifier l’identifiant de la seconde notice descriptive de profil d’unité archivistique.|
@@ -4114,6 +4163,7 @@ Messages d’erreur concernant le référentiel des profils d’archivage
 |4|"outDetail": "STP_IMPORT_PROFILE_JSON.<br>EMPTY_REQUIRED_FIELD.KO",<br>"outMessg":<br>"Échec du processus d'import du profil d'archivage : au moins un des champs obligatoires n'est pas renseigné"<br>"evDetData":<br>{ "Mandatory Fields" : "The field Format is mandatory." }|Soit la notice de profil d’archivage ne contient pas le champ obligatoire Format (= format), soit son champ Format ne contient aucune valeur.|Soit rajouter dans le fichier JSON correspondant à la notice l’élément obligatoire Format, avec une valeur égale à « RNG » ou « XSD ».<br>Soit rajouter une valeur égale à « RNG » ou « XSD » dans ce champ.|
 
 **Mise à jour d’une notice de profil d’archivage**
+
 ||Message retourné par la solution logicielle Vitam|Explication|Résolution|
 |:-----:|:----|:----|:----|
 |5| "outDetail": "STP_IMPORT_PROFILE_JSON.KO",
@@ -4139,35 +4189,31 @@ Messages d’erreur concernant le référentiel des profils d’archivage
 |Bordereau de transfert non conforme au profil d’archivage|{"evDetTechData":"character content of element \"Title\" invalid; must be equal to \"Fichiers sources\"","ArchivalProfile":"PR-000001","EvDetailReq":"Matrice cadastrale num\u00E9rique.","ArchivalAgreement":"IC-000002"}|- Le profil d’archivage attend une valeur précise dans le bloc Title.<br>- Dans le bordereau de transfert, corriger le bloc Title conformément aux attendus du profil d’archivage et enregistrer la modification.<br>- Réimporter le bordereau de transfert.|
 |Absence de profil d’archivage au format RNG ou XSD|Erreur lors de la vérification générale du bordereau de transfert.<br><br>{\"evDetTechData\":\"There is no Profile path file for Matrice\",\"ArchivalProfile\":\"Matrice\",\"EvDetailReq\":\"Matrice cadastrale num\\u00E9rique.\",\"ArchivalAgreement\":\"Matrice\"}|- Se rendre dans le référentiel des profils d’archivage et vérifier la présence d’un fichier au format RNG ou XSD associé à la notice du profil d’archivage déclarée dans le bordereau de transfert.<br>- En cas d’absence constatée, associer le profil d’archivage au format RNG ou XSD à la notice.|
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 ### Annexe 5 : Contrôle de conformité à un profil d’archivage avec ReSIP
+
 ReSIP permet de contrôler le manifeste chargé sur l’interface par rapport à un profil d’archivage au format XSD ou RNG. La présente annexe a pour vocation à expliquer comment réaliser ce contrôle de conformité avec ReSIP et quels sont les écueils à éviter lorsque l’on manipule un profil d’archivage au format RNG.
 
 #### Procédure de contrôle
+
 Afin de vérifier la conformité d’une structure arborescente d’archives et de sa description par rapport à un profil d’archivage conforme au SEDA 2.1., il convient, dans la moulinette ReSIP, de cliquer sur l’action « Traiter » puis sur la sous-action « Vérifier la conformité à un profil SEDA 2.1 » (cf. copie d’écran ci-dessous).
 ![reSIP](./medias/PA/ReSIP1.png)
+
 Le clic sur la sous-action « Vérifier la conformité à un profil SEDA 2.1 », ouvre l’explorateur Windows de l’utilisateur et permet à celui-ci de sélectionner un fichier correspondant à un profil d’archivage – au format XSD ou RNG – et de l’importer dans la moulinette ReSIP en cliquant sur le bouton d’action « Ouvrir » (cf. copie d’écran ci-dessous).
+
 Attention : il n’est possible de sélectionner qu’un seul fichier.
 ![reSIP](./medias/PA/ReSIP2.png)
+
 Le clic sur le bouton d’action « Ouvrir » lance une fenêtre de dialogue « Vérification profil SEDA 2.1 », indiquant que l’opération de vérification est lancée. Cette opération peut être annulée en cliquant sur le bouton d’action « Annuler » de la fenêtre de dialogue. Une fois l’opération de vérification, la fenêtre de dialogue indique son résultat et les éventuelles non conformités identifiées31. La fenêtre de dialogue peut être fermée en cliquant sur le bouton d’action « Fermer » (cf. copie d’écran ci-dessous).
 ![reSIP](./medias/PA/ReSIP3.png)
+
 **Attention :**
 - La moulinette ReSIP génère systématiquement des groupes d’objets. Le profil d’archivage doit prendre en compte cette structuration.
 - Par ailleurs, il est recommandé de structurer le manifeste dans la moulinette ReSIP en mode arborescent et de disposer d’un profil d’archivage arborescent également. La vérification par rapport à un profil d’archivage en mode râteau ne fonctionne pas avec la moulinette ReSIP.
+
 #### Recommandations
+
 ##### Dans la rédaction du profil d’archivage
+
 Il est recommandé de créer un profil d’archivage à l’aide du Service hébergé pour la rédaction de profils d’archivage (SHERPA)32, mis à disposition par le Service interministériel des Archives de France, ou depuis un éditeur XML, puis de procéder à des modifications manuelles sur le profil d’archivage extrait de SHERPA, à l’aide d’un éditeur XML33.
 Pour utiliser le profil d’archivage dans ReSIP, il faut prendre en compte deux spécificités :
 **La déclaration des groupes d’objets techniques**
@@ -4177,7 +4223,7 @@ Le SEDA permet de déclarer les objets techniques de deux manières :
 La moulinette ReSIP ne supporte que cette dernière méthode. Il est nécessaire que le profil d’archivage déclare des objets techniques inclus dans des groupes d’objets techniques, sans quoi ReSIP constatera une non conformité entre le manifeste chargé et le profil d’archivage.
 Mention d’un groupe d’objets techniques dans le profil d’archivage :
 
-``````
+```json
 <rng:group>
           <!-- DataObjectGroup -->
           <rng:element name="DataObjectGroup">
@@ -4246,14 +4292,16 @@ Mention d’un groupe d’objets techniques dans le profil d’archivage :
             </rng:element>
           </rng:element>
           </rng:element>
-``````
+```
 
 **La hiérarchisation des unités archivistiques**
 Le SEDA permet également de reproduire la hiérarchie entre les unités archivistiques de deux manières :
 - soit cette hiérarchie est matérialisée par une arborescence d’unités archivistiques, les unes s’emboîtant directement aux unités archivistiques de niveau supérieur,
 - soit cette arborescence est exprimée par des liens entre unités archivistiques, déclarés au moyen de l’élément ArchiveUnitRefId.
 Le contrôle de conformité par rapport à un profil d’archivage ne fonctionnera dans ReSIP qu’à la condition que le profil d’archivage ne déclare les liens entre unités archivistiques sous forme arborescente, c’est-à-dire emboîtées les unes à la suite des autres.
+
 ##### Dans ReSIP
+
 Dans ReSIP, il faut veiller à paramétrer le mode d’enregistrement des unités archivistiques avant leur import dans l’outil.
 Pour ce faire, depuis l’interface d’édition des paramètres, ouverte par un clic sur la sous-action « Préférences », depuis l’onglet « Export » (cf. copie d’écran ci-dessous) :
 - les unités archivistiques doivent être exportées de manière **imbriquée** (les unités archivistiques sont exportées de manière « arborescente » et sont imbriquées les unes dans les autres, en utilisant le champ ArchiveUnit du SEDA 2.1.), et non pas « à plat » (toutes les unités archivistiques sont exportées au même niveau et la structure arborescente est restituée par l’utilisation du champ ArchiveUnitRefId du SEDA 2.1.) ;
@@ -4261,6 +4309,7 @@ Pour ce faire, depuis l’interface d’édition des paramètres, ouverte par un
 ![ReSIP](./medias/PA/ReSIP4.png)
 
 #### Messages d’erreur rencontrés
+
 Lors d’un contrôle de conformité à un profil d’archivage, les erreurs retournées par ReSIP peuvent provenir :
 - du manifeste chargé dans ReSIP : au moins un élément n’est pas conforme au profil d’archivage ;
 - du profil d’archivage : celui-ci n’est pas conforme à la manière attendue par ReSIP et/ou à la manière de cet outil d’enregistrer les métadonnées importées.
@@ -4268,14 +4317,16 @@ C’est pourquoi, en cas d’erreur de conformité, il est recommandé de vérif
 
 **Nota bene :** Cette liste n’est pas forcément exhaustive.
 
-
 - **Message retourné par ReSIP** : position de l'erreur identifiée: ligne 1, colonne 334<br>
-````
+
+```xml
 ligne: <?xml version='1.0' encoding='UTF-8'?><ArchiveTransfer xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pr="info:lc/xmlns/premis-v2" xmlns="fr:gouv:culture:archivesdefrance:seda:v2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="fr:gouv:culture:archivesdefrance:seda:v2.1 seda-2.1-main.xsd" xml:id="ID1"><br>erreur brute: attribute "xsi:schemaLocation" not allowed here; expected attribute "id"
-``````
+```
+
 - Explication : L’erreur semble pointer l’attribut xml:id présent dans l’élément ArchiveTransfer du manifeste.xml.<br>En réalité, dans le profil d’archivage, à l’emplacement de l’élément rng:grammar, on a déclaré un namespace. Ce namespace doit être déclaré comme attribut de l’élément ArchiveTransfer.<br>En réalité, l’élément ArchiveTransfer présent dans le manifeste déclare un attribut correspondant à un namespace qui n’est pas déclaré dans le profil d’archivage. C’est pourquoi, le message précise qu’un attribut id est attendu dans le manifeste et non pas xsi:schemaLocation.
 - Résolution : Dans le profil d’archivage, rajouter un attribut correspondant au namespace :
-````<br><rng:zeroOrMore>
+```json
+<br><rng:zeroOrMore>
         <rng:attribute>
           <rng:anyName>
             <rng:except>
@@ -4285,35 +4336,51 @@ ligne: <?xml version='1.0' encoding='UTF-8'?><ArchiveTransfer xmlns:xlink="http:
           </rng:anyName>
         </rng:attribute>
       </rng:zeroOrMore>
-``````
-- **Message retourné par ReSIP** : position de l'erreur identifiée: ligne 24, colonne 32<br>ligne:     <DataObjectGroup id="ID15"><br>erreur brute: element "DataObjectGroup" not allowed anywhere; expected element "BinaryDataObject"
+```
+
+- **Message retourné par ReSIP** : position de l'erreur identifiée: ligne 24, colonne 32<br>
+```xml
+ligne:     <DataObjectGroup id="ID15"><br>erreur brute: element "DataObjectGroup" not allowed anywhere; expected element "BinaryDataObject"
+```
+
 - Explication : Le profil d’archivage attend un élément BinaryDataObject en lieu et place d’un élément DataObjectGroup à l’emplacement de l’élément <DataObjectGroup id="ID15"> dans le manifeste.
-- Résolution : Avec ce cas d’erreur-là, on peut se demander si le profil d’archivage n’est pas erroné.
+- Résolution : Avec ce cas d’erreur-là, on peut se demander si le profil d’archivage n’est pas erroné.  
 Pour rappel, ReSIP génère des objets binaires encapsulés dans un groupe d’objets techniques. Le message retourné par ReSIP suggère que le profil d’archivage attend un objet binaire en lieu et place du groupe d’objets.
 Il est recommandé d’ouvrir le manifeste pour vérifier comment sont déclarés les groupes d’objets techniques, puis de faire de même dans le profil d’archivage et de corriger l’erreur.
 
-- **Message retourné par ReSIP** : position de l'erreur identifiée: ligne 7, colonne 27<br>ligne:     <ReplyCodeListVersion>ReplyCodeListVersion0</ReplyCodeListVersion><br>erreur brute: element "ReplyCodeListVersion" not allowed anywhere; expected the element end-tag
+- **Message retourné par ReSIP** : position de l'erreur identifiée: ligne 7, colonne 27<br>
+```json
+ligne:     <ReplyCodeListVersion>ReplyCodeListVersion0</ReplyCodeListVersion><br>erreur brute: element "ReplyCodeListVersion" not allowed anywhere; expected the element end-tag
+```
+
 - Explication : L’élément ReplyCodeListVersion n’est pas autorisé par le profil d’archivage, alors qu’il est présent dans le manifeste généré par ReSIP.
 - Résolution : Il faut vérifier si ReplyCodeListVersion n’est pas un champ obligatoire du SEDA (option « Vérifier la conformité SEDA 2.1 »).<br>
 S’il n’est pas obligatoire, ce qui est le cas pour cet élément-là, retirer le champ de la liste des champs contextuels générés par ReSIP, en cliquant sur Contexte > Editer les informations d’export > Métadonnées globales étendues.
 
 - **Message retourné par ReSIP** : position de l'erreur identifiée: ligne 6, colonne 22<br>
+```json
 ligne:   <DataObjectPackage>
 erreur brute: element "DataObjectPackage" not allowed yet; missing required element "CodeListVersions"
+```
+
 - Explication : L’élément CodeListVersions, obligatoire dans le SEDA, est absent.
 - Résolution : 
     - Il faut rajouter l’élément CodeListVersions, obligatoire dans le SEDA, en cliquant sur Contexte > Editer les informations d’export > Métadonnées globales étendues.
     - Si l’erreur persiste, il faut également vérifier que le profil d’archivage intègre bien un élément CodeListVersions.
 
-- **Message retourné par ReSIP** : position de l'erreur identifiée: ligne 2, colonne 78<br>ligne:   <Comment>Matrice</Comment>
+- **Message retourné par ReSIP** : position de l'erreur identifiée: ligne 2, colonne 78<br>
+```json
+ligne:   <Comment>Matrice</Comment>
 erreur brute: character content of element "Comment" invalid; must be equal to "Matrice cadastrale numérique."
+```
+
 - Explication : La valeur de l’élément Comment présent dans le manifeste ne correspond pas à la valeur définie dans le profil d’archivage.
 - Résolution : Dans le manifeste, il faut corriger la valeur de l’élément Comment par la valeur attendue dans le profil d’archivage pour cette balise-là.
 
 *Exemple de profil d’archivage*
 
 **Nota bene :** le cas présenté ci-dessous est un exemple fictif, ne comportant pas de référence à un groupe d’objets techniques.
-``````
+```xml
 <?xml version='1.0' encoding='utf-8' standalone='no'?>
 <rng:grammar xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:seda="fr:gouv:culture:archivesdefrance:seda:v2.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="fr:gouv:culture:archivesdefrance:seda:v2.1" datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes" ns="fr:gouv:culture:archivesdefrance:seda:v2.1">
   <rng:start>
@@ -5330,64 +5397,64 @@ erreur brute: character content of element "Comment" invalid; must be equal to "
     </rng:zeroOrMore>
   </rng:define>
 </rng:grammar>
-``````
+```
 
-[^1] Un exemple de profil d’archivage est présenté dans l’[annexe 2 « Exemples de profil d’archivage »](#annexe-2--exemples-de-profil-darchivage) du présent document.
+[^1]: Un exemple de profil d’archivage est présenté dans l’[annexe 2 « Exemples de profil d’archivage »](#annexe-2--exemples-de-profil-darchivage) du présent document.
 
-[^2] Pour plus d’informations sur le référentiel des profils d’archivage, consulter le [chapitre « 4.1. Administration d’un référentiel des profils d’archivage »](#administration-dun-référentiel-des-profils-darchivage).
+[^2]: Pour plus d’informations sur le référentiel des profils d’archivage, consulter le [chapitre « 4.1. Administration d’un référentiel des profils d’archivage »](#administration-dun-référentiel-des-profils-darchivage).
 
-[^3] Pour plus d’informations sur la modélisation de cette collection, consulter le [document VITAM. Modèle de données](./modele_de_donnees.md), chapitre 5.14 « Collection Profile ».
+[^3]: Pour plus d’informations sur la modélisation de cette collection, consulter le [document VITAM. Modèle de données](./modele_de_donnees.md), chapitre 5.14 « Collection Profile ».
 
-[^4] Pour plus d’informations sur le processus d’import du référentiel, consulter le [document VITAM. Modèle de workflow](./modele_de_workflow.md), chapitre 5.7 « Workflow d’administration d’un référentiel des profils d’archivage ».
+[^4]: Pour plus d’informations sur le processus d’import du référentiel, consulter le [document VITAM. Modèle de workflow](./modele_de_workflow.md), chapitre 5.7 « Workflow d’administration d’un référentiel des profils d’archivage ».
 
-[^5] Des précisions sur les messages d’erreur sont apportées dans l’[annexe 4 « Liste de messages d’erreur »](#annexe-4--liste-de-messages-derreur) du présent document.
+[^5]: Des précisions sur les messages d’erreur sont apportées dans l’[annexe 4 « Liste de messages d’erreur »](#annexe-4--liste-de-messages-derreur) du présent document.
 
-[^6] Ce champ est obligatoire seulement s’il est généré par l’application à l’origine de sa création.
+[^6]: Ce champ est obligatoire seulement s’il est généré par l’application à l’origine de sa création.
 
-[^7] Seulement quand l’identifiant est généré par l’application à l’origine de la création de la notice de profil d’archivage.
+[^7]: Seulement quand l’identifiant est généré par l’application à l’origine de la création de la notice de profil d’archivage.
 
-[^8] Cf [chapitre 4.1.2 « Import du profil d’archivage lui-même »](#import-du-profil-darchivage-lui-même) du présent document.
+[^8]: Cf [chapitre 4.1.2 « Import du profil d’archivage lui-même »](#import-du-profil-darchivage-lui-même) du présent document.
 
-[^9] Pour plus d’informations sur la modélisation de cette collection, consulter le [document VITAM. Modèle de données](./modele_de_donnees.md), chapitre « 5.14. Collection Profile ».
+[^9]: Pour plus d’informations sur la modélisation de cette collection, consulter le [document VITAM. Modèle de données](./modele_de_donnees.md), chapitre « 5.14. Collection Profile ».
 
-[^10] Pour plus d’informations sur le processus d’import du référentiel, consulter le [document VITAM. Modèle de workflow](./modele_de_workflow.md), chapitre 5.7 « Workflow d’administration d’un référentiel des profils d’archivage ».
+[^10]: Pour plus d’informations sur le processus d’import du référentiel, consulter le [document VITAM. Modèle de workflow](./modele_de_workflow.md), chapitre 5.7 « Workflow d’administration d’un référentiel des profils d’archivage ».
 
-[^11] Pour plus d’informations sur le processus d’import du référentiel, consulter le [document VITAM. Modèle de workflow](./modele_de_workflow.md), chapitre 5.7 « Workflow d’administration d’un référentiel des profils d’archivage ».
+[^11]: Pour plus d’informations sur le processus d’import du référentiel, consulter le [document VITAM. Modèle de workflow](./modele_de_workflow.md), chapitre 5.7 « Workflow d’administration d’un référentiel des profils d’archivage ».
 
-[^12] Des précisions sur les messages d’erreur sont apportées dans l’[annexe 4 « Liste des messages d’erreur »](#annexe-4--liste-de-messages-derreur) du présent document.
+[^12]: Des précisions sur les messages d’erreur sont apportées dans l’[annexe 4 « Liste des messages d’erreur »](#annexe-4--liste-de-messages-derreur) du présent document.
 
-[^13] Pour plus d’informations sur cet audit, consulter le document Documentation d’exploitation, chapitre 6.5.2 « Audit sur les collections d’administration ».
+[^13]: Pour plus d’informations sur cet audit, consulter le document Documentation d’exploitation, chapitre 6.5.2 « Audit sur les collections d’administration ».
 
-[^14] L’[annexe 4 de ce document](#annexe-4--liste-de-messages-derreur) précise les messages d’erreur remontés par la solution logicielle Vitam lors de ce contrôle.
+[^14]: L’[annexe 4 de ce document](#annexe-4--liste-de-messages-derreur) précise les messages d’erreur remontés par la solution logicielle Vitam lors de ce contrôle.
 
-[^15] L’[annexe 4 de ce document](#annexe-4--liste-de-messages-derreur) précise les messages d’erreur remontés par la solution logicielle Vitam lors de ce contrôle.
+[^15]: L’[annexe 4 de ce document](#annexe-4--liste-de-messages-derreur) précise les messages d’erreur remontés par la solution logicielle Vitam lors de ce contrôle.
 
-[^16] Le tableau suivant est une libre adaptation du tableau présenté dans « Fiche pratique n°13 : positionnement de l’archiviste face à un projet de dématérialisation », Association des archivistes français – Groupe AM@E
+[^16]: Le tableau suivant est une libre adaptation du tableau présenté dans « Fiche pratique n°13 : positionnement de l’archiviste face à un projet de dématérialisation », Association des archivistes français – Groupe AM@E
 
-[^17] Le service et sa documentation sont disponibles à l’adresse suivante : https://sherpa.francearchives.fr/ (Lien consulté le 16 février 2023).
+[^17]: Le service et sa documentation sont disponibles à l’adresse suivante : https://sherpa.francearchives.fr/ (Lien consulté le 16 février 2023).
 
-[^18] Le service est disponible en ligne à l’adresse suivante : https://sherpa.francearchives.fr/ (Lien consulté le 16 février 2023).
+[^18]: Le service est disponible en ligne à l’adresse suivante : https://sherpa.francearchives.fr/ (Lien consulté le 16 février 2023).
 
-[^19] Il s’agira alors de modifier a posteriori la valeur sélectionnée. Une autre manière de procéder est de ne rien saisir dans SHERPA. Néanmoins, la modification ultérieure nécessitera de retravailler le langage RNG et de rajouter la valeur attendue.
+[^19]: Il s’agira alors de modifier a posteriori la valeur sélectionnée. Une autre manière de procéder est de ne rien saisir dans SHERPA. Néanmoins, la modification ultérieure nécessitera de retravailler le langage RNG et de rajouter la valeur attendue.
 
-[^20] Néanmoins, le service prend en compte les nouveautés présentes dans le SEDA 2.1 et, de fait, produit des fichiers compatibles avec le SEDA 2.1.
+[^20]: Néanmoins, le service prend en compte les nouveautés présentes dans le SEDA 2.1 et, de fait, produit des fichiers compatibles avec le SEDA 2.1.
 
-[^21] Pour plus d’informations sur les profils d’unité archivistique, consulter le [document VITAM. Profil d’unité archivistique](./profil_ua).
+[^21]: Pour plus d’informations sur les profils d’unité archivistique, consulter le [document VITAM. Profil d’unité archivistique](./profil_ua).
 
-[^22] Cf. [document VITAM. Ontologie](./ontologie.md), chapitre 3.2 « Dans le Standard d’échange des données pour l’archivage (SEDA) ».
+[^22]: Cf. [document VITAM. Ontologie](./ontologie.md), chapitre 3.2 « Dans le Standard d’échange des données pour l’archivage (SEDA) ».
 
-[^23] Se référer à la [section « Corrections au niveau des références aux listes de codes »](#corrections-et-ajouts) du chapitre 5.2.2.2 « Corrections et ajouts » pour plus de précisions.
+[^23]: Se référer à la [section « Corrections au niveau des références aux listes de codes »](#corrections-et-ajouts) du chapitre 5.2.2.2 « Corrections et ajouts » pour plus de précisions.
 
-[^24] Pour plus d’informations sur les profils d’unité archivistique, consulter le [document VITAM. Profil d’unité archivistique](./profil_ua).
+[^24]: Pour plus d’informations sur les profils d’unité archivistique, consulter le [document VITAM. Profil d’unité archivistique](./profil_ua).
 
-[^25] Cf. [document VITAM. Ontologie](./ontologie.md), chapitre 3.2 « Dans le Standard d’échange des données pour l’archivage (SEDA) ».
+[^25]: Cf. [document VITAM. Ontologie](./ontologie.md), chapitre 3.2 « Dans le Standard d’échange des données pour l’archivage (SEDA) ».
 
-[^26] On peut se référer aux profils d’archivage mis en ligne sur le site des Archives de France : https://francearchives.fr/seda/profils.html (Lien consulté le 9 février 2021).
+[^26]: On peut se référer aux profils d’archivage mis en ligne sur le site des Archives de France : https://francearchives.fr/seda/profils.html (Lien consulté le 9 février 2021).
 
-[^27] Cf. Documentation d’exploitation, chapitre 8.2.6.2.2 « Passage des identifiants des référentiels en mode esclave ».
+[^27]: Cf. Documentation d’exploitation, chapitre 8.2.6.2.2 « Passage des identifiants des référentiels en mode esclave ».
 
-[^28] Le cas particulier de la modification du fichier RNG ou XSD est traité dans le [chapitre 6.4 « Quand et comment mettre à jour un profil d’archivage »](#quand-et-comment-mettre-à-jour-un-profil-darchivage) du présent document.
+[^28]: Le cas particulier de la modification du fichier RNG ou XSD est traité dans le [chapitre 6.4 « Quand et comment mettre à jour un profil d’archivage »](#quand-et-comment-mettre-à-jour-un-profil-darchivage) du présent document.
 
-[^29] Le service et sa documentation sont disponibles à l’adresse suivante : https://sherpa.francearchives.fr/ (Lien consulté le  18 février 2022 ).
+[^29]: Le service et sa documentation sont disponibles à l’adresse suivante : https://sherpa.francearchives.fr/ (Lien consulté le  18 février 2022 ).
 
-[^30] Le service et sa documentation sont disponibles à l’adresse suivante : https://sherpa.francearchives.fr/ (Lien consulté le 18 février 2022 ).
+[^30]: Le service et sa documentation sont disponibles à l’adresse suivante : https://sherpa.francearchives.fr/ (Lien consulté le 18 février 2022 ).

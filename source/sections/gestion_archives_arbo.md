@@ -11,14 +11,14 @@ Introduction
 |NF Z 44022 – MEDONA – Modélisation des données pour l’archivage|18/01/2014||
 |Standard d’échange de données pour l’archivage – SEDA – v. 2.1|06/2018||
 |Standard d’échange de données pour l’archivage – SEDA – v. 2.2|02/2022|Cette nouvelle version du SEDA est intégrée à la solution logicielle Vitam à partir de la V6.RC.|
-|Vitam – Structuration des Submission Information Package (SIP)|||
-|Vitam – Structuration des Dissemination Information Package (DIP)|||
-|Vitam – Guide d’utilisation de ReSIP|||
-|Vitam – Module de collecte|||
-|Vitam – Les éliminations dans la solution logicielle Vitam|||
-|Vitam – Le transfert avec la solution logicielle Vitam|||
-|Vitam – Gestion de la préservation|||
-|Vitam – Modèle de workflow|||
+|[Vitam – Structuration des Submission Information Package (SIP)](./SIP.md)|||
+|[Vitam – Structuration des Dissemination Information Package (DIP)](./DIP.md|||
+|[Vitam – Guide d’utilisation de ReSIP](./resip.md)|||
+|[Vitam – Module de collecte](./module_de_collecte.md)|||
+|[Vitam – Les éliminations dans la solution logicielle Vitam](./eliminations.md)|||
+|[Vitam – Le transfert avec la solution logicielle Vitam](./transfert.md)|||
+|[Vitam – Gestion de la préservation](./preservation.md)|||
+|[Vitam – Modèle de workflow](./modele_de_workflow.md)|||
 
 ### Présentation du document
 
@@ -31,7 +31,8 @@ Il s’articule autour des axes suivants :
 
 Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la Version 7.0 (automne 2023). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
 
-## Présentation
+Présentation
+----
 
 ### Description
 

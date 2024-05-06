@@ -216,7 +216,9 @@ Elle autorise également :
  Au terme de la version 5, l’APP VitamUI « Registre des fonds » fait appel uniquement aux traitements ayant trait aux opérations d’entrée et ne prend pas en compte les traitements relatifs aux opérations de préservation et de suppression de versions d’objets.
 
 ### Accès
+
 #### Recherche
+
 Une application connectée et authentifiée à la solution logicielle Vitam peut effectuer des recherches sur les services producteurs déclarés dans les unités archivistiques, dans la limite des droits et des filtres qui lui sont définis, en utilisant les différentes notions existantes :
 - services producteurs déclarés par chaque unité archivistique dans ses métadonnées descriptives (bloc <OriginatingAgency>) ;
 - service producteur ayant transféré l’unité archivistique (information correspondant au champ OriginatingAgencyIdentifier du bloc ManagementMetadata propagé dans les unités archivistiques lors du traitement du transfert) ;
@@ -225,6 +227,7 @@ Une application connectée et authentifiée à la solution logicielle Vitam peut
 Depuis l’APP VitamUI « Recherche et consultation des archives », il est possible de rechercher les unités archivistiques à partir de l’identifiant ou de l’intitulé du service producteur référencé dans le référentiel des services agents, correspondant, dans l’unité archivistique, à la métadonnée propre au service producteur ayant transféré l’unité archivistique (information correspondant au champ OriginatingAgencyIdentifier du bloc ManagementMetadata).
 
 #### Filtrage des résultats au moyen des contrats d’accès
+
 Une application connectée et authentifiée à la solution logicielle Vitam, si elle dispose des droits de recherche et de consultation d’archives, peut voir le périmètre de ses droits restreint à un nombre précis de services producteurs en vertu de son contrat d’accès.  
 Dans ce cas, lorsque cette application effectue une recherche d’archives dans la solution logicielle Vitam, lui sont seulement retournées en résultat les unités archivistiques transférées par l’un des services producteurs autorisés dans son contrat d’accès, ou qui sont rattachées symboliquement à ce service. Les unités archivistiques transférées par d’autres services producteurs que ceux autorisés dans le contrat d’accès ne lui seront pas retournées en réponse à sa requête.    
 Deux options sont possibles dans le contrat d’accès :
@@ -269,6 +272,7 @@ L’équipe projet Vitam recommande les modalités de mise en œuvre ci-dessous.
 
 
 ### Comment gérer les droits d’accès à la solution logicielle Vitam ?
+
 |Intitulé|Description|Niveau de recommandation|
 | :--------------- |:---------------:|:-----:|
 |Contrat d’accès|||
@@ -279,6 +283,7 @@ L’équipe projet Vitam recommande les modalités de mise en œuvre ci-dessous.
 ||Il est envisageable de créer autant de contrats d’accès que de services producteurs, en déclarant au niveau de chaque contrat d’accès le (ou les) service(s) producteur(s) concerné(s) dans le champ « OriginatingAgencies ».|Envisageable|
 
 ### Comment gérer les droits d’accès au référentiel des services agents ?
+
 |Intitulé|Description|Niveau de recommandation|
 | :--------------- |:---------------:|:-----:|
 |Référentiel des services agents|||
@@ -487,4 +492,4 @@ Détail : nom du fichier CSV|Associer une description à un service agent est f
 |:---------------:|:-----:|:-----:|
 |OK|« Succès du processus d’import du référentiel des services agents. »<br>Détail : nom du fichier CSV|Même si l’import est en succès, il n’est pas recommandé de laisser des espaces blancs / vides avant ou après une chaîne de caractères dans un fichier CSV.|
 
-[^1] La documentation du standard est accessible à l’[adresse suivante](https://schema.data.gouv.fr/Archivistes75/registre_entrees/latest/documentation.html) (lien consulté le 27 février 2023).
+[^1]: La documentation du standard est accessible à l’[adresse suivante](https://schema.data.gouv.fr/Archivistes75/registre_entrees/latest/documentation.html) (lien consulté le 27 février 2023).

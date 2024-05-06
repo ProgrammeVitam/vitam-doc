@@ -1700,6 +1700,11 @@ Ce traitement n’est exécuté que si la valeur IN de *checkProfile* est « tr
         -   Cas 4 : au moins un champ date d’une unité archivistique est supérieur à 9000 ou la date de fin des dates extrêmes est strictement inférieure à la date de début (CHECK\_UNIT\_SCHEMA.RULE\_DATE\_THRESHOLD.KO = Échec du calcul des dates d’échéance, la date ne peut être gérée)
         -   Cas 5 : au moins un champ date d’une unité archivistique déclare une valeur non conforme au type attendu (CHECK\_UNIT\_SCHEMA.RULE\_DATE\_FORMAT.KO = Échec du calcul des dates d’échéance, la date ne peut être gérée)
         -   Cas 6 : au moins une valeur de l’unité archivistique n’est pas conforme à son schéma en raison d’un problème de cohérence entre champs. Par exemple, la valeur contenue dans le champ « StartDate » est postérieure à la date définie dans la « EndDate » (CHECK\_UNIT\_SCHEMA.CONSISTENCY.KO = Au moins une unité archivistique n’est pas conforme à son schéma en raison d’un problème de cohérence entre champs)
+		-   Cas 7 : au moins une archives n'est pas signée alors que le contrat d'entrée rend obligatoires les documents signés (CHECK\_UNIT\_SCHEMA.MANDATORY\_SIGNED\_DOCUMENT.KO = Echec lors du contrôle des documents signés électroniquement : document non signé interdit par le contrat d'entrée)
+		-   Cas 8 : au moins une archives est signée alors que le contrat d'entrée interdit les documents signés (CHECK\_UNIT\_SCHEMA.FORBIDDEN\_SIGNED\_DOCUMENT.KO = Echec lors du contrôle des documents signés électroniquement : document signé interdit par le contrat d'entrée)
+		-   Cas 9 : au moins une archives ne dispose pas de preuve complémentaires alors que le contrat d'entrée rend obligatoires les preuves complémentaires (CHECK\_UNIT\_SCHEMA.MISSING\_DECLARED\_ADDITIONAL\_PROOF.KO = Echec lors du contrôle des documents signés électroniquement : preuve additionnelle obligatoire manquante)
+		-   Cas 10 : au moins une archives ne dispose pas d'horodatage alors que le contrat d'entrée rend obligatoires les preuves complémentaires (CHECK\_UNIT\_SCHEMA.MISSING\_DECLARED\_TIMESTAMP.KO = Echec lors du contrôle des documents signés électroniquement : horodatage obligatoire manquant)
+		-   Cas 11 : au moins une archives ne dispose pas de signature alors que le contrat d'entrée rend obligatoires les preuves complémentaires (CHECK\_UNIT\_SCHEMA.MISSING\_DECLARED\_SIGNATURE.KO = Echec lors du contrôle des documents signés électroniquement : signature associée obligatoire manquante)	
     -   FATAL : une erreur technique est survenue lors de la vérification de l’unité archivistique (CHECK\_UNIT\_SCHEMA.FATAL = Erreur technique lors de la vérification globale de l’unité archivistique)
 
 #### Vérification du profil d’unité archivistique CHECK\_ARCHIVE\_UNIT\_PROFILE (CheckArchiveUnitProfileActionPlugin.java)
@@ -3287,9 +3292,9 @@ La partie « ReportSummary » c’est-à-dire le bloc situé sous la racine du
 - « extendedInfo » : partie libre où chaque type de rapport contient des informations qui lui est propre. Ici ce champ est vide. 
 
 La partie « ReportDetail » contient les détails de l’opération d’élimination effectuée sur chacune des unités archivistiques.<br>
-- « _id » : identifiant de l’unité archivistique ou de l’objet sur lequel l’action d’élimination s’est effectuée.
+- « _id » : identifiant de l’unité archivistique ou du groupe d'objets techniques sur lequel l’action d’élimination s’est effectuée.
 - « params » : informations sur l’unité archivistique ou le groupe d’objet
-    - « id » : identifiant de l’unité archivistique ou de l’objet
+    - « id » : identifiant de l’unité archivistique ou du groupe d'objets techniques
     - « type » : collection sur laquelle l’opération à été réalisée (UNIT ou OBJECTGROUP)
     - « status » : statut au regard de l’action d’élimination :
         - GLOBAL_STATUS_KEEP : unité archivistique non éliminable au regard des règles de gestion.
@@ -3298,7 +3303,37 @@ La partie « ReportDetail » contient les détails de l’opération d’élim
         - DELETED : l’unité a effectivement été supprimée
     - « opi » : identifiant de l’opération d’entrée
     - « originatingAgency » : service producteur
-    - « objectIds » : identifiant du groupe d'objets techniques rattaché à l’unité archivistique
+	- pour une unité archivistique :
+		- « objectGroupId » : identifiant du groupe d'objets techniques rattaché à l’unité archivistique
+		- « PersistentIdentifier » : identifiant(s) pérenne(s) (facultatifs):
+			- « PersistentIdentifierType » : type d'identifiant pérenne
+			- « PersistentIdentifierOrigin » : origine de l'identifiant pérenne
+			- « PersistentIdentifierReference » : référence de l'identifiant pérenne
+			- « PersistentIdentifierContent » : identifiant pérenne
+		- « extraInfo » : informations supplémentaires (facultatives et configurables):
+			- « #version » : version,
+			- « #unitups » : unité(s) archivistique(s) parente(s),
+			- « #originating_agency » : service producteur,
+			- « #approximate_creation_date » : date de création,
+			- « #approximate_update_date » : date de dernière modification,
+			- « FilePlanPosition » : position(s) dans le plan de classement,
+			- « SystemId » : identifiant(s) système,
+			- « OriginatingSystemId » : identifiant(s) du système d’origine,
+			- « ArchivalAgencyArchiveUnitIdentifier » : identifiant(s) émanant du service d’archives,
+			- « OriginatingAgencyArchiveUnitIdentifier » : identifiant(s) émanant du service producteur,
+			- « TransferringAgencyArchiveUnitIdentifier » : identifiant(s) émanant du service responsable du transfert.
+	- pour un groupe d'objets techniques :
+		- « objectVersions » : informations relatives aux versions d'usages d'objets techniques :
+			- « id » : identifiant de l'objet technique
+			- « opi » : identifiant de l'opération d'entrée
+			- « size » : poids de l'objet technique
+			- « version » : usage et version de l'objet technique
+			- « PersistentIdentifier » : identifiant(s) pérenne(s) (facultatifs):
+				- « PersistentIdentifierType » : type d'identifiant pérenne
+				- « PersistentIdentifierOrigin » : origine de l'identifiant pérenne
+				- « PersistentIdentifierReference » : référence de l'identifiant pérenne
+				- « PersistentIdentifierContent » : identifiant pérenne
+		- « objectIds » : identifiant(s) du(des) objet(s) technique(s) dépendant du groupe d'objets techniques
 
 Modification d’arborescence (Reclassification)
 -----
@@ -3750,9 +3785,9 @@ La partie « ReportSummary » c’est-à-dire le bloc situé sous la racine du
 - « extendedInfo » : partie libre où chaque type de rapport contient des informations qui lui est propre. Ici ce champ est vide.
 
 La partie « ReportDetail » contient les détails de l’opération d’acquittement du transfert effectuée sur chacune des unités archivistiques.
-- « _id » : identifiant de l’unité archivistique ou de l’objet sur lequel l’action d’acquittement du transfert s’est effectuée.
-- « params » : informations sur l’unité archivistique ou le groupe d’objet
-    - « id » : identifiant de l’unité archivistique ou de l’objet
+- « _id » : identifiant de l’unité archivistique ou du groupe d'objets techniques sur lequel l’action d’acquittement du transfert s’est effectuée.
+- « params » : informations sur l’unité archivistique ou le groupe d’objets techniques
+    - « id » : identifiant de l’unité archivistique ou du groupe d'objets techniques
     - « type » : collection sur laquelle l’opération à été réalisée (UNIT ou OBJECTGROUP)
     - « status » : statut au regard de l’action d’acquittement du transfert :
         - ALREADY_IN_TRANSFER : unité archivistique ayant déjà subi une demande de transfert.
@@ -3760,9 +3795,26 @@ La partie « ReportDetail » contient les détails de l’opération d’acqui
         - DELETED : l’unité a effectivement été supprimée
     - « opi » : identifiant de l’opération d’entrée
     - « originatingAgency » : service producteur
-    - « objectIds » : identifiant du groupe d’objets techniques rattaché à l’unité archivistique
-
-
+	- « archivalAgencyIdentifier » : service d'archives
+	- pour une unité archivistique :
+		- « objectGroupId » : identifiant du groupe d'objets techniques rattaché à l’unité archivistique
+		- « PersistentIdentifier » : identifiant(s) pérenne(s) (facultatifs):
+			- « PersistentIdentifierType » : type d'identifiant pérenne
+			- « PersistentIdentifierOrigin » : origine de l'identifiant pérenne
+			- « PersistentIdentifierReference » : référence de l'identifiant pérenne
+			- « PersistentIdentifierContent » : identifiant pérenne
+	- pour un groupe d'objets techniques :
+		- « objectVersions » : informations relatives aux versions d'usages d'objets techniques :
+			- « id » : identifiant de l'objet technique
+			- « opi » : identifiant de l'opération d'entrée
+			- « size » : poids de l'objet technique
+			- « version » : usage et version de l'objet technique
+			- « PersistentIdentifier » : identifiant(s) pérenne(s) (facultatifs):
+				- « PersistentIdentifierType » : type d'identifiant pérenne
+				- « PersistentIdentifierOrigin » : origine de l'identifiant pérenne
+				- « PersistentIdentifierReference » : référence de l'identifiant pérenne
+				- « PersistentIdentifierContent » : identifiant pérenne
+			- « objectIds » : identifiant(s) du(des) objet(s) technique(s) dépendant du groupe d'objets techniques
 
 Restauration de métadonnées essentielles (Revert Essential Metadata)
 -----
@@ -4889,7 +4941,7 @@ Le relevé de valeur probante est un fichier JSON généré par la solution logi
       "$projection" : { }
     },
     "usage" : "BinaryMaster",
-    "version" : "1",
+	"version" : "1",
     "includeDetachedSigningInformation" : false
   },
 
@@ -5185,11 +5237,11 @@ La deuxième partie « reportSummary » est constituée du résumé du rapport
 -  « reportType »: le type de rapport, ici PROBATIVE_VALUE
 -  « vitamResults » : la liste des valeurs de statut d’exécution sur chaque objet, ici OK, KO et WARNING, ainsi que le total
 
-La troisième partie « context » est constituée des éléments de requête qui permettent de connaître les critères de recherche et sélection des objets :
-- « dslQuery » : la requête DSL de définition des unités archivistiques cibles ;
-- « usage » : le type d’objets ciblés – via leur usage au sens de la solution logicielle Vitam, la plupart du temps BinaryMaster ;
-- « version » : la version des objets ciblés, la plupart du temps cela sera la version 1, mais dans le cas d’objets générés à l’occasion d’opérations de préservation, le numéro de version pourra être différent ;
-- « includeDetachedSigningInformation » : l'inclusion des documents associés à un contexte de signature détachée.
+La troisième partie « context » est constituée des éléments de requête qui permettent de connaître les critères de recherche et sélection des objets :
+- « dslQuery » : la requête DSL de définition des unités archivistiques cibles ;
+- « usage » : le type d’objets ciblés – via leur usage au sens de la solution logicielle Vitam, la plupart du temps BinaryMaster ;
+- « version » : la version des objets ciblés, la plupart du temps cela sera la version 1, mais dans le cas d’objets générés à l’occasion d’opérations de préservation, le numéro de version pourra être différent ;
+- « includeDetachedSigningInformation » : l'inclusion des documents associés à un contexte de signature détachée.
 
 La quatrième et dernière partie « reportEntries » rend compte des vérifications faites sur chaque objet binaire concerné, avec, pour chacun, un objet json contenant :
 -  « unitIds » : le tableau des unités archivistiques sélectionnées par la requête et contenant cet objet binaire (dans le cas général un seul) ;
@@ -5639,6 +5691,17 @@ La partie « ReportDetail » contient les détails de l’opération de suppre
 -  « detailType » : type de rapport="DELETE_GOT_VERSIONS"
 -  « objectGroupGlobal » : tableau pour chaque objet (version) à supprimer
 -  «  status » : résultat de suppression
--  «  deletedVersions » : tableau des versions à supprimer avec le détail de chaque version : id (id de GOT), DataObjectVersion, Size, strategyId, opi (ingest original ou préservation qui a crée le GOT) et opc 
+-  «  deletedVersions » : tableau des versions à supprimer avec le détail de chaque version : 
+	- « id » : identifiant technique de l'objet technique
+	- « DataObjectVersion » : usage et version de l'objet technique
+	- « Size » : poids de l'objet technique
+	- « strategyId » : identifiant de la stratégie de stockage
+	- « opi » : identifiant technique de l'opération à l'origine de la création de l'objet technique (ingest original ou préservation qui a crée le GOT) 
+	- « opc » : identifiant technique de l'opération courante
+	- « PersistentIdentifier » : identifiant(s) pérenne(s) (facultatifs):
+		- « PersistentIdentifierType » : type d'identifiant pérenne
+		- « PersistentIdentifierOrigin » : origine de l'identifiant pérenne
+		- « PersistentIdentifierReference » : référence de l'identifiant pérenne
+		- « PersistentIdentifierContent » : identifiant pérenne
 -  «  objectGroupId » : Id de l’objet groupe
 -  «  unitIds » : une liste des unités archivistiques associées à la version de GOT

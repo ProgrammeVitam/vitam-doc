@@ -31,11 +31,14 @@ Documentation métier
    sections/module_de_collecte.md
    sections/organisation_information.md
    sections/ontologie.md
+   sections/organisation_information.md
    sections/preservation.md
    sections/profil_archivage.md
    sections/profil_unite_archivistique.md
    sections/regles_gestion.md
    sections/services_prod.md
+   sections/SIP.md
+   sections/DIP.md
    sections/stockage.md
    sections/transfert.md
    sections/valeur_probante.md
@@ -58,6 +61,7 @@ Outils connexes
    :numbered:
 
    sections/resip.md
+   sections/resip_faq.md
 
 Chantier préservation
 ======
@@ -67,8 +71,8 @@ Chantier préservation
    :numbered:
 
    sections/chantier_preservation_validation_format.md
-   sections/chantier_preservation_identification_format.md
-   sections/chantier_preservation_extraction_MD.md
+   sections/chantier_identification_format.md
+   sections/chantier_extraction_MD.md
 
 Vademecum
 =======
