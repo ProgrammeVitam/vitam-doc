@@ -20,7 +20,7 @@ Au-delà des services de sécurisation des journaux, d’audit et de génératio
 
 
 ### Les types d’action de préservation
-Une action de préservation s’applique sur un objet donné (fichier numérique), caractérisé par un usage et une version relative, c’est-à-dire la première ou la dernière version disponible pour cet usage).
+Une action de préservation s’applique sur un objet donné (fichier numérique), caractérisé par un usage et une version relative, c’est-à-dire la première ou la dernière version disponible pour cet usage.
 
 Il existe quatre types d’action élémentaire.
 

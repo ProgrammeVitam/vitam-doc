@@ -78,7 +78,8 @@ Découvrir la solution logicielle Vitam
 ### Guide de prise en main de la solution logicielle Vitam (1er transfert)
 
 **Présentation :** ce document décrit comment effectuer une première entrée dans la solution logicielle Vitam avec l’IHM Vitam UI. Il explicite les étapes obligatoires de paramétrage et de préparation des lots d’archives. Un lexique en annexe explicite et détaille les principaux objets métiers avec une description, un statut (obligatoire ou facultatif) pour l’opération d’entrée et renvoie vers la documentation permettant d’approfondir cette notion.  
-Le document est accompagné d’un « kit » comportant les fichiers d’exemple utiles (référentiels, SIP). 
+
+Le document est accompagné d’un « kit » comportant les fichiers d’exemple utiles (référentiels, SIP).
 
 **Lien vers le document :** [Guide de prise en main](./guide_prise_en_main.md)  
 
@@ -89,7 +90,7 @@ Le document est accompagné d’un « kit » comportant les fichiers d’exemp
 -  Avertissements
 -  Présentation du portail Vitam UI
 -  Processus
-      
+
 Comprendre et approfondir les concepts Vitam
 ---
 
@@ -206,7 +207,7 @@ Chaque action peut avoir les modèles d’exécution suivants (toutes les étape
 
 **Présentation :** Le document a pour but de fournir à une équipe d’exploitants de la solution logicielle Vitam les procédures et informations nécessaires pour l’installation de celle-ci.
 
-**Lien vers le document :** [Documentation d'installation](https://www.programmevitam.fr/ressources/DocCourante/html/installation)
+**Lien vers le document :** [Documentation d'installation](https://www.programmevitam.fr/ressources/DocCourante/html/installation/)
 
 **Public cible :** informaticiens, exploitants ayant de bonnes connaissances en environnement Linux.
 
@@ -222,7 +223,7 @@ Chaque action peut avoir les modèles d’exécution suivants (toutes les étape
 
 **Présentation :** Le document a pour but de fournir à une équipe d’exploitants de la solution logicielle Vitam les procédures et informations nécessaires au bon fonctionnement de celle-ci.
 
-**Lien vers le document :** [Documentation d'exploitation](https://www.programmevitam.fr/ressources/DocCourante/html/exploitation)
+**Lien vers le document :** [Documentation d'exploitation](https://www.programmevitam.fr/ressources/DocCourante/html/exploitation/)
 
 **Public cible :** informaticiens, exploitants ayant de bonnes connaissances en environnement Linux.
 
@@ -242,7 +243,7 @@ Chaque action peut avoir les modèles d’exécution suivants (toutes les étape
 
 **Présentation :** Le document a pour but de fournir à une équipe d’exploitants de la solution logicielle Vitam les procédures et informations utiles pour réaliser les montées de version de la solution logicielle. Il décrit les chemins de montées de versions supportés.
 
-**Lien vers le document :** [Documentation de montées de version](https://www.programmevitam.fr/ressources/DocCourante/html/migration)
+**Lien vers le document :** [Documentation de montées de version](https://www.programmevitam.fr/ressources/DocCourante/html/migration/)
 
 **Public cible :**
 -  Les architectes techniques des projets désirant intégrer la solution logicielle Vitam ;
@@ -580,7 +581,7 @@ Ce document s’articule autour des axes suivants :
 -  modalités d’une campagne d’évaluation du caractère éliminable des unités archivistiques (analyse),
 -  modalités d’une campagne de mise en œuvre de l’élimination (action).
 
-**Lien vers le document :** [Eliminations](eliminations.md)
+**Lien vers le document :** [Eliminations](./eliminations.md)
 
 **Public cible :** archivistes, exploitants
 
@@ -626,20 +627,20 @@ Ce document s’articule autour des axes suivants :
 **Sommaire :**
 -  Administration de la préservation numérique
     -  Référentiel des formats : 
-            ▪ Définition ;
-            ▪ Formalisation ;
-            ▪ Mécanismes mis en œuvre par la solution logicielle Vitam ;
-            ▪ Conseils de mise en œuvre
+        - Définition ;
+        - Formalisation ;
+        - Mécanismes mis en œuvre par la solution logicielle Vitam ;
+        - Conseils de mise en œuvre
     -  Outils de préservation (griffons) : 
-            ▪ Définition ;
-            ▪ Formalisation ;
-            ▪ Mécanismes mis en œuvre par la solution logicielle Vitam ;
-            ▪ Conseils de mise en œuvre
+        - Définition ;
+        - Formalisation ;
+        - Mécanismes mis en œuvre par la solution logicielle Vitam ;
+        - Conseils de mise en œuvre
     -  Scénarios de préservation :
-            ▪ Définition ;
-            ▪ Formalisation ;
-            ▪ Mécanismes mis en œuvre par la solution logicielle Vitam ;
-            ▪ Conseils de mise en œuvre
+        - Définition ;
+        - Formalisation ;
+        - Mécanismes mis en œuvre par la solution logicielle Vitam ;
+        - Conseils de mise en œuvre
 -  Entrées et préservation : 
     -  Définition ;
     -  Mécanismes mis en œuvre par la solution logicielle Vitam ;
@@ -726,13 +727,13 @@ Il s’articule autour des axes suivants :
 -  Formalisation des profils d’archivage : Dans un fichier propre ; Dans le SEDA
 -  Mécanismes mis en œuvre dans la solution logicielle Vitam
     -  Administration d’un référentiel des profils d’archivage :
-            ▪ Import de la notice descriptive du profil d’archivage ;
-            ▪ Import du profil d’archivage lui-même ;
-            ▪ Modification de la notice descriptive d’un profil d’archivage ;
-            ▪ Activation / Désactivation d’un profil d’archivage
+        - Import de la notice descriptive du profil d’archivage ;
+        - Import du profil d’archivage lui-même ;
+        - Modification de la notice descriptive d’un profil d’archivage ;
+        - Activation / Désactivation d’un profil d’archivage
     -  Processus d’entrée : 
-            ▪ Déclaration d’un profil d’archivage dans un contrat d’entrée ; 
-            ▪ Processus de contrôles d’une entrée
+        - Déclaration d’un profil d’archivage dans un contrat d’entrée ; 
+        - Processus de contrôles d’une entrée
 -  Étapes d’élaboration d’un profil d’archivage :
     -  Analyse et Structuration des données à verser ;
     -  Rédaction, Corrections et Documentation d’un profil d’archivage ; 
@@ -830,8 +831,8 @@ Il s’articule autour des axes suivants :
     -  Quand et comment supprimer un vocabulaire ?
     -  Comment mettre à jour une unité archivistique associée ou non à un profil d’unité archivistique ?
     -  Quel accès à l’ontologie ?
-            ▪ Gestion des droits ;
-            ▪ Restitution sur une IHM
+        - Gestion des droits ;
+        - Restitution sur une IHM
     -  Comment utiliser l’ontologie ?
 -  Annexes
     -  Vocabulaires internes de l’ontologie ;
@@ -923,7 +924,7 @@ Utiliser Vitam UI
 
 **Présentation :** Cette documentation produit concerne le périmètre fonctionnel portail et les APPs permettant d’utiliser ce périmètre.
 
-**Lien vers le document :** [Documentation produit](./VitamUI_doc_produit.md)
+**Lien vers le document :** [Documentation produit](https://www.programmevitam.fr/ressources/DocCourante/autres/fonctionnel/VitamUI_Doc_produit.pdf)
 
 **Public cible :** elle est dédiée aux équipes chargées d’implémenter VitamUI.
 
@@ -1058,6 +1059,22 @@ Utiliser Vitam UI
 **Public cible :** 
 - Administrateur métier de l’organisation
 - Archiviste de l’organisation (accès en consultation)
+
+#### Profils documentaires
+
+**Présentation :** Le document permet de savoir comment:
+- créer et modifier un profil d’archivage (PA) ou un profil d’unité archivistique (PUA), 
+- créer et modifier une notice d’un profil, 
+- importer et exporter un profil d’archivage.
+
+**Ordre d’exécution :** 2 – facultatif
+
+**Nom de l’APP Vitam UI :** Profils documentaires
+
+**Lien vers le document :** [Profils documentaires](https://www.programmevitam.fr/ressources/DocCourante/autres/fonctionnel/VitamUI_DocAPP_Profils_documentaires.pdf)
+
+**Public cible :** 
+- Administrateur fonctionnel VITAM UI
 
 #### Formats de fichiers
 

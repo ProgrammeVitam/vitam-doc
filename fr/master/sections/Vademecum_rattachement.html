@@ -60,8 +60,9 @@
 <li class="toctree-l1"><a class="reference internal" href="modele_de_donnees.html">5. Modèle de données</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modele_de_workflow.html">6. Description des workflows et des opérations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="module_de_collecte.html">7. Module de collecte</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ontologie.html">8. Ontologie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="organisation_information.html">9. Organisation de l’information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="organisation_information.html">8. Organisation de l’information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ontologie.html">9. Ontologie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="organisation_information.html">8. Organisation de l’information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="preservation.html">10. Gestion de la préservation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="profil_archivage.html">11. Profils d’archivage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="profil_unite_archivistique.html">12. Profils d’unité archivistique</a></li>
@@ -86,6 +87,8 @@
 <p class="caption" role="heading"><span class="caption-text">Chantier préservation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="chantier_preservation_validation_format.html">1. Validation du format des fichiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_identification_format.html">2. Identification des formats de fichiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_extraction_MD.html">3. Extraction des métadonnées techniques</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Vademecum</span></p>
 <ul class="current">
@@ -271,7 +274,7 @@ Il est donc recommandé d’utiliser des éléments univoques comme un identifia
 <span class="o">&lt;/</span><span class="n">ArchiveUnit</span><span class="o">&gt;</span>
 </pre></div>
 </div>
-<p><em>Contrôle sur le positionnement des rattachements déclarés dans le bordereau de transfert</em>
+<p><em>Contrôle sur le positionnement des rattachements déclarés dans le bordereau de transfert</em><br />
 La solution logicielle Vitam offre la possibilité de déclarer un ou plusieurs nœud(s) dans le contrat d’entrée pour faire des contrôles sur les rattachements déclarés dans les bordereaux de transfert des SIP utilisant ce contrat d’entrée. En ce cas, le système vérifiera à l’entrée que les rattachements déclarés dans le bordereau de transfert correspondent à ce nœud ou sont bien situés dans sa descendance. Si ce n’est pas le cas, l’entrée sera en échec.
 Le nœud déclaré peut être de type « arbre de positionnement », « plan de classement » ou « standard ».</p>
 <p>Le contrat d’entrée peut être paramétré pour interdire la présence d’un rattachement dans le bordereau de transfert, l’autoriser ou la rendre obligatoire.</p>
@@ -292,7 +295,7 @@ Afin de rattacher une unité archivistique présente dans le bordereau à un gro
 <h3><span class="section-number">20.2.4. </span>Le rattachement d’un objet technique à un groupe d’objets techniques déjà présent dans le système par déclaration dans le bordereau de transfert (mise à jour d’une unité archivistique)<a class="headerlink" href="#le-rattachement-dun-objet-technique-a-un-groupe-dobjets-techniques-deja-present-dans-le-systeme-par-declaration-dans-le-bordereau-de-transfert-mise-a-jour-dune-unite-archivistique" title="Lien permanent vers cette rubrique"></a></h3>
 <p><em>Cas d’usage : un nouveau fichier représentant l’unité archivistique a été créé (par exemple, une version basse résolution d’une image fixe pour diffusion ou une vignette) et on souhaite l’ajouter au groupe d’objets techniques existant.</em>
 <em>Cas d’usage : au moment de l’entrée d’un fonds photographique, seules les versions de diffusion ont pu être collectées. Le service d’archives reçoit par la suite les versions haute définition (masters) et souhaite les ajouter aux groupes d’objets techniques existants.</em></p>
-<p>La solution logicielle Vitam offre la possibilité de déclarer dans le bordereau l’unité archivistique dont le groupe d’objets techniques doit être mis à jour par l’ajout d’un objet technique.
+<p>La solution logicielle Vitam offre la possibilité de déclarer dans le bordereau l’unité archivistique dont le groupe d’objets techniques doit être mis à jour par l’ajout d’un objet technique.<br />
 Seul le service producteur ayant provoqué la création du groupe d’objets techniques dans la plate-forme utilisant la solution logicielle Vitam a le droit de rajouter des objets à ce groupe d’objets. Le service producteur du SIP doit donc obligatoirement être le même que le service producteur du SIP qui a transféré le groupe d’objets techniques. Le transfert sera sinon rejeté.</p>
 <p>L’ajout d’objets à un groupe d’objets existant doit être autorisé par le contrat d’entrée utilisé. Le contrat d’entrée peut bloquer l’ajout d’un objet ou ne l’autoriser que pour certains usages.</p>
 <p>Le rattachement se fait en déclarant l’identifiant (GUID) de l’unité archivistique qui déclare le groupe d’objets à compléter.</p>

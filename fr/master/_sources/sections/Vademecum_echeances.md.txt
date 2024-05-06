@@ -5,7 +5,6 @@ La solution logicielle Vitam offre des fonctionnalités de calcul des règles de
 
 L’indexation des échéances facilite les recherches d’unités archivistiques en fonction des règles qui leur sont applicables.
 
-
 Présentation du calcul des héritages des règles de gestion
 ---
 ### L’enregistrement à l’entrée des échéances applicables à une unité archivistique
@@ -15,19 +14,16 @@ Les unités archivistiques qui ne déclarent pas de règle de gestion n’ont pa
 
 Lorsque les règles applicables à un transfert ont été déclarées dans le bloc ManagementMetadata, seules les unités archivistiques à la racine du bordereau de transfert porteront ces règles en base.
 
-
 ### Le calcul à la consultation des règles et des échéances applicables à une unité archivistique
 Lors d’une demande de consultation des métadonnées d’une unité archivistique, la solution logicielle Vitam retourne :
 - les règles déclarées par cette unité archivistique, y compris l’échéance de la règle si la date de départ de son calcul est connue ;
 - toutes les règles que l’unité archivistique hérite de ses parents, dans toutes les catégories de règles, avec leur échéance, sauf si l’héritage de ces règles a été bloqué, à l’entrée ou à l’occasion d’une modification des métadonnées de gestion.
-
 
 ### Le calcul à la mise en œuvre d’une opération de gestion des règles et des échéances applicables à une unité archivistique : le cas de l’élimination
 Lors du lancement d’une analyse d’élimination ou d’une opération d’élimination, la solution logicielle Vitam calcule les règles de durée d’utilité administrative applicables aux unités archivistiques faisant l’objet de l’opération, que ces unités archivistiques portent ces règles en propre ou en hérite.
 Les conflits (héritage de sorts finaux contradictoires) sont retournés à l’utilisateur applicatif pour permettre un traitement humain.
 
 Pour en savoir plus, consulter le [vademecum Réaliser des éliminations avec la solution logicielle Vitam](./Vademecum_eliminations.md).
-
 
 ### Le calcul sur un ensemble donné avec indexation des résultats
 La solution logicielle Vitam offre la possibilité d’indexer les résultats du calcul des règles applicables à un ensemble d’unités archivistiques donné.
@@ -67,11 +63,9 @@ Modalités de calcul des héritages avec indexation des échéances
 La solution logicielle Vitam permet de calculer les règles applicables à une ou plusieurs unités archivistiques et d’indexer les échéances associées à la demande.
 Le résultat des l’indexation à la demande est immédiatement disponible.
 
-
 ### En entrée
 La solution logicielle Vitam permet de paramétrer le contrat d’entrée pour spécifier si les unités archivistiques entrées en déclarant ce contrat doivent faire l’objet d’un calcul des héritages avec indexation des échéances.
 Si ce paramétrage est activé, les unités archivistiques sont marquées lors du processus d’entrée pour que l’indexation de leurs échéances soit réalisée par traitement automatique programmé (batch). Le résultat de l’indexation n’est donc pas immédiatement disponible.
-
 
 Utilisation de l’indexation des échéances en recherche et en accès
 ---
@@ -82,14 +76,12 @@ On peut par exemple rechercher :
 - toutes les unités archivistiques librement réutilisables à une date donnée ;
 - toutes les unités archivistiques auxquelles s’applique une règle donnée (si l’indexation a été faite par règle au sein de chaque catégorie).
 
-
 ### Accès
 L’indexation des échéances peut être utilisée en accès si le paramétrage correspondant est activé dans le contrat d’accès.
 En ce cas, les résultats remontés à l’utilisateur sont filtrés pour ne lui donner accès qu’aux unités archivistiques dont l’échéance pour la(les) catégorie(s) de règle de gestion concernée(s) est dans le passé par rapport à la date de la requête.
 
 Le filtre s’applique uniquement aux échéances indexées. Ainsi, si une unité archivistique porte en propre une règle de communicabilité échue, mais qu’elle n’a pas fait l’objet d’une indexation des échéances, elle ne sera pas accessible avec un contrat d’accès filtrant sur la règle de communicabilité.
 Les unités archivistiques d’arbre, qui ne portent pas de règles de gestion, ne sont pas consultables si ce filtre est utilisé.
-
 
 Invalidation des échéances calculées
 ---
@@ -104,10 +96,8 @@ Dans le cas du reclassement d’une unité archivistique, l’invalidation conce
 
 L’indexation invalidée sera recalculée par traitement automatique programmé (batch).
 
-
 Suppression des échéances calculées
 ---
 La suppression de l’indexation des unités archivistiques peut être lancée sur requête par une application utilisant la solution logicielle Vitam.
-
 
 Pour en savoir plus, consulter le [document VITAM. Règles de gestion](./regles_gestion.md).

@@ -168,11 +168,9 @@ Il est possible de générer ainsi :
 - 0 à n certificat(s) personnel(s),
 - 1 à n profil(s) de sécurité.
       
-
 ### Modification
 Cette action provoque la création d’une nouvelle version du contexte, contrat d’entrée, contrat d’accès ou profil de sécurité modifié.
 Elle fait l’objet d’une journalisation dans le journal des opérations.
-
 
 ### Suppression
 La solution logicielle permet de supprimer unitairement certaines habilitations : certificat applicatif, certificat personnel, profil de sécurité et contexte applicatif.

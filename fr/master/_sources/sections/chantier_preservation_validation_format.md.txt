@@ -1,4 +1,3 @@
-
 Validation du format des fichiers
 =====
 
@@ -10,9 +9,9 @@ Introduction
 
 |**Document**|**Date de la version**|**Remarques**|
 |:---------------:|:-----:|:-----:|
-|Vitam – Gestion de la préservation|||
+|[Vitam – Gestion de la préservation](./preservation.md)|||
 |[Vitam – Identification des formats de fichiers](./chantier_identification_format.md)|||
-|Vitam – Extraction des métadonnées techniques|||
+|[Vitam – Extraction des métadonnées techniques](./chantier_extraction_MD.md)|||
 
 
 ### Présentation du document

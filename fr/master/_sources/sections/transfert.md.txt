@@ -65,8 +65,13 @@ Une unité archivistique ou un lot d’archives peuvent être transférables san
 
 **Point d’attention :** 
 
+Après confirmation de la réception de ces archives par le système d’archivage électronique de destination, il faudra veiller à procéder à leur purge dans le système d’archivage électronique d’origine, afin que ne subsiste pas deux copies de ces archives dans deux systèmes différents. Cette purge est automatisable.
+
+### Cas où l’utilisation de la fonctionnalité de transfert est déconseillée
+=======
+
 Après confirmation de la réception de ces archives par le système d’archivage électronique de destination, il faudra veiller à procéder à leur purge dans le système d’archivage électronique d’origine, afin que ne subsiste pas deux copies de ces archives dans deux systèmes différents. Cette purge est automatisable.  
-3.3.  Cas où l’utilisation de la fonctionnalité de transfert est déconseillée
+
 La constitution d’un lot d’archives à transférer et la fonctionnalité de transfert doivent être utilisées lorsque l’on veut transmettre à la fois des archives et la responsabilité de leur conservation avec une traçabilité des événements ayant concerné ces archives dans le système d’archivage d’origine. Après acquittement du transfert, le lot d’archives est supprimé du système d’origine.  
 De fait, pour un transfert d’archives sans transfert de responsabilité, il est conseillé de recourir à la fonctionnalité de constitution d’un Dissemination Information Package (DIP) minimal ou complet qui permet de transmettre des archives (métadonnées et objets techniques) sans les supprimer ensuite du système d’origine.  
 Pour une simple transmission d’objet technique, il est conseillé d’utiliser la fonctionnalité de téléchargement d’un objet.  
@@ -124,7 +129,9 @@ L’opération peut aboutir aux résultats suivants :
 - L’opération de demande de transfert de transfert est en avertissement :
     - s’il n’y a pas d’objet technique concerné (statut « OBJECTS_LIST_EMPTY ») ;
     - si une unité archivistique a déjà fait l’objet d’une demande de transfert (message : {\"Reason\":\"unit [identifiant de l’unité archivistique] already in transfer\"} à la tâche « CREATE_MANIFEST ») ;
-- L’opération de demande de transfert de transfert sera en erreur si aucun des paramètres obligatoires n’est renseigné (message : {"Reason":"ArchivalAgreement parameter is required, OriginatingAgencyIdentifier parameter is required, ArchivalAgency parameter is required."} à la tâche « CREATE_MANIFEST »).  
+- L’opération de demande de transfert de transfert sera en erreur si :
+	- aucun des paramètres obligatoires n’est renseigné (message : {"Reason":"ArchivalAgreement parameter is required, OriginatingAgencyIdentifier parameter is required, ArchivalAgency parameter is required."} à la tâche « CREATE_MANIFEST »);
+	- l'export demandé en SEDA 2.1 d'un bordereau de transfert alors qu'il embarque des archives entrées en SEDA 2.2 et intégrant des champs ajoutés dans la version 2.2 du SEDA.
 
 Sont également disponibles :
 - Un rapport en JSONL qui récapitule la requête ciblant les unités archivistiques et liste les unités archivistiques effectivement prises en compte pour la constitution du paquet de transfert. Le statut de ces dernières peut être :
@@ -223,7 +230,8 @@ Le système d’archivage électronique d’origine déclenche alors la purge de
 - détachement des groupes d’objets techniques rattachés à plusieurs unités archivistiques si une unité archivistique seule est purgée,
 - conservation des unités archivistiques, des groupes d’objets techniques et/ou des objets binaires qui ne sont pas référencés dans le message « ArchiveTransferReply »,
 - purge des unités archivistiques, des groupes d’objets techniques et/ou des objets binaires qui étaient identifiés comme étant déjà en cours de transfert,
-- purge des unités archivistiques si aucun des cas précédents ne s’applique. 
+- purge des unités archivistiques si aucun des cas précédents ne s’applique,
+- alimentation de la collection « PurgedPersistentIdentifier », si des unités archivistiques et/ou des objets techniques transférés avec succès étaient référencés par des identifiants pérennes et si cette action d'alimentation est activée. 
 
 Le statut de l’opération à l’issue de la mise en œuvre de la purge pourra être :
 - succès : toutes les unités archivistiques soumises ont été supprimées du système d’origine ;

@@ -45,7 +45,7 @@ La configuration des référentiels en mode « maître » ou « esclave » d
 
 Le choix se fait tenant par tenant pour chacun des référentiels pour lequel un choix est possible.
 Le fichier de configuration se présente comme suit (exemple fictif) :
-``````
+```
 #  ExternalId configuration
 
 listEnableExternalIdentifiers :
@@ -58,7 +58,7 @@ listEnableExternalIdentifiers :
 - PROFILE
 - SECURITY_PROFILE
 - CONTEXT
-``````
+```
 Dans cet exemple, sur le tenant 0 les contrats d’entrée et les contrats d’accès sont en mode « esclave », sur le tenant 1, les contrats d’entrée, les contrats d’accès, les profils d’archivage, les profils de sécurité et les contextes sont en mode « esclave ».
 
 Un exemple du fichier de configuration se trouve dans la documentation d’exploitation au chapitre « Exploitation des composants de la solution logicielle Vitam ».
@@ -69,4 +69,3 @@ Mise à jour des référentiels en mode « esclave »
 Lorsque le référentiel utilisé dans la solution logicielle Vitam n’est qu’un extrait d’un référentiel plus riche piloté depuis un autre outil (ex. : référentiel producteurs d’un système d’information archivistique), il convient de penser les modalités de répercussion des mises à jour du référentiel « maître » sur le référentiel « esclave » de la solution logicielle Vitam : ces mises à jour seront-elles déclenchées automatiquement à chaque mise à jour du référentiel « maître » ? Par l’administrateur fonctionnel en réponse à une alerte quotidienne ou hebdomadaire ?
 
 Dans certains cas (référentiel des services agents, référentiel des règles de gestion, ontologie, griffons, scénarios de préservation, services agents), la mise à jour dans la solution logicielle Vitam se fait par un ré-import du référentiel complet et non une mise à jour unitaire.
-

@@ -58,8 +58,9 @@
 <li class="toctree-l1"><a class="reference internal" href="modele_de_donnees.html">5. Modèle de données</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modele_de_workflow.html">6. Description des workflows et des opérations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="module_de_collecte.html">7. Module de collecte</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ontologie.html">8. Ontologie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="organisation_information.html">9. Organisation de l’information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="organisation_information.html">8. Organisation de l’information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ontologie.html">9. Ontologie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="organisation_information.html">8. Organisation de l’information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="preservation.html">10. Gestion de la préservation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="profil_archivage.html">11. Profils d’archivage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="profil_unite_archivistique.html">12. Profils d’unité archivistique</a></li>
@@ -84,6 +85,8 @@
 <p class="caption" role="heading"><span class="caption-text">Chantier préservation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="chantier_preservation_validation_format.html">1. Validation du format des fichiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_identification_format.html">2. Identification des formats de fichiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_extraction_MD.html">3. Extraction des métadonnées techniques</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Vademecum</span></p>
 <ul>
@@ -243,8 +246,8 @@ Une unité hérite des règles de gestion et des attributs des unités parentes,
 <li><p>si l’héritage de la catégorie de règles est bloqué via la balise <PreventInheritance></p></li>
 <li><p>si l’unité bloque spécifiquement une règle en particulier (balise <RefNonRuleId>)</p></li>
 </ul>
-<p><em>Cas particulier de la propriété définie localement</em> qui l’emporte sur les propriétés héritées, même en l’absence de blocage explicite d’héritage
-Exemple : si une unité archivistique hérite d’un parent ayant le même service producteur une règle de durée d’utilité administrative « 5 ans » avec un sort final « conserver » et définit localement une autre règle « 10 ans » avec un sort final « détruire », cette unité aura deux durées d’utilité administrative, mais un seul sort final (« détruire »), au titre du service producteur principal de l’unité archivistique.</p>
+<p><em>Cas particulier de la propriété définie localement</em> qui l’emporte sur les propriétés héritées, même en l’absence de blocage explicite d’héritage</p>
+<p>Exemple : si une unité archivistique hérite d’un parent ayant le même service producteur une règle de durée d’utilité administrative « 5 ans » avec un sort final « conserver » et définit localement une autre règle « 10 ans » avec un sort final « détruire », cette unité aura deux durées d’utilité administrative, mais un seul sort final (« détruire »), au titre du service producteur principal de l’unité archivistique.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>AU 1
 Déclaration de la règle A, date de départ X
 Déclaration de la propriété « Conserver »
@@ -334,13 +337,16 @@ Il peut rester intéressant d’associer intellectuellement une règle à un niv
 </section>
 <section id="quand-declarer-une-regle-au-niveau-de-la-piece">
 <h3>Quand déclarer une règle au niveau de la pièce ?<a class="headerlink" href="#quand-declarer-une-regle-au-niveau-de-la-piece" title="Lien permanent vers cette rubrique"></a></h3>
-<p><strong>Cas 1</strong>: Lorsque les unités archivistiques sont soumises à une même règle pour toute l’arborescence, mais que cette règle doit s’appliquer pour chaque pièce en fonction de la date du document et non au niveau du dossier ou du sous-dossier, chaque pièce devra déclarer la règle et la date de départ du calcul de l’échéance.</p>
+<p><strong>Cas 1</strong>:<br />
+Lorsque les unités archivistiques sont soumises à une même règle pour toute l’arborescence, mais que cette règle doit s’appliquer pour chaque pièce en fonction de la date du document et non au niveau du dossier ou du sous-dossier, chaque pièce devra déclarer la règle et la date de départ du calcul de l’échéance.</p>
 <p>Cette configuration permet d’assurer que l’échéance sera calculée au plus juste et que les actions à échéance pourront être mises en œuvre sans tarder, qu’il s’agisse de communication, d’élimination ou de transfert.
 Cas d’usage : dans un dossier de captation de la Hadopi, chaque document est éliminé à la date anniversaire de la captation. Le dossier auquel les captations sont rattachées est conservé sans date d’échéance.
 Il sera inutile de déclarer la règle au niveau du dossier, sauf si l’on souhaite éliminer celui-ci à une échéance donnée, une fois toutes ses pièces éliminées.</p>
-<p><strong>Cas 2</strong>: Lorsque les unités archivistiques sont soumises à une règle commune pour toute l’arborescence avec une date de départ du calcul de l’échéance commune, sauf pour un sous-dossier ou une pièce pour lequel cette règle s’applique mais avec une autre date, cette unité archivistique de sous-dossier ou de pièce devra redéclarer la règle avec la date de départ spécifique.
+<p><strong>Cas 2</strong>:<br />
+Lorsque les unités archivistiques sont soumises à une règle commune pour toute l’arborescence avec une date de départ du calcul de l’échéance commune, sauf pour un sous-dossier ou une pièce pour lequel cette règle s’applique mais avec une autre date, cette unité archivistique de sous-dossier ou de pièce devra redéclarer la règle avec la date de départ spécifique.
 Cas d’usage : dans un dossier d’affaires composé de sous-dossier a la même durée d’utilité administrative que les autres, mais une date de départ spécifique pour le calcul de sa durée d’utilité administrative.</p>
-<p><strong>Cas 3</strong>: Lorsque les unités archivistiques sont soumises à une règle commune pour toute l’arborescence avec une date de départ du calcul de l’échéance commune, sauf un sous-dossier ou une pièce pour lequel cette règle ne s’applique pas, cette unité archivistique de sous-dossier ou de pièce devra bloquer l’héritage de cette règle en particulier (balise RefNonRuleId) ou l’héritage de toutes les règles de cette catégorie (balise PreventInheritance), sans oublier de déclarer une propriété localement le cas échéant.<br>
+<p><strong>Cas 3</strong>:<br />
+Lorsque les unités archivistiques sont soumises à une règle commune pour toute l’arborescence avec une date de départ du calcul de l’échéance commune, sauf un sous-dossier ou une pièce pour lequel cette règle ne s’applique pas, cette unité archivistique de sous-dossier ou de pièce devra bloquer l’héritage de cette règle en particulier (balise RefNonRuleId) ou l’héritage de toutes les règles de cette catégorie (balise PreventInheritance), sans oublier de déclarer une propriété localement le cas échéant.<br>
 <em>Cas d’usage</em> : dans un dossier d’agent, le dossier médical obéit à une règle de communicabilité particulière.<br>
 <em>Cas d’usage</em> : dans un dossier de procédure administrative non encore librement communicable, une pièce est librement communicable.<br>
 <em>Cas d’usage</em> : dans un dossier contenant des documents classifiés, un document a été déclassifié.<br>

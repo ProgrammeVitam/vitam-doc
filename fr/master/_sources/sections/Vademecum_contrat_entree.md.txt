@@ -1,13 +1,11 @@
 Le contrat d’entrée dans la solution logicielle Vitam
 ===
 
-
 Le contrat d’entrée permet d’octroyer sur un tenant des droits aux utilisateurs applicatifs habilités pour transférer des arbres de positionnement, des plans de classement et des archives dans la solution logicielle Vitam et de paramétrer les contrôles attendus à l’entrée.
 
 Ce contrat d’entrée est obligatoirement déclaré dans le bordereau de transfert accompagnant les plans de classement et les archives.
 
 En fonction des services producteurs et des objets à transférer, diverses configurations du contrat d’entrée sont possibles qui imposeront ou non des contrôles spécifiques sur les archives transférées.
-
 
 Présentation du contrat d’entrée
 ---
@@ -16,7 +14,6 @@ Présentation du contrat d’entrée
 Un contrat est propre au tenant sur lequel il a été importé.
 
 Une application qui serait amenée à effectuer des entrées sur plusieurs tenants devrait disposer d’un contrat pour chaque tenant.
-
 
 ### Paramétrage des modalités de contrôle de la structure des entrées
 Un ou plusieurs profils d’archivage peuvent être associés au contrat d’entrée. La déclaration du profil d’archivage se fait sur la base de l’identifiant du profil dans le référentiel des profils d’archivage.
@@ -41,7 +38,6 @@ Par défaut, un contrat d’entrée ne permet pas l’ajout d’un objet à un g
 
 Seul le service producteur ayant provoqué la création du groupe d’objets techniques dans la plate-forme utilisant la solution logicielle Vitam a le droit de rajouter des objets à ce groupe d’objets.
 
-
 ### Paramétrage des formats acceptés
 Lors de l’import d’un SIP dans la solution logicielle Vitam, le processus d’entrée comprend une étape d’identification du format des objets techniques (fichiers). Selon les options retenues dans le contrat d’entrée, le résultat de l’identification pourra conduire à refuser en entrée certains formats ou les objets techniques dont le format est non identifiable.
 
@@ -65,8 +61,8 @@ La solution logicielle Vitam offre la possibilité d’autoriser dans le contrat
 |Objets non identifiables interdits|Le bordereau de transfert ne peut contenir que des objets dont le format est identifiable|
 |Contrôle indéterminé (valeur par défaut « objets non identifiables interdits »)|Le bordereau de transfert ne peut contenir que des objets dont le format est identifiable|
 
-
 ### Utilisation des services de rattachement
+
 #### Déclaration d’un nœud de rattachement systématique
 La solution logicielle Vitam offre la possibilité de déclarer dans le contrat d’entrée un nœud de rattachement qui s’appliquera à toutes les unités archivistiques racines des SIP qui utilisent ce contrat.
 Le rattachement se fait sur la base de l’identifiant système (GUID) d’une unité archivistique déjà présente dans le système. Cette unité archivistique peut être de type « arbre de positionnement », « plan de classement » ou « standard ». Les rattachements qui seront effectués à l’entrée doivent cependant respecter la structuration de l’information dans la solution logicielle Vitam : une unité archivistique d’arbre ne peut être rattachée qu’à une unité archivistique d’arbre, une unité archivistique de plan ne peut être rattachée qu’à une unité archivistique d’arbre ou de plan.
@@ -100,7 +96,6 @@ Les rattachements effectués à l’entrée doivent respecter la structuration d
 
 Pour en savoir plus, consulter le [vademecum Faire un rattachement dans la solution logicielle Vitam](./Vademecum_rattachement.md)
 
-
 ### Paramétrage du calcul des héritages de règles et de l’indexation des échéances
 La solution logicielle Vitam permet d’indexer sur les unités archivistiques les échéances maximales applicables par catégorie de règle de gestion, que ces règles soit portées en propre par l’unité archivistique ou héritées.
 
@@ -116,14 +111,12 @@ Cette fonctionnalité est un complément de l’enregistrement en base des règl
 
 Pour en savoir plus, consulter le [vademecum Calcul des héritages de règles et indexation des échéances dans la solution logicielle Vitam](./Vademecum_echeances.md).
 
-
 ### Utilisation d’un contrat de gestion spécifique
 La solution logicielle Vitam permet d’indiquer dans le contrat d’entrée le contrat de gestion à utiliser pour le stockage des métadonnées et des objets techniques.
 
 Si aucun contrat n’est renseigné, c’est la stratégie de stockage par défaut qui s’appliquera.
 
 Pour en savoir plus, consulter le [vademecum Le contrat de gestion dans la solution logicielle Vitam](./Vademecum_contrat_gestion.md).
-
 
 ### Paramétrage sur les archives signées électroniquement
 Le contrat d’entrée prévoit une option permettant d’autoriser ou non le transfert d'archives signées électroniquement, et de vérifier la présence de leurs pièces pièces annexes (jeton d'horodatage, signature, preuves complémentaires).
@@ -133,7 +126,6 @@ Le contrat d’entrée prévoit une option permettant d’autoriser ou non le tr
 |Archives signées autorisées (valeur « MANDATORY »)|Chaque unité d'archives devra nécessairement contenir des documents signés et, le cas échéant, devra ou non contenir une signature (rôle « DeclaredSignature »), un jeton d'horodatage (rôle « DeclaredTimestamp ») et/ou des preuves complémentaires (rôle « DeclaredAdditionnalProof »)|
 |Archives signées obligatoires (valeur « MANDATORY »)|Chaque unité d'archives seront autorisés à contenir des documents signés et, le cas échéant, devra ou non contenir une signature (rôle « DeclaredSignature »), un jeton d'horodatage (rôle « DeclaredTimestamp ») et/ou des preuves complémentaires (rôle « DeclaredAdditionnalProof »)|
 |Archives signées interdites (valeur par défaut « FORBIDDEN »)|Les archives ne devront pas contenir d'archives signées électroniquement|
-
 
 Configuration du contrat d’entrée
 ----
@@ -147,8 +139,8 @@ Pour constituer un contrat d’entrée, l’administrateur fonctionnel recense l
 - l’ajout d’un objet technique (nouvelle version ou nouvel usage) à un groupe d’objets techniques existant sera-t-il autorisé ? Si oui, pour tous les usages ?
 En fonction des réponses à ces questions, l’administrateur fonctionnel pourra créer un ou plusieurs contrats d’entrée et définir les options de contrôle à activer dans chaque contrat d’entrée.
 
-S’il y a très peu de contrôles à faire et aucun rattachement systématique à prévoir, il est tout à fait possible de n’avoir qu’un seul contrat d’entrée commun à toutes les filières de versement (manuel et applicatif).
-Il devient intéressant d’avoir plusieurs contrats lorsque l’on veut par exemple avoir une filière de versement applicatif acceptant les formats non identifiés et une filière les refusant.
+S’il y a très peu de contrôles à faire et aucun rattachement systématique à prévoir, il est tout à fait possible de n’avoir qu’un seul contrat d’entrée commun à toutes les filières de versement (manuel et applicatif).  
+Il devient intéressant d’avoir plusieurs contrats lorsque l’on veut par exemple avoir une filière de versement applicatif acceptant les formats non identifiés et une filière les refusant.  
 Si l’on souhaite utiliser le rattachement par contrat d’entrée pour positionner les entrées dans l’arborescence du service d’archives, il conviendra de prévoir autant de contrats d’entrée que de nœuds de rattachement différents.
 
 Une application versante peut générer des données nécessitant plus d’un profil d’archivage :
@@ -162,11 +154,9 @@ Par exemple :
 - un système d’archivage électronique ne souhaitant garantir la conservation d’objets qu’aux formats ODT, ODS, ODP, PDF, TIFF pourrait ne déclarer que des contrats d’entrée n’acceptant que ces seuls formats.
 Quand on ne connaît pas les formats des archives qui pourraient être transférées dans la solution logicielle ou quand on ne souhaite pas imposer des formats pour les archives à transférer et quand on souhaite n’effectuer aucun contrôle d’identification de format au moment de leur transfert dans la solution logicielle Vitam, il est recommandé d’autoriser le transfert de groupes d’objets contenant tous les formats possibles et de désactiver le contrôle d’identification des objets.
 
-
 ### Gestion de l’identifiant du contrat d’entrée
 À l’installation de la plate-forme Vitam, l’administrateur technique peut configurer le tenant pour que les identifiants des contrats d’entrée soient générés par Vitam (mode « maître ») ou par le front-office (mode « esclave »).
 Le mode « esclave » permet à un service de conserver la main sur les identifiants des contrats d’entrée pour utiliser des identifiants normés au niveau de l’institution et/ou à un niveau national ou international.
-
 
 ### Formalisation du contrat d’entrée
 Un contrat d’entrée prend la forme d’un fichier JSON, pouvant contenir 1 à n contrat(s) d’entrée.
@@ -209,13 +199,11 @@ Il est possible d’importer, en une seule fois, un référentiel complet, compr
 
 Afin d’optimiser la traçabilité de la création des différents contrats d’entrée, il est recommandé de créer ces derniers un par un.
 
-
 ### Activation/désactivation du contrat d’entrée
 Un contrat d’entrée peut être importé avec un statut inactif ou être désactivé lors d’une mise à jour du contrat.
 Cette fonctionnalité est utile quand on souhaite créer un contrat d’entrée et l’importer avant d’autoriser des applications à l’utiliser ou lorsqu’on souhaite désactiver temporairement ou définitivement un contrat d’entrée.
 
 Un contrat au statut inactif ne permet pas de réaliser une entrée.
-
 
 ### Modification d’un contrat d’entrée
 
@@ -230,6 +218,5 @@ Il est possible de modifier un contrat d’entrée utilisé dans un contexte app
 |Avec un contrat d’entrée et un contrat d’accès|Désactivation du seul contrat d’entrée, le temps de procéder à la modification, de manière à ne pas interrompre l’accès associé au contexte applicatif.|
 |Avec plusieurs contrats d’entrée|Désactivation d’un seul contrat d’entrée, le temps de procéder à la modification, de manière à ne pas interrompre l’utilisation des autres contrats d’entrée associés au contexte applicatif.|
 |Avec un ou plusieurs contrats d’entrée|Création d’un nouveau contrat d’entrée contenant les modifications à apporter.<br>Association de ce contrat d’entrée au contexte applicatif.<br>Activation de ce contrat d’entrée.<br>Déclaration de ce nouveau contrat d’entrée dans les bordereaux de transfert.<br>Désactivation de l’ancien contrat d’entrée.<br>Suppression du lien entre l’ancien contrat d’entrée et le contexte applicatif.|
-
 
 Pour aller plus loin, consulter le [document VITAM. Gestion des habilitations](./habilitations.md).

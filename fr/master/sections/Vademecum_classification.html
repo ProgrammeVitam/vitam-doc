@@ -60,8 +60,9 @@
 <li class="toctree-l1"><a class="reference internal" href="modele_de_donnees.html">5. Modèle de données</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modele_de_workflow.html">6. Description des workflows et des opérations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="module_de_collecte.html">7. Module de collecte</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ontologie.html">8. Ontologie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="organisation_information.html">9. Organisation de l’information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="organisation_information.html">8. Organisation de l’information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ontologie.html">9. Ontologie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="organisation_information.html">8. Organisation de l’information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="preservation.html">10. Gestion de la préservation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="profil_archivage.html">11. Profils d’archivage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="profil_unite_archivistique.html">12. Profils d’unité archivistique</a></li>
@@ -86,6 +87,8 @@
 <p class="caption" role="heading"><span class="caption-text">Chantier préservation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="chantier_preservation_validation_format.html">1. Validation du format des fichiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_identification_format.html">2. Identification des formats de fichiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_extraction_MD.html">3. Extraction des métadonnées techniques</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Vademecum</span></p>
 <ul class="current">
@@ -172,7 +175,7 @@
 </div>
 <p>Dans l’exemple ci-dessus, la plate-forme accepte les unités archivistiques déclarant les niveaux de protection au titre du secret de la défense nationale suivants : Non protégé, Confidentiel Défense et Secret Défense. Elle accepte également les unités archivistiques ne déclarant pas de niveau de classification.</p>
 <p>Il est possible de configurer autant de niveaux de classification que souhaité par plate-forme, en fonction des obligations réglementaires.</p>
-<p>Il est important de bien indiquer si les unités archivistiques sans niveau de classification seront acceptées ou non (variable « authorizeNotDefined »). Il peut paraître préférable sur une plate-forme destinée à accueillir des informations de niveau Confidentiel Défense ou Secret Défense de ne pas accepter les unités archivistiques dont le niveau de protection est inconnu, pour des raisons de bonne gestion, mais cela signifie que tous les niveaux de l’arborescence devront porter des règles de classification, ce qui revient à classifier les pochettes de dossiers et sous-dossiers, de même que les documents qui y sont contenus. Dans la pratique, obliger à déclarer sur toutes les unités archivistiques des règles de classification peut aboutir à multiplier les procédures de déclassification et les éventuels conflits d’héritage de règles.
+<p>Il est important de bien indiquer si les unités archivistiques sans niveau de classification seront acceptées ou non (variable « authorizeNotDefined »). Il peut paraître préférable sur une plate-forme destinée à accueillir des informations de niveau Confidentiel Défense ou Secret Défense de ne pas accepter les unités archivistiques dont le niveau de protection est inconnu, pour des raisons de bonne gestion, mais cela signifie que tous les niveaux de l’arborescence devront porter des règles de classification, ce qui revient à classifier les pochettes de dossiers et sous-dossiers, de même que les documents qui y sont contenus. Dans la pratique, obliger à déclarer sur toutes les unités archivistiques des règles de classification peut aboutir à multiplier les procédures de déclassification et les éventuels conflits d’héritage de règles.<br />
 Exemple : pour une structure qui dispose d’un plan de classement dans lequel sont rangés les documents au fur et à mesure de leur production ou à la fin d’une opération (opération de maintien de la paix par exemple), si la plate-forme n’accepte pas d’unité archivistique dont le niveau de protection est inconnu, le plan de classement lui-même devra être classifié, quand bien même il ne contient pas d’autre information que « Journal des marches et opérations », « Chronos » ou « Documents comptables ». Chaque unité archivistique du plan devra déclarer un niveau de classification et un émetteur, propriétés qui pourront être héritées par les unités archivistiques rattachées.</p>
 <p>Le niveau de protection peut varier dans le temps. Par exemple, un document sur une plate-forme Secret Défense peut être déclassé ou déclassifié. Il faut donc que la plate-forme sur laquelle il se trouve accepte des niveaux de protection inférieurs. Il est ainsi conseillé que la plate-forme qui conserve le Secret Défense puisse aussi accepter les unités archivistiques de niveau Confidentiel Défense et Non protégé et de même, la plate-forme Confidentiel Défense, les unités archivistiques de niveau Non protégé, dans l’attente de leur transfert vers la plate-forme de niveau de protection inférieur le cas échéant.</p>
 </section>
@@ -217,7 +220,7 @@ Cette opération de modification peut être faite de manière unitaire ou en mas
 </section>
 <section id="recolement-des-documents-classifies">
 <h2><span class="section-number">5.7. </span>Récolement des documents classifiés<a class="headerlink" href="#recolement-des-documents-classifies" title="Lien permanent vers cette rubrique"></a></h2>
-<p>La fonctionnalité d’audit d’existence permet de s’assurer périodiquement de la présence des documents classifiés sur la plate-forme.
+<p>La fonctionnalité d’audit d’existence permet de s’assurer périodiquement de la présence des documents classifiés sur la plate-forme.<br />
 Pour cela, il convient de lancer un audit d’existence à partir des identifiants système des unités archivistiques listés dans le registre des documents classifiés que l’administrateur fonctionnel aura constitué.</p>
 </section>
 </section>

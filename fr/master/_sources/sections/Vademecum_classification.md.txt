@@ -7,7 +7,6 @@ La solution logicielle permet de déclarer les informations liées au niveau de 
 
 Elle offre également des fonctionnalités pour répondre aux obligations de cloisonnement sur des plates-formes distinctes des informations dont le niveau de protection du secret est différent, en s’assurant que le niveau de protection à accorder aux documents est cohérent avec le niveau de protection offert par la plate-forme.
 
-
 Configuration des niveaux de classification de la plate-forme
 ---
 De même que les archives physiques classifiées au titre du secret de la défense nationale sont conservées dans des magasins spécifiques bénéficiant de protections périmétriques et de contrôles d’accès particuliers, de même les archives électroniques bénéficiant d’une protection au titre du secret de la défense nationale doivent être conservées sur des plates-formes placées dans des environnements spécifiques assurant une protection adéquate.
@@ -15,20 +14,20 @@ De même que les archives physiques classifiées au titre du secret de la défen
 Chaque plate-forme utilisant la solution logicielle Vitam peut déclarer les niveaux de protection pour lesquels elle est habilitée. Cette opération est réalisée par l’administrateur technique lors de l’installation de la plate-forme.
 
 Les niveaux de classification sont paramétrés dans un fichier de positionnement des variables présenté dans la documentation d’installation.
-``````
+```
 classificationLevel :
 allowList :  [Non protégé,Secret Défense,Confidentiel Défense]
 authorizeNotDefined: True
-``````
+```
+
 Dans l’exemple ci-dessus, la plate-forme accepte les unités archivistiques déclarant les niveaux de protection au titre du secret de la défense nationale suivants : Non protégé, Confidentiel Défense et Secret Défense. Elle accepte également les unités archivistiques ne déclarant pas de niveau de classification.
 
 Il est possible de configurer autant de niveaux de classification que souhaité par plate-forme, en fonction des obligations réglementaires.
 
-Il est important de bien indiquer si les unités archivistiques sans niveau de classification seront acceptées ou non (variable « authorizeNotDefined »). Il peut paraître préférable sur une plate-forme destinée à accueillir des informations de niveau Confidentiel Défense ou Secret Défense de ne pas accepter les unités archivistiques dont le niveau de protection est inconnu, pour des raisons de bonne gestion, mais cela signifie que tous les niveaux de l’arborescence devront porter des règles de classification, ce qui revient à classifier les pochettes de dossiers et sous-dossiers, de même que les documents qui y sont contenus. Dans la pratique, obliger à déclarer sur toutes les unités archivistiques des règles de classification peut aboutir à multiplier les procédures de déclassification et les éventuels conflits d’héritage de règles.
+Il est important de bien indiquer si les unités archivistiques sans niveau de classification seront acceptées ou non (variable « authorizeNotDefined »). Il peut paraître préférable sur une plate-forme destinée à accueillir des informations de niveau Confidentiel Défense ou Secret Défense de ne pas accepter les unités archivistiques dont le niveau de protection est inconnu, pour des raisons de bonne gestion, mais cela signifie que tous les niveaux de l’arborescence devront porter des règles de classification, ce qui revient à classifier les pochettes de dossiers et sous-dossiers, de même que les documents qui y sont contenus. Dans la pratique, obliger à déclarer sur toutes les unités archivistiques des règles de classification peut aboutir à multiplier les procédures de déclassification et les éventuels conflits d’héritage de règles.  
 Exemple : pour une structure qui dispose d’un plan de classement dans lequel sont rangés les documents au fur et à mesure de leur production ou à la fin d’une opération (opération de maintien de la paix par exemple), si la plate-forme n’accepte pas d’unité archivistique dont le niveau de protection est inconnu, le plan de classement lui-même devra être classifié, quand bien même il ne contient pas d’autre information que « Journal des marches et opérations », « Chronos » ou « Documents comptables ». Chaque unité archivistique du plan devra déclarer un niveau de classification et un émetteur, propriétés qui pourront être héritées par les unités archivistiques rattachées.
 
 Le niveau de protection peut varier dans le temps. Par exemple, un document sur une plate-forme Secret Défense peut être déclassé ou déclassifié. Il faut donc que la plate-forme sur laquelle il se trouve accepte des niveaux de protection inférieurs. Il est ainsi conseillé que la plate-forme qui conserve le Secret Défense puisse aussi accepter les unités archivistiques de niveau Confidentiel Défense et Non protégé et de même, la plate-forme Confidentiel Défense, les unités archivistiques de niveau Non protégé, dans l’attente de leur transfert vers la plate-forme de niveau de protection inférieur le cas échéant.
-
 
 Déclaration du niveau de classification des unités archivistiques
 ---
@@ -42,7 +41,6 @@ Le niveau de protection et l’émetteur sont obligatoires dès lors que l’uni
 
 Les règles liées à la classification obéissent aux mêmes mécanismes d’héritage que les autres catégories de règles de gestion (cf. fiche Positionner des règles de gestion dans la solution logicielle Vitam). Il est toutefois recommandé de déclarer les éléments liés à la classification au niveau le plus bas de l’arborescence (niveau pièce) pour éviter qu’une unité archivistique hérite de niveaux de classification contradictoires.
 
-
 Contrôle à l’entrée de l’adéquation entre le niveau de protection de la plate-forme et le niveau de protection des unités archivistiques
 ----
 Un contrôle à l’entrée est effectué par la solution logicielle Vitam afin de vérifier que le niveau de protection des unités archivistiques déclaré dans le bordereau de transfert est conforme au niveau de protection apporté par la plate-forme.
@@ -53,13 +51,11 @@ Pour que ce contrôle puisse être effectué, la plate-forme doit déclarer les 
 
 **Nota bene :** Le niveau de protection de la plate-forme et le niveau de classification des unités archivistiques doivent être strictement équivalents : sur une plate-forme déclarant un niveau « Secret Défense », les unités archivistiques déclarant un niveau de classification « secret défense » ou « Secret Defense » par exemple seront rejetées.
 
-
 Utilisation des tenants
 ----
 Il peut être intéressant sur une plate-forme accueillant des documents classifiés d’utiliser des tenants* pour séparer les archives électroniques en fonction de leur champ de diffusion.
 
 Exemple : si l’entité conserve des informations sur un support classifié qui doivent pouvoir être contrôlées par un partenaire dans le cadre d’un accord de sécurité, ces informations peuvent être versées sur un tenant distinct de celui utilisé pour les informations strictement réservées à l’entité.
-
 
 Modification des informations de classification
 ---
@@ -76,15 +72,13 @@ La configuration de la plate-forme peut ne pas permettre la présence d’unité
 
 En cas de réévaluation du niveau de classification conduisant à rehausser le niveau de protection d’un document au-delà du niveau de protection autorisé pour la plate-forme, il conviendra de changer d’abord le document de plate-forme avant de modifier son niveau de classification pour que la modification ne soit pas rejetée.
 
-
 Constitution du registre des documents classifiés
 ---
 Il est recommandé de constituer un registre des informations sur support classifié en dehors de la solution logicielle Vitam. Ce registre pourra permettre de faire un récolement annuel des documents classifiés présents sur la plate-forme par rapport à un état extérieur.
 
 Pour cela, il convient de lancer périodiquement une requête recherchant parmi les dernières opérations d’entrée les unités archivistiques déclarant une règle de classification et remontant toutes les informations utiles pour l’alimentation du registre : identifiant système, titre, numéro d’enregistrement, niveau de classification, émetteur de la classification, volumétrie des objets techniques liés…
 
-
 Récolement des documents classifiés
 ---
-La fonctionnalité d’audit d’existence permet de s’assurer périodiquement de la présence des documents classifiés sur la plate-forme.
+La fonctionnalité d’audit d’existence permet de s’assurer périodiquement de la présence des documents classifiés sur la plate-forme.  
 Pour cela, il convient de lancer un audit d’existence à partir des identifiants système des unités archivistiques listés dans le registre des documents classifiés que l’administrateur fonctionnel aura constitué.

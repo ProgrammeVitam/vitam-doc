@@ -331,8 +331,9 @@
 <li class="toctree-l1"><a class="reference internal" href="modele_de_donnees.html">5. Modèle de données</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modele_de_workflow.html">6. Description des workflows et des opérations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="module_de_collecte.html">7. Module de collecte</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ontologie.html">8. Ontologie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="organisation_information.html">9. Organisation de l’information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="organisation_information.html">8. Organisation de l’information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ontologie.html">9. Ontologie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="organisation_information.html">8. Organisation de l’information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="preservation.html">10. Gestion de la préservation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="profil_archivage.html">11. Profils d’archivage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="profil_unite_archivistique.html">12. Profils d’unité archivistique</a></li>
@@ -357,6 +358,8 @@
 <p class="caption" role="heading"><span class="caption-text">Chantier préservation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="chantier_preservation_validation_format.html">1. Validation du format des fichiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_identification_format.html">2. Identification des formats de fichiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_extraction_MD.html">3. Extraction des métadonnées techniques</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Vademecum</span></p>
 <ul>
@@ -4726,36 +4729,44 @@ La déclaration du nœud est obligatoire, sans quoi l’application accéderait 
 <td class="text-left"><p>transaction:unit:create</p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p></p></td>
+<td class="text-left"><p>Verser une archive arborescente ZIP à un projet de versement automatique sans transaction</p></td>
+<td class="text-left"><p>createproject:id:zip:create</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Récupère toutes les unités archivistiques</p></td>
 <td class="text-left"><p>transaction:unit:read</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p></p></td>
+<tr class="row-even"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Récupère les unités archivistiques d’une transaction</p></td>
 <td class="text-left"><p>transaction:id:units</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p></p></td>
+<tr class="row-odd"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Récupère une unité archivistique</p></td>
 <td class="text-left"><p>transaction:unit:id:read</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p></p></td>
+<tr class="row-even"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Mettre à jour les unités archivistiques</p></td>
 <td class="text-left"><p>transaction:id:units:update</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p></p></td>
+<tr class="row-odd"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Créer un groupe d’objets techniques</p></td>
 <td class="text-left"><p>transaction:object:upsert</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p></p></td>
+<tr class="row-even"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Insérer un objet binaire</p></td>
 <td class="text-left"><p>transaction:binary:upsert</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p></p></td>
+<tr class="row-odd"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Récupère un groupe d’objets techniques</p></td>
 <td class="text-left"><p>transaction:object:read</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p></p></td>
+<tr class="row-even"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Télécharge un usage/version du binaire d’un groupe d’objets</p></td>
 <td class="text-left"><p>transaction:binary:read</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p></p></td>
+<td class="text-left"><p>Mise à jour unitaire en masse des métadonnées descriptives</p></td>
+<td class="text-left"><p>transaction:id:units:bulk:update</p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>Entrées</p></td>
 <td class="text-left"><p>Récupérer l’accusé de réception pour une opération d’entrée donnée</p></td>

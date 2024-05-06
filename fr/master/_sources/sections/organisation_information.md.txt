@@ -1,4 +1,3 @@
-
 Organisation de l'information
 =====
 

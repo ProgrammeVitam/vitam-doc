@@ -81,14 +81,14 @@ Le référentiel des scénarios de préservation peut être alimenté de manièr
     - un type de format en particulier par scénario ;
     - la finalité du scénario de préservation, en dissociant les scénarios par type d’action et format.
 
-*Cas 1 : un scénario par type d’action de préservation*
+*Cas 1 : un scénario par type d’action de préservation*  
 Cette première solution présente l’avantage de limiter le nombre de scénarios. En revanche, la mise au point de chacun des scénarios peut s’avérer complexe et leur utilisation dans le cadre d’une opération de préservation peut s’avérer lourde en termes de traitement et de performance. L’élaboration de ce type de scénarios génériques peut être envisagée dans le cadre d’opérations de préservation portant sur l’ensemble des objets conservés dans la solution logicielle Vitam et tournant en tâche de fond.
 Élaborer un scénario par type d’action ne présente d’intérêt que pour l’identification.
 
-*Cas 2 : un scénario par format*
+*Cas 2 : un scénario par format*  
 Cette deuxième solution permet d’effectuer des opérations de préservation plus ciblées et de répondre à des besoins plus circonscrits en termes de préservation. L’avantage de cette solution est de permettre de ne pas lancer une opération sur l’ensemble des objets conservés dans la solution logicielle Vitam et d’avoir une vision plus claire du contenu de chacun des scénarios de préservation.
 
-*Cas 3 : un scénario par finalité*
+*Cas 3 : un scénario par finalité*  
 Cette troisième solution, modulaire, permet de disposer de scénarios génériques, portant sur l’ensemble des formats supportés dans la solution logicielle Vitam, en vue de réaliser une opération de préservation en particulier (ex : générer des GIF, grâce à plusieurs griffons et sur une liste exhaustive de formats). Mais elle permet également d’effectuer des actions plus ciblées et de répondre à des besoins plus circonscrits (ex : valider des fichiers PDF).
 
 

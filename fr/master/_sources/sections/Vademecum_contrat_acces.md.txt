@@ -1,13 +1,11 @@
 Le contrat d’accès dans la solution logicielle Vitam
 ===
 
-
 Le contrat d’accès permet d’octroyer sur un tenant des droits aux utilisateurs applicatifs habilités pour accéder aux unités archivistiques, qu’il s’agisse de les consulter, de modifier unitairement ou en masse leurs métadonnées descriptives et de gestion, de télécharger ou d’exporter les unités archivistiques avec les objets techniques associés, d’éliminer les archives ou de les auditer. Il octroie également des droits pour la consultation du registre des fonds.
 
 Chaque opération d’accès (consultation, modification de métadonnées, accès au registre des fonds…) doit préciser dans sa requête le contrat utilisé.
 
 Diverses configurations du contrat d’accès sont possibles en fonction des restrictions que l’on souhaite apporter aux droits des utilisateurs applicatifs.
-
 
 Présentation du contrat d’accès
 ---
@@ -17,12 +15,10 @@ Un contrat d’accès est propre au tenant* sur lequel il a été importé.
 
 Une application qui serait amenée à effectuer des accès sur plusieurs tenants devrait disposer d’un contrat pour chaque tenant.
 
-
 ### Paramétrage des actions autorisées
 Le contrat d’accès permet de ne donner accès aux unités archivistiques qu’en lecture seule, c’est-à-dire sans possibilité de modifier les métadonnées. Il est recommandé de choisir ce paramétrage du contrat d’accès quand une application n’a besoin que de consulter les archives.
 Si le contrat autorise la modification de métadonnées, cette autorisation peut ne porter que sur les métadonnées descriptives ou sur les métadonnées descriptives et les métadonnées de gestion des unités archivistiques (règles de gestion et profil d’unité archivistique).
 Les métadonnées de gestion sont en effet considérées comme plus sensibles, car elles conditionnent notamment la mise en œuvre de sorts finaux (élimination, transfert) ou le statut de communicabilité des archives. La modification des métadonnées de gestion doit donc être réservée aux applications qui en ont vraiment besoin.
-
 
 ### Paramétrage du périmètre de consultation autorisé
 #### Restriction des services producteurs autorisés
@@ -60,7 +56,6 @@ Le contrat d’accès permet de préciser si des logs d’accès doivent être g
 Les accès aux métadonnées des unités archivistiques ne sont pas concernés (cf. fiche Le suivi des accès dans la solution logicielle Vitam).
 Par défaut, cette option n’est pas activée.
 
-
 Configuration du contrat d’accès
 ----
 
@@ -88,7 +83,6 @@ Exemple : tous les utilisateurs du SIA ne sont pas autorisés à consulter l’
 ### Gestion de l’identifiant du contrat d’accès
 À l’installation de la plate-forme Vitam, l’administrateur technique peut configurer le tenant pour que les identifiants des contrats d’accès soient générés par Vitam (mode « maître ») ou par le front-office (mode « esclave »).
 Le mode « esclave » permet à un service de conserver la main sur les identifiants des contrats d’accès pour utiliser des identifiants normés au niveau de l’institution et/ou à un niveau national ou international.
-
 
 ### Formalisation du contrat d’accès
 Un contrat d’accès prend la forme d’un fichier JSON, pouvant contenir 1 à n contrat(s) d’accès.
@@ -133,13 +127,11 @@ Il est possible d’importer, en une seule fois, un référentiel complet, compr
 
 Afin d’optimiser la traçabilité de la création des différents contrats d’accès, il est recommandé de créer ces derniers un par un.
 
-
 ### Activation/désactivation du contrat d’accès
 Un contrat d’accès peut être importé avec un statut inactif ou être désactivé lors d’une mise à jour du contrat.
 Cette fonctionnalité est utile quand on souhaite créer un contrat d’accès et l’importer avant d’autoriser des applications à l’utiliser ou lorsqu’on souhaite désactiver temporairement ou définitivement un contrat d’accès.
 
 Un contrat au statut inactif ne permet pas de réaliser un accès.
-
 
 Modification d’un contrat d’accès
 ---

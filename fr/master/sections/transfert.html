@@ -60,8 +60,9 @@
 <li class="toctree-l1"><a class="reference internal" href="modele_de_donnees.html">5. Modèle de données</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modele_de_workflow.html">6. Description des workflows et des opérations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="module_de_collecte.html">7. Module de collecte</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ontologie.html">8. Ontologie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="organisation_information.html">9. Organisation de l’information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="organisation_information.html">8. Organisation de l’information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ontologie.html">9. Ontologie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="organisation_information.html">8. Organisation de l’information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="preservation.html">10. Gestion de la préservation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="profil_archivage.html">11. Profils d’archivage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="profil_unite_archivistique.html">12. Profils d’unité archivistique</a></li>
@@ -80,6 +81,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#determination-du-caractere-transferable-dune-unite-archivistique-avec-la-solution-logicielle-vitam">18.3. Détermination du caractère transférable d’une unité archivistique avec la solution logicielle Vitam</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#une-duree-dutilite-arrivee-a-echeance">18.3.1. Une durée d’utilité arrivée à échéance</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#un-fonds-a-restituer-dans-sa-completude">18.3.2. Un fonds à restituer dans sa complétude</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cas-ou-lutilisation-de-la-fonctionnalite-de-transfert-est-deconseillee">18.3.3. Cas où l’utilisation de la fonctionnalité de transfert est déconseillée</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#realisation-dune-operation-de-transfert-avec-la-solution-logicielle-vitam">18.4. Réalisation d’une opération de transfert avec la solution logicielle Vitam</a><ul>
@@ -111,6 +113,8 @@
 <p class="caption" role="heading"><span class="caption-text">Chantier préservation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="chantier_preservation_validation_format.html">1. Validation du format des fichiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_identification_format.html">2. Identification des formats de fichiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_extraction_MD.html">3. Extraction des métadonnées techniques</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Vademecum</span></p>
 <ul>
@@ -259,9 +263,13 @@ Que ce soit dans le premier ou dans le second cas, la solution logicielle Vitam 
 </li>
 </ul>
 <p><strong>Point d’attention :</strong></p>
-<p>Après confirmation de la réception de ces archives par le système d’archivage électronique de destination, il faudra veiller à procéder à leur purge dans le système d’archivage électronique d’origine, afin que ne subsiste pas deux copies de ces archives dans deux systèmes différents. Cette purge est automatisable.<br />
-3.3.  Cas où l’utilisation de la fonctionnalité de transfert est déconseillée
-La constitution d’un lot d’archives à transférer et la fonctionnalité de transfert doivent être utilisées lorsque l’on veut transmettre à la fois des archives et la responsabilité de leur conservation avec une traçabilité des événements ayant concerné ces archives dans le système d’archivage d’origine. Après acquittement du transfert, le lot d’archives est supprimé du système d’origine.<br />
+<p>Après confirmation de la réception de ces archives par le système d’archivage électronique de destination, il faudra veiller à procéder à leur purge dans le système d’archivage électronique d’origine, afin que ne subsiste pas deux copies de ces archives dans deux systèmes différents. Cette purge est automatisable.</p>
+</section>
+<section id="cas-ou-lutilisation-de-la-fonctionnalite-de-transfert-est-deconseillee">
+<h3><span class="section-number">18.3.3. </span>Cas où l’utilisation de la fonctionnalité de transfert est déconseillée<a class="headerlink" href="#cas-ou-lutilisation-de-la-fonctionnalite-de-transfert-est-deconseillee" title="Lien permanent vers cette rubrique"></a></h3>
+<p>=======</p>
+<p>Après confirmation de la réception de ces archives par le système d’archivage électronique de destination, il faudra veiller à procéder à leur purge dans le système d’archivage électronique d’origine, afin que ne subsiste pas deux copies de ces archives dans deux systèmes différents. Cette purge est automatisable.</p>
+<p>La constitution d’un lot d’archives à transférer et la fonctionnalité de transfert doivent être utilisées lorsque l’on veut transmettre à la fois des archives et la responsabilité de leur conservation avec une traçabilité des événements ayant concerné ces archives dans le système d’archivage d’origine. Après acquittement du transfert, le lot d’archives est supprimé du système d’origine.<br />
 De fait, pour un transfert d’archives sans transfert de responsabilité, il est conseillé de recourir à la fonctionnalité de constitution d’un Dissemination Information Package (DIP) minimal ou complet qui permet de transmettre des archives (métadonnées et objets techniques) sans les supprimer ensuite du système d’origine.<br />
 Pour une simple transmission d’objet technique, il est conseillé d’utiliser la fonctionnalité de téléchargement d’un objet.</p>
 </section>
@@ -334,7 +342,12 @@ L’opération peut aboutir aux résultats suivants :</p></li>
 <li><p>si une unité archivistique a déjà fait l’objet d’une demande de transfert (message : {« Reason »: »unit [identifiant de l’unité archivistique] already in transfer »} à la tâche « CREATE_MANIFEST ») ;</p></li>
 </ul>
 </li>
-<li><p>L’opération de demande de transfert de transfert sera en erreur si aucun des paramètres obligatoires n’est renseigné (message : {« Reason »: »ArchivalAgreement parameter is required, OriginatingAgencyIdentifier parameter is required, ArchivalAgency parameter is required. »} à la tâche « CREATE_MANIFEST »).</p></li>
+<li><p>L’opération de demande de transfert de transfert sera en erreur si :</p>
+<ul>
+<li><p>aucun des paramètres obligatoires n’est renseigné (message : {« Reason »: »ArchivalAgreement parameter is required, OriginatingAgencyIdentifier parameter is required, ArchivalAgency parameter is required. »} à la tâche « CREATE_MANIFEST »);</p></li>
+<li><p>l’export demandé en SEDA 2.1 d’un bordereau de transfert alors qu’il embarque des archives entrées en SEDA 2.2 et intégrant des champs ajoutés dans la version 2.2 du SEDA.</p></li>
+</ul>
+</li>
 </ul>
 <p>Sont également disponibles :</p>
 <ul class="simple">
@@ -443,7 +456,8 @@ Le système d’archivage électronique d’origine déclenche alors la purge de
 <li><p>détachement des groupes d’objets techniques rattachés à plusieurs unités archivistiques si une unité archivistique seule est purgée,</p></li>
 <li><p>conservation des unités archivistiques, des groupes d’objets techniques et/ou des objets binaires qui ne sont pas référencés dans le message « ArchiveTransferReply »,</p></li>
 <li><p>purge des unités archivistiques, des groupes d’objets techniques et/ou des objets binaires qui étaient identifiés comme étant déjà en cours de transfert,</p></li>
-<li><p>purge des unités archivistiques si aucun des cas précédents ne s’applique.</p></li>
+<li><p>purge des unités archivistiques si aucun des cas précédents ne s’applique,</p></li>
+<li><p>alimentation de la collection « PurgedPersistentIdentifier », si des unités archivistiques et/ou des objets techniques transférés avec succès étaient référencés par des identifiants pérennes et si cette action d’alimentation est activée.</p></li>
 </ul>
 <p>Le statut de l’opération à l’issue de la mise en œuvre de la purge pourra être :</p>
 <ul class="simple">

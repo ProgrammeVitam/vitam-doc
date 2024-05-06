@@ -1,7 +1,6 @@
 Réaliser des éliminations d’archives avec la solution logicielle Vitam
 ====
 
-
 Présentation de l’élimination
 ----
 
@@ -25,8 +24,7 @@ En cas d’absence de déclaration de sort final pour la durée d’utilité adm
 
 *Rattacher des unités archivistiques à d’autres unités archivistiques peut entraîner des héritages complexes et empêcher la mise en œuvre des opérations d’élimination. L’archiviste devra identifier ces cas et procéder à des mises à jour des règles applicables à l’unité et/ou à des réorganisations d’arborescence pour pouvoir éliminer effectivement les unités archivistiques concernées.*
 
-Pour en savoir plus, consulter le [vademecum "Positionner des règles de gestion dans la solution logicielle Vitam"](./Vademecum_reglesgestion_fonctionnement).
-
+Pour en savoir plus, consulter le [vademecum "Positionner des règles de gestion dans la solution logicielle Vitam"](./Vademecum_reglesgestion_fonctionnement.md).
 
 ### Critères pour déterminer qu’une unité archivistique peut être éliminée
 Pour pouvoir être éliminée, une unité archivistique doit disposer, pour un producteur donné, d’une règle de durée d’utilité administrative échue à la date du lancement de l’opération d’élimination et ne pas avoir de descendance conservée dans le système. En outre, elle ne doit ni définir ni hériter de règles de gel non expirées à date de l’opération d’élimination.
@@ -35,14 +33,12 @@ Pour pouvoir éliminer une unité archivistique qui a encore un enfant à conser
 
 Pour pouvoir éliminer une unité archivistique gelée, la règle de gel doit être échue ou avoir été préalablement supprimée.
 
-
 ### Conséquence d’une élimination dans le système
 Si l’unité archivistique peut être éliminée pour tous ses services producteurs, elle sera effectivement éliminée dans le système, c’est-à-dire immédiatement déréférencée pour ne plus permettre à un utilisateur d’y accéder.
 
 Une élimination complète, au sens de la suppression du fichier de toutes les offres de stockage, n’est pas possible à garantir, compte tenu des technologies utilisées.
 
 Quand une unité archivistique n’est éliminable que pour l’un de ses services producteurs, l’élimination pour ce service producteur se fait sous la forme d’une modification d’arborescence : le lien de l’unité archivistique avec son unité archivistique parente pour ce service producteur est coupé. L’unité archivistique n’est plus accessible pour ce service producteur, mais reste disponible pour ses autres services producteurs.
-
 
 Mise en œuvre de l’élimination
 ----
@@ -86,7 +82,6 @@ Les informations qui ont été indexées peuvent être interrogées et, pour cer
 - Date de fin
 
 L’archiviste peut exporter sous forme de DIP des listes filtrées des résultats de l’analyse des archives éliminables pour permettre la génération, depuis son front office, des bordereaux de demande d’élimination destinés aux services producteurs.
-
 
 ### Lancement d’une opération d’élimination (action)
 La solution logicielle permet de lancer une opération d’élimination d’unités archivistiques. Cette opération peut être lancée indépendamment d’une campagne d’évaluation des éliminables et porter sur des unités archivistiques n’ayant encore jamais été analysées par la solution logicielle.
@@ -133,7 +128,6 @@ Le rapport de l’opération de mise en œuvre de l’élimination permet de ret
 Les GOT des unités archivistiques conservées ne sont pas listés dans le rapport.
 
 On a considéré pour le développement de la fonctionnalité d’élimination que la phase de mise en œuvre de l’élimination serait déclenchée par l’archiviste sur la base d’une évaluation préalable du caractère éliminable des archives. Dans ces conditions, la présence de documents non éliminables est une anomalie et c’est pour cette raison que le rapport liste les unités archivistiques dont le statut est « à conserver » au lieu de les ignorer comme en phase d’évaluation.
-
 
 ### Mise à jour du registre des fonds
 

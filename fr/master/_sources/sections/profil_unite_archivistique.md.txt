@@ -28,7 +28,8 @@ Il s’articule autour des axes suivants :
 
 Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 7.0 (octobre 2023) :  : il comprend particulièrement la présentation des fonctionnalités offertes par le projet PASTIS (Profil d’Archivage Simple pour le Traitement de l’Information en SEDA) intégré à l’IHM Vitam UI par l’APP Profils documentaires et également accessible par un exécutable. Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
 
-## Présentation de la notion de profil d’unité archivistique
+Présentation de la notion de profil d’unité archivistique
+----
 
 ### Qu’est-ce qu’un profil d’unité archivistique ?
 

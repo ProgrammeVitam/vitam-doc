@@ -71,7 +71,7 @@ Dans les deux cas, il convient de :
 - faire référence aux unités archivistiques du bordereau de transfert à rattacher en utilisant la balise <ArchiveUnitRefId>.
 
 *Exemple pour la méthode 1*
-``````
+```
 <ArchiveUnit id="ID4">
         <Management>
                 <UpdateOperation>
@@ -86,9 +86,10 @@ Dans les deux cas, il convient de :
                 <ArchiveUnitRefId>ID3</ArchiveUnitRefId>
         </ArchiveUnit>
 </ArchiveUnit>
-``````
+```
+
 *Exemple pour la méthode 2*
-``````
+```
 <ArchiveUnit id="ID4">
         <Management>
                 <UpdateOperation>
@@ -106,8 +107,9 @@ Dans les deux cas, il convient de :
                 <ArchiveUnitRefId>ID3</ArchiveUnitRefId>
         </ArchiveUnit>
 </ArchiveUnit>
-``````
-*Contrôle sur le positionnement des rattachements déclarés dans le bordereau de transfert*
+```
+
+*Contrôle sur le positionnement des rattachements déclarés dans le bordereau de transfert*  
 La solution logicielle Vitam offre la possibilité de déclarer un ou plusieurs nœud(s) dans le contrat d’entrée pour faire des contrôles sur les rattachements déclarés dans les bordereaux de transfert des SIP utilisant ce contrat d’entrée. En ce cas, le système vérifiera à l’entrée que les rattachements déclarés dans le bordereau de transfert correspondent à ce nœud ou sont bien situés dans sa descendance. Si ce n’est pas le cas, l’entrée sera en échec.
 Le nœud déclaré peut être de type « arbre de positionnement », « plan de classement » ou « standard ».
 
@@ -132,7 +134,7 @@ Le rattachement d’une unité archivistique à un groupe d’objets techniques 
 *Cas d’usage : un nouveau fichier représentant l’unité archivistique a été créé (par exemple, une version basse résolution d’une image fixe pour diffusion ou une vignette) et on souhaite l’ajouter au groupe d’objets techniques existant.*
 *Cas d’usage : au moment de l’entrée d’un fonds photographique, seules les versions de diffusion ont pu être collectées. Le service d’archives reçoit par la suite les versions haute définition (masters) et souhaite les ajouter aux groupes d’objets techniques existants.*
 
-La solution logicielle Vitam offre la possibilité de déclarer dans le bordereau l’unité archivistique dont le groupe d’objets techniques doit être mis à jour par l’ajout d’un objet technique.
+La solution logicielle Vitam offre la possibilité de déclarer dans le bordereau l’unité archivistique dont le groupe d’objets techniques doit être mis à jour par l’ajout d’un objet technique.  
 Seul le service producteur ayant provoqué la création du groupe d’objets techniques dans la plate-forme utilisant la solution logicielle Vitam a le droit de rajouter des objets à ce groupe d’objets. Le service producteur du SIP doit donc obligatoirement être le même que le service producteur du SIP qui a transféré le groupe d’objets techniques. Le transfert sera sinon rejeté.
 
 L’ajout d’objets à un groupe d’objets existant doit être autorisé par le contrat d’entrée utilisé. Le contrat d’entrée peut bloquer l’ajout d’un objet ou ne l’autoriser que pour certains usages.
@@ -148,7 +150,7 @@ Pour cela il convient de :
 - déclarer les objets du bordereau de transfert à rajouter en utilisant la balise <DataObjectGroupReferenceId>.
 
 *Exemple pour la méthode 1*
-``````
+```
 <ArchiveUnit id="ID4">
         <Management>
                 <UpdateOperation>
@@ -163,9 +165,10 @@ Pour cela il convient de :
                 <DataObjectGroupReferenceId>ID4</DataObjectGroupReferenceId>
         </DataObjectReference>
 </ArchiveUnit>
-``````
+```
+
 *Exemple pour la méthode 2*
-``````
+```
 <ArchiveUnit id="ID4">
         <Management>
                 <UpdateOperation>
@@ -183,7 +186,7 @@ Pour cela il convient de :
                 <DataObjectGroupReferenceId>ID4</DataObjectGroupReferenceId>
         </DataObjectReference>
 </ArchiveUnit>
-``````
+```
 
 La réorganisation d’arborescence pour les unités archivistiques déjà présentes dans le système
 ----

@@ -85,7 +85,8 @@ Le référentiel des règles de gestion fonctionne en mode « esclave ». Le p
 Afin de se prémunir contre une alimentation du référentiel des règles de gestion avec des durées trop courtes susceptibles de déclencher des actions indésirables sur la plate-forme (ex. éliminations), la solution logicielle Vitam vérifie que la durée de chaque règle est supérieure ou égale à une durée minimale définie lors du paramétrage de la plate-forme, dans un fichier de configuration.
 Cette configuration, optionnelle, est établie par les administrateurs – fonctionnel pour la définition du besoin et technique pour la saisie réelle des informations – de chaque implémentation de la solution logicielle Vitam et définit, pour chaque tenant et pour chaque catégorie de règle, les durées minimales acceptables.
 Le fichier de configuration se présente comme suit (exemple fictif) :
-``````
+
+```
 listMinimumRuleDuration:
   2:
     AppraisalRule : 1 year
@@ -95,7 +96,7 @@ listMinimumRuleDuration:
     AppraisaleRule : 5 year
     StorageRule : 5 year
     ReuseRule : 2 year
-``````
+```
 Dans cet exemple, il n’est pas possible d’importer sur le tenant 2 un référentiel des règles de gestion déclarant une règle dans la catégorie « Durée d’utilité administrative » dont la durée est égale ou inférieure à un an ni déclarant une règle dans la catégorie « Délai de diffusion » dont la durée est inférieure ou égale à dix ans. Pour les autres catégories de règle, aucune vérification sur une durée minimale n’est effectuée.<br>
 Sur le tenant 3, les contrôles portent sur les catégories « Durée d’utilité administrative » (pas de règle dont la durée est inférieure ou égale à cinq ans), « Durée d’utilité courante » (pas de règle dont la durée est inférieure ou égale à cinq ans) et « Délai de réutilisation » (pas de règle dont la durée est inférieure ou égale à deux ans).
 

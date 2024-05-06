@@ -3,7 +3,6 @@ L’arbre de positionnement dans la solution logicielle Vitam
 
 Un service d’archives peut avoir besoin d’organiser les fonds d’archives placés sous sa responsabilité, quel qu’en soit le producteur, afin de faciliter la recherche et la navigation dans ceux-ci. L’arbre de positionnement est, dans la solution logicielle Vitam, l’outil pour réaliser cette organisation des fonds. Il permettra à un service d’archives et à ses utilisateurs de rechercher un fonds d’archives et de le positionner dans une organisation plus globale.
 
-
 Présentation de l’arbre de positionnement
 ----
 
@@ -22,7 +21,6 @@ Les arbres de positionnement, les plans de classement et les SIP constituent tou
 - elles ne peuvent être rattachées qu’à d’autres unités d’arbres ;
 - elles peuvent avoir pour filles des unités archivistiques d’arbre, de plan ou des unités archivistiques standard ;
 - elles ne déclarent pas de service producteur, elles ne sont donc pas comptabilisées dans le registre des fonds.
-
 
 Configuration de l’arbre de positionnement
 ---
@@ -54,8 +52,7 @@ La notion d’arbre de positionnement s’apparente à celle de cadre de classem
 Toutefois, un arbre de positionnement peut être utilisé pour décrire la structure des fonds d’un service en dehors de toute référence à un cadre de classement normatif.
 
 Pour élaborer son arbre de positionnement, l’administrateur fonctionnel pourra donc s’appuyer sur diverses documentations métier existantes : cadre de classement, guide des fonds, présentation des archives…
-Dans certains cas, des services d’archives disposant d’un « plan de classement » alimenté par les versements des services producteurs auront tout intérêt à traduire cette structure dans la solution logicielle Vitam au moyen d’un arbre de positionnement, dès lors que cette structuration est plus thématique qu’organique et qu’il n’est pas nécessaire d’associer à ces unités archivistiques des services producteurs et des règles de gestion (cf. [vademecum Positionner des règles de gestion dans la solution logicielle Vitam](./Vademecum_reglesgestion_fonctionnement)).
-
+Dans certains cas, des services d’archives disposant d’un « plan de classement » alimenté par les versements des services producteurs auront tout intérêt à traduire cette structure dans la solution logicielle Vitam au moyen d’un arbre de positionnement, dès lors que cette structuration est plus thématique qu’organique et qu’il n’est pas nécessaire d’associer à ces unités archivistiques des services producteurs et des règles de gestion (cf. [vademecum Positionner des règles de gestion dans la solution logicielle Vitam](./Vademecum_reglesgestion_fonctionnement.md)).
 
 ### Formalisation de l’arbre de positionnement
 Les arbres de positionnement sont importés dans la solution logicielle Vitam sous la forme de SIP contenant un bordereau de transfert, mais sans aucun objet associé. L’arbre de positionnement ne peut pas contenir de règle de gestion ni de service producteur associé à l’entrée ou aux unités archivistiques.
@@ -70,7 +67,6 @@ Pour en savoir plus, consulter le [document VITAM. Modèle de données](./modele
 La moulinette ReSIP permet d’importer une structure arborescente d’unités archivistiques correspondant à un arbre de positionnement sous la forme d’un fichier tableur au format .csv pour en générer le SIP.
 
 Pour plus de précision sur la constitution de ce fichier se référer au document Vitam. ReSIP.
-
 
 Rattachement et modification d’un arbre de positionnement
 -----
@@ -88,4 +84,4 @@ La solution logicielle Vitam permet également de modifier l’arborescence d’
 - supprimer des branches d’arbre de positionnement dans le cadre d’une opération d’élimination.
 L’opération est journalisée dans le journal du cycle de vie de l’unité archivistique ayant été rattachée, déplacée ou supprimée.
 
-Pour aller plus loin, consulter le [document VITAM. Gestion des archives et des arborescences](./gestion_archives_arborescences).
+Pour aller plus loin, consulter le [document VITAM. Gestion des archives et des arborescences](./gestion_archives_arborescences.md).

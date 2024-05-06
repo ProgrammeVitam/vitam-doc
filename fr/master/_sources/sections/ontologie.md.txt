@@ -632,7 +632,6 @@ La solution logicielle Vitam propose une IHM pour représenter l’ontologie. El
 
 ### Comment utiliser l’ontologie ?
 
-
 | Intitulé | Niveau de recommandation |  Description  |
 |---|---|---|
 | |<font color="navy"> Administration de l’ontologie</font>| |
@@ -660,7 +659,9 @@ La solution logicielle Vitam propose une IHM pour représenter l’ontologie. El
 | Accès à l’ontologie par un administrateur technique | Recommandé | Un administrateur technique doit avoir accès à l’ontologie et détenir des droits d’ajout et de modification de vocabulaire. Il a également la possibilité de supprimer des vocabulaires, internes et externes.<br/>Il est recommandé de réaliser cette action de concert avec l’administrateur fonctionnel.| 
 | Accès à l’ontologie par un tiers | Recommandé | Il est recommandé, pour des tiers, de restreindre leur accès aux seuls vocabulaires utilisés lors d’un transfert et avec des profils d’unité archivistique,<br/> à savoir les vocabulaires internes issus du SEDA et les vocabulaires externes créés pour des besoins de transfert particuliers.|
 
-## Annexe 1 : Vocabulaires internes de l’ontologie
+## Annexes
+
+### Annexe 1 : Vocabulaires internes de l’ontologie
 
 Liste des vocabulaires internes présents dans l’ontologie.
 
@@ -4012,9 +4013,7 @@ Liste des vocabulaires internes présents dans l’ontologie.
 ]
 ```
 
-
-
-## Annexe 2 : Types JSON conformes au type d’indexation des vocabulaires internes
+### Annexe 2 : Types JSON conformes au type d’indexation des vocabulaires internes
 
 Pour les éléments propres au SEDA, le tableau suivant précise les types de certains d’entre eux, tels qu’ils doivent être dans un schéma de contrôle, conformément au type d’indexation du vocabulaire déclaré dans l’ontologie :
 

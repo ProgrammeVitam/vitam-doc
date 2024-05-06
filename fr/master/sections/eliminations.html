@@ -104,8 +104,9 @@
 <li class="toctree-l1"><a class="reference internal" href="modele_de_donnees.html">5. Modèle de données</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modele_de_workflow.html">6. Description des workflows et des opérations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="module_de_collecte.html">7. Module de collecte</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ontologie.html">8. Ontologie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="organisation_information.html">9. Organisation de l’information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="organisation_information.html">8. Organisation de l’information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ontologie.html">9. Ontologie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="organisation_information.html">8. Organisation de l’information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="preservation.html">10. Gestion de la préservation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="profil_archivage.html">11. Profils d’archivage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="profil_unite_archivistique.html">12. Profils d’unité archivistique</a></li>
@@ -130,6 +131,8 @@
 <p class="caption" role="heading"><span class="caption-text">Chantier préservation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="chantier_preservation_validation_format.html">1. Validation du format des fichiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_identification_format.html">2. Identification des formats de fichiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_extraction_MD.html">3. Extraction des métadonnées techniques</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Vademecum</span></p>
 <ul>
@@ -504,7 +507,7 @@ La présence d’unités archivistiques de statut KEEP conduira à une opératio
 <p>Une vérification supplémentaire est effectuée sur les unités archivistiques éliminables : celles qui ont des enfants encore à conserver ne sont pas éliminées afin de ne pas créer des unités archivistiques orphelines qui auraient perdu leurs parents et ne seraient plus accessibles par leurs grands-parents (statut spécifique à cette phase : NON_DESTROYABLE_HAS_CHILD_UNITS).<br />
 Ainsi, sur toutes les unités archivistiques soumises, seules celles dont le sort final est « détruire », qui ont une règle de gestion expirée, qui n’ont pas d’enfants encore à conserver et qui ne sont pas gelées sont donc effectivement éliminées.<br />
 La présence d’unités archivistiques de statut DESTROY qui ne peuvent être effectivement éliminées conduira à une opération en avertissement, mais n’interrompt pas le processus.</p>
-<p>Points d’attention :</p>
+<p><strong>Points d’attention :</strong></p>
 <ul class="simple">
 <li><p>pour pouvoir éliminer une unité archivistique qui a encore un enfant à conserver (par exemple, un sous-dossier éliminable qui contient encore une pièce), l’archiviste doit procéder à une réorganisation d’arborescence (par exemple, placer la pièce à la racine du dossier) et relancer l’opération d’élimination sur cette unité archivistique.</p></li>
 <li><p>Pour pouvoir éliminer une unité archivistique qui hérite ou dispose d’une règle de gel, l’archiviste doit soit bloquer ou supprimer cette règle de gel, soit procéder à une réorganisation d’arborescence, s’il en a les droits, et relancer l’opération d’élimination sur cette unité archivistique.</p></li>
@@ -544,7 +547,7 @@ Le détail de l’opération d’entrée concernée est également mis à jour.<
 Il en va de même pour le détail d’une opération de préservation dans le cas où des objets éliminés ont préalablement fait l’objet d’une opération de préservation. Peut lui être associée une à plusieurs opérations d’élimination, référençant chacune le nombre d’objets et la volumétrie retirés du système. Le détail d’une opération de préservation est par ailleurs mis à jour pour tenir compte de ces éliminations.<br />
 Pour les fonds symboliques, au moment du calcul périodique des fonds symboliques de la base, les AU, GOT et OT éliminés seront décomptés et la volumétrie sera mise à jour. Depuis la notice du service agent, l’utilisateur peut accéder à l’historique des rattachements et consulter sur une période donnée les variations à la hausse ou à la baisse des fonds symboliques pour ce producteur.</p></li>
 </ul>
-<p>Point d’attention : le calcul des AU, GOT et OT rattachés à un producteur au titre de son fonds symbolique n’est effectué qu’une fois par vingt-quatre heures (sauf paramétrage différent de la plate-forme). Dans ces conditions, si sur la même période de vingt-quatre heures l’archiviste effectue un ingest pour 3 AU et une élimination pour 3 AU, le total des symboliques entre deux calculs n’aura pas évolué.</p>
+<p><strong>Point d’attention :</strong> le calcul des AU, GOT et OT rattachés à un producteur au titre de son fonds symbolique n’est effectué qu’une fois par vingt-quatre heures (sauf paramétrage différent de la plate-forme). Dans ces conditions, si sur la même période de vingt-quatre heures l’archiviste effectue un ingest pour 3 AU et une élimination pour 3 AU, le total des symboliques entre deux calculs n’aura pas évolué.</p>
 </section>
 </section>
 <section id="conseils-de-mise-en-oeuvre">
@@ -656,7 +659,7 @@ Les seuils de plate-forme sont définis dans un fichier de configuration. Par d�
 </ul>
 </li>
 </ul>
-<p>Point d’attention :</p>
+<p><strong>Point d’attention :</strong></p>
 <ul class="simple">
 <li><p>Il est recommandé d’avoir un seuil maximal de :</p>
 <ul>
@@ -694,11 +697,11 @@ Les seuils de plate-forme sont définis dans un fichier de configuration. Par d�
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="id3" role="note">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
-<p>Des précisions sur les seuils sont apportées dans le présent document, <span class="xref myst">chapitre « Quelles sont les limitations pour les opérations d’analyse et d’action d’élimination ? »</span>.</p>
+<p>Des précisions sur les seuils sont apportées dans le présent document, <a class="reference external" href="https://www.programmevitam.fr/vitam-doc/fr/master/sections/eliminations.html#quelles-sont-les-limitations-pour-les-operations-danalyse-et-daction-delimination">chapitre « Quelles sont les limitations pour les opérations d’analyse et d’action d’élimination ? »</a>.</p>
 </aside>
 <aside class="footnote brackets" id="id4" role="note">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
-<p>Des précisions sur les seuils sont apportées dans le présent document, <span class="xref myst">chapitre « Quelles sont les limitations pour les opérations d’analyse et d’action d’élimination ? »</span>.</p>
+<p>Des précisions sur les seuils sont apportées dans le présent document, <a class="reference external" href="https://www.programmevitam.fr/vitam-doc/fr/master/sections/eliminations.html#quelles-sont-les-limitations-pour-les-operations-danalyse-et-daction-delimination">chapitre « Quelles sont les limitations pour les opérations d’analyse et d’action d’élimination ? »</a>.</p>
 </aside>
 </aside>
 </section>

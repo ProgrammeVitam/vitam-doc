@@ -1172,7 +1172,7 @@ Par ailleurs, pour un projet donné, il est possible de :
 
 Le module de collecte a vocation à permettre d’effectuer un certain nombre de traitement en amont du versement.
 
-Au terme de la V6, il est possible de réaliser les actions suivantes :
+Au terme de la V7.1, il est possible de réaliser les actions suivantes :
 
 -   modification,
 -   suppression,
@@ -1300,10 +1300,16 @@ Lors de cette action, l’opération peut aboutir aux résultats suivants :
 
 ##### Modification des unités archivistiques
 
-La solution logicielle Vitam permet de modifier des unités archivistiques par import d’un fichier au format .csv, et plus précisément de :
+La solution logicielle Vitam permet de modifier des unités archivistiques par :
 
-- modifier ses métadonnées,
-- lui ajouter des métadonnées.
+- import d'un fichier au format .csv,
+- import d'un fichier au format .jsonl,
+- une mise à jour unitaire en masse de métadonnées.
+
+Le premier mode, l'import d’un fichier au format .csv, permet plus précisément de :
+
+- modifier des métadonnées,
+- ajouter des métadonnées.
 
 ***Points d'attention***
 -   En prérequis à la mise à jour des unités archivistiques, il faut avoir au préalable créé :
@@ -1313,7 +1319,7 @@ La solution logicielle Vitam permet de modifier des unités archivistiques par i
 
 -   Il n’est pas possible de :
 
-    -   supprimer une métadonnée en l’état actuel des développements ;
+    -   supprimer une métadonnée avec ce mode ;
     -   ajouter une unité archivistique lors de cette action de mise à jour.
 
   *Exemple : requête en vue de modifier des métadonnées d’unités archivistiques associées à une transaction dont l’identifiant est «  aeeaaaaaachj3m7nabjocamcdqr2rqaaaaaq »*
@@ -1389,7 +1395,68 @@ Au terme de la V.6, le module de collecte :
     -   le fichier contient des simples guillemets comme séparateurs de texte ;
     -   il contient un champ obligatoire non renseigné (Title) :<br>Si le fichier CSV est erroné, une erreur peut être renvoyée par l’API, l’(les) unité(s) archivistique(s) en erreur sera(seront) ignorée(s) et seule(s) l’(les) unité(s) archivistique(s) sans erreur fera(feront) l’objet de la mise à jour ;
 
--   ne permet pas de supprimer une métadonnée.
+-   ne permet pas de supprimer une métadonnée avec ce mode de mise à jour par envoi de fichier .csv.
+
+AAAAAAAAAAAAAAAAAA : AJOUTER MAJ JSONL
+
+En troisième option la solution logicielle Vitam permet de mettre à jour unitairement plusieurs unités archivistiques. Pour chacune d'entre elles, elle permet plus précisément de :
+
+- modifier des métadonnées,
+- ajouter des métadonnées,
+- supprimer des métadonnées.
+
+***Points d'attention***
+-   En prérequis à la mise à jour unitaire en masse des unités archivistiques, il faut avoir au préalable créé une transaction et le signaler dans l’API ;
+
+-   Il n’est pas possible d'ajouter une unité archivistique lors de cette action de mise à jour.
+
+  *Exemple : requête en vue de modifier un titre pour une unité archivistique dont l'identifiant d'agent est "123456", de supprimer une date d'envoi et d'ajouter une description pour une unité archivistique dont l'identifiant d'agent est 1234557*
+```  
+POST {{url}}/collect-external/v1/transactions/{{transaction-id}}/units/bulk
+Accept: application/json
+Content-Type: application/json
+X-Tenant-Id: {{tenant}}
+
+{
+  "threshold": 10,
+  "queries": [
+    {
+      "$query": [
+        { "$eq": { "Agent.Identifier": "123456" } }
+      ],
+      "$action": [
+        { "$set": { "Title": "Nouveau titre" } }
+      ]
+    },
+    {
+      "$query": [
+        { "$eq": { "Agent.Identifier": "123457" } }
+      ],
+      "$action": [
+        { "$unset": [ "SentDate" ] },
+        { "$set": { "Description": "Description mise à jour" } }
+      ]
+    }
+  ]
+}
+```  
+Cette action provoque la mise à jour des unités archivistiques dans la base de données MongoDB, dans la collection « Unit » (base *MetadataCollect[^18]*).
+
+Lors de cette action, l’opération peut aboutir aux résultats suivants :
+
+| Statut       |  Motifs |
+|---|---|
+| Succès       |  Action réalisée sans rencontrer de problèmes particuliers. |
+| Échec        |  Le seuil de requête est dépassé. <br>Plusieurs unités archivistiques ont été trouvées. <br>Aucune unité archivistique n'a été trouvée. <br>Le format de la métadonnées à modifier n'est pas conforme au type d'indexation défini dans l'ontologie. |
+
+***Points d'attention***
+- L'échec ne concerne pas l'action en général, mais est spécifique à une unité archivistique en particulier.
+- La requête utilise le langage de requête DSL de type mise à jour unitaire de masse (BULK UPDATE) de la solution logicielle Vitam en entrée.
+- Le nombre de requêtes unitaires doit rester raisonnable, idéalement pas plus de 1000 par appel. Il est limité à un seuil maximum de 100 000 unités archivistiques par défaut. Ce seuil peut être redéfini dans la requête via le paramètre de seuil (threshold).
+
+Important : L'API est synchrone / bloquante, et peut prendre quelques instants.
+
+Elle n’est pas journalisée dans le journal des opérations.
 
 ##### Suppression
 
@@ -2166,6 +2233,9 @@ Annexe 3 : Liste des points d’API
 |                   | Récupère la liste des projets de versement par critère de recherche | project:query:read | GET | project:query:read |
 |                   | Mise à jour d’un projet de versement | project:update        | PUT           | /collect-external/v1/projects  |
 |                   | Supprime un projet de versement   | project:id:delete        | DELETE        | /collect-external/v1/projects/{projectId}/ |
+|                   | Verser une archive arborescente ZIP à un projet de versement automatique sans transaction | project:id:zip:create | POST        | /collect-external/v1/projects/{projectId}/upload/ |
+
+
 |                   | Récupérer la liste des transactions du projet | project:id:transactions | GET |/collect-external/v1/projects/{projectId}/transactions/ |
 | transaction       | Création de la transaction        | transaction:create       | POST          | /collect-external/v1/projects/{projectId}/transactions/ |
 |                   | Mise à jour d’une transaction     | transaction:update       | PUT           | /collect-external/v1/transactions/ |
@@ -2183,6 +2253,7 @@ Annexe 3 : Liste des points d’API
 |                   | Récupère une unité archivistique  | transaction:unit:id:read | GET           | /collect-external/v1/units/{{unit-id}}/ |
 |                   | Mettre à jour les unités archivistiques | transaction:id:units:update | PUT  | /collect-external/v1/transactions/{transactionId}/units/|
 |                   | Télécharge un usage/version du binaire<br> d'un groupe d'objets techniques| transaction:binary:read | GET | /collect-external/v1/units/{unitId}/objects/{usage}/{version}/binary/|
+|                   | Mettre à jour en masse les unités archivistiques | transaction:id:units:bulk:update | POST  | /collect-external/v1/transactions/{transactionId}/units/bulk|
 | objects           | Récupère un groupe d’objets techniques | transaction:object:read | GET       | /collect-external/v1/objects/{gotId}/|
 
 [^1]:  Pour plus d’informations, consulter le document *Modèle de données*, « Collection Project ». Un exemple de projet de versement se trouve dans l’annexe 1 du présent document.

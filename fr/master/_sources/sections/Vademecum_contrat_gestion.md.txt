@@ -1,11 +1,9 @@
 Le contrat de gestion dans la solution logicielle Vitam
 =======
 
-
 Le contrat de gestion permet de définir sur un tenant une stratégie de stockage spécifique, voire de mettre en place une stratégie différenciée pour les unités archivistiques, les groupes d’objets techniques et les objets techniques (fichiers numériques), ainsi qu’une stratégie d’identification pérenne.
 
 Le contrat de gestion est déclaré dans un contrat d’entrée et s’applique aux objets métiers entrés en déclarant ce contrat d’entrée.
-
 
 Présentation du contrat de gestion
 -----
@@ -32,7 +30,6 @@ Si les stratégies spécifiques définies dans le contrat de gestion sont valide
 Si le contrat de gestion déclare une stratégie d’identification pérenne, alors cette stratégie sera appliquée aux unités archivistiques et/ou aux objets versés.
 
 La déclaration d’un contrat de gestion dans un contrat d’entrée n’est pas obligatoire dès lors que l’on ne souhaite pas utiliser une stratégie de stockage spécifique pour les unités archivistiques, groupes d’objets techniques et objets techniques entrés en déclarant ce contrat d’entrée ou une stratégie d’identification pérenne. Par défaut, c’est la stratégie configurée lors de l’installation de la plate-forme qui sera utilisée.
-
 
 Configuration du contrat de gestion
 ----
@@ -102,7 +99,6 @@ Cette fonctionnalité est utile quand on souhaite créer un contrat de gestion e
 
 Un contrat de gestion au statut inactif ne permet pas de réaliser une entrée avec le contrat d’entrée auquel il est associé.
 
-
 ### Modification d’un contrat de gestion
 
 Les contrats de gestion peuvent être modifiés unitairement pour permettre d’activer ou de désactiver certaines options. Cette action provoque la création d’une nouvelle version du contrat de gestion. Les différentes versions font l’objet d’une sauvegarde sur les offres de stockage utilisées par la solution logicielle Vitam.
@@ -121,6 +117,5 @@ En ce qui concerne les options, il est possible de :
 En cas d’ajout d’une stratégie de stockage, la mise à jour sera en échec si cette stratégie n’est pas référencée par la solution logicielle Vitam.
 
 Si le contrat de gestion à modifier est utilisé dans au moins un contrat d’entrée, il est recommandé de désactiver le ou les contrats d’entrée déclarant le contrat de gestion, le temps de procéder à la modification du contrat de gestion.
-
 
 Pour aller plus loin, consulter le [document VITAM. Gestion des habilitations](./habilitations.md).
