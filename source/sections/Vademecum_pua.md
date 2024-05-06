@@ -1,7 +1,7 @@
 Les profils d’unité archivistique dans la solution logicielle Vitam
 ====
 
-Le profil d’unité archivistique permet de définir la syntaxe, la sémantique et les règles de gestion applicables à une unité archivistique, en entrée et tout au long de sa prise en charge par le système.
+Le profil d’unité archivistique permet de définir la syntaxe, la sémantique et les règles de gestion applicables à une unité archivistique, en entrée et tout au long de sa prise en charge par le système.  
 La solution logicielle Vitam permet de disposer d’un référentiel des profils utilisables.
 
 
@@ -13,8 +13,8 @@ Le référentiel des profils d’unité archivistique est propre au tenant sur l
 
 ### Contrôles effectués
 #### En entrée
-La solution logicielle Vitam vérifie que les unités archivistiques déclarant, dans le bordereau de transfert, un profil d’unité archivistique sont conformes à ce dernier.
-Si l’une d’entre elles n’est pas conforme à son profil d’unité archivistique, l’entrée sera rejetée.
+La solution logicielle Vitam vérifie que les unités archivistiques déclarant, dans le bordereau de transfert, un profil d’unité archivistique sont conformes à ce dernier.  
+Si l’une d’entre elles n’est pas conforme à son profil d’unité archivistique, l’entrée sera rejetée.  
 Le profil d’unité archivistique est déclaré au moyen de son identifiant dans le référentiel des profils d’unité archivistique dans les blocs <ArchiveUnit> pour chaque unité archivistique qui le nécessite.
 
 #### En modification
@@ -71,7 +71,7 @@ Champs attendus dans le bordereau de transfert des dossiers de personnel
 |:----|:----|:----|:----|:----|:----|:----|:----|:----|
 
 Le profil d’unité archivistique peut :
-- rendre obligatoire ou non la présence de tous ces champs (pour leur formalisation, voir le [vademecum ontologie](./Vademecum_ontologie.md) ;
+- rendre obligatoire ou non la présence de tous ces champs (pour leur formalisation, voir le [vademecum ontologie](./Vademecum_ontologie.md)) ;
 - préciser si ces champs sont répétables ou non ; on pourrait ici n’accepter qu’un seul matricule alors que le SEDA rend cette information répétable ;
 - rendre obligatoire la présence de certaines métadonnées de gestion, par exemple, dans ce cas, la présence d’une règle de communicabilité correspondant au délai de communicabilité de 50 ans.
 

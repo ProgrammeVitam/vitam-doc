@@ -67,7 +67,8 @@ La mise à jour est en succès avec avertissement si :
 - elle met à jour un référentiel dont la version est antérieure à celle du référentiel précédemment importé ;
 - elle met à jour un référentiel dont la date de création est antérieure à la date de création du référentiel préalablement importé.
 
-*Point d’attention :* La version du nouveau référentiel doit être identique à celle qui est importée dans l’outil Siegfried. Toute mise à jour du référentiel des formats doit être accompagnée d’une mise à jour du fichier de signatures importé dans cet outil au moyen d’un acte d’administration technique.
+*Point d’attention :*  
+La version du nouveau référentiel doit être identique à celle qui est importée dans l’outil Siegfried. Toute mise à jour du référentiel des formats doit être accompagnée d’une mise à jour du fichier de signatures importé dans cet outil au moyen d’un acte d’administration technique.
 
 Les différentes versions du référentiel font l’objet d’une sauvegarde sur les offres de stockage.
 

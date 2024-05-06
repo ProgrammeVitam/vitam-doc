@@ -143,5 +143,4 @@ Pour plus d’information, consulter la [documentation d’exploitation](http://
 
 Les différentes versions de l’ontologie font l’objet d’une sauvegarde sur les offres de stockage utilisées par l’implémentation de la solution logicielle Vitam.
 
-
 Pour aller plus loin, consulter le [document VITAM. Ontologie](./ontologie.md).

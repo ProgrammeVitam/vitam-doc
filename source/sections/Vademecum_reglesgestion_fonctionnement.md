@@ -65,38 +65,40 @@ Une unité hérite des règles de gestion et des attributs des unités parentes,
 - si l’unité bloque spécifiquement une règle en particulier (balise <RefNonRuleId>)
 
 *Cas particulier de la propriété définie localement* qui l’emporte sur les propriétés héritées, même en l’absence de blocage explicite d’héritage
+
 Exemple : si une unité archivistique hérite d’un parent ayant le même service producteur une règle de durée d’utilité administrative « 5 ans » avec un sort final « conserver » et définit localement une autre règle « 10 ans » avec un sort final « détruire », cette unité aura deux durées d’utilité administrative, mais un seul sort final (« détruire »), au titre du service producteur principal de l’unité archivistique.
 
 
-`````
+```
 AU 1
 Déclaration de la règle A, date de départ X
 Déclaration de la propriété « Conserver »
-``````
-``````
+```
+
+```
 AU 2
 Déclaration de la règle B, date de départ Y
 Déclaration de la propriété « Détruire »
 Héritage de la règle A, date de départ X
 Héritage de la propriété « Conserver » bloqué de facto
-``````
+```
 
 *Cas particulier du traitement des redéclarations de règles*
 Exemple : si une unité archivistique AU 1 déclare une règle A avec une date de départ X et qu’une unité archivistique AU 2, fille de cette première unité archivistique AU 1, déclare la même règle A avec une date de départ Y, alors l’unité archivistique AU 2 aura pour date de départ du calcul de la règle la date Y et les unités archivistiques filles de l’unité archivistique AU 2 n’hériteront de la règle A qu’en tant que filles de l’AU 2, c’est-à-dire avec la date de départ Y.
 
-``````
+```
 AU 1
 Déclaration de la règle A, date de départ X
-``````
-``````
+```
+```
 AU 2
 Déclaration de la règle A, date de départ Y
 Héritage de la règle A avec la date de départ X bloqué de facto
-``````
-``````
+```
+```
 AU 3
 Héritage de la règle A avec la date de départ Y
-``````
+```
 
 Il est recommandé d’utiliser la fonctionnalité de blocage d’héritage quand l’unité archivistique et ses filles ont des règles différentes à appliquer et seulement si des règles ont été définies par ses parentes.
 Quand aucune règle n’est définie par les unités archivistiques parentes, il est déconseillé de bloquer les héritages des unités archivistiques filles par principe.<br>
@@ -168,16 +170,19 @@ Lorsqu’une arborescence d’unités archivistiques a une même règle applicab
 
 
 ### Quand déclarer une règle au niveau de la pièce ?
-**Cas 1**: Lorsque les unités archivistiques sont soumises à une même règle pour toute l’arborescence, mais que cette règle doit s’appliquer pour chaque pièce en fonction de la date du document et non au niveau du dossier ou du sous-dossier, chaque pièce devra déclarer la règle et la date de départ du calcul de l’échéance.
+**Cas 1**:   
+Lorsque les unités archivistiques sont soumises à une même règle pour toute l’arborescence, mais que cette règle doit s’appliquer pour chaque pièce en fonction de la date du document et non au niveau du dossier ou du sous-dossier, chaque pièce devra déclarer la règle et la date de départ du calcul de l’échéance.
 
 Cette configuration permet d’assurer que l’échéance sera calculée au plus juste et que les actions à échéance pourront être mises en œuvre sans tarder, qu’il s’agisse de communication, d’élimination ou de transfert.
 Cas d’usage : dans un dossier de captation de la Hadopi, chaque document est éliminé à la date anniversaire de la captation. Le dossier auquel les captations sont rattachées est conservé sans date d’échéance.
 Il sera inutile de déclarer la règle au niveau du dossier, sauf si l’on souhaite éliminer celui-ci à une échéance donnée, une fois toutes ses pièces éliminées.
 
-**Cas 2**: Lorsque les unités archivistiques sont soumises à une règle commune pour toute l’arborescence avec une date de départ du calcul de l’échéance commune, sauf pour un sous-dossier ou une pièce pour lequel cette règle s’applique mais avec une autre date, cette unité archivistique de sous-dossier ou de pièce devra redéclarer la règle avec la date de départ spécifique.
+**Cas 2**:  
+Lorsque les unités archivistiques sont soumises à une règle commune pour toute l’arborescence avec une date de départ du calcul de l’échéance commune, sauf pour un sous-dossier ou une pièce pour lequel cette règle s’applique mais avec une autre date, cette unité archivistique de sous-dossier ou de pièce devra redéclarer la règle avec la date de départ spécifique.
 Cas d’usage : dans un dossier d’affaires composé de sous-dossier a la même durée d’utilité administrative que les autres, mais une date de départ spécifique pour le calcul de sa durée d’utilité administrative.
 
-**Cas 3**: Lorsque les unités archivistiques sont soumises à une règle commune pour toute l’arborescence avec une date de départ du calcul de l’échéance commune, sauf un sous-dossier ou une pièce pour lequel cette règle ne s’applique pas, cette unité archivistique de sous-dossier ou de pièce devra bloquer l’héritage de cette règle en particulier (balise RefNonRuleId) ou l’héritage de toutes les règles de cette catégorie (balise PreventInheritance), sans oublier de déclarer une propriété localement le cas échéant.<br>
+**Cas 3**:  
+Lorsque les unités archivistiques sont soumises à une règle commune pour toute l’arborescence avec une date de départ du calcul de l’échéance commune, sauf un sous-dossier ou une pièce pour lequel cette règle ne s’applique pas, cette unité archivistique de sous-dossier ou de pièce devra bloquer l’héritage de cette règle en particulier (balise RefNonRuleId) ou l’héritage de toutes les règles de cette catégorie (balise PreventInheritance), sans oublier de déclarer une propriété localement le cas échéant.<br>
 *Cas d’usage* : dans un dossier d’agent, le dossier médical obéit à une règle de communicabilité particulière.<br>
 *Cas d’usage* : dans un dossier de procédure administrative non encore librement communicable, une pièce est librement communicable.<br>
 *Cas d’usage* : dans un dossier contenant des documents classifiés, un document a été déclassifié.<br>

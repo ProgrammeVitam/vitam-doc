@@ -1,9 +1,7 @@
 Les audits dans la solution logicielle Vitam
 ====
 
-
 La solution logicielle Vitam offre des fonctionnalités d’audit permettant de vérifier la disponibilité des objets métier (unités archivistiques, groupes d’objets techniques) dans la solution logicielle ainsi que le maintien de leur intégrité.
-
 
 Présentation des audits
 ----
@@ -42,7 +40,6 @@ La solution logicielle Vitam ne rétablit que l’objet technique présent sur u
 
 Une intervention humaine sera nécessaire si des incohérences sont détectées dans la base de données.
 
-
 Mise en œuvre d’une opération d’audit
 ----
 
@@ -61,4 +58,4 @@ L’audit correctif sera lancé à la suite d’un audit de cohérence dont le r
 En fonction du nombre d’objets conservés dans la solution logicielle Vitam, une opération d’audit peut prendre du temps et avoir un impact en termes de performance. Avant de lancer un audit, il est recommandé de bien prendre en considération le périmètre qui doit faire l’objet de cet audit.
 
 
-Pour en savoir plus, consulter le [document VITAM. Gestion de la préservation](./preservation).
+Pour en savoir plus, consulter le [document VITAM. Gestion de la préservation](./preservation.md).

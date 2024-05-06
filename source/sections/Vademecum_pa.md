@@ -133,5 +133,4 @@ La solution logicielle Vitam permet de modifier le fichier au format XSD ou RNG 
       - d’un fichier RNG si la notice déclare un format Relax NG ;
 - rétablir les services désactivés.
 
-
 Pour en savoir plus, consulter le [document VITAM. Profils d’archivage](./profil_archivage.md).
