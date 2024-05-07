@@ -6,12 +6,14 @@ Les archives sont soumises à des règles pour la gestion de leur cycle de vie, 
 
 Présentation des règles de gestion et des mécanismes d’héritage
 ---
+
 ### Déclaration des règles de gestion
+
 Les règles de gestion peuvent être associées dans la solution logicielle Vitam unitairement aux unités archivistiques standard ou de plan de classement ou à l’ensemble d’un SIP.
 Il est ainsi possible de définir des règles valables pour une unité archivistique en particulier, pour une unité archivistique et ses filles ou pour l’ensemble des unités archivistiques transférées.
 
-
 ### Structure des règles de gestion
+
 Sept catégories de règles de gestion peuvent s’appliquer aux archives et ont été modélisées dans le SEDA :
 |Catégorie de règle|Description de la règle|Réglementation associée|Dénomination de la catégorie dans le SEDA|
 |:----:|:----|:----|:----:|
@@ -34,8 +36,8 @@ Au sein de chaque catégorie de règle, une unité archivistique (ou un SIP dans
       - pour la durée de classification (ClassificationRule) : le niveau de classification (ClassificationLevel), l’émetteur de la classification (ClassificationOwner), les mentions additionnelles de limitation du champ de diffusion (ClassificationAudience), la date de réévaluation du niveau de classification (ClassificationReassessingDate), la nécessité d’une autorisation pour procéder à la réévaluation (NeedReassessingAuthorization) ;
 - des attributs spécifiques à une règle de gel (HoldRule) : la date de fin du gel (HoldEndDate), l’émetteur du gel (HoldOwner), la raison du gel (HoldReason), la date de réévaluation du gel (HoldReassessingDate), le blocage du reclassement de l’archives gelée (PreventRearrangement) ;
 - des métadonnées de gestion d’héritage :
-      - pour bloquer l’héritage de toutes les règles pour la catégorie (balise <PreventInheritance> avec comme valeur « true » ou « false »)
-      - pour bloquer l’héritage d’une règle ciblée par son identifiant (balise <RefNonRuleId> avec indication de l’identifiant de la règle bloquée).
+      - pour bloquer l’héritage de toutes les règles pour la catégorie (balise *PreventInheritance* avec comme valeur « true » ou « false »)
+      - pour bloquer l’héritage d’une règle ciblée par son identifiant (balise *RefNonRuleId* avec indication de l’identifiant de la règle bloquée).
 
 Il est possible de renseigner un identifiant de règle sans donner de date de départ, par exemple quand la date de clôture du dossier n’est pas encore connue dans le cadre d’un archivage au fil de l’eau. Dans ce cas, cependant, la solution logicielle ne pourra pas calculer de date d’échéance et la règle ne pourra pas s’appliquer.
 
@@ -47,27 +49,26 @@ Certaines propriétés sont obligatoires dès lors qu’une règle est indiquée
 Les propriétés sont associées à la catégorie et non à une règle particulière. Ainsi, pour une unité archivistique donnée, il est possible d’indiquer plusieurs identifiants de règles de durée d’utilité administrative, mais un seul sort final.
 Les attributs sont associés à une règle particulière. Ainsi, pour une unité archivistique donnée, il est possible d’indiquer plusieurs identifiants de règles de gel et des attributs comme une raison par chacun d’eux.
 
-L’utilisation des balises <PreventInheritance> et <RefNonRuleId> nécessite de redéfinir une propriété pour les catégories de règles qui en attendent une, même si aucune règle spécifique n’est définie. Les catégories de règles concernées sont : StorageRule, AppraisalRule et ClassificationRule.
+L’utilisation des balises *PreventInheritance* et *RefNonRuleId* nécessite de redéfinir une propriété pour les catégories de règles qui en attendent une, même si aucune règle spécifique n’est définie. Les catégories de règles concernées sont : StorageRule, AppraisalRule et ClassificationRule.
 Ainsi, pour une unité archivistique qui bloque tout héritage dans la catégorie « Durée d’utilité administrative » sans redéfinir de règle, un sort final doit quand même être indiqué pour cette unité.
 
-Pour les archives soumises à des conditions particulières d’application des règles de communicabilité ou de gestion, comme les archives versées sous protocole ou avec un contrat de don ou de dépôt, il est possible d’indiquer que la mise en œuvre des règles de gestion est soumise à autorisation via la balise <NeedAuthorization>.
-
+Pour les archives soumises à des conditions particulières d’application des règles de communicabilité ou de gestion, comme les archives versées sous protocole ou avec un contrat de don ou de dépôt, il est possible d’indiquer que la mise en œuvre des règles de gestion est soumise à autorisation via la balise *NeedAuthorization*.
 
 ### Mécanisme général d’héritage des règles et des propriétés
+
 Pour chaque catégorie de règles, les règles spécifiques et les propriétés ou attributs portés par une unité archivistique sont héritées par ses filles, sauf cas particuliers de blocage de l’héritage.
 
 Une unité archivistique hérite des propriétés des unités parentes, sauf :
 - si l’unité redéfinit localement la propriété
-- si l’héritage de la catégorie de règles est bloqué via la balise <PreventInheritance>
+- si l’héritage de la catégorie de règles est bloqué via la balise *PreventInheritance*
 Une unité hérite des règles de gestion et des attributs des unités parentes, sauf :
 - si l’unité redéfinit localement la même règle (même identifiant - RuleId, avec ou non une date de départ différente)
-- si l’héritage de la catégorie de règles est bloqué via la balise <PreventInheritance>
-- si l’unité bloque spécifiquement une règle en particulier (balise <RefNonRuleId>)
+- si l’héritage de la catégorie de règles est bloqué via la balise *PreventInheritance*
+- si l’unité bloque spécifiquement une règle en particulier (balise *RefNonRuleId*)
 
 *Cas particulier de la propriété définie localement* qui l’emporte sur les propriétés héritées, même en l’absence de blocage explicite d’héritage
 
 Exemple : si une unité archivistique hérite d’un parent ayant le même service producteur une règle de durée d’utilité administrative « 5 ans » avec un sort final « conserver » et définit localement une autre règle « 10 ans » avec un sort final « détruire », cette unité aura deux durées d’utilité administrative, mais un seul sort final (« détruire »), au titre du service producteur principal de l’unité archivistique.
-
 
 ```
 AU 1
@@ -104,20 +105,19 @@ Il est recommandé d’utiliser la fonctionnalité de blocage d’héritage quan
 Quand aucune règle n’est définie par les unités archivistiques parentes, il est déconseillé de bloquer les héritages des unités archivistiques filles par principe.<br>
 Pour donner une date de départ différente pour une même règle, la redéclaration de la règle par l’unité archivistique fille sans blocage de l’héritage suffit.
 
-
 ### Calcul des règles et propriétés applicables à une unité archivistique
       
 Dans la solution logicielle Vitam, seules les unités archivistiques déclarant une règle sont concernées par le calcul de l’échéance et l’enregistrement des informations sur les règles en base.<br>
 Les autres unités archivistiques n’ont pas de règles en propre enregistrées en base. Les règles qui leur sont applicables, héritées des unités archivistiques parentes, sont calculées lorsque des opérations qui les concernent sont mises en œuvre (demande de consultation, mise en œuvre des sorts finaux), sans être conservées en base.<br>
-Quand les règles sont déclarées au niveau du SIP (bloc <ManagementMetadata>) pour toutes les archives transférées, seules les unités archivistiques à la racine du SIP porteront ces règles en base. Dans le cas particulier où la même règle est déclarée par les unités archivistiques racines avec des dates de départ différentes, leur date de départ respective l’emporte sur celle déclarée dans le bloc <ManagementMetadata>.
+Quand les règles sont déclarées au niveau du SIP (bloc *ManagementMetadata*) pour toutes les archives transférées, seules les unités archivistiques à la racine du SIP porteront ces règles en base. Dans le cas particulier où la même règle est déclarée par les unités archivistiques racines avec des dates de départ différentes, leur date de départ respective l’emporte sur celle déclarée dans le bloc *ManagementMetadata*.
 
 Lors du calcul des règles applicables à une unité archivistique, la solution logicielle Vitam associe aux règles le service producteur principal de l’unité qui a déclaré la règle et fait de même pour les propriétés.<br>
 Ceci permet de connaître le service producteur à l’origine d’une règle de gestion, pour pouvoir par exemple solliciter les autorisations d’élimination nécessaires dans le cas de la règle de durée d’utilité administrative.
 
 Il est possible de demander l’indexation en base des règles et propriétés portées en propre comme héritées par une unité archivistique afin de faciliter par la suite le filtrage des unités archivistiques en fonction des règles de gestion qui leur sont applicables. Le niveau des informations indexées dépend du paramétrage de la plate-forme (cf. vademecum [Le paramétrage fonctionnel d’une plate-forme utilisant la solution logicielle Vitam](./Vademecum_parametrages_pf.md)).
 
-
 ### Définition d’un sort final implicite pour la durée d’utilité administrative
+
 Dans le cas spécifique de la durée d’utilité administrative, si l’unité archivistique ne déclare pas de sort final et ne l’hérite pas non plus, elle est implicitement considérée par la solution logicielle Vitam comme devant être conservée et cette propriété implicite peut être héritée par ses descendants.<br>
 Ainsi, le premier niveau d’un SIP (unité racine), sauf s’il définit une information contraire, est considéré comme devant implicitement être conservé (propriété « KEEP » implicite). Cette propriété implicite est alors définie localement par la solution logicielle Vitam et est héritée par les éventuelles unités archivistiques filles de l’unité racine.
 
@@ -132,8 +132,6 @@ Un quatrième SIP (AU 30, AU 31 et AU 32) a pour service producteur SP 3 et une 
 
 ![RG_rattachement](./medias/vademecum/rg_fonctionnement.png)
 
-
-
 Le comportement dans la solution logicielle Vitam est le suivant :
 - Cas 1 : une unité archivistique racine rattachée lors de l’entrée à une unité archivistique de même service producteur qui porte un sort final KEEP implicite hérite ce sort final dans la mesure où elle n’en définit pas elle-même (cas de l’AU 10).
 - Cas 2 : une unité archivistique racine rattachée lors de l’entrée à une unité archivistique de service producteur différent qui porte un sort final KEEP implicite définit localement au titre de son service producteur un sort final implicite et cette définition locale bloque l’héritage du sort final implicite du service producteur de rattachement (cas de l’AU 20).
@@ -142,16 +140,18 @@ Le comportement dans la solution logicielle Vitam est le suivant :
 
 Positionnement des règles de gestion dans la solution logicielle Vitam
 ----
+
 ### Où positionner les règles de gestion ?
+
 Les règles peuvent être déclarées à des niveaux différents de l’arborescence d’unités archivistiques, en fonction des résultats attendus pour les traitements à échéance : traitement identique de toute une entrée, traitement identique de toutes les pièces d’un dossier, traitement spécifique de chaque document.<br>
-Dans le bordereau de transfert, les règles sont positionnées dans le bloc <ManagementMetadata> si elles doivent s’appliquer à l’ensemble du SIP ou dans le bloc <Management> des différentes unités archivistiques si elles sont spécifiques à ces unités.
+Dans le bordereau de transfert, les règles sont positionnées dans le bloc *ManagementMetadata* si elles doivent s’appliquer à l’ensemble du SIP ou dans le bloc *Management* des différentes unités archivistiques si elles sont spécifiques à ces unités.
 
 Dans l’univers papier, les règles étaient positionnées au plus haut niveau possible de l’arborescence et les niveaux inférieurs déclaraient leur date de départ pour le calcul de l’échéance des règles. Dans le modèle SEDA, la date de départ du calcul de l’échéance ne peut être exprimée sans déclaration de l’identifiant de la règle. Il n’est donc pas possible de déclarer au niveau d’une unité archivistique une règle qui serait héritée par ses filles qui déclareraient à leur niveau uniquement les dates de départ spécifiques du calcul de l’échéance.<br>
 - Dès lors qu’on veut déclarer une date de départ spécifique, il convient de déclarer l’identifiant de la règle et la date de départ sur cette unité ;
 - Si l’on déclare une règle sans date de départ, aucune application par la solution logicielle de cette règle ne sera possible.
 
-
 ### Peut-on positionner des règles de gestion sur des unités de plan de classement ?
+
 Dans le cas d’une implémentation qui intègre un plan de classement auquel sont rattachées les unités archivistiques standard, le plan de classement peut porter des règles de gestion qui seront héritées par les unités rattachées.
 Dans les pratiques de records management, il est d’usage de faire porter sur le plan de classement les règles applicables aux pièces qui seront classées dans cette rubrique.<br>
 Toutefois, dans la solution logicielle Vitam, dans cette configuration une date de départ commune pour toutes les archives rattachées doit être portée par le plan de classement pour permettre la mise en œuvre des actions à échéance. Dès lors qu’une unité archivistique rattachée doit avoir une date de départ de calcul de la règle différente, la règle devra être redéclarée sur cette unité archivistique. Mettre la règle de gestion sur une unité archivistique de plan de classement n’est donc envisageable que dans des cas d’unités archivistiques très homogènes.
@@ -160,17 +160,17 @@ Toutefois, dans la solution logicielle Vitam, dans cette configuration une date 
 Il n’est donc pas recommandé de porter des règles sur une unité archivistique de plan de classement qui a vocation à être conservée de manière pérenne, c’est-à-dire qui ne peut pas porter une date de clôture à compter de laquelle appliquer les traitements à échéance ou qui ne doit pas être éliminée.<br>
 Il peut rester intéressant d’associer intellectuellement une règle à un niveau de plan à titre de contrôle par l’archiviste des valeurs déclarées dans les unités rattachées.
 
-
 ### Quand déclarer une règle au niveau du dossier ?
+
 Lorsqu’une arborescence d’unités archivistiques a une même règle applicable à l’issue d’un délai calculé à partir de la date de clôture du dossier, la règle sera portée par l’unité archivistique de niveau dossier et héritée par les unités archivistiques filles. La date de départ pour le calcul de la règle peut être ajoutée ultérieurement, si elle n’est pas connue lors des premiers versements, pour permettre le calcul de l’échéance.
 
 *Cas d’usage* : un dossier de personnel est ouvert dès la prise de fonction d’un agent et est alimenté au fur et à mesure par les pièces du dossier. Lorsque le dossier ne sera plus actif, sa date de clôture sera portée sur l’unité archivistique du dossier, permettant le calcul du délai de communicabilité qui sera appliqué par héritage à toutes les pièces.
 
 **Attention**, tant que le dossier ne sera pas clos et ne déclarera pas de date de départ pour le calcul de l’échéance de la règle, le calcul du délai de communicabilité ne sera pas possible. Dans le cas d’une durée d’utilité administrative, même si un sort final « Détruire » est déclaré, le dossier et ses pièces ne seront pas considérés comme éliminables tant que la date de départ de la règle n’aura pas été déclarée dans le système, permettant le calcul de la date d’échéance.
 
-
 ### Quand déclarer une règle au niveau de la pièce ?
-**Cas 1**:   
+
+**Cas 1**:  
 Lorsque les unités archivistiques sont soumises à une même règle pour toute l’arborescence, mais que cette règle doit s’appliquer pour chaque pièce en fonction de la date du document et non au niveau du dossier ou du sous-dossier, chaque pièce devra déclarer la règle et la date de départ du calcul de l’échéance.
 
 Cette configuration permet d’assurer que l’échéance sera calculée au plus juste et que les actions à échéance pourront être mises en œuvre sans tarder, qu’il s’agisse de communication, d’élimination ou de transfert.
@@ -188,8 +188,8 @@ Lorsque les unités archivistiques sont soumises à une règle commune pour tout
 *Cas d’usage* : dans un dossier contenant des documents classifiés, un document a été déclassifié.<br>
 **Attention** : si une règle spécifique est bloquée dans une catégorie qui nécessite la déclaration d’une propriété (sort final de la durée d’utilité administrative par exemple), la propriété définie obligatoirement localement à l’occasion de l’utilisation de la balise RefNonRuleId bloquera l’héritage de la propriété des unités parentes, bien que des règles puissent être héritées de ces unités parentes dans cette catégorie. Cela pourra conduire à la non application de certaines règles héritées ou à une application d’un sort final contraire à celui porté par l’unité parente. Les annulations de règle ou d’héritage dans une catégorie doivent donc faire l’objet d’une étude précise pour chaque cas afin de bien s’assurer que les règles applicables à l’unité correspondent aux besoins métier.
 
-
 ### Quel niveau de granularité adopter ?
+
 En sus des cas présentés ci-dessus, le choix du meilleur niveau pour déclarer les règles de gestion pourra prendre en compte les possibilités offertes au service d’archives pour positionner des règles de gestion en fonction des modalités de génération du SIP.<br>
 Dans le cas de versements applicatifs, il est possible de prévoir que l’application productrice réalise des exports associant à chaque pièce la ou les règles applicables et la date de départ du calcul des échéances en fonction d’événements connus du système (date de validation du document, date de clôture d’une procédure…).<br>
 Pour des versements manuels, le renseignement des règles de gestion à la pièce peut se révéler chronophage. On favorisera en ce cas la déclaration au niveau du dossier ou du sous-dossier, et donc le traitement des archives par lot homogène pour l’application des règles de gestion.
@@ -197,8 +197,8 @@ Pour des versements manuels, le renseignement des règles de gestion à la pièc
 Dans le cas d’une production très importante de documents sériels, on pourra souhaiter tenir compte des possibilités d’appliquer au plus juste une durée d’utilité administrative ou une durée d’utilité courante pour organiser très rapidement un transfert vers un autre SAE ou une élimination. En effet, il est possible de lancer chaque mois, voire chaque jour, des opérations d’élimination ou de transfert si des règles ont été positionnées, puisque la date d’échéance s’exprime sous la forme d’une date précise (jour-mois-année) et non d’une année uniquement.<br>
 Cas d’usage : dans le cas d’un organisme qui produit quotidiennement un très grand nombre de dossiers de remboursement, on pourra porter la DUA sur chaque dossier de remboursement pour éliminer quotidiennement les dossiers arrivés à échéance ou sur un nœud regroupant les dossiers produits chaque mois pour éliminer mensuellement les dossiers arrivés à échéance ou sur un nœud regroupant les dossiers produits chaque année pour éliminer annuellement les dossiers arrivés à échéance.
 
-
 ### Précautions à prendre dans les héritages de règles pour la mise en œuvre du sort final
+
 Dans le cas d’une élimination, si une unité archivistique a hérité une règle pour un service producteur sans avoir également une propriété de sort final au titre de ce même service producteur, la règle pourra ne pas s’appliquer.
 
 *Exemple* : une unité archivistique A de service producteur X porte une règle de DUA 1 et une règle de DUA 2 avec comme sort final « Conserver ».
@@ -216,7 +216,6 @@ En revanche, la règle DUA 3 ne pourra pas être appliquée, faute de présence 
 L’unité archivistique AU B ne pourra ainsi pas être éliminée, puisqu’elle sera considérée comme devant être conservée pour l’unité archivistique parente AU C.
 
 Rattacher des unités archivistiques à d’autres unités archivistiques peut entraîner des héritages complexes et empêcher la mise en œuvre des opérations d’élimination. L’archiviste devra identifier ces cas et procéder à des mises à jour des règles applicables à l’unité et/ou à des réorganisations d’arborescence pour pouvoir éliminer effectivement les unités archivistiques concernées.
-
 
 Modification des règles de gestion
 ---

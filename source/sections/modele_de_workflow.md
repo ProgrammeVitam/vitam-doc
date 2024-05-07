@@ -82,7 +82,11 @@ Un Workflow est défini en JSON avec la structure suivante :
         - WORKSPACE : path indiquant le chemin relatif sur le workspace (implicitement un File local),
         - MEMORY : path indiquant le nom de la clé de valeur (implicitement un objet mémoire).
 
-![](./medias/modele_workflow/media/properties_exemple.JPG)
+![](./medias/modele_workflow/properties_exemple_1.png)
+
+![](./medias/modele_workflow/properties_exemple_2.png)
+
+![](./medias/modele_workflow/properties_exemple_3.png)
 
 Ingest de plan de classement
 -----
@@ -113,19 +117,20 @@ Vérification de la non-existence d’objets (CHECK_NO_OBJECT)
           
 
 #### Structure de workflow d’entrée d’un plan de classement
+
 Le workflow actuel mis en place dans la solution logicielle Vitam est défini dans le fichier « DefaultFilingSchemeWorkflow.json ». Ce fichier est disponible dans : sources/processing/processing-management/src/main/resources/workflows.
 D’une façon synthétique, le workflow est décrit ainsi :
 
-![](./medias/modele_workflow/media/entree_pc_1.png)
+![](./medias/modele_workflow/entree_pc_1.png)
 
-![](./medias/modele_workflow/media/entree_pc_2.png)
+![](./medias/modele_workflow/entree_pc_2.png)
 
-![](./medias/modele_workflow/media/entree_pc_3.png)
+![](./medias/modele_workflow/entree_pc_3.png)
 
-![](./medias/modele_workflow/media/entree_pc_4.png)
+![](./medias/modele_workflow/entree_pc_4.png)
 
-
-## Masterdata
+Masterdata
+---
 
 Cette section décrit les processus (workflows) d’administration des différents référentiels de la solution logicielle Vitam. Ceux-ci se construisent sur la base de fichiers à importer. La structure de ces fichiers et la description de leurs contenus sont décrites dans la documentation relative au modèle de données. Si un des fichiers importés contient des balises HTML, son contenu sera considéré comme dangereux et l’import sera rejeté. Ce rejet ne fera pas l’objet d’une opération et ne sera donc pas enregistré dans le journal des opérations. En revanche, une alerte de sécurité sera émise dans un log de sécurité de la solution logicielle Vitam, pour informer l’administrateur de cette tentative.
 
@@ -162,9 +167,9 @@ La fin du processus peut prendre plusieurs statuts :
 
 D’une façon synthétique, le workflow est décrit ainsi :
 
-![](./medias/modele_workflow/media/import_arbre_1.png)
-![](./medias/modele_workflow/media/import_arbre_2.png)
-![](./medias/modele_workflow/media/import_arbre_3.png)
+![](./medias/modele_workflow/import_arbre_1.png)  
+![](./medias/modele_workflow/import_arbre_2.png)  
+![](./medias/modele_workflow/import_arbre_3.png)
 
 ### Workflow d’administration d’un référentiel de règles de gestion
 
@@ -264,8 +269,7 @@ La fin du processus peut prendre plusieurs statuts :
 
 D’une façon synthétique, le workflow est décrit ainsi :
 
-![](./medias/modele_workflow/media/import_ref_rg_1.png)
-
+![](./medias/modele_workflow/import_ref_rg_1.png)
 
 #### Structure du rapport d’entrée du référentiel des règles de gestion
 
@@ -361,7 +365,7 @@ La fin du processus peut prendre plusieurs statuts 
 
 D’une façon synthétique, le workflow est décrit ainsi :
 
-![](./medias/modele_workflow/media/import_ref_format_1.png)
+![](./medias/modele_workflow/import_ref_format_1.png)
 
 #### Structure du rapport d’administration d’un référentiel des formats
 
@@ -471,7 +475,7 @@ La fin du processus peut prendre plusieurs statuts :
 
 D’une façon synthétique, le workflow est décrit ainsi :
 
-![](./medias/modele_workflow/media/import_ref_sa_1.png)
+![](./medias/modele_workflow/import_ref_sa_1.png)
 
 #### Structure du rapport d’import du référentiel des services agents
 
@@ -568,7 +572,7 @@ Sauvegarde du JSON (STP_BACKUP_INGEST_CONTRACT)
 
 D’une façon synthétique, le workflow est décrit ainsi :
 
-![](./medias/modele_workflow/media/import_ref_contrat_entree_1.png)
+![](./medias/modele_workflow/import_ref_contrat_entree_1.png)
 
 #### Processus de mise à jour d’un contrat d’entrée (STP_UPDATE_INGEST_CONTRACT)
 
@@ -602,7 +606,7 @@ Tous les éléments réalisés au cours de ce processus sont exécutés dans une
 
 D’une façon synthétique, le workflow est décrit ainsi :
 
-![](./medias/modele_workflow/media/maj_ref_contrat_entree_1.png)
+![](./medias/modele_workflow/maj_ref_contrat_entree_1.png)
 
 ### Workflow d’administration d’un référentiel des contrats d’accès
 
@@ -654,7 +658,8 @@ Tous les éléments réalisés au cours de ce processus sont exécutés dans une
 #### Structure du Workflow d’import du référentiel des contrats d’accès
 
 D’une façon synthétique, le workflow est décrit ainsi :
-![](./medias/modele_workflow/media/import_ref_contrat_acces_1.png)
+
+![](./medias/modele_workflow/import_ref_contrat_acces_1.png)
 
 #### Processus de mise à jour d’un contrat d’accès  STP_UPDATE_ACCESS_CONTRACT
 
@@ -682,7 +687,7 @@ D’une façon synthétique, le workflow est décrit ainsi :
 
 D’une façon synthétique, le workflow est décrit ainsi :
 
-![](./medias/modele_workflow/media/import_ref_contrat_acces_1.png)
+![](./medias/modele_workflow/maj_ref_contrat_acces_1.png)
 
 ### Workflow d’administration d’un référentiel des contrats de gestion
 
@@ -727,11 +732,11 @@ Tous les éléments réalisés au cours de ce processus sont exécutés dans une
     - KO : pas de cas KO
     - FATAL : une erreur technique est survenue lors de la copie de la base de données nouvellement importée (STP_BACKUP_MANAGEMENT_CONTRACT.FATAL = Erreur technique lors du processus de sauvegarde des contrats de gestion)
 
-### Structure du Workflow d’import du référentiel des contrats de gestion
+#### Structure du Workflow d’import du référentiel des contrats de gestion
 
 D’une façon synthétique, le workflow est décrit ainsi :
 
-![](./medias/modele_workflow/media/import_ref_contrat_gestion_1.png)
+![](./medias/modele_workflow/import_ref_contrat_gestion_1.png)
 
 #### Processus de mise à jour d’un contrat de gestion  (STP_UPDATE_MANAGEMENT_CONTRACT)
 
@@ -758,7 +763,7 @@ D’une façon synthétique, le workflow est décrit ainsi :
 
 D’une façon synthétique, le workflow est décrit ainsi :
 
-![](./medias/modele_workflow/media/maj_ref_contrat_gestion_1.png)
+![](./medias/modele_workflow/maj_ref_contrat_gestion_1.png)
 
 
 ### Workflow d’administration d’un référentiel des profils d’archivage
@@ -801,8 +806,8 @@ Le processus d’import d’une notice de profil d’archivage permet à la fois
 
 #### Structure du Workflow d’import d’une notice de profil d’archivage
 
-D’une façon synthétique, le workflow est décrit ainsi :
-![](./medias/modele_workflow/media/import_notice_pa_1.png)
+D’une façon synthétique, le workflow est décrit ainsi :  
+![](./medias/modele_workflow/import_notice_pa_1.png)
 
 #### Processus de mise à jour d’une notice de profil d’archivage  (STP_UPDATE_PROFILE_JSON)
 
@@ -835,7 +840,7 @@ Cette tâche est appelée que ce soit en import initial ou lors de la modificati
 
 D’une façon synthétique, le workflow est décrit ainsi :
 
-![](./medias/modele_workflow/media/maj_notice_pa_1.png)
+![](./medias/modele_workflow/maj_notice_pa_1.png)
 
 ### Workflow d’administration d’un référentiel des profils de sécurité
 
@@ -871,7 +876,7 @@ Tous les éléments réalisés au cours de ce processus sont exécutés dans une
 
 D’une façon synthétique, le workflow est décrit ainsi :
 
-![](./medias/modele_workflow/media/import_ref_profil_secu_1.png)
+![](./medias/modele_workflow/import_ref_profil_secu_1.png)
 
 #### Processus de mise à jour d’un référentiel des profils de sécurité (STP_UPDATE_SECURITY_PROFILE)
 
@@ -900,7 +905,7 @@ Cette tâche est appelée que ce soit en import initial ou en modification.
 
 D’une façon synthétique, le workflow est décrit ainsi :
 
-![](./medias/modele_workflow/media/maj_ref_profil_secu_1.png)
+![](./medias/modele_workflow/maj_ref_profil_secu_1.png)
 
 ### Workflow d’administration d’un référentiel des contextes applicatifs
 
@@ -944,7 +949,7 @@ Tous les éléments réalisés au cours de ce processus sont exécutés dans une
 
 D’une façon synthétique, le workflow est décrit ainsi :
 
-![](./medias/modele_workflow/media/import_ref_contexte_appli_1.png)
+![](./medias/modele_workflow/import_ref_contexte_appli_1.png)
 
 #### Processus de mise à jour d’un référentiel des contextes applicatifs (STP_UPDATE_CONTEXT)
 
@@ -972,7 +977,7 @@ Cette tâche est appelée que ce soit en import initial ou en modification.
 #### Structure du Workflow de mise à jour du référentiel des contextes applicatifs
 
 D’une façon synthétique, le workflow est décrit ainsi :
-![](./medias/modele_workflow/media/maj_ref_contexte_appli_1.png)
+![](./medias/modele_workflow/maj_ref_contexte_appli_1.png)
 
 ### Workflow d’administration du référentiel des profils d’unités archivistiques
 
@@ -996,7 +1001,7 @@ Les données suivantes, optionnelles, si elles sont remplies, le sont en respect
 - **Statuts** :
 - OK : les règles ci-dessus sont respectées (IMPORT_ARCHIVEUNITPROFILE.OK = Succès du processus d’import du profil d’unité archivistique)
 - KO :
-    - Cas n°1 : une des règles ci-dessus n’a pas été respectée (IMPORT_ARCHIVEUNITPROFILE.KO = Échec du processus d’import du profil d’unité archivistique
+    - Cas n°1 : une des règles ci-dessus n’a pas été respectée (IMPORT_ARCHIVEUNITPROFILE.KO = Échec du processus d’import du profil d’unité archivistique)
     - Cas n°2 : l’identifiant est déjà utilisé (IMPORT_ARCHIVEUNITPROFILE.IDENTIFIER_DUPLICATION.KO = Échec de l’import du profil d’unité archivistique  : l’identifiant est déjà utilisé)
     - Cas n°3 : au moins un des champs obligatoires n’est pas renseigné (IMPORT_ARCHIVEUNITPROFILE.EMPTY_REQUIRED_FIELD.KO = Échec de l’import du profil d’unité archivistique  : au moins un des champs obligatoires n’est pas renseigné)
     - Cas n°4 : Schéma JSON invalide (IMPORT_ARCHIVEUNITPROFILE.INVALID_JSON_SCHEMA.KO = Échec de l’import du profil d’unité archivistique  : schéma JSON non valide)
@@ -1015,7 +1020,7 @@ Les données suivantes, optionnelles, si elles sont remplies, le sont en respect
 
 D’une façon synthétique, le workflow est décrit ainsi :
 
-![](./medias/modele_workflow/media/import_ref_pua_1.png)
+![](./medias/modele_workflow/import_ref_pua_1.png)
 
 #### Processus de mise à jour d’un profil d’unité archivistique (UPDATE_ARCHIVEUNITPROFILE)
 
@@ -1040,13 +1045,13 @@ Cette tâche est appelée que ce soit en import initial ou lors de la modificati
 - **Statuts** :
     - OK : une copie de la base de données nouvellement importée est enregistrée (BACKUP_ARCHIVEUNITPROFILE.OK = Succès du processus de sauvegarde des profils d’unité archivistique (document type))
     - KO : pas de cas KO
-    - FATAL : une erreur technique est survenue lors de la copie de la base de données échec du processus de sauvegarde dudes profils d’unités archivistiques (document type) (BACKUP_ARCHIVEUNITPROFILE.KOFATAL = Erreur technique lors du processus de sauvegarde des profils d’unité archivistique (document type)
+    - FATAL : une erreur technique est survenue lors de la copie de la base de données échec du processus de sauvegarde dudes profils d’unités archivistiques (document type) (BACKUP_ARCHIVEUNITPROFILE.KOFATAL = Erreur technique lors du processus de sauvegarde des profils d’unité archivistique (document type))
 
 #### Structure du Workflow de mise à jour du référentiel des profils d’unité archivistique
 
 D’une façon synthétique, le workflow est décrit ainsi :
 
-![](./medias/modele_workflow/media/maj_ref_pua_1.png)
+![](./medias/modele_workflow/maj_ref_pua_1.png)
 
 ### Workflow d’administration d’un référentiel des vocabulaires de l’ontologie
 
@@ -1143,7 +1148,7 @@ La modification d’une ontologie s’effectue par ré-import du fichier JSON. L
 
 D’une façon synthétique, le workflow est décrit ainsi :
 
-![](./medias/modele_workflow/media/import_ref_onto_1.png)
+![](./medias/modele_workflow/import_ref_onto_1.png)
 
 #### Structure du rapport d’administration des vocabulaires de l’ontologie
 
@@ -1220,7 +1225,7 @@ La modification d’un référentiel des griffons s’effectue par ré-import du
 
 D’une façon synthétique, le workflow est décrit ainsi :
 
-![](./medias/modele_workflow/media/import_ref_griffons_1.png)
+![](./medias/modele_workflow/import_ref_griffons_1.png)
 
 #### Structure du rapport d’administration du référentiel des griffons
 
@@ -1336,7 +1341,7 @@ Les données suivantes sont obligatoirement remplies :
 
 D’une façon synthétique, le workflow est décrit ainsi :
 
-![](./medias/modele_workflow/media/import_ref_scenario_pres_1.png)
+![](./medias/modele_workflow/import_ref_scenario_pres_1.png)
 
 #### Structure du rapport d’administration du référentiel des scénarios de préservation
 
@@ -1643,8 +1648,8 @@ Ce traitement n’est exécuté que si la valeur IN de *checkProfile* est « tr
         -   Cas 3 : le SIP soumis à la solution logicielle Vitam contient à la fois le cas 1 et le cas 2 (CHECK\_DIGEST.KO = Échec de la vérification de l’empreinte des objets)
     -   FATAL : une erreur technique est survenue lors de la vérification de l’intégrité des objets binaires, par exemple lorsque l’algorithme est inconnu (CHECK\_DIGEST.FATAL = Erreur technique lors de la vérification de l’empreinte des objets)
 
-        1.  []{#__RefHeading___Toc86357_2252739535 .anchor}Calcul de la taille des fichiers CHECK\_OBJECT\_SIZE
-            (CheckObjectSizeActionPlugin.java)
+#### Calcul de la taille des fichiers CHECK\_OBJECT\_SIZ(CheckObjectSizeActionPlugin.java)
+
 -   **Règle** : tâche vérifier la taille de chaque objet binaire présent dans le SIP, à vérifier que la taille des objets correspond à la taille des fichiers renseignée pour chacun d’eux dans le manifeste. Le poids des fichiers est calculé en octets et comparé à la taille renseignée dans le manifeste. En cas d’incohérence entre la déclaration dans le manifeste et la taille du fichier, le SIP sera accepté, générant un avertissement. La solution logicielle Vitam se servira alors des informations
     > qu’elle a identifiées et non de celles fournies dans le SIP
 -   **Type** : bloquant
@@ -1655,7 +1660,7 @@ Ce traitement n’est exécuté que si la valeur IN de *checkProfile* est « tr
     -   WARNING (CHECK\_OBJECT\_SIZE.WARNING = Avertissement de la vérification de la taille des objets) : au moins un objet reçu a une taille renseignée dans le manifeste qui n’est pas identique à celle des fichiers numériques.
     -   FATAL : une erreur technique est survenue lors de la vérification de la taille des objets (CHECK\_OBJECT\_SIZE .FATAL = Erreur technique lors de la vérification de la taille des objets)
 
-#### Identification des formats OG\_OBJECTS\_FORMAT\_CHECK (FormatIdentificationActionPlugin.java)
+#### Identification des formats OG\_OBJECTS\_FORMAT\_CHECK (FormatIdentificationActionPlugin.java)
 
 -   **Règle** : tâche consistant à identifier le format de chaque objet binaire présent dans le SIP, à vérifier que le format identifié des objets correspond à la liste des formats acceptés dans le contrat d’entrée et à vérifier que le format identifié des objets est référencé dans le référentiel des formats de la solution logicielle Vitam. Cette action met en œuvre un outil d’identification prenant l’objet en entrée et fournissant des informations de format en sortie. Ces informations sont
     > comparées avec les formats enregistrés dans le référentiel des formats interne à la solution logicielle Vitam et avec celles déclarées dans le bordereau de transfert. En cas d’incohérence entre la déclaration dans le SIP et le format identifié, le SIP sera accepté, générant un avertissement. La solution logicielle Vitam se servira alors des informations qu’elle a identifiées et non de celles fournies dans le SIP
@@ -1747,7 +1752,7 @@ Ce traitement n’est exécuté que si la valeur IN de *checkProfile* est « tr
 
 ### Processus de vérification préalable à la prise en charge (STP\_STORAGE\_AVAILABILITY\_CHECK)
 
-#### Vérification de la disponibilité de toutes les offres de stockage STORAGE\_AVAILABILITY\_CHECK (CheckStorageAvailabilityActionHandler.java)
+#### Vérification de la disponibilité de toutes les offres de stockage STORAGE\_AVAILABILITY\_CHECK (CheckStorageAvailabilityActionHandler.java)
 
 -   **Règle** : tâche consistant à vérifier la disponibilité des offres de stockage et de l’espace disponible pour y stocker le contenu du SIP compte tenu de la taille des objets à stocker
 -   **Type** : bloquant
@@ -1794,7 +1799,7 @@ Ce traitement n’est exécuté que si la valeur IN de *checkProfile* est « tr
 
 ### Processus d’indexation des unités archivistiques (STP\_UNIT\_METADATA)
 
-#### Indexation des métadonnées des unités archivistiques UNIT\_METADATA\_INDEXATION (IndexUnitActionPlugin.java)
+**Indexation des métadonnées des unités archivistiques UNIT\_METADATA\_INDEXATION (IndexUnitActionPlugin.java)**
 
 -   **Règle** : tâche consistant à indexer les métadonnées des unités archivistiques dans les bases internes de la solution logicielle Vitam, c’est-à-dire le titre des unités, leurs descriptions, leurs dates extrêmes, etc.
 -   **Type** : bloquant
@@ -1852,7 +1857,7 @@ Ce traitement n’est exécuté que si la valeur IN de *checkProfile* est « tr
     -   FATAL=Erreur fatale lors de la mise à jour des groupes d'objets existants
     -   WARNING=Avertissement lors de la mise à jour des groupes d'objets existants
 
-#### Enregistrement du journal du cycle de vie des groupes d’objets COMMIT\_LIFE\_CYCLE\_OBJECT\_GROUP (CommitLifeCycleObjectGroupActionHandler.java)
+#### Enregistrement du journal du cycle de vie des groupes d’objets COMMIT\_LIFE\_CYCLE\_OBJECT\_GROUP (CommitLifeCycleObjectGroupActionHandler.java)
 
 -   **Règle** : tâche consistant à sécuriser en base les journaux du cycle de vie des groupes d’objets. Avant cette étape, les journaux du cycle de vie des groupes d’objets sont dans une collection temporaire afin de garder une cohérence entre les métadonnées indexées et les journaux lors d’une entrée en succès ou en échec, et il n’y a pas d’évènement créée dans le journal du cycle de vie.
 -   **Type** : bloquant
@@ -1860,7 +1865,7 @@ Ce traitement n’est exécuté que si la valeur IN de *checkProfile* est « tr
     -   OK : la sécurisation des journaux du cycle de vie s’est correctement déroulée (COMMIT\_LIFE\_CYCLE\_OBJECT\_GROUP.OK = Succès de l’enregistrement des journaux du cycle de vie des groupes d’objets)
     -   FATAL : une erreur technique est survenue lors de la sécurisation du journal du cycle de vie (COMMIT\_LIFE\_CYCLE\_OBJECT\_GROUP.FATAL = Erreur technique lors de l’enregistrement des journaux du cycle de vie des groupes d’objets)
 
-#### Écriture des métadonnées des groupes d’objets sur l’offre de stockage OG\_METADATA\_STORAGE (StoreMetaDataObjectGroupActionPlugin)
+#### Écriture des métadonnées des groupes d’objets sur l’offre de stockage OG\_METADATA\_STORAGE (StoreMetaDataObjectGroupActionPlugin)
 
 -   **Règle** : tâche consistant à sauvegarder les métadonnées liées aux groupes d’objets ainsi que leurs journaux de cycle de vie sur les offres de stockage en fonction de la stratégie de stockage
 -   **Type** : bloquant
@@ -1921,17 +1926,17 @@ Le workflow mis en place dans la solution logicielle Vitam est défini dans l’
 
 D’une façon synthétique, le workflow est décrit ainsi :
 
-![](medias/modele_workflow/media/image2.png)
+![](medias/modele_workflow/image2.png)
 
-![](medias/modele_workflow/media/image3.png)
+![](medias/modele_workflow/image3.png)
 
-![](medias/modele_workflow/media/image4.png)
+![](medias/modele_workflow/image4.png)
 
-![](medias/modele_workflow/media/image5.png)
+![](medias/modele_workflow/image5.png)
 
-![](medias/modele_workflow/media/image6.png)
+![](medias/modele_workflow/image6.png)
 
-![](medias/modele_workflow/media/image7.jpeg)
+![](medias/modele_workflow/image7.jpeg)
 
 Mise à jour unitaire (Update)
 ----
@@ -2023,7 +2028,7 @@ Ainsi lorsqu’un niveau de classification est modifié, alors l’intégralité
 
 D’une façon synthétique, le workflow est décrit ainsi :
 
-![](medias/modele_workflow/media/image8.jpeg)
+![](medias/modele_workflow/image8.jpeg)
 
 #### Mise à jour unitaire des règles de gestion d’une unité archivistique STP_UPDATE_UNIT (AccessInternalModuleImpl.java)
 
@@ -2109,265 +2114,17 @@ Ainsi, lorsqu’un niveau de classification est modifié, alors l’intégralit�
     - WARNING : avertissement lors de la sauvegarde des métadonnées de l’unité **archivistique** (UNIT_METADATA_STORAGE.ALREADY_EXECUTED = Action déjà exécutée : Pas d’enregistrement des métadonnées de l’unité archivistique)
     - FATAL : une erreur technique est survenue lors de la sauvegarde des métadonnées de l’unité archivistique (UNIT_METADATA_STORAGE.FATAL = Erreur technique lors de l’enregistrement des métadonnées de l’unité archivistique)
 
-### Processus de mise à jour des groupes d’objets (STP_UPDATE_OBJECT_GROUP)
-
-#### Mise à jour des groupes d’objets OBJECT_GROUP_UPDATE (AccessInternalModuleImpl.java)
-
-- **Règle** : Tâche consistant à mettre à jour les groupes d’objet techniques
-- **Type** : bloquant
-    - OK=Succès de la mise à jour des groupes d’objets existants
-    - KO=Échec lors de la mise à jour des groupes d'objets existants
-    - FATAL=Erreur fatale lors de la mise à jour des groupes d'objets existants
-    - WARNING=Avertissement lors de la mise à jour des groupes d'objets existants
-
-#### Enregistrement du journal du cycle de vie des groupes d’objets COMMIT_LIFE_CYCLE_OBJECT_GROUP (CommitLifeCycleObjectGroupActionHandler.java)
-
-- **Règle** : tâche consistant à sécuriser en base les journaux du cycle de vie des groupes d’objets. Avant cette étape, les journaux du cycle de vie des groupes d’objets sont dans une collection temporaire afin de garder une cohérence entre les métadonnées indexées et les journaux lors d’une entrée en succès ou en échec, et il n’y a pas d’évènement créée dans le journal du cycle de vie.
-- **Type** : bloquant
-- **Statuts** :
-    - OK : la sécurisation des journaux du cycle de vie s’est correctement déroulée (COMMIT_LIFE_CYCLE_OBJECT_GROUP.OK = Succès de l’enregistrement des journaux du cycle de vie des groupes d’objets)
-    - FATAL : une erreur technique est survenue lors de la sécurisation du journal du cycle de vie (COMMIT_LIFE_CYCLE_OBJECT_GROUP.FATAL = Erreur technique lors de l’enregistrement des journaux du cycle de vie des groupes d’objets)
-
-#### Écriture des métadonnées des groupes d’objets sur l’offre de stockage OG_METADATA_STORAGE (StoreMetaDataObjectGroupActionPlugin)
-
-- **Règle** : tâche consistant à sauvegarder les métadonnées liées aux groupes d’objets ainsi que leurs journaux de cycle de vie sur les offres de stockage en fonction de la stratégie de stockage
-- **Type** : bloquant
-- **Statuts** :
-    - OK : les métadonnées des groupes d’objets et objets ont été sauvegardées avec succès (OG_METADATA_STORAGE.OK = Succès de l’écriture des métadonnées des objets et groupes d’objets sur l’offre de stockage)
-    - KO : les métadonnées des groupes d’objets et objets n’ont pas été sauvegardées (OG_METADATA_STORAGE.KO = Échec de l’écriture des métadonnées des objets et groupes d’objets sur l’offre de stockage)
-    - FATAL : une erreur technique est survenue lors de l’écriture des métadonnées du groupe d’objets sur les offres de stockage (OG_METADATA_STORAGE.FATAL = Erreur technique lors de l’écriture des métadonnées du groupe d’objets sur les offres de stockage)
-
-### Processus d’alimentation du registre des fonds (STP_ACCESSION_REGISTRATION)
-
-Alimentation du registre des fonds ACCESSION_REGISTRATION
-- **Règle** : tâche consistant à enregistrer dans le registre des fonds des informations concernant la nouvelle entrée (nombre d’objets, volumétrie...). Ces informations viennent s’ajouter aux informations existantes pour un même service producteur. Si aucune information n’existait préalablement, alors un nouveau document est créé dans la base de données concernant ce producteur. Une fois cette action d’ajout ou de mise à jour effectuée, la solution logicielle Vitam calcule et enregistre une information agrégée de l’état des stocks du service producteur concerné (dans la collection AccessionRegisterDetail).
-- **Type** : bloquant
-- **Statuts** :
-    - OK : le registre des fonds est correctement alimenté (ACCESSION_REGISTRATION.OK = Succès de l’alimentation du registre des fonds)
-    - KO : le registre des fonds n’a pas pu être alimenté (ACCESSION_REGISTRATION.KO = Échec de l’alimentation du registre des fonds)
-    - FATAL : une erreur technique est survenue lors de l’alimentation du registre des fonds (ACCESSION_REGISTRATION.FATAL = Erreur technique lors de l’alimentation du registre des fonds)
-
-### Processus de finalisation de l’entrée (STP_INGEST_FINALISATION)
-
-#### Notification de la fin de l’opération d’entrée ATR_NOTIFICATION (TransferNotificationActionHandler.java)
-
-- **Règle** : tâche consistant à générer la notification de réponse (ArchiveTransferReply ou ATR) une fois toutes les étapes passées, en succès, avertissement ou échec, puis écriture de cette notification dans l’offre de stockage et envoi au service versant
-- **Type** : non bloquant
-- **Statuts** :
-    - OK : le message de réponse a été correctement généré, écrit sur l’offre de stockage et envoyé au service versant (ATR_NOTIFICATION.OK = Succès de la notification de la fin de l’opération d’entrée à l’opérateur de versement)
-    - KO : le message de réponse n’a pas été correctement généré, écrit sur l’offre de stockage ou envoyé au service versant (ATR_NOTIFICATION.KO = Échec de la notification de la fin de l’opération d’entrée à l’opérateur de versement)
-    - FATAL : une erreur technique est survenue lors de la notification de la fin de l’opération (ATR_NOTIFICATION.FATAL = Erreur technique lors de la notification de la fin de l’opération d’entrée à l’opérateur de versement)
-
-#### Mise en cohérence des journaux du cycle de vie ROLL_BACK (RollBackActionHandler.java)
-
-- **Règle** : Purge des collections temporaires des journaux du cycle de vie
-- **Type** : bloquant
-- **Statuts** :
-    - OK : la purge s’est correctement déroulée (ROLL_BACK.OK = Succès de la mise en cohérence des journaux du cycle de vie)
-    - FATAL : une erreur technique est survenue lors de la purge (ROLL_BACK.FATAL = Erreur technique lors de la mise en cohérence des journaux du cycle de vie)
-
-### Le cas du processus d’entrée « test à blanc »
-
-Il est possible de procéder à un versement dit « à blanc », pour tester la conformité du SIP par rapport à la forme attendue par la solution logicielle Vitam sans pour autant le prendre en charge. Dans ce cas, le processus d’entrée à blanc diffère du processus d’entrée « classique » en ignorant un certain nombre d’étapes.
-
-Les étapes non exécutées dans le processus d’entrée à blanc sont les suivantes :
-- Écriture et indexation des objets et groupes d’objets (STP_OBJ_STORING)
-- Indexation des unités archivistiques (STP_UNIT_METADATA)
-- Enregistrement et écriture des métadonnées des objets et groupes d’objets (STP_OG_STORING)
-- Enregistrement et écriture des unités archivistiques (STP_UNIT_STORING)
-- Rangement des métadonnées des objets (STP_UPDATE_OBJECT_GROUP)
-- Alimentation du registre des fonds (STP_ACCESSION_REGISTRATION)
-
-Les tâches et traitements relatifs à toutes ces étapes sont donc également ignorés.
-
-### Structure du Workflow de l’entrée
-
-Le workflow mis en place dans la solution logicielle Vitam est défini dans l’unique fichier « DefaultIngestWorkflow.json ». Ce fichier est disponible dans /sources/processing/processing-management/src/main/resources/workflows. Il décrit le processus d’entrée (hors Ingest externe) pour entrer un SIP, indexer les métadonnées et stocker les objets contenus dans le SIP.
-
-D’une façon synthétique, le workflow est décrit ainsi :
-
-
-
-Mise à jour unitaire (Update)
------
-### Workflow de mise à jour unitaire des unités archivistiques
-
-Cette section décrit le processus permettant la mise à jour unitaire des unités archivistiques.<br>
-Toutes les étapes, tâches et traitements sont journalisés dans le journal des opérations et décrivent le processus (clé et description de la clé associée dans le journal des opérations) tel qu’implémenté dans la version actuelle de la solution logicielle Vitam.
-
-#### Mise à jour d’une unité archivistique (vision métier)
-
-Le processus de mise à jour unitaire des unités archivistiques est lancé lors d’une mise à jour de n’importe quelle métadonnée d’une unité archivistique. On distingue cependant deux cas de modifications, liés à des droits gérés via les contrats d’accès : soit les utilisateurs disposent d’un droit de modification sur métadonnées descriptives seulement, soit ils disposent des droits pour modifier les métadonnées descriptives et les métadonnées de gestion (profil d’unité archivistiques et règles de gestion).<br>
-Un certain nombre d’étapes, tâches et traitements sont journalisés dans le journal des opérations et décrivent ce processus de mise à jour (clé et description de la clé associée dans le journal des opérations).
-
-#### Processus de mise à jour unitaire des métadonnées descriptives d’une unité archivistique STP_UPDATE_UNIT_DESC
-
-- **Règle** : étape consistant à mettre à jour de manière unitaire les métadonnées descriptives d’une unité archivistique
-- **Type** : bloquant
-- **Statuts** :
-    - OK : la mise à jour de l’unité archivistique a bien été effectuée (STP_UPDATE_UNIT_DESC.OK = Succès du processus de mise à jour des métadonnées descriptives de l’unité archivistique)
-    - KO : la mise à jour de l’unité archivistique n’a pas été effectuée en raison d’une erreur (STP_UPDATE_UNIT_DESC.KO = Échec du processus de mise à jour des métadonnées descriptives de l’unité archivistique)
-    - FATAL : une erreur technique est survenue lors de la mise à jour de l’unité archivistique (STP_UPDATE_UNIT_DESC.FATAL = Erreur technique lors du processus de mise à jour des métadonnées descriptives de l’unité archivistique)
-
-##### Vérification des droits de mise à jour des métadonnées descriptives des unités archivistiques UNIT_METADATA_UPDATE_CHECK_PERMISSION
-
-- **Règle** : tâche consistant à contrôler les droits d’écriture donnés par le contrat d’accès
-- **Type** : bloquant
-- **Statuts** :
-    - OK : succès de la vérification des droits de mise à jour des métadonnées des unités archivistiques (UNIT_METADATA_UPDATE_CHECK_PERMISSION.OK = Succès de la vérification des droits de mise à jour des métadonnées des unités archivistiques)
-    - KO : échec de la vérification des droits de mise à jour des métadonnées des unités archivistiques (UNIT_METADATA_UPDATE_CHECK_PERMISSION.KO = Échec de la vérification des droits de mise à jour des métadonnées des unités archivistiques)
-    - FATAL : erreur technique lors de la vérification des droits de mise à jour des métadonnées des unités archivistiques (UNIT_METADATA_UPDATE_CHECK_PERMISSION.FATAL = Erreur technique lors de la vérification des droits de mise à jour des métadonnées des unités archivistiques)
-    - WARNING : avertissement lors de la vérification des droits de mise à jour des métadonnées des unités archivistiques (UNIT_METADATA_UPDATE_CHECK_PERMISSION.WARNING = Avertissement lors de la vérification des droits de mise à jour des métadonnées des unités archivistiques)
-
-##### Vérification de l’association à un profil d’unité archivistique UNIT_METADATA_UPDATE_CHECK_DT
-
-- **Règle** : tâche consistant à vérifier la conformité des unités archivistiques mise à jour vis-à-vis des profils d’unités archivistiques qu’elles déclarent. Les profils associés doivent être actifs et leur schéma de contrôle ne doit pas être vide.
-- **Type** : bloquant
-- **Statuts** :
-    - OK : la mise à jour de l’unité archivistique est conforme au profil d’unité archivistique (document type) (UNIT_METADATA_UPDATE_CHECK_DT.OK = Succès de la vérification de l’association à un profil unité archivistique)
-    - KO : la mise à jour de l’unité archivistique n’a pas été effectuée en raison de la non-conformité vis-à-vis du profil d’unité archivistique (document type) (UNIT_METADATA_UPDATE_CHECK_DT.KO = Échec de la vérification de l’association à un profil d’unité archivistique)
-    - FATAL : une erreur technique est survenue lors de la vérification de la conformité à un profil d’unité archivistique (UNIT_METADATA_UPDATE_CHECK_DT.FATAL = Erreur technique lors de la vérification de l’association à un profil d’unité archivistique)
-
-##### Indexation des métadonnées UNIT_METADATA_UPDATE (ArchiveUnitUpdateUtils.java)
-
-- **Règle** : tâche consistant à indexer dans les bases internes de la solution logicielle Vitam les métadonnées de l’unité archivistique modifiée, ainsi qu’à mettre à jour son journal du cycle de vie de l’unité archivistique. Si la modification touche une métadonnée à historiser, alors un historique est créé.
-- **Type** : bloquant
-- **Statuts** :
-    - OK : succès de la mise à jour des métadonnées de l’unité archivistique (UNIT_METADATA_UPDATE.OK = Succès de la mise à jour des métadonnées de l’unité archivistique)
-    - KO : échec de la mise à jour des métadonnées de l’unité archivistique (UNIT_METADATA_UPDATE.KO = Échec de la mise à jour des métadonnées de l’unité archivistique)
-    - FATAL : une erreur technique est survenue lors de la mise à jour des métadonnées de l’unité archivistique (UNIT_METADATA_UPDATE.FATAL = Erreur technique lors dela mise à jour des métadonnées de l’unité archivistique)
-    - WARNING : avertissement lors de la mise à jour des métadonnées de l’unité archivistique (UNIT_METADATA_UPDATE.WARNING = Avertissement lors dela mise à jour des métadonnées de l’unité archivistique)
-
-À propos de l’historique des données : Il existe un fichier permettant de configurer les métadonnées à historiser dans : vitam/sources/metadata/metadata-core/src/main/resources/history-triggers.json
-
-Ce fichier contient deux variables par objet :
-- FieldPathTriggeredForHistory : champ dont la modification déclenche une historisation
-- ObjectPathForHistory : champ à historiser
-
-Quand ce champ correspondant à FieldPathTriggeredForHistory est modifié, alors le champ contenu dans « ObjectPathForHistory » est enregistré dans un bloc nommé « history » dans le modèle de données.<br>
-Par défaut dans la solution logicielle Vitam, la configuration de history-triggers.json est :
-```
-[
- {
-   "FieldPathTriggeredForHistory": "_mgt.ClassificationRule.ClassificationLevel",
-   "ObjectPathForHistory": "_mgt.ClassificationRule"
- }
-]
-```
-
-Ainsi lorsqu’un niveau de classification est modifié, alors l’intégralité de la catégorie de règle de classification est enregistré dans le bloc _history de l’unité archivistique.
-
-##### Enregistrement du journal du cycle de vie des unités archivistiques COMMIT_LIFE_CYCLE_UNIT
-
-- **Règle** : tâche consistant à sécuriser en base le journal du cycle de vie de l’unité archivistique (avant cette étape, les journaux du cycle de vie des unités archivistiques sont dans une collection temporaire afin de garder une cohérence entre les métadonnées indexées et les journaux lors d’une entrée en succès ou en échec)
-- **Type** : bloquant
-- **Statuts** :
-    - OK : le journal du cycle de vie de l’unité archivistique a été enregistré avec succès (COMMIT_LIFE_CYCLE_UNIT.OK = Succès de l’enregistrement du journal du cycle de vie de l’unité archivistique)
-    - FATAL : une erreur technique est survenue lors de l’enregistrement du journal du cycle de vie de l’unité archivistique (COMMIT_LIFE_CYCLE_UNIT.FATAL = Erreur technique lors de l’enregistrement du journal du cycle de vie de l’unité archivistique)
-
-##### Écriture des métadonnées de l’unité archivistique sur l’offre de stockage UNIT_METADATA_STORAGE (AccessInternalModuleImpl.java)
-
-- **Règle** : tâche consistant à sauvegarder les métadonnées de l’unité archivistique sur les offres de stockage en fonction de la stratégie de stockage.
-- **Type** : bloquant
-- **Statuts** :
-    - OK : les métadonnées de l’unité archivistique ont été sauvegardées sur les offres de stockage (UNIT_METADATA_STORAGE.OK = Succès de l’enregistrement des métadonnées de l’unité archivistique)
-    - WARNING : avertissement lors de la sauvegarde des métadonnées de l’unité archivistique (UNIT_METADATA_STORAGE.ALREADY_EXECUTED = Action déjà exécutée : Pas d’enregistrement des métadonnées de l’unité archivistique)
-    - FATAL : une erreur technique est survenue lors de la sauvegarde des métadonnées de l’unité archivistique (UNIT_METADATA_STORAGE.FATAL = Erreur technique lors de l’enregistrement des métadonnées de l’unité archivistique)
-
-#### Structure de workflow de mise à jour des métadonnées descriptives
-
-D’une façon synthétique, le workflow est décrit ainsi :
-
-#### Mise à jour unitaire des règles de gestion d’une unité archivistique STP_UPDATE_UNIT (AccessInternalModuleImpl.java)
-
-- **Règle** : étape consistant à mettre à jour de manière unitaire les métadonnées de gestion d’une unité archivistique
-- **Type** : bloquant
-- **Statuts** :
-    - OK : la mise à jour de l’unité archivistique a bien été effectuée. (STP_UPDATE_UNIT.OK = Succès du processus de mise à jour des métadonnées de l’unité archivistique)
-    - KO : la mise à jour de l’unité archivistique n’a pas été effectuée en raison d’une erreur (STP_UPDATE_UNIT.KO = Échec du processus de mise à jour des métadonnées de l’unité archivistique)
-    - FATAL : une erreur technique est survenue lors de la mise à jour de l’unité archivistique (STP_UPDATE_UNIT.FATAL = Erreur technique lors du processus de mise à jour des métadonnées de l’unité archivistique)
-
-##### Vérification des droits de mise à jour des métadonnées descriptives et de gestion des unités archivistiques UNIT_METADATA_UPDATE_CHECK_PERMISSION
-
-- **Règle** : tâche consistant à contrôler les droits d’écriture donnés par le contrat d’accès et à vérifier que l’utilisateur a bien des droits d’écriture des métadonnées descriptives et des métadonnées de gestion
-- **Type** : bloquant
-- **Statuts** :
-    - OK : succès de la vérification des droits de mise à jour des métadonnées de l’unité archivistique (UNIT_METADATA_UPDATE_CHECK_PERMISSION.OK = Succès de la vérification des droits de mise à jour des métadonnées de l’unité archivistique)
-    - KO : échec de la vérification des droits de mise à jour des métadonnées de l’unité archivistique (UNIT_METADATA_UPDATE_CHECK_PERMISSION.KO = Échec de la vérification des droits de mise à jour des métadonnées de l’unité archivistique)
-    - FATAL : erreur technique lors de la vérification des droits de mise à jour des métadonnées de l’unité archivistique (UNIT_METADATA_UPDATE_CHECK_PERMISSION.FATAL = Erreur technique lors de la vérification des droits de mise à jour des métadonnées de l’unité archivistique)
-    - WARNING : avertissement lors de la vérification des droits de mise à jour des métadonnées de l’unité archivistique (UNIT_METADATA_UPDATE_CHECK_PERMISSION.WARNING = Avertissement lors de la vérification des droits de mise à jour des métadonnées de l’unité archivistique)
-
-##### Vérification des règles de gestion UNIT_METADATA_UPDATE_CHECK_RULES (AccessInternalModuleImpl.java)
-
-- **Règle** : tâche consistant à vérifier les modifications apportées aux règles de gestion de l’unité archivistique
-- **Type** : bloquant
-- **Statuts** :
-    - OK : succès de la vérification des métadonnées de gestion de l’unité archivistique ont été vérifiées  (UNIT_METADATA_UPDATE_CHECK_RULES.OK = Succès de la vérification des métadonnées de gestion de l’unité archivistique )
-    - KO : oéchec de la vérification des métadonnées de gestion de l’unité archivistique (UNIT_METADATA_UPDATE_CHECK_RULES.KO = Échec de la vérification des métadonnées de gestionde l’unité archivistique )
-    - FATAL : une erreur technique est survenue lors de la vérification des métadonnées de gestion (UNIT_METADATA_UPDATE_CHECK_RULES.FATAL = Erreur technique lors de la vérification des métadonnées de gestion de l’unité archivistique)
-
-##### Vérification de l’association à un profil d’unité archivistique UNIT_METADATA_UPDATE_CHECK_DT
-
-- **Règle** : cette tâche permet de vérifier la conformité des unités archivistiques mise à jour vis-à-vis de leurs profils d’unités archivistiques. Les identifiants de profils archivistiques renseignés dans les unités archivistiques doivent exister dans le référentiel des profils. Les profils associés doivent être actif et leur schéma de contrôle ne doit pas être vide.
-- **Type** : bloquant
-- **Statuts** :
-    - OK : succès de la vérification de la conformité au profil unités archivistiques (document type) (UNIT_METADATA_UPDATE_CHECK_DT.OK = Succès de la vérification de l’association à un profil unité archivistique)
-    - KO : la mise à jour de l’unité archivistique n’a pas été effectuée en raison de la non-conformité vis-à-vis du profil d’unité archivistique (document type) (UNIT_METADATA_UPDATE_CHECK_DT.KO = Échec de la vérification de l’association à un profil unité archivistique)
-    - FATAL : une erreur technique est survenue lors de la vérification de la conformité aux profils d’unités archivistiques (UNIT_METADATA_UPDATE_CHECK_DT.FATAL = Erreur technique lors de la vérification de l’association à un profil unité archivistique)
-
-##### Indexation des métadonnées UNIT_METADATA_UPDATE (ArchiveUnitUpdateUtils.java)
-
-- **Règle** : tâche consistant à indexer dans les bases internes de la solution logicielle Vitam les métadonnées de l’unité archivistique modifiée, ainsi qu’à mettre à jour son journal du cycle de vie. Si la modification touche une métadonnée à historiser, alors un historique est créé.
-- **Type** : bloquant
-- **Statuts** :
-    - OK : succès de la mise à jour des métadonnées de l’unité archivistique (UNIT_METADATA_UPDATE.OK = Succès de la mise à jour des métadonnées de l’unité archivistique)
-    - KO : échec de la mise à jour des métadonnées de l’unité archivistique (UNIT_METADATA_UPDATE.KO = Échec de la mise à jour des métadonnées de l’unité archivistique)
-    - FATAL : une erreur technique est survenue lors de la mise à jour des métadonnées de l’unité archivistique (UNIT_METADATA_UPDATE.FATAL = Erreur technique lors dela mise à jour des métadonnées de l’unité archivistique)
-    - WARNING : avertissement lors de la mise à jour des métadonnées de l’unité archivistique (UNIT_METADATA_UPDATE.WARNING = Avertissement lors dela mise à jour des métadonnées de l’unité archivistique)
-
-À propos de l’historique des données : Il existe un fichier permettant de configurer les métadonnées à historiser dans : vitam/sources/metadata/metadata-core/src/main/resources/history-triggers.json
-
-Ce fichier contient deux variables par objet :
-- FieldPathTriggeredForHistory : champ dont la modification déclenche une historisation
-- ObjectPathForHistory : champ à historiser
-Quand ce champ correspondant à FieldPathTriggeredForHistory est modifié, alors le champ contenu dans « ObjectPathForHistory » est enregistré dans un bloc nommé « history » dans le modèle de données.<br>
-Par défaut dans la solution logicielle Vitam, la configuration de history-triggers.json est :
-```
-[
- {
-   "FieldPathTriggeredForHistory": "_mgt.ClassificationRule.ClassificationLevel",
-   "ObjectPathForHistory": "_mgt.ClassificationRule"
- }
-]
-```
-Ainsi, lorsqu’un niveau de classification est modifié, alors l’intégralité de la catégorie de règle de classification est enregistré dans le bloc _history de l’unité archivistique.
-
-##### Enregistrement du journal du cycle de vie des unités archivistiques COMMIT_LIFE_CYCLE_UNIT
-
-- **Règle** : tâche consistant à sécuriser en base le journal du cycle de vie de l’unité archivistique (avant cette étape, les journaux du cycle de vie des unités archivistiques sont dans une collection temporaire afin de garder une cohérence entre les métadonnées indexées et les journaux lors d’une entrée en succès ou en échec).
-- **Type** : bloquant
-- **Statuts** :
-    - OK : le journal du cycle de vie de l’unité archivistique a été enregistré avec succès (COMMIT_LIFE_CYCLE_UNIT.OK = Succès de l’enregistrement du journal du cycle de vie de l’unité archivistique)
-    - FATAL : une erreur technique est survenue lors de l’enregistrement du journal du cycle de vie de l’unité archivistique (COMMIT_LIFE_CYCLE_UNIT.FATAL = Erreur technique lors de l’enregistrement du journal du cycle de vie de l’unité archivistique)
-
-##### Écriture des métadonnées de l’unité archivistique sur l’offre de stockage UNIT_METADATA_STORAGE (AccessInternalModuleImpl.java)
-
-- **Règle** : tâche consistant à sauvegarder les métadonnées de l’unité archivistique sur les offres de stockage en fonction de la stratégie de stockage
-- **Type** : bloquant
-- **Statuts** :
-    - OK : les métadonnées de l’unité archivistique ont été sauvegardées sur les offres de stockage (UNIT_METADATA_STORAGE.OK = Succès de l’enregistrement des métadonnées de l’unité archivistique)
-    - WARNING : avertissement lors de la sauvegarde des métadonnées de l’unité archivistique (UNIT_METADATA_STORAGE.ALREADY_EXECUTED = Action déjà exécutée : Pas d’enregistrement des métadonnées de l’unité archivistique)
-    - FATAL : une erreur technique est survenue lors de la sauvegarde des métadonnées de l’unité archivistique (UNIT_METADATA_STORAGE.FATAL = Erreur technique lors de l’enregistrement des métadonnées de l’unité archivistique)
-
 #### Structure de workflow de mise à jour des métadonnées de gestion des unités archivistiques
 
-D’une façon synthétique, le workflow est décrit ainsi :
+D’une façon synthétique, le workflow est décrit de cette façon :
 
-![](./medias/modele_workflow/media/image9.gif)
+![](./medias/modele_workflow/maj_md_gestion_1.png)
 
 ### Workflow de mise à jour des règles de gestion des unités archivistiques lors de l’import d’un nouveau référentiel
-Cette section décrit le processus (workflow) permettant la mise à jour des règles de gestion des unités archivistiques suite à l’import d’un nouveau référentiel des règles de gestion.<br>
-Le workflow mis en place dans la solution logicielle Vitam est défini dans le fichier « DefaultRulesUpdateWorkflow.json ». Ce fichier est disponible dans : sources/processing/processing-management/src/main/resources/workflows.<br>
+
+Cette section décrit le processus (workflow) permettant la mise à jour des règles de gestion des unités archivistiques suite à l’import d’un nouveau référentiel des règles de gestion.
+Le workflow mis en place dans la solution logicielle Vitam est défini dans le fichier « DefaultRulesUpdateWorkflow.json ». Ce fichier est disponible dans : sources/processing/processing-management/src/main/resources/workflows.
+
 Toutes les étapes, tâches et traitements sont journalisés dans le journal des opérations et décrivent le processus (clé et description de la clé associée dans le journal des opérations) tel qu’implémenté dans la version actuelle de la solution logicielle Vitam.
 
 #### Mise à jour des règles de gestion des unités archivistiques (UPDATE_RULES_ARCHIVE_UNITS)
@@ -2390,8 +2147,8 @@ Le processus de mise à jour des règles de gestion des unités archivistiques e
 - **Règle** : tâche consistant à établir la liste des unités archivistiques à mettre à jour. Pour chaque unité archivistique concernée, un fichier est créé et déposé sur l’espace de travail interne (le workspace) pour pouvoir être traité plus tard dans le workflow.
 - **Type** : bloquant
 - **Statuts** :
-    -OK : la liste des unités archivistiques et les fichiers associés ont bien pu être créés. Les fichiers associés ont bien été créés (LIST_ARCHIVE_UNITS.OK = Succès lors du processus de l’établissement de la liste des unités archivistiques à mettre à jour)
-    -FATAL : une erreur technique est survenue lors d’établissement de la liste des unités archivistiques à mettre à jour (LIST_ARCHIVE_UNITS.FATAL = Erreur technique lors du processus d’établissement de la liste des unités archivistiques à mettre à jour)
+    - OK : la liste des unités archivistiques et les fichiers associés ont bien pu être créés. Les fichiers associés ont bien été créés (LIST_ARCHIVE_UNITS.OK = Succès lors du processus de l’établissement de la liste des unités archivistiques à mettre à jour)
+    - FATAL : une erreur technique est survenue lors d’établissement de la liste des unités archivistiques à mettre à jour (LIST_ARCHIVE_UNITS.FATAL = Erreur technique lors du processus d’établissement de la liste des unités archivistiques à mettre à jour)
 
 ##### Établissement de la liste des unités archivistiques à mettre à jour – COMPUTE_INHERITED_RULES_PROGENY_IDENTIFIER
 
@@ -2436,7 +2193,7 @@ Le processus de mise à jour des règles de gestion des unités archivistiques e
 
 ##### Mise à jour des entrées en cours – UPDATE_RUNNING_INGESTS (runningIngests.json)
 
-- **Règle** : traitement consistant, pour une liste d’entrées en cours, à vérifier que chaque entrée est finalisée, à vérifier les règles de gestion impactées, et à recalculer les échéances des règles.
+-  **Règle** : traitement consistant, pour une liste d’entrées en cours, à vérifier que chaque entrée est finalisée, à vérifier les règles de gestion impactées, et à recalculer les échéances des règles.
 - **Type** : bloquant
 - **Statuts** :
     - OK : les entrées en cours ont été finalisées, et les unités archivistiques ont bien été mises à jour (STP_UPDATE_RUNNING_INGESTS.OK = Succès de la mise à jour des entrées en cours).
@@ -2445,9 +2202,9 @@ Le processus de mise à jour des règles de gestion des unités archivistiques e
 
 #### Structure de workflow du processus de mise à jour des règles de gestion des unités archivistiques
 
-D’une façon synthétique, le workflow est décrit ainsi :
+D’une façon synthétique, le workflow est décrit de cette façon :
 
-![](./medias/modele_workflow/media/image10.gif)
+![](./medias/modele_workflow/maj_rg_ua_1.png)
 
 Mise à jour de masse (Mass update)
 ----
@@ -2527,7 +2284,7 @@ Génération du rapport de mise à jour des métadonnées descriptives des unit�
 
 D’une façon synthétique, le workflow est décrit ainsi :
 
-![](./medias/modele_workflow/media/image11.jpeg)
+![](./medias/modele_workflow/image11.jpeg)
 
 #### Rapport de modification en masse des métadonnées descriptives des unités archivistiques
 
@@ -2535,9 +2292,9 @@ Le rapport de modification en masse des métadonnées descriptives des unités a
 
 ##### Exemple de JSONL : rapport de modification en masse des métadonnées descriptives des unités archivistiques
 
-![](./medias/modele_workflow/media/image12.png)
+![](./medias/modele_workflow/image12.png)
 
-![](./medias/modele_workflow/media/image13.png)
+![](./medias/modele_workflow/image13.png)
 
 ##### Détails du rapport
 
@@ -2678,9 +2435,9 @@ Le processus de mise à jour en masse des métadonnées descriptives des unités
 
 D’une façon synthétique, le workflow est décrit ainsi :
 
-![](./medias/modele_workflow/media/image14.gif)
+![](./medias/modele_workflow/image14.gif)
 
-![](./medias/modele_workflow/media/image15.gif)
+![](./medias/modele_workflow/image15.gif)
 
 #### Rapport de modification en masse des métadonnées de gestion des unités archivistiques
 
@@ -2688,9 +2445,9 @@ Le rapport de modification en masse des métadonnées de gestion des unités arc
 
 ##### Exemple de JSONL : rapport de modification en masse des métadonnées descriptives des unités archivistiques
 
-![](./medias/modele_workflow/media/image16.png)
+![](./medias/modele_workflow/image16.png)
 
-![](./medias/modele_workflow/media/image17.png)
+![](./medias/modele_workflow/image17.png)
 
 ##### Détails du rapport
 
@@ -2771,7 +2528,7 @@ Toutes les étapes, tâches et traitements ne sont pas journalisés dans le jour
 
 D’une façon synthétique, le workflow est décrit ainsi :
 
-![](./medias/modele_workflow/media/image18.png)
+![](./medias/modele_workflow/image18.png)
 
 ### Workflow de suppression des règles de gestion hérités et calculés des unités archivistiques
 
@@ -2822,7 +2579,7 @@ Toutes les étapes, tâches et traitements sont journalisés dans le journal des
 
 D’une façon synthétique, le workflow est décrit ainsi :
 
-![](./medias/modele_workflow/media/image19.png)
+![](./medias/modele_workflow/image19.png)
 
 Mise à jour unitaire de masse (Bulk update)
 ----
@@ -2899,7 +2656,7 @@ Le processus de mise à jour unitaire en masse des métadonnées descriptives de
 
 D’une façon synthétique, le workflow est décrit ainsi :
 
-![](./medias/modele_workflow/media/image20.gif)
+![](./medias/modele_workflow/image20.gif)
 
 ### Rapport de modification unitaire en masse des métadonnées descriptives des unités archivistiques
 
@@ -2907,7 +2664,7 @@ Le rapport de modification unitaire en masse des métadonnées descriptives des 
 
 #### Exemple de fichier JSONL : rapport de modification unitaire en masse de métadonnées descriptives
 
-![](./medias/modele_workflow/media/image21.gif)
+![](./medias/modele_workflow/image21.gif)
 
 #### Détail du rapport
 
@@ -3001,7 +2758,7 @@ Stockage du DIP STORE_MANIFEST (StoreDIP.java)
 
 D’une façon synthétique, le workflow est décrit ainsi :
 
-![](./medias/modele_workflow/media/image22.gif)
+![](./medias/modele_workflow/image22.gif)
 
 Élimination
 ----
@@ -3073,7 +2830,7 @@ Lors de la phase d’analyse, le système procède à une analyse du caractère 
 
 D’une façon synthétique, le workflow est décrit ainsi :
 
-![](./medias/modele_workflow/media/image23.png)
+![](./medias/modele_workflow/image23.png)
 
 ### Workflow d’élimination définitive des unités archivistiques
 
@@ -3257,11 +3014,11 @@ Lors de la phase d’analyse, le système procède d’une part à la vérificat
 
 D’une façon synthétique, le workflow est décrit ainsi :
 
-![](./medias/modele_workflow/media/image24.gif)
+![](./medias/modele_workflow/image24.gif)
 
-![](./medias/modele_workflow/media/image25.gif)
+![](./medias/modele_workflow/image25.gif)
 
-![](./medias/modele_workflow/media/image26.jpeg)
+![](./medias/modele_workflow/image26.jpeg)
 
 
 #### Rapport d’élimination
@@ -3270,9 +3027,9 @@ Le rapport d’élimination est un fichier JSON généré par la solution logici
 
 ##### Exemple de JSON : rapport d’élimination
 
-![](./medias/modele_workflow/media/image27.png)
+![](./medias/modele_workflow/image27.png)
 
-![](./medias/modele_workflow/media/image28.png)
+![](./medias/modele_workflow/image28.png)
 
 ##### Détails du rapport
 
@@ -3474,7 +3231,7 @@ Toutes les étapes, tâches et traitements sont journalisés dans le journal des
     - KO : la mise à jour des graphes des unités archivistiques n’a pas pu s’effectuer (UNIT_GRAPH_COMPUTE.KO = échec de la mise à jour des graphes des unités archivistiques)
     - FATAL : une erreur technique est survenue lors de la mise à jour des graphes des unités archivistiques (UNIT_GRAPH_COMPUTE.FATAL = Erreur technique lors de la mise à jour des graphes des unités archivistiques)
 
-### Mise à joue des graphes des groupes d’objets STP_OBJECT_GROUP_GRAPH_COMPUTE
+### Mise à jour des graphes des groupes d’objets STP_OBJECT_GROUP_GRAPH_COMPUTE
 
 - **Règle** : étape consistant à recalculer le graphe des groupes d’objets.
 - **Type** : bloquant
@@ -3514,9 +3271,9 @@ Toutes les étapes, tâches et traitements sont journalisés dans le journal des
 
 D’une façon synthétique, le workflow est décrit ainsi :
 
-![](./medias/modele_workflow/media/image29.jpeg)
+![](./medias/modele_workflow/image29.jpeg)
 
-![](./medias/modele_workflow/media/image30.jpeg)
+![](./medias/modele_workflow/image30.jpeg)
 
 Transfert
 ----
@@ -3576,7 +3333,7 @@ Toutes les étapes, tâches et traitements sont journalisées dans le journal de
 
 D’une façon synthétique, le workflow est décrit ainsi :
 
-![](./medias/modele_workflow/media/image31.gif)
+![](./medias/modele_workflow/image31.gif)
 
 #### Rapport de préparation du transfert
 
@@ -3749,11 +3506,11 @@ Toutes les étapes, tâches et traitements sont journalisées dans le journal de
 
 D’une façon synthétique, le workflow est décrit ainsi :
 
-![](./medias/modele_workflow/media/image32.png)
+![](./medias/modele_workflow/image32.png)
 
-![](./medias/modele_workflow/media/image33.png)
+![](./medias/modele_workflow/image33.png)
 
-![](./medias/modele_workflow/media/image34.png)
+![](./medias/modele_workflow/image34.png)
 
 #### Rapport d’acquittement du transfert
 
@@ -3761,11 +3518,11 @@ Le rapport d’acquittement du transfert est un fichier JSONL généré par la s
 
 ##### Exemple de fichier JSONL : rapport d’acquittement du transfert
 
-![](./medias/modele_workflow/media/image35.png)
+![](./medias/modele_workflow/image35.png)
 
-![](./medias/modele_workflow/media/image36.png)
+![](./medias/modele_workflow/image36.png)
 
-![](./medias/modele_workflow/media/image37.png)
+![](./medias/modele_workflow/image37.png)
 
 ##### Détail du rapport
 
@@ -3873,7 +3630,7 @@ La restauration des métadonnées essentielles peut être demandée suite à la 
 
 D’une façon synthétique, le workflow est décrit ainsi :
 
-![](./medias/modele_workflow/media/image38.gif)
+![](./medias/modele_workflow/image38.gif)
 
 ### Rapport de restauration de métadonnées essentielles des unités archivistiques
 
@@ -3881,7 +3638,7 @@ Le rapport de restauration de métadonnées essentielles des unités archivistiq
 
 #### Exemple de fichier JSONL : rapport de restauration de métadonnées essentielles
 
-![](./medias/modele_workflow/media/image39.png)
+![](./medias/modele_workflow/image39.png)
 
 #### Détail du rapport
 
@@ -3950,7 +3707,7 @@ Ce fichier zip est ensuite enregistré sur les offres de stockage, en fonction d
 
 D’une façon synthétique, le workflow est décrit ainsi :
 
-![](./medias/modele_workflow/media/securisation_journal.png)
+![](./medias/modele_workflow/securisation_journal.png)
 
 ### Workflow de sécurisation des journaux du cycle de vie des groupes d’objets
 
@@ -4017,7 +3774,7 @@ Ce fichier zip est ensuite enregistré sur les offres de stockage, en fonction d
 
 D’une façon synthétique, le workflow est décrit ainsi :
 
-![](./medias/modele_workflow/media/securisation_journal_got.png)
+![](./medias/modele_workflow/securisation_journal_got.png)
 
 ### Workflow de sécurisation des journaux du cycle de vie des unités archivistiques
 
@@ -4084,7 +3841,7 @@ Ce fichier zip est ensuite enregistré sur les offres de stockage, en fonction d
 
 D’une façon synthétique, le workflow est décrit ainsi :
 
-![](./medias/modele_workflow/media/securisation_journal_ua.png)
+![](./medias/modele_workflow/securisation_journal_ua.png)
 
 ### Workflow de sécurisation des journaux des écritures
 
@@ -4127,7 +3884,7 @@ Au niveau du journal des écritures, cette action est entièrement réalisée da
 
 D’une façon synthétique, le workflow est décrit ainsi :
 
-![](./medias/modele_workflow/media/securisation_journal_ecriture.png)
+![](./medias/modele_workflow/securisation_journal_ecriture.png)
 
 ### Sauvegarde des journaux des écritures
 
@@ -4156,7 +3913,7 @@ Au niveau du journal des opérations, cette action est entièrement réalisée d
 
 D’une façon synthétique, le workflow est décrit ainsi :
 
-![](./medias/modele_workflow/media/sauvegarde_journal_ecriture.png)
+![](./medias/modele_workflow/sauvegarde_journal_ecriture.png)
 
 ### Sauvegarde des logs des accès
 
@@ -4185,7 +3942,7 @@ Au niveau du journal des opérations, cette action est entièrement réalisée d
 
 D’une façon synthétique, le workflow est décrit ainsi :
 
-![](./medias/modele_workflow/media/sauvegarde_log_acces.png)
+![](./medias/modele_workflow/sauvegarde_log_acces.png)
 
 Audit
 ----
@@ -4280,7 +4037,7 @@ La tâche Verify_Timestamp contient les traitements suivants :
 
 D’une façon synthétique, le workflow est décrit ainsi :
 
-![](./medias/modele_workflow/media/integrite_journal.png)
+![](./medias/modele_workflow/integrite_journal.png)
 
 ### Workflow d’audit de vérification des journaux sécurisés
 
@@ -4425,11 +4182,11 @@ TRACEABILITY_FINALIZATION (TraceabilityFinalizationPlugin.java)
 
 D’une façon synthétique, le workflow est décrit ainsi :
 
-![](./medias/modele_workflow/media/audit_journaux1.png)
+![](./medias/modele_workflow/audit_journaux1.png)
 
-![](./medias/modele_workflow/media/audit_journaux2.png)
+![](./medias/modele_workflow/audit_journaux2.png)
 
-![](./medias/modele_workflow/media/audit_journaux3.png)
+![](./medias/modele_workflow/audit_journaux3.png)
 
 ### Workflow de l’audit de l’existence et de l’intégrité des fichiers
 
@@ -4516,16 +4273,16 @@ La tâche Audit_Check_Object contient le traitement suivant :
 
 D’une façon synthétique, le workflow est décrit ainsi :
 
-![](./medias/modele_workflow/media/audit_existence_integrite.png)
+![](./medias/modele_workflow/audit_existence_integrite.png)
 
 #### Rapport d’audit
 Le rapport d’audit est un fichier JSON généré par la solution logicielle Vitam lorsqu’une opération d’audit se termine. Cette section décrit la manière dont ce rapport est structuré.
 
 ##### Exemple de JSON : rapport d’audit d’intégrité et d’existence KO
 
-![](./medias/modele_workflow/media/rapport_audit_integrite.png)
+![](./medias/modele_workflow/rapport_audit_integrite.png)
 
-![](./medias/modele_workflow/media/rapport_audit_integrite2.png)
+![](./medias/modele_workflow/rapport_audit_integrite2.png)
 
 ##### Détail du rapport
 
@@ -4655,9 +4412,9 @@ L’audit s’applique au niveau des unités archivistiques, des objets et des g
 
 D’une façon synthétique, le workflow est décrit ainsi :
 
-![](./medias/modele_workflow/media/audit_coherence.png)
+![](./medias/modele_workflow/audit_coherence.png)
 
-![](./medias/modele_workflow/media/audit_coherence2.png)
+![](./medias/modele_workflow/audit_coherence2.png)
 
 #### Rapport d’audit de cohérence
 
@@ -4665,9 +4422,9 @@ Le rapport d’audit de cohérence est un fichier JSONL généré par la solutio
 
 ##### Exemple de JSON : rapport d’audit de cohérence d’un objet technique KO
 
-![](./medias/modele_workflow/media/rapport_audit_coherence.png)
+![](./medias/modele_workflow/rapport_audit_coherence.png)
 
-![](./medias/modele_workflow/media/rapport_audit_coherence2.png)
+![](./medias/modele_workflow/rapport_audit_coherence2.png)
 
 ##### Détail du rapport
 
@@ -4825,9 +4582,9 @@ Cette action a pour but de corriger des objets défaillants. Cette correction fa
 
 D’une façon synthétique, le workflow est décrit ainsi :
 
-![](./medias/modele_workflow/media/audit_correctif.png)
+![](./medias/modele_workflow/audit_correctif.png)
 
-![](./medias/modele_workflow/media/audit_correctif2.png)
+![](./medias/modele_workflow/audit_correctif2.png)
 
 
 #### Rapport d’audit correctif
@@ -4891,7 +4648,7 @@ Toutes les étapes, tâches et traitement sont journalisées dans le journal des
 
 D’une façon synthétique, le workflow est décrit ainsi :
 
-![](./medias/modele_workflow/media/releve_valeur_probante.png)
+![](./medias/modele_workflow/releve_valeur_probante.png)
 
 ### Rapport du relevé de valeur probante
 
@@ -5462,20 +5219,20 @@ Toutes les étapes, tâches et traitements sont journalisées dans le journal de
 
 D’une façon synthétique, le workflow est décrit ainsi :
 
-![](./medias/modele_workflow/media/preservation.gif)
+![](./medias/modele_workflow/preservation.gif)
 
-![](./medias/modele_workflow/media/preservation2.png)
+![](./medias/modele_workflow/preservation2.png)
 
-![](./medias/modele_workflow/media/preservation3.gif)
+![](./medias/modele_workflow/preservation3.gif)
 
 ### Rapport de préservation
 
 Le rapport de préservation est un fichier JSONL généré par la solution logicielle Vitam lorsqu’une opération de préservation se termine. Cette section décrit la manière dont ce rapport est structuré.
 
 #### Exemple de fichier JSONL : rapport de préservation OK
-![](./medias/modele_workflow/media/rapport_preservation.png)
+![](./medias/modele_workflow/rapport_preservation.png)
 
-![](./medias/modele_workflow/media/rapport_preservation2.png)
+![](./medias/modele_workflow/rapport_preservation2.png)
 
 #### Détail du rapport
 
@@ -5643,7 +5400,7 @@ Workflow de suppression des versions de GOT
 
 D’une façon synthétique, le workflow est décrit ainsi :
 
-![](./medias/modele_workflow/media/suppression_version_GOT.gif)
+![](./medias/modele_workflow/suppression_version_GOT.gif)
 
 
 ### Rapport de suppression des versions des groupes d’objets
@@ -5653,7 +5410,7 @@ Cette section décrit la manière dont ce rapport est structuré.
 
 #### Exemple de JSON : rapport de suppression des versions des got
 
-![](./medias/modele_workflow/media/rapport_suppression_version_GOT.gif)
+![](./medias/modele_workflow/rapport_suppression_version_GOT.gif)
 
 
 ####  Détail du rapport

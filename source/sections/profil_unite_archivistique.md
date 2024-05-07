@@ -1371,7 +1371,10 @@ Si l’on sait que les modifications à apporter seront importantes, il est reco
 |Éléments à déclarer dans un schéma de contrôle – propriétés|Si on souhaite forcer à ce qu’un élément de type textuel ait au moins une valeur renseignée dans une unité archivistique, en entrée ou lors d’une mise à jour, il est recommandé d’utiliser la règle « minLength » et de lui associer une valeur égale à 1.|Recommandé|
 |Éléments à déclarer dans un schéma de contrôle – propriétés|La solution logicielle Vitam ne supporte actuellement pas les règles suivantes au niveau des propriétés : anyOf, allOf, oneOf, not.<br>De fait, leur utilisation dans un schéma de contrôle n’est pas recommandée.|Non recommandé|
 
-## Annexe 1 : Schéma de contrôle par défaut dans la solution logicielle Vitam (état au 07/08/2023)
+Annexes
+---
+
+### Annexe 1 : Schéma de contrôle par défaut dans la solution logicielle Vitam (état au 07/08/2023)
 
 ```json
 {
@@ -2513,11 +2516,11 @@ Si l’on sait que les modifications à apporter seront importantes, il est reco
 }
 ```
 
-## Annexe 2 : Exemples de notice détaillée d’un profil d’unité archivistique
+### Annexe 2 : Exemples de notice détaillée d’un profil d’unité archivistique
 
 *Nota bene :* les cas présentés ci-dessous visent à vérifier la bonne mise en œuvre des mécanismes relatifs aux profils d’unité archivistique dans la solution logicielle Vitam.
 
-### Notice sans schéma de contrôle
+#### Notice sans schéma de contrôle
 
 ```json
 {
@@ -2528,7 +2531,7 @@ Si l’on sait que les modifications à apporter seront importantes, il est reco
 }
 ```
 
-### Notice incluant un schéma de contrôle
+#### Notice incluant un schéma de contrôle
 
 ```json
 { 	"Identifier":"AUP_NoticeANDschema_1", 
@@ -2538,11 +2541,11 @@ Si l’on sait que les modifications à apporter seront importantes, il est reco
 	} 
 ```
 
-## Annexe 3 : Exemples de profil d’unité archivistique
+### Annexe 3 : Exemples de profil d’unité archivistique
 
 *Nota bene :* les cas présentés ci-dessous sont des exemples fictifs.
 
-### Profil d’unité archivistique 1
+#### Profil d’unité archivistique 1
 
 ```json
 {
@@ -2783,7 +2786,7 @@ Si l’on sait que les modifications à apporter seront importantes, il est reco
 }
 ```
 
-### Profil d’unité archivistique 2
+#### Profil d’unité archivistique 2
 
 ```json
 {
@@ -2953,7 +2956,7 @@ Si l’on sait que les modifications à apporter seront importantes, il est reco
 }
 ```
 
-### Profil d’unité archivistique 3
+#### Profil d’unité archivistique 3
 
 ```json
 {
@@ -3250,7 +3253,7 @@ Si l’on sait que les modifications à apporter seront importantes, il est reco
 }
 ```
 
-## Annexe 4 : Types JSON
+### Annexe 4 : Types JSON
 
 Pour les éléments propres au SEDA, le tableau suivant précise les types de certains d’entre eux :
 
@@ -3388,11 +3391,11 @@ Pour les éléments propres au SEDA, le tableau suivant précise les types de ce
 |GpsLongitudeRef|x|||||
 |GpsDateStamp|x|||||
 
-## Annexe 5 : messages d’erreur
+### Annexe 5 : messages d’erreur
 
 *Nota bene :* les cas présentés ci-dessous n’ont pas vocation à être exhaustif.
 
-### Import ou mise à jour d’un profil d’unité archivistique
+#### Import ou mise à jour d’un profil d’unité archivistique
 
 ||Message retourné par la solution logicielle Vitam|Explication|Résolution|
 |:---:|:----|:---|:----|
@@ -3403,7 +3406,7 @@ Pour les éléments propres au SEDA, le tableau suivant précise les types de ce
 |5|{ "archiveUnitProfileCheck" : "The field ControlSchema is not a json schema,The archive unit profile name contains bad fields in its schema" } |Lors de l’ajout d’un schéma de contrôle à une notice descriptive, cette erreur indique que le schéma n’est pas valide par rapport au format JSON.|Il faut corriger le schéma de contrôle et vérifier sa validité par rapport au format JSON, avant de réimporter le schéma de contrôle dans la notice descriptive.|
 |6|{ "archiveUnitProfileCheck" : "The field AUP_mail is used by an archiveUnit" }|Le schéma de contrôle n’est plus modifiable dès qu’il est utilisé par au moins une unité archivistique enregistrée dans le système.||
 
-### Import d’une unité archivistique déclarant un profil d’unité archivistique
+#### Import d’une unité archivistique déclarant un profil d’unité archivistique
 
 ||Message retourné par la solution logicielle Vitam|Explication|Résolution|
 |:---:|:----|:---|:----|

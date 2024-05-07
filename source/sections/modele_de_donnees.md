@@ -11424,20 +11424,21 @@ _v": version de la requête d'accès.
 * Si le numéro est supérieur à 0, alors il s’agit du numéro de version de l’enregistrement.
 * Cardinalité : 1-1
 
-Annexe 1 : Valeurs possibles pour le champ evType du LogBook Operation
-----------------------------------------------------------------------
+Annexes
+----
+
+### Annexe 1 : Valeurs possibles pour le champ evType du LogBook Operation
 
 L’ensemble des étapes, tâches et traitements sont détaillés dans la
 documentation Modèle de workflow.
 
-Annexe 2 : Valeurs possibles pour le champ evType du LogBook LifeCycle
-----------------------------------------------------------------------
+### Annexe 2 : Valeurs possibles pour le champ evType du LogBook LifeCycle
 
 L’ensemble des étapes, tâches et traitements sont détaillées dans la
 documentation Modèle de workflow.
 
-Annexe 3: Valeurs possibles pour le champ evTypeProc (type de processus)
-------------------------------------------------------------------------
+### Annexe 3: Valeurs possibles pour le champ evTypeProc (type de processus)
+
 
 | Process Type                                     | Valeur                    | Description                                       |
 |:-------------------------------------------------|:--------------------------|:--------------------------------------------------|
@@ -11468,8 +11469,8 @@ Annexe 3: Valeurs possibles pour le champ evTypeProc (type de processus)
 | Update process                                   | UPDATE                    | Mise à jour                                       | 
 
 
-Annexe 4 : Catégories de règles possibles
------------------------------------------
+### Annexe 4 : Catégories de règles possibles
+
 
 | Prefixe (Peut être modifié) | Type de règle correspondante | Description du type de règle |
 | :-: | :-: | :-: |
@@ -11481,8 +11482,7 @@ Annexe 4 : Catégories de règles possibles
 | STO                         | StorageRule                  | Durée d’utilité courante / durée de conservation au sens de la loi Informatique et Libertés |
 | HOL                         | HoldRule                     | Gel |
 
-Annexe 5 : Valeurs possibles pour le champ Status de la collection AccessionRegisterDetail
-------------------------------------------------------------------------------------------
+### Annexe 5 : Valeurs possibles pour le champ Status de la collection AccessionRegisterDetail
 
 | Status type                           | Valeur |
 | :-: | :-: |
@@ -11490,8 +11490,7 @@ Annexe 5 : Valeurs possibles pour le champ Status de la collection AccessionReg
 | Le fonds est mis à jour et sauvegardé | STORED_AND_UPDATED   |
 | Le fonds n’est pas sauvegardé         | UNSTORED             |
 
-Annexe 6 : Valeurs possibles pour le champ Name de la collection VitamSequence
-------------------------------------------------------------------------------
+### Annexe 6 : Valeurs possibles pour le champ Name de la collection VitamSequence
 
 |  Prefixe            | Type de collection correspondante | Description |
 | :-: | :-: | :-: |
@@ -11511,8 +11510,7 @@ Annexe 6 : Valeurs possibles pour le champ Name de la collection VitamSequence
 |  RULE               | FileRules                         | Règles de gestion |
 |  SEC_PROFILE        | SecurityProfiles                  | Profils de sécurité |
 
-Annexe 7 : Type d’indexation des chaînes de caractères dans ElasticSearch par collection et par champ
------------------------------------------------------------------------------------------------------
+### Annexe 7 : Type d’indexation des chaînes de caractères dans ElasticSearch par collection et par champ
 
 **Collection AccessContract**
 
@@ -12093,8 +12091,7 @@ Annexe 7 : Type d’indexation des chaînes de caractères dans ElasticSearch p
 | Name        | Analysé
 | Permissions | Non analysé
 
-Annexe 8 : Correspondances des champs spéciaux dans Vitam
----------------------------------------------------------
+### Annexe 8 : Correspondances des champs spéciaux dans Vitam
 
 Les champs dont le nom est préfixé d’un « _ » ne sont pas accessibles
 directement, une correspondance est nécessaire pour y accéder.

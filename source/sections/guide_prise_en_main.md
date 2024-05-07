@@ -148,7 +148,7 @@ Selon le paramétrage initial de la plateforme et l’utilisation ou non d’un 
 - Soit l’utilisateur attribue l’identifiant du contrat avant import,
 - Soit la solution logicielle Vitam le générera automatiquement lors de l’import, sous la forme IC-0000x.
 
-Certains SIP fournis dans les jeux de tests (Jeux_de_tests_fonctionnels_V7.zip) spécifient des contrats d’entrée qui leur sont propres dans la balise <ArchivalAgreement>. Pour pouvoir effectuer une entrée avec ces SIP, il faut :
+Certains SIP fournis dans les jeux de tests (Jeux_de_tests_fonctionnels_V7.zip) spécifient des contrats d’entrée qui leur sont propres dans la balise *ArchivalAgreement*. Pour pouvoir effectuer une entrée avec ces SIP, il faut :
 - soit créer le contrat d’entrée correspondant, désigné dans la balise ArchivalAgreement du bordereau de transfert,
 -  soit modifier le bordereau de transfert, en remplaçant la valeur de la balise ArchivalAgreement par « IC-000001 » par exemple ou l’identifiant d’un contrat d’entrée déjà importé dans la solution logicielle Vitam.
 

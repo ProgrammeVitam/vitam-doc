@@ -200,7 +200,7 @@ L’import du référentiel constitue une opération d’administration (« MAS
 
 ##### Ré-import et mise à jour
 
-Le fichier de signatures est régulièrement mis à jour par The National Archives (UK). Il est disponible à cette adresse : http://www.nationalarchives.gov.uk/aboutapps/pronom/droid-signature-files.htm.
+Le fichier de signatures est régulièrement mis à jour par The National Archives (UK). Il est disponible à cette adresse : <http://www.nationalarchives.gov.uk/aboutapps/pronom/droid-signature-files.html>.
 La modification du référentiel des formats est possible au moyen des API et de l’IHM standard fournie avec la solution logicielle Vitam et s'effectue par un réimport du fichier de signatures, en mode « annule et remplace », depuis le tenant d’administration. De fait, la solution logicielle Vitam permet de :
 - ajouter un nouveau format ;
 - modifier les informations associées à un format ;
@@ -568,13 +568,15 @@ Afin de pouvoir être utilisé, un scénario de préservation doit être associ�
 *Exemple :* le premier scénario couvre une seule action de préservation, effectuée par deux griffons différents sur des formats différents, tandis que le second porte sur deux actions différentes effectuée par des griffons différents sur des formats différents.
 
 En outre, la solution logicielle Vitam permet d’utiliser :
-- une même action de préservation dans 1 à n scénario(s) de préservation (ex : plusieurs scénarios de préservation peuvent avoir pour objet une action de génération de binaires) ;
+- une même action de préservation dans 1 à n scénario(s) de préservation (ex : plusieurs scénarios de préservation peuvent avoir pour objet une action de génération de binaires) ;  
 ![Exemple](./medias/preservation/exemple2_scenario.png)
-- un même griffon pour des tâches diverses dans 1 à n scénario(s) de préservation ;
+- un même griffon pour des tâches diverses dans 1 à n scénario(s) de préservation ;  
 ![Exemple](./medias/preservation/exemple3_scenario.png)
 
 ![Exemple](./medias/preservation/exemple4_scenario.png)
-- un même format dans 1 à n scénario(s) de préservation.
+
+- un même format dans 1 à n scénario(s) de préservation.  
+
 *Exemple :* deux scénarios de préservation ont pour objet les mêmes formats. En revanche, leurs actions et leurs griffons diffèrent.
 
 #### Formalisation
@@ -583,7 +585,7 @@ En outre, la solution logicielle Vitam permet d’utiliser :
 
 Un référentiel des scénarios de préservation liste l’ensemble des scénarios de préservation pouvant être utilisés par la solution logicielle Vitam. Ce référentiel est importé sous la forme d’un fichier JSON, contenant systématiquement l’ensemble des scénarios de préservation utilisés[^30].
 
-``````
+```
 {
     "Identifier": "PSC-000001",
     "Name": "Tranformation en GIF (fmt/43)",
@@ -632,7 +634,7 @@ Un référentiel des scénarios de préservation liste l’ensemble des scénari
         ]
       }
   }
-``````
+```
 
 Un scénario de préservation donné doit nécessairement comporter les informations suivantes :
 - identifiant signifiant du scénario de préservation, généré par l’application à l’origine de sa création (Identifier – obligatoire) ;
@@ -825,7 +827,7 @@ Si le scénario de préservation a vocation à réaliser des extractions de mét
 
 ![Exemple](./medias/preservation/exemple5_scenario.png)
 
-``````
+```
 [
   {
     "Identifier": "PSC-000001",
@@ -863,7 +865,7 @@ Si le scénario de préservation a vocation à réaliser des extractions de mét
     }
   }
 ]
-``````
+```
 
 ##### Quand et comment supprimer un scénario de préservation ?
 

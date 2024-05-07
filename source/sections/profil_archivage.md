@@ -42,7 +42,7 @@ Pour un ensemble de données à transférer, archiver et conserver par un servic
 - les règles de gestion qui leur sont associées ;
 - le niveau de service requis.
 
-*Exemple : le profil d’archivage « Dossier de retraite » précise qu’un SIP contenant un dossier de retraite devra contenir une unité archivistique avec au moins un titre, le cas échéant une date de création et un âge*
+*Exemple : le profil d’archivage « Dossier de retraite » précise qu’un SIP contenant un dossier de retraite devra contenir une unité archivistique avec au moins un titre, le cas échéant une date de création et un âge*  
 ![Exemple : le profil d’archivage « Dossier de retraite » précise qu’un SIP contenant un dossier de retraite devra contenir une unité archivistique avec au moins un titre, le cas échéant une date de création et un âge.](./medias/PA/exemple_pa.png)
 
 
@@ -4195,15 +4195,15 @@ ReSIP permet de contrôler le manifeste chargé sur l’interface par rapport à
 
 #### Procédure de contrôle
 
-Afin de vérifier la conformité d’une structure arborescente d’archives et de sa description par rapport à un profil d’archivage conforme au SEDA 2.1., il convient, dans la moulinette ReSIP, de cliquer sur l’action « Traiter » puis sur la sous-action « Vérifier la conformité à un profil SEDA 2.1 » (cf. copie d’écran ci-dessous).
-![reSIP](./medias/PA/ReSIP1.png)
+Afin de vérifier la conformité d’une structure arborescente d’archives et de sa description par rapport à un profil d’archivage conforme au SEDA 2.1., il convient, dans la moulinette ReSIP, de cliquer sur l’action « Traiter » puis sur la sous-action « Vérifier la conformité à un profil SEDA 2.1 » (cf. copie d’écran ci-dessous).  
+![reSIP](./medias/PA/ReSIP1.png)  
 
 Le clic sur la sous-action « Vérifier la conformité à un profil SEDA 2.1 », ouvre l’explorateur Windows de l’utilisateur et permet à celui-ci de sélectionner un fichier correspondant à un profil d’archivage – au format XSD ou RNG – et de l’importer dans la moulinette ReSIP en cliquant sur le bouton d’action « Ouvrir » (cf. copie d’écran ci-dessous).
 
 Attention : il n’est possible de sélectionner qu’un seul fichier.
-![reSIP](./medias/PA/ReSIP2.png)
+![reSIP](./medias/PA/ReSIP2.png)  
 
-Le clic sur le bouton d’action « Ouvrir » lance une fenêtre de dialogue « Vérification profil SEDA 2.1 », indiquant que l’opération de vérification est lancée. Cette opération peut être annulée en cliquant sur le bouton d’action « Annuler » de la fenêtre de dialogue. Une fois l’opération de vérification, la fenêtre de dialogue indique son résultat et les éventuelles non conformités identifiées31. La fenêtre de dialogue peut être fermée en cliquant sur le bouton d’action « Fermer » (cf. copie d’écran ci-dessous).
+Le clic sur le bouton d’action « Ouvrir » lance une fenêtre de dialogue « Vérification profil SEDA 2.1 », indiquant que l’opération de vérification est lancée. Cette opération peut être annulée en cliquant sur le bouton d’action « Annuler » de la fenêtre de dialogue. Une fois l’opération de vérification, la fenêtre de dialogue indique son résultat et les éventuelles non conformités identifiées31. La fenêtre de dialogue peut être fermée en cliquant sur le bouton d’action « Fermer » (cf. copie d’écran ci-dessous).  
 ![reSIP](./medias/PA/ReSIP3.png)
 
 **Attention :**

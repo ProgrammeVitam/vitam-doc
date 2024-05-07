@@ -106,8 +106,8 @@ Un même document peut être représenté par plusieurs fichiers et prendre ains
 D’après le SEDA, ces différentes formes (fichiers) prises par une même archive doivent être regroupées dans un groupe d’objets représentant l’unité intellectuelle.
 
 Le SEDA 2.1. représente ce groupe d’objets de deux manières différentes :
-- création du groupe d’objets (DataObjectGroup) en utilisant la balise <DataObjectGroup> et création, dans cette balise <DataObjectGroup>, des objets qui le constituent. Chaque objet doit déclarer la version ou l’usage auquel il correspond via la balise <DataObjectVersion> (méthode propre au SEDA 2.1.) ;
-- déclaration dans le bordereau du groupe d’objets (DataObjectGroup) par un seul des objets lui appartenant via la balise <DataObjectGroupId>, l’autre objet y fera référence via la balise <DataObjectGroupReferenceId>. Chaque objet doit déclarer la version ou l’usage auquel il correspond via la balise <DataObjectVersion> (méthode héritée du SEDA 2.0. mais dépréciée).
+- création du groupe d’objets (DataObjectGroup) en utilisant la balise *DataObjectGroup* et création, dans cette balise *DataObjectGroup*, des objets qui le constituent. Chaque objet doit déclarer la version ou l’usage auquel il correspond via la balise *DataObjectVersion* (méthode propre au SEDA 2.1.) ;
+- déclaration dans le bordereau du groupe d’objets (DataObjectGroup) par un seul des objets lui appartenant via la balise *DataObjectGroupId*, l’autre objet y fera référence via la balise *DataObjectGroupReferenceId*. Chaque objet doit déclarer la version ou l’usage auquel il correspond via la balise *DataObjectVersion* (méthode héritée du SEDA 2.0. mais dépréciée).
 
 **Nota Bene :**
 Il est obligatoire de déclarer un groupe d’objets dans le bordereau d’entrée si une archive est représentée par plusieurs fichiers. Quand l’archive n’est représentée que par un seul fichier, la déclaration d’un groupe d’objets n’est que recommandée.
@@ -170,7 +170,7 @@ Les directives de l’équipe projet Vitam sur l’implémentation d’un border
 |:---|:---|:---:|
 |Service producteur|Afin de faciliter le référencement de l’opération d’entrée, notamment dans le cas où plusieurs ArchiveUnits sont à la racine du bloc DescriptiveMetadata, le champ < OriginatingAgencyIdentifier > est obligatoire.<br>**Point d’attention :** le service producteur déclaré dans le bordereau est l’un des filtres utilisés pour restreindre les accès des utilisateurs applicatifs.<br>La valeur saisie dans le champ doit correspondre à celle de l’identifiant du service concerné dans le référentiel des services agents de la solution logicielle Vitam.|Obligatoire|
 |Service versant|Afin de faciliter le référencement de l’opération d’entrée, notamment dans le cas où plusieurs ArchiveUnit sont à la racine du bloc DescriptiveMetadata, il est recommandé de placer cette information au niveau des métadonnées de gestion en utilisant le champ <SubmissionAgencyIdentifier>.<br>La valeur saisie dans le champ doit correspondre à celle de l’identifiant du service concerné dans le référentiel des services agents de la solution logicielle Vitam.|Recommandation|
-|Journalisation|L’utilisation du bloc <Logbook> est déconseillée à ce jour, car la solution logicielle Vitam ne les enregistre pas.|Déconseillé|
+|Journalisation|L’utilisation du bloc *Logbook* est déconseillée à ce jour, car la solution logicielle Vitam ne les enregistre pas.|Déconseillé|
 |Demandes d’autorisation|Il est recommandé de renseigner ce champ NeedAuthorization avec la valeur « true » quand l’accès, la réutilisation, la diffusion ou la gestion du niveau de protection au titre du secret de la défense nationale nécessitent des demandes d’autorisation auprès du service producteur, du service émetteur, du service d’archives ou d’un titulaire de droits de propriété intellectuelle.|Recommandé|
 
 ##### Description des archives (DescriptiveMetadata/ArchiveUnit)
@@ -236,28 +236,28 @@ Les extensions techniquement possibles sont les suivantes :
 
 |Bloc concerné|Balise|Signification / usage|
 |:---|:----|:---|
-|Métadonnées techniques|<OtherDimensionsAbstract>|Autres dimensions possibles pour un objet physique|
-||<OtherCoreTechnicalMetadataAbstract>|Métadonnées techniques essentielles ne correspondant :<br>- ni à des fichiers de type texte,<br>- ni à des fichiers de type document,<br>- ni à des fichiers de type image,<br>- ni à des fichiers de type audio,<br>- ni à des fichiers de type vidéo<br>Ex. : bases de données, plans 2D, plans 3D|
-|Métadonnées descriptives|<ObjectGroupExtensionAbstract>|Métadonnées descriptives complémentaires|
-||<ArchiveUnitReferenceAbstract>|Requêtes permettant de gérer la récursivité et de pointer vers un objet-archives supposé être déjà géré par le SAE|
-|Métadonnées de gestion|<OtherManagementAbstract>|Autres métadonnées de gestion|
+|Métadonnées techniques|*OtherDimensionsAbstract*|Autres dimensions possibles pour un objet physique|
+||*OtherCoreTechnicalMetadataAbstract*|Métadonnées techniques essentielles ne correspondant :<br>- ni à des fichiers de type texte,<br>- ni à des fichiers de type document,<br>- ni à des fichiers de type image,<br>- ni à des fichiers de type audio,<br>- ni à des fichiers de type vidéo<br>Ex. : bases de données, plans 2D, plans 3D|
+|Métadonnées descriptives|*ObjectGroupExtensionAbstract*|Métadonnées descriptives complémentaires|
+||*ArchiveUnitReferenceAbstract*|Requêtes permettant de gérer la récursivité et de pointer vers un objet-archives supposé être déjà géré par le SAE|
+|Métadonnées de gestion|*OtherManagementAbstract*|Autres métadonnées de gestion|
 
 - les extensions dont la définition n’est pas obligatoire pour que le schéma soit valide (extensions par redéfinition, de type OpenType). Leur type peut être défini selon les besoins des utilisateurs qui peuvent y mettre ce qu’ils veulent. Aucune vérification sur ces extensions ne pourra être faite lors des transactions tant que le type de ces extensions n’est pas défini. Sont concernées :
 
 |Bloc concerné|Balise|Signification / usage|
 |:---|:----|:---|
-|Noyau du schéma (main)|<OrganizationDescriptiveMetadataType>|Métadonnées descriptives pour une organisation|
-||<SignatureType>|Signature utilisée lors des échanges de messages|
-|Métadonnées techniques|<XXXTechnicalMetadataType>|Métadonnées techniques essentielles correspondant à des fichiers de types texte, document, image, audio et vidéo|
-||<DescriptiveTechnicalMetadataType>|Autres métadonnées techniques|
+|Noyau du schéma (main)|*OrganizationDescriptiveMetadataType*|Métadonnées descriptives pour une organisation|
+||*SignatureType*|Signature utilisée lors des échanges de messages|
+|Métadonnées techniques|*XXXTechnicalMetadataType*|Métadonnées techniques essentielles correspondant à des fichiers de types texte, document, image, audio et vidéo|
+||*DescriptiveTechnicalMetadataType*|Autres métadonnées techniques|
 
 Le schéma utilisé dans la solution logicielle Vitam utilise à la date de publication de ce document les extensions suivantes :
 
 |Bloc concerné|Balise|Signification / usage|
 |:---|:----|:---|
-|Métadonnées descriptives|<ObjectGroupExtensionAbstract>|Ajout de métadonnées descriptives complémentaires, y compris un agent.|
-||<ArchiveUnitReferenceAbstract>|Déclaration d’une unité archivistique pouvant déjà être présente dans une plate-forme utilisant la solution logicielle Vitam|
-|Métadonnées de gestion|<OtherManagementAbstract>|Modification d’ArchiveUnit déjà présentes dans une plate-forme utilisant la solution logicielle Vitam via un bloc UpdateOperation.<br>Ajout d’une règle de gel en vue de pouvoir déclarer des archives gelées.|
+|Métadonnées descriptives|*ObjectGroupExtensionAbstract*|Ajout de métadonnées descriptives complémentaires, y compris un agent.|
+||*ArchiveUnitReferenceAbstract*|Déclaration d’une unité archivistique pouvant déjà être présente dans une plate-forme utilisant la solution logicielle Vitam|
+|Métadonnées de gestion|*OtherManagementAbstract*|Modification d’ArchiveUnit déjà présentes dans une plate-forme utilisant la solution logicielle Vitam via un bloc UpdateOperation.<br>Ajout d’une règle de gel en vue de pouvoir déclarer des archives gelées.|
 
 ### Annexe 2 : exemple de bordereau « simple » réalisé pour un jeu de test Vitam
 
@@ -1155,6 +1155,6 @@ Exemple pour la méthode 2 (demande de rattachement de l’ID3 à l’ArchiveUni
 
 [^3] : Pour les projets en phase d’initialisation, il est recommandé d’utiliser la version 2.2. du SEDA.
 
-[^4] : Pour tous les formats acceptés dans la norme ISO 8601, il est possible de spécifier le fuseau horaire : https://fr.wikipedia.org/wiki/ISO_8601#Fuseau_horaire
+[^4] : Pour tous les formats acceptés dans la norme ISO 8601, il est possible de spécifier le fuseau horaire : <https://fr.wikipedia.org/wiki/ISO_8601#Fuseau_horaire>
 
 [^5] : Si elles sont présentes et selon leur formalisation, les séquences de type « < !-- », « – !> », « <-- » ou encore « --> » provoqueront un rejet du SIP en entrée ou seront ignorées.
