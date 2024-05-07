@@ -62,7 +62,6 @@
 <li class="toctree-l1"><a class="reference internal" href="module_de_collecte.html">7. Module de collecte</a></li>
 <li class="toctree-l1"><a class="reference internal" href="organisation_information.html">8. Organisation de l’information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ontologie.html">9. Ontologie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="organisation_information.html">8. Organisation de l’information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="preservation.html">10. Gestion de la préservation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="profil_archivage.html">11. Profils d’archivage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="profil_unite_archivistique.html">12. Profils d’unité archivistique</a></li>
@@ -373,14 +372,16 @@ Ces procédures induisent des limites qui doivent être respectées dans le cas 
 <section id="scenario-strategie-de-plate-forme-en-dual-site">
 <h3><span class="section-number">17.3.2. </span>Scénario : stratégie de plate-forme en dual-site<a class="headerlink" href="#scenario-strategie-de-plate-forme-en-dual-site" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Il s’agit du mode par défaut de la solution logicielle Vitam. Dans ce cas nous avons uniquement la stratégie dite « default », déclarant deux offres de stockage avec deux sites.</p>
-<p><img alt="Configuration des stratégies déployée sur le site primaire" src="sections/medias/stockage/site_primaire.png" /></p>
-<p><img alt="Configuration des stratégies déployée sur le site secondaire" src="sections/medias/stockage/site_secondaire.png" /></p>
+<p><em>Configuration des stratégies déployée sur le site primaire</em>
+<img alt="Configuration des stratégies déployée sur le site primaire" src="../_images/site_primaire.png" /></p>
+<p><em>Configuration des stratégies déployée sur le site secondaire</em>
+<img alt="Configuration des stratégies déployée sur le site secondaire" src="../_images/site_secondaire.png" /></p>
 <p>Le système respecte bien les caractéristiques nécessaires au bon fonctionnement des procédures de la plate-forme Vitam :</p>
 <ul class="simple">
 <li><p>les offres de stockage « offer1 » et « offer2 » contiennent les mêmes données,</p></li>
 <li><p>les offres référentes de chaque site permettent bien la reconstruction de celui-ci.</p></li>
 </ul>
-<p><img alt="système_offres" src="sections/medias/stockage/offres_systeme.png" /></p>
+<p><img alt="système_offres" src="../_images/schema.png" /></p>
 </section>
 </section>
 <section id="mecanismes-pour-lutilisation-de-vitam-avec-plusieurs-strategies">
@@ -404,10 +405,10 @@ Ces procédures induisent des limites qui doivent être respectées dans le cas 
 <p>Dans le cas du mode multi-stratégies la reconstruction au fil de l’eau des métadonnées se fera à partir de toutes les offres référentes définies par les stratégies déployées sur la plate-forme. Pour rester performant sur cette reconstruction il est faut être vigilant sur la configuration de plate-forme pour éviter de reconstruire plusieurs fois les mêmes métadonnées. De ce fait il est nécessaire de s’assurer de respecter les règles suivantes :</p>
 <ul class="simple">
 <li><p>une offre « référente » ne doit pas être déclarée dans deux stratégies différentes utilisées pour stocker des métadonnées<br />
-<img alt="" src="sections/medias/stockage/config_offre3.png" /><br />
+<img alt="" src="../_images/offre3.png" /><br />
 <em>Exemples de configuration de stratégies de plate-forme invalide : Offre 3 « référente » déclarée dans deux stratégies différentes</em></p></li>
 <li><p>une offre « référente » ne doit pas contenir des métadonnées présentes dans une autre offre « référente »<br />
-<img alt="" src="sections/medias/stockage/config_offre4.png" /><br />
+<img alt="" src="../_images/offre4.png" /><br />
 <em>Exemples de configuration de stratégies de plate-forme invalide : Offre 4 « référente » contient les données de Offre 3 « référente »</em></p></li>
 </ul>
 </section>
@@ -421,7 +422,7 @@ Ces procédures induisent des limites qui doivent être respectées dans le cas 
 </ul>
 <p>Un contrôle a été ajouté pour assurer la cohérence des données de la plate-forme Vitam : les stratégies utilisées pour le stockage des métadonnées doivent déclarer une offre dite « référente ».</p>
 <p>Il n’y a pas de contrôle précis pour les stratégies utilisées pour le stockage des objets binaires.</p>
-<p><img alt="" src="sections/medias/stockage/stockage_md.png" /><br />
+<p><img alt="" src="../_images/stockage_md.png" /><br />
 <em>Exemple de déclarations pour une stratégie de stockage des métadonnées (strategyMD)</em></p>
 <p><img alt="" src="sections/medias/stockage/stockage_BDO.png" /><br />
 <em>Exemple de déclarations pour une stratégie de stockage des objets numériques (strategyBDO)</em></p>
@@ -485,8 +486,8 @@ Ces procédures induisent des limites qui doivent être respectées dans le cas 
 <section id="scenario-qualite-de-service">
 <h3><span class="section-number">17.4.4. </span>Scénario : qualité de service<a class="headerlink" href="#scenario-qualite-de-service" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Le but d’un déploiement orienté « Qualité de service » de la solution logicielle Vitam est de fournir la possibilité de proposer un nombre de copies stockées différemment en fonction des applications utilisatrices de la plate-forme Vitam.</p>
-<p><img alt="Configuration des stratégies déployées sur le site primaire" src="sections/medias/stockage/qualite_primaire.png" /></p>
-<p><img alt="Configuration des stratégies déployées sur le site secondaire" src="sections/medias/stockage/qualite_secondaire.png" /></p>
+<p><img alt="Configuration des stratégies déployées sur le site primaire" src="../_images/site_primaire_2.png" /></p>
+<p><img alt="Configuration des stratégies déployées sur le site secondaire" src="../_images/site_secondaire_2.png" /></p>
 <p>Dans le cas présenté ci-dessous, deux nouvelles offres et une stratégie contenant 3 offres permettant de monter le nombre de copies à 3 sont ajoutées.
 La stratégie est ensuite déclarée dans un contrat de gestion avec la surcharge aussi des métadonnées et des archives numériques.</p>
 <p>Contrat de gestion :</p>
@@ -543,15 +544,15 @@ La stratégie est ensuite déclarée dans un contrat de gestion avec la surcharg
 <li><p>les stratégies permettent la lecture sur le site secondaire si celui-ci doit être activé,</p></li>
 <li><p>les utilisateurs utilisant le contrat d’entrée déclarant le contrat de gestion auront 3 copies de leurs archives dans le système.</p></li>
 </ul>
-<p><img alt="" src="sections/medias/stockage/offres_systeme2.png" /></p>
+<p><img alt="" src="../_images/schema_2.png" /></p>
 </section>
 <section id="scenario-offres-objets">
 <h3><span class="section-number">17.4.5. </span>Scénario : offres objets<a class="headerlink" href="#scenario-offres-objets" title="Lien permanent vers cette rubrique"></a></h3>
 <p>Le but d’un déploiement orienté « Offres objets » de la solution logicielle Vitam est de fournir la possibilité de stocker les objets numériques uniquement sur des offres séparées dites « objets » pour certaines ou toutes les applications utilisatrices de la plate-forme Vitam.</p>
 <p>Ce type de déploiement offre également la possibilité de stocker les objets binaires uniquement sur des offres dites « froides » (sur bande par exemple), mais il est fortement conseillé d’y stocker également les métadonnées associées aux objets.</p>
 <p>Dans le cas présenté ci-dessous, deux nouvelles offres dites « objets » (offre 3 et offre 4) et une stratégie supplémentaire permettant de stocker les objets binaires et leurs métadonnées associées est ajoutée. Il n’y a pas d’offre dite « froide » représenté dans ce cas d’exemple.</p>
-<p><img alt="Configuration des stratégies déployées sur le site primaire" src="sections/medias/stockage/objets_primaire.png" /></p>
-<p><img alt="Configuration des stratégies déployées sur le site secondaire" src="sections/medias/stockage/objets_secondaire.png" /></p>
+<p><img alt="Configuration des stratégies déployées sur le site primaire" src="../_images/site_primaire_3.png" /></p>
+<p><img alt="Configuration des stratégies déployées sur le site secondaire" src="../_images/site_secondaire_3.png" /></p>
 <p>La stratégie est ensuite déclarée dans un contrat de gestion avec la surcharge aussi des métadonnées et des archives numériques.</p>
 <p>Contrat de gestion :</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
@@ -607,7 +608,7 @@ La stratégie est ensuite déclarée dans un contrat de gestion avec la surcharg
 <li><p>les offres référentes de chaque site ne contiennent aucune métadonnée communes,</p></li>
 <li><p>les utilisateurs utilisant le contrat d’entrée déclarant le contrat de gestion auront leurs archives numériques uniquement sur des offres dites « froides » dans le système</p></li>
 </ul>
-<p><img alt="" src="sections/medias/stockage/offres_systeme3.png" /></p>
+<p><img alt="" src="../_images/schema_3.png" /></p>
 </section>
 </section>
 </section>

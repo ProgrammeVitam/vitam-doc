@@ -3618,9 +3618,10 @@ des métadonnées » (cf. copie d’écran ci-dessous).
 
 L’export se poursuit ensuite selon le processus décrit dans la [section](#paramétrage-des-exports).
 
-Annexe. Préparer un fichier CSV
+Annexes
 -------------------------------
 
+### Annexe 1 : Préparer un fichier CSV
 La solution logicielle Vitam permet d’importer deux référentiels
 correspondant à des fichiers CSV :
 
@@ -3637,7 +3638,7 @@ Le présent document a vocation à :
 -   expliciter la manière d’écrire et de mettre à jour ces fichiers CSV,
 -   émettre des recommandations sur les règles à respecter.
 
-### Caractéristiques d’un fichier CSV
+#### Caractéristiques d’un fichier CSV
 
 Un fichier CSV représente des données tabulaires sous forme de valeurs
 séparées par :
@@ -3679,7 +3680,7 @@ Un référentiel au format CSV doit contenir :
 -   une à plusieurs lignes contenant les valeurs correspondant aux
     attendus du titre de colonne.
 
-### Recommandations
+#### Recommandations
 
 La rédaction d’un fichier CSV obéit à un certain nombre de règles à
 suivre :
@@ -3718,9 +3719,9 @@ suivre :
 | | Le champ correspondant à « RuleId » ne doit pas comprendre d’espace ou de caractère accentué. | Recommandé | 
 | | Le champ correspondant à « RuleType » doit contenir une des valeurs suivantes : AccessRule, AppraisalRule, ClassificationRule, DisseminationRule, ReuseRule, StorageRule.<br>Il est recommandé de ne pas laisser d’espaces vides avant et après la valeur sélectionnée.| Obligatoire |  | | Le champ correspondant à « RuleDuration » doit avoir pour valeur un entier positif compris entre 0 et 999 | Obligatoire |
 
-### Gestion d’un fichier au format CSV
+#### Gestion d’un fichier au format CSV
 
-#### Conversion d’un fichier au format CSV
+##### Conversion d’un fichier au format CSV
 
 Les référentiels des règles de gestion et des services agents doivent
 être au format CSV et encodés en UTF 8.
@@ -3751,7 +3752,7 @@ procédure suivante :
         -   dans Notepad++, en sélectionnant « Encodage », puis
             « Encoder en UTF-8 » et en enregistrant les modifications.
 
-#### Modification d’un fichier au format CSV
+##### Modification d’un fichier au format CSV
 
 Les référentiels des règles de gestion et des services agents doivent
 être au format CSV et encodés en UTF 8.
@@ -3806,15 +3807,14 @@ Vitam
 | La ligne de titre déclare « Description » suivie d’un espace blanc / vide<br>"Identifier"," Name",**"Description      "**<br>"FRAN_NP_009913","Présidence sous Valéry Giscard d’Estaing","Successeur de Pompidou [...]"<br>"FRAN_NP_009941","Veil Simone (1927-2017)","Née à Nice en 1927,  [...]"| OK |*« Succès du processus d'import du référentiel des services agents. »*<br>Détail : nom du fichier CSV|Même si l’import est en succès, il n’est pas recommandé de laisser des espaces blancs / vides avant ou après une chaîne de caractères dans un fichier CSV.|
 | La ligne de titre déclare « Description » précédée d’un espace blanc / vide<br>"Identifier"," Name",**"  Description"**<br>"FRAN_NP_009913","Présidence sous Valéry Giscard d’Estaing","Successeur de Pompidou [...]"<br>"FRAN_NP_009941","Veil Simone (1927-2017)","Née à Nice en 1927,  [...]"| OK | *« Succès du processus d'import du référentiel des services agents. »*<br>Détail : nom du fichier CSV|Même si l’import est en succès, il n’est pas recommandé de laisser des espaces blancs / vides avant ou après une chaîne de caractères dans un fichier CSV.|
 
-Annexe. Contrôle de conformité à un profil d’archivage
-------------------------------------------------------
+### Annexe 2 : Contrôle de conformité à un profil d’archivage
 
 ReSIP permet de contrôler le manifeste chargé sur l’interface par
 rapport à un profil d’archivage au format XSD ou RNG.
 
-### Recommandations
+#### Recommandations
 
-#### Dans la rédaction du profil d’archivage
+##### Dans la rédaction du profil d’archivage
 
 Il est recommandé de créer un profil d’archivage à l’aide du Service
 hébergé pour la rédaction de profils d’archivage (SHERPA)[^9], mis à
@@ -3826,7 +3826,7 @@ XML[^10].
 Pour utiliser le profil d’archivage dans ReSIP, il faut prendre en
 compte deux spécificités :
 
-##### La déclaration des groupes d’objets techniques
+###### La déclaration des groupes d’objets techniques
 
 Le SEDA permet de déclarer les **objets techniques** de deux manières :
 
@@ -3914,7 +3914,7 @@ Mention d’un groupe d’objets techniques dans le profil d’archivage :
           </rng:element>
 ```
 
-##### La hiérarchisation des unités archivistiques
+###### La hiérarchisation des unités archivistiques
 
 Le SEDA permet également de reproduire la **hiérarchie entre les unités
 archivistiques** de deux manières :
@@ -3930,7 +3930,7 @@ fonctionnera dans ReSIP qu’à la condition que le profil d’archivage ne
 déclare les liens entre unités archivistiques sous forme arborescente,
 c’est-à-dire emboîtées les unes à la suite des autres.
 
-#### Dans ReSIP
+##### Dans ReSIP
 
 Dans ReSIP, il faut veiller à paramétrer le mode d’enregistrement des
 unités archivistiques avant leur import dans l’outil.
@@ -3950,7 +3950,7 @@ un clic sur la sous-action « Préférences », depuis l’onglet « Export 
     forme **linéaire** et non pas indentée.
     ![](medias/resip/Pictures/100002010000031A00000463C611A444D22154BC.png)
 
-### Messages d’erreur rencontrés
+#### Messages d’erreur rencontrés
 
 Lors d’un contrôle de conformité à un profil d’archivage, les erreurs
 retournées par ReSIP peuvent provenir :
@@ -3967,7 +3967,7 @@ vérifier le contenu du manifeste et celui du profil d’archivage.
 **Nota bene** : Cette liste n’est pas forcément exhaustive.
 
 
-#### Erreur 1
+##### Erreur 1
 
 **Message retourné par ReSIP:**
 ```
@@ -3996,7 +3996,7 @@ Dans le profil d’archivage, rajouter un attribut correspondant au namespace :
       </rng:zeroOrMore>
 ```
 
-#### Erreur 2
+##### Erreur 2
 
 **Message retourné par ReSIP:**
 ```
@@ -4013,7 +4013,7 @@ Avec ce cas d’erreur-là, on peut se demander si le profil d’archivage n’e
 Pour rappel, ReSIP génère des objets binaires encapsulés dans un groupe d’objets techniques. Le message retourné par ReSIP suggère que le profil d’archivage attend un objet binaire en lieu et place du groupe d’objets.
 Il est recommandé d’ouvrir le manifeste pour vérifier comment sont déclarés les groupes d’objets techniques, puis de faire de même dans le profil d’archivage et de corriger l’erreur.
 
-#### Erreur 3
+##### Erreur 3
 
 **Message retourné par ReSIP:**
 ```
@@ -4033,7 +4033,7 @@ Pour rappel, ReSIP génère des objets binaires encapsulés dans un groupe d’o
 Il est recommandé d’ouvrir le manifeste pour vérifier comment sont déclarés les groupes d’objets techniques, puis de faire de même dans le profil d’archivage et de corriger l’erreur.
 
 
-#### Erreur 4
+##### Erreur 4
 
 **Message retourné par ReSIP:**
 
@@ -4050,7 +4050,7 @@ L’élément ReplyCodeListVersion n’est pas autorisé par le profil d’archi
 Il faut vérifier si ReplyCodeListVersion n’est pas un champ obligatoire du SEDA (option « Vérifier la conformité SEDA 2.1 »).
 S’il n’est pas obligatoire, ce qui est le cas pour cet élément-là, retirer le champ de la liste des champs contextuels générés par ReSIP, en cliquant sur Contexte > Editer les informations d’export > Métadonnées globales étendues.
 
-#### Erreur 5
+##### Erreur 5
 
 **Message retourné par ReSIP:**
 ```
@@ -4066,7 +4066,7 @@ L’élément CodeListVersions, obligatoire dans le SEDA, est absent.
 - Il faut rajouter l’élément CodeListVersions, obligatoire dans le SEDA, en cliquant sur Contexte > Editer les informations d’export > Métadonnées globales étendues.
 - Si l’erreur persiste, il faut également vérifier que le profil d’archivage intègre bien un élément CodeListVersions.
 
-#### Erreur 6
+##### Erreur 6
 
 **Message retourné par ReSIP:**
 ```
@@ -4082,7 +4082,7 @@ La valeur de l’élément Comment présent dans le manifeste ne correspond pas 
 Dans le manifeste, il faut corriger la valeur de l’élément Comment par la valeur attendue dans le profil d’archivage pour cette balise-là.
 
 
-### Exemple de profil d’archivage
+#### Exemple de profil d’archivage
 
 **Nota bene**: le cas présenté ci-dessous est un exemple fictif, ne comportant pas de référence à un groupe d’objets techniques.
 

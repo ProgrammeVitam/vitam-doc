@@ -62,7 +62,6 @@
 <li class="toctree-l1"><a class="reference internal" href="module_de_collecte.html">7. Module de collecte</a></li>
 <li class="toctree-l1"><a class="reference internal" href="organisation_information.html">8. Organisation de l’information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ontologie.html">9. Ontologie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="organisation_information.html">8. Organisation de l’information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="preservation.html">10. Gestion de la préservation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="profil_archivage.html">11. Profils d’archivage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="profil_unite_archivistique.html">12. Profils d’unité archivistique</a></li>
@@ -225,17 +224,17 @@ Le rattachement se fait sur la base de l’identifiant (GUID) d’une unité arc
 <h3><span class="section-number">20.2.2. </span>Le rattachement à l’entrée d’unités archivistiques du SIP à des unités archivistiques déjà présentes dans le système par déclaration dans le bordereau de transfert<a class="headerlink" href="#le-rattachement-a-lentree-dunites-archivistiques-du-sip-a-des-unites-archivistiques-deja-presentes-dans-le-systeme-par-declaration-dans-le-bordereau-de-transfert" title="Lien permanent vers cette rubrique"></a></h3>
 <p><em>Cas d’usage : une application de type GED verse périodiquement les documents produits dans la GED en demandant leur rattachement au plan de classement déjà présent dans le système.</em></p>
 <p>La solution logicielle Vitam offre la possibilité de déclarer dans le bordereau de transfert une unité archivistique déjà présente dans le système à laquelle rattacher une ou plusieurs unités archivistiques du SIP. L’unité archivistique de rattachement peut être de type « arbre de positionnement », « plan de classement » ou « standard ».
-Le rattachement peut se faire soit sur la base de l’identifiant (GUID) de l’unité archivistique de rattachement, soit sur la base de la valeur d’une métadonnée de l’unité archivistique de rattachement (par exemple : <MetadataName>Title</MetadataName>, <MetadataValue>Titre de mon AU</MetadataValue>).</p>
-<p>Avec la deuxième solution, la balise et la valeur déclarées pour identifier l’unité archivistique de rattachement doivent renvoyer un résultat unique dans la plate-forme. Ainsi, si le rattachement se fait sur la métadonnée <Title> et que plusieurs unités archivistiques ont la même valeur pour le champ Title, le rattachement ne pourra pas être effectué et l’entrée du SIP échouera.
-Il est donc recommandé d’utiliser des éléments univoques comme un identifiant (par exemple, les balises <FilePlanPosition>, <OriginatingSystemId>, <ArchivalAgencyArchiveUnitIdentifier>, <OriginatingAgencyArchiveUnitIdentifier>, <TransferringAgencyArchiveUnitIdentifier>).</p>
+Le rattachement peut se faire soit sur la base de l’identifiant (GUID) de l’unité archivistique de rattachement, soit sur la base de la valeur d’une métadonnée de l’unité archivistique de rattachement (par exemple : <em>MetadataName</em>Title*/MetadataName*, <em>MetadataValue</em>Titre de mon AU*/MetadataValue*).</p>
+<p>Avec la deuxième solution, la balise et la valeur déclarées pour identifier l’unité archivistique de rattachement doivent renvoyer un résultat unique dans la plate-forme. Ainsi, si le rattachement se fait sur la métadonnée <em>Title</em> et que plusieurs unités archivistiques ont la même valeur pour le champ Title, le rattachement ne pourra pas être effectué et l’entrée du SIP échouera.
+Il est donc recommandé d’utiliser des éléments univoques comme un identifiant (par exemple, les balises <em>FilePlanPosition</em>, <em>OriginatingSystemId</em>, <em>ArchivalAgencyArchiveUnitIdentifier</em>, <em>OriginatingAgencyArchiveUnitIdentifier</em>, <em>TransferringAgencyArchiveUnitIdentifier</em>).</p>
 <p>Dans les deux cas, il convient de :</p>
 <ul class="simple">
 <li><p>créer dans le bordereau une unité archivistique correspondant à l’unité archivistique déjà présente dans le système, renseignée avec les champs obligatoires dans le SEDA (Title, DescriptionLevel). Cette création est indispensable afin de respecter la logique du standard SEDA ;</p></li>
-<li><p>insérer dans le sous-bloc <Management> de cette unité archivistique un sous-bloc <UpdateOperation> (extension du schéma SEDA) ;</p></li>
-<li><p>déclarer dans la balise <UpdateOperation> de cette unité archivistique les informations permettant son identification dans le système. Cette déclaration peut être faite selon 2 méthodes :
-- méthode 1 : insérer dans le sous-bloc <UpdateOperation> une balise <SystemId> comprenant l’identifiant unique attribué par la solution logicielle Vitam à l’unité archivistique déjà présente dans le système ;
-- méthode 2 : insérer dans le sous-bloc <UpdateOperation> un bloc <ArchiveUnitIdentifierKey> qui comprend lui-même 2 balises : <MetadataName> qui doit correspondre à une balise du bloc Content du schéma SEDA 2.1, et une balise <MetadataValue> qui doit correspondre à la valeur du champ de l’unité archivistique déjà présente dans le système à laquelle on veut rattacher l’unité archivistique du SIP ;</p></li>
-<li><p>faire référence aux unités archivistiques du bordereau de transfert à rattacher en utilisant la balise <ArchiveUnitRefId>.</p></li>
+<li><p>insérer dans le sous-bloc <em>Management</em> de cette unité archivistique un sous-bloc <em>UpdateOperation</em> (extension du schéma SEDA) ;</p></li>
+<li><p>déclarer dans la balise <em>UpdateOperation</em> de cette unité archivistique les informations permettant son identification dans le système. Cette déclaration peut être faite selon 2 méthodes :
+- méthode 1 : insérer dans le sous-bloc <em>UpdateOperation</em> une balise <em>SystemId</em> comprenant l’identifiant unique attribué par la solution logicielle Vitam à l’unité archivistique déjà présente dans le système ;
+- méthode 2 : insérer dans le sous-bloc <em>UpdateOperation</em> un bloc <em>ArchiveUnitIdentifierKey</em> qui comprend lui-même 2 balises : <em>MetadataName</em> qui doit correspondre à une balise du bloc Content du schéma SEDA 2.1, et une balise <em>MetadataValue</em> qui doit correspondre à la valeur du champ de l’unité archivistique déjà présente dans le système à laquelle on veut rattacher l’unité archivistique du SIP ;</p></li>
+<li><p>faire référence aux unités archivistiques du bordereau de transfert à rattacher en utilisant la balise <em>ArchiveUnitRefId</em>.</p></li>
 </ul>
 <p><em>Exemple pour la méthode 1</em></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">ArchiveUnit</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;ID4&quot;</span><span class="o">&gt;</span>
@@ -285,9 +284,9 @@ Le nœud déclaré peut être de type « arbre de positionnement », « plan 
 <p>La solution logicielle Vitam offre la possibilité de déclarer dans le bordereau un groupe d’objets techniques déjà présent dans le système auquel se rattachera une unité archivistique.
 Afin de rattacher une unité archivistique présente dans le bordereau à un groupe d’objets déjà présent dans la plate-forme utilisant la solution logicielle Vitam, il est obligatoire :</p>
 <ul class="simple">
-<li><p>d’ajouter un sous-bloc <DataObjectGroup> à l’unité archivistique (extension du schéma SEDA) ;</p></li>
-<li><p>d’ajouter dans ce bloc un élément <DataObjectGroupExistingReferenceId> ;</p></li>
-<li><p>d’insérer dans l’élément <DataObjectGroupExistingReferenceId> une balise <SystemId> comprenant l’identifiant unique attribué par la solution logicielle Vitam au groupe d’objets techniques déjà présent dans la solution logicielle Vitam.</p></li>
+<li><p>d’ajouter un sous-bloc <em>DataObjectGroup</em> à l’unité archivistique (extension du schéma SEDA) ;</p></li>
+<li><p>d’ajouter dans ce bloc un élément <em>DataObjectGroupExistingReferenceId</em> ;</p></li>
+<li><p>d’insérer dans l’élément <em>DataObjectGroupExistingReferenceId</em> une balise <em>SystemId</em> comprenant l’identifiant unique attribué par la solution logicielle Vitam au groupe d’objets techniques déjà présent dans la solution logicielle Vitam.</p></li>
 </ul>
 <p>Le rattachement d’une unité archivistique à un groupe d’objets techniques déjà présent dans le système ne nécessite aucune configuration particulière du contrat d’entrée.</p>
 </section>
@@ -302,11 +301,11 @@ Seul le service producteur ayant provoqué la création du groupe d’objets tec
 <p>Pour cela il convient de :</p>
 <ul class="simple">
 <li><p>créer dans le bordereau une unité archivistique correspondant à l’unité archivistique dont le groupe d’objets doit être mis à jour, renseignée avec les champs obligatoires dans le SEDA (Title, DescriptionLevel). Cette création est indispensable afin de respecter la logique du standard SEDA ;</p></li>
-<li><p>insérer dans le sous-bloc <Management> de cette unité archivistique un sous-bloc <UpdateOperation> (extension du schéma SEDA) ;</p></li>
-<li><p>déclarer dans le sous-bloc <UpdateOperation> les informations permettant l’identification dans le système de l’unité archivistique dont le groupe d’objets techniques est à mettre à jour. Cette déclaration peut être faite selon 2 méthodes :
-- méthode 1 en utilisant le GUID attribué par la solution logicielle Vitam : insérer dans le sous-bloc <UpdateOperation> une balise <SystemId> comprenant l’identifiant unique attribué par la solution logicielle Vitam à l’unité archivistique déjà présente dans le système ;
-- méthode 2 en utilisant d’autres éléments de description de l’unité archivistique : insérer dans le sous-bloc <UpdateOperation> un bloc <ArchiveUnitIdentifierKey> qui comprend lui-même 2 balises : <MetadataName> qui doit correspondre à une balise du bloc Content du schéma SEDA 2.1., et une balise <MetadataValue> qui doit correspondre à la valeur du champ de l’unité archivistique présente dans le système à laquelle on veut rattacher l’objet du SIP ;</p></li>
-<li><p>déclarer les objets du bordereau de transfert à rajouter en utilisant la balise <DataObjectGroupReferenceId>.</p></li>
+<li><p>insérer dans le sous-bloc <em>Management</em> de cette unité archivistique un sous-bloc <em>UpdateOperation</em> (extension du schéma SEDA) ;</p></li>
+<li><p>déclarer dans le sous-bloc <em>UpdateOperation</em> les informations permettant l’identification dans le système de l’unité archivistique dont le groupe d’objets techniques est à mettre à jour. Cette déclaration peut être faite selon 2 méthodes :
+- méthode 1 en utilisant le GUID attribué par la solution logicielle Vitam : insérer dans le sous-bloc <em>UpdateOperation</em> une balise <em>SystemId</em> comprenant l’identifiant unique attribué par la solution logicielle Vitam à l’unité archivistique déjà présente dans le système ;
+- méthode 2 en utilisant d’autres éléments de description de l’unité archivistique : insérer dans le sous-bloc <em>UpdateOperation</em> un bloc <em>ArchiveUnitIdentifierKey</em> qui comprend lui-même 2 balises : <em>MetadataName</em> qui doit correspondre à une balise du bloc Content du schéma SEDA 2.1., et une balise <em>MetadataValue</em> qui doit correspondre à la valeur du champ de l’unité archivistique présente dans le système à laquelle on veut rattacher l’objet du SIP ;</p></li>
+<li><p>déclarer les objets du bordereau de transfert à rajouter en utilisant la balise <em>DataObjectGroupReferenceId</em>.</p></li>
 </ul>
 <p><em>Exemple pour la méthode 1</em></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">ArchiveUnit</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;ID4&quot;</span><span class="o">&gt;</span>

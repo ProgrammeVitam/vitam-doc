@@ -62,7 +62,6 @@
 <li class="toctree-l1"><a class="reference internal" href="module_de_collecte.html">7. Module de collecte</a></li>
 <li class="toctree-l1"><a class="reference internal" href="organisation_information.html">8. Organisation de l’information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ontologie.html">9. Ontologie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="organisation_information.html">8. Organisation de l’information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="preservation.html">10. Gestion de la préservation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="profil_archivage.html">11. Profils d’archivage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="profil_unite_archivistique.html">12. Profils d’unité archivistique</a></li>
@@ -257,36 +256,39 @@
 <li class="toctree-l3"><a class="reference internal" href="#export-sous-forme-dun-fichier-csv-decrivant-une-structure-arborescente-darchives-et-ou-de-fichiers">1.6.6. Export sous forme d’un fichier .csv décrivant une structure arborescente d’archives et/ou de fichiers</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#annexe-preparer-un-fichier-csv">1.7. Annexe. Préparer un fichier CSV</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#caracteristiques-dun-fichier-csv">1.7.1. Caractéristiques d’un fichier CSV</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#recommandations">1.7.2. Recommandations</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gestion-dun-fichier-au-format-csv">1.7.3. Gestion d’un fichier au format CSV</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#conversion-dun-fichier-au-format-csv">1.7.3.1. Conversion d’un fichier au format CSV</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#modification-dun-fichier-au-format-csv">1.7.3.2. Modification d’un fichier au format CSV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#annexes">1.7. Annexes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#annexe-1-preparer-un-fichier-csv">1.7.1. Annexe 1 : Préparer un fichier CSV</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#caracteristiques-dun-fichier-csv">1.7.1.1. Caractéristiques d’un fichier CSV</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#recommandations">1.7.1.2. Recommandations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gestion-dun-fichier-au-format-csv">1.7.1.3. Gestion d’un fichier au format CSV</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#conversion-dun-fichier-au-format-csv">1.7.1.3.1. Conversion d’un fichier au format CSV</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#modification-dun-fichier-au-format-csv">1.7.1.3.2. Modification d’un fichier au format CSV</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#annexe-controle-de-conformite-a-un-profil-darchivage">1.8. Annexe. Contrôle de conformité à un profil d’archivage</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id21">1.8.1. Recommandations</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#dans-la-redaction-du-profil-darchivage">1.8.1.1. Dans la rédaction du profil d’archivage</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#la-declaration-des-groupes-dobjets-techniques">1.8.1.1.1. La déclaration des groupes d’objets techniques</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#la-hierarchisation-des-unites-archivistiques">1.8.1.1.2. La hiérarchisation des unités archivistiques</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#annexe-2-controle-de-conformite-a-un-profil-darchivage">1.7.2. Annexe 2 : Contrôle de conformité à un profil d’archivage</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id21">1.7.2.1. Recommandations</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#dans-la-redaction-du-profil-darchivage">1.7.2.1.1. Dans la rédaction du profil d’archivage</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#la-declaration-des-groupes-dobjets-techniques">1.7.2.1.1.1. La déclaration des groupes d’objets techniques</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#la-hierarchisation-des-unites-archivistiques">1.7.2.1.1.2. La hiérarchisation des unités archivistiques</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#dans-resip">1.8.1.2. Dans ReSIP</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#dans-resip">1.7.2.1.2. Dans ReSIP</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#messages-derreur-rencontres">1.8.2. Messages d’erreur rencontrés</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#erreur-1">1.8.2.1. Erreur 1</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#erreur-2">1.8.2.2. Erreur 2</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#erreur-3">1.8.2.3. Erreur 3</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#erreur-4">1.8.2.4. Erreur 4</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#erreur-5">1.8.2.5. Erreur 5</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#erreur-6">1.8.2.6. Erreur 6</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#messages-derreur-rencontres">1.7.2.2. Messages d’erreur rencontrés</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#erreur-1">1.7.2.2.1. Erreur 1</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#erreur-2">1.7.2.2.2. Erreur 2</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#erreur-3">1.7.2.2.3. Erreur 3</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#erreur-4">1.7.2.2.4. Erreur 4</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#erreur-5">1.7.2.2.5. Erreur 5</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#erreur-6">1.7.2.2.6. Erreur 6</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#exemple-de-profil-darchivage">1.8.3. Exemple de profil d’archivage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exemple-de-profil-darchivage">1.7.2.3. Exemple de profil d’archivage</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -3890,8 +3892,10 @@ des métadonnées » (cf. copie d’écran ci-dessous).</p>
 <p>L’export se poursuit ensuite selon le processus décrit dans la <span class="xref myst">section</span>.</p>
 </section>
 </section>
-<section id="annexe-preparer-un-fichier-csv">
-<h2><span class="section-number">1.7. </span>Annexe. Préparer un fichier CSV<a class="headerlink" href="#annexe-preparer-un-fichier-csv" title="Lien permanent vers cette rubrique"></a></h2>
+<section id="annexes">
+<h2><span class="section-number">1.7. </span>Annexes<a class="headerlink" href="#annexes" title="Lien permanent vers cette rubrique"></a></h2>
+<section id="annexe-1-preparer-un-fichier-csv">
+<h3><span class="section-number">1.7.1. </span>Annexe 1 : Préparer un fichier CSV<a class="headerlink" href="#annexe-1-preparer-un-fichier-csv" title="Lien permanent vers cette rubrique"></a></h3>
 <p>La solution logicielle Vitam permet d’importer deux référentiels
 correspondant à des fichiers CSV :</p>
 <ul class="simple">
@@ -3908,7 +3912,7 @@ logicielle Vitam.</p>
 <li><p>émettre des recommandations sur les règles à respecter.</p></li>
 </ul>
 <section id="caracteristiques-dun-fichier-csv">
-<h3><span class="section-number">1.7.1. </span>Caractéristiques d’un fichier CSV<a class="headerlink" href="#caracteristiques-dun-fichier-csv" title="Lien permanent vers cette rubrique"></a></h3>
+<h4><span class="section-number">1.7.1.1. </span>Caractéristiques d’un fichier CSV<a class="headerlink" href="#caracteristiques-dun-fichier-csv" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Un fichier CSV représente des données tabulaires sous forme de valeurs
 séparées par :</p>
 <ul class="simple">
@@ -3965,7 +3969,7 @@ attendus du titre de colonne.</p></li>
 </ul>
 </section>
 <section id="recommandations">
-<h3><span class="section-number">1.7.2. </span>Recommandations<a class="headerlink" href="#recommandations" title="Lien permanent vers cette rubrique"></a></h3>
+<h4><span class="section-number">1.7.1.2. </span>Recommandations<a class="headerlink" href="#recommandations" title="Lien permanent vers cette rubrique"></a></h4>
 <p>La rédaction d’un fichier CSV obéit à un certain nombre de règles à
 suivre :</p>
 <ul class="simple">
@@ -4083,9 +4087,9 @@ la solution logicielle Vitam.</p></li>
 </table>
 </section>
 <section id="gestion-dun-fichier-au-format-csv">
-<h3><span class="section-number">1.7.3. </span>Gestion d’un fichier au format CSV<a class="headerlink" href="#gestion-dun-fichier-au-format-csv" title="Lien permanent vers cette rubrique"></a></h3>
+<h4><span class="section-number">1.7.1.3. </span>Gestion d’un fichier au format CSV<a class="headerlink" href="#gestion-dun-fichier-au-format-csv" title="Lien permanent vers cette rubrique"></a></h4>
 <section id="conversion-dun-fichier-au-format-csv">
-<h4><span class="section-number">1.7.3.1. </span>Conversion d’un fichier au format CSV<a class="headerlink" href="#conversion-dun-fichier-au-format-csv" title="Lien permanent vers cette rubrique"></a></h4>
+<h5><span class="section-number">1.7.1.3.1. </span>Conversion d’un fichier au format CSV<a class="headerlink" href="#conversion-dun-fichier-au-format-csv" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Les référentiels des règles de gestion et des services agents doivent
 être au format CSV et encodés en UTF 8.</p>
 <p>Si le fichier d’origine n’est pas au format CSV, il faut suivre la
@@ -4121,7 +4125,7 @@ modifications ;</p></li>
 </ul>
 </section>
 <section id="modification-dun-fichier-au-format-csv">
-<h4><span class="section-number">1.7.3.2. </span>Modification d’un fichier au format CSV<a class="headerlink" href="#modification-dun-fichier-au-format-csv" title="Lien permanent vers cette rubrique"></a></h4>
+<h5><span class="section-number">1.7.1.3.2. </span>Modification d’un fichier au format CSV<a class="headerlink" href="#modification-dun-fichier-au-format-csv" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Les référentiels des règles de gestion et des services agents doivent
 être au format CSV et encodés en UTF 8.</p>
 <p>Pour modifier un fichier de ce format, il faut suivre la procédure
@@ -4225,14 +4229,14 @@ Vitam</p>
 </section>
 </section>
 </section>
-<section id="annexe-controle-de-conformite-a-un-profil-darchivage">
-<h2><span class="section-number">1.8. </span>Annexe. Contrôle de conformité à un profil d’archivage<a class="headerlink" href="#annexe-controle-de-conformite-a-un-profil-darchivage" title="Lien permanent vers cette rubrique"></a></h2>
+<section id="annexe-2-controle-de-conformite-a-un-profil-darchivage">
+<h3><span class="section-number">1.7.2. </span>Annexe 2 : Contrôle de conformité à un profil d’archivage<a class="headerlink" href="#annexe-2-controle-de-conformite-a-un-profil-darchivage" title="Lien permanent vers cette rubrique"></a></h3>
 <p>ReSIP permet de contrôler le manifeste chargé sur l’interface par
 rapport à un profil d’archivage au format XSD ou RNG.</p>
 <section id="id21">
-<h3><span class="section-number">1.8.1. </span>Recommandations<a class="headerlink" href="#id21" title="Lien permanent vers cette rubrique"></a></h3>
+<h4><span class="section-number">1.7.2.1. </span>Recommandations<a class="headerlink" href="#id21" title="Lien permanent vers cette rubrique"></a></h4>
 <section id="dans-la-redaction-du-profil-darchivage">
-<h4><span class="section-number">1.8.1.1. </span>Dans la rédaction du profil d’archivage<a class="headerlink" href="#dans-la-redaction-du-profil-darchivage" title="Lien permanent vers cette rubrique"></a></h4>
+<h5><span class="section-number">1.7.2.1.1. </span>Dans la rédaction du profil d’archivage<a class="headerlink" href="#dans-la-redaction-du-profil-darchivage" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Il est recommandé de créer un profil d’archivage à l’aide du Service
 hébergé pour la rédaction de profils d’archivage (SHERPA)<a class="footnote-reference brackets" href="#id32" id="id22" role="doc-noteref"><span class="fn-bracket">[</span>9<span class="fn-bracket">]</span></a>, mis à
 disposition par le Service interministériel des Archives de France, ou
@@ -4242,7 +4246,7 @@ XML<a class="footnote-reference brackets" href="#id33" id="id23" role="doc-noter
 <p>Pour utiliser le profil d’archivage dans ReSIP, il faut prendre en
 compte deux spécificités :</p>
 <section id="la-declaration-des-groupes-dobjets-techniques">
-<h5><span class="section-number">1.8.1.1.1. </span>La déclaration des groupes d’objets techniques<a class="headerlink" href="#la-declaration-des-groupes-dobjets-techniques" title="Lien permanent vers cette rubrique"></a></h5>
+<h6><span class="section-number">1.7.2.1.1.1. </span>La déclaration des groupes d’objets techniques<a class="headerlink" href="#la-declaration-des-groupes-dobjets-techniques" title="Lien permanent vers cette rubrique"></a></h6>
 <p>Le SEDA permet de déclarer les <strong>objets techniques</strong> de deux manières :</p>
 <ul class="simple">
 <li><p>soit une liste d’objets techniques qui déclarent chacun leur
@@ -4328,7 +4332,7 @@ une non conformité entre le manifeste chargé et le profil d’archivage.</p>
 </div>
 </section>
 <section id="la-hierarchisation-des-unites-archivistiques">
-<h5><span class="section-number">1.8.1.1.2. </span>La hiérarchisation des unités archivistiques<a class="headerlink" href="#la-hierarchisation-des-unites-archivistiques" title="Lien permanent vers cette rubrique"></a></h5>
+<h6><span class="section-number">1.7.2.1.1.2. </span>La hiérarchisation des unités archivistiques<a class="headerlink" href="#la-hierarchisation-des-unites-archivistiques" title="Lien permanent vers cette rubrique"></a></h6>
 <p>Le SEDA permet également de reproduire la <strong>hiérarchie entre les unités
 archivistiques</strong> de deux manières :</p>
 <ul class="simple">
@@ -4345,7 +4349,7 @@ c’est-à-dire emboîtées les unes à la suite des autres.</p>
 </section>
 </section>
 <section id="dans-resip">
-<h4><span class="section-number">1.8.1.2. </span>Dans ReSIP<a class="headerlink" href="#dans-resip" title="Lien permanent vers cette rubrique"></a></h4>
+<h5><span class="section-number">1.7.2.1.2. </span>Dans ReSIP<a class="headerlink" href="#dans-resip" title="Lien permanent vers cette rubrique"></a></h5>
 <p>Dans ReSIP, il faut veiller à paramétrer le mode d’enregistrement des
 unités archivistiques avant leur import dans l’outil.</p>
 <p>Pour ce faire, depuis l’interface d’édition des paramètres, ouverte par
@@ -4366,7 +4370,7 @@ forme <strong>linéaire</strong> et non pas indentée.
 </section>
 </section>
 <section id="messages-derreur-rencontres">
-<h3><span class="section-number">1.8.2. </span>Messages d’erreur rencontrés<a class="headerlink" href="#messages-derreur-rencontres" title="Lien permanent vers cette rubrique"></a></h3>
+<h4><span class="section-number">1.7.2.2. </span>Messages d’erreur rencontrés<a class="headerlink" href="#messages-derreur-rencontres" title="Lien permanent vers cette rubrique"></a></h4>
 <p>Lors d’un contrôle de conformité à un profil d’archivage, les erreurs
 retournées par ReSIP peuvent provenir :</p>
 <ul class="simple">
@@ -4380,7 +4384,7 @@ métadonnées importées.</p></li>
 vérifier le contenu du manifeste et celui du profil d’archivage.</p>
 <p><strong>Nota bene</strong> : Cette liste n’est pas forcément exhaustive.</p>
 <section id="erreur-1">
-<h4><span class="section-number">1.8.2.1. </span>Erreur 1<a class="headerlink" href="#erreur-1" title="Lien permanent vers cette rubrique"></a></h4>
+<h5><span class="section-number">1.7.2.2.1. </span>Erreur 1<a class="headerlink" href="#erreur-1" title="Lien permanent vers cette rubrique"></a></h5>
 <p><strong>Message retourné par ReSIP:</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>position de l&#39;erreur identifiée: ligne 1, colonne 334
 ligne: &lt;?xml version=&#39;1.0&#39; encoding=&#39;UTF-8&#39;?&gt;&lt;ArchiveTransfer xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; xmlns:pr=&quot;info:lc/xmlns/premis-v2&quot; xmlns=&quot;fr:gouv:culture:archivesdefrance:seda:v2.1&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;fr:gouv:culture:archivesdefrance:seda:v2.1 seda-2.1-main.xsd&quot; xml:id=&quot;ID1&quot;&gt;
@@ -4407,7 +4411,7 @@ Dans le profil d’archivage, rajouter un attribut correspondant au namespace :
 </div>
 </section>
 <section id="erreur-2">
-<h4><span class="section-number">1.8.2.2. </span>Erreur 2<a class="headerlink" href="#erreur-2" title="Lien permanent vers cette rubrique"></a></h4>
+<h5><span class="section-number">1.7.2.2.2. </span>Erreur 2<a class="headerlink" href="#erreur-2" title="Lien permanent vers cette rubrique"></a></h5>
 <p><strong>Message retourné par ReSIP:</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">position</span> <span class="n">de</span> <span class="n">l</span><span class="s1">&#39;erreur identifiée: ligne 24, colonne 32</span>
 <span class="n">ligne</span><span class="p">:</span>     <span class="o">&lt;</span><span class="n">DataObjectGroup</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;ID15&quot;</span><span class="o">&gt;</span>
@@ -4422,7 +4426,7 @@ Pour rappel, ReSIP génère des objets binaires encapsulés dans un groupe d’o
 Il est recommandé d’ouvrir le manifeste pour vérifier comment sont déclarés les groupes d’objets techniques, puis de faire de même dans le profil d’archivage et de corriger l’erreur.</p>
 </section>
 <section id="erreur-3">
-<h4><span class="section-number">1.8.2.3. </span>Erreur 3<a class="headerlink" href="#erreur-3" title="Lien permanent vers cette rubrique"></a></h4>
+<h5><span class="section-number">1.7.2.2.3. </span>Erreur 3<a class="headerlink" href="#erreur-3" title="Lien permanent vers cette rubrique"></a></h5>
 <p><strong>Message retourné par ReSIP:</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">position</span> <span class="n">de</span> <span class="n">l</span><span class="s1">&#39;erreur identifiée: ligne 7, colonne 27</span>
 <span class="n">ligne</span><span class="p">:</span>     <span class="o">&lt;</span><span class="n">ReplyCodeListVersion</span><span class="o">&gt;</span><span class="n">ReplyCodeListVersion0</span><span class="o">&lt;/</span><span class="n">ReplyCodeListVersion</span><span class="o">&gt;</span>
@@ -4437,7 +4441,7 @@ Pour rappel, ReSIP génère des objets binaires encapsulés dans un groupe d’o
 Il est recommandé d’ouvrir le manifeste pour vérifier comment sont déclarés les groupes d’objets techniques, puis de faire de même dans le profil d’archivage et de corriger l’erreur.</p>
 </section>
 <section id="erreur-4">
-<h4><span class="section-number">1.8.2.4. </span>Erreur 4<a class="headerlink" href="#erreur-4" title="Lien permanent vers cette rubrique"></a></h4>
+<h5><span class="section-number">1.7.2.2.4. </span>Erreur 4<a class="headerlink" href="#erreur-4" title="Lien permanent vers cette rubrique"></a></h5>
 <p><strong>Message retourné par ReSIP:</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">position</span> <span class="n">de</span> <span class="n">l</span><span class="s1">&#39;erreur identifiée: ligne 7, colonne 27</span>
 <span class="n">ligne</span><span class="p">:</span>     <span class="o">&lt;</span><span class="n">ReplyCodeListVersion</span><span class="o">&gt;</span><span class="n">ReplyCodeListVersion0</span><span class="o">&lt;/</span><span class="n">ReplyCodeListVersion</span><span class="o">&gt;</span>
@@ -4451,7 +4455,7 @@ Il faut vérifier si ReplyCodeListVersion n’est pas un champ obligatoire du SE
 S’il n’est pas obligatoire, ce qui est le cas pour cet élément-là, retirer le champ de la liste des champs contextuels générés par ReSIP, en cliquant sur Contexte &gt; Editer les informations d’export &gt; Métadonnées globales étendues.</p>
 </section>
 <section id="erreur-5">
-<h4><span class="section-number">1.8.2.5. </span>Erreur 5<a class="headerlink" href="#erreur-5" title="Lien permanent vers cette rubrique"></a></h4>
+<h5><span class="section-number">1.7.2.2.5. </span>Erreur 5<a class="headerlink" href="#erreur-5" title="Lien permanent vers cette rubrique"></a></h5>
 <p><strong>Message retourné par ReSIP:</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">position</span> <span class="n">de</span> <span class="n">l</span><span class="s1">&#39;erreur identifiée: ligne 6, colonne 22</span>
 <span class="n">ligne</span><span class="p">:</span>   <span class="o">&lt;</span><span class="n">DataObjectPackage</span><span class="o">&gt;</span>
@@ -4467,7 +4471,7 @@ L’élément CodeListVersions, obligatoire dans le SEDA, est absent.</p>
 </ul>
 </section>
 <section id="erreur-6">
-<h4><span class="section-number">1.8.2.6. </span>Erreur 6<a class="headerlink" href="#erreur-6" title="Lien permanent vers cette rubrique"></a></h4>
+<h5><span class="section-number">1.7.2.2.6. </span>Erreur 6<a class="headerlink" href="#erreur-6" title="Lien permanent vers cette rubrique"></a></h5>
 <p><strong>Message retourné par ReSIP:</strong></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">position</span> <span class="n">de</span> <span class="n">l</span><span class="s1">&#39;erreur identifiée: ligne 2, colonne 78</span>
 <span class="n">ligne</span><span class="p">:</span>   <span class="o">&lt;</span><span class="n">Comment</span><span class="o">&gt;</span><span class="n">Matrice</span><span class="o">&lt;/</span><span class="n">Comment</span><span class="o">&gt;</span>
@@ -4481,7 +4485,7 @@ Dans le manifeste, il faut corriger la valeur de l’élément Comment par la va
 </section>
 </section>
 <section id="exemple-de-profil-darchivage">
-<h3><span class="section-number">1.8.3. </span>Exemple de profil d’archivage<a class="headerlink" href="#exemple-de-profil-darchivage" title="Lien permanent vers cette rubrique"></a></h3>
+<h4><span class="section-number">1.7.2.3. </span>Exemple de profil d’archivage<a class="headerlink" href="#exemple-de-profil-darchivage" title="Lien permanent vers cette rubrique"></a></h4>
 <p><strong>Nota bene</strong>: le cas présenté ci-dessous est un exemple fictif, ne comportant pas de référence à un groupe d’objets techniques.</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&#39;1.0&#39; encoding=&#39;utf-8&#39; standalone=&#39;no&#39;?&gt;</span>
 <span class="nt">&lt;rng:grammar</span><span class="w"> </span><span class="na">xmlns:a=</span><span class="s">&quot;http://relaxng.org/ns/compatibility/annotations/1.0&quot;</span><span class="w"> </span><span class="na">xmlns:rng=</span><span class="s">&quot;http://relaxng.org/ns/structure/1.0&quot;</span><span class="w"> </span><span class="na">xmlns:seda=</span><span class="s">&quot;fr:gouv:culture:archivesdefrance:seda:v2.1&quot;</span><span class="w"> </span><span class="na">xmlns:xlink=</span><span class="s">&quot;http://www.w3.org/1999/xlink&quot;</span><span class="w"> </span><span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;fr:gouv:culture:archivesdefrance:seda:v2.1&quot;</span><span class="w"> </span><span class="na">datatypeLibrary=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-datatypes&quot;</span><span class="w"> </span><span class="na">ns=</span><span class="s">&quot;fr:gouv:culture:archivesdefrance:seda:v2.1&quot;</span><span class="nt">&gt;</span>
@@ -5554,6 +5558,7 @@ particulièrement, au chapitre 5.2 « Structuration des données à
 verser » de ce document.</p>
 </aside>
 </aside>
+</section>
 </section>
 </section>
 </section>

@@ -31,7 +31,6 @@ Documentation métier
    sections/module_de_collecte.md
    sections/organisation_information.md
    sections/ontologie.md
-   sections/organisation_information.md
    sections/preservation.md
    sections/profil_archivage.md
    sections/profil_unite_archivistique.md

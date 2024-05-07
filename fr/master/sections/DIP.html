@@ -62,7 +62,6 @@
 <li class="toctree-l1"><a class="reference internal" href="module_de_collecte.html">7. Module de collecte</a></li>
 <li class="toctree-l1"><a class="reference internal" href="organisation_information.html">8. Organisation de l’information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ontologie.html">9. Ontologie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="organisation_information.html">8. Organisation de l’information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="preservation.html">10. Gestion de la préservation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="profil_archivage.html">11. Profils d’archivage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="profil_unite_archivistique.html">12. Profils d’unité archivistique</a></li>
@@ -108,10 +107,13 @@
 <li class="toctree-l3"><a class="reference internal" href="#limitation-du-poids-des-dip">16.7.2. Limitation du poids des DIP</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#annexe-1-exemple-de-bordereau-de-mise-a-disposition-pour-un-dip-mono-producteur-dip-minimal">16.8. Annexe 1 : Exemple de bordereau de mise à disposition pour un DIP mono-producteur (DIP minimal)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#annexe-2-exemple-de-bordereau-de-mise-a-disposition-pour-un-dip-multi-producteurs-dip-minimal">16.9. Annexe 2 : Exemple de bordereau de mise à disposition pour un DIP multi-producteurs (DIP minimal)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#annexe-3-exemple-de-bordereau-de-mise-a-disposition-pour-un-dip-complet-sans-les-journaux-de-cycle-de-vie">16.10. Annexe 3 : Exemple de bordereau de mise à disposition pour un DIP complet sans les journaux de cycle de vie</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#annexe-4-exemple-de-bordereau-de-mise-a-disposition-avec-export-du-journal-du-cycle-de-vie-de-lunite-archivistique-dip-minimal">16.11. Annexe 4 : Exemple de bordereau de mise à disposition avec export du journal du cycle de vie de l’unité archivistique (DIP minimal)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#annexes">16.8. Annexes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#annexe-1-exemple-de-bordereau-de-mise-a-disposition-pour-un-dip-mono-producteur-dip-minimal">16.8.1. Annexe 1 : Exemple de bordereau de mise à disposition pour un DIP mono-producteur (DIP minimal)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#annexe-2-exemple-de-bordereau-de-mise-a-disposition-pour-un-dip-multi-producteurs-dip-minimal">16.8.2. Annexe 2 : Exemple de bordereau de mise à disposition pour un DIP multi-producteurs (DIP minimal)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#annexe-3-exemple-de-bordereau-de-mise-a-disposition-pour-un-dip-complet-sans-les-journaux-de-cycle-de-vie">16.8.3. Annexe 3 : Exemple de bordereau de mise à disposition pour un DIP complet sans les journaux de cycle de vie</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#annexe-4-exemple-de-bordereau-de-mise-a-disposition-avec-export-du-journal-du-cycle-de-vie-de-lunite-archivistique-dip-minimal">16.8.4. Annexe 4 : Exemple de bordereau de mise à disposition avec export du journal du cycle de vie de l’unité archivistique (DIP minimal)</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="stockage.html">17. Gestion de multiples stratégies de stockage</a></li>
@@ -512,7 +514,7 @@ Cette transaction peut également s’appliquer pour des transferts entre deux S
 <li><p>avec leurs métadonnées descriptives ;</p></li>
 </ul>
 </li>
-<li><p>de métadonnées communes à toute l’arborescence d’unités archivistiques : déclaration du service producteur (hérité de la balise OriginatingAgencyIdentifier présente dans le ManagementMetadata du SIP à l’origine de l’entrée pour les DIP mono-producteurs ; pour les DIP multi-producteurs, la valeur de ce champ est « Export VITAM »[^3]; déclaration du service versant (SubmissionAgencyIdentifier), identifiant de la demande (MessageRequestIdentifier), identifiant du demandeur (sous-bloc Identifier inclus dans le bloc Requester) et identifiant du service d’archives (sous-bloc Identifier inclus dans le bloc ArchivalAgency) alimentés à partir des informations fournies lors de la demande de constitution du DIP.</p></li>
+<li><p>de métadonnées communes à toute l’arborescence d’unités archivistiques : déclaration du service producteur (hérité de la balise OriginatingAgencyIdentifier) présente dans le ManagementMetadata du SIP à l’origine de l’entrée pour les DIP mono-producteurs ; pour les DIP multi-producteurs, la valeur de ce champ est « Export VITAM »[^3]; déclaration du service versant (SubmissionAgencyIdentifier), identifiant de la demande (MessageRequestIdentifier), identifiant du demandeur (sous-bloc Identifier inclus dans le bloc Requester) et identifiant du service d’archives (sous-bloc Identifier inclus dans le bloc ArchivalAgency) alimentés à partir des informations fournies lors de la demande de constitution du DIP.</p></li>
 </ul>
 </section>
 </section>
@@ -696,8 +698,10 @@ binarySizeTenantThreshold:
 </ul>
 </section>
 </section>
+<section id="annexes">
+<h2><span class="section-number">16.8. </span>Annexes<a class="headerlink" href="#annexes" title="Lien permanent vers cette rubrique"></a></h2>
 <section id="annexe-1-exemple-de-bordereau-de-mise-a-disposition-pour-un-dip-mono-producteur-dip-minimal">
-<h2><span class="section-number">16.8. </span>Annexe 1 : Exemple de bordereau de mise à disposition pour un DIP mono-producteur (DIP minimal)<a class="headerlink" href="#annexe-1-exemple-de-bordereau-de-mise-a-disposition-pour-un-dip-mono-producteur-dip-minimal" title="Lien permanent vers cette rubrique"></a></h2>
+<h3><span class="section-number">16.8.1. </span>Annexe 1 : Exemple de bordereau de mise à disposition pour un DIP mono-producteur (DIP minimal)<a class="headerlink" href="#annexe-1-exemple-de-bordereau-de-mise-a-disposition-pour-un-dip-mono-producteur-dip-minimal" title="Lien permanent vers cette rubrique"></a></h3>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&lt;ArchiveRestitutionRequest xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;
     xmlns:pr=&quot;info:lc/xmlns/premis-v2&quot; xmlns=&quot;fr:gouv:culture:archivesdefrance:seda:v2.1&quot;
     xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
@@ -813,7 +817,7 @@ binarySizeTenantThreshold:
 </div>
 </section>
 <section id="annexe-2-exemple-de-bordereau-de-mise-a-disposition-pour-un-dip-multi-producteurs-dip-minimal">
-<h2><span class="section-number">16.9. </span>Annexe 2 : Exemple de bordereau de mise à disposition pour un DIP multi-producteurs (DIP minimal)<a class="headerlink" href="#annexe-2-exemple-de-bordereau-de-mise-a-disposition-pour-un-dip-multi-producteurs-dip-minimal" title="Lien permanent vers cette rubrique"></a></h2>
+<h3><span class="section-number">16.8.2. </span>Annexe 2 : Exemple de bordereau de mise à disposition pour un DIP multi-producteurs (DIP minimal)<a class="headerlink" href="#annexe-2-exemple-de-bordereau-de-mise-a-disposition-pour-un-dip-multi-producteurs-dip-minimal" title="Lien permanent vers cette rubrique"></a></h3>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&lt;ArchiveRestitutionRequest xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;
     xmlns:pr=&quot;info:lc/xmlns/premis-v2&quot; xmlns=&quot;fr:gouv:culture:archivesdefrance:seda:v2.1&quot;
     xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
@@ -931,7 +935,7 @@ binarySizeTenantThreshold:
 </div>
 </section>
 <section id="annexe-3-exemple-de-bordereau-de-mise-a-disposition-pour-un-dip-complet-sans-les-journaux-de-cycle-de-vie">
-<h2><span class="section-number">16.10. </span>Annexe 3 : Exemple de bordereau de mise à disposition pour un DIP complet sans les journaux de cycle de vie<a class="headerlink" href="#annexe-3-exemple-de-bordereau-de-mise-a-disposition-pour-un-dip-complet-sans-les-journaux-de-cycle-de-vie" title="Lien permanent vers cette rubrique"></a></h2>
+<h3><span class="section-number">16.8.3. </span>Annexe 3 : Exemple de bordereau de mise à disposition pour un DIP complet sans les journaux de cycle de vie<a class="headerlink" href="#annexe-3-exemple-de-bordereau-de-mise-a-disposition-pour-un-dip-complet-sans-les-journaux-de-cycle-de-vie" title="Lien permanent vers cette rubrique"></a></h3>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&lt;ArchiveDeliveryRequestReply xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;
             xmlns:pr=&quot;info:lc/xmlns/premis-v2&quot; xmlns=&quot;fr:gouv:culture:archivesdefrance:seda:v2.1&quot;
             xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
@@ -1339,7 +1343,7 @@ binarySizeTenantThreshold:
 </div>
 </section>
 <section id="annexe-4-exemple-de-bordereau-de-mise-a-disposition-avec-export-du-journal-du-cycle-de-vie-de-lunite-archivistique-dip-minimal">
-<h2><span class="section-number">16.11. </span>Annexe 4 : Exemple de bordereau de mise à disposition avec export du journal du cycle de vie de l’unité archivistique (DIP minimal)<a class="headerlink" href="#annexe-4-exemple-de-bordereau-de-mise-a-disposition-avec-export-du-journal-du-cycle-de-vie-de-lunite-archivistique-dip-minimal" title="Lien permanent vers cette rubrique"></a></h2>
+<h3><span class="section-number">16.8.4. </span>Annexe 4 : Exemple de bordereau de mise à disposition avec export du journal du cycle de vie de l’unité archivistique (DIP minimal)<a class="headerlink" href="#annexe-4-exemple-de-bordereau-de-mise-a-disposition-avec-export-du-journal-du-cycle-de-vie-de-lunite-archivistique-dip-minimal" title="Lien permanent vers cette rubrique"></a></h3>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&lt;ArchiveDeliveryRequestReply xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;
     xmlns:pr=&quot;info:lc/xmlns/premis-v2&quot; xmlns=&quot;fr:gouv:culture:archivesdefrance:seda:v2.1&quot;
     xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
@@ -1586,6 +1590,7 @@ binarySizeTenantThreshold:
 <p>[^6] : Il s’agit du fichier de configuration intitulé « environments /group_vars/all/vitam_vars.yml ».</p>
 <p>[^7] : Pour plus d’informations, consulter le document  Document d’exploitation, chapitre 8.2.1.8 « Fichier /vitam/conf/<composant>/vitam.conf ».</p>
 <p>[^8] : Il s’agit du fichier de configuration intitulé « vitam.conf ».</p>
+</section>
 </section>
 </section>
 

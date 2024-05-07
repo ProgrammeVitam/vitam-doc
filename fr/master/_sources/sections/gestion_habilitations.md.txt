@@ -24,7 +24,9 @@ Il s’articule autour des axes suivants :
 - des recommandations aux ministères porteurs, partenaires et utilisateurs de la solution logicielle Vitam sur la manière d’utiliser les fonctionnalités associées à ces habilitations.
 Le présent document décrit les fonctionnalités qui seront offertes par la première version de production de la solution logicielle Vitam au terme de la version 6 (mars 2023). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
 
-## Administration des habilitations
+Administration des habilitations
+---
+
 Les habilitations sont l’ensemble des droits et permissions attribués par la solution logicielle Vitam à une application externe et permettant à cette dernière d’accéder aux différents services proposés par la solution logicielle Vitam.
 
 ![](./medias/gestion_habilitations/habilitations1.png)
@@ -1748,9 +1750,8 @@ Il est possible de modifier un contrat de gestion utilisé dans au moins un cont
 |Avec plusieurs contrats d’entrée|Désactivation du contexte applicatif et/ou interruption des services de transfert, le temps de procéder à la modification.|
 |Avec un ou plusieurs contrats d’entrée|-  Création d’un nouveau contrat de gestion contenant les modifications à apporter.<br>-  Association de ce nouveau contrat de gestion au(x) contrat(s) d’entrée.<br>-  Activation de ce contrat de gestion.<br>-  Désactivation de l’ancien contrat de gestion.|
 
-
-
-## Authentification
+Authentification
+---
 
 ### Mécanismes mis en œuvre par la solution logicielle Vitam
 
@@ -1828,9 +1829,8 @@ Pour connecter une application à la solution logicielle Vitam, il est recommand
 |Administrateur fonctionnel|Activation du contexte|Oui|À la date souhaitée pour commencer les interactions entre l’application versante et/ou accédante et la solution logicielle Vitam|
 |Administrateur technique / fonctionnel|Test avant utilisation courante|Oui||
 
-
-
-## Entrées
+Entrées
+---
 
 ### Mécanismes mis en œuvre par la solution logicielle Vitam
 
@@ -2079,7 +2079,8 @@ Il est également possible d’enregistrer automatiquement les règles de gestio
 |Application versante ne devant pas accéder à ses archives après transfert|Une application versante peut avoir vocation à uniquement transférer ses archives dans la solution logicielle Vitam, mais n’y accédera pas. Il est alors possible de définir dans son contrat d’entrée un contrat de gestion particulier, configurant une stratégie de stockage particulière pour ces archives, par exemple sur offre froide ou sur une offre tiède (disponible non automatiquement).<br>**Point d’attention :** si un autre applicatif, par exemple un système d’archivage électronique, a besoin d’accéder à ces archives, notamment aux objets binaires (fichiers numériques), il est nécessaire de proposer une offre de stockage disponible.|Possible|
 |Application versante pouvant accéder à ses  métadonnées, mais pas à ses fichiers numériques après transfert|Une application versante peut avoir vocation à transférer ses archives dans la solution logicielle Vitam, mais à n’accéder qu’à ses métadonnées. Il est alors possible de définir dans son contrat d’entrée un contrat de gestion particulier, configurant une stratégie de stockage particulière pour ces archives, lui permettant d’accéder aux métadonnées, mais pas aux objets binaires transférés (fichiers numériques).<br>**Point d’attention :** si un autre applicatif, par exemple un système d’archivage électronique, a besoin d’accéder à ces objets binaires, il est nécessaire de proposer une offre de stockage disponible.|Possible|
 
-## Accès
+Accès
+---
 
 ### Mécanismes mis en œuvre par la solution logicielle Vitam
 
@@ -2189,11 +2190,14 @@ Une option permet enfin d’activer la génération d’un enregistrement ou log
 |Application devant accéder aux archives en fonction des règles de gestion|Une application peut n’avoir accès qu’à des archives dont une règle de gestion est échue, c’est-à-dire que sa date d’échéance est égale ou antérieure à la date d’aujourd’hui. Par exemple, un Portail Archives ne pouvant diffuser que des archives communicables et diffusables ne doit accèder qu’à des archives dont les règles de communicabilité et de diffusion sont échues.<br>Il est alors recommandé d’utiliser le filtre sur les catégories de règle de gestion pour paramétrer les catégories de règles de gestion échues sur lesquelles faire porter l’accès.|Recommandé|
 |Une application peut avoir accès à l’ensemble des archives, quelles que soient leurs règles de gestion et qu’elles soient échues ou non. Il peut s’agir par exemple d’un système d’archivage électronique.|Il n’est alors pas nécessaire d’utiliser le filtre sur les catégories de règle de gestion, puisque l’application a vocation à accéder à l’ensemble des archives conservées dans le système.|Non recommandé|
 
-## Annexe 1 : exemples d’habilitations
+Annexes
+----
+
+### Annexe 1 : exemples d’habilitations
 
 *Nota bene :* les cas présentés ci-dessous sont des exemples fictifs et visent simplement à vérifier la bonne mise en œuvre des mécanismes relatifs aux habilitations dans la solution logicielle Vitam.
 
-### Certificat applicatif
+#### Certificat applicatif
 ```json
 {
     "_id": "aeaaaaaaaaftuvruabdvkalafg6qe5yaaaaq",
@@ -2205,7 +2209,7 @@ Une option permet enfin d’activer la génération d’un enregistrement ou log
     "Status": "VALID"
 }
 ```
-### Certificat personnel
+#### Certificat personnel
 ```json
 {
     "_id": "aeaaaaaaaaftuvruabdvkalafg6q2yqaaaaq",
@@ -2217,7 +2221,7 @@ Une option permet enfin d’activer la génération d’un enregistrement ou log
     "Status": "VALID"
 }
 ```
-### Contexte applicatif
+#### Contexte applicatif
 ```json
 {
     "Name": "Contexte pour application 1",
@@ -2269,9 +2273,9 @@ Une option permet enfin d’activer la génération d’un enregistrement ou log
 }
 ```
 
-### Contrat d’entrée
+#### Contrat d’entrée
 
-#### Avec profil d’archivage
+##### Avec profil d’archivage
 ```json
 [
     {
@@ -2290,7 +2294,7 @@ Une option permet enfin d’activer la génération d’un enregistrement ou log
 ]
 ```
 
-#### Avec nœud de rattachement, cône de positionnement des rattachements et autorisation de rattachement
+##### Avec nœud de rattachement, cône de positionnement des rattachements et autorisation de rattachement
 ```json
 [
 	{
@@ -2305,7 +2309,7 @@ Une option permet enfin d’activer la génération d’un enregistrement ou log
 
 ]
 ```
-#### Avec filtres sur les types d’objets attendus
+##### Avec filtres sur les types d’objets attendus
 ```json
 [
 	{
@@ -2321,7 +2325,7 @@ Une option permet enfin d’activer la génération d’un enregistrement ou log
 	}
 ]
 ```
-#### Avec définition d’un contrat de gestion
+##### Avec définition d’un contrat de gestion
 ```json
 [
 	{
@@ -2332,7 +2336,7 @@ Une option permet enfin d’activer la génération d’un enregistrement ou log
 	}
 ]
 ```
-#### Avec option d’activation de l’enregistrement en base des règles de gestion héritées
+##### Avec option d’activation de l’enregistrement en base des règles de gestion héritées
 ```json
 [
 	{
@@ -2344,9 +2348,9 @@ Une option permet enfin d’activer la génération d’un enregistrement ou log
 ]
 ```
 
-### Contrat d’accès
+#### Contrat d’accès
 
-#### Avec filtre sur les services producteurs
+##### Avec filtre sur les services producteurs
 ```json
 [
     {
@@ -2375,7 +2379,7 @@ Une option permet enfin d’activer la génération d’un enregistrement ou log
 ]
 ```
 
-#### Avec filtre sur les usages
+##### Avec filtre sur les usages
 
 ```json
 [
@@ -2397,7 +2401,7 @@ Une option permet enfin d’activer la génération d’un enregistrement ou log
 ]
 ```
 
-#### Avec filtre sur les nœuds d’accès et d’exclusion
+##### Avec filtre sur les nœuds d’accès et d’exclusion
 
 ```json
 {
@@ -2411,7 +2415,7 @@ Une option permet enfin d’activer la génération d’un enregistrement ou log
 	}
 ```
 
-#### Avec filtre sur les catégories de règle de gestion
+##### Avec filtre sur les catégories de règle de gestion
 
 ```json
 {
@@ -2422,7 +2426,7 @@ Une option permet enfin d’activer la génération d’un enregistrement ou log
 	}
 ```
 
-#### Avec filtre sur les droits
+##### Avec filtre sur les droits
 ```json
 [
     {
@@ -2460,9 +2464,9 @@ Une option permet enfin d’activer la génération d’un enregistrement ou log
 ]
 ```
 
-### Profil de sécurité
+#### Profil de sécurité
 
-#### Avec permissions
+##### Avec permissions
 
 ```json
 { 
@@ -2476,7 +2480,7 @@ Une option permet enfin d’activer la génération d’un enregistrement ou log
 }
 ```
 
-#### Avec toutes les permissions
+##### Avec toutes les permissions
 
 ```json
 {
@@ -2488,9 +2492,9 @@ Une option permet enfin d’activer la génération d’un enregistrement ou log
 }
 ```
 
-### Contrat de gestion
+#### Contrat de gestion
 
-#### Avec stratégies de stockage
+##### Avec stratégies de stockage
 
 ```json
 {
@@ -2507,7 +2511,7 @@ Une option permet enfin d’activer la génération d’un enregistrement ou log
 }
 ```
 
-#### Sans stratégie de stockage
+##### Sans stratégie de stockage
 
 ```json
 {
@@ -2519,7 +2523,7 @@ Une option permet enfin d’activer la génération d’un enregistrement ou log
 }
 ```
 
-#### Avec politique de préservation générique
+##### Avec politique de préservation générique
 
 ```json
 {
@@ -2535,7 +2539,7 @@ Une option permet enfin d’activer la génération d’un enregistrement ou log
 	}
 ```
 
-#### Avec politique de préservation spécifique
+##### Avec politique de préservation spécifique
 
 ```json
 {
@@ -2562,11 +2566,11 @@ Une option permet enfin d’activer la génération d’un enregistrement ou log
 	}
 ```
 
-## Annexe 2 : cas d’utilisation des habilitations
+### Annexe 2 : cas d’utilisation des habilitations
 
 *Nota bene :* les cas présentés ci-dessous sont des exemples fictifs. Ils visent simplement à vérifier la bonne mise en œuvre des mécanismes relatifs aux habilitations dans la solution logicielle Vitam.
 
-### Cas 1
+#### Cas 1
 ![](./medias/gestion_habilitations/cas1.png)
 
 L’ensemble du plan de classement et des SIP ont pour unique producteur « Direction des Ressources humaines ».
@@ -2587,7 +2591,7 @@ L’ensemble du plan de classement et des SIP ont pour unique producteur « Dir
         - service producteur = « Direction des ressources humaines »
         - nœud : chaque contrat déterminera le nœud à partir duquel un service pourra consulter ses archives. Dans le cas présent, le nœud correspond au niveau « Service... ».
 
-### Cas 2
+#### Cas 2
 ![](./medias/gestion_habilitations/cas2.png)
 
 Un plan de classement ayant pour producteur « Direction des Ressources humaines » englobe des plans de classement propres à chaque service, ayant chacun leur propre service producteur. L’un d’eux, « Service comptable », dispose d’un nouveau plan de classement inférieur, pour le « Service de gestion des déplacements ».
@@ -2609,7 +2613,7 @@ Ce cas d’usage vaut également si les plans de classement de niveau « Servic
         - service producteur = « Service de la formation » et « Service de gestion des déplacements ».
         - nœud = « Dossier de stage ». Si on ne déclare pas ce nœud, le portail accédera à l’ensemble des archives du Service de la formation.
 
-## Annexe 3 : liste des permissions et privilèges
+### Annexe 3 : liste des permissions et privilèges
 
 Liste des permissions qui peuvent être associées à :
 -  un profil de sécurité,
@@ -2774,9 +2778,9 @@ accessrequests:remove|
 |Index|Réindexer une collection|reindex:create|
 ||Switch indexes|switchindex:create|
 
-## Annexe 4 : fonctionnement du log des accès
+### Annexe 4 : fonctionnement du log des accès
 
-### Description
+#### Description
 
 Le contrat d’accès permet de préciser si des logs d’accès doivent être générés. Par défaut, cette option n’est pas activée.
 
@@ -2785,7 +2789,7 @@ Le log des accès est généré lors d’un accès à l’objet binaire (fichier
 Les logs de l’heure en cours peuvent être consultés sur les machines hébergeant le composant **storage** sous l’arborescence « /vitam/log/storage/access-log/ ». Chaque fichier de log est nommé « <tenant>_<date>_<id opération>.log ».
 Toutes les heures, les logs sont archivés et sont alors accessibles dans des `containers` nommés ``<environnement>_<tenant>_storageaccesslog``.
 
-### Structure des logs
+#### Structure des logs
 -  "eventDateTime" : date et heure de l’accès au format AAAA-MM-JJTHH:MM:SS:[3 digits de millisecondes]
 -  "xRequestId" : identifiant de l’opération d’export du DIP
 -  "applicationId" : identifiant de l’application ayant demandé l’export du DIP
@@ -2797,7 +2801,7 @@ Toutes les heures, les logs sont archivés et sont alors accessibles dans des `c
 -  "contractId" : identifiant du contrat utilisé pour l’accès
 -  "archivesId" : identifiant de l’unité archivistique dont dépend le groupe d’objets techniques contenant l’objet binaire auquel on a accédé
 
-### Exemple de log généré lors de l’export d’un DIP d’une unité archivistique ayant un GOT contenant un objet
+#### Exemple de log généré lors de l’export d’un DIP d’une unité archivistique ayant un GOT contenant un objet
 ```json
 {"eventDateTime":"2019-01-11T12:50:53.344",
 "xRequestId":"aeeaaaaaachfmo4dabyw6aliht3q74aaaaaq",
@@ -2811,7 +2815,7 @@ Toutes les heures, les logs sont archivés et sont alors accessibles dans des `c
 "archivesId":"aeaqaaaaaahk2vrsabz26alhywthzbaaaaea"}
 ```
 
-#### Exemple de logs généré lors de l’export d’un DIP de sept unités archivistiques dont quatre seulement avaient un GOT contenant un objet
+##### Exemple de logs généré lors de l’export d’un DIP de sept unités archivistiques dont quatre seulement avaient un GOT contenant un objet
 ```json
 {"eventDateTime":"2019-01-11T12:51:46.185",
 "xRequestId":"aeeaaaaaachfmo4dabyw6aliht36c6qaaaaq",
@@ -2858,7 +2862,7 @@ Toutes les heures, les logs sont archivés et sont alors accessibles dans des `c
 "archivesId":"aeaqaaaaaaherlfzabz5salhywpmhlqaaaba"}
 ```
 
-### Exemple de logs générés lors de l’export d’une unité archivistique ayant un GOT comprenant trois objets
+#### Exemple de logs générés lors de l’export d’une unité archivistique ayant un GOT comprenant trois objets
 
 ```json
 {"eventDateTime":"2019-01-11T13:22:12.686",
@@ -2895,7 +2899,7 @@ Toutes les heures, les logs sont archivés et sont alors accessibles dans des `c
 "archivesId":"aeaqaaaaaaherlfzabz5salhywnsvsaaaaaq"}
 ```
 
-### Exemple de log généré lors de l’export d’un seul des usages de la même unité archivistique que ci-dessus
+#### Exemple de log généré lors de l’export d’un seul des usages de la même unité archivistique que ci-dessus
 
 ```json
 {"eventDateTime":"2019-01-11T14:17:52.472",
@@ -2910,19 +2914,15 @@ Toutes les heures, les logs sont archivés et sont alors accessibles dans des `c
 "archivesId":"aeaqaaaaaaherlfzabz5salhywnsvsaaaaaq"}
 ```
 
-
-
-
-
-## Annexe 5 : Messages d’erreur
+### Annexe 5 : Messages d’erreur
 
 *Nota bene :* 
 -  les cas présentés ci-dessous n’ont pas vocation à être exhaustif. 
 -  cette annexe étant encore en construction, des messages d’erreur lors de l’import et/ou de la mise à jour de certaines habilitations ne sont pas encore couverts.
 
-### Contexte applicatif
+#### Contexte applicatif
 
-#### Import d’un contexte
+##### Import d’un contexte
 
 ||Message retourné par la solution logicielle Vitam|Explication|Résolution|
 |:--:|:---|:---|:---|
@@ -2935,7 +2935,7 @@ Toutes les heures, les logs sont archivés et sont alors accessibles dans des `c
 |7|"outDetail":<br>"STP_IMPORT_CONTEXT.UNKNOWN_VALUE.KO"<br>"outMessg": <br>"Échec de l'import du contexte applicatif : au moins un objet déclare une valeur inconnue"<br>"evDetData": <br>{ "Incorrect field" : "The access contract XYZ does not exist" } |Le contexte applicatif contient un contrat d’accès non référencé dans la solution logicielle Vitam, c’est-à-dire qu’il n’existe pas sur le tenant requis.|Importer sur le tenant requis le contrat d’accès, avant de réimporter le contexte applicatif déclarant le contrat d’accès jusque-là en erreur.|
 |8|"outDetail":<br>"STP_IMPORT_CONTEXT.UNKNOWN_VALUE.KO"<br>"outMessg": <br>"Échec de l'import du contexte applicatif : au moins un objet déclare une valeur inconnue"<br>"evDetData": <br>{ "Incorrect field" : "The ingest contract XYZ does not exist" } |Le contexte applicatif contient un contrat d’entrée non référencé dans la solution logicielle Vitam, c’est-à-dire qu’il n’existe pas sur le tenant requis.|Importer sur le tenant requis le contrat d’entrée, avant de réimporter le contexte applicatif déclarant le contrat d’entrée jusque-là en erreur.|
 
-#### Mise à jour d’un contexte applicatif
+##### Mise à jour d’un contexte applicatif
 
 ||Message retourné par la solution logicielle Vitam|Explication|Résolution|
 |:--:|:---|:---|:---|
@@ -2943,16 +2943,16 @@ Toutes les heures, les logs sont archivés et sont alors accessibles dans des `c
 |2|"outDetail":<br>"STP_UPDATE_CONTEXT.UNKNOWN_VALUE.KO"<br>"outMessg": <br>"Échec du processus de mise à jour du contexte applicatif : au moins un objet déclare une valeur <br>nconnue"<br>"evDetData": <br>{ "Incorrect field" : "The ingest contract XYZ does not exist" } <br>OU<br>{ "contextCheck" : "Invalid identifier of the ingest contract:XYZ" } |Le contexte applicatif contient un contrat d’entrée non référencé dans la solution logicielle Vitam, c’est-à-dire qu’il n’existe pas sur le tenant requis.|Vérifier l’existence du contrat d’entrée que l’on souhaite ajouter dans le contexte applicatif, ainsi que son identifiant, avant de retenter la mise à jour du contexte applicatif déclarant le contrat d’entrée jusque-là en erreur.|
 
 
-### Profil de sécurité
+#### Profil de sécurité
 
-#### Import d’un profil de sécurité
+##### Import d’un profil de sécurité
 
 ||Message retourné par la solution logicielle Vitam|Explication|Résolution|
 |:--:|:---|:---|:---|
 |1|outDetail":<br>"STP_IMPORT_SECURITY_PROFILE.KO"<br>"outMessg": <br>"Échec du processus d'import du profil de sécurité "<br>"evDetData": <br>{ "errors" : "SecurityProfile service error" } |Le profil de sécurité contient à la fois une liste de permissions et une autorisation d’accès à tous les services (« FullAccess » = « true »), alors qu’on ne peut déclarer que :<br>-  une liste de permissions seule, si et seulement si « FullAccess » a pour valeur « false » ;<br>-  « FullAccess » avec pour valeur « true », sans aucune liste de permissions.|Choisir entre ces deux options dans le profil de sécurité : <br>-  déclarer une liste de permissions, et  , de fait,  « FullAccess » a pour valeur « false » ;<br>-  autoriser tous les accès (« FullAccess »  = « true »), et, de fait, ne placer aucune liste de permissions dans le profil de sécurité.|
 |2|"outDetail": "STP_IMPORT_SECURITY_PROFILE.KO",<br>"outMessg": "Échec du processus d'import du profil de sécurité"<br>"evDetData": "{\n  \"errors\" : \"Au moins une permission n'existe pas.\"\n}"|Le profil de sécurité importé contient au moins une permission qui n’existe pas dans le système.|Supprimer ou modifier la permission qui n’est pas reconnue lors de l’import.|
 
-#### Mise à jour d’un profil de sécurité
+##### Mise à jour d’un profil de sécurité
 
 ||Message retourné par la solution logicielle Vitam|Explication|Résolution|
 |:--:|:---|:---|:---|
@@ -2961,9 +2961,9 @@ Toutes les heures, les logs sont archivés et sont alors accessibles dans des `c
 |3|outDetail":<br>"STP_UPDATE_SECURITY_PROFILE.KO"<br>"outMessg": <br>"Échec du processus de mise à jour du profil de sécurité "<br>"evDetData": <br>{ "errors" : "Security profile update failed > Document was not updated as there is no changes" } |La modification a porté sur un élément, une permission par exemple, déjà présent dans le profil de sécurité, et n’a en rien modifié le profil de sécurité.||
 |4|"outDetail": "STP_UPDATE_SECURITY_PROFILE.KO",<br>"outMessg": "Échec du processus de mise à jour du profil de sécurité "<br>"evDetData": "{\n  \"errors\" : \"Au moins une permission n'existe pas.\"\n}"|Le profil de sécurité mis à jour contient au moins une permission qui n’existe pas dans le système.||
 
-### Contrat d’entrée
+#### Contrat d’entrée
 
-#### Import d’un contrat d’entrée
+##### Import d’un contrat d’entrée
 
 ||Message retourné par la solution logicielle Vitam|Explication|Résolution|
 |:--:|:---|:---|:---|

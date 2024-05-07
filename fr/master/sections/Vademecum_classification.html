@@ -62,7 +62,6 @@
 <li class="toctree-l1"><a class="reference internal" href="module_de_collecte.html">7. Module de collecte</a></li>
 <li class="toctree-l1"><a class="reference internal" href="organisation_information.html">8. Organisation de l’information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ontologie.html">9. Ontologie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="organisation_information.html">8. Organisation de l’information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="preservation.html">10. Gestion de la préservation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="profil_archivage.html">11. Profils d’archivage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="profil_unite_archivistique.html">12. Profils d’unité archivistique</a></li>
@@ -181,14 +180,14 @@ Exemple : pour une structure qui dispose d’un plan de classement dans lequel 
 </section>
 <section id="declaration-du-niveau-de-classification-des-unites-archivistiques">
 <h2><span class="section-number">5.2. </span>Déclaration du niveau de classification des unités archivistiques<a class="headerlink" href="#declaration-du-niveau-de-classification-des-unites-archivistiques" title="Lien permanent vers cette rubrique"></a></h2>
-<p>Chaque unité archivistique prise en charge dans la solution logicielle Vitam peut déclarer dans ses métadonnées de gestion des éléments liés à sa classification (sous-bloc <ClassificationRule> du bloc <Management>) :</p>
+<p>Chaque unité archivistique prise en charge dans la solution logicielle Vitam peut déclarer dans ses métadonnées de gestion des éléments liés à sa classification (sous-bloc <em>ClassificationRule</em> du bloc <em>Management</em>) :</p>
 <ul class="simple">
-<li><p>un niveau de protection (balise <ClassificationLevel>),</p></li>
-<li><p>un émetteur de ce niveau de classification (<ClassificationOwner>),</p></li>
-<li><p>une date de réévaluation de la classification (<ClassificationReassessingDate>) ou une règle spécifique permettant de calculer une échéance de réévaluation de la classification (<Rule> et <StartDate>),</p></li>
-<li><p>ainsi que des mentions additionnelles de limitation du champ de diffusion (<ClassificationAudience>).</p></li>
+<li><p>un niveau de protection (balise <em>ClassificationLevel</em>),</p></li>
+<li><p>un émetteur de ce niveau de classification (<em>ClassificationOwner</em>),</p></li>
+<li><p>une date de réévaluation de la classification (<em>ClassificationReassessingDate</em>) ou une règle spécifique permettant de calculer une échéance de réévaluation de la classification (<em>Rule</em> et <em>StartDate</em>),</p></li>
+<li><p>ainsi que des mentions additionnelles de limitation du champ de diffusion (<em>ClassificationAudience</em>).</p></li>
 </ul>
-<p>Le niveau de protection et l’émetteur sont obligatoires dès lors que l’unité archivistique déclare des éléments dans le sous-bloc <ClassificationRule>.</p>
+<p>Le niveau de protection et l’émetteur sont obligatoires dès lors que l’unité archivistique déclare des éléments dans le sous-bloc <em>ClassificationRule</em>.</p>
 <p>Les règles liées à la classification obéissent aux mêmes mécanismes d’héritage que les autres catégories de règles de gestion (cf. fiche Positionner des règles de gestion dans la solution logicielle Vitam). Il est toutefois recommandé de déclarer les éléments liés à la classification au niveau le plus bas de l’arborescence (niveau pièce) pour éviter qu’une unité archivistique hérite de niveaux de classification contradictoires.</p>
 </section>
 <section id="controle-a-lentree-de-ladequation-entre-le-niveau-de-protection-de-la-plate-forme-et-le-niveau-de-protection-des-unites-archivistiques">
@@ -205,10 +204,10 @@ Exemple : pour une structure qui dispose d’un plan de classement dans lequel 
 </section>
 <section id="modification-des-informations-de-classification">
 <h2><span class="section-number">5.5. </span>Modification des informations de classification<a class="headerlink" href="#modification-des-informations-de-classification" title="Lien permanent vers cette rubrique"></a></h2>
-<p>Le niveau de classification, de même que les autres éléments du bloc <ClassificationRule>, peut faire l’objet d’une modification pour tenir compte des évolutions du niveau de protection de l’unité archivistique.
+<p>Le niveau de classification, de même que les autres éléments du bloc <em>ClassificationRule</em>, peut faire l’objet d’une modification pour tenir compte des évolutions du niveau de protection de l’unité archivistique.
 Cette opération de modification peut être faite de manière unitaire ou en masse.</p>
-<p>Toute modification du niveau de classification porté en propre par l’unité archivistique entraîne une historisation en base de données des données du bloc <ClassificationRule> et la création d’une nouvelle version de l’unité archivistique dans le journal du cycle de vie.</p>
-<p>La mise à jour des propriétés et règles spécifiques doit respecter le modèle de données. Ainsi, il n’est pas possible de supprimer uniquement le champ <Classification Level>  ou le champ <ClassificationOwner> qui sont des champs obligatoires dans le bloc <ClassificationRule>.</p>
+<p>Toute modification du niveau de classification porté en propre par l’unité archivistique entraîne une historisation en base de données des données du bloc <em>ClassificationRule</em> et la création d’une nouvelle version de l’unité archivistique dans le journal du cycle de vie.</p>
+<p>La mise à jour des propriétés et règles spécifiques doit respecter le modèle de données. Ainsi, il n’est pas possible de supprimer uniquement le champ <em>Classification Level</em>  ou le champ <em>ClassificationOwner</em> qui sont des champs obligatoires dans le bloc <em>ClassificationRule</em>.</p>
 <p>Comme à l’entrée, un contrôle est effectué sur l’adéquation entre le niveau de classification accepté par la plate-forme et le niveau déclaré par l’unité archivistique. Si le niveau déclaré n’est pas conforme aux valeurs attendues par la plate-forme, la modification sera en échec.</p>
 <p>La configuration de la plate-forme peut ne pas permettre la présence d’unités archivistiques sans niveau de classification.</p>
 <p>En cas de réévaluation du niveau de classification conduisant à rehausser le niveau de protection d’un document au-delà du niveau de protection autorisé pour la plate-forme, il conviendra de changer d’abord le document de plate-forme avant de modifier son niveau de classification pour que la modification ne soit pas rejetée.</p>

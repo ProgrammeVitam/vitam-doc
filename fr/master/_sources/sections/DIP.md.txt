@@ -255,7 +255,7 @@ Il est composé :
 - d’une déclaration des unités archivistiques représentées par ces objets (DataObjectPackage > DescriptiveMetadata) : 
     - avec leurs métadonnées de gestion, avec, le cas échéant, les journaux du cycle de vie associés ;
     - avec leurs métadonnées descriptives ;
-- de métadonnées communes à toute l’arborescence d’unités archivistiques : déclaration du service producteur (hérité de la balise OriginatingAgencyIdentifier présente dans le ManagementMetadata du SIP à l’origine de l’entrée pour les DIP mono-producteurs ; pour les DIP multi-producteurs, la valeur de ce champ est « Export VITAM »[^3]; déclaration du service versant (SubmissionAgencyIdentifier), identifiant de la demande (MessageRequestIdentifier), identifiant du demandeur (sous-bloc Identifier inclus dans le bloc Requester) et identifiant du service d’archives (sous-bloc Identifier inclus dans le bloc ArchivalAgency) alimentés à partir des informations fournies lors de la demande de constitution du DIP.
+- de métadonnées communes à toute l’arborescence d’unités archivistiques : déclaration du service producteur (hérité de la balise OriginatingAgencyIdentifier) présente dans le ManagementMetadata du SIP à l’origine de l’entrée pour les DIP mono-producteurs ; pour les DIP multi-producteurs, la valeur de ce champ est « Export VITAM »[^3]; déclaration du service versant (SubmissionAgencyIdentifier), identifiant de la demande (MessageRequestIdentifier), identifiant du demandeur (sous-bloc Identifier inclus dans le bloc Requester) et identifiant du service d’archives (sous-bloc Identifier inclus dans le bloc ArchivalAgency) alimentés à partir des informations fournies lors de la demande de constitution du DIP.
 
 Le DIP de transfert
 ----
@@ -403,8 +403,10 @@ Dans l’exemple ci-dessus :
     - l’utilisateur est autorisé à dépasser ce seuil, mais sera averti de son dépassement.
 
 
-Annexe 1 : Exemple de bordereau de mise à disposition pour un DIP mono-producteur (DIP minimal)
+Annexes
 ---
+
+### Annexe 1 : Exemple de bordereau de mise à disposition pour un DIP mono-producteur (DIP minimal)
 
 ```json
 <ArchiveRestitutionRequest xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -521,8 +523,7 @@ Annexe 1 : Exemple de bordereau de mise à disposition pour un DIP mono-product
 ```
 
 
-Annexe 2 : Exemple de bordereau de mise à disposition pour un DIP multi-producteurs (DIP minimal)
-----
+### Annexe 2 : Exemple de bordereau de mise à disposition pour un DIP multi-producteurs (DIP minimal)
 
 ```json
 <ArchiveRestitutionRequest xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -641,8 +642,7 @@ Annexe 2 : Exemple de bordereau de mise à disposition pour un DIP multi-produc
 ```
 
 
-Annexe 3 : Exemple de bordereau de mise à disposition pour un DIP complet sans les journaux de cycle de vie
-----
+### Annexe 3 : Exemple de bordereau de mise à disposition pour un DIP complet sans les journaux de cycle de vie
 
 ```json
 <ArchiveDeliveryRequestReply xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -1050,8 +1050,8 @@ Annexe 3 : Exemple de bordereau de mise à disposition pour un DIP complet sans
 </ArchiveDeliveryRequestReply>
 ```
 
-Annexe 4 : Exemple de bordereau de mise à disposition avec export du journal du cycle de vie de l’unité archivistique (DIP minimal)
----
+### Annexe 4 : Exemple de bordereau de mise à disposition avec export du journal du cycle de vie de l’unité archivistique (DIP minimal)
+
 ```json
 <ArchiveDeliveryRequestReply xmlns:xlink="http://www.w3.org/1999/xlink"
     xmlns:pr="info:lc/xmlns/premis-v2" xmlns="fr:gouv:culture:archivesdefrance:seda:v2.1"
@@ -1297,7 +1297,7 @@ Annexe 4 : Exemple de bordereau de mise à disposition avec export du journal d
 
 [^3] : Cette valeur peut être modifiée en configuration.
 
-[^4] : Pour plus d’information sur l’opération de transfert, consulter le [document VITAM - Le transfert avec la solution logicielle Vitam](transfert.md).
+[^4] : Pour plus d’information sur l’opération de transfert, consulter le [document VITAM - Le transfert avec la solution logicielle Vitam](./transfert.md).
 
 [^5] :  Pour plus d’informations, consulter le document Document d’installation, chapitre 4.2.5.12 « Fichiers complémentaires » ; Document d’architecture, chapitre 5.13.2 « Stockage », Document d’exploitation, chapitre 5.25 « Suppression des DIP et des fichiers de transfert ».
 

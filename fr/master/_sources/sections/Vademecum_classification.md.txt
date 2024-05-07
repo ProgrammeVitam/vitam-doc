@@ -31,13 +31,13 @@ Le niveau de protection peut varier dans le temps. Par exemple, un document sur 
 
 Déclaration du niveau de classification des unités archivistiques
 ---
-Chaque unité archivistique prise en charge dans la solution logicielle Vitam peut déclarer dans ses métadonnées de gestion des éléments liés à sa classification (sous-bloc <ClassificationRule> du bloc <Management>) :
-- un niveau de protection (balise <ClassificationLevel>),
-- un émetteur de ce niveau de classification (<ClassificationOwner>),
-- une date de réévaluation de la classification (<ClassificationReassessingDate>) ou une règle spécifique permettant de calculer une échéance de réévaluation de la classification (<Rule> et <StartDate>),
-- ainsi que des mentions additionnelles de limitation du champ de diffusion (<ClassificationAudience>).
+Chaque unité archivistique prise en charge dans la solution logicielle Vitam peut déclarer dans ses métadonnées de gestion des éléments liés à sa classification (sous-bloc *ClassificationRule* du bloc *Management*) :
+- un niveau de protection (balise *ClassificationLevel*),
+- un émetteur de ce niveau de classification (*ClassificationOwner*),
+- une date de réévaluation de la classification (*ClassificationReassessingDate*) ou une règle spécifique permettant de calculer une échéance de réévaluation de la classification (*Rule* et *StartDate*),
+- ainsi que des mentions additionnelles de limitation du champ de diffusion (*ClassificationAudience*).
 
-Le niveau de protection et l’émetteur sont obligatoires dès lors que l’unité archivistique déclare des éléments dans le sous-bloc <ClassificationRule>.
+Le niveau de protection et l’émetteur sont obligatoires dès lors que l’unité archivistique déclare des éléments dans le sous-bloc *ClassificationRule*.
 
 Les règles liées à la classification obéissent aux mêmes mécanismes d’héritage que les autres catégories de règles de gestion (cf. fiche Positionner des règles de gestion dans la solution logicielle Vitam). Il est toutefois recommandé de déclarer les éléments liés à la classification au niveau le plus bas de l’arborescence (niveau pièce) pour éviter qu’une unité archivistique hérite de niveaux de classification contradictoires.
 
@@ -59,12 +59,12 @@ Exemple : si l’entité conserve des informations sur un support classifié qu
 
 Modification des informations de classification
 ---
-Le niveau de classification, de même que les autres éléments du bloc <ClassificationRule>, peut faire l’objet d’une modification pour tenir compte des évolutions du niveau de protection de l’unité archivistique.
+Le niveau de classification, de même que les autres éléments du bloc *ClassificationRule*, peut faire l’objet d’une modification pour tenir compte des évolutions du niveau de protection de l’unité archivistique.
 Cette opération de modification peut être faite de manière unitaire ou en masse.
 
-Toute modification du niveau de classification porté en propre par l’unité archivistique entraîne une historisation en base de données des données du bloc <ClassificationRule> et la création d’une nouvelle version de l’unité archivistique dans le journal du cycle de vie.
+Toute modification du niveau de classification porté en propre par l’unité archivistique entraîne une historisation en base de données des données du bloc *ClassificationRule* et la création d’une nouvelle version de l’unité archivistique dans le journal du cycle de vie.
 
-La mise à jour des propriétés et règles spécifiques doit respecter le modèle de données. Ainsi, il n’est pas possible de supprimer uniquement le champ <Classification Level>  ou le champ <ClassificationOwner> qui sont des champs obligatoires dans le bloc <ClassificationRule>.
+La mise à jour des propriétés et règles spécifiques doit respecter le modèle de données. Ainsi, il n’est pas possible de supprimer uniquement le champ *Classification Level*  ou le champ *ClassificationOwner* qui sont des champs obligatoires dans le bloc *ClassificationRule*.
 
 Comme à l’entrée, un contrôle est effectué sur l’adéquation entre le niveau de classification accepté par la plate-forme et le niveau déclaré par l’unité archivistique. Si le niveau déclaré n’est pas conforme aux valeurs attendues par la plate-forme, la modification sera en échec.
 

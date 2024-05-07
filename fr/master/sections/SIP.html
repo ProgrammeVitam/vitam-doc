@@ -62,7 +62,6 @@
 <li class="toctree-l1"><a class="reference internal" href="module_de_collecte.html">7. Module de collecte</a></li>
 <li class="toctree-l1"><a class="reference internal" href="organisation_information.html">8. Organisation de l’information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ontologie.html">9. Ontologie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="organisation_information.html">8. Organisation de l’information</a></li>
 <li class="toctree-l1"><a class="reference internal" href="preservation.html">10. Gestion de la préservation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="profil_archivage.html">11. Profils d’archivage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="profil_unite_archivistique.html">12. Profils d’unité archivistique</a></li>
@@ -369,8 +368,8 @@ Ces deux fichiers correspondant à la même photographie répondent à deux usag
 <p>D’après le SEDA, ces différentes formes (fichiers) prises par une même archive doivent être regroupées dans un groupe d’objets représentant l’unité intellectuelle.</p>
 <p>Le SEDA 2.1. représente ce groupe d’objets de deux manières différentes :</p>
 <ul class="simple">
-<li><p>création du groupe d’objets (DataObjectGroup) en utilisant la balise <DataObjectGroup> et création, dans cette balise <DataObjectGroup>, des objets qui le constituent. Chaque objet doit déclarer la version ou l’usage auquel il correspond via la balise <DataObjectVersion> (méthode propre au SEDA 2.1.) ;</p></li>
-<li><p>déclaration dans le bordereau du groupe d’objets (DataObjectGroup) par un seul des objets lui appartenant via la balise <DataObjectGroupId>, l’autre objet y fera référence via la balise <DataObjectGroupReferenceId>. Chaque objet doit déclarer la version ou l’usage auquel il correspond via la balise <DataObjectVersion> (méthode héritée du SEDA 2.0. mais dépréciée).</p></li>
+<li><p>création du groupe d’objets (DataObjectGroup) en utilisant la balise <em>DataObjectGroup</em> et création, dans cette balise <em>DataObjectGroup</em>, des objets qui le constituent. Chaque objet doit déclarer la version ou l’usage auquel il correspond via la balise <em>DataObjectVersion</em> (méthode propre au SEDA 2.1.) ;</p></li>
+<li><p>déclaration dans le bordereau du groupe d’objets (DataObjectGroup) par un seul des objets lui appartenant via la balise <em>DataObjectGroupId</em>, l’autre objet y fera référence via la balise <em>DataObjectGroupReferenceId</em>. Chaque objet doit déclarer la version ou l’usage auquel il correspond via la balise <em>DataObjectVersion</em> (méthode héritée du SEDA 2.0. mais dépréciée).</p></li>
 </ul>
 <p><strong>Nota Bene :</strong>
 Il est obligatoire de déclarer un groupe d’objets dans le bordereau d’entrée si une archive est représentée par plusieurs fichiers. Quand l’archive n’est représentée que par un seul fichier, la déclaration d’un groupe d’objets n’est que recommandée.</p>
@@ -543,7 +542,7 @@ Il est obligatoire de déclarer un groupe d’objets dans le bordereau d’entr�
 <td class="text-center"><p>Recommandation</p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>Journalisation</p></td>
-<td class="text-left"><p>L’utilisation du bloc <Logbook> est déconseillée à ce jour, car la solution logicielle Vitam ne les enregistre pas.</p></td>
+<td class="text-left"><p>L’utilisation du bloc <em>Logbook</em> est déconseillée à ce jour, car la solution logicielle Vitam ne les enregistre pas.</p></td>
 <td class="text-center"><p>Déconseillé</p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>Demandes d’autorisation</p></td>
@@ -714,23 +713,23 @@ Il est obligatoire de déclarer un groupe d’objets dans le bordereau d’entr�
 </thead>
 <tbody>
 <tr class="row-even"><td class="text-left"><p>Métadonnées techniques</p></td>
-<td class="text-left"><p><OtherDimensionsAbstract></p></td>
+<td class="text-left"><p><em>OtherDimensionsAbstract</em></p></td>
 <td class="text-left"><p>Autres dimensions possibles pour un objet physique</p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p></p></td>
-<td class="text-left"><p><OtherCoreTechnicalMetadataAbstract></p></td>
+<td class="text-left"><p><em>OtherCoreTechnicalMetadataAbstract</em></p></td>
 <td class="text-left"><p>Métadonnées techniques essentielles ne correspondant :<br>- ni à des fichiers de type texte,<br>- ni à des fichiers de type document,<br>- ni à des fichiers de type image,<br>- ni à des fichiers de type audio,<br>- ni à des fichiers de type vidéo<br>Ex. : bases de données, plans 2D, plans 3D</p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>Métadonnées descriptives</p></td>
-<td class="text-left"><p><ObjectGroupExtensionAbstract></p></td>
+<td class="text-left"><p><em>ObjectGroupExtensionAbstract</em></p></td>
 <td class="text-left"><p>Métadonnées descriptives complémentaires</p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p></p></td>
-<td class="text-left"><p><ArchiveUnitReferenceAbstract></p></td>
+<td class="text-left"><p><em>ArchiveUnitReferenceAbstract</em></p></td>
 <td class="text-left"><p>Requêtes permettant de gérer la récursivité et de pointer vers un objet-archives supposé être déjà géré par le SAE</p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>Métadonnées de gestion</p></td>
-<td class="text-left"><p><OtherManagementAbstract></p></td>
+<td class="text-left"><p><em>OtherManagementAbstract</em></p></td>
 <td class="text-left"><p>Autres métadonnées de gestion</p></td>
 </tr>
 </tbody>
@@ -747,19 +746,19 @@ Il est obligatoire de déclarer un groupe d’objets dans le bordereau d’entr�
 </thead>
 <tbody>
 <tr class="row-even"><td class="text-left"><p>Noyau du schéma (main)</p></td>
-<td class="text-left"><p><OrganizationDescriptiveMetadataType></p></td>
+<td class="text-left"><p><em>OrganizationDescriptiveMetadataType</em></p></td>
 <td class="text-left"><p>Métadonnées descriptives pour une organisation</p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p></p></td>
-<td class="text-left"><p><SignatureType></p></td>
+<td class="text-left"><p><em>SignatureType</em></p></td>
 <td class="text-left"><p>Signature utilisée lors des échanges de messages</p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>Métadonnées techniques</p></td>
-<td class="text-left"><p><XXXTechnicalMetadataType></p></td>
+<td class="text-left"><p><em>XXXTechnicalMetadataType</em></p></td>
 <td class="text-left"><p>Métadonnées techniques essentielles correspondant à des fichiers de types texte, document, image, audio et vidéo</p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p></p></td>
-<td class="text-left"><p><DescriptiveTechnicalMetadataType></p></td>
+<td class="text-left"><p><em>DescriptiveTechnicalMetadataType</em></p></td>
 <td class="text-left"><p>Autres métadonnées techniques</p></td>
 </tr>
 </tbody>
@@ -774,15 +773,15 @@ Il est obligatoire de déclarer un groupe d’objets dans le bordereau d’entr�
 </thead>
 <tbody>
 <tr class="row-even"><td class="text-left"><p>Métadonnées descriptives</p></td>
-<td class="text-left"><p><ObjectGroupExtensionAbstract></p></td>
+<td class="text-left"><p><em>ObjectGroupExtensionAbstract</em></p></td>
 <td class="text-left"><p>Ajout de métadonnées descriptives complémentaires, y compris un agent.</p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p></p></td>
-<td class="text-left"><p><ArchiveUnitReferenceAbstract></p></td>
+<td class="text-left"><p><em>ArchiveUnitReferenceAbstract</em></p></td>
 <td class="text-left"><p>Déclaration d’une unité archivistique pouvant déjà être présente dans une plate-forme utilisant la solution logicielle Vitam</p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>Métadonnées de gestion</p></td>
-<td class="text-left"><p><OtherManagementAbstract></p></td>
+<td class="text-left"><p><em>OtherManagementAbstract</em></p></td>
 <td class="text-left"><p>Modification d’ArchiveUnit déjà présentes dans une plate-forme utilisant la solution logicielle Vitam via un bloc UpdateOperation.<br>Ajout d’une règle de gel en vue de pouvoir déclarer des archives gelées.</p></td>
 </tr>
 </tbody>
@@ -1682,7 +1681,7 @@ Il est obligatoire de déclarer un groupe d’objets dans le bordereau d’entr�
 <p>[^1] : Disponible à l’adresse suivante (lien vérifié le 15/02/2023) : <a class="reference external" href="https://francearchives.fr/seda/">pour le SEDA 2.1</a> et <a class="reference external" href="https://github.com/culturecommunication/seda">pour le SEDA 2.2</a>.</p>
 <p>[^2] : Voir la documentation spécifique aux profils d’archivage et/ou aux profils d’unité archivistique. À noter que le SEDA 2.2. introduit la notion de profil d’objet, non implémentée par la solution logicielle Vitam au terme de la version 6.</p>
 <p>[^3] : Pour les projets en phase d’initialisation, il est recommandé d’utiliser la version 2.2. du SEDA.</p>
-<p>[^4] : Pour tous les formats acceptés dans la norme ISO 8601, il est possible de spécifier le fuseau horaire : https://fr.wikipedia.org/wiki/ISO_8601#Fuseau_horaire</p>
+<p>[^4] : Pour tous les formats acceptés dans la norme ISO 8601, il est possible de spécifier le fuseau horaire : <a class="reference external" href="https://fr.wikipedia.org/wiki/ISO_8601#Fuseau_horaire">https://fr.wikipedia.org/wiki/ISO_8601#Fuseau_horaire</a></p>
 <p>[^5] : Si elles sont présentes et selon leur formalisation, les séquences de type « &lt; !– », « – !&gt; », « &lt;– » ou encore « –&gt; » provoqueront un rejet du SIP en entrée ou seront ignorées.</p>
 </section>
 </section>
