@@ -69,6 +69,7 @@ Champs attendus dans le bordereau de transfert des dossiers de personnel
 
 |Nom|Prénom|Date de naissance|Matricule|Corps|Grade|Nombre d’enfants|Date de départ en retraite|Décorations|
 |:----|:----|:----|:----|:----|:----|:----|:----|:----|
+||||||||||
 
 Le profil d’unité archivistique peut :
 - rendre obligatoire ou non la présence de tous ces champs (pour leur formalisation, voir le [vademecum ontologie](./Vademecum_ontologie.md)) ;

@@ -67,6 +67,7 @@ Pour étudier son besoin de créer ou non de nouveaux vocabulaires dans l’onto
 
 |Nom|Prénom|Date de naissance|Matricule|Corps|Grade|Nombre d’enfants|Date de départ en retraite|Décorations|
 |:----|:----|:----|:----|:----|:----|:----|:----|:----|
+||||||||||
 
 Les « Nom », « Prénom », « Date de naissance » et « Matricule » correspondent à des balises déjà existantes dans le SEDA. Le type d’indexation de ces balises est défini dans le SEDA.<br>
 La « Date de départ en retraite » pourra soit être exprimée à l’aide d’une des dates proposées par le SEDA (*EndDate* par exemple), soit par un vocabulaire spécifique *DateDepartRetraite* qui pourrait également être utilisé pour décrire des dossiers de pension. Le type d’indexation de cette *DateDepartRetraite* sera une date conforme au format date standardisé (exprimée par exemple sous la forme « 1794-02-01 » et non « 1er février 1794 » ou « 13 pluviôse an II »).
@@ -76,6 +77,7 @@ Les « Corps », « Grade », « Nombre d’enfants » et « Décorations
 
 |Type de marché|Numéro attribué aux marchés|Titulaire|Intitulé des marchés|Date de notification|Date de liquidation|
 |:----|:----|:----|:----|:----|:----|
+|||||||
 
 Le « Type de marché » peut être traité par la balise *DocumentType* du SEDA.
 
