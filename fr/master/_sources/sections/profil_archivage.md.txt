@@ -305,7 +305,7 @@ Lors de l’étape de vérification de la conformité entre le profil d’archiv
 
 Exemple : message d’erreur sur la tâche de contrôle de conformité entre un contrat d’entrée et un profil d’archivage.
 
-```json
+```xml
 <Operation>
         <Event>
             <EventTypeCode>STP_INGEST_CONTROL_SIP</EventTypeCode>
@@ -349,7 +349,7 @@ Lors de l’étape de vérification de la conformité du bordereau de transfert 
 
 Exemple : message d’erreur sur la tâche de contrôle de conformité entre un bordereau de transfert et un profil d’archivage.
 
-```json
+```xml
 <Operation>
         <Event>
             <EventTypeCode>STP_INGEST_CONTROL_SIP</EventTypeCode>
@@ -522,7 +522,7 @@ Au niveau des références aux listes de codes (CodeListVersions), il faut rempl
 *Exemple : modifications à apporter au niveau des références aux listes de codes.*
 
 *Ancienne version :*
-```json
+```xml
 <rng:element name="MessageDigestAlgorithmCodeListVersion">
           <rng:optional>
             <rng:attribute name="listName"><rng:data type="string"/></rng:attribute>
@@ -549,7 +549,7 @@ Au niveau des références aux listes de codes (CodeListVersions), il faut rempl
         </rng:element>
 ```
 *Nouvelle version :*
-```json
+```xml
 <rng:element name="MessageDigestAlgorithmCodeListVersion">
           <rng:optional>
             <rng:attribute name="listName"><rng:data type="string"/></rng:attribute>
@@ -585,7 +585,7 @@ Au niveau des règles de gestion, si aucun référentiel des règles de gestion 
 *Exemple : modifications à apporter au niveau des règles de gestion.*
 
 *Ancienne version :*
-```json
+```xml
                         <rng:element name="Rule">
                           <rng:value type="token">P20Y</rng:value>
                         </rng:element>
@@ -602,7 +602,7 @@ Au niveau des règles de gestion, si aucun référentiel des règles de gestion 
 ```
 
 *Nouvelle version :*
-```json
+```xml
                         <rng:element name="Rule">
                           <rng:value type="token">DIS-00001</rng:value>
                         </rng:element>
@@ -625,7 +625,7 @@ Au niveau des acteurs – service d’archives (ArchivalAgency), service versant
 *Exemple : modifications à apporter au niveau des acteurs.*
 
 *Ancienne version :*
-```json
+```xml
        <rng:element name="ArchivalAgency">
         <rng:element name="Identifier">
           <rng:value>https://demo.logilab.fr/seda/174489</rng:value>
@@ -646,7 +646,7 @@ Au niveau des acteurs – service d’archives (ArchivalAgency), service versant
 
 *Nouvelle version :*
 
-```json
+```xml
        <rng:element name="ArchivalAgency">
         <rng:element name="Identifier">
           <rng:value>FRAD-0000001</rng:value>
@@ -675,7 +675,7 @@ Dans le bloc ManagementMetadata, il faut ajouter l’identifiant du profil d’a
 
 *Exemple : ajout de la mention du profil d’archivage.*
 
-```json
+```xml
  < !-- Élément précédent et englogant --> 
                 <rng:element name="ManagementMetadata">
                     <rng:optional>
@@ -717,7 +717,7 @@ Si l’on souhaite contrôler une unité archivistique au moyen d’un profil d�
 
 *Exemple : ajout de la mention du profil d’unité archivistique.*
 
-```json
+```xml
  < !-- Élément précédent et englogant --> 
                 <rng:element name="ArchiveUnit">
                     <rng:attribute name="id">
@@ -803,7 +803,7 @@ Il peut s’avérer nécessaire, dans le cas où l’on souhaite contrôler un g
 
 *Exemple : ajout de la mention du groupe d’objets au moyen d’un identifiant.*
 
-```json
+```xml
  < !-- Élément précédent et englogant --> 
                     <rng:element name="BinaryDataObject">
                         <xsd:annotation>
@@ -834,7 +834,7 @@ Il est possible de mentionner le groupe d’objets techniques d’une autre mani
 
 *Exemple : ajout de la mention du groupe d’objets, englobant un objet technique.*
 
-```json
+```xml
  < !-- Option 1 : Élément obligatoire englogant -->
              <rng:element name="DataObjectGroup">
             <rng:attribute name="id" seda:profid="id2940711">
@@ -896,7 +896,7 @@ En cas de présence d’objets, il faut également vérifier la présence d’un
 
 *Exemple : ajout de la mention de l’usage de l’objet.*
 
-```json
+```xml
  < !-- Élément précédent et englogant --> 
                     <rng:element name="BinaryDataObject">
                         <xsd:annotation>
@@ -946,7 +946,7 @@ En cas de présence d’objets, il faut également vérifier la présence d’un
 En cas de présence de vocabulaires externes, c’est-à-dire de métadonnées non gérées nativement par le SEDA[^22], il faut les ajouter dans le profil SEDA, en les positionnant aux endroits permis par le standard.
 
 *Exemple : ajout de la mention d’un vocabulaire externe intitulé « TOTO ».*
-```json
+```xml
 < !-- Option 1 : on rend obligatoire et on impose sa valeur -->
                     <rng:element name="TOTO">
                         <rng:value>TOTO</rng:value>
@@ -976,7 +976,7 @@ En cas de présence de vocabulaires externes, c’est-à-dire de métadonnées n
 En cas d’archives gelées, il faut ajouter les références à la règle de gel dans le profil SEDA, en positionnant la catégorie à l’endroit autorisé par le standard pour étendre les règles dans les éléments <rng:element name="Management"> ou <rng:element name="ManagementMetadata">.
 
 *Exemple : modélisation d’une règle de gel au format RNG*
-```json
+```xml
 <rng:element name="HoldRule">
             <rng:group>
               <rng:element name="Rule">
@@ -1001,7 +1001,7 @@ Le bloc Agent doit être positionné :
 
 *Exemple : positionnement du bloc Agent dans la version 5*
 
-```json
+```xml
                   <rng:element name="Content">
 
                     <rng:element name="DescriptionLevel">
@@ -1052,7 +1052,7 @@ Le bloc Agent doit être positionné :
     - en fin de bloc Content dans les versions antérieures à la version 5.
 
 *Exemple : positionnement du bloc Agent dans les versions antérieures à la version 5*
-```json
+```xml
                   <rng:element name="Content">
 
                     <rng:element name="DescriptionLevel">
@@ -1105,7 +1105,7 @@ Il est recommandé aux utilisateurs de :
 
 *Ancienne version :*
 
-```json
+```xml
                         <rng:element name="AuthorizedAgent">
                       <rng:group>
                         <rng:element name="FirstName">
@@ -1123,7 +1123,7 @@ Il est recommandé aux utilisateurs de :
 
 *Nouvelle version :*
 
-```json
+```xml
                         <rng:element name="Agent">
                       <rng:group>
                         <rng:element name="FirstName">
@@ -1203,14 +1203,14 @@ Au niveau de l’en-tête, déclarant les espaces de nom et autres références,
 
 *Ancienne version :*
 
-```json
+```xml
 <rng:grammar datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes" ns="fr:gouv:culture:archivesdefrance:seda:v2.1" xmlns="fr:gouv:culture:archivesdefrance:seda:v2.1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns:seda="fr:gouv:culture:archivesdefrance:seda:v2.1" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink">
 [...]
 ```
 
 *Nouvelle Version :*
 
-```json
+```xml
 <rng:grammar datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes" ns="fr:gouv:culture:archivesdefrance:seda:v2.1" xmlns="fr:gouv:culture:archivesdefrance:seda:v2.2" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" xmlns:seda="fr:gouv:culture:archivesdefrance:seda:v2.2" xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink">
 [...]
 ```
@@ -1226,7 +1226,7 @@ Au terme de la version 7.0, l’APP Profils documentaires ne permet pas de dépo
 Si on souhaite déporter le contrôle vers le profil d’unité archivistique, il faudra modifier les éléments suivant dans le fichier RNG :
 *Exemple : ajout de la mention du profil d’unité archivistique.*
 
-```json
+```xml
 
 < !-- Élément précédent et englogant --> 
                 <rng:element name="ArchiveUnit">
@@ -1295,7 +1295,7 @@ En cas de présence de vocabulaires externes, c’est-à-dire de métadonnées n
 
 *Exemple : ajout de la mention d’un vocabulaire externe intitulé « TOTO ».*
 
-```json
+```xml
 < !-- Option 1 : on rend obligatoire et on impose sa valeur -->
                     <rng:element name="TOTO">
                         <rng:value>TOTO</rng:value>
@@ -1326,7 +1326,7 @@ En cas d’archives gelées, il faut ajouter les références à la règle de ge
 
 *Exemple : modélisation d’une règle de gel au format RNG*
 
-```json
+```xml
 <rng:element name="HoldRule">
             <rng:group>
               <rng:element name="Rule">
@@ -1350,7 +1350,7 @@ Le bloc Agent doit être positionné :
 - entre les blocs SubmissionAgency et AuthorizedAgent, s’ils sont présents dans la version 5 de la solution,
 
 *Exemple : positionnement du bloc Agent dans la version 5*
-```json
+```xml
                   <rng:element name="Content">
 
                     <rng:element name="DescriptionLevel">
@@ -1402,7 +1402,7 @@ Le bloc Agent doit être positionné :
 
 *Exemple : positionnement du bloc Agent dans les versions antérieures à la version 5*
 
-```json
+```xml
                   <rng:element name="Content">
 
                     <rng:element name="DescriptionLevel">
@@ -1455,7 +1455,7 @@ Il est recommandé aux utilisateurs de :
 
 *Ancienne version :*
 
-```json
+```xml
                         <rng:element name="AuthorizedAgent">
                       <rng:group>
                         <rng:element name="FirstName">
@@ -1473,7 +1473,7 @@ Il est recommandé aux utilisateurs de :
 
 *Nouvelle version :*
 
-```json
+```xml
                         <rng:element name="Agent">
                       <rng:group>
                         <rng:element name="FirstName">
@@ -1701,7 +1701,7 @@ Nota bene : les cas présentés ci-dessous sont des exemples fictifs.
 
 #### Profil d’archivage sans profil d’unité archivistique
 
-```json
+```xml
 <?xml version='1.0' encoding='utf-8' standalone='no'?>
 <rng:grammar xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
   xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -2653,7 +2653,7 @@ Nota bene : les cas présentés ci-dessous sont des exemples fictifs.
 
 #### Profil d’archivage avec profil d’unité archivistique
 
-```json
+```xml
 <?xml version='1.0' encoding='utf-8' standalone='no'?>
 <rng:grammar xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
   xmlns:rng="http://relaxng.org/ns/structure/1.0"
@@ -3531,7 +3531,7 @@ Nota bene : les cas présentés ci-dessous sont des exemples fictifs.
 
 La portion de code RNG ci-dessous fait référence aux listes de codes (CodeListVersions) qui doivent être déclarées dans un profil d’archivage. Cette portion est générique et correspond aux attentes de la solution logicielle Vitam. De fait, elle est reproductible à l’identique dans n’importe quel profil d’archivage utilisé dans la solution logicielle Vitam.
 
-```json
+```xml
 
             <rng:element name="CodeListVersions">
                 <rng:optional>
@@ -4223,7 +4223,7 @@ Le SEDA permet de déclarer les objets techniques de deux manières :
 La moulinette ReSIP ne supporte que cette dernière méthode. Il est nécessaire que le profil d’archivage déclare des objets techniques inclus dans des groupes d’objets techniques, sans quoi ReSIP constatera une non conformité entre le manifeste chargé et le profil d’archivage.
 Mention d’un groupe d’objets techniques dans le profil d’archivage :
 
-```json
+```xml
 <rng:group>
           <!-- DataObjectGroup -->
           <rng:element name="DataObjectGroup">
@@ -4325,7 +4325,7 @@ ligne: <?xml version='1.0' encoding='UTF-8'?><ArchiveTransfer xmlns:xlink="http:
 
 - Explication : L’erreur semble pointer l’attribut xml:id présent dans l’élément ArchiveTransfer du manifeste.xml.<br>En réalité, dans le profil d’archivage, à l’emplacement de l’élément rng:grammar, on a déclaré un namespace. Ce namespace doit être déclaré comme attribut de l’élément ArchiveTransfer.<br>En réalité, l’élément ArchiveTransfer présent dans le manifeste déclare un attribut correspondant à un namespace qui n’est pas déclaré dans le profil d’archivage. C’est pourquoi, le message précise qu’un attribut id est attendu dans le manifeste et non pas xsi:schemaLocation.
 - Résolution : Dans le profil d’archivage, rajouter un attribut correspondant au namespace :
-```json
+```xml
 <br><rng:zeroOrMore>
         <rng:attribute>
           <rng:anyName>
@@ -4349,7 +4349,7 @@ Pour rappel, ReSIP génère des objets binaires encapsulés dans un groupe d’o
 Il est recommandé d’ouvrir le manifeste pour vérifier comment sont déclarés les groupes d’objets techniques, puis de faire de même dans le profil d’archivage et de corriger l’erreur.
 
 - **Message retourné par ReSIP** : position de l'erreur identifiée: ligne 7, colonne 27<br>
-```json
+```
 ligne:     <ReplyCodeListVersion>ReplyCodeListVersion0</ReplyCodeListVersion><br>erreur brute: element "ReplyCodeListVersion" not allowed anywhere; expected the element end-tag
 ```
 
@@ -4358,7 +4358,7 @@ ligne:     <ReplyCodeListVersion>ReplyCodeListVersion0</ReplyCodeListVersion><br
 S’il n’est pas obligatoire, ce qui est le cas pour cet élément-là, retirer le champ de la liste des champs contextuels générés par ReSIP, en cliquant sur Contexte > Editer les informations d’export > Métadonnées globales étendues.
 
 - **Message retourné par ReSIP** : position de l'erreur identifiée: ligne 6, colonne 22<br>
-```json
+```
 ligne:   <DataObjectPackage>
 erreur brute: element "DataObjectPackage" not allowed yet; missing required element "CodeListVersions"
 ```
@@ -4369,7 +4369,7 @@ erreur brute: element "DataObjectPackage" not allowed yet; missing required elem
     - Si l’erreur persiste, il faut également vérifier que le profil d’archivage intègre bien un élément CodeListVersions.
 
 - **Message retourné par ReSIP** : position de l'erreur identifiée: ligne 2, colonne 78<br>
-```json
+```
 ligne:   <Comment>Matrice</Comment>
 erreur brute: character content of element "Comment" invalid; must be equal to "Matrice cadastrale numérique."
 ```

@@ -263,7 +263,7 @@ Le schéma utilisé dans la solution logicielle Vitam utilise à la date de publ
 
 **Nota bene :** cet exemple a été généré à partir d’une arborescence de fichiers, en utilisant le générateur de SIP développé par l’équipe Vitam. Il n’a été procédé à aucun enrichissement des métadonnées de gestion, ce qui ne signifie aucunement qu’il ne soit pas possible de le faire.
 
-```json
+```xml
 <?xml version="1.0" ?>
 <ArchiveTransfer xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:pr="info:lc/xmlns/premis-v2"
     xmlns="fr:gouv:culture:archivesdefrance:seda:v2.1"
@@ -513,7 +513,7 @@ Le schéma utilisé dans la solution logicielle Vitam utilise à la date de publ
 
 **Nota bene :** cet exemple a été généré manuellement en utilisant un éditeur XML. Le bordereau est conforme au schéma SEDA 2.1. même si les valeurs ne sont pas représentatives.
 
-```json
+```xml
 <ArchiveTransfer xmlns:xlink="http://www.w3.org/1999/xlink"
     xmlns:pr="info:lc/xmlns/premis-v2"
     xmlns="fr:gouv:culture:archivesdefrance:seda:v2.1"
@@ -710,7 +710,7 @@ Le schéma utilisé dans la solution logicielle Vitam utilise à la date de publ
 
 ### Annexe 4 : exemple de bordereau « complexe » permettant le rattachement d’ArchiveUnits à des éléments déjà présents dans le système
 
-```json
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <ArchiveTransfer xmlns="fr:gouv:culture:archivesdefrance:seda:v2.1"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -880,7 +880,7 @@ Le schéma utilisé dans la solution logicielle Vitam utilise à la date de publ
 
 #### Méthode 1 :Une balise < DataObjectGroup > est créée dans le manifeste et comprend les autres DataObject.
 
-```json
+```xml
 <DataObjectGroup id="DOG8">
  <BinaryDataObject id="ID011">
  <DataObjectVersion>BinaryMaster_1</DataObjectVersion>
@@ -925,7 +925,7 @@ Le schéma utilisé dans la solution logicielle Vitam utilise à la date de publ
 
 #### Méthode 2 : Un des DataObject doit déclarer le groupe d’objets auquel seront rattachés les autres fichiers, en utilisant la balise
 
-```json
+```xml
  <BinaryDataObject id="ID011">
             <DataObjectGroupId>ID006</DataObjectGroupId>
             <DataObjectVersion>BinaryMaster_1</DataObjectVersion>
@@ -973,7 +973,7 @@ Le schéma utilisé dans la solution logicielle Vitam utilise à la date de publ
 #### Méthode 1
 
 Exemple pour la méthode 1 (demande de rattachement de l’ID3 à l’ArchiveUnit déjà présente dans le système et dont le GUID est aeaqaaaaaihnjdarabzvqak3m2b3qoqaaaaq) :
-```json
+```xml
 <ArchiveUnit id="ID4">
         <Management>
                 <UpdateOperation>
@@ -1011,7 +1011,7 @@ Exemple pour la méthode 1 (demande de rattachement de l’ID3 à l’ArchiveUni
 #### Méthode 2
 
 Exemple pour la méthode 2 (demande de rattachement de l’ID3 à l’ArchiveUnit déjà présente dans le système et dont la valeur du champ FilePlanPosition est « 2.5.1.2. ») :
-```json
+```xml
 <ArchiveUnit id="ID4">
         <Management>
                 <UpdateOperation>
@@ -1052,7 +1052,7 @@ Exemple pour la méthode 2 (demande de rattachement de l’ID3 à l’ArchiveUni
 
 #### Exemple d'implémentation 1 :
 
-```json
+```xml
 <BinaryDataObject id="ID011">
             <DataObjectGroupId>ID006</DataObjectGroupId>
             <DataObjectVersion>BinaryMaster</DataObjectVersion>
@@ -1081,7 +1081,7 @@ Exemple pour la méthode 2 (demande de rattachement de l’ID3 à l’ArchiveUni
 
 #### Exemple d'implémentation 2 :
 
-```json
+```xml
 <BinaryDataObject id="ID011">
 <Uri>content/BAD0431E2C5E80E5BD42D547A3ED5966.odt</Uri>
             <MessageDigest algorithm="MD5">BAD0431E2C5E80E5BD42D547A3ED5966</MessageDigest>
@@ -1110,7 +1110,7 @@ Exemple pour la méthode 2 (demande de rattachement de l’ID3 à l’ArchiveUni
 
 #### Exemple pour la méthode 1 :
 
-```json
+```xml
 <ArchiveUnit id="ID4">
         <Management>
                 <UpdateOperation>
@@ -1129,7 +1129,7 @@ Exemple pour la méthode 2 (demande de rattachement de l’ID3 à l’ArchiveUni
 
 #### Exemple pour la méthode 2 :
 
-```json
+```xml
 <ArchiveUnit id="ID4">
         <Management>
                 <UpdateOperation>

@@ -1865,7 +1865,7 @@ Lors de l’étape de vérification de la conformité entre le profil d’archiv
           Alors le transfert du SIP échouera à la tâche de vérification entre le contrat d’entrée et le profil d’archivage et ne passera pas à la tâche suivante[^99].
 
 Exemple : message d’erreur sur la tâche de contrôle de conformité entre un contrat d’entrée et un profil d’archivage.
-```json
+```xml
 <Operation>
         <Event>
             <EventTypeCode>STP_INGEST_CONTROL_SIP</EventTypeCode>
@@ -1908,7 +1908,7 @@ Lors de l’étape de vérification de la conformité du bordereau de transfert 
 -  Si le bordereau de transfert n’est pas conforme à son profil d’archivage, son transfert dans la solution logicielle Vitam n’aboutira pas. Un message de réponse (ArchiveTransferReply ou ATR) indique que le transfert a échoué à la tâche de vérification de la conformité au profil d’archivage et précise la première erreur rencontrée dans le détail de l’événement (EventDetailData).
 
 Exemple : message d’erreur sur la tâche de contrôle de conformité entre un bordereau de transfert et un profil d’archivage.
-```json
+```xml
 <Operation>
         <Event>
             <EventTypeCode>STP_INGEST_CONTROL_SIP</EventTypeCode>
@@ -2015,7 +2015,7 @@ Lors de cette étape :
 -  Si le contrat de gestion est actif et si la stratégie qu’il déclare existe, la solution logicielle Vitam passera à la tâche ou traitement suivant, puis à l’étape suivante ;
 -  Si le contrat de gestion est inactif ou si la stratégie de stockage qu’il déclare n’existe pas, alors le transfert du SIP échouera à la tâche de vérification de la présence et du contrôle du contrat d’entrée.
 Exemple : message d’erreur sur la tâche de contrôle du contrat d’entrée.
-```json
+```xml
     <Operation>
         <Event>
             <EventTypeCode>STP_INGEST_CONTROL_SIP</EventTypeCode>

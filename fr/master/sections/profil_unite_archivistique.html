@@ -707,26 +707,26 @@ En fonction du statut, seront autorisés ou non :</p></li>
 </li>
 </ul>
 <p><em>Exemple :</em> message d’erreur sur la tâche de contrôle de conformité au profil d’unité archivistique.</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&lt;ArchiveUnit id=&quot;ID3&quot;&gt;
-                &lt;Management&gt;
-                    &lt;LogBook&gt;
-                        &lt;Event&gt;
-                            &lt;EventTypeCode&gt;LFC.CHECK_ARCHIVE_UNIT_PROFILE&lt;/EventTypeCode&gt;
-                            &lt;EventType&gt;Vérification de la conformité aux profils d’unité archivistique&lt;/EventType&gt;
-                            &lt;EventDateTime&gt;2018-04-27T10:37:30.404&lt;/EventDateTime&gt;
-                            &lt;Outcome&gt;KO&lt;/Outcome&gt;
-                            &lt;OutcomeDetail&gt;LFC.CHECK_ARCHIVE_UNIT_PROFILE.KO&lt;/OutcomeDetail&gt;
-                            &lt;OutcomeDetailMessage&gt;Échec de la vérification de la conformité aux
-                                profils d’unité archivistique&lt;/OutcomeDetailMessage&gt;
-                            &lt;EventDetailData&gt;{&quot;ArchiveUnit&quot;:&quot;ID3&quot;,&quot;ArchiveUnitProfile&quot;:&quot;AUP-220001&quot;,&quot;evDetTechData&quot;:&quot;Archive Unit Profile not
-                                found&quot;}&lt;/EventDetailData&gt;
-                        &lt;/Event&gt;
-                    &lt;/LogBook&gt;
-                &lt;/Management&gt;
-                &lt;Content&gt;
-                    &lt;SystemId&gt;aeaqaaaabehc7dlhabspualda2w5tlyaaaba&lt;/SystemId&gt;
-                &lt;/Content&gt;
-            &lt;/ArchiveUnit&gt;
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;ArchiveUnit</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;ID3&quot;</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;Management&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;LogBook&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;Event&gt;</span>
+<span class="w">                            </span><span class="nt">&lt;EventTypeCode&gt;</span>LFC.CHECK_ARCHIVE_UNIT_PROFILE<span class="nt">&lt;/EventTypeCode&gt;</span>
+<span class="w">                            </span><span class="nt">&lt;EventType&gt;</span>Vérification<span class="w"> </span>de<span class="w"> </span>la<span class="w"> </span>conformité<span class="w"> </span>aux<span class="w"> </span>profils<span class="w"> </span>d’unité<span class="w"> </span>archivistique<span class="nt">&lt;/EventType&gt;</span>
+<span class="w">                            </span><span class="nt">&lt;EventDateTime&gt;</span>2018-04-27T10:37:30.404<span class="nt">&lt;/EventDateTime&gt;</span>
+<span class="w">                            </span><span class="nt">&lt;Outcome&gt;</span>KO<span class="nt">&lt;/Outcome&gt;</span>
+<span class="w">                            </span><span class="nt">&lt;OutcomeDetail&gt;</span>LFC.CHECK_ARCHIVE_UNIT_PROFILE.KO<span class="nt">&lt;/OutcomeDetail&gt;</span>
+<span class="w">                            </span><span class="nt">&lt;OutcomeDetailMessage&gt;</span>Échec<span class="w"> </span>de<span class="w"> </span>la<span class="w"> </span>vérification<span class="w"> </span>de<span class="w"> </span>la<span class="w"> </span>conformité<span class="w"> </span>aux
+<span class="w">                                </span>profils<span class="w"> </span>d’unité<span class="w"> </span>archivistique<span class="nt">&lt;/OutcomeDetailMessage&gt;</span>
+<span class="w">                            </span><span class="nt">&lt;EventDetailData&gt;</span>{&quot;ArchiveUnit&quot;:&quot;ID3&quot;,&quot;ArchiveUnitProfile&quot;:&quot;AUP-220001&quot;,&quot;evDetTechData&quot;:&quot;Archive<span class="w"> </span>Unit<span class="w"> </span>Profile<span class="w"> </span>not
+<span class="w">                                </span>found&quot;}<span class="nt">&lt;/EventDetailData&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;/Event&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;/LogBook&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/Management&gt;</span>
+<span class="w">                </span><span class="nt">&lt;Content&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;SystemId&gt;</span>aeaqaaaabehc7dlhabspualda2w5tlyaaaba<span class="nt">&lt;/SystemId&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/Content&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/ArchiveUnit&gt;</span>
 </pre></div>
 </div>
 <p><strong>Point d’attention :</strong> le profil d’unité archivistique ne sert pas à générer automatiquement le contenu d’une unité archivistique le déclarant lors de son transfert dans la solution logicielle Vitam. Il n’est utilisé que pour effectuer des contrôles de conformité de l’unité archivistique par rapport à ses attentes. De facto, l’unité archivistique présente dans un bordereau de transfert, associée à un profil d’unité archivistique, doit avoir été conçue, en amont du transfert, conformément aux attentes du profil d’unité archivistique.</p>

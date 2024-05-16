@@ -346,7 +346,7 @@ Par défaut, la solution logicielle Vitam retient les DIP, quel que soit leur ty
 Cette configuration par défaut peut être modifiée lors du paramétrage initial de la plate-forme par les administrateurs – fonctionnel pour la définition du besoin et technique[^5] pour la saisie réelle des informations – de chaque implémentation de la solution logicielle Vitam et définit, pour tous les tenants et pour chaque type de DIP – DIP générés dans le cadre d’une demande de communication et SIP générés dans le cadre d’une demande de transfert –  la durée de rétention minimale et maximale dans l’espace de stockage et la fréquence du batch permettant de les purger du système.
 
 Le fichier de configuration[^6] se présente comme suit (paramétrage par défaut) :
-```json
+```yaml
 ### global ###
 [...]
 vitam_timers:
@@ -376,7 +376,7 @@ Afin de se prémunir contre une surcharge de l’espace de stockage, il est poss
 Cette configuration, optionnelle, est établie lors du paramétrage initial de la plate-forme par les administrateurs – fonctionnel pour la définition du besoin et technique[^7] pour la saisie réelle des informations – de chaque implémentation de la solution logicielle Vitam et définit, pour la plate-forme et/ou chaque tenant, les seuils acceptables.
 
 Le fichier de configuration[^8] se présente comme suit (exemple fictif) :
-```json
+```yaml
 binarySizePlatformThreshold:
  limit: 1
  sizeUnit: GIGABYTE
@@ -408,7 +408,7 @@ Annexes
 
 ### Annexe 1 : Exemple de bordereau de mise à disposition pour un DIP mono-producteur (DIP minimal)
 
-```json
+```xml
 <ArchiveRestitutionRequest xmlns:xlink="http://www.w3.org/1999/xlink"
     xmlns:pr="info:lc/xmlns/premis-v2" xmlns="fr:gouv:culture:archivesdefrance:seda:v2.1"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -525,7 +525,7 @@ Annexes
 
 ### Annexe 2 : Exemple de bordereau de mise à disposition pour un DIP multi-producteurs (DIP minimal)
 
-```json
+```xml
 <ArchiveRestitutionRequest xmlns:xlink="http://www.w3.org/1999/xlink"
     xmlns:pr="info:lc/xmlns/premis-v2" xmlns="fr:gouv:culture:archivesdefrance:seda:v2.1"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -644,7 +644,7 @@ Annexes
 
 ### Annexe 3 : Exemple de bordereau de mise à disposition pour un DIP complet sans les journaux de cycle de vie
 
-```json
+```xml
 <ArchiveDeliveryRequestReply xmlns:xlink="http://www.w3.org/1999/xlink"
             xmlns:pr="info:lc/xmlns/premis-v2" xmlns="fr:gouv:culture:archivesdefrance:seda:v2.1"
             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -1052,7 +1052,7 @@ Annexes
 
 ### Annexe 4 : Exemple de bordereau de mise à disposition avec export du journal du cycle de vie de l’unité archivistique (DIP minimal)
 
-```json
+```xml
 <ArchiveDeliveryRequestReply xmlns:xlink="http://www.w3.org/1999/xlink"
     xmlns:pr="info:lc/xmlns/premis-v2" xmlns="fr:gouv:culture:archivesdefrance:seda:v2.1"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"

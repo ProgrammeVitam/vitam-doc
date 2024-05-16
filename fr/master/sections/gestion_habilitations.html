@@ -3364,41 +3364,41 @@ Alors le transfert du SIP échouera à la tâche de vérification entre le contr
 </li>
 </ul>
 <p>Exemple : message d’erreur sur la tâche de contrôle de conformité entre un contrat d’entrée et un profil d’archivage.</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&lt;Operation&gt;
-        &lt;Event&gt;
-            &lt;EventTypeCode&gt;STP_INGEST_CONTROL_SIP&lt;/EventTypeCode&gt;
-            &lt;EventType&gt;Processus de contrôle du SIP&lt;/EventType&gt;
-            &lt;EventDateTime&gt;2018-05-25T13:19:27.570&lt;/EventDateTime&gt;
-            &lt;Outcome&gt;KO&lt;/Outcome&gt;
-            &lt;OutcomeDetail&gt;STP_INGEST_CONTROL_SIP.KO&lt;/OutcomeDetail&gt;
-            &lt;OutcomeDetailMessage&gt;Échec du processus du contrôle du bordereau du
-                SIP&lt;/OutcomeDetailMessage&gt;
-        &lt;/Event&gt;
-        &lt;Event&gt;
-            &lt;EventTypeCode&gt;CHECK_HEADER&lt;/EventTypeCode&gt;
-            &lt;EventType&gt;Vérification générale du bordereau de transfert&lt;/EventType&gt;
-            &lt;EventDateTime&gt;2018-05-25T13:19:27.570&lt;/EventDateTime&gt;
-            &lt;Outcome&gt;KO&lt;/Outcome&gt;
-            &lt;OutcomeDetail&gt;CHECK_HEADER.DIFF.KO&lt;/OutcomeDetail&gt;
-            &lt;OutcomeDetailMessage&gt;Échec de la vérification générale du bordereau de transfert :
-                différence entre le profil déclaré dans le bordereau de transfert et celui déclaré
-                dans le contrat Detail= OK:2 KO:1&lt;/OutcomeDetailMessage&gt;
-            &lt;EventDetailData&gt;{&quot;evDetTechData&quot;:&quot;The profile PR-000018 was not found in the ingest
-                contract&quot;,&quot;ArchivalProfile&quot;:&quot;PR-000018&quot;,&quot;EvDetailReq&quot;:&quot;Catherine JABLASY :
-                mails&quot;,&quot;ArchivalAgreement&quot;:&quot;IC-000001&quot;}&lt;/EventDetailData&gt;
-        &lt;/Event&gt;
-        &lt;Event&gt;
-            &lt;EventTypeCode&gt;CHECK_HEADER.CHECK_IC_AP_RELATION&lt;/EventTypeCode&gt;
-            &lt;EventType&gt;Vérification de la relation entre le contrat d&#39;entrée et le profil
-                d&#39;archivage&lt;/EventType&gt;
-            &lt;EventDateTime&gt;2018-05-25T13:19:27.572&lt;/EventDateTime&gt;
-            &lt;Outcome&gt;KO&lt;/Outcome&gt;
-            &lt;OutcomeDetail&gt;CHECK_HEADER.CHECK_IC_AP_RELATION.DIFF.KO&lt;/OutcomeDetail&gt;
-            &lt;OutcomeDetailMessage&gt;Échec du contrôle de cohérence entre le profil d&#39;archivage déclaré
-                dans le bordereau de transfert et celui déclaré dans le contrat d&#39;entrée Detail=
-                KO:1&lt;/OutcomeDetailMessage&gt;
-        &lt;/Event&gt;
-    &lt;/Operation&gt;
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;Operation&gt;</span>
+<span class="w">        </span><span class="nt">&lt;Event&gt;</span>
+<span class="w">            </span><span class="nt">&lt;EventTypeCode&gt;</span>STP_INGEST_CONTROL_SIP<span class="nt">&lt;/EventTypeCode&gt;</span>
+<span class="w">            </span><span class="nt">&lt;EventType&gt;</span>Processus<span class="w"> </span>de<span class="w"> </span>contrôle<span class="w"> </span>du<span class="w"> </span>SIP<span class="nt">&lt;/EventType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;EventDateTime&gt;</span>2018-05-25T13:19:27.570<span class="nt">&lt;/EventDateTime&gt;</span>
+<span class="w">            </span><span class="nt">&lt;Outcome&gt;</span>KO<span class="nt">&lt;/Outcome&gt;</span>
+<span class="w">            </span><span class="nt">&lt;OutcomeDetail&gt;</span>STP_INGEST_CONTROL_SIP.KO<span class="nt">&lt;/OutcomeDetail&gt;</span>
+<span class="w">            </span><span class="nt">&lt;OutcomeDetailMessage&gt;</span>Échec<span class="w"> </span>du<span class="w"> </span>processus<span class="w"> </span>du<span class="w"> </span>contrôle<span class="w"> </span>du<span class="w"> </span>bordereau<span class="w"> </span>du
+<span class="w">                </span>SIP<span class="nt">&lt;/OutcomeDetailMessage&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/Event&gt;</span>
+<span class="w">        </span><span class="nt">&lt;Event&gt;</span>
+<span class="w">            </span><span class="nt">&lt;EventTypeCode&gt;</span>CHECK_HEADER<span class="nt">&lt;/EventTypeCode&gt;</span>
+<span class="w">            </span><span class="nt">&lt;EventType&gt;</span>Vérification<span class="w"> </span>générale<span class="w"> </span>du<span class="w"> </span>bordereau<span class="w"> </span>de<span class="w"> </span>transfert<span class="nt">&lt;/EventType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;EventDateTime&gt;</span>2018-05-25T13:19:27.570<span class="nt">&lt;/EventDateTime&gt;</span>
+<span class="w">            </span><span class="nt">&lt;Outcome&gt;</span>KO<span class="nt">&lt;/Outcome&gt;</span>
+<span class="w">            </span><span class="nt">&lt;OutcomeDetail&gt;</span>CHECK_HEADER.DIFF.KO<span class="nt">&lt;/OutcomeDetail&gt;</span>
+<span class="w">            </span><span class="nt">&lt;OutcomeDetailMessage&gt;</span>Échec<span class="w"> </span>de<span class="w"> </span>la<span class="w"> </span>vérification<span class="w"> </span>générale<span class="w"> </span>du<span class="w"> </span>bordereau<span class="w"> </span>de<span class="w"> </span>transfert<span class="w"> </span>:
+<span class="w">                </span>différence<span class="w"> </span>entre<span class="w"> </span>le<span class="w"> </span>profil<span class="w"> </span>déclaré<span class="w"> </span>dans<span class="w"> </span>le<span class="w"> </span>bordereau<span class="w"> </span>de<span class="w"> </span>transfert<span class="w"> </span>et<span class="w"> </span>celui<span class="w"> </span>déclaré
+<span class="w">                </span>dans<span class="w"> </span>le<span class="w"> </span>contrat<span class="w"> </span>Detail=<span class="w"> </span>OK:2<span class="w"> </span>KO:1<span class="nt">&lt;/OutcomeDetailMessage&gt;</span>
+<span class="w">            </span><span class="nt">&lt;EventDetailData&gt;</span>{&quot;evDetTechData&quot;:&quot;The<span class="w"> </span>profile<span class="w"> </span>PR-000018<span class="w"> </span>was<span class="w"> </span>not<span class="w"> </span>found<span class="w"> </span>in<span class="w"> </span>the<span class="w"> </span>ingest
+<span class="w">                </span>contract&quot;,&quot;ArchivalProfile&quot;:&quot;PR-000018&quot;,&quot;EvDetailReq&quot;:&quot;Catherine<span class="w"> </span>JABLASY<span class="w"> </span>:
+<span class="w">                </span>mails&quot;,&quot;ArchivalAgreement&quot;:&quot;IC-000001&quot;}<span class="nt">&lt;/EventDetailData&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/Event&gt;</span>
+<span class="w">        </span><span class="nt">&lt;Event&gt;</span>
+<span class="w">            </span><span class="nt">&lt;EventTypeCode&gt;</span>CHECK_HEADER.CHECK_IC_AP_RELATION<span class="nt">&lt;/EventTypeCode&gt;</span>
+<span class="w">            </span><span class="nt">&lt;EventType&gt;</span>Vérification<span class="w"> </span>de<span class="w"> </span>la<span class="w"> </span>relation<span class="w"> </span>entre<span class="w"> </span>le<span class="w"> </span>contrat<span class="w"> </span>d&#39;entrée<span class="w"> </span>et<span class="w"> </span>le<span class="w"> </span>profil
+<span class="w">                </span>d&#39;archivage<span class="nt">&lt;/EventType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;EventDateTime&gt;</span>2018-05-25T13:19:27.572<span class="nt">&lt;/EventDateTime&gt;</span>
+<span class="w">            </span><span class="nt">&lt;Outcome&gt;</span>KO<span class="nt">&lt;/Outcome&gt;</span>
+<span class="w">            </span><span class="nt">&lt;OutcomeDetail&gt;</span>CHECK_HEADER.CHECK_IC_AP_RELATION.DIFF.KO<span class="nt">&lt;/OutcomeDetail&gt;</span>
+<span class="w">            </span><span class="nt">&lt;OutcomeDetailMessage&gt;</span>Échec<span class="w"> </span>du<span class="w"> </span>contrôle<span class="w"> </span>de<span class="w"> </span>cohérence<span class="w"> </span>entre<span class="w"> </span>le<span class="w"> </span>profil<span class="w"> </span>d&#39;archivage<span class="w"> </span>déclaré
+<span class="w">                </span>dans<span class="w"> </span>le<span class="w"> </span>bordereau<span class="w"> </span>de<span class="w"> </span>transfert<span class="w"> </span>et<span class="w"> </span>celui<span class="w"> </span>déclaré<span class="w"> </span>dans<span class="w"> </span>le<span class="w"> </span>contrat<span class="w"> </span>d&#39;entrée<span class="w"> </span>Detail=
+<span class="w">                </span>KO:1<span class="nt">&lt;/OutcomeDetailMessage&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/Event&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/Operation&gt;</span>
 </pre></div>
 </div>
 <p>Lors de l’étape de vérification de la conformité du bordereau de transfert à son profil d’archivage :</p>
@@ -3407,38 +3407,38 @@ Alors le transfert du SIP échouera à la tâche de vérification entre le contr
 <li><p>Si le bordereau de transfert n’est pas conforme à son profil d’archivage, son transfert dans la solution logicielle Vitam n’aboutira pas. Un message de réponse (ArchiveTransferReply ou ATR) indique que le transfert a échoué à la tâche de vérification de la conformité au profil d’archivage et précise la première erreur rencontrée dans le détail de l’événement (EventDetailData).</p></li>
 </ul>
 <p>Exemple : message d’erreur sur la tâche de contrôle de conformité entre un bordereau de transfert et un profil d’archivage.</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&lt;Operation&gt;
-        &lt;Event&gt;
-            &lt;EventTypeCode&gt;STP_INGEST_CONTROL_SIP&lt;/EventTypeCode&gt;
-            &lt;EventType&gt;Processus de contrôle du SIP&lt;/EventType&gt;
-            &lt;EventDateTime&gt;2018-05-25T13:37:19.300&lt;/EventDateTime&gt;
-            &lt;Outcome&gt;KO&lt;/Outcome&gt;
-            &lt;OutcomeDetail&gt;STP_INGEST_CONTROL_SIP.KO&lt;/OutcomeDetail&gt;
-            &lt;OutcomeDetailMessage&gt;Échec du processus du contrôle du bordereau du
-                SIP&lt;/OutcomeDetailMessage&gt;
-        &lt;/Event&gt;
-        &lt;Event&gt;
-            &lt;EventTypeCode&gt;CHECK_HEADER&lt;/EventTypeCode&gt;
-            &lt;EventType&gt;Vérification générale du bordereau de transfert&lt;/EventType&gt;
-            &lt;EventDateTime&gt;2018-05-25T13:37:19.300&lt;/EventDateTime&gt;
-            &lt;Outcome&gt;KO&lt;/Outcome&gt;
-            &lt;OutcomeDetail&gt;CHECK_HEADER.KO&lt;/OutcomeDetail&gt;
-            &lt;OutcomeDetailMessage&gt;Échec de la vérification générale du bordereau de transfert
-                Detail= OK:3 KO:1&lt;/OutcomeDetailMessage&gt;
-            &lt;EventDetailData&gt;{&quot;evDetTechData&quot;:&quot;character content of element \&quot;Rule\&quot; invalid; must
-                be equal to \&quot;APP-00001\&quot;&quot;,&quot;ArchivalProfile&quot;:&quot;PR-000018&quot;,&quot;EvDetailReq&quot;:&quot;Catherine
-                JABLASY : mails&quot;,&quot;ArchivalAgreement&quot;:&quot;IC-000001&quot;}&lt;/EventDetailData&gt;
-        &lt;/Event&gt;
-        &lt;Event&gt;
-            &lt;EventTypeCode&gt;CHECK_HEADER.CHECK_ARCHIVEPROFILE&lt;/EventTypeCode&gt;
-            &lt;EventType&gt;Vérification de la conformité au profil d&#39;archivage&lt;/EventType&gt;
-            &lt;EventDateTime&gt;2018-05-25T13:37:19.300&lt;/EventDateTime&gt;
-            &lt;Outcome&gt;KO&lt;/Outcome&gt;
-            &lt;OutcomeDetail&gt;CHECK_HEADER.CHECK_ARCHIVEPROFILE.KO&lt;/OutcomeDetail&gt;
-            &lt;OutcomeDetailMessage&gt;Échec de la vérification de la conformité au profil d&#39;archivage
-                Detail= KO:1&lt;/OutcomeDetailMessage&gt;
-        &lt;/Event&gt;
-    &lt;/Operation&gt;
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;Operation&gt;</span>
+<span class="w">        </span><span class="nt">&lt;Event&gt;</span>
+<span class="w">            </span><span class="nt">&lt;EventTypeCode&gt;</span>STP_INGEST_CONTROL_SIP<span class="nt">&lt;/EventTypeCode&gt;</span>
+<span class="w">            </span><span class="nt">&lt;EventType&gt;</span>Processus<span class="w"> </span>de<span class="w"> </span>contrôle<span class="w"> </span>du<span class="w"> </span>SIP<span class="nt">&lt;/EventType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;EventDateTime&gt;</span>2018-05-25T13:37:19.300<span class="nt">&lt;/EventDateTime&gt;</span>
+<span class="w">            </span><span class="nt">&lt;Outcome&gt;</span>KO<span class="nt">&lt;/Outcome&gt;</span>
+<span class="w">            </span><span class="nt">&lt;OutcomeDetail&gt;</span>STP_INGEST_CONTROL_SIP.KO<span class="nt">&lt;/OutcomeDetail&gt;</span>
+<span class="w">            </span><span class="nt">&lt;OutcomeDetailMessage&gt;</span>Échec<span class="w"> </span>du<span class="w"> </span>processus<span class="w"> </span>du<span class="w"> </span>contrôle<span class="w"> </span>du<span class="w"> </span>bordereau<span class="w"> </span>du
+<span class="w">                </span>SIP<span class="nt">&lt;/OutcomeDetailMessage&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/Event&gt;</span>
+<span class="w">        </span><span class="nt">&lt;Event&gt;</span>
+<span class="w">            </span><span class="nt">&lt;EventTypeCode&gt;</span>CHECK_HEADER<span class="nt">&lt;/EventTypeCode&gt;</span>
+<span class="w">            </span><span class="nt">&lt;EventType&gt;</span>Vérification<span class="w"> </span>générale<span class="w"> </span>du<span class="w"> </span>bordereau<span class="w"> </span>de<span class="w"> </span>transfert<span class="nt">&lt;/EventType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;EventDateTime&gt;</span>2018-05-25T13:37:19.300<span class="nt">&lt;/EventDateTime&gt;</span>
+<span class="w">            </span><span class="nt">&lt;Outcome&gt;</span>KO<span class="nt">&lt;/Outcome&gt;</span>
+<span class="w">            </span><span class="nt">&lt;OutcomeDetail&gt;</span>CHECK_HEADER.KO<span class="nt">&lt;/OutcomeDetail&gt;</span>
+<span class="w">            </span><span class="nt">&lt;OutcomeDetailMessage&gt;</span>Échec<span class="w"> </span>de<span class="w"> </span>la<span class="w"> </span>vérification<span class="w"> </span>générale<span class="w"> </span>du<span class="w"> </span>bordereau<span class="w"> </span>de<span class="w"> </span>transfert
+<span class="w">                </span>Detail=<span class="w"> </span>OK:3<span class="w"> </span>KO:1<span class="nt">&lt;/OutcomeDetailMessage&gt;</span>
+<span class="w">            </span><span class="nt">&lt;EventDetailData&gt;</span>{&quot;evDetTechData&quot;:&quot;character<span class="w"> </span>content<span class="w"> </span>of<span class="w"> </span>element<span class="w"> </span>\&quot;Rule\&quot;<span class="w"> </span>invalid;<span class="w"> </span>must
+<span class="w">                </span>be<span class="w"> </span>equal<span class="w"> </span>to<span class="w"> </span>\&quot;APP-00001\&quot;&quot;,&quot;ArchivalProfile&quot;:&quot;PR-000018&quot;,&quot;EvDetailReq&quot;:&quot;Catherine
+<span class="w">                </span>JABLASY<span class="w"> </span>:<span class="w"> </span>mails&quot;,&quot;ArchivalAgreement&quot;:&quot;IC-000001&quot;}<span class="nt">&lt;/EventDetailData&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/Event&gt;</span>
+<span class="w">        </span><span class="nt">&lt;Event&gt;</span>
+<span class="w">            </span><span class="nt">&lt;EventTypeCode&gt;</span>CHECK_HEADER.CHECK_ARCHIVEPROFILE<span class="nt">&lt;/EventTypeCode&gt;</span>
+<span class="w">            </span><span class="nt">&lt;EventType&gt;</span>Vérification<span class="w"> </span>de<span class="w"> </span>la<span class="w"> </span>conformité<span class="w"> </span>au<span class="w"> </span>profil<span class="w"> </span>d&#39;archivage<span class="nt">&lt;/EventType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;EventDateTime&gt;</span>2018-05-25T13:37:19.300<span class="nt">&lt;/EventDateTime&gt;</span>
+<span class="w">            </span><span class="nt">&lt;Outcome&gt;</span>KO<span class="nt">&lt;/Outcome&gt;</span>
+<span class="w">            </span><span class="nt">&lt;OutcomeDetail&gt;</span>CHECK_HEADER.CHECK_ARCHIVEPROFILE.KO<span class="nt">&lt;/OutcomeDetail&gt;</span>
+<span class="w">            </span><span class="nt">&lt;OutcomeDetailMessage&gt;</span>Échec<span class="w"> </span>de<span class="w"> </span>la<span class="w"> </span>vérification<span class="w"> </span>de<span class="w"> </span>la<span class="w"> </span>conformité<span class="w"> </span>au<span class="w"> </span>profil<span class="w"> </span>d&#39;archivage
+<span class="w">                </span>Detail=<span class="w"> </span>KO:1<span class="nt">&lt;/OutcomeDetailMessage&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/Event&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/Operation&gt;</span>
 </pre></div>
 </div>
 <p><strong>Point d’attention :</strong><br />
@@ -3648,37 +3648,37 @@ Lors de cette étape :</p></li>
 <li><p>Si le contrat de gestion est inactif ou si la stratégie de stockage qu’il déclare n’existe pas, alors le transfert du SIP échouera à la tâche de vérification de la présence et du contrôle du contrat d’entrée.
 Exemple : message d’erreur sur la tâche de contrôle du contrat d’entrée.</p></li>
 </ul>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>    &lt;Operation&gt;
-        &lt;Event&gt;
-            &lt;EventTypeCode&gt;STP_INGEST_CONTROL_SIP&lt;/EventTypeCode&gt;
-            &lt;EventType&gt;Processus de contrôle du SIP&lt;/EventType&gt;
-            &lt;EventDateTime&gt;2019-10-15T15:08:24.999&lt;/EventDateTime&gt;
-            &lt;Outcome&gt;KO&lt;/Outcome&gt;
-            &lt;OutcomeDetail&gt;STP_INGEST_CONTROL_SIP.KO&lt;/OutcomeDetail&gt;
-            &lt;OutcomeDetailMessage&gt;Échec du processus du contrôle du bordereau du
-                SIP&lt;/OutcomeDetailMessage&gt;
-        &lt;/Event&gt;
-        &lt;Event&gt;
-            &lt;EventTypeCode&gt;CHECK_HEADER&lt;/EventTypeCode&gt;
-            &lt;EventType&gt;Vérification générale du bordereau de transfert&lt;/EventType&gt;
-            &lt;EventDateTime&gt;2019-10-15T15:08:24.999&lt;/EventDateTime&gt;
-            &lt;Outcome&gt;KO&lt;/Outcome&gt;
-            &lt;OutcomeDetail&gt;CHECK_HEADER.MANAGEMENT_CONTRACT_INACTIVE.KO&lt;/OutcomeDetail&gt;
-            &lt;OutcomeDetailMessage&gt;!CHECK_HEADER.MANAGEMENT_CONTRACT_INACTIVE.KO! Detail= OK:1
-                KO:1&lt;/OutcomeDetailMessage&gt;
-            &lt;EventDetailData&gt;{&quot;ArchivalAgreement&quot;:&quot;IC-000001&quot;,&quot;evDetTechData&quot;:&quot;Management Contract
-                inactive&quot;,&quot;EvDetailReq&quot;:&quot;2 images de lac&quot;}&lt;/EventDetailData&gt;
-        &lt;/Event&gt;
-        &lt;Event&gt;
-            &lt;EventTypeCode&gt;CHECK_HEADER.CHECK_CONTRACT_INGEST&lt;/EventTypeCode&gt;
-            &lt;EventType&gt;Vérification de la présence et du contrôle du contrat d&#39;entrée&lt;/EventType&gt;
-            &lt;EventDateTime&gt;2019-10-15T15:08:25&lt;/EventDateTime&gt;
-            &lt;Outcome&gt;KO&lt;/Outcome&gt;
-            &lt;OutcomeDetail&gt;CHECK_HEADER.CHECK_CONTRACT_INGEST.MANAGEMENT_CONTRACT_INACTIVE.KO&lt;/OutcomeDetail&gt;
-            &lt;OutcomeDetailMessage&gt;!CHECK_HEADER.CHECK_CONTRACT_INGEST.MANAGEMENT_CONTRACT_INACTIVE.KO!
-                Detail= KO:1&lt;/OutcomeDetailMessage&gt;
-        &lt;/Event&gt;
-    &lt;/Operation&gt;
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="nt">&lt;Operation&gt;</span>
+<span class="w">        </span><span class="nt">&lt;Event&gt;</span>
+<span class="w">            </span><span class="nt">&lt;EventTypeCode&gt;</span>STP_INGEST_CONTROL_SIP<span class="nt">&lt;/EventTypeCode&gt;</span>
+<span class="w">            </span><span class="nt">&lt;EventType&gt;</span>Processus<span class="w"> </span>de<span class="w"> </span>contrôle<span class="w"> </span>du<span class="w"> </span>SIP<span class="nt">&lt;/EventType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;EventDateTime&gt;</span>2019-10-15T15:08:24.999<span class="nt">&lt;/EventDateTime&gt;</span>
+<span class="w">            </span><span class="nt">&lt;Outcome&gt;</span>KO<span class="nt">&lt;/Outcome&gt;</span>
+<span class="w">            </span><span class="nt">&lt;OutcomeDetail&gt;</span>STP_INGEST_CONTROL_SIP.KO<span class="nt">&lt;/OutcomeDetail&gt;</span>
+<span class="w">            </span><span class="nt">&lt;OutcomeDetailMessage&gt;</span>Échec<span class="w"> </span>du<span class="w"> </span>processus<span class="w"> </span>du<span class="w"> </span>contrôle<span class="w"> </span>du<span class="w"> </span>bordereau<span class="w"> </span>du
+<span class="w">                </span>SIP<span class="nt">&lt;/OutcomeDetailMessage&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/Event&gt;</span>
+<span class="w">        </span><span class="nt">&lt;Event&gt;</span>
+<span class="w">            </span><span class="nt">&lt;EventTypeCode&gt;</span>CHECK_HEADER<span class="nt">&lt;/EventTypeCode&gt;</span>
+<span class="w">            </span><span class="nt">&lt;EventType&gt;</span>Vérification<span class="w"> </span>générale<span class="w"> </span>du<span class="w"> </span>bordereau<span class="w"> </span>de<span class="w"> </span>transfert<span class="nt">&lt;/EventType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;EventDateTime&gt;</span>2019-10-15T15:08:24.999<span class="nt">&lt;/EventDateTime&gt;</span>
+<span class="w">            </span><span class="nt">&lt;Outcome&gt;</span>KO<span class="nt">&lt;/Outcome&gt;</span>
+<span class="w">            </span><span class="nt">&lt;OutcomeDetail&gt;</span>CHECK_HEADER.MANAGEMENT_CONTRACT_INACTIVE.KO<span class="nt">&lt;/OutcomeDetail&gt;</span>
+<span class="w">            </span><span class="nt">&lt;OutcomeDetailMessage&gt;</span>!CHECK_HEADER.MANAGEMENT_CONTRACT_INACTIVE.KO!<span class="w"> </span>Detail=<span class="w"> </span>OK:1
+<span class="w">                </span>KO:1<span class="nt">&lt;/OutcomeDetailMessage&gt;</span>
+<span class="w">            </span><span class="nt">&lt;EventDetailData&gt;</span>{&quot;ArchivalAgreement&quot;:&quot;IC-000001&quot;,&quot;evDetTechData&quot;:&quot;Management<span class="w"> </span>Contract
+<span class="w">                </span>inactive&quot;,&quot;EvDetailReq&quot;:&quot;2<span class="w"> </span>images<span class="w"> </span>de<span class="w"> </span>lac&quot;}<span class="nt">&lt;/EventDetailData&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/Event&gt;</span>
+<span class="w">        </span><span class="nt">&lt;Event&gt;</span>
+<span class="w">            </span><span class="nt">&lt;EventTypeCode&gt;</span>CHECK_HEADER.CHECK_CONTRACT_INGEST<span class="nt">&lt;/EventTypeCode&gt;</span>
+<span class="w">            </span><span class="nt">&lt;EventType&gt;</span>Vérification<span class="w"> </span>de<span class="w"> </span>la<span class="w"> </span>présence<span class="w"> </span>et<span class="w"> </span>du<span class="w"> </span>contrôle<span class="w"> </span>du<span class="w"> </span>contrat<span class="w"> </span>d&#39;entrée<span class="nt">&lt;/EventType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;EventDateTime&gt;</span>2019-10-15T15:08:25<span class="nt">&lt;/EventDateTime&gt;</span>
+<span class="w">            </span><span class="nt">&lt;Outcome&gt;</span>KO<span class="nt">&lt;/Outcome&gt;</span>
+<span class="w">            </span><span class="nt">&lt;OutcomeDetail&gt;</span>CHECK_HEADER.CHECK_CONTRACT_INGEST.MANAGEMENT_CONTRACT_INACTIVE.KO<span class="nt">&lt;/OutcomeDetail&gt;</span>
+<span class="w">            </span><span class="nt">&lt;OutcomeDetailMessage&gt;</span>!CHECK_HEADER.CHECK_CONTRACT_INGEST.MANAGEMENT_CONTRACT_INACTIVE.KO!
+<span class="w">                </span>Detail=<span class="w"> </span>KO:1<span class="nt">&lt;/OutcomeDetailMessage&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/Event&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/Operation&gt;</span>
 </pre></div>
 </div>
 <p><strong>Point d’attention :</strong> Au terme de la version 5.RC, les paramètres liés à la définition d’une politique de préservation ne sont qu’informatifs. De facto, aucun contrôle n’est réalisé en entrée par rapport à cette politique.</p>

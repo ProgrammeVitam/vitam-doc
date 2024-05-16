@@ -1053,7 +1053,7 @@ Ces propriétés sont spécifiques à certaines catégories de règles de gestio
 <p>Afin de se prémunir contre une alimentation du référentiel des règles de gestion avec des durées trop courtes susceptibles de déclencher des actions indésirables sur la plate-forme (ex. : éliminations) – que cette tentative soit intentionnelle ou non –, il est possible de configurer une durée minimale pour chaque catégorie de règle. La solution logicielle Vitam vérifie alors que la durée saisie pour chaque champ du référentiel des règles de gestion est supérieure ou égale à la durée minimale définie.</p>
 <p>Cette configuration, optionnelle, est établie lors du paramétrage initial de la plate-forme par les administrateurs – fonctionnel pour la définition du besoin et technique<a class="footnote-reference brackets" href="#id23" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></a> pour la saisie réelle des informations – de chaque implémentation de la solution logicielle Vitam et définit, pour chaque tenant et pour chaque catégorie de règle, les durées minimales acceptables.</p>
 <p>Le fichier de configuration<a class="footnote-reference brackets" href="#id24" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>8<span class="fn-bracket">]</span></a> se présente comme suit (exemple fictif) :</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>listMinimumRuleDuration:
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span>listMinimumRuleDuration:
   2:
     AppraisalRule : 1 year
     DisseminationRule : 10 year
@@ -1086,9 +1086,9 @@ Ces propriétés sont spécifiques à certaines catégories de règles de gestio
 <p>Afin de se conformer à la réglementation relative à la protection du secret de la défense nationale et d’éviter les risques de compromission, la solution logicielle Vitam permet de définir, pour une implémentation donnée, les niveaux de protection du secret tolérés sur celle-ci.</p>
 <p>C’est au moment du déploiement de la solution logicielle Vitam que doivent être définis en configuration les niveaux de protection acceptés, notamment si l’implémentation ne doit pas pouvoir prendre en charge des archives classifiées. Cette liste des niveaux de protection acceptés peut être modifiée par la suite par l’administrateur technique<a class="footnote-reference brackets" href="#id25" id="id9" role="doc-noteref"><span class="fn-bracket">[</span>9<span class="fn-bracket">]</span></a>.</p>
 <p>Le fichier de configuration se présente comme suit (exemple fictif)<a class="footnote-reference brackets" href="#id26" id="id10" role="doc-noteref"><span class="fn-bracket">[</span>10<span class="fn-bracket">]</span></a> :</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>classificationLevel :
-allowList :  [Non protégé,Secret Défense,Confidentiel Défense]
-authorizeNotDefined: True
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">classificationLevel</span> <span class="p">:</span>
+<span class="n">allowList</span> <span class="p">:</span>  <span class="p">[</span><span class="n">Non</span> <span class="n">protégé</span><span class="p">,</span><span class="n">Secret</span> <span class="n">Défense</span><span class="p">,</span><span class="n">Confidentiel</span> <span class="n">Défense</span><span class="p">]</span>
+<span class="n">authorizeNotDefined</span><span class="p">:</span> <span class="kc">True</span>
 </pre></div>
 </div>
 <p>Dans l’exemple ci-dessus, l’implémentation n’acceptera que des unités archivistiques déclarant soit « Non protégé », soit « Confidentiel Défense », soit « Secret Défense » comme niveau de protection du secret (champ ClassificationLevel des métadonnées de gestion). Elle acceptera des unités archivistiques ne déclarant aucune information de classification.</p>
@@ -1114,8 +1114,8 @@ Cette configuration, optionnelle, est établie lors du paramétrage initial de l
 <li><p>rendre requêtables toutes les règles retournées en cas de demande d’accès à l’unité archivistique au moyen du paramètre « indexInheritedRulesWithRulesIdByTenant » (cf. service décrit dans la section 3.5.)<a class="footnote-reference brackets" href="#id29" id="id13" role="doc-noteref"><span class="fn-bracket">[</span>13<span class="fn-bracket">]</span></a>.
 Le fichier de configuration se présente comme suit (exemple fictif)<a class="footnote-reference brackets" href="#id30" id="id14" role="doc-noteref"><span class="fn-bracket">[</span>14<span class="fn-bracket">]</span></a> :</p></li>
 </ul>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>indexInheritedRulesWithAPIV2OutputByTenant: [&quot;0&quot;, &quot;1&quot;, &quot;2&quot;, &quot;3&quot;]
-indexInheritedRulesWithRulesIdByTenant: [&quot;0&quot;, &quot;1&quot;, &quot;2&quot;, &quot;4&quot;]
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">indexInheritedRulesWithAPIV2OutputByTenant</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;0&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">]</span>
+<span class="n">indexInheritedRulesWithRulesIdByTenant</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;0&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span> <span class="s2">&quot;4&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>Dans l’exemple ci-dessus :</p>
@@ -1730,7 +1730,7 @@ La présente annexe a vocation à :</p>
 • un séparateur de texte : guillemets simples ou doubles, espace vide.
 Il existe d’autres séparateurs de champ (point virgule, deux points, tabulation, espace, etc.), mais la solution logicielle Vitam ne les supporte pas. Il est interdit de les utiliser.</p>
 <p>Exemple de fichier CSV :</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>RuleId&quot;,&quot;RuleType&quot;,&quot;RuleValue&quot;,&quot;RuleDescription&quot;,&quot;RuleDuration&quot;,&quot;RuleMeasurement&quot;
+<div class="highlight-csv notranslate"><div class="highlight"><pre><span></span>RuleId&quot;,&quot;RuleType&quot;,&quot;RuleValue&quot;,&quot;RuleDescription&quot;,&quot;RuleDuration&quot;,&quot;RuleMeasurement&quot;
 &quot;APP-00001&quot;,&quot;AppraisalRule&quot;,&quot;Dossier individuel d’agent civil&quot;,&quot;Durée de conservation des dossiers individuels d’agents. L’échéance est calculée à partir de la date de naissance de l’agent&quot;,&quot;80&quot;,&quot;YEAR&quot;
 &quot;APP-00002&quot;,&quot;AppraisalRule&quot;,&quot;Offres non retenues des marchés&quot;,&quot;Durée de conservation des offres non retenues des marchés publics. L’échéance est calculée à partir de la date de notification du marché au titulaire&quot;,&quot;5&quot;,&quot;YEAR&quot;
 &quot;ACC-00001&quot;,&quot;AccessRule&quot;,&quot;Libre communicabilité&quot;,&quot;Délai de communicabilité applicable par défaut&quot;,&quot;0&quot;,&quot;YEAR&quot;

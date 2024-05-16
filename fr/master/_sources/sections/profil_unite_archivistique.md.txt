@@ -299,7 +299,7 @@ Lors de cette étape de vérification de la conformité entre le profil d’unit
 	-> alors le transfert du SIP échouera à la tâche de vérification de conformité aux profils d’unité archivistique, passera à la tâche suivante, mais n’aboutira pas. Un message de réponse (ArchiveTransferReply ou ATR) indiquera que le transfert a échoué à la tâche de vérification de la conformité au profil d’unité archivistique et précisera la première erreur rencontrée dans le détail de l’événement (EventDetailData)[^23].
 
 *Exemple :* message d’erreur sur la tâche de contrôle de conformité au profil d’unité archivistique.
-```json
+```xml
 <ArchiveUnit id="ID3">
                 <Management>
                     <LogBook>

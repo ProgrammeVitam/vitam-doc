@@ -633,7 +633,7 @@ Afin de se prémunir contre une alimentation du référentiel des règles de ges
 Cette configuration, optionnelle, est établie lors du paramétrage initial de la plate-forme par les administrateurs – fonctionnel pour la définition du besoin et technique[^7] pour la saisie réelle des informations – de chaque implémentation de la solution logicielle Vitam et définit, pour chaque tenant et pour chaque catégorie de règle, les durées minimales acceptables.
 
 Le fichier de configuration[^8] se présente comme suit (exemple fictif) :
-```json
+```yaml
 listMinimumRuleDuration:
   2:
     AppraisalRule : 1 year
@@ -661,7 +661,7 @@ Afin de se conformer à la réglementation relative à la protection du secret d
 C’est au moment du déploiement de la solution logicielle Vitam que doivent être définis en configuration les niveaux de protection acceptés, notamment si l’implémentation ne doit pas pouvoir prendre en charge des archives classifiées. Cette liste des niveaux de protection acceptés peut être modifiée par la suite par l’administrateur technique[^9].
 
 Le fichier de configuration se présente comme suit (exemple fictif)[^10] :
-```json
+```
 classificationLevel :
 allowList :  [Non protégé,Secret Défense,Confidentiel Défense]
 authorizeNotDefined: True
@@ -688,7 +688,7 @@ Il est aussi possible, en configurant la plate-forme, de compléter ce service p
 - rendre requêtables toutes les règles retournées en cas de demande d’accès à l’unité archivistique au moyen du paramètre « indexInheritedRulesWithRulesIdByTenant » (cf. service décrit dans la section 3.5.)[^13].
 Le fichier de configuration se présente comme suit (exemple fictif)[^14] :
 
-```json
+```
 indexInheritedRulesWithAPIV2OutputByTenant: ["0", "1", "2", "3"]
 indexInheritedRulesWithRulesIdByTenant: ["0", "1", "2", "4"]
 ```
@@ -1143,7 +1143,7 @@ Un fichier CSV représente des données tabulaires sous forme de valeurs sépar�
 Il existe d’autres séparateurs de champ (point virgule, deux points, tabulation, espace, etc.), mais la solution logicielle Vitam ne les supporte pas. Il est interdit de les utiliser.
 
 Exemple de fichier CSV :
-```json
+```csv
 RuleId","RuleType","RuleValue","RuleDescription","RuleDuration","RuleMeasurement"
 "APP-00001","AppraisalRule","Dossier individuel d’agent civil","Durée de conservation des dossiers individuels d’agents. L’échéance est calculée à partir de la date de naissance de l’agent","80","YEAR"
 "APP-00002","AppraisalRule","Offres non retenues des marchés","Durée de conservation des offres non retenues des marchés publics. L’échéance est calculée à partir de la date de notification du marché au titulaire","5","YEAR"
