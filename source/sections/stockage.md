@@ -237,7 +237,7 @@ Il n’y a pas de contrôle précis pour les stratégies utilisées pour le stoc
 ![](./medias/stockage/stockage_md.png)  
 *Exemple de déclarations pour une stratégie de stockage des métadonnées (strategyMD)*
 
-![](./medias/stockage/stockage_BDO.png)  
+![](./medias/stockage/stockage_bdo.png)  
 *Exemple de déclarations pour une stratégie de stockage des objets numériques (strategyBDO)*
 
 Il est recommandé, dans un contrat de gestion, de déclarer les mêmes stratégies pour les métadonnées des unités archivistiques et des métadonnées groupes d’objets techniques. À ce jour, aucun contrôle ne rend obligatoire cette règle. Néanmoins déclarer deux stratégies distinctes rompt la cohérence des données, il est donc fortement déconseillé de le faire.
