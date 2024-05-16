@@ -2435,9 +2435,9 @@ Le processus de mise à jour en masse des métadonnées descriptives des unités
 
 D’une façon synthétique, le workflow est décrit ainsi :
 
-![](./medias/modele_workflow/image14.gif)
+![](./medias/modele_workflow/image14.png)
 
-![](./medias/modele_workflow/image15.gif)
+![](./medias/modele_workflow/image15.png)
 
 #### Rapport de modification en masse des métadonnées de gestion des unités archivistiques
 
@@ -2656,7 +2656,7 @@ Le processus de mise à jour unitaire en masse des métadonnées descriptives de
 
 D’une façon synthétique, le workflow est décrit ainsi :
 
-![](./medias/modele_workflow/image20.gif)
+![](./medias/modele_workflow/image20.png)
 
 ### Rapport de modification unitaire en masse des métadonnées descriptives des unités archivistiques
 
@@ -2664,7 +2664,7 @@ Le rapport de modification unitaire en masse des métadonnées descriptives des 
 
 #### Exemple de fichier JSONL : rapport de modification unitaire en masse de métadonnées descriptives
 
-![](./medias/modele_workflow/image21.gif)
+![](./medias/modele_workflow/image21.png)
 
 #### Détail du rapport
 
@@ -2758,7 +2758,7 @@ Stockage du DIP STORE_MANIFEST (StoreDIP.java)
 
 D’une façon synthétique, le workflow est décrit ainsi :
 
-![](./medias/modele_workflow/image22.gif)
+![](./medias/modele_workflow/image22.png)
 
 Élimination
 ----
@@ -3014,9 +3014,9 @@ Lors de la phase d’analyse, le système procède d’une part à la vérificat
 
 D’une façon synthétique, le workflow est décrit ainsi :
 
-![](./medias/modele_workflow/image24.gif)
+![](./medias/modele_workflow/image24.png)
 
-![](./medias/modele_workflow/image25.gif)
+![](./medias/modele_workflow/image25.png)
 
 ![](./medias/modele_workflow/image26.jpeg)
 
@@ -3333,7 +3333,7 @@ Toutes les étapes, tâches et traitements sont journalisées dans le journal de
 
 D’une façon synthétique, le workflow est décrit ainsi :
 
-![](./medias/modele_workflow/image31.gif)
+![](./medias/modele_workflow/image31.png)
 
 #### Rapport de préparation du transfert
 
@@ -3630,7 +3630,7 @@ La restauration des métadonnées essentielles peut être demandée suite à la 
 
 D’une façon synthétique, le workflow est décrit ainsi :
 
-![](./medias/modele_workflow/image38.gif)
+![](./medias/modele_workflow/image38.png)
 
 ### Rapport de restauration de métadonnées essentielles des unités archivistiques
 
@@ -5219,11 +5219,11 @@ Toutes les étapes, tâches et traitements sont journalisées dans le journal de
 
 D’une façon synthétique, le workflow est décrit ainsi :
 
-![](./medias/modele_workflow/preservation.gif)
+![](./medias/modele_workflow/preservation.png)
 
 ![](./medias/modele_workflow/preservation2.png)
 
-![](./medias/modele_workflow/preservation3.gif)
+![](./medias/modele_workflow/preservation3.png)
 
 ### Rapport de préservation
 
@@ -5400,7 +5400,7 @@ Workflow de suppression des versions de GOT
 
 D’une façon synthétique, le workflow est décrit ainsi :
 
-![](./medias/modele_workflow/suppression_version_GOT.gif)
+![](./medias/modele_workflow/suppression_version_GOT.png)
 
 
 ### Rapport de suppression des versions des groupes d’objets
@@ -5410,7 +5410,7 @@ Cette section décrit la manière dont ce rapport est structuré.
 
 #### Exemple de JSON : rapport de suppression des versions des got
 
-![](./medias/modele_workflow/rapport_suppression_version_GOT.gif)
+![](./medias/modele_workflow/rapport_suppression_version_GOT.png)
 
 
 ####  Détail du rapport
