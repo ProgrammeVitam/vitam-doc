@@ -1261,9 +1261,9 @@ Les questions à étudier sont les suivantes :
     - une modélisation des données extraites doit-elle être mise en place au niveau national ou faut-il s’appuyer sur des modèles de données existants (ex. SEDA, PREMIS, METS, IPTC, etc.) ? Si la réponse est positive, qui doit en être l’initiateur et le gestionnaire ?
     - en cas d’appui sur un modèle de données existant, quelle attitude avoir avec l’organisme chargé de l’administration de celui-ci : une attitude passive de « consommateur » ? une attitude plus active de contribution à l’enrichissement du référentiel et à la vie de la communauté qui s’est constituée autour de celui-ci ?
     - en cas de contribution active :
-            ▪ chaque projet d’implémentation contribuera-t-il ?
-            ▪ comment seront formalisés les échanges avec l’administrateur du modèle ?
-            ▪ quelles sont les ressources, les moyens et les compétences à mettre en œuvre pour réaliser cette contribution ?
+        - chaque projet d’implémentation contribuera-t-il ?
+        - comment seront formalisés les échanges avec l’administrateur du modèle ?
+        - quelles sont les ressources, les moyens et les compétences à mettre en œuvre pour réaliser cette contribution ?
 
 #### La gestion opérationnelle de l’extraction de métadonnées internes
 

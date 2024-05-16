@@ -5039,8 +5039,8 @@ La quatrième et dernière partie « reportEntries » rend compte des vérific
     - « OperationCheckStatus » : le résultat du check de l’opération
     - « Details » : message de vérification de l’opération en question par rapport à la sécurisation
     - Dans le cas d’une opération d’entrée
-            ▪ « EvIdAppSession » : mention du contrat d’entrée utilisé lors de l’opération d’entrée
-            ▪ « agIdApp » : mention du contexte applicatif utilisé pour réaliser l’opération d’entrée
+        - « EvIdAppSession » : mention du contrat d’entrée utilisé lors de l’opération d’entrée
+        - « agIdApp » : mention du contexte applicatif utilisé pour réaliser l’opération d’entrée
 Et finalement le statut final de la vérification de l’objet.
 
 Préservation
