@@ -183,6 +183,8 @@ latex_documents = [
      u'Programme Vitam', 'manual'),
 ]
 
+latex_engine='lualatex'
+
 
 # -- Options for manual page output ------------------------------------------
 
