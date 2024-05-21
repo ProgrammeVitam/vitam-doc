@@ -1,21 +1,25 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="fr" >
+<html class="writer-html5" lang="fr" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Extraction des métadonnées techniques &mdash; Vitam documentation fonctionnelle</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=eea1f72d" />
+
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script src="../_static/translations.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f4732e6d"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/translations.js?v=bf059b8c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" /> 
@@ -147,11 +151,11 @@
            <div itemprop="articleBody">
              
   <section id="extraction-des-metadonnees-techniques">
-<h1>Extraction des métadonnées techniques<a class="headerlink" href="#extraction-des-metadonnees-techniques" title="Lien permanent vers cette rubrique"></a></h1>
+<h1>Extraction des métadonnées techniques<a class="headerlink" href="#extraction-des-metadonnees-techniques" title="Lien vers cette rubrique"></a></h1>
 <section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Lien permanent vers cette rubrique"></a></h2>
+<h2>Introduction<a class="headerlink" href="#introduction" title="Lien vers cette rubrique"></a></h2>
 <section id="documents-de-reference">
-<h3>Documents de référence<a class="headerlink" href="#documents-de-reference" title="Lien permanent vers cette rubrique"></a></h3>
+<h3>Documents de référence<a class="headerlink" href="#documents-de-reference" title="Lien vers cette rubrique"></a></h3>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p><strong>Document</strong></p></th>
@@ -160,15 +164,15 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-center"><p><a class="reference internal" href="preservation.html"><span class="doc std std-doc">Vitam – Gestion de la préservation</span></a></p></td>
+<tr class="row-even"><td class="text-center"><p><a class="reference internal" href="preservation.html"><span class="std std-doc">Vitam – Gestion de la préservation</span></a></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p><a class="reference internal" href="chantier_preservation_identification_format.html"><span class="doc std std-doc">Vitam – Identification des formats de fichiers</span></a></p></td>
+<tr class="row-odd"><td class="text-center"><p><a class="reference internal" href="chantier_preservation_identification_format.html"><span class="std std-doc">Vitam – Identification des formats de fichiers</span></a></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 </tr>
-<tr class="row-even"><td class="text-center"><p><a class="reference internal" href="chantier_preservation_validation_format.html"><span class="doc std std-doc">Vitam – Validation du format des fichiers</span></a></p></td>
+<tr class="row-even"><td class="text-center"><p><a class="reference internal" href="chantier_preservation_validation_format.html"><span class="std std-doc">Vitam – Validation du format des fichiers</span></a></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 </tr>
@@ -176,12 +180,12 @@
 </table>
 </section>
 <section id="presentation-du-document">
-<h3>Présentation du document<a class="headerlink" href="#presentation-du-document" title="Lien permanent vers cette rubrique"></a></h3>
+<h3>Présentation du document<a class="headerlink" href="#presentation-du-document" title="Lien vers cette rubrique"></a></h3>
 <p>Le présent document constitue une présentation de la problématique des métadonnées associées aux fichiers numériques et de leur extraction automatisée, et de la manière dont elle est abordée par le programme Vitam, aux fins de permettre la pérennisation à moyen et long terme des archives électroniques.</p>
 <p>Il fait partie d’un ensemble de documents liés aux questions d’identification et de validation de formats.</p>
 </section>
 <section id="definitions">
-<h3>Définitions<a class="headerlink" href="#definitions" title="Lien permanent vers cette rubrique"></a></h3>
+<h3>Définitions<a class="headerlink" href="#definitions" title="Lien vers cette rubrique"></a></h3>
 <p><strong>Conversion de format :</strong> opération qui consiste à convertir le document dans un format différent de celui dans lequel il était précédemment encodé. Elle doit préserver la fidélité du document (Source : NF Z 42-013).</p>
 <p><strong>Format de fichier :</strong> ensemble des règles et algorithmes permettant d’organiser l’information dans un objet numérique, par exemple : spécifier le codage des couleurs des pixels d’une image ; définir un algorithme de compression des données et l’organisation de ces données dans un fichier (formats PNG, TIFF…) ; spécifier l’organisation et la structuration d’informations textuelles à partir de l’encodage élémentaire des caractères (formats SGML, XML) ; définir comment les quatre informations élémentaires que sont la mantisse (nombre entier positif), l’exposant (nombre entier positif), le signe de l’exposant et le signe de la mantisse (caractères + et -) sont organisées pour représenter un nombre réel sous forme numérique (cf. standard ANSI/IEEE 754-1985) (Source : PIAF).</p>
 <p><strong>Identification de format :</strong> processus permettant de définir précisément le format d’un fichier numérique, qu’il s’agisse d’un conteneur ou non.</p>
@@ -191,11 +195,11 @@
 </section>
 </section>
 <section id="presentation-de-la-problematique">
-<h2>Présentation de la problématique<a class="headerlink" href="#presentation-de-la-problematique" title="Lien permanent vers cette rubrique"></a></h2>
+<h2>Présentation de la problématique<a class="headerlink" href="#presentation-de-la-problematique" title="Lien vers cette rubrique"></a></h2>
 <section id="contexte-metadonnee-et-standards-de-description">
-<h3>Contexte : métadonnée et standards de description<a class="headerlink" href="#contexte-metadonnee-et-standards-de-description" title="Lien permanent vers cette rubrique"></a></h3>
+<h3>Contexte : métadonnée et standards de description<a class="headerlink" href="#contexte-metadonnee-et-standards-de-description" title="Lien vers cette rubrique"></a></h3>
 <section id="quest-ce-quune-metadonnee-interne">
-<h4>Qu’est-ce qu’une métadonnée interne ?<a class="headerlink" href="#quest-ce-quune-metadonnee-interne" title="Lien permanent vers cette rubrique"></a></h4>
+<h4>Qu’est-ce qu’une métadonnée interne ?<a class="headerlink" href="#quest-ce-quune-metadonnee-interne" title="Lien vers cette rubrique"></a></h4>
 <p>Les fichiers numériques sont accompagnés de métadonnées leur permettant d’être identifiés et utilisables, c’est-à-dire exécutés, interrogés, consultés, modifiés ou imprimés.</p>
 <p>Ces métadonnées peuvent être de deux types :</p>
 <ul class="simple">
@@ -214,10 +218,10 @@ Elles peuvent être redondantes. Néanmoins, leur coexistence peut s’avérer u
 <p>Les métadonnées internes, associées à des fichiers numériques, font l’objet du présent document. Elles obéissent à des standards spécifiques, reconnus par un certain nombre d’outils permettant leur édition, leur exploitation et leur extraction.</p>
 </section>
 <section id="quels-sont-les-standards-existant-pour-la-description-des-metadonnees-internes">
-<h4>Quels sont les standards existant pour la description des métadonnées internes ?<a class="headerlink" href="#quels-sont-les-standards-existant-pour-la-description-des-metadonnees-internes" title="Lien permanent vers cette rubrique"></a></h4>
+<h4>Quels sont les standards existant pour la description des métadonnées internes ?<a class="headerlink" href="#quels-sont-les-standards-existant-pour-la-description-des-metadonnees-internes" title="Lien vers cette rubrique"></a></h4>
 <p>Les standards existants pour décrire les métadonnées internes varient en fonction des formats de fichiers.</p>
 <section id="metadonnees-internes-des-images-fixes">
-<h5>Métadonnées internes des images fixes<a class="headerlink" href="#metadonnees-internes-des-images-fixes" title="Lien permanent vers cette rubrique"></a></h5>
+<h5>Métadonnées internes des images fixes<a class="headerlink" href="#metadonnees-internes-des-images-fixes" title="Lien vers cette rubrique"></a></h5>
 <p>Les formats correspondant à des images fixes ont fait l’objet de travaux de standardisation de leurs métadonnées internes dès les années 1990. De ces travaux se distinguent deux types de métadonnées internes :</p>
 <ul class="simple">
 <li><p>des métadonnées appelées techniques, relatives à la prise de vue et fournies automatiquement par l’appareil numérique (fabricant et modèle de l’appareil, hauteur et largeur de l’image, date et heure de la prise de vue, orientation, résolution, temps d’exposition, ouverture, présence d’un flash, etc.). Ces métadonnées sont formalisées par le <strong>format EXIF</strong> (Exchangeable Image File), développé en 1995 par la JEIDA (Japan Electronic Industry Development Association) ; la version 2.3 actuelle date de 2010 et a été révisée en 2012[^2]. Ce format, quoique non standardisé et non maintenu par une organisation, est utilisé par la majeure partie des constructeurs d’appareils numériques.</p></li>
@@ -237,7 +241,7 @@ Des mises à jour de l’IPTC ont été faites en 2009, 2014 et 2016 et 2017[^4]
 <em>Métadonnées XMP d’une photographie éditées avec l’outil XnView</em></p>
 </section>
 <section id="metadonnees-internes-des-fichiers-bureautiques">
-<h5>Métadonnées internes des fichiers bureautiques<a class="headerlink" href="#metadonnees-internes-des-fichiers-bureautiques" title="Lien permanent vers cette rubrique"></a></h5>
+<h5>Métadonnées internes des fichiers bureautiques<a class="headerlink" href="#metadonnees-internes-des-fichiers-bureautiques" title="Lien vers cette rubrique"></a></h5>
 <p>Les fichiers de type bureautique embarquent également des métadonnées internes ou « propriétés ». Elles sont visibles et modifiables depuis l’onglet « Fichier &gt; Propriétés du document », présent dans l’interface de l’outil permettant de consulter ce type de fichiers. La liste de ces métadonnées est souvent réduite à :</p>
 <ul class="simple">
 <li><p>des propriétés standards telles que l’auteur, le titre et l’objet du document. Chacun est libre de renseigner ce type de métadonnées ;</p></li>
@@ -254,7 +258,7 @@ Des mises à jour de l’IPTC ont été faites en 2009, 2014 et 2016 et 2017[^4]
 </ul>
 </section>
 <section id="metadonnees-internes-des-images-animees">
-<h5>Métadonnées internes des images animées<a class="headerlink" href="#metadonnees-internes-des-images-animees" title="Lien permanent vers cette rubrique"></a></h5>
+<h5>Métadonnées internes des images animées<a class="headerlink" href="#metadonnees-internes-des-images-animees" title="Lien vers cette rubrique"></a></h5>
 <p>Les métadonnées internes d’images animées obéissent à des normes très variées, sans qu’une norme précise se distingue particulièrement.</p>
 <p>Parmi elles, on peut distinguer :</p>
 <ul class="simple">
@@ -286,7 +290,7 @@ L’IPTC ambitionne d’ajouter à cette liste de nouveaux formats et standards,
 </ul>
 </section>
 <section id="metadonnees-internes-des-enregistrements-sonores">
-<h5>Métadonnées internes des enregistrements sonores<a class="headerlink" href="#metadonnees-internes-des-enregistrements-sonores" title="Lien permanent vers cette rubrique"></a></h5>
+<h5>Métadonnées internes des enregistrements sonores<a class="headerlink" href="#metadonnees-internes-des-enregistrements-sonores" title="Lien vers cette rubrique"></a></h5>
 <p>Chaque format correspondant à des enregistrements sonores dispose de son propre modèle de métadonnées. Parmi ces modèles de métadonnées, on peut citer :</p>
 <ul class="simple">
 <li><p>le standard ID3, abréviation de « IDentify an MP3 », développé pour décrire les fichiers au format MPEG3[^13]. Conçu en 1996 par Eric Kemp, il se limite au départ à 7 métadonnées de taille fixe, disposées en fin de fichier sur 128 bits (identifiant « TAG », titre, nom de l’artiste, nom de l’album, année de parution, genre, commentaire). En 1997, Michael Mutschler ajoute une huitième métadonnée (le numéro de la piste) tout en conservant la longueur de 128 bits.
@@ -313,9 +317,9 @@ Le standard a connu deux révisions : l’une en 2001 avec l’ajout de l’UMI
 </section>
 </section>
 <section id="pourquoi-et-comment-extraire-des-metadonnees-internes">
-<h3>Pourquoi et comment extraire des métadonnées internes ?<a class="headerlink" href="#pourquoi-et-comment-extraire-des-metadonnees-internes" title="Lien permanent vers cette rubrique"></a></h3>
+<h3>Pourquoi et comment extraire des métadonnées internes ?<a class="headerlink" href="#pourquoi-et-comment-extraire-des-metadonnees-internes" title="Lien vers cette rubrique"></a></h3>
 <section id="pourquoi-extraire-les-metadonnees-internes">
-<h4>Pourquoi extraire les métadonnées internes ?<a class="headerlink" href="#pourquoi-extraire-les-metadonnees-internes" title="Lien permanent vers cette rubrique"></a></h4>
+<h4>Pourquoi extraire les métadonnées internes ?<a class="headerlink" href="#pourquoi-extraire-les-metadonnees-internes" title="Lien vers cette rubrique"></a></h4>
 <p>L’objectif de la préservation numérique est de conserver dans le temps des fichiers numériques dans une forme utilisable et exploitable, sans perte de métadonnées, internes ou externes. Dès lors qu’intervient une conversion ou transformation de format, il y a un risque de perte des métadonnées internes. Pour une plate-forme d’archivage, il est donc important de disposer de mécanismes permettant d’assurer la prise en charge et la conservation des métadonnées internes dans une forme utilisable et exploitable dans le temps.</p>
 <p>L’extraction de métadonnées est un des mécanismes mis en œuvre pour effectuer cette prise en charge. Son objectif est d’extraire les métadonnées internes d’un fichier numérique afin de les exploiter et/ou de les conserver en dehors de celui-ci ou de les réintégrer dans la nouvelle version du fichier numérique, après conversion.</p>
 <p>Cette action répond en outre à deux besoins supplémentaires :</p>
@@ -340,7 +344,7 @@ La question est alors de savoir à quel point la non-conformité d’un fichier 
 <p>L’extraction de métadonnées internes présente donc un degré de complexité proportionnel à celle des spécifications de ces dernières. Si certains formats disposent de modèles de métadonnées internes très simples, d’autres, comme les formats représentant des images fixes ou animées, sont en revanche très complexes, car ils permettent d’associer dans un même fichier une multitude de modèles de métadonnées internes, d’embarquer des fichiers (vidéo ou vignette), d’utiliser un encodage particulier ou des polices de caractères embarquées ou non.</p>
 </section>
 <section id="comment-ca-marche">
-<h4>Comment ça marche ?<a class="headerlink" href="#comment-ca-marche" title="Lien permanent vers cette rubrique"></a></h4>
+<h4>Comment ça marche ?<a class="headerlink" href="#comment-ca-marche" title="Lien vers cette rubrique"></a></h4>
 <p>L’extraction de métadonnées internes est réalisée au moyen d’outils logiciels, génériques ou spécifiques, conçus et réalisés par différents organismes – concepteurs de formats, éditeurs de logiciels, spécialistes de la préservation numérique – pour différents publics – développeurs, utilisateurs, spécialistes de la préservation numérique.</p>
 <p>Ces outils lisent les fichiers numériques qui leur sont soumis, permettent d’éditer leurs métadonnées internes, de les modifier et de les extraire sous la forme d’un fichier au format pivot (par exemple, XML ou CSV) et selon un formalisme et un encodage propres à chaque outil (ex : ASCII, RDF, METS, etc.).</p>
 <p>De là, découlent plusieurs conséquences :</p>
@@ -372,11 +376,11 @@ La question est alors de savoir à quel point la non-conformité d’un fichier 
 </section>
 </section>
 <section id="les-outils-dedition-et-dextraction-des-metadonnees-internes">
-<h3>Les outils d’édition et d’extraction des métadonnées internes<a class="headerlink" href="#les-outils-dedition-et-dextraction-des-metadonnees-internes" title="Lien permanent vers cette rubrique"></a></h3>
+<h3>Les outils d’édition et d’extraction des métadonnées internes<a class="headerlink" href="#les-outils-dedition-et-dextraction-des-metadonnees-internes" title="Lien vers cette rubrique"></a></h3>
 <section id="outils-generiques">
-<h4>Outils génériques<a class="headerlink" href="#outils-generiques" title="Lien permanent vers cette rubrique"></a></h4>
+<h4>Outils génériques<a class="headerlink" href="#outils-generiques" title="Lien vers cette rubrique"></a></h4>
 <section id="apache-tika">
-<h5>Apache Tika<a class="headerlink" href="#apache-tika" title="Lien permanent vers cette rubrique"></a></h5>
+<h5>Apache Tika<a class="headerlink" href="#apache-tika" title="Lien vers cette rubrique"></a></h5>
 <p>Site web : http://tika.apache.org/<br />
 Github : https://github.com/apache/tika<br />
 Langage : JAVA<br />
@@ -432,7 +436,7 @@ Licence : Apache License (version 2.0.), compatible avec la licence GPL</p>
 </table>
 </section>
 <section id="exiftool">
-<h5>ExifTool<a class="headerlink" href="#exiftool" title="Lien permanent vers cette rubrique"></a></h5>
+<h5>ExifTool<a class="headerlink" href="#exiftool" title="Lien vers cette rubrique"></a></h5>
 <p>Github : https://www.sno.phy.queensu.ca/~phil/exiftool/<br />
 Langage : Perl<br />
 Dernière mise à jour : 2 janvier 2020 (version 11.81.)<br />
@@ -484,7 +488,7 @@ Licence : GNU Licence</p>
 </table>
 </section>
 <section id="jhove">
-<h5>JHOVE<a class="headerlink" href="#jhove" title="Lien permanent vers cette rubrique"></a></h5>
+<h5>JHOVE<a class="headerlink" href="#jhove" title="Lien vers cette rubrique"></a></h5>
 <p>Site web : http://jhove.openpreservation.org/<br />
 Github : https://github.com/openpreserve/jhove<br />
 Langage : JAVA<br />
@@ -537,7 +541,7 @@ Clients : Archivematica, CINES, Rosetta</p>
 </table>
 </section>
 <section id="metadata-extraction-tool">
-<h5>Metadata Extraction Tool<a class="headerlink" href="#metadata-extraction-tool" title="Lien permanent vers cette rubrique"></a></h5>
+<h5>Metadata Extraction Tool<a class="headerlink" href="#metadata-extraction-tool" title="Lien vers cette rubrique"></a></h5>
 <p>Site web : http://meta-extractor.sourceforge.net/<br />
 Github : https://github.com/DIA-NZ/Metadata-Extraction-Tool<br />
 Langage : JAVA et XML<br />
@@ -588,7 +592,7 @@ Clients : Bibliothèque nationale de Nouvelle-Zélande</p>
 </table>
 </section>
 <section id="metadata-extractor">
-<h5>Metadata Extractor<a class="headerlink" href="#metadata-extractor" title="Lien permanent vers cette rubrique"></a></h5>
+<h5>Metadata Extractor<a class="headerlink" href="#metadata-extractor" title="Lien vers cette rubrique"></a></h5>
 <p>Site web : https://drewnoakes.com/code/exif/<br />
 Github : https://github.com/drewnoakes/metadata-extractor<br />
 Langage : JAVA et C#<br />
@@ -629,7 +633,7 @@ Licence : Apache License version 2</p>
 </table>
 </section>
 <section id="xnview">
-<h5>XnView<a class="headerlink" href="#xnview" title="Lien permanent vers cette rubrique"></a></h5>
+<h5>XnView<a class="headerlink" href="#xnview" title="Lien vers cette rubrique"></a></h5>
 <p>Site web : https://www.xnview.com/fr<br />
 Langage : C, QT<br />
 Dernière mise à jour : 12 décembre 2019 (version 2.49.2.)<br />
@@ -655,9 +659,9 @@ Il permet d’éditer plus de 500 formats, tels que les formats GIF, TIFF, JPEG,
 </section>
 </section>
 <section id="outils-specifiques">
-<h4>Outils spécifiques<a class="headerlink" href="#outils-specifiques" title="Lien permanent vers cette rubrique"></a></h4>
+<h4>Outils spécifiques<a class="headerlink" href="#outils-specifiques" title="Lien vers cette rubrique"></a></h4>
 <section id="bwf-metaedit">
-<h5>BWF MetaEdit<a class="headerlink" href="#bwf-metaedit" title="Lien permanent vers cette rubrique"></a></h5>
+<h5>BWF MetaEdit<a class="headerlink" href="#bwf-metaedit" title="Lien vers cette rubrique"></a></h5>
 <p>Site web : https://mediaarea.net/BWFMetaEdit<br />
 Github : https://github.com/MediaArea/BWFMetaEdit<br />
 Langage : ?<br />
@@ -702,7 +706,7 @@ Il est possible de :</p>
 </table>
 </section>
 <section id="epubcheck">
-<h5>Epubcheck<a class="headerlink" href="#epubcheck" title="Lien permanent vers cette rubrique"></a></h5>
+<h5>Epubcheck<a class="headerlink" href="#epubcheck" title="Lien vers cette rubrique"></a></h5>
 <p>Github : https://github.com/idpf/epubcheck<br />
 Langage : JAVA<br />
 Dernière mise à jour du code : 19 juillet 2019 (4.2.2.)<br />
@@ -740,7 +744,7 @@ Il permet à la fois de valider un fichier au format EPUB et, depuis la version 
 </table>
 </section>
 <section id="exifer">
-<h5>Exifer<a class="headerlink" href="#exifer" title="Lien permanent vers cette rubrique"></a></h5>
+<h5>Exifer<a class="headerlink" href="#exifer" title="Lien vers cette rubrique"></a></h5>
 <p>Site web : http://www.exifer.friedemann.info/<br />
 Langage : ?<br />
 Dernière mise à jour : 18 septembre 2002 (version 2.1.5.)<br />
@@ -797,7 +801,7 @@ Il offre néanmoins un certain nombre de fonctionnalités :</p>
 </table>
 </section>
 <section id="exiv2">
-<h5>Exiv2<a class="headerlink" href="#exiv2" title="Lien permanent vers cette rubrique"></a></h5>
+<h5>Exiv2<a class="headerlink" href="#exiv2" title="Lien vers cette rubrique"></a></h5>
 <p>Site web : http://www.exiv2.org/<br />
 Github : https://github.com/Exiv2/exiv2<br />
 Langage : C++<br />
@@ -835,7 +839,7 @@ Licence : GNU General Public License</p>
 </table>
 </section>
 <section id="imagemagick">
-<h5>ImageMagick<a class="headerlink" href="#imagemagick" title="Lien permanent vers cette rubrique"></a></h5>
+<h5>ImageMagick<a class="headerlink" href="#imagemagick" title="Lien vers cette rubrique"></a></h5>
 <p>Site web : https://www.imagemagick.org/script/index.php<br />
 Dépôt du code : https://github.com/ImageMagick<br />
 Langage : C<br />
@@ -860,7 +864,7 @@ Licence : Apache License version 2.0.</p>
 </table>
 </section>
 <section id="jpylizer">
-<h5>Jpylizer<a class="headerlink" href="#jpylizer" title="Lien permanent vers cette rubrique"></a></h5>
+<h5>Jpylizer<a class="headerlink" href="#jpylizer" title="Lien vers cette rubrique"></a></h5>
 <p>Site web : http://jpylyzer.openpreservation.org/<br />
 Github : https://github.com/openpreserve/jpylyzer<br />
 Langage : Python<br />
@@ -899,7 +903,7 @@ Clients : Bibliothèque nationale de France</p>
 </table>
 </section>
 <section id="mediainfo">
-<h5>MediaInfo<a class="headerlink" href="#mediainfo" title="Lien permanent vers cette rubrique"></a></h5>
+<h5>MediaInfo<a class="headerlink" href="#mediainfo" title="Lien vers cette rubrique"></a></h5>
 <p>Site web : https://mediaarea.net/fr/MediaInfo<br />
 Github : https://github.com/MediaArea/MediaInfo / https://sourceforge.net/projects/mediainfo/<br />
 Langage : C++<br />
@@ -950,7 +954,7 @@ Il permet de lire et d’exporter sous différentes formes les informations tech
 </table>
 </section>
 <section id="pdf-metadata-editor">
-<h5>PDF Metadata Editor<a class="headerlink" href="#pdf-metadata-editor" title="Lien permanent vers cette rubrique"></a></h5>
+<h5>PDF Metadata Editor<a class="headerlink" href="#pdf-metadata-editor" title="Lien vers cette rubrique"></a></h5>
 <p>Site web : http://broken-by.me/pdf-metadata-editor/<br />
 Github : https://github.com/zaro/pdf-metadata-editor<br />
 Langage : JAVA<br />
@@ -1001,10 +1005,10 @@ Il permet de :</p>
 </section>
 </section>
 <section id="les-retours-dexperiences">
-<h3>Les retours d’expériences<a class="headerlink" href="#les-retours-dexperiences" title="Lien permanent vers cette rubrique"></a></h3>
+<h3>Les retours d’expériences<a class="headerlink" href="#les-retours-dexperiences" title="Lien vers cette rubrique"></a></h3>
 <p>La finalité et le besoin de l’extraction de métadonnées dans le cadre d’une politique de préservation numérique peuvent porter à confusion et poser question. Voici six exemples de son utilité au sein d’institutions publiques.</p>
 <section id="bnf-lextraction-de-metadonnees-pour-completer-les-metadonnees-de-preservation">
-<h4>BnF : l’extraction de métadonnées pour compléter les métadonnées de préservation<a class="headerlink" href="#bnf-lextraction-de-metadonnees-pour-completer-les-metadonnees-de-preservation" title="Lien permanent vers cette rubrique"></a></h4>
+<h4>BnF : l’extraction de métadonnées pour compléter les métadonnées de préservation<a class="headerlink" href="#bnf-lextraction-de-metadonnees-pour-completer-les-metadonnees-de-preservation" title="Lien vers cette rubrique"></a></h4>
 <p>La Bibliothèque nationale de France (BnF) dispose d’un système d’archivage électronique nommé SPAR (Système de Préservation et d’Archivage Réparti) depuis mai 2010. En fonction de la provenance des lots d’archives, qu’elle maîtrise plus ou moins, et des formats contenus dans ces lots d’archives, elle a décliné un niveau de prise en charge, allant d’un simple stockage de fichiers à une conservation maîtrisée.</p>
 <p>La BnF procède de manière systématique à une extraction de métadonnées internes seulement quand le format et la provenance des fichiers numériques sont maîtrisés. Cette extraction, ou étape de « caractérisation », est réalisée lors du processus d’analyse des fichiers, après leur identification et leur validation[^27].</p>
 <p>En fonction du format, elle utilise des outils d’extraction différents, ainsi qu’un type de métadonnées à extraire :</p>
@@ -1075,7 +1079,7 @@ L’extraction de métadonnées est considérée comme une action de préservati
 <p>Il est à noter que cette extraction ou « caractérisation » intervient uniquement quand le format et la chaîne de production sont bien connus et maîtrisés par la BnF, c’est-à-dire quand cette dernière est en mesure de savoir quelles métadonnées internes ont été systématiquement intégrées aux fichiers numériques. Elle procède ainsi par exemple à une caractérisation systématique des métadonnées internes des lots d’archives issus de ses campagnes de numérisation à des fins de préservation.</p>
 </section>
 <section id="huma-num-lextraction-de-metadonnees-a-des-fins-de-conservation">
-<h4>Huma-Num : l’extraction de métadonnées à des fins de conservation<a class="headerlink" href="#huma-num-lextraction-de-metadonnees-a-des-fins-de-conservation" title="Lien permanent vers cette rubrique"></a></h4>
+<h4>Huma-Num : l’extraction de métadonnées à des fins de conservation<a class="headerlink" href="#huma-num-lextraction-de-metadonnees-a-des-fins-de-conservation" title="Lien vers cette rubrique"></a></h4>
 <p>Huma-Num est une très grande infrastructure de recherche (TGIR) visant à faciliter le tournant numérique de la recherche en sciences humaines et sociales. Elle accompagne en particulier les projets de préservation des données de la recherche et en finance l’archivage au CINES. C’est à ce titre qu’elle est intervenu sur les archives numériques de l’Institut de Recherche et d’Histoire des Textes (IRHT)[^28].<br />
 Depuis 1979, cet institut a pour mission de reproduire les manuscrits sous forme de microfilm, puis sous forme numérique (format DNG), et de mettre à disposition des chercheurs ces copies (format TIFF). En 2013, ces données représentent plus de 40 To de données répartis sur plus de 2 millions de fichiers, conservés au format TIFF sur l’infrastructure de Huma-Num.</p>
 <p>En 2015, il est décidé de procéder à l’archivage de ces données au CINES, non pas au format TIFF, mais au format JPEG2000, en utilisant l’outil de conversion KAKADU.</p>
@@ -1094,7 +1098,7 @@ Elles n’ont pas été réinjectées sciemment dans les fichiers convertis en J
 <p>Dans ce contexte, l’extraction de métadonnées internes vers un fichier XML/RDF, dont le modèle de description est basé sur METS et TEI, permet leur préservation dans un système d’archivage électronique. Elle a permis également de mettre au jour des problèmes d’encodage dans les fichiers numériques, problèmes qui seraient passés inaperçus sans cette opération d’extraction.</p>
 </section>
 <section id="norwegian-research-council-lextraction-de-metadonnees-pour-planifier-une-migration-29">
-<h4>Norwegian Research Council : l’extraction de métadonnées pour planifier une migration[^29]<a class="headerlink" href="#norwegian-research-council-lextraction-de-metadonnees-pour-planifier-une-migration-29" title="Lien permanent vers cette rubrique"></a></h4>
+<h4>Norwegian Research Council : l’extraction de métadonnées pour planifier une migration[^29]<a class="headerlink" href="#norwegian-research-council-lextraction-de-metadonnees-pour-planifier-une-migration-29" title="Lien vers cette rubrique"></a></h4>
 <p>Quand on réalise une migration de plate-forme ou de données, la logique veut qu’on planifie l’opération, qu’on réalise des tests, puis qu’on la déploie. L’un des prérequis à cette réalisation est d’avoir à disposition les informations nécessaires sur l’infrastructure technique, les caractéristiques et la provenance des fichiers numériques, ainsi que les règles de préservation et de gestion.<br />
 Pour obtenir ces informations, il est possible de recourir à une extraction de métadonnées au moyen d’outils d’extraction, mais le Norwegian Research Council a constaté que :</p>
 <ul class="simple">
@@ -1128,7 +1132,7 @@ De cette expérience, on peut retenir les points suivants :</p>
 </ul>
 </section>
 <section id="national-library-of-australia-lanalyse-comparee-des-outils-dextraction-pour-identifier-des-recommandations">
-<h4>National Library of Australia : l’analyse comparée des outils d’extraction pour identifier des recommandations<a class="headerlink" href="#national-library-of-australia-lanalyse-comparee-des-outils-dextraction-pour-identifier-des-recommandations" title="Lien permanent vers cette rubrique"></a></h4>
+<h4>National Library of Australia : l’analyse comparée des outils d’extraction pour identifier des recommandations<a class="headerlink" href="#national-library-of-australia-lanalyse-comparee-des-outils-dextraction-pour-identifier-des-recommandations" title="Lien vers cette rubrique"></a></h4>
 <p>La National Library of Australia a réalisé une étude comparative sur des outils pouvant être utilisés dans le cadre d’activités portant sur la préservation numérique[^30]. L’objectif était d’en retirer des bénéfices dans les spécifications et le développement de systèmes devant assurer des opérations de préservation au moyen d’outils logiciels.</p>
 <p>En plus de quatre outils d’identification de formats, cinq outils d’extraction de métadonnées internes ont fait l’objet de cette étude :</p>
 <ul class="simple">
@@ -1181,7 +1185,7 @@ De là découle la nécessité de filtrer les métadonnées extraites, afin de n
 </ul>
 </section>
 <section id="centre-for-long-term-digital-preservation-lanalyse-comparee-des-outils-dextraction-pour-identifier-des-recommandations">
-<h4>Centre for Long-term Digital Preservation : l’analyse comparée des outils d’extraction pour identifier des recommandations<a class="headerlink" href="#centre-for-long-term-digital-preservation-lanalyse-comparee-des-outils-dextraction-pour-identifier-des-recommandations" title="Lien permanent vers cette rubrique"></a></h4>
+<h4>Centre for Long-term Digital Preservation : l’analyse comparée des outils d’extraction pour identifier des recommandations<a class="headerlink" href="#centre-for-long-term-digital-preservation-lanalyse-comparee-des-outils-dextraction-pour-identifier-des-recommandations" title="Lien vers cette rubrique"></a></h4>
 <p>Le Centre for Long-term Digital Preservation (LDP Centre ou LDB-centrum) regroupe quatre organisations oeuvrant ensemble pour assurer la préservation et l’accès du numérique sur le long terme : Archives nationales de Suède, Bibliothèque nationale de Suède (National Library of Sweden), Université de Technologie de Lulea, ville de Boden. Depuis 2007, ces dernières coopèrent dans un programme nommé CODA.<br />
 En 2008, le projet CODA-META a eu pour objectif de tester et évaluer des outils d’extraction de métadonnées[^33]. Contrairement à l’analyse pratiquée par la National Library of Australia, la demande était de confronter l’extraction réalisée au regard d’une liste de métadonnées utilisées par la National Library of Sweden, puis au regard des métadonnées techniques propres à un type de format (TIFF, format textuel, audio, vidéo).</p>
 <p>Ont été testés les outils suivant :</p>
@@ -1200,7 +1204,7 @@ En 2008, le projet CODA-META a eu pour objectif de tester et évaluer des outils
 <li><p>16 fichiers qui ont fait l’objet d’un enrichissement de métadonnées, afin de vérifier si ces dernières étaient bien extraites par les différents outils.</p></li>
 </ul>
 <section id="tests-au-regard-des-metadonnees-de-la-national-library-of-sweden">
-<h5>Tests au regard des métadonnées de la National Library of Sweden<a class="headerlink" href="#tests-au-regard-des-metadonnees-de-la-national-library-of-sweden" title="Lien permanent vers cette rubrique"></a></h5>
+<h5>Tests au regard des métadonnées de la National Library of Sweden<a class="headerlink" href="#tests-au-regard-des-metadonnees-de-la-national-library-of-sweden" title="Lien vers cette rubrique"></a></h5>
 <p>Au regard de la liste de métadonnées internes de la National Library of Sweden, ExifTool l’emporte, quel que soit le type de fichier ayant fait l’objet d’une extraction.
 Il semble, par ailleurs, plus facile d’extraire des métadonnées issues de fichiers image, que des métadonnées issues de fichiers audio et vidéo.</p>
 <p><img alt="" src="../_images/ExifTool_Suede.png" /><br />
@@ -1223,7 +1227,7 @@ Il semble, par ailleurs, plus facile d’extraire des métadonnées issues de fi
 <p>En conclusion, ExifTool réussit à lire le plus de fichiers et à extraire le plus de métadonnées, tant techniques que descriptives. JHOVE obtient de bons résultats, mais seulement sur les formats qu’il maîtrise et s’ils sont valides. Metadata Extraction Tool est le meilleur pour extraire les métadonnées techniques et est le seul à lire les fichiers Open Office Text, mais il extrait très peu de métadonnées descriptives.</p>
 </section>
 <section id="tests-dextraction-par-format-de-fichier">
-<h5>Tests d’extraction par format de fichier<a class="headerlink" href="#tests-dextraction-par-format-de-fichier" title="Lien permanent vers cette rubrique"></a></h5>
+<h5>Tests d’extraction par format de fichier<a class="headerlink" href="#tests-dextraction-par-format-de-fichier" title="Lien vers cette rubrique"></a></h5>
 <p>Les métadonnées internes de 7 fichiers au format TIFF ont été comparées à une liste de métadonnées attendues, dont une partie, générique, est conforme aux métadonnées techniques de ce type de format et une partie a été étendue.</p>
 <p><img alt="" src="../_images/extraction_MD.png" />
 <em>Taux de réussite d’extraction d’une liste de métadonnées par outil</em></p>
@@ -1245,7 +1249,7 @@ De cette étude, on constate que :</p>
 </section>
 </section>
 <section id="eth-zurich-que-faire-en-cas-dechec-de-lextraction">
-<h4>ETH Zurich : que faire en cas d’échec de l’extraction ?<a class="headerlink" href="#eth-zurich-que-faire-en-cas-dechec-de-lextraction" title="Lien permanent vers cette rubrique"></a></h4>
+<h4>ETH Zurich : que faire en cas d’échec de l’extraction ?<a class="headerlink" href="#eth-zurich-que-faire-en-cas-dechec-de-lextraction" title="Lien vers cette rubrique"></a></h4>
 <p>L’Institut fédéral suisse de technologie (ETH Zurich) a présenté en 2016 à la conférence iPRES une communication sous forme d’affiche sur les problèmes pratiques rencontrés par l’institution en termes d’identification et de validation de formats de fichiers, ainsi que d’extraction de métadonnées[^34].</p>
 <p>Le système d’archivage électronique de l’ETH est basé sur la solution logicielle Rosetta qui intègre DROID pour l’identification de formats de fichiers et JHOVE pour la validation de formats et l’extraction de métadonnées. Ce SAE collecte des données de la recherche, des documents administratifs et des dons, qu’il s’agisse de documents/données nativement numériques ou de documents/données numérisés produits par le centre de numérisation de l’université. La durée de conservation de ces documents/données est variable, notamment pour les données de la recherche, de quelques années à une conservation sur le très long terme.</p>
 <p>L’ETH soulève un certain nombre de problèmes pratiques, rencontrés notamment lors du traitement de données de recherche ou de dons aux formats de fichiers hétérogènes. L’ETH a été conduit à prendre des décisions plus ou moins satisfaisantes pour maintenir gérable le volume de données traitées et ne pas obérer les capacités d’identification ou de préservation ultérieures.</p>
@@ -1278,7 +1282,7 @@ De cette étude, on constate que :</p>
 </section>
 </section>
 <section id="le-programme-vitam-et-lextraction-de-metadonnees-internes">
-<h2>Le programme Vitam et l’extraction de métadonnées internes<a class="headerlink" href="#le-programme-vitam-et-lextraction-de-metadonnees-internes" title="Lien permanent vers cette rubrique"></a></h2>
+<h2>Le programme Vitam et l’extraction de métadonnées internes<a class="headerlink" href="#le-programme-vitam-et-lextraction-de-metadonnees-internes" title="Lien vers cette rubrique"></a></h2>
 <p>C’est sur la base des éléments présentés ci-dessus que l’équipe programme Vitam a lancé sa propre réflexion sur l’extraction de métadonnées internes aux fichiers numériques, afin de spécifier les services attendus de la solution logicielle Vitam et de réfléchir aux modalités de mise en œuvre de ceux-ci.</p>
 <p>Cette réflexion s’est opérée en trois temps :</p>
 <ul class="simple">
@@ -1287,9 +1291,9 @@ De cette étude, on constate que :</p>
 <li><p>recensement des sujets restant à traiter par les organisations choisissant d’utiliser la solution logicielle Vitam.</p></li>
 </ul>
 <section id="les-tests-effectues-dans-le-cadre-du-chantier-preservation">
-<h3>Les tests effectués dans le cadre du chantier préservation<a class="headerlink" href="#les-tests-effectues-dans-le-cadre-du-chantier-preservation" title="Lien permanent vers cette rubrique"></a></h3>
+<h3>Les tests effectués dans le cadre du chantier préservation<a class="headerlink" href="#les-tests-effectues-dans-le-cadre-du-chantier-preservation" title="Lien vers cette rubrique"></a></h3>
 <section id="presentation-du-chantier-preservation">
-<h4>Présentation du chantier préservation<a class="headerlink" href="#presentation-du-chantier-preservation" title="Lien permanent vers cette rubrique"></a></h4>
+<h4>Présentation du chantier préservation<a class="headerlink" href="#presentation-du-chantier-preservation" title="Lien vers cette rubrique"></a></h4>
 <p>L’équipe programme Vitam a mis en place, à partir du mois d’octobre 2017, un groupe de travail dédié à la question de la préservation numérique, afin de définir, avec les partenaires du programme Vitam, les services à développer en la matière dans la solution logicielle Vitam.<br />
 Ce groupe de travail s’est articulé autour de trois phases de travail :</p>
 <ul class="simple">
@@ -1314,7 +1318,7 @@ Ce groupe de travail s’est articulé autour de trois phases de travail :</p>
 </ul>
 </section>
 <section id="le-protocole-de-tests-retenu">
-<h4>Le protocole de tests retenu<a class="headerlink" href="#le-protocole-de-tests-retenu" title="Lien permanent vers cette rubrique"></a></h4>
+<h4>Le protocole de tests retenu<a class="headerlink" href="#le-protocole-de-tests-retenu" title="Lien vers cette rubrique"></a></h4>
 <p>L’extraction de métadonnées internes a été la quatrième opération de préservation à faire l’objet d’une expérimentation dans le cadre du groupe de travail.</p>
 <p>L’équipe programme Vitam a proposé aux participants d’appliquer le protocole d’expérimentation suivant :</p>
 <ul class="simple">
@@ -1365,7 +1369,7 @@ Ce groupe de travail s’est articulé autour de trois phases de travail :</p>
 </ul>
 </section>
 <section id="resultats-et-enseignements">
-<h4>Résultats et enseignements<a class="headerlink" href="#resultats-et-enseignements" title="Lien permanent vers cette rubrique"></a></h4>
+<h4>Résultats et enseignements<a class="headerlink" href="#resultats-et-enseignements" title="Lien vers cette rubrique"></a></h4>
 <p>La taille et la représentativité des jeux de tests ont été variables en fonction des participants :</p>
 <ul class="simple">
 <li><p>les Archives nationales (projet Adamant) se sont efforcées de constituer un échantillon représentatif des archives qui leur avaient été versées en termes de producteurs et de sélectionner des fichiers représentant les différentes catégories manipulées à l’exception des images vectorielles ;</p></li>
@@ -1376,7 +1380,7 @@ Ce groupe de travail s’est articulé autour de trois phases de travail :</p>
 <p>La représentativité des jeux de données n’est en conséquence pas parfaite, mais permet néanmoins de tirer des conclusions de cette expérimentation, dans la mesure où chaque fichier numérique, quelle que soit sa catégorie, a systématiquement fait l’objet d’une extraction de métadonnées avec les quatre outils proposés : MetadataExtractor, ExifTool, MediaInfo et Apache Tika.</p>
 <p>Les résultats obtenus par les Archives nationales (projet Adamant), le Ministère de l’Europe et des Affaires étrangères (projet Saphir) et le Ministère de la Transition écologique et solidaire (projet SIAM-AE) peuvent être synthétisés de la manière suivante :</p>
 <section id="document-pdf">
-<h5>Document PDF<a class="headerlink" href="#document-pdf" title="Lien permanent vers cette rubrique"></a></h5>
+<h5>Document PDF<a class="headerlink" href="#document-pdf" title="Lien vers cette rubrique"></a></h5>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head text-left"><p>Outil utilisé</p></th>
@@ -1502,7 +1506,7 @@ Ce groupe de travail s’est articulé autour de trois phases de travail :</p>
 </table>
 </section>
 <section id="image-animee">
-<h5>Image animée<a class="headerlink" href="#image-animee" title="Lien permanent vers cette rubrique"></a></h5>
+<h5>Image animée<a class="headerlink" href="#image-animee" title="Lien vers cette rubrique"></a></h5>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head text-left"><p>Outil utilisé</p></th>
@@ -1628,7 +1632,7 @@ Ce groupe de travail s’est articulé autour de trois phases de travail :</p>
 </table>
 </section>
 <section id="image-fixe">
-<h5>Image fixe<a class="headerlink" href="#image-fixe" title="Lien permanent vers cette rubrique"></a></h5>
+<h5>Image fixe<a class="headerlink" href="#image-fixe" title="Lien vers cette rubrique"></a></h5>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head text-left"><p>Outil utilisé</p></th>
@@ -1754,7 +1758,7 @@ Ce groupe de travail s’est articulé autour de trois phases de travail :</p>
 </table>
 </section>
 <section id="presentation">
-<h5>Présentation<a class="headerlink" href="#presentation" title="Lien permanent vers cette rubrique"></a></h5>
+<h5>Présentation<a class="headerlink" href="#presentation" title="Lien vers cette rubrique"></a></h5>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head text-left"><p>Outil utilisé</p></th>
@@ -1880,7 +1884,7 @@ Ce groupe de travail s’est articulé autour de trois phases de travail :</p>
 </table>
 </section>
 <section id="son">
-<h5>Son<a class="headerlink" href="#son" title="Lien permanent vers cette rubrique"></a></h5>
+<h5>Son<a class="headerlink" href="#son" title="Lien vers cette rubrique"></a></h5>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head text-left"><p>Outil utilisé</p></th>
@@ -2006,7 +2010,7 @@ Ce groupe de travail s’est articulé autour de trois phases de travail :</p>
 </table>
 </section>
 <section id="tableur">
-<h5>Tableur<a class="headerlink" href="#tableur" title="Lien permanent vers cette rubrique"></a></h5>
+<h5>Tableur<a class="headerlink" href="#tableur" title="Lien vers cette rubrique"></a></h5>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head text-left"><p>Outil utilisé</p></th>
@@ -2132,7 +2136,7 @@ Ce groupe de travail s’est articulé autour de trois phases de travail :</p>
 </table>
 </section>
 <section id="traitement-de-texte">
-<h5>Traitement de texte<a class="headerlink" href="#traitement-de-texte" title="Lien permanent vers cette rubrique"></a></h5>
+<h5>Traitement de texte<a class="headerlink" href="#traitement-de-texte" title="Lien vers cette rubrique"></a></h5>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head text-left"><p>Outil utilisé</p></th>
@@ -2258,7 +2262,7 @@ Ce groupe de travail s’est articulé autour de trois phases de travail :</p>
 </table>
 </section>
 <section id="texte">
-<h5>Texte<a class="headerlink" href="#texte" title="Lien permanent vers cette rubrique"></a></h5>
+<h5>Texte<a class="headerlink" href="#texte" title="Lien vers cette rubrique"></a></h5>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head text-left"><p>Outil utilisé</p></th>
@@ -2583,7 +2587,7 @@ Informations sur le contenu :
 </section>
 </section>
 <section id="lextraction-de-metadonnees-internes-dans-la-solution-logicielle-vitam-et-ses-outils-annexes">
-<h3>L’extraction de métadonnées internes dans la solution logicielle Vitam et ses outils annexes<a class="headerlink" href="#lextraction-de-metadonnees-internes-dans-la-solution-logicielle-vitam-et-ses-outils-annexes" title="Lien permanent vers cette rubrique"></a></h3>
+<h3>L’extraction de métadonnées internes dans la solution logicielle Vitam et ses outils annexes<a class="headerlink" href="#lextraction-de-metadonnees-internes-dans-la-solution-logicielle-vitam-et-ses-outils-annexes" title="Lien vers cette rubrique"></a></h3>
 <p>C’est sur la base de la présente étude et des expérimentations menées avec ses partenaires dans le cadre du groupe de travail sur la préservation que l’équipe programme Vitam et ses équipes de réalisation ont développé les services d’extraction de métadonnées internes disponibles dans la solution logicielle Vitam.</p>
 <p>L’extraction de métadonnées internes y repose sur :</p>
 <ul class="simple">
@@ -2592,7 +2596,7 @@ Informations sur le contenu :
 </ul>
 <p>L’équipe programme Vitam a par ailleurs intégré des opérations d’extraction de métadonnées dans un outil d’audit de ces métadonnées et de préparation de leur extraction qu’elle a développé.</p>
 <section id="le-choix-de-loutil-dextraction-de-metadonnees-internes">
-<h4>Le choix de l’outil d’extraction de métadonnées internes<a class="headerlink" href="#le-choix-de-loutil-dextraction-de-metadonnees-internes" title="Lien permanent vers cette rubrique"></a></h4>
+<h4>Le choix de l’outil d’extraction de métadonnées internes<a class="headerlink" href="#le-choix-de-loutil-dextraction-de-metadonnees-internes" title="Lien vers cette rubrique"></a></h4>
 <p>Au regard des tests effectués et au vu des développements relatifs aux opérations de préservation à réaliser dans la solution logicielle Vitam, l’équipe programme Vitam a retenu un outil d’extraction de métadonnées internes, ImageMagick, comme outil permettant d’initier les fonctionnalités d’extraction de métadonnées internes pour la solution logicielle développée.</p>
 <p>Ce choix a été effectué pour plusieurs raisons :</p>
 <ul class="simple">
@@ -2607,7 +2611,7 @@ Informations sur le contenu :
 </ul>
 </section>
 <section id="les-services-dextraction-de-metadonnees-internes">
-<h4>Les services d’extraction de métadonnées internes<a class="headerlink" href="#les-services-dextraction-de-metadonnees-internes" title="Lien permanent vers cette rubrique"></a></h4>
+<h4>Les services d’extraction de métadonnées internes<a class="headerlink" href="#les-services-dextraction-de-metadonnees-internes" title="Lien vers cette rubrique"></a></h4>
 <p>La solution logicielle Vitam met en œuvre des services d’extraction de métadonnées internes lors d’opération de traitement de masse des fichiers numériques (opérations de préservation).</p>
 <p>Ces opérations de traitement de masse des fichiers numériques (opérations de préservation) peuvent être effectuées par des utilisateurs habilités sur le périmètre qui leur est autorisé par un contrat d’accès. Elles ne sont pas automatisées. Elles sont spécifiées dans des scénarios de préservation s’appuyant eux-mêmes sur l’utilisation d’outils logiciels interfacés avec la solution logicielle Vitam et appelés des griffons.</p>
 <p>L’opération d’extraction de métadonnées internes figure parmi les quatre types d’opération de traitement de masse des objets binaires (opérations de préservation) réalisables dans la solution logicielle Vitam :</p>
@@ -2626,7 +2630,7 @@ Elle peut également être combinée avec un ou plusieurs de ces types d’opér
 </ul>
 </section>
 <section id="les-outils-danalyse-de-metadonnees-internes">
-<h4>Les outils d’analyse de métadonnées internes<a class="headerlink" href="#les-outils-danalyse-de-metadonnees-internes" title="Lien permanent vers cette rubrique"></a></h4>
+<h4>Les outils d’analyse de métadonnées internes<a class="headerlink" href="#les-outils-danalyse-de-metadonnees-internes" title="Lien vers cette rubrique"></a></h4>
 <p>L’équipe programme Vitam a, en complément du développement de la solution logicielle Vitam proprement dite, conçu et réalisé un outil complémentaire, RestMDExtractor, destiné à extraire des métadonnées internes à des fichiers et à analyser ces extractions. Cet outil a uniquement été mis à disposition dans le cadre des tests réalisés dans le cadre du chantier préservation, en vue de réaliser des tests sur l’extraction de métadonnées.</p>
 <p>Cet outil permet :</p>
 <ul class="simple">
@@ -2644,7 +2648,7 @@ Elle peut également être combinée avec un ou plusieurs de ces types d’opér
 </section>
 </section>
 <section id="les-reflexions-a-mener-au-niveau-de-limplementation-de-la-solution-logicielle-vitam-de-sa-mise-en-production-et-de-son-maintien-en-condition-operationnelle">
-<h3>Les réflexions à mener au niveau de l’implémentation de la solution logicielle Vitam, de sa mise en production et de son maintien en condition opérationnelle<a class="headerlink" href="#les-reflexions-a-mener-au-niveau-de-limplementation-de-la-solution-logicielle-vitam-de-sa-mise-en-production-et-de-son-maintien-en-condition-operationnelle" title="Lien permanent vers cette rubrique"></a></h3>
+<h3>Les réflexions à mener au niveau de l’implémentation de la solution logicielle Vitam, de sa mise en production et de son maintien en condition opérationnelle<a class="headerlink" href="#les-reflexions-a-mener-au-niveau-de-limplementation-de-la-solution-logicielle-vitam-de-sa-mise-en-production-et-de-son-maintien-en-condition-operationnelle" title="Lien vers cette rubrique"></a></h3>
 <p>La solution logicielle Vitam apporte des services d’extraction de métadonnées internes aux organisations qui souhaitent l’implémenter. Les modalités d’administration et de pilotage de ces services doivent cependant être définis par chacune de ces organisations ou faire l’objet d’une coordination entre les différents utilisateurs de la solution logicielle Vitam.</p>
 <p>Trois points méritent de retenir l’attention des organisations souhaitant utiliser la solution logicielle Vitam :</p>
 <ul class="simple">
@@ -2653,7 +2657,7 @@ Elle peut également être combinée avec un ou plusieurs de ces types d’opér
 <li><p>la gestion opérationnelle de l’extraction de métadonnées.</p></li>
 </ul>
 <section id="ladministration-du-referentiel-des-griffons-et-lextraction-de-metadonnees-internes">
-<h4>L’administration du référentiel des griffons et l’extraction de métadonnées internes<a class="headerlink" href="#ladministration-du-referentiel-des-griffons-et-lextraction-de-metadonnees-internes" title="Lien permanent vers cette rubrique"></a></h4>
+<h4>L’administration du référentiel des griffons et l’extraction de métadonnées internes<a class="headerlink" href="#ladministration-du-referentiel-des-griffons-et-lextraction-de-metadonnees-internes" title="Lien vers cette rubrique"></a></h4>
 <p>La solution logicielle Vitam met à disposition un unique griffon permettant de réaliser des extractions de métadonnées internes : il s’agit d’ImageMagick. Néanmoins, son utilisation ne s’impose pas aux organisations choisissant d’utiliser les services de préservation. Les modalités d’administration du référentiel des griffons ne sont en aucune manière imposées aux utilisateurs.</p>
 <p>Il revient à ces derniers de déterminer :</p>
 <ul class="simple">
@@ -2675,7 +2679,7 @@ Elle peut également être combinée avec un ou plusieurs de ces types d’opér
 </ul>
 </section>
 <section id="la-definition-dune-politique-de-preservation">
-<h4>La définition d’une politique de préservation<a class="headerlink" href="#la-definition-dune-politique-de-preservation" title="Lien permanent vers cette rubrique"></a></h4>
+<h4>La définition d’une politique de préservation<a class="headerlink" href="#la-definition-dune-politique-de-preservation" title="Lien vers cette rubrique"></a></h4>
 <p>Les organisations choisissant d’implémenter la solution logicielle Vitam doivent également définir la politique de préservation et, partant, celle d’extraction de métadonnées internes qu’elles souhaitent mettre en œuvre.</p>
 <p>Les questions à étudier sont les suivantes :</p>
 <ul class="simple">
@@ -2709,16 +2713,19 @@ Elle peut également être combinée avec un ou plusieurs de ces types d’opér
 </li>
 <li><p>une modélisation des données extraites doit-elle être mise en place au niveau national ou faut-il s’appuyer sur des modèles de données existants (ex. SEDA, PREMIS, METS, IPTC, etc.) ? Si la réponse est positive, qui doit en être l’initiateur et le gestionnaire ?</p></li>
 <li><p>en cas d’appui sur un modèle de données existant, quelle attitude avoir avec l’organisme chargé de l’administration de celui-ci : une attitude passive de « consommateur » ? une attitude plus active de contribution à l’enrichissement du référentiel et à la vie de la communauté qui s’est constituée autour de celui-ci ?</p></li>
-<li><p>en cas de contribution active :
-▪ chaque projet d’implémentation contribuera-t-il ?
-▪ comment seront formalisés les échanges avec l’administrateur du modèle ?
-▪ quelles sont les ressources, les moyens et les compétences à mettre en œuvre pour réaliser cette contribution ?</p></li>
+<li><p>en cas de contribution active :</p>
+<ul>
+<li><p>chaque projet d’implémentation contribuera-t-il ?</p></li>
+<li><p>comment seront formalisés les échanges avec l’administrateur du modèle ?</p></li>
+<li><p>quelles sont les ressources, les moyens et les compétences à mettre en œuvre pour réaliser cette contribution ?</p></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 </section>
 <section id="la-gestion-operationnelle-de-lextraction-de-metadonnees-internes">
-<h4>La gestion opérationnelle de l’extraction de métadonnées internes<a class="headerlink" href="#la-gestion-operationnelle-de-lextraction-de-metadonnees-internes" title="Lien permanent vers cette rubrique"></a></h4>
+<h4>La gestion opérationnelle de l’extraction de métadonnées internes<a class="headerlink" href="#la-gestion-operationnelle-de-lextraction-de-metadonnees-internes" title="Lien vers cette rubrique"></a></h4>
 <p>Dès lors que la solution logicielle Vitam dispose d’un service d’extraction de métadonnées internes et qu’il s’avère que l’identification à 100 % des métadonnées internes des fichiers conservés dans les collections d’un service d’archives est impossible et que leur extraction peut échouer, les questions à étudier sont les suivantes :</p>
 <ul class="simple">
 <li><p>quels problèmes d’identification de métadonnées internes et d’extraction posent les fonds d’ores et déjà conservés par les futurs utilisateurs de la solution logicielle Vitam ?</p></li>
@@ -2746,11 +2753,11 @@ Elle peut également être combinée avec un ou plusieurs de ces types d’opér
 </section>
 </section>
 <section id="annexes">
-<h2>Annexes<a class="headerlink" href="#annexes" title="Lien permanent vers cette rubrique"></a></h2>
+<h2>Annexes<a class="headerlink" href="#annexes" title="Lien vers cette rubrique"></a></h2>
 <section id="bibliographie">
-<h3>Bibliographie<a class="headerlink" href="#bibliographie" title="Lien permanent vers cette rubrique"></a></h3>
+<h3>Bibliographie<a class="headerlink" href="#bibliographie" title="Lien vers cette rubrique"></a></h3>
 <section id="generalites">
-<h4>Généralités<a class="headerlink" href="#generalites" title="Lien permanent vers cette rubrique"></a></h4>
+<h4>Généralités<a class="headerlink" href="#generalites" title="Lien vers cette rubrique"></a></h4>
 <p>Baldé Abdourahmane, Lechevallier Yves et Aufaure Marie-Aude. « Extraction de métadonnées sur les prototypes issus de la classification d’objets ». Consultable à l’adresse suivante : http://www-sop.inria.fr/axis/papers/04sfc/balde-sfc2004.pdf. Lien consulté le 2 janvier 2020.</p>
 <p>Banat-Berger Françoise et Huc Claude. « Section 9 – Métadonnées », Version 2, 22 novembre 2011, in PIAF. Consultable à l’adresse suivante : http://www.piaf-archives.org/sites/default/files/bulk_media/m07s09/co/section09_web.html. Lien consulté le 72 janvier 2020.</p>
 <p>Bibliotheque nationale de France. « Données et métadonnées : formats et implémentation BnF ». Consultable à l’adresse suivante : http://www.bnf.fr/fr/professionnels/preservation_numerique_boite_outils.html. Lien consulté le 23 novembre 2018.</p>
@@ -2770,7 +2777,7 @@ TGIR Huma-Num. « Le guide des bonnes pratiques numériques », dernière vers
 <p>Töwe Matthias, Geisser Franziska, Suri Roland E.. « To Act ou Not to Act. Handling File Format Identification Issues in Practice », iPRES 2016 Proceedings, p. 288-289. Consultable à l’adresse suivante : https://services.phaidra.univie.ac.at/api/object/o:503183/diss/Content/get. Lien consulté le 2 janvier 2020.</p>
 </section>
 <section id="outils-dextraction">
-<h4>Outils d’extraction<a class="headerlink" href="#outils-dextraction" title="Lien permanent vers cette rubrique"></a></h4>
+<h4>Outils d’extraction<a class="headerlink" href="#outils-dextraction" title="Lien vers cette rubrique"></a></h4>
 <p>Archivematica. « DROID, JHOVE, NLNZ Metadata Extractor », dernière version, 3 juillet 2015. Consultable à l’adresse suivante : https://wiki.archivematica.org/DROID,_JHOVE,_NLNZ_Metadata_Extractor. Lien consulté le 2 janvier 2020.</p>
 <p>Arvidson Allan [trad.]. « CODA-META. Curation of Digital Assets – Metadata », LDP Centrum, Boden, 2008 (version anglaise : 2009). Lien consultable à l’adresse suivante : https://www.ltu.se/cms_fs/1.49845!/coda-meta_english.pdf . Lien consulté le 2 janvier 2020.</p>
 <p>Hutchins Matthew. « Testing Software Tools of Potential Interest for Digital Preservation Activities at the National Library of Australia », Camberra [Australie], 30 juillet 2012. Consultable à l’adresse suivante : http://openpreservation.org/system/files/Digital%20Preservation%20Project%20Report%20-%20Testing%20Software%20Tools.pdf. Lien consulté le 2 janvier 2020.</p>
@@ -2778,7 +2785,7 @@ TGIR Huma-Num. « Le guide des bonnes pratiques numériques », dernière vers
 <p>Nichele Baptiste. « Préparation des versements : Metadata Extraction Tool », 24 novembre 2016. Consultable à l’adresse suivante : http://siaf.hypotheses.org/689. Lien consulté le 2 janvier 2020.</p>
 </section>
 <section id="images-fixes">
-<h4>Images fixes<a class="headerlink" href="#images-fixes" title="Lien permanent vers cette rubrique"></a></h4>
+<h4>Images fixes<a class="headerlink" href="#images-fixes" title="Lien vers cette rubrique"></a></h4>
 <p>Adobe. « XMP. Adding Intelligence to Media ». Consultable à l’adresse suivante :  https://www.adobe.com/products/xmp.html. Lien consulté le 2 janvier 2020.</p>
 <p>CIPA et JEITA. « Exchangeable image file format for digital still cameras : Exif Version 2.3 »., avril 2010 (révisé en décembre 2012). Consultable à l’adresse suivante :  http://www.cipa.jp/std/documents/e/DC-008-2012_E.pdf. Lien consulté le 2 janvier 2020.</p>
 <p>IPTC. « IPTC Photo Metadata Standard ». Consultable à l’adresse suivante :  https://iptc.org/standards/photo-metadata/iptc-standard/. Lien consulté le 2 janvier 2020.</p>
@@ -2786,12 +2793,12 @@ TGIR Huma-Num. « Le guide des bonnes pratiques numériques », dernière vers
 <p>Van Den Bergue Fabien. « L’indexation des documents iconographiques par les métadonnées internes », Mémoire de master, ENSSIB, Lyon, juin 2013. Consultable à l’adresse suivante : https://www.enssib.fr/bibliotheque-numerique/documents/64111-l-indexation-des-documents-iconographiques-par-les-metadonnees-internes.pdf. Lien consulté le 2 janvier 2020.</p>
 </section>
 <section id="fichiers-bureautiques">
-<h4>Fichiers bureautiques<a class="headerlink" href="#fichiers-bureautiques" title="Lien permanent vers cette rubrique"></a></h4>
+<h4>Fichiers bureautiques<a class="headerlink" href="#fichiers-bureautiques" title="Lien vers cette rubrique"></a></h4>
 <p>Peccate Patrick. « Les métadonnées embarquées dans les documents PDF », 5 janvier 2010, in « Du bruit au signal (et inversement) ». Consultable à l’adresse suivante : http://blog.tuquoque.com/post/2010/01/05/metadata-PDF. Lien consulté le 2 janvier 2020.</p>
 <p>Microsoft Office. « Afficher ou modifier les propriétés d’un fichier Office ». Consultable à l’adresse suivante : https://support.office.com/fr-fr/article/afficher-ou-modifier-les-propri%C3%A9t%C3%A9s-d-un-fichier-office-21d604c2-481e-4379-8e54-1dd4622c6b75. Lien consulté le 2 janvier 2020.</p>
 </section>
 <section id="images-animees">
-<h4>Images animées<a class="headerlink" href="#images-animees" title="Lien permanent vers cette rubrique"></a></h4>
+<h4>Images animées<a class="headerlink" href="#images-animees" title="Lien vers cette rubrique"></a></h4>
 <p>Amar Mama. « Métadonnées et processus pour l’archivage de données médiatiques », Mémoire présenté comme exigence partielle de la maîtrise en informatique, Université du Québec à Montréal, mars 2012. Consultable à l’adresse suivante : https://archipel.uqam.ca/4593/1/M12351.pdf. Lien consulté le 2 janvier 2020.</p>
 <p>Bachimont Bruno. « L’indexation multimédia », in « Assistance intelligente à la recherche d’information », Hermès, 2003, chapitre 5, p.139-170. Consultable à l’adresse suivante : http://cours.ebsi.umontreal.ca/sci6116/Ressources_files/07_Chapitre_5.pdf. Lien consulté le 2 janvier 2020.</p>
 <p>Baghdadi Siwar. « Extraction multimodale de métadonnées de séquences vidéo dans un cadre bayésien. Interface homme-machine ». Thèse, Université de Rennes 1, 2010. Consultable à l’adresse suivante : https://tel.archives-ouvertes.fr/tel-00512706/document. Lien consulté le 2 janvier 2020.</p>
@@ -2807,7 +2814,7 @@ TGIR Huma-Num. « Le guide des bonnes pratiques numériques », dernière vers
 <p>Wikipedia. « MPEG-7 », 15 avril 2019 (dernière modification). Lien consultable à l’adresse suivante : https://en.wikipedia.org/wiki/MPEG-7. Lien consulté le 2 janvier 2020.</p>
 </section>
 <section id="fichiers-sonores">
-<h4>Fichiers sonores<a class="headerlink" href="#fichiers-sonores" title="Lien permanent vers cette rubrique"></a></h4>
+<h4>Fichiers sonores<a class="headerlink" href="#fichiers-sonores" title="Lien vers cette rubrique"></a></h4>
 <p>The Audio Archive. « audio metadata primer ». Lien consultable à l’adresse suivante : http://www.theaudioarchive.com/taa_resources_metadata.htm . lien consulté le 2 janvier 2020.</p>
 <p>Delezoide Bertrand. « Modèles d’indexation multimedia pour la description automatique de films de cinéma ». Thèse, Université de Paris VI – Pierre et Marie Curie, 24 avril 2006. Consultable à l’adresse suivante : http://articles.ircam.fr/textes/Delezoide06c/index.pdf. Lien consulté le 2 janvier 2020.</p>
 <p>Federal Agencies Digital Guidelines Initiative. « Guidelines : Embedded Metadata in Broadcast WAVE Files ». Consultable à l’adresse suivante : http://www.digitizationguidelines.gov/guidelines/digitize-embedding.html. Lien consulté le 2 janvier 2020.</p>
@@ -2833,7 +2840,7 @@ TGIR Huma-Num. « Le guide des bonnes pratiques numériques », dernière vers
 <p>[^15] : Un chunk correspond à un fragment de fichier multimédia. Un format conteneur tel que le format BWF ou WAVE contient de facto plusieurs chunk, contenant en particulier les informations nécessaires au décodage de l’audio ou des données audio utiles. Le standard BWF complète ces informations par des chunks qu’il définit.</p>
 <p>[^16] : Pour plus d’informations sur la validation de formats, consulter Equipe Vitam, « Validation des formats de fichiers », 6 février 2020.</p>
 <p>[^17] : Shala Lavdërim, Shala Ahmet. « File Formats – Characterization and Validation », dans Kopacek Peter, Hajrizi Edmond [dir.], 17th IFAC Conference on International Stability, Technology and Culture TECIS 2016 [Dürres, Albanie, 26-28 octobre 2016], p.254.</p>
-<p>[^18] : Equipe Vitam, <a class="reference internal" href="chantier_preservation_validation_format.html"><span class="doc std std-doc">« Validation des formats de fichiers »</span></a>, 6 février 2020, p.8.</p>
+<p>[^18] : Equipe Vitam, <a class="reference internal" href="chantier_preservation_validation_format.html"><span class="std std-doc">« Validation des formats de fichiers »</span></a>, 6 février 2020, p.8.</p>
 <p>[^19] : Shala Lavdërim, Shala Ahmet. « File Formats – Characterization and Validation », dans Kopacek Peter, Hajrizi Edmond [dir.], 17th IFAC Conference on International Stability, Technology and Culture TECIS 2016 [Dürres, Albanie, 26-28 octobre 2016], p.257.</p>
 <p>[^20] : Shala Lavdërim, Shala Ahmet. « File Formats – Characterization and Validation », dans Kopacek Peter, Hajrizi Edmond [dir.], 17th IFAC Conference on International Stability, Technology and Culture TECIS 2016 [Dürres, Albanie, 26-28 octobre 2016], p. 255.</p>
 <p>[^21] :  Lindlar Michelle, Tunnat Yvonne, Wilson Carl. « A PDF Test-Set for Well-Formedness Validation in JHOVE – The Good, the Bad and the Ugly », Proceedings of iPRES Conference, Kyoto, Japan, September 2017 (iPRES 2017) , p. 113.</p>
@@ -2876,7 +2883,7 @@ TGIR Huma-Num. « Le guide des bonnes pratiques numériques », dernière vers
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, Programme Vitam.</p>
+    <p>&#169; Droits d'auteur 2022, Programme Vitam.</p>
   </div>
 
   Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un

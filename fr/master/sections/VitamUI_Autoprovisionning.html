@@ -1,21 +1,25 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="fr" >
+<html class="writer-html5" lang="fr" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>1. Vitam UI : présentation de la fonctionnalité d’auto-provisioning &mdash; Vitam documentation fonctionnelle</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=eea1f72d" />
+
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script src="../_static/translations.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f4732e6d"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/translations.js?v=bf059b8c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
@@ -169,11 +173,11 @@
            <div itemprop="articleBody">
              
   <section id="vitam-ui-presentation-de-la-fonctionnalite-dauto-provisioning">
-<h1><span class="section-number">1. </span>Vitam UI : présentation de la fonctionnalité d’auto-provisioning<a class="headerlink" href="#vitam-ui-presentation-de-la-fonctionnalite-dauto-provisioning" title="Lien permanent vers cette rubrique"></a></h1>
+<h1><span class="section-number">1. </span>Vitam UI : présentation de la fonctionnalité d’auto-provisioning<a class="headerlink" href="#vitam-ui-presentation-de-la-fonctionnalite-dauto-provisioning" title="Lien vers cette rubrique"></a></h1>
 <section id="besoins-et-contraintes-actuelles">
-<h2><span class="section-number">1.1. </span>Besoins et contraintes actuelles<a class="headerlink" href="#besoins-et-contraintes-actuelles" title="Lien permanent vers cette rubrique"></a></h2>
+<h2><span class="section-number">1.1. </span>Besoins et contraintes actuelles<a class="headerlink" href="#besoins-et-contraintes-actuelles" title="Lien vers cette rubrique"></a></h2>
 <section id="synthese-des-trois-besoins-devolution-des-fonctions-dauthentification">
-<h3><span class="section-number">1.1.1. </span>Synthèse des trois besoins d’évolution des fonctions d’authentification<a class="headerlink" href="#synthese-des-trois-besoins-devolution-des-fonctions-dauthentification" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">1.1.1. </span>Synthèse des trois besoins d’évolution des fonctions d’authentification<a class="headerlink" href="#synthese-des-trois-besoins-devolution-des-fonctions-dauthentification" title="Lien vers cette rubrique"></a></h3>
 <p>La road-map VITAM UI a planifié trois besoins d’évolutions des fonctions du portail, par ordre de priorité :</p>
 <ul class="simple">
 <li><p>Assurer les créations et modifications d’utilisateurs au moment de l’authentification (auto-provisioning), ainsi que de leurs droits selon deux cas d’usages :</p>
@@ -196,7 +200,7 @@ Ce système permet de provisionner uniquement les utilisateurs qui se sont authe
 <p>Ce document spécifie l’auto-provisioning pour le premier lot de développement.</p>
 </section>
 <section id="rappel-du-fonctionnement-actuel">
-<h3><span class="section-number">1.1.2. </span>Rappel du fonctionnement actuel<a class="headerlink" href="#rappel-du-fonctionnement-actuel" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">1.1.2. </span>Rappel du fonctionnement actuel<a class="headerlink" href="#rappel-du-fonctionnement-actuel" title="Lien vers cette rubrique"></a></h3>
 <p>Les fonctions portail sont documentées dans la <a class="reference external" href="http://www.programmevitam.fr/ressources/DocCourante/autres/fonctionnel/VitamUI_Doc_produit.pdf">documentation produit VITAM UI</a>.</p>
 <p>En synthèse, les modes d’authentification actuellement proposés sont :</p>
 <ul class="simple">
@@ -235,9 +239,9 @@ L’utilisateur peut accéder uniquement aux APPs dans lequel un profil de droit
 </section>
 </section>
 <section id="specification-fonctionnelle-pour-le-provisioning-automatise-des-utilisateurs">
-<h2><span class="section-number">1.2. </span>Spécification fonctionnelle pour le provisioning automatisé des utilisateurs<a class="headerlink" href="#specification-fonctionnelle-pour-le-provisioning-automatise-des-utilisateurs" title="Lien permanent vers cette rubrique"></a></h2>
+<h2><span class="section-number">1.2. </span>Spécification fonctionnelle pour le provisioning automatisé des utilisateurs<a class="headerlink" href="#specification-fonctionnelle-pour-le-provisioning-automatise-des-utilisateurs" title="Lien vers cette rubrique"></a></h2>
 <section id="principes-generaux">
-<h3><span class="section-number">1.2.1. </span>Principes généraux<a class="headerlink" href="#principes-generaux" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">1.2.1. </span>Principes généraux<a class="headerlink" href="#principes-generaux" title="Lien vers cette rubrique"></a></h3>
 <p>Le provisioning automatisé des utilisateurs sera réalisé de manière synchrone au processus d’authentification :</p>
 <ul class="simple">
 <li><p>Pour un nouvel utilisateur : création automatique d’un utilisateur</p></li>
@@ -246,7 +250,7 @@ L’utilisateur peut accéder uniquement aux APPs dans lequel un profil de droit
 <p>Le processus d’élimination d’utilisateur n’est pas implémenté car aucun utilisateur n’est supprimé de l’annuaire VITAM UI pour conserver le lien de traçabilité des informations systèmes. Les informations nominatives sont anonymisées par l’administrateur fonctionnel au bout d’une durée paramétrable (72 mois par défaut). Un utilisateur peut être désactivé</p>
 </section>
 <section id="concept-dunite">
-<h3><span class="section-number">1.2.2. </span>Concept d’unité<a class="headerlink" href="#concept-dunite" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">1.2.2. </span>Concept d’unité<a class="headerlink" href="#concept-dunite" title="Lien vers cette rubrique"></a></h3>
 <p><img alt="" src="../_images/concept_unite.png" /></p>
 <p>Pour octroyer des droits à un utilisateur, son identifiant est associé à un groupe de profil VITAM UI préalablement configuré.<br />
 Chaque groupe de profil dispose d’un identifiant unique dans le modèle de données des groupes de profil VITAM UI.</p>
@@ -264,7 +268,7 @@ A ce titre, le référentiel des utilisateurs doit fournir une information utili
 </ul>
 </section>
 <section id="processus-dauto-provisioning-standard">
-<h3><span class="section-number">1.2.3. </span>Processus d’auto-provisioning standard<a class="headerlink" href="#processus-dauto-provisioning-standard" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">1.2.3. </span>Processus d’auto-provisioning standard<a class="headerlink" href="#processus-dauto-provisioning-standard" title="Lien vers cette rubrique"></a></h3>
 <p>Le processus d’auto-provisioning sera paramétré pour deux cas d’usages :</p>
 <ul class="simple">
 <li><p>Fournisseur d’identité (IdP) configuré en SSO</p></li>
@@ -328,7 +332,7 @@ A ce titre, le référentiel des utilisateurs doit fournir une information utili
 </table>
 </section>
 <section id="exemple">
-<h3><span class="section-number">1.2.4. </span>Exemple<a class="headerlink" href="#exemple" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">1.2.4. </span>Exemple<a class="headerlink" href="#exemple" title="Lien vers cette rubrique"></a></h3>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head text-left"><p>Etape</p></th>
@@ -392,9 +396,9 @@ A ce titre, le référentiel des utilisateurs doit fournir une information utili
 </table>
 </section>
 <section id="evolution-des-interfaces-pour-gerer-lauto-provisioning-quand-lunite-est-fournie-par-un-referentiel-tiers">
-<h3><span class="section-number">1.2.5. </span>Evolution des interfaces pour gérer l’auto-provisioning quand l’unité est fournie par un référentiel tiers<a class="headerlink" href="#evolution-des-interfaces-pour-gerer-lauto-provisioning-quand-lunite-est-fournie-par-un-referentiel-tiers" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">1.2.5. </span>Evolution des interfaces pour gérer l’auto-provisioning quand l’unité est fournie par un référentiel tiers<a class="headerlink" href="#evolution-des-interfaces-pour-gerer-lauto-provisioning-quand-lunite-est-fournie-par-un-referentiel-tiers" title="Lien vers cette rubrique"></a></h3>
 <section id="parametrages-des-unites-dans-les-groupes-de-profils">
-<h4><span class="section-number">1.2.5.1. </span>Paramétrages des unités dans les groupes de profils<a class="headerlink" href="#parametrages-des-unites-dans-les-groupes-de-profils" title="Lien permanent vers cette rubrique"></a></h4>
+<h4><span class="section-number">1.2.5.1. </span>Paramétrages des unités dans les groupes de profils<a class="headerlink" href="#parametrages-des-unites-dans-les-groupes-de-profils" title="Lien vers cette rubrique"></a></h4>
 <p>L’évolution de l’APP « Groupe de profils » consiste à activer un champ unité, multi-valué.
 Cela nécessite l’ajout du champ unité dans le modèle MongoDB des groupes de profils VITAM UI.</p>
 <p>Les écrans à faire évoluer sont les suivants :</p>
@@ -403,13 +407,13 @@ Cela nécessite l’ajout du champ unité dans le modèle MongoDB des groupes de
 <p>Le composant « tag » multi-valué existant pourra être réutilisé avec la règle d’alimentation suivante : texte libre avec la syntaxe exacte de l’unité telle que fournie par l’API tiers dans la transaction de consultation du référentiel.</p>
 </section>
 <section id="parametrages-des-fournisseurs-didentite-idp-avec-auto-provisioning">
-<h4><span class="section-number">1.2.5.2. </span>Paramétrages des fournisseurs d’identité (IdP) avec auto-provisioning<a class="headerlink" href="#parametrages-des-fournisseurs-didentite-idp-avec-auto-provisioning" title="Lien permanent vers cette rubrique"></a></h4>
+<h4><span class="section-number">1.2.5.2. </span>Paramétrages des fournisseurs d’identité (IdP) avec auto-provisioning<a class="headerlink" href="#parametrages-des-fournisseurs-didentite-idp-avec-auto-provisioning" title="Lien vers cette rubrique"></a></h4>
 <p>L’évolution de l’APP « Organisations » consiste à paramétrer le service de provisioning dans le paramétrage de l’IdP.</p>
 <p><img alt="" src="../_images/ecran3.png" /></p>
 </section>
 </section>
 <section id="parametrages-de-lauto-provisioning-au-niveau-de-lutilisateur">
-<h3><span class="section-number">1.2.6. </span>Paramétrages de l’auto-provisioning au niveau de l’utilisateur<a class="headerlink" href="#parametrages-de-lauto-provisioning-au-niveau-de-lutilisateur" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">1.2.6. </span>Paramétrages de l’auto-provisioning au niveau de l’utilisateur<a class="headerlink" href="#parametrages-de-lauto-provisioning-au-niveau-de-lutilisateur" title="Lien vers cette rubrique"></a></h3>
 <p>Si la fonction est utilisée, la plupart des utilisateurs seront auto-provisionnés. Cependant, pour plus de souplesse notamment au niveau de l’administration des utilisateurs à haut privilèges, il devra être possible de le provisionner « manuellement » via l’APP Utilisateur.</p>
 <p>Si un utilisateur est auto-provisionné, les modifications d’informations utilisateurs et des groupes de profil ne sera pas possible dans l’APP Utilisateur</p>
 <p>L’APP utilisateur évolue en ce sens avec l’ajout d’un toggle « autoprovisionné » automatiquement activé si l’IdP est configuré ainsi, mais débrayable.</p>
@@ -435,7 +439,7 @@ Cela nécessite l’ajout du champ unité dans le modèle MongoDB des groupes de
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, Programme Vitam.</p>
+    <p>&#169; Droits d'auteur 2022, Programme Vitam.</p>
   </div>
 
   Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un

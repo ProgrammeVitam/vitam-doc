@@ -1,21 +1,25 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="fr" >
+<html class="writer-html5" lang="fr" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>10. Réaliser des éliminations d’archives avec la solution logicielle Vitam &mdash; Vitam documentation fonctionnelle</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=eea1f72d" />
+
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script src="../_static/translations.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f4732e6d"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/translations.js?v=bf059b8c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
@@ -165,47 +169,47 @@
            <div itemprop="articleBody">
              
   <section id="realiser-des-eliminations-darchives-avec-la-solution-logicielle-vitam">
-<h1><span class="section-number">10. </span>Réaliser des éliminations d’archives avec la solution logicielle Vitam<a class="headerlink" href="#realiser-des-eliminations-darchives-avec-la-solution-logicielle-vitam" title="Lien permanent vers cette rubrique"></a></h1>
+<h1><span class="section-number">10. </span>Réaliser des éliminations d’archives avec la solution logicielle Vitam<a class="headerlink" href="#realiser-des-eliminations-darchives-avec-la-solution-logicielle-vitam" title="Lien vers cette rubrique"></a></h1>
 <section id="presentation-de-lelimination">
-<h2><span class="section-number">10.1. </span>Présentation de l’élimination<a class="headerlink" href="#presentation-de-lelimination" title="Lien permanent vers cette rubrique"></a></h2>
+<h2><span class="section-number">10.1. </span>Présentation de l’élimination<a class="headerlink" href="#presentation-de-lelimination" title="Lien vers cette rubrique"></a></h2>
 <section id="calcul-des-regles-de-gestion-applicables-a-une-unite-archivistique">
-<h3><span class="section-number">10.1.1. </span>Calcul des règles de gestion applicables à une unité archivistique<a class="headerlink" href="#calcul-des-regles-de-gestion-applicables-a-une-unite-archivistique" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">10.1.1. </span>Calcul des règles de gestion applicables à une unité archivistique<a class="headerlink" href="#calcul-des-regles-de-gestion-applicables-a-une-unite-archivistique" title="Lien vers cette rubrique"></a></h3>
 <p>Lorsque la solution logicielle Vitam calcule les règles qui s’appliquent à une unité archivistique donnée, pour chaque règle spécifique est indiqué le chemin par lequel est héritée cette règle ainsi que le service producteur à l’origine de la règle.
 Ce service producteur est le service producteur principal de l’unité archivistique qui porte la règle.
 Dans le cas de l’élimination, cela permet de savoir quel producteur a demandé la destruction ou la conservation de l’unité archivistique et de mettre en œuvre l’élimination en conséquence.</p>
 <p>Pour la catégorie de règle de durée d’utilité administrative, la déclaration d’une règle spécifique s’accompagne de la déclaration d’une propriété de sort final dont le statut peut être « conserver » (Keep) ou « détruire » (Destroy).</p>
 </section>
 <section id="criteres-pour-determiner-quune-unite-archivistique-est-eliminable">
-<h3><span class="section-number">10.1.2. </span>Critères pour déterminer qu’une unité archivistique est éliminable<a class="headerlink" href="#criteres-pour-determiner-quune-unite-archivistique-est-eliminable" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">10.1.2. </span>Critères pour déterminer qu’une unité archivistique est éliminable<a class="headerlink" href="#criteres-pour-determiner-quune-unite-archivistique-est-eliminable" title="Lien vers cette rubrique"></a></h3>
 <p>Pour être éliminable, une unité archivistique doit définir ou hériter une règle de durée d’utilité administrative dont la date d’échéance est dans le passé par rapport à une date de référence donnée par l’archiviste et avoir un sort final « détruire » au titre du même service producteur. En outre, elle ne doit ni définir ni hériter de règles de gel non expirées à date de l’opération d’élimination.</p>
 <p><em>Si l’unité archivistique n’a qu’un sort final « détruire » sans règle associée permettant de calculer une date d’échéance, elle ne sera pas considérée comme éliminable.</em></p>
 <p>Si une unité archivistique hérite pour un service producteur une règle de durée d’utilité administrative sans qu’un sort final soit associé au titre de ce même service producteur, aucune action ne pourra être mise en œuvre à échéance de la règle.
 Cette situation se rencontre quand l’unité archivistique déclare en propre un sort final (donc au titre de son service producteur principal), ce qui fait obstacle à l’héritage du sort final d’un producteur de <strong>rattachement</strong>.</p>
 <p>En cas d’absence de déclaration de sort final pour la durée d’utilité administrative dans le  bordereau de transfert, un sort final par défaut « conserver » est défini lors de l’entrée.</p>
 <p><em>Rattacher des unités archivistiques à d’autres unités archivistiques peut entraîner des héritages complexes et empêcher la mise en œuvre des opérations d’élimination. L’archiviste devra identifier ces cas et procéder à des mises à jour des règles applicables à l’unité et/ou à des réorganisations d’arborescence pour pouvoir éliminer effectivement les unités archivistiques concernées.</em></p>
-<p>Pour en savoir plus, consulter le <a class="reference internal" href="Vademecum_reglesgestion_fonctionnement.html"><span class="doc std std-doc">vademecum « Positionner des règles de gestion dans la solution logicielle Vitam »</span></a>.</p>
+<p>Pour en savoir plus, consulter le <a class="reference internal" href="Vademecum_reglesgestion_fonctionnement.html"><span class="std std-doc">vademecum « Positionner des règles de gestion dans la solution logicielle Vitam »</span></a>.</p>
 </section>
 <section id="criteres-pour-determiner-quune-unite-archivistique-peut-etre-eliminee">
-<h3><span class="section-number">10.1.3. </span>Critères pour déterminer qu’une unité archivistique peut être éliminée<a class="headerlink" href="#criteres-pour-determiner-quune-unite-archivistique-peut-etre-eliminee" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">10.1.3. </span>Critères pour déterminer qu’une unité archivistique peut être éliminée<a class="headerlink" href="#criteres-pour-determiner-quune-unite-archivistique-peut-etre-eliminee" title="Lien vers cette rubrique"></a></h3>
 <p>Pour pouvoir être éliminée, une unité archivistique doit disposer, pour un producteur donné, d’une règle de durée d’utilité administrative échue à la date du lancement de l’opération d’élimination et ne pas avoir de descendance conservée dans le système. En outre, elle ne doit ni définir ni hériter de règles de gel non expirées à date de l’opération d’élimination.</p>
 <p>Pour pouvoir éliminer une unité archivistique qui a encore un enfant à conserver (par exemple, un sous-dossier éliminable qui contient encore une pièce à conserver) ou un enfant gelé, l’archiviste doit procéder à une réorganisation d’arborescence (par exemple, placer la pièce à la racine du dossier) et relancer l’opération d’élimination sur cette unité archivistique.</p>
 <p>Pour pouvoir éliminer une unité archivistique gelée, la règle de gel doit être échue ou avoir été préalablement supprimée.</p>
 </section>
 <section id="consequence-dune-elimination-dans-le-systeme">
-<h3><span class="section-number">10.1.4. </span>Conséquence d’une élimination dans le système<a class="headerlink" href="#consequence-dune-elimination-dans-le-systeme" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">10.1.4. </span>Conséquence d’une élimination dans le système<a class="headerlink" href="#consequence-dune-elimination-dans-le-systeme" title="Lien vers cette rubrique"></a></h3>
 <p>Si l’unité archivistique peut être éliminée pour tous ses services producteurs, elle sera effectivement éliminée dans le système, c’est-à-dire immédiatement déréférencée pour ne plus permettre à un utilisateur d’y accéder.</p>
 <p>Une élimination complète, au sens de la suppression du fichier de toutes les offres de stockage, n’est pas possible à garantir, compte tenu des technologies utilisées.</p>
 <p>Quand une unité archivistique n’est éliminable que pour l’un de ses services producteurs, l’élimination pour ce service producteur se fait sous la forme d’une modification d’arborescence : le lien de l’unité archivistique avec son unité archivistique parente pour ce service producteur est coupé. L’unité archivistique n’est plus accessible pour ce service producteur, mais reste disponible pour ses autres services producteurs.</p>
 </section>
 </section>
 <section id="mise-en-oeuvre-de-lelimination">
-<h2><span class="section-number">10.2. </span>Mise en œuvre de l’élimination<a class="headerlink" href="#mise-en-oeuvre-de-lelimination" title="Lien permanent vers cette rubrique"></a></h2>
+<h2><span class="section-number">10.2. </span>Mise en œuvre de l’élimination<a class="headerlink" href="#mise-en-oeuvre-de-lelimination" title="Lien vers cette rubrique"></a></h2>
 <section id="configuration">
-<h3><span class="section-number">10.2.1. </span>Configuration<a class="headerlink" href="#configuration" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">10.2.1. </span>Configuration<a class="headerlink" href="#configuration" title="Lien vers cette rubrique"></a></h3>
 <p>Il est possible d’ajouter des informations complémentaires dans les rapports d’élimination produits (identifiants métier, informations système) au moyen d’un paramétrage de plate-forme.</p>
 </section>
 <section id="lancement-dune-campagne-devaluation-des-eliminables-analyse">
-<h3><span class="section-number">10.2.2. </span>Lancement d’une campagne d’évaluation des éliminables (analyse)<a class="headerlink" href="#lancement-dune-campagne-devaluation-des-eliminables-analyse" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">10.2.2. </span>Lancement d’une campagne d’évaluation des éliminables (analyse)<a class="headerlink" href="#lancement-dune-campagne-devaluation-des-eliminables-analyse" title="Lien vers cette rubrique"></a></h3>
 <p>La solution logicielle permet d’étudier le caractère éliminable d’ensemble d’unités archivistiques. L’analyse peut porter sur des unités isolées, sur des unités et leur descendance, sur des entrées.</p>
 <p>La date par rapport à laquelle se fait l’analyse peut se situer dans le passé ou le futur.</p>
 <p>Il est ainsi possible de réaliser en cours d’année l’analyse des archives arrivées à échéance de leur durée d’utilité administrative au 31 décembre de l’année précédente ou bien de rechercher les archives qui deviendront éliminables à la fin de l’année.</p>
@@ -240,7 +244,7 @@ Une intervention humaine est nécessaire pour décider du sort final de l’unit
 <p>L’archiviste peut exporter sous forme de DIP des listes filtrées des résultats de l’analyse des archives éliminables pour permettre la génération, depuis son front office, des bordereaux de demande d’élimination destinés aux services producteurs.</p>
 </section>
 <section id="lancement-dune-operation-delimination-action">
-<h3><span class="section-number">10.2.3. </span>Lancement d’une opération d’élimination (action)<a class="headerlink" href="#lancement-dune-operation-delimination-action" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">10.2.3. </span>Lancement d’une opération d’élimination (action)<a class="headerlink" href="#lancement-dune-operation-delimination-action" title="Lien vers cette rubrique"></a></h3>
 <p>La solution logicielle permet de lancer une opération d’élimination d’unités archivistiques. Cette opération peut être lancée indépendamment d’une campagne d’évaluation des éliminables et porter sur des unités archivistiques n’ayant encore jamais été analysées par la solution logicielle.
 L’analyse peut porter sur des unités isolées, sur des unités et leur descendance, sur des entrées.</p>
 <p>L’opération d’élimination peut être lancée par rapport à une date située dans le passé ou à la date du jour. Elle ne peut pas être lancée par rapport à une date située dans le futur.</p>
@@ -282,7 +286,7 @@ Les GOT des unités archivistiques conservées ne sont pas listés dans le rappo
 <p>On a considéré pour le développement de la fonctionnalité d’élimination que la phase de mise en œuvre de l’élimination serait déclenchée par l’archiviste sur la base d’une évaluation préalable du caractère éliminable des archives. Dans ces conditions, la présence de documents non éliminables est une anomalie et c’est pour cette raison que le rapport liste les unités archivistiques dont le statut est « à conserver » au lieu de les ignorer comme en phase d’évaluation.</p>
 </section>
 <section id="mise-a-jour-du-registre-des-fonds">
-<h3><span class="section-number">10.2.4. </span>Mise à jour du registre des fonds<a class="headerlink" href="#mise-a-jour-du-registre-des-fonds" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">10.2.4. </span>Mise à jour du registre des fonds<a class="headerlink" href="#mise-a-jour-du-registre-des-fonds" title="Lien vers cette rubrique"></a></h3>
 <p>Les éliminations d’archives ont des conséquences sur le registre des fonds propres et symboliques.</p>
 <p>Pour les fonds propres, les totaux d’unités archivistiques, groupes d’objets techniques, objets techniques et la volumétrie sont mis à jour immédiatement. Le détail de l’opération d’entrée concernée est également mis à jour. En cliquant sur la ligne de cette opération, l’utilisateur peut connaître toutes les opérations qui ont affecté cette entrée et le nombre d’unités archivistiques, groupes d’objets techniques et objets techniques ainsi que la volumétrie concernée pour chacune des opérations, celle de l’entrée initiale comme celles des éliminations qui ont ensuite affecté cette entrée.</p>
 <p>Pour les fonds symboliques, au moment du calcul périodique des fonds symboliques de la base, les unités archivistiques, groupes d’objets techniques et objets techniques éliminés seront décomptés et la volumétrie sera mise à jour.</p>
@@ -303,7 +307,7 @@ Les GOT des unités archivistiques conservées ne sont pas listés dans le rappo
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, Programme Vitam.</p>
+    <p>&#169; Droits d'auteur 2022, Programme Vitam.</p>
   </div>
 
   Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un

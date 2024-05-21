@@ -1,21 +1,25 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="fr" >
+<html class="writer-html5" lang="fr" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>11. La gestion des droits et permissions des utilisateurs applicatifs dans la solution logicielle Vitam &mdash; Vitam documentation fonctionnelle</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=eea1f72d" />
+
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script src="../_static/translations.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f4732e6d"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/translations.js?v=bf059b8c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
@@ -179,11 +183,11 @@
            <div itemprop="articleBody">
              
   <section id="la-gestion-des-droits-et-permissions-des-utilisateurs-applicatifs-dans-la-solution-logicielle-vitam">
-<h1><span class="section-number">11. </span>La gestion des droits et permissions des utilisateurs applicatifs dans la solution logicielle Vitam<a class="headerlink" href="#la-gestion-des-droits-et-permissions-des-utilisateurs-applicatifs-dans-la-solution-logicielle-vitam" title="Lien permanent vers cette rubrique"></a></h1>
+<h1><span class="section-number">11. </span>La gestion des droits et permissions des utilisateurs applicatifs dans la solution logicielle Vitam<a class="headerlink" href="#la-gestion-des-droits-et-permissions-des-utilisateurs-applicatifs-dans-la-solution-logicielle-vitam" title="Lien vers cette rubrique"></a></h1>
 <p>La solution logicielle Vitam, comme toute application, dispose d’utilisateurs qui ont des droits plus ou moins avancés. Ses utilisateurs ne sont cependant pas des individus, mais d’autres applications informatiques qui vont utiliser ses services, comme un service d’archives qui n’aurait pour utilisateurs que des administrations, des entreprises ou des universités, sans savoir plus précisément quels sont les droits des différentes personnes relevant de ces entités.</p>
 <p>L’accès à la solution logicielle Vitam et les droits accordés sont paramétrables.</p>
 <section id="articulation-des-differentes-habilitations">
-<h2><span class="section-number">11.1. </span>Articulation des différentes habilitations<a class="headerlink" href="#articulation-des-differentes-habilitations" title="Lien permanent vers cette rubrique"></a></h2>
+<h2><span class="section-number">11.1. </span>Articulation des différentes habilitations<a class="headerlink" href="#articulation-des-differentes-habilitations" title="Lien vers cette rubrique"></a></h2>
 <p>La gestion des droits et permission d’un utilisateur applicatif dans la solution logicielle Vitam s’opère de la manière suivante :</p>
 <ul class="simple">
 <li><p>il faut d’abord définir la liste des services qu’il pourra utiliser en lui octroyant un profil de sécurité ;</p></li>
@@ -193,11 +197,11 @@
 Les services utilisés et le périmètre d’intervention autorisé peuvent être affinés, pour les opérations d’entrées, au moyen de contrats d’entrée et, pour les autres opérations (recherche, consultations d’archives, modifications, élimination, audit, préservation), au moyen de contrats d’accès.</p></li>
 </ul>
 <section id="liste-des-services-utilisables-par-les-utilisateurs-applicatifs">
-<h3><span class="section-number">11.1.1. </span>Liste des services utilisables par les utilisateurs applicatifs<a class="headerlink" href="#liste-des-services-utilisables-par-les-utilisateurs-applicatifs" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">11.1.1. </span>Liste des services utilisables par les utilisateurs applicatifs<a class="headerlink" href="#liste-des-services-utilisables-par-les-utilisateurs-applicatifs" title="Lien vers cette rubrique"></a></h3>
 <p>Pour un contexte applicatif donné, le profil de sécurité formalise les privilèges, c’est-à-dire les droits octroyés à une application externe par la solution logicielle Vitam, et par conséquent les points d’accès par lesquels cette application, une fois authentifiée, pourra transmettre des requêtes à la solution logicielle Vitam.</p>
 <p>Cela revient à définir pour un utilisateur applicatif les fonctionnalités de la solution logicielle Vitam qu’il pourra utiliser.</p>
 <p>Exemples de services : récupérer le bordereau de transfert pour une opération d’entrée donnée, envoyer un SIP à Vitam afin qu’il en réalise l’entrée, récupérer le journal de cycle de vie d’une unité archivistique, télécharger un objet, importer un référentiel des scénarios de préservation…</p>
-<p>Pour connaître les autres services, consulter l’annexe 3 du <span class="xref myst">document VITAM. Gestion des habilitations</span>.</p>
+<p>Pour connaître les autres services, consulter l’annexe 3 du <a class="reference internal" href="#./habilitations.md"><span class="xref myst">document VITAM. Gestion des habilitations</span></a>.</p>
 <p>Le profil de sécurité applicatif détermine les droits suivants :</p>
 <ul class="simple">
 <li><p>soit un accès à tous les services proposés par la solution logicielle Vitam ;</p></li>
@@ -207,7 +211,7 @@ Les services utilisés et le périmètre d’intervention autorisé peuvent êtr
 <p>Un service externe souhaitant utiliser les services de la solution logicielle Vitam doit disposer d’un profil de sécurité. Ce profil doit être associé à un contexte dès la création de ce dernier, sans quoi l’application cherchant à s’authentifier à la solution logicielle Vitam ne pourra accéder à aucun de ses services.</p>
 </section>
 <section id="enregistrement-des-utilisateurs-applicatifs">
-<h3><span class="section-number">11.1.2. </span>Enregistrement des utilisateurs applicatifs<a class="headerlink" href="#enregistrement-des-utilisateurs-applicatifs" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">11.1.2. </span>Enregistrement des utilisateurs applicatifs<a class="headerlink" href="#enregistrement-des-utilisateurs-applicatifs" title="Lien vers cette rubrique"></a></h3>
 <p>Le contexte applicatif est une description de l’utilisateur applicatif qui rassemble l’ensemble des informations sur celui-ci. Il formalise les interactions entre un service externe et la solution logicielle Vitam. Il permet notamment d’authentifier une application et de lui affecter des droits.
 Pour qu’une application externe puisse utiliser les services fournis par la solution logicielle Vitam, son contexte applicatif doit être associé à :</p>
 <ul class="simple">
@@ -220,11 +224,11 @@ Le contexte doit ensuite être associé à un certificat pour que l’applicatio
 </ul>
 </section>
 <section id="outils-dauthentification-et-de-connexion-des-utilisateurs-applicatifs">
-<h3><span class="section-number">11.1.3. </span>Outils d’authentification et de connexion des utilisateurs applicatifs<a class="headerlink" href="#outils-dauthentification-et-de-connexion-des-utilisateurs-applicatifs" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">11.1.3. </span>Outils d’authentification et de connexion des utilisateurs applicatifs<a class="headerlink" href="#outils-dauthentification-et-de-connexion-des-utilisateurs-applicatifs" title="Lien vers cette rubrique"></a></h3>
 <p>Dès qu’on souhaite connecter une application à la solution logicielle Vitam, il faut avant toute chose, l’authentifier au moyen d’un certificat applicatif qui détermine un contexte applicatif, avant de lui associer un profil de sécurité et des contrats, préexistants ou créés à cette occasion.</p>
 <p>Un service externe souhaitant utiliser les services de la solution logicielle Vitam doit avoir déclaré son certificat applicatif dans la solution logicielle Vitam. Ce certificat doit être associé à un contexte dès la création de celui-ci, sans quoi l’application cherchant à s’authentifier à la solution logicielle Vitam ne pourra accéder à aucun de ses services.</p>
 <section id="certificat-applicatif-et-certificat-personnel">
-<h4><span class="section-number">11.1.3.1. </span>Certificat applicatif et certificat personnel<a class="headerlink" href="#certificat-applicatif-et-certificat-personnel" title="Lien permanent vers cette rubrique"></a></h4>
+<h4><span class="section-number">11.1.3.1. </span>Certificat applicatif et certificat personnel<a class="headerlink" href="#certificat-applicatif-et-certificat-personnel" title="Lien vers cette rubrique"></a></h4>
 <p>Le certificat applicatif permet d’identifier et d’authentifier une application souhaitant accéder aux services de la solution logicielle Vitam.</p>
 <p>Il doit être associé obligatoirement à au moins un contexte applicatif.</p>
 <p>Le certificat personnel correspond à un certificat propre à une personne physique utilisatrice en particulier de l’application souhaitant accéder aux services de la solution logicielle Vitam. Le certificat personnel ne se substitue pas au certificat applicatif qui authentifie une application, et il sert uniquement à identifier et non à authentifier une personne qui se connecte derrière une application.</p>
@@ -234,28 +238,28 @@ Le contexte doit ensuite être associé à un certificat pour que l’applicatio
 </section>
 </section>
 <section id="perimetre-daction-des-utilisateurs-applicatifs">
-<h3><span class="section-number">11.1.4. </span>Périmètre d’action des utilisateurs applicatifs<a class="headerlink" href="#perimetre-daction-des-utilisateurs-applicatifs" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">11.1.4. </span>Périmètre d’action des utilisateurs applicatifs<a class="headerlink" href="#perimetre-daction-des-utilisateurs-applicatifs" title="Lien vers cette rubrique"></a></h3>
 <p>Le contexte applicatif doit être associé à un ou plusieurs tenants auxquels l’application aura le droit d’accéder.</p>
 <p>Pour assurer une étanchéité entre les tenants, il est préconisé d’associer un seul tenant par contexte. De cette manière, le mécanisme d’authentification d’une application externe à un tenant ne permet de verser et d’accéder qu’à ce seul tenant. Le mécanisme de multi-tenant pour le contexte applicatif est mis en place pour le cas d’un système d’information archivistique (SIA) qui devrait pouvoir accéder à plusieurs tenants.</p>
 </section>
 <section id="affinage-des-droits-et-perimetres-dintervention-des-utilisateurs-applicatifs">
-<h3><span class="section-number">11.1.5. </span>Affinage des droits et périmètres d’intervention des utilisateurs applicatifs<a class="headerlink" href="#affinage-des-droits-et-perimetres-dintervention-des-utilisateurs-applicatifs" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">11.1.5. </span>Affinage des droits et périmètres d’intervention des utilisateurs applicatifs<a class="headerlink" href="#affinage-des-droits-et-perimetres-dintervention-des-utilisateurs-applicatifs" title="Lien vers cette rubrique"></a></h3>
 <p>Si l’utilisateur applicatif doit réaliser des entrées, son contexte applicatif doit également être associé à un ou plusieurs contrats d’entrée.</p>
 <p>De même, pour réaliser des accès, son contexte applicatif doit être associé à un ou plusieurs contrats d’accès.
 Les contrats d’entrée et d’accès permettent de paramétrer finement les droits des utilisateurs applicatifs : par exemple, une application externe qui a le droit de télécharger un objet pourra dans son contrat d’accès être limitée aux archives de certains producteurs et à certains usages des objets.
-Pour en savoir plus, consulter les vademecum <a class="reference internal" href="Vademecum_contrat_entree.html"><span class="doc std std-doc">Le contrat d’entrée dans la solution logicielle Vitam</span></a> et <a class="reference internal" href="Vademecum_contrat_acces.html"><span class="doc std std-doc">Le contrat d’accès dans la solution logicielle Vitam</span></a>.</p>
+Pour en savoir plus, consulter les vademecum <a class="reference internal" href="Vademecum_contrat_entree.html"><span class="std std-doc">Le contrat d’entrée dans la solution logicielle Vitam</span></a> et <a class="reference internal" href="Vademecum_contrat_acces.html"><span class="std std-doc">Le contrat d’accès dans la solution logicielle Vitam</span></a>.</p>
 </section>
 </section>
 <section id="presentation-des-referentiels-des-habilitations">
-<h2><span class="section-number">11.2. </span>Présentation des référentiels des habilitations<a class="headerlink" href="#presentation-des-referentiels-des-habilitations" title="Lien permanent vers cette rubrique"></a></h2>
+<h2><span class="section-number">11.2. </span>Présentation des référentiels des habilitations<a class="headerlink" href="#presentation-des-referentiels-des-habilitations" title="Lien vers cette rubrique"></a></h2>
 <section id="perimetre-des-habilitations">
-<h3><span class="section-number">11.2.1. </span>Périmètre des habilitations<a class="headerlink" href="#perimetre-des-habilitations" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">11.2.1. </span>Périmètre des habilitations<a class="headerlink" href="#perimetre-des-habilitations" title="Lien vers cette rubrique"></a></h3>
 <p>La solution logicielle Vitam intègre un référentiel pour chaque type d’habilitation, administrable par l’administrateur fonctionnel ou technique.</p>
 <p>Les référentiels des certificats applicatifs, des certificats personnels, des contextes applicatifs et des profils de sécurité sont multi-tenants. Ils sont administrables et journalisés depuis le tenant d’administration.</p>
 <p>Les référentiels des contrats d’entrée et des contrats d’accès sont propres à chaque tenant de la solution logicielle Vitam.</p>
 </section>
 <section id="controles-realises-par-la-solution-logicielle-vitam-au-moyen-des-habilitations">
-<h3><span class="section-number">11.2.2. </span>Contrôles réalisés par la solution logicielle Vitam au moyen des habilitations<a class="headerlink" href="#controles-realises-par-la-solution-logicielle-vitam-au-moyen-des-habilitations" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">11.2.2. </span>Contrôles réalisés par la solution logicielle Vitam au moyen des habilitations<a class="headerlink" href="#controles-realises-par-la-solution-logicielle-vitam-au-moyen-des-habilitations" title="Lien vers cette rubrique"></a></h3>
 <p>Un service externe doit toujours s’authentifier à la solution logicielle Vitam au moyen de son certificat applicatif qui détermine un contexte applicatif.
 Lorsqu’il adresse une requête à la solution logicielle Vitam celle-ci vérifie que :</p>
 <ul class="simple">
@@ -270,12 +274,12 @@ Si un élément fait défaut, le service externe ne pourra pas accéder aux serv
 </section>
 </section>
 <section id="configuration-des-habilitations">
-<h2><span class="section-number">11.3. </span>Configuration des habilitations<a class="headerlink" href="#configuration-des-habilitations" title="Lien permanent vers cette rubrique"></a></h2>
+<h2><span class="section-number">11.3. </span>Configuration des habilitations<a class="headerlink" href="#configuration-des-habilitations" title="Lien vers cette rubrique"></a></h2>
 <p>La configuration des habilitations est une opération d’administration technique.
 Toutefois, l’administrateur fonctionnel intervient dans la définition des droits à accorder à chaque application en fonction de ses besoins d’interaction avec la plate-forme d’archivage.
-Pour en savoir plus sur la formalisation des habilitations, consulter le <a class="reference internal" href="modele_de_donnees.html"><span class="doc std std-doc">document VITAM. Modèle des données</span></a>.</p>
+Pour en savoir plus sur la formalisation des habilitations, consulter le <a class="reference internal" href="modele_de_donnees.html"><span class="std std-doc">document VITAM. Modèle des données</span></a>.</p>
 <section id="gestion-dune-nouvelle-application">
-<h3><span class="section-number">11.3.1. </span>Gestion d’une nouvelle application<a class="headerlink" href="#gestion-dune-nouvelle-application" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">11.3.1. </span>Gestion d’une nouvelle application<a class="headerlink" href="#gestion-dune-nouvelle-application" title="Lien vers cette rubrique"></a></h3>
 <p>Pour connecter une nouvelle application à la solution logicielle Vitam, il est recommandé de suivre les étapes suivantes :</p>
 <table class="docutils align-default">
 <thead>
@@ -335,12 +339,12 @@ Pour en savoir plus sur la formalisation des habilitations, consulter le <a clas
 </table>
 </section>
 <section id="gestion-des-identifiants-des-habilitations">
-<h3><span class="section-number">11.3.2. </span>Gestion des identifiants des habilitations<a class="headerlink" href="#gestion-des-identifiants-des-habilitations" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">11.3.2. </span>Gestion des identifiants des habilitations<a class="headerlink" href="#gestion-des-identifiants-des-habilitations" title="Lien vers cette rubrique"></a></h3>
 <p>À l’installation de la plate-forme Vitam, l’administrateur technique peut configurer le tenant pour que les identifiants des profils de sécurité, des contextes applicatifs, des contrats d’entrée et des contrats d’accès soient générés par Vitam (mode « maître ») ou par le front-office (mode « esclave »).</p>
 <p>Le mode « esclave » est intéressant si les habilitations sont générées dans le front office qui leur donne un identifiant que l’on souhaite pouvoir suivre.</p>
 </section>
 <section id="activation-et-desactivation-des-elements-des-habilitations">
-<h3><span class="section-number">11.3.3. </span>Activation et désactivation des éléments des habilitations<a class="headerlink" href="#activation-et-desactivation-des-elements-des-habilitations" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">11.3.3. </span>Activation et désactivation des éléments des habilitations<a class="headerlink" href="#activation-et-desactivation-des-elements-des-habilitations" title="Lien vers cette rubrique"></a></h3>
 <p>La solution logicielle Vitam permet de rendre actif ou de désactiver un contexte applicatif, un contrat d’entrée ou un contrat d’accès.
 En fonction du statut du contexte applicatif et de celui du contrat d’entrée associé, un transfert de SIP sera autorisé ou non :</p>
 <p>||Contexte applicatif|Contrat d’entrée|Résultat|
@@ -357,9 +361,9 @@ En fonction du statut du contexte applicatif et de celui du contrat d’entrée 
 </section>
 </section>
 <section id="import-modification-et-suppression-des-habilitations">
-<h2><span class="section-number">11.4. </span>Import, modification et suppression des habilitations<a class="headerlink" href="#import-modification-et-suppression-des-habilitations" title="Lien permanent vers cette rubrique"></a></h2>
+<h2><span class="section-number">11.4. </span>Import, modification et suppression des habilitations<a class="headerlink" href="#import-modification-et-suppression-des-habilitations" title="Lien vers cette rubrique"></a></h2>
 <section id="import">
-<h3><span class="section-number">11.4.1. </span>Import<a class="headerlink" href="#import" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">11.4.1. </span>Import<a class="headerlink" href="#import" title="Lien vers cette rubrique"></a></h3>
 <p>Dans la solution logicielle Vitam, il est possible d’importer :</p>
 <ul class="simple">
 <li><p>1 à n contexte(s) applicatif(s),</p></li>
@@ -378,16 +382,16 @@ Il est possible de générer ainsi :</p>
 </ul>
 </section>
 <section id="modification">
-<h3><span class="section-number">11.4.2. </span>Modification<a class="headerlink" href="#modification" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">11.4.2. </span>Modification<a class="headerlink" href="#modification" title="Lien vers cette rubrique"></a></h3>
 <p>Cette action provoque la création d’une nouvelle version du contexte, contrat d’entrée, contrat d’accès ou profil de sécurité modifié.
 Elle fait l’objet d’une journalisation dans le journal des opérations.</p>
 </section>
 <section id="suppression">
-<h3><span class="section-number">11.4.3. </span>Suppression<a class="headerlink" href="#suppression" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">11.4.3. </span>Suppression<a class="headerlink" href="#suppression" title="Lien vers cette rubrique"></a></h3>
 <p>La solution logicielle permet de supprimer unitairement certaines habilitations : certificat applicatif, certificat personnel, profil de sécurité et contexte applicatif.
 Cette suppression peut avoir un impact sur les interactions entre l’application versante et/ou accédante et la solution logicielle Vitam. Cette opération relève d’une opération d’administration technique.
 Elle fait l’objet d’une journalisation dans le journal des opérations.</p>
-<p>Pour en savoir plus, consulter le <span class="xref myst">document VITAM. Gestion des habilitations</span>.</p>
+<p>Pour en savoir plus, consulter le <a class="reference internal" href="#./habilitations.md"><span class="xref myst">document VITAM. Gestion des habilitations</span></a>.</p>
 </section>
 </section>
 </section>
@@ -404,7 +408,7 @@ Elle fait l’objet d’une journalisation dans le journal des opérations.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, Programme Vitam.</p>
+    <p>&#169; Droits d'auteur 2022, Programme Vitam.</p>
   </div>
 
   Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un

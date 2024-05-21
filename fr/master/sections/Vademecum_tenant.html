@@ -1,21 +1,25 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="fr" >
+<html class="writer-html5" lang="fr" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>29. Les tenants dans la solution logicielle Vitam &mdash; Vitam documentation fonctionnelle</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=eea1f72d" />
+
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script src="../_static/translations.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f4732e6d"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/translations.js?v=bf059b8c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
@@ -158,10 +162,10 @@
            <div itemprop="articleBody">
              
   <section id="les-tenants-dans-la-solution-logicielle-vitam">
-<h1><span class="section-number">29. </span>Les tenants dans la solution logicielle Vitam<a class="headerlink" href="#les-tenants-dans-la-solution-logicielle-vitam" title="Lien permanent vers cette rubrique"></a></h1>
+<h1><span class="section-number">29. </span>Les tenants dans la solution logicielle Vitam<a class="headerlink" href="#les-tenants-dans-la-solution-logicielle-vitam" title="Lien vers cette rubrique"></a></h1>
 <p>La solution logicielle Vitam permet de cloisonner la plate-forme pour séparer les données de façon stricte et sécuriser les accès, de même que, dans un bâtiment d’archives, on peut choisir d’attribuer des magasins à des producteurs ou à des documents en particulier (fonds précieux, données sensibles) pour limiter physiquement les accès à ces archives. Ce cloisonnement s’opère en créant des espaces distincts appelés « tenants ».</p>
 <section id="presentation-du-tenant">
-<h2><span class="section-number">29.1. </span>Présentation du tenant<a class="headerlink" href="#presentation-du-tenant" title="Lien permanent vers cette rubrique"></a></h2>
+<h2><span class="section-number">29.1. </span>Présentation du tenant<a class="headerlink" href="#presentation-du-tenant" title="Lien vers cette rubrique"></a></h2>
 <p>Un tenant correspond à une partition étanche de la plate-forme d’archivage. Les données conservées sur un tenant ne sont consultables que par les applications disposant de droits d’accès à ce tenant  (cf. contexte et contrat d’accès). De même, seules les applications habilitées peuvent réaliser une entrée sur un tenant donné (cf. contexte et contrat d’entrée).
 Le tenant permet un cloisonnement (ou séparation logique) des archives. Ce n’est pas une séparation physique des offres de stockage.
 Pour permettre une gestion fine adaptée aux besoins des utilisateurs, chaque tenant est paramétrable indépendamment des autres tenants de la plate-forme sur les aspects suivants :</p>
@@ -177,7 +181,7 @@ Pour permettre une gestion fine adaptée aux besoins des utilisateurs, chaque te
 </ul>
 </section>
 <section id="configuration-des-tenants">
-<h2><span class="section-number">29.2. </span>Configuration des tenants<a class="headerlink" href="#configuration-des-tenants" title="Lien permanent vers cette rubrique"></a></h2>
+<h2><span class="section-number">29.2. </span>Configuration des tenants<a class="headerlink" href="#configuration-des-tenants" title="Lien vers cette rubrique"></a></h2>
 <p>Une plate-forme utilisant la solution logicielle Vitam peut fonctionner en mode mono-tenant ou multi-tenant. À l’installation de la plate-forme, l’administrateur fonctionnel doit donc décider le nombre de tenants à configurer.
 Pour cela, il doit s’interroger sur ses besoins :</p>
 <ul class="simple">
@@ -196,10 +200,10 @@ Pour cela, il doit s’interroger sur ses besoins :</p>
 Cela permet de restreindre les modifications impactant toute la plate-forme aux seuls utilisateurs applicatifs accédant au tenant d’administration.</p>
 </section>
 <section id="inconvenients-de-la-gestion-dun-trop-grand-nombre-de-tenants-sur-une-meme-plate-forme">
-<h2><span class="section-number">29.3. </span>Inconvénients de la gestion d’un trop grand nombre de tenants sur une même plate-forme<a class="headerlink" href="#inconvenients-de-la-gestion-dun-trop-grand-nombre-de-tenants-sur-une-meme-plate-forme" title="Lien permanent vers cette rubrique"></a></h2>
+<h2><span class="section-number">29.3. </span>Inconvénients de la gestion d’un trop grand nombre de tenants sur une même plate-forme<a class="headerlink" href="#inconvenients-de-la-gestion-dun-trop-grand-nombre-de-tenants-sur-une-meme-plate-forme" title="Lien vers cette rubrique"></a></h2>
 <p>La configuration de plusieurs tenants a des conséquences techniques et organisationnelles à évaluer avant de fixer le nombre de tenants à configurer.</p>
 <section id="consequences-techniques">
-<h3><span class="section-number">29.3.1. </span>Conséquences techniques<a class="headerlink" href="#consequences-techniques" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">29.3.1. </span>Conséquences techniques<a class="headerlink" href="#consequences-techniques" title="Lien vers cette rubrique"></a></h3>
 <ul class="simple">
 <li><p>performance : il y aura autant d’opérations de sécurisation sur la plate-forme que de tenants, ce qui peut ralentir les performances ;</p></li>
 <li><p>stockage : multiplier les tenants multiplie le nombre de conteneurs créés sur les offres de stockage.
@@ -207,7 +211,7 @@ Ces conséquences techniques sont valables même en l’absence d’entrée d’
 </ul>
 </section>
 <section id="consequences-organisationnelles">
-<h3><span class="section-number">29.3.2. </span>Conséquences organisationnelles<a class="headerlink" href="#consequences-organisationnelles" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">29.3.2. </span>Conséquences organisationnelles<a class="headerlink" href="#consequences-organisationnelles" title="Lien vers cette rubrique"></a></h3>
 <ul class="simple">
 <li><p>administration fonctionnelle : certains référentiels n’étant valables que sur un tenant donné, il conviendra de gérer autant de ces référentiels mono-tenants qu’il y a de tenants, tout en veillant à la cohérence globale des référentiels trans-tenants (cas de l’ontologie qui doit référencer l’ensemble des vocabulaires utilisés sur les différents tenants) ;</p></li>
 <li><p>capacité des utilisateurs applicatifs à verser et à accéder aux données : les interactions d’une application avec la plate-forme en versement et en accès sont limitées aux tenants qui sont autorisés dans son contexte ; ainsi, si une application doit pouvoir accéder aux archives de plusieurs tenants, il lui faudra autant de contrats d’accès que de tenants auxquels elle doit accéder et il en va de même pour les contrats d’entrée pour réaliser des versements ; c’est pourquoi il est conseillé de ne pas séparer plus que strictement nécessaire les archives d’un même producteur sur plusieurs tenants si on ne souhaite pas devoir gérer pour ce producteur un trop grand nombre de contrats.</p></li>
@@ -216,7 +220,7 @@ Ces conséquences techniques sont valables même en l’absence d’entrée d’
 </section>
 </section>
 <section id="formalisation-des-tenants">
-<h2><span class="section-number">29.4. </span>Formalisation des tenants<a class="headerlink" href="#formalisation-des-tenants" title="Lien permanent vers cette rubrique"></a></h2>
+<h2><span class="section-number">29.4. </span>Formalisation des tenants<a class="headerlink" href="#formalisation-des-tenants" title="Lien vers cette rubrique"></a></h2>
 <p>Les tenants se configurent à l’installation de la plate-forme. Cette opération est réalisée par l’administrateur technique.
 Il sera possible par la suite d’ajouter des tenants, mais il s’agit d’un acte d’exploitation technique qui nécessitera un arrêt des opérations en cours (versements, éliminations, transferts…).</p>
 <p>Pour en savoir plus, consulter la <a class="reference external" href="http://www.programmevitam.fr/ressources/DocCourante/html/installation/">documentation d’installation</a>.</p>
@@ -234,7 +238,7 @@ Il sera possible par la suite d’ajouter des tenants, mais il s’agit d’un a
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, Programme Vitam.</p>
+    <p>&#169; Droits d'auteur 2022, Programme Vitam.</p>
   </div>
 
   Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un

@@ -1,21 +1,25 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="fr" >
+<html class="writer-html5" lang="fr" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>25. Le référentiel des services agents dans la solution logicielle Vitam &mdash; Vitam documentation fonctionnelle</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=eea1f72d" />
+
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script src="../_static/translations.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f4732e6d"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/translations.js?v=bf059b8c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
@@ -163,18 +167,18 @@
            <div itemprop="articleBody">
              
   <section id="le-referentiel-des-services-agents-dans-la-solution-logicielle-vitam">
-<h1><span class="section-number">25. </span>Le référentiel des services agents dans la solution logicielle Vitam<a class="headerlink" href="#le-referentiel-des-services-agents-dans-la-solution-logicielle-vitam" title="Lien permanent vers cette rubrique"></a></h1>
+<h1><span class="section-number">25. </span>Le référentiel des services agents dans la solution logicielle Vitam<a class="headerlink" href="#le-referentiel-des-services-agents-dans-la-solution-logicielle-vitam" title="Lien vers cette rubrique"></a></h1>
 <p>Le service producteur constitue une donnée essentielle du système d’archivage électronique, car il permet d’identifier précisément les responsables des fonds d’archives, et de gérer les droits d’accès et de traitement sur celles-ci en se basant sur une information normalisée et fiable dans la solution logicielle Vitam.
 Le référentiel des services agents liste l’ensemble des services producteurs et versants des unités archivistiques conservées dans la solution logicielle Vitam et gère cette donnée de référence.
 Le référentiel sert de base au contrôle des services déclarés dans le bordereau de transfert lors de l’entrée, à l’alimentation du registre des fonds ainsi qu’à la gestion des accès sur les archives.</p>
 <section id="presentation-du-referentiel-des-services-agents">
-<h2><span class="section-number">25.1. </span>Présentation du référentiel des services agents<a class="headerlink" href="#presentation-du-referentiel-des-services-agents" title="Lien permanent vers cette rubrique"></a></h2>
+<h2><span class="section-number">25.1. </span>Présentation du référentiel des services agents<a class="headerlink" href="#presentation-du-referentiel-des-services-agents" title="Lien vers cette rubrique"></a></h2>
 <section id="perimetre-du-referentiel-des-services-agents">
-<h3><span class="section-number">25.1.1. </span>Périmètre du référentiel des services agents<a class="headerlink" href="#perimetre-du-referentiel-des-services-agents" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">25.1.1. </span>Périmètre du référentiel des services agents<a class="headerlink" href="#perimetre-du-referentiel-des-services-agents" title="Lien vers cette rubrique"></a></h3>
 <p>Un référentiel des services agents est propre au tenant sur lequel il a été importé.</p>
 </section>
 <section id="controles-effectues-a-partir-du-referentiel-des-services-agents">
-<h3><span class="section-number">25.1.2. </span>Contrôles effectués à partir du référentiel des services agents<a class="headerlink" href="#controles-effectues-a-partir-du-referentiel-des-services-agents" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">25.1.2. </span>Contrôles effectués à partir du référentiel des services agents<a class="headerlink" href="#controles-effectues-a-partir-du-referentiel-des-services-agents" title="Lien vers cette rubrique"></a></h3>
 <p>Lors d’une entrée, la solution logicielle Vitam vérifie que les services agents déclarés pour toute l’entrée (balise <ManagementMetadata> du bordereau de transfert) – c’est-à-dire le service producteur et le service versant de l’entrée – sont bien présents dans le référentiel des services agents applicable sur le tenant.</p>
 <p>En cas d’absence du référentiel des services agents, la vérification de la conformité des services agents présents dans le bordereau de transfert ne pourra être réalisée et l’entrée sera rejetée. Ce référentiel est donc indispensable pour pouvoir réaliser des entrées.</p>
 <p>Sur la base de ce contrôle, la solution logicielle enregistre la prise en charge du transfert pour le service producteur déclaré dans le bordereau de transfert et enrichit en conséquence le registre des fonds de celui-ci.</p>
@@ -183,20 +187,20 @@ Le référentiel sert de base au contrôle des services déclarés dans le borde
 </section>
 </section>
 <section id="configuration-du-referentiel-des-services-agents">
-<h2><span class="section-number">25.2. </span>Configuration du référentiel des services agents<a class="headerlink" href="#configuration-du-referentiel-des-services-agents" title="Lien permanent vers cette rubrique"></a></h2>
+<h2><span class="section-number">25.2. </span>Configuration du référentiel des services agents<a class="headerlink" href="#configuration-du-referentiel-des-services-agents" title="Lien vers cette rubrique"></a></h2>
 <section id="constitution-du-referentiel-des-services-agents">
-<h3><span class="section-number">25.2.1. </span>Constitution du référentiel des services agents<a class="headerlink" href="#constitution-du-referentiel-des-services-agents" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">25.2.1. </span>Constitution du référentiel des services agents<a class="headerlink" href="#constitution-du-referentiel-des-services-agents" title="Lien vers cette rubrique"></a></h3>
 <p>L’administrateur fonctionnel constitue le référentiel des services agents à partir du recensement des services producteurs et versants de son entité.
 À chacun de ces services, il associe un identifiant et une description sommaire qui permettra de différencier au besoin deux services au nom proche, par exemple, les services des ressources humaines des différentes entités.</p>
 <p>Le référentiel des services agents n’est pas un référentiel complet comme ceux utilisés dans les applications archivistiques qui indiquent les filiations et les héritages. Pour les services qui disposent déjà d’un tel outil, une extraction simplifiée en sera réalisée pour alimenter la solution logicielle Vitam.</p>
 </section>
 <section id="gestion-des-identifiants-des-services-agents">
-<h3><span class="section-number">25.2.2. </span>Gestion des identifiants des services agents<a class="headerlink" href="#gestion-des-identifiants-des-services-agents" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">25.2.2. </span>Gestion des identifiants des services agents<a class="headerlink" href="#gestion-des-identifiants-des-services-agents" title="Lien vers cette rubrique"></a></h3>
 <p>Le référentiel des services agents fonctionne en mode « esclave ». En effet, le référencement des agents constitue une donnée de référence partagée entre de nombreux systèmes et, dans les services d’archives, souvent pilotée depuis le SIA ou des gestionnaires de référentiels externes au SAE. Le  référentiel du SAE sera alors constitué d’un export du référentiel maître applicable aux archives papier comme électroniques, ce qui permet de garder une unité dans la dénomination (identifiant) des services agents, quel que soit le support auquel ils s’appliquent.
 Utiliser le référentiel des services agents en mode « esclave » permet également au service d’archives d’attribuer des identifiants signifiants aux services agents et/ou de permettre l’interopérabilité avec des systèmes attribuant des identifiants nationaux ou internationaux pour désigner de manière univoque les personnes et les organismes, comme les identifiants ISNI (International Standard Name Identifier).</p>
 </section>
 <section id="formalisation-du-referentiel-des-services-agents">
-<h3><span class="section-number">25.2.3. </span>Formalisation du référentiel des services agents<a class="headerlink" href="#formalisation-du-referentiel-des-services-agents" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">25.2.3. </span>Formalisation du référentiel des services agents<a class="headerlink" href="#formalisation-du-referentiel-des-services-agents" title="Lien vers cette rubrique"></a></h3>
 <p>Le référentiel des services agents est importé dans la solution logicielle Vitam sous la forme d’un fichier tableur au format .csv comportant les colonnes suivantes :</p>
 <table class="docutils align-default">
 <thead>
@@ -230,11 +234,11 @@ Utiliser le référentiel des services agents en mode « esclave » permet ég
 <li><p>séparateur de champ : la virgule ;</p></li>
 <li><p>séparateur de texte : guillemets simples ou doubles, espace vide.</p></li>
 </ul>
-<p>Pour en savoir plus, consulter le <a class="reference internal" href="modele_de_donnees.html"><span class="doc std std-doc">document VITAM. Modèle de données</span></a>.</p>
+<p>Pour en savoir plus, consulter le <a class="reference internal" href="modele_de_donnees.html"><span class="std std-doc">document VITAM. Modèle de données</span></a>.</p>
 </section>
 </section>
 <section id="modification-du-referentiel-des-services-agents">
-<h2><span class="section-number">25.3. </span>Modification du référentiel des services agents<a class="headerlink" href="#modification-du-referentiel-des-services-agents" title="Lien permanent vers cette rubrique"></a></h2>
+<h2><span class="section-number">25.3. </span>Modification du référentiel des services agents<a class="headerlink" href="#modification-du-referentiel-des-services-agents" title="Lien vers cette rubrique"></a></h2>
 <p>Le référentiel des services agents ne peut pas être mis à jour unitairement (pour un service uniquement). Il convient d’importer un nouveau fichier .csv contenant l’ensemble des services agents en mode « annule et remplace ».</p>
 <p>Lors d’une mise à jour du référentiel, des contrôles sont effectués sur les services agents déjà utilisés dans la solution logicielle Vitam, c’est-à-dire les services agents déclarés par des entrées ou par des contrats d’accès.
 Sont appliqués les cas suivants :</p>
@@ -243,7 +247,7 @@ Sont appliqués les cas suivants :</p>
 <li><p>succès avec avertissement de la mise à jour si celle-ci a demandé la modification d’un service agent déjà utilisé (uniquement son intitulé et sa description).</p></li>
 </ul>
 <p>Les différentes versions du référentiel font l’objet d’une sauvegarde sur les offres de stockage utilisées par l’implémentation de la solution logicielle Vitam.</p>
-<p>Pour aller plus loin, consulter le <a class="reference internal" href="services_prod.html"><span class="doc std std-doc">document VITAM. Services producteurs</span></a>.</p>
+<p>Pour aller plus loin, consulter le <a class="reference internal" href="services_prod.html"><span class="std std-doc">document VITAM. Services producteurs</span></a>.</p>
 </section>
 </section>
 
@@ -259,7 +263,7 @@ Sont appliqués les cas suivants :</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, Programme Vitam.</p>
+    <p>&#169; Droits d'auteur 2022, Programme Vitam.</p>
   </div>
 
   Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un

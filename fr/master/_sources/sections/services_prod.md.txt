@@ -161,7 +161,7 @@ Celui-ci est composé comme suit :
     - le nombre d’« entités » (unités archivistiques, groupes d’objets, objets) et la taille globale des objets pour cette entrée – avec indication du nombre ou de la taille initiale :
         - des entités prises en charge lors du transfert,
         - des entités de ce transfert sorties de la responsabilité de la solution logicielle depuis leur prise en charge (suite à élimination ou réversibilité),
-        - ▪ des entités de ce transfert actuellement sous la responsabilité de la solution logicielle ;
+        - des entités de ce transfert actuellement sous la responsabilité de la solution logicielle ;
     - le statut :
         - en stock et complète,
         - en stock et mise à jour,

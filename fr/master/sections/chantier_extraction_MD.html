@@ -1,21 +1,25 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="fr" >
+<html class="writer-html5" lang="fr" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>3. Extraction des métadonnées techniques &mdash; Vitam documentation fonctionnelle</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=eea1f72d" />
+
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script src="../_static/translations.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f4732e6d"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/translations.js?v=bf059b8c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
@@ -223,11 +227,11 @@
            <div itemprop="articleBody">
              
   <section id="extraction-des-metadonnees-techniques">
-<h1><span class="section-number">3. </span>Extraction des métadonnées techniques<a class="headerlink" href="#extraction-des-metadonnees-techniques" title="Lien permanent vers cette rubrique"></a></h1>
+<h1><span class="section-number">3. </span>Extraction des métadonnées techniques<a class="headerlink" href="#extraction-des-metadonnees-techniques" title="Lien vers cette rubrique"></a></h1>
 <section id="introduction">
-<h2><span class="section-number">3.1. </span>Introduction<a class="headerlink" href="#introduction" title="Lien permanent vers cette rubrique"></a></h2>
+<h2><span class="section-number">3.1. </span>Introduction<a class="headerlink" href="#introduction" title="Lien vers cette rubrique"></a></h2>
 <section id="documents-de-reference">
-<h3><span class="section-number">3.1.1. </span>Documents de référence<a class="headerlink" href="#documents-de-reference" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">3.1.1. </span>Documents de référence<a class="headerlink" href="#documents-de-reference" title="Lien vers cette rubrique"></a></h3>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p><strong>Document</strong></p></th>
@@ -236,15 +240,15 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-center"><p><a class="reference internal" href="preservation.html"><span class="doc std std-doc">Vitam – Gestion de la préservation</span></a></p></td>
+<tr class="row-even"><td class="text-center"><p><a class="reference internal" href="preservation.html"><span class="std std-doc">Vitam – Gestion de la préservation</span></a></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p><a class="reference internal" href="chantier_identification_format.html"><span class="doc std std-doc">Vitam – Identification des formats de fichiers</span></a></p></td>
+<tr class="row-odd"><td class="text-center"><p><a class="reference internal" href="chantier_identification_format.html"><span class="std std-doc">Vitam – Identification des formats de fichiers</span></a></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 </tr>
-<tr class="row-even"><td class="text-center"><p><a class="reference internal" href="chantier_preservation_validation_format.html"><span class="doc std std-doc">Vitam – Validation du format des fichiers</span></a></p></td>
+<tr class="row-even"><td class="text-center"><p><a class="reference internal" href="chantier_preservation_validation_format.html"><span class="std std-doc">Vitam – Validation du format des fichiers</span></a></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 </tr>
@@ -252,12 +256,12 @@
 </table>
 </section>
 <section id="presentation-du-document">
-<h3><span class="section-number">3.1.2. </span>Présentation du document<a class="headerlink" href="#presentation-du-document" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">3.1.2. </span>Présentation du document<a class="headerlink" href="#presentation-du-document" title="Lien vers cette rubrique"></a></h3>
 <p>Le présent document constitue une présentation de la problématique des métadonnées associées aux fichiers numériques et de leur extraction automatisée, et de la manière dont elle est abordée par le programme Vitam, aux fins de permettre la pérennisation à moyen et long terme des archives électroniques.</p>
 <p>Il fait partie d’un ensemble de documents liés aux questions d’identification et de validation de formats.</p>
 </section>
 <section id="definitions">
-<h3><span class="section-number">3.1.3. </span>Définitions<a class="headerlink" href="#definitions" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">3.1.3. </span>Définitions<a class="headerlink" href="#definitions" title="Lien vers cette rubrique"></a></h3>
 <p><strong>Conversion de format :</strong> opération qui consiste à convertir le document dans un format différent de celui dans lequel il était précédemment encodé. Elle doit préserver la fidélité du document (Source : NF Z 42-013).</p>
 <p><strong>Format de fichier :</strong> ensemble des règles et algorithmes permettant d’organiser l’information dans un objet numérique, par exemple : spécifier le codage des couleurs des pixels d’une image ; définir un algorithme de compression des données et l’organisation de ces données dans un fichier (formats PNG, TIFF…) ; spécifier l’organisation et la structuration d’informations textuelles à partir de l’encodage élémentaire des caractères (formats SGML, XML) ; définir comment les quatre informations élémentaires que sont la mantisse (nombre entier positif), l’exposant (nombre entier positif), le signe de l’exposant et le signe de la mantisse (caractères + et -) sont organisées pour représenter un nombre réel sous forme numérique (cf. standard ANSI/IEEE 754-1985) (Source : PIAF).</p>
 <p><strong>Identification de format :</strong> processus permettant de définir précisément le format d’un fichier numérique, qu’il s’agisse d’un conteneur ou non.</p>
@@ -267,11 +271,11 @@
 </section>
 </section>
 <section id="presentation-de-la-problematique">
-<h2><span class="section-number">3.2. </span>Présentation de la problématique<a class="headerlink" href="#presentation-de-la-problematique" title="Lien permanent vers cette rubrique"></a></h2>
+<h2><span class="section-number">3.2. </span>Présentation de la problématique<a class="headerlink" href="#presentation-de-la-problematique" title="Lien vers cette rubrique"></a></h2>
 <section id="contexte-metadonnee-et-standards-de-description">
-<h3><span class="section-number">3.2.1. </span>Contexte : métadonnée et standards de description<a class="headerlink" href="#contexte-metadonnee-et-standards-de-description" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">3.2.1. </span>Contexte : métadonnée et standards de description<a class="headerlink" href="#contexte-metadonnee-et-standards-de-description" title="Lien vers cette rubrique"></a></h3>
 <section id="quest-ce-quune-metadonnee-interne">
-<h4><span class="section-number">3.2.1.1. </span>Qu’est-ce qu’une métadonnée interne ?<a class="headerlink" href="#quest-ce-quune-metadonnee-interne" title="Lien permanent vers cette rubrique"></a></h4>
+<h4><span class="section-number">3.2.1.1. </span>Qu’est-ce qu’une métadonnée interne ?<a class="headerlink" href="#quest-ce-quune-metadonnee-interne" title="Lien vers cette rubrique"></a></h4>
 <p>Les fichiers numériques sont accompagnés de métadonnées leur permettant d’être identifiés et utilisables, c’est-à-dire exécutés, interrogés, consultés, modifiés ou imprimés.</p>
 <p>Ces métadonnées peuvent être de deux types :</p>
 <ul class="simple">
@@ -290,10 +294,10 @@ Elles peuvent être redondantes. Néanmoins, leur coexistence peut s’avérer u
 <p>Les métadonnées internes, associées à des fichiers numériques, font l’objet du présent document. Elles obéissent à des standards spécifiques, reconnus par un certain nombre d’outils permettant leur édition, leur exploitation et leur extraction.</p>
 </section>
 <section id="quels-sont-les-standards-existant-pour-la-description-des-metadonnees-internes">
-<h4><span class="section-number">3.2.1.2. </span>Quels sont les standards existant pour la description des métadonnées internes ?<a class="headerlink" href="#quels-sont-les-standards-existant-pour-la-description-des-metadonnees-internes" title="Lien permanent vers cette rubrique"></a></h4>
+<h4><span class="section-number">3.2.1.2. </span>Quels sont les standards existant pour la description des métadonnées internes ?<a class="headerlink" href="#quels-sont-les-standards-existant-pour-la-description-des-metadonnees-internes" title="Lien vers cette rubrique"></a></h4>
 <p>Les standards existants pour décrire les métadonnées internes varient en fonction des formats de fichiers.</p>
 <section id="metadonnees-internes-des-images-fixes">
-<h5><span class="section-number">3.2.1.2.1. </span>Métadonnées internes des images fixes<a class="headerlink" href="#metadonnees-internes-des-images-fixes" title="Lien permanent vers cette rubrique"></a></h5>
+<h5><span class="section-number">3.2.1.2.1. </span>Métadonnées internes des images fixes<a class="headerlink" href="#metadonnees-internes-des-images-fixes" title="Lien vers cette rubrique"></a></h5>
 <p>Les formats correspondant à des images fixes ont fait l’objet de travaux de standardisation de leurs métadonnées internes dès les années 1990. De ces travaux se distinguent deux types de métadonnées internes :</p>
 <ul class="simple">
 <li><p>des métadonnées appelées techniques, relatives à la prise de vue et fournies automatiquement par l’appareil numérique (fabricant et modèle de l’appareil, hauteur et largeur de l’image, date et heure de la prise de vue, orientation, résolution, temps d’exposition, ouverture, présence d’un flash, etc.). Ces métadonnées sont formalisées par le format EXIF (Exchangeable Image File), développé en 1995 par la JEIDA (Japan Electronic Industry Development Association) ; la version 2.3 actuelle date de 2010 et a été révisée en 2012<a class="footnote-reference brackets" href="#id47" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>. Ce format, quoique non standardisé et non maintenu par une organisation, est utilisé par la majeure partie des constructeurs d’appareils numériques.</p></li>
@@ -313,7 +317,7 @@ Des mises à jour de l’IPTC ont été faites en 2009, 2014 et 2016 et 2017<a c
 <p><img alt="" src="../_images/MD_XMP.png" /></p>
 </section>
 <section id="metadonnees-internes-des-fichiers-bureautiques">
-<h5><span class="section-number">3.2.1.2.2. </span>Métadonnées internes des fichiers bureautiques<a class="headerlink" href="#metadonnees-internes-des-fichiers-bureautiques" title="Lien permanent vers cette rubrique"></a></h5>
+<h5><span class="section-number">3.2.1.2.2. </span>Métadonnées internes des fichiers bureautiques<a class="headerlink" href="#metadonnees-internes-des-fichiers-bureautiques" title="Lien vers cette rubrique"></a></h5>
 <p>Les fichiers de type bureautique embarquent également des métadonnées internes ou « propriétés ». Elles sont visibles et modifiables depuis l’onglet « Fichier &gt; Propriétés du document », présent dans l’interface de l’outil permettant de consulter ce type de fichiers. La liste de ces métadonnées est souvent réduite à :</p>
 <ul class="simple">
 <li><p>des propriétés standards telles que l’auteur, le titre et l’objet du document. Chacun est libre de renseigner ce type de métadonnées ;</p></li>
@@ -330,7 +334,7 @@ Des mises à jour de l’IPTC ont été faites en 2009, 2014 et 2016 et 2017<a c
 </ul>
 </section>
 <section id="metadonnees-internes-des-images-animees">
-<h5><span class="section-number">3.2.1.2.3. </span>Métadonnées internes des images animées<a class="headerlink" href="#metadonnees-internes-des-images-animees" title="Lien permanent vers cette rubrique"></a></h5>
+<h5><span class="section-number">3.2.1.2.3. </span>Métadonnées internes des images animées<a class="headerlink" href="#metadonnees-internes-des-images-animees" title="Lien vers cette rubrique"></a></h5>
 <p>Les métadonnées internes d’images animées obéissent à des normes très variées, sans qu’une norme précise se distingue particulièrement.</p>
 <p>Parmi elles, on peut distinguer :</p>
 <ul class="simple">
@@ -361,7 +365,7 @@ L’IPTC ambitionne d’ajouter à cette liste de nouveaux formats et standards,
 </ul>
 </section>
 <section id="metadonnees-internes-des-enregistrements-sonores">
-<h5><span class="section-number">3.2.1.2.4. </span>Métadonnées internes des enregistrements sonores<a class="headerlink" href="#metadonnees-internes-des-enregistrements-sonores" title="Lien permanent vers cette rubrique"></a></h5>
+<h5><span class="section-number">3.2.1.2.4. </span>Métadonnées internes des enregistrements sonores<a class="headerlink" href="#metadonnees-internes-des-enregistrements-sonores" title="Lien vers cette rubrique"></a></h5>
 <p>Chaque format correspondant à des enregistrements sonores dispose de son propre modèle de métadonnées. Parmi ces modèles de métadonnées, on peut citer :</p>
 <ul class="simple">
 <li><p>le standard ID3, abréviation de « IDentify an MP3 », développé pour décrire les fichiers au format MPEG3<a class="footnote-reference brackets" href="#id58" id="id13" role="doc-noteref"><span class="fn-bracket">[</span>13<span class="fn-bracket">]</span></a>. Conçu en 1996 par Eric Kemp, il se limite au départ à 7 métadonnées de taille fixe, disposées en fin de fichier sur 128 bits (identifiant « TAG », titre, nom de l’artiste, nom de l’album, année de parution, genre, commentaire). En 1997, Michael Mutschler ajoute une huitième métadonnée (le numéro de la piste) tout en conservant la longueur de 128 bits.<br />
@@ -389,9 +393,9 @@ Le standard a connu deux révisions : l’une en 2001 avec l’ajout de l’UMI
 </section>
 </section>
 <section id="pourquoi-et-comment-extraire-des-metadonnees-internes">
-<h3><span class="section-number">3.2.2. </span>Pourquoi et comment extraire des métadonnées internes ?<a class="headerlink" href="#pourquoi-et-comment-extraire-des-metadonnees-internes" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">3.2.2. </span>Pourquoi et comment extraire des métadonnées internes ?<a class="headerlink" href="#pourquoi-et-comment-extraire-des-metadonnees-internes" title="Lien vers cette rubrique"></a></h3>
 <section id="pourquoi-extraire-les-metadonnees-internes">
-<h4><span class="section-number">3.2.2.1. </span>Pourquoi extraire les métadonnées internes ?<a class="headerlink" href="#pourquoi-extraire-les-metadonnees-internes" title="Lien permanent vers cette rubrique"></a></h4>
+<h4><span class="section-number">3.2.2.1. </span>Pourquoi extraire les métadonnées internes ?<a class="headerlink" href="#pourquoi-extraire-les-metadonnees-internes" title="Lien vers cette rubrique"></a></h4>
 <p>L’objectif de la préservation numérique est de conserver dans le temps des fichiers numériques dans une forme utilisable et exploitable, sans perte de métadonnées, internes ou externes. Dès lors qu’intervient une conversion ou transformation de format, il y a un risque de perte des métadonnées internes. Pour une plate-forme d’archivage, il est donc important de disposer de mécanismes permettant d’assurer la prise en charge et la conservation des métadonnées internes dans une forme utilisable et exploitable dans le temps.</p>
 <p>L’extraction de métadonnées est un des mécanismes mis en œuvre pour effectuer cette prise en charge. Son objectif est d’extraire les métadonnées internes d’un fichier numérique afin de les exploiter et/ou de les conserver en dehors de celui-ci ou de les réintégrer dans la nouvelle version du fichier numérique, après conversion.</p>
 <p>Cette action répond en outre à deux besoins supplémentaires :</p>
@@ -416,7 +420,7 @@ La question est alors de savoir à quel point la non-conformité d’un fichier 
 <p>L’extraction de métadonnées internes présente donc un degré de complexité proportionnel à celle des spécifications de ces dernières. Si certains formats disposent de modèles de métadonnées internes très simples, d’autres, comme les formats représentant des images fixes ou animées, sont en revanche très complexes, car ils permettent d’associer dans un même fichier une multitude de modèles de métadonnées internes, d’embarquer des fichiers (vidéo ou vignette), d’utiliser un encodage particulier ou des polices de caractères embarquées ou non.</p>
 </section>
 <section id="comment-ca-marche">
-<h4><span class="section-number">3.2.2.2. </span>Comment ça marche ?<a class="headerlink" href="#comment-ca-marche" title="Lien permanent vers cette rubrique"></a></h4>
+<h4><span class="section-number">3.2.2.2. </span>Comment ça marche ?<a class="headerlink" href="#comment-ca-marche" title="Lien vers cette rubrique"></a></h4>
 <p>L’extraction de métadonnées internes est réalisée au moyen d’outils logiciels, génériques ou spécifiques, conçus et réalisés par différents organismes – concepteurs de formats, éditeurs de logiciels, spécialistes de la préservation numérique – pour différents publics – développeurs, utilisateurs, spécialistes de la préservation numérique.</p>
 <p>Ces outils lisent les fichiers numériques qui leur sont soumis, permettent d’éditer leurs métadonnées internes, de les modifier et de les extraire sous la forme d’un fichier au format pivot (par exemple, XML ou CSV) et selon un formalisme et un encodage propres à chaque outil (ex : ASCII, RDF, METS, etc.).</p>
 <p>De là, découlent plusieurs conséquences :</p>
@@ -448,9 +452,9 @@ La question est alors de savoir à quel point la non-conformité d’un fichier 
 </section>
 </section>
 <section id="les-outils-dedition-et-dextraction-des-metadonnees-internes">
-<h3><span class="section-number">3.2.3. </span>Les outils d’édition et d’extraction des métadonnées internes<a class="headerlink" href="#les-outils-dedition-et-dextraction-des-metadonnees-internes" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">3.2.3. </span>Les outils d’édition et d’extraction des métadonnées internes<a class="headerlink" href="#les-outils-dedition-et-dextraction-des-metadonnees-internes" title="Lien vers cette rubrique"></a></h3>
 <section id="outils-generiques">
-<h4><span class="section-number">3.2.3.1. </span>Outils génériques<a class="headerlink" href="#outils-generiques" title="Lien permanent vers cette rubrique"></a></h4>
+<h4><span class="section-number">3.2.3.1. </span>Outils génériques<a class="headerlink" href="#outils-generiques" title="Lien vers cette rubrique"></a></h4>
 <p><strong>Apache Tika</strong></p>
 <p>Site web : <a class="reference external" href="http://tika.apache.org/">http://tika.apache.org/</a><br />
 Github : <a class="reference external" href="https://github.com/apache/tika">https://github.com/apache/tika</a><br />
@@ -722,7 +726,7 @@ Il permet d’éditer plus de 500 formats, tels que les formats GIF, TIFF, JPEG,
 </table>
 </section>
 <section id="outils-specifiques">
-<h4><span class="section-number">3.2.3.2. </span>Outils spécifiques<a class="headerlink" href="#outils-specifiques" title="Lien permanent vers cette rubrique"></a></h4>
+<h4><span class="section-number">3.2.3.2. </span>Outils spécifiques<a class="headerlink" href="#outils-specifiques" title="Lien vers cette rubrique"></a></h4>
 <p><strong>BWF MetaEdit</strong></p>
 <p>Site web : <a class="reference external" href="https://mediaarea.net/BWFMetaEdit">https://mediaarea.net/BWFMetaEdit</a><br />
 Github : <a class="reference external" href="https://github.com/MediaArea/BWFMetaEdit">https://github.com/MediaArea/BWFMetaEdit</a><br />
@@ -1050,10 +1054,10 @@ Sont soumises à licence trois fonctionnalités :</p></li>
 </section>
 </section>
 <section id="les-retours-dexperiences">
-<h3><span class="section-number">3.2.4. </span>Les retours d’expériences<a class="headerlink" href="#les-retours-dexperiences" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">3.2.4. </span>Les retours d’expériences<a class="headerlink" href="#les-retours-dexperiences" title="Lien vers cette rubrique"></a></h3>
 <p>La finalité et le besoin de l’extraction de métadonnées dans le cadre d’une politique de préservation numérique peuvent porter à confusion et poser question. Voici six exemples de son utilité au sein d’institutions publiques.</p>
 <section id="bnf-lextraction-de-metadonnees-pour-completer-les-metadonnees-de-preservation">
-<h4><span class="section-number">3.2.4.1. </span>BnF : l’extraction de métadonnées pour compléter les métadonnées de préservation<a class="headerlink" href="#bnf-lextraction-de-metadonnees-pour-completer-les-metadonnees-de-preservation" title="Lien permanent vers cette rubrique"></a></h4>
+<h4><span class="section-number">3.2.4.1. </span>BnF : l’extraction de métadonnées pour compléter les métadonnées de préservation<a class="headerlink" href="#bnf-lextraction-de-metadonnees-pour-completer-les-metadonnees-de-preservation" title="Lien vers cette rubrique"></a></h4>
 <p>La Bibliothèque nationale de France (BnF) dispose d’un système d’archivage électronique nommé SPAR (Système de Préservation et d’Archivage Réparti) depuis mai 2010. En fonction de la provenance des lots d’archives, qu’elle maîtrise plus ou moins, et des formats contenus dans ces lots d’archives, elle a décliné un niveau de prise en charge, allant d’un simple stockage de fichiers à une conservation maîtrisée.</p>
 <p>La BnF procède de manière systématique à une extraction de métadonnées internes seulement quand le format et la provenance des fichiers numériques sont maîtrisés. Cette extraction, ou étape de « caractérisation », est réalisée lors du processus d’analyse des fichiers, après leur identification et leur validation<a class="footnote-reference brackets" href="#id72" id="id27" role="doc-noteref"><span class="fn-bracket">[</span>27<span class="fn-bracket">]</span></a>.</p>
 <p>En fonction du format, elle utilise des outils d’extraction différents, ainsi qu’un type de métadonnées à extraire :</p>
@@ -1124,7 +1128,7 @@ L’extraction de métadonnées est considérée comme une action de préservati
 <p>Il est à noter que cette extraction ou « caractérisation » intervient uniquement quand le format et la chaîne de production sont bien connus et maîtrisés par la BnF, c’est-à-dire quand cette dernière est en mesure de savoir quelles métadonnées internes ont été systématiquement intégrées aux fichiers numériques. Elle procède ainsi par exemple à une caractérisation systématique des métadonnées internes des lots d’archives issus de ses campagnes de numérisation à des fins de préservation.</p>
 </section>
 <section id="huma-num-lextraction-de-metadonnees-a-des-fins-de-conservation">
-<h4><span class="section-number">3.2.4.2. </span>Huma-Num : l’extraction de métadonnées à des fins de conservation<a class="headerlink" href="#huma-num-lextraction-de-metadonnees-a-des-fins-de-conservation" title="Lien permanent vers cette rubrique"></a></h4>
+<h4><span class="section-number">3.2.4.2. </span>Huma-Num : l’extraction de métadonnées à des fins de conservation<a class="headerlink" href="#huma-num-lextraction-de-metadonnees-a-des-fins-de-conservation" title="Lien vers cette rubrique"></a></h4>
 <p>Huma-Num est une très grande infrastructure de recherche (TGIR) visant à faciliter le tournant numérique de la recherche en sciences humaines et sociales. Elle accompagne en particulier les projets de préservation des données de la recherche et en finance l’archivage au CINES. C’est à ce titre qu’elle est intervenu sur les archives numériques de l’Institut de Recherche et d’Histoire des Textes (IRHT)<a class="footnote-reference brackets" href="#id73" id="id28" role="doc-noteref"><span class="fn-bracket">[</span>28<span class="fn-bracket">]</span></a>.<br />
 Depuis 1979, cet institut a pour mission de reproduire les manuscrits sous forme de microfilm, puis sous forme numérique (format DNG), et de mettre à disposition des chercheurs ces copies (format TIFF). En 2013, ces données représentent plus de 40 To de données répartis sur plus de 2 millions de fichiers, conservés au format TIFF sur l’infrastructure de Huma-Num.</p>
 <p>En 2015, il est décidé de procéder à l’archivage de ces données au CINES, non pas au format TIFF, mais au format JPEG2000, en utilisant l’outil de conversion KAKADU.</p>
@@ -1143,7 +1147,7 @@ Toutes les métadonnées internes sont extraites, sans aucune sélection ni filt
 <p>Dans ce contexte, l’extraction de métadonnées internes vers un fichier XML/RDF, dont le modèle de description est basé sur METS et TEI, permet leur préservation dans un système d’archivage électronique. Elle a permis également de mettre au jour des problèmes d’encodage dans les fichiers numériques, problèmes qui seraient passés inaperçus sans cette opération d’extraction.</p>
 </section>
 <section id="norwegian-research-council-lextraction-de-metadonnees-pour-planifier-une-migration29">
-<h4><span class="section-number">3.2.4.3. </span>Norwegian Research Council : l’extraction de métadonnées pour planifier une migration<a class="footnote-reference brackets" href="#id74" id="id29" role="doc-noteref"><span class="fn-bracket">[</span>29<span class="fn-bracket">]</span></a><a class="headerlink" href="#norwegian-research-council-lextraction-de-metadonnees-pour-planifier-une-migration29" title="Lien permanent vers cette rubrique"></a></h4>
+<h4><span class="section-number">3.2.4.3. </span>Norwegian Research Council : l’extraction de métadonnées pour planifier une migration<a class="footnote-reference brackets" href="#id74" id="id29" role="doc-noteref"><span class="fn-bracket">[</span>29<span class="fn-bracket">]</span></a><a class="headerlink" href="#norwegian-research-council-lextraction-de-metadonnees-pour-planifier-une-migration29" title="Lien vers cette rubrique"></a></h4>
 <p>Quand on réalise une migration de plate-forme ou de données, la logique veut qu’on planifie l’opération, qu’on réalise des tests, puis qu’on la déploie. L’un des prérequis à cette réalisation est d’avoir à disposition les informations nécessaires sur l’infrastructure technique, les caractéristiques et la provenance des fichiers numériques, ainsi que les règles de préservation et de gestion.<br />
 Pour obtenir ces informations, il est possible de recourir à une extraction de métadonnées au moyen d’outils d’extraction, mais le Norwegian Research Council a constaté que :</p>
 <ul class="simple">
@@ -1179,7 +1183,7 @@ Pour obtenir ces informations, il est possible de recourir à une extraction de 
 </ul>
 </section>
 <section id="national-library-of-australia-lanalyse-comparee-des-outils-dextraction-pour-identifier-des-recommandations">
-<h4><span class="section-number">3.2.4.4. </span>National Library of Australia : l’analyse comparée des outils d’extraction pour identifier des recommandations<a class="headerlink" href="#national-library-of-australia-lanalyse-comparee-des-outils-dextraction-pour-identifier-des-recommandations" title="Lien permanent vers cette rubrique"></a></h4>
+<h4><span class="section-number">3.2.4.4. </span>National Library of Australia : l’analyse comparée des outils d’extraction pour identifier des recommandations<a class="headerlink" href="#national-library-of-australia-lanalyse-comparee-des-outils-dextraction-pour-identifier-des-recommandations" title="Lien vers cette rubrique"></a></h4>
 <p>La National Library of Australia a réalisé une étude comparative sur des outils pouvant être utilisés dans le cadre d’activités portant sur la préservation numérique30. L’objectif était d’en retirer des bénéfices dans les spécifications et le développement de systèmes devant assurer des opérations de préservation au moyen d’outils logiciels.</p>
 <p>En plus de quatre outils d’identification de formats, cinq outils d’extraction de métadonnées internes ont fait l’objet de cette étude :</p>
 <ul class="simple">
@@ -1236,7 +1240,7 @@ De là découle la nécessité de filtrer les métadonnées extraites, afin de n
 </ul>
 </section>
 <section id="centre-for-long-term-digital-preservation-lanalyse-comparee-des-outils-dextraction-pour-identifier-des-recommandations">
-<h4><span class="section-number">3.2.4.5. </span>Centre for Long-term Digital Preservation : l’analyse comparée des outils d’extraction pour identifier des recommandations<a class="headerlink" href="#centre-for-long-term-digital-preservation-lanalyse-comparee-des-outils-dextraction-pour-identifier-des-recommandations" title="Lien permanent vers cette rubrique"></a></h4>
+<h4><span class="section-number">3.2.4.5. </span>Centre for Long-term Digital Preservation : l’analyse comparée des outils d’extraction pour identifier des recommandations<a class="headerlink" href="#centre-for-long-term-digital-preservation-lanalyse-comparee-des-outils-dextraction-pour-identifier-des-recommandations" title="Lien vers cette rubrique"></a></h4>
 <p>Le Centre for Long-term Digital Preservation (LDP Centre ou LDB-centrum) regroupe quatre organisations oeuvrant ensemble pour assurer la préservation et l’accès du numérique sur le long terme : Archives nationales de Suède, Bibliothèque nationale de Suède (National Library of Sweden), Université de Technologie de Lulea, ville de Boden. Depuis 2007, ces dernières coopèrent dans un programme nommé CODA.<br />
 En 2008, le projet CODA-META a eu pour objectif de tester et évaluer des outils d’extraction de métadonnées<a class="footnote-reference brackets" href="#id77" id="id32" role="doc-noteref"><span class="fn-bracket">[</span>33<span class="fn-bracket">]</span></a>. Contrairement à l’analyse pratiquée par la National Library of Australia, la demande était de confronter l’extraction réalisée au regard d’une liste de métadonnées utilisées par la National Library of Sweden, puis au regard des métadonnées techniques propres à un type de format (TIFF, format textuel, audio, vidéo).</p>
 <p>Ont été testés les outils suivant :</p>
@@ -1294,7 +1298,7 @@ En conclusion, ExifTool obtient les meilleurs résultats pour l’extraction de 
 </ul>
 </section>
 <section id="eth-zurich-que-faire-en-cas-dechec-de-lextraction">
-<h4><span class="section-number">3.2.4.6. </span>ETH Zurich : que faire en cas d’échec de l’extraction ?<a class="headerlink" href="#eth-zurich-que-faire-en-cas-dechec-de-lextraction" title="Lien permanent vers cette rubrique"></a></h4>
+<h4><span class="section-number">3.2.4.6. </span>ETH Zurich : que faire en cas d’échec de l’extraction ?<a class="headerlink" href="#eth-zurich-que-faire-en-cas-dechec-de-lextraction" title="Lien vers cette rubrique"></a></h4>
 <p>L’Institut fédéral suisse de technologie (ETH Zurich) a présenté en 2016 à la conférence iPRES une communication sous forme d’affiche sur les problèmes pratiques rencontrés par l’institution en termes d’identification et de validation de formats de fichiers, ainsi que d’extraction de métadonnées<a class="footnote-reference brackets" href="#id78" id="id33" role="doc-noteref"><span class="fn-bracket">[</span>34<span class="fn-bracket">]</span></a>.</p>
 <p>Le système d’archivage électronique de l’ETH est basé sur la solution logicielle Rosetta qui intègre DROID pour l’identification de formats de fichiers et JHOVE pour la validation de formats et l’extraction de métadonnées. Ce SAE collecte des données de la recherche, des documents administratifs et des dons, qu’il s’agisse de documents/données nativement numériques ou de documents/données numérisés produits par le centre de numérisation de l’université. La durée de conservation de ces documents/données est variable, notamment pour les données de la recherche, de quelques années à une conservation sur le très long terme.</p>
 <p>L’ETH soulève un certain nombre de problèmes pratiques, rencontrés notamment lors du traitement de données de recherche ou de dons aux formats de fichiers hétérogènes. L’ETH a été conduit à prendre des décisions plus ou moins satisfaisantes pour maintenir gérable le volume de données traitées et ne pas obérer les capacités d’identification ou de préservation ultérieures.</p>
@@ -1327,7 +1331,7 @@ En conclusion, ExifTool obtient les meilleurs résultats pour l’extraction de 
 </section>
 </section>
 <section id="le-programme-vitam-et-lextraction-de-metadonnees-internes">
-<h2><span class="section-number">3.3. </span>Le programme Vitam et l’extraction de métadonnées internes<a class="headerlink" href="#le-programme-vitam-et-lextraction-de-metadonnees-internes" title="Lien permanent vers cette rubrique"></a></h2>
+<h2><span class="section-number">3.3. </span>Le programme Vitam et l’extraction de métadonnées internes<a class="headerlink" href="#le-programme-vitam-et-lextraction-de-metadonnees-internes" title="Lien vers cette rubrique"></a></h2>
 <p>C’est sur la base des éléments présentés ci-dessus que l’équipe programme Vitam a lancé sa propre réflexion sur l’extraction de métadonnées internes aux fichiers numériques, afin de spécifier les services attendus de la solution logicielle Vitam et de réfléchir aux modalités de mise en œuvre de ceux-ci.</p>
 <p>Cette réflexion s’est opérée en trois temps :</p>
 <ul class="simple">
@@ -1336,9 +1340,9 @@ En conclusion, ExifTool obtient les meilleurs résultats pour l’extraction de 
 <li><p>recensement des sujets restant à traiter par les organisations choisissant d’utiliser la solution logicielle Vitam.</p></li>
 </ul>
 <section id="les-tests-effectues-dans-le-cadre-du-chantier-preservation">
-<h3><span class="section-number">3.3.1. </span>Les tests effectués dans le cadre du chantier préservation<a class="headerlink" href="#les-tests-effectues-dans-le-cadre-du-chantier-preservation" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">3.3.1. </span>Les tests effectués dans le cadre du chantier préservation<a class="headerlink" href="#les-tests-effectues-dans-le-cadre-du-chantier-preservation" title="Lien vers cette rubrique"></a></h3>
 <section id="presentation-du-chantier-preservation">
-<h4><span class="section-number">3.3.1.1. </span>Présentation du chantier préservation<a class="headerlink" href="#presentation-du-chantier-preservation" title="Lien permanent vers cette rubrique"></a></h4>
+<h4><span class="section-number">3.3.1.1. </span>Présentation du chantier préservation<a class="headerlink" href="#presentation-du-chantier-preservation" title="Lien vers cette rubrique"></a></h4>
 <p>L’équipe programme Vitam a mis en place, à partir du mois d’octobre 2017, un groupe de travail dédié à la question de la préservation numérique, afin de définir, avec les partenaires du programme Vitam, les services à développer en la matière dans la solution logicielle Vitam.</p>
 <p>Ce groupe de travail s’est articulé autour de trois phases de travail :</p>
 <ul class="simple">
@@ -1363,7 +1367,7 @@ En conclusion, ExifTool obtient les meilleurs résultats pour l’extraction de 
 </ul>
 </section>
 <section id="le-protocole-de-tests-retenu">
-<h4><span class="section-number">3.3.1.2. </span>Le protocole de tests retenu<a class="headerlink" href="#le-protocole-de-tests-retenu" title="Lien permanent vers cette rubrique"></a></h4>
+<h4><span class="section-number">3.3.1.2. </span>Le protocole de tests retenu<a class="headerlink" href="#le-protocole-de-tests-retenu" title="Lien vers cette rubrique"></a></h4>
 <p>L’extraction de métadonnées internes a été la quatrième opération de préservation à faire l’objet d’une expérimentation dans le cadre du groupe de travail.</p>
 <p>L’équipe programme Vitam a proposé aux participants d’appliquer le protocole d’expérimentation suivant :</p>
 <ul class="simple">
@@ -1414,7 +1418,7 @@ En conclusion, ExifTool obtient les meilleurs résultats pour l’extraction de 
 </ul>
 </section>
 <section id="resultats-et-enseignements">
-<h4><span class="section-number">3.3.1.3. </span>Résultats et enseignements<a class="headerlink" href="#resultats-et-enseignements" title="Lien permanent vers cette rubrique"></a></h4>
+<h4><span class="section-number">3.3.1.3. </span>Résultats et enseignements<a class="headerlink" href="#resultats-et-enseignements" title="Lien vers cette rubrique"></a></h4>
 <p>La taille et la représentativité des jeux de tests ont été variables en fonction des participants :</p>
 <ul class="simple">
 <li><p>les Archives nationales (projet Adamant) se sont efforcées de constituer un échantillon représentatif des archives qui leur avaient été versées en termes de producteurs et de sélectionner des fichiers représentant les différentes catégories manipulées à l’exception des images vectorielles ;</p></li>
@@ -2688,7 +2692,7 @@ Informations sur le contenu :
 </section>
 </section>
 <section id="lextraction-de-metadonnees-internes-dans-la-solution-logicielle-vitam-et-ses-outils-annexes">
-<h3><span class="section-number">3.3.2. </span>L’extraction de métadonnées internes dans la solution logicielle Vitam et ses outils annexes<a class="headerlink" href="#lextraction-de-metadonnees-internes-dans-la-solution-logicielle-vitam-et-ses-outils-annexes" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">3.3.2. </span>L’extraction de métadonnées internes dans la solution logicielle Vitam et ses outils annexes<a class="headerlink" href="#lextraction-de-metadonnees-internes-dans-la-solution-logicielle-vitam-et-ses-outils-annexes" title="Lien vers cette rubrique"></a></h3>
 <p>C’est sur la base de la présente étude et des expérimentations menées avec ses partenaires dans le cadre du groupe de travail sur la préservation que l’équipe programme Vitam et ses équipes de réalisation ont développé les services d’extraction de métadonnées internes disponibles dans la solution logicielle Vitam.</p>
 <p>L’extraction de métadonnées internes y repose sur :</p>
 <ul class="simple">
@@ -2697,7 +2701,7 @@ Informations sur le contenu :
 </ul>
 <p>L’équipe programme Vitam a par ailleurs intégré des opérations d’extraction de métadonnées dans un outil d’audit de ces métadonnées et de préparation de leur extraction qu’elle a développé.</p>
 <section id="le-choix-de-loutil-dextraction-de-metadonnees-internes">
-<h4><span class="section-number">3.3.2.1. </span>Le choix de l’outil d’extraction de métadonnées internes<a class="headerlink" href="#le-choix-de-loutil-dextraction-de-metadonnees-internes" title="Lien permanent vers cette rubrique"></a></h4>
+<h4><span class="section-number">3.3.2.1. </span>Le choix de l’outil d’extraction de métadonnées internes<a class="headerlink" href="#le-choix-de-loutil-dextraction-de-metadonnees-internes" title="Lien vers cette rubrique"></a></h4>
 <p>Au regard des tests effectués et au vu des développements relatifs aux opérations de préservation à réaliser dans la solution logicielle Vitam, l’équipe programme Vitam a retenu un outil d’extraction de métadonnées internes, ImageMagick, comme outil permettant d’initier les fonctionnalités d’extraction de métadonnées internes pour la solution logicielle développée.</p>
 <p>Ce choix a été effectué pour plusieurs raisons :</p>
 <ul class="simple">
@@ -2712,7 +2716,7 @@ Informations sur le contenu :
 </ul>
 </section>
 <section id="les-services-dextraction-de-metadonnees-internes">
-<h4><span class="section-number">3.3.2.2. </span>Les services d’extraction de métadonnées internes<a class="headerlink" href="#les-services-dextraction-de-metadonnees-internes" title="Lien permanent vers cette rubrique"></a></h4>
+<h4><span class="section-number">3.3.2.2. </span>Les services d’extraction de métadonnées internes<a class="headerlink" href="#les-services-dextraction-de-metadonnees-internes" title="Lien vers cette rubrique"></a></h4>
 <p>La solution logicielle Vitam met en œuvre des services d’extraction de métadonnées internes lors d’opération de traitement de masse des fichiers numériques (opérations de préservation).</p>
 <p>Ces opérations de traitement de masse des fichiers numériques (opérations de préservation) peuvent être effectuées par des utilisateurs habilités sur le périmètre qui leur est autorisé par un contrat d’accès. Elles ne sont pas automatisées. Elles sont spécifiées dans des scénarios de préservation s’appuyant eux-mêmes sur l’utilisation d’outils logiciels interfacés avec la solution logicielle Vitam et appelés des griffons.</p>
 <p>L’opération d’extraction de métadonnées internes figure parmi les quatre types d’opération de traitement de masse des objets binaires (opérations de préservation) réalisables dans la solution logicielle Vitam :</p>
@@ -2731,7 +2735,7 @@ Elle peut également être combinée avec un ou plusieurs de ces types d’opér
 </ul>
 </section>
 <section id="les-outils-danalyse-de-metadonnees-internes">
-<h4><span class="section-number">3.3.2.3. </span>Les outils d’analyse de métadonnées internes<a class="headerlink" href="#les-outils-danalyse-de-metadonnees-internes" title="Lien permanent vers cette rubrique"></a></h4>
+<h4><span class="section-number">3.3.2.3. </span>Les outils d’analyse de métadonnées internes<a class="headerlink" href="#les-outils-danalyse-de-metadonnees-internes" title="Lien vers cette rubrique"></a></h4>
 <p>L’équipe programme Vitam a, en complément du développement de la solution logicielle Vitam proprement dite, conçu et réalisé un outil complémentaire, RestMDExtractor, destiné à extraire des métadonnées internes à des fichiers et à analyser ces extractions. Cet outil a uniquement été mis à disposition dans le cadre des tests réalisés dans le cadre du chantier préservation, en vue de réaliser des tests sur l’extraction de métadonnées.</p>
 <p>Cet outil permet :</p>
 <ul class="simple">
@@ -2749,7 +2753,7 @@ Elle peut également être combinée avec un ou plusieurs de ces types d’opér
 </section>
 </section>
 <section id="les-reflexions-a-mener-au-niveau-de-limplementation-de-la-solution-logicielle-vitam-de-sa-mise-en-production-et-de-son-maintien-en-condition-operationnelle">
-<h3><span class="section-number">3.3.3. </span>Les réflexions à mener au niveau de l’implémentation de la solution logicielle Vitam, de sa mise en production et de son maintien en condition opérationnelle<a class="headerlink" href="#les-reflexions-a-mener-au-niveau-de-limplementation-de-la-solution-logicielle-vitam-de-sa-mise-en-production-et-de-son-maintien-en-condition-operationnelle" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">3.3.3. </span>Les réflexions à mener au niveau de l’implémentation de la solution logicielle Vitam, de sa mise en production et de son maintien en condition opérationnelle<a class="headerlink" href="#les-reflexions-a-mener-au-niveau-de-limplementation-de-la-solution-logicielle-vitam-de-sa-mise-en-production-et-de-son-maintien-en-condition-operationnelle" title="Lien vers cette rubrique"></a></h3>
 <p>La solution logicielle Vitam apporte des services d’extraction de métadonnées internes aux organisations qui souhaitent l’implémenter. Les modalités d’administration et de pilotage de ces services doivent cependant être définis par chacune de ces organisations ou faire l’objet d’une coordination entre les différents utilisateurs de la solution logicielle Vitam.</p>
 <p>Trois points méritent de retenir l’attention des organisations souhaitant utiliser la solution logicielle Vitam :</p>
 <ul class="simple">
@@ -2758,7 +2762,7 @@ Elle peut également être combinée avec un ou plusieurs de ces types d’opér
 <li><p>la gestion opérationnelle de l’extraction de métadonnées.</p></li>
 </ul>
 <section id="ladministration-du-referentiel-des-griffons-et-lextraction-de-metadonnees-internes">
-<h4><span class="section-number">3.3.3.1. </span>L’administration du référentiel des griffons et l’extraction de métadonnées internes<a class="headerlink" href="#ladministration-du-referentiel-des-griffons-et-lextraction-de-metadonnees-internes" title="Lien permanent vers cette rubrique"></a></h4>
+<h4><span class="section-number">3.3.3.1. </span>L’administration du référentiel des griffons et l’extraction de métadonnées internes<a class="headerlink" href="#ladministration-du-referentiel-des-griffons-et-lextraction-de-metadonnees-internes" title="Lien vers cette rubrique"></a></h4>
 <p>La solution logicielle Vitam met à disposition un unique griffon permettant de réaliser des extractions de métadonnées internes : il s’agit d’ImageMagick. Néanmoins, son utilisation ne s’impose pas aux organisations choisissant d’utiliser les services de préservation. Les modalités d’administration du référentiel des griffons ne sont en aucune manière imposées aux utilisateurs.</p>
 <p>Il revient à ces derniers de déterminer :</p>
 <ul class="simple">
@@ -2780,7 +2784,7 @@ Elle peut également être combinée avec un ou plusieurs de ces types d’opér
 </ul>
 </section>
 <section id="la-definition-dune-politique-de-preservation">
-<h4><span class="section-number">3.3.3.2. </span>La définition d’une politique de préservation<a class="headerlink" href="#la-definition-dune-politique-de-preservation" title="Lien permanent vers cette rubrique"></a></h4>
+<h4><span class="section-number">3.3.3.2. </span>La définition d’une politique de préservation<a class="headerlink" href="#la-definition-dune-politique-de-preservation" title="Lien vers cette rubrique"></a></h4>
 <p>Les organisations choisissant d’implémenter la solution logicielle Vitam doivent également définir la politique de préservation et, partant, celle d’extraction de métadonnées internes qu’elles souhaitent mettre en œuvre.</p>
 <p>Les questions à étudier sont les suivantes :</p>
 <ul class="simple">
@@ -2826,7 +2830,7 @@ Elle peut également être combinée avec un ou plusieurs de ces types d’opér
 </ul>
 </section>
 <section id="la-gestion-operationnelle-de-lextraction-de-metadonnees-internes">
-<h4><span class="section-number">3.3.3.3. </span>La gestion opérationnelle de l’extraction de métadonnées internes<a class="headerlink" href="#la-gestion-operationnelle-de-lextraction-de-metadonnees-internes" title="Lien permanent vers cette rubrique"></a></h4>
+<h4><span class="section-number">3.3.3.3. </span>La gestion opérationnelle de l’extraction de métadonnées internes<a class="headerlink" href="#la-gestion-operationnelle-de-lextraction-de-metadonnees-internes" title="Lien vers cette rubrique"></a></h4>
 <p>Dès lors que la solution logicielle Vitam dispose d’un service d’extraction de métadonnées internes et qu’il s’avère que l’identification à 100 % des métadonnées internes des fichiers conservés dans les collections d’un service d’archives est impossible et que leur extraction peut échouer, les questions à étudier sont les suivantes :</p>
 <ul class="simple">
 <li><p>quels problèmes d’identification de métadonnées internes et d’extraction posent les fonds d’ores et déjà conservés par les futurs utilisateurs de la solution logicielle Vitam ?</p></li>
@@ -2854,11 +2858,11 @@ Elle peut également être combinée avec un ou plusieurs de ces types d’opér
 </section>
 </section>
 <section id="annexes">
-<h2><span class="section-number">3.4. </span>Annexes<a class="headerlink" href="#annexes" title="Lien permanent vers cette rubrique"></a></h2>
+<h2><span class="section-number">3.4. </span>Annexes<a class="headerlink" href="#annexes" title="Lien vers cette rubrique"></a></h2>
 <section id="bibliographie">
-<h3><span class="section-number">3.4.1. </span>Bibliographie<a class="headerlink" href="#bibliographie" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">3.4.1. </span>Bibliographie<a class="headerlink" href="#bibliographie" title="Lien vers cette rubrique"></a></h3>
 <section id="generalites">
-<h4><span class="section-number">3.4.1.1. </span>Généralités<a class="headerlink" href="#generalites" title="Lien permanent vers cette rubrique"></a></h4>
+<h4><span class="section-number">3.4.1.1. </span>Généralités<a class="headerlink" href="#generalites" title="Lien vers cette rubrique"></a></h4>
 <p>Baldé Abdourahmane, Lechevallier Yves et Aufaure Marie-Aude. « Extraction de métadonnées sur les prototypes issus de la classification d’objets ». Consultable à l’adresse suivante : <a class="reference external" href="http://www-sop.inria.fr/axis/papers/04sfc/balde-sfc2004.pdf">http://www-sop.inria.fr/axis/papers/04sfc/balde-sfc2004.pdf</a>. Lien consulté le 2 janvier 2020.</p>
 <p>Banat-Berger Françoise et Huc Claude. « Section 9 – Métadonnées », Version 2, 22 novembre 2011, in PIAF. Consultable à l’adresse suivante : <a class="reference external" href="http://www.piaf-archives.org/sites/default/files/bulk_media/m07s09/co/section09_web.html">http://www.piaf-archives.org/sites/default/files/bulk_media/m07s09/co/section09_web.html</a>. Lien consulté le 72 janvier 2020 .</p>
 <p>Bibliotheque nationale de France. « Données et métadonnées : formats et implémentation BnF ». Consultable à l’adresse suivante : <a class="reference external" href="http://www.bnf.fr/fr/professionnels/preservation_numerique_boite_outils.html">http://www.bnf.fr/fr/professionnels/preservation_numerique_boite_outils.html</a>. Lien consulté le 23 novembre 2018.</p>
@@ -2878,7 +2882,7 @@ Consultable en ligne à l’adresse suivante :  <a class="reference external" h
 <p>Töwe Matthias, Geisser Franziska, Suri Roland E.. « To Act ou Not to Act. Handling File Format Identification Issues in Practice », iPRES 2016 Proceedings, p. 288-289. Consultable à l’adresse suivante : <a class="reference external" href="https://services.phaidra.univie.ac.at/api/object/o:503183/diss/Content/get">https://services.phaidra.univie.ac.at/api/object/o:503183/diss/Content/get</a>. Lien consulté le 2 janvier 2020.</p>
 </section>
 <section id="outils-dextraction">
-<h4><span class="section-number">3.4.1.2. </span>Outils d’extraction<a class="headerlink" href="#outils-dextraction" title="Lien permanent vers cette rubrique"></a></h4>
+<h4><span class="section-number">3.4.1.2. </span>Outils d’extraction<a class="headerlink" href="#outils-dextraction" title="Lien vers cette rubrique"></a></h4>
 <p>Archivematica. « DROID, JHOVE, NLNZ Metadata Extractor », dernière version, 3 juillet 2015. Consultable à l’adresse suivante : <a class="reference external" href="https://wiki.archivematica.org/DROID,_JHOVE,_NLNZ_Metadata_Extractor">https://wiki.archivematica.org/DROID,_JHOVE,_NLNZ_Metadata_Extractor</a>. Lien consulté le 2 janvier 2020.</p>
 <p>Arvidson Allan [trad.]. « CODA-META. Curation of Digital Assets – Metadata », LDP Centrum, Boden, 2008 (version anglaise : 2009). Lien consultable à l’adresse suivante : <a class="reference external" href="https://www.ltu.se/cms_fs/1.49845!/coda-meta_english.pdf">https://www.ltu.se/cms_fs/1.49845!/coda-meta_english.pdf</a>. Lien consulté le 2 janvier 2020.</p>
 <p>Hutchins Matthew. « Testing Software Tools of Potential Interest for Digital Preservation Activities at the National Library of Australia », Camberra [Australie], 30 juillet 2012. Consultable à l’adresse suivante : <a class="reference external" href="http://openpreservation.org/system/files/Digital%20Preservation%20Project%20Report%20-%20Testing%20Software%20Tools.pdf">http://openpreservation.org/system/files/Digital Preservation Project Report - Testing Software Tools.pdf</a>. Lien consulté le 2 janvier 2020.</p>
@@ -2886,7 +2890,7 @@ Consultable en ligne à l’adresse suivante :  <a class="reference external" h
 <p>Nichele Baptiste. « Préparation des versements : Metadata Extraction Tool », 24 novembre 2016. Consultable à l’adresse suivante : <a class="reference external" href="http://siaf.hypotheses.org/689">http://siaf.hypotheses.org/689</a>. Lien consulté le 2 janvier 2020.</p>
 </section>
 <section id="images-fixes">
-<h4><span class="section-number">3.4.1.3. </span>Images fixes<a class="headerlink" href="#images-fixes" title="Lien permanent vers cette rubrique"></a></h4>
+<h4><span class="section-number">3.4.1.3. </span>Images fixes<a class="headerlink" href="#images-fixes" title="Lien vers cette rubrique"></a></h4>
 <p>Adobe. « XMP. Adding Intelligence to Media ». Consultable à l’adresse suivante :  <a class="reference external" href="https://www.adobe.com/products/xmp.html">https://www.adobe.com/products/xmp.html</a>. Lien consulté le 2 janvier 2020.</p>
 <p>CIPA et JEITA. « Exchangeable image file format for digital still cameras : Exif Version 2.3 »., avril 2010 (révisé en décembre 2012). Consultable à l’adresse suivante : <a class="reference external" href="http://www.cipa.jp/std/documents/e/DC-008-2012_E.pdf">http://www.cipa.jp/std/documents/e/DC-008-2012_E.pdf</a>. Lien consulté le 2 janvier 2020.</p>
 <p>IPTC. « IPTC Photo Metadata Standard ». Consultable à l’adresse suivante :  <a class="reference external" href="https://iptc.org/standards/photo-metadata/iptc-standard/">https://iptc.org/standards/photo-metadata/iptc-standard/</a>. Lien consulté le 2 janvier 2020.</p>
@@ -2894,12 +2898,12 @@ Consultable en ligne à l’adresse suivante :  <a class="reference external" h
 <p>Van Den Bergue Fabien. « L’indexation des documents iconographiques par les métadonnées internes », Mémoire de master, ENSSIB, Lyon, juin 2013. Consultable à l’adresse suivante : <a class="reference external" href="https://www.enssib.fr/bibliotheque-numerique/documents/64111-l-indexation-des-documents-iconographiques-par-les-metadonnees-internes.pdf">https://www.enssib.fr/bibliotheque-numerique/documents/64111-l-indexation-des-documents-iconographiques-par-les-metadonnees-internes.pdf</a>. Lien consulté le 2 janvier 2020.</p>
 </section>
 <section id="fichiers-bureautiques">
-<h4><span class="section-number">3.4.1.4. </span>Fichiers bureautiques<a class="headerlink" href="#fichiers-bureautiques" title="Lien permanent vers cette rubrique"></a></h4>
+<h4><span class="section-number">3.4.1.4. </span>Fichiers bureautiques<a class="headerlink" href="#fichiers-bureautiques" title="Lien vers cette rubrique"></a></h4>
 <p>Peccate Patrick. « Les métadonnées embarquées dans les documents PDF », 5 janvier 2010, in « Du bruit au signal (et inversement) ». Consultable à l’adresse suivante : &lt;http://blog.tuquoque.com/post/2010/01/05/metadata-PDF&lt;&gt;. Lien consulté le 2 janvier 2020.</p>
 <p>Microsoft Office. « Afficher ou modifier les propriétés d’un fichier Office ». Consultable à l’adresse suivante : <a class="reference external" href="https://support.office.com/fr-fr/article/afficher-ou-modifier-les-propri%C3%A9t%C3%A9s-d-un-fichier-office-21d604c2-481e-4379-8e54-1dd4622c6b75">https://support.office.com/fr-fr/article/afficher-ou-modifier-les-propriétés-d-un-fichier-office-21d604c2-481e-4379-8e54-1dd4622c6b75</a>. Lien consulté le 2 janvier 2020.</p>
 </section>
 <section id="images-animees">
-<h4><span class="section-number">3.4.1.5. </span>Images animées<a class="headerlink" href="#images-animees" title="Lien permanent vers cette rubrique"></a></h4>
+<h4><span class="section-number">3.4.1.5. </span>Images animées<a class="headerlink" href="#images-animees" title="Lien vers cette rubrique"></a></h4>
 <p>Amar Mama. « Métadonnées et processus pour l’archivage de données médiatiques », Mémoire présenté comme exigence partielle de la maîtrise en informatique, Université du Québec à Montréal, mars 2012. Consultable à l’adresse suivante : <a class="reference external" href="https://archipel.uqam.ca/4593/1/M12351.pdf">https://archipel.uqam.ca/4593/1/M12351.pdf</a>. Lien consulté le 2 janvier 2020.</p>
 <p>Bachimont Bruno. « L’indexation multimédia », in « Assistance intelligente à la recherche d’information », Hermès, 2003, chapitre 5, p.139-170. Consultable à l’adresse suivante : <a class="reference external" href="http://cours.ebsi.umontreal.ca/sci6116/Ressources_files/07_Chapitre_5.pdf">http://cours.ebsi.umontreal.ca/sci6116/Ressources_files/07_Chapitre_5.pdf</a>. Lien consulté le 2 janvier 2020.</p>
 <p>Baghdadi Siwar. « Extraction multimodale de métadonnées de séquences vidéo dans un cadre bayésien. Interface homme-machine ». Thèse, Université de Rennes 1, 2010. Consultable à l’adresse suivante : <a class="reference external" href="https://tel.archives-ouvertes.fr/tel-00512706/document">https://tel.archives-ouvertes.fr/tel-00512706/document</a>. Lien consulté le 2 janvier 2020.</p>
@@ -2915,7 +2919,7 @@ Consultable en ligne à l’adresse suivante :  <a class="reference external" h
 <p>Wikipedia. « MPEG-7 », 15 avril 2019 (dernière modification). Lien consultable à l’adresse suivante : <a class="reference external" href="https://en.wikipedia.org/wiki/MPEG-7">https://en.wikipedia.org/wiki/MPEG-7</a>. Lien consulté le 2 janvier 2020.</p>
 </section>
 <section id="fichiers-sonores">
-<h4><span class="section-number">3.4.1.6. </span>Fichiers sonores<a class="headerlink" href="#fichiers-sonores" title="Lien permanent vers cette rubrique"></a></h4>
+<h4><span class="section-number">3.4.1.6. </span>Fichiers sonores<a class="headerlink" href="#fichiers-sonores" title="Lien vers cette rubrique"></a></h4>
 <p>The Audio Archive. « audio metadata primer ». Lien consultable à l’adresse suivante : <a class="reference external" href="http://www.theaudioarchive.com/taa_resources_metadata.htm">http://www.theaudioarchive.com/taa_resources_metadata.htm</a>. lien consulté le 2 janvier 2020.</p>
 <p>Delezoide Bertrand. « Modèles d’indexation multimedia pour la description automatique de films de cinéma ». Thèse, Université de Paris VI – Pierre et Marie Curie, 24 avril 2006. Consultable à l’adresse suivante : <a class="reference external" href="http://articles.ircam.fr/textes/Delezoide06c/index.pdf">http://articles.ircam.fr/textes/Delezoide06c/index.pdf</a>. Lien consulté le 2 janvier 2020.</p>
 <p>Federal Agencies Digital Guidelines Initiative. « Guidelines : Embedded Metadata in Broadcast WAVE Files ». Consultable à l’adresse suivante : <a class="reference external" href="http://www.digitizationguidelines.gov/guidelines/digitize-embedding.html">http://www.digitizationguidelines.gov/guidelines/digitize-embedding.html</a>. Lien consulté le 2 janvier 2020.</p>
@@ -2926,183 +2930,183 @@ Wikipedia. « Broadcast Wave Format », 14 avril 2019 (dernière modification)
 Wikipedia. « ID3 (métadonnées MP3) », 24 décembre 2018 (dernière modification). Lien consultable à l’adresse suivante : <a class="reference external" href="https://fr.wikipedia.org/wiki/ID3_(m%C3%A9tadonn%C3%A9es_MP3)">https://fr.wikipedia.org/wiki/ID3_(métadonnées_MP3)</a>. Lien consulté le 2 janvier 2020.</p>
 <hr class="footnotes docutils" />
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id46" role="note">
+<aside class="footnote brackets" id="id46" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
 <p>Peccate Patrick, « Métadonnées : une initiation. Dublin Core, IPTC, Exif, RDF, XMP, etc. », dernière version, 13 décembre 2007.</p>
 </aside>
-<aside class="footnote brackets" id="id47" role="note">
+<aside class="footnote brackets" id="id47" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
 <p>CIPA et JEITA, « Exchangeable image file format for digital still cameras : Exif Version 2.3 »., avril 2010 (révisé en décembre 2012).</p>
 </aside>
-<aside class="footnote brackets" id="id48" role="note">
+<aside class="footnote brackets" id="id48" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">3</a><span class="fn-bracket">]</span></span>
 <p>Adobe, « XMP. Adding Intelligence to Media ».</p>
 </aside>
-<aside class="footnote brackets" id="id49" role="note">
+<aside class="footnote brackets" id="id49" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">4</a><span class="fn-bracket">]</span></span>
 <p>IPTC, « IPTC Photo Metadata Standard ».</p>
 </aside>
-<aside class="footnote brackets" id="id50" role="note">
+<aside class="footnote brackets" id="id50" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">5</a><span class="fn-bracket">]</span></span>
 <p>Microsoft Office, « Afficher ou modifier les propriétés d’un fichier Office ».</p>
 </aside>
-<aside class="footnote brackets" id="id51" role="note">
+<aside class="footnote brackets" id="id51" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">6</a><span class="fn-bracket">]</span></span>
 <p>Peccate Patrick, « Les métadonnées embarquées dans les documents PDF », 5 janvier 2010, in « Du bruit au signal (et inversement) ».</p>
 </aside>
-<aside class="footnote brackets" id="id52" role="note">
+<aside class="footnote brackets" id="id52" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">7</a><span class="fn-bracket">]</span></span>
 <p>MPEG, « MPEG-7. ISO/IEC 15 938. Multimedia Content Description Interface ».</p>
 </aside>
-<aside class="footnote brackets" id="id53" role="note">
+<aside class="footnote brackets" id="id53" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id8">8</a><span class="fn-bracket">]</span></span>
 <p>Paré François-Xavier, « Les normes MPEG : de la compression à la gestion intégrée des contenus multimédias », Documentation et bibliothèques, 49-1, janvier-mars 2003, p.17-19. Bachimont Bruno, « L’indexation multimédia », in « Assistance intelligente à la recherche d’information », Hermès, 2003, chapitre 5, p.163-168. Wikipedia, « MPEG-7 », 15 avril 2019 (dernière modification).</p>
 </aside>
-<aside class="footnote brackets" id="id54" role="note">
+<aside class="footnote brackets" id="id54" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id9">9</a><span class="fn-bracket">]</span></span>
 <p>TGE Adonis, « Le guide des bonnes pratiques numériques », Version 1, décembre 2009, p.20. Paré François-Xavier, « Les normes MPEG : de la compression à la gestion intégrée des contenus multimédias », Documentation et bibliothèques, 49-1, janvier-mars 2003, p.18.</p>
 </aside>
-<aside class="footnote brackets" id="id55" role="note">
+<aside class="footnote brackets" id="id55" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id10">10</a><span class="fn-bracket">]</span></span>
 <p>Paré François-Xavier, « Les normes MPEG : de la compression à la gestion intégrée des contenus multimédias », Documentation et bibliothèques, 49-1, janvier-mars 2003, p.18-19.</p>
 </aside>
-<aside class="footnote brackets" id="id56" role="note">
+<aside class="footnote brackets" id="id56" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id11">11</a><span class="fn-bracket">]</span></span>
 <p>IPTC, « IPTC Video Metadata Hub. Recommandations 1.2 », 25 avril 2018.</p>
 </aside>
-<aside class="footnote brackets" id="id57" role="note">
+<aside class="footnote brackets" id="id57" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id12">12</a><span class="fn-bracket">]</span></span>
 <p>Myles Stuart, « TV News Archives and IPTC’s Video Metadata Hub », 1er mars 2018. IPTC, « IPTC Video Metadata Hub. A common ground for video management ».</p>
 </aside>
-<aside class="footnote brackets" id="id58" role="note">
+<aside class="footnote brackets" id="id58" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id13">13</a><span class="fn-bracket">]</span></span>
 <p>ID3, « ID3v2. The Audience is informed ». Wikipedia, « ID3 (métadonnées MP3) », 24 décembre 2018 (dernière modification).</p>
 </aside>
-<aside class="footnote brackets" id="id59" role="note">
+<aside class="footnote brackets" id="id59" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id14">14</a><span class="fn-bracket">]</span></span>
 <p>Federal Agencies Digital Guidelines Initiative. « Guidelines : Embedded Metadata in Broadcast WAVE Files ». Wikipedia. « Broadcast Wave Format », 14 avril 2019 (dernière modification).</p>
 </aside>
-<aside class="footnote brackets" id="id60" role="note">
+<aside class="footnote brackets" id="id60" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id15">15</a><span class="fn-bracket">]</span></span>
 <p>Un chunk correspond à un fragment de fichier multimédia. Un format conteneur tel que le format BWF ou WAVE contient de facto plusieurs chunk, contenant en particulier les informations nécessaires au décodage de l’audio ou des données audio utiles. Le standard BWF complète ces informations par des chunks qu’il définit.</p>
 </aside>
-<aside class="footnote brackets" id="id61" role="note">
+<aside class="footnote brackets" id="id61" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id16">16</a><span class="fn-bracket">]</span></span>
 <p>Pour plus d’informations sur la validation de formats, consulter Equipe Vitam, « Validation des formats de fichiers », 6 février 2020.</p>
 </aside>
-<aside class="footnote brackets" id="id62" role="note">
+<aside class="footnote brackets" id="id62" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id17">17</a><span class="fn-bracket">]</span></span>
 <p>Shala Lavdërim, Shala Ahmet. « File Formats – Characterization and Validation », dans Kopacek Peter, Hajrizi Edmond [dir.], 17th IFAC Conference on International Stability, Technology and Culture TECIS 2016 [Dürres, Albanie, 26-28 octobre 2016], p.254.</p>
 </aside>
-<aside class="footnote brackets" id="id63" role="note">
+<aside class="footnote brackets" id="id63" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id18">18</a><span class="fn-bracket">]</span></span>
-<p><a class="reference internal" href="chantier_preservation_validation_format.html"><span class="doc std std-doc">Equipe Vitam, « Validation des formats de fichiers »</span></a>, 6 février 2020, p.8.</p>
+<p><a class="reference internal" href="chantier_preservation_validation_format.html"><span class="std std-doc">Equipe Vitam, « Validation des formats de fichiers »</span></a>, 6 février 2020, p.8.</p>
 </aside>
-<aside class="footnote brackets" id="id64" role="note">
+<aside class="footnote brackets" id="id64" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id19">19</a><span class="fn-bracket">]</span></span>
 <p>Shala Lavdërim, Shala Ahmet. « File Formats – Characterization and Validation », dans Kopacek Peter, Hajrizi Edmond [dir.], 17th IFAC Conference on International Stability, Technology and Culture TECIS 2016 [Dürres, Albanie, 26-28 octobre 2016], p.257.</p>
 </aside>
-<aside class="footnote brackets" id="id65" role="note">
+<aside class="footnote brackets" id="id65" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id20">20</a><span class="fn-bracket">]</span></span>
 <p>Shala Lavdërim, Shala Ahmet. « File Formats – Characterization and Validation », dans Kopacek Peter, Hajrizi Edmond [dir.], 17th IFAC Conference on International Stability, Technology and Culture TECIS 2016 [Dürres, Albanie, 26-28 octobre 2016], p. 255.</p>
 </aside>
-<aside class="footnote brackets" id="id66" role="note">
+<aside class="footnote brackets" id="id66" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id21">21</a><span class="fn-bracket">]</span></span>
 <p>Lindlar Michelle, Tunnat Yvonne, Wilson Carl. « A PDF Test-Set for Well-Formedness Validation in JHOVE – The Good, the Bad and the Ugly », Proceedings of iPRES Conference, Kyoto, Japan, September 2017 (iPRES 2017) , p. 113.</p>
 </aside>
-<aside class="footnote brackets" id="id67" role="note">
+<aside class="footnote brackets" id="id67" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id22">22</a><span class="fn-bracket">]</span></span>
 <p>Shala Lavdërim, Shala Ahmet. « File Formats – Characterization and Validation », dans Kopacek Peter, Hajrizi Edmond [dir.], 17th IFAC Conference on International Stability, Technology and Culture TECIS 2016 [Dürres, Albanie, 26-28 octobre 2016], p. 255.</p>
 </aside>
-<aside class="footnote brackets" id="id68" role="note">
+<aside class="footnote brackets" id="id68" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id23">23</a><span class="fn-bracket">]</span></span>
 <p>La liste des formats supportés est consultable à la page suivante : <a class="reference external" href="https://www.xnview.com/en/xnview/#formats">https://www.xnview.com/en/xnview/#formats</a>. Lien vérifié le 2 janvier 2020.</p>
 </aside>
-<aside class="footnote brackets" id="id69" role="note">
+<aside class="footnote brackets" id="id69" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id24">24</a><span class="fn-bracket">]</span></span>
 <p>Federal Agencies Digital Guidelines Initiative. « Guidelines : Embedded Metadata in Broadcast WAVE Files ».</p>
 </aside>
-<aside class="footnote brackets" id="id70" role="note">
+<aside class="footnote brackets" id="id70" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id25">25</a><span class="fn-bracket">]</span></span>
 <p>Pour rappel, un chunk correspond à un fragment de fichier multimédia. Un format conteneur tel que le format BWF ou WAVE contient de facto plusieurs chunk, contenant en particulier les informations nécessaires au décodage de l’audio ou des données audio utiles. Le standard BWF complète ces informations par un chunk bext (pour « Broadcast audio Extension ») destiné à disposer des informations minimales considérées comme étant nécessaires à toute application de diffusion. Pour plus d’informations, consulter Wikipedia. « Broadcast Wave Format », 14 avril 2019 (dernière modification).</p>
 </aside>
-<aside class="footnote brackets" id="id71" role="note">
+<aside class="footnote brackets" id="id71" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id26">26</a><span class="fn-bracket">]</span></span>
 <p>La liste des formats supportés est consultable à la page suivante : <a class="reference external" href="https://imagemagick.org/script/formats.php">https://imagemagick.org/script/formats.php</a>. Lien vérifié le 2 janvier 2020.</p>
 </aside>
-<aside class="footnote brackets" id="id72" role="note">
+<aside class="footnote brackets" id="id72" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id27">27</a><span class="fn-bracket">]</span></span>
 <p>Bibliotheque nationale de France, « Données et métadonnées : formats et implémentation BnF ».</p>
 </aside>
-<aside class="footnote brackets" id="id73" role="note">
+<aside class="footnote brackets" id="id73" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id28">28</a><span class="fn-bracket">]</span></span>
 <p>Jacobson Michel et Larrousse Nicolas. « Transmettre la connaissance sur le (très) long terme. Des manuscrits à l’âge moderne », Saint-Etienne, Forum des archivistes, 3-5 avril 2019.</p>
 </aside>
-<aside class="footnote brackets" id="id74" role="note">
+<aside class="footnote brackets" id="id74" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id29">29</a><span class="fn-bracket">]</span></span>
 <p>Luan Feng, Nygard Mads, « MMET : A Migration Metadata Extraction Tool for Long-term Preservation Systems », dans Cherifi Hocine, Zain Jasni Mohamad, El-Qawasmeh Eyas [dir.], Digital Information and Communication Technology and Its Applications. International Conference, DICTAP 2011. Dijon, France, June 21-23, 2011. Proceedings, Part II, p.579-590. Luan Feng, Mestl Thomas, Nygard Mads, « Quality Requirements of Migration Metadata in Long-Term Digital Preservation Systems », dans Sanchez-Alonso Salvador, Athanasiadis Ioannis N. [dir.], Metadata and Semantic Research. MTSR 2010. Communications in Computer and Information Science, vol 108. Springer, Berlin, Heidelberg, 2010, p.172-182.</p>
 </aside>
-<aside class="footnote brackets" id="id75" role="note">
+<aside class="footnote brackets" id="id75" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id30">31</a><span class="fn-bracket">]</span></span>
 <p>Il faut par ailleurs tenir compte des métadonnées externes qui peuvent contenir les mêmes informations que les métadonnées internes. Il est recommandé de n’extraire que les métadonnées non disponibles par ailleurs et qu’à la condition qu’elles soient présentes dans le fichier numérique. Par exemple : Creating Application, Creating Application Version, Creation Date and Time, Encryption, Geo-tag Coordinates, Recording Equipement Information, Colour Profile, Colour Sub-sampling, CODEC, CODEC Version, Tracks / Channels, Track / Channel Relationships, Bitdepth, Alpha Channel, Bitrate, Sampling Rate, Frame Rate, Compression, Byte Order, Interlacing Picture Format, Aspect Ratio.</p>
 </aside>
-<aside class="footnote brackets" id="id76" role="note">
+<aside class="footnote brackets" id="id76" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id31">32</a><span class="fn-bracket">]</span></span>
 <p>L’objet du test n’ayant pas porté sur la confrontation des métadonnées extraites à un modèle de données particulier, il faudra ajouter ce critère lors de la sélection d’un outil d’extraction.</p>
 </aside>
-<aside class="footnote brackets" id="id77" role="note">
+<aside class="footnote brackets" id="id77" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id32">33</a><span class="fn-bracket">]</span></span>
 <p>Arvidson Allan [trad.], « CODA-META. Curation of Digital Assets – Metadata », LDP Centrum, Boden, 2008 (version anglaise : 2009).</p>
 </aside>
-<aside class="footnote brackets" id="id78" role="note">
+<aside class="footnote brackets" id="id78" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id33">34</a><span class="fn-bracket">]</span></span>
 <p>Töwe Matthias, Geisser Franziska, Suri Roland E., « To Act ou Not to Act. Handling File Format Identification Issues in Practice », iPRES 2016 Proceedings, p. 288-289.</p>
 </aside>
-<aside class="footnote brackets" id="id79" role="note">
+<aside class="footnote brackets" id="id79" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id34">35</a><span class="fn-bracket">]</span></span>
 <p>On peut aller plus loin en affirmant que la correction des métadonnées internes d’un fichier numérique impacte son intégrité et son authenticité.</p>
 </aside>
-<aside class="footnote brackets" id="id80" role="note">
+<aside class="footnote brackets" id="id80" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id35">36</a><span class="fn-bracket">]</span></span>
 <p>Trois fichiers n’ont aucune métadonnée extraite.</p>
 </aside>
-<aside class="footnote brackets" id="id81" role="note">
+<aside class="footnote brackets" id="id81" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id36">37</a><span class="fn-bracket">]</span></span>
 <p>Deux fichiers n’ont aucune métadonnée extraite.</p>
 </aside>
-<aside class="footnote brackets" id="id82" role="note">
+<aside class="footnote brackets" id="id82" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id37">38</a><span class="fn-bracket">]</span></span>
 <p>Un fichier MPEG.</p>
 </aside>
-<aside class="footnote brackets" id="id83" role="note">
+<aside class="footnote brackets" id="id83" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id38">39</a><span class="fn-bracket">]</span></span>
 <p>Quatre fichiers n’ont aucune métadonnée extraite.</p>
 </aside>
-<aside class="footnote brackets" id="id84" role="note">
+<aside class="footnote brackets" id="id84" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id39">40</a><span class="fn-bracket">]</span></span>
 <p>Un fichier MP3.</p>
 </aside>
-<aside class="footnote brackets" id="id85" role="note">
+<aside class="footnote brackets" id="id85" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id40">41</a><span class="fn-bracket">]</span></span>
 <p>Un fichier ODS.</p>
 </aside>
-<aside class="footnote brackets" id="id86" role="note">
+<aside class="footnote brackets" id="id86" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id41">42</a><span class="fn-bracket">]</span></span>
 <p>La mention « Rien » fait référence à une absence de résultats pour cause d’échec de l’extraction de métadonnées internes pour au moins un objet de la catégorie en question.</p>
 </aside>
-<aside class="footnote brackets" id="id87" role="note">
+<aside class="footnote brackets" id="id87" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id42">43</a><span class="fn-bracket">]</span></span>
 <p>La liste de ces métadonnées n’est pas exhaustive.</p>
 </aside>
-<aside class="footnote brackets" id="id88" role="note">
+<aside class="footnote brackets" id="id88" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id43">44</a><span class="fn-bracket">]</span></span>
-<p>Pour en savoir plus sur les griffons dans la solution logicielle Vitam, consulter les documentations spécifiques consacrées à la <a class="reference internal" href="preservation.html"><span class="doc std std-doc">préservation</span></a>, à l’installation et à l’exploitation de la solution logicielle Vitam.</p>
+<p>Pour en savoir plus sur les griffons dans la solution logicielle Vitam, consulter les documentations spécifiques consacrées à la <a class="reference internal" href="preservation.html"><span class="std std-doc">préservation</span></a>, à l’installation et à l’exploitation de la solution logicielle Vitam.</p>
 </aside>
-<aside class="footnote brackets" id="id89" role="note">
+<aside class="footnote brackets" id="id89" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id44">45</a><span class="fn-bracket">]</span></span>
-<p>Pour en savoir plus sur les opérations de traitement de masse des fichiers numériques (opérations de préservation, consulter la <a class="reference internal" href="preservation.html"><span class="doc std std-doc">documentation spécifique consacrée à la préservation</span></a>).</p>
+<p>Pour en savoir plus sur les opérations de traitement de masse des fichiers numériques (opérations de préservation, consulter la <a class="reference internal" href="preservation.html"><span class="std std-doc">documentation spécifique consacrée à la préservation</span></a>).</p>
 </aside>
-<aside class="footnote brackets" id="id90" role="note">
+<aside class="footnote brackets" id="id90" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id45">46</a><span class="fn-bracket">]</span></span>
 <p>Pour rappel, en fonction de l’outil de création, un fichier numérique peut voir ses métadonnées encodées de manière différente et, de fait, interprétées de manière différente par l’outil d’extraction.</p>
 </aside>
@@ -3124,7 +3128,7 @@ Wikipedia. « ID3 (métadonnées MP3) », 24 décembre 2018 (dernière modific
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, Programme Vitam.</p>
+    <p>&#169; Droits d'auteur 2022, Programme Vitam.</p>
   </div>
 
   Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un

@@ -1,21 +1,25 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="fr" >
+<html class="writer-html5" lang="fr" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>19. Les profils d’unité archivistique dans la solution logicielle Vitam &mdash; Vitam documentation fonctionnelle</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=eea1f72d" />
+
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script src="../_static/translations.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f4732e6d"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/translations.js?v=bf059b8c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
@@ -173,25 +177,25 @@
            <div itemprop="articleBody">
              
   <section id="les-profils-dunite-archivistique-dans-la-solution-logicielle-vitam">
-<h1><span class="section-number">19. </span>Les profils d’unité archivistique dans la solution logicielle Vitam<a class="headerlink" href="#les-profils-dunite-archivistique-dans-la-solution-logicielle-vitam" title="Lien permanent vers cette rubrique"></a></h1>
+<h1><span class="section-number">19. </span>Les profils d’unité archivistique dans la solution logicielle Vitam<a class="headerlink" href="#les-profils-dunite-archivistique-dans-la-solution-logicielle-vitam" title="Lien vers cette rubrique"></a></h1>
 <p>Le profil d’unité archivistique permet de définir la syntaxe, la sémantique et les règles de gestion applicables à une unité archivistique, en entrée et tout au long de sa prise en charge par le système.<br />
 La solution logicielle Vitam permet de disposer d’un référentiel des profils utilisables.</p>
 <section id="presentation-du-referentiel-des-profils-dunite-archivistique">
-<h2><span class="section-number">19.1. </span>Présentation du référentiel des profils d’unité archivistique<a class="headerlink" href="#presentation-du-referentiel-des-profils-dunite-archivistique" title="Lien permanent vers cette rubrique"></a></h2>
+<h2><span class="section-number">19.1. </span>Présentation du référentiel des profils d’unité archivistique<a class="headerlink" href="#presentation-du-referentiel-des-profils-dunite-archivistique" title="Lien vers cette rubrique"></a></h2>
 <section id="perimetre-du-referentiel-des-profils-dunite-archivistique">
-<h3><span class="section-number">19.1.1. </span>Périmètre du référentiel des profils d’unité archivistique<a class="headerlink" href="#perimetre-du-referentiel-des-profils-dunite-archivistique" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">19.1.1. </span>Périmètre du référentiel des profils d’unité archivistique<a class="headerlink" href="#perimetre-du-referentiel-des-profils-dunite-archivistique" title="Lien vers cette rubrique"></a></h3>
 <p>Le référentiel des profils d’unité archivistique est propre au tenant sur lequel il a été importé.</p>
 </section>
 <section id="controles-effectues">
-<h3><span class="section-number">19.1.2. </span>Contrôles effectués<a class="headerlink" href="#controles-effectues" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">19.1.2. </span>Contrôles effectués<a class="headerlink" href="#controles-effectues" title="Lien vers cette rubrique"></a></h3>
 <section id="en-entree">
-<h4><span class="section-number">19.1.2.1. </span>En entrée<a class="headerlink" href="#en-entree" title="Lien permanent vers cette rubrique"></a></h4>
+<h4><span class="section-number">19.1.2.1. </span>En entrée<a class="headerlink" href="#en-entree" title="Lien vers cette rubrique"></a></h4>
 <p>La solution logicielle Vitam vérifie que les unités archivistiques déclarant, dans le bordereau de transfert, un profil d’unité archivistique sont conformes à ce dernier.<br />
 Si l’une d’entre elles n’est pas conforme à son profil d’unité archivistique, l’entrée sera rejetée.<br />
 Le profil d’unité archivistique est déclaré au moyen de son identifiant dans le référentiel des profils d’unité archivistique dans les blocs <ArchiveUnit> pour chaque unité archivistique qui le nécessite.</p>
 </section>
 <section id="en-modification">
-<h4><span class="section-number">19.1.2.2. </span>En modification<a class="headerlink" href="#en-modification" title="Lien permanent vers cette rubrique"></a></h4>
+<h4><span class="section-number">19.1.2.2. </span>En modification<a class="headerlink" href="#en-modification" title="Lien vers cette rubrique"></a></h4>
 <p>La solution logicielle Vitam permet :</p>
 <ul class="simple">
 <li><p>de modifier les métadonnées d’une unité archivistique déclarant un profil d’unité archivistique, en contrôlant que l’unité archivistique reste conforme au profil d’unité archivistique qu’elle déclare (pas de suppression des métadonnées obligatoires par exemple) ;</p></li>
@@ -204,9 +208,9 @@ Le profil d’unité archivistique est déclaré au moyen de son identifiant dan
 </section>
 </section>
 <section id="configuration-du-referentiel-des-profils-dunite-archivistique">
-<h2><span class="section-number">19.2. </span>Configuration du référentiel des profils d’unité archivistique<a class="headerlink" href="#configuration-du-referentiel-des-profils-dunite-archivistique" title="Lien permanent vers cette rubrique"></a></h2>
+<h2><span class="section-number">19.2. </span>Configuration du référentiel des profils d’unité archivistique<a class="headerlink" href="#configuration-du-referentiel-des-profils-dunite-archivistique" title="Lien vers cette rubrique"></a></h2>
 <section id="constitution-des-profils-dunite-archivistique">
-<h3><span class="section-number">19.2.1. </span>Constitution des profils d’unité archivistique<a class="headerlink" href="#constitution-des-profils-dunite-archivistique" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">19.2.1. </span>Constitution des profils d’unité archivistique<a class="headerlink" href="#constitution-des-profils-dunite-archivistique" title="Lien vers cette rubrique"></a></h3>
 <p>Les profils d’unité archivistique ne sont pas obligatoires pour effectuer des entrées sur la plate-forme.
 Néanmoins, l’administrateur fonctionnel pourra souhaiter définir des profils d’unité archivistique pour :</p>
 <ul class="simple">
@@ -225,7 +229,7 @@ Un profil d’unité archivistique peut également être utilisé pour des types
 Cela permet de s’assurer que des métadonnées essentielles à la recherche ne sont pas supprimées lors d’une mise à jour (par exemple, le matricule pour un dossier d’agent).</p>
 </section>
 <section id="transposition-des-outils-existants">
-<h3><span class="section-number">19.2.2. </span>Transposition des outils existants<a class="headerlink" href="#transposition-des-outils-existants" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">19.2.2. </span>Transposition des outils existants<a class="headerlink" href="#transposition-des-outils-existants" title="Lien vers cette rubrique"></a></h3>
 <p>Des profils d’unité archivistique peuvent être définis à tout niveau de l’arborescence : dossier, sous-dossier, pièce.</p>
 <p>Définir un profil d’unité archivistique nécessite une analyse préalable des données à archiver, type de document par type de document. Il s’agit de connaître :</p>
 <ul class="simple">
@@ -239,7 +243,7 @@ Cela permet de s’assurer que des métadonnées essentielles à la recherche ne
 </ul>
 <p>Pour rassembler les informations à faire figurer dans les profils d’unité archivistique de niveau dossier, l’administrateur fonctionnel peut s’appuyer sur les bordereaux de versement pour des filières particulières qui définissent très précisément les informations attendues.</p>
 <section id="illustration-pour-un-niveau-dossier">
-<h4><span class="section-number">19.2.2.1. </span>Illustration pour un niveau dossier<a class="headerlink" href="#illustration-pour-un-niveau-dossier" title="Lien permanent vers cette rubrique"></a></h4>
+<h4><span class="section-number">19.2.2.1. </span>Illustration pour un niveau dossier<a class="headerlink" href="#illustration-pour-un-niveau-dossier" title="Lien vers cette rubrique"></a></h4>
 <p>Champs attendus dans le bordereau de transfert des dossiers de personnel</p>
 <table class="docutils align-default">
 <thead>
@@ -269,13 +273,13 @@ Cela permet de s’assurer que des métadonnées essentielles à la recherche ne
 </table>
 <p>Le profil d’unité archivistique peut :</p>
 <ul class="simple">
-<li><p>rendre obligatoire ou non la présence de tous ces champs (pour leur formalisation, voir le <a class="reference internal" href="Vademecum_ontologie.html"><span class="doc std std-doc">vademecum ontologie</span></a>) ;</p></li>
+<li><p>rendre obligatoire ou non la présence de tous ces champs (pour leur formalisation, voir le <a class="reference internal" href="Vademecum_ontologie.html"><span class="std std-doc">vademecum ontologie</span></a>) ;</p></li>
 <li><p>préciser si ces champs sont répétables ou non ; on pourrait ici n’accepter qu’un seul matricule alors que le SEDA rend cette information répétable ;</p></li>
 <li><p>rendre obligatoire la présence de certaines métadonnées de gestion, par exemple, dans ce cas, la présence d’une règle de communicabilité correspondant au délai de communicabilité de 50 ans.</p></li>
 </ul>
 </section>
 <section id="illustration-pour-un-niveau-piece">
-<h4><span class="section-number">19.2.2.2. </span>Illustration pour un niveau pièce<a class="headerlink" href="#illustration-pour-un-niveau-piece" title="Lien permanent vers cette rubrique"></a></h4>
+<h4><span class="section-number">19.2.2.2. </span>Illustration pour un niveau pièce<a class="headerlink" href="#illustration-pour-un-niveau-piece" title="Lien vers cette rubrique"></a></h4>
 <p>Le niveau « pièce » est assez rarement défini actuellement dans les outils dont disposent les services d’archives.
 L’administrateur fonctionnel qui souhaiterait contrôler les métadonnées d’une pièce au moyen d’un profil d’unité archivistique pourra étudier la manière dont une même pièce est décrite dans les différents SI et définir ainsi les métadonnées à renseigner systématiquement ou de manière facultative.</p>
 <p>Exemple pour un courrier :</p>
@@ -343,12 +347,12 @@ L’administrateur fonctionnel qui souhaiterait contrôler les métadonnées d�
 </section>
 </section>
 <section id="gestion-des-identifiants-des-profils-dunite-archivistique">
-<h3><span class="section-number">19.2.3. </span>Gestion des identifiants des profils d’unité archivistique<a class="headerlink" href="#gestion-des-identifiants-des-profils-dunite-archivistique" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">19.2.3. </span>Gestion des identifiants des profils d’unité archivistique<a class="headerlink" href="#gestion-des-identifiants-des-profils-dunite-archivistique" title="Lien vers cette rubrique"></a></h3>
 <p>À l’installation de la plate-forme Vitam, l’administrateur technique peut configurer le tenant pour que les identifiants des profils d’unité archivistique soient générés par Vitam (mode « maître ») ou par le front-office (mode « esclave »).
 Le mode esclave est intéressant si les profils d’unité archivistique sont générés dans le front office qui leur attribue un identifiant que l’on souhaite pouvoir suivre.</p>
 </section>
 <section id="formalisation-du-referentiel">
-<h3><span class="section-number">19.2.4. </span>Formalisation du référentiel<a class="headerlink" href="#formalisation-du-referentiel" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">19.2.4. </span>Formalisation du référentiel<a class="headerlink" href="#formalisation-du-referentiel" title="Lien vers cette rubrique"></a></h3>
 <p>Le référentiel des profils d’unité archivistique se compose de notices descriptives au format JSON qui incluent nativement un schéma de contrôle au format JSON ou auxquelles il est possible d’associer a posteriori un schéma de contrôle au format JSON.</p>
 <p>L’import d’une notice seule ne suffit pas pour utiliser un profil d’unité archivistique dans la solution logicielle Vitam. Il est nécessaire, après cette opération, d’ajouter le schéma de contrôle correspondant au profil d’unité archivistique lui-même et de l’associer à la notice qui le référence, afin qu’il soit pris en compte dans la solution logicielle Vitam.</p>
 <p>Les schémas de contrôle permettent de valider des contenus exprimés au format JSON, format de structuration des données dans la solution logicielle Vitam.</p>
@@ -367,24 +371,24 @@ Le mode esclave est intéressant si les profils d’unité archivistique sont g�
 - date d’activation
 - date de désactivation</p></li>
 </ul>
-<p>Pour en savoir plus, consulter le <a class="reference internal" href="modele_de_donnees.html"><span class="doc std std-doc">document VITAM. Modèle de données</span></a>.</p>
+<p>Pour en savoir plus, consulter le <a class="reference internal" href="modele_de_donnees.html"><span class="std std-doc">document VITAM. Modèle de données</span></a>.</p>
 <p>Il est possible d’importer, en une seule fois, un référentiel complet, comprenant plusieurs notices  décrivant chacune un profil d’unité archivistique. La solution logicielle Vitam ne comptabilisera qu’une seule opération et ne prendra pas en compte dans le journal des opérations la création unitaire des différents items compris dans le référentiel importé.</p>
 <p>Afin d’optimiser la traçabilité de la création des différentes notices, il est recommandé de créer ces dernières une par une.</p>
 <p>À chaque notice descriptive, il est possible d’associer un seul profil d’unité archivistique ou schéma de contrôle.
 Lors de l’import du schéma de contrôle, la solution logicielle Vitam vérifie que le schéma est compatible avec l’ontologie, c’est-à-dire que les vocabulaires déclarés dans le schéma de contrôle existent dans l’ontologie.</p>
 </section>
 <section id="activation-du-profil-dunite-archivistique">
-<h3><span class="section-number">19.2.5. </span>Activation du profil d’unité archivistique<a class="headerlink" href="#activation-du-profil-dunite-archivistique" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">19.2.5. </span>Activation du profil d’unité archivistique<a class="headerlink" href="#activation-du-profil-dunite-archivistique" title="Lien vers cette rubrique"></a></h3>
 <p>Un profil d’unité archivistique peut être importé avec un statut inactif ou être désactivé lors d’une mise à jour du profil d’unité archivistique.
 Pour pouvoir être utilisé pour effectuer des contrôles en entrée ou lors d’une modification de métadonnées des unités archivistiques, un profil d’unité archivistique doit avoir un statut « actif » dans le référentiel des profils d’unité archivistique.</p>
 <p>Si le profil n’a pas un statut « actif », les versements déclarant ce profil seront rejetés. De même, les modifications des unités archivistiques déclarant ce profil ou l’association de ce profil à une unité archivistique ne seront pas possibles.</p>
 </section>
 </section>
 <section id="modification-du-referentiel-des-profils-dunite-archivistique">
-<h2><span class="section-number">19.3. </span>Modification du référentiel des profils d’unité archivistique<a class="headerlink" href="#modification-du-referentiel-des-profils-dunite-archivistique" title="Lien permanent vers cette rubrique"></a></h2>
+<h2><span class="section-number">19.3. </span>Modification du référentiel des profils d’unité archivistique<a class="headerlink" href="#modification-du-referentiel-des-profils-dunite-archivistique" title="Lien vers cette rubrique"></a></h2>
 <p>La modification des champs des notices décrivant les profils d’unité archivistique est possible. Cette action provoque la création d’une nouvelle version de la notice modifiée. Elle fait l’objet d’une journalisation dans le journal des opérations.</p>
 <p>La solution logicielle Vitam permet de modifier la notice de profil d’unité archivistique ou son schéma de contrôle, tant que ce dernier n’est pas utilisé par une unité archivistique. S’il l’est, il n’est plus possible de le modifier.</p>
-<p>Pour aller plus loin, consulter le <a class="reference internal" href="profil_unite_archivistique.html"><span class="doc std std-doc">document VITAM. Profils d’unité archivistique</span></a>.</p>
+<p>Pour aller plus loin, consulter le <a class="reference internal" href="profil_unite_archivistique.html"><span class="std std-doc">document VITAM. Profils d’unité archivistique</span></a>.</p>
 </section>
 </section>
 
@@ -400,7 +404,7 @@ Pour pouvoir être utilisé pour effectuer des contrôles en entrée ou lors d�
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, Programme Vitam.</p>
+    <p>&#169; Droits d'auteur 2022, Programme Vitam.</p>
   </div>
 
   Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un

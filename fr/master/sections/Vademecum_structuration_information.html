@@ -1,21 +1,25 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="fr" >
+<html class="writer-html5" lang="fr" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>27. La structuration des informations dans la solution logicielle Vitam &mdash; Vitam documentation fonctionnelle</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=eea1f72d" />
+
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
-        <script src="../_static/translations.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f4732e6d"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/translations.js?v=bf059b8c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
@@ -160,13 +164,13 @@
            <div itemprop="articleBody">
              
   <section id="la-structuration-des-informations-dans-la-solution-logicielle-vitam">
-<h1><span class="section-number">27. </span>La structuration des informations dans la solution logicielle Vitam<a class="headerlink" href="#la-structuration-des-informations-dans-la-solution-logicielle-vitam" title="Lien permanent vers cette rubrique"></a></h1>
+<h1><span class="section-number">27. </span>La structuration des informations dans la solution logicielle Vitam<a class="headerlink" href="#la-structuration-des-informations-dans-la-solution-logicielle-vitam" title="Lien vers cette rubrique"></a></h1>
 <p>Les archives nativement numériques sont des objets métier que les archivistes vont collecter, décrire, conserver et communiquer comme toutes les archives. Toutefois, leur support particulier  entraîne certaines spécificités dans leur traitement archivistique par rapport aux archives traditionnelles sur support papier.<br>
 Deux normes principales concernent les archives numériques dans la sphère publique et sont à la base de l’organisation des informations dans la solution logicielle Vitam.
 La norme OAIS apporte un modèle conceptuel pour un système d’archivage électronique et définit la notion de « paquet d’information » à collecter, conserver et communiquer.<br>
 La norme MEDONA modélise les transactions entre les différents acteurs des processus d’archivage (service d’archives, service de contrôle, service producteur, service versant, demandeur d’archives) et précise, dans sa déclinaison pour les archives publiques, le SEDA, la forme que prennent les informations échangées (constitution du paquet et formalisation de la description des métadonnées).</p>
 <section id="organisation-interne-de-linformation">
-<h2><span class="section-number">27.1. </span>Organisation interne de l’information<a class="headerlink" href="#organisation-interne-de-linformation" title="Lien permanent vers cette rubrique"></a></h2>
+<h2><span class="section-number">27.1. </span>Organisation interne de l’information<a class="headerlink" href="#organisation-interne-de-linformation" title="Lien vers cette rubrique"></a></h2>
 <p>La solution logicielle Vitam prend en charge, conserve et donne accès à :</p>
 <ul class="simple">
 <li><p>des unités archivistiques, avec leurs métadonnées descriptives et de gestion,</p></li>
@@ -174,7 +178,7 @@ La norme MEDONA modélise les transactions entre les différents acteurs des pro
 <li><p>des objets techniques avec leurs métadonnées techniques.</p></li>
 </ul>
 <section id="presentation-dune-unite-archivistique">
-<h3><span class="section-number">27.1.1. </span>Présentation d’une unité archivistique<a class="headerlink" href="#presentation-dune-unite-archivistique" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">27.1.1. </span>Présentation d’une unité archivistique<a class="headerlink" href="#presentation-dune-unite-archivistique" title="Lien vers cette rubrique"></a></h3>
 <p>Une unité archivistique correspond à un niveau de classement intellectuel (ou unité de description). Elle peut décrire un fonds, un sous-fonds, une série organique, une sous-série organique, un dossier, un sous-dossier, un document, une page d’un registre…</p>
 <p>Dans la solution logicielle Vitam, les unités archivistiques peuvent être de type arbre de positionnement, plan de classement ou standard. Les unités archivistiques déclarent un niveau de description, au sens des normes de description archivistique (Series, RecordGrp, Item…), mais la solution logicielle n’effectue pas de contrôle de cohérence sur ces niveaux de description.</p>
 <p>Une unité archivistique peut être rattachée à une ou plusieurs unités archivistiques (unités archivistiques parentes) et avoir une ou plusieurs unités archivistiques dépendantes (unité archivistiques filles), de manière à permettre une description archivistique hiérarchisée. Il est ainsi possible de naviguer dans une arborescence pour parcourir un fonds, une série, un dossier… Dans la solution logicielle Vitam, chaque point de cette arborescence est appelé nœud.</p>
@@ -185,7 +189,7 @@ Les possibilités offertes par le SEDA permettent une description très riche de
 <p>Le traitement des archives électroniques implique une gestion fine à un niveau de granularité qui correspondrait au pièce à pièce dans le papier : en effet, le plus petit niveau d’unité archivistique pris en charge est le fichier. Par exemple, dans un dossier électronique de correspondance reçue par le Premier ministre, chaque courrier sera décrit séparément avec ses métadonnées. La notion d’article, qui combine unité matérielle et unité intellectuelle correspond ainsi dans le contexte électronique à l’objet nativement numérique pris en charge. Ceci permet une gestion très fine des accès puisqu’il est possible de cibler un objet très précis au sein d’un ensemble plus large pour le communiquer (par exemple, telle copie de concours, tel acte d’état civil, tel document dans un dossier).</p>
 </section>
 <section id="presentation-des-objets-techniques">
-<h3><span class="section-number">27.1.2. </span>Présentation des objets techniques<a class="headerlink" href="#presentation-des-objets-techniques" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">27.1.2. </span>Présentation des objets techniques<a class="headerlink" href="#presentation-des-objets-techniques" title="Lien vers cette rubrique"></a></h3>
 <p>Les objets techniques sont la forme prise par l’objet archivé. Il peut s’agir d’un objet physique (registre, maquette, dossier, carte postale…) référencé dans le SAE, comme de fichiers binaires (document bureautique, messagerie, photographie ou film numérique…).<br>
 Les objets techniques sont typés en fonction de leur version et de leur usage.<br>
 La version correspond à la génération technique d’un nouveau fichier binaire, dans le cadre des opérations de préservation, pour assurer la lisibilité dans le temps.</p>
@@ -196,13 +200,13 @@ Pour une même unité archivistique, le nouveau fichier généré peut différer
 <p>Les objets techniques sont décrits par des métadonnées techniques (format, taille, date…). Le SEDA propose une liste des métadonnées techniques pouvant être utilisées et leur cardinalité (la métadonnée est-elle obligatoire ou non ? Est-elle répétable ?). La description technique peut être minimale ou enrichie en fonction des besoins du service producteur (cf. ontologie).</p>
 </section>
 <section id="presentation-du-groupe-dobjets-techniques">
-<h3><span class="section-number">27.1.3. </span>Présentation du groupe d’objets techniques<a class="headerlink" href="#presentation-du-groupe-dobjets-techniques" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">27.1.3. </span>Présentation du groupe d’objets techniques<a class="headerlink" href="#presentation-du-groupe-dobjets-techniques" title="Lien vers cette rubrique"></a></h3>
 <p>À chaque unité archivistique peut être associé un groupe d’objets techniques. Ce groupe d’objets regroupe tous les objets binaires qui représentent l’unité archivistique, selon leurs usages et leurs versions, et peut référencer un objet physique (original physique) : un groupe d’objets peut ainsi contenir, par exemple, la référence à un registre, le fichier TIFF issu de la numérisation d’une des fiches du registre et le fichier en basse résolution utilisé pour la mise en ligne.
 Le groupe d’objets techniques indique en métadonnée le nombre de copies des objets techniques réalisées par la solution logicielle en fonction de la stratégie de stockage appliquée.</p>
 <p>L’original numérique est le fichier sur lequel la solution logicielle Vitam fera reposer la valeur probante et dont elle s’engage à préserver l’accès dans le temps. C’est pourquoi, sauf exception, le groupe d’objets techniques doit toujours contenir un objet « original », qu’il s’agisse d’un original numérique (fichier) ou de la référence à un original physique conservé par le service.</p>
 </section>
 <section id="exemple-de-structuration-des-informations-dans-le-cadre-de-la-numerisation-dun-registre-matricule">
-<h3><span class="section-number">27.1.4. </span>Exemple de structuration des informations dans le cadre de la numérisation d’un registre matricule<a class="headerlink" href="#exemple-de-structuration-des-informations-dans-le-cadre-de-la-numerisation-dun-registre-matricule" title="Lien permanent vers cette rubrique"></a></h3>
+<h3><span class="section-number">27.1.4. </span>Exemple de structuration des informations dans le cadre de la numérisation d’un registre matricule<a class="headerlink" href="#exemple-de-structuration-des-informations-dans-le-cadre-de-la-numerisation-dun-registre-matricule" title="Lien vers cette rubrique"></a></h3>
 <p>Le registre sera décrit dans une unité archivistique associée à un groupe d’objets techniques qui référencera un original physique (le registre).
 Chaque fiche matricule sera décrite dans une unité archivistique fille de l’unité archivistique décrivant le registre, associée un groupe d’objets techniques.
 Le groupe d’objets techniques comprendra :</p>
@@ -216,7 +220,7 @@ Le groupe d’objets techniques comprendra :</p>
 </section>
 </section>
 <section id="constitution-des-paquets-dinformation">
-<h2><span class="section-number">27.2. </span>Constitution des paquets d’information<a class="headerlink" href="#constitution-des-paquets-dinformation" title="Lien permanent vers cette rubrique"></a></h2>
+<h2><span class="section-number">27.2. </span>Constitution des paquets d’information<a class="headerlink" href="#constitution-des-paquets-dinformation" title="Lien vers cette rubrique"></a></h2>
 <p>Le fonctionnement conceptuel d’un système d’archivage électronique repose sur la notion de paquets à soumettre, à archiver et à diffuser. On parle de « paquet » car l’objet à conserver (le fichier électronique, la base de données…) est obligatoirement accompagné des métadonnées descriptives et techniques qui vont permettre de le retrouver, de gérer son cycle de vie et de le préserver.</p>
 <p>En entrée, la solution logicielle reçoit des SIP (Submission Information Package), constitués d’un bordereau de transfert et des fichiers à archiver.
 Les fichiers à archiver sont contenus dans un répertoire informatique (la « boîte d’archives ») et sont accompagnés d’un bordereau de transfert.
@@ -228,7 +232,7 @@ Le bordereau décrit les unités archivistiques, les groupes d’objets techniqu
 Un DIP peut correspondre à une entrée, à une partie d’une entrée, à plusieurs entrées, à des unités archivistiques issues de plusieurs entrées. Il peut être constitué d’archives de services producteurs différents.</p>
 </section>
 <section id="coexistence-avec-les-systemes-traditionnels-de-description-et-de-gestion-des-archives">
-<h2><span class="section-number">27.3. </span>Coexistence avec les systèmes traditionnels de description et de gestion des archives<a class="headerlink" href="#coexistence-avec-les-systemes-traditionnels-de-description-et-de-gestion-des-archives" title="Lien permanent vers cette rubrique"></a></h2>
+<h2><span class="section-number">27.3. </span>Coexistence avec les systèmes traditionnels de description et de gestion des archives<a class="headerlink" href="#coexistence-avec-les-systemes-traditionnels-de-description-et-de-gestion-des-archives" title="Lien vers cette rubrique"></a></h2>
 <p>Les services d’archives souhaiteront sans doute offrir à leurs publics une seule interface d’accès aux archives, quel qu’en soit le support. La coexistence des archives traditionnelles, numérisées et nativement numériques dans un même portail est tout à fait possible, dans la mesure où ces archives partagent des caractéristiques communes, mais une attention particulière devra être portée sur certains points.</p>
 <p>Les archives nativement numériques sont décrites comme les archives traditionnelles de façon hiérarchisée, ce qui permet de naviguer dans une arborescence commune. Toutefois, le niveau de granularité de description des archives électroniques étant plus fin, cette spécificité est à prendre en compte dans un système hybride pour gérer les descriptions de granularité très différente et leur restitution au lecteur : comment fournir des informations homogènes en évitant une surreprésentation des archives numériques ? Quel est le bon niveau de description des archives numériques à restituer : pièce, sous-dossier, dossier ?
 <em>Exemple :</em> une messagerie électronique peut être décrite jusqu’au niveau de la pièce jointe à un message. Dans un portail hybride, la description de la boîte de messagerie peut-elle suffire ?</p>
@@ -249,7 +253,7 @@ Un DIP peut correspondre à une entrée, à une partie d’une entrée, à plusi
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, Programme Vitam.</p>
+    <p>&#169; Droits d'auteur 2022, Programme Vitam.</p>
   </div>
 
   Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
