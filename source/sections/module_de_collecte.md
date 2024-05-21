@@ -2256,11 +2256,11 @@ Annexe 3 : Liste des points d’API
 |                   | Mettre à jour en masse les unités archivistiques | transaction:id:units:bulk:update | POST  | /collect-external/v1/transactions/{transactionId}/units/bulk|
 | objects           | Récupère un groupe d’objets techniques | transaction:object:read | GET       | /collect-external/v1/objects/{gotId}/|
 
-[^1]:  Pour plus d’informations, consulter le document *Modèle de données*, « Collection Project ». Un exemple de projet de versement se trouve dans l’annexe 1 du présent document.
+[^1]:  Pour plus d’informations, consulter le document *Modèle de données*, « Collection Project ». Un exemple de projet de versement se trouve dans l’[annexe 1](#annexe-1-exemples-de-donnees-entrantes) du présent document.
 
 [^2]:  À noter que, dans l’APP « Collecte et préparation des versements », ce champ est alimenté par la valeur du champ « MessageIdentifier ».
 
-[^3]:  Pour plus d’informations, consulter le document *Modèle de données*, « Collection Transaction ». Un exemple de contexte de collecte se trouve dans l’annexe 1 du présent document.
+[^3]:  Pour plus d’informations, consulter le document *Modèle de données*, « Collection Transaction ». Un exemple de contexte de collecte se trouve dans l’[annexe 1](#annexe-1-exemples-de-donnees-entrantes) du présent document.
 
 [^4]:  À noter que cette collection est renommée « Transaction » dans la version 6 RC de la solution logicielle Vitam.
 
@@ -2270,27 +2270,27 @@ Annexe 3 : Liste des points d’API
 
 [^7]:  Si la transaction est clôturée (son statut est égal à « READY »), il n’est plus possible de lui adjoindre des unités archivistiques, ainsi que des métadonnées techniques et des objets.
 
-[^8]:  *Pour plus d’informations sur l’enregistrement de l’unité archivistique dans la base de données, il est recommandé de consulter le document *Modèle de données*.*
+[^8]:  Pour plus d’informations sur l’enregistrement de l’unité archivistique dans la base de données, il est recommandé de consulter le document *Modèle de données*.
 
 [^9]:  Si la transaction est clôturée (son statut est égal à « READY »), il n’est plus possible de lui adjoindre des unités archivistiques, ainsi que des métadonnées techniques et des objets.
 
-[^10]:  *Pour plus d’informations sur l’enregistrement de l’unité archivistique dans la base de données, il est recommandé de consulter le document *Modèle de données*.*
+[^10]: Pour plus d’informations sur l’enregistrement de l’unité archivistique dans la base de données, il est recommandé de consulter le document *Modèle de données*.
 
 [^11]:  Le fonctionnement est identique à celui de l’import d’arborescence bureautique dans ReSIP.
 
-[^12]:  *Pour plus d’informations sur l’enregistrement de l’unité archivistique dans la base de données, il est recommandé de consulter le document *Modèle de données*.*
+[^12]: Pour plus d’informations sur l’enregistrement de l’unité archivistique dans la base de données, il est recommandé de consulter le document *Modèle de données*.
 
 [^13]:  Se référer à la sous-section 3.2.4.2 « Envoi d’une arborescence bureautique » du présent document.
 
 [^14]:  Son modèle est identique au modèle de fichier .csv importé dans ReSIP, hors colonnes ID et ParentID qui ne sont pas supportées par le module de collecte en l’état actuel des développements.
 
-[^15]:  *Pour plus d’informations sur l’enregistrement de l’unité archivistique dans la base de données, il est recommandé de consulter le document *Modèle de données*.*
+[^15]: Pour plus d’informations sur l’enregistrement de l’unité archivistique dans la base de données, il est recommandé de consulter le document *Modèle de données*.
 
-[^16]:  *Pour plus d’informations sur l’enregistrement de l’unité archivistique dans la base de données, il est recommandé de consulter le document *Modèle de données*.*
+[^16]: Pour plus d’informations sur l’enregistrement de l’unité archivistique dans la base de données, il est recommandé de consulter le document *Modèle de données*.
 
-[^17]:  Son modèle est identique au modèle de fichier .csv importé dans ReSIP, hors colonnes ID et ParentID qui ne sont pas supportées par le module de collecte en l’état actuel des développements.
+[^17]: Son modèle est identique au modèle de fichier .csv importé dans ReSIP, hors colonnes ID et ParentID qui ne sont pas supportées par le module de collecte en l’état actuel des développements.
 
-[^18]:  *Pour plus d’informations sur l’enregistrement de l’unité archivistique dans la base de données, il est recommandé de consulter le document *Modèle de données*.*
+[^18]: Pour plus d’informations sur l’enregistrement de l’unité archivistique dans la base de données, il est recommandé de consulter le document *Modèle de données*.
 
 [^19]:  Le paramétrage de la purge automatique s’effectue depuis le fichier collect.conf. Pour modifier le délai par défaut, il faut modifier les valeurs des paramètres « purgeTransactionThreadFrequency » et « purgeTransactionDelayInMinutes » pour le(s) tenant(s) concerné(s).
 
@@ -2308,11 +2308,11 @@ Annexe 3 : Liste des points d’API
 
 [^26]:  Pour plus d’informations sur ces modélisations particulières, il est recommandé de consulter le document Modèle de données, chapitre 5.1, « Collection Unit ».
 
-[^27]:  Les types des éléments propres au SEDA sont listés dans l’annexe 2 « Types JSON ». Il est conseillé de se reporter à cette annexe, afin de typer correctement les éléments.
+[^27]:  Les types des éléments propres au SEDA sont listés dans l'[annexe 2](#annexe-2-types-json) « Types JSON ». Il est conseillé de se reporter à cette annexe, afin de typer correctement les éléments.
 
 [^28]:  La présence de crochets dans le tableau de correspondances indique que le vocabulaire employé dans l’enregistrement peut ou doit se présenter sous la forme d’un tableau ou « array », pouvant contenir un type de valeur en particulier. Le vocabulaire représenté entre crochets est également répétable.
 
-[^29]:  Les types des éléments propres au SEDA sont listés dans l’annexe 2 « Types JSON ». du présent document.
+[^29]:  Les types des éléments propres au SEDA sont listés dans l’[annexe 2](#annexe-2-types-json) « Types JSON ». du présent document.
 
 [^30]:  Pour plus d’informations sur ces modélisations particulières, il est recommandé de consulter le document *Modèle de données*, chapitre 5.1, « Collection Unit ».
 

@@ -187,7 +187,7 @@ Chaque format est décrit avec les informations suivantes :
 - documentation.
 
 <<<<<<< Updated upstream
-Les descriptions sont présentées au format HTML et exportables au format XML. Elles sont en décembre 2019 au nombre de 512. Un exemple de fiche est fourni en annexe 2.
+Les descriptions sont présentées au format HTML et exportables au format XML. Elles sont en décembre 2019 au nombre de 512. Un exemple de fiche est fourni en [annexe 2](#annexe-2-description-dun-format-par-différents-registres).
 =======
 Les descriptions sont présentées au format HTML et exportables au format XML. Elles sont en décembre 2019 au nombre de 512. Un exemple de fiche est fourni en [annexe 2](#annexe-2-description-dun-format-par-differents-registres).
 >>>>>>> Stashed changes

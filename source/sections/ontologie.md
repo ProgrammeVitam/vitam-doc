@@ -5013,7 +5013,7 @@ Pour les éléments propres au SEDA, le tableau suivant précise les types de ce
 
 ## Notes
 
-[^1]:  Pour plus de précisions, consulter la section 3. « Formalisation des vocabulaires ontologiques » du présent document.
+[^1]:  Pour plus de précisions, consulter la [section 3](#formalisation-des-vocabulaires-ontologiques). « Formalisation des vocabulaires ontologiques » du présent document.
 
 [^2]:  Ces vocabulaires sont détaillés dans la documentation *Modèle de données*.
 
@@ -5021,7 +5021,7 @@ Pour les éléments propres au SEDA, le tableau suivant précise les types de ce
 
 [^4]:  Des précisions sur les types d’indexation supportés par la solution logicielle Vitam sont apportées dans la partie 5.2. « Quand et comment créer un vocabulaire ? ».
 
-[^5]:  Pour plus d’informations, consulter le document *Modèle de données*, chapitre « Collection Ontology ». Un exemple d’ontologie se trouve dans l’annexe 1 du présent document.
+[^5]:  Pour plus d’informations, consulter le document *Modèle de données*, chapitre « Collection Ontology ». Un exemple d’ontologie se trouve dans l’[annexe 1](#annexe-1-vocabulaires-internes-de-lontologie) du présent document.
 
 [^6]:  Des précisions sur les types d’indexation supportés par la solution logicielle Vitam sont apportées dans la partie 5.2. « Quand et comment créer un vocabulaire ? ».
 
@@ -5047,7 +5047,7 @@ Pour les éléments propres au SEDA, le tableau suivant précise les types de ce
 
 [^17]:  Les règles de mise à jour d’une unité archivistique associée à un profil d’unité archivistique sont précisées dans la partie 5.5. « Comment modifier une unité archivistique associée à un profil d’unité archivistique ? » du présent document.
 
-[^18]:  Pour plus de précisions sur ce qu’est un élément de type objet, se référer à la présente documentation, section 2.1. « Qu’est-ce qu’une ontologie ? ».
+[^18]:  Pour plus de précisions sur ce qu’est un élément de type objet, se référer à la présente documentation, [section « Qu’est-ce qu’une ontologie ? »](#quest-ce-quune-ontologie).
 
 [^19]:  Pour plus d’informations, consulter la documentation d’exploitation, chapitre 5.11. « Procédure d’exploitation suite à la création ou la modification d’une ontologie ».
 
@@ -5061,7 +5061,7 @@ Pour les éléments propres au SEDA, le tableau suivant précise les types de ce
 
 [^24]:  Ce type est compatible si et seulement si les données en base correspondent à des entiers.
 
-[^25]:  La présence de crochets dans le tableau de correspondances indique que le vocabulaire employé dans le profil d’unité archivistique doit se présenter sous la forme d’un tableau. Pour plus d’informations, consulter le document *Profil d’unité archivistique*. L’annexe 2 « Types JSON conformes au type d’indexation des vocabulaires internes » du présent document précise les types attendus dans un schéma de contrôle pour définir un vocabulaire interne, conformément à son type dans l’ontologie.
+[^25]:  La présence de crochets dans le tableau de correspondances indique que le vocabulaire employé dans le profil d’unité archivistique doit se présenter sous la forme d’un tableau. Pour plus d’informations, consulter le document *Profil d’unité archivistique*. L’[annexe 2](#annexe-2-types-json-conformes-au-type-dindexation-des-vocabulaires-internes) « Types JSON conformes au type d’indexation des vocabulaires internes » du présent document précise les types attendus dans un schéma de contrôle pour définir un vocabulaire interne, conformément à son type dans l’ontologie.
 
 [^26]:  Pour plus d’informations, consulter la documentation d’exploitation, chapitre 5.11 « Procédure d’exploitation suite à la création ou la modification d’une ontologie ».
 

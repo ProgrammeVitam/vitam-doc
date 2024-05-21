@@ -447,7 +447,7 @@ de l’initialisation de l’opération.
 
 -   Issu de la définition du workflow structuré en JSON (fichier default-workflow.json).
 
--   La liste des valeurs possibles pour ce champ se trouve en annexe. Seul le code est stocké dans ce champ, la traduction se faisant via un fichier properties (vitam-logbook-message-fr.properties).
+-   La liste des valeurs possibles pour ce champ se trouve en [annexe](#annexe-1-valeurs-possibles-pour-le-champ-evtype-du-logbook-operation). Seul le code est stocké dans ce champ, la traduction se faisant via un fichier properties (vitam-logbook-message-fr.properties).
 
 -   Cardinalité : 1-1
 
@@ -588,7 +588,7 @@ de l’initialisation de l’opération.
 
 -   Il s’agit d’une chaîne de caractères.
 
--   Il contient le code correspondant au résultat de l’événement, incluant le statut. La liste des valeurs possibles pour ce champ se trouve en annexe. Seul le code doit être stocké dans ce champ, la traduction doit se faire via un fichier properties (vitam-logbook-message-fr.properties).
+-   Il contient le code correspondant au résultat de l’événement, incluant le statut. La liste des valeurs possibles pour ce champ se trouve en [annexe](#annexe-1-valeurs-possibles-pour-le-champ-evtype-du-logbook-operation). Seul le code doit être stocké dans ce champ, la traduction doit se faire via un fichier properties (vitam-logbook-message-fr.properties).
 
 -   Cardinalité : 1-1
 
@@ -1075,7 +1075,7 @@ parent.
 
 -   Il s’agit d’une chaîne de caractères.
 
--   La liste des valeurs possibles pour ce champ se trouve en annexe. Seul le code est stocké dans ce champ, la traduction se fait via un fichier properties (vitam-logbook-message-fr.properties).
+-   La liste des valeurs possibles pour ce champ se trouve en [annexe](#annexe-2-valeurs-possibles-pour-le-champ-evtype-du-logbook-lifecycle). Seul le code est stocké dans ce champ, la traduction se fait via un fichier properties (vitam-logbook-message-fr.properties).
 
 -   Cardinalité : 1-1
 
@@ -1108,7 +1108,7 @@ parent.
 
 -   Il s’agit d’une chaîne de caractères.
 
--   Nom du processus parmi une liste de processus possibles fixée. Cette liste est disponible en annexe.
+-   Nom du processus parmi une liste de processus possibles fixée. Cette liste est disponible en [annexe](#annexe-3-valeurs-possibles-pour-le-champ-evtypeproc-type-de-processus).
 
 -   Cardinalité : 1-1
 
@@ -1133,7 +1133,7 @@ l’événement.
 
 -   Il s’agit d’une chaîne de caractères.
 
--   Il contient le code correspondant au résultat de l’événement, incluant le statut. La liste des valeurs possibles pour ce champ se trouve en annexe. Seul le code est stocké dans ce champ, la traduction se fait via le fichier properties (vitam-logbook-message-fr.properties).
+-   Il contient le code correspondant au résultat de l’événement, incluant le statut. La liste des valeurs possibles pour ce champ se trouve en [annexe](#annexe-2-valeurs-possibles-pour-le-champ-evtype-du-logbook-lifecycle). Seul le code est stocké dans ce champ, la traduction se fait via le fichier properties (vitam-logbook-message-fr.properties).
 
 -   Cardinalité : 1-1
 
@@ -1385,7 +1385,7 @@ parent.
 
 -   Il s’agit d’une chaîne de caractères.
 
--   La liste des valeurs possibles pour ce champ se trouve en annexe. Seul le code doit être stocké dans ce champ, la traduction doit se faire via le fichier properties (vitam-logbook-message-fr.properties).
+-   La liste des valeurs possibles pour ce champ se trouve en [annexe](#annexe-2-valeurs-possibles-pour-le-champ-evtype-du-logbook-lifecycle). Seul le code doit être stocké dans ce champ, la traduction doit se faire via le fichier properties (vitam-logbook-message-fr.properties).
 
 -   Cardinalité : 1-1
 
@@ -1417,7 +1417,7 @@ parent.
 
 -   Il s’agit d’une chaîne de caractères.
 
--   Nom du processus parmi une liste de processus possibles fixée. Cette liste est disponible en annexe.
+-   Nom du processus parmi une liste de processus possibles fixée. Cette liste est disponible en [annexe](#annexe-3-valeurs-possibles-pour-le-champ-evtypeproc-type-de-processus).
 
 -   Cardinalité : 1-1
 
@@ -1445,7 +1445,7 @@ parent.
 
 -   Il s’agit d’une chaîne de caractères.
 
--   Il contient le code fin de l’événement, incluant le statut. La liste des valeurs possibles pour ce champ se trouve en annexe. Seul le code est stocké dans ce champ, la traduction doit se faire via le fichier properties (vitam-logbook-message-fr.properties)
+-   Il contient le code fin de l’événement, incluant le statut. La liste des valeurs possibles pour ce champ se trouve en [annexe](#annexe-2-valeurs-possibles-pour-le-champ-evtype-du-logbook-lifecycle). Seul le code est stocké dans ce champ, la traduction doit se faire via le fichier properties (vitam-logbook-message-fr.properties)
 
 -   Cardinalité : 1-1
 
@@ -6627,11 +6627,7 @@ Cette collection est alimentée par l’import d’un fichier CSV contenant l’
 
 Le fichier .csv doit avoir comme séparateur de champs la virgule.
 
-<<<<<<< Updated upstream
-La liste des types de règle disponibles est en annexe.
-=======
-La liste des types de règle disponibles est en [annexe](#annexe-4-categories-de-regles-possibles).
->>>>>>> Stashed changes
+La liste des types de règle disponibles est en [annexe](#annexe-4-cateories-de-regles-possibles).
 
 Les valeurs renseignées dans la colonne unité de mesure doivent correspondre à une valeur de l’énumération RuleMeasurementEnum, à savoir :
 
@@ -6685,7 +6681,7 @@ Par exemple :
 
 -   Il s’agit d’une chaîne de caractères.
 
--   Il correspond à la valeur située dans la colonne RuleType du fichier d’import. Les valeurs possibles pour ce champ sont indiquées en annexe.
+-   Il correspond à la valeur située dans la colonne RuleType du fichier d’import. Les valeurs possibles pour ce champ sont indiquées en [annexe](#annexe-4-categories-de-regles-possibles).
 
 -   Cardinalité : 1-1
 
@@ -8419,7 +8415,7 @@ Ces identifiants sont généralement composés d’un préfixe de deux lettres, 
 
 **« Name » :** préfixe utilisé pour générer un identifiant signifiant.
 
--   La valeur contenue dans ce champ doit correspondre à la table de concordance du service VitamCounterService.java. La liste des valeurs possibles est détaillée en annexe.
+-   La valeur contenue dans ce champ doit correspondre à la table de concordance du service VitamCounterService.java. La liste des valeurs possibles est détaillée en [annexe](#annexe-6-valeurs-possibles-pour-le-champ-name-de-la-collection-vitamsequence).
 
 -   Il s’agit d’une chaîne de caractères.
 
