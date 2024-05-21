@@ -824,7 +824,7 @@ Le clic sur le bouton d’action « Ouvrir » de
 l’explorateur lance la mise à jour des paramètres de la moulinette
 ReSIP. Pour consulter les paramètres définis, il convient, dans le menu
 de la moulinette ReSIP, de cliquer sur l’action « Fichier » puis sur la
-sous-action « Préférences » (voir [section](#import-depuis-un-fichier-csv-decrivant-une-structure-arborescente-darchives-etou-de-fichiers) ci-dessous).
+sous-action « Préférences » (voir [section](#import-depuis-un-fichier-csv-decrivant-une-structure-arborescente-darchives-et-ou-de-fichiers) ci-dessous).
 
 #### Réinitialiser le paramétrage par défaut
 
@@ -844,7 +844,7 @@ préférences » de la fenêtre de dialogue lance la mise à jour des
 paramètres de la moulinette ReSIP. Pour consulter les paramètres
 réinitialisés, il convient, dans le menu de la moulinette ReSIP, de
 cliquer sur l’action « Fichier » puis sur la sous-action « Préférences »
-(voir [section] (#import-depuis-un-fichier-csv-décrivant-une-structure-arborescente-darchives-etou-de-fichiers)ci-dessous).
+(voir [section] (#import-depuis-un-fichier-csv-décrivant-une-structure-arborescente-darchives-et-ou-de-fichiers)ci-dessous).
 
 Import de structures arborescentes d’archives dans la moulinette ReSIP
 ----------------------------------------------------------------------
@@ -858,7 +858,7 @@ travail de l’utilisateur :
 -   [import d’un DIP existant](#import-dun-dip-deja-constitue) ;
 -   [import de fichiers encapsulés dans un ZIP](#import-dune-arborescence-de-fichiers-sous-forme-de-fichier-zip) ;
 -   [import depuis un fichier .csv correspondant à un arbre de positionnement ou à un plan de classement](#import-dun-arbre-de-positionnement-ou-dun-plan-de-classement-sous-forme-de-fichier-csv) ;
--   [import depuis un fichier .csv décrivant une structure arborescente d’archives et/ou de fichiers](#import-depuis-un-fichier-csv-decrivant-une-structure-arborescente-darchives-etou-de-fichiers) ;
+-   [import depuis un fichier .csv décrivant une structure arborescente d’archives et/ou de fichiers](#import-depuis-un-fichier-csv-decrivant-une-structure-arborescente-darchives-et-ou-de-fichiers) ;
 -   [import d’un conteneur de messages électroniques](#import-dune-structure-arborescente-darchives-correspondant-a-une-messagerie-electronique) ;
 -   [réouverture d’une structure arborescente de fichiers dont le traitement a déjà été commencé et sauvegardé via la moulinette ReSIP (réouverture de session)](#reouverture-dune-structure-arborescente-darchives-en-cours-de-traitement).
 
@@ -1795,7 +1795,7 @@ répertoire.
 ![](medias/resip/Pictures/1000020100000555000002D8F88F6EDCE2C9611C.png)
 
 Le clic sur le bouton « Ouvrir » ouvre une fenêtre de
-dialogue affichant les paramètres d’import comme décrit dans la [section](#import-depuis-un-fichier-csv-decrivant-une-structure-arborescente-darchives-etou-de-fichiers) (cf. copie d’écran ci-dessous) et permettant de les modifier :
+dialogue affichant les paramètres d’import comme décrit dans la [section](#import-depuis-un-fichier-csv-decrivant-une-structure-arborescente-darchives-et-ou-de-fichiers) (cf. copie d’écran ci-dessous) et permettant de les modifier :
 
 -   protocole d’extraction des messageries : la moulinette ReSIP
     identifie par défaut le protocole à employer en fonction du type de
@@ -3291,8 +3291,8 @@ arborescente d’archives sous plusieurs formes différentes :
 -   [un SIP conforme au SEDA 2.1. ou au SEDA 2.2. et aux spécifications particulières de la solution logicielle Vitam](#export-de-la-structure-arborescente-darchives-sous-la-forme-dun-sip) ;
 -   [un manifeste conforme au SEDA 2.1. ou au SEDA 2.2. et aux spécifications particulières de la solution logicielle Vitam](#export-de-la-structure-arborescente-darchives-sous-la-forme-dun-manifeste-xml) ;
 -   [une structure arborescente de fichiers](#export-sous-forme-darborescence-de-fichiers) ;
--   [une structure arborescente de fichiers accompagnée d’un fichier de métadonnées au format .csv, zippée ou non](#export-sous-forme-darborescence-de-fichiers-accompagnee-dun-fichier-csv-decrivant-une-structure-arborescente-darchives-etou-de-fichiers) ;
--   [un fichier de métadonnées au format .csv](#export-sous-forme-dun-fichier-csv-decrivant-une-structure-arborescente-darchives-etou-de-fichiers).
+-   [une structure arborescente de fichiers accompagnée d’un fichier de métadonnées au format .csv, zippée ou non](#export-sous-forme-darborescence-de-fichiers-accompagnee-dun-fichier-csv-decrivant-une-structure-arborescente-darchives-et-ou-de-fichiers) ;
+-   [un fichier de métadonnées au format .csv](#export-sous-forme-dun-fichier-csv-decrivant-une-structure-arborescente-darchives-et-ou-de-fichiers).
 
 L’[export est paramétrable](#parametrage-des-exports).
 
