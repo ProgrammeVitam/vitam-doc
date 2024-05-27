@@ -11,7 +11,7 @@ Introduction
 |**Document**|**Date de la version**|**Remarques**|
 |:---------------:|:-----:|:-----:|
 |[Vitam – Gestion de la préservation](./preservation.md)|||
-|[Vitam – Identification des formats de fichiers](./chantier_preservation_identification_format.md)|
+|[Vitam – Identification des formats de fichiers](./chantier_identification_format.md)|
 |[Vitam – Validation du format des fichiers](./chantier_preservation_validation_format.md)|||
 
 
@@ -1444,13 +1444,13 @@ Wikipedia. « ID3 (métadonnées MP3) », 24 décembre 2018 (dernière modific
 
 [^22] : Shala Lavdërim, Shala Ahmet. « File Formats – Characterization and Validation », dans Kopacek Peter, Hajrizi Edmond [dir.], 17th IFAC Conference on International Stability, Technology and Culture TECIS 2016 [Dürres, Albanie, 26-28 octobre 2016], p. 255.
 
-[^23] : La liste des formats supportés est consultable à la page suivante : https://www.xnview.com/en/xnview/#formats. Lien vérifié le 2 janvier 2020.
+[^23] : La liste des formats supportés est consultable à la page suivante : <https://www.xnview.com/en/xnview/#formats>. Lien vérifié le 2 janvier 2020.
 
 [^24] : Federal Agencies Digital Guidelines Initiative. « Guidelines : Embedded Metadata in Broadcast WAVE Files ».
 
 [^25] : Pour rappel, un chunk correspond à un fragment de fichier multimédia. Un format conteneur tel que le format BWF ou WAVE contient de facto plusieurs chunk, contenant en particulier les informations nécessaires au décodage de l’audio ou des données audio utiles. Le standard BWF complète ces informations par un chunk bext (pour « Broadcast audio Extension ») destiné à disposer des informations minimales considérées comme étant nécessaires à toute application de diffusion. Pour plus d’informations, consulter Wikipedia. « Broadcast Wave Format », 14 avril 2019 (dernière modification).
 
-[^26] : La liste des formats supportés est consultable à la page suivante : https://imagemagick.org/script/formats.php. Lien vérifié le 2 janvier 2020.
+[^26] : La liste des formats supportés est consultable à la page suivante : <https://imagemagick.org/script/formats.php>. Lien vérifié le 2 janvier 2020.
 
 [^27] : Bibliotheque nationale de France, « Données et métadonnées : formats et implémentation BnF ».
 

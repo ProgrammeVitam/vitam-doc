@@ -84,4 +84,4 @@ La solution logicielle Vitam permet également de modifier l’arborescence d’
 - supprimer des branches d’arbre de positionnement dans le cadre d’une opération d’élimination.
 L’opération est journalisée dans le journal du cycle de vie de l’unité archivistique ayant été rattachée, déplacée ou supprimée.
 
-Pour aller plus loin, consulter le [document VITAM. Gestion des archives et des arborescences](./gestion_archives_arborescences.md).
+Pour aller plus loin, consulter le [document VITAM. Gestion des archives et des arborescences](./gestion_archives_arbo.md).

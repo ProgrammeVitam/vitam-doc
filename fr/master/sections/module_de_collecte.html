@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>7. Module de collecte &mdash; Vitam documentation fonctionnelle</title>
+  <title>8. Module de collecte &mdash; Vitam documentation fonctionnelle</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=eea1f72d" />
@@ -23,8 +23,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
-    <link rel="next" title="8. Organisation de l’information" href="organisation_information.html" />
-    <link rel="prev" title="6. Description des workflows et des opérations" href="modele_de_workflow.html" /> 
+    <link rel="next" title="9. Organisation de l’information" href="organisation_information.html" />
+    <link rel="prev" title="7. Description des workflows et des opérations" href="modele_de_workflow.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -62,114 +62,116 @@
 <li class="toctree-l1"><a class="reference internal" href="gestion_archives_arbo.html">3. Gestion des archives et des arborescences</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gestion_habilitations.html">4. Gestion des habilitations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modele_de_donnees.html">5. Modèle de données</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modele_de_workflow.html">6. Description des workflows et des opérations</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">7. Module de collecte</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#introduction">7.1. Introduction</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#documents-de-reference">7.1.1. Documents de référence</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#presentation-du-document">7.1.2. Présentation du document</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_donnees.html#updated-upstream-la-liste-des-types-de-regle-disponibles-est-en-annexe">6. &lt;&lt;&lt;&lt;&lt;&lt;&lt; Updated upstream
+La liste des types de règle disponibles est en annexe.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_workflow.html">7. Description des workflows et des opérations</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">8. Module de collecte</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">8.1. Introduction</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#documents-de-reference">8.1.1. Documents de référence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#presentation-du-document">8.1.2. Présentation du document</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#presentation-du-module-de-collecte">7.2. Présentation du module de collecte</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#quest-ce-que-la-collecte-darchives">7.2.1. Qu’est-ce que la collecte d’archives ?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#quest-ce-que-le-module-de-collecte">7.2.2. Qu’est-ce que le module de collecte ?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#pourquoi-quand-et-comment-utiliser-le-module-de-collecte">7.2.3. Pourquoi, quand et comment utiliser le module de collecte ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#presentation-du-module-de-collecte">8.2. Présentation du module de collecte</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#quest-ce-que-la-collecte-darchives">8.2.1. Qu’est-ce que la collecte d’archives ?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#quest-ce-que-le-module-de-collecte">8.2.2. Qu’est-ce que le module de collecte ?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pourquoi-quand-et-comment-utiliser-le-module-de-collecte">8.2.3. Pourquoi, quand et comment utiliser le module de collecte ?</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#mecanismes-mis-en-oeuvre-dans-la-solution-logicielle-vitam">7.3. Mécanismes mis en œuvre dans la solution logicielle Vitam</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#configuration">7.3.1. Configuration</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#definitions">7.3.1.1. Définitions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#utilisation-des-api">7.3.1.2. Utilisation des API</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#utilisation-dans-vitamui">7.3.1.3. Utilisation dans VitamUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mecanismes-mis-en-oeuvre-dans-la-solution-logicielle-vitam">8.3. Mécanismes mis en œuvre dans la solution logicielle Vitam</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#configuration">8.3.1. Configuration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#definitions">8.3.1.1. Définitions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#utilisation-des-api">8.3.1.2. Utilisation des API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#utilisation-dans-vitamui">8.3.1.3. Utilisation dans VitamUI</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#versement">7.3.2. Versement</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id3">7.3.2.1. Définitions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#utilisation-des-api-pour-envoi-dune-transaction">7.3.2.2. Utilisation des API pour envoi d’une transaction</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#utilisation-des-api-pour-des-envois-unitaires">7.3.2.3. Utilisation des API pour des envois unitaires</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#envoi-dunites-archivistiques">7.3.2.3.1. Envoi d’unités archivistiques</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#envoi-des-metadonnees-techniques">7.3.2.3.2. Envoi des métadonnées techniques</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#envoi-des-objets">7.3.2.3.3. Envoi des objets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#versement">8.3.2. Versement</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id3">8.3.2.1. Définitions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#utilisation-des-api-pour-envoi-dune-transaction">8.3.2.2. Utilisation des API pour envoi d’une transaction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#utilisation-des-api-pour-des-envois-unitaires">8.3.2.3. Utilisation des API pour des envois unitaires</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#envoi-dunites-archivistiques">8.3.2.3.1. Envoi d’unités archivistiques</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#envoi-des-metadonnees-techniques">8.3.2.3.2. Envoi des métadonnées techniques</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#envoi-des-objets">8.3.2.3.3. Envoi des objets</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#utilisation-des-api-pour-des-envois-en-lot">7.3.2.4. Utilisation des API pour des envois en lot</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#envoi-dune-arborescence-bureautique">7.3.2.4.1. Envoi d’une arborescence bureautique</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#envoi-dune-arborescence-bureautique-avec-fichier-csv-de-metadonnees">7.3.2.4.2. Envoi d’une arborescence bureautique avec fichier .csv de métadonnées</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#utilisation-des-api-pour-des-envois-en-lot">8.3.2.4. Utilisation des API pour des envois en lot</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#envoi-dune-arborescence-bureautique">8.3.2.4.1. Envoi d’une arborescence bureautique</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#envoi-dune-arborescence-bureautique-avec-fichier-csv-de-metadonnees">8.3.2.4.2. Envoi d’une arborescence bureautique avec fichier .csv de métadonnées</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#id18">7.3.2.5. Utilisation dans VitamUI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id18">8.3.2.5. Utilisation dans VitamUI</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#acces">7.3.3. Accès</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id19">7.3.3.1. Définitions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id20">7.3.3.2. Utilisation des API</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#acces-aux-projets-de-versement">7.3.3.2.1. Accès aux projets de versement</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#acces-aux-transactions">7.3.3.2.2. Accès aux transactions</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#acces-aux-unites-archivistiques">7.3.3.2.3. 3.3.2.3. Accès aux unités archivistiques</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#acces-aux-groupes-dobjets-techniques">7.3.3.2.4. Accès aux groupes d’objets techniques</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#acces">8.3.3. Accès</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id19">8.3.3.1. Définitions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id20">8.3.3.2. Utilisation des API</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#acces-aux-projets-de-versement">8.3.3.2.1. Accès aux projets de versement</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#acces-aux-transactions">8.3.3.2.2. Accès aux transactions</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#acces-aux-unites-archivistiques">8.3.3.2.3. 3.3.2.3. Accès aux unités archivistiques</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#acces-aux-groupes-dobjets-techniques">8.3.3.2.4. Accès aux groupes d’objets techniques</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#id21">7.3.3.3. Utilisation dans VitamUI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id21">8.3.3.3. Utilisation dans VitamUI</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#gestion-des-archives">7.3.4. Gestion des archives</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id22">7.3.4.1. Définitions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id23">7.3.4.2. Utilisation des API</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#modification-dun-projet-de-versement">7.3.4.2.1. Modification d’un projet de versement</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#modification-dune-transaction">7.3.4.2.2. Modification d’une transaction</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#modification-des-unites-archivistiques">7.3.4.2.3. Modification des unités archivistiques</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#suppression">7.3.4.2.4. Suppression</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#abandon">7.3.4.2.5. Abandon</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#reouverture">7.3.4.2.6. Réouverture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gestion-des-archives">8.3.4. Gestion des archives</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id22">8.3.4.1. Définitions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id23">8.3.4.2. Utilisation des API</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#modification-dun-projet-de-versement">8.3.4.2.1. Modification d’un projet de versement</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#modification-dune-transaction">8.3.4.2.2. Modification d’une transaction</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#modification-des-unites-archivistiques">8.3.4.2.3. Modification des unités archivistiques</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#suppression">8.3.4.2.4. Suppression</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#abandon">8.3.4.2.5. Abandon</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#reouverture">8.3.4.2.6. Réouverture</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#id28">7.3.4.3. Utilisation dans VitamUI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id28">8.3.4.3. Utilisation dans VitamUI</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#transfert">7.3.5. Transfert</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id30">7.3.5.1. Définitions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id31">7.3.5.2. Utilisation des API</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#cloture-dune-transaction">7.3.5.2.1. Clôture d’une transaction</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#envoi-du-sip">7.3.5.2.2. Envoi du SIP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#transfert">8.3.5. Transfert</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id30">8.3.5.1. Définitions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id31">8.3.5.2. Utilisation des API</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#cloture-dune-transaction">8.3.5.2.1. Clôture d’une transaction</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#envoi-du-sip">8.3.5.2.2. Envoi du SIP</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#id34">7.3.5.3. Utilisation dans VitamUI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id34">8.3.5.3. Utilisation dans VitamUI</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#conseils-de-mise-en-oeuvre">7.4. Conseils de mise en œuvre</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#comment-formaliser-les-donnees-dans-les-api-du-module-de-collecte">7.4.1. Comment formaliser les données dans les API du module de collecte ?</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#generalites">7.4.1.1. Généralités</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#types">7.4.1.2. Types</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cas-particulier">7.4.1.3. Cas particulier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#conseils-de-mise-en-oeuvre">8.4. Conseils de mise en œuvre</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#comment-formaliser-les-donnees-dans-les-api-du-module-de-collecte">8.4.1. Comment formaliser les données dans les API du module de collecte ?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#generalites">8.4.1.1. Généralités</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#types">8.4.1.2. Types</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cas-particulier">8.4.1.3. Cas particulier</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#comment-sont-geres-les-statuts-dune-transaction">7.4.2. Comment sont gérés les statuts d’une transaction ?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#comment-parametrer-un-versement">7.4.3. Comment paramétrer un versement ?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#comment-sont-geres-les-statuts-dune-transaction">8.4.2. Comment sont gérés les statuts d’une transaction ?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#comment-parametrer-un-versement">8.4.3. Comment paramétrer un versement ?</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#annexe-1-exemples-de-donnees-entrantes">7.5. Annexe 1 : Exemples de données entrantes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#metadonnees-d-en-tete">7.5.1. Métadonnées d’en-tête</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#unites-archivistiques">7.5.2. Unités archivistiques</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#objets">7.5.3. Objets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#annexe-1-exemples-de-donnees-entrantes">8.5. Annexe 1 : Exemples de données entrantes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#metadonnees-d-en-tete">8.5.1. Métadonnées d’en-tête</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#unites-archivistiques">8.5.2. Unités archivistiques</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#objets">8.5.3. Objets</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#annexe-2-types-json">7.6. Annexe 2 : Types JSON</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#annexe-3-liste-des-points-dapi">7.7. Annexe 3 : Liste des points d’API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#annexe-2-types-json">8.6. Annexe 2 : Types JSON</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#annexe-3-liste-des-points-dapi">8.7. Annexe 3 : Liste des points d’API</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="organisation_information.html">8. Organisation de l’information</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ontologie.html">9. Ontologie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="preservation.html">10. Gestion de la préservation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="profil_archivage.html">11. Profils d’archivage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="profil_unite_archivistique.html">12. Profils d’unité archivistique</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regles_gestion.html">13. Règles de gestion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="services_prod.html">14. Services producteurs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SIP.html">15. Structuration des <em>Submission Information Packages</em> (SIP)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="DIP.html">16. Structuration des <em>Dissemination Information Packages</em> (DIP)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="stockage.html">17. Gestion de multiples stratégies de stockage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="transfert.html">18. Le transfert avec la solution logicielle Vitam</a></li>
-<li class="toctree-l1"><a class="reference internal" href="valeur_probante.html">19. Conservation de la valeur probante</a></li>
+<li class="toctree-l1"><a class="reference internal" href="organisation_information.html">9. Organisation de l’information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ontologie.html">10. Ontologie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preservation.html">11. Gestion de la préservation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_archivage.html">12. Profils d’archivage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_unite_archivistique.html">13. Profils d’unité archivistique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regles_gestion.html">14. Règles de gestion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services_prod.html">15. Services producteurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SIP.html">16. Structuration des <em>Submission Information Packages</em> (SIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DIP.html">17. Structuration des <em>Dissemination Information Packages</em> (DIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stockage.html">18. Gestion de multiples stratégies de stockage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transfert.html">19. Le transfert avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="valeur_probante.html">20. Conservation de la valeur probante</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">documentation Vitam UI</span></p>
 <ul>
@@ -185,7 +187,9 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="chantier_preservation_validation_format.html">1. Validation du format des fichiers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chantier_identification_format.html">2. Identification des formats de fichiers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chantier_extraction_MD.html">3. Extraction des métadonnées techniques</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_identification_format.html#updated-upstream-les-descriptions-sont-presentees-au-format-html-et-exportables-au-format-xml-elles-sont-en-decembre-2019-au-nombre-de-512-un-exemple-de-fiche-est-fourni-en-annexe-2">3. &lt;&lt;&lt;&lt;&lt;&lt;&lt; Updated upstream
+Les descriptions sont présentées au format HTML et exportables au format XML. Elles sont en décembre 2019 au nombre de 512. Un exemple de fiche est fourni en annexe 2.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_extraction_MD.html">4. Extraction des métadonnées techniques</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Vademecum</span></p>
 <ul>
@@ -234,7 +238,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active"><span class="section-number">7. </span>Module de collecte</li>
+      <li class="breadcrumb-item active"><span class="section-number">8. </span>Module de collecte</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/sections/module_de_collecte.md.txt" rel="nofollow"> Afficher la source de la page</a>
       </li>
@@ -247,11 +251,11 @@
            <div itemprop="articleBody">
              
   <section id="module-de-collecte">
-<h1><span class="section-number">7. </span>Module de collecte<a class="headerlink" href="#module-de-collecte" title="Lien vers cette rubrique"></a></h1>
+<h1><span class="section-number">8. </span>Module de collecte<a class="headerlink" href="#module-de-collecte" title="Lien vers cette rubrique"></a></h1>
 <section id="introduction">
-<h2><span class="section-number">7.1. </span>Introduction<a class="headerlink" href="#introduction" title="Lien vers cette rubrique"></a></h2>
+<h2><span class="section-number">8.1. </span>Introduction<a class="headerlink" href="#introduction" title="Lien vers cette rubrique"></a></h2>
 <section id="documents-de-reference">
-<h3><span class="section-number">7.1.1. </span>Documents de référence<a class="headerlink" href="#documents-de-reference" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">8.1.1. </span>Documents de référence<a class="headerlink" href="#documents-de-reference" title="Lien vers cette rubrique"></a></h3>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>Document</p></th>
@@ -296,7 +300,7 @@
 </table>
 </section>
 <section id="presentation-du-document">
-<h3><span class="section-number">7.1.2. </span>Présentation du document<a class="headerlink" href="#presentation-du-document" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">8.1.2. </span>Présentation du document<a class="headerlink" href="#presentation-du-document" title="Lien vers cette rubrique"></a></h3>
 <p>Le document présente les fonctionnalités associées à l’utilisation du module de collecte dans la solution logicielle Vitam.</p>
 <p>Il s’articule autour des axes suivants :</p>
 <ul class="simple">
@@ -308,9 +312,9 @@
 </section>
 </section>
 <section id="presentation-du-module-de-collecte">
-<h2><span class="section-number">7.2. </span>Présentation du module de collecte<a class="headerlink" href="#presentation-du-module-de-collecte" title="Lien vers cette rubrique"></a></h2>
+<h2><span class="section-number">8.2. </span>Présentation du module de collecte<a class="headerlink" href="#presentation-du-module-de-collecte" title="Lien vers cette rubrique"></a></h2>
 <section id="quest-ce-que-la-collecte-darchives">
-<h3><span class="section-number">7.2.1. </span>Qu’est-ce que la collecte d’archives ?<a class="headerlink" href="#quest-ce-que-la-collecte-darchives" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">8.2.1. </span>Qu’est-ce que la collecte d’archives ?<a class="headerlink" href="#quest-ce-que-la-collecte-darchives" title="Lien vers cette rubrique"></a></h3>
 <p>La <strong>collecte</strong> d’archives désigne l’ensemble des opérations qui vont conduire au <strong>transfert</strong> d’un ensemble d’archives :</p>
 <ul class="simple">
 <li><p>d’un service producteur à un service d’archives,</p></li>
@@ -338,7 +342,7 @@
 <p>Au préalable de versements, une politique ou stratégie de versement est définie par le service d’archives, en termes de rôles et responsabilités, mais aussi de contenu attendu. Elle est définie dans un contrat de versement, dont une partie est matérialisée dans un projet de versement et un contrat d’entrée.</p>
 </section>
 <section id="quest-ce-que-le-module-de-collecte">
-<h3><span class="section-number">7.2.2. </span>Qu’est-ce que le module de collecte ?<a class="headerlink" href="#quest-ce-que-le-module-de-collecte" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">8.2.2. </span>Qu’est-ce que le module de collecte ?<a class="headerlink" href="#quest-ce-que-le-module-de-collecte" title="Lien vers cette rubrique"></a></h3>
 <p>La solution logicielle Vitam met à disposition un <strong>module de collecte</strong> en vue de recevoir des ensembles hétérogènes d’archives, de paramétrer leur réception, de procéder à des traitements sur ces archives et de les transférer pour conservation dans le système d’archivage électronique. Ce module :</p>
 <ul class="simple">
 <li><p>constitue un service du back-office de la solution logicielle Vitam ;</p></li>
@@ -374,7 +378,7 @@
 </table>
 </section>
 <section id="pourquoi-quand-et-comment-utiliser-le-module-de-collecte">
-<h3><span class="section-number">7.2.3. </span>Pourquoi, quand et comment utiliser le module de collecte ?<a class="headerlink" href="#pourquoi-quand-et-comment-utiliser-le-module-de-collecte" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">8.2.3. </span>Pourquoi, quand et comment utiliser le module de collecte ?<a class="headerlink" href="#pourquoi-quand-et-comment-utiliser-le-module-de-collecte" title="Lien vers cette rubrique"></a></h3>
 <p>Le module de collecte permet de :</p>
 <ul class="simple">
 <li><p>faciliter, voire automatiser, les versements (ou transactions) d’archives, depuis un service externe vers la solution logicielle Vitam ;</p></li>
@@ -399,7 +403,7 @@
 </section>
 </section>
 <section id="mecanismes-mis-en-oeuvre-dans-la-solution-logicielle-vitam">
-<h2><span class="section-number">7.3. </span>Mécanismes mis en œuvre dans la solution logicielle Vitam<a class="headerlink" href="#mecanismes-mis-en-oeuvre-dans-la-solution-logicielle-vitam" title="Lien vers cette rubrique"></a></h2>
+<h2><span class="section-number">8.3. </span>Mécanismes mis en œuvre dans la solution logicielle Vitam<a class="headerlink" href="#mecanismes-mis-en-oeuvre-dans-la-solution-logicielle-vitam" title="Lien vers cette rubrique"></a></h2>
 <p>La solution logicielle Vitam offre à un service d’archives plusieurs fonctionnalités lui permettant de <strong>collecter des archives</strong> au moyen du module de collecte :</p>
 <ul class="simple">
 <li><p>la <strong>configuration</strong> des (pré-)versements (ou transactions) au moyen de la définition d’un projet de versement ;</p></li>
@@ -409,9 +413,9 @@
 <li><p>leur <strong>transfert</strong> vers les espaces de conservation pérennes de la solution logicielle Vitam.</p></li>
 </ul>
 <section id="configuration">
-<h3><span class="section-number">7.3.1. </span>Configuration<a class="headerlink" href="#configuration" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">8.3.1. </span>Configuration<a class="headerlink" href="#configuration" title="Lien vers cette rubrique"></a></h3>
 <section id="definitions">
-<h4><span class="section-number">7.3.1.1. </span>Définitions<a class="headerlink" href="#definitions" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.3.1.1. </span>Définitions<a class="headerlink" href="#definitions" title="Lien vers cette rubrique"></a></h4>
 <p>Dans la solution logicielle Vitam, il est possible de configurer le versement de un à plusieurs SIP conforme(s) au Standard d’échanges des données pour l’archivage (SEDA) en initialisant un projet de versement au sein du module de collecte.</p>
 <p>Un projet de versement est propre à chaque tenant de la solution logicielle Vitam.</p>
 <p>Il permet de préconfigurer dans une base de données dédiée, sous forme d’enregistrements JSON, les informations relatives à :</p>
@@ -435,7 +439,7 @@
 </ul>
 </section>
 <section id="utilisation-des-api">
-<h4><span class="section-number">7.3.1.2. </span>Utilisation des API<a class="headerlink" href="#utilisation-des-api" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.3.1.2. </span>Utilisation des API<a class="headerlink" href="#utilisation-des-api" title="Lien vers cette rubrique"></a></h4>
 <p>L’envoi et l’enregistrement d’un projet de versement dans le module de collecte s’effectue au moyen d’une commande de création d’un projet de versement correspondant aux métadonnées d’en-tête.</p>
 <p><em><strong>Point d’attention :</strong></em> la création d’un projet de versement est un prérequis à la création des transactions (ou versements).</p>
 <p>Lors de la création d’un projet de versement sont envoyées :</p>
@@ -443,7 +447,7 @@
 <li><p>les métadonnées correspondant aux informations dites d’en-tête du bordereau telles que l’identifiant du message ou le contrat d’entrée ;</p></li>
 <li><p>le cas échéant, la position de rattachement et/ou des paramètres de rattachement automatisés.</p></li>
 </ul>
-<p>Un projet de versement peut comporter les éléments suivants<a class="footnote-reference brackets" href="#id56" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> :</p>
+<p>Un projet de versement peut comporter les éléments suivants<a class="footnote-reference brackets" href="#id65" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> :</p>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p><strong>Champ</strong></p></th>
@@ -452,7 +456,7 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Name</p></td>
-<td><p>Intitulé du projet de versement (champ facultatif)<a class="footnote-reference brackets" href="#id57" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>.</p></td>
+<td><p>Intitulé du projet de versement (champ facultatif)<a class="footnote-reference brackets" href="#id66" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>.</p></td>
 </tr>
 <tr class="row-odd"><td><p>ArchivalAgreement</p></td>
 <td><p>Identifiant du contrat d’entrée utilisé pour réaliser l’entrée, destiné à alimenter le champ ArchivalAgreement du message ArchiveTransfer (champ facultatif).</p></td>
@@ -584,7 +588,7 @@
 </table>
 </section>
 <section id="utilisation-dans-vitamui">
-<h4><span class="section-number">7.3.1.3. </span>Utilisation dans VitamUI<a class="headerlink" href="#utilisation-dans-vitamui" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.3.1.3. </span>Utilisation dans VitamUI<a class="headerlink" href="#utilisation-dans-vitamui" title="Lien vers cette rubrique"></a></h4>
 <p>L’APP « Collecte et préparation des versements » du front-office VitamUI fournie avec la solution logicielle Vitam permet de créer un projet de versement au moyen d’un wizard ou boîte de dialogue. Il peut s’agir d’un projet de versement pour :</p>
 <ul>
 <li><p>un versement manuel. Ce projet de versement donne lieu au renseignement :</p>
@@ -630,9 +634,9 @@
 </section>
 </section>
 <section id="versement">
-<h3><span class="section-number">7.3.2. </span>Versement<a class="headerlink" href="#versement" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">8.3.2. </span>Versement<a class="headerlink" href="#versement" title="Lien vers cette rubrique"></a></h3>
 <section id="id3">
-<h4><span class="section-number">7.3.2.1. </span>Définitions<a class="headerlink" href="#id3" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.3.2.1. </span>Définitions<a class="headerlink" href="#id3" title="Lien vers cette rubrique"></a></h4>
 <p>Dans la solution logicielle Vitam, il est possible de préparer le versement d’un SIP conforme au Standard d’échanges des données pour l’archivage (SEDA) au moyen du module de collecte.</p>
 <p>Ce module est propre à chaque tenant de la solution logicielle Vitam.</p>
 <p>Il permet de recevoir dans un espace de stockage et des bases de données dédiés :</p>
@@ -668,7 +672,7 @@
 <p>Après réception, le module a vocation à formater ces différentes informations sous la forme de SIP conformes au standard SEDA, puis à les transférer vers le back-office de la solution logicielle Vitam (opération de type « INGEST »). Cette dernière opération est journalisée dans le journal des opérations (« INGEST »).</p>
 </section>
 <section id="utilisation-des-api-pour-envoi-dune-transaction">
-<h4><span class="section-number">7.3.2.2. </span>Utilisation des API pour envoi d’une transaction<a class="headerlink" href="#utilisation-des-api-pour-envoi-dune-transaction" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.3.2.2. </span>Utilisation des API pour envoi d’une transaction<a class="headerlink" href="#utilisation-des-api-pour-envoi-dune-transaction" title="Lien vers cette rubrique"></a></h4>
 <p>À un projet de versement peu(ven)t être associée(s) 1 à n transaction(s) (ou versement(s)).</p>
 <p>Dans la transaction sont :</p>
 <ul class="simple">
@@ -680,7 +684,7 @@
 <li><p>En prérequis à la création d’une transaction, il faut avoir au préalable créé un projet de versement et le signaler dans l’API.</p></li>
 <li><p>La création d’une transaction est un prérequis à l’ajout d’archives en mode « unitaire » ou en mode « lot ».</p></li>
 </ul>
-<p>La transaction peut comporter les éléments suivants<a class="footnote-reference brackets" href="#id58" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a> :</p>
+<p>La transaction peut comporter les éléments suivants<a class="footnote-reference brackets" href="#id67" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a> :</p>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Champ</p></th>
@@ -761,7 +765,7 @@
   <span class="p">}</span>
 </pre></div>
 </div>
-<p>Cette action provoque la création d’un enregistrement dans la base de données MongoDB, dans la collection « Transaction »<a class="footnote-reference brackets" href="#id59" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a> (base <em>Collect</em>).</p>
+<p>Cette action provoque la création d’un enregistrement dans la base de données MongoDB, dans la collection « Transaction »<a class="footnote-reference brackets" href="#id68" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a> (base <em>Collect</em>).</p>
 <p>À cet enregistrement, est associé :</p>
 <ul class="simple">
 <li><p>un statut (champ « Status ») dont la valeur est égale à « OPEN »,</p></li>
@@ -807,7 +811,7 @@
 </table>
 </section>
 <section id="utilisation-des-api-pour-des-envois-unitaires">
-<h4><span class="section-number">7.3.2.3. </span>Utilisation des API pour des envois unitaires<a class="headerlink" href="#utilisation-des-api-pour-des-envois-unitaires" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.3.2.3. </span>Utilisation des API pour des envois unitaires<a class="headerlink" href="#utilisation-des-api-pour-des-envois-unitaires" title="Lien vers cette rubrique"></a></h4>
 <p>L’envoi et l’enregistrement des archives dans le module de collecte s’effectue au moyen de trois commandes distinctes :</p>
 <ul class="simple">
 <li><p>création unitaire des unités archivistiques,</p></li>
@@ -820,7 +824,7 @@
 <li><p>L’ordre d’utilisation des API doit être respecté en vue d’enregistrer avec succès l’ensemble des métadonnées et objets constituant un versement (ou transaction).</p></li>
 </ul>
 <section id="envoi-dunites-archivistiques">
-<h5><span class="section-number">7.3.2.3.1. </span>Envoi d’unités archivistiques<a class="headerlink" href="#envoi-dunites-archivistiques" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.3.2.3.1. </span>Envoi d’unités archivistiques<a class="headerlink" href="#envoi-dunites-archivistiques" title="Lien vers cette rubrique"></a></h5>
 <p>À une transaction peu(ven)t être associée(s) 1 à n unité(s) archivistique(s).</p>
 <p>Chaque unité archivistique :</p>
 <ul class="simple">
@@ -835,7 +839,7 @@
 </ul>
 <p><em><strong>Points d’attention :</strong></em></p>
 <ul class="simple">
-<li><p>En prérequis à la création d’une unité archivistique, il faut avoir au préalable créé une transaction et la signaler dans l’API. En outre, la transaction associée doit avoir un statut « OPEN »<a class="footnote-reference brackets" href="#id60" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a> ;</p></li>
+<li><p>En prérequis à la création d’une unité archivistique, il faut avoir au préalable créé une transaction et la signaler dans l’API. En outre, la transaction associée doit avoir un statut « OPEN »<a class="footnote-reference brackets" href="#id69" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a> ;</p></li>
 <li><p>Au terme de la version 6, aucun contrôle n’est effectué avec les référentiels présents dans la solution logicielle Vitam. De fait, il est fortement recommandé de veiller à :</p>
 <ul>
 <li><p>inclure les métadonnées obligatoires attendues par la solution logicielle Vitam, à savoir un titre (Title) et un niveau de description (DescriptionLevel) ;</p></li>
@@ -911,7 +915,7 @@
   <span class="p">}</span>
 </pre></div>
 </div>
-<p>Cette action provoque la création d’un enregistrement dans la base de données MongoDB, dans la collection « Unit » (base <em>MetadataCollect</em>)<a class="footnote-reference brackets" href="#id61" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a>.
+<p>Cette action provoque la création d’un enregistrement dans la base de données MongoDB, dans la collection « Unit » (base <em>MetadataCollect</em>)<a class="footnote-reference brackets" href="#id70" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a>.
 À cet enregistrement, est associé l’identifiant de la transaction (_opi).</p>
 <p><em>Exemple : enregistrement de l’unité archivistique dans la collection « Unit » de la base « MetadataCollect ».</em></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="p">{</span>
@@ -964,7 +968,7 @@
 </table>
 </section>
 <section id="envoi-des-metadonnees-techniques">
-<h5><span class="section-number">7.3.2.3.2. </span>Envoi des métadonnées techniques<a class="headerlink" href="#envoi-des-metadonnees-techniques" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.3.2.3.2. </span>Envoi des métadonnées techniques<a class="headerlink" href="#envoi-des-metadonnees-techniques" title="Lien vers cette rubrique"></a></h5>
 <p>À une unité archivistique donnée peut être associé un groupe d’objets techniques, dans lequel on peut ajouter unitairement une version d’objet d’un usage particulier.</p>
 <p>Il est possible d’associer plusieurs usages à un groupe d’objets techniques :</p>
 <ul class="simple">
@@ -978,7 +982,7 @@
 <ul class="simple">
 <li><p>En prérequis à la création de métadonnées techniques, il faut avoir au préalable créé :</p>
 <ul>
-<li><p>une transaction et la signaler dans l’API. En outre, la transaction associée doit avoir un statut « OPEN »<a class="footnote-reference brackets" href="#id62" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></a> ;</p></li>
+<li><p>une transaction et la signaler dans l’API. En outre, la transaction associée doit avoir un statut « OPEN »<a class="footnote-reference brackets" href="#id71" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></a> ;</p></li>
 <li><p>une unité archivistique et la signaler dans l’API.</p></li>
 </ul>
 </li>
@@ -1002,7 +1006,7 @@
   <span class="p">}</span>
 </pre></div>
 </div>
-<p>Cette action provoque la création d’un enregistrement dans la base de données MongoDB, dans la collection « ObjectGroup » (base <em>MetadataCollect<a class="footnote-reference brackets" href="#id63" id="id9" role="doc-noteref"><span class="fn-bracket">[</span>8<span class="fn-bracket">]</span></a></em>).
+<p>Cette action provoque la création d’un enregistrement dans la base de données MongoDB, dans la collection « ObjectGroup » (base <em>MetadataCollect<a class="footnote-reference brackets" href="#id72" id="id9" role="doc-noteref"><span class="fn-bracket">[</span>8<span class="fn-bracket">]</span></a></em>).
 À cet enregistrement, est associé l’identifiant de la transaction (_opi).</p>
 <p><em>Exemple : enregistrement des métadonnées techniques dans la collection « ObjectGroup » de la base « MetadataCollect ».</em></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="p">{</span>
@@ -1054,13 +1058,13 @@
 </table>
 </section>
 <section id="envoi-des-objets">
-<h5><span class="section-number">7.3.2.3.3. </span>Envoi des objets<a class="headerlink" href="#envoi-des-objets" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.3.2.3.3. </span>Envoi des objets<a class="headerlink" href="#envoi-des-objets" title="Lien vers cette rubrique"></a></h5>
 <p>À une unité archivistique associée un groupe d’objets techniques et pour un usage et une version d’objet donné, on peut ajouter unitairement un objet numérique.</p>
 <p><em><strong>Point d’attention :</strong></em></p>
 <ul class="simple">
 <li><p>En prérequis à l’envoi d’un objet, il faut avoir au préalable créé :</p>
 <ul>
-<li><p>une transaction et la signaler dans l’API. En outre, la transaction associée doit avoir un statut « OPEN »<a class="footnote-reference brackets" href="#id64" id="id10" role="doc-noteref"><span class="fn-bracket">[</span>9<span class="fn-bracket">]</span></a> ;</p></li>
+<li><p>une transaction et la signaler dans l’API. En outre, la transaction associée doit avoir un statut « OPEN »<a class="footnote-reference brackets" href="#id73" id="id10" role="doc-noteref"><span class="fn-bracket">[</span>9<span class="fn-bracket">]</span></a> ;</p></li>
 <li><p>une unité archivistique et la signaler dans l’API.</p></li>
 </ul>
 </li>
@@ -1148,7 +1152,7 @@
 </section>
 </section>
 <section id="utilisation-des-api-pour-des-envois-en-lot">
-<h4><span class="section-number">7.3.2.4. </span>Utilisation des API pour des envois en lot<a class="headerlink" href="#utilisation-des-api-pour-des-envois-en-lot" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.3.2.4. </span>Utilisation des API pour des envois en lot<a class="headerlink" href="#utilisation-des-api-pour-des-envois-en-lot" title="Lien vers cette rubrique"></a></h4>
 <p>L’envoi et l’enregistrement des données dans le module de collecte peut s’effectuer en lot au moyen d’une commande pouvant fonctionner de deux façons :</p>
 <ul class="simple">
 <li><p>envoi sous forme de zip d’une arborescence bureautique,</p></li>
@@ -1156,7 +1160,7 @@
 </ul>
 <p><em><strong>Point d’attention :</strong></em> Pour ces deux envois, la commande est unique. Seul l’association d’un fichier annexe « metadata.csv », optionnelle, diffère.</p>
 <section id="envoi-dune-arborescence-bureautique">
-<h5><span class="section-number">7.3.2.4.1. </span>Envoi d’une arborescence bureautique<a class="headerlink" href="#envoi-dune-arborescence-bureautique" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.3.2.4.1. </span>Envoi d’une arborescence bureautique<a class="headerlink" href="#envoi-dune-arborescence-bureautique" title="Lien vers cette rubrique"></a></h5>
 <p>Pour une transaction donnée est envoyée une arborescence bureautique sous forme de zip.</p>
 <p><em><strong>Point d’attention :</strong></em></p>
 <ul class="simple">
@@ -1175,7 +1179,7 @@
 </div>
 <p>Cette action provoque :</p>
 <ul>
-<li><p>la création des unités archivistiques dans la base de données MongoDB, dans la collection « Unit » (base <em>MetadataCollect<a class="footnote-reference brackets" href="#id65" id="id11" role="doc-noteref"><span class="fn-bracket">[</span>10<span class="fn-bracket">]</span></a></em>). Sont enregistrés automatiquement<a class="footnote-reference brackets" href="#id66" id="id12" role="doc-noteref"><span class="fn-bracket">[</span>11<span class="fn-bracket">]</span></a> :</p>
+<li><p>la création des unités archivistiques dans la base de données MongoDB, dans la collection « Unit » (base <em>MetadataCollect<a class="footnote-reference brackets" href="#id74" id="id11" role="doc-noteref"><span class="fn-bracket">[</span>10<span class="fn-bracket">]</span></a></em>). Sont enregistrés automatiquement<a class="footnote-reference brackets" href="#id75" id="id12" role="doc-noteref"><span class="fn-bracket">[</span>11<span class="fn-bracket">]</span></a> :</p>
 <ul class="simple">
 <li><p>un niveau de description (DescriptionLevel) dont la valeur est :</p>
 <ul>
@@ -1187,7 +1191,7 @@
 </ul>
 <p>À chaque enregistrement, est associé l’identifiant de la transaction (_opi).</p>
 </li>
-<li><p>la création de métadonnées techniques dans la base de données MongoDB, dans la collection « ObjectGroup » (base <em>MetadataCollect<a class="footnote-reference brackets" href="#id67" id="id13" role="doc-noteref"><span class="fn-bracket">[</span>12<span class="fn-bracket">]</span></a></em>) ;</p>
+<li><p>la création de métadonnées techniques dans la base de données MongoDB, dans la collection « ObjectGroup » (base <em>MetadataCollect<a class="footnote-reference brackets" href="#id76" id="id13" role="doc-noteref"><span class="fn-bracket">[</span>12<span class="fn-bracket">]</span></a></em>) ;</p>
 <p>À chaque enregistrement, est associé l’identifiant de la transaction (_opi) ;</p>
 </li>
 <li><p>l’enregistrement des objets numériques sur les offres de stockage.</p></li>
@@ -1225,9 +1229,9 @@
 </ul>
 </section>
 <section id="envoi-dune-arborescence-bureautique-avec-fichier-csv-de-metadonnees">
-<h5><span class="section-number">7.3.2.4.2. </span>Envoi d’une arborescence bureautique avec fichier .csv de métadonnées<a class="headerlink" href="#envoi-dune-arborescence-bureautique-avec-fichier-csv-de-metadonnees" title="Lien vers cette rubrique"></a></h5>
-<p>Pour une transaction donnée peut être envoyé sous forme de zip en plus d’une arborescence bureautique<a class="footnote-reference brackets" href="#id68" id="id14" role="doc-noteref"><span class="fn-bracket">[</span>13<span class="fn-bracket">]</span></a> un fichier .csv contenant des métadonnées détaillant unitairement les unités archivistiques.</p>
-<p>Le fichier .csv, obligatoirement intitulé « metadata.csv », est composé de x colonnes<a class="footnote-reference brackets" href="#id69" id="id15" role="doc-noteref"><span class="fn-bracket">[</span>14<span class="fn-bracket">]</span></a> :</p>
+<h5><span class="section-number">8.3.2.4.2. </span>Envoi d’une arborescence bureautique avec fichier .csv de métadonnées<a class="headerlink" href="#envoi-dune-arborescence-bureautique-avec-fichier-csv-de-metadonnees" title="Lien vers cette rubrique"></a></h5>
+<p>Pour une transaction donnée peut être envoyé sous forme de zip en plus d’une arborescence bureautique<a class="footnote-reference brackets" href="#id77" id="id14" role="doc-noteref"><span class="fn-bracket">[</span>13<span class="fn-bracket">]</span></a> un fichier .csv contenant des métadonnées détaillant unitairement les unités archivistiques.</p>
+<p>Le fichier .csv, obligatoirement intitulé « metadata.csv », est composé de x colonnes<a class="footnote-reference brackets" href="#id78" id="id15" role="doc-noteref"><span class="fn-bracket">[</span>14<span class="fn-bracket">]</span></a> :</p>
 <ul class="simple">
 <li><p>File : chemin relatif à partir de l’emplacement où est enregistré le fichier .csv (colonne obligatoire) ;</p></li>
 <li><p>DescriptionLevel : niveau de description de l’unité archivistique (colonne obligatoire) ;</p></li>
@@ -1277,10 +1281,10 @@
 </ul>
 <p>L’import du fichier zip incluant un fichier .csv et une arborescence bureautique provoque :</p>
 <ul>
-<li><p>la création des unités archivistiques dans la base de données MongoDB, dans la collection « Unit » (base <em>MetadataCollect<a class="footnote-reference brackets" href="#id70" id="id16" role="doc-noteref"><span class="fn-bracket">[</span>15<span class="fn-bracket">]</span></a></em>). Sont enregistrées automatiquement les valeurs portées dans le fichier .csv si l’enregistrement ne contient pas d’erreur.</p>
+<li><p>la création des unités archivistiques dans la base de données MongoDB, dans la collection « Unit » (base <em>MetadataCollect<a class="footnote-reference brackets" href="#id79" id="id16" role="doc-noteref"><span class="fn-bracket">[</span>15<span class="fn-bracket">]</span></a></em>). Sont enregistrées automatiquement les valeurs portées dans le fichier .csv si l’enregistrement ne contient pas d’erreur.</p>
 <p>À chaque enregistrement, est associé l’identifiant de la transaction (_opi).</p>
 </li>
-<li><p>la création de métadonnées techniques dans la base de données MongoDB, dans la collection « ObjectGroup » (base <em>MetadataCollect<a class="footnote-reference brackets" href="#id71" id="id17" role="doc-noteref"><span class="fn-bracket">[</span>16<span class="fn-bracket">]</span></a></em>).</p>
+<li><p>la création de métadonnées techniques dans la base de données MongoDB, dans la collection « ObjectGroup » (base <em>MetadataCollect<a class="footnote-reference brackets" href="#id80" id="id17" role="doc-noteref"><span class="fn-bracket">[</span>16<span class="fn-bracket">]</span></a></em>).</p>
 <p>À chaque enregistrement, est associé l’identifiant de la transaction (_opi) ;</p>
 </li>
 <li><p>l’enregistrement des objets numériques sur les offres de stockage.</p></li>
@@ -1330,7 +1334,7 @@
 </section>
 </section>
 <section id="id18">
-<h4><span class="section-number">7.3.2.5. </span>Utilisation dans VitamUI<a class="headerlink" href="#id18" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.3.2.5. </span>Utilisation dans VitamUI<a class="headerlink" href="#id18" title="Lien vers cette rubrique"></a></h4>
 <p>L’APP « Collecte et préparation des versements » du front-office VitamUI fournie avec la solution logicielle Vitam permet de verser une arborescence bureautique, le cas échéant accompagnée d’un fichier « metatadata.csv », lors de la création d’un projet de versement manuel au moyen d’un wizard ou boîte de dialogue.</p>
 <p>Le détail du projet de versement, ainsi que les archives qui lui sont associées sont par ailleurs accessibles depuis l’APP.</p>
 <p><em><strong>Point d’attention :</strong></em></p>
@@ -1357,16 +1361,16 @@
 </section>
 </section>
 <section id="acces">
-<h3><span class="section-number">7.3.3. </span>Accès<a class="headerlink" href="#acces" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">8.3.3. </span>Accès<a class="headerlink" href="#acces" title="Lien vers cette rubrique"></a></h3>
 <section id="id19">
-<h4><span class="section-number">7.3.3.1. </span>Définitions<a class="headerlink" href="#id19" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.3.3.1. </span>Définitions<a class="headerlink" href="#id19" title="Lien vers cette rubrique"></a></h4>
 <p>Dans la solution logicielle Vitam, il est possible de rechercher et de consulter les projets de versement, les versements, ainsi que les archives associées, au moyen du module de collecte.</p>
 <p>Cette recherche et consultation est propre à chaque tenant de la solution logicielle Vitam.</p>
 </section>
 <section id="id20">
-<h4><span class="section-number">7.3.3.2. </span>Utilisation des API<a class="headerlink" href="#id20" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.3.3.2. </span>Utilisation des API<a class="headerlink" href="#id20" title="Lien vers cette rubrique"></a></h4>
 <section id="acces-aux-projets-de-versement">
-<h5><span class="section-number">7.3.3.2.1. </span>Accès aux projets de versement<a class="headerlink" href="#acces-aux-projets-de-versement" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.3.3.2.1. </span>Accès aux projets de versement<a class="headerlink" href="#acces-aux-projets-de-versement" title="Lien vers cette rubrique"></a></h5>
 <p>La solution logicielle Vitam permet de :</p>
 <ul class="simple">
 <li><p>accéder à la liste des projets de versement créés sur un tenant donné,</p></li>
@@ -1412,7 +1416,7 @@
 En résultats, la solution logicielle renvoie systématiquement l’ensemble des métadonnées relatives au(x) projet(s) de versement. Au terme de la version 6, il n’est pas possible de récupérer une sélection de métadonnées.</p>
 </section>
 <section id="acces-aux-transactions">
-<h5><span class="section-number">7.3.3.2.2. </span>Accès aux transactions<a class="headerlink" href="#acces-aux-transactions" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.3.3.2.2. </span>Accès aux transactions<a class="headerlink" href="#acces-aux-transactions" title="Lien vers cette rubrique"></a></h5>
 <p>Pour un projet donné, la solution logicielle Vitam permet de :</p>
 <ul class="simple">
 <li><p>accéder à la liste des transactions associées créées sur un tenant donné,</p></li>
@@ -1443,7 +1447,7 @@ En résultats, la solution logicielle renvoie systématiquement l’ensemble des
 En résultats, la solution logicielle renvoie systématiquement l’ensemble des métadonnées relatives au(x) transaction(s). Au terme de la version 6, il n’est pas possible de récupérer une sélection de métadonnées.</p>
 </section>
 <section id="acces-aux-unites-archivistiques">
-<h5><span class="section-number">7.3.3.2.3. </span>3.3.2.3. Accès aux unités archivistiques<a class="headerlink" href="#acces-aux-unites-archivistiques" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.3.3.2.3. </span>3.3.2.3. Accès aux unités archivistiques<a class="headerlink" href="#acces-aux-unites-archivistiques" title="Lien vers cette rubrique"></a></h5>
 <p>L’utilisateur peut rechercher :</p>
 <ul class="simple">
 <li><p>une unité archivistique en particulier et accéder à son détail,</p></li>
@@ -1512,7 +1516,7 @@ le seuil de résultats supporté par le moteur d’indexation Elastic Search est
 </div>
 </section>
 <section id="acces-aux-groupes-dobjets-techniques">
-<h5><span class="section-number">7.3.3.2.4. </span>Accès aux groupes d’objets techniques<a class="headerlink" href="#acces-aux-groupes-dobjets-techniques" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.3.3.2.4. </span>Accès aux groupes d’objets techniques<a class="headerlink" href="#acces-aux-groupes-dobjets-techniques" title="Lien vers cette rubrique"></a></h5>
 <p>L’utilisateur peut récupérer :</p>
 <ul class="simple">
 <li><p>les métadonnées techniques d’un groupe d’objets techniques donné,</p></li>
@@ -1545,7 +1549,7 @@ le seuil de résultats supporté par le moteur d’indexation Elastic Search est
 </section>
 </section>
 <section id="id21">
-<h4><span class="section-number">7.3.3.3. </span>Utilisation dans VitamUI<a class="headerlink" href="#id21" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.3.3.3. </span>Utilisation dans VitamUI<a class="headerlink" href="#id21" title="Lien vers cette rubrique"></a></h4>
 <p>L’APP « Collecte et préparation des versements » du front-office VitamUI fournie avec la solution logicielle Vitam permet d’accéder à la liste des projets de versement préalablement créés et de les rechercher au moyen de :</p>
 <ul class="simple">
 <li><p>leur intitulé (champ MessageIdentifier),</p></li>
@@ -1571,9 +1575,9 @@ La recherche est approchante.</p>
 </section>
 </section>
 <section id="gestion-des-archives">
-<h3><span class="section-number">7.3.4. </span>Gestion des archives<a class="headerlink" href="#gestion-des-archives" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">8.3.4. </span>Gestion des archives<a class="headerlink" href="#gestion-des-archives" title="Lien vers cette rubrique"></a></h3>
 <section id="id22">
-<h4><span class="section-number">7.3.4.1. </span>Définitions<a class="headerlink" href="#id22" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.3.4.1. </span>Définitions<a class="headerlink" href="#id22" title="Lien vers cette rubrique"></a></h4>
 <p>Le module de collecte a vocation à permettre d’effectuer un certain nombre de traitement en amont du versement.</p>
 <p>Au terme de la V7.1, il est possible de réaliser les actions suivantes :</p>
 <ul class="simple">
@@ -1586,9 +1590,9 @@ La recherche est approchante.</p>
 <p>Elles ne sont pas journalisées dans le journal des opérations.</p>
 </section>
 <section id="id23">
-<h4><span class="section-number">7.3.4.2. </span>Utilisation des API<a class="headerlink" href="#id23" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.3.4.2. </span>Utilisation des API<a class="headerlink" href="#id23" title="Lien vers cette rubrique"></a></h4>
 <section id="modification-dun-projet-de-versement">
-<h5><span class="section-number">7.3.4.2.1. </span>Modification d’un projet de versement<a class="headerlink" href="#modification-dun-projet-de-versement" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.3.4.2.1. </span>Modification d’un projet de versement<a class="headerlink" href="#modification-dun-projet-de-versement" title="Lien vers cette rubrique"></a></h5>
 <p>La solution logicielle Vitam permet de modifier un projet de versement, et plus précisément de :</p>
 <ul class="simple">
 <li><p>modifier ses métadonnées,</p></li>
@@ -1659,7 +1663,7 @@ La recherche est approchante.</p>
 </table>
 </section>
 <section id="modification-dune-transaction">
-<h5><span class="section-number">7.3.4.2.2. </span>Modification d’une transaction<a class="headerlink" href="#modification-dune-transaction" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.3.4.2.2. </span>Modification d’une transaction<a class="headerlink" href="#modification-dune-transaction" title="Lien vers cette rubrique"></a></h5>
 <p>La solution logicielle Vitam permet de modifier une transaction, et plus précisément de :</p>
 <ul>
 <li><p>modifier ses métadonnées,</p></li>
@@ -1733,7 +1737,7 @@ La recherche est approchante.</p>
 </table>
 </section>
 <section id="modification-des-unites-archivistiques">
-<h5><span class="section-number">7.3.4.2.3. </span>Modification des unités archivistiques<a class="headerlink" href="#modification-des-unites-archivistiques" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.3.4.2.3. </span>Modification des unités archivistiques<a class="headerlink" href="#modification-des-unites-archivistiques" title="Lien vers cette rubrique"></a></h5>
 <p>La solution logicielle Vitam permet de modifier des unités archivistiques par :</p>
 <ul class="simple">
 <li><p>import d’un fichier au format .csv,</p></li>
@@ -1771,7 +1775,7 @@ La recherche est approchante.</p>
 </pre></div>
 </div>
 <p>Pour une transaction donnée peut être envoyé un fichier .csv contenant des métadonnées détaillant unitairement tout ou partie des unités archivistiques préalablement envoyées.</p>
-<p>Le fichier .csv est composé de x colonnes<a class="footnote-reference brackets" href="#id72" id="id24" role="doc-noteref"><span class="fn-bracket">[</span>17<span class="fn-bracket">]</span></a> :</p>
+<p>Le fichier .csv est composé de x colonnes<a class="footnote-reference brackets" href="#id81" id="id24" role="doc-noteref"><span class="fn-bracket">[</span>17<span class="fn-bracket">]</span></a> :</p>
 <ul class="simple">
 <li><p>File : chemin relatif à partir de l’emplacement où est positionnée l’unité archivistique faisant l’objet de la modification. Il s’agit d’une concaténation des intitulés des différentes unités archivistiques (colonne obligatoire) ;</p></li>
 <li><p>toute colonne correspondant à un champ du standard SEDA et nécessitant une modification et/ou un ajout de métadonnées (colonnes facultatives).</p></li>
@@ -1815,7 +1819,7 @@ La recherche est approchante.</p>
   &quot;content/AU4&quot;;&quot;Item&quot;;&quot;AU4&quot;;&quot;&quot;;&quot;&quot;
 </pre></div>
 </div>
-<p>Cette action provoque la mise à jour des unités archivistiques dans la base de données MongoDB, dans la collection « Unit » (base <em>MetadataCollect<a class="footnote-reference brackets" href="#id73" id="id25" role="doc-noteref"><span class="fn-bracket">[</span>18<span class="fn-bracket">]</span></a></em>).
+<p>Cette action provoque la mise à jour des unités archivistiques dans la base de données MongoDB, dans la collection « Unit » (base <em>MetadataCollect<a class="footnote-reference brackets" href="#id82" id="id25" role="doc-noteref"><span class="fn-bracket">[</span>18<span class="fn-bracket">]</span></a></em>).
 Lors de cette action, l’opération peut aboutir aux résultats suivants :</p>
 <table class="docutils align-default">
 <thead>
@@ -1893,7 +1897,7 @@ Au terme de la V.6, le module de collecte :</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Cette action provoque la mise à jour des unités archivistiques dans la base de données MongoDB, dans la collection « Unit » (base <em>MetadataCollect<a class="footnote-reference brackets" href="#id73" id="id26" role="doc-noteref"><span class="fn-bracket">[</span>18<span class="fn-bracket">]</span></a></em>).</p>
+<p>Cette action provoque la mise à jour des unités archivistiques dans la base de données MongoDB, dans la collection « Unit » (base <em>MetadataCollect<a class="footnote-reference brackets" href="#id82" id="id26" role="doc-noteref"><span class="fn-bracket">[</span>18<span class="fn-bracket">]</span></a></em>).</p>
 <p>Lors de cette action, l’opération peut aboutir aux résultats suivants :</p>
 <table class="docutils align-default">
 <thead>
@@ -1920,7 +1924,7 @@ Au terme de la V.6, le module de collecte :</p>
 <p>Elle n’est pas journalisée dans le journal des opérations.</p>
 </section>
 <section id="suppression">
-<h5><span class="section-number">7.3.4.2.4. </span>Suppression<a class="headerlink" href="#suppression" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.3.4.2.4. </span>Suppression<a class="headerlink" href="#suppression" title="Lien vers cette rubrique"></a></h5>
 <p>La solution logicielle Vitam permet de :</p>
 <ul class="simple">
 <li><p>supprimer un projet de versement,</p></li>
@@ -1987,7 +1991,7 @@ Au terme de la V.6, le module de collecte :</p>
 </table>
 </section>
 <section id="abandon">
-<h5><span class="section-number">7.3.4.2.5. </span>Abandon<a class="headerlink" href="#abandon" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.3.4.2.5. </span>Abandon<a class="headerlink" href="#abandon" title="Lien vers cette rubrique"></a></h5>
 <p>La solution logicielle Vitam permet également d’abandonner une transaction.</p>
 <p><em><strong>Point d’attention :</strong></em>
 En prérequis à cette action, il faut avoir au préalable créé une transaction et le signaler dans l’API.</p>
@@ -2003,7 +2007,7 @@ En prérequis à cette action, il faut avoir au préalable créé une transactio
 <p>Cette action provoque :</p>
 <ul class="simple">
 <li><p>la modification de l’enregistrement dans la base de données MongoDB, dans la collection « Transaction » (base <em>Collect</em>) : la valeur du champ « Status » devient « ABORTED » ;</p></li>
-<li><p>la purge des données associées à la transaction, enregistrées dans les collections « Unit » et « ObjectGroup » (base <em>MetadataCollect</em>) et sur les offres de stockage, passé un certain délai configurable par tenant (60 minutes par défaut)<a class="footnote-reference brackets" href="#id74" id="id27" role="doc-noteref"><span class="fn-bracket">[</span>19<span class="fn-bracket">]</span></a>.</p></li>
+<li><p>la purge des données associées à la transaction, enregistrées dans les collections « Unit » et « ObjectGroup » (base <em>MetadataCollect</em>) et sur les offres de stockage, passé un certain délai configurable par tenant (60 minutes par défaut)<a class="footnote-reference brackets" href="#id83" id="id27" role="doc-noteref"><span class="fn-bracket">[</span>19<span class="fn-bracket">]</span></a>.</p></li>
 </ul>
 <p><em><strong>Point d’attention :</strong></em></p>
 <ul>
@@ -2035,7 +2039,7 @@ En prérequis à cette action, il faut avoir au préalable créé une transactio
 </table>
 </section>
 <section id="reouverture">
-<h5><span class="section-number">7.3.4.2.6. </span>Réouverture<a class="headerlink" href="#reouverture" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.3.4.2.6. </span>Réouverture<a class="headerlink" href="#reouverture" title="Lien vers cette rubrique"></a></h5>
 <p>La solution logicielle Vitam permet également de rouvrir (ou rééditer) une transaction.</p>
 <p><em><strong>Point d’attention :</strong></em> En prérequis à cette action, il faut avoir au préalable créé une transaction et le signaler dans l’API.</p>
 <p><em>Exemple : requête en vue de réouvrir une transaction dont l’identifiant est «  aeeaaaaaachj3m7nabjocamcdqr2rqaaaaaq »</em></p>
@@ -2076,12 +2080,12 @@ Lors de cette action, l’opération peut aboutir aux résultats suivants :</p>
 </section>
 </section>
 <section id="id28">
-<h4><span class="section-number">7.3.4.3. </span>Utilisation dans VitamUI<a class="headerlink" href="#id28" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.3.4.3. </span>Utilisation dans VitamUI<a class="headerlink" href="#id28" title="Lien vers cette rubrique"></a></h4>
 <p>L’APP « Collecte et préparation des versements » du front-office VitamUI fournie avec la solution logicielle Vitam permet :</p>
 <ul>
 <li><p>au moment de la création d’un projet de versement, d’abandonner ce dernier à tout moment du processus de création, au moyen d’un bouton « Annuler » ;</p></li>
 <li><p>dès qu’une transaction est créée, de l’abandonner et/ou de la rouvrir depuis la liste des transactions (ou versements) associées à un projet de versement donné.</p>
-<p>Dans le cas d’un abandon, les archives associées à la transaction sont supprimées, passé un certain délai configurable par tenant (60 minutes par défaut)<a class="footnote-reference brackets" href="#id75" id="id29" role="doc-noteref"><span class="fn-bracket">[</span>20<span class="fn-bracket">]</span></a>. Le projet de versement et la transaction restent visibles depuis les interfaces ;</p>
+<p>Dans le cas d’un abandon, les archives associées à la transaction sont supprimées, passé un certain délai configurable par tenant (60 minutes par défaut)<a class="footnote-reference brackets" href="#id84" id="id29" role="doc-noteref"><span class="fn-bracket">[</span>20<span class="fn-bracket">]</span></a>. Le projet de versement et la transaction restent visibles depuis les interfaces ;</p>
 </li>
 <li><p>de modifier un projet de versement, avec, le cas échéant, la(les) transaction(s) associée(s) si elle(s) a(ont) un statut égal à « OPEN » ;</p></li>
 <li><p>de modifier des unités archivistiques par import d’un fichier .csv, depuis le détail d’un projet de versement.</p></li>
@@ -2095,9 +2099,9 @@ Au terme de la version 6, il n’est pas possible, depuis les interfaces, de :<
 </section>
 </section>
 <section id="transfert">
-<h3><span class="section-number">7.3.5. </span>Transfert<a class="headerlink" href="#transfert" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">8.3.5. </span>Transfert<a class="headerlink" href="#transfert" title="Lien vers cette rubrique"></a></h3>
 <section id="id30">
-<h4><span class="section-number">7.3.5.1. </span>Définitions<a class="headerlink" href="#id30" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.3.5.1. </span>Définitions<a class="headerlink" href="#id30" title="Lien vers cette rubrique"></a></h4>
 <p>La solution logicielle Vitam permet de :</p>
 <ul class="simple">
 <li><p>clôturer une transaction (ou versement),</p></li>
@@ -2107,7 +2111,7 @@ Au terme de la version 6, il n’est pas possible, depuis les interfaces, de :<
 <p>L’opération de clôture, effectuée dans le module de collecte, n’est pas journalisée dans le journal des opérations, tandis que l’opération de transfert des archives sous la forme d’un SIP, envoyée par le module de collecte, est tracée dans le journal des opérations (opération de type « INGEST »).</p>
 </section>
 <section id="id31">
-<h4><span class="section-number">7.3.5.2. </span>Utilisation des API<a class="headerlink" href="#id31" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.3.5.2. </span>Utilisation des API<a class="headerlink" href="#id31" title="Lien vers cette rubrique"></a></h4>
 <p>Une fois le versement des données dans le module de collecte terminé, il est possible de :</p>
 <ul class="simple">
 <li><p>clôturer la transaction,</p></li>
@@ -2116,7 +2120,7 @@ Au terme de la version 6, il n’est pas possible, depuis les interfaces, de :<
 <p><em><strong>Point d’attention :</strong></em>
 l’ordre d’utilisation des API doit être respecté en vue de transférer avec succès l’ensemble des métadonnées et objets constituant un versement vers la solution logicielle Vitam pour conservation.</p>
 <section id="cloture-dune-transaction">
-<h5><span class="section-number">7.3.5.2.1. </span>Clôture d’une transaction<a class="headerlink" href="#cloture-dune-transaction" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.3.5.2.1. </span>Clôture d’une transaction<a class="headerlink" href="#cloture-dune-transaction" title="Lien vers cette rubrique"></a></h5>
 <p>La solution logicielle permet de clôturer une transaction, une fois l’ensemble des archives liées à cette transaction envoyées dans le module de collecte.</p>
 <p><em><strong>Points d’attention :</strong></em></p>
 <ul class="simple">
@@ -2178,10 +2182,10 @@ l’ordre d’utilisation des API doit être respecté en vue de transférer ave
 </tbody>
 </table>
 <p><em><strong>Point d’attention :</strong></em>
-S’il s’avère nécessaire de modifier le contenu de la transaction, il est toujours possible à ce stade la rouvrir<a class="footnote-reference brackets" href="#id76" id="id32" role="doc-noteref"><span class="fn-bracket">[</span>21<span class="fn-bracket">]</span></a>.</p>
+S’il s’avère nécessaire de modifier le contenu de la transaction, il est toujours possible à ce stade la rouvrir<a class="footnote-reference brackets" href="#id85" id="id32" role="doc-noteref"><span class="fn-bracket">[</span>21<span class="fn-bracket">]</span></a>.</p>
 </section>
 <section id="envoi-du-sip">
-<h5><span class="section-number">7.3.5.2.2. </span>Envoi du SIP<a class="headerlink" href="#envoi-du-sip" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.3.5.2.2. </span>Envoi du SIP<a class="headerlink" href="#envoi-du-sip" title="Lien vers cette rubrique"></a></h5>
 <p>Pour une transaction donnée, une fois celle-ci clôturée, le module de collecte permet de générer un SIP et de le transférer au moyen d’une opération de type « INGEST ».</p>
 <p><em><strong>Point d’attention :</strong></em></p>
 <ul class="simple">
@@ -2246,11 +2250,11 @@ S’il s’avère nécessaire de modifier le contenu de la transaction, il est t
 </tbody>
 </table>
 <p><em><strong>Point d’attention :</strong></em>
-Au terme de la V6, les archives transférées avec succès ou en avertissement (statut égal à « ACK_OK » et « ACK_WARNING ») pour archivage sont purgées du module de collecte passé un certain délai configurable par tenant (60 minutes par défaut)<a class="footnote-reference brackets" href="#id77" id="id33" role="doc-noteref"><span class="fn-bracket">[</span>22<span class="fn-bracket">]</span></a>.</p>
+Au terme de la V6, les archives transférées avec succès ou en avertissement (statut égal à « ACK_OK » et « ACK_WARNING ») pour archivage sont purgées du module de collecte passé un certain délai configurable par tenant (60 minutes par défaut)<a class="footnote-reference brackets" href="#id86" id="id33" role="doc-noteref"><span class="fn-bracket">[</span>22<span class="fn-bracket">]</span></a>.</p>
 </section>
 </section>
 <section id="id34">
-<h4><span class="section-number">7.3.5.3. </span>Utilisation dans VitamUI<a class="headerlink" href="#id34" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.3.5.3. </span>Utilisation dans VitamUI<a class="headerlink" href="#id34" title="Lien vers cette rubrique"></a></h4>
 <p>L’APP « Collecte et préparation des versements » du front-office VitamUI fournie avec la solution logicielle Vitam utilise les API de clôture et de génération d’un SIP pour envoi dans la solution logicielle Vitam.</p>
 <p>Ces services sont disponibles :</p>
 <ul class="simple">
@@ -2335,22 +2339,22 @@ Au terme de la V6, les archives transférées avec succès ou en avertissement (
 </section>
 </section>
 <section id="conseils-de-mise-en-oeuvre">
-<h2><span class="section-number">7.4. </span>Conseils de mise en œuvre<a class="headerlink" href="#conseils-de-mise-en-oeuvre" title="Lien vers cette rubrique"></a></h2>
+<h2><span class="section-number">8.4. </span>Conseils de mise en œuvre<a class="headerlink" href="#conseils-de-mise-en-oeuvre" title="Lien vers cette rubrique"></a></h2>
 <p>À l’issue de cette phase de réalisation de fonctionnalités concernant le module de collecte, l’équipe du programme Vitam est en mesure de fournir plusieurs recommandations de mise en œuvre.</p>
 <section id="comment-formaliser-les-donnees-dans-les-api-du-module-de-collecte">
-<h3><span class="section-number">7.4.1. </span>Comment formaliser les données dans les API du module de collecte ?<a class="headerlink" href="#comment-formaliser-les-donnees-dans-les-api-du-module-de-collecte" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">8.4.1. </span>Comment formaliser les données dans les API du module de collecte ?<a class="headerlink" href="#comment-formaliser-les-donnees-dans-les-api-du-module-de-collecte" title="Lien vers cette rubrique"></a></h3>
 <p>Il est possible de verser séparément dans le module de collecte selon un formalisme spécifique au format JSON :</p>
 <ul class="simple">
 <li><p>les métadonnées correspondant à l’en-tête du message ArchiveTransfer,</p></li>
 <li><p>les métadonnées décrivant les unités archivistiques,</p></li>
 <li><p>les métadonnées techniques.</p></li>
 </ul>
-<p>Chaque appel API<a class="footnote-reference brackets" href="#id78" id="id35" role="doc-noteref"><span class="fn-bracket">[</span>23<span class="fn-bracket">]</span></a> permettant de verser ces métadonnées inclut une liste d’éléments, clés ou vocabulaires que l’on souhaite intégrer dans le module de collecte.</p>
+<p>Chaque appel API<a class="footnote-reference brackets" href="#id87" id="id35" role="doc-noteref"><span class="fn-bracket">[</span>23<span class="fn-bracket">]</span></a> permettant de verser ces métadonnées inclut une liste d’éléments, clés ou vocabulaires que l’on souhaite intégrer dans le module de collecte.</p>
 <p>Si ces éléments doivent respecter le formalisme attendu par le SEDA et l’ontologie de la solution logicielle Vitam (s’il s’agit d’une chaîne de caractères, d’une date, d’un élément répétable, etc.), il n’est pas nécessaire de les ordonnancer comme le demande le SEDA.</p>
-<p>Si certains éléments, issus du SEDA et/ou du système externe, ne doivent pas être envoyés, il n’est pas nécessaire de les référencer dans les différents appels API<a class="footnote-reference brackets" href="#id79" id="id36" role="doc-noteref"><span class="fn-bracket">[</span>24<span class="fn-bracket">]</span></a>.</p>
+<p>Si certains éléments, issus du SEDA et/ou du système externe, ne doivent pas être envoyés, il n’est pas nécessaire de les référencer dans les différents appels API<a class="footnote-reference brackets" href="#id88" id="id36" role="doc-noteref"><span class="fn-bracket">[</span>24<span class="fn-bracket">]</span></a>.</p>
 <p>Certains contrôles, disponibles au moment du transfert dans la solution logicielle Vitam n’ont pas été implémentés. Il est fortement recommandé de ne pas envoyer dans le module de collecte des éléments sans valeurs, en particulier ceux qui sont obligatoires et doivent nécessairement être renseignés.</p>
 <section id="generalites">
-<h4><span class="section-number">7.4.1.1. </span>Généralités<a class="headerlink" href="#generalites" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.4.1.1. </span>Généralités<a class="headerlink" href="#generalites" title="Lien vers cette rubrique"></a></h4>
 <p>Dans un enregistrement JSON, un élément (ou vocabulaire) est désigné par son <strong>nom</strong>.</p>
 <p><em>Exemple : l’élément suivant se nomme Description.</em></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="s2">&quot;Description&quot;</span><span class="p">:</span> <span class="s2">&quot;Ceci est une description&quot;</span>
@@ -2358,7 +2362,7 @@ Au terme de la V6, les archives transférées avec succès ou en avertissement (
 </div>
 <p><em><strong>Point d’attention :</strong></em></p>
 <ul class="simple">
-<li><p>Si un élément (ou vocabulaire), présent dans un enregistrement, n’existe pas dans l’ontologie, Il est fortement recommandé de l’avoir préalablement créé dans le référentiel<a class="footnote-reference brackets" href="#id80" id="id37" role="doc-noteref"><span class="fn-bracket">[</span>25<span class="fn-bracket">]</span></a>.</p></li>
+<li><p>Si un élément (ou vocabulaire), présent dans un enregistrement, n’existe pas dans l’ontologie, Il est fortement recommandé de l’avoir préalablement créé dans le référentiel<a class="footnote-reference brackets" href="#id89" id="id37" role="doc-noteref"><span class="fn-bracket">[</span>25<span class="fn-bracket">]</span></a>.</p></li>
 <li><p>Les vocabulaires issus du SEDA sont nommés de la même manière qu’ils le sont dans le standard (ex. l’élément « Tag » défini dans le SEDA est référencé sous ce nom dans l’ontologie et doit être indiqué comme tel).</p></li>
 <li><p>Il existe néanmoins quelques exceptions à cette règle :</p>
 <ul>
@@ -2381,14 +2385,14 @@ Au terme de la V6, les archives transférées avec succès ou en avertissement (
 <li><p>« EventDetailData » en « evDetData ».</p></li>
 </ul>
 </li>
-<li><p>les éléments Title et Description, s’ils contiennent des attributs, seront intitulés « Title_ » et « Description_ » et devront définir des propriétés<a class="footnote-reference brackets" href="#id81" id="id38" role="doc-noteref"><span class="fn-bracket">[</span>26<span class="fn-bracket">]</span></a>.</p></li>
+<li><p>les éléments Title et Description, s’ils contiennent des attributs, seront intitulés « Title_ » et « Description_ » et devront définir des propriétés<a class="footnote-reference brackets" href="#id90" id="id38" role="doc-noteref"><span class="fn-bracket">[</span>26<span class="fn-bracket">]</span></a>.</p></li>
 </ul>
 </li>
 </ul>
 </section>
 <section id="types">
-<h4><span class="section-number">7.4.1.2. </span>Types<a class="headerlink" href="#types" title="Lien vers cette rubrique"></a></h4>
-<p>L’élément (ou vocabulaire) est associé à un <strong>type</strong> particulier<a class="footnote-reference brackets" href="#id82" id="id39" role="doc-noteref"><span class="fn-bracket">[</span>27<span class="fn-bracket">]</span></a>. On distingue plusieurs types JSON possibles :</p>
+<h4><span class="section-number">8.4.1.2. </span>Types<a class="headerlink" href="#types" title="Lien vers cette rubrique"></a></h4>
+<p>L’élément (ou vocabulaire) est associé à un <strong>type</strong> particulier<a class="footnote-reference brackets" href="#id91" id="id39" role="doc-noteref"><span class="fn-bracket">[</span>27<span class="fn-bracket">]</span></a>. On distingue plusieurs types JSON possibles :</p>
 <ul class="simple">
 <li><p>« string » : texte ;</p></li>
 <li><p>« number » : nombre, entier ou décimal ;</p></li>
@@ -2397,7 +2401,7 @@ Au terme de la V6, les archives transférées avec succès ou en avertissement (
 <li><p>« object » : objet ;</p></li>
 <li><p>« array » : liste ou tableau de valeurs textuelles.</p></li>
 </ul>
-<p>Il doit alors être cohérent avec celui du vocabulaire tel qu’il est déclaré dans l’ontologie<a class="footnote-reference brackets" href="#id83" id="id40" role="doc-noteref"><span class="fn-bracket">[</span>28<span class="fn-bracket">]</span></a> :</p>
+<p>Il doit alors être cohérent avec celui du vocabulaire tel qu’il est déclaré dans l’ontologie<a class="footnote-reference brackets" href="#id92" id="id40" role="doc-noteref"><span class="fn-bracket">[</span>28<span class="fn-bracket">]</span></a> :</p>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p>Type d’indexation dans l’ontologie</p></th>
@@ -2465,7 +2469,7 @@ Au terme de la V6, les archives transférées avec succès ou en avertissement (
 <li><p>pour les <strong>informations d’en-tête</strong> : les éléments sont uniquement de type « string » ou « array » ;</p></li>
 <li><p>pour une <strong>unité archivistique</strong> :</p>
 <ul>
-<li><p>pour les <em>vocabulaires internes</em>, propres au SEDA, les principaux types rencontrés sont : « string », « array » et « object », auxquels s’ajoute un unique « boolean » et un unique « integer »<a class="footnote-reference brackets" href="#id84" id="id41" role="doc-noteref"><span class="fn-bracket">[</span>29<span class="fn-bracket">]</span></a>.</p></li>
+<li><p>pour les <em>vocabulaires internes</em>, propres au SEDA, les principaux types rencontrés sont : « string », « array » et « object », auxquels s’ajoute un unique « boolean » et un unique « integer »<a class="footnote-reference brackets" href="#id93" id="id41" role="doc-noteref"><span class="fn-bracket">[</span>29<span class="fn-bracket">]</span></a>.</p></li>
 <li><p>quant aux <em>vocabulaires externes</em>, ajoutés pour répondre à des besoins et transferts spécifiques, il faut les identifier systématiquement comme des « array » (ou tableaux), c’est-à-dire des éléments répétables. Ces tableaux peuvent inclure ensuite un type particulier de chaînes : texte, entier, décimal ou booléen.</p></li>
 </ul>
 </li>
@@ -2526,7 +2530,7 @@ Au terme de la V6, les archives transférées avec succès ou en avertissement (
 </div>
 </section>
 <section id="cas-particulier">
-<h4><span class="section-number">7.4.1.3. </span>Cas particulier<a class="headerlink" href="#cas-particulier" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.4.1.3. </span>Cas particulier<a class="headerlink" href="#cas-particulier" title="Lien vers cette rubrique"></a></h4>
 <p>Les éléments <strong>« Title » et « Description »</strong>, s’ils définissent un attribut ou sont répétables, doivent prendre la forme d’objet.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Title_&quot;</span><span class="p">:</span> <span class="p">{</span>
      <span class="s2">&quot;fr&quot;</span><span class="p">:</span> <span class="s2">&quot;Ceci est un titre en français&quot;</span><span class="p">,</span>
@@ -2541,7 +2545,7 @@ Au terme de la V6, les archives transférées avec succès ou en avertissement (
 <p>Le bloc définissant les <strong>règles de gestion</strong> contient également des particularités. Il doit être déclaré sous le nom #management. La modélisation des catégories de règle de gestion attend :</p>
 <ul class="simple">
 <li><p>un sous-bloc « Rules » pouvant contenir 0 à n règles de gestion,</p></li>
-<li><p>un sous-bloc « Inheritance » pouvant bloquer des règles de gestion<a class="footnote-reference brackets" href="#id85" id="id42" role="doc-noteref"><span class="fn-bracket">[</span>30<span class="fn-bracket">]</span></a>.</p></li>
+<li><p>un sous-bloc « Inheritance » pouvant bloquer des règles de gestion<a class="footnote-reference brackets" href="#id94" id="id42" role="doc-noteref"><span class="fn-bracket">[</span>30<span class="fn-bracket">]</span></a>.</p></li>
 </ul>
 <p><em>Exemple : Le bloc AppraisalRule déclare deux règles différentes dans le sous-bloc Rules, « APP-00001 » et « APP-00002 », et définit un blocage sur la catégorie de règle avec le sous-bloc PreventInheritance.</em></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="s2">&quot;\#management&quot;</span><span class="p">:</span> <span class="p">{</span>
@@ -2565,7 +2569,7 @@ Au terme de la V6, les archives transférées avec succès ou en avertissement (
 </section>
 </section>
 <section id="comment-sont-geres-les-statuts-dune-transaction">
-<h3><span class="section-number">7.4.2. </span>Comment sont gérés les statuts d’une transaction ?<a class="headerlink" href="#comment-sont-geres-les-statuts-dune-transaction" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">8.4.2. </span>Comment sont gérés les statuts d’une transaction ?<a class="headerlink" href="#comment-sont-geres-les-statuts-dune-transaction" title="Lien vers cette rubrique"></a></h3>
 <p>Le module de collecte attribue un certain nombre de statuts à une transaction. Ces statuts sont générés à la suite d’une action :</p>
 <table class="docutils align-default">
 <thead>
@@ -2652,7 +2656,7 @@ Au terme de la V6, les archives transférées avec succès ou en avertissement (
 </table>
 </section>
 <section id="comment-parametrer-un-versement">
-<h3><span class="section-number">7.4.3. </span>Comment paramétrer un versement ?<a class="headerlink" href="#comment-parametrer-un-versement" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">8.4.3. </span>Comment paramétrer un versement ?<a class="headerlink" href="#comment-parametrer-un-versement" title="Lien vers cette rubrique"></a></h3>
 <p>La solution logicielle Vitam permet de paramétrer des versements au moyen de la définition d’un projet de versement. Dans ce dernier, il est possible de :</p>
 <ul class="simple">
 <li><p>définir des métadonnées d’en-tête qui seront héritées dans chacune des transactions qui seront associées au projet de versement et qui, de fait, ne nécessiteront pas d’être envoyées lors de la création d’une transaction. Peuvent être héritées les métadonnées suivantes :</p>
@@ -2691,10 +2695,10 @@ Dans le cas d’un flux automatisé, à l’exception de l’intitulé (« Name
 </section>
 </section>
 <section id="annexe-1-exemples-de-donnees-entrantes">
-<h2><span class="section-number">7.5. </span>Annexe 1 : Exemples de données entrantes<a class="headerlink" href="#annexe-1-exemples-de-donnees-entrantes" title="Lien vers cette rubrique"></a></h2>
+<h2><span class="section-number">8.5. </span>Annexe 1 : Exemples de données entrantes<a class="headerlink" href="#annexe-1-exemples-de-donnees-entrantes" title="Lien vers cette rubrique"></a></h2>
 <p>*Nota bene *: les cas présentés ci-dessous sont des exemples fictifs.</p>
 <section id="metadonnees-d-en-tete">
-<h3><span class="section-number">7.5.1. </span>Métadonnées d’en-tête<a class="headerlink" href="#metadonnees-d-en-tete" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">8.5.1. </span>Métadonnées d’en-tête<a class="headerlink" href="#metadonnees-d-en-tete" title="Lien vers cette rubrique"></a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="s2">&quot;ArchivalAgencyIdentifier&quot;</span><span class="p">:</span> <span class="s2">&quot;Vitam&quot;</span><span class="p">,</span>
   <span class="s2">&quot;TransferringAgencyIdentifier&quot;</span><span class="p">:</span> <span class="s2">&quot;AN&quot;</span><span class="p">,</span>
@@ -2708,7 +2712,7 @@ Dans le cas d’un flux automatisé, à l’exception de l’intitulé (« Name
 </div>
 </section>
 <section id="unites-archivistiques">
-<h3><span class="section-number">7.5.2. </span>Unités archivistiques<a class="headerlink" href="#unites-archivistiques" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">8.5.2. </span>Unités archivistiques<a class="headerlink" href="#unites-archivistiques" title="Lien vers cette rubrique"></a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;DescriptionLevel&quot;</span><span class="p">:</span> <span class="s2">&quot;RecordGrp&quot;</span><span class="p">,</span>
     <span class="s2">&quot;Title&quot;</span><span class="p">:</span> <span class="s2">&quot;Discours de Michel Mercier&quot;</span><span class="p">,</span>
@@ -2727,7 +2731,7 @@ Dans le cas d’un flux automatisé, à l’exception de l’intitulé (« Name
 </div>
 </section>
 <section id="objets">
-<h3><span class="section-number">7.5.3. </span>Objets<a class="headerlink" href="#objets" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">8.5.3. </span>Objets<a class="headerlink" href="#objets" title="Lien vers cette rubrique"></a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="s2">&quot;FileInfo&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="s2">&quot;Filename&quot;</span><span class="p">:</span> <span class="s2">&quot;MonFichier.txt&quot;</span>
@@ -2738,7 +2742,7 @@ Dans le cas d’un flux automatisé, à l’exception de l’intitulé (« Name
 </section>
 </section>
 <section id="annexe-2-types-json">
-<h2><span class="section-number">7.6. </span>Annexe 2 : Types JSON<a class="headerlink" href="#annexe-2-types-json" title="Lien vers cette rubrique"></a></h2>
+<h2><span class="section-number">8.6. </span>Annexe 2 : Types JSON<a class="headerlink" href="#annexe-2-types-json" title="Lien vers cette rubrique"></a></h2>
 <p>Pour les éléments propres au SEDA, le tableau suivant précise les types de certains d’entre eux :</p>
 <ul class="simple">
 <li><p>Métadonnées d’en-tête :</p></li>
@@ -2773,7 +2777,7 @@ Dans le cas d’un flux automatisé, à l’exception de l’intitulé (« Name
 </tr>
 <tr class="row-even"><td><p>Comment</p></td>
 <td><p></p></td>
-<td><p>x<a class="footnote-reference brackets" href="#id86" id="id43" role="doc-noteref"><span class="fn-bracket">[</span>31<span class="fn-bracket">]</span></a></p></td>
+<td><p>x<a class="footnote-reference brackets" href="#id95" id="id43" role="doc-noteref"><span class="fn-bracket">[</span>31<span class="fn-bracket">]</span></a></p></td>
 <td><p></p></td>
 <td><p></p></td>
 <td><p></p></td>
@@ -2852,7 +2856,7 @@ Dans le cas d’un flux automatisé, à l’exception de l’intitulé (« Name
 <td><p><br></p></td>
 <td><p><br></p></td>
 </tr>
-<tr class="row-odd"><td><p>#management<a class="footnote-reference brackets" href="#id87" id="id44" role="doc-noteref"><span class="fn-bracket">[</span>32<span class="fn-bracket">]</span></a></p></td>
+<tr class="row-odd"><td><p>#management<a class="footnote-reference brackets" href="#id96" id="id44" role="doc-noteref"><span class="fn-bracket">[</span>32<span class="fn-bracket">]</span></a></p></td>
 <td><p>x</p></td>
 <td><p><br></p></td>
 <td><p><br></p></td>
@@ -2926,7 +2930,7 @@ Dans le cas d’un flux automatisé, à l’exception de l’intitulé (« Name
 </tr>
 <tr class="row-even"><td><p>StartDate</p></td>
 <td><p><br></p></td>
-<td><p>x<a class="footnote-reference brackets" href="#id88" id="id45" role="doc-noteref"><span class="fn-bracket">[</span>33<span class="fn-bracket">]</span></a></p></td>
+<td><p>x<a class="footnote-reference brackets" href="#id97" id="id45" role="doc-noteref"><span class="fn-bracket">[</span>33<span class="fn-bracket">]</span></a></p></td>
 <td><p><br></p></td>
 <td><p><br></p></td>
 <td><p><br></p></td>
@@ -2934,13 +2938,13 @@ Dans le cas d’un flux automatisé, à l’exception de l’intitulé (« Name
 </tr>
 <tr class="row-odd"><td><p>EndDate</p></td>
 <td><p><br></p></td>
-<td><p>x<a class="footnote-reference brackets" href="#id89" id="id46" role="doc-noteref"><span class="fn-bracket">[</span>34<span class="fn-bracket">]</span></a></p></td>
+<td><p>x<a class="footnote-reference brackets" href="#id98" id="id46" role="doc-noteref"><span class="fn-bracket">[</span>34<span class="fn-bracket">]</span></a></p></td>
 <td><p><br></p></td>
 <td><p><br></p></td>
 <td><p><br></p></td>
 <td><p><br></p></td>
 </tr>
-<tr class="row-even"><td><p>FinalAction<a class="footnote-reference brackets" href="#id90" id="id47" role="doc-noteref"><span class="fn-bracket">[</span>35<span class="fn-bracket">]</span></a></p></td>
+<tr class="row-even"><td><p>FinalAction<a class="footnote-reference brackets" href="#id99" id="id47" role="doc-noteref"><span class="fn-bracket">[</span>35<span class="fn-bracket">]</span></a></p></td>
 <td><p><br></p></td>
 <td><p>x</p></td>
 <td><p><br></p></td>
@@ -2970,11 +2974,11 @@ Dans le cas d’un flux automatisé, à l’exception de l’intitulé (« Name
 <td><p><br></p></td>
 <td><p><br></p></td>
 <td><p><br></p></td>
-<td><p>x<a class="footnote-reference brackets" href="#id91" id="id48" role="doc-noteref"><span class="fn-bracket">[</span>36<span class="fn-bracket">]</span></a></p></td>
+<td><p>x<a class="footnote-reference brackets" href="#id100" id="id48" role="doc-noteref"><span class="fn-bracket">[</span>36<span class="fn-bracket">]</span></a></p></td>
 </tr>
 <tr class="row-even"><td><p>HoldEndDate</p></td>
 <td><p><br></p></td>
-<td><p>x<a class="footnote-reference brackets" href="#id92" id="id49" role="doc-noteref"><span class="fn-bracket">[</span>37<span class="fn-bracket">]</span></a></p></td>
+<td><p>x<a class="footnote-reference brackets" href="#id101" id="id49" role="doc-noteref"><span class="fn-bracket">[</span>37<span class="fn-bracket">]</span></a></p></td>
 <td><p><br></p></td>
 <td><p><br></p></td>
 <td><p><br></p></td>
@@ -2998,7 +3002,7 @@ Dans le cas d’un flux automatisé, à l’exception de l’intitulé (« Name
 </tr>
 <tr class="row-odd"><td><p>HoldReassessingDate</p></td>
 <td><p><br></p></td>
-<td><p>x<a class="footnote-reference brackets" href="#id93" id="id50" role="doc-noteref"><span class="fn-bracket">[</span>38<span class="fn-bracket">]</span></a></p></td>
+<td><p>x<a class="footnote-reference brackets" href="#id102" id="id50" role="doc-noteref"><span class="fn-bracket">[</span>38<span class="fn-bracket">]</span></a></p></td>
 <td><p><br></p></td>
 <td><p><br></p></td>
 <td><p><br></p></td>
@@ -3022,7 +3026,7 @@ Dans le cas d’un flux automatisé, à l’exception de l’intitulé (« Name
 </tr>
 <tr class="row-even"><td><p>ClassificationReassessingDate</p></td>
 <td><p><br></p></td>
-<td><p>x<a class="footnote-reference brackets" href="#id94" id="id51" role="doc-noteref"><span class="fn-bracket">[</span>39<span class="fn-bracket">]</span></a></p></td>
+<td><p>x<a class="footnote-reference brackets" href="#id103" id="id51" role="doc-noteref"><span class="fn-bracket">[</span>39<span class="fn-bracket">]</span></a></p></td>
 <td><p><br></p></td>
 <td><p><br></p></td>
 <td><p><br></p></td>
@@ -3190,7 +3194,7 @@ Dans le cas d’un flux automatisé, à l’exception de l’intitulé (« Name
 </tr>
 <tr class="row-odd"><td><p>Language</p></td>
 <td><p><br></p></td>
-<td><p>x<a class="footnote-reference brackets" href="#id95" id="id52" role="doc-noteref"><span class="fn-bracket">[</span>40<span class="fn-bracket">]</span></a></p></td>
+<td><p>x<a class="footnote-reference brackets" href="#id104" id="id52" role="doc-noteref"><span class="fn-bracket">[</span>40<span class="fn-bracket">]</span></a></p></td>
 <td><p><br></p></td>
 <td><p><br></p></td>
 <td><p><br></p></td>
@@ -3198,7 +3202,7 @@ Dans le cas d’un flux automatisé, à l’exception de l’intitulé (« Name
 </tr>
 <tr class="row-even"><td><p>DescriptionLanguage</p></td>
 <td><p><br></p></td>
-<td><p>x<a class="footnote-reference brackets" href="#id96" id="id53" role="doc-noteref"><span class="fn-bracket">[</span>41<span class="fn-bracket">]</span></a></p></td>
+<td><p>x<a class="footnote-reference brackets" href="#id105" id="id53" role="doc-noteref"><span class="fn-bracket">[</span>41<span class="fn-bracket">]</span></a></p></td>
 <td><p><br></p></td>
 <td><p><br></p></td>
 <td><p><br></p></td>
@@ -3406,7 +3410,7 @@ Dans le cas d’un flux automatisé, à l’exception de l’intitulé (« Name
 </tr>
 <tr class="row-even"><td><p>BirthDate</p></td>
 <td><p><br></p></td>
-<td><p>x<a class="footnote-reference brackets" href="#id97" id="id54" role="doc-noteref"><span class="fn-bracket">[</span>42<span class="fn-bracket">]</span></a></p></td>
+<td><p>x<a class="footnote-reference brackets" href="#id106" id="id54" role="doc-noteref"><span class="fn-bracket">[</span>42<span class="fn-bracket">]</span></a></p></td>
 <td><p><br></p></td>
 <td><p><br></p></td>
 <td><p><br></p></td>
@@ -3414,7 +3418,7 @@ Dans le cas d’un flux automatisé, à l’exception de l’intitulé (« Name
 </tr>
 <tr class="row-odd"><td><p>DeathDate</p></td>
 <td><p><br></p></td>
-<td><p>x<a class="footnote-reference brackets" href="#id98" id="id55" role="doc-noteref"><span class="fn-bracket">[</span>43<span class="fn-bracket">]</span></a></p></td>
+<td><p>x<a class="footnote-reference brackets" href="#id107" id="id55" role="doc-noteref"><span class="fn-bracket">[</span>43<span class="fn-bracket">]</span></a></p></td>
 <td><p><br></p></td>
 <td><p><br></p></td>
 <td><p><br></p></td>
@@ -3716,7 +3720,7 @@ Dans le cas d’un flux automatisé, à l’exception de l’intitulé (« Name
 <td><p>x</p></td>
 <td><p><br></p></td>
 </tr>
-<tr class="row-odd"><td><p>evId<a class="reference internal" href="#sdfootnote13sym"><span class="xref myst">13</span></a></p></td>
+<tr class="row-odd"><td><p>evId<a class="footnote-reference brackets" href="#id77" id="id56" role="doc-noteref"><span class="fn-bracket">[</span>13<span class="fn-bracket">]</span></a></p></td>
 <td><p><br></p></td>
 <td><p>x</p></td>
 <td><p><br></p></td>
@@ -3724,7 +3728,7 @@ Dans le cas d’un flux automatisé, à l’exception de l’intitulé (« Name
 <td><p><br></p></td>
 <td><p><br></p></td>
 </tr>
-<tr class="row-even"><td><p>evTypeProc<a class="reference internal" href="#sdfootnote14sym"><span class="xref myst">14</span></a></p></td>
+<tr class="row-even"><td><p>evTypeProc<a class="footnote-reference brackets" href="#id78" id="id57" role="doc-noteref"><span class="fn-bracket">[</span>14<span class="fn-bracket">]</span></a></p></td>
 <td><p><br></p></td>
 <td><p>x</p></td>
 <td><p><br></p></td>
@@ -3732,7 +3736,7 @@ Dans le cas d’un flux automatisé, à l’exception de l’intitulé (« Name
 <td><p><br></p></td>
 <td><p><br></p></td>
 </tr>
-<tr class="row-odd"><td><p>evType<a class="reference internal" href="#sdfootnote15sym"><span class="xref myst">15</span></a></p></td>
+<tr class="row-odd"><td><p>evType<a class="footnote-reference brackets" href="#id79" id="id58" role="doc-noteref"><span class="fn-bracket">[</span>15<span class="fn-bracket">]</span></a></p></td>
 <td><p><br></p></td>
 <td><p>x</p></td>
 <td><p><br></p></td>
@@ -3740,7 +3744,7 @@ Dans le cas d’un flux automatisé, à l’exception de l’intitulé (« Name
 <td><p><br></p></td>
 <td><p><br></p></td>
 </tr>
-<tr class="row-even"><td><p>EvDateTime<a class="reference internal" href="#sdfootnote16sym"><span class="xref myst">16</span></a></p></td>
+<tr class="row-even"><td><p>EvDateTime<a class="footnote-reference brackets" href="#id80" id="id59" role="doc-noteref"><span class="fn-bracket">[</span>16<span class="fn-bracket">]</span></a></p></td>
 <td><p><br></p></td>
 <td><p>x</p></td>
 <td><p><br></p></td>
@@ -3748,7 +3752,7 @@ Dans le cas d’un flux automatisé, à l’exception de l’intitulé (« Name
 <td><p><br></p></td>
 <td><p><br></p></td>
 </tr>
-<tr class="row-odd"><td><p>evTypeDetail<a class="reference internal" href="#sdfootnote17sym"><span class="xref myst">17</span></a></p></td>
+<tr class="row-odd"><td><p>evTypeDetail<a class="footnote-reference brackets" href="#id81" id="id60" role="doc-noteref"><span class="fn-bracket">[</span>17<span class="fn-bracket">]</span></a></p></td>
 <td><p><br></p></td>
 <td><p>x</p></td>
 <td><p><br></p></td>
@@ -3756,7 +3760,7 @@ Dans le cas d’un flux automatisé, à l’exception de l’intitulé (« Name
 <td><p><br></p></td>
 <td><p><br></p></td>
 </tr>
-<tr class="row-even"><td><p>outcome<a class="reference internal" href="#sdfootnote18sym"><span class="xref myst">18</span></a></p></td>
+<tr class="row-even"><td><p>outcome<a class="footnote-reference brackets" href="#id82" id="id61" role="doc-noteref"><span class="fn-bracket">[</span>18<span class="fn-bracket">]</span></a></p></td>
 <td><p><br></p></td>
 <td><p>x</p></td>
 <td><p><br></p></td>
@@ -3764,7 +3768,7 @@ Dans le cas d’un flux automatisé, à l’exception de l’intitulé (« Name
 <td><p><br></p></td>
 <td><p><br></p></td>
 </tr>
-<tr class="row-odd"><td><p>outDetail<a class="reference internal" href="#sdfootnote19sym"><span class="xref myst">19</span></a></p></td>
+<tr class="row-odd"><td><p>outDetail<a class="footnote-reference brackets" href="#id83" id="id62" role="doc-noteref"><span class="fn-bracket">[</span>19<span class="fn-bracket">]</span></a></p></td>
 <td><p><br></p></td>
 <td><p>x</p></td>
 <td><p><br></p></td>
@@ -3772,7 +3776,7 @@ Dans le cas d’un flux automatisé, à l’exception de l’intitulé (« Name
 <td><p><br></p></td>
 <td><p><br></p></td>
 </tr>
-<tr class="row-even"><td><p>outMessg<a class="reference internal" href="#sdfootnote20sym"><span class="xref myst">20</span></a></p></td>
+<tr class="row-even"><td><p>outMessg<a class="footnote-reference brackets" href="#id84" id="id63" role="doc-noteref"><span class="fn-bracket">[</span>20<span class="fn-bracket">]</span></a></p></td>
 <td><p><br></p></td>
 <td><p>x</p></td>
 <td><p><br></p></td>
@@ -3780,7 +3784,7 @@ Dans le cas d’un flux automatisé, à l’exception de l’intitulé (« Name
 <td><p><br></p></td>
 <td><p><br></p></td>
 </tr>
-<tr class="row-odd"><td><p>evDetData<a class="reference internal" href="#sdfootnote21sym"><span class="xref myst">21</span></a></p></td>
+<tr class="row-odd"><td><p>evDetData<a class="footnote-reference brackets" href="#id85" id="id64" role="doc-noteref"><span class="fn-bracket">[</span>21<span class="fn-bracket">]</span></a></p></td>
 <td><p><br></p></td>
 <td><p>x</p></td>
 <td><p><br></p></td>
@@ -3920,7 +3924,7 @@ Dans le cas d’un flux automatisé, à l’exception de l’intitulé (« Name
 </table>
 </section>
 <section id="annexe-3-liste-des-points-dapi">
-<h2><span class="section-number">7.7. </span>Annexe 3 : Liste des points d’API<a class="headerlink" href="#annexe-3-liste-des-points-dapi" title="Lien vers cette rubrique"></a></h2>
+<h2><span class="section-number">8.7. </span>Annexe 3 : Liste des points d’API<a class="headerlink" href="#annexe-3-liste-des-points-dapi" title="Lien vers cette rubrique"></a></h2>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head"><p></p></th>
@@ -3996,176 +4000,184 @@ Dans le cas d’un flux automatisé, à l’exception de l’intitulé (« Name
 | objects           | Récupère un groupe d’objets techniques | transaction:object:read | GET       | /collect-external/v1/objects/{gotId}/|</p>
 <hr class="footnotes docutils" />
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id56" role="doc-footnote">
+<aside class="footnote brackets" id="id65" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
 <p>Pour plus d’informations, consulter le document <em>Modèle de données</em>, « Collection Project ». Un exemple de projet de versement se trouve dans l’annexe 1 du présent document.</p>
 </aside>
-<aside class="footnote brackets" id="id57" role="doc-footnote">
+<aside class="footnote brackets" id="id66" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
 <p>À noter que, dans l’APP « Collecte et préparation des versements », ce champ est alimenté par la valeur du champ « MessageIdentifier ».</p>
 </aside>
-<aside class="footnote brackets" id="id58" role="doc-footnote">
+<aside class="footnote brackets" id="id67" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">3</a><span class="fn-bracket">]</span></span>
 <p>Pour plus d’informations, consulter le document <em>Modèle de données</em>, « Collection Transaction ». Un exemple de contexte de collecte se trouve dans l’annexe 1 du présent document.</p>
 </aside>
-<aside class="footnote brackets" id="id59" role="doc-footnote">
+<aside class="footnote brackets" id="id68" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">4</a><span class="fn-bracket">]</span></span>
 <p>À noter que cette collection est renommée « Transaction » dans la version 6 RC de la solution logicielle Vitam.</p>
 </aside>
-<aside class="footnote brackets" id="id60" role="doc-footnote">
+<aside class="footnote brackets" id="id69" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">5</a><span class="fn-bracket">]</span></span>
 <p>Si la transaction est clôturée (son statut est égal à « READY »), il n’est plus possible de lui adjoindre des unités archivistiques, ainsi que des métadonnées techniques et des objets.</p>
 </aside>
-<aside class="footnote brackets" id="id61" role="doc-footnote">
+<aside class="footnote brackets" id="id70" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">6</a><span class="fn-bracket">]</span></span>
 <p>Pour plus d’informations sur l’enregistrement de l’unité archivistique dans la base de données, il est recommandé de consulter le document <em>Modèle de données</em>.</p>
 </aside>
-<aside class="footnote brackets" id="id62" role="doc-footnote">
+<aside class="footnote brackets" id="id71" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id8">7</a><span class="fn-bracket">]</span></span>
 <p>Si la transaction est clôturée (son statut est égal à « READY »), il n’est plus possible de lui adjoindre des unités archivistiques, ainsi que des métadonnées techniques et des objets.</p>
 </aside>
-<aside class="footnote brackets" id="id63" role="doc-footnote">
+<aside class="footnote brackets" id="id72" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id9">8</a><span class="fn-bracket">]</span></span>
 <p><em>Pour plus d’informations sur l’enregistrement de l’unité archivistique dans la base de données, il est recommandé de consulter le document <em>Modèle de données</em>.</em></p>
 </aside>
-<aside class="footnote brackets" id="id64" role="doc-footnote">
+<aside class="footnote brackets" id="id73" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id10">9</a><span class="fn-bracket">]</span></span>
 <p>Si la transaction est clôturée (son statut est égal à « READY »), il n’est plus possible de lui adjoindre des unités archivistiques, ainsi que des métadonnées techniques et des objets.</p>
 </aside>
-<aside class="footnote brackets" id="id65" role="doc-footnote">
+<aside class="footnote brackets" id="id74" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id11">10</a><span class="fn-bracket">]</span></span>
 <p><em>Pour plus d’informations sur l’enregistrement de l’unité archivistique dans la base de données, il est recommandé de consulter le document <em>Modèle de données</em>.</em></p>
 </aside>
-<aside class="footnote brackets" id="id66" role="doc-footnote">
+<aside class="footnote brackets" id="id75" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id12">11</a><span class="fn-bracket">]</span></span>
 <p>Le fonctionnement est identique à celui de l’import d’arborescence bureautique dans ReSIP.</p>
 </aside>
-<aside class="footnote brackets" id="id67" role="doc-footnote">
+<aside class="footnote brackets" id="id76" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id13">12</a><span class="fn-bracket">]</span></span>
 <p><em>Pour plus d’informations sur l’enregistrement de l’unité archivistique dans la base de données, il est recommandé de consulter le document <em>Modèle de données</em>.</em></p>
 </aside>
-<aside class="footnote brackets" id="id68" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id14">13</a><span class="fn-bracket">]</span></span>
+<aside class="footnote brackets" id="id77" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>13<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id14">1</a>,<a role="doc-backlink" href="#id56">2</a>)</span>
 <p>Se référer à la sous-section 3.2.4.2 « Envoi d’une arborescence bureautique » du présent document.</p>
 </aside>
-<aside class="footnote brackets" id="id69" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id15">14</a><span class="fn-bracket">]</span></span>
+<aside class="footnote brackets" id="id78" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>14<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id15">1</a>,<a role="doc-backlink" href="#id57">2</a>)</span>
 <p>Son modèle est identique au modèle de fichier .csv importé dans ReSIP, hors colonnes ID et ParentID qui ne sont pas supportées par le module de collecte en l’état actuel des développements.</p>
 </aside>
-<aside class="footnote brackets" id="id70" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id16">15</a><span class="fn-bracket">]</span></span>
+<aside class="footnote brackets" id="id79" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>15<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id16">1</a>,<a role="doc-backlink" href="#id58">2</a>)</span>
 <p><em>Pour plus d’informations sur l’enregistrement de l’unité archivistique dans la base de données, il est recommandé de consulter le document <em>Modèle de données</em>.</em></p>
 </aside>
-<aside class="footnote brackets" id="id71" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id17">16</a><span class="fn-bracket">]</span></span>
+<aside class="footnote brackets" id="id80" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>16<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id17">1</a>,<a role="doc-backlink" href="#id59">2</a>)</span>
 <p><em>Pour plus d’informations sur l’enregistrement de l’unité archivistique dans la base de données, il est recommandé de consulter le document <em>Modèle de données</em>.</em></p>
 </aside>
-<aside class="footnote brackets" id="id72" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id24">17</a><span class="fn-bracket">]</span></span>
+<aside class="footnote brackets" id="id81" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>17<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id24">1</a>,<a role="doc-backlink" href="#id60">2</a>)</span>
 <p>Son modèle est identique au modèle de fichier .csv importé dans ReSIP, hors colonnes ID et ParentID qui ne sont pas supportées par le module de collecte en l’état actuel des développements.</p>
 </aside>
-<aside class="footnote brackets" id="id73" role="doc-footnote">
+<aside class="footnote brackets" id="id82" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span>18<span class="fn-bracket">]</span></span>
-<span class="backrefs">(<a role="doc-backlink" href="#id25">1</a>,<a role="doc-backlink" href="#id26">2</a>)</span>
+<span class="backrefs">(<a role="doc-backlink" href="#id25">1</a>,<a role="doc-backlink" href="#id26">2</a>,<a role="doc-backlink" href="#id61">3</a>)</span>
 <p><em>Pour plus d’informations sur l’enregistrement de l’unité archivistique dans la base de données, il est recommandé de consulter le document <em>Modèle de données</em>.</em></p>
 </aside>
-<aside class="footnote brackets" id="id74" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id27">19</a><span class="fn-bracket">]</span></span>
+<aside class="footnote brackets" id="id83" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>19<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id27">1</a>,<a role="doc-backlink" href="#id62">2</a>)</span>
 <p>Le paramétrage de la purge automatique s’effectue depuis le fichier collect.conf. Pour modifier le délai par défaut, il faut modifier les valeurs des paramètres « purgeTransactionThreadFrequency » et « purgeTransactionDelayInMinutes » pour le(s) tenant(s) concerné(s).</p>
 </aside>
-<aside class="footnote brackets" id="id75" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id29">20</a><span class="fn-bracket">]</span></span>
+<aside class="footnote brackets" id="id84" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>20<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id29">1</a>,<a role="doc-backlink" href="#id63">2</a>)</span>
 <p>Le paramétrage de la purge automatique s’effectue depuis le fichier collect.conf. Pour modifier le délai par défaut, il faut modifier les valeurs des paramètres « purgeTransactionThreadFrequency » et « purgeTransactionDelayInMinutes » pour le(s) tenant(s) concerné(s).</p>
 </aside>
-<aside class="footnote brackets" id="id76" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id32">21</a><span class="fn-bracket">]</span></span>
+<aside class="footnote brackets" id="id85" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>21<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id32">1</a>,<a role="doc-backlink" href="#id64">2</a>)</span>
 <p>Se référer à la sous-section « Réouverture » du présent document.</p>
 </aside>
-<aside class="footnote brackets" id="id77" role="doc-footnote">
+<aside class="footnote brackets" id="id86" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id33">22</a><span class="fn-bracket">]</span></span>
 <p>Le paramétrage de la purge automatique s’effectue depuis le fichier collect.conf. Pour modifier le délai par défaut, il faut modifier les valeurs des paramètres « purgeTransactionThreadFrequency » et « purgeTransactionDelayInMinutes » pour le(s) tenant(s) concerné(s).</p>
 </aside>
-<aside class="footnote brackets" id="id78" role="doc-footnote">
+<aside class="footnote brackets" id="id87" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id35">23</a><span class="fn-bracket">]</span></span>
 <p>Ces appels API sont décrits dans le chapitre 3 du présent document, dans la sous-section 3.1.2 « Utilisation des API ».</p>
 </aside>
-<aside class="footnote brackets" id="id79" role="doc-footnote">
+<aside class="footnote brackets" id="id88" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id36">24</a><span class="fn-bracket">]</span></span>
 <p>La partie ci-dessous explicite la grammaire attendue par le format JSON dans le cadre d’un appel API. Des précisions sur le formalisme attendu est également disponible dans le document <em>Modèle de données</em>.</p>
 </aside>
-<aside class="footnote brackets" id="id80" role="doc-footnote">
+<aside class="footnote brackets" id="id89" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id37">25</a><span class="fn-bracket">]</span></span>
 <p>Pour plus d’informations sur les vocabulaires, consulter le document* Ontologie*.</p>
 </aside>
-<aside class="footnote brackets" id="id81" role="doc-footnote">
+<aside class="footnote brackets" id="id90" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id38">26</a><span class="fn-bracket">]</span></span>
 <p>Pour plus d’informations sur ces modélisations particulières, il est recommandé de consulter le document Modèle de données, chapitre 5.1, « Collection Unit ».</p>
 </aside>
-<aside class="footnote brackets" id="id82" role="doc-footnote">
+<aside class="footnote brackets" id="id91" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id39">27</a><span class="fn-bracket">]</span></span>
 <p>Les types des éléments propres au SEDA sont listés dans l’annexe 2 « Types JSON ». Il est conseillé de se reporter à cette annexe, afin de typer correctement les éléments.</p>
 </aside>
-<aside class="footnote brackets" id="id83" role="doc-footnote">
+<aside class="footnote brackets" id="id92" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id40">28</a><span class="fn-bracket">]</span></span>
 <p>La présence de crochets dans le tableau de correspondances indique que le vocabulaire employé dans l’enregistrement peut ou doit se présenter sous la forme d’un tableau ou « array », pouvant contenir un type de valeur en particulier. Le vocabulaire représenté entre crochets est également répétable.</p>
 </aside>
-<aside class="footnote brackets" id="id84" role="doc-footnote">
+<aside class="footnote brackets" id="id93" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id41">29</a><span class="fn-bracket">]</span></span>
 <p>Les types des éléments propres au SEDA sont listés dans l’annexe 2 « Types JSON ». du présent document.</p>
 </aside>
-<aside class="footnote brackets" id="id85" role="doc-footnote">
+<aside class="footnote brackets" id="id94" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id42">30</a><span class="fn-bracket">]</span></span>
 <p>Pour plus d’informations sur ces modélisations particulières, il est recommandé de consulter le document <em>Modèle de données</em>, chapitre 5.1, « Collection Unit ».</p>
 </aside>
-<aside class="footnote brackets" id="id86" role="doc-footnote">
+<aside class="footnote brackets" id="id95" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id43">31</a><span class="fn-bracket">]</span></span>
 <p>En l’état actuel des développements, le champ Comment est non répétable, alors que, dans le SEDA, il l’est.</p>
 </aside>
-<aside class="footnote brackets" id="id87" role="doc-footnote">
+<aside class="footnote brackets" id="id96" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id44">32</a><span class="fn-bracket">]</span></span>
 <p>#management est à employer en lieu et place de la balise Management pour se conformer aux attendus de la solution logicielle Vitam.</p>
 </aside>
-<aside class="footnote brackets" id="id88" role="doc-footnote">
+<aside class="footnote brackets" id="id97" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id45">33</a><span class="fn-bracket">]</span></span>
 <p>Avec un pattern date.</p>
 </aside>
-<aside class="footnote brackets" id="id89" role="doc-footnote">
+<aside class="footnote brackets" id="id98" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id46">34</a><span class="fn-bracket">]</span></span>
 <p>Avec un pattern date.</p>
 </aside>
-<aside class="footnote brackets" id="id90" role="doc-footnote">
+<aside class="footnote brackets" id="id99" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id47">35</a><span class="fn-bracket">]</span></span>
 <p>Simple énumération.</p>
 </aside>
-<aside class="footnote brackets" id="id91" role="doc-footnote">
+<aside class="footnote brackets" id="id100" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id48">36</a><span class="fn-bracket">]</span></span>
 <p>Tableau contenant des éléments de type string.</p>
 </aside>
-<aside class="footnote brackets" id="id92" role="doc-footnote">
+<aside class="footnote brackets" id="id101" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id49">37</a><span class="fn-bracket">]</span></span>
 <p>Avec un pattern date.</p>
 </aside>
-<aside class="footnote brackets" id="id93" role="doc-footnote">
+<aside class="footnote brackets" id="id102" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id50">38</a><span class="fn-bracket">]</span></span>
 <p>Avec un pattern date.</p>
 </aside>
-<aside class="footnote brackets" id="id94" role="doc-footnote">
+<aside class="footnote brackets" id="id103" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id51">39</a><span class="fn-bracket">]</span></span>
 <p>Avec un pattern date.</p>
 </aside>
-<aside class="footnote brackets" id="id95" role="doc-footnote">
+<aside class="footnote brackets" id="id104" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id52">40</a><span class="fn-bracket">]</span></span>
 <p>Le SEDA attend plus précisément un pattern langue.</p>
 </aside>
-<aside class="footnote brackets" id="id96" role="doc-footnote">
+<aside class="footnote brackets" id="id105" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id53">41</a><span class="fn-bracket">]</span></span>
 <p>Le SEDA attend plus précisément un pattern langue.</p>
 </aside>
-<aside class="footnote brackets" id="id97" role="doc-footnote">
+<aside class="footnote brackets" id="id106" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id54">42</a><span class="fn-bracket">]</span></span>
 <p>Avec un pattern date.</p>
 </aside>
-<aside class="footnote brackets" id="id98" role="doc-footnote">
+<aside class="footnote brackets" id="id107" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id55">43</a><span class="fn-bracket">]</span></span>
 <p>Avec un pattern date.</p>
 </aside>
@@ -4178,8 +4190,8 @@ Dans le cas d’un flux automatisé, à l’exception de l’intitulé (« Name
           </div>
 
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
-        <a href="modele_de_workflow.html" class="btn btn-neutral float-left" title="6. Description des workflows et des opérations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
-        <a href="organisation_information.html" class="btn btn-neutral float-right" title="8. Organisation de l’information" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="modele_de_workflow.html" class="btn btn-neutral float-left" title="7. Description des workflows et des opérations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="organisation_information.html" class="btn btn-neutral float-right" title="9. Organisation de l’information" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

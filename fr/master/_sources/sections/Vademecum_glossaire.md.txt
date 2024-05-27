@@ -48,7 +48,7 @@ Rattachement : voir [vademecum Faire un rattachement dans la solution logiciell
 
 Registre des fonds : voir [vademecum Registre des fonds](./Vademecum_registre_fonds.md)
 
-Règles de gestion : voir vademecums [Référentiel des règles de gestion](./Vademecum_regerentiel_rg.md), [Positionner des règles de gestion](./Vademecum_reglesgestion_fonctionnement.md) et [Le calcul des héritages des règles de gestion et l’indexation des échéances](./Vademecum_echeances.md)
+Règles de gestion : voir vademecums [Référentiel des règles de gestion](./Vademecum_referentiel_rg.md), [Positionner des règles de gestion](./Vademecum_reglesgestion_fonctionnement.md) et [Le calcul des héritages des règles de gestion et l’indexation des échéances](./Vademecum_echeances.md)
 
 Scénarios de préservation : voir [vademecum Référentiel des scénarios de préservation](./Vademecum_referentiel_preservation.md)
 

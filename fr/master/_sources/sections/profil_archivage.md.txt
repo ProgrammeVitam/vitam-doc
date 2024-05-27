@@ -576,7 +576,7 @@ Au niveau des références aux listes de codes (CodeListVersions), il faut rempl
         </rng:element>
 ```
 
-À cette fin, il est possible de copier l’[annexe 3](#annexe-3--déclaration-des-références-aux-listes-de-codes-codelistversions) de ce document et de l’insérer dans le profil d’archivage en lieu et place de l’élément englobant <rng:element name="CodeListVersions">…</rng:element>.
+À cette fin, il est possible de copier l’[annexe 3](#annexe-3-declaration-des-references-aux-listes-de-codes-codelistversions) de ce document et de l’insérer dans le profil d’archivage en lieu et place de l’élément englobant <rng:element name="CodeListVersions">…</rng:element>.
 
     - Corrections au niveau des règles de gestion
 
@@ -5399,21 +5399,21 @@ erreur brute: character content of element "Comment" invalid; must be equal to "
 </rng:grammar>
 ```
 
-[^1]: Un exemple de profil d’archivage est présenté dans l’[annexe 2 « Exemples de profil d’archivage »](#annexe-2--exemples-de-profil-darchivage) du présent document.
+[^1]: Un exemple de profil d’archivage est présenté dans l’[annexe 2 « Exemples de profil d’archivage »](#annexe-2-exemples-de-profil-darchivage) du présent document.
 
-[^2]: Pour plus d’informations sur le référentiel des profils d’archivage, consulter le [chapitre « 4.1. Administration d’un référentiel des profils d’archivage »](#administration-dun-référentiel-des-profils-darchivage).
+[^2]: Pour plus d’informations sur le référentiel des profils d’archivage, consulter le [chapitre « 4.1. Administration d’un référentiel des profils d’archivage »](#administration-dun-referentiel-des-profils-darchivage).
 
 [^3]: Pour plus d’informations sur la modélisation de cette collection, consulter le [document VITAM. Modèle de données](./modele_de_donnees.md), chapitre 5.14 « Collection Profile ».
 
 [^4]: Pour plus d’informations sur le processus d’import du référentiel, consulter le [document VITAM. Modèle de workflow](./modele_de_workflow.md), chapitre 5.7 « Workflow d’administration d’un référentiel des profils d’archivage ».
 
-[^5]: Des précisions sur les messages d’erreur sont apportées dans l’[annexe 4 « Liste de messages d’erreur »](#annexe-4--liste-de-messages-derreur) du présent document.
+[^5]: Des précisions sur les messages d’erreur sont apportées dans l’[annexe 4 « Liste de messages d’erreur »](#annexe-4-liste-de-messages-derreur) du présent document.
 
 [^6]: Ce champ est obligatoire seulement s’il est généré par l’application à l’origine de sa création.
 
 [^7]: Seulement quand l’identifiant est généré par l’application à l’origine de la création de la notice de profil d’archivage.
 
-[^8]: Cf [chapitre 4.1.2 « Import du profil d’archivage lui-même »](#import-du-profil-darchivage-lui-même) du présent document.
+[^8]: Cf [chapitre 4.1.2 « Import du profil d’archivage lui-même »](#import-du-profil-darchivage-lui-meme) du présent document.
 
 [^9]: Pour plus d’informations sur la modélisation de cette collection, consulter le [document VITAM. Modèle de données](./modele_de_donnees.md), chapitre « 5.14. Collection Profile ».
 
@@ -5421,40 +5421,40 @@ erreur brute: character content of element "Comment" invalid; must be equal to "
 
 [^11]: Pour plus d’informations sur le processus d’import du référentiel, consulter le [document VITAM. Modèle de workflow](./modele_de_workflow.md), chapitre 5.7 « Workflow d’administration d’un référentiel des profils d’archivage ».
 
-[^12]: Des précisions sur les messages d’erreur sont apportées dans l’[annexe 4 « Liste des messages d’erreur »](#annexe-4--liste-de-messages-derreur) du présent document.
+[^12]: Des précisions sur les messages d’erreur sont apportées dans l’[annexe 4 « Liste des messages d’erreur »](#annexe-4-liste-de-messages-derreur) du présent document.
 
 [^13]: Pour plus d’informations sur cet audit, consulter le document Documentation d’exploitation, chapitre 6.5.2 « Audit sur les collections d’administration ».
 
-[^14]: L’[annexe 4 de ce document](#annexe-4--liste-de-messages-derreur) précise les messages d’erreur remontés par la solution logicielle Vitam lors de ce contrôle.
+[^14]: L’[annexe 4 de ce document](#annexe-4-liste-de-messages-derreur) précise les messages d’erreur remontés par la solution logicielle Vitam lors de ce contrôle.
 
-[^15]: L’[annexe 4 de ce document](#annexe-4--liste-de-messages-derreur) précise les messages d’erreur remontés par la solution logicielle Vitam lors de ce contrôle.
+[^15]: L’[annexe 4 de ce document](#annexe-4-liste-de-messages-derreur) précise les messages d’erreur remontés par la solution logicielle Vitam lors de ce contrôle.
 
 [^16]: Le tableau suivant est une libre adaptation du tableau présenté dans « Fiche pratique n°13 : positionnement de l’archiviste face à un projet de dématérialisation », Association des archivistes français – Groupe AM@E
 
-[^17]: Le service et sa documentation sont disponibles à l’adresse suivante : https://sherpa.francearchives.fr/ (Lien consulté le 16 février 2023).
+[^17]: Le service et sa documentation sont disponibles à l’adresse suivante : <https://sherpa.francearchives.fr/> (Lien consulté le 16 février 2023).
 
-[^18]: Le service est disponible en ligne à l’adresse suivante : https://sherpa.francearchives.fr/ (Lien consulté le 16 février 2023).
+[^18]: Le service est disponible en ligne à l’adresse suivante : <https://sherpa.francearchives.fr/> (Lien consulté le 16 février 2023).
 
 [^19]: Il s’agira alors de modifier a posteriori la valeur sélectionnée. Une autre manière de procéder est de ne rien saisir dans SHERPA. Néanmoins, la modification ultérieure nécessitera de retravailler le langage RNG et de rajouter la valeur attendue.
 
 [^20]: Néanmoins, le service prend en compte les nouveautés présentes dans le SEDA 2.1 et, de fait, produit des fichiers compatibles avec le SEDA 2.1.
 
-[^21]: Pour plus d’informations sur les profils d’unité archivistique, consulter le [document VITAM. Profil d’unité archivistique](./profil_ua).
+[^21]: Pour plus d’informations sur les profils d’unité archivistique, consulter le [document VITAM. Profil d’unité archivistique](./profil_unite_archivistique.md).
 
 [^22]: Cf. [document VITAM. Ontologie](./ontologie.md), chapitre 3.2 « Dans le Standard d’échange des données pour l’archivage (SEDA) ».
 
 [^23]: Se référer à la [section « Corrections au niveau des références aux listes de codes »](#corrections-et-ajouts) du chapitre 5.2.2.2 « Corrections et ajouts » pour plus de précisions.
 
-[^24]: Pour plus d’informations sur les profils d’unité archivistique, consulter le [document VITAM. Profil d’unité archivistique](./profil_ua).
+[^24]: Pour plus d’informations sur les profils d’unité archivistique, consulter le [document VITAM. Profil d’unité archivistique](./profil_unite_archivistique.md).
 
 [^25]: Cf. [document VITAM. Ontologie](./ontologie.md), chapitre 3.2 « Dans le Standard d’échange des données pour l’archivage (SEDA) ».
 
-[^26]: On peut se référer aux profils d’archivage mis en ligne sur le site des Archives de France : https://francearchives.fr/seda/profils.html (Lien consulté le 9 février 2021).
+[^26]: On peut se référer aux profils d’archivage mis en ligne sur le site des Archives de France : <https://francearchives.fr/seda/profils.html> (Lien consulté le 9 février 2021).
 
 [^27]: Cf. Documentation d’exploitation, chapitre 8.2.6.2.2 « Passage des identifiants des référentiels en mode esclave ».
 
-[^28]: Le cas particulier de la modification du fichier RNG ou XSD est traité dans le [chapitre 6.4 « Quand et comment mettre à jour un profil d’archivage »](#quand-et-comment-mettre-à-jour-un-profil-darchivage) du présent document.
+[^28]: Le cas particulier de la modification du fichier RNG ou XSD est traité dans le [chapitre 6.4 « Quand et comment mettre à jour un profil d’archivage »](#quand-et-comment-mettre-a-jour-un-profil-darchivage) du présent document.
 
-[^29]: Le service et sa documentation sont disponibles à l’adresse suivante : https://sherpa.francearchives.fr/ (Lien consulté le  18 février 2022 ).
+[^29]: Le service et sa documentation sont disponibles à l’adresse suivante : <https://sherpa.francearchives.fr/> (Lien consulté le  18 février 2022 ).
 
-[^30]: Le service et sa documentation sont disponibles à l’adresse suivante : https://sherpa.francearchives.fr/ (Lien consulté le 18 février 2022 ).
+[^30]: Le service et sa documentation sont disponibles à l’adresse suivante : <https://sherpa.francearchives.fr/> (Lien consulté le 18 février 2022 ).

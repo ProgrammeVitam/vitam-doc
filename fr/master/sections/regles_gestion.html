@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>13. Règles de gestion &mdash; Vitam documentation fonctionnelle</title>
+  <title>14. Règles de gestion &mdash; Vitam documentation fonctionnelle</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=eea1f72d" />
@@ -23,8 +23,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
-    <link rel="next" title="14. Services producteurs" href="services_prod.html" />
-    <link rel="prev" title="12. Profils d’unité archivistique" href="profil_unite_archivistique.html" /> 
+    <link rel="next" title="15. Services producteurs" href="services_prod.html" />
+    <link rel="prev" title="13. Profils d’unité archivistique" href="profil_unite_archivistique.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -62,94 +62,96 @@
 <li class="toctree-l1"><a class="reference internal" href="gestion_archives_arbo.html">3. Gestion des archives et des arborescences</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gestion_habilitations.html">4. Gestion des habilitations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modele_de_donnees.html">5. Modèle de données</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modele_de_workflow.html">6. Description des workflows et des opérations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="module_de_collecte.html">7. Module de collecte</a></li>
-<li class="toctree-l1"><a class="reference internal" href="organisation_information.html">8. Organisation de l’information</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ontologie.html">9. Ontologie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="preservation.html">10. Gestion de la préservation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="profil_archivage.html">11. Profils d’archivage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="profil_unite_archivistique.html">12. Profils d’unité archivistique</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">13. Règles de gestion</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#introduction">13.1. Introduction</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#documents-de-reference">13.1.1. Documents de référence</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#presentation-du-document">13.1.2. Présentation du document</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_donnees.html#updated-upstream-la-liste-des-types-de-regle-disponibles-est-en-annexe">6. &lt;&lt;&lt;&lt;&lt;&lt;&lt; Updated upstream
+La liste des types de règle disponibles est en annexe.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_workflow.html">7. Description des workflows et des opérations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_de_collecte.html">8. Module de collecte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="organisation_information.html">9. Organisation de l’information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ontologie.html">10. Ontologie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preservation.html">11. Gestion de la préservation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_archivage.html">12. Profils d’archivage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_unite_archivistique.html">13. Profils d’unité archivistique</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">14. Règles de gestion</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">14.1. Introduction</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#documents-de-reference">14.1.1. Documents de référence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#presentation-du-document">14.1.2. Présentation du document</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#presentation-des-regles-de-gestion">13.2. Présentation des règles de gestion</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#description-des-regles-de-gestion">13.2.1. Description des règles de gestion</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#formalisation-des-regles-dans-le-standard-dechanges-de-donnees-pour-larchivage-seda">13.2.2. Formalisation des règles dans le Standard d’échanges de données pour l’archivage (SEDA)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#formalisation-des-regles-dans-la-solution-logicielle-vitam">13.2.3. Formalisation des règles dans la solution logicielle Vitam</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#enregistrement-generique">13.2.3.1. Enregistrement générique</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#enregistrement-parametrable">13.2.3.2. Enregistrement paramétrable</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#mecanismes-mis-en-oeuvre-dans-la-solution-logicielle-vitam">13.3. Mécanismes mis en œuvre dans la solution logicielle Vitam</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#configuration-dune-plate-forme-utilisant-la-solution-logicielle-vitam">13.3.1. Configuration d’une plate-forme utilisant la solution logicielle Vitam</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#configuration-des-durees-minimales-autorisees-dans-le-referentiel-des-regles-de-gestion">13.3.1.1. Configuration des durées minimales autorisées dans le référentiel des règles de gestion</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#configuration-des-niveaux-de-protection-du-secret-acceptes-sur-une-implementation-de-la-solution-logicielle-vitam">13.3.1.2. Configuration des niveaux de protection du secret acceptés sur une implémentation de la solution logicielle Vitam</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#configuration-des-indexations-en-base-des-regles-de-gestion">13.3.1.3. Configuration des indexations en base des règles de gestion</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#administration-du-referentiel-des-regles-de-gestion">13.3.2. Administration du référentiel des règles de gestion</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#presentation-generale-du-referentiel">13.3.2.1. Présentation générale du référentiel</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#controles-effectues-lors-de-limport-et-de-la-mise-a-jour-du-referentiel">13.3.2.2. Contrôles effectués lors de l’import et de la mise à jour du référentiel</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#mise-a-jour-du-referentiel">13.3.2.3. Mise à jour du référentiel</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#sauvegarde-du-referentiel">13.3.2.4. Sauvegarde du référentiel</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#entrees">13.3.3. Entrées</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gestion-des-archives-existantes">13.3.4. Gestion des archives existantes</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#mise-a-jour-des-regles-de-gestion-associees-aux-unites-archivistiques">13.3.4.1. Mise à jour des règles de gestion associées aux unités archivistiques</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#indexation-desindexation-des-regles-de-gestion-heritees">13.3.4.2. Indexation/désindexation des règles de gestion héritées</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#indexation">13.3.4.2.1. Indexation</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#mise-a-jour-de-lindexation">13.3.4.2.2. Mise à jour de l’indexation</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#suppression-de-lindexation-desindexation">13.3.4.2.3. Suppression de l’indexation (désindexation)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#presentation-des-regles-de-gestion">14.2. Présentation des règles de gestion</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#description-des-regles-de-gestion">14.2.1. Description des règles de gestion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#formalisation-des-regles-dans-le-standard-dechanges-de-donnees-pour-larchivage-seda">14.2.2. Formalisation des règles dans le Standard d’échanges de données pour l’archivage (SEDA)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#formalisation-des-regles-dans-la-solution-logicielle-vitam">14.2.3. Formalisation des règles dans la solution logicielle Vitam</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#enregistrement-generique">14.2.3.1. Enregistrement générique</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#enregistrement-parametrable">14.2.3.2. Enregistrement paramétrable</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#acces">13.3.5. Accès</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#calcul-des-regles-a-lacces">13.3.5.1. Calcul des règles à l’accès</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#filtrage-par-contrat-dacces-sur-les-echeances-indexees">13.3.5.2. Filtrage par contrat d’accès sur les échéances indexées</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mecanismes-mis-en-oeuvre-dans-la-solution-logicielle-vitam">14.3. Mécanismes mis en œuvre dans la solution logicielle Vitam</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#configuration-dune-plate-forme-utilisant-la-solution-logicielle-vitam">14.3.1. Configuration d’une plate-forme utilisant la solution logicielle Vitam</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#configuration-des-durees-minimales-autorisees-dans-le-referentiel-des-regles-de-gestion">14.3.1.1. Configuration des durées minimales autorisées dans le référentiel des règles de gestion</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuration-des-niveaux-de-protection-du-secret-acceptes-sur-une-implementation-de-la-solution-logicielle-vitam">14.3.1.2. Configuration des niveaux de protection du secret acceptés sur une implémentation de la solution logicielle Vitam</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuration-des-indexations-en-base-des-regles-de-gestion">14.3.1.3. Configuration des indexations en base des règles de gestion</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#administration-du-referentiel-des-regles-de-gestion">14.3.2. Administration du référentiel des règles de gestion</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#presentation-generale-du-referentiel">14.3.2.1. Présentation générale du référentiel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controles-effectues-lors-de-limport-et-de-la-mise-a-jour-du-referentiel">14.3.2.2. Contrôles effectués lors de l’import et de la mise à jour du référentiel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mise-a-jour-du-referentiel">14.3.2.3. Mise à jour du référentiel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sauvegarde-du-referentiel">14.3.2.4. Sauvegarde du référentiel</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#entrees">14.3.3. Entrées</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gestion-des-archives-existantes">14.3.4. Gestion des archives existantes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#mise-a-jour-des-regles-de-gestion-associees-aux-unites-archivistiques">14.3.4.1. Mise à jour des règles de gestion associées aux unités archivistiques</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#indexation-desindexation-des-regles-de-gestion-heritees">14.3.4.2. Indexation/désindexation des règles de gestion héritées</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#indexation">14.3.4.2.1. Indexation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#mise-a-jour-de-lindexation">14.3.4.2.2. Mise à jour de l’indexation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#suppression-de-lindexation-desindexation">14.3.4.2.3. Suppression de l’indexation (désindexation)</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#conseils-de-mise-en-oeuvre">13.4. Conseils de mise en œuvre</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#comment-elaborer-le-referentiel-des-regles-de-gestion">13.4.1. Comment élaborer le référentiel des règles de gestion ?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#comment-gerer-les-droits-dacces-au-referentiel-des-regles-de-gestion">13.4.2. Comment gérer les droits d’accès au référentiel des règles de gestion ?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#comment-utiliser-les-mecanismes-de-controle-des-metadonnees-offerts-par-la-solution-logicielle-vitam-pour-les-regles-de-gestion">13.4.3. Comment utiliser les mécanismes de contrôle des métadonnées offerts par la solution logicielle Vitam pour les règles de gestion ?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#ou-positionner-les-regles">13.4.4. Où positionner les règles ?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#quand-et-comment-bloquer-lheritage-de-regles">13.4.5. Quand et comment bloquer l’héritage de règles ?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#comment-restituer-sur-une-interface-graphique-les-regles-de-gestion-associees-aux-unites-archivistiques">13.4.6. Comment restituer sur une interface graphique les règles de gestion associées aux unités archivistiques ?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#comment-utiliser-les-regles-de-gestion-associees-aux-unites-archivistiques-pour-gerer-les-droits-dacces-des-utilisateurs">13.4.7. Comment utiliser les règles de gestion associées aux unités archivistiques pour gérer les droits d’accès des utilisateurs ?</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#annexes">13.5. Annexes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#annexe-1-preparer-un-fichier-csv">13.5.1. Annexe 1 : Préparer un fichier CSV</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#caracteristiques-dun-fichier-csv">13.5.1.1. Caractéristiques d’un fichier CSV</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#recommandations">13.5.1.2. Recommandations</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#gestion-dun-fichier-au-format-csv">13.5.1.3. Gestion d’un fichier au format CSV</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#conversion-dun-fichier-au-format-csv">13.5.1.3.1. Conversion d’un fichier au format CSV</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#modification-dun-fichier-au-format-csv">13.5.1.3.2. Modification d’un fichier au format CSV</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#acces">14.3.5. Accès</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#calcul-des-regles-a-lacces">14.3.5.1. Calcul des règles à l’accès</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#filtrage-par-contrat-dacces-sur-les-echeances-indexees">14.3.5.2. Filtrage par contrat d’accès sur les échéances indexées</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#annexe-2-exemple-de-message-archivetransfer-mettant-en-oeuvre-les-differentes-possibilites-dutilisation-des-regles-de-gestion">13.5.2. Annexe 2 : Exemple de message ArchiveTransfer mettant en œuvre les différentes possibilités d’utilisation des règles de gestion</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#annexe-3-exemple-de-requete-pour-recuperer-les-regles-heritees-applicables-a-des-unites-archivistiques">13.5.3. Annexe 3 : Exemple de requête pour récupérer les règles héritées applicables à des unités archivistiques</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#conseils-de-mise-en-oeuvre">14.4. Conseils de mise en œuvre</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#comment-elaborer-le-referentiel-des-regles-de-gestion">14.4.1. Comment élaborer le référentiel des règles de gestion ?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#comment-gerer-les-droits-dacces-au-referentiel-des-regles-de-gestion">14.4.2. Comment gérer les droits d’accès au référentiel des règles de gestion ?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#comment-utiliser-les-mecanismes-de-controle-des-metadonnees-offerts-par-la-solution-logicielle-vitam-pour-les-regles-de-gestion">14.4.3. Comment utiliser les mécanismes de contrôle des métadonnées offerts par la solution logicielle Vitam pour les règles de gestion ?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ou-positionner-les-regles">14.4.4. Où positionner les règles ?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#quand-et-comment-bloquer-lheritage-de-regles">14.4.5. Quand et comment bloquer l’héritage de règles ?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#comment-restituer-sur-une-interface-graphique-les-regles-de-gestion-associees-aux-unites-archivistiques">14.4.6. Comment restituer sur une interface graphique les règles de gestion associées aux unités archivistiques ?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#comment-utiliser-les-regles-de-gestion-associees-aux-unites-archivistiques-pour-gerer-les-droits-dacces-des-utilisateurs">14.4.7. Comment utiliser les règles de gestion associées aux unités archivistiques pour gérer les droits d’accès des utilisateurs ?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#annexes">14.5. Annexes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#annexe-1-preparer-un-fichier-csv">14.5.1. Annexe 1 : Préparer un fichier CSV</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#caracteristiques-dun-fichier-csv">14.5.1.1. Caractéristiques d’un fichier CSV</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#recommandations">14.5.1.2. Recommandations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gestion-dun-fichier-au-format-csv">14.5.1.3. Gestion d’un fichier au format CSV</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#conversion-dun-fichier-au-format-csv">14.5.1.3.1. Conversion d’un fichier au format CSV</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#modification-dun-fichier-au-format-csv">14.5.1.3.2. Modification d’un fichier au format CSV</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="services_prod.html">14. Services producteurs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SIP.html">15. Structuration des <em>Submission Information Packages</em> (SIP)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="DIP.html">16. Structuration des <em>Dissemination Information Packages</em> (DIP)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="stockage.html">17. Gestion de multiples stratégies de stockage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="transfert.html">18. Le transfert avec la solution logicielle Vitam</a></li>
-<li class="toctree-l1"><a class="reference internal" href="valeur_probante.html">19. Conservation de la valeur probante</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#annexe-2-exemple-de-message-archivetransfer-mettant-en-oeuvre-les-differentes-possibilites-dutilisation-des-regles-de-gestion">14.5.2. Annexe 2 : Exemple de message ArchiveTransfer mettant en œuvre les différentes possibilités d’utilisation des règles de gestion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#annexe-3-exemple-de-requete-pour-recuperer-les-regles-heritees-applicables-a-des-unites-archivistiques">14.5.3. Annexe 3 : Exemple de requête pour récupérer les règles héritées applicables à des unités archivistiques</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="services_prod.html">15. Services producteurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SIP.html">16. Structuration des <em>Submission Information Packages</em> (SIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DIP.html">17. Structuration des <em>Dissemination Information Packages</em> (DIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stockage.html">18. Gestion de multiples stratégies de stockage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transfert.html">19. Le transfert avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="valeur_probante.html">20. Conservation de la valeur probante</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">documentation Vitam UI</span></p>
 <ul>
@@ -165,7 +167,9 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="chantier_preservation_validation_format.html">1. Validation du format des fichiers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chantier_identification_format.html">2. Identification des formats de fichiers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chantier_extraction_MD.html">3. Extraction des métadonnées techniques</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_identification_format.html#updated-upstream-les-descriptions-sont-presentees-au-format-html-et-exportables-au-format-xml-elles-sont-en-decembre-2019-au-nombre-de-512-un-exemple-de-fiche-est-fourni-en-annexe-2">3. &lt;&lt;&lt;&lt;&lt;&lt;&lt; Updated upstream
+Les descriptions sont présentées au format HTML et exportables au format XML. Elles sont en décembre 2019 au nombre de 512. Un exemple de fiche est fourni en annexe 2.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_extraction_MD.html">4. Extraction des métadonnées techniques</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Vademecum</span></p>
 <ul>
@@ -214,7 +218,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active"><span class="section-number">13. </span>Règles de gestion</li>
+      <li class="breadcrumb-item active"><span class="section-number">14. </span>Règles de gestion</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/sections/regles_gestion.md.txt" rel="nofollow"> Afficher la source de la page</a>
       </li>
@@ -227,11 +231,11 @@
            <div itemprop="articleBody">
              
   <section id="regles-de-gestion">
-<h1><span class="section-number">13. </span>Règles de gestion<a class="headerlink" href="#regles-de-gestion" title="Lien vers cette rubrique"></a></h1>
+<h1><span class="section-number">14. </span>Règles de gestion<a class="headerlink" href="#regles-de-gestion" title="Lien vers cette rubrique"></a></h1>
 <section id="introduction">
-<h2><span class="section-number">13.1. </span>Introduction<a class="headerlink" href="#introduction" title="Lien vers cette rubrique"></a></h2>
+<h2><span class="section-number">14.1. </span>Introduction<a class="headerlink" href="#introduction" title="Lien vers cette rubrique"></a></h2>
 <section id="documents-de-reference">
-<h3><span class="section-number">13.1.1. </span>Documents de référence<a class="headerlink" href="#documents-de-reference" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">14.1.1. </span>Documents de référence<a class="headerlink" href="#documents-de-reference" title="Lien vers cette rubrique"></a></h3>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>Document</p></th>
@@ -260,7 +264,7 @@
 </table>
 </section>
 <section id="presentation-du-document">
-<h3><span class="section-number">13.1.2. </span>Présentation du document<a class="headerlink" href="#presentation-du-document" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">14.1.2. </span>Présentation du document<a class="headerlink" href="#presentation-du-document" title="Lien vers cette rubrique"></a></h3>
 <p>Le présent document présente les fonctionnalités associées à l’utilisation des règles de gestion dans la solution logicielle Vitam.
 Il s’articule autour des axes suivants :</p>
 <ul class="simple">
@@ -273,9 +277,9 @@ Il ne décrit pas les services mis en œuvre en application des règles, notamme
 </section>
 </section>
 <section id="presentation-des-regles-de-gestion">
-<h2><span class="section-number">13.2. </span>Présentation des règles de gestion<a class="headerlink" href="#presentation-des-regles-de-gestion" title="Lien vers cette rubrique"></a></h2>
+<h2><span class="section-number">14.2. </span>Présentation des règles de gestion<a class="headerlink" href="#presentation-des-regles-de-gestion" title="Lien vers cette rubrique"></a></h2>
 <section id="description-des-regles-de-gestion">
-<h3><span class="section-number">13.2.1. </span>Description des règles de gestion<a class="headerlink" href="#description-des-regles-de-gestion" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">14.2.1. </span>Description des règles de gestion<a class="headerlink" href="#description-des-regles-de-gestion" title="Lien vers cette rubrique"></a></h3>
 <p>Sept catégories de règles de gestion peuvent être associées aux archives destinées à être prises en charge par une plate-forme d’archivage électronique :</p>
 <table class="docutils align-default">
 <thead>
@@ -325,7 +329,7 @@ Il ne décrit pas les services mis en œuvre en application des règles, notamme
 </table>
 </section>
 <section id="formalisation-des-regles-dans-le-standard-dechanges-de-donnees-pour-larchivage-seda">
-<h3><span class="section-number">13.2.2. </span>Formalisation des règles dans le Standard d’échanges de données pour l’archivage (SEDA)<a class="headerlink" href="#formalisation-des-regles-dans-le-standard-dechanges-de-donnees-pour-larchivage-seda" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">14.2.2. </span>Formalisation des règles dans le Standard d’échanges de données pour l’archivage (SEDA)<a class="headerlink" href="#formalisation-des-regles-dans-le-standard-dechanges-de-donnees-pour-larchivage-seda" title="Lien vers cette rubrique"></a></h3>
 <p>La manière de déclarer les règles de gestion applicables aux archives est définie dans la norme NF Z 44‑022, intitulée « Modèle d’Échange de DONnées pour l’Archivage » ou MEDONA, et dans sa déclinaison pour les acteurs du service public, le Standard d’Échanges de Données pour l’Archivage (SEDA).</p>
 <p>La norme NF Z 44‑022 offre la possibilité, pour une unité archivistique donnée, de :</p>
 <ul class="simple">
@@ -461,9 +465,9 @@ Ce blocage de règle peut être :<br>
 <p>Un exemple de bordereau exploitant les différents cas de figures utilisables pour l’expression des règles de gestion et conforme au SEDA 2.1. est fourni en <a class="reference internal" href="#annexes"><span class="xref myst">annexe</span></a>.</p>
 </section>
 <section id="formalisation-des-regles-dans-la-solution-logicielle-vitam">
-<h3><span class="section-number">13.2.3. </span>Formalisation des règles dans la solution logicielle Vitam<a class="headerlink" href="#formalisation-des-regles-dans-la-solution-logicielle-vitam" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">14.2.3. </span>Formalisation des règles dans la solution logicielle Vitam<a class="headerlink" href="#formalisation-des-regles-dans-la-solution-logicielle-vitam" title="Lien vers cette rubrique"></a></h3>
 <section id="enregistrement-generique">
-<h4><span class="section-number">13.2.3.1. </span>Enregistrement générique<a class="headerlink" href="#enregistrement-generique" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">14.2.3.1. </span>Enregistrement générique<a class="headerlink" href="#enregistrement-generique" title="Lien vers cette rubrique"></a></h4>
 <p>Les règles de gestion déclarées dans une unité archivistique sont enregistrées, au même titre que les métadonnées décrivant cette unité, dans la collection « Unit », sous la forme d’enregistrements au format JSON.</p>
 <p>Elles sont enregistrées dans un enregistrement correspondant aux métadonnées d’une unité archivistique en fonction de la manière dont elles sont déclarées dans le bordereau de transfert :</p>
 <ul class="simple">
@@ -593,7 +597,7 @@ Chacune des règles de ce tableau est elle-même composée de plusieurs informat
 </ul>
 </section>
 <section id="enregistrement-parametrable">
-<h4><span class="section-number">13.2.3.2. </span>Enregistrement paramétrable<a class="headerlink" href="#enregistrement-parametrable" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">14.2.3.2. </span>Enregistrement paramétrable<a class="headerlink" href="#enregistrement-parametrable" title="Lien vers cette rubrique"></a></h4>
 <p>La solution logicielle Vitam enregistre également en base à la demande pour chaque unité archivistique les règles de gestion applicables et les échéances de ces règles, que les règles soient déclarées par l’unité archivistique ou héritées d’unités archivistiques parentes.</p>
 <p>Par défaut, sont enregistrés les éléments suivants :</p>
 <ul class="simple">
@@ -1030,7 +1034,7 @@ Ces propriétés sont spécifiques à certaines catégories de règles de gestio
 </section>
 </section>
 <section id="mecanismes-mis-en-oeuvre-dans-la-solution-logicielle-vitam">
-<h2><span class="section-number">13.3. </span>Mécanismes mis en œuvre dans la solution logicielle Vitam<a class="headerlink" href="#mecanismes-mis-en-oeuvre-dans-la-solution-logicielle-vitam" title="Lien vers cette rubrique"></a></h2>
+<h2><span class="section-number">14.3. </span>Mécanismes mis en œuvre dans la solution logicielle Vitam<a class="headerlink" href="#mecanismes-mis-en-oeuvre-dans-la-solution-logicielle-vitam" title="Lien vers cette rubrique"></a></h2>
 <p>La solution logicielle Vitam offre à un service d’archives plusieurs fonctionnalités lui permettant de gérer les règles de gestion associées aux archives :</p>
 <ul class="simple">
 <li><p>la configuration des règles de gestion au niveau de la plate-forme ;</p></li>
@@ -1051,9 +1055,9 @@ Ces propriétés sont spécifiques à certaines catégories de règles de gestio
 <li><p>0 à n enfants pour une unité archivistique.</p></li>
 </ul>
 <section id="configuration-dune-plate-forme-utilisant-la-solution-logicielle-vitam">
-<h3><span class="section-number">13.3.1. </span>Configuration d’une plate-forme utilisant la solution logicielle Vitam<a class="headerlink" href="#configuration-dune-plate-forme-utilisant-la-solution-logicielle-vitam" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">14.3.1. </span>Configuration d’une plate-forme utilisant la solution logicielle Vitam<a class="headerlink" href="#configuration-dune-plate-forme-utilisant-la-solution-logicielle-vitam" title="Lien vers cette rubrique"></a></h3>
 <section id="configuration-des-durees-minimales-autorisees-dans-le-referentiel-des-regles-de-gestion">
-<h4><span class="section-number">13.3.1.1. </span>Configuration des durées minimales autorisées dans le référentiel des règles de gestion<a class="headerlink" href="#configuration-des-durees-minimales-autorisees-dans-le-referentiel-des-regles-de-gestion" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">14.3.1.1. </span>Configuration des durées minimales autorisées dans le référentiel des règles de gestion<a class="headerlink" href="#configuration-des-durees-minimales-autorisees-dans-le-referentiel-des-regles-de-gestion" title="Lien vers cette rubrique"></a></h4>
 <p>Afin de se prémunir contre une alimentation du référentiel des règles de gestion avec des durées trop courtes susceptibles de déclencher des actions indésirables sur la plate-forme (ex. : éliminations) – que cette tentative soit intentionnelle ou non –, il est possible de configurer une durée minimale pour chaque catégorie de règle. La solution logicielle Vitam vérifie alors que la durée saisie pour chaque champ du référentiel des règles de gestion est supérieure ou égale à la durée minimale définie.</p>
 <p>Cette configuration, optionnelle, est établie lors du paramétrage initial de la plate-forme par les administrateurs – fonctionnel pour la définition du besoin et technique<a class="footnote-reference brackets" href="#id23" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></a> pour la saisie réelle des informations – de chaque implémentation de la solution logicielle Vitam et définit, pour chaque tenant et pour chaque catégorie de règle, les durées minimales acceptables.</p>
 <p>Le fichier de configuration<a class="footnote-reference brackets" href="#id24" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>8<span class="fn-bracket">]</span></a> se présente comme suit (exemple fictif) :</p>
@@ -1086,7 +1090,7 @@ Ces propriétés sont spécifiques à certaines catégories de règles de gestio
 </ul>
 </section>
 <section id="configuration-des-niveaux-de-protection-du-secret-acceptes-sur-une-implementation-de-la-solution-logicielle-vitam">
-<h4><span class="section-number">13.3.1.2. </span>Configuration des niveaux de protection du secret acceptés sur une implémentation de la solution logicielle Vitam<a class="headerlink" href="#configuration-des-niveaux-de-protection-du-secret-acceptes-sur-une-implementation-de-la-solution-logicielle-vitam" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">14.3.1.2. </span>Configuration des niveaux de protection du secret acceptés sur une implémentation de la solution logicielle Vitam<a class="headerlink" href="#configuration-des-niveaux-de-protection-du-secret-acceptes-sur-une-implementation-de-la-solution-logicielle-vitam" title="Lien vers cette rubrique"></a></h4>
 <p>Afin de se conformer à la réglementation relative à la protection du secret de la défense nationale et d’éviter les risques de compromission, la solution logicielle Vitam permet de définir, pour une implémentation donnée, les niveaux de protection du secret tolérés sur celle-ci.</p>
 <p>C’est au moment du déploiement de la solution logicielle Vitam que doivent être définis en configuration les niveaux de protection acceptés, notamment si l’implémentation ne doit pas pouvoir prendre en charge des archives classifiées. Cette liste des niveaux de protection acceptés peut être modifiée par la suite par l’administrateur technique<a class="footnote-reference brackets" href="#id25" id="id9" role="doc-noteref"><span class="fn-bracket">[</span>9<span class="fn-bracket">]</span></a>.</p>
 <p>Le fichier de configuration se présente comme suit (exemple fictif)<a class="footnote-reference brackets" href="#id26" id="id10" role="doc-noteref"><span class="fn-bracket">[</span>10<span class="fn-bracket">]</span></a> :</p>
@@ -1103,7 +1107,7 @@ Ces propriétés sont spécifiques à certaines catégories de règles de gestio
 </ul>
 </section>
 <section id="configuration-des-indexations-en-base-des-regles-de-gestion">
-<h4><span class="section-number">13.3.1.3. </span>Configuration des indexations en base des règles de gestion<a class="headerlink" href="#configuration-des-indexations-en-base-des-regles-de-gestion" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">14.3.1.3. </span>Configuration des indexations en base des règles de gestion<a class="headerlink" href="#configuration-des-indexations-en-base-des-regles-de-gestion" title="Lien vers cette rubrique"></a></h4>
 <p>Afin de faciliter la gestion des droits d’accès aux unités archivistiques prises en charge sur la plate-forme, la solution logicielle Vitam offre un service paramétrable permettant d’indexer en base à la demande pour chaque unité archivistique les règles de gestion applicables et les échéances de ces règles, que les règles soient déclarées par l’unité archivistique ou héritées d’unités archivistiques parentes.
 Cette configuration, optionnelle, est établie lors du paramétrage initial de la plate-forme par les administrateurs – fonctionnel pour la définition du besoin et technique<a class="footnote-reference brackets" href="#id27" id="id11" role="doc-noteref"><span class="fn-bracket">[</span>11<span class="fn-bracket">]</span></a> pour la saisie réelle des informations – de chaque implémentation de la solution logicielle Vitam et définit, pour chaque tenant le type d’indexation requis.</p>
 <p>Par défaut, ce service indexe en base, pour chaque unité archivistique<a class="footnote-reference brackets" href="#id28" id="id12" role="doc-noteref"><span class="fn-bracket">[</span>12<span class="fn-bracket">]</span></a> :</p>
@@ -1132,9 +1136,9 @@ Le fichier de configuration se présente comme suit (exemple fictif)<a class="fo
 </section>
 </section>
 <section id="administration-du-referentiel-des-regles-de-gestion">
-<h3><span class="section-number">13.3.2. </span>Administration du référentiel des règles de gestion<a class="headerlink" href="#administration-du-referentiel-des-regles-de-gestion" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">14.3.2. </span>Administration du référentiel des règles de gestion<a class="headerlink" href="#administration-du-referentiel-des-regles-de-gestion" title="Lien vers cette rubrique"></a></h3>
 <section id="presentation-generale-du-referentiel">
-<h4><span class="section-number">13.3.2.1. </span>Présentation générale du référentiel<a class="headerlink" href="#presentation-generale-du-referentiel" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">14.3.2.1. </span>Présentation générale du référentiel<a class="headerlink" href="#presentation-generale-du-referentiel" title="Lien vers cette rubrique"></a></h4>
 <p>La solution logicielle Vitam intègre un référentiel des règles de gestion administrable (import initial ou mise à jour) par un utilisateur doté des droits adéquats (administrateur fonctionnel). Ce référentiel fonctionne en mode « esclave ». Il a pour vocation à être utilisé par la solution logicielle Vitam pour effectuer localement les calculs d’échéances associées aux unités archivistiques prises en charge par le système. Il est propre à chaque tenant de la plate-forme. Il est importé dans la solution logicielle Vitam sous la forme d’un fichier .csv comprenant les colonnes suivantes :</p>
 <table class="docutils align-default">
 <thead>
@@ -1183,10 +1187,10 @@ Le fichier de configuration se présente comme suit (exemple fictif)<a class="fo
 <li><p>séparateur de champ : la virgule ;</p></li>
 <li><p>séparateur de texte : guillemets simples ou doubles, espace vide.</p></li>
 </ul>
-<p>Note : Pour en savoir plus, consulter le document <a class="reference internal" href="modele_de_donnees.html"><span class="std std-doc">VITAM. Modèle de données</span></a>. Chapitre 5. Section 9. Pour plus de précisions sur l’élaboration des fichiers .csv, consulter l’<a class="reference internal" href="#annexe-1--pr%C3%A9parer-un-fichier-csv"><span class="xref myst">annexe 1</span></a>.</p>
+<p>Note : Pour en savoir plus, consulter le document <a class="reference internal" href="modele_de_donnees.html"><span class="std std-doc">VITAM. Modèle de données</span></a>. Chapitre 5. Section 9. Pour plus de précisions sur l’élaboration des fichiers .csv, consulter l’<a class="reference internal" href="#annexe-1-preparer-un-fichier-csv"><span class="xref myst">annexe 1</span></a>.</p>
 </section>
 <section id="controles-effectues-lors-de-limport-et-de-la-mise-a-jour-du-referentiel">
-<h4><span class="section-number">13.3.2.2. </span>Contrôles effectués lors de l’import et de la mise à jour du référentiel<a class="headerlink" href="#controles-effectues-lors-de-limport-et-de-la-mise-a-jour-du-referentiel" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">14.3.2.2. </span>Contrôles effectués lors de l’import et de la mise à jour du référentiel<a class="headerlink" href="#controles-effectues-lors-de-limport-et-de-la-mise-a-jour-du-referentiel" title="Lien vers cette rubrique"></a></h4>
 <p>Lors de l’import initial ou de la mise à jour du référentiel, la solution logicielle Vitam procède aux contrôles suivants :</p>
 <ul class="simple">
 <li><p>vérification de la syntaxe du fichier : toutes les colonnes sont-elles présentes ?</p></li>
@@ -1208,7 +1212,7 @@ Le fichier de configuration se présente comme suit (exemple fictif)<a class="fo
 </ul>
 </section>
 <section id="mise-a-jour-du-referentiel">
-<h4><span class="section-number">13.3.2.3. </span>Mise à jour du référentiel<a class="headerlink" href="#mise-a-jour-du-referentiel" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">14.3.2.3. </span>Mise à jour du référentiel<a class="headerlink" href="#mise-a-jour-du-referentiel" title="Lien vers cette rubrique"></a></h4>
 <p>Lors d’une mise à jour du référentiel sont appliqués les principes suivants :</p>
 <ul class="simple">
 <li><p>échec de la mise à jour si :</p>
@@ -1228,12 +1232,12 @@ Le fichier de configuration se présente comme suit (exemple fictif)<a class="fo
 </ul>
 </section>
 <section id="sauvegarde-du-referentiel">
-<h4><span class="section-number">13.3.2.4. </span>Sauvegarde du référentiel<a class="headerlink" href="#sauvegarde-du-referentiel" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">14.3.2.4. </span>Sauvegarde du référentiel<a class="headerlink" href="#sauvegarde-du-referentiel" title="Lien vers cette rubrique"></a></h4>
 <p>Les différentes versions du référentiel font l’objet d’une sauvegarde sur les offres de stockage utilisées par l’implémentation de la solution logicielle Vitam.</p>
 </section>
 </section>
 <section id="entrees">
-<h3><span class="section-number">13.3.3. </span>Entrées<a class="headerlink" href="#entrees" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">14.3.3. </span>Entrées<a class="headerlink" href="#entrees" title="Lien vers cette rubrique"></a></h3>
 <p>Dans le cadre du processus d’entrée d’un ensemble d’unités archivistiques, suite à la réception d’un message ArchiveTransfer du SEDA, la solution logicielle Vitam effectue les tâches et traitements suivants pour les unités archivistiques déclarant des règles de gestion :</p>
 <ul class="simple">
 <li><p>vérification de la conformité du bordereau avec le schéma par défaut associé à la version 2.1. ou à la version 2.2. du SEDA ou avec les exigences portées dans un profil d’archivage et/ou dans un profil d’unité archivistique ;</p></li>
@@ -1330,9 +1334,9 @@ Le fichier de configuration se présente comme suit (exemple fictif)<a class="fo
 </ul>
 </section>
 <section id="gestion-des-archives-existantes">
-<h3><span class="section-number">13.3.4. </span>Gestion des archives existantes<a class="headerlink" href="#gestion-des-archives-existantes" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">14.3.4. </span>Gestion des archives existantes<a class="headerlink" href="#gestion-des-archives-existantes" title="Lien vers cette rubrique"></a></h3>
 <section id="mise-a-jour-des-regles-de-gestion-associees-aux-unites-archivistiques">
-<h4><span class="section-number">13.3.4.1. </span>Mise à jour des règles de gestion associées aux unités archivistiques<a class="headerlink" href="#mise-a-jour-des-regles-de-gestion-associees-aux-unites-archivistiques" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">14.3.4.1. </span>Mise à jour des règles de gestion associées aux unités archivistiques<a class="headerlink" href="#mise-a-jour-des-regles-de-gestion-associees-aux-unites-archivistiques" title="Lien vers cette rubrique"></a></h4>
 <p>La solution logicielle Vitam permet de mettre à jour les règles de gestion associées aux unités archivistiques :</p>
 <ul class="simple">
 <li><p>soit via une mise à jour des unités archivistiques, à l’unité ou en masse<a class="footnote-reference brackets" href="#id31" id="id15" role="doc-noteref"><span class="fn-bracket">[</span>15<span class="fn-bracket">]</span></a> :</p>
@@ -1366,10 +1370,10 @@ Il est également possible de mettre à jour des règles de gestion au moyen des
 </ul>
 </section>
 <section id="indexation-desindexation-des-regles-de-gestion-heritees">
-<h4><span class="section-number">13.3.4.2. </span>Indexation/désindexation des règles de gestion héritées<a class="headerlink" href="#indexation-desindexation-des-regles-de-gestion-heritees" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">14.3.4.2. </span>Indexation/désindexation des règles de gestion héritées<a class="headerlink" href="#indexation-desindexation-des-regles-de-gestion-heritees" title="Lien vers cette rubrique"></a></h4>
 <p>Afin de permettre aux plates-formes d’archivage de filtrer l’accès aux unités archivistiques en fonction des règles de gestion, la solution logicielle Vitam met en place un service permettant de gérer l’indexation des règles déclarées et héritées par une ou plusieurs unités archivistiques.</p>
 <section id="indexation">
-<h5><span class="section-number">13.3.4.2.1. </span>Indexation<a class="headerlink" href="#indexation" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">14.3.4.2.1. </span>Indexation<a class="headerlink" href="#indexation" title="Lien vers cette rubrique"></a></h5>
 <p>L’indexation des unités archivistiques peut être lancée :</p>
 <ul class="simple">
 <li><p>sur requête par une application utilisant la solution logicielle Vitam ;</p></li>
@@ -1463,7 +1467,7 @@ Il est également possible, en activant le paramétrage correspondant dans le co
 </ul>
 </section>
 <section id="mise-a-jour-de-lindexation">
-<h5><span class="section-number">13.3.4.2.2. </span>Mise à jour de l’indexation<a class="headerlink" href="#mise-a-jour-de-lindexation" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">14.3.4.2.2. </span>Mise à jour de l’indexation<a class="headerlink" href="#mise-a-jour-de-lindexation" title="Lien vers cette rubrique"></a></h5>
 <p>L’indexation des règles déclarées et héritées par une ou plusieurs unités archivistiques est automatiquement invalidée par la solution logicielle Vitam dans les cas suivants :</p>
 <ul class="simple">
 <li><p>mise à jour des métadonnées de gestion d’une unité archivistique ;</p></li>
@@ -1479,15 +1483,15 @@ Il est également possible, en activant le paramétrage correspondant dans le co
 <p>L’indexation invalidée sera recalculée par traitement automatique programmé (batch).</p>
 </section>
 <section id="suppression-de-lindexation-desindexation">
-<h5><span class="section-number">13.3.4.2.3. </span>Suppression de l’indexation (désindexation)<a class="headerlink" href="#suppression-de-lindexation-desindexation" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">14.3.4.2.3. </span>Suppression de l’indexation (désindexation)<a class="headerlink" href="#suppression-de-lindexation-desindexation" title="Lien vers cette rubrique"></a></h5>
 <p>La suppression de l’indexation des unités archivistiques peut être lancée sur requête par une application utilisant la solution logicielle Vitam.</p>
 </section>
 </section>
 </section>
 <section id="acces">
-<h3><span class="section-number">13.3.5. </span>Accès<a class="headerlink" href="#acces" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">14.3.5. </span>Accès<a class="headerlink" href="#acces" title="Lien vers cette rubrique"></a></h3>
 <section id="calcul-des-regles-a-lacces">
-<h4><span class="section-number">13.3.5.1. </span>Calcul des règles à l’accès<a class="headerlink" href="#calcul-des-regles-a-lacces" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">14.3.5.1. </span>Calcul des règles à l’accès<a class="headerlink" href="#calcul-des-regles-a-lacces" title="Lien vers cette rubrique"></a></h4>
 <p>Par défaut, lorsque l’utilisateur demande à accéder au détail d’une unité archivistique, la solution logicielle Vitam retourne :</p>
 <ul class="simple">
 <li><p>les règles déclarées par cette unité archivistique, y compris l’échéance de la règle si la date de départ de son calcul est connue ;</p></li>
@@ -1504,7 +1508,7 @@ Il est également possible, en activant le paramétrage correspondant dans le co
 </ul>
 </li>
 </ul>
-<p>Un exemple de requête pour récupérer les règles applicables à une unité archivistique est proposé en <a class="reference internal" href="#annexe-3--exemple-de-requ%C3%AAte-pour-r%C3%A9cup%C3%A9rer-les-r%C3%A8gles-h%C3%A9rit%C3%A9es-applicables-%C3%A0-des-unit%C3%A9s-archivistiques"><span class="xref myst">annexe 3</span></a>.</p>
+<p>Un exemple de requête pour récupérer les règles applicables à une unité archivistique est proposé en <a class="reference internal" href="#annexe-3-exemple-de-requete-pour-recuperer-les-regles-heritees-applicables-a-des-unites-archivistiques"><span class="xref myst">annexe 3</span></a>.</p>
 <p>Les interfaces de VitamUI utilisent en revanche l’indexation des unités archivistiques pour afficher les règles de gestion. Le résultat en est visible dans l’APP « Recherche et consultation des archives », où il est possible de :</p>
 <ul class="simple">
 <li><p>rechercher des archives portant et/ou héritant de règles,</p></li>
@@ -1514,7 +1518,7 @@ Il est également possible, en activant le paramétrage correspondant dans le co
 <p>En revanche, l’APP « Collecte et préparation des versements » propose les mêmes services uniquement pour les règles portées par les unités archivistiques.</p>
 </section>
 <section id="filtrage-par-contrat-dacces-sur-les-echeances-indexees">
-<h4><span class="section-number">13.3.5.2. </span>Filtrage par contrat d’accès sur les échéances indexées<a class="headerlink" href="#filtrage-par-contrat-dacces-sur-les-echeances-indexees" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">14.3.5.2. </span>Filtrage par contrat d’accès sur les échéances indexées<a class="headerlink" href="#filtrage-par-contrat-dacces-sur-les-echeances-indexees" title="Lien vers cette rubrique"></a></h4>
 <p>Le contrat d’accès permet de filtrer les résultats retournés à l’utilisateur en filtrant sur les échéances des règles de gestion indexées.</p>
 <p>Si le paramétrage correspondant est activé, la solution logicielle ne retournera en réponse à une requête que les unités archivistiques ayant fait l’objet d’une indexation des règles applicables pour lesquelles la ou les règles de gestion sélectionnées dans le contrat d’accès sont échues à la date à laquelle est faite la requête.</p>
 <p>Points d’attention :</p>
@@ -1527,10 +1531,10 @@ Il est également possible, en activant le paramétrage correspondant dans le co
 </section>
 </section>
 <section id="conseils-de-mise-en-oeuvre">
-<h2><span class="section-number">13.4. </span>Conseils de mise en œuvre<a class="headerlink" href="#conseils-de-mise-en-oeuvre" title="Lien vers cette rubrique"></a></h2>
+<h2><span class="section-number">14.4. </span>Conseils de mise en œuvre<a class="headerlink" href="#conseils-de-mise-en-oeuvre" title="Lien vers cette rubrique"></a></h2>
 <p>À l’issue de la réalisation de fonctionnalités concernant les règles de gestion associées aux unités archivistiques, l’équipe projet Vitam est en mesure de fournir quelques recommandations de mise en œuvre.</p>
 <section id="comment-elaborer-le-referentiel-des-regles-de-gestion">
-<h3><span class="section-number">13.4.1. </span>Comment élaborer le référentiel des règles de gestion ?<a class="headerlink" href="#comment-elaborer-le-referentiel-des-regles-de-gestion" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">14.4.1. </span>Comment élaborer le référentiel des règles de gestion ?<a class="headerlink" href="#comment-elaborer-le-referentiel-des-regles-de-gestion" title="Lien vers cette rubrique"></a></h3>
 <p>Le référentiel des règles de gestion décrit dans la section 3.1. peut être alimenté, pour chaque catégorie de règle :</p>
 <ul class="simple">
 <li><p>d’une manière très générique, en se focalisant uniquement sur les durées associées aux règles. À titre d’exemple, il est possible de déclarer, pour les règles d’utilité courante ou les règles d’utilité administrative, des règles correspondant à des durées d’1 an, de 2 ans, de 3 ans, etc. Dans ce cas, la règle pourra être utilisée pour différentes catégories de dossiers ;</p></li>
@@ -1539,7 +1543,7 @@ Il est également possible, en activant le paramétrage correspondant dans le co
 <p>La première solution présente l’avantage de limiter le nombre de règles à administrer ; la seconde, de permettre d’effectuer des mises à jour de règles plus ciblées et de faciliter l’évaluation d’archives éliminables.</p>
 </section>
 <section id="comment-gerer-les-droits-dacces-au-referentiel-des-regles-de-gestion">
-<h3><span class="section-number">13.4.2. </span>Comment gérer les droits d’accès au référentiel des règles de gestion ?<a class="headerlink" href="#comment-gerer-les-droits-dacces-au-referentiel-des-regles-de-gestion" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">14.4.2. </span>Comment gérer les droits d’accès au référentiel des règles de gestion ?<a class="headerlink" href="#comment-gerer-les-droits-dacces-au-referentiel-des-regles-de-gestion" title="Lien vers cette rubrique"></a></h3>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>Intitulé</p></th>
@@ -1572,7 +1576,7 @@ Il est également possible, en activant le paramétrage correspondant dans le co
 </table>
 </section>
 <section id="comment-utiliser-les-mecanismes-de-controle-des-metadonnees-offerts-par-la-solution-logicielle-vitam-pour-les-regles-de-gestion">
-<h3><span class="section-number">13.4.3. </span>Comment utiliser les mécanismes de contrôle des métadonnées offerts par la solution logicielle Vitam pour les règles de gestion ?<a class="headerlink" href="#comment-utiliser-les-mecanismes-de-controle-des-metadonnees-offerts-par-la-solution-logicielle-vitam-pour-les-regles-de-gestion" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">14.4.3. </span>Comment utiliser les mécanismes de contrôle des métadonnées offerts par la solution logicielle Vitam pour les règles de gestion ?<a class="headerlink" href="#comment-utiliser-les-mecanismes-de-controle-des-metadonnees-offerts-par-la-solution-logicielle-vitam-pour-les-regles-de-gestion" title="Lien vers cette rubrique"></a></h3>
 <p>La solution logicielle Vitam met à disposition de ses utilisateurs plusieurs moyens de contrôler les métadonnées enregistrées dans le système :</p>
 <ul class="simple">
 <li><p>une ontologie permet de déclarer les vocabulaires utilisés pour décrire les archives, y compris leurs règles de gestion, ainsi que le type utilisé pour indexer ces vocabulaires dans la base de données ;</p></li>
@@ -1600,7 +1604,7 @@ Seuls les profils d’unités archivistiques et les profils d’archivage permet
 </ul>
 </section>
 <section id="ou-positionner-les-regles">
-<h3><span class="section-number">13.4.4. </span>Où positionner les règles ?<a class="headerlink" href="#ou-positionner-les-regles" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">14.4.4. </span>Où positionner les règles ?<a class="headerlink" href="#ou-positionner-les-regles" title="Lien vers cette rubrique"></a></h3>
 <p>Les règles de gestion applicables aux unités archivistiques peuvent être définies :</p>
 <ul class="simple">
 <li><p>au niveau du profil d’archivage (ArchiveProfile) :</p>
@@ -1647,14 +1651,14 @@ Seuls les profils d’unités archivistiques et les profils d’archivage permet
 </table>
 </section>
 <section id="quand-et-comment-bloquer-lheritage-de-regles">
-<h3><span class="section-number">13.4.5. </span>Quand et comment bloquer l’héritage de règles ?<a class="headerlink" href="#quand-et-comment-bloquer-lheritage-de-regles" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">14.4.5. </span>Quand et comment bloquer l’héritage de règles ?<a class="headerlink" href="#quand-et-comment-bloquer-lheritage-de-regles" title="Lien vers cette rubrique"></a></h3>
 <p>Il est possible de bloquer les règles de gestion déclarées dans le bordereau de transfert lui-même. Le blocage peut être systématique dans une catégorie (PreventInheritance) ou spécifique à une règle donnée (RefNonRuleId). Une règle bloquée au niveau d’une unité archivistique pour empêcher les héritages peut tout à fait être déclarée à nouveau par la même unité archivistique, même si cette utilisation semble peu vraisemblable.</p>
 <p>Il est recommandé d’utiliser la fonctionnalité de blocage d’héritage quand l’unité archivistique et ses « filles » ont des règles spécifiques à appliquer et seulement si des règles ont été définies par ses parentes.</p>
 <p>Il n’est pas recommandé d’utiliser cette fonctionnalité quand la règle héritée par l’unité archivistique de ses parentes s’applique.</p>
 <p>En cas de date de départ différente pour une même règle, la redéclaration de la règle par l’unité archivistique fille sans blocage de l’héritage suffit.</p>
 </section>
 <section id="comment-restituer-sur-une-interface-graphique-les-regles-de-gestion-associees-aux-unites-archivistiques">
-<h3><span class="section-number">13.4.6. </span>Comment restituer sur une interface graphique les règles de gestion associées aux unités archivistiques ?<a class="headerlink" href="#comment-restituer-sur-une-interface-graphique-les-regles-de-gestion-associees-aux-unites-archivistiques" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">14.4.6. </span>Comment restituer sur une interface graphique les règles de gestion associées aux unités archivistiques ?<a class="headerlink" href="#comment-restituer-sur-une-interface-graphique-les-regles-de-gestion-associees-aux-unites-archivistiques" title="Lien vers cette rubrique"></a></h3>
 <p>Afficher les règles de gestion applicables à une unité archivistique sur l’écran présenté à un utilisateur peut se révéler complexe dans les cas suivants :</p>
 <ul class="simple">
 <li><p>quand l’unité archivistique a plusieurs unités archivistiques parentes, elle va hériter de règles de gestion de celles-ci. Les règles des unités archivistiques parentes peuvent être identiques ou différentes. Ainsi, une unité archivistique peut à une date donnée, par le biais des règles de gestion héritées, être éliminable en vertu des règles héritées d’une unité archivistique parente, mais être à conserver définitivement en vertu des règles héritées d’une autre unité archivistique parente. Lors de la conception de l’écran, il conviendra de présenter les règles de manière à expliciter à l’utilisateur cette différence de comportement et l’origine de chaque règle (ex. : éliminable pour tel service producteur et à conserver pour tel autre service producteur) ;</p></li>
@@ -1669,7 +1673,7 @@ Seuls les profils d’unités archivistiques et les profils d’archivage permet
 <p>Il est donc recommandé de porter une grande attention à la définition des écrans.</p>
 </section>
 <section id="comment-utiliser-les-regles-de-gestion-associees-aux-unites-archivistiques-pour-gerer-les-droits-dacces-des-utilisateurs">
-<h3><span class="section-number">13.4.7. </span>Comment utiliser les règles de gestion associées aux unités archivistiques pour gérer les droits d’accès des utilisateurs ?<a class="headerlink" href="#comment-utiliser-les-regles-de-gestion-associees-aux-unites-archivistiques-pour-gerer-les-droits-dacces-des-utilisateurs" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">14.4.7. </span>Comment utiliser les règles de gestion associées aux unités archivistiques pour gérer les droits d’accès des utilisateurs ?<a class="headerlink" href="#comment-utiliser-les-regles-de-gestion-associees-aux-unites-archivistiques-pour-gerer-les-droits-dacces-des-utilisateurs" title="Lien vers cette rubrique"></a></h3>
 <p>Le back-office de la solution logicielle Vitam ne connaît que des utilisateurs applicatifs, et pas des utilisateurs individuels. Or, en vertu de la réglementation en vigueur, tous les utilisateurs individuels n’ont pas les mêmes droits d’accès aux archives. Ce sont les règles de gestion qui vont permettre aux applications utilisant les services de la solution logicielle Vitam de gérer la problématique des accès individuels en application de la réglementation en vigueur.</p>
 <p>Point d’attention : l’implémentation de ces règles de gestion est un point d’attention lors des opérations de transfert. À défaut de renseignement des règles de gestion dans le bordereau de transfert associé à ce transfert ou de règles de gestion par défaut définies au niveau du contrat d’entrée, les restrictions d’accès aux utilisateurs individuels ne pourront être mises en œuvre.</p>
 <p>L’équipe projet Vitam peut fournir à ce stade les recommandations suivantes :</p>
@@ -1713,9 +1717,9 @@ Seuls les profils d’unités archivistiques et les profils d’archivage permet
 </section>
 </section>
 <section id="annexes">
-<h2><span class="section-number">13.5. </span>Annexes<a class="headerlink" href="#annexes" title="Lien vers cette rubrique"></a></h2>
+<h2><span class="section-number">14.5. </span>Annexes<a class="headerlink" href="#annexes" title="Lien vers cette rubrique"></a></h2>
 <section id="annexe-1-preparer-un-fichier-csv">
-<h3><span class="section-number">13.5.1. </span>Annexe 1 : Préparer un fichier CSV<a class="headerlink" href="#annexe-1-preparer-un-fichier-csv" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">14.5.1. </span>Annexe 1 : Préparer un fichier CSV<a class="headerlink" href="#annexe-1-preparer-un-fichier-csv" title="Lien vers cette rubrique"></a></h3>
 <p>La solution logicielle Vitam permet d’importer deux référentiels correspondant à des fichiers CSV :</p>
 <ul class="simple">
 <li><p>le référentiel des règles de gestion,</p></li>
@@ -1728,7 +1732,7 @@ La présente annexe a vocation à :</p>
 <li><p>émettre des recommandations sur les règles à respecter.</p></li>
 </ul>
 <section id="caracteristiques-dun-fichier-csv">
-<h4><span class="section-number">13.5.1.1. </span>Caractéristiques d’un fichier CSV<a class="headerlink" href="#caracteristiques-dun-fichier-csv" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">14.5.1.1. </span>Caractéristiques d’un fichier CSV<a class="headerlink" href="#caracteristiques-dun-fichier-csv" title="Lien vers cette rubrique"></a></h4>
 <p>Un fichier CSV représente des données tabulaires sous forme de valeurs séparées par :
 • un séparateur de champ : virgule,
 • un séparateur de texte : guillemets simples ou doubles, espace vide.
@@ -1786,7 +1790,7 @@ Il existe d’autres séparateurs de champ (point virgule, deux points, tabulati
 </ul>
 </section>
 <section id="recommandations">
-<h4><span class="section-number">13.5.1.2. </span>Recommandations<a class="headerlink" href="#recommandations" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">14.5.1.2. </span>Recommandations<a class="headerlink" href="#recommandations" title="Lien vers cette rubrique"></a></h4>
 <p>La rédaction d’un fichier CSV obéit à un certain nombre de règles à suivre :</p>
 <ul class="simple">
 <li><p>afin de se conformer au format CSV et à l’encodage UTF-8 ;</p></li>
@@ -1913,9 +1917,9 @@ Il existe d’autres séparateurs de champ (point virgule, deux points, tabulati
 </table>
 </section>
 <section id="gestion-dun-fichier-au-format-csv">
-<h4><span class="section-number">13.5.1.3. </span>Gestion d’un fichier au format CSV<a class="headerlink" href="#gestion-dun-fichier-au-format-csv" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">14.5.1.3. </span>Gestion d’un fichier au format CSV<a class="headerlink" href="#gestion-dun-fichier-au-format-csv" title="Lien vers cette rubrique"></a></h4>
 <section id="conversion-dun-fichier-au-format-csv">
-<h5><span class="section-number">13.5.1.3.1. </span>Conversion d’un fichier au format CSV<a class="headerlink" href="#conversion-dun-fichier-au-format-csv" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">14.5.1.3.1. </span>Conversion d’un fichier au format CSV<a class="headerlink" href="#conversion-dun-fichier-au-format-csv" title="Lien vers cette rubrique"></a></h5>
 <p>Les référentiels des règles de gestion et des services agents doivent être au format CSV et encodés en UTF 8.
 Si le fichier d’origine n’est pas au format CSV, il faut suivre la procédure suivante :</p>
 <ul class="simple">
@@ -1942,7 +1946,7 @@ Si le fichier d’origine n’est pas au format CSV, il faut suivre la procédur
 </ul>
 </section>
 <section id="modification-dun-fichier-au-format-csv">
-<h5><span class="section-number">13.5.1.3.2. </span>Modification d’un fichier au format CSV<a class="headerlink" href="#modification-dun-fichier-au-format-csv" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">14.5.1.3.2. </span>Modification d’un fichier au format CSV<a class="headerlink" href="#modification-dun-fichier-au-format-csv" title="Lien vers cette rubrique"></a></h5>
 <p>Les référentiels des règles de gestion et des services agents doivent être au format CSV et encodés en UTF 8.
 Pour modifier un fichier de ce format, il faut suivre la procédure suivante :</p>
 <ul class="simple">
@@ -2007,7 +2011,7 @@ Détail : nom du fichier CSV</p></li>
 </section>
 </section>
 <section id="annexe-2-exemple-de-message-archivetransfer-mettant-en-oeuvre-les-differentes-possibilites-dutilisation-des-regles-de-gestion">
-<h3><span class="section-number">13.5.2. </span>Annexe 2 : Exemple de message ArchiveTransfer mettant en œuvre les différentes possibilités d’utilisation des règles de gestion<a class="headerlink" href="#annexe-2-exemple-de-message-archivetransfer-mettant-en-oeuvre-les-differentes-possibilites-dutilisation-des-regles-de-gestion" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">14.5.2. </span>Annexe 2 : Exemple de message ArchiveTransfer mettant en œuvre les différentes possibilités d’utilisation des règles de gestion<a class="headerlink" href="#annexe-2-exemple-de-message-archivetransfer-mettant-en-oeuvre-les-differentes-possibilites-dutilisation-des-regles-de-gestion" title="Lien vers cette rubrique"></a></h3>
 <p><strong>Nota bene :</strong> le cas présenté ci-dessous est un exemple fictif qui vise simplement à vérifier la bonne mise en œuvre des mécanismes relatifs aux règles de gestion dans la solution logicielle Vitam.</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 <span class="nt">&lt;ArchiveTransfer</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;fr:gouv:culture:archivesdefrance:seda:v2.1&quot;</span>
@@ -3043,7 +3047,7 @@ Détail : nom du fichier CSV</p></li>
 </div>
 </section>
 <section id="annexe-3-exemple-de-requete-pour-recuperer-les-regles-heritees-applicables-a-des-unites-archivistiques">
-<h3><span class="section-number">13.5.3. </span>Annexe 3 : Exemple de requête pour récupérer les règles héritées applicables à des unités archivistiques<a class="headerlink" href="#annexe-3-exemple-de-requete-pour-recuperer-les-regles-heritees-applicables-a-des-unites-archivistiques" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">14.5.3. </span>Annexe 3 : Exemple de requête pour récupérer les règles héritées applicables à des unités archivistiques<a class="headerlink" href="#annexe-3-exemple-de-requete-pour-recuperer-les-regles-heritees-applicables-a-des-unites-archivistiques" title="Lien vers cette rubrique"></a></h3>
 <p>La requête utilisée pour récupérer toute l’arborescence d’une règle est la suivante :</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="err">    </span><span class="w"> </span><span class="nt">&quot;$roots&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
@@ -3272,7 +3276,7 @@ Détail : nom du fichier CSV</p></li>
 </aside>
 <aside class="footnote brackets" id="id22" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">6</a><span class="fn-bracket">]</span></span>
-<p>Pour plus de précisions, consulter la documentation <a class="reference internal" href="#./orga_information"><span class="xref myst">VITAM. Organisation de l’information</span></a>.</p>
+<p>Pour plus de précisions, consulter la documentation <a class="reference internal" href="organisation_information.html"><span class="std std-doc">VITAM. Organisation de l’information</span></a>.</p>
 </aside>
 <aside class="footnote brackets" id="id23" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">7</a><span class="fn-bracket">]</span></span>
@@ -3300,7 +3304,7 @@ Détail : nom du fichier CSV</p></li>
 </aside>
 <aside class="footnote brackets" id="id29" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id13">13</a><span class="fn-bracket">]</span></span>
-<p>Le <a class="reference internal" href="#formalisation-des-r%C3%A8gles-dans-la-solution-logicielle-vitam"><span class="xref myst">chapitre 2.3 du présent document</span></a> présente le résultat de chacun de ces paramétrages.</p>
+<p>Le <a class="reference internal" href="#formalisation-des-regles-dans-la-solution-logicielle-vitam"><span class="xref myst">chapitre 2.3 du présent document</span></a> présente le résultat de chacun de ces paramétrages.</p>
 </aside>
 <aside class="footnote brackets" id="id30" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id14">14</a><span class="fn-bracket">]</span></span>
@@ -3324,8 +3328,8 @@ Détail : nom du fichier CSV</p></li>
           </div>
 
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
-        <a href="profil_unite_archivistique.html" class="btn btn-neutral float-left" title="12. Profils d’unité archivistique" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
-        <a href="services_prod.html" class="btn btn-neutral float-right" title="14. Services producteurs" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="profil_unite_archivistique.html" class="btn btn-neutral float-left" title="13. Profils d’unité archivistique" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="services_prod.html" class="btn btn-neutral float-right" title="15. Services producteurs" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
