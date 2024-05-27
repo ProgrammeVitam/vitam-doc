@@ -219,4 +219,4 @@ Il est possible de modifier un contrat d’entrée utilisé dans un contexte app
 |Avec plusieurs contrats d’entrée|Désactivation d’un seul contrat d’entrée, le temps de procéder à la modification, de manière à ne pas interrompre l’utilisation des autres contrats d’entrée associés au contexte applicatif.|
 |Avec un ou plusieurs contrats d’entrée|Création d’un nouveau contrat d’entrée contenant les modifications à apporter.<br>Association de ce contrat d’entrée au contexte applicatif.<br>Activation de ce contrat d’entrée.<br>Déclaration de ce nouveau contrat d’entrée dans les bordereaux de transfert.<br>Désactivation de l’ancien contrat d’entrée.<br>Suppression du lien entre l’ancien contrat d’entrée et le contexte applicatif.|
 
-Pour aller plus loin, consulter le [document VITAM. Gestion des habilitations](./habilitations.md).
+Pour aller plus loin, consulter le [document VITAM. Gestion des habilitations](./gestion_habilitations.md).

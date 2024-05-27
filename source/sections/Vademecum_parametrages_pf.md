@@ -21,7 +21,7 @@ Identification des besoins de cloisonnement des archives au sein de la plate-for
 La solution logicielle Vitam permet de cloisonner les archives prises en charge via des « espaces » distincts appelés « tenant ». Elle peut être utilisée sans cloisonnement (on parle alors de plate-forme « mono-tenant ») ou avec cloisonnements (on parle alors de plate-forme « multi-tenant »).
 
 Il est recommandé de définir à l’installation de la plate-forme ce paramétrage. Il sera possible de rajouter des tenants par la suite, mais il s’agira alors d’un acte d’exploitation technique nécessitant un arrêt des opérations en cours (entrées, éliminations, transferts…).
-Vademecum lié : [Les tenants dans la solution logicielle Vitam](./Vademecum_tenants.md)
+Vademecum lié : [Les tenants dans la solution logicielle Vitam](./Vademecum_tenant.md)
 
 
 Définition des stratégies de stockage (recommandé)

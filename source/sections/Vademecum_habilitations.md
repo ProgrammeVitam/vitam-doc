@@ -24,7 +24,7 @@ Cela revient à définir pour un utilisateur applicatif les fonctionnalités de 
 
 Exemples de services : récupérer le bordereau de transfert pour une opération d’entrée donnée, envoyer un SIP à Vitam afin qu’il en réalise l’entrée, récupérer le journal de cycle de vie d’une unité archivistique, télécharger un objet, importer un référentiel des scénarios de préservation…
 
-Pour connaître les autres services, consulter l’annexe 3 du [document VITAM. Gestion des habilitations](./habilitations.md).
+Pour connaître les autres services, consulter l’annexe 3 du [document VITAM. Gestion des habilitations](./gestion_habilitations.md).
 
 Le profil de sécurité applicatif détermine les droits suivants :
 - soit un accès à tous les services proposés par la solution logicielle Vitam ;
@@ -177,4 +177,4 @@ La solution logicielle permet de supprimer unitairement certaines habilitations�
 Cette suppression peut avoir un impact sur les interactions entre l’application versante et/ou accédante et la solution logicielle Vitam. Cette opération relève d’une opération d’administration technique.
 Elle fait l’objet d’une journalisation dans le journal des opérations.
 
-Pour en savoir plus, consulter le [document VITAM. Gestion des habilitations](./habilitations.md).
+Pour en savoir plus, consulter le [document VITAM. Gestion des habilitations](./gestion_habilitations.md).

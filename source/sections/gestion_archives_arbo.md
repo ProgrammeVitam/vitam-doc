@@ -841,4 +841,4 @@ Exemple d’enregistrement dans un journal du cycle de vie d’une trace externe
 
 [^39]: Pour plus d’informations, consulter le document [VITAM - Gestion de la préservation](./preservation.md).
 
-[^40]: Les étapes liées à cette opération sont décrites dans la documentation [VITAM - Modèle de workflow](/modele_de_workflow.md), chapitre « Préservation ».
+[^40]: Les étapes liées à cette opération sont décrites dans la documentation [VITAM - Modèle de workflow](./modele_de_workflow.md), chapitre « Préservation ».

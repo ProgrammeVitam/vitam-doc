@@ -3425,21 +3425,21 @@ Ajouter au moins un vocabulaire Beneficiary dans l’unité archivistique, conte
 |18|{"ArchiveUnit":"ID3","ArchiveUnitProfile":"AUP-000005","evDetTechData":"{\"validateUnitReport\":[{\"level\":\"warning\",\"schema\":{\"loadingURI\":\"#\",\"pointer\":\"/properties/Management/properties/AppraisalRule\"},\"domain\":\"syntax\",\"message\":\"the following keywords are unknown and will be ignored: [FinalAction]\",\"ignored\":[\"FinalAction\"]},{\"level\":\"error\",\"schema\":{\"loadingURI\":\"#\",\"pointer\":\"\"},\"instance\":{\"pointer\":\"\"},\"domain\":\"validation\",\"keyword\":\"anyOf\",\"message\":\"instance failed to match at least one required schema among 1\",\"nrSchemas\":1,\"reports\":{\"/anyOf/0\":[{\"level\":\"error\",\"schema\":{\"loadingURI\":\"#\",\"pointer\":\"/anyOf/0\"},\"instance\":{\"pointer\":\"\"},\"domain\":\"validation\",\"keyword\":\"required\",\"message\":\"object has missing required properties ([\\\"ChildrenNumber\\\"])\",\"required\":[\"ChildrenNumber\",\"DescriptionLevel\",\"Management\",\"RecruitmentDate\",\"StartDate\",\"Title\"],\"missing\":[\"ChildrenNumber\"]}]}}]}"}|Absence d’une métadonnée attendue (ChildrenNumber).|Corriger le bordereau de transfert pour rajouter la métadonnée attendue.|
 |19|{"ArchiveUnit":"ID3","ArchiveUnitProfile":"AUP-000005","evDetTechData":"{\"validateUnitReport\":[{\"level\":\"warning\",\"schema\":{\"loadingURI\":\"#\",\"pointer\":\"/properties/Management/properties/AppraisalRule\"},\"domain\":\"syntax\",\"message\":\"the following keywords are unknown and will be ignored: [FinalAction]\",\"ignored\":[\"FinalAction\"]},{\"level\":\"error\",\"schema\":{\"loadingURI\":\"#\",\"pointer\":\"/properties/ChildrenNumber\"},\"instance\":{\"pointer\":\"/ChildrenNumber\"},\"domain\":\"validation\",\"keyword\":\"type\",\"message\":\"instance type (array) does not match any allowed primitive type (allowed: [\\\"integer\\\",\\\"number\\\"])\",\"found\":\"array\",\"expected\":[\"integer\",\"number\"]},{\"level\":\"warning\",\"schema\":{\"loadingURI\":\"#\",\"pointer\":\"/properties/Management/properties/AppraisalRule\"},\"domain\":\"syntax\",\"message\":\"the following keywords are unknown and will be ignored: [FinalAction]\",\"ignored\":[\"FinalAction\"]}]}"}|La valeur du champ ChildrenNumber est incompatible avec le type déclaré dans le profil d’unité archivistique.|Corriger le manifeste du SIP pour rendre la valeur du champ ChildrenNumber compatible avec le type déclaré dans le profil d’unité archivistique.|
 
-[^1]: Un exemple de profil d’unité archivistique est présenté dans l’[annexe 3 « Exemples de profil d’unité archivistique » du présent document](#annexe-3--exemples-de-profil-dunité-archivistique).
+[^1]: Un exemple de profil d’unité archivistique est présenté dans l’[annexe 3 « Exemples de profil d’unité archivistique » du présent document](#annexe-3-exemples-de-profil-dunite-archivistique).
 
-[^2]: Pour plus d’informations sur la rédaction d’un schéma de contrôle, [consulter la section « Schématisation des données à contrôler » du présent document](#schématisation-des-données-à-contrôler).
+[^2]: Pour plus d’informations sur la rédaction d’un schéma de contrôle, [consulter la section « Schématisation des données à contrôler » du présent document](#schematisation-des-donnees-a-controler).
 
 [^3]: Pour plus d’informations sur les vocabulaires, se référer au [document VITAM.Ontologies](./ontologie.md)
 
-[^4]: Un tableau de concordance entre les types définis dans l’ontologie et ceux présents dans un schéma de contrôle JSON est présent dans la [section « Rédaction d’un schéma de contrôle »](#méthode-de-rédaction-dun-schéma-de-contrôle-au-format-json).
+[^4]: Un tableau de concordance entre les types définis dans l’ontologie et ceux présents dans un schéma de contrôle JSON est présent dans la [section « Rédaction d’un schéma de contrôle »](#methode-de-redaction-dun-schema-de-controle-au-format-json).
 
-[^5]: Pour plus d’informations sur le référentiel des profils d’unité archivistique, [consulter la partie « Administration d’un référentiel des profils d’unité archivistique »](#administration-dun-référentiel-des-profils-dunité-archivistique).
+[^5]: Pour plus d’informations sur le référentiel des profils d’unité archivistique, [consulter la partie « Administration d’un référentiel des profils d’unité archivistique »](#administration-dun-referentiel-des-profils-dunite-archivistique).
 
 [^6]: Pour plus d’informations sur la modélisation de cette collection, consulter le [document VITAM. Modèle de données](./modele_de_donnees.md), chapitre « Collection ArchiveUnitProfile ».
 
 [^7]: Pour plus d’informations sur le processus d’import du référentiel, consulter le [document VITAM. Modèle de workflow](./modele_de_workflow.md), chapitre « Workflow d’administration d’un référentiel des profils d’unité archivistique ».
 
-[^8]: Des précisions sur les messages d’erreur sont apportées dans l’[annexe 5 « Messages d’erreur » du présent document](#annexe-5--messages-derreur).
+[^8]: Des précisions sur les messages d’erreur sont apportées dans l’[annexe 5 « Messages d’erreur » du présent document](#annexe-5-messages-derreur).
 
 [^9]: Ce champ est obligatoire seulement s’il est généré par l’application à l’origine de sa création.
 
@@ -3447,29 +3447,29 @@ Ajouter au moins un vocabulaire Beneficiary dans l’unité archivistique, conte
 
 [^11]: Seulement quand l’identifiant est généré par l’application à l’origine de la création du contexte.
 
-[^12]:  Un exemple de chacun de ces deux cas est présenté dans l’[annexe 2 « Exemples de notice détaillée d’un profil d’unité archivistique » du présent document](#annexe-2--exemples-de-notice-détaillée-dun-profil-dunité-archivistique).
+[^12]:  Un exemple de chacun de ces deux cas est présenté dans l’[annexe 2 « Exemples de notice détaillée d’un profil d’unité archivistique » du présent document](#annexe-2-exemples-de-notice-detaillee-dun-profil-dunite-archivistique).
 
-[^13]: Cf [section « Ajout du profil d’unité archivistique lui-même »](#ajout-du-profil-dunité-archivistique-lui-même).
+[^13]: Cf [section « Ajout du profil d’unité archivistique lui-même »](#ajout-du-profil-dunite-archivistique-lui-meme).
 
-[^14]:  Le paramétrage de l’identifiant est décrit dans le [chapitre « Comment paramétrer les identifiants des notices de profil d’unité archivistique ? »](#comment-paramétrer-les-identifiants-des-notices-de-profil-dunité-archivistique).
+[^14]:  Le paramétrage de l’identifiant est décrit dans le [chapitre « Comment paramétrer les identifiants des notices de profil d’unité archivistique ? »](#comment-parametrer-les-identifiants-des-notices-de-profil-dunite-archivistique).
 
-[^15]: Les règles propres à la cohérence des types définis dans un profil d’unité archivistique et dans l’ontologie sont définies dans la [partie « Elaboration d’un schéma de contrôle »](#élaboration-dun-schéma-de-contrôle).
+[^15]: Les règles propres à la cohérence des types définis dans un profil d’unité archivistique et dans l’ontologie sont définies dans la [partie « Elaboration d’un schéma de contrôle »](#elaboration-dun-schema-de-controle).
 
 [^16]: Pour plus d’informations sur le processus d’import du référentiel, consulter le [document VITAM.Modèle de workflow](./modele_de_workflow.md), chapitre « Workflow d’administration d’un référentiel des profils d’unité archivistique ».
 
-[^17]: Des précisions sur les messages d’erreur sont apportées dans l’[annexe 5 « Messages d’erreur » du présent document](#annexe-5--messages-derreur).
+[^17]: Des précisions sur les messages d’erreur sont apportées dans l’[annexe 5 « Messages d’erreur » du présent document](#annexe-5-messages-derreur).
 
 [^18]: Si on a besoin de modifier un profil d’unité archivistique déjà utilisé par au moins une unité archivistique, [consulter la section « Conseils de mise en œuvre » du présent document](#conseils-de-mise-en-œuvre).
 
 [^19]: Pour plus d’informations sur le processus d’import du référentiel, consulter le [document VITAM.Modèle de workflow](./modele_de_workflow.md), chapitre « Workflow d’administration d’un référentiel des profils d’unité archivistique ».
 
-[^20]: Des précisions sur les messages d’erreur sont apportées dans l’[annexe 5 « Messages d’erreur » du présent document](#annexe-5--messages-derreur).
+[^20]: Des précisions sur les messages d’erreur sont apportées dans l’[annexe 5 « Messages d’erreur » du présent document](#annexe-5-messages-derreur).
 
 [^21]: À noter que ce champ doit être obligatoirement présent, mais peut être vide, c’est-à-dire ne contenir aucune information.
 
 [^22]: Pour plus d’informations sur cet audit, consulter le document Documentation d’exploitation, chapitre 6.5.2 « Audit sur les collections d’administration ».
 
-[^23]: Des précisions sur les messages d’erreur sont apportées dans l’[annexe 5 « Messages d’erreur » du présent document](#annexe-5--messages-derreur).
+[^23]: Des précisions sur les messages d’erreur sont apportées dans l’[annexe 5 « Messages d’erreur » du présent document](#annexe-5-messages-derreur).
 
 [^24]:  Le tableau suivant est une libre adaptation du tableau présenté dans « Fiche pratique n°13 : positionnement de l’archiviste face à un projet de dématérialisation », Association des archivistes françcais – groupe AM@E.
 
@@ -3477,15 +3477,15 @@ Ajouter au moins un vocabulaire Beneficiary dans l’unité archivistique, conte
 
 [^26]: En d’autres termes, le schéma de contrôle ne contient que les éléments du SEDA ou de l’ontologie qui feront l’objet d’un contrôle. Il n’est donc pas nécessaire d’y déclarer l’ensemble des éléments attendus par le SEDA et l’ontologie avec des cardinalités 0 – 0 s’ils n’ont pas vocation à être présents dans une unité archivistique à contrôler par un profil d’unité archivistique.
 
-[^27]: Cf [chapitre « Elaboration d'un schéma de contrôle » du présent document](#élaboration-dun-schéma-de-contrôle).
+[^27]: Cf [chapitre « Elaboration d'un schéma de contrôle » du présent document](#elaboration-dun-schema-de-contrôle).
 
-[^28]: Les types des éléments propres au SEDA sont listés dans l’[annexe 4 « Types JSON »](#annexe-4--types-json). Il est conseillé de se reporter à cette annexe, afin de typer correctement les propriétés d’un schéma de contrôle.
+[^28]: Les types des éléments propres au SEDA sont listés dans l’[annexe 4 « Types JSON »](#annexe-4-types-json). Il est conseillé de se reporter à cette annexe, afin de typer correctement les propriétés d’un schéma de contrôle.
 
 [^29]: La présence de crochets dans le tableau de correspondances indique que le vocabulaire employé dans le profil d’unité archivistique peut ou doit se présenter sous la forme d’un tableau ou « array », pouvant contenir un type de valeur en particulier. Le vocabulaire représenté entre crochets est également répétable.
 
-[^30]: Les types des éléments propres au SEDA sont listés dans l’[annexe 4 « Types JSON ». du présent document](#annexe-4--types-json).
+[^30]: Les types des éléments propres au SEDA sont listés dans l’[annexe 4 « Types JSON ». du présent document](#annexe-4-types-json).
 
-[^31]: Cf. supra : mention de la règle générique « definitions », in [chapitre « En-tête d’un schéma de contrôle » du présent document](#élaboration-dun-schéma-de-contrôle).
+[^31]: Cf. supra : mention de la règle générique « definitions », in [chapitre « En-tête d’un schéma de contrôle » du présent document](#elaboration-dun-schema-de-controle).
 
 [^32]: IETF, RFC3339. Date and Time on the Internet : Timestamps, in : https://www.ietf.org/rfc/rfc3339.txt (Dernière consultation : 25 septembre 2018).
 
@@ -3497,7 +3497,7 @@ Ajouter au moins un vocabulaire Beneficiary dans l’unité archivistique, conte
 
 [^36]: Documentation d’exploitation, chapitre 8.2.6.2.2 « Passage des identifiants des référentiels en mode esclave ».
 
-[^37]: Le cas particulier de la modification du fichier RNG ou XSD est traité dans le [chapitre « Quand et comment mettre à jour un profil d’unité archivistique » du présent document](#modification-dun-profil-dunité-archivistique-déclaré-dans-une-unité-archivistique).
+[^37]: Le cas particulier de la modification du fichier RNG ou XSD est traité dans le [chapitre « Quand et comment mettre à jour un profil d’unité archivistique » du présent document](#modification-dun-profil-dunite-archivistique-declare-dans-une-unite-archivistique).
 
 [^38]: #management est à employer en lieu et place de la balise Management dans un schéma de contrôle pour se conformer aux attendus de la solution logicielle Vitam.
 

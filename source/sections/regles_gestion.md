@@ -719,7 +719,7 @@ Le fichier CSV à importer doit avoir les caractéristiques suivantes :
 - séparateur de champ : la virgule ;
 - séparateur de texte : guillemets simples ou doubles, espace vide.
 
-Note : Pour en savoir plus, consulter le document [VITAM. Modèle de données](./modele_de_donnees.md). Chapitre 5. Section 9. Pour plus de précisions sur l’élaboration des fichiers .csv, consulter l’[annexe 1](#annexe-1--préparer-un-fichier-csv).
+Note : Pour en savoir plus, consulter le document [VITAM. Modèle de données](./modele_de_donnees.md). Chapitre 5. Section 9. Pour plus de précisions sur l’élaboration des fichiers .csv, consulter l’[annexe 1](#annexe-1-preparer-un-fichier-csv).
 
 #### Contrôles effectués lors de l’import et de la mise à jour du référentiel
 
@@ -996,7 +996,7 @@ Par défaut, lorsque l’utilisateur demande à accéder au détail d’une unit
     - indication des règles dont l’héritage est bloqué ;
     - indication des catégories de règles pour lesquels l’héritage est bloqué.
 
-Un exemple de requête pour récupérer les règles applicables à une unité archivistique est proposé en [annexe 3](#annexe-3--exemple-de-requête-pour-récupérer-les-règles-héritées-applicables-à-des-unités-archivistiques).
+Un exemple de requête pour récupérer les règles applicables à une unité archivistique est proposé en [annexe 3](#annexe-3-exemple-de-requete-pour-recuperer-les-regles-heritees-applicables-a-des-unites-archivistiques).
 
 Les interfaces de VitamUI utilisent en revanche l’indexation des unités archivistiques pour afficher les règles de gestion. Le résultat en est visible dans l’APP « Recherche et consultation des archives », où il est possible de :
 - rechercher des archives portant et/ou héritant de règles,
@@ -2522,7 +2522,7 @@ Les règles héritées sont remontées par inheritedRule et sont les règles app
 
 [^5]: Ce champ n’est pas formalisé dans le SEDA.
 
-[^6]: Pour plus de précisions, consulter la documentation [VITAM. Organisation de l’information](./orga_information).
+[^6]: Pour plus de précisions, consulter la documentation [VITAM. Organisation de l’information](./organisation_information.md).
 
 [^7]: Pour plus d’informations, consulter le document Document d’installation, chapitres 4.2.5.11 « Durées minimales permettant de contrôler les valeurs saisies » et 4.2.5.12 « Fichiers complémentaires » ; Document d’exploitation, chapitre 8.2.6.2.4 « Configuration du Functional administration ».
 
@@ -2536,7 +2536,7 @@ Les règles héritées sont remontées par inheritedRule et sont les règles app
 
 [^12]: Ce service ne nécessite aucune configuration. Il est présent par défaut.
 
-[^13]: Le [chapitre 2.3 du présent document](#formalisation-des-règles-dans-la-solution-logicielle-vitam) présente le résultat de chacun de ces paramétrages.
+[^13]: Le [chapitre 2.3 du présent document](#formalisation-des-regles-dans-la-solution-logicielle-vitam) présente le résultat de chacun de ces paramétrages.
 
 [^14]: Il s’agit du fichier de configuration intitulé « vitam.conf ».
 
