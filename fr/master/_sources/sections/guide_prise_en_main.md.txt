@@ -13,7 +13,7 @@ Introduction
 |Standard d’échange de données pour l’archivage – SEDA – v. 2.1|06/2018||
 |Standard d’échange de données pour l’archivage – SEDA – v. 2.2|02/2022|Cette nouvelle version du SEDA est intégrée à la solution logicielle Vitam à partir de la V6.RC.|
 |[Vitam – Organisation de l’information](./organisation_information.md)|||
-|[Vitam – Manuel Utilisateur|Décembre 2023||
+|[Vitam – Manuel Utilisateur](https://www.programmevitam.fr/ressources/DocCourante/autres/fonctionnel/VITAM_Manuel_utilisateur.pdf)|Décembre 2023||
 |[Vitam – Services producteurs](./services_prod.md)|||
 |[Vitam – Règles de gestion](./regles_gestion.md)|||
 |[Vitam – Gestion des habilitations](./gestion_habilitations.md)|||

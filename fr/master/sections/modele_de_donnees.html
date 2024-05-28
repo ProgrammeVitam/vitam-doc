@@ -23,7 +23,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
-    <link rel="next" title="7. Description des workflows et des opérations" href="modele_de_workflow.html" />
+    <link rel="next" title="6. Description des workflows et des opérations" href="modele_de_workflow.html" />
     <link rel="prev" title="4. Gestion des habilitations" href="gestion_habilitations.html" /> 
 </head>
 
@@ -242,280 +242,276 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#collection-filerules">5.7.9. Collection FileRules</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#utilisation-de-la-collection-filerules">5.7.9.1. Utilisation de la collection FileRules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exemple-de-json-stocke-en-base-comprenant-lexhaustivite-des-champs-de-la-collection-filerules">5.7.9.2. Exemple de JSON stocké en base comprenant l’exhaustivité des champs de la collection FileRules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id37">5.7.9.3. Détail des champs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#collection-griffin">5.7.10. Collection Griffin</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#utilisation-de-la-collection-griffin">5.7.10.1. Utilisation de la collection Griffin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exemple-dun-fichier-dimport-de-griffon">5.7.10.2. Exemple d’un fichier d’import de griffon</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exemple-de-json-stocke-en-base-comprenant-lexhaustivite-des-champs-de-la-collection-griffins">5.7.10.3. Exemple de JSON stocké en base comprenant l’exhaustivité des champs de la collection Griffins</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id38">5.7.10.4. Détail des champs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#collection-ingestcontract">5.7.11. Collection IngestContract</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id39">5.7.11.1. Utilisation de la collection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exemple-dun-fichier-dimport-de-contrat">5.7.11.2. Exemple d’un fichier d’import de contrat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exemple-de-json-stocke-en-base-comprenant-lexhaustivite-des-champs-de-la-collection-ingestcontract">5.7.11.3. Exemple de JSON stocké en base comprenant l’exhaustivité des champs de la collection IngestContract</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#detail-des-champs-de-la-collection-ingestcontract">5.7.11.4. Détail des champs de la collection IngestContract</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#collection-managementcontract">5.7.12. Collection ManagementContract</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#utilisation-de-la-collection-managementcontract">5.7.12.1. Utilisation de la collection ManagementContract</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exemple-dun-fichier-dimport-de-contrat-de-gestion">5.7.12.2. Exemple d’un fichier d’import de contrat de gestion</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exemple-de-json-stocke-en-base-comprenant-lexhaustivite-des-champs-de-la-collection-managementcontract">5.7.12.3. Exemple de JSON stocké en base comprenant l’exhaustivité des champs de la collection ManagementContract</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id40">5.7.12.4. Détail des champs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#collection-ontology">5.7.13. Collection Ontology</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id41">5.7.13.1. Utilisation de la collection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exemple-dun-fichier-dimport-dontology">5.7.13.2. Exemple d’un fichier d’import d’ontology</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#detail-des-champs-de-la-collection-ontology">5.7.13.3. Détail des champs de la collection Ontology</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#collection-schema">5.7.14. Collection Schema</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#utilisation-de-la-collection-schema">5.7.14.1. Utilisation de la collection Schema</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#champs">5.7.15. Champs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#collection-preservationscenario">5.7.16. Collection PreservationScenario</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#utilisation-de-la-collection-preservationscenario">5.7.16.1. Utilisation de la collection PreservationScenario</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exemple-dun-fichier-dimport-de-scenario-de-preservation">5.7.16.2. Exemple d’un fichier d’import de scénario de préservation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exemple-de-json-stocke-en-base-comprenant-lexhaustivite-des-champs-de-la-collection-preservationscenario">5.7.16.3. Exemple de JSON stocké en base comprenant l’exhaustivité des champs de la collection PreservationScenario</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id42">5.7.16.4. Détail des champs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#collection-profile">5.7.17. Collection Profile</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#utilisation-de-la-collection-profile">5.7.17.1. Utilisation de la collection Profile</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exemple-de-json-stocke-en-base-comprenant-lexhaustivite-des-champs-de-la-collection-profile">5.7.17.2. Exemple de JSON stocké en base comprenant l’exhaustivité des champs de la collection Profile</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id43">5.7.17.3. Détail des champs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#collection-securityprofile">5.7.18. Collection SecurityProfile</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id44">5.7.18.1. Utilisation de la collection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id45">5.7.18.2. Exemple de JSON stocké en base comprenant l’exhaustivité des champs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id46">5.7.18.3. Détail des champs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#collection-vitamsequence">5.7.19. Collection VitamSequence</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id47">5.7.19.1. Utilisation de la collection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id48">5.7.19.2. Exemple de JSON stocké en base comprenant l’exhaustivité des champs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id49">5.7.19.3. Détail des champs</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id50">5.7.20. Collection Offset</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id51">5.7.20.1. Utilisation de la collection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id52">5.7.20.2. Exemple de JSON stocké en base comprenant l’exhaustivité des champs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id53">5.7.20.3. Détail des champs</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#base-report">5.8. Base Report</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#collection-auditobjectgroup">5.8.1. Collection AuditObjectGroup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id54">5.8.1.1. Utilisation de la collection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id55">5.8.1.2. Détail des champs</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="#updated-upstream-la-liste-des-types-de-regle-disponibles-est-en-annexe">6. &lt;&lt;&lt;&lt;&lt;&lt;&lt; Updated upstream
-La liste des types de règle disponibles est en annexe.</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#exemple-de-json-stocke-en-base-comprenant-lexhaustivite-des-champs-de-la-collection-filerules">6.1. Exemple de JSON stocké en base comprenant l’exhaustivité des champs de la collection FileRules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id37">6.2. Détail des champs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#collection-griffin">6.3. Collection Griffin</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#utilisation-de-la-collection-griffin">6.3.1. Utilisation de la collection Griffin</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#exemple-dun-fichier-dimport-de-griffon">6.3.2. Exemple d’un fichier d’import de griffon</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#exemple-de-json-stocke-en-base-comprenant-lexhaustivite-des-champs-de-la-collection-griffins">6.3.3. Exemple de JSON stocké en base comprenant l’exhaustivité des champs de la collection Griffins</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id38">6.3.4. Détail des champs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#collection-eliminationactionunit">5.8.2. Collection EliminationActionUnit</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id56">5.8.2.1. Utilisation de la collection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id57">5.8.2.2. Détail des champs</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#collection-ingestcontract">6.4. Collection IngestContract</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id39">6.4.1. Utilisation de la collection</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#exemple-dun-fichier-dimport-de-contrat">6.4.2. Exemple d’un fichier d’import de contrat</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#exemple-de-json-stocke-en-base-comprenant-lexhaustivite-des-champs-de-la-collection-ingestcontract">6.4.3. Exemple de JSON stocké en base comprenant l’exhaustivité des champs de la collection IngestContract</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#detail-des-champs-de-la-collection-ingestcontract">6.4.4. Détail des champs de la collection IngestContract</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#collection-eliminationactionobjectgroup">5.8.3. Collection EliminationActionObjectGroup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id58">5.8.3.1. Utilisation de la collection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id59">5.8.3.2. Détail des champs</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#collection-managementcontract">6.5. Collection ManagementContract</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#utilisation-de-la-collection-managementcontract">6.5.1. Utilisation de la collection ManagementContract</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#exemple-dun-fichier-dimport-de-contrat-de-gestion">6.5.2. Exemple d’un fichier d’import de contrat de gestion</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#exemple-de-json-stocke-en-base-comprenant-lexhaustivite-des-champs-de-la-collection-managementcontract">6.5.3. Exemple de JSON stocké en base comprenant l’exhaustivité des champs de la collection ManagementContract</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id40">6.5.4. Détail des champs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#collection-preservationreport">5.8.4. Collection PreservationReport</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id60">5.8.4.1. Utilisation de la collection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id61">5.8.4.2. Détail des champs</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#collection-ontology">6.6. Collection Ontology</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id41">6.6.1. Utilisation de la collection</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#exemple-dun-fichier-dimport-dontology">6.6.2. Exemple d’un fichier d’import d’ontology</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#detail-des-champs-de-la-collection-ontology">6.6.3. Détail des champs de la collection Ontology</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#collection-bulkupdateunitmetadatareport">5.8.5. Collection BulkUpdateUnitMetadataReport</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id62">5.8.5.1. Utilisation de la collection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id63">5.8.5.2. Détail des champs</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#collection-schema">6.7. Collection Schema</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#utilisation-de-la-collection-schema">6.7.1. Utilisation de la collection Schema</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#collection-deletegotversionsreport">5.8.6. Collection DeleteGotVersionsReport</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id64">5.8.6.1. Utilisation de la collection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id65">5.8.6.2. Détail des champs</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#champs">6.8. Champs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#collection-preservationscenario">6.9. Collection PreservationScenario</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#utilisation-de-la-collection-preservationscenario">6.9.1. Utilisation de la collection PreservationScenario</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#exemple-dun-fichier-dimport-de-scenario-de-preservation">6.9.2. Exemple d’un fichier d’import de scénario de préservation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#exemple-de-json-stocke-en-base-comprenant-lexhaustivite-des-champs-de-la-collection-preservationscenario">6.9.3. Exemple de JSON stocké en base comprenant l’exhaustivité des champs de la collection PreservationScenario</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id42">6.9.4. Détail des champs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#collection-evidenceauditreport">5.8.7. Collection EvidenceAuditReport</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id66">5.8.7.1. Utilisation de la collection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id67">5.8.7.2. Détail des champs</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#collection-profile">6.10. Collection Profile</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#utilisation-de-la-collection-profile">6.10.1. Utilisation de la collection Profile</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#exemple-de-json-stocke-en-base-comprenant-lexhaustivite-des-champs-de-la-collection-profile">6.10.2. Exemple de JSON stocké en base comprenant l’exhaustivité des champs de la collection Profile</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id43">6.10.3. Détail des champs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#collection-extractedmetadata">5.8.8. Collection ExtractedMetadata</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id68">5.8.8.1. Utilisation de la collection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id69">5.8.8.2. Détail des champs</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#collection-securityprofile">6.11. Collection SecurityProfile</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id44">6.11.1. Utilisation de la collection</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id45">6.11.2. Exemple de JSON stocké en base comprenant l’exhaustivité des champs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id46">6.11.3. Détail des champs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#collection-invalidunits">5.8.9. Collection InvalidUnits</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id70">5.8.9.1. Utilisation de la collection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id71">5.8.9.2. Détail des champs</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#collection-vitamsequence">6.12. Collection VitamSequence</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id47">6.12.1. Utilisation de la collection</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id48">6.12.2. Exemple de JSON stocké en base comprenant l’exhaustivité des champs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id49">6.12.3. Détail des champs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#collection-purgeobjectgroup">5.8.10. Collection PurgeObjectGroup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id72">5.8.10.1. Utilisation de la collection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id73">5.8.10.2. Détail des champs</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id50">6.13. Collection Offset</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id51">6.13.1. Utilisation de la collection</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id52">6.13.2. Exemple de JSON stocké en base comprenant l’exhaustivité des champs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id53">6.13.3. Détail des champs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#collection-purgeunit">5.8.11. Collection PurgeUnit</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id74">5.8.11.1. Utilisation de la collection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id75">5.8.11.2. Détail des champs</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#base-report">6.14. Base Report</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#collection-auditobjectgroup">6.14.1. Collection AuditObjectGroup</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id54">6.14.1.1. Utilisation de la collection</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id55">6.14.1.2. Détail des champs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#collection-traceabilityreport">5.8.12. Collection TraceabilityReport</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id76">5.8.12.1. Utilisation de la collection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id77">5.8.12.2. Détail des champs</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#collection-eliminationactionunit">6.14.2. Collection EliminationActionUnit</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id56">6.14.2.1. Utilisation de la collection</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id57">6.14.2.2. Détail des champs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#collection-transferreplyunit">5.8.13. Collection TransferReplyUnit</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id78">5.8.13.1. Utilisation de la collection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id79">5.8.13.2. Détail des champs</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#collection-eliminationactionobjectgroup">6.14.3. Collection EliminationActionObjectGroup</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id58">6.14.3.1. Utilisation de la collection</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id59">6.14.3.2. Détail des champs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#collection-updateunitreport">5.8.14. Collection UpdateUnitReport</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id80">5.8.14.1. Utilisation de la collection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id81">5.8.14.2. Détail des champs</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#collection-preservationreport">6.14.4. Collection PreservationReport</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id60">6.14.4.1. Utilisation de la collection</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id61">6.14.4.2. Détail des champs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id82">5.8.15. Collection BulkUpdateUnitMetadataReport</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id83">5.8.15.1. Utilisation de la collection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id84">5.8.15.2. Détail des champs</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#collection-bulkupdateunitmetadatareport">6.14.5. Collection BulkUpdateUnitMetadataReport</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id62">6.14.5.1. Utilisation de la collection</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id63">6.14.5.2. Détail des champs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id85">5.8.16. Collection DeleteGotVersionsReport</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id86">5.8.16.1. Utilisation de la collection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id87">5.8.16.2. Détail des champs</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#collection-deletegotversionsreport">6.14.6. Collection DeleteGotVersionsReport</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id64">6.14.6.1. Utilisation de la collection</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id65">6.14.6.2. Détail des champs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id88">5.8.17. Collection EvidenceAuditReport</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id89">5.8.17.1. Utilisation de la collection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id90">5.8.17.2. Détail des champs</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#collection-evidenceauditreport">6.14.7. Collection EvidenceAuditReport</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id66">6.14.7.1. Utilisation de la collection</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id67">6.14.7.2. Détail des champs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id91">5.8.18. Collection ExtractedMetadata</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id92">5.8.18.1. Utilisation de la collection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id93">5.8.18.2. Détail des champs</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#collection-extractedmetadata">6.14.8. Collection ExtractedMetadata</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id68">6.14.8.1. Utilisation de la collection</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id69">6.14.8.2. Détail des champs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id94">5.8.19. Collection InvalidUnits</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id95">5.8.19.1. Utilisation de la collection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id96">5.8.19.2. Détail des champs</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#collection-invalidunits">6.14.9. Collection InvalidUnits</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id70">6.14.9.1. Utilisation de la collection</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id71">6.14.9.2. Détail des champs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id97">5.8.20. Collection PurgeObjectGroup</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id98">5.8.20.1. Utilisation de la collection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id99">5.8.20.2. Détail des champs</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#collection-purgeobjectgroup">6.14.10. Collection PurgeObjectGroup</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id72">6.14.10.1. Utilisation de la collection</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id73">6.14.10.2. Détail des champs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id100">5.8.21. Collection PurgeUnit</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id101">5.8.21.1. Utilisation de la collection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id102">5.8.21.2. Détail des champs</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#collection-purgeunit">6.14.11. Collection PurgeUnit</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id74">6.14.11.1. Utilisation de la collection</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id75">6.14.11.2. Détail des champs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id103">5.8.22. Collection TraceabilityReport</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id104">5.8.22.1. Utilisation de la collection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id105">5.8.22.2. Détail des champs</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#collection-traceabilityreport">6.14.12. Collection TraceabilityReport</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id76">6.14.12.1. Utilisation de la collection</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id77">6.14.12.2. Détail des champs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id106">5.8.23. Collection TransferReplyUnit</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id107">5.8.23.1. Utilisation de la collection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id108">5.8.23.2. Détail des champs</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#collection-transferreplyunit">6.14.13. Collection TransferReplyUnit</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id78">6.14.13.1. Utilisation de la collection</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id79">6.14.13.2. Détail des champs</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#collection-updateunitreport">6.14.14. Collection UpdateUnitReport</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id80">6.14.14.1. Utilisation de la collection</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id81">6.14.14.2. Détail des champs</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#id82">6.14.15. Collection BulkUpdateUnitMetadataReport</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id83">6.14.15.1. Utilisation de la collection</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id84">6.14.15.2. Détail des champs</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#id85">6.14.16. Collection DeleteGotVersionsReport</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id86">6.14.16.1. Utilisation de la collection</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id87">6.14.16.2. Détail des champs</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#id88">6.14.17. Collection EvidenceAuditReport</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id89">6.14.17.1. Utilisation de la collection</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id90">6.14.17.2. Détail des champs</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#id91">6.14.18. Collection ExtractedMetadata</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id92">6.14.18.1. Utilisation de la collection</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id93">6.14.18.2. Détail des champs</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#id94">6.14.19. Collection InvalidUnits</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id95">6.14.19.1. Utilisation de la collection</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id96">6.14.19.2. Détail des champs</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#id97">6.14.20. Collection PurgeObjectGroup</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id98">6.14.20.1. Utilisation de la collection</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id99">6.14.20.2. Détail des champs</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#id100">6.14.21. Collection PurgeUnit</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id101">6.14.21.1. Utilisation de la collection</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id102">6.14.21.2. Détail des champs</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#id103">6.14.22. Collection TraceabilityReport</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id104">6.14.22.1. Utilisation de la collection</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id105">6.14.22.2. Détail des champs</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#id106">6.14.23. Collection TransferReplyUnit</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id107">6.14.23.1. Utilisation de la collection</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id108">6.14.23.2. Détail des champs</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#id109">6.14.24. Collection UpdateUnitReport</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id110">6.14.24.1. Utilisation de la collection</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id111">6.14.24.2. Détail des champs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id109">5.8.24. Collection UpdateUnitReport</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id110">5.8.24.1. Utilisation de la collection</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id111">5.8.24.2. Détail des champs</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#base-offer">6.15. Base Offer</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#collection-offerlog">6.15.1. Collection OfferLog</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#utilisation-de-la-collection-offerlog">6.15.1.1. Utilisation de la collection OfferLog</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id112">6.15.1.2. Exemple de JSON stocké en base comprenant l’exhaustivité des champs</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id113">6.15.1.3. Détail des champs du JSON stocké dans la collection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#base-offer">5.9. Base Offer</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#collection-offerlog">5.9.1. Collection OfferLog</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#utilisation-de-la-collection-offerlog">5.9.1.1. Utilisation de la collection OfferLog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id112">5.9.1.2. Exemple de JSON stocké en base comprenant l’exhaustivité des champs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id113">5.9.1.3. Détail des champs du JSON stocké dans la collection</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#collection-compactedofferlog">6.15.2. Collection CompactedOfferLog</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#utilisation-de-la-collection-compactedofferlog">6.15.2.1. Utilisation de la collection CompactedOfferLog</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id114">6.15.2.2. Exemple de JSON stocké en base comprenant l’exhaustivité des champs</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id115">6.15.2.3. Détail des champs du JSON stocké dans la collection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#collection-compactedofferlog">5.9.2. Collection CompactedOfferLog</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#utilisation-de-la-collection-compactedofferlog">5.9.2.1. Utilisation de la collection CompactedOfferLog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id114">5.9.2.2. Exemple de JSON stocké en base comprenant l’exhaustivité des champs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id115">5.9.2.3. Détail des champs du JSON stocké dans la collection</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#collection-offersequence">6.15.3. Collection OfferSequence</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#utilisation-de-la-collection-offersequence">6.15.3.1. Utilisation de la collection OfferSequence</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id116">6.15.3.2. Exemple de JSON stocké en base comprenant l’exhaustivité des champs</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id117">6.15.3.3. Détail des champs du JSON stocké dans la collection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#collection-offersequence">5.9.3. Collection OfferSequence</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#utilisation-de-la-collection-offersequence">5.9.3.1. Utilisation de la collection OfferSequence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id116">5.9.3.2. Exemple de JSON stocké en base comprenant l’exhaustivité des champs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id117">5.9.3.3. Détail des champs du JSON stocké dans la collection</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#collection-tapecatalog-offre-froide">6.15.4. Collection TapeCatalog (offre froide)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#utilisation-de-la-collection-tapecatalog">6.15.4.1. Utilisation de la collection TapeCatalog</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id118">6.15.4.2. Exemple de JSON stocké en base comprenant l’exhaustivité des champs</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id119">6.15.4.3. Détail des champs du JSON stocké dans la collection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#collection-tapecatalog-offre-froide">5.9.4. Collection TapeCatalog (offre froide)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#utilisation-de-la-collection-tapecatalog">5.9.4.1. Utilisation de la collection TapeCatalog</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id118">5.9.4.2. Exemple de JSON stocké en base comprenant l’exhaustivité des champs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id119">5.9.4.3. Détail des champs du JSON stocké dans la collection</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#collections-tapequeuemessage-offre-froide">6.15.5. Collections TapeQueueMessage (offre froide)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#utilisation-de-la-collection-tapequeuemessage">6.15.5.1. Utilisation de la collection TapeQueueMessage</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#exemples-de-json-stockes-en-base-comprenant-lexhaustivite-des-champs">6.15.5.2. Exemples de JSON stockés en base comprenant l’exhaustivité des champs</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id120">6.15.5.3. Détail des champs du JSON stocké dans la collection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#collections-tapequeuemessage-offre-froide">5.9.5. Collections TapeQueueMessage (offre froide)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#utilisation-de-la-collection-tapequeuemessage">5.9.5.1. Utilisation de la collection TapeQueueMessage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exemples-de-json-stockes-en-base-comprenant-lexhaustivite-des-champs">5.9.5.2. Exemples de JSON stockés en base comprenant l’exhaustivité des champs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id120">5.9.5.3. Détail des champs du JSON stocké dans la collection</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#collection-tapeobjectreferential-offre-froide">6.15.6. Collection TapeObjectReferential (offre froide)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#utilisation-de-la-collection-tapeobjectreferential">6.15.6.1. Utilisation de la collection TapeObjectReferential</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id121">6.15.6.2. Exemple de JSON stocké en base comprenant l’exhaustivité des champs</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id122">6.15.6.3. Détail des champs du JSON stocké dans la collection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#collection-tapeobjectreferential-offre-froide">5.9.6. Collection TapeObjectReferential (offre froide)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#utilisation-de-la-collection-tapeobjectreferential">5.9.6.1. Utilisation de la collection TapeObjectReferential</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id121">5.9.6.2. Exemple de JSON stocké en base comprenant l’exhaustivité des champs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id122">5.9.6.3. Détail des champs du JSON stocké dans la collection</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#collection-tapearchivereferential-offre-froide">6.15.7. Collection TapeArchiveReferential (offre froide)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#utilisation-de-la-collection-tapearchivereferential">6.15.7.1. Utilisation de la collection TapeArchiveReferential</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#exemples-de-json-stockes-en-base-comprenant-les-differents-cas-possibles">6.15.7.2. Exemples de JSON stockés en base comprenant les différents cas possibles</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id123">6.15.7.3. Détail des champs du JSON stocké dans la collection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#collection-tapearchivereferential-offre-froide">5.9.7. Collection TapeArchiveReferential (offre froide)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#utilisation-de-la-collection-tapearchivereferential">5.9.7.1. Utilisation de la collection TapeArchiveReferential</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exemples-de-json-stockes-en-base-comprenant-les-differents-cas-possibles">5.9.7.2. Exemples de JSON stockés en base comprenant les différents cas possibles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id123">5.9.7.3. Détail des champs du JSON stocké dans la collection</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#collection-tapeaccessrequestreferential-offre-froide">6.15.8. Collection TapeAccessRequestReferential (offre froide)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#utilisation-de-la-collection-tapeaccessrequestreferential">6.15.8.1. Utilisation de la collection TapeAccessRequestReferential</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id124">6.15.8.2. Exemples de JSON stockés en base comprenant l’exhaustivité des champs</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id125">6.15.8.3. Détail des champs du JSON stocké dans la collection</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#annexes">6.16. Annexes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#annexe-1-valeurs-possibles-pour-le-champ-evtype-du-logbook-operation">6.16.1. Annexe 1 : Valeurs possibles pour le champ evType du LogBook Operation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#annexe-2-valeurs-possibles-pour-le-champ-evtype-du-logbook-lifecycle">6.16.2. Annexe 2 : Valeurs possibles pour le champ evType du LogBook LifeCycle</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#annexe-3-valeurs-possibles-pour-le-champ-evtypeproc-type-de-processus">6.16.3. Annexe 3: Valeurs possibles pour le champ evTypeProc (type de processus)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#annexe-4-categories-de-regles-possibles">6.16.4. Annexe 4 : Catégories de règles possibles</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#annexe-5-valeurs-possibles-pour-le-champ-status-de-la-collection-accessionregisterdetail">6.16.5. Annexe 5 : Valeurs possibles pour le champ Status de la collection AccessionRegisterDetail</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#annexe-6-valeurs-possibles-pour-le-champ-name-de-la-collection-vitamsequence">6.16.6. Annexe 6 : Valeurs possibles pour le champ Name de la collection VitamSequence</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#annexe-7-type-dindexation-des-chaines-de-caracteres-dans-elasticsearch-par-collection-et-par-champ">6.16.7. Annexe 7 : Type d’indexation des chaînes de caractères dans ElasticSearch par collection et par champ</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#annexe-8-correspondances-des-champs-speciaux-dans-vitam">6.16.8. Annexe 8 : Correspondances des champs spéciaux dans Vitam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#collection-tapeaccessrequestreferential-offre-froide">5.9.8. Collection TapeAccessRequestReferential (offre froide)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#utilisation-de-la-collection-tapeaccessrequestreferential">5.9.8.1. Utilisation de la collection TapeAccessRequestReferential</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id124">5.9.8.2. Exemples de JSON stockés en base comprenant l’exhaustivité des champs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id125">5.9.8.3. Détail des champs du JSON stocké dans la collection</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="modele_de_workflow.html">7. Description des workflows et des opérations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="module_de_collecte.html">8. Module de collecte</a></li>
-<li class="toctree-l1"><a class="reference internal" href="organisation_information.html">9. Organisation de l’information</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ontologie.html">10. Ontologie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="preservation.html">11. Gestion de la préservation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="profil_archivage.html">12. Profils d’archivage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="profil_unite_archivistique.html">13. Profils d’unité archivistique</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regles_gestion.html">14. Règles de gestion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="services_prod.html">15. Services producteurs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SIP.html">16. Structuration des <em>Submission Information Packages</em> (SIP)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="DIP.html">17. Structuration des <em>Dissemination Information Packages</em> (DIP)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="stockage.html">18. Gestion de multiples stratégies de stockage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="transfert.html">19. Le transfert avec la solution logicielle Vitam</a></li>
-<li class="toctree-l1"><a class="reference internal" href="valeur_probante.html">20. Conservation de la valeur probante</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#annexes">5.10. Annexes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#annexe-1-valeurs-possibles-pour-le-champ-evtype-du-logbook-operation">5.10.1. Annexe 1 : Valeurs possibles pour le champ evType du LogBook Operation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#annexe-2-valeurs-possibles-pour-le-champ-evtype-du-logbook-lifecycle">5.10.2. Annexe 2 : Valeurs possibles pour le champ evType du LogBook LifeCycle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#annexe-3-valeurs-possibles-pour-le-champ-evtypeproc-type-de-processus">5.10.3. Annexe 3: Valeurs possibles pour le champ evTypeProc (type de processus)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#annexe-4-categories-de-regles-possibles">5.10.4. Annexe 4 : Catégories de règles possibles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#annexe-5-valeurs-possibles-pour-le-champ-status-de-la-collection-accessionregisterdetail">5.10.5. Annexe 5 : Valeurs possibles pour le champ Status de la collection AccessionRegisterDetail</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#annexe-6-valeurs-possibles-pour-le-champ-name-de-la-collection-vitamsequence">5.10.6. Annexe 6 : Valeurs possibles pour le champ Name de la collection VitamSequence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#annexe-7-type-dindexation-des-chaines-de-caracteres-dans-elasticsearch-par-collection-et-par-champ">5.10.7. Annexe 7 : Type d’indexation des chaînes de caractères dans ElasticSearch par collection et par champ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#annexe-8-correspondances-des-champs-speciaux-dans-vitam">5.10.8. Annexe 8 : Correspondances des champs spéciaux dans Vitam</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_workflow.html">6. Description des workflows et des opérations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_de_collecte.html">7. Module de collecte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="organisation_information.html">8. Organisation de l’information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ontologie.html">9. Ontologie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preservation.html">10. Gestion de la préservation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_archivage.html">11. Profils d’archivage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_unite_archivistique.html">12. Profils d’unité archivistique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regles_gestion.html">13. Règles de gestion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services_prod.html">14. Services producteurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SIP.html">15. Structuration des <em>Submission Information Packages</em> (SIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DIP.html">16. Structuration des <em>Dissemination Information Packages</em> (DIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stockage.html">17. Gestion de multiples stratégies de stockage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transfert.html">18. Le transfert avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="valeur_probante.html">19. Conservation de la valeur probante</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">documentation Vitam UI</span></p>
 <ul>
@@ -531,9 +527,7 @@ La liste des types de règle disponibles est en annexe.</a><ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="chantier_preservation_validation_format.html">1. Validation du format des fichiers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chantier_identification_format.html">2. Identification des formats de fichiers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chantier_identification_format.html#updated-upstream-les-descriptions-sont-presentees-au-format-html-et-exportables-au-format-xml-elles-sont-en-decembre-2019-au-nombre-de-512-un-exemple-de-fiche-est-fourni-en-annexe-2">3. &lt;&lt;&lt;&lt;&lt;&lt;&lt; Updated upstream
-Les descriptions sont présentées au format HTML et exportables au format XML. Elles sont en décembre 2019 au nombre de 512. Un exemple de fiche est fourni en annexe 2.</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chantier_extraction_MD.html">4. Extraction des métadonnées techniques</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_extraction_MD.html">3. Extraction des métadonnées techniques</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Vademecum</span></p>
 <ul>
@@ -988,7 +982,7 @@ de l’initialisation de l’opération.</p>
 <p><strong>« evType » (event Type):</strong> code du type de l’opération.</p>
 <ul class="simple">
 <li><p>Issu de la définition du workflow structuré en JSON (fichier default-workflow.json).</p></li>
-<li><p>La liste des valeurs possibles pour ce champ se trouve en annexe. Seul le code est stocké dans ce champ, la traduction se faisant via un fichier properties (vitam-logbook-message-fr.properties).</p></li>
+<li><p>La liste des valeurs possibles pour ce champ se trouve en <a class="reference internal" href="#annexe-1-valeurs-possibles-pour-le-champ-evtype-du-logbook-operation"><span class="xref myst">annexe</span></a>. Seul le code est stocké dans ce champ, la traduction se faisant via un fichier properties (vitam-logbook-message-fr.properties).</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 <li><p>Ce champ existe pour les structures incluantes et incluses.</p></li>
 </ul>
@@ -1108,7 +1102,7 @@ reprennent pour ce champ la valeur du champ « _id ». Dans le cas où une op�
 <p><strong>« outDetail » (outcome Detail):</strong> code correspondant au résultat de l’événement.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de caractères.</p></li>
-<li><p>Il contient le code correspondant au résultat de l’événement, incluant le statut. La liste des valeurs possibles pour ce champ se trouve en annexe. Seul le code doit être stocké dans ce champ, la traduction doit se faire via un fichier properties (vitam-logbook-message-fr.properties).</p></li>
+<li><p>Il contient le code correspondant au résultat de l’événement, incluant le statut. La liste des valeurs possibles pour ce champ se trouve en <a class="reference internal" href="#annexe-1-valeurs-possibles-pour-le-champ-evtype-du-logbook-operation"><span class="xref myst">annexe</span></a>. Seul le code doit être stocké dans ce champ, la traduction doit se faire via un fichier properties (vitam-logbook-message-fr.properties).</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 <li><p>Ce champ existe pour les structures incluantes et incluses.</p></li>
 </ul>
@@ -1514,7 +1508,7 @@ parent.</p>
 <p><strong>« evType » (event Type):</strong> code du type d’événement.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de caractères.</p></li>
-<li><p>La liste des valeurs possibles pour ce champ se trouve en annexe. Seul le code est stocké dans ce champ, la traduction se fait via un fichier properties (vitam-logbook-message-fr.properties).</p></li>
+<li><p>La liste des valeurs possibles pour ce champ se trouve en <a class="reference internal" href="#annexe-2-valeurs-possibles-pour-le-champ-evtype-du-logbook-lifecycle"><span class="xref myst">annexe</span></a>. Seul le code est stocké dans ce champ, la traduction se fait via un fichier properties (vitam-logbook-message-fr.properties).</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 <li><p>Ce champ existe pour les structures incluantes et incluses.</p></li>
 </ul>
@@ -1537,7 +1531,7 @@ journal du cycle de vie partagent la même valeur, qui est celle du champ « _i
 <p><strong>« evTypeProc » (event Type Process):</strong> type de processus.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de caractères.</p></li>
-<li><p>Nom du processus parmi une liste de processus possibles fixée. Cette liste est disponible en annexe.</p></li>
+<li><p>Nom du processus parmi une liste de processus possibles fixée. Cette liste est disponible en <a class="reference internal" href="#annexe-3-valeurs-possibles-pour-le-champ-evtypeproc-type-de-processus"><span class="xref myst">annexe</span></a>.</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 <li><p>Ce champ existe pour les structures incluantes et incluses.</p></li>
 </ul>
@@ -1559,7 +1553,7 @@ journal du cycle de vie partagent la même valeur, qui est celle du champ « _i
 l’événement.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de caractères.</p></li>
-<li><p>Il contient le code correspondant au résultat de l’événement, incluant le statut. La liste des valeurs possibles pour ce champ se trouve en annexe. Seul le code est stocké dans ce champ, la traduction se fait via le fichier properties (vitam-logbook-message-fr.properties).</p></li>
+<li><p>Il contient le code correspondant au résultat de l’événement, incluant le statut. La liste des valeurs possibles pour ce champ se trouve en <a class="reference internal" href="#annexe-2-valeurs-possibles-pour-le-champ-evtype-du-logbook-lifecycle"><span class="xref myst">annexe</span></a>. Seul le code est stocké dans ce champ, la traduction se fait via le fichier properties (vitam-logbook-message-fr.properties).</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 <li><p>Ce champ existe pour les structures incluantes et incluses.</p></li>
 </ul>
@@ -1778,7 +1772,7 @@ parent.</p>
 <p><strong>« evType »</strong> (event Type): nom de l’événement.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de caractères.</p></li>
-<li><p>La liste des valeurs possibles pour ce champ se trouve en annexe. Seul le code doit être stocké dans ce champ, la traduction doit se faire via le fichier properties (vitam-logbook-message-fr.properties).</p></li>
+<li><p>La liste des valeurs possibles pour ce champ se trouve en <a class="reference internal" href="#annexe-2-valeurs-possibles-pour-le-champ-evtype-du-logbook-lifecycle"><span class="xref myst">annexe</span></a>. Seul le code doit être stocké dans ce champ, la traduction doit se faire via le fichier properties (vitam-logbook-message-fr.properties).</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 <li><p>Ce champ existe pour les structures incluantes et incluses.</p></li>
 </ul>
@@ -1801,7 +1795,7 @@ parent.</p>
 <p><strong>« evTypeProc » (event Type Process):</strong> type de processus.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de caractères.</p></li>
-<li><p>Nom du processus parmi une liste de processus possibles fixée. Cette liste est disponible en annexe.</p></li>
+<li><p>Nom du processus parmi une liste de processus possibles fixée. Cette liste est disponible en <a class="reference internal" href="#annexe-3-valeurs-possibles-pour-le-champ-evtypeproc-type-de-processus"><span class="xref myst">annexe</span></a>.</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 <li><p>Ce champ existe pour les structures incluantes et incluses</p></li>
 </ul>
@@ -1822,7 +1816,7 @@ parent.</p>
 <p><strong>« outDetail » (outcome Detail):</strong> code correspondant à l’erreur.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de caractères.</p></li>
-<li><p>Il contient le code fin de l’événement, incluant le statut. La liste des valeurs possibles pour ce champ se trouve en annexe. Seul le code est stocké dans ce champ, la traduction doit se faire via le fichier properties (vitam-logbook-message-fr.properties)</p></li>
+<li><p>Il contient le code fin de l’événement, incluant le statut. La liste des valeurs possibles pour ce champ se trouve en <a class="reference internal" href="#annexe-2-valeurs-possibles-pour-le-champ-evtype-du-logbook-lifecycle"><span class="xref myst">annexe</span></a>. Seul le code est stocké dans ce champ, la traduction doit se faire via le fichier properties (vitam-logbook-message-fr.properties)</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 <li><p>Ce champ existe pour les structures incluantes et incluses.</p></li>
 </ul>
@@ -6398,37 +6392,16 @@ archivistique sont :</p>
 </tbody>
 </table>
 <p>Le fichier .csv doit avoir comme séparateur de champs la virgule.</p>
-</section>
-</section>
-</section>
-</section>
-<section id="updated-upstream-la-liste-des-types-de-regle-disponibles-est-en-annexe">
-<h1><span class="section-number">6. </span>&lt;&lt;&lt;&lt;&lt;&lt;&lt; Updated upstream
-La liste des types de règle disponibles est en annexe.<a class="headerlink" href="#updated-upstream-la-liste-des-types-de-regle-disponibles-est-en-annexe" title="Lien vers cette rubrique"></a></h1>
-<p>La liste des types de règle disponibles est en <a class="reference internal" href="#annexe-4-categories-de-regles-possibles"><span class="xref myst">annexe</span></a>.</p>
-<blockquote>
-<div><blockquote>
-<div><blockquote>
-<div><blockquote>
-<div><blockquote>
-<div><blockquote>
-<div><blockquote>
-<div><p>Stashed changes</p>
-</div></blockquote>
-</div></blockquote>
-</div></blockquote>
-</div></blockquote>
-</div></blockquote>
-</div></blockquote>
-</div></blockquote>
+<p>La liste des types de règle disponibles est en <a class="reference internal" href="#annexe-4-cateories-de-regles-possibles"><span class="xref myst">annexe</span></a>.</p>
 <p>Les valeurs renseignées dans la colonne unité de mesure doivent correspondre à une valeur de l’énumération RuleMeasurementEnum, à savoir :</p>
 <ul class="simple">
 <li><p>MONTH</p></li>
 <li><p>DAY</p></li>
 <li><p>YEAR</p></li>
 </ul>
+</section>
 <section id="exemple-de-json-stocke-en-base-comprenant-lexhaustivite-des-champs-de-la-collection-filerules">
-<h2><span class="section-number">6.1. </span>Exemple de JSON stocké en base comprenant l’exhaustivité des champs de la collection FileRules<a class="headerlink" href="#exemple-de-json-stocke-en-base-comprenant-lexhaustivite-des-champs-de-la-collection-filerules" title="Lien vers cette rubrique"></a></h2>
+<h4><span class="section-number">5.7.9.2. </span>Exemple de JSON stocké en base comprenant l’exhaustivité des champs de la collection FileRules<a class="headerlink" href="#exemple-de-json-stocke-en-base-comprenant-lexhaustivite-des-champs-de-la-collection-filerules" title="Lien vers cette rubrique"></a></h4>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aeaaaaaaaahbl62nabduoak3jc4avsyaaaha&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;RuleId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ACC-00011&quot;</span><span class="p">,</span>
@@ -6446,7 +6419,7 @@ La liste des types de règle disponibles est en annexe.<a class="headerlink" hre
 </div>
 </section>
 <section id="id37">
-<h2><span class="section-number">6.2. </span>Détail des champs<a class="headerlink" href="#id37" title="Lien vers cette rubrique"></a></h2>
+<h4><span class="section-number">5.7.9.3. </span>Détail des champs<a class="headerlink" href="#id37" title="Lien vers cette rubrique"></a></h4>
 <p><strong>« _id » :</strong> identifiant unique.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de 36 caractères correspondant à un GUID.</p></li>
@@ -6464,7 +6437,7 @@ La liste des types de règle disponibles est en annexe.<a class="headerlink" hre
 <p><strong>« RuleType » :</strong> type de règle.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de caractères.</p></li>
-<li><p>Il correspond à la valeur située dans la colonne RuleType du fichier d’import. Les valeurs possibles pour ce champ sont indiquées en annexe.</p></li>
+<li><p>Il correspond à la valeur située dans la colonne RuleType du fichier d’import. Les valeurs possibles pour ce champ sont indiquées en <a class="reference internal" href="#annexe-4-categories-de-regles-possibles"><span class="xref myst">annexe</span></a>.</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 </ul>
 <p><strong>« RuleValue » :</strong> intitulé de la règle.</p>
@@ -6537,14 +6510,15 @@ colonne RuleDuration du fichier d’import.</p>
 <li><p>Cardinalité : 1-1</p></li>
 </ul>
 </section>
+</section>
 <section id="collection-griffin">
-<h2><span class="section-number">6.3. </span>Collection Griffin<a class="headerlink" href="#collection-griffin" title="Lien vers cette rubrique"></a></h2>
+<h3><span class="section-number">5.7.10. </span>Collection Griffin<a class="headerlink" href="#collection-griffin" title="Lien vers cette rubrique"></a></h3>
 <section id="utilisation-de-la-collection-griffin">
-<h3><span class="section-number">6.3.1. </span>Utilisation de la collection Griffin<a class="headerlink" href="#utilisation-de-la-collection-griffin" title="Lien vers cette rubrique"></a></h3>
+<h4><span class="section-number">5.7.10.1. </span>Utilisation de la collection Griffin<a class="headerlink" href="#utilisation-de-la-collection-griffin" title="Lien vers cette rubrique"></a></h4>
 <p>La collection Griffin permet de référencer et décrire unitairement les griffons utilisés pour mettre en œuvre les opérations de préservation.</p>
 </section>
 <section id="exemple-dun-fichier-dimport-de-griffon">
-<h3><span class="section-number">6.3.2. </span>Exemple d’un fichier d’import de griffon<a class="headerlink" href="#exemple-dun-fichier-dimport-de-griffon" title="Lien vers cette rubrique"></a></h3>
+<h4><span class="section-number">5.7.10.2. </span>Exemple d’un fichier d’import de griffon<a class="headerlink" href="#exemple-dun-fichier-dimport-de-griffon" title="Lien vers cette rubrique"></a></h4>
 <p>Le référentiel des griffons estt importé dans la solution logicielle Vitam sous la forme d’un fichier JSON.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
 <span class="w">  </span><span class="p">{</span>
@@ -6576,7 +6550,7 @@ colonne RuleDuration du fichier d’import.</p>
 <p>Un fichier d’import peut décrire plusieurs griffons.</p>
 </section>
 <section id="exemple-de-json-stocke-en-base-comprenant-lexhaustivite-des-champs-de-la-collection-griffins">
-<h3><span class="section-number">6.3.3. </span>Exemple de JSON stocké en base comprenant l’exhaustivité des champs de la collection Griffins<a class="headerlink" href="#exemple-de-json-stocke-en-base-comprenant-lexhaustivite-des-champs-de-la-collection-griffins" title="Lien vers cette rubrique"></a></h3>
+<h4><span class="section-number">5.7.10.3. </span>Exemple de JSON stocké en base comprenant l’exhaustivité des champs de la collection Griffins<a class="headerlink" href="#exemple-de-json-stocke-en-base-comprenant-lexhaustivite-des-champs-de-la-collection-griffins" title="Lien vers cette rubrique"></a></h4>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
 <span class="w">  </span><span class="p">{</span><span class="w">  </span>
 <span class="w">    </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aeaaaaaaaahlopljab2wualhmuydxiaaaaaq&quot;</span><span class="p">,</span>
@@ -6595,7 +6569,7 @@ colonne RuleDuration du fichier d’import.</p>
 </div>
 </section>
 <section id="id38">
-<h3><span class="section-number">6.3.4. </span>Détail des champs<a class="headerlink" href="#id38" title="Lien vers cette rubrique"></a></h3>
+<h4><span class="section-number">5.7.10.4. </span>Détail des champs<a class="headerlink" href="#id38" title="Lien vers cette rubrique"></a></h4>
 <p><strong>« _id » :</strong> identifiant unique faisant référence à un exécutable et à sa version.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de 36 caractères correspondant à un GUID.</p></li>
@@ -6662,13 +6636,13 @@ colonne RuleDuration du fichier d’import.</p>
 </section>
 </section>
 <section id="collection-ingestcontract">
-<h2><span class="section-number">6.4. </span>Collection IngestContract<a class="headerlink" href="#collection-ingestcontract" title="Lien vers cette rubrique"></a></h2>
+<h3><span class="section-number">5.7.11. </span>Collection IngestContract<a class="headerlink" href="#collection-ingestcontract" title="Lien vers cette rubrique"></a></h3>
 <section id="id39">
-<h3><span class="section-number">6.4.1. </span>Utilisation de la collection<a class="headerlink" href="#id39" title="Lien vers cette rubrique"></a></h3>
+<h4><span class="section-number">5.7.11.1. </span>Utilisation de la collection<a class="headerlink" href="#id39" title="Lien vers cette rubrique"></a></h4>
 <p>La collection IngestContract permet de référencer et décrire unitairement les contrats d’entrée.</p>
 </section>
 <section id="exemple-dun-fichier-dimport-de-contrat">
-<h3><span class="section-number">6.4.2. </span>Exemple d’un fichier d’import de contrat<a class="headerlink" href="#exemple-dun-fichier-dimport-de-contrat" title="Lien vers cette rubrique"></a></h3>
+<h4><span class="section-number">5.7.11.2. </span>Exemple d’un fichier d’import de contrat<a class="headerlink" href="#exemple-dun-fichier-dimport-de-contrat" title="Lien vers cette rubrique"></a></h4>
 <p>Les contrats d’entrée sont importés dans la solution logicielle Vitam sous la forme d’un fichier JSON.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
 <span class="w">    </span><span class="p">{</span>
@@ -6696,7 +6670,7 @@ colonne RuleDuration du fichier d’import.</p>
 <p>Un fichier d’import peut décrire plusieurs contrats.</p>
 </section>
 <section id="exemple-de-json-stocke-en-base-comprenant-lexhaustivite-des-champs-de-la-collection-ingestcontract">
-<h3><span class="section-number">6.4.3. </span>Exemple de JSON stocké en base comprenant l’exhaustivité des champs de la collection IngestContract<a class="headerlink" href="#exemple-de-json-stocke-en-base-comprenant-lexhaustivite-des-champs-de-la-collection-ingestcontract" title="Lien vers cette rubrique"></a></h3>
+<h4><span class="section-number">5.7.11.3. </span>Exemple de JSON stocké en base comprenant l’exhaustivité des champs de la collection IngestContract<a class="headerlink" href="#exemple-de-json-stocke-en-base-comprenant-lexhaustivite-des-champs-de-la-collection-ingestcontract" title="Lien vers cette rubrique"></a></h4>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aefqaaaaaahbl62nabkzgak3k6qtf3aaaaaq&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SIA archives nationales&quot;</span><span class="p">,</span>
@@ -6725,7 +6699,7 @@ colonne RuleDuration du fichier d’import.</p>
 </div>
 </section>
 <section id="detail-des-champs-de-la-collection-ingestcontract">
-<h3><span class="section-number">6.4.4. </span>Détail des champs de la collection IngestContract<a class="headerlink" href="#detail-des-champs-de-la-collection-ingestcontract" title="Lien vers cette rubrique"></a></h3>
+<h4><span class="section-number">5.7.11.4. </span>Détail des champs de la collection IngestContract<a class="headerlink" href="#detail-des-champs-de-la-collection-ingestcontract" title="Lien vers cette rubrique"></a></h4>
 <p><strong>« _id » :</strong> identifiant unique du contrat.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de 36 caractères correspondant à un GUID.</p></li>
@@ -6916,13 +6890,13 @@ Par exemple : IC-007485. Si le référentiel est en position esclave, cet ident
 </section>
 </section>
 <section id="collection-managementcontract">
-<h2><span class="section-number">6.5. </span>Collection ManagementContract<a class="headerlink" href="#collection-managementcontract" title="Lien vers cette rubrique"></a></h2>
+<h3><span class="section-number">5.7.12. </span>Collection ManagementContract<a class="headerlink" href="#collection-managementcontract" title="Lien vers cette rubrique"></a></h3>
 <section id="utilisation-de-la-collection-managementcontract">
-<h3><span class="section-number">6.5.1. </span>Utilisation de la collection ManagementContract<a class="headerlink" href="#utilisation-de-la-collection-managementcontract" title="Lien vers cette rubrique"></a></h3>
+<h4><span class="section-number">5.7.12.1. </span>Utilisation de la collection ManagementContract<a class="headerlink" href="#utilisation-de-la-collection-managementcontract" title="Lien vers cette rubrique"></a></h4>
 <p>La collection ManagementContract permet de référencer et de décrire unitairement les contrats de gestion.</p>
 </section>
 <section id="exemple-dun-fichier-dimport-de-contrat-de-gestion">
-<h3><span class="section-number">6.5.2. </span>Exemple d’un fichier d’import de contrat de gestion<a class="headerlink" href="#exemple-dun-fichier-dimport-de-contrat-de-gestion" title="Lien vers cette rubrique"></a></h3>
+<h4><span class="section-number">5.7.12.2. </span>Exemple d’un fichier d’import de contrat de gestion<a class="headerlink" href="#exemple-dun-fichier-dimport-de-contrat-de-gestion" title="Lien vers cette rubrique"></a></h4>
 <p>Les contrats de gestion sont importés dans la solution logicielle Vitam
 sous la forme d’un fichier JSON.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
@@ -6948,7 +6922,7 @@ sous la forme d’un fichier JSON.</p>
 <p>Un fichier d’import peut décrire plusieurs contrats.</p>
 </section>
 <section id="exemple-de-json-stocke-en-base-comprenant-lexhaustivite-des-champs-de-la-collection-managementcontract">
-<h3><span class="section-number">6.5.3. </span>Exemple de JSON stocké en base comprenant l’exhaustivité des champs de la collection ManagementContract<a class="headerlink" href="#exemple-de-json-stocke-en-base-comprenant-lexhaustivite-des-champs-de-la-collection-managementcontract" title="Lien vers cette rubrique"></a></h3>
+<h4><span class="section-number">5.7.12.3. </span>Exemple de JSON stocké en base comprenant l’exhaustivité des champs de la collection ManagementContract<a class="headerlink" href="#exemple-de-json-stocke-en-base-comprenant-lexhaustivite-des-champs-de-la-collection-managementcontract" title="Lien vers cette rubrique"></a></h4>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aefqaaaaaahjy6rtaapocalm6uiw5oqaaaaq&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Contrat de gestion avec stockage&quot;</span><span class="p">,</span>
@@ -7022,7 +6996,7 @@ sous la forme d’un fichier JSON.</p>
 </div>
 </section>
 <section id="id40">
-<h3><span class="section-number">6.5.4. </span>Détail des champs<a class="headerlink" href="#id40" title="Lien vers cette rubrique"></a></h3>
+<h4><span class="section-number">5.7.12.4. </span>Détail des champs<a class="headerlink" href="#id40" title="Lien vers cette rubrique"></a></h4>
 <p><strong>« _id » :</strong> identifiant unique du contrat pour un tenant donné.</p>
 <ul>
 <li><p>Il s’agit d’une chaîne de 36 caractères correspondant à un GUID.</p></li>
@@ -7232,13 +7206,13 @@ sous la forme d’un fichier JSON.</p>
 </section>
 </section>
 <section id="collection-ontology">
-<h2><span class="section-number">6.6. </span>Collection Ontology<a class="headerlink" href="#collection-ontology" title="Lien vers cette rubrique"></a></h2>
+<h3><span class="section-number">5.7.13. </span>Collection Ontology<a class="headerlink" href="#collection-ontology" title="Lien vers cette rubrique"></a></h3>
 <section id="id41">
-<h3><span class="section-number">6.6.1. </span>Utilisation de la collection<a class="headerlink" href="#id41" title="Lien vers cette rubrique"></a></h3>
+<h4><span class="section-number">5.7.13.1. </span>Utilisation de la collection<a class="headerlink" href="#id41" title="Lien vers cette rubrique"></a></h4>
 <p>La collection Ontology permet de référencer et décrire unitairement les champs définissant l’ontologie utilisée dans la solution logicielle Vitam.</p>
 </section>
 <section id="exemple-dun-fichier-dimport-dontology">
-<h3><span class="section-number">6.6.2. </span>Exemple d’un fichier d’import d’ontology<a class="headerlink" href="#exemple-dun-fichier-dimport-dontology" title="Lien vers cette rubrique"></a></h3>
+<h4><span class="section-number">5.7.13.2. </span>Exemple d’un fichier d’import d’ontology<a class="headerlink" href="#exemple-dun-fichier-dimport-dontology" title="Lien vers cette rubrique"></a></h4>
 <p>L’ontologie est importée dans la solution logicielle Vitam sous la forme d’un fichier JSON.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="w"> </span>
 <span class="w">  </span><span class="p">{</span>
@@ -7274,7 +7248,7 @@ sous la forme d’un fichier JSON.</p>
 <p>Un fichier JSON décrit la totalité des champs de l’ontologie (interne et externe).</p>
 </section>
 <section id="detail-des-champs-de-la-collection-ontology">
-<h3><span class="section-number">6.6.3. </span>Détail des champs de la collection Ontology<a class="headerlink" href="#detail-des-champs-de-la-collection-ontology" title="Lien vers cette rubrique"></a></h3>
+<h4><span class="section-number">5.7.13.3. </span>Détail des champs de la collection Ontology<a class="headerlink" href="#detail-des-champs-de-la-collection-ontology" title="Lien vers cette rubrique"></a></h4>
 <p><strong>« _id » :</strong> identifiant unique d’un vocabulaire de l’ontologie.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de 36 caractères correspondant à un GUID.</p></li>
@@ -7369,14 +7343,14 @@ sous la forme d’un fichier JSON.</p>
 </section>
 </section>
 <section id="collection-schema">
-<h2><span class="section-number">6.7. </span>Collection Schema<a class="headerlink" href="#collection-schema" title="Lien vers cette rubrique"></a></h2>
+<h3><span class="section-number">5.7.14. </span>Collection Schema<a class="headerlink" href="#collection-schema" title="Lien vers cette rubrique"></a></h3>
 <section id="utilisation-de-la-collection-schema">
-<h3><span class="section-number">6.7.1. </span>Utilisation de la collection Schema<a class="headerlink" href="#utilisation-de-la-collection-schema" title="Lien vers cette rubrique"></a></h3>
+<h4><span class="section-number">5.7.14.1. </span>Utilisation de la collection Schema<a class="headerlink" href="#utilisation-de-la-collection-schema" title="Lien vers cette rubrique"></a></h4>
 <p>La collection Schema contient les définitions des chemins (paths) et des structures utilisées pour organiser et valider les données archivistiques dans le système Vitam. Elle permet de préciser les caractéristiques et les règles applicables à chaque élément.</p>
 </section>
 </section>
 <section id="champs">
-<h2><span class="section-number">6.8. </span>Champs<a class="headerlink" href="#champs" title="Lien vers cette rubrique"></a></h2>
+<h3><span class="section-number">5.7.15. </span>Champs<a class="headerlink" href="#champs" title="Lien vers cette rubrique"></a></h3>
 <p><strong>« id » :</strong> Identifiant unique du schéma.</p>
 <ul class="simple">
 <li><p>Type : Chaîne de caractères.</p></li>
@@ -7427,13 +7401,13 @@ sous la forme d’un fichier JSON.</p>
 </ul>
 </section>
 <section id="collection-preservationscenario">
-<h2><span class="section-number">6.9. </span>Collection PreservationScenario<a class="headerlink" href="#collection-preservationscenario" title="Lien vers cette rubrique"></a></h2>
+<h3><span class="section-number">5.7.16. </span>Collection PreservationScenario<a class="headerlink" href="#collection-preservationscenario" title="Lien vers cette rubrique"></a></h3>
 <section id="utilisation-de-la-collection-preservationscenario">
-<h3><span class="section-number">6.9.1. </span>Utilisation de la collection PreservationScenario<a class="headerlink" href="#utilisation-de-la-collection-preservationscenario" title="Lien vers cette rubrique"></a></h3>
+<h4><span class="section-number">5.7.16.1. </span>Utilisation de la collection PreservationScenario<a class="headerlink" href="#utilisation-de-la-collection-preservationscenario" title="Lien vers cette rubrique"></a></h4>
 <p>La collection PreservationScenario permet de référencer et décrire unitairement les scénarios de préservation utilisés pour lancer des opérations de préservation.</p>
 </section>
 <section id="exemple-dun-fichier-dimport-de-scenario-de-preservation">
-<h3><span class="section-number">6.9.2. </span>Exemple d’un fichier d’import de scénario de préservation<a class="headerlink" href="#exemple-dun-fichier-dimport-de-scenario-de-preservation" title="Lien vers cette rubrique"></a></h3>
+<h4><span class="section-number">5.7.16.2. </span>Exemple d’un fichier d’import de scénario de préservation<a class="headerlink" href="#exemple-dun-fichier-dimport-de-scenario-de-preservation" title="Lien vers cette rubrique"></a></h4>
 <p>Les scénarios de préservation sont importés dans la solution logicielle Vitam sous la forme d’un fichier JSON.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
 <span class="w">  </span><span class="p">{</span>
@@ -7488,7 +7462,7 @@ sous la forme d’un fichier JSON.</p>
 <p>Un fichier d’import peut décrire plusieurs scénarios de préservation.</p>
 </section>
 <section id="exemple-de-json-stocke-en-base-comprenant-lexhaustivite-des-champs-de-la-collection-preservationscenario">
-<h3><span class="section-number">6.9.3. </span>Exemple de JSON stocké en base comprenant l’exhaustivité des champs de la collection PreservationScenario<a class="headerlink" href="#exemple-de-json-stocke-en-base-comprenant-lexhaustivite-des-champs-de-la-collection-preservationscenario" title="Lien vers cette rubrique"></a></h3>
+<h4><span class="section-number">5.7.16.3. </span>Exemple de JSON stocké en base comprenant l’exhaustivité des champs de la collection PreservationScenario<a class="headerlink" href="#exemple-de-json-stocke-en-base-comprenant-lexhaustivite-des-champs-de-la-collection-preservationscenario" title="Lien vers cette rubrique"></a></h4>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aefqaaaabahn6dttabew6alha45dfgqaaaaq&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;Identifier&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PSC-000023&quot;</span><span class="p">,</span>
@@ -7554,7 +7528,7 @@ sous la forme d’un fichier JSON.</p>
 </div>
 </section>
 <section id="id42">
-<h3><span class="section-number">6.9.4. </span>Détail des champs<a class="headerlink" href="#id42" title="Lien vers cette rubrique"></a></h3>
+<h4><span class="section-number">5.7.16.4. </span>Détail des champs<a class="headerlink" href="#id42" title="Lien vers cette rubrique"></a></h4>
 <p><strong>« _id » :</strong> identifiant unique du scénario de préservation.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de 36 caractères correspondant à un GUID.</p></li>
@@ -7708,9 +7682,9 @@ liste de formats.</p>
 </section>
 </section>
 <section id="collection-profile">
-<h2><span class="section-number">6.10. </span>Collection Profile<a class="headerlink" href="#collection-profile" title="Lien vers cette rubrique"></a></h2>
+<h3><span class="section-number">5.7.17. </span>Collection Profile<a class="headerlink" href="#collection-profile" title="Lien vers cette rubrique"></a></h3>
 <section id="utilisation-de-la-collection-profile">
-<h3><span class="section-number">6.10.1. </span>Utilisation de la collection Profile<a class="headerlink" href="#utilisation-de-la-collection-profile" title="Lien vers cette rubrique"></a></h3>
+<h4><span class="section-number">5.7.17.1. </span>Utilisation de la collection Profile<a class="headerlink" href="#utilisation-de-la-collection-profile" title="Lien vers cette rubrique"></a></h4>
 <p>La collection Profile permet de référencer et décrire unitairement les
 notices de profil d’archivage.</p>
 <p>#### Exemple d’un fichier d’import de notices de Profils d’archivage</p>
@@ -7739,7 +7713,7 @@ d’archivage sont :</p>
 </ul>
 </section>
 <section id="exemple-de-json-stocke-en-base-comprenant-lexhaustivite-des-champs-de-la-collection-profile">
-<h3><span class="section-number">6.10.2. </span>Exemple de JSON stocké en base comprenant l’exhaustivité des champs de la collection Profile<a class="headerlink" href="#exemple-de-json-stocke-en-base-comprenant-lexhaustivite-des-champs-de-la-collection-profile" title="Lien vers cette rubrique"></a></h3>
+<h4><span class="section-number">5.7.17.2. </span>Exemple de JSON stocké en base comprenant l’exhaustivité des champs de la collection Profile<a class="headerlink" href="#exemple-de-json-stocke-en-base-comprenant-lexhaustivite-des-champs-de-la-collection-profile" title="Lien vers cette rubrique"></a></h4>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aegaaaaaaehlfs7waax4iak4f52mzriaaaaq&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;Identifier&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PR-000003&quot;</span><span class="p">,</span>
@@ -7759,7 +7733,7 @@ d’archivage sont :</p>
 </div>
 </section>
 <section id="id43">
-<h3><span class="section-number">6.10.3. </span>Détail des champs<a class="headerlink" href="#id43" title="Lien vers cette rubrique"></a></h3>
+<h4><span class="section-number">5.7.17.3. </span>Détail des champs<a class="headerlink" href="#id43" title="Lien vers cette rubrique"></a></h4>
 <p><strong>« _id » :</strong> identifiant unique de la notice de profil d’archivage.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de 36 caractères correspondant à un GUID.</p></li>
@@ -7850,13 +7824,13 @@ profil d’archivage.</p>
 </section>
 </section>
 <section id="collection-securityprofile">
-<h2><span class="section-number">6.11. </span>Collection SecurityProfile<a class="headerlink" href="#collection-securityprofile" title="Lien vers cette rubrique"></a></h2>
+<h3><span class="section-number">5.7.18. </span>Collection SecurityProfile<a class="headerlink" href="#collection-securityprofile" title="Lien vers cette rubrique"></a></h3>
 <section id="id44">
-<h3><span class="section-number">6.11.1. </span>Utilisation de la collection<a class="headerlink" href="#id44" title="Lien vers cette rubrique"></a></h3>
+<h4><span class="section-number">5.7.18.1. </span>Utilisation de la collection<a class="headerlink" href="#id44" title="Lien vers cette rubrique"></a></h4>
 <p>Cette collection référence et décrit les profils de sécurité mobilisés par les contextes applicatifs.</p>
 </section>
 <section id="id45">
-<h3><span class="section-number">6.11.2. </span>Exemple de JSON stocké en base comprenant l’exhaustivité des champs<a class="headerlink" href="#id45" title="Lien vers cette rubrique"></a></h3>
+<h4><span class="section-number">5.7.18.2. </span>Exemple de JSON stocké en base comprenant l’exhaustivité des champs<a class="headerlink" href="#id45" title="Lien vers cette rubrique"></a></h4>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aegqaaaaaaeucszwabglyak64gjmgbyaaaba&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;Identifier&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SEC_PROFILE-000002&quot;</span><span class="p">,</span>
@@ -7877,7 +7851,7 @@ profil d’archivage.</p>
 </div>
 </section>
 <section id="id46">
-<h3><span class="section-number">6.11.3. </span>Détail des champs<a class="headerlink" href="#id46" title="Lien vers cette rubrique"></a></h3>
+<h4><span class="section-number">5.7.18.3. </span>Détail des champs<a class="headerlink" href="#id46" title="Lien vers cette rubrique"></a></h4>
 <p><strong>« _id » :</strong> identifiant unique du profil de sécurité.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de 36 caractères correspondant à un GUID.</p></li>
@@ -8063,9 +8037,9 @@ profil d’archivage.</p>
 </section>
 </section>
 <section id="collection-vitamsequence">
-<h2><span class="section-number">6.12. </span>Collection VitamSequence<a class="headerlink" href="#collection-vitamsequence" title="Lien vers cette rubrique"></a></h2>
+<h3><span class="section-number">5.7.19. </span>Collection VitamSequence<a class="headerlink" href="#collection-vitamsequence" title="Lien vers cette rubrique"></a></h3>
 <section id="id47">
-<h3><span class="section-number">6.12.1. </span>Utilisation de la collection<a class="headerlink" href="#id47" title="Lien vers cette rubrique"></a></h3>
+<h4><span class="section-number">5.7.19.1. </span>Utilisation de la collection<a class="headerlink" href="#id47" title="Lien vers cette rubrique"></a></h4>
 <p>Cette collection permet de générer des identifiants signifiants pour les
 enregistrements des collections suivantes :</p>
 <ul class="simple">
@@ -8086,7 +8060,7 @@ enregistrements des collections suivantes :</p>
 <p>Ces identifiants sont généralement composés d’un préfixe de deux lettres, d’un tiret et d’une suite de six chiffres. Par exemple : IC-027593. Il sont reportés dans les champs Identifier des collections concernées.</p>
 </section>
 <section id="id48">
-<h3><span class="section-number">6.12.2. </span>Exemple de JSON stocké en base comprenant l’exhaustivité des champs<a class="headerlink" href="#id48" title="Lien vers cette rubrique"></a></h3>
+<h4><span class="section-number">5.7.19.2. </span>Exemple de JSON stocké en base comprenant l’exhaustivité des champs<a class="headerlink" href="#id48" title="Lien vers cette rubrique"></a></h4>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aeaaaaaaaahkwxukabqteak4q5mtmdyaaaaq&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AC&quot;</span><span class="p">,</span>
@@ -8098,7 +8072,7 @@ enregistrements des collections suivantes :</p>
 </div>
 </section>
 <section id="id49">
-<h3><span class="section-number">6.12.3. </span>Détail des champs<a class="headerlink" href="#id49" title="Lien vers cette rubrique"></a></h3>
+<h4><span class="section-number">5.7.19.3. </span>Détail des champs<a class="headerlink" href="#id49" title="Lien vers cette rubrique"></a></h4>
 <p><strong>« _id » :</strong> identifiant unique.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de 36 caractères correspondant à un GUID.</p></li>
@@ -8107,7 +8081,7 @@ enregistrements des collections suivantes :</p>
 </ul>
 <p><strong>« Name » :</strong> préfixe utilisé pour générer un identifiant signifiant.</p>
 <ul class="simple">
-<li><p>La valeur contenue dans ce champ doit correspondre à la table de concordance du service VitamCounterService.java. La liste des valeurs possibles est détaillée en annexe.</p></li>
+<li><p>La valeur contenue dans ce champ doit correspondre à la table de concordance du service VitamCounterService.java. La liste des valeurs possibles est détaillée en <a class="reference internal" href="#annexe-6-valeurs-possibles-pour-le-champ-name-de-la-collection-vitamsequence"><span class="xref myst">annexe</span></a>.</p></li>
 <li><p>Il s’agit d’une chaîne de caractères.</p></li>
 <li><p>Champ peuplé par la solution logicielle Vitam.</p></li>
 <li><p>Cardinalité : 1-1</p></li>
@@ -8136,14 +8110,14 @@ enregistrements des collections suivantes :</p>
 </section>
 </section>
 <section id="id50">
-<h2><span class="section-number">6.13. </span>Collection Offset<a class="headerlink" href="#id50" title="Lien vers cette rubrique"></a></h2>
+<h3><span class="section-number">5.7.20. </span>Collection Offset<a class="headerlink" href="#id50" title="Lien vers cette rubrique"></a></h3>
 <section id="id51">
-<h3><span class="section-number">6.13.1. </span>Utilisation de la collection<a class="headerlink" href="#id51" title="Lien vers cette rubrique"></a></h3>
+<h4><span class="section-number">5.7.20.1. </span>Utilisation de la collection<a class="headerlink" href="#id51" title="Lien vers cette rubrique"></a></h4>
 <p>Cette collection permet de persister les offsets des dernières données reconstruites des offres de stockage lors de la reconstruction au fil de l’eau pour les collections de la base Masterdata.</p>
 <p>Il y a une valeur d’offset par couple tenant/collection.</p>
 </section>
 <section id="id52">
-<h3><span class="section-number">6.13.2. </span>Exemple de JSON stocké en base comprenant l’exhaustivité des champs<a class="headerlink" href="#id52" title="Lien vers cette rubrique"></a></h3>
+<h4><span class="section-number">5.7.20.2. </span>Exemple de JSON stocké en base comprenant l’exhaustivité des champs<a class="headerlink" href="#id52" title="Lien vers cette rubrique"></a></h4>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">Objec</span><span class="kc">t</span><span class="err">Id(</span><span class="s2">&quot;507f191e810c19729de860ea&quot;</span><span class="err">)</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;offset&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1357</span><span class="p">,</span>
@@ -8155,7 +8129,7 @@ enregistrements des collections suivantes :</p>
 </div>
 </section>
 <section id="id53">
-<h3><span class="section-number">6.13.3. </span>Détail des champs<a class="headerlink" href="#id53" title="Lien vers cette rubrique"></a></h3>
+<h4><span class="section-number">5.7.20.3. </span>Détail des champs<a class="headerlink" href="#id53" title="Lien vers cette rubrique"></a></h4>
 <p><strong>« _id » :</strong> identifiant unique mongo.</p>
 <ul class="simple">
 <li><p>Il s’agit d’un champ de type mongo : ObjectId(&lt;hexadecimal&gt;).</p></li>
@@ -8183,8 +8157,9 @@ enregistrements des collections suivantes :</p>
 </ul>
 </section>
 </section>
+</section>
 <section id="base-report">
-<h2><span class="section-number">6.14. </span>Base Report<a class="headerlink" href="#base-report" title="Lien vers cette rubrique"></a></h2>
+<h2><span class="section-number">5.8. </span>Base Report<a class="headerlink" href="#base-report" title="Lien vers cette rubrique"></a></h2>
 <p>La base Report contient des collections remplies temporairement,
 utilisées pour construire des rapports d’opérations dans la solution
 logicielle Vitam. Ces collections sont :</p>
@@ -8204,13 +8179,13 @@ logicielle Vitam. Ces collections sont :</p>
 <li><p>UpdateUnitReport</p></li>
 </ul>
 <section id="collection-auditobjectgroup">
-<h3><span class="section-number">6.14.1. </span>Collection AuditObjectGroup<a class="headerlink" href="#collection-auditobjectgroup" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">5.8.1. </span>Collection AuditObjectGroup<a class="headerlink" href="#collection-auditobjectgroup" title="Lien vers cette rubrique"></a></h3>
 <section id="id54">
-<h4><span class="section-number">6.14.1.1. </span>Utilisation de la collection<a class="headerlink" href="#id54" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.8.1.1. </span>Utilisation de la collection<a class="headerlink" href="#id54" title="Lien vers cette rubrique"></a></h4>
 <p>La collection AuditObjectGroup permet à la solution logicielle Vitam de construire des rapports d’audit. Les données de cette collection sont temporaires et sont supprimées dès que les rapports correspondants sont créés. Il est donc possible de trouver la collection vide.</p>
 </section>
 <section id="id55">
-<h4><span class="section-number">6.14.1.2. </span>Détail des champs<a class="headerlink" href="#id55" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.8.1.2. </span>Détail des champs<a class="headerlink" href="#id55" title="Lien vers cette rubrique"></a></h4>
 <p><strong>« _id » :</strong> identifiant unique de l’enregistrement</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de 36 caractères correspondant à un GUID.</p></li>
@@ -8247,13 +8222,13 @@ logicielle Vitam. Ces collections sont :</p>
 </section>
 </section>
 <section id="collection-eliminationactionunit">
-<h3><span class="section-number">6.14.2. </span>Collection EliminationActionUnit<a class="headerlink" href="#collection-eliminationactionunit" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">5.8.2. </span>Collection EliminationActionUnit<a class="headerlink" href="#collection-eliminationactionunit" title="Lien vers cette rubrique"></a></h3>
 <section id="id56">
-<h4><span class="section-number">6.14.2.1. </span>Utilisation de la collection<a class="headerlink" href="#id56" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.8.2.1. </span>Utilisation de la collection<a class="headerlink" href="#id56" title="Lien vers cette rubrique"></a></h4>
 <p>La collection EliminationActionUnit permet à la solution logicielle Vitam de construire des rapports d’élimination d’unités archivistiques. Les données de cette collection sont temporaires et sont supprimées dès que les rapports correspondants sont créés. Il est donc possible de trouver la collection vide.</p>
 </section>
 <section id="id57">
-<h4><span class="section-number">6.14.2.2. </span>Détail des champs<a class="headerlink" href="#id57" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.8.2.2. </span>Détail des champs<a class="headerlink" href="#id57" title="Lien vers cette rubrique"></a></h4>
 <p><strong>« _id » :</strong> identifiant unique de l’enregistrement.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de 36 caractères correspondant à un GUID.</p></li>
@@ -8297,13 +8272,13 @@ métadonnées de l’unité archivistiques. Il est composé comme suit :</p>
 </section>
 </section>
 <section id="collection-eliminationactionobjectgroup">
-<h3><span class="section-number">6.14.3. </span>Collection EliminationActionObjectGroup<a class="headerlink" href="#collection-eliminationactionobjectgroup" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">5.8.3. </span>Collection EliminationActionObjectGroup<a class="headerlink" href="#collection-eliminationactionobjectgroup" title="Lien vers cette rubrique"></a></h3>
 <section id="id58">
-<h4><span class="section-number">6.14.3.1. </span>Utilisation de la collection<a class="headerlink" href="#id58" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.8.3.1. </span>Utilisation de la collection<a class="headerlink" href="#id58" title="Lien vers cette rubrique"></a></h4>
 <p>La collection EliminationActionObjectGroup permet à la solution logicielle Vitam de construire des rapports d’élimination des groupes d’objets techniques. Les données de cette collection sont temporaires et sont supprimées dès que les rapports correspondants sont créés. Il est donc possible de trouver la collection vide.</p>
 </section>
 <section id="id59">
-<h4><span class="section-number">6.14.3.2. </span>Détail des champs<a class="headerlink" href="#id59" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.8.3.2. </span>Détail des champs<a class="headerlink" href="#id59" title="Lien vers cette rubrique"></a></h4>
 <p><strong>« _id » :</strong> identifiant unique de l’enregistrement.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de 36 caractères correspondant à un GUID.</p></li>
@@ -8341,13 +8316,13 @@ les métadonnées du groupe d’objets. Il est composé comme suit :</p>
 </section>
 </section>
 <section id="collection-preservationreport">
-<h3><span class="section-number">6.14.4. </span>Collection PreservationReport<a class="headerlink" href="#collection-preservationreport" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">5.8.4. </span>Collection PreservationReport<a class="headerlink" href="#collection-preservationreport" title="Lien vers cette rubrique"></a></h3>
 <section id="id60">
-<h4><span class="section-number">6.14.4.1. </span>Utilisation de la collection<a class="headerlink" href="#id60" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.8.4.1. </span>Utilisation de la collection<a class="headerlink" href="#id60" title="Lien vers cette rubrique"></a></h4>
 <p>La collection PreservationReport permet à la solution logicielle Vitam de construire des rapports de préservation des groupes d’objets techniques. Les données de cette collection sont temporaires et sont supprimées dès que les rapports correspondants sont créés. Il est donc possible de trouver la collection vide.</p>
 </section>
 <section id="id61">
-<h4><span class="section-number">6.14.4.2. </span>Détail des champs<a class="headerlink" href="#id61" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.8.4.2. </span>Détail des champs<a class="headerlink" href="#id61" title="Lien vers cette rubrique"></a></h4>
 <p><strong>« _id » :</strong> identifiant unique de l’enregistrement.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de 36 caractères correspondant à un GUID.</p></li>
@@ -8418,13 +8393,13 @@ d’objets.</p>
 </section>
 </section>
 <section id="collection-bulkupdateunitmetadatareport">
-<h3><span class="section-number">6.14.5. </span>Collection BulkUpdateUnitMetadataReport<a class="headerlink" href="#collection-bulkupdateunitmetadatareport" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">5.8.5. </span>Collection BulkUpdateUnitMetadataReport<a class="headerlink" href="#collection-bulkupdateunitmetadatareport" title="Lien vers cette rubrique"></a></h3>
 <section id="id62">
-<h4><span class="section-number">6.14.5.1. </span>Utilisation de la collection<a class="headerlink" href="#id62" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.8.5.1. </span>Utilisation de la collection<a class="headerlink" href="#id62" title="Lien vers cette rubrique"></a></h4>
 <p>La collection BulkUpdateUnitMetadataReport permet à la solution logicielle Vitam de construire des rapports de mises à jour de métadonnées d’archives de manière unitaire mais dans le contexte d’une opération de masse. Les données de cette collection sont temporaires et sont supprimées dès que les rapports correspondants sont créés. Il est donc possible de trouver la collection vide.</p>
 </section>
 <section id="id63">
-<h4><span class="section-number">6.14.5.2. </span>Détail des champs<a class="headerlink" href="#id63" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.8.5.2. </span>Détail des champs<a class="headerlink" href="#id63" title="Lien vers cette rubrique"></a></h4>
 <p><strong>« _id » :</strong> identifiant unique de l’enregistrement.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de 36 caractères correspondant à un GUID.</p></li>
@@ -8493,13 +8468,13 @@ d’objets.</p>
 </section>
 </section>
 <section id="collection-deletegotversionsreport">
-<h3><span class="section-number">6.14.6. </span>Collection DeleteGotVersionsReport<a class="headerlink" href="#collection-deletegotversionsreport" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">5.8.6. </span>Collection DeleteGotVersionsReport<a class="headerlink" href="#collection-deletegotversionsreport" title="Lien vers cette rubrique"></a></h3>
 <section id="id64">
-<h4><span class="section-number">6.14.6.1. </span>Utilisation de la collection<a class="headerlink" href="#id64" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.8.6.1. </span>Utilisation de la collection<a class="headerlink" href="#id64" title="Lien vers cette rubrique"></a></h4>
 <p>La collection DeleteGotVersionsReport permet à la solution logicielle Vitam de construire des rapports de suppression d’usages et de versions d’objets. Les données de cette collection sont temporaires et sont supprimées dès que les rapports correspondants sont créés. Il est donc possible de trouver la collection vide.</p>
 </section>
 <section id="id65">
-<h4><span class="section-number">6.14.6.2. </span>Détail des champs<a class="headerlink" href="#id65" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.8.6.2. </span>Détail des champs<a class="headerlink" href="#id65" title="Lien vers cette rubrique"></a></h4>
 <p><strong>« _id » :</strong> identifiant unique de l’enregistrement.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de 36 caractères correspondant à un GUID.</p></li>
@@ -8632,13 +8607,13 @@ d’objets.</p>
 </section>
 </section>
 <section id="collection-evidenceauditreport">
-<h3><span class="section-number">6.14.7. </span>Collection EvidenceAuditReport<a class="headerlink" href="#collection-evidenceauditreport" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">5.8.7. </span>Collection EvidenceAuditReport<a class="headerlink" href="#collection-evidenceauditreport" title="Lien vers cette rubrique"></a></h3>
 <section id="id66">
-<h4><span class="section-number">6.14.7.1. </span>Utilisation de la collection<a class="headerlink" href="#id66" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.8.7.1. </span>Utilisation de la collection<a class="headerlink" href="#id66" title="Lien vers cette rubrique"></a></h4>
 <p>La collection EvidenceAuditReport permet à la solution logicielle Vitam de construire des rapport d’audit de cohérence. Les données de cette collection sont temporaires et sont supprimées dès que les rapports correspondants sont créés. Il est donc possible de trouver la collection vide.</p>
 </section>
 <section id="id67">
-<h4><span class="section-number">6.14.7.2. </span>Détail des champs<a class="headerlink" href="#id67" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.8.7.2. </span>Détail des champs<a class="headerlink" href="#id67" title="Lien vers cette rubrique"></a></h4>
 <p><strong>« _id » :</strong> identifiant unique de l’enregistrement.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de 36 caractères correspondant à un GUID.</p></li>
@@ -8711,13 +8686,13 @@ d’objets.</p>
 </section>
 </section>
 <section id="collection-extractedmetadata">
-<h3><span class="section-number">6.14.8. </span>Collection ExtractedMetadata<a class="headerlink" href="#collection-extractedmetadata" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">5.8.8. </span>Collection ExtractedMetadata<a class="headerlink" href="#collection-extractedmetadata" title="Lien vers cette rubrique"></a></h3>
 <section id="id68">
-<h4><span class="section-number">6.14.8.1. </span>Utilisation de la collection<a class="headerlink" href="#id68" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.8.8.1. </span>Utilisation de la collection<a class="headerlink" href="#id68" title="Lien vers cette rubrique"></a></h4>
 <p>La collection ExtractedMetadata est conçue pour conserver les métadonnées extraites à partir des unités archivistiques au cours de différents processus de création de rapports.</p>
 </section>
 <section id="id69">
-<h4><span class="section-number">6.14.8.2. </span>Détail des champs<a class="headerlink" href="#id69" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.8.8.2. </span>Détail des champs<a class="headerlink" href="#id69" title="Lien vers cette rubrique"></a></h4>
 <p><strong>« _id » :</strong> identifiant unique de l’enregistrement.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de 36 caractères correspondant à un GUID.</p></li>
@@ -8751,13 +8726,13 @@ d’objets.</p>
 </section>
 </section>
 <section id="collection-invalidunits">
-<h3><span class="section-number">6.14.9. </span>Collection InvalidUnits<a class="headerlink" href="#collection-invalidunits" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">5.8.9. </span>Collection InvalidUnits<a class="headerlink" href="#collection-invalidunits" title="Lien vers cette rubrique"></a></h3>
 <section id="id70">
-<h4><span class="section-number">6.14.9.1. </span>Utilisation de la collection<a class="headerlink" href="#id70" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.8.9.1. </span>Utilisation de la collection<a class="headerlink" href="#id70" title="Lien vers cette rubrique"></a></h4>
 <p>La collection InvalidUnits est utilisée pour identifier les Unités Archivistiques (UA) dont les règles héritées calculées ont été invalidées suite à une mise à jour du référentiel de règles. L’objectif est de maintenir la cohérence et l’exactitude des informations de gestion appliquées aux archives.</p>
 </section>
 <section id="id71">
-<h4><span class="section-number">6.14.9.2. </span>Détail des champs<a class="headerlink" href="#id71" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.8.9.2. </span>Détail des champs<a class="headerlink" href="#id71" title="Lien vers cette rubrique"></a></h4>
 <p><strong>« _id » :</strong> identifiant unique de l’enregistrement.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de 36 caractères correspondant à un GUID.</p></li>
@@ -8791,13 +8766,13 @@ d’objets.</p>
 </section>
 </section>
 <section id="collection-purgeobjectgroup">
-<h3><span class="section-number">6.14.10. </span>Collection PurgeObjectGroup<a class="headerlink" href="#collection-purgeobjectgroup" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">5.8.10. </span>Collection PurgeObjectGroup<a class="headerlink" href="#collection-purgeobjectgroup" title="Lien vers cette rubrique"></a></h3>
 <section id="id72">
-<h4><span class="section-number">6.14.10.1. </span>Utilisation de la collection<a class="headerlink" href="#id72" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.8.10.1. </span>Utilisation de la collection<a class="headerlink" href="#id72" title="Lien vers cette rubrique"></a></h4>
 <p>La collection PurgeObjectGroup est utilisée pour consigner les opérations de purge effectuées sur les groupes d’objets archivistiques. Elle enregistre les détails de chaque groupe d’objets supprimé ou détaché des unités parentes, incluant les identifiants des objets, le statut de la purge, les versions d’objet concernées, et d’autres métadonnées pertinentes.</p>
 </section>
 <section id="id73">
-<h4><span class="section-number">6.14.10.2. </span>Détail des champs<a class="headerlink" href="#id73" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.8.10.2. </span>Détail des champs<a class="headerlink" href="#id73" title="Lien vers cette rubrique"></a></h4>
 <p><strong>« _id » :</strong> identifiant unique de l’enregistrement.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de 36 caractères correspondant à un GUID.</p></li>
@@ -8904,13 +8879,13 @@ d’objets.</p>
 </section>
 </section>
 <section id="collection-purgeunit">
-<h3><span class="section-number">6.14.11. </span>Collection PurgeUnit<a class="headerlink" href="#collection-purgeunit" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">5.8.11. </span>Collection PurgeUnit<a class="headerlink" href="#collection-purgeunit" title="Lien vers cette rubrique"></a></h3>
 <section id="id74">
-<h4><span class="section-number">6.14.11.1. </span>Utilisation de la collection<a class="headerlink" href="#id74" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.8.11.1. </span>Utilisation de la collection<a class="headerlink" href="#id74" title="Lien vers cette rubrique"></a></h4>
 <p>La collection PurgeUnit consigne les opérations d’élimination effectuées sur les Unités Archivistiques (UA) dans le système d’archivage électronique Vitam. Elle enregistre des détails tels que l’identifiant unique de l’UA, le service producteur, l’opération initiale, le groupe d’objets associé, le statut de l’élimination, et d’autres informations métadonnées pertinentes. Cette collection est essentielle pour le suivi et l’audit des actions d’élimination, permettant une gestion conforme des archives numériques.</p>
 </section>
 <section id="id75">
-<h4><span class="section-number">6.14.11.2. </span>Détail des champs<a class="headerlink" href="#id75" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.8.11.2. </span>Détail des champs<a class="headerlink" href="#id75" title="Lien vers cette rubrique"></a></h4>
 <p><strong>« _id » :</strong> identifiant unique de l’enregistrement.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de 36 caractères correspondant à un GUID.</p></li>
@@ -8986,13 +8961,13 @@ d’objets.</p>
 </section>
 </section>
 <section id="collection-traceabilityreport">
-<h3><span class="section-number">6.14.12. </span>Collection TraceabilityReport<a class="headerlink" href="#collection-traceabilityreport" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">5.8.12. </span>Collection TraceabilityReport<a class="headerlink" href="#collection-traceabilityreport" title="Lien vers cette rubrique"></a></h3>
 <section id="id76">
-<h4><span class="section-number">6.14.12.1. </span>Utilisation de la collection<a class="headerlink" href="#id76" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.8.12.1. </span>Utilisation de la collection<a class="headerlink" href="#id76" title="Lien vers cette rubrique"></a></h4>
 <p>La collection TraceabilityReport est utilisé dans la construction d’un rapport qui est généré pendant l’audit relatif aux contrôles d’intégrité effectués sur les journaux sécurisés dans Vitam.</p>
 </section>
 <section id="id77">
-<h4><span class="section-number">6.14.12.2. </span>Détail des champs<a class="headerlink" href="#id77" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.8.12.2. </span>Détail des champs<a class="headerlink" href="#id77" title="Lien vers cette rubrique"></a></h4>
 <p><strong>« _id » :</strong> identifiant unique de l’enregistrement.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de 36 caractères correspondant à un GUID.</p></li>
@@ -9077,13 +9052,13 @@ d’objets.</p>
 </section>
 </section>
 <section id="collection-transferreplyunit">
-<h3><span class="section-number">6.14.13. </span>Collection TransferReplyUnit<a class="headerlink" href="#collection-transferreplyunit" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">5.8.13. </span>Collection TransferReplyUnit<a class="headerlink" href="#collection-transferreplyunit" title="Lien vers cette rubrique"></a></h3>
 <section id="id78">
-<h4><span class="section-number">6.14.13.1. </span>Utilisation de la collection<a class="headerlink" href="#id78" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.8.13.1. </span>Utilisation de la collection<a class="headerlink" href="#id78" title="Lien vers cette rubrique"></a></h4>
 <p>La collection TransferReplyUnit est utilisé dans la construction d’un rapport qui est documente les résultats du traitement des Unités Archivistiques (UA) suite à l’acquittement d’un transfert.</p>
 </section>
 <section id="id79">
-<h4><span class="section-number">6.14.13.2. </span>Détail des champs<a class="headerlink" href="#id79" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.8.13.2. </span>Détail des champs<a class="headerlink" href="#id79" title="Lien vers cette rubrique"></a></h4>
 <p><strong>« id » :</strong> Identifiant unique de l’Unité Archivistique concernée par le transfert.</p>
 <ul class="simple">
 <li><p>Champ peuplé par la solution logicielle Vitam.</p></li>
@@ -9105,13 +9080,13 @@ d’objets.</p>
 </section>
 </section>
 <section id="collection-updateunitreport">
-<h3><span class="section-number">6.14.14. </span>Collection UpdateUnitReport<a class="headerlink" href="#collection-updateunitreport" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">5.8.14. </span>Collection UpdateUnitReport<a class="headerlink" href="#collection-updateunitreport" title="Lien vers cette rubrique"></a></h3>
 <section id="id80">
-<h4><span class="section-number">6.14.14.1. </span>Utilisation de la collection<a class="headerlink" href="#id80" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.8.14.1. </span>Utilisation de la collection<a class="headerlink" href="#id80" title="Lien vers cette rubrique"></a></h4>
 <p>La collection UpdateUnitReport permet à la solution logicielle Vitam de construire des rapports de mises à jour de métadonnées d’archives de manière unitaire. Les données de cette collection sont temporaires et sont supprimées dès que les rapports correspondants sont créés. Il est donc possible de trouver la collection vide.</p>
 </section>
 <section id="id81">
-<h4><span class="section-number">6.14.14.2. </span>Détail des champs<a class="headerlink" href="#id81" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.8.14.2. </span>Détail des champs<a class="headerlink" href="#id81" title="Lien vers cette rubrique"></a></h4>
 <p><strong>« _id » :</strong> identifiant unique de l’enregistrement.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de 36 caractères correspondant à un GUID.</p></li>
@@ -9180,13 +9155,13 @@ d’objets.</p>
 </section>
 </section>
 <section id="id82">
-<h3><span class="section-number">6.14.15. </span>Collection BulkUpdateUnitMetadataReport<a class="headerlink" href="#id82" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">5.8.15. </span>Collection BulkUpdateUnitMetadataReport<a class="headerlink" href="#id82" title="Lien vers cette rubrique"></a></h3>
 <section id="id83">
-<h4><span class="section-number">6.14.15.1. </span>Utilisation de la collection<a class="headerlink" href="#id83" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.8.15.1. </span>Utilisation de la collection<a class="headerlink" href="#id83" title="Lien vers cette rubrique"></a></h4>
 <p>La collection BulkUpdateUnitMetadataReport permet à la solution logicielle Vitam de construire des rapports de mises à jour de métadonnées d’archives de manière unitaire mais dans le contexte d’une opération de masse. Les données de cette collection sont temporaires et sont supprimées dès que les rapports correspondants sont créés. Il est donc possible de trouver la collection vide.</p>
 </section>
 <section id="id84">
-<h4><span class="section-number">6.14.15.2. </span>Détail des champs<a class="headerlink" href="#id84" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.8.15.2. </span>Détail des champs<a class="headerlink" href="#id84" title="Lien vers cette rubrique"></a></h4>
 <p><strong>« _id » :</strong> identifiant unique de l’enregistrement.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de 36 caractères correspondant à un GUID.</p></li>
@@ -9255,13 +9230,13 @@ d’objets.</p>
 </section>
 </section>
 <section id="id85">
-<h3><span class="section-number">6.14.16. </span>Collection DeleteGotVersionsReport<a class="headerlink" href="#id85" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">5.8.16. </span>Collection DeleteGotVersionsReport<a class="headerlink" href="#id85" title="Lien vers cette rubrique"></a></h3>
 <section id="id86">
-<h4><span class="section-number">6.14.16.1. </span>Utilisation de la collection<a class="headerlink" href="#id86" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.8.16.1. </span>Utilisation de la collection<a class="headerlink" href="#id86" title="Lien vers cette rubrique"></a></h4>
 <p>La collection DeleteGotVersionsReport permet à la solution logicielle Vitam de construire des rapports de suppression d’usages et de versions d’objets. Les données de cette collection sont temporaires et sont supprimées dès que les rapports correspondants sont créés. Il est donc possible de trouver la collection vide.</p>
 </section>
 <section id="id87">
-<h4><span class="section-number">6.14.16.2. </span>Détail des champs<a class="headerlink" href="#id87" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.8.16.2. </span>Détail des champs<a class="headerlink" href="#id87" title="Lien vers cette rubrique"></a></h4>
 <p><strong>« _id » :</strong> identifiant unique de l’enregistrement.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de 36 caractères correspondant à un GUID.</p></li>
@@ -9394,13 +9369,13 @@ d’objets.</p>
 </section>
 </section>
 <section id="id88">
-<h3><span class="section-number">6.14.17. </span>Collection EvidenceAuditReport<a class="headerlink" href="#id88" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">5.8.17. </span>Collection EvidenceAuditReport<a class="headerlink" href="#id88" title="Lien vers cette rubrique"></a></h3>
 <section id="id89">
-<h4><span class="section-number">6.14.17.1. </span>Utilisation de la collection<a class="headerlink" href="#id89" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.8.17.1. </span>Utilisation de la collection<a class="headerlink" href="#id89" title="Lien vers cette rubrique"></a></h4>
 <p>La collection EvidenceAuditReport permet à la solution logicielle Vitam de construire des rapport d’audit de cohérence. Les données de cette collection sont temporaires et sont supprimées dès que les rapports correspondants sont créés. Il est donc possible de trouver la collection vide.</p>
 </section>
 <section id="id90">
-<h4><span class="section-number">6.14.17.2. </span>Détail des champs<a class="headerlink" href="#id90" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.8.17.2. </span>Détail des champs<a class="headerlink" href="#id90" title="Lien vers cette rubrique"></a></h4>
 <p><strong>« _id » :</strong> identifiant unique de l’enregistrement.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de 36 caractères correspondant à un GUID.</p></li>
@@ -9473,13 +9448,13 @@ d’objets.</p>
 </section>
 </section>
 <section id="id91">
-<h3><span class="section-number">6.14.18. </span>Collection ExtractedMetadata<a class="headerlink" href="#id91" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">5.8.18. </span>Collection ExtractedMetadata<a class="headerlink" href="#id91" title="Lien vers cette rubrique"></a></h3>
 <section id="id92">
-<h4><span class="section-number">6.14.18.1. </span>Utilisation de la collection<a class="headerlink" href="#id92" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.8.18.1. </span>Utilisation de la collection<a class="headerlink" href="#id92" title="Lien vers cette rubrique"></a></h4>
 <p>La collection ExtractedMetadata est conçue pour conserver les métadonnées extraites à partir des unités archivistiques au cours de différents processus de création de rapports.</p>
 </section>
 <section id="id93">
-<h4><span class="section-number">6.14.18.2. </span>Détail des champs<a class="headerlink" href="#id93" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.8.18.2. </span>Détail des champs<a class="headerlink" href="#id93" title="Lien vers cette rubrique"></a></h4>
 <p><strong>« _id » :</strong> identifiant unique de l’enregistrement.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de 36 caractères correspondant à un GUID.</p></li>
@@ -9513,13 +9488,13 @@ d’objets.</p>
 </section>
 </section>
 <section id="id94">
-<h3><span class="section-number">6.14.19. </span>Collection InvalidUnits<a class="headerlink" href="#id94" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">5.8.19. </span>Collection InvalidUnits<a class="headerlink" href="#id94" title="Lien vers cette rubrique"></a></h3>
 <section id="id95">
-<h4><span class="section-number">6.14.19.1. </span>Utilisation de la collection<a class="headerlink" href="#id95" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.8.19.1. </span>Utilisation de la collection<a class="headerlink" href="#id95" title="Lien vers cette rubrique"></a></h4>
 <p>La collection InvalidUnits est utilisée pour identifier les Unités Archivistiques (UA) dont les règles héritées calculées ont été invalidées suite à une mise à jour du référentiel de règles. L’objectif est de maintenir la cohérence et l’exactitude des informations de gestion appliquées aux archives.</p>
 </section>
 <section id="id96">
-<h4><span class="section-number">6.14.19.2. </span>Détail des champs<a class="headerlink" href="#id96" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.8.19.2. </span>Détail des champs<a class="headerlink" href="#id96" title="Lien vers cette rubrique"></a></h4>
 <p><strong>« _id » :</strong> identifiant unique de l’enregistrement.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de 36 caractères correspondant à un GUID.</p></li>
@@ -9553,13 +9528,13 @@ d’objets.</p>
 </section>
 </section>
 <section id="id97">
-<h3><span class="section-number">6.14.20. </span>Collection PurgeObjectGroup<a class="headerlink" href="#id97" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">5.8.20. </span>Collection PurgeObjectGroup<a class="headerlink" href="#id97" title="Lien vers cette rubrique"></a></h3>
 <section id="id98">
-<h4><span class="section-number">6.14.20.1. </span>Utilisation de la collection<a class="headerlink" href="#id98" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.8.20.1. </span>Utilisation de la collection<a class="headerlink" href="#id98" title="Lien vers cette rubrique"></a></h4>
 <p>La collection PurgeObjectGroup est utilisée pour consigner les opérations de purge effectuées sur les groupes d’objets archivistiques. Elle enregistre les détails de chaque groupe d’objets supprimé ou détaché des unités parentes, incluant les identifiants des objets, le statut de la purge, les versions d’objet concernées, et d’autres métadonnées pertinentes.</p>
 </section>
 <section id="id99">
-<h4><span class="section-number">6.14.20.2. </span>Détail des champs<a class="headerlink" href="#id99" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.8.20.2. </span>Détail des champs<a class="headerlink" href="#id99" title="Lien vers cette rubrique"></a></h4>
 <p><strong>« _id » :</strong> identifiant unique de l’enregistrement.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de 36 caractères correspondant à un GUID.</p></li>
@@ -9666,13 +9641,13 @@ d’objets.</p>
 </section>
 </section>
 <section id="id100">
-<h3><span class="section-number">6.14.21. </span>Collection PurgeUnit<a class="headerlink" href="#id100" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">5.8.21. </span>Collection PurgeUnit<a class="headerlink" href="#id100" title="Lien vers cette rubrique"></a></h3>
 <section id="id101">
-<h4><span class="section-number">6.14.21.1. </span>Utilisation de la collection<a class="headerlink" href="#id101" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.8.21.1. </span>Utilisation de la collection<a class="headerlink" href="#id101" title="Lien vers cette rubrique"></a></h4>
 <p>La collection PurgeUnit consigne les opérations d’élimination effectuées sur les Unités Archivistiques (UA) dans le système d’archivage électronique Vitam. Elle enregistre des détails tels que l’identifiant unique de l’UA, le service producteur, l’opération initiale, le groupe d’objets associé, le statut de l’élimination, et d’autres informations métadonnées pertinentes. Cette collection est essentielle pour le suivi et l’audit des actions d’élimination, permettant une gestion conforme des archives numériques.</p>
 </section>
 <section id="id102">
-<h4><span class="section-number">6.14.21.2. </span>Détail des champs<a class="headerlink" href="#id102" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.8.21.2. </span>Détail des champs<a class="headerlink" href="#id102" title="Lien vers cette rubrique"></a></h4>
 <p><strong>« _id » :</strong> identifiant unique de l’enregistrement.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de 36 caractères correspondant à un GUID.</p></li>
@@ -9748,13 +9723,13 @@ d’objets.</p>
 </section>
 </section>
 <section id="id103">
-<h3><span class="section-number">6.14.22. </span>Collection TraceabilityReport<a class="headerlink" href="#id103" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">5.8.22. </span>Collection TraceabilityReport<a class="headerlink" href="#id103" title="Lien vers cette rubrique"></a></h3>
 <section id="id104">
-<h4><span class="section-number">6.14.22.1. </span>Utilisation de la collection<a class="headerlink" href="#id104" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.8.22.1. </span>Utilisation de la collection<a class="headerlink" href="#id104" title="Lien vers cette rubrique"></a></h4>
 <p>La collection TraceabilityReport est utilisé dans la construction d’un rapport qui est généré pendant l’audit relatif aux contrôles d’intégrité effectués sur les journaux sécurisés dans Vitam.</p>
 </section>
 <section id="id105">
-<h4><span class="section-number">6.14.22.2. </span>Détail des champs<a class="headerlink" href="#id105" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.8.22.2. </span>Détail des champs<a class="headerlink" href="#id105" title="Lien vers cette rubrique"></a></h4>
 <p><strong>« _id » :</strong> identifiant unique de l’enregistrement.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de 36 caractères correspondant à un GUID.</p></li>
@@ -9839,13 +9814,13 @@ d’objets.</p>
 </section>
 </section>
 <section id="id106">
-<h3><span class="section-number">6.14.23. </span>Collection TransferReplyUnit<a class="headerlink" href="#id106" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">5.8.23. </span>Collection TransferReplyUnit<a class="headerlink" href="#id106" title="Lien vers cette rubrique"></a></h3>
 <section id="id107">
-<h4><span class="section-number">6.14.23.1. </span>Utilisation de la collection<a class="headerlink" href="#id107" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.8.23.1. </span>Utilisation de la collection<a class="headerlink" href="#id107" title="Lien vers cette rubrique"></a></h4>
 <p>La collection TransferReplyUnit est utilisé dans la construction d’un rapport qui est documente les résultats du traitement des Unités Archivistiques (UA) suite à l’acquittement d’un transfert.</p>
 </section>
 <section id="id108">
-<h4><span class="section-number">6.14.23.2. </span>Détail des champs<a class="headerlink" href="#id108" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.8.23.2. </span>Détail des champs<a class="headerlink" href="#id108" title="Lien vers cette rubrique"></a></h4>
 <p><strong>« id » :</strong> Identifiant unique de l’Unité Archivistique concernée par le transfert.</p>
 <ul class="simple">
 <li><p>Champ peuplé par la solution logicielle Vitam.</p></li>
@@ -9867,13 +9842,13 @@ d’objets.</p>
 </section>
 </section>
 <section id="id109">
-<h3><span class="section-number">6.14.24. </span>Collection UpdateUnitReport<a class="headerlink" href="#id109" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">5.8.24. </span>Collection UpdateUnitReport<a class="headerlink" href="#id109" title="Lien vers cette rubrique"></a></h3>
 <section id="id110">
-<h4><span class="section-number">6.14.24.1. </span>Utilisation de la collection<a class="headerlink" href="#id110" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.8.24.1. </span>Utilisation de la collection<a class="headerlink" href="#id110" title="Lien vers cette rubrique"></a></h4>
 <p>La collection UpdateUnitReport permet à la solution logicielle Vitam de construire des rapports de mises à jour de métadonnées d’archives de manière unitaire. Les données de cette collection sont temporaires et sont supprimées dès que les rapports correspondants sont créés. Il est donc possible de trouver la collection vide.</p>
 </section>
 <section id="id111">
-<h4><span class="section-number">6.14.24.2. </span>Détail des champs<a class="headerlink" href="#id111" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.8.24.2. </span>Détail des champs<a class="headerlink" href="#id111" title="Lien vers cette rubrique"></a></h4>
 <p><strong>« _id » :</strong> identifiant unique de l’enregistrement.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de 36 caractères correspondant à un GUID.</p></li>
@@ -9943,16 +9918,16 @@ d’objets.</p>
 </section>
 </section>
 <section id="base-offer">
-<h2><span class="section-number">6.15. </span>Base Offer<a class="headerlink" href="#base-offer" title="Lien vers cette rubrique"></a></h2>
+<h2><span class="section-number">5.9. </span>Base Offer<a class="headerlink" href="#base-offer" title="Lien vers cette rubrique"></a></h2>
 <p>La base Offer contient pour une offre les collections relatives aux ordres d’écriture opérés sur les offres. Pour l’offre froide, cette base contient aussi les données d’emplacement de stockage dans l’offre (bande magnétique).</p>
 <section id="collection-offerlog">
-<h3><span class="section-number">6.15.1. </span>Collection OfferLog<a class="headerlink" href="#collection-offerlog" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">5.9.1. </span>Collection OfferLog<a class="headerlink" href="#collection-offerlog" title="Lien vers cette rubrique"></a></h3>
 <section id="utilisation-de-la-collection-offerlog">
-<h4><span class="section-number">6.15.1.1. </span>Utilisation de la collection OfferLog<a class="headerlink" href="#utilisation-de-la-collection-offerlog" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.9.1.1. </span>Utilisation de la collection OfferLog<a class="headerlink" href="#utilisation-de-la-collection-offerlog" title="Lien vers cette rubrique"></a></h4>
 <p>La collection OfferLog contient les ordres d’écriture ou de suppression reçus par l’offre, ordonnés selon un numéro de séquence.</p>
 </section>
 <section id="id112">
-<h4><span class="section-number">6.15.1.2. </span>Exemple de JSON stocké en base comprenant l’exhaustivité des champs<a class="headerlink" href="#id112" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.9.1.2. </span>Exemple de JSON stocké en base comprenant l’exhaustivité des champs<a class="headerlink" href="#id112" title="Lien vers cette rubrique"></a></h4>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">Objec</span><span class="kc">t</span><span class="err">ID(</span><span class="s2">&quot;61c5e857e50db01443f204a7&quot;</span><span class="err">)</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;Sequence&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
@@ -9966,7 +9941,7 @@ d’objets.</p>
 </div>
 </section>
 <section id="id113">
-<h4><span class="section-number">6.15.1.3. </span>Détail des champs du JSON stocké dans la collection<a class="headerlink" href="#id113" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.9.1.3. </span>Détail des champs du JSON stocké dans la collection<a class="headerlink" href="#id113" title="Lien vers cette rubrique"></a></h4>
 <p>« _id » : identifiant unique Mongo.</p>
 <ul class="simple">
 <li><p>Il s’agit d’un champ de type Mongo composé comme suit : ObjectId( &lt; hexadecimal &gt; ).</p></li>
@@ -10032,13 +10007,13 @@ d’objets.</p>
 </section>
 </section>
 <section id="collection-compactedofferlog">
-<h3><span class="section-number">6.15.2. </span>Collection CompactedOfferLog<a class="headerlink" href="#collection-compactedofferlog" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">5.9.2. </span>Collection CompactedOfferLog<a class="headerlink" href="#collection-compactedofferlog" title="Lien vers cette rubrique"></a></h3>
 <section id="utilisation-de-la-collection-compactedofferlog">
-<h4><span class="section-number">6.15.2.1. </span>Utilisation de la collection CompactedOfferLog<a class="headerlink" href="#utilisation-de-la-collection-compactedofferlog" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.9.2.1. </span>Utilisation de la collection CompactedOfferLog<a class="headerlink" href="#utilisation-de-la-collection-compactedofferlog" title="Lien vers cette rubrique"></a></h4>
 <p>La collection CompactedOfferLog contient un regroupement d’anciens ordres d’écriture et de suppression.</p>
 </section>
 <section id="id114">
-<h4><span class="section-number">6.15.2.2. </span>Exemple de JSON stocké en base comprenant l’exhaustivité des champs<a class="headerlink" href="#id114" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.9.2.2. </span>Exemple de JSON stocké en base comprenant l’exhaustivité des champs<a class="headerlink" href="#id114" title="Lien vers cette rubrique"></a></h4>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">Objec</span><span class="kc">t</span><span class="err">ID(</span><span class="s2">&quot;6198de987cd1fd5f1f812c26&quot;</span><span class="err">)</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;SequenceStart&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2424</span><span class="p">,</span>
@@ -10069,7 +10044,7 @@ d’objets.</p>
 </div>
 </section>
 <section id="id115">
-<h4><span class="section-number">6.15.2.3. </span>Détail des champs du JSON stocké dans la collection<a class="headerlink" href="#id115" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.9.2.3. </span>Détail des champs du JSON stocké dans la collection<a class="headerlink" href="#id115" title="Lien vers cette rubrique"></a></h4>
 <p>« _id » : identifiant unique Mongo.</p>
 <ul class="simple">
 <li><p>Il s’agit d’un champ de type Mongo composé comme suit : ObjectId( &lt; hexadecimal &gt; ).</p></li>
@@ -10117,13 +10092,13 @@ d’objets.</p>
 </section>
 </section>
 <section id="collection-offersequence">
-<h3><span class="section-number">6.15.3. </span>Collection OfferSequence<a class="headerlink" href="#collection-offersequence" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">5.9.3. </span>Collection OfferSequence<a class="headerlink" href="#collection-offersequence" title="Lien vers cette rubrique"></a></h3>
 <section id="utilisation-de-la-collection-offersequence">
-<h4><span class="section-number">6.15.3.1. </span>Utilisation de la collection OfferSequence<a class="headerlink" href="#utilisation-de-la-collection-offersequence" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.9.3.1. </span>Utilisation de la collection OfferSequence<a class="headerlink" href="#utilisation-de-la-collection-offersequence" title="Lien vers cette rubrique"></a></h4>
 <p>Cette collection permet de générer des identifiants ordonnés pour les enregistrements de la Collection OfferLog.</p>
 </section>
 <section id="id116">
-<h4><span class="section-number">6.15.3.2. </span>Exemple de JSON stocké en base comprenant l’exhaustivité des champs<a class="headerlink" href="#id116" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.9.3.2. </span>Exemple de JSON stocké en base comprenant l’exhaustivité des champs<a class="headerlink" href="#id116" title="Lien vers cette rubrique"></a></h4>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Backup_Log_Sequence&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;Counter&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">838338</span>
@@ -10132,7 +10107,7 @@ d’objets.</p>
 </div>
 </section>
 <section id="id117">
-<h4><span class="section-number">6.15.3.3. </span>Détail des champs du JSON stocké dans la collection<a class="headerlink" href="#id117" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.9.3.3. </span>Détail des champs du JSON stocké dans la collection<a class="headerlink" href="#id117" title="Lien vers cette rubrique"></a></h4>
 <p>« _id » : identifiant unique.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de caractères.</p></li>
@@ -10154,13 +10129,13 @@ d’objets.</p>
 </section>
 </section>
 <section id="collection-tapecatalog-offre-froide">
-<h3><span class="section-number">6.15.4. </span>Collection TapeCatalog (offre froide)<a class="headerlink" href="#collection-tapecatalog-offre-froide" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">5.9.4. </span>Collection TapeCatalog (offre froide)<a class="headerlink" href="#collection-tapecatalog-offre-froide" title="Lien vers cette rubrique"></a></h3>
 <section id="utilisation-de-la-collection-tapecatalog">
-<h4><span class="section-number">6.15.4.1. </span>Utilisation de la collection TapeCatalog<a class="headerlink" href="#utilisation-de-la-collection-tapecatalog" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.9.4.1. </span>Utilisation de la collection TapeCatalog<a class="headerlink" href="#utilisation-de-la-collection-tapecatalog" title="Lien vers cette rubrique"></a></h4>
 <p>La collection TapeCatalog regroupe l’ensemble des bandes magnétiques connues du système. Cette collection est peuplée par Vitam lors de l’initialisation de l’offre froide.</p>
 </section>
 <section id="id118">
-<h4><span class="section-number">6.15.4.2. </span>Exemple de JSON stocké en base comprenant l’exhaustivité des champs<a class="headerlink" href="#id118" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.9.4.2. </span>Exemple de JSON stocké en base comprenant l’exhaustivité des champs<a class="headerlink" href="#id118" title="Lien vers cette rubrique"></a></h4>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aeaaaaaaaahar5sqaane4al55udhntqaaaaq&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;queue_state&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RUNNING&quot;</span><span class="p">,</span>
@@ -10196,7 +10171,7 @@ d’objets.</p>
 </div>
 </section>
 <section id="id119">
-<h4><span class="section-number">6.15.4.3. </span>Détail des champs du JSON stocké dans la collection<a class="headerlink" href="#id119" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.9.4.3. </span>Détail des champs du JSON stocké dans la collection<a class="headerlink" href="#id119" title="Lien vers cette rubrique"></a></h4>
 <p>« _id » : identifiant unique.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de 36 caractères correspondant à un GUID.</p></li>
@@ -10395,13 +10370,13 @@ d’objets.</p>
 </section>
 </section>
 <section id="collections-tapequeuemessage-offre-froide">
-<h3><span class="section-number">6.15.5. </span>Collections TapeQueueMessage (offre froide)<a class="headerlink" href="#collections-tapequeuemessage-offre-froide" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">5.9.5. </span>Collections TapeQueueMessage (offre froide)<a class="headerlink" href="#collections-tapequeuemessage-offre-froide" title="Lien vers cette rubrique"></a></h3>
 <section id="utilisation-de-la-collection-tapequeuemessage">
-<h4><span class="section-number">6.15.5.1. </span>Utilisation de la collection TapeQueueMessage<a class="headerlink" href="#utilisation-de-la-collection-tapequeuemessage" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.9.5.1. </span>Utilisation de la collection TapeQueueMessage<a class="headerlink" href="#utilisation-de-la-collection-tapequeuemessage" title="Lien vers cette rubrique"></a></h4>
 <p>La collection TapeQueueMessage contient la liste (file d’attente) des ordres d’écriture vers une bande ou de lecture depuis une bande.</p>
 </section>
 <section id="exemples-de-json-stockes-en-base-comprenant-lexhaustivite-des-champs">
-<h4><span class="section-number">6.15.5.2. </span>Exemples de JSON stockés en base comprenant l’exhaustivité des champs<a class="headerlink" href="#exemples-de-json-stockes-en-base-comprenant-lexhaustivite-des-champs" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.9.5.2. </span>Exemples de JSON stockés en base comprenant l’exhaustivité des champs<a class="headerlink" href="#exemples-de-json-stockes-en-base-comprenant-lexhaustivite-des-champs" title="Lien vers cette rubrique"></a></h4>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;_id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aeaaaaaaaacctyjaacrv6al6kq76acyaaaaq&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;queue_state&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RUNNING&quot;</span><span class="p">,</span>
@@ -10452,7 +10427,7 @@ d’objets.</p>
 </div>
 </section>
 <section id="id120">
-<h4><span class="section-number">6.15.5.3. </span>Détail des champs du JSON stocké dans la collection<a class="headerlink" href="#id120" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.9.5.3. </span>Détail des champs du JSON stocké dans la collection<a class="headerlink" href="#id120" title="Lien vers cette rubrique"></a></h4>
 <p>« _id » : identifiant unique.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de 36 caractères correspondant à un GUID.</p></li>
@@ -10560,13 +10535,13 @@ d’objets.</p>
 </section>
 </section>
 <section id="collection-tapeobjectreferential-offre-froide">
-<h3><span class="section-number">6.15.6. </span>Collection TapeObjectReferential (offre froide)<a class="headerlink" href="#collection-tapeobjectreferential-offre-froide" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">5.9.6. </span>Collection TapeObjectReferential (offre froide)<a class="headerlink" href="#collection-tapeobjectreferential-offre-froide" title="Lien vers cette rubrique"></a></h3>
 <section id="utilisation-de-la-collection-tapeobjectreferential">
-<h4><span class="section-number">6.15.6.1. </span>Utilisation de la collection TapeObjectReferential<a class="headerlink" href="#utilisation-de-la-collection-tapeobjectreferential" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.9.6.1. </span>Utilisation de la collection TapeObjectReferential<a class="headerlink" href="#utilisation-de-la-collection-tapeobjectreferential" title="Lien vers cette rubrique"></a></h4>
 <p>La collection TapeObjectReferential écrit un objet archivé dans l’offre froide.</p>
 </section>
 <section id="id121">
-<h4><span class="section-number">6.15.6.2. </span>Exemple de JSON stocké en base comprenant l’exhaustivité des champs<a class="headerlink" href="#id121" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.9.6.2. </span>Exemple de JSON stocké en base comprenant l’exhaustivité des champs<a class="headerlink" href="#id121" title="Lien vers cette rubrique"></a></h4>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nt">&quot;containerName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;frigo_1_report&quot;</span><span class="p">,</span>
@@ -10595,7 +10570,7 @@ d’objets.</p>
 </div>
 </section>
 <section id="id122">
-<h4><span class="section-number">6.15.6.3. </span>Détail des champs du JSON stocké dans la collection<a class="headerlink" href="#id122" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.9.6.3. </span>Détail des champs du JSON stocké dans la collection<a class="headerlink" href="#id122" title="Lien vers cette rubrique"></a></h4>
 <p>« _id » : identifiant technique du fichier objet.</p>
 <ul class="simple">
 <li><p>Il s’agit d’un object composé des champs suivants :</p>
@@ -10714,13 +10689,13 @@ d’objets.</p>
 </section>
 </section>
 <section id="collection-tapearchivereferential-offre-froide">
-<h3><span class="section-number">6.15.7. </span>Collection TapeArchiveReferential (offre froide)<a class="headerlink" href="#collection-tapearchivereferential-offre-froide" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">5.9.7. </span>Collection TapeArchiveReferential (offre froide)<a class="headerlink" href="#collection-tapearchivereferential-offre-froide" title="Lien vers cette rubrique"></a></h3>
 <section id="utilisation-de-la-collection-tapearchivereferential">
-<h4><span class="section-number">6.15.7.1. </span>Utilisation de la collection TapeArchiveReferential<a class="headerlink" href="#utilisation-de-la-collection-tapearchivereferential" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.9.7.1. </span>Utilisation de la collection TapeArchiveReferential<a class="headerlink" href="#utilisation-de-la-collection-tapearchivereferential" title="Lien vers cette rubrique"></a></h4>
 <p>La collection TapeArchiveReferential écrit une archive de données archivée sur une bande magnétique ou en cours d’archivage.</p>
 </section>
 <section id="exemples-de-json-stockes-en-base-comprenant-les-differents-cas-possibles">
-<h4><span class="section-number">6.15.7.2. </span>Exemples de JSON stockés en base comprenant les différents cas possibles<a class="headerlink" href="#exemples-de-json-stockes-en-base-comprenant-les-differents-cas-possibles" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.9.7.2. </span>Exemples de JSON stockés en base comprenant les différents cas possibles<a class="headerlink" href="#exemples-de-json-stockes-en-base-comprenant-les-differents-cas-possibles" title="Lien vers cette rubrique"></a></h4>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;20211225001023845-cca8fa6a-acd5-4192-8132-ba2d907ef6df.tar&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;location&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -10759,7 +10734,7 @@ d’objets.</p>
 </div>
 </section>
 <section id="id123">
-<h4><span class="section-number">6.15.7.3. </span>Détail des champs du JSON stocké dans la collection<a class="headerlink" href="#id123" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.9.7.3. </span>Détail des champs du JSON stocké dans la collection<a class="headerlink" href="#id123" title="Lien vers cette rubrique"></a></h4>
 <p>« _id » : identifiant unique de l’archive.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de caractères.</p></li>
@@ -10838,13 +10813,13 @@ d’objets.</p>
 </section>
 </section>
 <section id="collection-tapeaccessrequestreferential-offre-froide">
-<h3><span class="section-number">6.15.8. </span>Collection TapeAccessRequestReferential (offre froide)<a class="headerlink" href="#collection-tapeaccessrequestreferential-offre-froide" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">5.9.8. </span>Collection TapeAccessRequestReferential (offre froide)<a class="headerlink" href="#collection-tapeaccessrequestreferential-offre-froide" title="Lien vers cette rubrique"></a></h3>
 <section id="utilisation-de-la-collection-tapeaccessrequestreferential">
-<h4><span class="section-number">6.15.8.1. </span>Utilisation de la collection TapeAccessRequestReferential<a class="headerlink" href="#utilisation-de-la-collection-tapeaccessrequestreferential" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.9.8.1. </span>Utilisation de la collection TapeAccessRequestReferential<a class="headerlink" href="#utilisation-de-la-collection-tapeaccessrequestreferential" title="Lien vers cette rubrique"></a></h4>
 <p>Cette collection contient les demandes d’accès aux archives contenues sur un stockage de type bandes magnétiques.</p>
 </section>
 <section id="id124">
-<h4><span class="section-number">6.15.8.2. </span>Exemples de JSON stockés en base comprenant l’exhaustivité des champs<a class="headerlink" href="#id124" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.9.8.2. </span>Exemples de JSON stockés en base comprenant l’exhaustivité des champs<a class="headerlink" href="#id124" title="Lien vers cette rubrique"></a></h4>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aeaaaaaaaahjp2jaabukyal6nxps3eaaaaaq&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;containerName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;prod_0_unit&quot;</span><span class="p">,</span>
@@ -10873,7 +10848,7 @@ d’objets.</p>
 </div>
 </section>
 <section id="id125">
-<h4><span class="section-number">6.15.8.3. </span>Détail des champs du JSON stocké dans la collection<a class="headerlink" href="#id125" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">5.9.8.3. </span>Détail des champs du JSON stocké dans la collection<a class="headerlink" href="#id125" title="Lien vers cette rubrique"></a></h4>
 <p>« _id » : identifiant de la requête d’accès.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de 36 caractères correspondant à un GUID.</p></li>
@@ -10938,19 +10913,19 @@ d’objets.</p>
 </section>
 </section>
 <section id="annexes">
-<h2><span class="section-number">6.16. </span>Annexes<a class="headerlink" href="#annexes" title="Lien vers cette rubrique"></a></h2>
+<h2><span class="section-number">5.10. </span>Annexes<a class="headerlink" href="#annexes" title="Lien vers cette rubrique"></a></h2>
 <section id="annexe-1-valeurs-possibles-pour-le-champ-evtype-du-logbook-operation">
-<h3><span class="section-number">6.16.1. </span>Annexe 1 : Valeurs possibles pour le champ evType du LogBook Operation<a class="headerlink" href="#annexe-1-valeurs-possibles-pour-le-champ-evtype-du-logbook-operation" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">5.10.1. </span>Annexe 1 : Valeurs possibles pour le champ evType du LogBook Operation<a class="headerlink" href="#annexe-1-valeurs-possibles-pour-le-champ-evtype-du-logbook-operation" title="Lien vers cette rubrique"></a></h3>
 <p>L’ensemble des étapes, tâches et traitements sont détaillés dans la
 documentation Modèle de workflow.</p>
 </section>
 <section id="annexe-2-valeurs-possibles-pour-le-champ-evtype-du-logbook-lifecycle">
-<h3><span class="section-number">6.16.2. </span>Annexe 2 : Valeurs possibles pour le champ evType du LogBook LifeCycle<a class="headerlink" href="#annexe-2-valeurs-possibles-pour-le-champ-evtype-du-logbook-lifecycle" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">5.10.2. </span>Annexe 2 : Valeurs possibles pour le champ evType du LogBook LifeCycle<a class="headerlink" href="#annexe-2-valeurs-possibles-pour-le-champ-evtype-du-logbook-lifecycle" title="Lien vers cette rubrique"></a></h3>
 <p>L’ensemble des étapes, tâches et traitements sont détaillées dans la
 documentation Modèle de workflow.</p>
 </section>
 <section id="annexe-3-valeurs-possibles-pour-le-champ-evtypeproc-type-de-processus">
-<h3><span class="section-number">6.16.3. </span>Annexe 3: Valeurs possibles pour le champ evTypeProc (type de processus)<a class="headerlink" href="#annexe-3-valeurs-possibles-pour-le-champ-evtypeproc-type-de-processus" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">5.10.3. </span>Annexe 3: Valeurs possibles pour le champ evTypeProc (type de processus)<a class="headerlink" href="#annexe-3-valeurs-possibles-pour-le-champ-evtypeproc-type-de-processus" title="Lien vers cette rubrique"></a></h3>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head text-left"><p>Process Type</p></th>
@@ -11063,7 +11038,7 @@ documentation Modèle de workflow.</p>
 </table>
 </section>
 <section id="annexe-4-categories-de-regles-possibles">
-<h3><span class="section-number">6.16.4. </span>Annexe 4 : Catégories de règles possibles<a class="headerlink" href="#annexe-4-categories-de-regles-possibles" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">5.10.4. </span>Annexe 4 : Catégories de règles possibles<a class="headerlink" href="#annexe-4-categories-de-regles-possibles" title="Lien vers cette rubrique"></a></h3>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>Prefixe (Peut être modifié)</p></th>
@@ -11104,7 +11079,7 @@ documentation Modèle de workflow.</p>
 </table>
 </section>
 <section id="annexe-5-valeurs-possibles-pour-le-champ-status-de-la-collection-accessionregisterdetail">
-<h3><span class="section-number">6.16.5. </span>Annexe 5 : Valeurs possibles pour le champ Status de la collection AccessionRegisterDetail<a class="headerlink" href="#annexe-5-valeurs-possibles-pour-le-champ-status-de-la-collection-accessionregisterdetail" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">5.10.5. </span>Annexe 5 : Valeurs possibles pour le champ Status de la collection AccessionRegisterDetail<a class="headerlink" href="#annexe-5-valeurs-possibles-pour-le-champ-status-de-la-collection-accessionregisterdetail" title="Lien vers cette rubrique"></a></h3>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>Status type</p></th>
@@ -11125,7 +11100,7 @@ documentation Modèle de workflow.</p>
 </table>
 </section>
 <section id="annexe-6-valeurs-possibles-pour-le-champ-name-de-la-collection-vitamsequence">
-<h3><span class="section-number">6.16.6. </span>Annexe 6 : Valeurs possibles pour le champ Name de la collection VitamSequence<a class="headerlink" href="#annexe-6-valeurs-possibles-pour-le-champ-name-de-la-collection-vitamsequence" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">5.10.6. </span>Annexe 6 : Valeurs possibles pour le champ Name de la collection VitamSequence<a class="headerlink" href="#annexe-6-valeurs-possibles-pour-le-champ-name-de-la-collection-vitamsequence" title="Lien vers cette rubrique"></a></h3>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>Prefixe</p></th>
@@ -11198,7 +11173,7 @@ documentation Modèle de workflow.</p>
 </table>
 </section>
 <section id="annexe-7-type-dindexation-des-chaines-de-caracteres-dans-elasticsearch-par-collection-et-par-champ">
-<h3><span class="section-number">6.16.7. </span>Annexe 7 : Type d’indexation des chaînes de caractères dans ElasticSearch par collection et par champ<a class="headerlink" href="#annexe-7-type-dindexation-des-chaines-de-caracteres-dans-elasticsearch-par-collection-et-par-champ" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">5.10.7. </span>Annexe 7 : Type d’indexation des chaînes de caractères dans ElasticSearch par collection et par champ<a class="headerlink" href="#annexe-7-type-dindexation-des-chaines-de-caracteres-dans-elasticsearch-par-collection-et-par-champ" title="Lien vers cette rubrique"></a></h3>
 <p><strong>Collection AccessContract</strong></p>
 <table class="docutils align-default">
 <thead>
@@ -12844,7 +12819,7 @@ documentation Modèle de workflow.</p>
 </table>
 </section>
 <section id="annexe-8-correspondances-des-champs-speciaux-dans-vitam">
-<h3><span class="section-number">6.16.8. </span>Annexe 8 : Correspondances des champs spéciaux dans Vitam<a class="headerlink" href="#annexe-8-correspondances-des-champs-speciaux-dans-vitam" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">5.10.8. </span>Annexe 8 : Correspondances des champs spéciaux dans Vitam<a class="headerlink" href="#annexe-8-correspondances-des-champs-speciaux-dans-vitam" title="Lien vers cette rubrique"></a></h3>
 <p>Les champs dont le nom est préfixé d’un « _ » ne sont pas accessibles
 directement, une correspondance est nécessaire pour y accéder.</p>
 <p><strong>Collection AccessContract</strong></p>
@@ -13265,7 +13240,7 @@ directement, une correspondance est nécessaire pour y accéder.</p>
 
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
         <a href="gestion_habilitations.html" class="btn btn-neutral float-left" title="4. Gestion des habilitations" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
-        <a href="modele_de_workflow.html" class="btn btn-neutral float-right" title="7. Description des workflows et des opérations" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="modele_de_workflow.html" class="btn btn-neutral float-right" title="6. Description des workflows et des opérations" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

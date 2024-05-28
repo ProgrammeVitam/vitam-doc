@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>9. Organisation de l’information &mdash; Vitam documentation fonctionnelle</title>
+  <title>8. Organisation de l’information &mdash; Vitam documentation fonctionnelle</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=eea1f72d" />
@@ -23,8 +23,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
-    <link rel="next" title="10. Ontologie" href="ontologie.html" />
-    <link rel="prev" title="8. Module de collecte" href="module_de_collecte.html" /> 
+    <link rel="next" title="9. Ontologie" href="ontologie.html" />
+    <link rel="prev" title="7. Module de collecte" href="module_de_collecte.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -62,284 +62,282 @@
 <li class="toctree-l1"><a class="reference internal" href="gestion_archives_arbo.html">3. Gestion des archives et des arborescences</a></li>
 <li class="toctree-l1"><a class="reference internal" href="gestion_habilitations.html">4. Gestion des habilitations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modele_de_donnees.html">5. Modèle de données</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modele_de_donnees.html#updated-upstream-la-liste-des-types-de-regle-disponibles-est-en-annexe">6. &lt;&lt;&lt;&lt;&lt;&lt;&lt; Updated upstream
-La liste des types de règle disponibles est en annexe.</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modele_de_workflow.html">7. Description des workflows et des opérations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="module_de_collecte.html">8. Module de collecte</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">9. Organisation de l’information</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#introduction">9.1. Introduction</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#documents-de-reference">9.1.1. Documents de référence</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#presentation-du-document">9.1.2. Présentation du document</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_workflow.html">6. Description des workflows et des opérations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_de_collecte.html">7. Module de collecte</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">8. Organisation de l’information</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">8.1. Introduction</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#documents-de-reference">8.1.1. Documents de référence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#presentation-du-document">8.1.2. Présentation du document</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#exigences">9.2. Exigences</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#exigences-transverses">9.2.1. Exigences transverses</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#perimetre-darchivage">9.2.1.1. Périmètre d’archivage</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#identification-des-entites-gerees-par-le-systeme">9.2.1.2. Identification des entités gérées par le système</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#contractualisation-des-services-rendus-par-le-systeme">9.2.1.3. Contractualisation des services rendus par le système</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#description-des-objets-archives">9.2.1.4. Description des objets archivés</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#regles-de-gestion-applicables-aux-objets-archives">9.2.1.5. Règles de gestion applicables aux objets archivés</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#journalisation-et-tracabilite">9.2.1.6. Journalisation et traçabilité</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#securite">9.2.1.7. Sécurité</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exigences">8.2. Exigences</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#exigences-transverses">8.2.1. Exigences transverses</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#perimetre-darchivage">8.2.1.1. Périmètre d’archivage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#identification-des-entites-gerees-par-le-systeme">8.2.1.2. Identification des entités gérées par le système</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#contractualisation-des-services-rendus-par-le-systeme">8.2.1.3. Contractualisation des services rendus par le système</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#description-des-objets-archives">8.2.1.4. Description des objets archivés</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#regles-de-gestion-applicables-aux-objets-archives">8.2.1.5. Règles de gestion applicables aux objets archivés</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#journalisation-et-tracabilite">8.2.1.6. Journalisation et traçabilité</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#securite">8.2.1.7. Sécurité</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#exigences-associees-aux-differentes-etapes-du-cycle-de-vie-des-objets-archives">9.2.2. Exigences associées aux différentes étapes du cycle de vie des objets archivés</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#transfert-entrees-et-prise-en-charge-des-objets-archives">9.2.2.1. Transfert, entrées et prise en charge des objets archivés</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#recherche-acces-et-consultation-des-objets-archives-et-des-fichiers-qui-leur-sont-associes1">9.2.2.2. Recherche, accès et consultation des objets archivés et des fichiers qui leur sont associés</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#recherche">9.2.2.2.1. Recherche</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#consultation-des-resultats">9.2.2.2.2. Consultation des résultats</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#consultation-et-exploitation-des-archives">9.2.2.2.3. Consultation et exploitation des archives</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exigences-associees-aux-differentes-etapes-du-cycle-de-vie-des-objets-archives">8.2.2. Exigences associées aux différentes étapes du cycle de vie des objets archivés</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#transfert-entrees-et-prise-en-charge-des-objets-archives">8.2.2.1. Transfert, entrées et prise en charge des objets archivés</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#recherche-acces-et-consultation-des-objets-archives-et-des-fichiers-qui-leur-sont-associes1">8.2.2.2. Recherche, accès et consultation des objets archivés et des fichiers qui leur sont associés</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#recherche">8.2.2.2.1. Recherche</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#consultation-des-resultats">8.2.2.2.2. Consultation des résultats</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#consultation-et-exploitation-des-archives">8.2.2.2.3. Consultation et exploitation des archives</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#gestion-des-objets-archives-pris-en-charge-et-des-fichiers-qui-leur-sont-associes">9.2.2.3. Gestion des objets archivés pris en charge et des fichiers qui leur sont associés</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#mise-en-oeuvre-des-actions-a-echeance">9.2.2.3.1. Mise en œuvre des actions à échéance</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#preservation-et-integrite">9.2.2.3.2. Préservation et intégrité</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#stockage">9.2.2.3.3. Stockage</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#reversibilite">9.2.2.3.4. Réversibilité</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#implementation-de-la-norme-oais-dans-la-solution-logicielle-vitam">9.3. Implémentation de la norme OAIS dans la solution logicielle Vitam</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#les-paquets-transmis-au-systeme-darchivage-les-submission-information-packages-sip">9.3.1. Les paquets transmis au système d’archivage : les Submission Information Packages (SIP)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#la-transformation-des-sip-en-aip">9.3.1.1. La transformation des SIP en AIP</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#illustration-via-une-etude-de-cas">9.3.1.2. Illustration via une étude de cas</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#la-restitution-des-sip">9.3.1.3. La restitution des SIP</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#les-paquets-geres-par-le-systeme-darchivage-les-archival-information-packages-aip">9.3.2. Les paquets gérés par le système d’archivage : les Archival Information Packages (AIP)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#representation-dans-la-solution-logicielle-vitam-des-entites-constituant-un-aip-au-sens-de-la-norme-oais">9.3.2.1. Représentation dans la solution logicielle Vitam des entités constituant un AIP au sens de la norme OAIS</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#content-information">9.3.2.1.1. <em>Content information</em></a></li>
-<li class="toctree-l5"><a class="reference internal" href="#representation-information">9.3.2.1.2. <em>Representation Information</em></a></li>
-<li class="toctree-l5"><a class="reference internal" href="#preservation-description-information">9.3.2.1.3. Preservation Description Information</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#package-description">9.3.2.1.4. Package Description</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#packaging-information">9.3.2.1.5. Packaging Information</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#la-mise-a-jour-des-aip">9.3.2.2. La mise à jour des AIP</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#les-paquets-generes-par-le-systeme-darchivage-les-dissemination-information-packages-dip">9.3.3. Les paquets générés par le système d’archivage : les Dissemination Information Packages (DIP)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#les-dip-en-tant-que-tels">9.3.3.1. Les DIP en tant que tels</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#la-transformation-des-aip-en-dip">9.3.3.2. La transformation des AIP en DIP</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#structuration-proposee">9.4. Structuration proposée</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#donnees-de-reference">9.4.1. Données de référence</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#referentiel-des-regles-de-gestion-du-cycle-de-vie">9.4.1.1. Référentiel des règles de gestion du cycle de vie</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#definition-et-objectifs">9.4.1.1.1. Définition et objectifs</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#exigences-associees">9.4.1.1.2. Exigences associées</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#structuration">9.4.1.1.3. Structuration</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#section-correspondante-dans-le-modele-de-donnees">9.4.1.1.4. Section correspondante dans le modèle de données</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#documentation-associee">9.4.1.1.5. Documentation associée</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#referentiel-des-formats-de-fichiers">9.4.1.2. Référentiel des formats de fichiers</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#id6">9.4.1.2.1. Définition et objectifs</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id8">9.4.1.2.2. Exigences associées</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id9">9.4.1.2.3. Structuration</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id10">9.4.1.2.4. Section correspondante dans le modèle de données</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id11">9.4.1.2.5. Documentation associée</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#referentiel-des-services-agents">9.4.1.3. Référentiel des services agents</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#id12">9.4.1.3.1. Définition et objectifs</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id13">9.4.1.3.2. Exigences associées</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id14">9.4.1.3.3. Structuration</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id15">9.4.1.3.4. Section correspondante dans le modèle de données</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id16">9.4.1.3.5. Documentation associée</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#referentiel-des-griffons">9.4.1.4. Référentiel des griffons</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#id17">9.4.1.4.1. Définition et objectifs</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id18">9.4.1.4.2. Exigences associées</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id19">9.4.1.4.3. Structuration</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id20">9.4.1.4.4. Section correspondante dans le modèle de données</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id21">9.4.1.4.5. Documentation associée</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#objets-permettant-la-gestion-des-droits">9.4.2. Objets permettant la gestion des droits</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#contextes-applicatifs-et-certificats">9.4.2.1. Contextes applicatifs et certificats</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#id22">9.4.2.1.1. Définition et objectifs</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id23">9.4.2.1.2. Exigences associées</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id24">9.4.2.1.3. Structuration</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id25">9.4.2.1.4. Section correspondante dans le modèle de données</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id26">9.4.2.1.5. Documentation associée</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#profils-de-securite">9.4.2.2. Profils de sécurité</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#id27">9.4.2.2.1. Définition et objectifs</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id28">9.4.2.2.2. Exigences associées</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id29">9.4.2.2.3. Structuration</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id30">9.4.2.2.4. Section correspondante dans le modèle de données</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id31">9.4.2.2.5. Documentation associée</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#contrats-dacces">9.4.2.3. Contrats d’accès</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#id32">9.4.2.3.1. Définition et objectifs</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id33">9.4.2.3.2. Exigences associées</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id34">9.4.2.3.3. Structuration</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id35">9.4.2.3.4. Section correspondante dans le modèle de données</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id36">9.4.2.3.5. Documentation associée</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#contrats-dentree">9.4.2.4. Contrats d’entrée</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#id37">9.4.2.4.1. Définition et objectifs</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id38">9.4.2.4.2. Exigences associées</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id39">9.4.2.4.3. Structuration</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id40">9.4.2.4.4. Section correspondante dans le modèle de données</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id41">9.4.2.4.5. Documentation associée</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#strategies-liees-a-la-gestion">9.4.3. Stratégies liées à la gestion</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#scenario-de-preservation">9.4.3.1. Scénario de préservation</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#id42">9.4.3.1.1. Définition et objectifs</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id43">9.4.3.1.2. Exigences associées</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id44">9.4.3.1.3. Structuration</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id45">9.4.3.1.4. Section correspondante dans le modèle de données</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id46">9.4.3.1.5. Documentation associée</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#strategie-de-stockage">9.4.3.2. Stratégie de stockage</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#id47">9.4.3.2.1. Définition et objectifs</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id48">9.4.3.2.2. Exigences associées</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id49">9.4.3.2.3. Structuration</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id50">9.4.3.2.4. Documentation associée</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#contrat-de-gestion">9.4.3.3. Contrat de gestion</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#id51">9.4.3.3.1. Définition et objectifs</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id52">9.4.3.3.2. Exigences associées</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id53">9.4.3.3.3. Structuration</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id54">9.4.3.3.4. Section correspondante dans le modèle de données</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id55">9.4.3.3.5. Documentation associée</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#modeles-et-structuration-des-objets-metiers">9.4.4. Modèles et structuration des objets métiers</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#ontologie">9.4.4.1. Ontologie</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#id56">9.4.4.1.1. Définition et objectifs</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id57">9.4.4.1.2. Exigences associées</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id58">9.4.4.1.3. Structuration</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id59">9.4.4.1.4. Section correspondante dans le modèle de données</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id60">9.4.4.1.5. Documentation associée</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#profils-darchivage-et-dunite-archivistique">9.4.4.2. Profils d’archivage et d’unité archivistique</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#profil-darchivage">9.4.4.2.1. Profil d’archivage</a><ul>
-<li class="toctree-l6"><a class="reference internal" href="#id61">9.4.4.2.1.1. Définition et objectifs</a></li>
-<li class="toctree-l6"><a class="reference internal" href="#id62">9.4.4.2.1.2. Exigences associées</a></li>
-<li class="toctree-l6"><a class="reference internal" href="#id63">9.4.4.2.1.3. Structuration</a></li>
-<li class="toctree-l6"><a class="reference internal" href="#id64">9.4.4.2.1.4. Section correspondante dans le modèle de données</a></li>
-<li class="toctree-l6"><a class="reference internal" href="#id65">9.4.4.2.1.5. Documentation associée</a></li>
-</ul>
-</li>
-<li class="toctree-l5"><a class="reference internal" href="#profil-dunite-archivistique">9.4.4.2.2. Profil d’unité archivistique</a><ul>
-<li class="toctree-l6"><a class="reference internal" href="#id66">9.4.4.2.2.1. Définition et objectifs</a></li>
-<li class="toctree-l6"><a class="reference internal" href="#id67">9.4.4.2.2.2. Exigences associées</a></li>
-<li class="toctree-l6"><a class="reference internal" href="#id68">9.4.4.2.2.3. Structuration</a></li>
-<li class="toctree-l6"><a class="reference internal" href="#id69">9.4.4.2.2.4. Section correspondante dans le modèle de données</a></li>
-<li class="toctree-l6"><a class="reference internal" href="#id70">9.4.4.2.2.5. Documentation associée</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gestion-des-objets-archives-pris-en-charge-et-des-fichiers-qui-leur-sont-associes">8.2.2.3. Gestion des objets archivés pris en charge et des fichiers qui leur sont associés</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#mise-en-oeuvre-des-actions-a-echeance">8.2.2.3.1. Mise en œuvre des actions à échéance</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#preservation-et-integrite">8.2.2.3.2. Préservation et intégrité</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#stockage">8.2.2.3.3. Stockage</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#reversibilite">8.2.2.3.4. Réversibilité</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#descriptions">9.4.5. Descriptions</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#unite-archivistique">9.4.5.1. Unité archivistique</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#id71">9.4.5.1.1. Définition et objectifs</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id72">9.4.5.1.2. Exigences associées</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id73">9.4.5.1.3. Structuration</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id74">9.4.5.1.4. Section correspondante dans le modèle de données</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id75">9.4.5.1.5. Documentation associée</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#implementation-de-la-norme-oais-dans-la-solution-logicielle-vitam">8.3. Implémentation de la norme OAIS dans la solution logicielle Vitam</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#les-paquets-transmis-au-systeme-darchivage-les-submission-information-packages-sip">8.3.1. Les paquets transmis au système d’archivage : les Submission Information Packages (SIP)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#la-transformation-des-sip-en-aip">8.3.1.1. La transformation des SIP en AIP</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#illustration-via-une-etude-de-cas">8.3.1.2. Illustration via une étude de cas</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#la-restitution-des-sip">8.3.1.3. La restitution des SIP</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#unite-archivistique-de-type-arbre-de-positionnement">9.4.5.2. Unité archivistique de type arbre de positionnement</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#id76">9.4.5.2.1. Définition et objectifs</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id77">9.4.5.2.2. Exigences associées</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id78">9.4.5.2.3. Structuration</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id79">9.4.5.2.4. Section correspondante dans le modèle de données</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id80">9.4.5.2.5. Documentation associée</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#les-paquets-geres-par-le-systeme-darchivage-les-archival-information-packages-aip">8.3.2. Les paquets gérés par le système d’archivage : les Archival Information Packages (AIP)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#representation-dans-la-solution-logicielle-vitam-des-entites-constituant-un-aip-au-sens-de-la-norme-oais">8.3.2.1. Représentation dans la solution logicielle Vitam des entités constituant un AIP au sens de la norme OAIS</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#content-information">8.3.2.1.1. <em>Content information</em></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#representation-information">8.3.2.1.2. <em>Representation Information</em></a></li>
+<li class="toctree-l5"><a class="reference internal" href="#preservation-description-information">8.3.2.1.3. Preservation Description Information</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#package-description">8.3.2.1.4. Package Description</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#packaging-information">8.3.2.1.5. Packaging Information</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#unite-archivistique-de-type-plan-de-classement">9.4.5.3. Unité archivistique de type plan de classement</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#id81">9.4.5.3.1. Définition et objectifs</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id82">9.4.5.3.2. Exigences associées</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id83">9.4.5.3.3. Structuration</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id84">9.4.5.3.4. Section correspondante dans le modèle de données</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id85">9.4.5.3.5. Documentation associée</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#la-mise-a-jour-des-aip">8.3.2.2. La mise à jour des AIP</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#groupe-dobjets-et-objets">9.4.5.4. Groupe d’objets et objets</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#id86">9.4.5.4.1. Définition et objectifs</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id87">9.4.5.4.2. Exigences associées</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id88">9.4.5.4.3. Structuration</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id89">9.4.5.4.4. Section correspondante dans le modèle de données</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#les-paquets-generes-par-le-systeme-darchivage-les-dissemination-information-packages-dip">8.3.3. Les paquets générés par le système d’archivage : les Dissemination Information Packages (DIP)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#les-dip-en-tant-que-tels">8.3.3.1. Les DIP en tant que tels</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#la-transformation-des-aip-en-dip">8.3.3.2. La transformation des AIP en DIP</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#journaux-et-registres">9.4.6. Journaux et registres</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#journal-des-operations">9.4.6.1. Journal des opérations</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#id90">9.4.6.1.1. Définition et objectifs</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id91">9.4.6.1.2. Exigences associées</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id92">9.4.6.1.3. Structuration</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id93">9.4.6.1.4. Section correspondante dans le modèle de données</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#structuration-proposee">8.4. Structuration proposée</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#donnees-de-reference">8.4.1. Données de référence</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#referentiel-des-regles-de-gestion-du-cycle-de-vie">8.4.1.1. Référentiel des règles de gestion du cycle de vie</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#definition-et-objectifs">8.4.1.1.1. Définition et objectifs</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#exigences-associees">8.4.1.1.2. Exigences associées</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#structuration">8.4.1.1.3. Structuration</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#section-correspondante-dans-le-modele-de-donnees">8.4.1.1.4. Section correspondante dans le modèle de données</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#documentation-associee">8.4.1.1.5. Documentation associée</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#journal-du-cycle-de-vie">9.4.6.2. Journal du cycle de vie</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#id94">9.4.6.2.1. Définition et objectifs</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id95">9.4.6.2.2. Exigences associées</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id96">9.4.6.2.3. Structuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#referentiel-des-formats-de-fichiers">8.4.1.2. Référentiel des formats de fichiers</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#id6">8.4.1.2.1. Définition et objectifs</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id8">8.4.1.2.2. Exigences associées</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id9">8.4.1.2.3. Structuration</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id10">8.4.1.2.4. Section correspondante dans le modèle de données</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id11">8.4.1.2.5. Documentation associée</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#journal-des-ecritures">9.4.6.3. Journal des écritures</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#id97">9.4.6.3.1. Définition et objectifs</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#exigences-fonctionnelles">9.4.6.3.2. Exigences fonctionnelles</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id98">9.4.6.3.3. Structuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#referentiel-des-services-agents">8.4.1.3. Référentiel des services agents</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#id12">8.4.1.3.1. Définition et objectifs</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id13">8.4.1.3.2. Exigences associées</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id14">8.4.1.3.3. Structuration</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id15">8.4.1.3.4. Section correspondante dans le modèle de données</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id16">8.4.1.3.5. Documentation associée</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#log-des-acces">9.4.6.4. Log des accès</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#id99">9.4.6.4.1. Définition et objectifs</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id100">9.4.6.4.2. Exigences fonctionnelles</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#cstructuration">9.4.6.4.3. CStructuration</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#registre-des-fonds">9.4.6.5. Registre des fonds</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#objectif">9.4.6.5.1. Objectif</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id101">9.4.6.5.2. Exigences associées</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id102">9.4.6.5.3. Structuration</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id103">9.4.6.5.4. Section correspondante dans le modèle de données</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id104">9.4.6.5.5. Documentation associée</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l4"><a class="reference internal" href="#referentiel-des-griffons">8.4.1.4. Référentiel des griffons</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#id17">8.4.1.4.1. Définition et objectifs</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id18">8.4.1.4.2. Exigences associées</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id19">8.4.1.4.3. Structuration</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id20">8.4.1.4.4. Section correspondante dans le modèle de données</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id21">8.4.1.4.5. Documentation associée</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="ontologie.html">10. Ontologie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="preservation.html">11. Gestion de la préservation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="profil_archivage.html">12. Profils d’archivage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="profil_unite_archivistique.html">13. Profils d’unité archivistique</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regles_gestion.html">14. Règles de gestion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="services_prod.html">15. Services producteurs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SIP.html">16. Structuration des <em>Submission Information Packages</em> (SIP)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="DIP.html">17. Structuration des <em>Dissemination Information Packages</em> (DIP)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="stockage.html">18. Gestion de multiples stratégies de stockage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="transfert.html">19. Le transfert avec la solution logicielle Vitam</a></li>
-<li class="toctree-l1"><a class="reference internal" href="valeur_probante.html">20. Conservation de la valeur probante</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#objets-permettant-la-gestion-des-droits">8.4.2. Objets permettant la gestion des droits</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#contextes-applicatifs-et-certificats">8.4.2.1. Contextes applicatifs et certificats</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#id22">8.4.2.1.1. Définition et objectifs</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id23">8.4.2.1.2. Exigences associées</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id24">8.4.2.1.3. Structuration</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id25">8.4.2.1.4. Section correspondante dans le modèle de données</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id26">8.4.2.1.5. Documentation associée</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#profils-de-securite">8.4.2.2. Profils de sécurité</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#id27">8.4.2.2.1. Définition et objectifs</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id28">8.4.2.2.2. Exigences associées</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id29">8.4.2.2.3. Structuration</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id30">8.4.2.2.4. Section correspondante dans le modèle de données</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id31">8.4.2.2.5. Documentation associée</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#contrats-dacces">8.4.2.3. Contrats d’accès</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#id32">8.4.2.3.1. Définition et objectifs</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id33">8.4.2.3.2. Exigences associées</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id34">8.4.2.3.3. Structuration</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id35">8.4.2.3.4. Section correspondante dans le modèle de données</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id36">8.4.2.3.5. Documentation associée</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#contrats-dentree">8.4.2.4. Contrats d’entrée</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#id37">8.4.2.4.1. Définition et objectifs</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id38">8.4.2.4.2. Exigences associées</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id39">8.4.2.4.3. Structuration</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id40">8.4.2.4.4. Section correspondante dans le modèle de données</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id41">8.4.2.4.5. Documentation associée</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#strategies-liees-a-la-gestion">8.4.3. Stratégies liées à la gestion</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#scenario-de-preservation">8.4.3.1. Scénario de préservation</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#id42">8.4.3.1.1. Définition et objectifs</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id43">8.4.3.1.2. Exigences associées</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id44">8.4.3.1.3. Structuration</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id45">8.4.3.1.4. Section correspondante dans le modèle de données</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id46">8.4.3.1.5. Documentation associée</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#strategie-de-stockage">8.4.3.2. Stratégie de stockage</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#id47">8.4.3.2.1. Définition et objectifs</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id48">8.4.3.2.2. Exigences associées</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id49">8.4.3.2.3. Structuration</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id50">8.4.3.2.4. Documentation associée</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#contrat-de-gestion">8.4.3.3. Contrat de gestion</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#id51">8.4.3.3.1. Définition et objectifs</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id52">8.4.3.3.2. Exigences associées</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id53">8.4.3.3.3. Structuration</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id54">8.4.3.3.4. Section correspondante dans le modèle de données</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id55">8.4.3.3.5. Documentation associée</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#modeles-et-structuration-des-objets-metiers">8.4.4. Modèles et structuration des objets métiers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ontologie">8.4.4.1. Ontologie</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#id56">8.4.4.1.1. Définition et objectifs</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id57">8.4.4.1.2. Exigences associées</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id58">8.4.4.1.3. Structuration</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id59">8.4.4.1.4. Section correspondante dans le modèle de données</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id60">8.4.4.1.5. Documentation associée</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#profils-darchivage-et-dunite-archivistique">8.4.4.2. Profils d’archivage et d’unité archivistique</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#profil-darchivage">8.4.4.2.1. Profil d’archivage</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#id61">8.4.4.2.1.1. Définition et objectifs</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#id62">8.4.4.2.1.2. Exigences associées</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#id63">8.4.4.2.1.3. Structuration</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#id64">8.4.4.2.1.4. Section correspondante dans le modèle de données</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#id65">8.4.4.2.1.5. Documentation associée</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="#profil-dunite-archivistique">8.4.4.2.2. Profil d’unité archivistique</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#id66">8.4.4.2.2.1. Définition et objectifs</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#id67">8.4.4.2.2.2. Exigences associées</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#id68">8.4.4.2.2.3. Structuration</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#id69">8.4.4.2.2.4. Section correspondante dans le modèle de données</a></li>
+<li class="toctree-l6"><a class="reference internal" href="#id70">8.4.4.2.2.5. Documentation associée</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#descriptions">8.4.5. Descriptions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#unite-archivistique">8.4.5.1. Unité archivistique</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#id71">8.4.5.1.1. Définition et objectifs</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id72">8.4.5.1.2. Exigences associées</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id73">8.4.5.1.3. Structuration</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id74">8.4.5.1.4. Section correspondante dans le modèle de données</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id75">8.4.5.1.5. Documentation associée</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#unite-archivistique-de-type-arbre-de-positionnement">8.4.5.2. Unité archivistique de type arbre de positionnement</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#id76">8.4.5.2.1. Définition et objectifs</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id77">8.4.5.2.2. Exigences associées</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id78">8.4.5.2.3. Structuration</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id79">8.4.5.2.4. Section correspondante dans le modèle de données</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id80">8.4.5.2.5. Documentation associée</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#unite-archivistique-de-type-plan-de-classement">8.4.5.3. Unité archivistique de type plan de classement</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#id81">8.4.5.3.1. Définition et objectifs</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id82">8.4.5.3.2. Exigences associées</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id83">8.4.5.3.3. Structuration</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id84">8.4.5.3.4. Section correspondante dans le modèle de données</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id85">8.4.5.3.5. Documentation associée</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#groupe-dobjets-et-objets">8.4.5.4. Groupe d’objets et objets</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#id86">8.4.5.4.1. Définition et objectifs</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id87">8.4.5.4.2. Exigences associées</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id88">8.4.5.4.3. Structuration</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id89">8.4.5.4.4. Section correspondante dans le modèle de données</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#journaux-et-registres">8.4.6. Journaux et registres</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#journal-des-operations">8.4.6.1. Journal des opérations</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#id90">8.4.6.1.1. Définition et objectifs</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id91">8.4.6.1.2. Exigences associées</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id92">8.4.6.1.3. Structuration</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id93">8.4.6.1.4. Section correspondante dans le modèle de données</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#journal-du-cycle-de-vie">8.4.6.2. Journal du cycle de vie</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#id94">8.4.6.2.1. Définition et objectifs</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id95">8.4.6.2.2. Exigences associées</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id96">8.4.6.2.3. Structuration</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#journal-des-ecritures">8.4.6.3. Journal des écritures</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#id97">8.4.6.3.1. Définition et objectifs</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#exigences-fonctionnelles">8.4.6.3.2. Exigences fonctionnelles</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id98">8.4.6.3.3. Structuration</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#log-des-acces">8.4.6.4. Log des accès</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#id99">8.4.6.4.1. Définition et objectifs</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id100">8.4.6.4.2. Exigences fonctionnelles</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#cstructuration">8.4.6.4.3. CStructuration</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#registre-des-fonds">8.4.6.5. Registre des fonds</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#objectif">8.4.6.5.1. Objectif</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id101">8.4.6.5.2. Exigences associées</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id102">8.4.6.5.3. Structuration</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id103">8.4.6.5.4. Section correspondante dans le modèle de données</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id104">8.4.6.5.5. Documentation associée</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ontologie.html">9. Ontologie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preservation.html">10. Gestion de la préservation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_archivage.html">11. Profils d’archivage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_unite_archivistique.html">12. Profils d’unité archivistique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regles_gestion.html">13. Règles de gestion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services_prod.html">14. Services producteurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SIP.html">15. Structuration des <em>Submission Information Packages</em> (SIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DIP.html">16. Structuration des <em>Dissemination Information Packages</em> (DIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stockage.html">17. Gestion de multiples stratégies de stockage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transfert.html">18. Le transfert avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="valeur_probante.html">19. Conservation de la valeur probante</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">documentation Vitam UI</span></p>
 <ul>
@@ -355,9 +353,7 @@ La liste des types de règle disponibles est en annexe.</a></li>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="chantier_preservation_validation_format.html">1. Validation du format des fichiers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="chantier_identification_format.html">2. Identification des formats de fichiers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chantier_identification_format.html#updated-upstream-les-descriptions-sont-presentees-au-format-html-et-exportables-au-format-xml-elles-sont-en-decembre-2019-au-nombre-de-512-un-exemple-de-fiche-est-fourni-en-annexe-2">3. &lt;&lt;&lt;&lt;&lt;&lt;&lt; Updated upstream
-Les descriptions sont présentées au format HTML et exportables au format XML. Elles sont en décembre 2019 au nombre de 512. Un exemple de fiche est fourni en annexe 2.</a></li>
-<li class="toctree-l1"><a class="reference internal" href="chantier_extraction_MD.html">4. Extraction des métadonnées techniques</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_extraction_MD.html">3. Extraction des métadonnées techniques</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Vademecum</span></p>
 <ul>
@@ -406,7 +402,7 @@ Les descriptions sont présentées au format HTML et exportables au format XML. 
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active"><span class="section-number">9. </span>Organisation de l’information</li>
+      <li class="breadcrumb-item active"><span class="section-number">8. </span>Organisation de l’information</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/sections/organisation_information.md.txt" rel="nofollow"> Afficher la source de la page</a>
       </li>
@@ -419,11 +415,11 @@ Les descriptions sont présentées au format HTML et exportables au format XML. 
            <div itemprop="articleBody">
              
   <section id="organisation-de-l-information">
-<h1><span class="section-number">9. </span>Organisation de l’information<a class="headerlink" href="#organisation-de-l-information" title="Lien vers cette rubrique"></a></h1>
+<h1><span class="section-number">8. </span>Organisation de l’information<a class="headerlink" href="#organisation-de-l-information" title="Lien vers cette rubrique"></a></h1>
 <section id="introduction">
-<h2><span class="section-number">9.1. </span>Introduction<a class="headerlink" href="#introduction" title="Lien vers cette rubrique"></a></h2>
+<h2><span class="section-number">8.1. </span>Introduction<a class="headerlink" href="#introduction" title="Lien vers cette rubrique"></a></h2>
 <section id="documents-de-reference">
-<h3><span class="section-number">9.1.1. </span>Documents de référence<a class="headerlink" href="#documents-de-reference" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">8.1.1. </span>Documents de référence<a class="headerlink" href="#documents-de-reference" title="Lien vers cette rubrique"></a></h3>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p><strong>Document</strong></p></th>
@@ -528,7 +524,7 @@ Les descriptions sont présentées au format HTML et exportables au format XML. 
 </table>
 </section>
 <section id="presentation-du-document">
-<h3><span class="section-number">9.1.2. </span>Présentation du document<a class="headerlink" href="#presentation-du-document" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">8.1.2. </span>Présentation du document<a class="headerlink" href="#presentation-du-document" title="Lien vers cette rubrique"></a></h3>
 <p>Ce document présente l’organisation de l’information retenue pour la solution logicielle Vitam.</p>
 <p>Il s’articule autour de trois grands axes :</p>
 <ul class="simple">
@@ -541,7 +537,7 @@ Le présent document doit permettre aux ministères porteurs, aux partenaires, a
 </section>
 </section>
 <section id="exigences">
-<h2><span class="section-number">9.2. </span>Exigences<a class="headerlink" href="#exigences" title="Lien vers cette rubrique"></a></h2>
+<h2><span class="section-number">8.2. </span>Exigences<a class="headerlink" href="#exigences" title="Lien vers cette rubrique"></a></h2>
 <p>Cette première section du document a pour objectif de recenser les exigences fonctionnelles ayant un impact sur la manière dont l’information doit être organisée dans la solution logicielle Vitam. Ces exigences ont été recensées en utilisant deux sources différentes :</p>
 <ul class="simple">
 <li><p>la réglementation et les normes en vigueur dans le domaine du records management/gestion des documents d’activités et dans celui de la gestion des archives, qu’il s’agisse de réglementations et normes nationales ou internationales. Un accent tout particulier a été mis sur les normes OAIS, NF Z 42‑013 et NF Z 42‑020 ;</p></li>
@@ -632,10 +628,10 @@ Le présent document doit permettre aux ministères porteurs, aux partenaires, a
 </table>
 <p>Les différentes exigences identifiées ont été regroupées de la manière suivante :</p>
 <ul class="simple">
-<li><p>exigences transverses applicables à la solution logicielle (section 2.1.) ;</p></li>
-<li><p>exigences applicables à la prise en charge d’objets par la solution logicielle (section 2.2.) ;</p></li>
-<li><p>exigences applicables à l’accès aux objets pris en charge par la solution logicielle (section 2.3.) ;</p></li>
-<li><p>exigences applicables à la gestion des objets pris en charge par la solution logicielle (section 2.4.).</p></li>
+<li><p><a class="reference internal" href="#exigences-transverses"><span class="xref myst">exigences transverses applicables à la solution logicielle</span></a> ;</p></li>
+<li><p><a class="reference internal" href="#transfert-entrees-et-prise-en-charge-des-objets-archives"><span class="xref myst">exigences applicables à la prise en charge d’objets par la solution logicielle</span></a> ;</p></li>
+<li><p><a class="reference internal" href="#recherche-acces-et-consultation-des-objets-archives-et-des-fichiers-qui-leur-sont-associes1"><span class="xref myst">exigences applicables à l’accès aux objets pris en charge par la solution logicielle</span></a> ;</p></li>
+<li><p><a class="reference internal" href="#gestion-des-objets-archives-pris-en-charge-et-des-fichiers-qui-leur-sont-associes"><span class="xref myst">exigences applicables à la gestion des objets pris en charge par la solution logicielle</span></a>.</p></li>
 </ul>
 <p>Chaque exigence est présentée de la manière suivante :</p>
 <ul class="simple">
@@ -678,9 +674,9 @@ Le présent document doit permettre aux ministères porteurs, aux partenaires, a
 </tbody>
 </table>
 <section id="exigences-transverses">
-<h3><span class="section-number">9.2.1. </span>Exigences transverses<a class="headerlink" href="#exigences-transverses" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">8.2.1. </span>Exigences transverses<a class="headerlink" href="#exigences-transverses" title="Lien vers cette rubrique"></a></h3>
 <section id="perimetre-darchivage">
-<h4><span class="section-number">9.2.1.1. </span>Périmètre d’archivage<a class="headerlink" href="#perimetre-darchivage" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.2.1.1. </span>Périmètre d’archivage<a class="headerlink" href="#perimetre-darchivage" title="Lien vers cette rubrique"></a></h4>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>N° d’exigence</p></th>
@@ -704,7 +700,7 @@ Le présent document doit permettre aux ministères porteurs, aux partenaires, a
 </table>
 </section>
 <section id="identification-des-entites-gerees-par-le-systeme">
-<h4><span class="section-number">9.2.1.2. </span>Identification des entités gérées par le système<a class="headerlink" href="#identification-des-entites-gerees-par-le-systeme" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.2.1.2. </span>Identification des entités gérées par le système<a class="headerlink" href="#identification-des-entites-gerees-par-le-systeme" title="Lien vers cette rubrique"></a></h4>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>N° d’exigence</p></th>
@@ -738,7 +734,7 @@ Le présent document doit permettre aux ministères porteurs, aux partenaires, a
 </table>
 </section>
 <section id="contractualisation-des-services-rendus-par-le-systeme">
-<h4><span class="section-number">9.2.1.3. </span>Contractualisation des services rendus par le système<a class="headerlink" href="#contractualisation-des-services-rendus-par-le-systeme" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.2.1.3. </span>Contractualisation des services rendus par le système<a class="headerlink" href="#contractualisation-des-services-rendus-par-le-systeme" title="Lien vers cette rubrique"></a></h4>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>N° d’exigence</p></th>
@@ -777,7 +773,7 @@ Le présent document doit permettre aux ministères porteurs, aux partenaires, a
 </table>
 </section>
 <section id="description-des-objets-archives">
-<h4><span class="section-number">9.2.1.4. </span>Description des objets archivés<a class="headerlink" href="#description-des-objets-archives" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.2.1.4. </span>Description des objets archivés<a class="headerlink" href="#description-des-objets-archives" title="Lien vers cette rubrique"></a></h4>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>N° d’exigence</p></th>
@@ -836,7 +832,7 @@ Le présent document doit permettre aux ministères porteurs, aux partenaires, a
 </table>
 </section>
 <section id="regles-de-gestion-applicables-aux-objets-archives">
-<h4><span class="section-number">9.2.1.5. </span>Règles de gestion applicables aux objets archivés<a class="headerlink" href="#regles-de-gestion-applicables-aux-objets-archives" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.2.1.5. </span>Règles de gestion applicables aux objets archivés<a class="headerlink" href="#regles-de-gestion-applicables-aux-objets-archives" title="Lien vers cette rubrique"></a></h4>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>N° d’exigence</p></th>
@@ -875,7 +871,7 @@ Le présent document doit permettre aux ministères porteurs, aux partenaires, a
 </table>
 </section>
 <section id="journalisation-et-tracabilite">
-<h4><span class="section-number">9.2.1.6. </span>Journalisation et traçabilité<a class="headerlink" href="#journalisation-et-tracabilite" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.2.1.6. </span>Journalisation et traçabilité<a class="headerlink" href="#journalisation-et-tracabilite" title="Lien vers cette rubrique"></a></h4>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>N° d’exigence</p></th>
@@ -929,7 +925,7 @@ Le présent document doit permettre aux ministères porteurs, aux partenaires, a
 </table>
 </section>
 <section id="securite">
-<h4><span class="section-number">9.2.1.7. </span>Sécurité<a class="headerlink" href="#securite" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.2.1.7. </span>Sécurité<a class="headerlink" href="#securite" title="Lien vers cette rubrique"></a></h4>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>N° d’exigence</p></th>
@@ -959,9 +955,9 @@ Le présent document doit permettre aux ministères porteurs, aux partenaires, a
 </section>
 </section>
 <section id="exigences-associees-aux-differentes-etapes-du-cycle-de-vie-des-objets-archives">
-<h3><span class="section-number">9.2.2. </span>Exigences associées aux différentes étapes du cycle de vie des objets archivés<a class="headerlink" href="#exigences-associees-aux-differentes-etapes-du-cycle-de-vie-des-objets-archives" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">8.2.2. </span>Exigences associées aux différentes étapes du cycle de vie des objets archivés<a class="headerlink" href="#exigences-associees-aux-differentes-etapes-du-cycle-de-vie-des-objets-archives" title="Lien vers cette rubrique"></a></h3>
 <section id="transfert-entrees-et-prise-en-charge-des-objets-archives">
-<h4><span class="section-number">9.2.2.1. </span>Transfert, entrées et prise en charge des objets archivés<a class="headerlink" href="#transfert-entrees-et-prise-en-charge-des-objets-archives" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.2.2.1. </span>Transfert, entrées et prise en charge des objets archivés<a class="headerlink" href="#transfert-entrees-et-prise-en-charge-des-objets-archives" title="Lien vers cette rubrique"></a></h4>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>N° d’exigence</p></th>
@@ -1005,9 +1001,9 @@ Le présent document doit permettre aux ministères porteurs, aux partenaires, a
 </table>
 </section>
 <section id="recherche-acces-et-consultation-des-objets-archives-et-des-fichiers-qui-leur-sont-associes1">
-<h4><span class="section-number">9.2.2.2. </span>Recherche, accès et consultation des objets archivés et des fichiers qui leur sont associés<a class="footnote-reference brackets" href="#id105" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a><a class="headerlink" href="#recherche-acces-et-consultation-des-objets-archives-et-des-fichiers-qui-leur-sont-associes1" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.2.2.2. </span>Recherche, accès et consultation des objets archivés et des fichiers qui leur sont associés<a class="footnote-reference brackets" href="#id105" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a><a class="headerlink" href="#recherche-acces-et-consultation-des-objets-archives-et-des-fichiers-qui-leur-sont-associes1" title="Lien vers cette rubrique"></a></h4>
 <section id="recherche">
-<h5><span class="section-number">9.2.2.2.1. </span>Recherche<a class="headerlink" href="#recherche" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.2.2.2.1. </span>Recherche<a class="headerlink" href="#recherche" title="Lien vers cette rubrique"></a></h5>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>N° d’exigence</p></th>
@@ -1071,7 +1067,7 @@ Le présent document doit permettre aux ministères porteurs, aux partenaires, a
 </table>
 </section>
 <section id="consultation-des-resultats">
-<h5><span class="section-number">9.2.2.2.2. </span>Consultation des résultats<a class="headerlink" href="#consultation-des-resultats" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.2.2.2.2. </span>Consultation des résultats<a class="headerlink" href="#consultation-des-resultats" title="Lien vers cette rubrique"></a></h5>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>N° d’exigence</p></th>
@@ -1130,7 +1126,7 @@ Le présent document doit permettre aux ministères porteurs, aux partenaires, a
 </table>
 </section>
 <section id="consultation-et-exploitation-des-archives">
-<h5><span class="section-number">9.2.2.2.3. </span>Consultation et exploitation des archives<a class="headerlink" href="#consultation-et-exploitation-des-archives" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.2.2.2.3. </span>Consultation et exploitation des archives<a class="headerlink" href="#consultation-et-exploitation-des-archives" title="Lien vers cette rubrique"></a></h5>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>N° d’exigence</p></th>
@@ -1175,9 +1171,9 @@ Le présent document doit permettre aux ministères porteurs, aux partenaires, a
 </section>
 </section>
 <section id="gestion-des-objets-archives-pris-en-charge-et-des-fichiers-qui-leur-sont-associes">
-<h4><span class="section-number">9.2.2.3. </span>Gestion des objets archivés pris en charge et des fichiers qui leur sont associés<a class="headerlink" href="#gestion-des-objets-archives-pris-en-charge-et-des-fichiers-qui-leur-sont-associes" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.2.2.3. </span>Gestion des objets archivés pris en charge et des fichiers qui leur sont associés<a class="headerlink" href="#gestion-des-objets-archives-pris-en-charge-et-des-fichiers-qui-leur-sont-associes" title="Lien vers cette rubrique"></a></h4>
 <section id="mise-en-oeuvre-des-actions-a-echeance">
-<h5><span class="section-number">9.2.2.3.1. </span>Mise en œuvre des actions à échéance<a class="headerlink" href="#mise-en-oeuvre-des-actions-a-echeance" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.2.2.3.1. </span>Mise en œuvre des actions à échéance<a class="headerlink" href="#mise-en-oeuvre-des-actions-a-echeance" title="Lien vers cette rubrique"></a></h5>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>N° d’exigence</p></th>
@@ -1206,7 +1202,7 @@ Le présent document doit permettre aux ministères porteurs, aux partenaires, a
 </table>
 </section>
 <section id="preservation-et-integrite">
-<h5><span class="section-number">9.2.2.3.2. </span>Préservation et intégrité<a class="headerlink" href="#preservation-et-integrite" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.2.2.3.2. </span>Préservation et intégrité<a class="headerlink" href="#preservation-et-integrite" title="Lien vers cette rubrique"></a></h5>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>N° d’exigence</p></th>
@@ -1265,7 +1261,7 @@ Le présent document doit permettre aux ministères porteurs, aux partenaires, a
 </table>
 </section>
 <section id="stockage">
-<h5><span class="section-number">9.2.2.3.3. </span>Stockage<a class="headerlink" href="#stockage" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.2.2.3.3. </span>Stockage<a class="headerlink" href="#stockage" title="Lien vers cette rubrique"></a></h5>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>N° d’exigence</p></th>
@@ -1314,7 +1310,7 @@ Le présent document doit permettre aux ministères porteurs, aux partenaires, a
 </table>
 </section>
 <section id="reversibilite">
-<h5><span class="section-number">9.2.2.3.4. </span>Réversibilité<a class="headerlink" href="#reversibilite" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.2.2.3.4. </span>Réversibilité<a class="headerlink" href="#reversibilite" title="Lien vers cette rubrique"></a></h5>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>N° d’exigence</p></th>
@@ -1336,7 +1332,7 @@ Le présent document doit permettre aux ministères porteurs, aux partenaires, a
 </section>
 </section>
 <section id="implementation-de-la-norme-oais-dans-la-solution-logicielle-vitam">
-<h2><span class="section-number">9.3. </span>Implémentation de la norme OAIS dans la solution logicielle Vitam<a class="headerlink" href="#implementation-de-la-norme-oais-dans-la-solution-logicielle-vitam" title="Lien vers cette rubrique"></a></h2>
+<h2><span class="section-number">8.3. </span>Implémentation de la norme OAIS dans la solution logicielle Vitam<a class="headerlink" href="#implementation-de-la-norme-oais-dans-la-solution-logicielle-vitam" title="Lien vers cette rubrique"></a></h2>
 <p>Cette deuxième section du document présente la manière dont la solution logicielle Vitam met en œuvre les concepts formulés par la norme OAIS, afin de répondre aux exigences fonctionnelles précédemment identifiées.</p>
 <p>La norme OAIS décrit les types d’information qui sont échangés et gérés dans des systèmes d’archivage et définit un modèle de données conceptuel (logical model of informations) centré autour de la notion d’objets informationnels (Information Objects) nécessaire pour la préservation sur le long terme des contenus informationnels (Content Information).
 La norme OAIS (section 4.2.2. Logical Model of Information in an Open Archival Information System) précise que la préservation sur le long terme des objets à archiver (Data Objects) et de l’ensemble des informations qui leur sont associées (Representation Information, Preservation Description Information, Package Description), nécessite de réfléchir en termes de paquets informationnels (Information Packages) :</p>
@@ -1349,7 +1345,7 @@ La norme OAIS (section 4.2.2. Logical Model of Information in an Open Archival I
 La norme précise enfin qu’aucune équivalence n’est obligatoire entre les différents types de paquets informationnels.</p></li>
 </ul>
 <section id="les-paquets-transmis-au-systeme-darchivage-les-submission-information-packages-sip">
-<h3><span class="section-number">9.3.1. </span>Les paquets transmis au système d’archivage : les Submission Information Packages (SIP)<a class="headerlink" href="#les-paquets-transmis-au-systeme-darchivage-les-submission-information-packages-sip" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">8.3.1. </span>Les paquets transmis au système d’archivage : les Submission Information Packages (SIP)<a class="headerlink" href="#les-paquets-transmis-au-systeme-darchivage-les-submission-information-packages-sip" title="Lien vers cette rubrique"></a></h3>
 <p>Selon la norme OAIS, les SIP correspondent aux paquets informationnels transférés au système d’archivage par le producteur des objets à archiver.</p>
 <p><strong>Les SIP en tant que tels</strong></p>
 <p>La norme OAIS indique que la forme et le contenu des SIP doivent faire l’objet d’une négociation entre le service versant et le service d’archives. S’agissant des systèmes d’archivage basés sur la solution logicielle Vitam, ils suivent les prescriptions de la norme NF Z 44‑022 et de sa déclinaison pour le secteur public, le Standard d’échanges de données pour l’archivage (SEDA), dans sa version 2.2<a class="footnote-reference brackets" href="#id106" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>. L’implémentation de cette norme et de ce standard est décrite dans le document « Structuration des Submission Information Packages (SIP) » mis à disposition par l’équipe projet Vitam.</p>
@@ -1362,7 +1358,7 @@ La norme précise enfin qu’aucune équivalence n’est obligatoire entre les d
 <p>Ces SIP permettent de transférer au système d’archivage aussi bien des descriptions que des fichiers correspondant aux informations nécessaires pour représenter et interpréter ces objets informationnels (Representation Information, Preservation Description Information).</p>
 <p>Chaque SIP est doté, lors de sa réception pour contrôle et traitement avant prise en charge par la solution logicielle Vitam, d’un identifiant unique et pérenne qui prend la forme d’un Globally Unique Identifier (GUID).</p>
 <section id="la-transformation-des-sip-en-aip">
-<h4><span class="section-number">9.3.1.1. </span>La transformation des SIP en AIP<a class="headerlink" href="#la-transformation-des-sip-en-aip" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.3.1.1. </span>La transformation des SIP en AIP<a class="headerlink" href="#la-transformation-des-sip-en-aip" title="Lien vers cette rubrique"></a></h4>
 <p>La norme OAIS (section 4.3.2.) précise qu’une fois reçu par un système d’archivage, un SIP peut être modifié dans sa forme et son contenu pour rendre possible et gérable la préservation de l’information transmise. Le SIP prend alors la forme d’un Archival Information Package (AIP).
 La norme précise ensuite que quatre types de transformation sont possibles lors du traitement du SIP dans l’entité « entrées » du système :</p>
 <ul class="simple">
@@ -1395,7 +1391,7 @@ La norme précise ensuite que quatre types de transformation sont possibles lors
 <p>Les identifiants uniques et pérennes, ainsi que les indexations, permettent de faire le lien entre les différents éléments constituant l’AIP.</p>
 </section>
 <section id="illustration-via-une-etude-de-cas">
-<h4><span class="section-number">9.3.1.2. </span>Illustration via une étude de cas<a class="headerlink" href="#illustration-via-une-etude-de-cas" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.3.1.2. </span>Illustration via une étude de cas<a class="headerlink" href="#illustration-via-une-etude-de-cas" title="Lien vers cette rubrique"></a></h4>
 <p>Une étude de cas va permettre d’illustrer les transformations opérées par la solution logicielle Vitam sur les SIP et la manière dont l’Archival Information Package est conçu dans la solution logicielle Vitam.</p>
 <p>Le cas étudié (cf. illustration dans le schéma ci-dessous) concerne une arborescence de fichiers comprenant :</p>
 <ul class="simple">
@@ -1410,7 +1406,7 @@ La norme précise ensuite que quatre types de transformation sont possibles lors
 </ul>
 <p><img alt="" src="../_images/arbo.jpg" /></p>
 <p>Une fois pris en charge, après contrôles et traitements, par la solution logicielle Vitam, l’arborescence de fichiers fait l’objet d’une gestion double, en base de données NoSQL et en stockage.</p>
-<p>Dans la base de données sont alimentées deux collections (voir ci-dessous section 4.5) :</p>
+<p>Dans la base de données sont alimentées deux collections (<a class="reference internal" href="#descriptions"><span class="xref myst">voir ci-dessous</span></a>) :</p>
 <ul class="simple">
 <li><p>la collection Unit, qui indexe les métadonnées associées aux unités archivistiques ;</p></li>
 <li><p>la collection ObjectGroup qui indexe les métadonnées associées aux groupes d’objets.</p></li>
@@ -1425,7 +1421,7 @@ Dans la collection ObjectGroup, chaque groupe d’objets fait l’objet d’une 
 Chaque ObjectGroup est doté d’un identifiant unique (un Globally Unique Identifier – GUID).<br />
 L’arborescence initiale est donc préservée dans l’indexation de la solution logicielle Vitam et permet, a posteriori, de restituer cette structuration à l’utilisateur sous la forme d’un Dissemination Information Package.</p>
 <p><img alt="" src="../_images/arbo_dip.jpg" /></p>
-<p>Par ailleurs, chaque unité archivistique et chaque groupe d’objets sont dotés d’un journal du cycle de vie propre, qui recense l’ensemble des événements majeurs survenus pendant la période de prise en charge et de gestion de ceux-ci par la solution logicielle Vitam (voir section 4.6). Le GUID de chaque unité archivistique et de chaque groupe d’objets constitue la clé primaire de ces journaux.</p>
+<p>Par ailleurs, chaque unité archivistique et chaque groupe d’objets sont dotés d’un journal du cycle de vie propre, qui recense l’ensemble des événements majeurs survenus pendant la période de prise en charge et de gestion de ceux-ci par la solution logicielle Vitam (<a class="reference internal" href="#journaux-et-registres"><span class="xref myst">voir section</span></a>). Le GUID de chaque unité archivistique et de chaque groupe d’objets constitue la clé primaire de ces journaux.</p>
 <p>Sur les offres de stockage sur lesquelles s’appuie la solution logicielle Vitam, sont stockés et sécurisés :</p>
 <ul class="simple">
 <li><p>les objets numériques (file 1.1.1.1, 1.1.2.1, 1.1.2.2, 1.1.2.3) transférés ;</p></li>
@@ -1441,7 +1437,7 @@ L’arborescence initiale est donc préservée dans l’indexation de la solutio
 </ul>
 </section>
 <section id="la-restitution-des-sip">
-<h4><span class="section-number">9.3.1.3. </span>La restitution des SIP<a class="headerlink" href="#la-restitution-des-sip" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.3.1.3. </span>La restitution des SIP<a class="headerlink" href="#la-restitution-des-sip" title="Lien vers cette rubrique"></a></h4>
 <p>La transformation des SIP reçus par la solution logicielle Vitam n’empêche donc pas le maintien d’un lien logique entre les différents éléments constituant le SIP d’origine :</p>
 <ul class="simple">
 <li><p>le SIP est identifié dans la solution logicielle en utilisant l’identifiant de l’opération d’entrée à l’occasion de laquelle il a été reçu et pris en charge ;</p></li>
@@ -1453,15 +1449,15 @@ L’arborescence initiale est donc préservée dans l’indexation de la solutio
 </section>
 </section>
 <section id="les-paquets-geres-par-le-systeme-darchivage-les-archival-information-packages-aip">
-<h3><span class="section-number">9.3.2. </span>Les paquets gérés par le système d’archivage : les Archival Information Packages (AIP)<a class="headerlink" href="#les-paquets-geres-par-le-systeme-darchivage-les-archival-information-packages-aip" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">8.3.2. </span>Les paquets gérés par le système d’archivage : les Archival Information Packages (AIP)<a class="headerlink" href="#les-paquets-geres-par-le-systeme-darchivage-les-archival-information-packages-aip" title="Lien vers cette rubrique"></a></h3>
 <p>Selon la norme OAIS, les AIP correspondent aux paquets informationnels gérés par le système d’archivage.</p>
 <section id="representation-dans-la-solution-logicielle-vitam-des-entites-constituant-un-aip-au-sens-de-la-norme-oais">
-<h4><span class="section-number">9.3.2.1. </span>Représentation dans la solution logicielle Vitam des entités constituant un AIP au sens de la norme OAIS<a class="headerlink" href="#representation-dans-la-solution-logicielle-vitam-des-entites-constituant-un-aip-au-sens-de-la-norme-oais" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.3.2.1. </span>Représentation dans la solution logicielle Vitam des entités constituant un AIP au sens de la norme OAIS<a class="headerlink" href="#representation-dans-la-solution-logicielle-vitam-des-entites-constituant-un-aip-au-sens-de-la-norme-oais" title="Lien vers cette rubrique"></a></h4>
 <p>Le schéma ci-dessous donne une vue détaillée des relations logiques entre informations constituant un AIP au sens de la norme OAIS (section 4.2.2.3.).</p>
 <p><img alt="" src="../_images/AIP.jpg" /></p>
 <p>Le tableau ci-dessous fournit une correspondance entre ces différents types d’information et les objets et informations gérés à ce jour dans la solution logicielle Vitam – la description des différents types d’objets et d’informations est fournie dans le chapitre 4 du présent document. Ce tableau sera amené à évoluer en fonction des nouveaux concepts et objets métiers mis en œuvre dans la solution logicielle Vitam.</p>
 <section id="content-information">
-<h5><span class="section-number">9.3.2.1.1. </span><em>Content information</em><a class="headerlink" href="#content-information" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.3.2.1.1. </span><em>Content information</em><a class="headerlink" href="#content-information" title="Lien vers cette rubrique"></a></h5>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>Intitulé</p></th>
@@ -1482,7 +1478,7 @@ L’arborescence initiale est donc préservée dans l’indexation de la solutio
 </table>
 </section>
 <section id="representation-information">
-<h5><span class="section-number">9.3.2.1.2. </span><em>Representation Information</em><a class="headerlink" href="#representation-information" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.3.2.1.2. </span><em>Representation Information</em><a class="headerlink" href="#representation-information" title="Lien vers cette rubrique"></a></h5>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>Intitulé</p></th>
@@ -1503,7 +1499,7 @@ L’arborescence initiale est donc préservée dans l’indexation de la solutio
 </table>
 </section>
 <section id="preservation-description-information">
-<h5><span class="section-number">9.3.2.1.3. </span>Preservation Description Information<a class="headerlink" href="#preservation-description-information" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.3.2.1.3. </span>Preservation Description Information<a class="headerlink" href="#preservation-description-information" title="Lien vers cette rubrique"></a></h5>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>Intitulé</p></th>
@@ -1540,7 +1536,7 @@ L’arborescence initiale est donc préservée dans l’indexation de la solutio
 </table>
 </section>
 <section id="package-description">
-<h5><span class="section-number">9.3.2.1.4. </span>Package Description<a class="headerlink" href="#package-description" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.3.2.1.4. </span>Package Description<a class="headerlink" href="#package-description" title="Lien vers cette rubrique"></a></h5>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>Intitulé</p></th>
@@ -1557,7 +1553,7 @@ L’arborescence initiale est donc préservée dans l’indexation de la solutio
 </table>
 </section>
 <section id="packaging-information">
-<h5><span class="section-number">9.3.2.1.5. </span>Packaging Information<a class="headerlink" href="#packaging-information" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.3.2.1.5. </span>Packaging Information<a class="headerlink" href="#packaging-information" title="Lien vers cette rubrique"></a></h5>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>Intitulé</p></th>
@@ -1575,7 +1571,7 @@ L’arborescence initiale est donc préservée dans l’indexation de la solutio
 </section>
 </section>
 <section id="la-mise-a-jour-des-aip">
-<h4><span class="section-number">9.3.2.2. </span>La mise à jour des AIP<a class="headerlink" href="#la-mise-a-jour-des-aip" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.3.2.2. </span>La mise à jour des AIP<a class="headerlink" href="#la-mise-a-jour-des-aip" title="Lien vers cette rubrique"></a></h4>
 <p>La norme OAIS (section 5.1.3.4.) précise que les AIP – en tout cas leur Content Information et leur Preservation Description Information (PDI) – peuvent faire l’objet de transformations à l’occasion d’opérations de conversion (Digital Migrations), ce qui entraîne la création de nouvelles versions de ces AIP.<br />
 Si les opérations de conversion constituent des opérations importantes de mise à jour des AIP, ce ne sont pas nécessairement les seules qui peuvent impacter les AIP. Les modifications des AIP peuvent en effet concerner toutes les catégories d’information au sens de la norme OAIS :</p>
 <ul class="simple">
@@ -1602,10 +1598,10 @@ Si les opérations de conversion constituent des opérations importantes de mise
 </section>
 </section>
 <section id="les-paquets-generes-par-le-systeme-darchivage-les-dissemination-information-packages-dip">
-<h3><span class="section-number">9.3.3. </span>Les paquets générés par le système d’archivage : les Dissemination Information Packages (DIP)<a class="headerlink" href="#les-paquets-generes-par-le-systeme-darchivage-les-dissemination-information-packages-dip" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">8.3.3. </span>Les paquets générés par le système d’archivage : les Dissemination Information Packages (DIP)<a class="headerlink" href="#les-paquets-generes-par-le-systeme-darchivage-les-dissemination-information-packages-dip" title="Lien vers cette rubrique"></a></h3>
 <p>Selon la norme OAIS, les DIP correspondent aux paquets informationnels transmis de quelque manière que ce soit par le système d’archivage à un demandeur, générés à partir d’un ou de plusieurs AIP conservés par le système d’archivage.</p>
 <section id="les-dip-en-tant-que-tels">
-<h4><span class="section-number">9.3.3.1. </span>Les DIP en tant que tels<a class="headerlink" href="#les-dip-en-tant-que-tels" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.3.3.1. </span>Les DIP en tant que tels<a class="headerlink" href="#les-dip-en-tant-que-tels" title="Lien vers cette rubrique"></a></h4>
 <p>La norme OAIS indique que le DIP comprend tout ou partie d’un ou plusieurs AIP et peut également contenir une Preservation Description Information (PDI) plus ou moins complète. Elle précise également qu’en cas d’empaquetage, l’information d’empaquetage, même si elle peut prendre des formes variées, doit nécessairement être présente sous une forme permettant au demandeur de distinguer clairement l’information recherchée. S’agissant des systèmes d’archivage basés sur la solution logicielle Vitam, ils suivent les prescriptions de la norme NF Z 44‑022 et de sa déclinaison pour le secteur public, le Standard d’échanges de données pour l’archivage (SEDA), dans sa version 2.2.<a class="footnote-reference brackets" href="#id108" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a>.</p>
 <p>En application de cette norme, de ce standard et de son projet d’implémentation, les DIP émis par un système d’archivage utilisant la solution logicielle Vitam prennent la forme d’un conteneur (de format .zip) comprenant tous les fichiers représentant les archives demandées, ainsi qu’un bordereau les accompagnant. Ce dernier prend la forme d’un fichier XML conforme au schéma défini dans la norme NF Z 44‑022 et le standard SEDA, dans sa version 2.2.<a class="footnote-reference brackets" href="#id109" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a>. Ce bordereau contient :</p>
 <ul class="simple">
@@ -1618,7 +1614,7 @@ Si les opérations de conversion constituent des opérations importantes de mise
 <p>Avertissement : Dans le cadre de la release 7 (juin 2018), l’équipe chargée de la réalisation de la solution logicielle Vitam a développé les fonctionnalités de base d’export d’un DIP : constitution du paquet d’objets-données (DataObjectPackage). Les messages d’échanges prévus par le SEDA ont été implémentées dans le cadre de la release 13 (mars 2020).</p>
 </section>
 <section id="la-transformation-des-aip-en-dip">
-<h4><span class="section-number">9.3.3.2. </span>La transformation des AIP en DIP<a class="headerlink" href="#la-transformation-des-aip-en-dip" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.3.3.2. </span>La transformation des AIP en DIP<a class="headerlink" href="#la-transformation-des-aip-en-dip" title="Lien vers cette rubrique"></a></h4>
 <p>La norme OAIS (section 4.3.4.) précise que le DIP est constitué par l’entité « accès » sur la base d’une commande d’un utilisateur, en mobilisant les AIP et les descriptions associées gérées par les entités « Gestion de la donnée » et « Stockage ».</p>
 <p>La norme précise ensuite que les DIP résultent de la transformation par l’entité « Accès » des AIP et des descriptions de paquets et que la complexité du processus de transformation peut varier selon le niveau de service proposé par le système d’archivage et les demandes des utilisateurs :</p>
 <ul class="simple">
@@ -1646,16 +1642,16 @@ Pour ce faire, l’entité « accès » de la solution logicielle Vitam :</p>
 </section>
 </section>
 <section id="structuration-proposee">
-<h2><span class="section-number">9.4. </span>Structuration proposée<a class="headerlink" href="#structuration-proposee" title="Lien vers cette rubrique"></a></h2>
+<h2><span class="section-number">8.4. </span>Structuration proposée<a class="headerlink" href="#structuration-proposee" title="Lien vers cette rubrique"></a></h2>
 <p>Le présent chapitre décrit la structuration de l’information retenue dans la solution logicielle Vitam.</p>
 <p>Sont successivement décrits :</p>
 <ul class="simple">
-<li><p>les données de référence (section 4.1.) ;</p></li>
-<li><p>les objets permettant la gestion des droits (section 4.2.) ;</p></li>
-<li><p>les stratégies de gestion (section 4.3.) ;</p></li>
-<li><p>les modèles d’objets métiers (section 4.4.) ;</p></li>
-<li><p>les descriptions des objets archivés et des fichiers qui leur sont associés (section 4.5.) ;</p></li>
-<li><p>les journaux et registres (section 4.6.).
+<li><p><a class="reference internal" href="#donnees-de-reference"><span class="xref myst">les données de référence</span></a> ;</p></li>
+<li><p><a class="reference internal" href="#objets-permettant-la-gestion-des-droits"><span class="xref myst">les objets permettant la gestion des droits</span></a> ;</p></li>
+<li><p><a class="reference internal" href="#strategies-liees-a-la-gestion"><span class="xref myst">les stratégies de gestion</span></a> ;</p></li>
+<li><p><a class="reference internal" href="#modeles-et-structuration-des-objets-metiers"><span class="xref myst">les modèles d’objets métiers</span></a> ;</p></li>
+<li><p><a class="reference internal" href="#descriptions"><span class="xref myst">les descriptions des objets archivés et des fichiers qui leur sont associés</span></a> ;</p></li>
+<li><p><a class="reference internal" href="#journaux-et-registres"><span class="xref myst">les journaux et registres</span></a>.
 Chaque entité composant le modèle de données fait l’objet d’une présentation précisant :</p></li>
 <li><p>la définition et les objectifs de cette entité ;</p></li>
 <li><p>les exigences fonctionnelles que cette entité permet de satisfaire ;</p></li>
@@ -1663,21 +1659,21 @@ Chaque entité composant le modèle de données fait l’objet d’une présenta
 <li><p>la section correspondant à cette entité dans le modèle de données.</p></li>
 </ul>
 <section id="donnees-de-reference">
-<h3><span class="section-number">9.4.1. </span>Données de référence<a class="headerlink" href="#donnees-de-reference" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">8.4.1. </span>Données de référence<a class="headerlink" href="#donnees-de-reference" title="Lien vers cette rubrique"></a></h3>
 <section id="referentiel-des-regles-de-gestion-du-cycle-de-vie">
-<h4><span class="section-number">9.4.1.1. </span>Référentiel des règles de gestion du cycle de vie<a class="headerlink" href="#referentiel-des-regles-de-gestion-du-cycle-de-vie" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.4.1.1. </span>Référentiel des règles de gestion du cycle de vie<a class="headerlink" href="#referentiel-des-regles-de-gestion-du-cycle-de-vie" title="Lien vers cette rubrique"></a></h4>
 <section id="definition-et-objectifs">
-<h5><span class="section-number">9.4.1.1.1. </span>Définition et objectifs<a class="headerlink" href="#definition-et-objectifs" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.1.1.1. </span>Définition et objectifs<a class="headerlink" href="#definition-et-objectifs" title="Lien vers cette rubrique"></a></h5>
 <p>Le référentiel de règles de gestion a pour objectif de décrire les règles de gestion applicables aux unités archivistiques transférées dans la solution logicielle Vitam et prises en charge par celle-ci. Ces règles seront utilisées pour calculer les échéances auxquelles sont soumises les unités archivistiques correspondantes et déclencher les opérations correspondantes.<br />
 Ce référentiel est alimenté à partir de fichiers au format .csv définis par chaque utilisateur. Il peut constituer une version d’un référentiel maintenu à l’extérieur de la solution logicielle Vitam, permettant de faciliter les opérations mises en œuvre par celle-ci (référentiel en mode « esclave »).<br />
 Il est propre à chaque tenant partageant une même implémentation de la solution logicielle Vitam.</p>
 </section>
 <section id="exigences-associees">
-<h5><span class="section-number">9.4.1.1.2. </span>Exigences associées<a class="headerlink" href="#exigences-associees" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.1.1.2. </span>Exigences associées<a class="headerlink" href="#exigences-associees" title="Lien vers cette rubrique"></a></h5>
 <p>1.2.1., 1.5.1., 1.5.5., 2.1.1., 2.2.4.</p>
 </section>
 <section id="structuration">
-<h5><span class="section-number">9.4.1.1.3. </span>Structuration<a class="headerlink" href="#structuration" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.1.1.3. </span>Structuration<a class="headerlink" href="#structuration" title="Lien vers cette rubrique"></a></h5>
 <p>Ce référentiel comprend :</p>
 <ul class="simple">
 <li><p>des champs d’identification : identification système et identification métier, qui peut correspondre à l’identification d’un référentiel externe dont la version de la solution logicielle Vitam est esclave ;</p></li>
@@ -1688,29 +1684,29 @@ Il est propre à chaque tenant partageant une même implémentation de la soluti
 <p>L’identifiant métier permet de faire le lien entre le référentiel et la description des unités archivistiques (cf. 4.5.).</p>
 </section>
 <section id="section-correspondante-dans-le-modele-de-donnees">
-<h5><span class="section-number">9.4.1.1.4. </span>Section correspondante dans le modèle de données<a class="headerlink" href="#section-correspondante-dans-le-modele-de-donnees" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.1.1.4. </span>Section correspondante dans le modèle de données<a class="headerlink" href="#section-correspondante-dans-le-modele-de-donnees" title="Lien vers cette rubrique"></a></h5>
 <p>Base MasterData – collection Règles de gestion (FileRules)</p>
 </section>
 <section id="documentation-associee">
-<h5><span class="section-number">9.4.1.1.5. </span>Documentation associée<a class="headerlink" href="#documentation-associee" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.1.1.5. </span>Documentation associée<a class="headerlink" href="#documentation-associee" title="Lien vers cette rubrique"></a></h5>
 <p><a class="reference internal" href="regles_gestion.html"><span class="std std-doc">Vitam. Règles de gestion.</span></a></p>
 </section>
 </section>
 <section id="referentiel-des-formats-de-fichiers">
-<h4><span class="section-number">9.4.1.2. </span>Référentiel des formats de fichiers<a class="headerlink" href="#referentiel-des-formats-de-fichiers" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.4.1.2. </span>Référentiel des formats de fichiers<a class="headerlink" href="#referentiel-des-formats-de-fichiers" title="Lien vers cette rubrique"></a></h4>
 <section id="id6">
-<h5><span class="section-number">9.4.1.2.1. </span>Définition et objectifs<a class="headerlink" href="#id6" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.1.2.1. </span>Définition et objectifs<a class="headerlink" href="#id6" title="Lien vers cette rubrique"></a></h5>
 <p>Le référentiel des formats a pour objectif de décrire et documenter les formats de fichier susceptibles d’avoir été utilisés pour créer des objets transférés et pris en charge par la solution logicielle Vitam.<br />
 Ce référentiel est alimenté à partir des fichiers de signature DROID publiés par The National Archives<a class="footnote-reference brackets" href="#id110" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a>.
 L’identifiant métier permet de faire le lien entre le référentiel, les contrats d’entrée (cf. 4.2.) et les scénarios de préservation (cf. 4.3.), mais aussi les groupes d’objets (cf. 4.5.).<br />
 Le référentiel des formats est unique par implémentation de la solution logicielle Vitam.</p>
 </section>
 <section id="id8">
-<h5><span class="section-number">9.4.1.2.2. </span>Exigences associées<a class="headerlink" href="#id8" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.1.2.2. </span>Exigences associées<a class="headerlink" href="#id8" title="Lien vers cette rubrique"></a></h5>
 <p>1.2.1., 2.1.3., 2.2.4., 2.6.1., 2.6.2., 2.6.3., 2.6.4., 2.6.5.</p>
 </section>
 <section id="id9">
-<h5><span class="section-number">9.4.1.2.3. </span>Structuration<a class="headerlink" href="#id9" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.1.2.3. </span>Structuration<a class="headerlink" href="#id9" title="Lien vers cette rubrique"></a></h5>
 <p>Ce référentiel comprend :</p>
 <ul class="simple">
 <li><p>des champs d’identification : un identifiant système et un identifiant métier correspondant au PUID attribué par The National Archives (UK) ;</p></li>
@@ -1722,28 +1718,28 @@ Le référentiel des formats est unique par implémentation de la solution logic
 <p>L’identifiant métier permet de faire le lien entre le référentiel et la description des objets dans les groupes d’objets techniques (cf. 4.5.).</p>
 </section>
 <section id="id10">
-<h5><span class="section-number">9.4.1.2.4. </span>Section correspondante dans le modèle de données<a class="headerlink" href="#id10" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.1.2.4. </span>Section correspondante dans le modèle de données<a class="headerlink" href="#id10" title="Lien vers cette rubrique"></a></h5>
 <p>Base MasterData – collection Formats (FileFormat)</p>
 </section>
 <section id="id11">
-<h5><span class="section-number">9.4.1.2.5. </span>Documentation associée<a class="headerlink" href="#id11" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.1.2.5. </span>Documentation associée<a class="headerlink" href="#id11" title="Lien vers cette rubrique"></a></h5>
 <p><a class="reference internal" href="preservation.html"><span class="std std-doc">Vitam. Gestion de la préservation.</span></a></p>
 </section>
 </section>
 <section id="referentiel-des-services-agents">
-<h4><span class="section-number">9.4.1.3. </span>Référentiel des services agents<a class="headerlink" href="#referentiel-des-services-agents" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.4.1.3. </span>Référentiel des services agents<a class="headerlink" href="#referentiel-des-services-agents" title="Lien vers cette rubrique"></a></h4>
 <section id="id12">
-<h5><span class="section-number">9.4.1.3.1. </span>Définition et objectifs<a class="headerlink" href="#id12" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.1.3.1. </span>Définition et objectifs<a class="headerlink" href="#id12" title="Lien vers cette rubrique"></a></h5>
 <p>Le référentiel des services agents a pour objectif de décrire les acteurs des opérations d’archivage effectuées avec la solution logicielle Vitam, notamment les services producteurs (OriginatingAgencies) et les services versants (SubmissionAgencies) au sens de la norme NF Z 44‑022. Ces services sont utilisés pour vérifier la valeur des informations transmises à la solution logicielle Vitam lors du transfert d’un SIP ou lors de la création d’un contrat d’accès.<br />
 Ce référentiel est alimenté à partir de fichiers au format .csv définis par chaque utilisateur. Il peut constituer une version d’un référentiel maintenu à l’extérieur de la solution logicielle Vitam, permettant de faciliter les opérations mises en œuvre par celle-ci (référentiel en mode « esclave »).<br />
 Il est propre à chaque tenant partageant une même implémentation de la solution logicielle Vitam.</p>
 </section>
 <section id="id13">
-<h5><span class="section-number">9.4.1.3.2. </span>Exigences associées<a class="headerlink" href="#id13" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.1.3.2. </span>Exigences associées<a class="headerlink" href="#id13" title="Lien vers cette rubrique"></a></h5>
 <p>1.2.1., 1.2.3., 1.4.2., 2.2.9., 2.3.7.</p>
 </section>
 <section id="id14">
-<h5><span class="section-number">9.4.1.3.3. </span>Structuration<a class="headerlink" href="#id14" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.1.3.3. </span>Structuration<a class="headerlink" href="#id14" title="Lien vers cette rubrique"></a></h5>
 <p>Ce référentiel comprend :</p>
 <ul class="simple">
 <li><p>des champs d’identification : identification système et identification métier, qui peut correspondre à l’identification d’un référentiel externe dont la version de la solution logicielle Vitam est esclave ;</p></li>
@@ -1752,28 +1748,28 @@ Il est propre à chaque tenant partageant une même implémentation de la soluti
 <p>L’identifiant métier permet de faire le lien entre le référentiel, la description des unités archivistiques, le registre des fonds, les contrats d’accès et éventuellement les profils d’archivage.</p>
 </section>
 <section id="id15">
-<h5><span class="section-number">9.4.1.3.4. </span>Section correspondante dans le modèle de données<a class="headerlink" href="#id15" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.1.3.4. </span>Section correspondante dans le modèle de données<a class="headerlink" href="#id15" title="Lien vers cette rubrique"></a></h5>
 <p>Base MasterData – collection Services agents (Agencies)</p>
 </section>
 <section id="id16">
-<h5><span class="section-number">9.4.1.3.5. </span>Documentation associée<a class="headerlink" href="#id16" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.1.3.5. </span>Documentation associée<a class="headerlink" href="#id16" title="Lien vers cette rubrique"></a></h5>
 <p><a class="reference internal" href="services_prod.html"><span class="std std-doc">Vitam. Services producteurs.</span></a></p>
 </section>
 </section>
 <section id="referentiel-des-griffons">
-<h4><span class="section-number">9.4.1.4. </span>Référentiel des griffons<a class="headerlink" href="#referentiel-des-griffons" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.4.1.4. </span>Référentiel des griffons<a class="headerlink" href="#referentiel-des-griffons" title="Lien vers cette rubrique"></a></h4>
 <section id="id17">
-<h5><span class="section-number">9.4.1.4.1. </span>Définition et objectifs<a class="headerlink" href="#id17" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.1.4.1. </span>Définition et objectifs<a class="headerlink" href="#id17" title="Lien vers cette rubrique"></a></h5>
 <p>Le référentiel des griffons a pour objectifs de décrire un outil (logiciel ou bibliothèque) exécutable par la solution logicielle Vitam, après programmation, pour mettre en œuvre des scénarios de préservation.<br />
 L’identifiant du griffon permet de faire le lien entre celui-ci et les scénarios de préservation mis en œuvre par la solution logicielle Vitam.<br />
 Le référentiel des griffons est unique par implémentation de la solution logicielle Vitam.</p>
 </section>
 <section id="id18">
-<h5><span class="section-number">9.4.1.4.2. </span>Exigences associées<a class="headerlink" href="#id18" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.1.4.2. </span>Exigences associées<a class="headerlink" href="#id18" title="Lien vers cette rubrique"></a></h5>
 <p>1.2.1., 2.6.3., 2.6.4., 2.6.6., 2.6.8.</p>
 </section>
 <section id="id19">
-<h5><span class="section-number">9.4.1.4.3. </span>Structuration<a class="headerlink" href="#id19" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.1.4.3. </span>Structuration<a class="headerlink" href="#id19" title="Lien vers cette rubrique"></a></h5>
 <p>Le référentiel des griffons comprend :</p>
 <ul class="simple">
 <li><p>des champs d’identification : un identifiant système et un identifiant métier du griffon ;</p></li>
@@ -1781,29 +1777,29 @@ Le référentiel des griffons est unique par implémentation de la solution logi
 </ul>
 </section>
 <section id="id20">
-<h5><span class="section-number">9.4.1.4.4. </span>Section correspondante dans le modèle de données<a class="headerlink" href="#id20" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.1.4.4. </span>Section correspondante dans le modèle de données<a class="headerlink" href="#id20" title="Lien vers cette rubrique"></a></h5>
 <p>Base MasterData – collection Griffons (Griffin)</p>
 </section>
 <section id="id21">
-<h5><span class="section-number">9.4.1.4.5. </span>Documentation associée<a class="headerlink" href="#id21" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.1.4.5. </span>Documentation associée<a class="headerlink" href="#id21" title="Lien vers cette rubrique"></a></h5>
 <p><a class="reference internal" href="preservation.html"><span class="std std-doc">Vitam. Gestion de la préservation.</span></a></p>
 </section>
 </section>
 </section>
 <section id="objets-permettant-la-gestion-des-droits">
-<h3><span class="section-number">9.4.2. </span>Objets permettant la gestion des droits<a class="headerlink" href="#objets-permettant-la-gestion-des-droits" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">8.4.2. </span>Objets permettant la gestion des droits<a class="headerlink" href="#objets-permettant-la-gestion-des-droits" title="Lien vers cette rubrique"></a></h3>
 <section id="contextes-applicatifs-et-certificats">
-<h4><span class="section-number">9.4.2.1. </span>Contextes applicatifs et certificats<a class="headerlink" href="#contextes-applicatifs-et-certificats" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.4.2.1. </span>Contextes applicatifs et certificats<a class="headerlink" href="#contextes-applicatifs-et-certificats" title="Lien vers cette rubrique"></a></h4>
 <section id="id22">
-<h5><span class="section-number">9.4.2.1.1. </span>Définition et objectifs<a class="headerlink" href="#id22" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.2.1.1. </span>Définition et objectifs<a class="headerlink" href="#id22" title="Lien vers cette rubrique"></a></h5>
 <p>Le contexte applicatif a pour objectif de formaliser les interactions entre une application connectée à la solution logicielle Vitam (ou service externe) et la solution logicielle Vitam.</p>
 </section>
 <section id="id23">
-<h5><span class="section-number">9.4.2.1.2. </span>Exigences associées<a class="headerlink" href="#id23" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.2.1.2. </span>Exigences associées<a class="headerlink" href="#id23" title="Lien vers cette rubrique"></a></h5>
 <p>1.7.2., 1.7.3., 2.1.2., 2.2.1., 2.3.1., 2.4.1.</p>
 </section>
 <section id="id24">
-<h5><span class="section-number">9.4.2.1.3. </span>Structuration<a class="headerlink" href="#id24" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.2.1.3. </span>Structuration<a class="headerlink" href="#id24" title="Lien vers cette rubrique"></a></h5>
 <p>Le contexte applicatif comprend :</p>
 <ul class="simple">
 <li><p>des champs d’identification : identifiant du contexte applicatif, nom du contexte applicatif, date de création du contexte applicatif, date d’activation/désactivation du contexte applicatif, date de dernière mise à jour du contexte applicatif ;</p></li>
@@ -1814,27 +1810,27 @@ Le référentiel des griffons est unique par implémentation de la solution logi
 <p>Est également associé à chaque contexte applicatif un mécanisme d’authentification (certificat).</p>
 </section>
 <section id="id25">
-<h5><span class="section-number">9.4.2.1.4. </span>Section correspondante dans le modèle de données<a class="headerlink" href="#id25" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.2.1.4. </span>Section correspondante dans le modèle de données<a class="headerlink" href="#id25" title="Lien vers cette rubrique"></a></h5>
 <p>Base MasterData – collection Contextes applicatifs (Context)
 Base Identity – collection Certificats (Certificate)</p>
 </section>
 <section id="id26">
-<h5><span class="section-number">9.4.2.1.5. </span>Documentation associée<a class="headerlink" href="#id26" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.2.1.5. </span>Documentation associée<a class="headerlink" href="#id26" title="Lien vers cette rubrique"></a></h5>
 <p><a class="reference internal" href="gestion_habilitations.html"><span class="std std-doc">Vitam. Gestion des habilitations.</span></a></p>
 </section>
 </section>
 <section id="profils-de-securite">
-<h4><span class="section-number">9.4.2.2. </span>Profils de sécurité<a class="headerlink" href="#profils-de-securite" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.4.2.2. </span>Profils de sécurité<a class="headerlink" href="#profils-de-securite" title="Lien vers cette rubrique"></a></h4>
 <section id="id27">
-<h5><span class="section-number">9.4.2.2.1. </span>Définition et objectifs<a class="headerlink" href="#id27" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.2.2.1. </span>Définition et objectifs<a class="headerlink" href="#id27" title="Lien vers cette rubrique"></a></h5>
 <p>Le profil de sécurité identifie les droits octroyés à une application connectée à la solution logicielle Vitam et, par conséquent, les points d’accès (endpoints) par lesquels l’application connectée pourra transmettre des requêtes à la solution logicielle Vitam.</p>
 </section>
 <section id="id28">
-<h5><span class="section-number">9.4.2.2.2. </span>Exigences associées<a class="headerlink" href="#id28" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.2.2.2. </span>Exigences associées<a class="headerlink" href="#id28" title="Lien vers cette rubrique"></a></h5>
 <p>1.7.2., 1.7.3., 2.1.2., 2.2.1., 2.3.1., 2.4.1.</p>
 </section>
 <section id="id29">
-<h5><span class="section-number">9.4.2.2.3. </span>Structuration<a class="headerlink" href="#id29" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.2.2.3. </span>Structuration<a class="headerlink" href="#id29" title="Lien vers cette rubrique"></a></h5>
 <p>Le profil de sécurité comprend :</p>
 <ul class="simple">
 <li><p>des champs d’identification : identifiant du profil de sécurité, nom du profil de sécurité ;</p></li>
@@ -1842,26 +1838,26 @@ Base Identity – collection Certificats (Certificate)</p>
 </ul>
 </section>
 <section id="id30">
-<h5><span class="section-number">9.4.2.2.4. </span>Section correspondante dans le modèle de données<a class="headerlink" href="#id30" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.2.2.4. </span>Section correspondante dans le modèle de données<a class="headerlink" href="#id30" title="Lien vers cette rubrique"></a></h5>
 <p>Base MasterData – collection Profils de sécurité (SecurityProfile)</p>
 </section>
 <section id="id31">
-<h5><span class="section-number">9.4.2.2.5. </span>Documentation associée<a class="headerlink" href="#id31" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.2.2.5. </span>Documentation associée<a class="headerlink" href="#id31" title="Lien vers cette rubrique"></a></h5>
 <p><a class="reference internal" href="gestion_habilitations.html"><span class="std std-doc">Vitam. Gestion des habilitations.</span></a></p>
 </section>
 </section>
 <section id="contrats-dacces">
-<h4><span class="section-number">9.4.2.3. </span>Contrats d’accès<a class="headerlink" href="#contrats-dacces" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.4.2.3. </span>Contrats d’accès<a class="headerlink" href="#contrats-dacces" title="Lien vers cette rubrique"></a></h4>
 <section id="id32">
-<h5><span class="section-number">9.4.2.3.1. </span>Définition et objectifs<a class="headerlink" href="#id32" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.2.3.1. </span>Définition et objectifs<a class="headerlink" href="#id32" title="Lien vers cette rubrique"></a></h5>
 <p>Le contrat d’accès a pour objectif de définir les droits d’une application connectée à la solution logicielle Vitam en termes de recherche, de consultation, de mise à jour et de gestion des archives prises en charge par la solution logicielle Vitam.</p>
 </section>
 <section id="id33">
-<h5><span class="section-number">9.4.2.3.2. </span>Exigences associées<a class="headerlink" href="#id33" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.2.3.2. </span>Exigences associées<a class="headerlink" href="#id33" title="Lien vers cette rubrique"></a></h5>
 <p>1.3.1., 1.3.2., 1.3.3., 1.3.4., 2.2.1., 2.2.3., 2.2.4., 2.2.5., 2.2.9., 2.2.10., 2.3.1., 2.3.2., 2.3.7., 2.4.1., 2.4.3., 2.4.5.</p>
 </section>
 <section id="id34">
-<h5><span class="section-number">9.4.2.3.3. </span>Structuration<a class="headerlink" href="#id34" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.2.3.3. </span>Structuration<a class="headerlink" href="#id34" title="Lien vers cette rubrique"></a></h5>
 <p>Le contrat d’accès comprend :</p>
 <ul class="simple">
 <li><p>des champs d’identification : identifiant du contrat, nom du contrat, description du contrat, date de création du contrat, date d’activation/désactivation du contrat, date de dernière mise à jour du contrat ;</p></li>
@@ -1873,26 +1869,26 @@ Base Identity – collection Certificats (Certificate)</p>
 <p>L’identifiant du contrat permet de faire le lien entre le contrat et les opérations associées aux requêtes adressées par son titulaire à la solution logicielle Vitam.</p>
 </section>
 <section id="id35">
-<h5><span class="section-number">9.4.2.3.4. </span>Section correspondante dans le modèle de données<a class="headerlink" href="#id35" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.2.3.4. </span>Section correspondante dans le modèle de données<a class="headerlink" href="#id35" title="Lien vers cette rubrique"></a></h5>
 <p>Base MasterData – collection Contrats d’accès (AccessContract)</p>
 </section>
 <section id="id36">
-<h5><span class="section-number">9.4.2.3.5. </span>Documentation associée<a class="headerlink" href="#id36" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.2.3.5. </span>Documentation associée<a class="headerlink" href="#id36" title="Lien vers cette rubrique"></a></h5>
 <p><a class="reference internal" href="gestion_habilitations.html"><span class="std std-doc">Vitam. Gestion des habilitations.</span></a></p>
 </section>
 </section>
 <section id="contrats-dentree">
-<h4><span class="section-number">9.4.2.4. </span>Contrats d’entrée<a class="headerlink" href="#contrats-dentree" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.4.2.4. </span>Contrats d’entrée<a class="headerlink" href="#contrats-dentree" title="Lien vers cette rubrique"></a></h4>
 <section id="id37">
-<h5><span class="section-number">9.4.2.4.1. </span>Définition et objectifs<a class="headerlink" href="#id37" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.2.4.1. </span>Définition et objectifs<a class="headerlink" href="#id37" title="Lien vers cette rubrique"></a></h5>
 <p>Le contrat d’entrée a pour objectifs de définir les droits d’une application connectée à la solution logicielle Vitam en termes de transfert d’archives, de préciser le contenu et la forme des archives que les utilisateurs souhaitent transférer, de définir les modalités de transfert, ainsi que de préciser les services mis en œuvre par la solution logicielle Vitam pour les archives à transférer.</p>
 </section>
 <section id="id38">
-<h5><span class="section-number">9.4.2.4.2. </span>Exigences associées<a class="headerlink" href="#id38" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.2.4.2. </span>Exigences associées<a class="headerlink" href="#id38" title="Lien vers cette rubrique"></a></h5>
 <p>1.3.1., 1.3.2., 1.3.3., 1.3.4., 1.3.5., 2.1.1., 2.1.2., 2.1.3., 2.1.4., 2.1.5., 2.6.2., 2.6.3.</p>
 </section>
 <section id="id39">
-<h5><span class="section-number">9.4.2.4.3. </span>Structuration<a class="headerlink" href="#id39" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.2.4.3. </span>Structuration<a class="headerlink" href="#id39" title="Lien vers cette rubrique"></a></h5>
 <p>Le contrat d’entrée comprend :</p>
 <ul class="simple">
 <li><p>des champs d’identification : identifiant du contrat, nom du contrat, description du contrat, date de création du contrat, date d’activation/désactivation du contrat, date de dernière mise à jour du contrat ;</p></li>
@@ -1905,29 +1901,29 @@ Base Identity – collection Certificats (Certificate)</p>
 <p>L’identifiant du contrat permet de faire le lien entre le contrat et les opérations associées aux requêtes adressées par son titulaire à la solution logicielle Vitam.</p>
 </section>
 <section id="id40">
-<h5><span class="section-number">9.4.2.4.4. </span>Section correspondante dans le modèle de données<a class="headerlink" href="#id40" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.2.4.4. </span>Section correspondante dans le modèle de données<a class="headerlink" href="#id40" title="Lien vers cette rubrique"></a></h5>
 <p>Base MasterData – collection Contrats d’entrée (IngestContract)</p>
 </section>
 <section id="id41">
-<h5><span class="section-number">9.4.2.4.5. </span>Documentation associée<a class="headerlink" href="#id41" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.2.4.5. </span>Documentation associée<a class="headerlink" href="#id41" title="Lien vers cette rubrique"></a></h5>
 <p><a class="reference internal" href="gestion_habilitations.html"><span class="std std-doc">Vitam. Gestion des habilitations.</span></a></p>
 </section>
 </section>
 </section>
 <section id="strategies-liees-a-la-gestion">
-<h3><span class="section-number">9.4.3. </span>Stratégies liées à la gestion<a class="headerlink" href="#strategies-liees-a-la-gestion" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">8.4.3. </span>Stratégies liées à la gestion<a class="headerlink" href="#strategies-liees-a-la-gestion" title="Lien vers cette rubrique"></a></h3>
 <section id="scenario-de-preservation">
-<h4><span class="section-number">9.4.3.1. </span>Scénario de préservation<a class="headerlink" href="#scenario-de-preservation" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.4.3.1. </span>Scénario de préservation<a class="headerlink" href="#scenario-de-preservation" title="Lien vers cette rubrique"></a></h4>
 <section id="id42">
-<h5><span class="section-number">9.4.3.1.1. </span>Définition et objectifs<a class="headerlink" href="#id42" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.3.1.1. </span>Définition et objectifs<a class="headerlink" href="#id42" title="Lien vers cette rubrique"></a></h5>
 <p>Le scénario de préservation a pour objectifs de décrire les actions de préservation à appliquer à un lot d’objets numériques pris en charge par la solution logicielle Vitam, ainsi que les éléments entrants et sortants attendus de la mise en œuvre de ces actions.</p>
 </section>
 <section id="id43">
-<h5><span class="section-number">9.4.3.1.2. </span>Exigences associées<a class="headerlink" href="#id43" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.3.1.2. </span>Exigences associées<a class="headerlink" href="#id43" title="Lien vers cette rubrique"></a></h5>
 <p>1.2.1., 1.3.1., 2.6.3., 2.6.4., 2.6.6., 2.6.8., 2.6.9.</p>
 </section>
 <section id="id44">
-<h5><span class="section-number">9.4.3.1.3. </span>Structuration<a class="headerlink" href="#id44" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.3.1.3. </span>Structuration<a class="headerlink" href="#id44" title="Lien vers cette rubrique"></a></h5>
 <p>Le scénario de préservation comprend :</p>
 <ul class="simple">
 <li><p>des champs d’identification : identifiant système et métier du scénario, date de création et date de dernière mise à jour du scénario ;</p></li>
@@ -1946,26 +1942,26 @@ Base Identity – collection Certificats (Certificate)</p>
 </ul>
 </section>
 <section id="id45">
-<h5><span class="section-number">9.4.3.1.4. </span>Section correspondante dans le modèle de données<a class="headerlink" href="#id45" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.3.1.4. </span>Section correspondante dans le modèle de données<a class="headerlink" href="#id45" title="Lien vers cette rubrique"></a></h5>
 <p>Base MasterData – collection Scénarios de préservation (PreservationScenario)</p>
 </section>
 <section id="id46">
-<h5><span class="section-number">9.4.3.1.5. </span>Documentation associée<a class="headerlink" href="#id46" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.3.1.5. </span>Documentation associée<a class="headerlink" href="#id46" title="Lien vers cette rubrique"></a></h5>
 <p><a class="reference internal" href="preservation.html"><span class="std std-doc">Vitam. Gestion de la préservation.</span></a></p>
 </section>
 </section>
 <section id="strategie-de-stockage">
-<h4><span class="section-number">9.4.3.2. </span>Stratégie de stockage<a class="headerlink" href="#strategie-de-stockage" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.4.3.2. </span>Stratégie de stockage<a class="headerlink" href="#strategie-de-stockage" title="Lien vers cette rubrique"></a></h4>
 <section id="id47">
-<h5><span class="section-number">9.4.3.2.1. </span>Définition et objectifs<a class="headerlink" href="#id47" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.3.2.1. </span>Définition et objectifs<a class="headerlink" href="#id47" title="Lien vers cette rubrique"></a></h5>
 <p>La stratégie de stockage a pour objectif de définir les offres de stockage sur lesquelles écrire les objets numériques et les autres fichiers gérés par la solution logicielle Vitam et le nombre de copies à réaliser.</p>
 </section>
 <section id="id48">
-<h5><span class="section-number">9.4.3.2.2. </span>Exigences associées<a class="headerlink" href="#id48" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.3.2.2. </span>Exigences associées<a class="headerlink" href="#id48" title="Lien vers cette rubrique"></a></h5>
 <p>1.2.1., 2.7.2., 2.7.3., 2.7.4., 2.7.5., 2.7.6., 2.7.7.</p>
 </section>
 <section id="id49">
-<h5><span class="section-number">9.4.3.2.3. </span>Structuration<a class="headerlink" href="#id49" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.3.2.3. </span>Structuration<a class="headerlink" href="#id49" title="Lien vers cette rubrique"></a></h5>
 <p>La stratégie de stockage comprend :</p>
 <ul class="simple">
 <li><p>des champs d’identification : identifiant de la stratégie ;</p></li>
@@ -1973,15 +1969,15 @@ Base Identity – collection Certificats (Certificate)</p>
 </ul>
 </section>
 <section id="id50">
-<h5><span class="section-number">9.4.3.2.4. </span>Documentation associée<a class="headerlink" href="#id50" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.3.2.4. </span>Documentation associée<a class="headerlink" href="#id50" title="Lien vers cette rubrique"></a></h5>
 <p><a class="reference internal" href="stockage.html"><span class="std std-doc">Vitam. Gestion de multiples stratégies de stockage.</span></a>
 <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/html/installation">Vitam. Document d’installation (DIN)</a>, <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/html/archi">Document d’architecture technique (DAT)</a>, <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/html/exploitation">Document d’exploitation (DEX)</a></p>
 </section>
 </section>
 <section id="contrat-de-gestion">
-<h4><span class="section-number">9.4.3.3. </span>Contrat de gestion<a class="headerlink" href="#contrat-de-gestion" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.4.3.3. </span>Contrat de gestion<a class="headerlink" href="#contrat-de-gestion" title="Lien vers cette rubrique"></a></h4>
 <section id="id51">
-<h5><span class="section-number">9.4.3.3.1. </span>Définition et objectifs<a class="headerlink" href="#id51" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.3.3.1. </span>Définition et objectifs<a class="headerlink" href="#id51" title="Lien vers cette rubrique"></a></h5>
 <p>Le contrat de gestion a pour objectif de définir :</p>
 <ul class="simple">
 <li><p>une stratégie de stockage, voire de mettre en place une stratégie différenciée, dite multi-stratégie, pour les unités archivistiques, les groupes d’objets techniques et les objets binaires.
@@ -1996,11 +1992,11 @@ Il définit une stratégie de stockage déterminée pour :</p>
 </ul>
 </section>
 <section id="id52">
-<h5><span class="section-number">9.4.3.3.2. </span>Exigences associées<a class="headerlink" href="#id52" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.3.3.2. </span>Exigences associées<a class="headerlink" href="#id52" title="Lien vers cette rubrique"></a></h5>
 <p>1.2.1., 1.2.3., 2.7.2., 2.7.3., 2.7.4., 2.7.5., 2.7.6., 2.7.7.</p>
 </section>
 <section id="id53">
-<h5><span class="section-number">9.4.3.3.3. </span>Structuration<a class="headerlink" href="#id53" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.3.3.3. </span>Structuration<a class="headerlink" href="#id53" title="Lien vers cette rubrique"></a></h5>
 <p>Le contrat de gestion comprend :</p>
 <ul class="simple">
 <li><p>des champs d’identification : identifiant système et métier du contrat, date de création et date de dernière mise à jour du contrat ;</p></li>
@@ -2023,22 +2019,22 @@ Il définit une stratégie de stockage déterminée pour :</p>
 </ul>
 </section>
 <section id="id54">
-<h5><span class="section-number">9.4.3.3.4. </span>Section correspondante dans le modèle de données<a class="headerlink" href="#id54" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.3.3.4. </span>Section correspondante dans le modèle de données<a class="headerlink" href="#id54" title="Lien vers cette rubrique"></a></h5>
 <p>Base MasterData – collection Contrats de gestion (ManagementContract)</p>
 </section>
 <section id="id55">
-<h5><span class="section-number">9.4.3.3.5. </span>Documentation associée<a class="headerlink" href="#id55" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.3.3.5. </span>Documentation associée<a class="headerlink" href="#id55" title="Lien vers cette rubrique"></a></h5>
 <p><a class="reference internal" href="gestion_habilitations.html"><span class="std std-doc">Vitam. Gestion des habilitations.</span></a>
 <a class="reference internal" href="stockage.html"><span class="std std-doc">Vitam. Gestion de multiples stratégies de stockage.</span></a></p>
 </section>
 </section>
 </section>
 <section id="modeles-et-structuration-des-objets-metiers">
-<h3><span class="section-number">9.4.4. </span>Modèles et structuration des objets métiers<a class="headerlink" href="#modeles-et-structuration-des-objets-metiers" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">8.4.4. </span>Modèles et structuration des objets métiers<a class="headerlink" href="#modeles-et-structuration-des-objets-metiers" title="Lien vers cette rubrique"></a></h3>
 <section id="ontologie">
-<h4><span class="section-number">9.4.4.1. </span>Ontologie<a class="headerlink" href="#ontologie" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.4.4.1. </span>Ontologie<a class="headerlink" href="#ontologie" title="Lien vers cette rubrique"></a></h4>
 <section id="id56">
-<h5><span class="section-number">9.4.4.1.1. </span>Définition et objectifs<a class="headerlink" href="#id56" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.4.1.1. </span>Définition et objectifs<a class="headerlink" href="#id56" title="Lien vers cette rubrique"></a></h5>
 <p>L’ontologie a pour objectifs de :</p>
 <ul class="simple">
 <li><p>décrire les métadonnées utilisées dans la solution logicielle Vitam, quelle que soit la collection concernée et lister les collections et profils d’unités archivistiques (ArchiveUnitProfile) qui les utilisent ;</p></li>
@@ -2047,11 +2043,11 @@ Il définit une stratégie de stockage déterminée pour :</p>
 </ul>
 </section>
 <section id="id57">
-<h5><span class="section-number">9.4.4.1.2. </span>Exigences associées<a class="headerlink" href="#id57" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.4.1.2. </span>Exigences associées<a class="headerlink" href="#id57" title="Lien vers cette rubrique"></a></h5>
 <p>1.4.1., 1.4.3., 1.4.7., 1.4.8., 2.1.4., 2.2.6., 2.2.7.</p>
 </section>
 <section id="id58">
-<h5><span class="section-number">9.4.4.1.3. </span>Structuration<a class="headerlink" href="#id58" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.4.1.3. </span>Structuration<a class="headerlink" href="#id58" title="Lien vers cette rubrique"></a></h5>
 <p>L’ontologie comprend :</p>
 <ul class="simple">
 <li><p>des champs d’identification : identifiant de la métadonnée, nom de la métadonnée dans le Standard d’échanges de données pour l’archivage (SEDA) si c’est dans ce cadre qu’elle a été créée, nom de la métadonnée telle qu’exposée dans les interfaces de programmation applicatives (API) ; une description de la métadonnée ;</p></li>
@@ -2067,20 +2063,20 @@ Il définit une stratégie de stockage déterminée pour :</p>
 </ul>
 </section>
 <section id="id59">
-<h5><span class="section-number">9.4.4.1.4. </span>Section correspondante dans le modèle de données<a class="headerlink" href="#id59" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.4.1.4. </span>Section correspondante dans le modèle de données<a class="headerlink" href="#id59" title="Lien vers cette rubrique"></a></h5>
 <p>Base MasterData – collection Ontologie (Ontology)</p>
 </section>
 <section id="id60">
-<h5><span class="section-number">9.4.4.1.5. </span>Documentation associée<a class="headerlink" href="#id60" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.4.1.5. </span>Documentation associée<a class="headerlink" href="#id60" title="Lien vers cette rubrique"></a></h5>
 <p><a class="reference internal" href="ontologie.html"><span class="std std-doc">Vitam. Ontologie.</span></a></p>
 </section>
 </section>
 <section id="profils-darchivage-et-dunite-archivistique">
-<h4><span class="section-number">9.4.4.2. </span>Profils d’archivage et d’unité archivistique<a class="headerlink" href="#profils-darchivage-et-dunite-archivistique" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.4.4.2. </span>Profils d’archivage et d’unité archivistique<a class="headerlink" href="#profils-darchivage-et-dunite-archivistique" title="Lien vers cette rubrique"></a></h4>
 <section id="profil-darchivage">
-<h5><span class="section-number">9.4.4.2.1. </span>Profil d’archivage<a class="headerlink" href="#profil-darchivage" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.4.2.1. </span>Profil d’archivage<a class="headerlink" href="#profil-darchivage" title="Lien vers cette rubrique"></a></h5>
 <section id="id61">
-<h6><span class="section-number">9.4.4.2.1.1. </span>Définition et objectifs<a class="headerlink" href="#id61" title="Lien vers cette rubrique"></a></h6>
+<h6><span class="section-number">8.4.4.2.1.1. </span>Définition et objectifs<a class="headerlink" href="#id61" title="Lien vers cette rubrique"></a></h6>
 <p>Un profil d’archivage a pour objectifs de :</p>
 <ul class="simple">
 <li><p>permettre le contrôle structurel, syntaxique et sémantique d’un SIP lors du processus d’entrée ;</p></li>
@@ -2090,11 +2086,11 @@ Il définit une stratégie de stockage déterminée pour :</p>
 <p>L’identifiant du profil d’archivage permet de faire le lien avec le champ ArchiveProfile enregistré dans les journaux des opérations correspondant aux opérations d’entrée, ainsi que dans le registre des fonds (cf. 4.6.).</p>
 </section>
 <section id="id62">
-<h6><span class="section-number">9.4.4.2.1.2. </span>Exigences associées<a class="headerlink" href="#id62" title="Lien vers cette rubrique"></a></h6>
+<h6><span class="section-number">8.4.4.2.1.2. </span>Exigences associées<a class="headerlink" href="#id62" title="Lien vers cette rubrique"></a></h6>
 <p>1.3.2., 1.3.4., 1.4.1., 1.4.7., 1.5.1., 1.5.2., 1.6.3., 2.1.1., 2.1.4., 2.1.5., 2.1.6.</p>
 </section>
 <section id="id63">
-<h6><span class="section-number">9.4.4.2.1.3. </span>Structuration<a class="headerlink" href="#id63" title="Lien vers cette rubrique"></a></h6>
+<h6><span class="section-number">8.4.4.2.1.3. </span>Structuration<a class="headerlink" href="#id63" title="Lien vers cette rubrique"></a></h6>
 <p>Le profil d’archivage et sa description comprennent :</p>
 <ul class="simple">
 <li><p>des champs d’identification : identifiant du profil d’archivage, nom du profil d’archivage, description du profil d’archivage, date de création du profil d’archivage, date d’activation/désactivation du profil d’archivage, date de dernière mise à jour de la description du profil d’archivage ;</p></li>
@@ -2110,18 +2106,18 @@ Il définit une stratégie de stockage déterminée pour :</p>
 </ul>
 </section>
 <section id="id64">
-<h6><span class="section-number">9.4.4.2.1.4. </span>Section correspondante dans le modèle de données<a class="headerlink" href="#id64" title="Lien vers cette rubrique"></a></h6>
+<h6><span class="section-number">8.4.4.2.1.4. </span>Section correspondante dans le modèle de données<a class="headerlink" href="#id64" title="Lien vers cette rubrique"></a></h6>
 <p>Base MasterData – collection Profils d’archivage (Profile)</p>
 </section>
 <section id="id65">
-<h6><span class="section-number">9.4.4.2.1.5. </span>Documentation associée<a class="headerlink" href="#id65" title="Lien vers cette rubrique"></a></h6>
+<h6><span class="section-number">8.4.4.2.1.5. </span>Documentation associée<a class="headerlink" href="#id65" title="Lien vers cette rubrique"></a></h6>
 <p><a class="reference internal" href="profil_archivage.html"><span class="std std-doc">Vitam. Profils d’archivage.</span></a></p>
 </section>
 </section>
 <section id="profil-dunite-archivistique">
-<h5><span class="section-number">9.4.4.2.2. </span>Profil d’unité archivistique<a class="headerlink" href="#profil-dunite-archivistique" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.4.2.2. </span>Profil d’unité archivistique<a class="headerlink" href="#profil-dunite-archivistique" title="Lien vers cette rubrique"></a></h5>
 <section id="id66">
-<h6><span class="section-number">9.4.4.2.2.1. </span>Définition et objectifs<a class="headerlink" href="#id66" title="Lien vers cette rubrique"></a></h6>
+<h6><span class="section-number">8.4.4.2.2.1. </span>Définition et objectifs<a class="headerlink" href="#id66" title="Lien vers cette rubrique"></a></h6>
 <p>Un profil d’unité archivistique (ou document type) a pour objectifs de :</p>
 <ul class="simple">
 <li><p>permettre le contrôle structurel, syntaxique et sémantique d’une unité archivistique lors du processus d’entrée ou lors du processus de mise à jour ;</p></li>
@@ -2131,11 +2127,11 @@ Le profil d’unité archivistique correspond à la notion d’ArchiveUnitProfil
 <p>L’identifiant du profil d’unité archivistique ou document type permet de faire le lien avec le champ ArchiveUnitProfile enregistré dans les unités archivistiques.</p>
 </section>
 <section id="id67">
-<h6><span class="section-number">9.4.4.2.2.2. </span>Exigences associées<a class="headerlink" href="#id67" title="Lien vers cette rubrique"></a></h6>
+<h6><span class="section-number">8.4.4.2.2.2. </span>Exigences associées<a class="headerlink" href="#id67" title="Lien vers cette rubrique"></a></h6>
 <p>1.4.1., 1.4.7., 1.5.1., 1.5.2., 1.6.3., 2.1.1., 2.1.4., 2.1.5., 2.1.6., 2.2.7., 2.4.5.</p>
 </section>
 <section id="id68">
-<h6><span class="section-number">9.4.4.2.2.3. </span>Structuration<a class="headerlink" href="#id68" title="Lien vers cette rubrique"></a></h6>
+<h6><span class="section-number">8.4.4.2.2.3. </span>Structuration<a class="headerlink" href="#id68" title="Lien vers cette rubrique"></a></h6>
 <p>Le profil d’unité archivistique comprend :</p>
 <ul class="simple">
 <li><p>des champs d’identification : identifiant du profil, nom du profil, description du profil, date de création du profil, date d’activation/désactivation du profil, date de dernière mise à jour de la description du profil ;</p></li>
@@ -2149,11 +2145,11 @@ Le profil d’unité archivistique correspond à la notion d’ArchiveUnitProfil
 </ul>
 </section>
 <section id="id69">
-<h6><span class="section-number">9.4.4.2.2.4. </span>Section correspondante dans le modèle de données<a class="headerlink" href="#id69" title="Lien vers cette rubrique"></a></h6>
+<h6><span class="section-number">8.4.4.2.2.4. </span>Section correspondante dans le modèle de données<a class="headerlink" href="#id69" title="Lien vers cette rubrique"></a></h6>
 <p>Base MasterData – collection Profils d’unité archivistique ou documents types (ArchiveUnitProfile)</p>
 </section>
 <section id="id70">
-<h6><span class="section-number">9.4.4.2.2.5. </span>Documentation associée<a class="headerlink" href="#id70" title="Lien vers cette rubrique"></a></h6>
+<h6><span class="section-number">8.4.4.2.2.5. </span>Documentation associée<a class="headerlink" href="#id70" title="Lien vers cette rubrique"></a></h6>
 <p><a class="reference internal" href="profil_archivage.html"><span class="std std-doc">Vitam. Profils d’archivage.</span></a>
 <a class="reference internal" href="profil_unite_archivistique.html"><span class="std std-doc">Vitam. Profils d’unité archivistique.</span></a></p>
 </section>
@@ -2161,11 +2157,11 @@ Le profil d’unité archivistique correspond à la notion d’ArchiveUnitProfil
 </section>
 </section>
 <section id="descriptions">
-<h3><span class="section-number">9.4.5. </span>Descriptions<a class="headerlink" href="#descriptions" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">8.4.5. </span>Descriptions<a class="headerlink" href="#descriptions" title="Lien vers cette rubrique"></a></h3>
 <section id="unite-archivistique">
-<h4><span class="section-number">9.4.5.1. </span>Unité archivistique<a class="headerlink" href="#unite-archivistique" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.4.5.1. </span>Unité archivistique<a class="headerlink" href="#unite-archivistique" title="Lien vers cette rubrique"></a></h4>
 <section id="id71">
-<h5><span class="section-number">9.4.5.1.1. </span>Définition et objectifs<a class="headerlink" href="#id71" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.5.1.1. </span>Définition et objectifs<a class="headerlink" href="#id71" title="Lien vers cette rubrique"></a></h5>
 <p>Les unités archivistiques correspondent aux entités archivistiques transférées et prises en charge par la solution logicielle Vitam et  à des niveaux de description au sens de la norme ISAD(G). Elles répondent à la Description Unit de l’EAD.</p>
 <p>Une unité archivistique peut :</p>
 <ul class="simple">
@@ -2189,11 +2185,11 @@ Le profil d’unité archivistique correspond à la notion d’ArchiveUnitProfil
 <p>La description des unités archivistiques est, par défaut, celle fournie par le service producteur. Elle est néanmoins modifiable et historisable dans son journal du cycle de vie tout au long de sa prise en charge par la solution logicielle.</p>
 </section>
 <section id="id72">
-<h5><span class="section-number">9.4.5.1.2. </span>Exigences associées<a class="headerlink" href="#id72" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.5.1.2. </span>Exigences associées<a class="headerlink" href="#id72" title="Lien vers cette rubrique"></a></h5>
 <p>1.2.1., 1.2.3., 1.2.4., 1.3.5., 1.4.1., 1.4.2., 1.4.3., 1.4.4., 1.4.5., 1.4.6., 1.4.7., 1.4.8., 1.4.9., 1.5.1., 1.5.2., 1.5.3., 1.5.4., 1.5.5., 1.7.2., 2.1.1., 2.1.4., 2.1.6., 2.2.1., 2.2.2., 2.2.3., 2.2.4., 2.2.5., 2.2.6., 2.2.7., 2.2.8., 2.2.9., 2.2.10., 2.3.1., 2.3.2., 2.3.4., 2.3.5., 2.3.6., 2.3.7., 2.3.8., 2.3.9., 2.4.3., 2.4.4., 2.4.5., 2.4.6., 2.5.1., 2.5.2., 2.8.1.</p>
 </section>
 <section id="id73">
-<h5><span class="section-number">9.4.5.1.3. </span>Structuration<a class="headerlink" href="#id73" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.5.1.3. </span>Structuration<a class="headerlink" href="#id73" title="Lien vers cette rubrique"></a></h5>
 <p>La description des unités archivistiques comprend :</p>
 <ul class="simple">
 <li><p>des champs d’identification : identifiant système, identifiants fournis par le service producteur – qu’il s’agisse d’identifiants système ou d’identifiants métiers (ex. numéro de dossier, numéro de marché, etc.) –, identifiants métiers fournis par le service d’archives (cotation) ;</p></li>
@@ -2210,20 +2206,20 @@ Le profil d’unité archivistique correspond à la notion d’ArchiveUnitProfil
 </ul>
 </section>
 <section id="id74">
-<h5><span class="section-number">9.4.5.1.4. </span>Section correspondante dans le modèle de données<a class="headerlink" href="#id74" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.5.1.4. </span>Section correspondante dans le modèle de données<a class="headerlink" href="#id74" title="Lien vers cette rubrique"></a></h5>
 <p>Base MetaData – collection Unités archivistiques (Unit)</p>
 </section>
 <section id="id75">
-<h5><span class="section-number">9.4.5.1.5. </span>Documentation associée<a class="headerlink" href="#id75" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.5.1.5. </span>Documentation associée<a class="headerlink" href="#id75" title="Lien vers cette rubrique"></a></h5>
 <p><a class="reference internal" href="gestion_archives_arbo.html"><span class="std std-doc">Vitam. Gestion des archives et des arborescences.</span></a>
 <a class="reference internal" href="SIP.html"><span class="std std-doc">Vitam. Structuration des Submission Information Packages (SIP).</span></a>
 <a class="reference internal" href="DIP.html"><span class="std std-doc">Vitam. Structuration des Dissemination Information Packages (DIP).</span></a></p>
 </section>
 </section>
 <section id="unite-archivistique-de-type-arbre-de-positionnement">
-<h4><span class="section-number">9.4.5.2. </span>Unité archivistique de type arbre de positionnement<a class="headerlink" href="#unite-archivistique-de-type-arbre-de-positionnement" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.4.5.2. </span>Unité archivistique de type arbre de positionnement<a class="headerlink" href="#unite-archivistique-de-type-arbre-de-positionnement" title="Lien vers cette rubrique"></a></h4>
 <section id="id76">
-<h5><span class="section-number">9.4.5.2.1. </span>Définition et objectifs<a class="headerlink" href="#id76" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.5.2.1. </span>Définition et objectifs<a class="headerlink" href="#id76" title="Lien vers cette rubrique"></a></h5>
 <p>Un arbre de positionnement a pour objectif de faciliter la navigation et la recherche dans les fonds d’archives placés sous la responsabilité d’un service d’archives. Il permet donc de pouvoir situer et de rechercher un fonds au sein d’une organisation plus globale et correspond à la notion de cadre de classement utilisée par les services d’archives.</p>
 <p>Il est constitué d’une arborescence d’unités archivistiques qui peuvent :</p>
 <ul class="simple">
@@ -2242,11 +2238,11 @@ Le profil d’unité archivistique correspond à la notion d’ArchiveUnitProfil
 L’arbre de positionnement est propre à un tenant.</p>
 </section>
 <section id="id77">
-<h5><span class="section-number">9.4.5.2.2. </span>Exigences associées<a class="headerlink" href="#id77" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.5.2.2. </span>Exigences associées<a class="headerlink" href="#id77" title="Lien vers cette rubrique"></a></h5>
 <p>1.4.1., 1.4.6., 1.4.7., 1.4.8., 1.4.9., 2.1.5., 2.2.3., 2.2.9., 2.3.6.</p>
 </section>
 <section id="id78">
-<h5><span class="section-number">9.4.5.2.3. </span>Structuration<a class="headerlink" href="#id78" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.5.2.3. </span>Structuration<a class="headerlink" href="#id78" title="Lien vers cette rubrique"></a></h5>
 <p>La description des unités archivistiques de type arbre de positionnement comprend :</p>
 <ul class="simple">
 <li><p>des champs d’identification : identifiant système, identifiants fournis par le service d’archives (cotation) ;</p></li>
@@ -2256,18 +2252,18 @@ L’arbre de positionnement est propre à un tenant.</p>
 </ul>
 </section>
 <section id="id79">
-<h5><span class="section-number">9.4.5.2.4. </span>Section correspondante dans le modèle de données<a class="headerlink" href="#id79" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.5.2.4. </span>Section correspondante dans le modèle de données<a class="headerlink" href="#id79" title="Lien vers cette rubrique"></a></h5>
 <p>Base MetaData – collection Unités archivistiques (Unit)</p>
 </section>
 <section id="id80">
-<h5><span class="section-number">9.4.5.2.5. </span>Documentation associée<a class="headerlink" href="#id80" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.5.2.5. </span>Documentation associée<a class="headerlink" href="#id80" title="Lien vers cette rubrique"></a></h5>
 <p><a class="reference internal" href="gestion_archives_arbo.html"><span class="std std-doc">Vitam. Gestion des archives et des arborescences.</span></a></p>
 </section>
 </section>
 <section id="unite-archivistique-de-type-plan-de-classement">
-<h4><span class="section-number">9.4.5.3. </span>Unité archivistique de type plan de classement<a class="headerlink" href="#unite-archivistique-de-type-plan-de-classement" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.4.5.3. </span>Unité archivistique de type plan de classement<a class="headerlink" href="#unite-archivistique-de-type-plan-de-classement" title="Lien vers cette rubrique"></a></h4>
 <section id="id81">
-<h5><span class="section-number">9.4.5.3.1. </span>Définition et objectifs<a class="headerlink" href="#id81" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.5.3.1. </span>Définition et objectifs<a class="headerlink" href="#id81" title="Lien vers cette rubrique"></a></h5>
 <p>Un plan de classement a pour objectif de faciliter l’organisation et la recherche des unités archivistiques produites ou reçues par un service producteur. Il permet donc de pouvoir situer et de rechercher des unités archivistiques au sein d’une organisation plus globale et correspond à la notion définie par la norme ISO 15 489 utilisée dans les organisations pour la gestion des documents d’activité/records management.</p>
 <p>Il est constitué d’une arborescence d’unités archivistiques qui peuvent :</p>
 <ul class="simple">
@@ -2286,11 +2282,11 @@ L’arbre de positionnement est propre à un tenant.</p>
 <p>Le plan de classement est propre à un service producteur et à un tenant.</p>
 </section>
 <section id="id82">
-<h5><span class="section-number">9.4.5.3.2. </span>Exigences associées<a class="headerlink" href="#id82" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.5.3.2. </span>Exigences associées<a class="headerlink" href="#id82" title="Lien vers cette rubrique"></a></h5>
 <p>1.4.1., 1.4.6., 1.4.7., 1.4.8., 1.4.9., 2.1.5., 2.2.3., 2.2.9., 2.3.6.</p>
 </section>
 <section id="id83">
-<h5><span class="section-number">9.4.5.3.3. </span>Structuration<a class="headerlink" href="#id83" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.5.3.3. </span>Structuration<a class="headerlink" href="#id83" title="Lien vers cette rubrique"></a></h5>
 <p>La description des unités archivistiques de type plan de classement comprend :</p>
 <ul class="simple">
 <li><p>des champs d’identification : identifiant système, identifiants fournis par le service producteur (cotation) ;</p></li>
@@ -2300,18 +2296,18 @@ L’arbre de positionnement est propre à un tenant.</p>
 </ul>
 </section>
 <section id="id84">
-<h5><span class="section-number">9.4.5.3.4. </span>Section correspondante dans le modèle de données<a class="headerlink" href="#id84" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.5.3.4. </span>Section correspondante dans le modèle de données<a class="headerlink" href="#id84" title="Lien vers cette rubrique"></a></h5>
 <p>Base MetaData – collection Unités archivistiques (Unit)</p>
 </section>
 <section id="id85">
-<h5><span class="section-number">9.4.5.3.5. </span>Documentation associée<a class="headerlink" href="#id85" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.5.3.5. </span>Documentation associée<a class="headerlink" href="#id85" title="Lien vers cette rubrique"></a></h5>
 <p><a class="reference internal" href="gestion_archives_arbo.html"><span class="std std-doc">Vitam. Gestion des archives et des arborescences.</span></a></p>
 </section>
 </section>
 <section id="groupe-dobjets-et-objets">
-<h4><span class="section-number">9.4.5.4. </span>Groupe d’objets et objets<a class="headerlink" href="#groupe-dobjets-et-objets" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.4.5.4. </span>Groupe d’objets et objets<a class="headerlink" href="#groupe-dobjets-et-objets" title="Lien vers cette rubrique"></a></h4>
 <section id="id86">
-<h5><span class="section-number">9.4.5.4.1. </span>Définition et objectifs<a class="headerlink" href="#id86" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.5.4.1. </span>Définition et objectifs<a class="headerlink" href="#id86" title="Lien vers cette rubrique"></a></h5>
 <p>Les groupes d’objets correspondent au regroupement d’un ensemble d’objets physiques ou binaires représentant différentes représentations d’une même unité archivistique selon :</p>
 <ul class="simple">
 <li><p>les usages (conservation, diffusion, vignette, etc.) ;</p></li>
@@ -2327,11 +2323,11 @@ Les objets peuvent être :</p>
 <p>La description des groupes d’objets est, par défaut, celle fournie par le service producteur. Elle s’enrichit néanmoins au fur et à mesure du processus d’entrée (calcul d’une empreinte selon l’algorithme utilisé par la solution logicielle, identification du format, calcul du poids des objets) ainsi qu’au fur et à mesure des opérations de préservation mises en œuvre par la solution logicielle (création de nouvelles générations d’usages, recalcul d’empreintes).</p>
 </section>
 <section id="id87">
-<h5><span class="section-number">9.4.5.4.2. </span>Exigences associées<a class="headerlink" href="#id87" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.5.4.2. </span>Exigences associées<a class="headerlink" href="#id87" title="Lien vers cette rubrique"></a></h5>
 <p>1.2.1., 1.2.2., 1.4.1., 1.4.2., 1.4.4., 1.7.2., 2.2.2., 2.2.3., 2.2.4., 2.2.6., 2.2.7., 2.2.10., 2.3.4., 2.3.9., 2.4.3., 2.6.3., 2.6.4., 2.6.6., 2.6.7., 2.6.8., 2.6.9., 2.8.1.</p>
 </section>
 <section id="id88">
-<h5><span class="section-number">9.4.5.4.3. </span>Structuration<a class="headerlink" href="#id88" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.5.4.3. </span>Structuration<a class="headerlink" href="#id88" title="Lien vers cette rubrique"></a></h5>
 <p>La description des groupes d’objets comprend :</p>
 <ul class="simple">
 <li><p>des champs d’identification : identifiant système du groupe d’objets, identifiant système des objets compris dans le groupe d’objets ;</p></li>
@@ -2345,17 +2341,17 @@ Les objets peuvent être :</p>
 </ul>
 </section>
 <section id="id89">
-<h5><span class="section-number">9.4.5.4.4. </span>Section correspondante dans le modèle de données<a class="headerlink" href="#id89" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.5.4.4. </span>Section correspondante dans le modèle de données<a class="headerlink" href="#id89" title="Lien vers cette rubrique"></a></h5>
 <p>Base MetaData – collection Groupes d’objets (ObjectGroup)</p>
 </section>
 </section>
 </section>
 <section id="journaux-et-registres">
-<h3><span class="section-number">9.4.6. </span>Journaux et registres<a class="headerlink" href="#journaux-et-registres" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">8.4.6. </span>Journaux et registres<a class="headerlink" href="#journaux-et-registres" title="Lien vers cette rubrique"></a></h3>
 <section id="journal-des-operations">
-<h4><span class="section-number">9.4.6.1. </span>Journal des opérations<a class="headerlink" href="#journal-des-operations" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.4.6.1. </span>Journal des opérations<a class="headerlink" href="#journal-des-operations" title="Lien vers cette rubrique"></a></h4>
 <section id="id90">
-<h5><span class="section-number">9.4.6.1.1. </span>Définition et objectifs<a class="headerlink" href="#id90" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.6.1.1. </span>Définition et objectifs<a class="headerlink" href="#id90" title="Lien vers cette rubrique"></a></h5>
 <p>Le journal des opérations a pour objectif d’enregistrer toutes les opérations effectuées par la solution logicielle ayant un impact significatif sur les unités archivistiques, groupes d’objets et objets pris en charge par celle-ci.</p>
 <p>À titre d’illustration, au terme de la version 6, sont enregistrées les opérations suivantes :</p>
 <ul class="simple">
@@ -2386,11 +2382,11 @@ Les objets peuvent être :</p>
 </ul>
 </section>
 <section id="id91">
-<h5><span class="section-number">9.4.6.1.2. </span>Exigences associées<a class="headerlink" href="#id91" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.6.1.2. </span>Exigences associées<a class="headerlink" href="#id91" title="Lien vers cette rubrique"></a></h5>
 <p>1.2.1., 1.6.1., 1.6.2., 1.6.3., 1.6.4., 1.6.5., 1.6.6., 1.6.7., 1.6.8., 2.8.1.</p>
 </section>
 <section id="id92">
-<h5><span class="section-number">9.4.6.1.3. </span>Structuration<a class="headerlink" href="#id92" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.6.1.3. </span>Structuration<a class="headerlink" href="#id92" title="Lien vers cette rubrique"></a></h5>
 <p>Chaque opération dispose d’un journal comprenant :</p>
 <ul class="simple">
 <li><p>des champs d’identification : identifiant système de l’opération, identifiants système des actions mises en œuvre dans le cadre de l’opération – étapes (1er niveau), tâches (2e niveau) et traitements (3e niveau) ;</p></li>
@@ -2408,14 +2404,14 @@ Les objets peuvent être :</p>
 </ul>
 </section>
 <section id="id93">
-<h5><span class="section-number">9.4.6.1.4. </span>Section correspondante dans le modèle de données<a class="headerlink" href="#id93" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.6.1.4. </span>Section correspondante dans le modèle de données<a class="headerlink" href="#id93" title="Lien vers cette rubrique"></a></h5>
 <p>Base Logbook – collection Journal des opérations (LogbookOperation)</p>
 </section>
 </section>
 <section id="journal-du-cycle-de-vie">
-<h4><span class="section-number">9.4.6.2. </span>Journal du cycle de vie<a class="headerlink" href="#journal-du-cycle-de-vie" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.4.6.2. </span>Journal du cycle de vie<a class="headerlink" href="#journal-du-cycle-de-vie" title="Lien vers cette rubrique"></a></h4>
 <section id="id94">
-<h5><span class="section-number">9.4.6.2.1. </span>Définition et objectifs<a class="headerlink" href="#id94" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.6.2.1. </span>Définition et objectifs<a class="headerlink" href="#id94" title="Lien vers cette rubrique"></a></h5>
 <p>Les journaux du cycle de vie ont pour objectif d’enregistrer toutes les actions significatives effectuées par la solution logicielle sur les unités archivistiques, les groupes d’objets techniques et les objets qui les composent. Est considérée comme une action significative toute action modifiant l’entité concernée ou apportant une information significative sur son cycle de vie. Ces journaux sont créés lors de la réception des unités archivistiques et des groupes d’objets dans la solution logicielle Vitam.</p>
 <p>À titre d’illustration, sont enregistrées les actions suivantes :</p>
 <ul class="simple">
@@ -2452,11 +2448,11 @@ Les objets peuvent être :</p>
 <p>Les journaux de cycle de vie sont créés pendant le processus d’entrée, lors de l’étape de traitement du bordereau de transfert SEDA (message ArchiveTransfer).</p>
 </section>
 <section id="id95">
-<h5><span class="section-number">9.4.6.2.2. </span>Exigences associées<a class="headerlink" href="#id95" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.6.2.2. </span>Exigences associées<a class="headerlink" href="#id95" title="Lien vers cette rubrique"></a></h5>
 <p>1.2.1., 1.3.5., 1.6.1., 1.6.5., 1.6.6., 1.6.8., 2.4.5., 2.4.6., 2.8.1.</p>
 </section>
 <section id="id96">
-<h5><span class="section-number">9.4.6.2.3. </span>Structuration<a class="headerlink" href="#id96" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.6.2.3. </span>Structuration<a class="headerlink" href="#id96" title="Lien vers cette rubrique"></a></h5>
 <p>Chaque opération dispose d’un journal comprenant :</p>
 <ul class="simple">
 <li><p>des champs d’identification : identifiant système de l’unité archivistique ou du groupe d’objets, identifiants système des actions effectuées sur l’unité archivistique ou le groupe d’objets ;</p></li>
@@ -2475,9 +2471,9 @@ Base Logbook – collections Journal du cycle de vie des unités archivistiques 
 </section>
 </section>
 <section id="journal-des-ecritures">
-<h4><span class="section-number">9.4.6.3. </span>Journal des écritures<a class="headerlink" href="#journal-des-ecritures" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.4.6.3. </span>Journal des écritures<a class="headerlink" href="#journal-des-ecritures" title="Lien vers cette rubrique"></a></h4>
 <section id="id97">
-<h5><span class="section-number">9.4.6.3.1. </span>Définition et objectifs<a class="headerlink" href="#id97" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.6.3.1. </span>Définition et objectifs<a class="headerlink" href="#id97" title="Lien vers cette rubrique"></a></h5>
 <p>Le journal des écritures a pour objectifs de :</p>
 <ul class="simple">
 <li><p>tracer les opérations d’écriture effectuées par la solution logicielle sur les offres de stockage ;</p></li>
@@ -2485,11 +2481,11 @@ Base Logbook – collections Journal du cycle de vie des unités archivistiques 
 </ul>
 </section>
 <section id="exigences-fonctionnelles">
-<h5><span class="section-number">9.4.6.3.2. </span>Exigences fonctionnelles<a class="headerlink" href="#exigences-fonctionnelles" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.6.3.2. </span>Exigences fonctionnelles<a class="headerlink" href="#exigences-fonctionnelles" title="Lien vers cette rubrique"></a></h5>
 <p>1.2.1., 1.2.2., 1.3.5., 1.6.5., 1.6.6., 1.6.8., 2.6.7., 2.7.1., 2.7.2., 2.7.3., 2.7.4., 2.7.6., 2.7.7., 2.8.1.</p>
 </section>
 <section id="id98">
-<h5><span class="section-number">9.4.6.3.3. </span>Structuration<a class="headerlink" href="#id98" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.6.3.3. </span>Structuration<a class="headerlink" href="#id98" title="Lien vers cette rubrique"></a></h5>
 <p>Le journal des écritures comprend :</p>
 <ul class="simple">
 <li><p>des champs d’identification des objets traités lors de l’opération d’écriture ;</p></li>
@@ -2502,17 +2498,17 @@ Base Logbook – collections Journal du cycle de vie des unités archivistiques 
 </section>
 </section>
 <section id="log-des-acces">
-<h4><span class="section-number">9.4.6.4. </span>Log des accès<a class="headerlink" href="#log-des-acces" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.4.6.4. </span>Log des accès<a class="headerlink" href="#log-des-acces" title="Lien vers cette rubrique"></a></h4>
 <section id="id99">
-<h5><span class="section-number">9.4.6.4.1. </span>Définition et objectifs<a class="headerlink" href="#id99" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.6.4.1. </span>Définition et objectifs<a class="headerlink" href="#id99" title="Lien vers cette rubrique"></a></h5>
 <p>Le log des accès a pour objectif de tracer les accès aux objets, qu’il s’agisse d’une consultation ou d’une génération de DIP.</p>
 </section>
 <section id="id100">
-<h5><span class="section-number">9.4.6.4.2. </span>Exigences fonctionnelles<a class="headerlink" href="#id100" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.6.4.2. </span>Exigences fonctionnelles<a class="headerlink" href="#id100" title="Lien vers cette rubrique"></a></h5>
 <p>1.6.1., 1.6.8., 2.4.2.</p>
 </section>
 <section id="cstructuration">
-<h5><span class="section-number">9.4.6.4.3. </span>CStructuration<a class="headerlink" href="#cstructuration" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.6.4.3. </span>CStructuration<a class="headerlink" href="#cstructuration" title="Lien vers cette rubrique"></a></h5>
 <p>Le log des accès comprend :</p>
 <ul class="simple">
 <li><p>la date et l’heure de l’accès ;</p></li>
@@ -2527,9 +2523,9 @@ Base Logbook – collections Journal du cycle de vie des unités archivistiques 
 </section>
 </section>
 <section id="registre-des-fonds">
-<h4><span class="section-number">9.4.6.5. </span>Registre des fonds<a class="headerlink" href="#registre-des-fonds" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.4.6.5. </span>Registre des fonds<a class="headerlink" href="#registre-des-fonds" title="Lien vers cette rubrique"></a></h4>
 <section id="objectif">
-<h5><span class="section-number">9.4.6.5.1. </span>Objectif<a class="headerlink" href="#objectif" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.6.5.1. </span>Objectif<a class="headerlink" href="#objectif" title="Lien vers cette rubrique"></a></h5>
 <p>Le registre des fonds a pour but de :</p>
 <ul class="simple">
 <li><p>fournir une vue globale des archives sous la responsabilité du service d’archives, pour chaque tenant ;</p></li>
@@ -2537,11 +2533,11 @@ Base Logbook – collections Journal du cycle de vie des unités archivistiques 
 </ul>
 </section>
 <section id="id101">
-<h5><span class="section-number">9.4.6.5.2. </span>Exigences associées<a class="headerlink" href="#id101" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.6.5.2. </span>Exigences associées<a class="headerlink" href="#id101" title="Lien vers cette rubrique"></a></h5>
 <p>1.2.1., 1.3.5., 2.1.5., 2.2.3., 2.2.4., 2.2.9., 2.8.1.</p>
 </section>
 <section id="id102">
-<h5><span class="section-number">9.4.6.5.3. </span>Structuration<a class="headerlink" href="#id102" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.6.5.3. </span>Structuration<a class="headerlink" href="#id102" title="Lien vers cette rubrique"></a></h5>
 <p>Le registre des fonds comprend, pour chaque service producteur :</p>
 <ul class="simple">
 <li><p>un état actualisé de son fond, indiquant :</p>
@@ -2597,11 +2593,11 @@ Base Logbook – collections Journal du cycle de vie des unités archivistiques 
 </ul>
 </section>
 <section id="id103">
-<h5><span class="section-number">9.4.6.5.4. </span>Section correspondante dans le modèle de données<a class="headerlink" href="#id103" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.6.5.4. </span>Section correspondante dans le modèle de données<a class="headerlink" href="#id103" title="Lien vers cette rubrique"></a></h5>
 <p>Base MasterData – collections Registre des fonds (AccessionRegisterSummary, AccessionRegisterDetail et AccessionRegisterSymbolic)</p>
 </section>
 <section id="id104">
-<h5><span class="section-number">9.4.6.5.5. </span>Documentation associée<a class="headerlink" href="#id104" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">8.4.6.5.5. </span>Documentation associée<a class="headerlink" href="#id104" title="Lien vers cette rubrique"></a></h5>
 <p><a class="reference internal" href="services_prod.html"><span class="std std-doc">Vitam. Services producteurs.</span></a></p>
 <hr class="footnotes docutils" />
 <aside class="footnote-list brackets">
@@ -2641,8 +2637,8 @@ Base Logbook – collections Journal du cycle de vie des unités archivistiques 
           </div>
 
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
-        <a href="module_de_collecte.html" class="btn btn-neutral float-left" title="8. Module de collecte" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
-        <a href="ontologie.html" class="btn btn-neutral float-right" title="10. Ontologie" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="module_de_collecte.html" class="btn btn-neutral float-left" title="7. Module de collecte" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="ontologie.html" class="btn btn-neutral float-right" title="9. Ontologie" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

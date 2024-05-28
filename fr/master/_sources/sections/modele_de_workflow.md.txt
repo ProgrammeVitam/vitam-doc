@@ -1926,7 +1926,7 @@ Le workflow mis en place dans la solution logicielle Vitam est défini dans l’
 
 D’une façon synthétique, le workflow est décrit ainsi :
 
-![](medias/modele_workflow/image2.png)
+![](./medias/modele_workflow/image2.png)
 
 ![](medias/modele_workflow/image3.png)
 

@@ -192,9 +192,7 @@ archivistiques dispose d’un sous-bloc correspondant à la règle de gel
 </HoldRule>
 ```
 
-Un exemple de bordereau exploitant les différents cas de figures
-utilisables pour l’expression des règles de gestion et conforme au SEDA
-2.1. est fourni en annexe.
+Un exemple de bordereau exploitant les différents cas de figures utilisables pour l’expression des règles de gestion et conforme au SEDA 2.1. est fourni en [annexe](#annexes).
 
 ### Formalisation du gel dans la solution logicielle Vitam
 

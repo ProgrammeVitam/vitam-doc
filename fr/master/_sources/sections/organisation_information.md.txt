@@ -77,10 +77,10 @@ Le tableau ci-dessous recense l’ensemble des textes législatifs et réglement
 |Note d’information DGP/SIAF/2014/005 du 8 juillet 2014 relative à la journalisation des événements|08/07/2014||
 
 Les différentes exigences identifiées ont été regroupées de la manière suivante :
--  exigences transverses applicables à la solution logicielle (section 2.1.) ;
--  exigences applicables à la prise en charge d’objets par la solution logicielle (section 2.2.) ;
--  exigences applicables à l’accès aux objets pris en charge par la solution logicielle (section 2.3.) ;
--  exigences applicables à la gestion des objets pris en charge par la solution logicielle (section 2.4.).
+-  [exigences transverses applicables à la solution logicielle](#exigences-transverses) ;
+-  [exigences applicables à la prise en charge d’objets par la solution logicielle](#transfert-entrees-et-prise-en-charge-des-objets-archives) ;
+-  [exigences applicables à l’accès aux objets pris en charge par la solution logicielle](#recherche-acces-et-consultation-des-objets-archives-et-des-fichiers-qui-leur-sont-associes1) ;
+-  [exigences applicables à la gestion des objets pris en charge par la solution logicielle](#gestion-des-objets-archives-pris-en-charge-et-des-fichiers-qui-leur-sont-associes).
 
 Chaque exigence est présentée de la manière suivante :
 -  une numérotation purement arbitraire ;
@@ -348,7 +348,7 @@ Conformément à la norme NF Z 44‑022 et au SEDA 2.1., le Submission Informa
 
 Une fois pris en charge, après contrôles et traitements, par la solution logicielle Vitam, l’arborescence de fichiers fait l’objet d’une gestion double, en base de données NoSQL et en stockage.
 
-Dans la base de données sont alimentées deux collections (voir ci-dessous section 4.5) :
+Dans la base de données sont alimentées deux collections ([voir ci-dessous](#descriptions)) :
 -  la collection Unit, qui indexe les métadonnées associées aux unités archivistiques ;
 -  la collection ObjectGroup qui indexe les métadonnées associées aux groupes d’objets.
 
@@ -363,7 +363,7 @@ L’arborescence initiale est donc préservée dans l’indexation de la solutio
 
 ![](./medias/organisation_information/arbo_dip.jpg)
 
-Par ailleurs, chaque unité archivistique et chaque groupe d’objets sont dotés d’un journal du cycle de vie propre, qui recense l’ensemble des événements majeurs survenus pendant la période de prise en charge et de gestion de ceux-ci par la solution logicielle Vitam (voir section 4.6). Le GUID de chaque unité archivistique et de chaque groupe d’objets constitue la clé primaire de ces journaux.
+Par ailleurs, chaque unité archivistique et chaque groupe d’objets sont dotés d’un journal du cycle de vie propre, qui recense l’ensemble des événements majeurs survenus pendant la période de prise en charge et de gestion de ceux-ci par la solution logicielle Vitam ([voir section](#journaux-et-registres)). Le GUID de chaque unité archivistique et de chaque groupe d’objets constitue la clé primaire de ces journaux.
 
 Sur les offres de stockage sur lesquelles s’appuie la solution logicielle Vitam, sont stockés et sécurisés :
 -  les objets numériques (file 1.1.1.1, 1.1.2.1, 1.1.2.2, 1.1.2.3) transférés ;
@@ -502,12 +502,12 @@ Structuration proposée
 Le présent chapitre décrit la structuration de l’information retenue dans la solution logicielle Vitam.
 
 Sont successivement décrits :
--  les données de référence (section 4.1.) ;
--  les objets permettant la gestion des droits (section 4.2.) ;
--  les stratégies de gestion (section 4.3.) ;
--  les modèles d’objets métiers (section 4.4.) ;
--  les descriptions des objets archivés et des fichiers qui leur sont associés (section 4.5.) ;
--  les journaux et registres (section 4.6.).
+-  [les données de référence](#donnees-de-reference) ;
+-  [les objets permettant la gestion des droits](#objets-permettant-la-gestion-des-droits) ;
+-  [les stratégies de gestion](#strategies-liees-a-la-gestion) ;
+-  [les modèles d’objets métiers](#modeles-et-structuration-des-objets-metiers) ;
+-  [les descriptions des objets archivés et des fichiers qui leur sont associés](#descriptions) ;
+-  [les journaux et registres](#journaux-et-registres).
 Chaque entité composant le modèle de données fait l’objet d’une présentation précisant :
 -  la définition et les objectifs de cette entité ;
 -  les exigences fonctionnelles que cette entité permet de satisfaire ;

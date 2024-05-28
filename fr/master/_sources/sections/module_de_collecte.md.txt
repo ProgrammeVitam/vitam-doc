@@ -1037,7 +1037,7 @@ Pour un projet donné, la solution logicielle Vitam permet de :
 En résultats, la solution logicielle renvoie systématiquement l’ensemble des métadonnées relatives au(x) transaction(s). Au terme de la version 6, il n’est pas possible de récupérer une sélection de métadonnées.
 
 
-##### 3.3.2.3. Accès aux unités archivistiques
+##### Accès aux unités archivistiques
 
 L’utilisateur peut rechercher :
 
@@ -1767,12 +1767,12 @@ Certaines de ces actions entraînent la purge des archives passé un certain dé
 |  Actions disponibles                   | Statut correspondant dans le front-office    | Statut correspondant dans le back-office| Purge automatique ? |
 |---|---|---|---|
 |  Valider   | Validé                      | READY| |
-|  Verser    | Préparation et envoi du SIP | SENDING | |
-|^           | Envoyé, en cours de traitement du SAE | SENT            | |
-|^           | Versé en succès             | ACK_OK                    |  OUI|
-|^           | Versé                       | ACK_WARNING               |  OUI|
-|^           | Échec du versement          | ACK_KO                    | |
-|^           | Erreur technique            | KO                        | |
+|Verser| Préparation et envoi du SIP | SENDING | |
+|Verser| Envoyé, en cours de traitement du SAE | SENT            | |
+|Verser | Versé en succès             | ACK_OK                    |  OUI|
+|Verser | Versé                       | ACK_WARNING               |  OUI|
+|Verser | Échec du versement          | ACK_KO                    | |
+|Verser | Erreur technique            | KO                        | |
 |  Éditer    | Ouvert en édition           | OPEN                      | |
 |  Abandonner| Abandonné                   | ABORTED                   |  OUI|
 
@@ -1978,11 +1978,11 @@ Le module de collecte attribue un certain nombre de statuts à une transaction. 
 | Créer la transaction                     | Ouvert en édition            |OPEN           |          OUI       |          OUI ||
 | Clôturer / Valider                       | Validé                       |READY          |                    |          OUI ||
 | Verser / Envoyer                         | Préparation et envoi du SIP  |SENDING        |                    |              ||
-|^|  Envoyé, en cours de traitement du SAE                                |SENT           |                    |              ||
-|^|  Versé en succès                                                      |ACK_OK         |                    |              |OUI|
-|^|  Versé                                                                |ACK_WARNING    |                    |              |OUI|
-|^|  Échec du versement                                                   |ACK_KO         |                    |         OUI  ||
-|^|  Erreur technique                                                     |KO             |                    |         OUI  ||
+|Verser / Envoyer|  Envoyé, en cours de traitement du SAE                                |SENT           |                    |              ||
+|Verser / Envoyer|  Versé en succès                                                      |ACK_OK         |                    |              |OUI|
+|Verser / Envoyer|  Versé                                                                |ACK_WARNING    |                    |              |OUI|
+|Verser / Envoyer|  Échec du versement                                                   |ACK_KO         |                    |         OUI  ||
+|Verser / Envoyer|  Erreur technique                                                     |KO             |                    |         OUI  ||
 |  Éditer / Rouvrir                        | Ouvert en édition            |OPEN           |          OUI       |              ||
 |  Abandonner                              | Abandonné                    |ABORTED        |                    |              |OUI|
 
@@ -2196,15 +2196,15 @@ Pour les éléments propres au SEDA, le tableau suivant précise les types de ce
 | StartDate                               | <br>            | x                       | <br>       | <br>        | <br>       | <br>                  |
 | EndDate                                 | <br>            | x                       | <br>       | <br>        | <br>       | <br>                  |
 | Event                                   | <br>            | <br>                    | <br>       | <br>        | x          | <br>                  |
-| evId[^13]                               | <br>            | x                       | <br>       | <br>        | <br>       | <br>                  |
-| evTypeProc[^14]                         | <br>            | x                       | <br>       | <br>        | <br>       | <br>                  |
-| evType[^15]                             | <br>            | x                       | <br>       | <br>        | <br>       | <br>                  |
-| EvDateTime[^16]                         | <br>            | x                       | <br>       | <br>        | <br>       | <br>                  |
-| evTypeDetail[^17]                       | <br>            | x                       | <br>       | <br>        | <br>       | <br>                  |
-| outcome[^18]                            | <br>            | x                       | <br>       | <br>        | <br>       | <br>                  |
-| outDetail[^19]                          | <br>            | x                       | <br>       | <br>        | <br>       | <br>                  |
-| outMessg[^20]                           | <br>            | x                       | <br>       | <br>        | <br>       | <br>                  |
-| evDetData[^21]                          | <br>            | x                       | <br>       | <br>        | <br>       | <br>                  |
+| evId[^44]                               | <br>            | x                       | <br>       | <br>        | <br>       | <br>                  |
+| evTypeProc[^45]                         | <br>            | x                       | <br>       | <br>        | <br>       | <br>                  |
+| evType[^46]                             | <br>            | x                       | <br>       | <br>        | <br>       | <br>                  |
+| EvDateTime[^47]                         | <br>            | x                       | <br>       | <br>        | <br>       | <br>                  |
+| evTypeDetail[^48]                       | <br>            | x                       | <br>       | <br>        | <br>       | <br>                  |
+| outcome[^49]                            | <br>            | x                       | <br>       | <br>        | <br>       | <br>                  |
+| outDetail[^50]                          | <br>            | x                       | <br>       | <br>        | <br>       | <br>                  |
+| outMessg[^51]                           | <br>            | x                       | <br>       | <br>        | <br>       | <br>                  |
+| evDetData[^52]                          | <br>            | x                       | <br>       | <br>        | <br>       | <br>                  |
 | Signature                               | <br>            | <br>                    | <br>       | <br>        | x          | <br>                  |
 | Signer                                  | <br>            | <br>                    | <br>       | <br>        | x          | <br>                  |
 | Validator                               | <br>            | <br>                    | <br>       | <br>        | x          | <br>                  |
@@ -2256,11 +2256,11 @@ Annexe 3 : Liste des points d’API
 |                   | Mettre à jour en masse les unités archivistiques | transaction:id:units:bulk:update | POST  | /collect-external/v1/transactions/{transactionId}/units/bulk|
 | objects           | Récupère un groupe d’objets techniques | transaction:object:read | GET       | /collect-external/v1/objects/{gotId}/|
 
-[^1]:  Pour plus d’informations, consulter le document *Modèle de données*, « Collection Project ». Un exemple de projet de versement se trouve dans l’annexe 1 du présent document.
+[^1]:  Pour plus d’informations, consulter le document *Modèle de données*, « Collection Project ». Un exemple de projet de versement se trouve dans l’[annexe 1](#annexe-1-exemples-de-donnees-entrantes) du présent document.
 
 [^2]:  À noter que, dans l’APP « Collecte et préparation des versements », ce champ est alimenté par la valeur du champ « MessageIdentifier ».
 
-[^3]:  Pour plus d’informations, consulter le document *Modèle de données*, « Collection Transaction ». Un exemple de contexte de collecte se trouve dans l’annexe 1 du présent document.
+[^3]:  Pour plus d’informations, consulter le document *Modèle de données*, « Collection Transaction ». Un exemple de contexte de collecte se trouve dans l’[annexe 1](#annexe-1-exemples-de-donnees-entrantes) du présent document.
 
 [^4]:  À noter que cette collection est renommée « Transaction » dans la version 6 RC de la solution logicielle Vitam.
 
@@ -2270,27 +2270,27 @@ Annexe 3 : Liste des points d’API
 
 [^7]:  Si la transaction est clôturée (son statut est égal à « READY »), il n’est plus possible de lui adjoindre des unités archivistiques, ainsi que des métadonnées techniques et des objets.
 
-[^8]:  *Pour plus d’informations sur l’enregistrement de l’unité archivistique dans la base de données, il est recommandé de consulter le document *Modèle de données*.*
+[^8]:  Pour plus d’informations sur l’enregistrement de l’unité archivistique dans la base de données, il est recommandé de consulter le document *Modèle de données*.
 
 [^9]:  Si la transaction est clôturée (son statut est égal à « READY »), il n’est plus possible de lui adjoindre des unités archivistiques, ainsi que des métadonnées techniques et des objets.
 
-[^10]:  *Pour plus d’informations sur l’enregistrement de l’unité archivistique dans la base de données, il est recommandé de consulter le document *Modèle de données*.*
+[^10]: Pour plus d’informations sur l’enregistrement de l’unité archivistique dans la base de données, il est recommandé de consulter le document *Modèle de données*.
 
 [^11]:  Le fonctionnement est identique à celui de l’import d’arborescence bureautique dans ReSIP.
 
-[^12]:  *Pour plus d’informations sur l’enregistrement de l’unité archivistique dans la base de données, il est recommandé de consulter le document *Modèle de données*.*
+[^12]: Pour plus d’informations sur l’enregistrement de l’unité archivistique dans la base de données, il est recommandé de consulter le document *Modèle de données*.
 
 [^13]:  Se référer à la sous-section 3.2.4.2 « Envoi d’une arborescence bureautique » du présent document.
 
 [^14]:  Son modèle est identique au modèle de fichier .csv importé dans ReSIP, hors colonnes ID et ParentID qui ne sont pas supportées par le module de collecte en l’état actuel des développements.
 
-[^15]:  *Pour plus d’informations sur l’enregistrement de l’unité archivistique dans la base de données, il est recommandé de consulter le document *Modèle de données*.*
+[^15]: Pour plus d’informations sur l’enregistrement de l’unité archivistique dans la base de données, il est recommandé de consulter le document *Modèle de données*.
 
-[^16]:  *Pour plus d’informations sur l’enregistrement de l’unité archivistique dans la base de données, il est recommandé de consulter le document *Modèle de données*.*
+[^16]: Pour plus d’informations sur l’enregistrement de l’unité archivistique dans la base de données, il est recommandé de consulter le document *Modèle de données*.
 
-[^17]:  Son modèle est identique au modèle de fichier .csv importé dans ReSIP, hors colonnes ID et ParentID qui ne sont pas supportées par le module de collecte en l’état actuel des développements.
+[^17]: Son modèle est identique au modèle de fichier .csv importé dans ReSIP, hors colonnes ID et ParentID qui ne sont pas supportées par le module de collecte en l’état actuel des développements.
 
-[^18]:  *Pour plus d’informations sur l’enregistrement de l’unité archivistique dans la base de données, il est recommandé de consulter le document *Modèle de données*.*
+[^18]: Pour plus d’informations sur l’enregistrement de l’unité archivistique dans la base de données, il est recommandé de consulter le document *Modèle de données*.
 
 [^19]:  Le paramétrage de la purge automatique s’effectue depuis le fichier collect.conf. Pour modifier le délai par défaut, il faut modifier les valeurs des paramètres « purgeTransactionThreadFrequency » et « purgeTransactionDelayInMinutes » pour le(s) tenant(s) concerné(s).
 
@@ -2308,11 +2308,11 @@ Annexe 3 : Liste des points d’API
 
 [^26]:  Pour plus d’informations sur ces modélisations particulières, il est recommandé de consulter le document Modèle de données, chapitre 5.1, « Collection Unit ».
 
-[^27]:  Les types des éléments propres au SEDA sont listés dans l’annexe 2 « Types JSON ». Il est conseillé de se reporter à cette annexe, afin de typer correctement les éléments.
+[^27]:  Les types des éléments propres au SEDA sont listés dans l'[annexe 2](#annexe-2-types-json) « Types JSON ». Il est conseillé de se reporter à cette annexe, afin de typer correctement les éléments.
 
 [^28]:  La présence de crochets dans le tableau de correspondances indique que le vocabulaire employé dans l’enregistrement peut ou doit se présenter sous la forme d’un tableau ou « array », pouvant contenir un type de valeur en particulier. Le vocabulaire représenté entre crochets est également répétable.
 
-[^29]:  Les types des éléments propres au SEDA sont listés dans l’annexe 2 « Types JSON ». du présent document.
+[^29]:  Les types des éléments propres au SEDA sont listés dans l’[annexe 2](#annexe-2-types-json) « Types JSON ». du présent document.
 
 [^30]:  Pour plus d’informations sur ces modélisations particulières, il est recommandé de consulter le document *Modèle de données*, chapitre 5.1, « Collection Unit ».
 
