@@ -1037,7 +1037,7 @@ Pour un projet donné, la solution logicielle Vitam permet de :
 En résultats, la solution logicielle renvoie systématiquement l’ensemble des métadonnées relatives au(x) transaction(s). Au terme de la version 6, il n’est pas possible de récupérer une sélection de métadonnées.
 
 
-##### 3.3.2.3. Accès aux unités archivistiques
+##### Accès aux unités archivistiques
 
 L’utilisateur peut rechercher :
 
@@ -1767,12 +1767,12 @@ Certaines de ces actions entraînent la purge des archives passé un certain dé
 |  Actions disponibles                   | Statut correspondant dans le front-office    | Statut correspondant dans le back-office| Purge automatique ? |
 |---|---|---|---|
 |  Valider   | Validé                      | READY| |
-|  Verser    | Préparation et envoi du SIP | SENDING | |
-|^           | Envoyé, en cours de traitement du SAE | SENT            | |
-|^           | Versé en succès             | ACK_OK                    |  OUI|
-|^           | Versé                       | ACK_WARNING               |  OUI|
-|^           | Échec du versement          | ACK_KO                    | |
-|^           | Erreur technique            | KO                        | |
+|Verser| Préparation et envoi du SIP | SENDING | |
+|Verser| Envoyé, en cours de traitement du SAE | SENT            | |
+|Verser | Versé en succès             | ACK_OK                    |  OUI|
+|Verser | Versé                       | ACK_WARNING               |  OUI|
+|Verser | Échec du versement          | ACK_KO                    | |
+|Verser | Erreur technique            | KO                        | |
 |  Éditer    | Ouvert en édition           | OPEN                      | |
 |  Abandonner| Abandonné                   | ABORTED                   |  OUI|
 
@@ -1978,11 +1978,11 @@ Le module de collecte attribue un certain nombre de statuts à une transaction. 
 | Créer la transaction                     | Ouvert en édition            |OPEN           |          OUI       |          OUI ||
 | Clôturer / Valider                       | Validé                       |READY          |                    |          OUI ||
 | Verser / Envoyer                         | Préparation et envoi du SIP  |SENDING        |                    |              ||
-|^|  Envoyé, en cours de traitement du SAE                                |SENT           |                    |              ||
-|^|  Versé en succès                                                      |ACK_OK         |                    |              |OUI|
-|^|  Versé                                                                |ACK_WARNING    |                    |              |OUI|
-|^|  Échec du versement                                                   |ACK_KO         |                    |         OUI  ||
-|^|  Erreur technique                                                     |KO             |                    |         OUI  ||
+|Verser / Envoyer|  Envoyé, en cours de traitement du SAE                                |SENT           |                    |              ||
+|Verser / Envoyer|  Versé en succès                                                      |ACK_OK         |                    |              |OUI|
+|Verser / Envoyer|  Versé                                                                |ACK_WARNING    |                    |              |OUI|
+|Verser / Envoyer|  Échec du versement                                                   |ACK_KO         |                    |         OUI  ||
+|Verser / Envoyer|  Erreur technique                                                     |KO             |                    |         OUI  ||
 |  Éditer / Rouvrir                        | Ouvert en édition            |OPEN           |          OUI       |              ||
 |  Abandonner                              | Abandonné                    |ABORTED        |                    |              |OUI|
 
@@ -2196,15 +2196,15 @@ Pour les éléments propres au SEDA, le tableau suivant précise les types de ce
 | StartDate                               | <br>            | x                       | <br>       | <br>        | <br>       | <br>                  |
 | EndDate                                 | <br>            | x                       | <br>       | <br>        | <br>       | <br>                  |
 | Event                                   | <br>            | <br>                    | <br>       | <br>        | x          | <br>                  |
-| evId[^13]                               | <br>            | x                       | <br>       | <br>        | <br>       | <br>                  |
-| evTypeProc[^14]                         | <br>            | x                       | <br>       | <br>        | <br>       | <br>                  |
-| evType[^15]                             | <br>            | x                       | <br>       | <br>        | <br>       | <br>                  |
-| EvDateTime[^16]                         | <br>            | x                       | <br>       | <br>        | <br>       | <br>                  |
-| evTypeDetail[^17]                       | <br>            | x                       | <br>       | <br>        | <br>       | <br>                  |
-| outcome[^18]                            | <br>            | x                       | <br>       | <br>        | <br>       | <br>                  |
-| outDetail[^19]                          | <br>            | x                       | <br>       | <br>        | <br>       | <br>                  |
-| outMessg[^20]                           | <br>            | x                       | <br>       | <br>        | <br>       | <br>                  |
-| evDetData[^21]                          | <br>            | x                       | <br>       | <br>        | <br>       | <br>                  |
+| evId[^44]                               | <br>            | x                       | <br>       | <br>        | <br>       | <br>                  |
+| evTypeProc[^45]                         | <br>            | x                       | <br>       | <br>        | <br>       | <br>                  |
+| evType[^46]                             | <br>            | x                       | <br>       | <br>        | <br>       | <br>                  |
+| EvDateTime[^47]                         | <br>            | x                       | <br>       | <br>        | <br>       | <br>                  |
+| evTypeDetail[^48]                       | <br>            | x                       | <br>       | <br>        | <br>       | <br>                  |
+| outcome[^49]                            | <br>            | x                       | <br>       | <br>        | <br>       | <br>                  |
+| outDetail[^50]                          | <br>            | x                       | <br>       | <br>        | <br>       | <br>                  |
+| outMessg[^51]                           | <br>            | x                       | <br>       | <br>        | <br>       | <br>                  |
+| evDetData[^52]                          | <br>            | x                       | <br>       | <br>        | <br>       | <br>                  |
 | Signature                               | <br>            | <br>                    | <br>       | <br>        | x          | <br>                  |
 | Signer                                  | <br>            | <br>                    | <br>       | <br>        | x          | <br>                  |
 | Validator                               | <br>            | <br>                    | <br>       | <br>        | x          | <br>                  |

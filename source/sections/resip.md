@@ -2521,8 +2521,8 @@ Le traitement des unités archivistiques importées dans la moulinette
 ReSIP est réalisable, dans le panneau de visualisation et d’édition des
 métadonnées de l’unité d’archives, sous deux formes :
 
--   [la modification libre et complète des métadonnées de l’unité archivistique](#dans-linterface-«-xml-expert-») ;
--   [l’ajout guidé d’une métadonnée clairement identifiée](#dans-linterface-«-structuree-»).
+-   [la modification libre et complète des métadonnées de l’unité archivistique](#dans-linterface-xml-expert) ;
+-   [l’ajout guidé d’une métadonnée clairement identifiée](#dans-linterface-structuree).
 
 ##### Modification libre et complète des métadonnées de l’unité archivistique
 
@@ -2609,7 +2609,7 @@ des métadonnées de l’unité d’archives, de :
     ![](medias/resip/Pictures/1000020100000555000002D85D6CFC22BF866AA8.png)
 
 La modification de métadonnées se poursuit ensuite selon le processus
-décrit dans la [section](#dans-linterface-«-xml-expert-»).
+décrit dans la [section](#dans-linterface-xml-expert).
 
 **Attention** : aucun contrôle de conformité par rapport à la structure
 et à la sémantique du schéma XML défini par le SEDA 2.1. n’est réalisé.
@@ -2938,7 +2938,7 @@ Cette action déclenche le processus d’import (cf. copie d’écran ci-dessous
 
 ![](medias/resip/Pictures/1000020100000555000002D85DB55E88BE0707D7.png)
 Les métadonnées de cet objet peuvent être modifiées en
-utilisant la fonction correspondante (cf. [section](#dans-linterface-«-xml-expert-»)).
+utilisant la fonction correspondante (cf. [section](#dans-linterface-xml-expert)).
 
 #### Dans l’interface « structurée »
 
@@ -5131,6 +5131,5 @@ Dans le manifeste, il faut corriger la valeur de l’élément Comment par la va
     suivante : <https://www.francearchives.fr/sherpa/> (Lien consulté le
     24 novembre 2019).
 
-[^10]:  Se référer à la documentation *Profils d’archivage* et, plus
-    particulièrement, au chapitre 5.2 « Structuration des données à
+[^10]:  Se référer à la documentation [*Profils d’archivage*](./profil_archivage.md) et, plus particulièrement, au chapitre 5.2 « Structuration des données à
     verser » de ce document.
