@@ -844,7 +844,7 @@ préférences » de la fenêtre de dialogue lance la mise à jour des
 paramètres de la moulinette ReSIP. Pour consulter les paramètres
 réinitialisés, il convient, dans le menu de la moulinette ReSIP, de
 cliquer sur l’action « Fichier » puis sur la sous-action « Préférences »
-(voir [section] (#import-depuis-un-fichier-csv-décrivant-une-structure-arborescente-darchives-et-ou-de-fichiers)ci-dessous).
+(voir [section](#import-depuis-un-fichier-csv-decrivant-une-structure-arborescente-darchives-et-ou-de-fichiers) ci-dessous).
 
 Import de structures arborescentes d’archives dans la moulinette ReSIP
 ----------------------------------------------------------------------
@@ -854,8 +854,8 @@ structures arborescentes d’archives enregistrées sur l’environnement de
 travail de l’utilisateur :
 
 -   [import d’une arborescence de fichiers](#import-dune-arborescence-de-fichiers) ;
--   [import d’un SIP existant](#import-dun-sip-deja-constitue) ;
--   [import d’un DIP existant](#import-dun-dip-deja-constitue) ;
+-   [import d’un SIP existant](#import-d-un-sip-deja-constitue) ;
+-   [import d’un DIP existant](#import-d-un-dip-deja-constitue) ;
 -   [import de fichiers encapsulés dans un ZIP](#import-dune-arborescence-de-fichiers-sous-forme-de-fichier-zip) ;
 -   [import depuis un fichier .csv correspondant à un arbre de positionnement ou à un plan de classement](#import-dun-arbre-de-positionnement-ou-dun-plan-de-classement-sous-forme-de-fichier-csv) ;
 -   [import depuis un fichier .csv décrivant une structure arborescente d’archives et/ou de fichiers](#import-depuis-un-fichier-csv-decrivant-une-structure-arborescente-darchives-et-ou-de-fichiers) ;
@@ -868,7 +868,7 @@ L’import d’une structure arborescente d’archives représentée par une
 arborescence de fichiers est réalisable sous deux formes :
 
 -   une manière simple : [import d’une arborescence sans fichier supplémentaire de métadonnées](#import-dune-arborescence-de-fichiers-sans-fichier-supplementaire-de-metadonnees) ;
--   une manière avancée : [import d’une arborescence avec fichiers supplémentaires de métadonnées](#import-dune-arborescence-de-fichiers-avec-fichier-supplementaire-de-métadonnees).
+-   une manière avancée : [import d’une arborescence avec fichiers supplémentaires de métadonnées](#import-dune-arborescence-de-fichiers-avec-fichier-supplementaire-de-metadonnees).
 
 L’[import est paramétrable](#parametrage-de-limport).
 
@@ -1932,7 +1932,7 @@ moulinette ReSIP, il est possible d’effectuer les traitements suivants :
 -   [traitement des métadonnées des unités archivistiques](#traiter-les-unites-archivistiques)
    ;
 -   [traitement des objets, tant physiques que binaires, et de leurs métadonnées](#traiter-les-objets-et-leurs-metadonnees) ;
--   [vérification de la conformité de la structure arborescente d’archives par rapport au SEDA 2.1. et 2.2.](#verification-de-la-conformite-de-la-structure-arborescente-darchives-par-rapport-au-seda-21-et-22) ;
+-   [vérification de la conformité de la structure arborescente d’archives par rapport au SEDA 2.1. et 2.2.](#verification-de-la-conformite-de-la-structure-arborescente-darchives-par-rapport-au-seda-2-1-et-2-2) ;
 -   [sauvegarde du contexte de travail en cours de traitement](#sauvegarder-le-contexte-de-travail-en-cours-de-traitement) ;
 -   [nettoyage de l’espace de travail](#nettoyer-lespace-de-travail).
 
@@ -2620,7 +2620,7 @@ Le traitement des unités archivistiques importées dans la moulinette
 ReSIP est réalisable, dans le panneau de visualisation et d’édition des
 métadonnées de l’unité d’archives, sous plusieurs formes :
 
--   [la modification de métadonnées présentes dans un champ de saisie textuelle](#modification-de-metadonnées-textuelles) ;
+-   [la modification de métadonnées présentes dans un champ de saisie textuelle](#modification-de-metadonnees-textuelles) ;
 -   [la modification de métadonnées présentes sous forme de liste de valeurs](#modification-de-metadonnees-presentes-dans-une-liste) ;
 -   [la modification de métadonnées présentes sous forme de date](#modification-de-date) ;
 -   [l’ajout et la suppression d’attribut](#ajout-et-suppression-dattribut) ;
@@ -2949,7 +2949,7 @@ métadonnées des objets, sous trois formes :
 
 -   [le remplacement d’un fichier correspondant à un objet binaire par un autre fichier](#remplacement-du-fichier-correspondant-a-un-objet-binaire)  ;
 -   [la modification des métadonnées de l’objet](#modification-des-metadonnees-de-lobjet) ;
--   [l’ajout d’un fichier au groupe d’objets techniques](#ajout-dun-objet-1).
+-   [l’ajout d’un fichier au groupe d’objets techniques](#ajout-dun-objet).
 
 ##### Remplacement du fichier correspondant à un objet binaire
 

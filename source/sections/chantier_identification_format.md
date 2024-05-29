@@ -186,7 +186,7 @@ Chaque format est décrit avec les informations suivantes :
 - spécifications ;
 - documentation.
 
-Les descriptions sont présentées au format HTML et exportables au format XML. Elles sont en décembre 2019 au nombre de 512. Un exemple de fiche est fourni en [annexe 2](#annexe-2-description-dun-format-par-différents-registres).
+Les descriptions sont présentées au format HTML et exportables au format XML. Elles sont en décembre 2019 au nombre de 512. Un exemple de fiche est fourni en [annexe 2](#annexe-2-description-dun-format-par-differents-registres).
 
 Des analyses et mises à jour complémentaires sont réalisées régulièrement, sans planification préalable. La Bibliothèque du Congrès encourage contributions et relectures externes, notamment pour faciliter la constitution des réseaux de représentation évoqués par la norme OAIS.
 

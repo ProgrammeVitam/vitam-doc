@@ -6627,7 +6627,7 @@ Cette collection est alimentée par l’import d’un fichier CSV contenant l’
 
 Le fichier .csv doit avoir comme séparateur de champs la virgule.
 
-La liste des types de règle disponibles est en [annexe](#annexe-4-cateories-de-regles-possibles).
+La liste des types de règle disponibles est en [annexe 4](#annexe-4-categories-de-regles-possibles).
 
 Les valeurs renseignées dans la colonne unité de mesure doivent correspondre à une valeur de l’énumération RuleMeasurementEnum, à savoir :
 

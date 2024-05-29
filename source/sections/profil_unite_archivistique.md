@@ -3459,7 +3459,7 @@ Ajouter au moins un vocabulaire Beneficiary dans l’unité archivistique, conte
 
 [^17]: Des précisions sur les messages d’erreur sont apportées dans l’[annexe 5 « Messages d’erreur » du présent document](#annexe-5-messages-derreur).
 
-[^18]: Si on a besoin de modifier un profil d’unité archivistique déjà utilisé par au moins une unité archivistique, [consulter la section « Conseils de mise en œuvre » du présent document](#conseils-de-mise-en-œuvre).
+[^18]: Si on a besoin de modifier un profil d’unité archivistique déjà utilisé par au moins une unité archivistique, [consulter la section « Conseils de mise en œuvre » du présent document](#conseils-de-mise-en-oeuvre).
 
 [^19]: Pour plus d’informations sur le processus d’import du référentiel, consulter le [document VITAM.Modèle de workflow](./modele_de_workflow.md), chapitre « Workflow d’administration d’un référentiel des profils d’unité archivistique ».
 
@@ -3477,7 +3477,7 @@ Ajouter au moins un vocabulaire Beneficiary dans l’unité archivistique, conte
 
 [^26]: En d’autres termes, le schéma de contrôle ne contient que les éléments du SEDA ou de l’ontologie qui feront l’objet d’un contrôle. Il n’est donc pas nécessaire d’y déclarer l’ensemble des éléments attendus par le SEDA et l’ontologie avec des cardinalités 0 – 0 s’ils n’ont pas vocation à être présents dans une unité archivistique à contrôler par un profil d’unité archivistique.
 
-[^27]: Cf [chapitre « Elaboration d'un schéma de contrôle » du présent document](#elaboration-dun-schema-de-contrôle).
+[^27]: Cf [chapitre « Elaboration d'un schéma de contrôle » du présent document](#elaboration-dun-schema-de-controle).
 
 [^28]: Les types des éléments propres au SEDA sont listés dans l’[annexe 4 « Types JSON »](#annexe-4-types-json). Il est conseillé de se reporter à cette annexe, afin de typer correctement les propriétés d’un schéma de contrôle.
 
