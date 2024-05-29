@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>23. Le référentiel des scénarios de préservation dans la solution logicielle Vitam &mdash; Vitam documentation fonctionnelle</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=eea1f72d" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f4732e6d"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/translations.js?v=bf059b8c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="24. Le référentiel des règles de gestion dans la solution logicielle Vitam" href="Vademecum_referentiel_rg.html" />
+    <link rel="prev" title="22. Le référentiel des griffons dans la solution logicielle Vitam" href="Vademecum_referentiel_griffons.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: white" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/Vitam_Logo-CMJN.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">première approche</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="guide_lecture.html">1. Documentation Vitam - guide de lecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="presentation_programme.html">2. Présentation du programme Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="presentation_solution_logicielle.html">3. Présentation de la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_prise_en_main.html">4. Guide de prise en main de la solution logicielle Vitam – Vitam UI<br>
+<em>Réaliser une première entrée</em></a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">documentation métier</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="eliminations.html">1. Les éliminations avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gel.html">2. Le gel d’archives avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gestion_archives_arbo.html">3. Gestion des archives et des arborescences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gestion_habilitations.html">4. Gestion des habilitations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_donnees.html">5. Modèle de données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_workflow.html">6. Description des workflows et des opérations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_de_collecte.html">7. Module de collecte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="organisation_information.html">8. Organisation de l’information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ontologie.html">9. Ontologie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preservation.html">10. Gestion de la préservation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_archivage.html">11. Profils d’archivage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_unite_archivistique.html">12. Profils d’unité archivistique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regles_gestion.html">13. Règles de gestion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services_prod.html">14. Services producteurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SIP.html">15. Structuration des <em>Submission Information Packages</em> (SIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DIP.html">16. Structuration des <em>Dissemination Information Packages</em> (DIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stockage.html">17. Gestion de multiples stratégies de stockage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transfert.html">18. Le transfert avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="valeur_probante.html">19. Conservation de la valeur probante</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">documentation Vitam UI</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Autoprovisionning.html">1. Vitam UI : présentation de la fonctionnalité d’auto-provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Arbres_Plans.html">2. APP Arbres et plans</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">outils connexes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="resip.html">1. RESIP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resip_faq.html">2. RESIP : foire aux questions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Chantier préservation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="chantier_preservation_validation_format.html">1. Validation du format des fichiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_identification_format.html">2. Identification des formats de fichiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_extraction_MD.html">3. Extraction des métadonnées techniques</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Vademecum</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_sommaire.html">1. Vademecum: sommaire thématique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_glossaire.html">2. Notions utilisées dans la solution logicielle Vitam et lien vers la fiche qui les définit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_arbre.html">3. L’arbre de positionnement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_audit.html">4. Les audits dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_classification.html">5. La gestion des archives classifiées avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_acces.html">6. Le contrat d’accès dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_entree.html">7. Le contrat d’entrée dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_gestion.html">8. Le contrat de gestion dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_echeances.html">9. Le calcul des héritages des règles de gestion et l’indexation des échéances dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_eliminations.html">10. Réaliser des éliminations d’archives avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_habilitations.html">11. La gestion des droits et permissions des utilisateurs applicatifs dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_identifiants.html">12. L’attribution des identifiants dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_journalisation.html">13. La journalisation et la conservation de la valeur probante dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_ontologie.html">14. L’ontologie dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_pa.html">15. Les profils d’archivage dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_parametrages_pf.html">16. Le paramétrage fonctionnel d’une plate-forme utilisant la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_plan.html">17. Le plan de classement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_preservation.html">18. La préservation dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_pua.html">19. Les profils d’unité archivistique dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_rattachement.html">20. Faire un rattachement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_formats.html">21. Le référentiel des formats dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_griffons.html">22. Le référentiel des griffons dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">23. Le référentiel des scénarios de préservation dans la solution logicielle Vitam</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#presentation-du-referentiel-des-scenarios-de-preservation">23.1. Présentation du référentiel des scénarios de préservation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#perimetre">23.1.1. Périmètre</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#actions-couvertes-par-un-scenario-de-preservation">23.1.2. Actions couvertes par un scénario de préservation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#parametrage-du-griffon-utilise">23.1.3. Paramétrage du griffon utilisé</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#formats">23.1.3.1. Formats</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mecanismes-de-surveillance-du-fonctionnement-des-griffons">23.1.3.2. Mécanismes de surveillance du fonctionnement des griffons</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#commande-a-executer">23.1.3.3. Commande à exécuter</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#controles-effectues">23.1.4. Contrôles effectués</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#configurer-un-referentiel-des-scenarios-de-preservation">23.2. Configurer un référentiel des scénarios de préservation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#constitution-du-referentiel-des-scenarios-de-preservation">23.2.1. Constitution du référentiel des scénarios de préservation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#transposition-dun-referentiel-existant">23.2.2. Transposition d’un référentiel existant</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gestion-des-identifiants-des-scenarios-de-preservation">23.2.3. Gestion des identifiants des scénarios de préservation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#formalisation-du-referentiel">23.2.4. Formalisation du référentiel</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#modification-du-referentiel-des-scenarios-de-preservation">23.3. Modification du référentiel des scénarios de préservation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#suppression-dun-scenario-de-preservation">23.3.1. Suppression d’un scénario de préservation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mise-a-jour-du-referentiel">23.3.2. Mise à jour du référentiel</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_rg.html">24. Le référentiel des règles de gestion dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_sa.html">25. Le référentiel des services agents dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_registre_fonds.html">26. Le registre des fonds dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_structuration_information.html">27. La structuration des informations dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_suivi_acces.html">28. Le suivi des accès dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_tenant.html">29. Les tenants dans la solution logicielle Vitam</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: white" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Documentation utilisateur Vitam</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">23. </span>Le référentiel des scénarios de préservation dans la solution logicielle Vitam</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/sections/Vademecum_referentiel_preservation.md.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+
+           <div itemprop="articleBody">
+             
+  <section id="le-referentiel-des-scenarios-de-preservation-dans-la-solution-logicielle-vitam">
+<h1><span class="section-number">23. </span>Le référentiel des scénarios de préservation dans la solution logicielle Vitam<a class="headerlink" href="#le-referentiel-des-scenarios-de-preservation-dans-la-solution-logicielle-vitam" title="Lien vers cette rubrique"></a></h1>
+<p>Un scénario de préservation décrit, pour une liste de formats donnée et un griffon donné, les actions de préservation à lancer.
+Le référentiel des scénarios de préservation a pour finalités de :</p>
+<ul class="simple">
+<li><p>connaître l’ensemble des scénarios de préservation disponibles et utilisables dans la solution logicielle Vitam ;</p></li>
+<li><p>gérer et administrer une politique de préservation dont les scénarios de préservation sont la déclinaison ;</p></li>
+<li><p>permettre l’utilisation des scénarios de préservation ainsi référencés dans une ou plusieurs opérations de préservation.</p></li>
+</ul>
+<section id="presentation-du-referentiel-des-scenarios-de-preservation">
+<h2><span class="section-number">23.1. </span>Présentation du référentiel des scénarios de préservation<a class="headerlink" href="#presentation-du-referentiel-des-scenarios-de-preservation" title="Lien vers cette rubrique"></a></h2>
+<section id="perimetre">
+<h3><span class="section-number">23.1.1. </span>Périmètre<a class="headerlink" href="#perimetre" title="Lien vers cette rubrique"></a></h3>
+<p>Le référentiel des scénarios de préservation est propre au tenant sur lequel il a été importé.</p>
+</section>
+<section id="actions-couvertes-par-un-scenario-de-preservation">
+<h3><span class="section-number">23.1.2. </span>Actions couvertes par un scénario de préservation<a class="headerlink" href="#actions-couvertes-par-un-scenario-de-preservation" title="Lien vers cette rubrique"></a></h3>
+<p>Quatre actions élémentaires de préservation peuvent être effectuées par un scénario de préservation :</p>
+<ul class="simple">
+<li><p>GENERATE : génération d’un nouvel objet, par exemple, conversion d’un format,</p></li>
+<li><p>ANALYSE : analyse d’un ou plusieurs formats, par exemple, validation d’un format,</p></li>
+<li><p>IDENTIFY : ré-identification d’un ou plusieurs formats,</p></li>
+<li><p>EXTRACT : extraction de métadonnées contenues dans les objets binaires.
+Un scénario de préservation peut effectuer une ou plusieurs de ces actions élémentaires.</p></li>
+</ul>
+</section>
+<section id="parametrage-du-griffon-utilise">
+<h3><span class="section-number">23.1.3. </span>Paramétrage du griffon utilisé<a class="headerlink" href="#parametrage-du-griffon-utilise" title="Lien vers cette rubrique"></a></h3>
+<p>À un scénario de préservation, un ou plusieurs griffons peuvent être associés.</p>
+<p>Le griffon déclaré dans le scénario de préservation doit impérativement figurer dans le référentiel des griffons.</p>
+<p>Pour chaque griffon, le scénario de préservation définit des arguments (des précisions sur l’action de préservation) et des conditions d’appel permettant ainsi d’affiner l’action de préservation et d’aller au-delà d’une simple conversion de format ou d’une simple validation de format.
+Exemple :</p>
+<ul class="simple">
+<li><p>convertir un fichier .tiff en .jpeg en précisant la résolution attendue ;</p></li>
+<li><p>valider un format d’image ainsi que sa résolution conformément aux paramètres du scénario de préservation.</p></li>
+</ul>
+<section id="formats">
+<h4><span class="section-number">23.1.3.1. </span>Formats<a class="headerlink" href="#formats" title="Lien vers cette rubrique"></a></h4>
+<p>Un griffon peut être utilisé pour tous les formats d’objets techniques (griffon par défaut ou « DefaultGriffin ») ou pour des formats spécifiques listés dans le scénario (griffon par format ou « GriffinByFormat »).</p>
+<p>Les formats déclarés dans le scénario de préservation doivent impérativement figurer dans le référentiel des formats.</p>
+</section>
+<section id="mecanismes-de-surveillance-du-fonctionnement-des-griffons">
+<h4><span class="section-number">23.1.3.2. </span>Mécanismes de surveillance du fonctionnement des griffons<a class="headerlink" href="#mecanismes-de-surveillance-du-fonctionnement-des-griffons" title="Lien vers cette rubrique"></a></h4>
+<ul class="simple">
+<li><p>Délai de traitement maximal défini pour le griffon : sans réponse du griffon dans ce délai, l’opération de préservation sera en échec.</p></li>
+<li><p>Taille maximale pour la génération des objets numériques attendue : si le griffon génère un objet de taille supérieure à cette limite, l’opération de préservation sera en échec.</p></li>
+<li><p>Récupération des logs générés par les griffons : cette option est intéressante en phase de test du scénario de préservation pour comprendre les éventuelles anomalies rencontrées.</p></li>
+</ul>
+</section>
+<section id="commande-a-executer">
+<h4><span class="section-number">23.1.3.3. </span>Commande à exécuter<a class="headerlink" href="#commande-a-executer" title="Lien vers cette rubrique"></a></h4>
+<ul class="simple">
+<li><p>Type d’action à exécuter : une des quatre actions élémentaires de préservation.</p></li>
+<li><p>Valeurs précisant les commandes passées par le scénario de préservation :</p>
+<ul>
+<li><p>arguments, correspondant à une commande passée au griffon selon son langage et sa grammaire propre,</p></li>
+<li><p>extension de sortie, permettant de préciser, dans le cadre d’une opération de génération d’objet binaire, l’extension du format généré attendue</p></li>
+<li><p>métadonnées à extraire dans le cas d’une extraction de métadonnées.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="controles-effectues">
+<h3><span class="section-number">23.1.4. </span>Contrôles effectués<a class="headerlink" href="#controles-effectues" title="Lien vers cette rubrique"></a></h3>
+<p>Lors du lancement d’une opération de préservation, la solution logicielle Vitam vérifie que le scénario de préservation déclaré figure bien dans le référentiel des scénarios de préservation.</p>
+</section>
+</section>
+<section id="configurer-un-referentiel-des-scenarios-de-preservation">
+<h2><span class="section-number">23.2. </span>Configurer un référentiel des scénarios de préservation<a class="headerlink" href="#configurer-un-referentiel-des-scenarios-de-preservation" title="Lien vers cette rubrique"></a></h2>
+<section id="constitution-du-referentiel-des-scenarios-de-preservation">
+<h3><span class="section-number">23.2.1. </span>Constitution du référentiel des scénarios de préservation<a class="headerlink" href="#constitution-du-referentiel-des-scenarios-de-preservation" title="Lien vers cette rubrique"></a></h3>
+<p>Créer un scénario de préservation est un pré-requis obligatoire pour lancer une opération de préservation.<br>
+Pour cela, il convient de réfléchir aux actions de préservation que l’on souhaite réaliser et de mener des tests préalables afin de tester les outils à utiliser, de les valider et de valider les résultats de l’action de préservation.<br></p>
+<p>De fait, afin de créer un scénario de préservation, il est recommandé que :</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Qui ?</p></th>
+<th class="head text-left"><p>Quoi ?</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Administrateur fonctionnel</p></td>
+<td class="text-left"><p>- détermine l’opération de préservation qu’il veut mettre en œuvre et l’outil qu’il souhaite utiliser.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Administrateur technique</p></td>
+<td class="text-left"><p>– vérifie si le griffon que l’on souhaite solliciter est installé et disponible dans la solution logicielle Vitam<br>– le cas échéant, installe le griffon.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Administrateur technique et/ou fonctionnel</p></td>
+<td class="text-left"><p>– vérifie si le griffon est référencé dans le référentiel des griffons ;<br>– le cas échéant, ajoute le griffon dans le référentiel des griffons</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Administrateur technique et fonctionnel</p></td>
+<td class="text-left"><p>– crée un scénario de préservation utilisant le griffon en question</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Administrateur fonctionnel</p></td>
+<td class="text-left"><p>– lance l’opération de préservation</p></td>
+</tr>
+</tbody>
+</table>
+<p>En fonction du périmètre, de(s) l’action(s) à effectuer et de(s) l’outil(s) privilégié(s), la conception du scénario de préservation variera. Par exemple :</p>
+<ul class="simple">
+<li><p>On peut envisager de réaliser un scénario unique d’identification de formats en utilisant le griffon par défaut Siegfried. Ce scénario ne spécifie pas de formats en particulier dans la mesure où Siegfried couvre les formats référencés dans le registre PRONOM ;</p></li>
+<li><p>Si l’on veut faire une succession d’actions sur un fichier (d’abord le transformer de A en B, puis de B en C), il faudra faire deux scénarios, car on va intervenir sur deux objets de format différent ;</p></li>
+<li><p>Si l’on veut faire deux actions sur le même fichier (analyse, puis conversion), on doit créer deux scénarios : l’un pour l’analyse, l’autre pour la conversion, car un même scénario ne peut avoir deux actions à réaliser portant sur le même format.</p></li>
+</ul>
+<p>Le référentiel des scénarios de préservation peut être alimenté de manière très modulaire :</p>
+<ul class="simple">
+<li><p>d’une manière très générique, en réduisant le nombre de scénarios au nombre d’actions de préservation possibles : validation, conversion, identification, extraction ;</p></li>
+<li><p>d’une manière plus spécifique, en se focalisant sur :</p>
+<ul>
+<li><p>un type de format en particulier par scénario ;</p></li>
+<li><p>la finalité du scénario de préservation, en dissociant les scénarios par type d’action et format.</p></li>
+</ul>
+</li>
+</ul>
+<p><em>Cas 1 : un scénario par type d’action de préservation</em><br />
+Cette première solution présente l’avantage de limiter le nombre de scénarios. En revanche, la mise au point de chacun des scénarios peut s’avérer complexe et leur utilisation dans le cadre d’une opération de préservation peut s’avérer lourde en termes de traitement et de performance. L’élaboration de ce type de scénarios génériques peut être envisagée dans le cadre d’opérations de préservation portant sur l’ensemble des objets conservés dans la solution logicielle Vitam et tournant en tâche de fond.
+Élaborer un scénario par type d’action ne présente d’intérêt que pour l’identification.</p>
+<p><em>Cas 2 : un scénario par format</em><br />
+Cette deuxième solution permet d’effectuer des opérations de préservation plus ciblées et de répondre à des besoins plus circonscrits en termes de préservation. L’avantage de cette solution est de permettre de ne pas lancer une opération sur l’ensemble des objets conservés dans la solution logicielle Vitam et d’avoir une vision plus claire du contenu de chacun des scénarios de préservation.</p>
+<p><em>Cas 3 : un scénario par finalité</em><br />
+Cette troisième solution, modulaire, permet de disposer de scénarios génériques, portant sur l’ensemble des formats supportés dans la solution logicielle Vitam, en vue de réaliser une opération de préservation en particulier (ex : générer des GIF, grâce à plusieurs griffons et sur une liste exhaustive de formats). Mais elle permet également d’effectuer des actions plus ciblées et de répondre à des besoins plus circonscrits (ex : valider des fichiers PDF).</p>
+</section>
+<section id="transposition-dun-referentiel-existant">
+<h3><span class="section-number">23.2.2. </span>Transposition d’un référentiel existant<a class="headerlink" href="#transposition-dun-referentiel-existant" title="Lien vers cette rubrique"></a></h3>
+<p>La préservation numérique étant un domaine relativement récent pour les archivistes, il n’existe actuellement que rarement des outils métier qui pourraient être transposés pour élaborer le référentiel des scénarios de préservation.</p>
+</section>
+<section id="gestion-des-identifiants-des-scenarios-de-preservation">
+<h3><span class="section-number">23.2.3. </span>Gestion des identifiants des scénarios de préservation<a class="headerlink" href="#gestion-des-identifiants-des-scenarios-de-preservation" title="Lien vers cette rubrique"></a></h3>
+<p>Le référentiel des scénarios de préservation fonctionne en mode « esclave ». Les identifiants des scénarios de préservation sont gérés dans un outil externe.</p>
+</section>
+<section id="formalisation-du-referentiel">
+<h3><span class="section-number">23.2.4. </span>Formalisation du référentiel<a class="headerlink" href="#formalisation-du-referentiel" title="Lien vers cette rubrique"></a></h3>
+<p>Le référentiel des scénarios de préservation est importé dans la solution logicielle Vitam sous la forme d’un fichier JSON contenant l’ensemble des scénarios de préservation.
+Un scénario de préservation comporte obligatoirement les informations suivantes :</p>
+<ul class="simple">
+<li><p>identifiant signifiant du scénario de préservation, généré par l’application à l’origine de sa création (Identifier) et devant être unique dans le système ;</p></li>
+<li><p>nom du scénario de préservation (Name) ;</p></li>
+<li><p>action(s) couverte(s) par le scénario de préservation (ActionList). Ce champ peut contenir 1 à 4 valeurs : « GENERATE », « ANALYSE », « IDENTIFY » ou « EXTRACT » ;</p></li>
+<li><p>un bloc GriffinByFormat (Action(s) couverte(s)) précise l’(les) action(s) couverte(s) par le scénario de préservation, pour un griffon donné et une liste de formats donnée.<br>
+Une description (Description), ainsi qu’une action et un griffon à exécuter par défaut (bloc DefaultGriffin), facultatifs, peuvent venir compléter ces informations.</p></li>
+</ul>
+<p>Pour en savoir plus, consulter le <a class="reference internal" href="modele_de_donnees.html"><span class="std std-doc">document VITAM. Modèle de données</span></a>.</p>
+</section>
+</section>
+<section id="modification-du-referentiel-des-scenarios-de-preservation">
+<h2><span class="section-number">23.3. </span>Modification du référentiel des scénarios de préservation<a class="headerlink" href="#modification-du-referentiel-des-scenarios-de-preservation" title="Lien vers cette rubrique"></a></h2>
+<section id="suppression-dun-scenario-de-preservation">
+<h3><span class="section-number">23.3.1. </span>Suppression d’un scénario de préservation<a class="headerlink" href="#suppression-dun-scenario-de-preservation" title="Lien vers cette rubrique"></a></h3>
+<p>Si on ne souhaite plus utiliser un scénario de préservation, il faut l’ôter du référentiel des scénarios de préservation et ainsi il ne pourra plus être utilisé dans une opération de préservation.
+Les raisons pouvant amener à supprimer un scénario sont les suivantes :</p>
+<ul class="simple">
+<li><p>Le scénario n’est jamais utilisé ou n’est plus utilisé. Par souci de clarté, on souhaite le supprimer du référentiel ;</p></li>
+<li><p>Le référentiel contient deux scénarios identiques. Plutôt que de les maintenir séparément, on souhaite en supprimer un du référentiel ;</p></li>
+<li><p>Le scénario fait appel à un griffon qui n’est plus utilisé dans le système ;</p></li>
+<li><p>Il y a eu erreur de saisie dans le référentiel, qui a entraîné la création d’une deuxième version d’un scénario de préservation.</p></li>
+</ul>
+<p>Avant de supprimer tout scénario de préservation, il est recommandé de vérifier qu’il n’est pas utilisé dans le cadre d’une opération de préservation en cours de réalisation.</p>
+</section>
+<section id="mise-a-jour-du-referentiel">
+<h3><span class="section-number">23.3.2. </span>Mise à jour du référentiel<a class="headerlink" href="#mise-a-jour-du-referentiel" title="Lien vers cette rubrique"></a></h3>
+<p>La mise à jour du référentiel des scénarios de préservation s’effectue par un réimport du fichier JSON, en mode « annule et remplace ». Il est donc possible :</p>
+<ul class="simple">
+<li><p>d’ajouter un nouveau scénario ;</p></li>
+<li><p>modifier les informations associées à un scénario (notamment lorsque on le met à jour un griffon ou lorsque l’on en crée un nouveau) ;</p></li>
+<li><p>supprimer un scénario.</p></li>
+</ul>
+<p>Les différentes versions du référentiel font l’objet d’une sauvegarde sur les offres de stockage.</p>
+<p>Pour en savoir plus, consulter le <a class="reference internal" href="preservation.html"><span class="std std-doc">document VITAM. Gestion de la préservation</span></a>.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="Vademecum_referentiel_griffons.html" class="btn btn-neutral float-left" title="22. Le référentiel des griffons dans la solution logicielle Vitam" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="Vademecum_referentiel_rg.html" class="btn btn-neutral float-right" title="24. Le référentiel des règles de gestion dans la solution logicielle Vitam" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2022, Programme Vitam.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: master_7.1.x
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Branches</dt>
+      <dd><a href="../../master/sections/Vademecum_referentiel_preservation.html">master</a></dd>
+      <dd><a href="../../master_6.rc.x/index.html">master_6.rc.x</a></dd>
+      <dd><a href="Vademecum_referentiel_preservation.html">master_7.1.x</a></dd>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

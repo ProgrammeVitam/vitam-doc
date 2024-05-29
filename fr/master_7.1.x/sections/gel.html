@@ -1,0 +1,1692 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2. Le gel d’archives avec la solution logicielle Vitam &mdash; Vitam documentation fonctionnelle</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=eea1f72d" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f4732e6d"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/translations.js?v=bf059b8c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="3. Gestion des archives et des arborescences" href="gestion_archives_arbo.html" />
+    <link rel="prev" title="1. Les éliminations avec la solution logicielle Vitam" href="eliminations.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: white" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/Vitam_Logo-CMJN.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">première approche</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="guide_lecture.html">1. Documentation Vitam - guide de lecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="presentation_programme.html">2. Présentation du programme Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="presentation_solution_logicielle.html">3. Présentation de la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_prise_en_main.html">4. Guide de prise en main de la solution logicielle Vitam – Vitam UI<br>
+<em>Réaliser une première entrée</em></a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">documentation métier</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="eliminations.html">1. Les éliminations avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2. Le gel d’archives avec la solution logicielle Vitam</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">2.1. Introduction</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#documents-de-reference">2.1.1. Documents de référence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#presentation-du-document">2.1.2. Présentation du document</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#definitions">2.1.3. Definitions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#determination-de-la-regle-de-gel-et-de-son-application-sur-une-unite-archivistique-avec-la-solution-logicielle-vitam">2.2. Détermination de la règle de gel et de son application sur une unité archivistique avec la solution logicielle Vitam</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#le-gel-dans-le-referentiel-des-regles-de-gestion">2.2.1. Le gel dans le référentiel des règles de gestion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#formalisation-du-gel-dans-le-standard-dechanges-de-donnees-pour-larchivage-seda">2.2.2. Formalisation du gel dans le Standard d’échanges de données pour l’archivage (SEDA)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#formalisation-du-gel-dans-la-solution-logicielle-vitam">2.2.3. Formalisation du gel dans la solution logicielle Vitam</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#enregistrement-generique">2.2.3.1. Enregistrement générique</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#enregistrement-parametrable">2.2.3.2. Enregistrement paramétrable</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#mecanismes-mis-en-oeuvre-dans-la-solution-logicielle-vitam">2.3. Mécanismes mis en œuvre dans la solution logicielle Vitam</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#realisation-du-gel-darchives">2.3.1. Réalisation du gel d’archives</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#action-de-gel">2.3.1.1. Action de gel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#impacts-du-gel-sur-les-traitements-de-masse">2.3.1.2. Impacts du gel sur les traitements de masse</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#realisation-du-degel-darchives">2.3.2. Réalisation du dégel d’archives</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#action-de-degel">2.3.2.1. Action de dégel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#impacts-du-degel-sur-les-traitements-de-masse">2.3.2.2. Impacts du dégel sur les traitements de masse</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#conseils-de-mise-en-oeuvre">2.4. Conseils de mise en œuvre</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#comment-integrer-des-regles-de-gel-dans-le-referentiel-des-regles-de-gestion">2.4.1. Comment intégrer des règles de gel dans le référentiel des règles de gestion ?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#quand-et-comment-bloquer-le-reclassement-d-archives-gelees">2.4.2. Quand et comment bloquer le reclassement d’archives gelées ?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#annexes">2.5. Annexes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#annexe-1-exemple-de-message-archivetransfer-mettant-en-oeuvre-les-differentes-possibilites-dutilisation-des-regles-de-gestion">2.5.1. Annexe 1 : Exemple de message ArchiveTransfer mettant en œuvre les différentes possibilités d’utilisation des règles de gestion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#annexe-2-exemple-de-requete-pour-geler-et-degeler-des-archives">2.5.2. Annexe 2 : Exemple de requête pour geler et dégeler des archives</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gestion_archives_arbo.html">3. Gestion des archives et des arborescences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gestion_habilitations.html">4. Gestion des habilitations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_donnees.html">5. Modèle de données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_workflow.html">6. Description des workflows et des opérations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_de_collecte.html">7. Module de collecte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="organisation_information.html">8. Organisation de l’information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ontologie.html">9. Ontologie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preservation.html">10. Gestion de la préservation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_archivage.html">11. Profils d’archivage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_unite_archivistique.html">12. Profils d’unité archivistique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regles_gestion.html">13. Règles de gestion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services_prod.html">14. Services producteurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SIP.html">15. Structuration des <em>Submission Information Packages</em> (SIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DIP.html">16. Structuration des <em>Dissemination Information Packages</em> (DIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stockage.html">17. Gestion de multiples stratégies de stockage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transfert.html">18. Le transfert avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="valeur_probante.html">19. Conservation de la valeur probante</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">documentation Vitam UI</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Autoprovisionning.html">1. Vitam UI : présentation de la fonctionnalité d’auto-provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Arbres_Plans.html">2. APP Arbres et plans</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">outils connexes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="resip.html">1. RESIP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resip_faq.html">2. RESIP : foire aux questions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Chantier préservation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="chantier_preservation_validation_format.html">1. Validation du format des fichiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_identification_format.html">2. Identification des formats de fichiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_extraction_MD.html">3. Extraction des métadonnées techniques</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Vademecum</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_sommaire.html">1. Vademecum: sommaire thématique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_glossaire.html">2. Notions utilisées dans la solution logicielle Vitam et lien vers la fiche qui les définit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_arbre.html">3. L’arbre de positionnement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_audit.html">4. Les audits dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_classification.html">5. La gestion des archives classifiées avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_acces.html">6. Le contrat d’accès dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_entree.html">7. Le contrat d’entrée dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_gestion.html">8. Le contrat de gestion dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_echeances.html">9. Le calcul des héritages des règles de gestion et l’indexation des échéances dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_eliminations.html">10. Réaliser des éliminations d’archives avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_habilitations.html">11. La gestion des droits et permissions des utilisateurs applicatifs dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_identifiants.html">12. L’attribution des identifiants dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_journalisation.html">13. La journalisation et la conservation de la valeur probante dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_ontologie.html">14. L’ontologie dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_pa.html">15. Les profils d’archivage dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_parametrages_pf.html">16. Le paramétrage fonctionnel d’une plate-forme utilisant la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_plan.html">17. Le plan de classement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_preservation.html">18. La préservation dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_pua.html">19. Les profils d’unité archivistique dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_rattachement.html">20. Faire un rattachement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_formats.html">21. Le référentiel des formats dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_griffons.html">22. Le référentiel des griffons dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_preservation.html">23. Le référentiel des scénarios de préservation dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_rg.html">24. Le référentiel des règles de gestion dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_sa.html">25. Le référentiel des services agents dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_registre_fonds.html">26. Le registre des fonds dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_structuration_information.html">27. La structuration des informations dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_suivi_acces.html">28. Le suivi des accès dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_tenant.html">29. Les tenants dans la solution logicielle Vitam</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: white" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Documentation utilisateur Vitam</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">2. </span>Le gel d’archives avec la solution logicielle Vitam</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/sections/gel.md.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+
+           <div itemprop="articleBody">
+             
+  <section id="le-gel-darchives-avec-la-solution-logicielle-vitam">
+<h1><span class="section-number">2. </span>Le gel d’archives avec la solution logicielle Vitam<a class="headerlink" href="#le-gel-darchives-avec-la-solution-logicielle-vitam" title="Lien vers cette rubrique"></a></h1>
+<section id="introduction">
+<h2><span class="section-number">2.1. </span>Introduction<a class="headerlink" href="#introduction" title="Lien vers cette rubrique"></a></h2>
+<p>Jusqu’à présent, pour la gestion, la conservation, la préservation et la
+consultation des archives numériques, les acteurs du secteur public
+étatique ont utilisé des techniques d’archivage classiques, adaptées aux
+volumes limités dont la prise en charge leur était proposée. Cette
+situation évolue désormais rapidement et les acteurs du secteur public
+étatique doivent se mettre en capacité de traiter les volumes croissants
+d’archives numériques qui doivent être archivés, grâce à un saut
+technologique.</p>
+<section id="documents-de-reference">
+<h3><span class="section-number">2.1.1. </span>Documents de référence<a class="headerlink" href="#documents-de-reference" title="Lien vers cette rubrique"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Document</p></th>
+<th class="head text-center"><p>Date</p></th>
+<th class="head text-left"><p>Remarques</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>NF Z44-022 – MEDONA - Modélisation des données pour l’archivage</p></td>
+<td class="text-center"><p>18/01/2014</p></td>
+<td class="text-left"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Standard d’échange de données pour l’archivage – SEDA – v. 2.1</p></td>
+<td class="text-center"><p>06/2018</p></td>
+<td class="text-left"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Standard d’échange de données pour l’archivage – SEDA – v. 2.2</p></td>
+<td class="text-center"><p>02/2022</p></td>
+<td class="text-left"><p>Cette nouvelle version du SEDA est intégrée à la solution logicielle Vitam à partir de la V6.RC.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><a class="reference internal" href="regles_gestion.html"><span class="std std-doc">Vitam – Règles de gestion</span></a></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-left"><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="presentation-du-document">
+<h3><span class="section-number">2.1.2. </span>Présentation du document<a class="headerlink" href="#presentation-du-document" title="Lien vers cette rubrique"></a></h3>
+<p>Le gel d’archives fait partie des processus archivistiques mis en œuvre
+dans la solution logicielle Vitam.</p>
+<p>Dans un contexte d’archivage électronique, cette fonctionnalité est mise
+en œuvre en tenant compte des particularités liées au calcul et à
+l’héritage des règles et au graphe, tout en ayant ses propres
+spécificités.</p>
+<p>Ce document s’articule autour des axes suivants :</p>
+<ul class="simple">
+<li><p>calcul des règles et détermination d’une règle de gel pour un lot
+d’unités archivistiques,</p></li>
+<li><p>modalités du gel d’un lot d’archives,</p></li>
+<li><p>modalités de dégel d’archives.</p></li>
+</ul>
+<p>Le présent document décrit les fonctionnalités qui sont offertes par la
+solution logicielle Vitam au terme de la Version 5.RC (septembre 2021).
+Il a vocation à être amendé, complété et enrichi au fur et à mesure de
+la réalisation de la solution logicielle Vitam et des retours et
+commentaires formulés par les ministères porteurs et les partenaires du
+programme.</p>
+</section>
+<section id="definitions">
+<h3><span class="section-number">2.1.3. </span>Definitions<a class="headerlink" href="#definitions" title="Lien vers cette rubrique"></a></h3>
+<p>Le gel d’archives consiste en une opération visant à interdire
+l’élimination d’archives, quand bien même celles-ci seraient
+éliminables.</p>
+<p>Il peut intervenir à plusieurs occasions :</p>
+<ul class="simple">
+<li><p>procédures judiciaires,</p></li>
+<li><p>enquêtes (policières, parlementaires, etc.)</p></li>
+<li><p>perquisitions,</p></li>
+<li><p>audits de type divers (financiers, comptables, etc.).</p></li>
+</ul>
+<p>Des pièces de dossiers sont alors gelées, sur demande, le temps de la
+procédure. Le gel permet ainsi d’éviter toute élimination malencontreuse
+d’archives.</p>
+<p>Les archives gelées peuvent être en outre soumises à des droits
+particuliers :</p>
+<ul class="simple">
+<li><p>interdiction d’être modifiées ou réorganisées,</p></li>
+<li><p>interdiction d’être transférées vers un autre système d’archivage
+électronique,</p></li>
+<li><p>restrictions de consultation.</p></li>
+</ul>
+<p>Les règles consistant à procéder au gel ou au dégel d’archives sont
+définies dans les normes suivantes :</p>
+<ul class="simple">
+<li><p>Modular Requirements for Records Systems 2010 (MoReq2010) : recueil
+d’exigences pour l’organisation de l’archivage numérique, élaboré
+dans le cadre de l’Union européenne ;</p></li>
+<li><p>NF Z 42‑013  : Archivage électronique, recommandations et exigences.</p></li>
+</ul>
+<p>La procédure s’effectue en deux temps :</p>
+<ul class="simple">
+<li><p>un gel des archives, suite à une demande émanant d’un service
+producteur dans le cadre d’un contexte particulier ;</p></li>
+<li><p>après clôture de la procédure, dégel des archives, visant à les
+gérer à nouveau selon leur cycle de vie initial.</p></li>
+</ul>
+</section>
+</section>
+<section id="determination-de-la-regle-de-gel-et-de-son-application-sur-une-unite-archivistique-avec-la-solution-logicielle-vitam">
+<h2><span class="section-number">2.2. </span>Détermination de la règle de gel et de son application sur une unité archivistique avec la solution logicielle Vitam<a class="headerlink" href="#determination-de-la-regle-de-gel-et-de-son-application-sur-une-unite-archivistique-avec-la-solution-logicielle-vitam" title="Lien vers cette rubrique"></a></h2>
+<section id="le-gel-dans-le-referentiel-des-regles-de-gestion">
+<h3><span class="section-number">2.2.1. </span>Le gel dans le référentiel des règles de gestion<a class="headerlink" href="#le-gel-dans-le-referentiel-des-regles-de-gestion" title="Lien vers cette rubrique"></a></h3>
+<p>La solution logicielle Vitam implémente une règle spécifique dans le
+référentiel des règles de gestion pour traiter le gel d’archives. Cette
+règle propre au gel est de type « HoldRule ».</p>
+<p>Elle peut être définie de deux manières :</p>
+<ul class="simple">
+<li><p>avec une durée et une mesure, comme les autres règles de gestion
+gérées dans ce référentiel ;</p></li>
+<li><p>sans durée ni mesure, si on n’est pas en mesure de les qualifier.</p></li>
+</ul>
+<p>Exemple:
+<code class="docutils literal notranslate"> <span class="pre">La</span> <span class="pre">première</span> <span class="pre">règle</span> <span class="pre">de</span> <span class="pre">gel</span> <span class="pre">définit</span> <span class="pre">une</span> <span class="pre">durée</span> <span class="pre">et</span> <span class="pre">une</span> <span class="pre">mesure,</span> <span class="pre">contrairement</span> <span class="pre">à</span> <span class="pre">la</span> <span class="pre">deuxième</span> <span class="pre">règle</span> <span class="pre">de</span> <span class="pre">gel.</span></code></p>
+</section>
+<section id="formalisation-du-gel-dans-le-standard-dechanges-de-donnees-pour-larchivage-seda">
+<h3><span class="section-number">2.2.2. </span>Formalisation du gel dans le Standard d’échanges de données pour l’archivage (SEDA)<a class="headerlink" href="#formalisation-du-gel-dans-le-standard-dechanges-de-donnees-pour-larchivage-seda" title="Lien vers cette rubrique"></a></h3>
+<p>La règle de gel a été intégrée par la solution logicielle Vitam en
+<strong>extension</strong> à la norme NF Z 44‑022, intitulée « Modèle d’Échange de
+DONnées pour l’Archivage » ou MEDONA, et sa déclinaison pour les acteurs
+du service public, le Standard d’Échanges de Données pour l’Archivage
+(SEDA), qui ne définissent pas actuellement ce type d’information.</p>
+<p>Cette extension fonctionne néanmoins comme une règle de gestion. Et la
+solution logicielle Vitam offre la possibilité, pour une unité
+archivistique donnée, de :</p>
+<ul class="simple">
+<li><p>déclarer la ou les règles qui s’appliquent à elle et aux unités
+archivistiques qui dépendent d’elles (ses « filles ») ;</p></li>
+<li><p>hériter de la ou des règles de gestions déclarées par les unités
+archivistiques dont elle dépend (ses « parentes »).</p></li>
+</ul>
+<p>Si elles sont déclarées, les règles de gel peuvent être décrites, au
+moment de la demande de transfert à un service d’archives (message
+<em>ArchiveTransfer</em>, bloc <em>DataObjectPackage</em>) :</p>
+<ul class="simple">
+<li><p>dans le bloc <strong>ManagementMetadata</strong> pour toute une entrée ;</p></li>
+<li><p>dans le sous-bloc <strong>Management de chaque unité archivistique</strong> pour
+une unité archivistique ou un ensemble d’unités archivistiques
+décrites dans le bloc <em>DescriptiveMetadata</em>.</p></li>
+</ul>
+<p>Le schéma ci-après, issu de la documentation publiée par le Service
+interministériel des archives de France (SIAF), illustre ces différentes
+possibilités.</p>
+<p><img alt="" src="../_images/1000000000000556000003002C2276E3B31C73E3.png" /></p>
+<p>Le bloc <em>ManagementMetadata</em> et le sous-bloc Management des unités
+archivistiques dispose d’un sous-bloc correspondant à la règle de gel
+(HoldRule)<a class="footnote-reference brackets" href="#id8" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>, dans lequel il est possible de préciser :</p>
+<ul>
+<li><p>la ou les règles applicables, décrites par :</p>
+<ul class="simple">
+<li><p>l’<strong>identifiant</strong> de la règle applicable (RuleId –
+obligatoire) ;</p></li>
+<li><p>la** date de départ, **à partir de laquelle la règle s’applique
+(StartDate – facultatif) ;</p></li>
+</ul>
+</li>
+<li><p>des <strong>attributs</strong> spécifiques à une règle de gel :</p>
+<ul class="simple">
+<li><p>la date de fin du gel (HoldEndDate – facultatif),</p></li>
+<li><p>l’émetteur du gel (HoldOwner – facultatif),</p></li>
+<li><p>la raison du gel (HoldReason – facultatif),</p></li>
+<li><p>la date de réévaluation du gel (HoldReassessingDate –
+facultatif),</p></li>
+<li><p>le blocage du reclassement de l’archives gelée
+(PreventRearrangement – facultatif) ;</p></li>
+</ul>
+</li>
+<li><p>des métadonnées de gestion d’héritage, avec indication des <strong>règles
+héritées</strong> des unités archivistiques parentes** qui ne doivent pas
+s’appliquer **à l’unité archivistique concernée et à ses unités
+archivistiques filles.</p>
+<p>Ce blocage de règle peut être :</p>
+<ul class="simple">
+<li><p>global (blocage de toutes les règles héritées dans une catégorie
+via l’élément PreventInheritance – facultatif) ;</p></li>
+<li><p>ou partiel (blocage d’une ou plusieurs règles de la catégorie
+concernée via l’élément RefNonRuleId – facultatif).</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Nota bene</strong> :</p>
+<ul class="simple">
+<li><p>il est possible pour une unité archivistique, dans une même
+catégorie de règle, de déclarer plusieurs règles. Cette possibilité
+pour le gel (HoldRule), une même unité archivistique pouvant être
+gelée pour des motifs différents ou par des entités différentes ;</p></li>
+<li><p>le schéma correspondant à la règle de gel, extension du SEDA, est
+également spécifique et plus riche en termes d’informations par
+rapport aux autres règles de gestion ;</p></li>
+<li><p>Les attributs sont propres à chaque règle de gel.</p></li>
+</ul>
+<p>Exemple de modélisation d’une règle de gel en XML :</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;HoldRule&gt;</span>
+<span class="w">      </span><span class="nt">&lt;Rule&gt;</span>HOLD-00001<span class="nt">&lt;/RuleId&gt;</span>
+<span class="w">      </span><span class="nt">&lt;StartDate&gt;</span>2020-06-18<span class="nt">&lt;/StartDate&gt;</span>
+<span class="w">      </span><span class="nt">&lt;HoldOwner&gt;</span>Maître<span class="w"> </span>Dupont<span class="nt">&lt;/HoldOwner&gt;</span><span class="w">   </span>
+<span class="w">      </span><span class="nt">&lt;HoldReassessingDate&gt;</span>2055-01-01<span class="nt">&lt;/HoldReassessingDate&gt;</span>
+<span class="w">      </span><span class="nt">&lt;PreventRearrangement&gt;</span>true<span class="nt">&lt;/NonUpdatable&gt;</span>
+<span class="nt">&lt;/HoldRule&gt;</span>
+</pre></div>
+</div>
+<p>Un exemple de bordereau exploitant les différents cas de figures utilisables pour l’expression des règles de gestion et conforme au SEDA 2.1. est fourni en <a class="reference internal" href="#annexes"><span class="xref myst">annexe</span></a>.</p>
+</section>
+<section id="formalisation-du-gel-dans-la-solution-logicielle-vitam">
+<h3><span class="section-number">2.2.3. </span>Formalisation du gel dans la solution logicielle Vitam<a class="headerlink" href="#formalisation-du-gel-dans-la-solution-logicielle-vitam" title="Lien vers cette rubrique"></a></h3>
+<section id="enregistrement-generique">
+<h4><span class="section-number">2.2.3.1. </span>Enregistrement générique<a class="headerlink" href="#enregistrement-generique" title="Lien vers cette rubrique"></a></h4>
+<p>Les règles de gel déclarées dans une unité archivistique sont
+enregistrées, au même titre que les métadonnées décrivant cette unité,
+dans la collection « Unit », sous la forme d’enregistrements au format
+JSON.</p>
+<p>Elles sont enregistrées dans un enregistrement correspondant aux
+métadonnées d’une unité archivistique en fonction de la manière dont
+elles sont déclarées dans le bordereau de transfert :</p>
+<ul class="simple">
+<li><p>elles sont déclarées dans le bloc Management de l’unité en
+question ;</p></li>
+<li><p>l’unité archivistique correspond à une unité archivistique racine
+et, de fait, enregistre les règles de gestion déclarées dans le bloc
+ManagementMetadata du bordereau de transfert.</p></li>
+</ul>
+<p>Dans les autres cas, l’unité archivistique ne contiendra pas de règles
+enregistrées en base. Elles seront calculées automatiquement par la
+solution logicielle Vitam.</p>
+<p>Exemple d’enregistrement de règles de gel pour une unité archivistique :</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;_mgt&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;HoldRule&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;Rules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;Rule&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;HOL-00002&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;StartDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2000-01-01&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;HoldEndDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2010-01-01&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;HoldOwner&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Juge Dupont&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;HoldReason&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Gel du dossier dans le cadre de la procédure XYZ&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;HoldReassessingDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2005-01-01&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;PreventRearrangement&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;EndDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2010-01-01&quot;</span>
+<span class="w">                </span><span class="p">},</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;Rule&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;HOL-00003&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;StartDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2000-01-01&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;HoldOwner&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;M. Tartempion&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;HoldReason&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Gel du dossier dans le cadre de l’enquête parlementaire ABC&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;HoldReassessingDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2005-01-01&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;PreventRearrangement&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;EndDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2010-01-01&quot;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">]</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Le gel est l’une des catégories de règle qui peut figurer parmi
+l’ensemble de <em><strong>règles pour une unité archivistique</strong></em>, héritant
+des règles présentes dans le bloc ManagementMetadata et/ou dans le
+sous-bloc Management (_mgt – obligatoire, mais pouvant être
+vide)<a class="footnote-reference brackets" href="#id9" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>. Il est défini dans un sous-bloc dédié (HoldRule –
+facultatif).</p>
+<p>Cette catégorie peut contenir :</p>
+<ul>
+<li><p><strong>une à plusieurs règles</strong> particulières, énumérées dans un
+tableau (Rules – facultatif).</p>
+<p>Chacune des règles de ce tableau est elle-même composée de plusieurs
+informations :</p>
+<ul class="simple">
+<li><p>l’<strong>identifiant de la règle</strong>, correspondant à l’identifiant
+d’une des règles définies dans le référentiel des règles de
+gestion (Rule – obligatoire) ;</p></li>
+<li><p>la <strong>date de début du calcul de l’échéance</strong>
+(StartDate – facultatif) ;</p></li>
+</ul>
+</li>
+<li><ul class="simple">
+<li><p>la <strong>date de fin d’application de la règle</strong>
+(EndDate – facultatif). Cette valeur est issue
+d’un calcul réalisé par la solution logicielle Vitam. Celui-ci
+consiste en l’ajout du délai correspondant à la règle dans la
+collection FileRules à la valeur du champ startDate (EndDate =
+StartDate + Durée)<a class="footnote-reference brackets" href="#id10" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a> ;</p></li>
+</ul>
+</li>
+<li><p>des données spécifiques :</p>
+<ul class="simple">
+<li><p>la <strong>date de fin de gel</strong>, pour les règles de gel ne déclarant
+pas de durée générique (HoldEndDate –
+facultatif),</p></li>
+<li><p>le <strong>propriétaire</strong> de la règle de gel
+(Hold Owner – facultatif);</p></li>
+<li><p>la <strong>raison</strong> de la règle de gel
+(HoldReason – facultatif);</p></li>
+<li><p>la date de réévaluation de la règle de gel
+(Hold ReassessingDate – facultatif),</p></li>
+<li><p><strong>blocage du reclassement</strong> de l’archives gelée
+(PreventRearrangement – obligatoire), dont
+la valeur par défaut est « false »;</p></li>
+</ul>
+</li>
+<li><p>des <strong>paramètres de gestion d’héritage de règles</strong>
+(Inheritance<a class="footnote-reference brackets" href="#id11" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a> – facultatif), pouvant contenir les
+deux éléments suivants :</p>
+<ul class="simple">
+<li><p>booléen permettant de <strong>bloquer l’héritage de toutes les
+règles</strong> de gel de la même catégorie (PreventInheritance –
+obligatoire),</p></li>
+<li><p><strong>règles de gel qui ne doivent pas être héritées</strong> d’un parent,
+correspondant au champ « RefNonRuleId » du SEDA
+(PreventRulesId – obligatoire, mais pouvant être
+vide).</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="enregistrement-parametrable">
+<h4><span class="section-number">2.2.3.2. </span>Enregistrement paramétrable<a class="headerlink" href="#enregistrement-parametrable" title="Lien vers cette rubrique"></a></h4>
+<p>La solution logicielle Vitam enregistre également en base à la demande
+pour chaque unité archivistique les règles de gel applicables et les
+échéances de ces règles, que les règles soient déclarées par l’unité
+archivistique ou héritées d’unités archivistiques parentes.</p>
+<p><em><strong>Par défaut</strong></em>, est enregistrée la catégorie liée au gel (HoldRule)
+parmi l’<strong>ensemble de catégories de règle indexées par
+défaut</strong> pour une unité archivistique
+(computedInheritedRule – facultatif)</p>
+<p>Elle peut contenir :</p>
+<ul class="simple">
+<li><p>la <strong>date d’échéance la plus lointaine</strong> pour la catégorie de
+règle (MaxEndDate – facultatif)</p></li>
+<li><p>des données spécifiques à la catégorie « HoldRule » uniquement :</p>
+<ul>
+<li><p>la <strong>date de fin de gel</strong>, pour les règles de gel ne déclarant
+pas de durée générique (HoldEndDate –
+facultatif),</p></li>
+<li><p>le <strong>propriétaire</strong> de la règle de gel
+(Hold Owner – facultatif),</p></li>
+<li><p>la <strong>raison</strong> de la règle de gel
+(HoldReason – facultatif) ;</p></li>
+<li><p>la date de réévaluation de la règle de gel
+(Hold ReassessingDate – facultatif),</p></li>
+<li><p><strong>blocage du reclassement</strong> de l’archives gelée
+(PreventRearrangement – facultatif).</p></li>
+</ul>
+</li>
+</ul>
+<p>Exemple d’enregistrement par défaut des catégories de règle de gestion :</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;_computedInheritedRules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w"> </span><span class="nt">&quot;StorageRule&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w"> </span><span class="nt">&quot;FinalAction&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+
+<span class="w"> </span><span class="s2">&quot;Copy&quot;</span>
+
+<span class="w"> </span><span class="p">]</span>
+
+<span class="w"> </span><span class="p">},</span>
+
+<span class="w"> </span><span class="nt">&quot;AppraisalRule&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w"> </span><span class="nt">&quot;MaxEndDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2007-01-01&quot;</span><span class="p">,</span>
+
+<span class="w"> </span><span class="nt">&quot;FinalAction&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+
+<span class="w"> </span><span class="s2">&quot;Keep&quot;</span>
+
+<span class="w"> </span><span class="p">]</span>
+
+<span class="w"> </span><span class="p">},</span>
+
+<span class="w"> </span><span class="nt">&quot;DisseminationRule&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+
+<span class="w"> </span><span class="nt">&quot;AccessRule&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w"> </span><span class="nt">&quot;MaxEndDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2027-01-01&quot;</span>
+
+<span class="w"> </span><span class="p">},</span>
+
+<span class="w"> </span><span class="nt">&quot;ReuseRule&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w"> </span><span class="nt">&quot;MaxEndDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2047-01-01&quot;</span>
+
+<span class="w"> </span><span class="p">},</span>
+
+<span class="w"> </span><span class="nt">&quot;ClassificationRule&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w"> </span><span class="nt">&quot;MaxEndDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-06-03&quot;</span><span class="p">,</span>
+
+<span class="w"> </span><span class="nt">&quot;ClassificationAudience&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+
+<span class="w"> </span><span class="s2">&quot;Spécial France&quot;</span>
+
+<span class="w"> </span><span class="p">],</span>
+
+<span class="w"> </span><span class="nt">&quot;ClassificationLevel&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+
+<span class="w"> </span><span class="s2">&quot;Secret Défense&quot;</span>
+
+<span class="w"> </span><span class="p">],</span>
+
+<span class="w"> </span><span class="nt">&quot;ClassificationOwner&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+
+<span class="w"> </span><span class="s2">&quot;Emetteur0&quot;</span>
+
+<span class="w"> </span><span class="p">],</span>
+
+<span class="w"> </span><span class="nt">&quot;ClassificationReassessingDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+
+<span class="w"> </span><span class="s2">&quot;2016-06-03&quot;</span>
+
+<span class="w"> </span><span class="p">],</span>
+
+<span class="w"> </span><span class="nt">&quot;NeedReassessingAuthorization&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+
+<span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+
+<span class="w"> </span><span class="kc">true</span>
+
+<span class="w"> </span><span class="p">]</span>
+
+<span class="w"> </span><span class="p">},</span>
+
+<span class="w"> </span><span class="nt">&quot;HoldRule&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w"> </span><span class="nt">&quot;MaxEndDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2010-01-01&quot;</span>
+
+<span class="w"> </span><span class="p">},</span>
+
+<span class="w"> </span><span class="nt">&quot;indexationDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2019-07-17&quot;</span>
+
+<span class="w"> </span><span class="p">}</span>
+</pre></div>
+</div>
+<p>**Pour une configuration indexant en plus, pour chaque règle, les
+dates d’échéance maximales **(indexInheritedRulesWithRulesIdByTenant),
+est enregistrée la catégorie liée au gel (HoldRule) parmi l’ensemble
+de <strong>catégories de règle indexées pour une unité
+archivistique</strong> (computedInheritedRule –
+facultatif).</p>
+<p>Cette catégorie peut contenir :</p>
+<ul>
+<li><p>la <strong>date d’échéance la plus lointaine</strong> pour la catégorie de
+règle (MaxEndDate – facultatif)</p></li>
+<li><p>la <strong>date d’échéance la plus lointaine</strong> par règle de
+gestion (EndDates – facultatif).</p>
+<p>Ce champ contient <strong>une à plusieurs règles de gel</strong>,
+caractérisée(s) par son(leur) identifiant et ayant pour
+valeur associée la date de fin de validité la plus longue.</p>
+</li>
+<li><p>des données spécifiques à la règle de gel :</p>
+<ul class="simple">
+<li><p>la <strong>date de fin de gel</strong>, pour les règles de gel ne déclarant
+pas de durée générique (HoldEndDate –
+facultatif),</p></li>
+<li><p>le <strong>propriétaire</strong> de la règle de gel
+(Hold Owner – facultatif);</p></li>
+<li><p>la <strong>raison</strong> de la règle de gel
+(HoldReason – facultatif);</p></li>
+<li><p>la date de réévaluation de la règle de gel
+(Hold ReassessingDate – facultatif),</p></li>
+<li><p><strong>blocage du reclassement</strong> de l’archives gelée
+(<strong><strong>PreventRearrangement</strong></strong> – facultatif).****</p></li>
+</ul>
+</li>
+</ul>
+<p>Exemple d’enregistrement par défaut des catégories de règle de gestion :</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;_computedInheritedRules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;StorageRule&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;FinalAction&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="s2">&quot;Copy&quot;</span>
+<span class="w">            </span><span class="p">]</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;AppraisalRule&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;MaxEndDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2007-01-01&quot;</span><span class="p">,</span>
+<span class="w">           </span><span class="nt">&quot;EndDates&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;APP-00001&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2007-01-01&quot;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">            </span><span class="nt">&quot;FinalAction&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="s2">&quot;Keep&quot;</span>
+<span class="w">            </span><span class="p">]</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;DisseminationRule&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">        </span><span class="nt">&quot;AccessRule&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;MaxEndDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2027-01-01&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;EndDates&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;DIS-00001&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-01-01&quot;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;ReuseRule&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;MaxEndDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2047-01-01&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;EndDates&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;REU-00001&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-01-01&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;REU-00004&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2040-01-01&quot;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;HoldRule&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;MaxEndDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2010-01-01&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;EndDates&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;HOL-00002&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2010-01-01&quot;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;indexationDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2019-07-17&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Pour une configuration indexant toutes les catégories de
+règle, ainsi que leur contexte</strong>
+(indexInheritedRulesWithAPIV2OutputByTenant), sont enregistrés les
+éléments suivants :</p>
+<ul>
+<li><p>ensemble de <strong>catégories de règle indexées pour
+une unité archivistique, incluant leur contexte</strong>
+(inheritedRulesAPIOutput – facultatif).</p>
+<p>Il peut contenir les éléments suivants :</p>
+<ul>
+<li><p>des propriétés génériques (Global Properties –
+facultatif).</p>
+<p>Chacune d’elle est modélisée comme suit :</p>
+<ul class="simple">
+<li><p><strong>identifiant unique de l’unité archivistique</strong>, généré
+par la solution logicielle Vitam (UnitId –
+obligatoire),</p></li>
+<li><p><strong>identifiant du service producteur</strong>, correspondant au
+champ « Identifier » du référentiel des services agents
+(OriginatingAgency – obligatoire),</p></li>
+<li><p><strong>identifiant de l’(des) unité(s) archivistique(s)</strong> d’où
+provient la propriété (Paths – obligatoire),</p></li>
+<li><p><strong>nom de la propriété</strong> décrite (PropertyName –
+obligatoire, mais pouvant être vide),</p></li>
+<li><p><strong>valeur de la propriété</strong> décrite, pouvant varier en
+fonction de la propriété décrite (PropertyValue
+– obligatoire, mais pouvant être vide);</p></li>
+</ul>
+</li>
+<li><p>la règle de gel (HoldRule), parmi une liste de catégories de
+règles de gestion appliquées à cette unité archivistique
+(facultatif).</p></li>
+</ul>
+</li>
+</ul>
+<p>Cette catégorie peut contenir :</p>
+<ul>
+<li><p>une à plusieurs règles de gel (Rules –
+obligatoire, mais pouvant être vide).</p>
+<p><strong>Chacune d’elle est modélisée comme suit :</strong></p>
+<ul class="simple">
+<li><ul>
+<li><p><strong>identifiant unique de l’unité archivistique</strong>, généré
+par la solution logicielle Vitam (UnitId –
+obligatoire),</p></li>
+<li><p><strong>identifiant du service producteur</strong>, correspondant au
+champ « Identifier » du référentiel des services agents
+(OriginatingAgency – obligatoire),</p></li>
+<li><p><strong>identifiant de l’(des) unité(s) archivistique(s)</strong> d’où
+provient la règle de gestion (Paths –
+obligatoire),</p></li>
+<li><p><strong>identifiant de la règle</strong>, correspondant au champ
+« RuleId » du référentiel des règles de gestion****
+(Rule – obligatoire, mais pouvant être
+vide),</p></li>
+<li><p><strong>date de début</strong> du calcul de l’échéance (StartDate –
+facultatif),</p></li>
+<li><p><strong>date de fin</strong> d’application de la règle (EndDate –
+facultatif) ;</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>des propriétés propres à la règle décrite (Properties –
+obligatoire, mais pouvant être vide).</p>
+<p>Chacune d’elle est modélisée comme suit :</p>
+<ul class="simple">
+<li><ul>
+<li><p><strong>identifiant unique de l’unité archivistique</strong>, généré
+par la solution logicielle Vitam (UnitId –
+obligatoire),</p></li>
+<li><p><strong>identifiant du service producteur</strong>, correspondant au
+champ « Identifier » du référentiel des services agents
+(OriginatingAgency – obligatoire),</p></li>
+<li><p><strong>identifiant de l’(des) unité(s) archivistique(s)</strong> d’où
+provient la propriété (Paths – obligatoire),</p></li>
+<li><p><strong>nom de la propriété</strong> décrite (PropertyName –
+obligatoire, mais pouvant être vide),</p></li>
+<li><p><strong>valeur de la propriété</strong> décrite, pouvant varier en
+fonction de la propriété décrite (PropertyValue
+– obligatoire, mais pouvant être vide).</p></li>
+</ul>
+</li>
+</ul>
+<p>Ces propriétés sont spécifiques à la catégorie « HoldRule »
+uniquement :</p>
+</li>
+<li><ul class="simple">
+<li><ul>
+<li><p>la <strong>date de fin de gel</strong>, pour les règles de gel ne
+déclarant pas de durée générique (HoldEndDate –
+facultatif),</p></li>
+<li><p>le <strong>propriétaire</strong> de la règle de gel
+(HoldOwner – facultatif) ;</p></li>
+<li><p>la <strong>raison</strong> de la règle de gel
+(HoldReason – facultatif) ;</p></li>
+<li><p>la date de réévaluation de la règle de gel
+(HoldReassessingDate – facultatif),</p></li>
+<li><p><strong>blocage du reclassement</strong> de l’archives gelée
+(PreventRearrangement – facultatif).</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Exemple d’enregistrement par défaut des catégories de règle de gestion :</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;inheritedRulesAPIOutput&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;GlobalProperties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;UnitId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aeaqaaaaaehi7u6oabuokalqki5qvziaaabq&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;OriginatingAgency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RATP&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;Paths&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                        </span><span class="p">[</span>
+<span class="w">                            </span><span class="s2">&quot;aeaqaaaaaehi7u6oabuokalqki5qv2aaaaaq&quot;</span><span class="p">,</span>
+<span class="w">                            </span><span class="s2">&quot;aeaqaaaaaehi7u6oabuokalqki5qvzyaaaba&quot;</span><span class="p">,</span>
+<span class="w">                            </span><span class="s2">&quot;aeaqaaaaaehi7u6oabuokalqki5qvziaaabq&quot;</span>
+<span class="w">                        </span><span class="p">]</span>
+<span class="w">                    </span><span class="p">],</span>
+<span class="w">                    </span><span class="nt">&quot;PropertyName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NeedAuthorization&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;PropertyValue&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;true&quot;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">],</span>
+<span class="w">            </span><span class="nt">&quot;StorageRule&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;Rules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">                </span><span class="nt">&quot;Properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;UnitId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aeaqaaaaaehi7u6oabuokalqki5qv2aaaaaq&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;OriginatingAgency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RATP&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;Paths&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                            </span><span class="p">[</span>
+<span class="w">                                </span><span class="s2">&quot;aeaqaaaaaehi7u6oabuokalqki5qv2aaaaaq&quot;</span>
+<span class="w">                            </span><span class="p">]</span>
+<span class="w">                        </span><span class="p">],</span>
+<span class="w">                        </span><span class="nt">&quot;PropertyName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FinalAction&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;PropertyValue&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Copy&quot;</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                </span><span class="p">]</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;AppraisalRule&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;Rules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">                </span><span class="nt">&quot;Properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;UnitId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aeaqaaaaaehi7u6oabuokalqki5qv2aaaada&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;OriginatingAgency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RATP&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;Paths&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                            </span><span class="p">[</span>
+<span class="w">                                </span><span class="s2">&quot;aeaqaaaaaehi7u6oabuokalqki5qv2aaaaaq&quot;</span><span class="p">,</span>
+<span class="w">                                </span><span class="s2">&quot;aeaqaaaaaehi7u6oabuokalqki5qv2iaaabq&quot;</span><span class="p">,</span>
+<span class="w">                                </span><span class="s2">&quot;aeaqaaaaaehi7u6oabuokalqki5qv2aaaaeq&quot;</span><span class="p">,</span>
+<span class="w">                                </span><span class="s2">&quot;aeaqaaaaaehi7u6oabuokalqki5qv2aaaada&quot;</span>
+<span class="w">                            </span><span class="p">]</span>
+<span class="w">                        </span><span class="p">],</span>
+<span class="w">                        </span><span class="nt">&quot;PropertyName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FinalAction&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;PropertyValue&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Keep&quot;</span>
+<span class="w">                    </span><span class="p">},</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;UnitId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aeaqaaaaaehi7u6oabuokalqki5qvyaaaaba&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;OriginatingAgency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RATP&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;Paths&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                            </span><span class="p">[</span>
+<span class="w">                                </span><span class="s2">&quot;aeaqaaaaaehi7u6oabuokalqki5qv2aaaaaq&quot;</span><span class="p">,</span>
+<span class="w">                                </span><span class="s2">&quot;aeaqaaaaaehi7u6oabuokalqki5qvzyaaaba&quot;</span><span class="p">,</span>
+<span class="w">                                </span><span class="s2">&quot;aeaqaaaaaehi7u6oabuokalqki5qvziaaabq&quot;</span><span class="p">,</span>
+<span class="w">                                </span><span class="s2">&quot;aeaqaaaaaehi7u6oabuokalqki5qvyaaaaba&quot;</span>
+<span class="w">                            </span><span class="p">]</span>
+<span class="w">                        </span><span class="p">],</span>
+<span class="w">                        </span><span class="nt">&quot;PropertyName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FinalAction&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;PropertyValue&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Keep&quot;</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                </span><span class="p">]</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;DisseminationRule&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;Rules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">                </span><span class="nt">&quot;Properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;ReuseRule&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;Rules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;UnitId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aeaqaaaaaehi7u6oabuokalqki5qvzyaaaba&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;OriginatingAgency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RATP&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;Paths&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                            </span><span class="p">[</span>
+<span class="w">                                </span><span class="s2">&quot;aeaqaaaaaehi7u6oabuokalqki5qv2aaaaaq&quot;</span><span class="p">,</span>
+<span class="w">                                </span><span class="s2">&quot;aeaqaaaaaehi7u6oabuokalqki5qvzyaaaba&quot;</span>
+<span class="w">                            </span><span class="p">]</span>
+<span class="w">                        </span><span class="p">],</span>
+<span class="w">                        </span><span class="nt">&quot;Rule&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;REU-00001&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;StartDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2000-01-01&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;EndDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2010-01-01&quot;</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                </span><span class="p">],</span>
+<span class="w">                </span><span class="nt">&quot;Properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;ClassificationRule&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;Rules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">                </span><span class="nt">&quot;Properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;AccessRule&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;Rules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;UnitId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aeaqaaaaaehi7u6oabuokalqki5qvyaaaaba&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;OriginatingAgency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RATP&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;Paths&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                            </span><span class="p">[</span>
+<span class="w">                                </span><span class="s2">&quot;aeaqaaaaaehi7u6oabuokalqki5qv2aaaaaq&quot;</span><span class="p">,</span>
+<span class="w">                                </span><span class="s2">&quot;aeaqaaaaaehi7u6oabuokalqki5qvzyaaaba&quot;</span><span class="p">,</span>
+<span class="w">                                </span><span class="s2">&quot;aeaqaaaaaehi7u6oabuokalqki5qvziaaabq&quot;</span><span class="p">,</span>
+<span class="w">                                </span><span class="s2">&quot;aeaqaaaaaehi7u6oabuokalqki5qvyaaaaba&quot;</span>
+<span class="w">                            </span><span class="p">]</span>
+<span class="w">                        </span><span class="p">],</span>
+<span class="w">                        </span><span class="nt">&quot;Rule&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ACC-00002&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;StartDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2000-01-01&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;EndDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-01-01&quot;</span>
+<span class="w">                    </span><span class="p">},</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;UnitId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aeaqaaaaaehi7u6oabuokalqki5qv2aaaaeq&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;OriginatingAgency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RATP&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;Paths&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                            </span><span class="p">[</span>
+<span class="w">                                </span><span class="s2">&quot;aeaqaaaaaehi7u6oabuokalqki5qv2aaaaaq&quot;</span><span class="p">,</span>
+<span class="w">                                </span><span class="s2">&quot;aeaqaaaaaehi7u6oabuokalqki5qv2iaaabq&quot;</span><span class="p">,</span>
+<span class="w">                                </span><span class="s2">&quot;aeaqaaaaaehi7u6oabuokalqki5qv2aaaaeq&quot;</span>
+<span class="w">                            </span><span class="p">]</span>
+<span class="w">                        </span><span class="p">],</span>
+<span class="w">                        </span><span class="nt">&quot;Rule&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ACC-00002&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;StartDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2002-01-01&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;EndDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2027-01-01&quot;</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                </span><span class="p">],</span>
+<span class="w">                </span><span class="nt">&quot;Properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;HoldRule&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;Rules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                    </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;UnitId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aeaqaaaaaehkzzw7ab6psalz6x2weqqaaaca&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;OriginatingAgency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RATP&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;Paths&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                            </span><span class="p">[</span>
+<span class="w">                                </span><span class="s2">&quot;aeaqaaaaaehkzzw7ab6psalz6x2weqqaaaca&quot;</span>
+<span class="w">                            </span><span class="p">]</span>
+<span class="w">                        </span><span class="p">],</span>
+<span class="w">                        </span><span class="nt">&quot;Rule&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;HOL-00002&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;StartDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2000-01-01&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;PreventRearrangement&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;HoldEndDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2010-01-01&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;HoldOwner&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Owner&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;HoldReassessingDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2005-01-01&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;EndDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2010-01-01&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;HoldReason&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Reason&quot;</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                </span><span class="p">],</span>
+<span class="w">                </span><span class="nt">&quot;Properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;indexationDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2020-02-17&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;NeedAuthorization&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="kc">true</span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="mecanismes-mis-en-oeuvre-dans-la-solution-logicielle-vitam">
+<h2><span class="section-number">2.3. </span>Mécanismes mis en œuvre dans la solution logicielle Vitam<a class="headerlink" href="#mecanismes-mis-en-oeuvre-dans-la-solution-logicielle-vitam" title="Lien vers cette rubrique"></a></h2>
+<p>La solution logicielle Vitam offre à un service d’archives plusieurs
+fonctionnalités lui permettant de gérer les règles de gel associées aux
+archives :</p>
+<ul class="simple">
+<li><p>la <strong>configuration</strong> des règles de gel au niveau de la plate-forme ;</p></li>
+<li><p>l’**administration des règles de gel dans le référentiel **de règles
+de gestion ;</p></li>
+<li><p>en entrée du système, le <strong>calcul des échéances</strong> associées aux
+unités archivistiques gelées et <strong>l’indexation des métadonnées</strong>
+liées au gel et associées à ces unités archivistiques ;</p></li>
+<li><p>en gestion des archives existantes :</p>
+<ul>
+<li><p>le <strong>gel d’archives, visant à interdire leur élimination et, le
+cas échéant, leur reclassement,</strong> et l’indexation des règles de
+gel et échéances héritées par les unités archivistiques ;</p></li>
+<li><p>le <strong>dégel</strong> d’archives ;</p></li>
+<li><p>à la demande, le calcul des échéances applicables aux unités
+archivistiques gelées et l’<strong>indexation</strong> du résultat dans un
+champ spécifique permettant des recherches et des filtres sur
+les résultats ;</p></li>
+</ul>
+</li>
+<li><p>en accès, le <strong>calcul des échéances</strong> pour toutes les unités
+archivistiques conservées dans le système, ainsi qu’un <strong>filtre sur
+les catégories de règles échues</strong> au moyen d’un contrat d’accès.</p></li>
+</ul>
+<p>Les fonctionnalités ont été conçues et réalisées pour prendre en compte
+toutes les situations susceptibles d’être rencontrées par les services
+d’archives<a class="footnote-reference brackets" href="#id12" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a>, notamment en termes de structuration des archives prises
+en charge, avec la possibilité d’avoir :</p>
+<ul class="simple">
+<li><p>**0 à n unités archivistiques <strong>à la racine du bloc
+DescriptionMetadata du message de transfert d’archives
+(ArchiveTransfer)</strong> **;</p></li>
+<li><p>**0 à n parents **pour une unité archivistique ;</p></li>
+<li><p>**0 à n enfants **pour une unité archivistique.</p></li>
+</ul>
+<p>Le présent document détaille uniquement les mécanismes permettant de
+<strong>geler et dégeler</strong> une archives. Les autres fonctionnalités sont
+décrites dans la documentation <em>Règles de gestion</em>.</p>
+<section id="realisation-du-gel-darchives">
+<h3><span class="section-number">2.3.1. </span>Réalisation du gel d’archives<a class="headerlink" href="#realisation-du-gel-darchives" title="Lien vers cette rubrique"></a></h3>
+<p>Le gel d’archives s’effectue au moyen d’une opération de mise à jour en
+masse effectuée sur un lot d’archives préalablement sélectionnées. Il a
+pour impact d’interdire l’élimination des archives gelées et, de manière
+optionnelle, de bloquer leur reclassement.</p>
+<section id="action-de-gel">
+<h4><span class="section-number">2.3.1.1. </span>Action de gel<a class="headerlink" href="#action-de-gel" title="Lien vers cette rubrique"></a></h4>
+<p>La solution logicielle permet de geler un lot d’archives au moyen des
+API. Plusieurs critères de constitution d’un lot d’archives à geler sont
+utilisables : identifiant d’une opération d’entrée, unité(s)
+archivistique(s) précise(s), ensemble des unités archivistiques
+dépendant d’une unité archivistique précise, etc.</p>
+<p><strong>Point d’attention :</strong></p>
+<ul class="simple">
+<li><p>La sélection est réalisée en fonction des droits octroyés par le
+contrat d’accès utilisé.</p></li>
+<li><p>La solution logicielle Vitam ne contrôle pas si le lot contient des
+archives éliminables ou à conserver.</p></li>
+</ul>
+<p>L’action de gel d’archives s’effectue au moyen de l’opération de mise à
+jour en masse des règles de gestion. Elle consiste en l’ajout d’une à
+plusieurs règles de gel sur le lot d’archives sélectionnées :</p>
+<ul class="simple">
+<li><p>Si on ajoute une règle de gel définie dans le référentiel sans durée
+ni mesure, l’unité archivistique contiendra une règle de gel sans
+date de fin calculée par la solution logicielle Vitam ;</p></li>
+<li><p>Si on ajoute une règle de gel définie dans le référentiel avec durée
+et mesure, en plus d’une date de début, la solution logicielle Vitam
+calculera automatiquement la date de dégel des archives.</p></li>
+</ul>
+<p>Il est également possible d’ajouter des informations liées à l’émetteur
+et à la raison du gel du lot d’archives, une date de révision de la
+règle, mais aussi de bloquer tout reclassement du lot d’archives.</p>
+<p><strong>Point d’attention :</strong><br />
+Il n’est pas possible d’ajouter une règle de
+gel au moyen d’une opération de mise à jour unitaire de règle de
+gestion. Ce service fourni par la solution logicielle Vitam est en cours
+de dépréciation.</p>
+<p>L’opération est journalisée dans le journal des opérations. Son statut à
+l’issue de la mise en œuvre du gel pourra être :</p>
+<ul class="simple">
+<li><p>succès : toutes les unités archivistiques soumises ont été gelées ;</p></li>
+<li><p>erreur : les paramètres de la requête d’ajout d’une règle de gel
+sont incohérents par rapport au référentiel des règles de gestion,
+par exemple : ils contiennent une date de fin (HoldEndDate) alors
+que la règle de gel déclarée dans le référentiel déclare une durée
+et une mesure ;</p></li>
+<li><p>fatal : une erreur technique s’est produite lors du processus de
+mise en œuvre de l’opération de gel.</p></li>
+</ul>
+<p>Elle donne lieu à un enregistrement dans le journal du cycle de vie de
+l’(des) unité(s) archivistique(s) ayant fait l’objet d’un gel.</p>
+<p><strong>Point d’attention :</strong><br />
+L’information n’est enregistrée que dans le
+journal du cycle de vie de l’(des) unité(s) archivistique(s) racine(s).</p>
+</section>
+<section id="impacts-du-gel-sur-les-traitements-de-masse">
+<h4><span class="section-number">2.3.1.2. </span>Impacts du gel sur les traitements de masse<a class="headerlink" href="#impacts-du-gel-sur-les-traitements-de-masse" title="Lien vers cette rubrique"></a></h4>
+<p><strong>Impact sur le processus d’élimination</strong></p>
+<p>Une archives gelée ou héritant d’une règle de gel** ne peut pas être
+éliminée** du système si la date de fin calculée de gel ou la date de
+fin renseignée (HoldEndDate) n’est pas arrivée à échéance.</p>
+<p>Il est néanmoins possible d’intégrer une archives gelée dans :</p>
+<ul class="simple">
+<li><p>le processus d’<strong>analyse</strong> d’élimination. Le résultat de cette
+analyse, indexé dans les métadonnées des unités archivistiques,
+indiquera un conflit en raison du caractère gelé de l’archives
+(statut CONFLICT, BLOCKED_BY_HOLD_RULE) :</p></li>
+</ul>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nt">&quot;_elimination&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;OperationId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aeeaaaaaa2hfba5wabzviallw7xjlsqaaaaq&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;GlobalStatus&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CONFLICT&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;DestroyableOriginatingAgencies&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">            </span><span class="nt">&quot;NonDestroyableOriginatingAgencies&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">            </span><span class="nt">&quot;ExtendedInfo&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;ExtendedInfoType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BLOCKED_BY_HOLD_RULE&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;ExtendedInfoDetails&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;HoldRuleIds&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                            </span><span class="s2">&quot;HOL-00001&quot;</span>
+<span class="w">                        </span><span class="p">]</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>le processus d’<strong>élimination</strong>. L’opération sera alors en
+avertissement et signalera le statut de l’unité archivistique gelée
+comme ne pouvant être déterminé (Global Status : CONFLICT), même si
+sa durée d’utilité administrative est arrivée à échéance et son sort
+final est égal à « Destroy »<a class="footnote-reference brackets" href="#id13" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a>.</p></li>
+</ul>
+<p><em><strong>Impact sur le processus de réorganisation d’arborescence</strong></em></p>
+<p>La solution logicielle Vitam permet de bloquer tout reclassement
+d’archives gelées ou héritant d’une règle de gel de manière
+<strong>optionnelle</strong>. Par défaut, ce blocage n’est pas activé.</p>
+<p>Ce blocage est rendu possible par l’ajout, lors de l’opération de gel
+d’archives, d’un paramètre l’activant. La requête doit en effet contenir
+en plus de la règle de gel le blocage du reclassement avec pour valeur
+« true » (PreventRearrangement).</p>
+<p>Lors d’une réorganisation d’arborescence d’au moins une archives gelée
+contenant un blocage de reclassement actif, l’opération sera en échec à
+la tâche de contrôle du blocage de reclassification des unités
+archivistiques par des règles de gel.</p>
+<p>La réorganisation d’arborescence reste possible dans les cas suivants :</p>
+<ul class="simple">
+<li><p>l’archives gelée ne dispose pas d’un blocage de reclassement actif.
+Le paramètre a pour valeur « false » ;</p></li>
+<li><p>l’archives gelée, pouvant disposer d’un blocage actif, a une date de
+fin, calculée ou renseignée, arrivée à échéance.</p></li>
+</ul>
+<p><strong>Point d’attention :</strong>: il est recommandé d’activer le blocage de tout reclassement d’archives gelées.
+En effet, activé, ce paramètre permet d’éviter de dégeler des archives héritant d’une règle de gel à la suite d’une réorganisation d’arborescence.</p>
+</section>
+</section>
+<section id="realisation-du-degel-darchives">
+<h3><span class="section-number">2.3.2. </span>Réalisation du dégel d’archives<a class="headerlink" href="#realisation-du-degel-darchives" title="Lien vers cette rubrique"></a></h3>
+<p>La solution logicielle Vitam permet de dégeler des archives de plusieurs
+manières. Cette action permet de rétablir le cycle de vie attendu des
+archives.</p>
+<section id="action-de-degel">
+<h4><span class="section-number">2.3.2.1. </span>Action de dégel<a class="headerlink" href="#action-de-degel" title="Lien vers cette rubrique"></a></h4>
+<p><em><strong>Dégel manuel</strong></em></p>
+<p>Que la règle de gel contienne une date de fin calculée ou renseignée
+manuellement, la solution logicielle Vitam permet de dégeler un lot
+d’archives gelées au moyen des API, que ces archives déclarent ou
+héritent d’une règle avec date de fin calculée ou renseignée
+manuellement, que la règle soit arrivée à échéance ou non. Plusieurs
+critères de constitution d’un lot d’archives à dégeler sont
+utilisables : unité(s) archivistique(s) contenant ou héritant d’une
+règle de gel, unité(s) archivistique(s) contenant ou héritant d’une
+règle de gel arrivée à échéance, date de réévaluation du caractère gelé
+d’unité(s) archivistique(s), etc.</p>
+<p><em><strong>Point d’attention :</strong></em> La sélection est réalisée en fonction des
+droits octroyés par le contrat d’accès utilisé.</p>
+<p>L’action de dégel d’archives s’effectue au moyen de l’opération de mise
+à jour en masse des règles de gestion. Elle consiste en la suppression
+d’une à plusieurs règles de gel sur le lot d’archives sélectionnées.</p>
+<p><em><strong>Point d’attention :</strong></em> Il n’est pas possible de supprimer une règle
+de gel au moyen d’une opération de mise à jour unitaire de règle de
+gestion. Ce service fourni par la solution logicielle Vitam est en cours
+de dépréciation.</p>
+<p>L’opération est journalisée dans le journal des opérations.</p>
+<p>Elle donne lieu à un enregistrement dans le journal du cycle de vie de
+l’(des) unité(s) archivistique(s) ayant fait l’objet d’un gel.</p>
+<p><em><strong>Point d’attention :</strong></em> L’information n’est enregistrée que dans le
+journal du cycle de vie de l’(des) unité(s) archivistique(s) racine(s).</p>
+<p><em><strong>Dégel automatisé</strong></em></p>
+<p>La solution logicielle Vitam rend possible le dégel automatique
+d’archives dans deux cas :</p>
+<ul class="simple">
+<li><p>quand l’archives gelée contient une date de fin calculée par le
+système, l’archives portant ou héritant de la règle est
+automatiquement dégelée lorsque la date de fin est arrivée à
+échéance ;</p></li>
+<li><p>quand l’archives gelée ne contient pas de date de fin calculée, il
+est possible d’associer au moment de l’ajout de la règle de gel ou a
+posteriori une date de fin de gel (HoldEndDate). Cette archives est
+automatiquement dégelée dès que cette date de fin renseignée
+manuellement est arrivée à échéance.</p></li>
+</ul>
+<p>Aucune opération n’est alors réalisée, ni journalisée.</p>
+<p><em><strong>Point d’attention :</strong></em> il est recommandé d’utiliser cette option de
+dégel, si on souhaite pouvoir conserver traces dans les métadonnées des
+unités archivistiques que certaines ont été gelées durant une certaine
+période.</p>
+</section>
+<section id="impacts-du-degel-sur-les-traitements-de-masse">
+<h4><span class="section-number">2.3.2.2. </span>Impacts du dégel sur les traitements de masse<a class="headerlink" href="#impacts-du-degel-sur-les-traitements-de-masse" title="Lien vers cette rubrique"></a></h4>
+<p>Une archives dégelée à la suite d’une suppression de sa règle de gel ou
+en raison de sa date de fin arrivée à échéance peut à nouveau faire
+l’objet de traitements de masse :</p>
+<ul class="simple">
+<li><p>elle peut être analysée, puis éliminée, si aucun autre conflit n’est
+détecté et si sa durée d’utilité administrative est arrivée à
+échéance et si son sort final est égal à « Destroy » ;</p></li>
+<li><p>elle peut être déplacée dans les arborescences sans aucun blocage.</p></li>
+</ul>
+<p>Elle poursuit à nouveau son cycle de vie.</p>
+</section>
+</section>
+</section>
+<section id="conseils-de-mise-en-oeuvre">
+<h2><span class="section-number">2.4. </span>Conseils de mise en œuvre<a class="headerlink" href="#conseils-de-mise-en-oeuvre" title="Lien vers cette rubrique"></a></h2>
+<p>À l’issue de la réalisation de fonctionnalités concernant les règles de
+gel associées aux unités archivistiques, l’équipe projet Vitam est en
+mesure de fournir quelques recommandations de mise en œuvre<a class="footnote-reference brackets" href="#id14" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></a>.</p>
+<section id="comment-integrer-des-regles-de-gel-dans-le-referentiel-des-regles-de-gestion">
+<h3><span class="section-number">2.4.1. </span>Comment intégrer des règles de gel dans le référentiel des règles de gestion ?<a class="headerlink" href="#comment-integrer-des-regles-de-gel-dans-le-referentiel-des-regles-de-gestion" title="Lien vers cette rubrique"></a></h3>
+<p>Il est obligatoire de déclarer des règles de gel dans le référentiel des
+règles de gestion pour pouvoir geler des archives.</p>
+<p>Le référentiel peut être alimenté :</p>
+<ul class="simple">
+<li><p>d’une manière très générique, en se focalisant uniquement sur les
+durées associées aux règles. À titre d’exemple, il est possible de
+déclarer des règles correspondant à des durées d’1 an, de 2 ans, de
+3 ans, etc. Dans ce cas, la règle pourra être utilisée pour
+différentes catégories de dossiers gelés ;</p></li>
+<li><p>d’une manière plus spécifique, en se focalisant sur les spécificités
+de chaque catégorie de dossier gelé. À titre d’exemple, on pourra
+distinguer la règle applicable à des scellés judiciaires de la règle
+applicable lors d’audits comptables et/ou financiers.</p></li>
+</ul>
+<p>La première solution présente l’avantage de limiter le
+nombre de règles à administrer ; la seconde, de permettre d’effectuer
+des mises à jour de règles plus ciblées.</p>
+<p>Par ailleurs, il est possible de déclarer des règles de gel :</p>
+<ul class="simple">
+<li><p>avec durée et mesure, comme pour les autres règles de gestion ;</p></li>
+<li><p>sans durée et mesure, si on n’est pas en capacité de préciser ces
+éléments.</p></li>
+</ul>
+</section>
+<section id="quand-et-comment-bloquer-le-reclassement-d-archives-gelees">
+<h3><span class="section-number">2.4.2. </span>Quand et comment bloquer le reclassement d’archives gelées ?<a class="headerlink" href="#quand-et-comment-bloquer-le-reclassement-d-archives-gelees" title="Lien vers cette rubrique"></a></h3>
+<p>Il est possible de bloquer le reclassement d’archives portant ou
+héritant d’une règle de gel par l’utilisation du paramètre interdisant
+la réorganisation d’arborescences des archives gelées
+(PreventRearrangement), en lui attribuant une valeur égale à « true ».</p>
+<p>Il est fortement recommandé d’utiliser systématiquement ce paramètre et
+de l’activer, malgré son caractère facultatif.</p>
+<p>S’il n’est pas utilisé (valeur « false » par défaut, autorisant les
+reclassements d’archives) ou activé (par la valeur « true »), il est en
+effet possible de dégeler des archives héritant d’une règle de gel en
+les déplaçant dans une arborescence ne portant pas de règle de gel.</p>
+<p>### Comment geler des archives ?</p>
+<p>Il est possible de geler des archives par l’ajout d’une règle de gel.
+Lors de cette opération d’ajout de métadonnées liées à une règle de gel,
+il est :</p>
+<ul class="simple">
+<li><p>obligatoire de signaler un identifiant de règle de gel,</p></li>
+<li><p>fortement recommandé de :</p>
+<ul>
+<li><p>associer à cet identifiant une date de début,</p></li>
+<li><p>déclarer un blocage de reclassement (PreventRearrangement avec
+une valeur égale à « true »),</p></li>
+</ul>
+</li>
+<li><p>conseillé, dans le cas d’une règle ne déclarant ni durée ni mesure,
+d’indiquer une date de réévaluation de la règle de gel.</p></li>
+</ul>
+</section>
+</section>
+<section id="annexes">
+<h2><span class="section-number">2.5. </span>Annexes<a class="headerlink" href="#annexes" title="Lien vers cette rubrique"></a></h2>
+<section id="annexe-1-exemple-de-message-archivetransfer-mettant-en-oeuvre-les-differentes-possibilites-dutilisation-des-regles-de-gestion">
+<h3><span class="section-number">2.5.1. </span>Annexe 1 : Exemple de message ArchiveTransfer mettant en œuvre les différentes possibilités d’utilisation des règles de gestion<a class="headerlink" href="#annexe-1-exemple-de-message-archivetransfer-mettant-en-oeuvre-les-differentes-possibilites-dutilisation-des-regles-de-gestion" title="Lien vers cette rubrique"></a></h3>
+<p><strong>Nota bene</strong> : le cas présenté ci-dessous est un exemple
+fictif qui vise simplement à vérifier la bonne mise en œuvre des
+mécanismes relatifs aux règles de gel dans la solution logicielle Vitam.</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;ArchiveTransfer</span><span class="w"> </span><span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+<span class="w"> </span><span class="na">xsi:schemaLocation=</span><span class="s">&quot;fr:gouv:culture:archivesdefrance:seda:v2.1 seda-2.1-main.xsd&quot;</span>
+<span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;fr:gouv:culture:archivesdefrance:seda:v2.1&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Comment&gt;</span>Test<span class="w"> </span>SIP<span class="w"> </span>for<span class="w"> </span>HoldRules<span class="nt">&lt;/Comment&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Date&gt;</span>2016-10-12T16:28:40<span class="nt">&lt;/Date&gt;</span>
+<span class="w">    </span><span class="nt">&lt;MessageIdentifier&gt;</span>20161012002<span class="nt">&lt;/MessageIdentifier&gt;</span>
+<span class="w">    </span><span class="nt">&lt;ArchivalAgreement&gt;</span>IC-000001<span class="nt">&lt;/ArchivalAgreement&gt;</span>
+<span class="w">    </span><span class="nt">&lt;CodeListVersions&gt;</span>
+<span class="w">        </span><span class="nt">&lt;ReplyCodeListVersion&gt;</span>ReplyCodeListVersion0<span class="nt">&lt;/ReplyCodeListVersion&gt;</span>
+<span class="w">        </span><span class="nt">&lt;MessageDigestAlgorithmCodeListVersion&gt;</span>MessageDigestAlgorithmCodeListVersion0<span class="nt">&lt;/MessageDigestAlgorithmCodeListVersion&gt;</span>
+<span class="w">        </span><span class="nt">&lt;MimeTypeCodeListVersion&gt;</span>MimeTypeCodeListVersion0<span class="nt">&lt;/MimeTypeCodeListVersion&gt;</span>
+<span class="w">        </span><span class="nt">&lt;EncodingCodeListVersion&gt;</span>EncodingCodeListVersion0<span class="nt">&lt;/EncodingCodeListVersion&gt;</span>
+<span class="w">        </span><span class="nt">&lt;FileFormatCodeListVersion&gt;</span>FileFormatCodeListVersion0<span class="nt">&lt;/FileFormatCodeListVersion&gt;</span>
+<span class="w">        </span><span class="nt">&lt;CompressionAlgorithmCodeListVersion&gt;</span>CompressionAlgorithmCodeListVersion0<span class="nt">&lt;/CompressionAlgorithmCodeListVersion&gt;</span>
+<span class="w">        </span><span class="nt">&lt;DataObjectVersionCodeListVersion&gt;</span>DataObjectVersionCodeListVersion0<span class="nt">&lt;/DataObjectVersionCodeListVersion&gt;</span>
+<span class="w">        </span><span class="nt">&lt;StorageRuleCodeListVersion&gt;</span>StorageRuleCodeListVersion0<span class="nt">&lt;/StorageRuleCodeListVersion&gt;</span>
+<span class="w">        </span><span class="nt">&lt;AppraisalRuleCodeListVersion&gt;</span>AppraisalRuleCodeListVersion0<span class="nt">&lt;/AppraisalRuleCodeListVersion&gt;</span>
+<span class="w">        </span><span class="nt">&lt;AccessRuleCodeListVersion&gt;</span>AccessRuleCodeListVersion0<span class="nt">&lt;/AccessRuleCodeListVersion&gt;</span>
+<span class="w">        </span><span class="nt">&lt;DisseminationRuleCodeListVersion&gt;</span>DisseminationRuleCodeListVersion0<span class="nt">&lt;/DisseminationRuleCodeListVersion&gt;</span>
+<span class="w">        </span><span class="nt">&lt;ReuseRuleCodeListVersion&gt;</span>ReuseRuleCodeListVersion0<span class="nt">&lt;/ReuseRuleCodeListVersion&gt;</span>
+<span class="w">        </span><span class="nt">&lt;ClassificationRuleCodeListVersion&gt;</span>ClassificationRuleCodeListVersion0<span class="nt">&lt;/ClassificationRuleCodeListVersion&gt;</span>
+<span class="w">        </span><span class="nt">&lt;AuthorizationReasonCodeListVersion&gt;</span>AuthorizationReasonCodeListVersion0<span class="nt">&lt;/AuthorizationReasonCodeListVersion&gt;</span>
+<span class="w">        </span><span class="nt">&lt;RelationshipCodeListVersion&gt;</span>RelationshipCodeListVersion0<span class="nt">&lt;/RelationshipCodeListVersion&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/CodeListVersions&gt;</span>
+<span class="w">    </span><span class="nt">&lt;DataObjectPackage&gt;</span>
+<span class="w">        </span><span class="nt">&lt;DescriptiveMetadata&gt;</span>
+<span class="w">            </span><span class="nt">&lt;ArchiveUnit</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;ID01&quot;</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;Content&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;DescriptionLevel&gt;</span>Item<span class="nt">&lt;/DescriptionLevel&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;Title&gt;</span>Unit1<span class="nt">&lt;/Title&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;Description&gt;</span>Unit1<span class="w"> </span>-<span class="w"> </span>Sans<span class="w"> </span>HoldRules<span class="nt">&lt;/Description&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/Content&gt;</span>
+<span class="w">                </span><span class="nt">&lt;ArchiveUnit</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;ID_REF_1&quot;</span><span class="nt">&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;ArchiveUnitRefId&gt;</span>ID02<span class="nt">&lt;/ArchiveUnitRefId&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/ArchiveUnit&gt;</span>
+<span class="w">                </span><span class="nt">&lt;ArchiveUnit</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;ID_REF_2&quot;</span><span class="nt">&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;ArchiveUnitRefId&gt;</span>ID03<span class="nt">&lt;/ArchiveUnitRefId&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/ArchiveUnit&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/ArchiveUnit&gt;</span>
+<span class="w">            </span><span class="nt">&lt;ArchiveUnit</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;ID02&quot;</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;Management&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;AppraisalRule&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;Rule&gt;</span>APP-00002<span class="nt">&lt;/Rule&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;StartDate&gt;</span>2000-01-01<span class="nt">&lt;/StartDate&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;FinalAction&gt;</span>Destroy<span class="nt">&lt;/FinalAction&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;/AppraisalRule&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;HoldRule&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;Rule&gt;</span>HOL-00001<span class="nt">&lt;/Rule&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;StartDate&gt;</span>2000-01-01<span class="nt">&lt;/StartDate&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;HoldOwner&gt;</span>Owner<span class="w"> </span>de<span class="w"> </span>la<span class="w"> </span>règle<span class="w"> </span>de<span class="w"> </span>Gel<span class="nt">&lt;/HoldOwner&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;HoldReassessingDate&gt;</span>2005-01-01<span class="nt">&lt;/HoldReassessingDate&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;HoldReason&gt;</span>Motif<span class="w"> </span>du<span class="w"> </span>gel<span class="nt">&lt;/HoldReason&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;PreventRearrangement&gt;</span>true<span class="nt">&lt;/PreventRearrangement&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;/HoldRule&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/Management&gt;</span>
+<span class="w">                </span><span class="nt">&lt;Content&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;DescriptionLevel&gt;</span>Item<span class="nt">&lt;/DescriptionLevel&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;Title&gt;</span>Unit2<span class="nt">&lt;/Title&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;Description&gt;</span>Unit2<span class="w"> </span>-<span class="w"> </span>Hold<span class="w"> </span>rules<span class="w"> </span>avec<span class="w"> </span>durée<span class="w"> </span>définie,<span class="w"> </span>et<span class="w"> </span>date<span class="w"> </span>de<span class="w"> </span>début<span class="nt">&lt;/Description&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/Content&gt;</span>
+<span class="w">                </span><span class="nt">&lt;ArchiveUnit</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;ID_REF_3&quot;</span><span class="nt">&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;ArchiveUnitRefId&gt;</span>ID05<span class="nt">&lt;/ArchiveUnitRefId&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/ArchiveUnit&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/ArchiveUnit&gt;</span>
+<span class="w">            </span><span class="nt">&lt;ArchiveUnit</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;ID03&quot;</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;Management&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;HoldRule&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;Rule&gt;</span>HOL-00001<span class="nt">&lt;/Rule&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;/HoldRule&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/Management&gt;</span>
+<span class="w">                </span><span class="nt">&lt;Content&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;DescriptionLevel&gt;</span>Item<span class="nt">&lt;/DescriptionLevel&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;Title&gt;</span>Unit3<span class="nt">&lt;/Title&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;Description&gt;</span>Unit3<span class="w"> </span>-<span class="w"> </span>Hold<span class="w"> </span>rules<span class="w"> </span>avec<span class="w"> </span>durée<span class="w"> </span>définie,<span class="w"> </span>sans<span class="w"> </span>date<span class="w"> </span>de<span class="w"> </span>début<span class="nt">&lt;/Description&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/Content&gt;</span>
+<span class="w">                </span><span class="nt">&lt;ArchiveUnit</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;ID_REF_4&quot;</span><span class="nt">&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;ArchiveUnitRefId&gt;</span>ID06<span class="nt">&lt;/ArchiveUnitRefId&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/ArchiveUnit&gt;</span>
+<span class="w">                </span><span class="nt">&lt;ArchiveUnit</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;ID_REF_5&quot;</span><span class="nt">&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;ArchiveUnitRefId&gt;</span>ID07<span class="nt">&lt;/ArchiveUnitRefId&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/ArchiveUnit&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/ArchiveUnit&gt;</span>
+<span class="w">            </span><span class="nt">&lt;ArchiveUnit</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;ID04&quot;</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;Management&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;HoldRule&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;Rule&gt;</span>HOL-00002<span class="nt">&lt;/Rule&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;StartDate&gt;</span>2000-01-01<span class="nt">&lt;/StartDate&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;HoldEndDate&gt;</span>2010-01-01<span class="nt">&lt;/HoldEndDate&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;HoldOwner&gt;</span>Owner<span class="w"> </span>de<span class="w"> </span>la<span class="w"> </span>règle<span class="w"> </span>de<span class="w"> </span>Gel<span class="nt">&lt;/HoldOwner&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;HoldReassessingDate&gt;</span>2005-01-01<span class="nt">&lt;/HoldReassessingDate&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;HoldReason&gt;</span>Motif<span class="w"> </span>du<span class="w"> </span>gel<span class="nt">&lt;/HoldReason&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;PreventRearrangement&gt;</span>false<span class="nt">&lt;/PreventRearrangement&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;/HoldRule&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/Management&gt;</span>
+<span class="w">                </span><span class="nt">&lt;Content&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;DescriptionLevel&gt;</span>Item<span class="nt">&lt;/DescriptionLevel&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;Title&gt;</span>Unit4<span class="nt">&lt;/Title&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;Description&gt;</span>Unit4<span class="w"> </span>-<span class="w"> </span>Hold<span class="w"> </span>rules<span class="w"> </span>avec<span class="w"> </span>durée<span class="w"> </span>indéfinie,<span class="w"> </span>et<span class="w"> </span>durée<span class="w"> </span>de<span class="w"> </span>fin<span class="w"> </span>explicite<span class="w"> </span>HoldEndDate<span class="nt">&lt;/Description&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/Content&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/ArchiveUnit&gt;</span>
+<span class="w">            </span><span class="nt">&lt;ArchiveUnit</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;ID05&quot;</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;Management&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;HoldRule&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;Rule&gt;</span>HOL-00002<span class="nt">&lt;/Rule&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;StartDate&gt;</span>2000-01-01<span class="nt">&lt;/StartDate&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;HoldOwner&gt;</span>Owner<span class="w"> </span>de<span class="w"> </span>la<span class="w"> </span>règle<span class="w"> </span>de<span class="w"> </span>Gel<span class="nt">&lt;/HoldOwner&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;HoldReassessingDate&gt;</span>2005-01-01<span class="nt">&lt;/HoldReassessingDate&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;PreventRearrangement&gt;</span>false<span class="nt">&lt;/PreventRearrangement&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;/HoldRule&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/Management&gt;</span>
+<span class="w">                </span><span class="nt">&lt;Content&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;DescriptionLevel&gt;</span>Item<span class="nt">&lt;/DescriptionLevel&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;Title&gt;</span>Unit5<span class="nt">&lt;/Title&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;Description&gt;</span>Unit5<span class="w"> </span>-<span class="w"> </span>Hold<span class="w"> </span>rules<span class="w"> </span>avec<span class="w"> </span>durée<span class="w"> </span>indéfinie,<span class="w"> </span>et<span class="w"> </span>sans<span class="w"> </span>durée<span class="w"> </span>de<span class="w"> </span>fin<span class="w"> </span>explicite<span class="w"> </span>HoldEndDate<span class="nt">&lt;/Description&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/Content&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/ArchiveUnit&gt;</span>
+<span class="w">            </span><span class="nt">&lt;ArchiveUnit</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;ID06&quot;</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;Management&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;HoldRule&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;RefNonRuleId&gt;</span>HOL-00001<span class="nt">&lt;/RefNonRuleId&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;/HoldRule&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/Management&gt;</span>
+<span class="w">                </span><span class="nt">&lt;Content&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;DescriptionLevel&gt;</span>Item<span class="nt">&lt;/DescriptionLevel&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;Title&gt;</span>Unit6<span class="nt">&lt;/Title&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;Description&gt;</span>Unit6<span class="w"> </span>-<span class="w"> </span>HoldRules<span class="w"> </span>avec<span class="w"> </span>RefNonRuleId<span class="nt">&lt;/Description&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/Content&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/ArchiveUnit&gt;</span>
+<span class="w">            </span><span class="nt">&lt;ArchiveUnit</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;ID07&quot;</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;Management&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;HoldRule&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;PreventInheritance&gt;</span>true<span class="nt">&lt;/PreventInheritance&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;/HoldRule&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/Management&gt;</span>
+<span class="w">                </span><span class="nt">&lt;Content&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;DescriptionLevel&gt;</span>Item<span class="nt">&lt;/DescriptionLevel&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;Title&gt;</span>Unit7<span class="nt">&lt;/Title&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;Description&gt;</span>Unit7<span class="w"> </span>-<span class="w"> </span>HoldRules<span class="w"> </span>avec<span class="w"> </span>PreventInheritence<span class="nt">&lt;/Description&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/Content&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/ArchiveUnit&gt;</span>
+<span class="w">            </span><span class="nt">&lt;ArchiveUnit</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;ID08&quot;</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;Management&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;HoldRule&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;Rule&gt;</span>HOL-00001<span class="nt">&lt;/Rule&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;StartDate&gt;</span>2000-01-01<span class="nt">&lt;/StartDate&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;HoldOwner&gt;</span>Owner<span class="w"> </span>de<span class="w"> </span>la<span class="w"> </span>règle<span class="w"> </span>de<span class="w"> </span>Gel<span class="w"> </span>HOL-00001<span class="nt">&lt;/HoldOwner&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;Rule&gt;</span>HOL-00002<span class="nt">&lt;/Rule&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;HoldEndDate&gt;</span>2010-01-01<span class="nt">&lt;/HoldEndDate&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;HoldOwner&gt;</span>Owner<span class="w"> </span>de<span class="w"> </span>la<span class="w"> </span>règle<span class="w"> </span>de<span class="w"> </span>Gel<span class="w"> </span>HOL-00002<span class="nt">&lt;/HoldOwner&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;HoldReassessingDate&gt;</span>2005-01-01<span class="nt">&lt;/HoldReassessingDate&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;PreventRearrangement&gt;</span>false<span class="nt">&lt;/PreventRearrangement&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;Rule&gt;</span>HOL-00003<span class="nt">&lt;/Rule&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;RefNonRuleId&gt;</span>HOL-00004<span class="nt">&lt;/RefNonRuleId&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;/HoldRule&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/Management&gt;</span>
+<span class="w">                </span><span class="nt">&lt;Content&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;DescriptionLevel&gt;</span>Item<span class="nt">&lt;/DescriptionLevel&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;Title&gt;</span>Unit8<span class="nt">&lt;/Title&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;Description&gt;</span>Unit8<span class="w"> </span>-<span class="w"> </span>Multiples<span class="w"> </span>HoldRules<span class="nt">&lt;/Description&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/Content&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/ArchiveUnit&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/DescriptiveMetadata&gt;</span>
+<span class="w">        </span><span class="nt">&lt;ManagementMetadata&gt;</span>
+<span class="w">            </span><span class="nt">&lt;OriginatingAgencyIdentifier&gt;</span>Vitam<span class="nt">&lt;/OriginatingAgencyIdentifier&gt;</span>
+<span class="w">            </span><span class="nt">&lt;SubmissionAgencyIdentifier&gt;</span>Vitam<span class="nt">&lt;/SubmissionAgencyIdentifier&gt;</span>
+<span class="w">            </span><span class="nt">&lt;HoldRule&gt;</span>
+<span class="w">                </span><span class="nt">&lt;Rule&gt;</span>HOL-00003<span class="nt">&lt;/Rule&gt;</span>
+<span class="w">                </span><span class="nt">&lt;StartDate&gt;</span>2000-01-01<span class="nt">&lt;/StartDate&gt;</span>
+<span class="w">                </span><span class="nt">&lt;HoldOwner&gt;</span>Owner<span class="w"> </span>de<span class="w"> </span>la<span class="w"> </span>règle<span class="w"> </span>de<span class="w"> </span>Gel<span class="w"> </span>HOL-00003<span class="nt">&lt;/HoldOwner&gt;</span>
+<span class="w">                </span><span class="nt">&lt;HoldReassessingDate&gt;</span>2005-01-01<span class="nt">&lt;/HoldReassessingDate&gt;</span>
+<span class="w">                </span><span class="nt">&lt;HoldReason&gt;</span>Motif<span class="w"> </span>du<span class="w"> </span>gel<span class="w"> </span>HOL-00003<span class="nt">&lt;/HoldReason&gt;</span>
+<span class="w">                </span><span class="nt">&lt;PreventRearrangement&gt;</span>false<span class="nt">&lt;/PreventRearrangement&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/HoldRule&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/ManagementMetadata&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/DataObjectPackage&gt;</span>
+<span class="w">    </span><span class="nt">&lt;RelatedTransferReference&gt;</span>RelatedTransferReference0<span class="nt">&lt;/RelatedTransferReference&gt;</span>
+<span class="w">    </span><span class="nt">&lt;TransferRequestReplyIdentifier&gt;</span>TransferRequestReplyIdentifier0<span class="nt">&lt;/TransferRequestReplyIdentifier&gt;</span>
+<span class="w">    </span><span class="nt">&lt;ArchivalAgency&gt;</span>
+<span class="w">        </span><span class="nt">&lt;Identifier&gt;</span>BBBBBB<span class="nt">&lt;/Identifier&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/ArchivalAgency&gt;</span>
+<span class="w">    </span><span class="nt">&lt;TransferringAgency&gt;</span>
+<span class="w">        </span><span class="nt">&lt;Identifier&gt;</span>FRAN_NP_050758<span class="nt">&lt;/Identifier&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/TransferringAgency&gt;</span>
+<span class="nt">&lt;/ArchiveTransfer&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="annexe-2-exemple-de-requete-pour-geler-et-degeler-des-archives">
+<h3><span class="section-number">2.5.2. </span>Annexe 2 : Exemple de requête pour geler et dégeler des archives<a class="headerlink" href="#annexe-2-exemple-de-requete-pour-geler-et-degeler-des-archives" title="Lien vers cette rubrique"></a></h3>
+<p>Requête permettant d’ajouter une règle de gel (la règle n’a pas de durée
+ni de mesure) :</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="p">{</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="nt">&quot;dslRequest&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span>
+<span class="w">   </span><span class="nt">&quot;$roots&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">  </span>
+<span class="w">   </span><span class="nt">&quot;$query&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;$eq&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;#id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{unit-id}}&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span>
+<span class="w">  </span>
+<span class="w">   </span><span class="nt">&quot;$threshold&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="nt">&quot;ruleActions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="nt">&quot;add&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span>
+<span class="w">   </span><span class="p">{</span>
+<span class="w">  </span>
+<span class="w">   </span><span class="nt">&quot;HoldRule&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span>
+<span class="w">   </span><span class="nt">&quot;Rules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span>
+<span class="w">   </span><span class="p">{</span>
+<span class="w">  </span>
+<span class="w">   </span><span class="nt">&quot;Rule&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;HOL-00001&quot;</span><span class="p">,</span>
+<span class="w">  </span>
+<span class="w">   </span><span class="nt">&quot;StartDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2000-01-01&quot;</span><span class="p">,</span>
+<span class="w">  </span>
+<span class="w">   </span><span class="nt">&quot;HoldEndDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2025-01-01&quot;</span><span class="p">,</span>
+<span class="w">  </span>
+<span class="w">   </span><span class="nt">&quot;HoldOwner&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Owner&quot;</span><span class="p">,</span>
+<span class="w">  </span>
+<span class="w">   </span><span class="nt">&quot;HoldReason&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Reason&quot;</span><span class="p">,</span>
+<span class="w">  </span>
+<span class="w">   </span><span class="nt">&quot;HoldReassessingDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2015-01-01&quot;</span><span class="p">,</span>
+<span class="w">  </span>
+<span class="w">   </span><span class="nt">&quot;PreventRearrangement&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">  </span>
+<span class="w">   </span><span class="p">}</span>
+<span class="w">  </span>
+<span class="w">   </span><span class="p">]</span>
+<span class="w">  </span>
+<span class="w">   </span><span class="p">}</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="nt">&quot;update&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="nt">&quot;delete&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Requête permettant d’ajouter une règle de gel (la règle a une durée et
+une mesure) :</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="p">{</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="nt">&quot;dslRequest&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span>
+<span class="w">   </span><span class="nt">&quot;$roots&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">  </span>
+<span class="w">   </span><span class="nt">&quot;$query&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;$eq&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;#id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{unit-id}}&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span>
+<span class="w">  </span>
+<span class="w">   </span><span class="nt">&quot;$threshold&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10000</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="nt">&quot;ruleActions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="nt">&quot;add&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span>
+<span class="w">   </span><span class="p">{</span>
+<span class="w">  </span>
+<span class="w">   </span><span class="nt">&quot;HoldRule&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span>
+<span class="w">   </span><span class="nt">&quot;Rules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span>
+<span class="w">   </span><span class="p">{</span>
+<span class="w">  </span>
+<span class="w">   </span><span class="nt">&quot;Rule&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;HOL-00002&quot;</span><span class="p">,</span>
+<span class="w">  </span>
+<span class="w">   </span><span class="nt">&quot;StartDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2000-01-01&quot;</span><span class="p">,</span>
+<span class="w">  </span>
+<span class="w">   </span><span class="nt">&quot;HoldOwner&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Owner&quot;</span><span class="p">,</span>
+<span class="w">  </span>
+<span class="w">   </span><span class="nt">&quot;HoldReason&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Reason&quot;</span><span class="p">,</span>
+<span class="w">  </span>
+<span class="w">   </span><span class="nt">&quot;HoldReassessingDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2015-01-01&quot;</span><span class="p">,</span>
+<span class="w">  </span>
+<span class="w">   </span><span class="nt">&quot;PreventRearrangement&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">  </span>
+<span class="w">   </span><span class="p">}</span>
+<span class="w">  </span>
+<span class="w">   </span><span class="p">]</span>
+<span class="w">  </span>
+<span class="w">   </span><span class="p">}</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="nt">&quot;update&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="nt">&quot;delete&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Requête permettant de supprimer une règle de gel :</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="w">  </span><span class="p">{</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="s2">&quot;dslRequest&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span>
+<span class="w">   </span><span class="s2">&quot;$roots&quot;</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">  </span>
+<span class="w">   </span><span class="s2">&quot;$query&quot;</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;$eq&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;#id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{unit-id}}&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">],</span>
+<span class="w">  </span>
+<span class="w">   </span><span class="s2">&quot;$threshold&quot;</span><span class="w"> </span><span class="mi">10000</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="s2">&quot;ruleActions&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span>
+<span class="w">   </span><span class="s2">&quot;add&quot;</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">  </span>
+<span class="w">   </span><span class="s2">&quot;update&quot;</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">  </span>
+<span class="w">   </span><span class="s2">&quot;delete&quot;</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span>
+<span class="w">   </span><span class="p">{</span>
+<span class="w">  </span>
+<span class="w">   </span><span class="s2">&quot;HoldRule&quot;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span>
+<span class="w">   </span><span class="s2">&quot;Rules&quot;</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span>
+<span class="w">   </span><span class="p">{</span>
+<span class="w">  </span>
+<span class="w">   </span><span class="s2">&quot;Rule&quot;</span><span class="w"> </span><span class="s2">&quot;HOL-00001&quot;</span>
+<span class="w">  </span>
+<span class="w">   </span><span class="p">}</span>
+<span class="w">  </span>
+<span class="w">   </span><span class="p">]</span>
+<span class="w">  </span>
+<span class="w">   </span><span class="p">}</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="p">]</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="p">}</span>
+</pre></div>
+</div>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id8" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Au terme de la release 16, le gel est implémenté dans la solution logicielle Vitam comme une extension du schéma SEDA.</p>
+</aside>
+<aside class="footnote brackets" id="id9" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>Pour plus d’informations, consulter <a class="reference internal" href="modele_de_donnees.html"><span class="std std-doc">VITAM.Modèle de données</span></a>, chapitre 4.1, « Collection Unit ».</p>
+</aside>
+<aside class="footnote brackets" id="id10" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">3</a><span class="fn-bracket">]</span></span>
+<p>À noter que ce calcul automatique n’est pas effectué pour les seules règles de gel ne déclarant pas de durée.</p>
+</aside>
+<aside class="footnote brackets" id="id11" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">4</a><span class="fn-bracket">]</span></span>
+<p>Ce champ n’est pas formalisé dans le SEDA.</p>
+</aside>
+<aside class="footnote brackets" id="id12" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">5</a><span class="fn-bracket">]</span></span>
+<p>Pour plus de précisions, consulter la documentation <a class="reference internal" href="organisation_information.html"><span class="std std-doc">VITAM. Organisation de l’information</span></a>.</p>
+</aside>
+<aside class="footnote brackets" id="id13" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">6</a><span class="fn-bracket">]</span></span>
+<p>Pour plus de précisions, consulter la documentation <a class="reference internal" href="eliminations.html"><span class="std std-doc">VITAM. Les éliminations avec la solution logicielle Vitam</span></a>.</p>
+</aside>
+<aside class="footnote brackets" id="id14" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">7</a><span class="fn-bracket">]</span></span>
+<p>D’autres conseils d’utilisation sont proposés dans la documentation <a class="reference internal" href="regles_gestion.html"><span class="std std-doc">VITAM. Règles de gestion</span></a>.</p>
+</aside>
+</aside>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="eliminations.html" class="btn btn-neutral float-left" title="1. Les éliminations avec la solution logicielle Vitam" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="gestion_archives_arbo.html" class="btn btn-neutral float-right" title="3. Gestion des archives et des arborescences" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2022, Programme Vitam.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: master_7.1.x
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Branches</dt>
+      <dd><a href="../../master/sections/gel.html">master</a></dd>
+      <dd><a href="../../master_6.rc.x/sections/gel.html">master_6.rc.x</a></dd>
+      <dd><a href="gel.html">master_7.1.x</a></dd>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

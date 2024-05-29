@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>18. Le transfert avec la solution logicielle Vitam &mdash; Vitam documentation fonctionnelle</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=eea1f72d" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f4732e6d"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/translations.js?v=bf059b8c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="19. Conservation de la valeur probante" href="valeur_probante.html" />
+    <link rel="prev" title="17. Gestion de multiples stratégies de stockage" href="stockage.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: white" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/Vitam_Logo-CMJN.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">première approche</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="guide_lecture.html">1. Documentation Vitam - guide de lecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="presentation_programme.html">2. Présentation du programme Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="presentation_solution_logicielle.html">3. Présentation de la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_prise_en_main.html">4. Guide de prise en main de la solution logicielle Vitam – Vitam UI<br>
+<em>Réaliser une première entrée</em></a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">documentation métier</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="eliminations.html">1. Les éliminations avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gel.html">2. Le gel d’archives avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gestion_archives_arbo.html">3. Gestion des archives et des arborescences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gestion_habilitations.html">4. Gestion des habilitations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_donnees.html">5. Modèle de données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_workflow.html">6. Description des workflows et des opérations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_de_collecte.html">7. Module de collecte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="organisation_information.html">8. Organisation de l’information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ontologie.html">9. Ontologie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preservation.html">10. Gestion de la préservation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_archivage.html">11. Profils d’archivage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_unite_archivistique.html">12. Profils d’unité archivistique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regles_gestion.html">13. Règles de gestion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services_prod.html">14. Services producteurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SIP.html">15. Structuration des <em>Submission Information Packages</em> (SIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DIP.html">16. Structuration des <em>Dissemination Information Packages</em> (DIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stockage.html">17. Gestion de multiples stratégies de stockage</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">18. Le transfert avec la solution logicielle Vitam</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">18.1. Introduction</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#documents-de-reference">18.1.1. Documents de référence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#presentation-du-document">18.1.2. Présentation du document</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#definitions">18.2. Définitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#determination-du-caractere-transferable-dune-unite-archivistique-avec-la-solution-logicielle-vitam">18.3. Détermination du caractère transférable d’une unité archivistique avec la solution logicielle Vitam</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#une-duree-dutilite-arrivee-a-echeance">18.3.1. Une durée d’utilité arrivée à échéance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#un-fonds-a-restituer-dans-sa-completude">18.3.2. Un fonds à restituer dans sa complétude</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cas-ou-lutilisation-de-la-fonctionnalite-de-transfert-est-deconseillee">18.3.3. Cas où l’utilisation de la fonctionnalité de transfert est déconseillée</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#realisation-dune-operation-de-transfert-avec-la-solution-logicielle-vitam">18.4. Réalisation d’une opération de transfert avec la solution logicielle Vitam</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#lancement-dune-campagne-de-transfert-darchives-archive-transfer">18.4.1. Lancement d’une campagne de transfert d’archives (ARCHIVE_TRANSFER)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#constitution-dun-lot-darchives-a-transferer">18.4.1.1. Constitution d’un lot d’archives à transférer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#consultation-des-resultats-de-la-demande-de-transfert">18.4.1.2. Consultation des résultats de la demande de transfert</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#consultation-des-resultats-de-la-demande-de-transfert-en-base-de-donnees">18.4.2. Consultation des résultats de la demande de transfert en base de données</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#transfert-darchives-vers-un-autre-systeme-ingest">18.4.3. Transfert d’archives vers un autre système (INGEST)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#finalisation-du-transfert-dans-la-solution-logicielle-vitam-transfer-reply">18.4.4. Finalisation du transfert dans la solution logicielle Vitam (TRANSFER_REPLY)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mise-a-jour-du-registre-des-fonds">18.4.5. Mise à jour du registre des fonds</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="valeur_probante.html">19. Conservation de la valeur probante</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">documentation Vitam UI</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Autoprovisionning.html">1. Vitam UI : présentation de la fonctionnalité d’auto-provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Arbres_Plans.html">2. APP Arbres et plans</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">outils connexes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="resip.html">1. RESIP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resip_faq.html">2. RESIP : foire aux questions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Chantier préservation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="chantier_preservation_validation_format.html">1. Validation du format des fichiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_identification_format.html">2. Identification des formats de fichiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_extraction_MD.html">3. Extraction des métadonnées techniques</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Vademecum</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_sommaire.html">1. Vademecum: sommaire thématique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_glossaire.html">2. Notions utilisées dans la solution logicielle Vitam et lien vers la fiche qui les définit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_arbre.html">3. L’arbre de positionnement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_audit.html">4. Les audits dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_classification.html">5. La gestion des archives classifiées avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_acces.html">6. Le contrat d’accès dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_entree.html">7. Le contrat d’entrée dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_gestion.html">8. Le contrat de gestion dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_echeances.html">9. Le calcul des héritages des règles de gestion et l’indexation des échéances dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_eliminations.html">10. Réaliser des éliminations d’archives avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_habilitations.html">11. La gestion des droits et permissions des utilisateurs applicatifs dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_identifiants.html">12. L’attribution des identifiants dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_journalisation.html">13. La journalisation et la conservation de la valeur probante dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_ontologie.html">14. L’ontologie dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_pa.html">15. Les profils d’archivage dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_parametrages_pf.html">16. Le paramétrage fonctionnel d’une plate-forme utilisant la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_plan.html">17. Le plan de classement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_preservation.html">18. La préservation dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_pua.html">19. Les profils d’unité archivistique dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_rattachement.html">20. Faire un rattachement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_formats.html">21. Le référentiel des formats dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_griffons.html">22. Le référentiel des griffons dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_preservation.html">23. Le référentiel des scénarios de préservation dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_rg.html">24. Le référentiel des règles de gestion dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_sa.html">25. Le référentiel des services agents dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_registre_fonds.html">26. Le registre des fonds dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_structuration_information.html">27. La structuration des informations dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_suivi_acces.html">28. Le suivi des accès dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_tenant.html">29. Les tenants dans la solution logicielle Vitam</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: white" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Documentation utilisateur Vitam</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">18. </span>Le transfert avec la solution logicielle Vitam</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/sections/transfert.md.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+
+           <div itemprop="articleBody">
+             
+  <section id="le-transfert-avec-la-solution-logicielle-vitam">
+<h1><span class="section-number">18. </span>Le transfert avec la solution logicielle Vitam<a class="headerlink" href="#le-transfert-avec-la-solution-logicielle-vitam" title="Lien vers cette rubrique"></a></h1>
+<section id="introduction">
+<h2><span class="section-number">18.1. </span>Introduction<a class="headerlink" href="#introduction" title="Lien vers cette rubrique"></a></h2>
+<section id="documents-de-reference">
+<h3><span class="section-number">18.1.1. </span>Documents de référence<a class="headerlink" href="#documents-de-reference" title="Lien vers cette rubrique"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Document</p></th>
+<th class="head text-center"><p>Date de la version</p></th>
+<th class="head text-center"><p>Remarques</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>NF Z 44022 – MEDONA – Modélisation des données pour l’archivage</p></td>
+<td class="text-center"><p>18/01/2014</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Standard d’échange de données pour l’archivage – SEDA – v. 2.1</p></td>
+<td class="text-center"><p>06/2018</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>Standard d’échange de données pour l’archivage – SEDA – v. 2.2</p></td>
+<td class="text-center"><p>02/2022</p></td>
+<td class="text-center"><p>Cette nouvelle version du SEDA est intégrée à la solution logicielle Vitam à partir de la V6.RC.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><a class="reference internal" href="modele_de_workflow.html"><span class="std std-doc">Vitam – Modèle de workflow</span></a></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="presentation-du-document">
+<h3><span class="section-number">18.1.2. </span>Présentation du document<a class="headerlink" href="#presentation-du-document" title="Lien vers cette rubrique"></a></h3>
+<p>Le transfert et la restitution des archives font partie des processus archivistiques mis en œuvre dans la solution logicielle Vitam.<br />
+Ce document s’articule autour des axes suivants :</p>
+<ul class="simple">
+<li><p>détermination du caractère transférable des unités archivistiques,</p></li>
+<li><p>modalités d’une demande de transfert,</p></li>
+<li><p>modalités de mise en œuvre d’un transfert.
+Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 6 (mars 2023). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.</p></li>
+</ul>
+</section>
+</section>
+<section id="definitions">
+<h2><span class="section-number">18.2. </span>Définitions<a class="headerlink" href="#definitions" title="Lien vers cette rubrique"></a></h2>
+<p>Le transfert d’archives consiste en la restitution définitive d’archives par le service en charge de leur conservation vers le service qui les a produites ou un tiers.<br />
+Il peut intervenir à plusieurs occasions :</p>
+<ul class="simple">
+<li><p>Un service producteur demande à ré-activer un dossier archivé. La restitution peut alors être partielle et ne pas porter sur l’ensemble des archives composant le transfert d’origine.</p></li>
+<li><p>Le transfert peut être à l’initiative d’un service producteur ou d’un service d’archives, notamment lors de la fin d’un contrat liant un service producteur et un tiers-archiveur.</p></li>
+<li><p>Des règles de gestion associées à des archives arrivent à échéance et impliquent un transfert de responsabilité en termes de conservation de ces dernières, et, de fait, un transfert vers un autre système d’archivage électronique.<br />
+La manière de procéder à une restitution d’archives est définie dans la norme NF Z 44‑022 et dans sa déclinaison pour les acteurs du service public, le Standard d’échanges de données pour l’archivage (SEDA).<br />
+La transaction s’effectue en deux temps :</p></li>
+<li><p>un transfert des archives, après une éventuelle demande, vers une plate-forme de destination ;</p></li>
+<li><p>après confirmation du transfert, suppression des archives de la plate-forme d’origine.</p></li>
+</ul>
+<p>Modélisation des échanges :<br />
+<img alt="modélisation des échanges" src="../_images/modelisation_echanges.png" /></p>
+</section>
+<section id="determination-du-caractere-transferable-dune-unite-archivistique-avec-la-solution-logicielle-vitam">
+<h2><span class="section-number">18.3. </span>Détermination du caractère transférable d’une unité archivistique avec la solution logicielle Vitam<a class="headerlink" href="#determination-du-caractere-transferable-dune-unite-archivistique-avec-la-solution-logicielle-vitam" title="Lien vers cette rubrique"></a></h2>
+<section id="une-duree-dutilite-arrivee-a-echeance">
+<h3><span class="section-number">18.3.1. </span>Une durée d’utilité arrivée à échéance<a class="headerlink" href="#une-duree-dutilite-arrivee-a-echeance" title="Lien vers cette rubrique"></a></h3>
+<p>Pour être transférable, une unité archivistique peut ou doit définir ou hériter des règles suivantes :</p>
+<ul class="simple">
+<li><p>une règle de durée d’utilité courante dont la date d’échéance est dans le passé par rapport à une date donnée et un sort final « transfer ».</p></li>
+<li><p>une règle de durée d’utilité administrative dont la date d’échéance est dans le passé par rapport à une date donnée et un sort final « keep ».</p></li>
+</ul>
+<p>Si l’unité archivistique n’a qu’un sort final « transfer » ou « keep » sans règle associée permettant de calculer une date d’échéance, elle pourra être considérée comme transférable. En revanche, il sera nécessaire d’effectuer des contrôles supplémentaires en vue de vérifier qu’elle est transférable en l’état.</p>
+<p><strong>Point d’attention :</strong>
+Que ce soit dans le premier ou dans le second cas, la solution logicielle Vitam n’effectue aucun contrôle sur les archives identifiées comme transférables. En d’autres termes, il n’existe pas actuellement de service d’analyse tel qu’il existe pour les opérations d’élimination, qui ne retient que les archives à éliminer en raison de l’arrivée à échéance de leur règle de gestion. Il revient à l’utilisateur de faire les contrôles nécessaires en vue de transférer uniquement les archives dont la durée de conservation dans le système d’archivage électronique d’origine est arrivée à échéance, sans inclure dans le lot d’archives à transférer des archives qui ne doivent pas l’être.</p>
+</section>
+<section id="un-fonds-a-restituer-dans-sa-completude">
+<h3><span class="section-number">18.3.2. </span>Un fonds à restituer dans sa complétude<a class="headerlink" href="#un-fonds-a-restituer-dans-sa-completude" title="Lien vers cette rubrique"></a></h3>
+<p>Une unité archivistique ou un lot d’archives peuvent être transférables sans tenir compte des règles de gestion qui leur sont associées dans les cas suivants :</p>
+<ul class="simple">
+<li><p>le service producteur demande une restitution complète de tout ou partie de ses fonds conservés dans le système d’archivage électronique, même si les règles de gestion associées à ses archives ne sont pas échues ;</p></li>
+<li><p>le service d’archivage électronique prend fin. L’opérateur d’archivage doit alors assurer la réversibilité des données en :</p>
+<ul>
+<li><p>les restituant à leur producteur d’origine,</p></li>
+<li><p>les transférant au service d’archives ayant compétence pour les conserver,</p></li>
+<li><p>les migrant vers un nouveau système d’archivage électronique.</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Point d’attention :</strong></p>
+<p>Après confirmation de la réception de ces archives par le système d’archivage électronique de destination, il faudra veiller à procéder à leur purge dans le système d’archivage électronique d’origine, afin que ne subsiste pas deux copies de ces archives dans deux systèmes différents. Cette purge est automatisable.</p>
+</section>
+<section id="cas-ou-lutilisation-de-la-fonctionnalite-de-transfert-est-deconseillee">
+<h3><span class="section-number">18.3.3. </span>Cas où l’utilisation de la fonctionnalité de transfert est déconseillée<a class="headerlink" href="#cas-ou-lutilisation-de-la-fonctionnalite-de-transfert-est-deconseillee" title="Lien vers cette rubrique"></a></h3>
+<p>=======</p>
+<p>Après confirmation de la réception de ces archives par le système d’archivage électronique de destination, il faudra veiller à procéder à leur purge dans le système d’archivage électronique d’origine, afin que ne subsiste pas deux copies de ces archives dans deux systèmes différents. Cette purge est automatisable.</p>
+<p>La constitution d’un lot d’archives à transférer et la fonctionnalité de transfert doivent être utilisées lorsque l’on veut transmettre à la fois des archives et la responsabilité de leur conservation avec une traçabilité des événements ayant concerné ces archives dans le système d’archivage d’origine. Après acquittement du transfert, le lot d’archives est supprimé du système d’origine.<br />
+De fait, pour un transfert d’archives sans transfert de responsabilité, il est conseillé de recourir à la fonctionnalité de constitution d’un Dissemination Information Package (DIP) minimal ou complet qui permet de transmettre des archives (métadonnées et objets techniques) sans les supprimer ensuite du système d’origine.<br />
+Pour une simple transmission d’objet technique, il est conseillé d’utiliser la fonctionnalité de téléchargement d’un objet.</p>
+</section>
+</section>
+<section id="realisation-dune-operation-de-transfert-avec-la-solution-logicielle-vitam">
+<h2><span class="section-number">18.4. </span>Réalisation d’une opération de transfert avec la solution logicielle Vitam<a class="headerlink" href="#realisation-dune-operation-de-transfert-avec-la-solution-logicielle-vitam" title="Lien vers cette rubrique"></a></h2>
+<p>La solution logicielle Vitam permet de constituer des DIP de transfert destinés à être pris en charge par une plate-forme utilisant la solution logicielle Vitam (autre tenant ou autre instance). Le transfert génère un accusé de prise en charge dans le système d’archivage de destination et un effacement des données dans le système d’origine.</p>
+<p>Modélisation des opérations et des objets échangés :
+<img alt="modélisation des opérations et des objets échangés" src="../_images/modelisation_operation_objet_echanges.png" /></p>
+<section id="lancement-dune-campagne-de-transfert-darchives-archive-transfer">
+<h3><span class="section-number">18.4.1. </span>Lancement d’une campagne de transfert d’archives (ARCHIVE_TRANSFER)<a class="headerlink" href="#lancement-dune-campagne-de-transfert-darchives-archive-transfer" title="Lien vers cette rubrique"></a></h3>
+<section id="constitution-dun-lot-darchives-a-transferer">
+<h4><span class="section-number">18.4.1.1. </span>Constitution d’un lot d’archives à transférer<a class="headerlink" href="#constitution-dun-lot-darchives-a-transferer" title="Lien vers cette rubrique"></a></h4>
+<p>La solution logicielle permet de préparer un lot d’archives à transférer.</p>
+<ul class="simple">
+<li><p>Par l’IHM de démonstration, cette opération se fait via le détail d’une unité archivistique et peut porter sur l’unité archivistique en question, l’unité archivistique et sa descendance ou sur l’ensemble de l’entrée par laquelle cette unité archivistique a été transférée dans la solution logicielle Vitam.</p></li>
+<li><p>Depuis l’APP « Recherche et consultation des archives » de VitamUI, cette opération se fait après sélection d’un lot d’archives.</p></li>
+<li><p>Par API, plusieurs critères de constitution d’un lot d’archives à transférer sont utilisables : identifiant d’une opération d’entrée, unité(s) archivistique(s) précise(s), ensemble des unités archivistiques dépendant d’une unité archivistique précise, etc.</p></li>
+<li><p>Des filtres supplémentaires peuvent être demandés sur :</p>
+<ul>
+<li><p>les usages. Ce filtre sera contrôlé par rapport aux droits octroyés par le contrat accès, pour ne transférer par exemple que les originaux numériques (BinaryMaster) sans les versions de diffusion ou les vignettes ;</p></li>
+<li><p>la version du SEDA. Ce filtre fonctionne de la manière suivante :</p>
+<ul>
+<li><p>S’il n’est pas utilisé, le DIP de transfert généré sera déclaré en SEDA 2.2 ;</p></li>
+<li><p>Un contrôle de compatibilité est effectué entre la version du SEDA demandée dans le DIP et celle des unités archivistiques devant intégrer ce dernier.</p></li>
+</ul>
+</li>
+<li><p>Les journaux de cycle de vie peuvent être intégrés dans le lot d’archives à transférer. Il est conseillé d’activer cette option lorsque les unités archivistiques et les groupes d’objets techniques transférés doivent pouvoir faire l’objet d’une traçabilité forte.</p></li>
+</ul>
+</li>
+</ul>
+<p>L’utilisateur autorisé doit renseigner un certain nombre de paramètres qui permettront d’alimenter le manifeste référençant les archives à transférer :</p>
+<ul class="simple">
+<li><p>informations obligatoires :</p>
+<ul>
+<li><p>contrat d’entrée à utiliser pour la prise en charge dans la plate-forme de destination (ArchivalAgreement),</p></li>
+<li><p>identifiant du service producteur (OriginatingAgencyIdentifier),</p></li>
+<li><p>identifiant du service d’archives (sous-bloc Identifier du bloc ArchivalAgency),</p></li>
+<li><p>identifiant du service de transfert (sous-bloc Identifier du bloc  TransferringAgency). Si ce bloc n’est pas renseigné, la solution logicielle Vitam auto-incrémentera la valeur « VITAM » comme service en charge du transfert ;</p></li>
+</ul>
+</li>
+<li><p>informations facultatives :</p>
+<ul>
+<li><p>intitulé (Comment),</p></li>
+<li><p>identifiant du service versant (SubmissionAgencyIdentifier),</p></li>
+<li><p>identifiant d’un transfert associé (RelatedTransferReference),</p></li>
+<li><p>identifiant de la réponse à une demande de transfert (TransferRequestReplyIdentifier).</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Point d’attention :</strong></p>
+<ul class="simple">
+<li><p>Ces paramètres doivent être conformes aux valeurs attendues par le SAE de destination. Ils ne font pas l’objet d’un contrôle par rapport aux référentiels du SAE d’origine. Il est ainsi possible d’indiquer un identifiant de contrat d’entrée qui n’existe pas dans le référentiel des contrats d’entrée du SAE d’origine.</p></li>
+<li><p>Il est obligatoire d’indiquer le service producteur, pour deux raisons. D’une part, l’identifiant de ce service pour le SAE de destination n’est pas forcément identique à celui du SAE d’origine. D’autre part, la solution logicielle Vitam impose de ne déclarer dans le manifeste/bordereau de transfert qu’un seul service producteur pour l’ensemble des archives transférées. En cas de transfert d’archives provenant de plusieurs services producteurs, c’est à l’utilisateur qu’il revient de choisir le service producteur le plus « générique » à indiquer.<br />
+Par exemple, dans le cas d’un transfert regroupant les divers versements faits par les bureaux d’une sous-direction, c’est cette sous-direction qui pourra être désignée comme producteur des archives transférées. Les services producteurs d’origine pourront figurer dans les descriptions des unités archivistiques.</p></li>
+</ul>
+</section>
+<section id="consultation-des-resultats-de-la-demande-de-transfert">
+<h4><span class="section-number">18.4.1.2. </span>Consultation des résultats de la demande de transfert<a class="headerlink" href="#consultation-des-resultats-de-la-demande-de-transfert" title="Lien vers cette rubrique"></a></h4>
+<p>Le résultat de l’opération de demande de transfert (ARCHIVE_TRANSFER / Transfert des unités archivistiques et des groupes d’objets) peut être consulté :</p>
+<ul class="simple">
+<li><p>en allant dans le menu « Opérations », sur l’IHM de démonstration ;</p></li>
+<li><p>depuis l’APP « Journal des opérations » de l’IHM VitamUI ;</p></li>
+<li><p>via les API.
+L’opération peut aboutir aux résultats suivants :</p></li>
+<li><p>L’opération de demande de transfert est en succès ;</p></li>
+<li><p>L’opération de demande de transfert de transfert est en avertissement :</p>
+<ul>
+<li><p>s’il n’y a pas d’objet technique concerné (statut « OBJECTS_LIST_EMPTY ») ;</p></li>
+<li><p>si une unité archivistique a déjà fait l’objet d’une demande de transfert (message : {« Reason »: »unit [identifiant de l’unité archivistique] already in transfer »} à la tâche « CREATE_MANIFEST ») ;</p></li>
+</ul>
+</li>
+<li><p>L’opération de demande de transfert de transfert sera en erreur si :</p>
+<ul>
+<li><p>aucun des paramètres obligatoires n’est renseigné (message : {« Reason »: »ArchivalAgreement parameter is required, OriginatingAgencyIdentifier parameter is required, ArchivalAgency parameter is required. »} à la tâche « CREATE_MANIFEST »);</p></li>
+<li><p>l’export demandé en SEDA 2.1 d’un bordereau de transfert alors qu’il embarque des archives entrées en SEDA 2.2 et intégrant des champs ajoutés dans la version 2.2 du SEDA.</p></li>
+</ul>
+</li>
+</ul>
+<p>Sont également disponibles :</p>
+<ul class="simple">
+<li><p>Un rapport en JSONL qui récapitule la requête ciblant les unités archivistiques et liste les unités archivistiques effectivement prises en compte pour la constitution du paquet de transfert. Le statut de ces dernières peut être :</p>
+<ul>
+<li><p>OK : l’unité archivistique est transférable et fait partie du lot à transférer,</p></li>
+<li><p>ALREADY_IN_TRANSFER : l’unité archivistique fait déjà l’objet d’une demande de transfert et ne fait pas partie du lot à transférer ;</p></li>
+</ul>
+</li>
+</ul>
+<p>Exemple de rapport au format JSONL :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;DslQuery&quot;</span><span class="p">:{</span><span class="s2">&quot;$roots&quot;</span><span class="p">:[],</span><span class="s2">&quot;$query&quot;</span><span class="p">:[{</span><span class="s2">&quot;$eq&quot;</span><span class="p">:{</span><span class="s2">&quot;#id&quot;</span><span class="p">:</span><span class="s2">&quot;aeaqaaaabahftfesaab6yalqlwe54laaaaba&quot;</span><span class="p">},</span><span class="s2">&quot;$depth&quot;</span><span class="p">:</span><span class="mi">1000</span><span class="p">}],</span><span class="s2">&quot;$filter&quot;</span><span class="p">:{</span><span class="s2">&quot;$limit&quot;</span><span class="p">:</span><span class="mi">10000</span><span class="p">},</span><span class="s2">&quot;$projection&quot;</span><span class="p">:{},</span><span class="s2">&quot;$facets&quot;</span><span class="p">:[]}}</span>
+<span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;aeaqaaaabahftfesaab6yalqlwe54laaaaba&quot;</span><span class="p">,</span><span class="s2">&quot;status&quot;</span><span class="p">:</span><span class="s2">&quot;OK&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Un DIP dit de « transfert » dont l’intitulé correspond au préfixe « TRANSFER- », suivi de l’identifiant de l’opération, et qui prend la forme d’un fichier ZIP. Ce DIP contient :</p>
+<ul class="simple">
+<li><p>un fichier « manifest.xml » correspondant à un message « ArchiveTransfer » du SEDA et dont l’identifiant du message correspond à l’identifiant de l’opération (MessageIdentifier) ;</p></li>
+<li><p>un répertoire Content contenant l’ensemble des objets binaires (fichiers numériques) associés au bordereau, dans le cas où des objets sont transférés.</p></li>
+<li><p>l’empreinte du DIP de transfert disponible à la tâche de Création de l’archive et de son déplacement vers l’espace de stockage .</p></li>
+</ul>
+<p><strong>Point d’attention :</strong></p>
+<ul class="simple">
+<li><p>Dans le fichier « manifest.xml », la distinction entre unités archivistiques d’arbre, de plan ou standard n’est pas conservée.</p></li>
+<li><p>Dans ce même fichier, la distinction entre archives gelée avec ou sans durée définie dans le référentiel des règles de gestion n’est pas conservée, à moins de déterminer une  date de fin de gel (« HoldEndDate ») dans le cas d’une règle déclarée sans durée.</p></li>
+<li><p>Si le groupe d’objets techniques d’origine comprend plusieurs versions pour un même usage, c’est par défaut la dernière version qui sera exportée. Il n’est actuellement pas possible d’exporter plusieurs versions pour un même usage.</p></li>
+<li><p>À ce stade-là, la solution logicielle Vitam ne vérifie pas si l’unité archivistique à transférer contient des unités archivistiques enfants. Il revient à l’utilisateur de préparer son paquet d’archives à transférer avec précaution, en veillant à ne pas transférer une unité archivistique sans ses enfants, de manière à ne pas obtenir par la suite des refus de transfert pour cause d’unité non supprimable au risque de créer des incohérences dans le graphe.</p></li>
+</ul>
+</section>
+</section>
+<section id="consultation-des-resultats-de-la-demande-de-transfert-en-base-de-donnees">
+<h3><span class="section-number">18.4.2. </span>Consultation des résultats de la demande de transfert en base de données<a class="headerlink" href="#consultation-des-resultats-de-la-demande-de-transfert-en-base-de-donnees" title="Lien vers cette rubrique"></a></h3>
+<p>L’appartenance d’une unité archivistique à une opération de transfert est enregistrée dans les métadonnées de celle-ci.<br />
+En effet, l’identifiant de l’opération de transfert est indexé dans les métadonnées des unités archivistiques concernées (champ « _opts). Cela permet de rechercher les unités archivistiques faisant l’objet d’une demande de transfert en général ou en particulier.</p>
+<p>Exemple d’unité archivistique ayant fait l’objet d’une demande de transfert :</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aeaqaaaabahftfesaab6yalqlwe54laaaaba&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;DescriptionLevel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RecordGrp&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ambassade de France en Ruritanie&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;C:\\Users\\mehdi.afnai\\Desktop\\Test Keep implicite\\Test Keep\n                        implicite\\Ambassade_de_France_en_Ruritanie&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;StartDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2018-10-04T16:39:43&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;EndDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2018-10-04T16:39:43&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;_mgt&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">    </span><span class="nt">&quot;_sedaVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.1&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;_implementationVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3.1.0-SNAPSHOT&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;_unitType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;INGEST&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;_opi&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aeeaaaaabchhfmwoaaxhialqlwe5nqqaaaaq&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;_ops&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;aeeaaaaabchhfmwoaaxhialqlwe5nqqaaaaq&quot;</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;_storage&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;strategyId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;default&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;_sps&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;Service_producteur&quot;</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;_sp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Service_producteur&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;_up&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">    </span><span class="nt">&quot;_us&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">    </span><span class="nt">&quot;_graph&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">    </span><span class="nt">&quot;_us_sp&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">    </span><span class="nt">&quot;_uds&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">    </span><span class="nt">&quot;_min&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;_max&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;_glpd&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2020-02-19T13:01:26.537&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;_v&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;_av&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;_tenant&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;_opts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;aeeaaaaabchhfmwoaanoualqlwr54ayaaaaq&quot;</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="transfert-darchives-vers-un-autre-systeme-ingest">
+<h3><span class="section-number">18.4.3. </span>Transfert d’archives vers un autre système (INGEST)<a class="headerlink" href="#transfert-darchives-vers-un-autre-systeme-ingest" title="Lien vers cette rubrique"></a></h3>
+<p>Le DIP dit « de transfert » peut être alors transféré :</p>
+<ul class="simple">
+<li><p>soit sur un autre tenant de la même plate-forme d’archivage utilisant la solution logicielle Vitam ;</p></li>
+<li><p>soit sur une autre plate-forme utilisant la solution logicielle Vitam ;</p></li>
+<li><p>soit dans un autre système d’archivage électronique.</p></li>
+</ul>
+<p><strong>Points d’attention :</strong></p>
+<ul class="simple">
+<li><p>les paramètres obligatoires saisis doivent être référencés dans la plate-forme de destination, sans quoi le transfert sera en échec ;</p></li>
+<li><p>il en va de même pour les règles de gestion. Celles-ci doivent être référencées dans la plate-forme de destination. Les règles de gel, en particulier, doivent être déclarées à l’identique (avec ou sans mesure), afin que le transfert n’échoue pas ;</p></li>
+<li><p>dans le cas d’un transfert vers un autre système, ce dernier doit être en mesure d’accepter un message « ArchiveTransfer » et renvoyer un message « ArchiveTransferReply » tous deux conformes au SEDA 2.1 ou au SEDA 2.2 et aux attendus de la solution logicielle Vitam. Si ce n’est pas le cas, il faudra veiller à prévoir une interopérabilité des données entre la solution logicielle Vitam et le système destinataire des données.</p></li>
+</ul>
+</section>
+<section id="finalisation-du-transfert-dans-la-solution-logicielle-vitam-transfer-reply">
+<h3><span class="section-number">18.4.4. </span>Finalisation du transfert dans la solution logicielle Vitam (TRANSFER_REPLY)<a class="headerlink" href="#finalisation-du-transfert-dans-la-solution-logicielle-vitam-transfer-reply" title="Lien vers cette rubrique"></a></h3>
+<p>La solution logicielle ne permet pas de confirmer et d’acquitter un transfert depuis l’IHM de démonstration. Cette opération est réalisable :</p>
+<ul class="simple">
+<li><p>au moyen des API ;</p></li>
+<li><p>depuis l’APP « Recherche, consultation et gestion des archives » de l’IHM VitamUI.</p></li>
+</ul>
+<p>Le processus d’acquittement du transfert débute avec la réception de l’accusé de réception en provenance du système d’archivage électronique de destination. Il est en effet lancé par rapport à la réception du message « ArchiveTransferReply » faisant état de la bonne réception du lot d’archives à transférer par le système d’archivage destinataire.<br />
+Pour des raisons liées aux problématiques de calcul de graphe, il n’est pas possible de lancer cette action si une autre action de constitution d’un lot d’archives à transférer est en cours (ou en pause) ou en parallèle d’une action telle que la modification d’arborescence ou l’élimination. Pour ce faire, la solution logicielle vérifie si des processus concurrents ne sont pas en cours au lancement du processus d’acquittement du transfert.<br />
+L’opération de transfert implique en outre que la mise en œuvre de l’acquittement du transfert proprement dite (TRANSFER_REPLY) soit précédée dans la solution logicielle d’une phase de constitution d’un lot d’archives à transférer dans le cadre d’une opération de demande de transfert (ARCHIVE_TRANSFER). Cette dernière, visant à constituer un lot permet en effet d’indiquer dans les métadonnées que des unités archivistiques sont en cours de transfert, et de fait purgeables suite à la confirmation du transfert par le message « ArchiveTransferReply ».<br />
+Lors de cette opération d’acquittement du transfert ou de purge, le système d’archivage électronique d’origine procède à la vérification du statut du message « ArchiveTransferReply » (statut OK, WARNING ou KO) et à la vérification de l’identifiant d’opération qu’il renvoie (bloc MessageRequestIdentifier). En d’autres termes, il vérifie que les unités archivistiques qui sont référencées dans le message « ArchiveTransferReply » comme prises en charge par le système d’archivage électronique de destination sont bien comprises dans l’opération de transfert préalablement lancée et pas une autre. Ainsi, il évite de déclencher une purge d’unité archivistique qui n’ont pas fait l’objet de la demande de transfert.<br />
+Si le message « ArchiveTransferReply » a un statut OK ou WARNING et si l’identifiant d’opération est connu du système d’archivage électronique d’origine (bloc MessageRequestIdentifier), le message « ArchiveTransferReply » récupéré du système destinataire du lot à transférer est stocké par le système d’archivage électronique d’origine.<br />
+Le système d’archivage électronique d’origine déclenche alors la purge des unités archivistiques, des groupes d’objets techniques et des objets binaires (fichiers numériques) concernés par l’opération de transfert acquittée et référencés dans le message « ArchiveTransferReply ». Cette purge obéit à des règles similaires à celles mises en place dans l’opération d’élimination[^1] :</p>
+<ul class="simple">
+<li><p>conservation des unités archivistiques qui ont des unités archivistiques filles (orphelinage),</p></li>
+<li><p>détachement des groupes d’objets techniques rattachés à plusieurs unités archivistiques si une unité archivistique seule est purgée,</p></li>
+<li><p>conservation des unités archivistiques, des groupes d’objets techniques et/ou des objets binaires qui ne sont pas référencés dans le message « ArchiveTransferReply »,</p></li>
+<li><p>purge des unités archivistiques, des groupes d’objets techniques et/ou des objets binaires qui étaient identifiés comme étant déjà en cours de transfert,</p></li>
+<li><p>purge des unités archivistiques si aucun des cas précédents ne s’applique,</p></li>
+<li><p>alimentation de la collection « PurgedPersistentIdentifier », si des unités archivistiques et/ou des objets techniques transférés avec succès étaient référencés par des identifiants pérennes et si cette action d’alimentation est activée.</p></li>
+</ul>
+<p>Le statut de l’opération à l’issue de la mise en œuvre de la purge pourra être :</p>
+<ul class="simple">
+<li><p>succès : toutes les unités archivistiques soumises ont été supprimées du système d’origine ;</p></li>
+<li><p>avertissement : parmi les unités archivistiques soumises par le message « ArchiveTransferReply », la phase d’acquittement a permis de déterminer que certaines ne devaient pas être supprimées ou ne pouvaient pas l’être, en raison des motifs suivants :</p>
+<ul>
+<li><p>les unités archivistiques, les groupes d’objets techniques et/ou les objets binaires ont déjà fait l’objet d’une purge (message : {« Event »: »File not found »} à la tâche TRANSFER_REPLY_DELETE_SIP) ;</p></li>
+<li><p>des unités archivistiques ne peuvent être purgées car leur suppression entraînerait des incohérences du graphe (message : {« Event »: »Unit cannot be deleted because it has child units attached to it. »}) ;</p></li>
+<li><p>des groupes d’objets techniques rattachés à plusieurs unités archivistiques ont été détachées si une unité archivistique seule est purgée ;</p></li>
+</ul>
+</li>
+<li><p>fatal : une erreur technique s’est produite lors du processus de mise en œuvre de l’acquittement du transfert.<br />
+Si l’opération s’effectue avec succès, les unités archivistiques, des groupes d’objets techniques et des objets binaires (fichiers numériques) sont purgés du système.<br />
+L’opération d’acquittement du transfert produit un rapport au format JSONL qui récapitule le contexte de l’opération et liste les unités archivistiques, les groupes d’objets techniques et les objets binaires (fichiers numériques) ayant fait l’objet de l’opération.</p></li>
+</ul>
+<p>Exemple de rapport au format JSONL :</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">&quot;tenant&quot;</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span><span class="nt">&quot;evId&quot;</span><span class="p">:</span><span class="s2">&quot;aeeaaaaabchhfmwoaanoualqlx7lbiyaaaaq&quot;</span><span class="p">,</span><span class="nt">&quot;evType&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;outcome&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;outDetail&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;outMsg&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;rightsStatementIdentifier&quot;</span><span class="p">:{},</span><span class="nt">&quot;evDetData&quot;</span><span class="p">:{}}</span>
+<span class="p">{</span><span class="nt">&quot;evEndDateTime&quot;</span><span class="p">:</span><span class="s2">&quot;2020-02-19T15:09:03.566&quot;</span><span class="p">,</span><span class="nt">&quot;reportType&quot;</span><span class="p">:</span><span class="s2">&quot;TRANSFER_REPLY&quot;</span><span class="p">,</span><span class="nt">&quot;vitamResults&quot;</span><span class="p">:{},</span><span class="nt">&quot;extendedInfo&quot;</span><span class="p">:{}}</span>
+<span class="p">{}</span>
+<span class="p">{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;aeaqaaaabahi7u6oaabzialqlwgjp3aaaaba&quot;</span><span class="p">,</span><span class="nt">&quot;params&quot;</span><span class="p">:{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;aeaqaaaabahi7u6oaabzialqlwgjp3aaaaba&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;Unit&quot;</span><span class="p">,</span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="s2">&quot;DELETED&quot;</span><span class="p">,</span><span class="nt">&quot;opi&quot;</span><span class="p">:</span><span class="s2">&quot;aeeaaaaabchhfmwoaaxhialqlwgg66qaaaaq&quot;</span><span class="p">,</span><span class="nt">&quot;originatingAgency&quot;</span><span class="p">:</span><span class="s2">&quot;RATP&quot;</span><span class="p">,</span><span class="nt">&quot;objectGroupId&quot;</span><span class="p">:</span><span class="s2">&quot;aebaaaaabahi7u6oaabzialqlwgjppyaaaba&quot;</span><span class="p">}}</span>
+<span class="p">{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;aeaqaaaabahi7u6oaabzialqlwgjp2yaaabq&quot;</span><span class="p">,</span><span class="nt">&quot;params&quot;</span><span class="p">:{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;aeaqaaaabahi7u6oaabzialqlwgjp2yaaabq&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;Unit&quot;</span><span class="p">,</span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="s2">&quot;DELETED&quot;</span><span class="p">,</span><span class="nt">&quot;opi&quot;</span><span class="p">:</span><span class="s2">&quot;aeeaaaaabchhfmwoaaxhialqlwgg66qaaaaq&quot;</span><span class="p">,</span><span class="nt">&quot;originatingAgency&quot;</span><span class="p">:</span><span class="s2">&quot;RATP&quot;</span><span class="p">}}</span>
+<span class="p">{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;aebaaaaabahi7u6oaabzialqlwgjppyaaaba&quot;</span><span class="p">,</span><span class="nt">&quot;params&quot;</span><span class="p">:{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;aebaaaaabahi7u6oaabzialqlwgjppyaaaba&quot;</span><span class="p">,</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="s2">&quot;ObjectGroup&quot;</span><span class="p">,</span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="s2">&quot;PARTIAL_DETACHMENT&quot;</span><span class="p">,</span><span class="nt">&quot;opi&quot;</span><span class="p">:</span><span class="s2">&quot;aeeaaaaabchhfmwoaaxhialqlwgg66qaaaaq&quot;</span><span class="p">,</span><span class="nt">&quot;originatingAgency&quot;</span><span class="p">:</span><span class="s2">&quot;RATP&quot;</span><span class="p">,</span><span class="nt">&quot;deletedParentUnitIds&quot;</span><span class="p">:[</span><span class="s2">&quot;aeaqaaaabahi7u6oaabzialqlwgjp3aaaaba&quot;</span><span class="p">]}}</span>
+</pre></div>
+</div>
+<p>Pour chaque unité archivistique et groupe d’objets techniques, l’opération de purge peut aboutir aux statuts suivants :</p>
+<ul class="simple">
+<li><p>DELETED : l’unité et/ou le groupe d’objets techniques a été supprimé ;</p></li>
+<li><p>NON_DESTROYABLE_HAS_CHILD_UNITS : l’unité archivistique ne peut être supprimée, car elle comporte des enfants et sa suppression entraînerait des incohérences dans le graphe du système d’archivage électronique d’origine ;</p></li>
+<li><p>DETACHED : le groupe d’objets techniques a été détaché d’au moins une unité archivistique ;</p></li>
+<li><p>ALREADY_DELETED : l’unité archivistique et/ou le groupe d’objets techniques a déjà été transféré et purgé du système.</p></li>
+</ul>
+<p>Si une unité archivistique ne peut pas être purgée, un événement est enregistré dans son journal de cycle de vie.<br />
+Exemple d’événement enregistré dans le journal du cycle de vie d’une unité archivistique :
+<img alt="exemple d’événement enregistré dans le journal du cycle de vie d’une unité archivistique" src="../_images/exemple_evenement_journal_cycledevie.png" /></p>
+</section>
+<section id="mise-a-jour-du-registre-des-fonds">
+<h3><span class="section-number">18.4.5. </span>Mise à jour du registre des fonds<a class="headerlink" href="#mise-a-jour-du-registre-des-fonds" title="Lien vers cette rubrique"></a></h3>
+<p>Le transfert d’unités archivistiques a des conséquences sur le registre des fonds propres et symboliques.<br />
+Pour les fonds propres, les totaux d’unités archivistiques (AU), groupes d’objets techniques (GOT), objets techniques (OT) et la volumétrie sont mis à jour immédiatement. Le détail de l’opération d’entrée concernée est également mis à jour.</p>
+<ul class="simple">
+<li><p>Dans l’IHM de démonstration, en cliquant sur la ligne de cette opération, l’utilisateur peut connaître toutes les opérations qui ont affecté cette entrée et le nombre d’unités archivistiques (AU), groupes d’objets techniques (GOT), objets techniques (OT) ainsi que la volumétrie concernée pour chacune des opérations, celle de l’entrée initiale comme celles de l’acquittement du transfert qui ont ensuite affecté cette entrée.</p></li>
+<li><p>Dans l’IHM VitamUI, ces opérations de transfert sont visibles en cliquant sur la ligne de cette opération au terme de la version 6.RC.</p></li>
+</ul>
+<p>Pour les fonds symboliques, au moment du calcul périodique des fonds symboliques de la base, les unités archivistiques (AU), groupes d’objets techniques (GOT), objets techniques (OT) transférés et éliminés du système d’origine seront décomptés et la volumétrie sera mise à jour. Depuis la notice du service agent, l’utilisateur peut accéder à l’historique des rattachements et consulter sur une période donnée les variations à la hausse ou à la baisse des fonds symboliques pour ce producteur.</p>
+<p>Exemple d’entrée impactée par un transfert d’archives dans le registre des fonds :</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aehaaaaabahi7u6oaabzialqlwhptjiaaaaq&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ObjectSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;ingested&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">24</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;deleted&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;remained&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">24</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;AcquisitionInformation&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Versement&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;LegalStatus&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Public Archive&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;OriginatingAgency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RATP&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;SubmissionAgency&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RATP&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ArchivalAgreement&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IC-000001&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;EndDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2020-02-19T13:06:56.037&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;StartDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2020-02-19T13:06:56.037&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;LastUpdate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2020-02-19T15:09:02.743&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;STORED_AND_COMPLETED&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;TotalObjectGroups&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;ingested&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;deleted&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;remained&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;TotalUnits&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;ingested&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">29</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;deleted&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;remained&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">27</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;TotalObjects&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;ingested&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;deleted&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;remained&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;Opc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aeeaaaaabchhfmwoaaxhialqlwgg66qaaaaq&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Opi&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aeeaaaaabchhfmwoaaxhialqlwgg66qaaaaq&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;OpType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;INGEST&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Events&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;Opc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aeeaaaaabchhfmwoaaxhialqlwgg66qaaaaq&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;OpType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;INGEST&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;Gots&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;Units&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">29</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;Objects&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;ObjSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">24</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;CreationDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2020-02-19T13:06:56.037&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;Opc&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aeeaaaaabchhfmwoaanoualqlx7lbiyaaaaq&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;OpType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TRANSFER_REPLY&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;Gots&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;Units&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">-2</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;Objects&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;ObjSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;CreationDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2020-02-19T15:09:02.743&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;OperationIds&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;aeeaaaaabchhfmwoaaxhialqlwgg66qaaaaq&quot;</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;_tenant&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;_v&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Point d’attention :</strong></p>
+<p>Le calcul des unités archivistiques (AU), groupes d’objets techniques (GOT), objets techniques (OT) rattachés à un producteur au titre de son fonds symbolique n’est effectué qu’une fois par vingt-quatre heures (sauf paramétrage différent de la plate-forme). Dans ces conditions, si sur la même période de vingt-quatre heures l’archiviste effectue une entrée pour 3 unités archivistiques et un transfert acquitté pour 3 unités archivistiques, le total des symboliques entre deux calculs n’aura pas évolué.</p>
+<p>[^1] Pour plus d’informations sur le processus d’élimination, consulter le document <a class="reference internal" href="eliminations.html"><span class="std std-doc">Les éliminations avec la solution logicielle Vitam</span></a>.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="stockage.html" class="btn btn-neutral float-left" title="17. Gestion de multiples stratégies de stockage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="valeur_probante.html" class="btn btn-neutral float-right" title="19. Conservation de la valeur probante" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2022, Programme Vitam.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: master_7.1.x
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Branches</dt>
+      <dd><a href="../../master/sections/transfert.html">master</a></dd>
+      <dd><a href="../../master_6.rc.x/index.html">master_6.rc.x</a></dd>
+      <dd><a href="transfert.html">master_7.1.x</a></dd>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>
