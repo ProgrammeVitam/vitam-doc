@@ -519,34 +519,34 @@ Cette structuration est de fait reprise dans les collections exposées par les A
 |:---|:---|
 |Disposer d’un front-office de référence|Améliorer la diffusion du produit vitam en simplifiant son adoption et son utilisabilité<br>- Pour les fonctions d’administration technique et fonctionnelle<br>- Pour les fonctions archivistiques, dans le but d’une plus grande diffusion de la solution, afin d’avoir des processus de référence sur lesquels échanger|
 
-[^1] Les méthodes Agiles sont des méthodes de gestion de projets fonctionnant sur une base itérative et incrémentale, visant à créer de la valeur métier rapidement même sur des contours réduits, dans une interaction permanente avec les porteurs de besoins fonctionnels, tant pour l’expression de leurs attentes que pour le contrôle de l’adéquation avec ce qui est réalisé. (Voir [« Manifeste pour le développement Agile de logiciels – Agile Manifesto »](https://agilemanifesto.org/iso/fr/manifesto.html))
+[^1]: Les méthodes Agiles sont des méthodes de gestion de projets fonctionnant sur une base itérative et incrémentale, visant à créer de la valeur métier rapidement même sur des contours réduits, dans une interaction permanente avec les porteurs de besoins fonctionnels, tant pour l’expression de leurs attentes que pour le contrôle de l’adéquation avec ce qui est réalisé. (Voir [« Manifeste pour le développement Agile de logiciels – Agile Manifesto »](https://agilemanifesto.org/iso/fr/manifesto.html))
 
-[^2] Le « Manifeste » est une phrase résumant l’essentiel d’un projet, utilisée comme fondement dans les méthodes Agiles.
+[^2]: Le « Manifeste » est une phrase résumant l’essentiel d’un projet, utilisée comme fondement dans les méthodes Agiles.
 
-[^3] A l’origine, le manifeste s’achevait par cette ligne : « Et vise son adoption par le plus grand nombre d’acteurs publics ». Elle a été mise à jour en 2020 suite au passage en phase produit.
+[^3]: A l’origine, le manifeste s’achevait par cette ligne : « Et vise son adoption par le plus grand nombre d’acteurs publics ». Elle a été mise à jour en 2020 suite au passage en phase produit.
 
-[^4] Avant la clôture d’une affaire ou d’un dossier, par exemple, le dossier RH d’un agent travaillant toujours dans le service.
+[^4]: Avant la clôture d’une affaire ou d’un dossier, par exemple, le dossier RH d’un agent travaillant toujours dans le service.
 
-[^5] Avant l’expiration de la durée d’utilité administrative (DUA), les données peuvent faire l’objet d’un contrôle, d’un recours contentieux ou d’une demande du public à des fins administratives.
+[^5]: Avant l’expiration de la durée d’utilité administrative (DUA), les données peuvent faire l’objet d’un contrôle, d’un recours contentieux ou d’une demande du public à des fins administratives.
 
-[^6] À l’issue de la DUA, les données n’ont plus d’utilité administrative mais sont conservées pour des raisons historiques, statistiques mais aussi juridiques. Les données ayant un effet de droit sans limite dans le temps, par exemple l’état-civil, sont aussi archivées à titre définitif. À ce stade, elles doivent pouvoir être communiquées au public, en conformité avec les délais légaux de communicabilité.
+[^6]: À l’issue de la DUA, les données n’ont plus d’utilité administrative mais sont conservées pour des raisons historiques, statistiques mais aussi juridiques. Les données ayant un effet de droit sans limite dans le temps, par exemple l’état-civil, sont aussi archivées à titre définitif. À ce stade, elles doivent pouvoir être communiquées au public, en conformité avec les délais légaux de communicabilité.
 
-[^7] Pour Vitam accessible en service
+[^7]: Pour Vitam accessible en service
 
-[^8] Dans les méthodes Agiles, une « User Story » (traduisible par « Récit Utilisateur ») est un énoncé simple dans le langage de tous les jours permettant de décrire avec suffisamment de précision le contenu d'une fonctionnalité à développer. Elle est complétée d’éléments plus techniques au fur et à mesure des échanges avec les membres de l’équipe Agile pour obtenir une formulation suffisamment claire pour engager les développements.
+[^8]: Dans les méthodes Agiles, une « User Story » (traduisible par « Récit Utilisateur ») est un énoncé simple dans le langage de tous les jours permettant de décrire avec suffisamment de précision le contenu d'une fonctionnalité à développer. Elle est complétée d’éléments plus techniques au fur et à mesure des échanges avec les membres de l’équipe Agile pour obtenir une formulation suffisamment claire pour engager les développements.
 
-[^9] L’Open Archival Information System ou OAIS (Système ouvert d’archivage d’information) est un modèle conceptuel destiné à la gestion, à l’archivage et à la préservation à long terme de documents numériques. La mise au point de l'OAIS a été pilotée par le Consultative Committee for Space Data Systems. L'OAIS est enregistré comme norme ISO sous la référence 14 721:2003. (source Wikipedia).
+[^9]: L’Open Archival Information System ou OAIS (Système ouvert d’archivage d’information) est un modèle conceptuel destiné à la gestion, à l’archivage et à la préservation à long terme de documents numériques. La mise au point de l'OAIS a été pilotée par le Consultative Committee for Space Data Systems. L'OAIS est enregistré comme norme ISO sous la référence 14 721:2003. (source Wikipedia).
 
-[^10] Peu visibles de l’utilisateur ces fonctions sont en fait appelées au travers des autres domaines.
+[^10]: Peu visibles de l’utilisateur ces fonctions sont en fait appelées au travers des autres domaines.
 
-[^11] La méthode MoSCoW est une technique visant à prioriser des besoins ou des exigences en matière d'assistance à maîtrise d'ouvrage et de développement logiciel. L’objectif est que le maître d'œuvre et le maître d'ouvrage s'accordent sur l'importance des tâches à réaliser par rapport aux délais prévus.
+[^11]: La méthode MoSCoW est une technique visant à prioriser des besoins ou des exigences en matière d'assistance à maîtrise d'ouvrage et de développement logiciel. L’objectif est que le maître d'œuvre et le maître d'ouvrage s'accordent sur l'importance des tâches à réaliser par rapport aux délais prévus.
 
-[^12] Le frontal archivistique (ou encore Système d’Information Archivistique - SIA) gère tous les aspects métiers d’un service d’archives y compris dans le domaine papier. Il assure donc des fonctions comme la gestion des salles de lecture, des localisations physiques, des processus de dérogation… qui n’ont aucun lien avec le back-office d’archivage numérique.
+[^12]: Le frontal archivistique (ou encore Système d’Information Archivistique - SIA) gère tous les aspects métiers d’un service d’archives y compris dans le domaine papier. Il assure donc des fonctions comme la gestion des salles de lecture, des localisations physiques, des processus de dérogation… qui n’ont aucun lien avec le back-office d’archivage numérique.
 
-[^13] Le projet Vitam accessible en service vise à proposer une solution cloud Vitam pour l'archivage intermédiaire interministériel. Il est porté par le ministère de la Culture, le ministère de la Transition écologique et les ministères sociaux, conjointement par les missions archives et les services du numérique.
+[^13]: Le projet Vitam accessible en service vise à proposer une solution cloud Vitam pour l'archivage intermédiaire interministériel. Il est porté par le ministère de la Culture, le ministère de la Transition écologique et les ministères sociaux, conjointement par les missions archives et les services du numérique.
 
-[^14] Dans le cadre du POC réalisé en 2013, 200 millions d’items ont pu être pris en charge sur un serveur de type 2 cœurs/16 Go avec des temps de réponse de recherche de l’ordre de la seconde sur des requêtes simples. Qui plus est, la linéarité par ajout de serveurs a été excellente : 8 serveurs amenant à des temps similaires pour 1,5 milliards d’archives.
+[^14]: Dans le cadre du POC réalisé en 2013, 200 millions d’items ont pu être pris en charge sur un serveur de type 2 cœurs/16 Go avec des temps de réponse de recherche de l’ordre de la seconde sur des requêtes simples. Qui plus est, la linéarité par ajout de serveurs a été excellente : 8 serveurs amenant à des temps similaires pour 1,5 milliards d’archives.
 
-[^15] Une vision globale du système, soit « systémique », permet non seulement d’apporter les éléments de preuves, mais de vérifier leur cohérence à partir de sources multiples et relativement indépendantes.
+[^15]: Une vision globale du système, soit « systémique », permet non seulement d’apporter les éléments de preuves, mais de vérifier leur cohérence à partir de sources multiples et relativement indépendantes.
 
-[^16] Le sous-titre explicite de la norme est « Spécifications fonctionnelles d’un composant Coffre-Fort Numérique destiné à la conservation d’informations numériques dans des conditions de nature à en garantir leur intégrité dans le temps. »
+[^16]: Le sous-titre explicite de la norme est « Spécifications fonctionnelles d’un composant Coffre-Fort Numérique destiné à la conservation d’informations numériques dans des conditions de nature à en garantir leur intégrité dans le temps. »

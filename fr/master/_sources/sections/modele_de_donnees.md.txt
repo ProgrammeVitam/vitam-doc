@@ -3736,97 +3736,163 @@ Deux documents sont créés à chaque fois qu'un scroll est effectué par tenant
 
 #### Utilisation de la collection PurgedPersistentIdentifier
 
-La collection PurgedPersistentIdentifier conserve les identifiants pérennes des Archives Unitaires et des Objets Techniques qui ont été supprimés suite à des opérations d'élimination, de transfert, ou de suppression spécifique d'objets. Cette collection joue un rôle crucial dans la gestion de la traçabilité des archives éliminées ou transférées, en offrant la possibilité de reconstruire l'information sur ces éléments pour les opérations de sauvegarde et de restauration.
+La collection PurgedPersistentIdentifier conserve les identifiants pérennes des unités archivistiques et des objets techniques qui ont été supprimés suite à des opérations d'élimination, de transfert, ou de suppression spécifique d'objets. Cette collection joue un rôle crucial dans la gestion de la traçabilité des archives éliminées ou transférées, en offrant la possibilité de reconstruire l'information sur ces éléments pour les opérations de sauvegarde et de restauration.
 
-### Détail des champs
+#### Exemple de JSON stocké en base comprenant l’exhaustivité des champs
 
-- **« id » :** Identifiant unique de l'élément (AU ou Objet) concerné par la suppression.
+```json
+{
+    _id: 'aeaqaaaaaeeci65iabqykamny5hmb5yaaaba',
+    persistentIdentifier: [
+        {
+            PersistentIdentifierType: 'doi',
+            PersistentIdentifierOrigin: 'OriginatingAgency',
+            PersistentIdentifierReference: 'Identifier0',
+            PersistentIdentifierContent: 'doi:10.1522/cla.ada.con'
+        }
+    ],
+    _tenant: 1,
+    _v: 0,
+    type: 'Unit',
+    idObjectGroup: 'aebaaaaaaeeci65iabqykamny5hmb2qaaaaq',
+    archivalAgencyIdentifier: null,
+    opId: 'aeeaaaaaageci65iabusuamny5hvvkiaaaaq',
+    opType: 'ELIMINATION_ACTION',
+    opEndDate: '2024-02-20T16:18:05.961',
+    lastPersistentDate: '2024-02-20T16:30:00.210'
+}
+```
 
-- Champ peuplé par la solution logicielle Vitam.
+#### Détail des champs
+
+**« _id » :** identifiant unique de l'élément (unité archivistique ou objet technique) concerné par la suppression.
 
 - Il s’agit d’une chaîne de caractères.
 
+- Champ peuplé par la solution logicielle Vitam.
+
 - Cardinalité : 1-1.
 
-- **« tenant » :** Identifiant du tenant concerné par l'opération de suppression.
-
-- Champ peuplé par la solution logicielle Vitam.
+**« tenant » :** identifiant du tenant concerné par l'opération de suppression.
 
 - Il s’agit d’un entier.
 
-- Cardinalité : 1-1.
-
-- **« persistentIdentifiers » :** Liste des identifiants pérennes associés à l'élément purgé.
-
 - Champ peuplé par la solution logicielle Vitam.
 
-- Il s’agit d’une liste de d'objets.
+- Cardinalité : 1-1.
+
+**« persistentIdentifier » :** liste des identifiants pérennes associés à l'élément supprimé.
+
+- Il s’agit d’une liste de d'objets. Elle contient :
+
+    -   « PersistentIdentifierType » : type d'identifiant pérenne.
+
+        -   Il s’agit d’une chaîne de caractères.
+
+        -   Cardinalité : 1-1
+		
+    -   « PersistentIdentifierOrigin » : origine de l'identifiant pérenne.
+
+        -   Il s’agit d’une chaîne de caractères.
+
+        -   Cardinalité : 0-1
+		
+	-   « PersistentIdentifierReference » : référence de l'identifiant pérenne.
+
+        -   Il s’agit d’une chaîne de caractères.
+
+        -   Cardinalité : 0-1
+		
+	-   « PersistentIdentifierContent » : contenu de l'identifiant pérenne.
+
+        -   Il s’agit d’une chaîne de caractères.
+
+        -   Cardinalité : 1-1
+
+- Liste peuplée par la solution logicielle Vitam.
 
 - Cardinalité : 1-N.
 
-- **« version » :** version de l’enregistrement décrit.
-
-- Champ peuplé par la solution logicielle Vitam.
+**« _v » :** version de l’enregistrement décrit.
 
 - Il s’agit d’un entier.
 
+- Champ peuplé par la solution logicielle Vitam.
+
 - Cardinalité : 1-1.
 
-- **« type » :** Type de l'élément supprimé (AU ou Objet).
-
-- Champ peuplé par la solution logicielle Vitam.
+**« type » :** type de l'élément supprimé.
 
 - Il s’agit d’une chaîne de caractères.
 
+- Champ peuplé par la solution logicielle Vitam.
+
+- Ce champ peut avoir comme valeur : "Unit" ou "Object".
+
 - Cardinalité : 1-1.
 
-- **« operationId » :** Identifiant de l'opération ayant conduit à la suppression de l'élément.
-
-- Champ peuplé par la solution logicielle Vitam.
+**« idObjectGroup » :** identifiant du groupe d'objets techniques si l'élément est un objet.
 
 - Il s’agit d’une chaîne de caractères.
 
-- Cardinalité : 1-1.
-
-- **« operationType » :** Type de l'opération (Elimination, Suppression, ou Transfert).
+- Contient la valeur « null » si l'élément est une unité archivistique.
 
 - Champ peuplé par la solution logicielle Vitam.
-
-- Il s’agit d’une chaîne de caractères.
-
-- Cardinalité : 1-1.
-
-- **« operationLastPersistentDate » :** Date de la dernière persistance de l'opération.
-
-- Champ peuplé par la solution logicielle Vitam.
-
-- Il s’agit d’une chaîne de caractères au format date.
-
-- Cardinalité : 1-1.
-
-- **« objectGroupId » :** Identifiant du groupe d'objets si l'élément est un objet, vide sinon.
-
-- Champ peuplé par la solution logicielle Vitam.
-
-- Il s’agit d’une chaîne de caractères.
 
 - Cardinalité : 0-1.
 
-- **« archivalAgencyIdentifier » :** Identifiant de l'agence d'archives cible dans le cas d'un transfert.
-
-- Champ peuplé par la solution logicielle Vitam.
+**« archivalAgencyIdentifier » :** identifiant du service d'archives.
 
 - Il s’agit d’une chaîne de caractères.
 
+- Champ peuplé par la solution logicielle Vitam uniquement dans le cas d'une opération de transfert d'archives.
+
+- Correspond au champ ArchivalAgencyIdentifier défini dans le message ArchiveTransfer.
+
+- Contient la valeur « null » s'il s'agit d'une opération d'élimination ou de suppression d'objets.
+
 - Cardinalité : 0-1.
 
-- **« lastPersistentDate » :** Dernière date de persistance du document.
+**« opId » :** identifiant de l'opération ayant conduit à la suppression de l'élément.
+
+- Il s’agit d’une chaîne de caractères.
 
 - Champ peuplé par la solution logicielle Vitam.
 
-- Il s’agit d’une chaîne de caractères au format date.
+- Cardinalité : 1-1.
+
+**« opType » :** type de l'opération.
+
+- Il s’agit d’une chaîne de caractères.
+
+- Champ peuplé par la solution logicielle Vitam.
+
+- Peut contenir :
+	
+	- la valeur "ELIMINATION_ACTION" s'il s'agit d'une opération d'élimination,
+	
+	- la valeur "TRANSFER_REPLY" s'il s'agit d'une opération de transfert,
+
+	- la valeur "DELETE_GOT_VERSIONS" s'il s'agit d'une opération de suppression d'objets.
 
 - Cardinalité : 1-1.
+
+**« opEndDate » :** date de la dernière persistance de l'opération.
+
+- Il s’agit d’une chaîne de caractères au format date.
+
+- Champ peuplé par la solution logicielle Vitam.
+
+- Cardinalité : 1-1.
+
+**« lastPersistentDate » :** dernière date de persistance du document.
+
+- Il s’agit d’une chaîne de caractères au format date.
+
+- Champ peuplé par la solution logicielle Vitam.
+
+- Cardinalité : 1-1.
+
 
 Base metadataCollect
 --------------------
@@ -4697,6 +4763,12 @@ Cette transposition se fait comme suit :
 		-   Champ peuplé par la solution logicielle Vitam.
 
 		-   Cardinalité : 1-1
+
+**« AutomaticIngest » :** paramètre permettant d'automatiser l'envoi de transaction(s) vers la solution logicielle Vitam.
+
+-   Il s’agit d’un booléen.
+
+-   Cardinalité : 0-1
 		
 **« _tenant » :** identifiant du tenant.
 
@@ -4893,7 +4965,6 @@ Cette transposition se fait comme suit :
 
 -   Cardinalité : 0-1
 
-AutomaticIngest: true
 
 
 Base MasterData
@@ -7683,31 +7754,33 @@ Un fichier JSON décrit la totalité des champs de l’ontologie (interne et ext
 
 -   Cardinalité : 1-1
 
-**« StringSize » :** Indique la taille attendue pour les chaînes de caractères.
-    
-- Types possibles : `SHORT`, `MEDIUM`, `LARGE`.
+**« StringSize » :** indique la taille attendue pour les chaînes de caractères.
 
-    - `SHORT` correspond à des identifiants ou des chaînes de petite taille.
-    - `MEDIUM` est utilisé pour des textes de taille moyenne.
+-   Il s’agit d’une chaîne de caractères.
+
+-   Types possibles : `SHORT`, `MEDIUM`, `LARGE`.
+
+    - `SHORT` correspond à des identifiants ou des chaînes de petite taille ;
+    - `MEDIUM` est utilisé pour des textes de taille moyenne ;
     - `LARGE` permet d'accueillir des textes de grande taille, comme des descriptions détaillées.
 
-- Non applicable pour les types autres que `String`.
+-   Non applicable pour les types autres que `String`.
 
-- Cardinalité : 0-1.
+-   Cardinalité : 0-1.
 
-**« TypeDetail » :** Fournit des informations supplémentaires sur le type de l'élément dans l'ontologie.
+**« TypeDetail » :** fournit des informations supplémentaires sur le type de l'élément dans l'ontologie.
 
-- Valeurs possibles pour `TypeDetail`:
+-   Il s’agit d’une chaîne de caractères.
 
-    - `STRING`: Compatible avec les types Ontology `TEXT`, `KEYWORD`, et `GEO_POINT`.
-    - `ENUM`: Compatible avec `ENUM`, `TEXT`, et `KEYWORD`.
-    - `DATETIME`: Spécifiquement pour `DATE` avec une précision temporelle.
-    - `DATE`: Uniquement pour le type Ontology `DATE`.
-    - `LONG`: Pour le type Ontology `LONG`.
-    - `DOUBLE`: Pour le type Ontology `DOUBLE`.
-    - `BOOLEAN`: Pour le type Ontology `BOOLEAN`.
+-   Valeurs possibles pour `TypeDetail`:
 
-- Il s’agit d’une chaîne de caractères.
+    - `STRING`: compatible avec les types `TEXT`, `KEYWORD`, et `GEO_POINT` ;
+    - `ENUM`: compatible avec `ENUM`, `TEXT`, et `KEYWORD` ;
+    - `DATETIME`: spécifiquement pour `DATE` avec une précision temporelle ;
+    - `DATE`: uniquement pour le type `DATE` ;
+    - `LONG`: pour le type `LONG` ;
+    - `DOUBLE`: pour le type `DOUBLE` ;
+    - `BOOLEAN`: pour le type `BOOLEAN`.
 
 - Cardinalité : 0-1.
 
@@ -7715,69 +7788,125 @@ Un fichier JSON décrit la totalité des champs de l’ontologie (interne et ext
 
 #### Utilisation de la collection Schema
 
-La collection Schema contient les définitions des chemins (paths) et des structures utilisées pour organiser et valider les données archivistiques dans le système Vitam. Elle permet de préciser les caractéristiques et les règles applicables à chaque élément.
+La collection Schema contient les définitions des chemins (paths) et des structures utilisées pour organiser et valider les données archivistiques dans la solution logicielle Vitam. Elle permet de préciser les caractéristiques et les règles applicables à chaque élément.
 
-### Champs
+#### Utilisation de la collection
 
-**« id » :** Identifiant unique du schéma.
+La collection Ontology permet de référencer et décrire unitairement les champs définissant l’ontologie utilisée dans la solution logicielle Vitam.
 
-- Type : Chaîne de caractères.
+#### Exemple de JSON stocké en base comprenant l’exhaustivité des champs de la collection Schema
 
-- Cardinalité : 1-1.
+```json
+{
+    _id: 'aeaaaaaaaaecx2k6abhpuamq4m363dyaaaaq',
+    Origin: 'EXTERNAL',
+    Collection: 'Unit',
+    Cardinality: 'ONE',
+    Path: 'TNRSchema.Provider.Address',
+    ShortName: 'Adresse du provider',
+    CreationDate: '2024-07-24T05:30:11.727',
+    LastUpdate: '2024-07-24T05:30:11.727',
+    IsObject: false,
+    _v: 0,
+    _tenant: 0
+}
+```
 
-**« Collection » :** Nom de la collection à laquelle appartient le schéma.
+#### Détail des champs de la collection Schema
 
-- Type : Chaîne de caractères.
+**« _id » :** identifiant unique de l'enregistrement.
 
-- Cardinalité : 1-1.
+- Il s'agit d'une chaîne de caractères.
 
-**« Description » :** Description du schéma ou de l'élément du schéma.
+- Cardinalité : 1-1
 
-- Type : Chaîne de caractères.
+**« Collection » :** nom de la collection à laquelle appartient l'enregistrement.
 
-- Cardinalité : 0-1.
+- Il s'agit d'une chaîne de caractères.
 
-**« Origin » :** Origine du schéma, indiquant s'il est interne ou externe.
+- Peut avoir comme valeur : "Unit" ou "ObjectGroup"
 
-- Type : Enumération (`INTERNAL`, `EXTERNAL`).
+- Cardinalité : 1-1
 
-- Cardinalité : 1-1.
+**« Description » :** description du schéma ou de l'élément du schéma.
 
-**« ShortName » :** Nom court ou abrégé du schéma.
+- Il s'agit d'une chaîne de caractères.
 
-- Type : Chaîne de caractères.
+- Cardinalité : 0-1
 
-- Cardinalité : 1-1.
+**« Origin » :** origine du schéma, indiquant s'il est interne ou externe.
 
-**« Path » :** Chemin complet de l'élément dans l'arborescence des métadonnées.
+- Il s'agit d'une chaîne de caractères.
 
-- Type : Chaîne de caractères.
+- Peut avoir comme valeur : `INTERNAL` ou `EXTERNAL`.
 
-- Cardinalité : 1-1.
+- Cardinalité : 1-1
 
-**« StringSize » :** Taille indicative pour les champs de type chaîne, peut prendre les valeurs `SHORT`, `MEDIUM`, ou `LARGE`.
+**« ShortName » :** mom court ou abrégé du schéma.
 
-Type : Enumération.
+- Il s'agit d'une chaîne de caractères.
 
-Cardinalité : 0-1 (Applicable uniquement pour les feuilles de type `String`).
+- Cardinalité : 1-1
 
-**« Cardinality » :** Cardinalité de l'élément, indiquant s'il peut apparaître une fois ou plusieurs fois.
+**« Path » :** chemin complet de l'élément dans l'arborescence des métadonnées.
 
-- Type : Enumération (`ONE`, `MANY`, `ONE_REQUIRED`, `MANY_REQUIRED`).
+- Il s'agit d'une chaîne de caractères.
 
-- Cardinalité : 1-1.
+- Cardinalité : 1-1
 
-**« IsObject » :** Indique si l'élément est un objet.
+**« StringSize » :** taille indicative pour les champs de type chaîne de caractères.
 
-- Type : Booléen.
+- Il s'agit d'une chaîne de caractères.
 
-- Cardinalité : 1-1.
+- Peut avoir comme valeur : `SHORT`, `MEDIUM`, ou `LARGE`.
 
-**« CreationDate » et « LastUpdate » :** Dates de création et de dernière mise à jour du schéma.
+- Applicable uniquement pour les feuilles de type `String`.
 
-- Type : Chaîne de caractères au format date.
+- Cardinalité : 0-1
 
-- Cardinalité : 1-1 pour chacun.
+**« Cardinality » :** cardinalité de l'élément, indiquant s'il peut apparaître une fois ou plusieurs fois.
+
+- Il s'agit d'une chaîne de caractères.
+
+- Peut avoir comme valeur : `ONE`, `MANY`, `ONE_REQUIRED`, `MANY_REQUIRED`.
+
+- Cardinalité : 1-1
+
+**« IsObject » :** indique si l'élément est un objet.
+
+- Il s'agit d'un booléen.
+
+- Cardinalité : 1-1
+
+**« CreationDate » :** date de création du schéma.
+
+- Il s'agit d'une chaîne de caractères au format date.
+
+- Cardinalité : 1-1
+
+**« LastUpdate » :** date de dernière mise à jour du schéma.
+
+- Il s'agit d'une chaîne de caractères au format date.
+
+- Cardinalité : 1-1
+
+**« _tenant » :** information sur le tenant.
+
+-   Il s’agit d’un entier.
+
+-   Champ peuplé par la solution logicielle Vitam.
+
+-   Cardinalité : 1-1
+
+**« _v » :** version de l’enregistrement décrit.
+
+-   Il s’agit d’un entier.
+
+-   Champ peuplé par la solution logicielle Vitam.
+
+-   Cardinalité : 1-1
+
+-   0 correspond à l’enregistrement d’origine. Si le numéro est supérieur à 0, alors il s’agit du numéro de version de l’enregistrement.
 
 ### Collection PreservationScenario
 
@@ -8510,9 +8639,7 @@ Il y a une valeur d’offset par couple tenant/collection.
 Base Report
 -----------
 
-La base Report contient des collections remplies temporairement,
-utilisées pour construire des rapports d’opérations dans la solution
-logicielle Vitam. Ces collections sont :
+La base Report contient des collections remplies temporairement, utilisées pour construire des rapports d’opérations dans la solution logicielle Vitam. Ces collections sont :
 
 -   AuditObjectGroup
 
@@ -8548,7 +8675,7 @@ La collection AuditObjectGroup permet à la solution logicielle Vitam de constru
 
 #### Détail des champs
 
-**« _id » :** identifiant unique de l’enregistrement
+**« _id » :** identifiant unique de l’enregistrement.
 
 -   Il s’agit d’une chaîne de 36 caractères correspondant à un GUID.
 
@@ -8564,21 +8691,21 @@ La collection AuditObjectGroup permet à la solution logicielle Vitam de constru
 
 -   Cardinalité : 1-1
 
-**« _metadata »** objet contenant une liste de paramètres concernant les métadonnées du groupe d’objets. Il est composé comme suit :
+**« _metadata »** objet contenant une liste de paramètres concernant les métadonnées du groupe d’objets techniques. Il est composé comme suit :
 
 -   « id » : identifiant du groupe d’objets.
 
--   « status » : statut de l’action d’audit pour ce groupe d’objets. Il s’agit d’une chaîne de caractères qui peut avoir comme valeurs : OK, WARNING, KO.
+-   « status » : statut de l’action d’audit pour ce groupe d’objets techniques. Il s’agit d’une chaîne de caractères qui peut avoir comme valeurs : OK, WARNING, KO.
 
--   « opi » : identifiant de l’opération d’entrée du groupe d’objets.
+-   « opi » : identifiant de l’opération d’entrée du groupe d’objets techniques.
 
--   « originatingAgency » : identifiant du service producteur du groupe d’objets.
+-   « originatingAgency » : identifiant du service producteur du groupe d’objets techniques.
 
--   « parentUnitIds » : identifiant des unités archivistiques parentes du groupe d’objets ayant été audités.
+-   « parentUnitIds » : identifiant des unités archivistiques parentes du groupe d’objets techniques ayant été audité.
 
--   « objectIds » : identifiants des objets du groupe d’objets.
+-   « objectIds » : identifiants des objets techniques du groupe d’objets techniques.
 
-**« _tenant » :** information sur le tenant
+**« _tenant » :** information sur le tenant.
 
 -   Il s’agit de l’identifiant du tenant.
 
@@ -8618,8 +8745,7 @@ La collection EliminationActionUnit permet à la solution logicielle Vitam de co
 
 -   Cardinalité : 1-1
 
-**_metadata** objet contenant une liste de paramètres concernant les
-métadonnées de l’unité archivistiques. Il est composé comme suit :
+**_metadata** objet contenant une liste de paramètres concernant les métadonnées de l’unité archivistique. Il est composé comme suit :
 
 -   « id » : identifiant unique de l’enregistrement.
 
@@ -8679,20 +8805,19 @@ La collection EliminationActionObjectGroup permet à la solution logicielle Vita
 
 -   Cardinalité : 1-1
 
-**« _metadata »** objet contenant une liste de paramètres concernant
-les métadonnées du groupe d’objets. Il est composé comme suit :
+**« _metadata »** objet contenant une liste de paramètres concernant les métadonnées du groupe d’objets techniques. Il est composé comme suit :
 
--   « id » : identifiant du groupe d’objets
+-   « id » : identifiant du groupe d’objets techniques.
 
--   « status » : statut de l’action d’élimination pour ce groupe d’objets. Il s’agit d’une chaîne de caractères qui peut avoir comme valeurs : DELETED, PARTIAL_DETACHMENT.
+-   « status » : statut de l’action d’élimination pour ce groupe d’objets techniques. Il s’agit d’une chaîne de caractères qui peut avoir comme valeurs : DELETED, PARTIAL_DETACHMENT.
 
--   « opi » : identifiant de l’opération d’entrée du groupe d’objets.
+-   « opi » : identifiant de l’opération d’entrée du groupe d’objets techniques.
 
--   « originatingAgency » : identifiant du service producteur du groupe d’objets.
+-   « originatingAgency » : identifiant du service producteur du groupe d’objets techniques.
 
--   « deletedParentUnitIds » : identifiant des unités archivistiques parentes du groupe d’objets et ayant été supprimées.
+-   « deletedParentUnitIds » : identifiant des unités archivistiques parentes du groupe d’objets techniques et ayant été supprimées.
 
--   « objectIds » : identifiants des objets du groupe d’objets.
+-   « objectIds » : identifiants des objets techniques du groupe d’objets techniques.
 
 **« _tenant » :** information sur le tenant.
 
@@ -8702,7 +8827,7 @@ les métadonnées du groupe d’objets. Il est composé comme suit :
 
 -   Cardinalité : 1-1
 
-**« creationDateTime » :** date d’enregistrement du document
+**« creationDateTime » :** date d’enregistrement du document.
 
 -   Il s’agit d’une date.
 
@@ -8742,8 +8867,7 @@ La collection PreservationReport permet à la solution logicielle Vitam de const
 
 -   Cardinalité : 1-1
 
-**« _action » :** action mise en œuvre dans le cadre de l’opération de
-préservation.
+**« _action » :** action mise en œuvre dans le cadre de l’opération de préservation.
 
 -   Il s’agit d’une chaîne de caractères.
 
@@ -8753,8 +8877,7 @@ préservation.
 
 -   Cardinalité : 1-1
 
-    « **analyseResult** » : statut de l’action de préservation pour ce
-    groupe d’objets tel que renvoyé par le griffin.
+« **analyseResult** » : statut de l’action de préservation pour ce groupe d’objets techniques tel que renvoyé par le griffon.
 
 -   Il s’agit d’une chaîne de caractères.
 
@@ -8770,8 +8893,7 @@ préservation.
 
 -   Cardinalité : 1-1
 
-    « **inputName** » : identifiant unique de l’objet ayant servi de
-    source à l’opération de préservation.
+« **inputName** » : identifiant unique de l’objet technique ayant servi de source à l’opération de préservation.
 
 -   Il s’agit d’une chaîne de 36 caractères correspondant à un GUID.
 
@@ -8779,8 +8901,7 @@ préservation.
 
 -   Cardinalité : 1-1
 
-    « **objectGroupId** » : identifiant unique du groupe d’objets ayant
-    fait l’objet de l’opération de préservation.
+« **objectGroupId** » : identifiant unique du groupe d’objets techniques ayant fait l’objet de l’opération de préservation.
 
 -   Il s’agit d’une chaîne de 36 caractères correspondant à un GUID.
 
@@ -8788,7 +8909,7 @@ préservation.
 
 -   Cardinalité : 1-1
 
-    « **outputName** » : identifiant unique de l’objet créé lors de l’opération de préservation.
+« **outputName** » : identifiant unique de l’objet technique créé lors de l’opération de préservation.
 
 -   Il s’agit d’une chaîne de 36 caractères correspondant à un GUID.
 
@@ -8796,8 +8917,7 @@ préservation.
 
 -   Cardinalité : 1-1
 
-    « **status** » : statut de l’action de préservation pour ce groupe
-    d’objets.
+« **status** » : statut de l’action de préservation pour ce groupe d’objets techniques.
 
 -   Il s’agit d’une chaîne de caractères.
 
@@ -8807,7 +8927,7 @@ préservation.
 
 -   Cardinalité : 1-1
 
-    « **unitId** » : identifiant unique de l’unité archivistique déclarant le groupe d’objets ayant fait l’objet de l’opération de préservation.
+« **unitId** » : identifiant unique de l’unité archivistique déclarant le groupe d’objets techniques ayant fait l’objet de l’opération de préservation.
 
 -   Il s’agit d’une chaîne de 36 caractères correspondant à un GUID.
 
@@ -8819,7 +8939,7 @@ préservation.
 
 #### Utilisation de la collection
 
-La collection BulkUpdateUnitMetadataReport permet à la solution logicielle Vitam de construire des rapports de mises à jour de métadonnées d'archives de manière unitaire mais dans le contexte d'une opération de masse. Les données de cette collection sont temporaires et sont supprimées dès que les rapports correspondants sont créés. Il est donc possible de trouver la collection vide.
+La collection BulkUpdateUnitMetadataReport permet à la solution logicielle Vitam de construire des rapports de mise à jour de métadonnées d'unités archivistiques de manière unitaire dans le contexte d'une opération de masse. Les données de cette collection sont temporaires et sont supprimées dès que les rapports correspondants sont créés. Il est donc possible de trouver la collection vide.
 
 #### Détail des champs
 
@@ -8847,7 +8967,7 @@ La collection BulkUpdateUnitMetadataReport permet à la solution logicielle Vita
 
 - Cardinalité : 1-1
 
-**« status » :** statut de l’action de mise à jour pour ce groupe
+**« status » :** statut de l’action de mise à jour pour ce groupe.
 d’objets.
 
 - Il s’agit d’une chaîne de caractères.
@@ -8858,10 +8978,9 @@ d’objets.
 
 - Cardinalité : 1-1
 
-**« query » :** requête de sélection des unités pour mise à jour
-d’objets.
+**« query » :** requête de sélection des unités archivistiques pour mise à jour.
 
-- Il s’agit d’une chaîne de caractères qui représente la requête utilisée pour identifier les unités d'archives ciblées pour la mise à jour dans le cadre de l'opération de masse
+- Il s’agit d’une chaîne de caractères qui représente la requête utilisée pour identifier les unités archivistiques ciblées pour la mise à jour dans le cadre d'une opération de masse.
 
 - Champ peuplé par la solution logicielle Vitam.
 
@@ -8875,7 +8994,7 @@ d’objets.
 
 - Cardinalité : 1-1
 
-**« detailType » :** le type d'élément sur lequel on fait la mise à jour.
+**« detailType » :** type d'élément sur lequel on la mise à jour a été faite.
 
 - Il s’agit d’une chaîne de caractères qui a la valeur "unit" pour ce type de rapport.
 
@@ -8883,22 +9002,22 @@ d’objets.
 
 - Cardinalité : 1-1
 
-**« resultKey » :** indicateur du résultat de l’opération
+**« resultKey » :** indicateur du résultat de l’opération.
 
 - Il s’agit d’une chaîne de caractères.
 
 - Peut avoir comme valeurs :
 
-    - INVALID_DSL_QUERY : Indique que la requête DSL fournie pour l'opération est invalide en raison de la présence de champs internes non autorisés.
-    - UNIT_NOT_FOUND : Signifie qu'aucune unité archivistique correspondante à la requête spécifiée n'a été trouvée.
-    - TOO_MANY_UNITS_FOUND : Avertit que la requête a retourné plusieurs unités archivistiques alors qu'une seule était attendue, ce qui indique une ambigüité dans la requête.
-    - ERROR_METADATA_UPDATE : Informe qu'une erreur s'est produite lors de la tentative de mise à jour des métadonnées, empêchant l'opération de se terminer avec succès.
+    - INVALID_DSL_QUERY : indique que la requête DSL fournie pour l'opération est invalide en raison de la présence de champs internes non autorisés ;
+    - UNIT_NOT_FOUND : signifie qu'aucune unité archivistique correspondante à la requête spécifiée n'a été trouvée ;
+    - TOO_MANY_UNITS_FOUND : avertit que la requête a retourné plusieurs unités archivistiques alors qu'une seule était attendue, ce qui indique une ambigüité dans la requête ;
+    - ERROR_METADATA_UPDATE : informe qu'une erreur s'est produite lors de la tentative de mise à jour des métadonnées, empêchant l'opération de se terminer avec succès.
 
 - Champ peuplé par la solution logicielle Vitam.
 
 - Cardinalité : 1-1
 
-**« message » :** message descriptif du résultat de l’opération
+**« message » :** message descriptif du résultat de l’opération.
 
 - Il s’agit d’une chaîne de caractères qui contient des détails sur le résultat de l'opération de mise à jour en masse. Ce champ peut contenir des messages prédéfinis qui indiquent soit un problème rencontré lors de l'opération, soit le résultat de la tentative de mise à jour.
 
@@ -8910,7 +9029,7 @@ d’objets.
 
 #### Utilisation de la collection
 
-La collection DeleteGotVersionsReport permet à la solution logicielle Vitam de construire des rapports de suppression d'usages et de versions d'objets. Les données de cette collection sont temporaires et sont supprimées dès que les rapports correspondants sont créés. Il est donc possible de trouver la collection vide.
+La collection DeleteGotVersionsReport permet à la solution logicielle Vitam de construire des rapports de suppression d'usages et de versions d'objets techniques. Les données de cette collection sont temporaires et sont supprimées dès que les rapports correspondants sont créés. Il est donc possible de trouver la collection vide.
 
 #### Détail des champs
 
@@ -8938,8 +9057,7 @@ La collection DeleteGotVersionsReport permet à la solution logicielle Vitam de 
 
 - Cardinalité : 1-1
 
-**« status » :** statut de l’action de mise à jour pour ce groupe
-d’objets.
+**« status » :** statut de l’action de suppression pour ce groupe d’objets techniques.
 
 - Il s’agit d’une chaîne de caractères.
 
@@ -8957,23 +9075,23 @@ d’objets.
 
 - Cardinalité : 1-1
 
-**« objectGroupId » :** identifiant du groupe d'objects
+**« objectGroupId » :** identifiant du groupe d'objets techniques.
 
-- Il s’agit d’une chaîne de caractères et représente l'identifiant unique du groupe d'objets sur lequel porte l'opération de suppression.
+- Il s’agit d’une chaîne de caractères qui représente l'identifiant unique du groupe d'objets techniques sur lequel porte l'opération de suppression.
 
 - Champ peuplé par la solution logicielle Vitam.
 
 - Cardinalité : 1-1
 
-**« unitIds » :** Liste des identifiants des unités d'archive.
+**« unitIds » :** Liste des identifiants des unités archivistiques.
 
-- Il s’agit d'une liste de chaîne de caractères. Il s'agit de la liste des unités d'archive associées au groupe d'objets impactée par l'opération de suppression.
+- Il s’agit d'une liste de chaîne de caractères. Il s'agit de la liste des unités archivistiques associées au groupe d'objets techniques impactées par l'opération de suppression.
 
 - Champ peuplé par la solution logicielle Vitam.
 
 - Cardinalité : 0-N
 
-**« objectGroupGlobal » :** enregistre les détails des opérations de suppression effectuées sur les groupes d'objets spécifiques. Chaque entrée dans cette liste contient les informations concernant l'état de la suppression, les versions supprimées, et le résultat global de l'opération.
+**« objectGroupGlobal » :** enregistre les détails des opérations de suppression effectuées sur les groupes d'objets techniques spécifiques. Chaque entrée dans cette liste contient les informations concernant l'état de la suppression, les versions supprimées, et le résultat global de l'opération.
 
 - Champ peuplé par la solution logicielle Vitam.
 
@@ -8981,7 +9099,7 @@ d’objets.
 
 - Il s’agit d’un object composé des champs suivants :
 
-    - **« status » :** statut de l’action de mise à jour pour ce groupe
+    - **« status » :** statut de l’action de suppression pour ce groupe
       d’objets.
 
         - Il s’agit d’une chaîne de caractères.
@@ -8992,25 +9110,25 @@ d’objets.
 
         - Cardinalité : 1-1
 
-    - **« outcome » :** statut final de la mise à jour sur l'unité archivistique.
+    - **« outcome » :** statut final de l'opération.
 
-        - Il s’agit d’une chaîne de caractères devant contenir statut final de la modification sur l'unité archivistique.
+        - Il s’agit d’une chaîne de caractères devant contenir statut final de l'opération.
 
         - Champ peuplé par la solution logicielle Vitam.
 
         - Cardinalité : 1-1
 
-    - **« deletedVersions » :** Versions supprimées
+    - **« deletedVersions » :** versions supprimées.
 
-        - Il s’agit d’une chaîne de caractères devant contenir statut final de la modification sur l'unité archivistique.
+        - Il s’agit d’une chaîne de caractères devant contenir statut final de l'opération.
 
         - Champ peuplé par la solution logicielle Vitam.
 
         - Cardinalité : 0-N
 
-        - Il s’agit d’un object composé des champs suivants :
+        - Il s’agit d’un objet composé des champs suivants :
 
-            - **« id » :** Identifiant de la version
+            - **« id » :** identifiant de la version.
 
                 - Il s’agit d’une chaîne de caractères qui sert comme identifiant unique de la version supprimée.
 
@@ -9018,40 +9136,52 @@ d’objets.
 
                 - Cardinalité : 1-1
 
-            - **« DataObjectVersion » :** Version de l'objet de données.
+            - **« DataObjectVersion » :** version de l'objet technique.
 
-                - Il s’agit d’une chaîne de caractères spécifiant la version de l'objet de données.
+                - Il s’agit d’une chaîne de caractères spécifiant la version de l'objet technique.
+				
                 - Champ peuplé par la solution logicielle Vitam.
+				
                 - Cardinalité : 1-1.
 
-            - **« DataObjectGroupId » :** Identifiant du groupe d'objets de données.
+            - **« DataObjectGroupId » :** identifiant du groupe d'objets techniques.
 
-                - Il s’agit d’une chaîne de caractères identifiant le groupe auquel l'objet supprimé appartenait.
+                - Il s’agit d’une chaîne de caractères identifiant le groupe d'objets techniques auquel l'objet supprimé appartenait.
+				
                 - Champ peuplé par la solution logicielle Vitam.
+				
                 - Cardinalité : 1-1.
 
-            - **« Size » :** Taille de l'objet de données supprimé.
+            - **« Size » :** taille de l'objet technique supprimé.
 
-                - Il s’agit d’un nombre représentant la taille en octets de l'objet de données.
+                - Il s’agit d’un nombre représentant la taille en octets de l'objet technique.
+				
                 - Champ peuplé par la solution logicielle Vitam.
+				
                 - Cardinalité : 1-1.
 
-            - **« strategyId » :** Identifiant de la stratégie de conservation.
+            - **« strategyId » :** identifiant de la stratégie de stockage.
 
-                - Il s’agit d’une chaîne de caractères référençant la stratégie sous laquelle l'objet a été supprimé.
+                - Il s’agit d’une chaîne de caractères référençant la stratégie sous laquelle l'objet technique a été supprimé.
+				
                 - Champ peuplé par la solution logicielle Vitam.
+				
                 - Cardinalité : 1-1.
 
-            - **« opi » :** Identifiant d'opération de suppression.
+            - **« opi » :** identifiant de l'opération de suppression.
 
                 - Il s’agit d’une chaîne de caractères référençant l'opération de suppression.
+				
                 - Champ peuplé par la solution logicielle Vitam.
+				
                 - Cardinalité : 1-1.
 
-            - **« persistentIdentifier » :** Liste des identifiants pérennes associés à l'objet de données supprimé, permettant une traçabilité et une référence croisée avec d'autres systèmes ou archives
+            - **« persistentIdentifier » :** liste des identifiants pérennes associés à l'objet technique supprimé, permettant une traçabilité et une référence croisée avec d'autres systèmes ou archives.
 
-                - Liste des identifiants persistants de l'objet de données.
+                - Liste des identifiants persistants de l'objet technique.
+				
                 - Champ peuplé par la solution logicielle Vitam.
+				
                 - Cardinalité : 0-N.
 
 ### Collection EvidenceAuditReport
@@ -9070,7 +9200,7 @@ La collection EvidenceAuditReport permet à la solution logicielle Vitam de cons
 
 - Cardinalité : 1-1
 
-**« processId » :** identifiant de l’opération de mise à jour.
+**« processId » :** identifiant de l’opération.
 
 - Il s’agit d’une chaîne de caractères.
 
@@ -9104,19 +9234,22 @@ La collection EvidenceAuditReport permet à la solution logicielle Vitam de cons
 
 - Cardinalité : 1-1
 
-**« objectsReports » :** Rapports détaillés des objets spécifiques audités.
+**« objectsReports » :** rapport détaillé des objets spécifiquement audités.
 
 - Champ peuplé par la solution logicielle Vitam.
+
 - Il s’agit d’une liste contenant des objets
-- Cardinalité : 0-N.
+
+- Cardinalité : 0-N
+
 - chaque objet contient cette liste de champs :
-    - **« identifier » :** Identifiant unique de l'objet archivistique audité.
-    - **« status » :** Statut de l'audit pour l'objet.
-    - **« message » :** Message fournissant des détails sur le résultat de l'audit pour l'objet spécifique.
-    - **« objectType » :** Type de l'objet archivistique soumis à l'audit.
-    - **« securedHash » :** Empreinte sécurisée de l'objet audité.
+    - **« identifier » :** identifiant unique de l'objet archivistique audité.
+    - **« status » :** statut de l'audit pour l'objet.
+    - **« message » :** message fournissant des détails sur le résultat de l'audit pour l'objet spécifique.
+    - **« objectType » :** type de l'objet archivistique soumis à l'audit.
+    - **« securedHash » :** empreinte sécurisée de l'objet audité.
     - **« strategyId »** : identifiant de la stratégie de stockage.
-    - **« offersHashes » :** Empreintes des offres de stockage pour l'objet.
+    - **« offersHashes » :** empreintes des offres de stockage pour l'objet.
 
 **« objectType » :** Type de l'objet archivistique audité.
 
@@ -9132,7 +9265,7 @@ La collection EvidenceAuditReport permet à la solution logicielle Vitam de cons
 
 - Cardinalité : 1-1
 
-**« message » :** message descriptif du résultat de l'audit
+**« message » :** message descriptif du résultat de l'audit.
 
 - Il s’agit d’une chaîne de caractères qui contient des détails sur le résultat de l'audit. Ce champ peut contenir des messages prédéfinis qui indiquent soit un problème rencontré lors de l'audit, soit le résultat de l'audit.
 
@@ -9140,13 +9273,13 @@ La collection EvidenceAuditReport permet à la solution logicielle Vitam de cons
 
 - Cardinalité : 1-1
 
-**« offersHashes » :** Empreintes des offres de stockage pour l'objet.
+**« offersHashes » :** empreintes des offres de stockage pour l'objet technique.
 
 - Il s’agit d'une map avec les identifiants d'offre comme clés et leurs empreintes correspondantes comme valeurs.
 
 - Champ peuplé par la solution logicielle Vitam.
 
-- Cardinalité : 1-N.
+- Cardinalité : 1-N
 
 ### Collection ExtractedMetadata
 
@@ -9180,7 +9313,7 @@ La collection ExtractedMetadata est conçue pour conserver les métadonnées ext
 
 - Cardinalité : 1-1
 
-**« unitIds » :** Liste des identifiants des Unités Archivistiques associées aux métadonnées extraites.
+**« unitIds » :** Liste des identifiants des unités archivistiques associées aux métadonnées extraites.
 
 - Il s’agit d’une liste de chaînes de caractères.
 
@@ -9188,9 +9321,9 @@ La collection ExtractedMetadata est conçue pour conserver les métadonnées ext
 
 - Cardinalité : 0-N.
 
-**« metadata » :** Métadonnées extraites sous forme d'une carte clé-valeur.
+**« metadata » :** métadonnées extraites sous forme d'une carte clé-valeur.
 
-- Les clés sont des chaînes de caractères représentant les noms des métadonnées, et les valeurs sont des objets de types variés représentant les données associées à ces métadonnées.
+- Les clés sont des chaînes de caractères représentant les noms des métadonnées, et les valeurs sont des objets de type variés représentant les données associées à ces métadonnées.
 
 - Champ peuplé par la solution logicielle Vitam.
 
@@ -9200,7 +9333,7 @@ La collection ExtractedMetadata est conçue pour conserver les métadonnées ext
 
 #### Utilisation de la collection
 
-La collection InvalidUnits est utilisée pour identifier les Unités Archivistiques (UA) dont les règles héritées calculées ont été invalidées suite à une mise à jour du référentiel de règles. L'objectif est de maintenir la cohérence et l'exactitude des informations de gestion appliquées aux archives.
+La collection InvalidUnits est utilisée pour identifier les unités archivistiques dont les règles héritées calculées ont été invalidées suite à une mise à jour du référentiel de règles. L'objectif est de maintenir la cohérence et l'exactitude des informations de gestion appliquées aux unités archivistiques.
 
 #### Détail des champs
 
@@ -9228,7 +9361,7 @@ La collection InvalidUnits est utilisée pour identifier les Unités Archivistiq
 
 - Cardinalité : 1-1
 
-**« metadata » :** objet contenant l'identifiant de l'Unité Archivistique concernée
+**« metadata » :** objet contenant l'identifiant de l'unité archivistique concernée.
 
 - Il s’agit d’une chaîne de caractères.
 
@@ -9236,7 +9369,7 @@ La collection InvalidUnits est utilisée pour identifier les Unités Archivistiq
 
 - Cardinalité : 0-N.
 
-**« creationDateTime » :** Date et heure de création de l'entrée d'invalidation.
+**« creationDateTime » :** date et heure de création de l'entrée d'invalidation.
 
 - Champ peuplé par la solution logicielle Vitam.
 
@@ -9248,7 +9381,7 @@ La collection InvalidUnits est utilisée pour identifier les Unités Archivistiq
 
 #### Utilisation de la collection
 
-La collection PurgeObjectGroup est utilisée pour consigner les opérations de purge effectuées sur les groupes d'objets archivistiques. Elle enregistre les détails de chaque groupe d'objets supprimé ou détaché des unités parentes, incluant les identifiants des objets, le statut de la purge, les versions d'objet concernées, et d'autres métadonnées pertinentes.
+La collection PurgeObjectGroup est utilisée pour consigner les opérations de purge effectuées sur les groupes d'objets techniques. Elle enregistre les détails de chaque groupe d'objets techniques supprimé ou détaché des unités archivistiques parentes, incluant les identifiants des objets techniques, le statut de la purge, les versions d'objet techniques concernées, et d'autres métadonnées pertinentes.
 
 #### Détail des champs
 
@@ -9276,116 +9409,117 @@ La collection PurgeObjectGroup est utilisée pour consigner les opérations de p
 
 - Cardinalité : 1-1
 
-**« id » :** Identifiant unique du groupe d'objets concerné par la purge.
+**« id » :** identifiant unique du groupe d'objets techniques concerné par la purge.
 
 - Il s’agit d’une chaîne de caractères.
 
 - Champ peuplé par la solution logicielle Vitam.
 
-- Cardinalité : 1-1.
+- Cardinalité : 1-1
 
-**« originatingAgency » :** Service producteur associé au groupe d'objets.
-
-- Il s’agit d’une chaîne de caractères.
-
-- Champ peuplé par la solution logicielle Vitam.
-
-- Cardinalité : 1-1.
-
-**« opi » :** Identifiant de l'opération d'élémination.
+**« originatingAgency » :** service producteur associé au groupe d'objets techniques.
 
 - Il s’agit d’une chaîne de caractères.
 
 - Champ peuplé par la solution logicielle Vitam.
 
-- Cardinalité : 1-1.
+- Cardinalité : 1-1
 
-**« deletedParentUnitIds » :** Ensemble des identifiants des unités parentes supprimées lors de la purge.
+**« opi » :** Identifiant de l'opération.
+
+- Il s’agit d’une chaîne de caractères.
+
+- Champ peuplé par la solution logicielle Vitam.
+
+- Cardinalité : 1-1
+
+**« deletedParentUnitIds » :** ensemble des identifiants des unités archivistiques parentes supprimées lors de la purge.
 
 - Il s’agit d’un ensemble de chaînes de caractères.
 
 - Champ peuplé par la solution logicielle Vitam.
 
-- Cardinalité : 0-N.
+- Cardinalité : 0-N
 
-**« objectIds » :** Ensemble des identifiants des objets inclus dans le groupe d'objets purgé.
+**« objectIds » :** ensemble des identifiants des objets techniques inclus dans le groupe d'objets techniques purgé.
 
 - Il s’agit d’un ensemble de chaînes de caractères.
 
 - Champ peuplé par la solution logicielle Vitam.
 
-- Cardinalité : 0-N.
+- Cardinalité : 0-N
 
-**« status » :** Statut de la purge pour le groupe d'objets (par exemple, DELETED ou PARTIAL_DETACHMENT).
-
-- Il s’agit d’une chaîne de caractères.
-
-- Champ peuplé par la solution logicielle Vitam.
-
-- Cardinalité : 1-1.
-
-**« archivalAgencyIdentifier » :** Identifiant de l'entité d'archivage responsable du groupe d'objets.
+**« status » :** statut de la purge pour le groupe d'objets techniques (par exemple, DELETED ou PARTIAL_DETACHMENT).
 
 - Il s’agit d’une chaîne de caractères.
 
 - Champ peuplé par la solution logicielle Vitam.
 
-- Cardinalité : 1-1.
+- Cardinalité : 1-1
 
-**« objectVersions » :** Liste des versions d'objets concernées par la purge.
+**« archivalAgencyIdentifier » :** identifiant du service d'archives.
+
+- Il s’agit d’une chaîne de caractères.
+
+- Champ peuplé par la solution logicielle Vitam.
+
+- Cardinalité : 1-1
+
+**« objectVersions » :** liste des versions d'objets techniques concernés par la purge.
 
 - Il s’agit d’une liste d'objets.
 
 - Champ peuplé par la solution logicielle Vitam.
 
-- Cardinalité : 0-N.
+- Cardinalité : 0-N
 
 - Chaque objet de cette est composée de plusieurs champs :
 
-  **« id » :** Identifiant de la version d'objet.
+  **« id » :** identifiant de la version d'objet technique.
 
     - Il s’agit d’une chaîne de caractères.
 
     - Champ peuplé par la solution logicielle Vitam.
 
-    - Cardinalité : 1-1.
+    - Cardinalité : 1-1
 
-  **« opi » :** Identifiant de l'opération d'élémination.
-
-    - Il s’agit d’une chaîne de caractères.
-
-    - Champ peuplé par la solution logicielle Vitam.
-
-    - Cardinalité : 1-1.
-
-  **« size » :** Taille de la version de l'objet.
-
-    - Il s’agit d’un nombre long.
-
-    - Champ peuplé par la solution logicielle Vitam.
-
-    - Cardinalité : 1-1.
-
-  **« version » :** Identifiant de la version de l'objet.
-
-    - Il s’agit d’une chaîne de caractères.
-    - Cardinalité : 1-1.
-
-  **« usage » :** Usage de la version de l'objet (par exemple, BinaryMaster, Thumbnail).
+  **« opi » :** identifiant de l'opération.
 
     - Il s’agit d’une chaîne de caractères.
 
     - Champ peuplé par la solution logicielle Vitam.
 
-    - Cardinalité : 1-1.
+    - Cardinalité : 1-1
 
-  **« persistentIdentifier » :** Liste des identifiants persistants associés à la version de l'objet.
+  **« size » :** taille de la version de l'objet technique.
+
+    - Il s’agit d’un entier.
+
+    - Champ peuplé par la solution logicielle Vitam.
+
+    - Cardinalité : 1-1
+
+  **« version » :** version de l'objet technique.
+
+    - Il s’agit d’un entier.
+	
+    - Cardinalité : 1-1
+
+  **« usage » :** usage de la version de l'objet technique (par exemple, BinaryMaster, Thumbnail).
+
+    - Il s’agit d’une chaîne de caractères.
+
+    - Champ peuplé par la solution logicielle Vitam.
+
+    - Cardinalité : 1-1
+
+  **« persistentIdentifier » :** liste des identifiants pérennes associés à la version de l'objet.
 
     - Il s’agit d’une liste d'objets.
 
     - Champ peuplé par la solution logicielle Vitam.
 
-    - Cardinalité : 0-N.
+    - Cardinalité : 0-N
 
 ### Collection PurgeUnit
 
@@ -9419,83 +9553,83 @@ La collection PurgeUnit consigne les opérations d'élimination effectuées sur 
 
 - Cardinalité : 1-1
 
-**« id » :** Identifiant unique de l'Unité Archivistique concernée par l'élimination.
+**« id » :** identifiant unique de l'unité archivistique concernée par l'élimination.
 
 - Il s’agit d’une chaîne de caractères.
 
 - Champ peuplé par la solution logicielle Vitam.
 
-- Cardinalité : 1-1.
+- Cardinalité : 1-1
 
-**« originatingAgency » :** Service producteur de l'Unité Archivistique.
-
-- Il s’agit d’une chaîne de caractères.
-
-- Champ peuplé par la solution logicielle Vitam.
-
-- Cardinalité : 1-1.
-
-**« opi » :** Identifiant de l'opération d'élimination ayant ciblé l'Unité Archivistique.
+**« originatingAgency » :** service producteur de l'unité archivistique.
 
 - Il s’agit d’une chaîne de caractères.
 
 - Champ peuplé par la solution logicielle Vitam.
 
-- Cardinalité : 1-1.
+- Cardinalité : 1-1
 
-**« objectGroupId » :** Identifiant du groupe d'objets associé à l'Unité Archivistique.
-
-- Il s’agit d’une chaîne de caractères.
-
-- Champ peuplé par la solution logicielle Vitam.
-
-- Cardinalité : 1-1.
-
-**« archivalAgencyIdentifier » :** Identifiant du service d'archives
+**« opi » :** identifiant de l'opération d'élimination ayant ciblé l'unité archivistique.
 
 - Il s’agit d’une chaîne de caractères.
 
 - Champ peuplé par la solution logicielle Vitam.
 
-- Cardinalité : 1-1.
+- Cardinalité : 1-1
 
-**« extraInfo » :** Informations supplémentaires et personnalisées relatives à l'Unité Archivistique.
+**« objectGroupId » :** Identifiant du groupe d'objets associé à l'unité archivistique.
 
 - Il s’agit d’une chaîne de caractères.
 
 - Champ peuplé par la solution logicielle Vitam.
 
-- Cardinalité : 0-1.
+- Cardinalité : 1-1
 
-**« persistentIdentifier » :** Liste d'identifiants persistants attribués à l'Unité Archivistique.
+**« archivalAgencyIdentifier » :** identifiant du service d'archives.
+
+- Il s’agit d’une chaîne de caractères.
+
+- Champ peuplé par la solution logicielle Vitam.
+
+- Cardinalité : 1-1
+
+**« extraInfo » :** informations supplémentaires et personnalisées relatives à l'unité archivistique.
+
+- Il s’agit d’une chaîne de caractères.
+
+- Champ peuplé par la solution logicielle Vitam.
+
+- Cardinalité : 0-1
+
+**« persistentIdentifier » :** liste d'identifiants persistants attribués à l'unité archivistique.
 
 - Il s’agit d’une liste d'objets.
 
 - Champ peuplé par la solution logicielle Vitam.
 
-- Cardinalité : 0-N.
+- Cardinalité : 0-N
 
-**« status » :** Statut reflétant le résultat de l'opération d'élimination pour l'Unité Archivistique (exemple : DELETED).
-
-- Il s’agit d’une chaîne de caractères.
-
-- Champ peuplé par la solution logicielle Vitam.
-
-- Cardinalité : 1-1.
-
-**« type » :** Type de l'Unité Archivistique.
+**« status » :** statut reflétant le résultat de l'opération d'élimination pour l'unité archivistique (exemple : DELETED).
 
 - Il s’agit d’une chaîne de caractères.
 
 - Champ peuplé par la solution logicielle Vitam.
 
-- Cardinalité : 1-1.
+- Cardinalité : 1-1
+
+**« type » :** type de l'unité archivistique.
+
+- Il s’agit d’une chaîne de caractères.
+
+- Champ peuplé par la solution logicielle Vitam.
+
+- Cardinalité : 1-1
 
 ### Collection TraceabilityReport
 
 #### Utilisation de la collection
 
-La collection TraceabilityReport est utilisé dans la construction d'un rapport qui est généré pendant l'audit relatif aux contrôles d’intégrité effectués sur les journaux sécurisés dans Vitam.
+La collection TraceabilityReport est utilisée dans la construction d'un rapport qui est généré pendant l'audit relatif aux contrôles d’intégrité effectués sur les journaux sécurisés dans la solution logicielle Vitam.
 
 #### Détail des champs
 
@@ -9523,103 +9657,109 @@ La collection TraceabilityReport est utilisé dans la construction d'un rapport 
 
 - Cardinalité : 1-1
 
-- **« operationId » :** Identifiant unique de l'opération de sécurisation.
+- **« operationId » :** identifiant unique de l'opération de sécurisation.
 
     - Champ peuplé par la solution logicielle Vitam.
 
     - Il s’agit d’une chaîne de caractères.
 
-    - Cardinalité : 1-1.
+    - Cardinalité : 1-1
 
-- **« operationType » :** Type de l'opération (par exemple, TRACEABILITY).
-
-    - Champ peuplé par la solution logicielle Vitam.
-
-    - Il s’agit d’une chaîne de caractères.
-
-    - Cardinalité : 1-1.
-
-- **« status » :** Statut du contrôle d'intégrité (OK, KO, FATAL).
+- **« operationType » :** type de l'opération (par exemple, TRACEABILITY).
 
     - Champ peuplé par la solution logicielle Vitam.
 
     - Il s’agit d’une chaîne de caractères.
 
-    - Cardinalité : 1-1.
+    - Cardinalité : 1-1
 
-- **« message » :** Message détaillant le résultat de l'opération.
+- **« status » :** statut du contrôle d'intégrité (OK, KO, FATAL).
 
     - Champ peuplé par la solution logicielle Vitam.
 
     - Il s’agit d’une chaîne de caractères.
 
-    - Cardinalité : 1-1.
+    - Cardinalité : 1-1
 
-- **« error » :** Détails sur l'erreur rencontrée si le statut est KO ou FATAL.
+- **« message » :** message détaillant le résultat de l'opération.
+
+    - Champ peuplé par la solution logicielle Vitam.
+
+    - Il s’agit d’une chaîne de caractères.
+
+    - Cardinalité : 1-1
+
+- **« error » :** détails sur l'erreur rencontrée si le statut est KO ou FATAL.
 
     - Champ peuplé par la solution logicielle Vitam.
 
     - Il s’agit d'un objet.
 
-    - Cardinalité : 0-1.
+    - Cardinalité : 0-1
 
-- **« securedHash » :** Hash sécurisé du journal contrôlé.
+- **« securedHash » :** hash sécurisé du journal contrôlé.
 
     - Champ peuplé par la solution logicielle Vitam.
 
     - Il s’agit d’une chaîne de caractères.
 
-    - Cardinalité : 0-1.
+    - Cardinalité : 0-1
 
-- **« offersHashes » :** Hashes des offres de stockage.
+- **« offersHashes » :** hashes des offres de stockage.
 
     - Champ peuplé par la solution logicielle Vitam.
 
     - Il s’agit d'une map clé-valeur où chaque clé est l'identifiant de l'offre et la valeur le hash correspondant.
 
-    - Cardinalité : 0-N.
+    - Cardinalité : 0-N
 
-- **« fileId » :** Identifiant du fichier soumis à la vérification
+- **« fileId » :** identifiant du fichier soumis à la vérification.
 
     - Champ peuplé par la solution logicielle Vitam.
 
     - Il s’agit d’une chaîne de caractères.
 
-    - Cardinalité : 1-1.
+    - Cardinalité : 1-1
 
-- **« extraData » :** Données supplémentaires pouvant être incluses dans le rapport.
+- **« extraData » :** données supplémentaires pouvant être incluses dans le rapport.
 
     - Champ peuplé par la solution logicielle Vitam.
 
     - Il s’agit d'une map clé-valeur contenant des données supplémentaires.
 
-    - Cardinalité : 0-N.
+    - Cardinalité : 0-N
 
 ### Collection TransferReplyUnit
 
 #### Utilisation de la collection
 
-La collection TransferReplyUnit est utilisé dans la construction d'un rapport qui est documente les résultats du traitement des Unités Archivistiques (UA) suite à l'acquittement d'un transfert.
+La collection TransferReplyUnit est utilisée dans la construction d'un rapport qui documente les résultats du traitement des unités archivistiques suite à l'acquittement d'un transfert.
 
 #### Détail des champs
 
-**« id » :** Identifiant unique de l'Unité Archivistique concernée par le transfert.
+**« id » :** Identifiant unique de l'unité archivistique concernée par le transfert.
 
-- Champ peuplé par la solution logicielle Vitam.
 - Il s’agit d’une chaîne de caractères.
-- Cardinalité : 1-1.
-
-**« status » :** Statut de l'UA après le processus de transfert, indiquant si l'UA a été supprimée, non supprimable, ou si un GOT a été partiellement détaché.
 
 - Champ peuplé par la solution logicielle Vitam.
+
+- Cardinalité : 1-1
+
+**« status » :** statut de l'unité archivistique après le processus de transfert, indiquant si l'unité archivistique a été supprimée, ne l'a pas été, ou si un groupe d'objets techniques a été partiellement détaché.
+
 - Il s’agit d’une chaîne de caractères indiquant le statut tel que `DELETED`, `NON_DELETABLE`, ou `PARTIALLY_DETACHED`.
-- Cardinalité : 1-1.
-
-**« persistentIdentifier » :** Identifiants pérennes associés à l'UA.
 
 - Champ peuplé par la solution logicielle Vitam.
+
+- Cardinalité : 1-1
+
+**« persistentIdentifier » :** identifiants pérennes associés à l'unité archivistique.
+
 - Il s’agit d'une liste d'objets contenant des identifiants pérennes.
-- Cardinalité : 0-N.
+
+- Champ peuplé par la solution logicielle Vitam.
+
+- Cardinalité : 0-N
 
 ### Collection UpdateUnitReport
 
@@ -9653,8 +9793,7 @@ La collection UpdateUnitReport permet à la solution logicielle Vitam de constru
 
 - Cardinalité : 1-1
 
-**« status » :** statut de l’action de mise à jour pour ce groupe
-d’objets.
+**« status » :** statut de l’opération de mise à jour.
 
 - Il s’agit d’une chaîne de caractères.
 
@@ -9664,10 +9803,9 @@ d’objets.
 
 - Cardinalité : 1-1
 
-**« query » :** requête de sélection des unités pour mise à jour
-d’objets.
+**« query » :** requête de sélection des unités archivistiques pour mise à jour.
 
-- Il s’agit d’une chaîne de caractères qui représente la requête utilisée pour identifier les unités d'archives ciblées pour la mise à jour/
+- Il s’agit d’une chaîne de caractères qui représente la requête utilisée pour identifier les unités archivistiques ciblées pour la mise à jour.
 
 - Champ peuplé par la solution logicielle Vitam.
 
@@ -9681,7 +9819,7 @@ d’objets.
 
 - Cardinalité : 1-1
 
-**« detailType » :** le type d'élément sur lequel on fait la mise à jour.
+**« detailType » :** type d'élément sur lequel on fait la mise à jour.
 
 - Il s’agit d’une chaîne de caractères qui a la valeur "unit" pour ce type de rapport.
 
@@ -9689,22 +9827,21 @@ d’objets.
 
 - Cardinalité : 1-1
 
-**« resultKey » :** indicateur du résultat de l’opération
+**« resultKey » :** indicateur du résultat de l’opération.
 
 - Il s’agit d’une chaîne de caractères.
 
 - Peut avoir comme valeurs :
-
-    - INVALID_DSL_QUERY : Indique que la requête DSL fournie pour l'opération est invalide en raison de la présence de champs internes non autorisés.
-    - UNIT_NOT_FOUND : Signifie qu'aucune unité archivistique correspondante à la requête spécifiée n'a été trouvée.
-    - TOO_MANY_UNITS_FOUND : Avertit que la requête a retourné plusieurs unités archivistiques alors qu'une seule était attendue, ce qui indique une ambigüité dans la requête.
-    - ERROR_METADATA_UPDATE : Informe qu'une erreur s'est produite lors de la tentative de mise à jour des métadonnées, empêchant l'opération de se terminer avec succès.
+    - INVALID_DSL_QUERY : indique que la requête DSL fournie pour l'opération est invalide en raison de la présence de champs internes non autorisés ;
+    - UNIT_NOT_FOUND : signifie qu'aucune unité archivistique correspondante à la requête spécifiée n'a été trouvée ;
+    - TOO_MANY_UNITS_FOUND : avertit que la requête a retourné plusieurs unités archivistiques alors qu'une seule était attendue, ce qui indique une ambigüité dans la requête ;
+    - ERROR_METADATA_UPDATE : informe qu'une erreur s'est produite lors de la tentative de mise à jour des métadonnées, empêchant l'opération de se terminer avec succès.
 
 - Champ peuplé par la solution logicielle Vitam.
 
 - Cardinalité : 1-1
 
-**« message » :** message descriptif du résultat de l’opération
+**« message » :** message descriptif du résultat de l’opération.
 
 - Il s’agit d’une chaîne de caractères qui contient des détails sur le résultat de l'opération de mise à jour. Ce champ peut contenir des messages prédéfinis qui indiquent soit un problème rencontré lors de l'opération, soit le résultat de la tentative de mise à jour.
 
@@ -9716,7 +9853,7 @@ d’objets.
 
 #### Utilisation de la collection
 
-La collection BulkUpdateUnitMetadataReport permet à la solution logicielle Vitam de construire des rapports de mises à jour de métadonnées d'archives de manière unitaire mais dans le contexte d'une opération de masse. Les données de cette collection sont temporaires et sont supprimées dès que les rapports correspondants sont créés. Il est donc possible de trouver la collection vide.
+La collection BulkUpdateUnitMetadataReport permet à la solution logicielle Vitam de construire des rapports de mise à jour de métadonnées d'unités archivistiques de manière unitaire mais dans le contexte d'une opération de masse. Les données de cette collection sont temporaires et sont supprimées dès que les rapports correspondants sont créés. Il est donc possible de trouver la collection vide.
 
 #### Détail des champs
 
@@ -9744,8 +9881,7 @@ La collection BulkUpdateUnitMetadataReport permet à la solution logicielle Vita
 
 - Cardinalité : 1-1
 
-**« status » :** statut de l’action de mise à jour pour ce groupe
-d’objets.
+**« status » :** statut de l’action de mise à jour pour ce groupe d’objets.
 
 - Il s’agit d’une chaîne de caractères.
 
@@ -9755,10 +9891,9 @@ d’objets.
 
 - Cardinalité : 1-1
 
-**« query » :** requête de sélection des unités pour mise à jour
-d’objets.
+**« query » :** requête de sélection des unités pour mise à jour.
 
-- Il s’agit d’une chaîne de caractères qui représente la requête utilisée pour identifier les unités d'archives ciblées pour la mise à jour dans le cadre de l'opération de masse
+- Il s’agit d’une chaîne de caractères qui représente la requête utilisée pour identifier les unités archivistiques ciblées pour la mise à jour dans le cadre de l'opération de masse.
 
 - Champ peuplé par la solution logicielle Vitam.
 

@@ -242,7 +242,8 @@
 <li class="toctree-l4"><a class="reference internal" href="#options-de-rattachement">4.4.1.3. Options de rattachement</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#options-sur-les-groupes-dobjets-techniques">4.4.1.4. Options sur les groupes d’objets techniques</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#options-de-stockage">4.4.1.5. Options de stockage</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#option-de-generation-automatique-des-regles-de-gestion-heritees">4.4.1.6. Option de génération automatique des règles de gestion héritées</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#options-de-generation-automatique-d-identifiants-perennes">4.4.1.6. Options de génération automatique d’identifiants pérennes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#option-de-generation-automatique-des-regles-de-gestion-heritees">4.4.1.7. Option de génération automatique des règles de gestion héritées</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#id151">4.4.2. Conseils de mise en œuvre</a></li>
@@ -293,6 +294,7 @@
 <li class="toctree-l5"><a class="reference internal" href="#sans-strategie-de-stockage">4.6.1.7.2. Sans stratégie de stockage</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#avec-politique-de-preservation-generique">4.6.1.7.3. Avec politique de préservation générique</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#avec-politique-de-preservation-specifique">4.6.1.7.4. Avec politique de préservation spécifique</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#avec-strategie-d-identification-perenne">4.6.1.7.5. Avec stratégie d’identification pérenne</a></li>
 </ul>
 </li>
 </ul>
@@ -451,6 +453,26 @@
 <tr class="row-even"><td class="text-left"><p>Standard d’échange de données pour l’archivage – SEDA – v. 2.2</p></td>
 <td class="text-center"><p>02/2022</p></td>
 <td class="text-center"><p>Cette nouvelle version du SEDA est intégrée à la solution logicielle Vitam à partir de la V6.RC.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Standard d’échange de données pour l’archivage – SEDA – v. 2.3</p></td>
+<td class="text-center"><p>06/2023</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p><a class="reference internal" href="SIP.html"><span class="std std-doc">Vitam – Structuration des Submission Information Package (SIP)</span></a></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Vitam – Documentation d’installation</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Vitam – Documentation d’exploitation</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><a class="reference internal" href="stockage.html"><span class="std std-doc">Vitam – Gestion de multiples stratégies de stockage </span></a></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
 </tr>
 </tbody>
 </table>
@@ -2706,9 +2728,16 @@ Dans VitamUI, l’APP « Contrats d’accès » permet de :</p>
 <li><p>les métadonnées correspondant aux groupes d’objets techniques,</p></li>
 <li><p>les objets binaires (fichiers numériques).</p></li>
 </ul>
-<p>Il définit également une politique de préservation des objets numériques de manière générique ou de manière spécifique.</p>
-<p><strong>Point d’attention :</strong>
-Au terme de la version 5.RC, les paramètres liés à la définition d’une politique de préservation ne sont qu’informatifs. En effet, ils ne sont actuellement pas applicables dans des workflows existants (opérations de préservation, opérations de suppression de versions d’objets à la demande).</p>
+<p>Il définit également :</p>
+<ul class="simple">
+<li><p>une politique de préservation des objets numériques de manière générique ou de manière spécifique,</p></li>
+<li><p>une stratégie d’identification pérenne.</p></li>
+</ul>
+<p><strong>Point d’attention :</strong></p>
+<ul class="simple">
+<li><p>Au terme de la version 8.0, les paramètres liés à la définition d’une politique de préservation ne sont qu’informatifs. En effet, ils ne sont actuellement pas applicables dans des workflows existants (opérations de préservation, opérations de suppression de versions d’objets à la demande).</p></li>
+<li><p>Au terme de la version 8.0, la stratégie d’identification pérenne qu’il est possible de mettre en œuvre ne couvre que l’identification ARK.</p></li>
+</ul>
 </section>
 <section id="id125">
 <h4><span class="section-number">4.2.7.2. </span>Formalisation<a class="headerlink" href="#id125" title="Lien vers cette rubrique"></a></h4>
@@ -2729,7 +2758,7 @@ Exemple de contrat de gestion à importer dans la solution logicielle Vitam :</
 <li><p>identifiant signifiant. Ce champ est obligatoire seulement s’il est généré par l’application à l’origine de sa création (Identifier). Si cet identifiant est généré par la solution logicielle Vitam, il n’est pas nécessaire de le renseigner dans le fichier JSON ;</p></li>
 <li><p>nom du contrat (Name).</p></li>
 </ul>
-<p>D’autres informations, facultatives – une description (Description), un statut (Status), une date d’activation (ActivationDate) et de désactivation (DeactivationDate), une définition de la gestion du stockage (Storage) et de la politique de préservation (VersionRetentionPolicy) –  peuvent venir compléter ces informations.</p>
+<p>D’autres informations, facultatives – une description (Description), un statut (Status), une date d’activation (ActivationDate) et de désactivation (DeactivationDate), une définition de la gestion du stockage (Storage) et de la politique de préservation (VersionRetentionPolicy) et de la stratégie d’identification pérenne (PersistentIdentifierPolicy) –  peuvent venir compléter ces informations.</p>
 <p>À noter pour certaines d’entre elles que, si elles ne sont pas renseignées, la solution logicielle Vitam fournira automatiquement une valeur par défaut :</p>
 <ul class="simple">
 <li><p>valeur «  INACTIVE » pour le statut,</p></li>
@@ -2787,6 +2816,9 @@ Le contrat de gestion est modélisé en JSON comme suit<a class="footnote-refere
 <tr class="row-even"><td class="text-left"><p>VersionRetentionPolicy</p></td>
 <td class="text-left"><p>définition d’une politique de préservation (champ obligatoire) pour :<br>-  tous les usages :<br>-&gt; conservation de la valeur initiale des objets (InitialVersion – champ obligatoire), dont la valeur est obligatoirement égale à « true » (valeur par défaut : « true » ;<br>-&gt; conservation des versions intermédiaires des objets (IntermediaryVersion  – champ obligatoire), dont la valeur peut être égale à « ALL » ou à « LAST » (valeur par défaut : « LAST) ;<br>-  un usage en particulier (Usages – champ facultatif) :<br>-&gt; nom de l’usage d’objet concerné (UsageName – champ facultatif), dont la valeur peut être égale à « BinaryMaster, Dissemination, TextContent, Thumbnail, PhysicalMaster) ;<br>-&gt; conservation de la valeur initiale des objets (InitialVersion – champ facultatif), dont la valeur est obligatoirement égale à « true » pour les objets d’usage « BinaryMaster » ;<br>-&gt; conservation des versions intermédiaires des objets (IntermediaryVersion  – champ facultatif), dont la valeur peut être égale à « ALL », à « LAST » ou « NONE », ce dernier n’étant pas accepté pour les objets d’usage « BinaryMaster ».</p></td>
 </tr>
+<tr class="row-odd"><td class="text-left"><p>PersistentIdentifierPolicy</p></td>
+<td class="text-left"><p>définition d’une politique de préservation (champ obligatoire) pour :<br>-  un type d’identification pérenne, dont la valeur doit être égale à « ARK » (PersistentIdentifierPolicyType – champ obligatoire) ;<br>- une autorité nommante en particulier (PersistentIdentifierAuthority – champ facultatif), correspondant à un numéro de 5 ou 9 chiffres pour l’identification de type ARK. Si le contrat de gestion importé ne contient pas d’autorité nommante, la solution logicielle Vitam enregistre par défaut la valeur « 0 » ;<br>-  un périmètre donné :<br>-&gt; les unités archivistiques associées à un groupe d’objets techniques, dont la valeur est égale à « true » ou « false » (PersistentIdentifierUnit – champ obligatoire). Si le contrat de gestion importé ne contient pas de valeur, la solution logicielle Vitam enregistre par défaut la valeur « false ».<br>-&gt; un à plusieurs usage(s)  (PersistentIdentifierUsages – champ obligatoire, mais pouvant être vide) :<br>-&gt;&gt;nom de l’usage d’objet concerné (UsageName – champ facultatif), dont la valeur peut être égale à « BinaryMaster, Dissemination, TextContent, Thumbnail, PhysicalMaster) ;<br>-&gt;&gt; génération d’un identifiant pérenne pour la version initiale des objets (InitialVersion – champ obligatoire), dont la valeur est égale à « true » ou « false ». Si le contrat de gestion importé ne contient pas de valeur, la solution logicielle Vitam enregistre par défaut la valeur « false ».<br>-&gt;&gt; génération d’un identifiant pérennes pour les versions intermédiaires des objets (IntermediaryVersion  – champ obligatoire), dont la valeur peut être égale à « ALL »,  « LAST » ou « NONE ».</p></td>
+</tr>
 </tbody>
 </table>
 <p>La solution logicielle Vitam n’impose pas l’utilisation d’un contrat de gestion, en proposant une stratégie de stockage active par défaut.</p>
@@ -2801,7 +2833,7 @@ Il est possible de réaliser les opérations présentées ci-dessous.</p>
 <h5><span class="section-number">4.2.7.3.1. </span>Import<a class="headerlink" href="#id133" title="Lien vers cette rubrique"></a></h5>
 <p>Dans la solution logicielle Vitam, il est possible d’importer sur n’importe quel tenant 1 à n contrat(s) de gestion sous la forme d’un fichier JSON.
 Par cet import, 1 à n contrat(s) de gestion sont ajoutés au référentiel des contrats de gestion.</p>
-<p>Il est également possible de créer un contrat d’accès depuis l’APP VitamUI « Contrats de gestion ».</p>
+<p>Il est également possible de créer un contrat de gestion depuis l’APP VitamUI « Contrats de gestion ».</p>
 <p>Il s’agit d’une opération d’administration (« MASTERDATA »), tracée dans le journal des opérations du tenant sur lequel a eu lieu l’opération<a class="footnote-reference brackets" href="#id255" id="id134" role="doc-noteref"><span class="fn-bracket">[</span>89<span class="fn-bracket">]</span></a>.</p>
 <p>Lors de cet import, l’opération peut aboutir aux statuts suivants :</p>
 <table class="docutils align-default">
@@ -2815,10 +2847,10 @@ Par cet import, 1 à n contrat(s) de gestion sont ajoutés au référentiel des 
 <td class="text-left"><p>Opération réalisée sans rencontrer de problèmes particuliers.</p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>Échec<a class="footnote-reference brackets" href="#id256" id="id135" role="doc-noteref"><span class="fn-bracket">[</span>90<span class="fn-bracket">]</span></a></p></td>
-<td class="text-left"><p>Sans journalisation :<br>- Import d’un référentiel sous la forme d’un fichier qui n’est pas au format JSON ;<br>- Import d’un référentiel sous la forme d’un fichier qui n’est pas correctement formaté au format JSON ;<br>- Import d’un référentiel dont au moins un des champs contient une injection HTML ;<br>- Import d’un contrat de gestion dont le champ « Status » ne contient pas de valeur ou contient une valeur ne correspondant ni à « ACTIVE », ni à « INACTIVE » ;<br>- Import d’un contrat de gestion dans lequel une valeur ne correspond pas au type d’indexation du champ défini dans l’ontologie (ex : valeur textuelle dans un champ de type « DATE »).</p></td>
+<td class="text-left"><p>Sans journalisation :<br>- Import d’un référentiel sous la forme d’un fichier qui n’est pas au format JSON ;<br>- Import d’un référentiel sous la forme d’un fichier qui n’est pas correctement formaté au format JSON ;<br>- Import d’un référentiel dont au moins un des champs contient une injection HTML ;<br>- Import d’un contrat de gestion dont le champ « Status » ne contient pas de valeur ou contient une valeur ne correspondant ni à « ACTIVE », ni à « INACTIVE » ;<br>- Import d’un contrat de gestion dans lequel une valeur ne correspond pas au type d’indexation du champ défini dans l’ontologie (ex : valeur textuelle dans un champ de type « DATE ») ou à la valeur attendue (ex : valeur autre que « ARK » pour le champ « PersistentIdentifierPolicyType »).</p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>Échec</p></td>
-<td class="text-left"><p>Avec journalisation :<br>- import d’un contrat de gestion dont l’identifiant existe déjà dans le système sur un tenant en mode « esclave » ;<br>- import d’un fichier JSON dans lequel un contrat de gestion ne déclare pas d’identifiant<a class="footnote-reference brackets" href="#id257" id="id136" role="doc-noteref"><span class="fn-bracket">[</span>91<span class="fn-bracket">]</span></a> ou d’intitulé ;<br>- import d’un contrat de gestion dans lequel un champ obligatoire ne contient pas de valeur. Il peut s’agir des champs : Identifier<a class="footnote-reference brackets" href="#id258" id="id137" role="doc-noteref"><span class="fn-bracket">[</span>92<span class="fn-bracket">]</span></a> ou Name ;<br>- import d’un contrat de gestion qui déclare une(des) stratégie(s) de stockage non référencée(s) ou invalide(s) dans la solution logicielle Vitam ;<br>- import d’un contrat de gestion qui déclare un usage inconnu ou mal écrit dans la politique de préservation ;<br>- import d’un contrat de gestion qui demande la conservation d’aucune version intérmédiaire d’un objet d’usage « BinaryMaster » ;<br>- import d’un contrat de gestion qui demande la conservation d’aucune version intermédiare d’un objet d’usage « BinaryMaster ».</p></td>
+<td class="text-left"><p>Avec journalisation :<br>- import d’un contrat de gestion dont l’identifiant existe déjà dans le système sur un tenant en mode « esclave » ;<br>- import d’un fichier JSON dans lequel un contrat de gestion ne déclare pas d’identifiant<a class="footnote-reference brackets" href="#id257" id="id136" role="doc-noteref"><span class="fn-bracket">[</span>91<span class="fn-bracket">]</span></a> ou d’intitulé ;<br>- import d’un contrat de gestion dans lequel un champ obligatoire ne contient pas de valeur. Il peut s’agir des champs : Identifier<a class="footnote-reference brackets" href="#id258" id="id137" role="doc-noteref"><span class="fn-bracket">[</span>92<span class="fn-bracket">]</span></a> ou Name ;<br>- import d’un contrat de gestion qui déclare une(des) stratégie(s) de stockage non référencée(s) ou invalide(s) dans la solution logicielle Vitam ;<br>- import d’un contrat de gestion qui déclare un usage inconnu ou mal écrit dans la politique de préservation ou dans la stratégie d’identification pérenne ;<br>- import d’un contrat de gestion qui demande la conservation d’aucune version intermédiaire d’un objet d’usage « BinaryMaster » ;<br>- import d’un contrat de gestion qui définit une stratégie d’identification pérenne sans déclarer un champ obligatoire tel que : PersistentIdentifierPolicyType, PersistentIdentifierUsages, UsageName et IntermediaryVersion pour un usage donné.</p></td>
 </tr>
 </tbody>
 </table>
@@ -2844,10 +2876,15 @@ Concernant les options contenues dans un contrat de gestion, il est possible de�
 </li>
 <li><p>ajouter, modifier ou supprimer une stratégie de stockage appliquées aux unités archivistiques (UnitStrategy) ;</p></li>
 <li><p>ajouter, modifier ou supprimer une stratégie de stockage appliquées aux groupes d’objets techniques (ObjectGroupStrategy) ;</p></li>
-<li><p>ajouter, modifier ou supprimer une stratégie de stockage appliquées aux objets binaires (ObjectStrategy).</p></li>
+<li><p>ajouter, modifier ou supprimer une stratégie de stockage appliquées aux objets binaires (ObjectStrategy) ;</p></li>
+<li><p>ajouter, modifier ou supprimer une stratégie d’identification pérenne (PersistentIdentifierPolicy).</p></li>
 </ul>
-<p><strong>Point d’attention :</strong> Le statut du contrat de gestion doit être « Actif » (« ACTIVE ») pour pouvoir appliquer la stratégie de stockage qu’il définit.
-Cette action provoque la création d’une nouvelle version du contrat de gestion modifié. Les différentes versions du référentiel font l’objet d’une sauvegarde sur les offres de stockage utilisées par la solution logicielle Vitam.</p>
+<p><strong>Point d’attention :</strong></p>
+<ul class="simple">
+<li><p>Le statut du contrat de gestion doit être « Actif » (« ACTIVE ») pour pouvoir appliquer la stratégie de stockage qu’il définit.</p></li>
+<li><p>Il n’est pas possible de supprimer une stratégie de stockage ou une stratégie d’identification pérenne depuis l’APP VitamUI « Contrats de gestion ».</p></li>
+</ul>
+<p>Cette action provoque la création d’une nouvelle version du contrat de gestion modifié. Les différentes versions du référentiel font l’objet d’une sauvegarde sur les offres de stockage utilisées par la solution logicielle Vitam.</p>
 <p>Il s’agit d’une opération d’administration (« MASTERDATA »), tracée dans le journal des opérations du tenant sur lequel a eu lieu l’opération<a class="footnote-reference brackets" href="#id259" id="id139" role="doc-noteref"><span class="fn-bracket">[</span>93<span class="fn-bracket">]</span></a>.</p>
 <p>Lors de cette mise à jour, l’opération peut aboutir aux statuts suivants :</p>
 <table class="docutils align-default">
@@ -2861,7 +2898,7 @@ Cette action provoque la création d’une nouvelle version du contrat de gestio
 <td class="text-left"><p>Opération réalisée sans rencontrer de problèmes particuliers.</p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>Échec<a class="footnote-reference brackets" href="#id260" id="id140" role="doc-noteref"><span class="fn-bracket">[</span>94<span class="fn-bracket">]</span></a></p></td>
-<td class="text-left"><p>Avec journalisation :<br>- mise à jour d’un contrat de gestion dans lequel une valeur ne correspond pas au type d’indexation du champ défini dans l’ontologie (ex : valeur textuelle dans un champ de type « DATE ») ;<br>- mise à jour d’une valeur par une valeur ne correspondant pas à la valeur attendu par le champ (ex : dans le champ « Status », remplacement de la valeur « ACTIVE » par la valeur « TOTO » au lieu de « INACTIVE ») ;<br>- ajout d’une stratégie de stockage non référencée par la solution logicielle Vitam ;<br>- mise à jour de l’identifiant d’un contrat de gestion par un identifiant existant déjà dans le système sur un tenant en mode « esclave » ;<br>- ajout d’un usage inconnu ou mal écrit dans la politique de préservation ;<br>- modification d’un contrat de gestion qui demande la conservation d’aucune version intérmédiaire d’un objet d’usage « BinaryMaster » ;<br>- modification d’un contrat de gestion qui demande la conservation d’aucune version intermédiare d’un objet d’usage « BinaryMaster ».</p></td>
+<td class="text-left"><p>Avec journalisation :<br>- mise à jour d’un contrat de gestion dans lequel une valeur ne correspond pas au type d’indexation du champ défini dans l’ontologie (ex : valeur textuelle dans un champ de type « DATE ») ;<br>- mise à jour d’une valeur par une valeur ne correspondant pas à la valeur attendu par le champ (ex : dans le champ « Status », remplacement de la valeur « ACTIVE » par la valeur « TOTO » au lieu de « INACTIVE ») ;<br>- ajout d’une stratégie de stockage non référencée par la solution logicielle Vitam ;<br>- mise à jour de l’identifiant d’un contrat de gestion par un identifiant existant déjà dans le système sur un tenant en mode « esclave » ;<br>- ajout d’un usage inconnu ou mal écrit dans la politique de préservation ;<br>- modification d’un contrat de gestion qui demande la conservation d’aucune version intermédiaire d’un objet d’usage « BinaryMaster ».</p></td>
 </tr>
 </tbody>
 </table>
@@ -2986,10 +3023,16 @@ En fonction du statut du contexte applicatif et de celui du contrat d’entrée 
 <li><p>d’accès (déporter sur des offres froides des objets binaires peu consultés et conserver les objets très consultés sur des offres chaudes),</p></li>
 <li><p>de contexte (tiers-archivage).</p></li>
 </ul>
+<p>La création d’un contrat de gestion s’avère également nécessaire si l’on souhaite définir une stratégie d’identification pérenne.</p>
 <p>La création de contrats de gestion peut intervenir à différents moments :</p>
 <ul class="simple">
-<li><p>lors de l’initialisation de la plate-forme : si l’on souhaite mettre en place différents niveaux de service de stockage en définissant plusieurs stratégies de stockage, en plus de la stratégie par défaut, il est recommandé de créer des contrats de gestion utilisant ces différentes stratégies de stockage, correspondant à autant de niveaux de service ;</p></li>
-<li><p>lors de l’intégration d’une nouvelle application requérant un stockage particulier, différent de la stratégie de stockage par défaut.</p></li>
+<li><p>lors de l’initialisation de la plate-forme :</p>
+<ul>
+<li><p>si l’on souhaite mettre en place différents niveaux de service de stockage en définissant plusieurs stratégies de stockage, en plus de la stratégie par défaut, il est recommandé de créer des contrats de gestion utilisant ces différentes stratégies de stockage, correspondant à autant de niveaux de service ;</p></li>
+<li><p>si l’on souhaite définir une ou plusieurs stratégie(s) d’identification pérenne, il est nécessaire de créer au moins un contrat de gestion ;</p></li>
+</ul>
+</li>
+<li><p>lors de l’intégration d’une nouvelle application requérant un stockage particulier, différent de la stratégie de stockage par défaut, ou requérant une identification pérenne spécifique pour ses archives.</p></li>
 </ul>
 <p><strong>Point d’attention :</strong> Au terme de la version 5.RC, les paramètres liés à la définition d’une politique de préservation ne sont qu’informatifs. En effet, ils ne sont actuellement pas applicables dans des workflows existants (opérations de préservation, opérations de suppression de versions d’objets à la demande).
 La déclaration d’un contrat de gestion dans la solution logicielle Vitam relève d’une opération d’administration technico-fonctionnelle. Elle nécessite la configuration préalable d’une à plusieurs stratégie(s) de stockage.</p>
@@ -3687,8 +3730,45 @@ Exemple : message d’erreur sur la tâche de contrôle du contrat d’entrée.
 </div>
 <p><strong>Point d’attention :</strong> Au terme de la version 5.RC, les paramètres liés à la définition d’une politique de préservation ne sont qu’informatifs. De facto, aucun contrôle n’est réalisé en entrée par rapport à cette politique.</p>
 </section>
+<section id="options-de-generation-automatique-d-identifiants-perennes">
+<h4><span class="section-number">4.4.1.6. </span>Options de génération automatique d’identifiants pérennes<a class="headerlink" href="#options-de-generation-automatique-d-identifiants-perennes" title="Lien vers cette rubrique"></a></h4>
+<p>Le contrat d’entrée permet de générer un identifiant pérenne pour des unités archivistiques et/ou des objets techniques au moyen de la définition d’un contrat de gestion.</p>
+<p>Cette option est, de fait, paramétrée dans un contrat de gestion qui permet de déclarer une stratégie d’identification pérenne en définissant :</p>
+<ul class="simple">
+<li><p>un type d’identification pérenne,</p></li>
+<li><p>une autorité nommante,</p></li>
+<li><p>la cible de l’identification pérenne (unité archivistique et/ou objet technique).</p></li>
+</ul>
+<p><strong>Points d’attention :</strong></p>
+<ul class="simple">
+<li><p>Pour pouvoir associer un contrat de gestion à un contrat d’entrée, il va de soi que le contrat de gestion doit exister dans le système.</p></li>
+<li><p>Pour pouvoir être utilisé, un contrat de gestion doit définir une stratégie d’identification pérenne.</p></li>
+<li><p>Au terme de la version 8.0, la solution logicielle Vitam permet uniquement de définir une stratégie d’identification pérenne de type ARK.</p></li>
+</ul>
+<p>Dans le cadre du processus d’entrée d’un ensemble d’archives, suite à la réception d’un bordereau de transfert (message ArchiveTransfer du SEDA), à l’étape vérifiant que le contrat d’entrée déclaré dans le SIP (ArchivalAgreement) existe bien dans le référentiel des contrats d’entrée et est actif, la solution logicielle Vitam effectue également les tâches et traitements suivants pour les archives déclarant ce contrat d’entrée déclarant un contrat de gestion :</p>
+<ul class="simple">
+<li><p>vérification que le contrat de gestion est actif ;</p></li>
+<li><p>vérification que la stratégie de stockage définie dans le contrat de gestion existe.
+Lors de cette étape :</p></li>
+<li><p>Si le contrat de gestion est actif et si la stratégie qu’il déclare existe, la solution logicielle Vitam passera à la tâche ou traitement suivant, puis à l’étape suivante ;</p></li>
+<li><p>Si le contrat de gestion est inactif ou si la stratégie de stockage qu’il déclare n’existe pas, alors le transfert du SIP échouera à la tâche de vérification de la présence et du contrôle du contrat d’entrée.</p></li>
+<li><p>Si le contrat de gestion déclare une stratégie d’identification pérenne, la solution logicielle Vitam enregistrera automatiquement un identifiant pérenne dans les unités archivistiques et/ou les objets techniques en base de données.</p></li>
+<li><p>Si le contrat de gestion ne déclare pas de stratégie d’identification pérenne, la solution logicielle Vitam n’enregistrera pas d’identifiant pérenne dans les unités archivistiques et/ou les objets techniques en base de données.</p></li>
+</ul>
+<p><strong>Point d’attention :</strong></p>
+<ul class="simple">
+<li><p>L’enregistrement en base de données s’effectuera en fonction des paramètres définis dans le contrat de gestion et les éléments disponibles dans le SIP :</p>
+<ul>
+<li><p>Si la stratégie est de générer des identifiants sur les unités archivistiques, alors toutes les unités archivistiques associées à un groupe d’objets techniques seront dotées d’un identifiant pérenne,</p></li>
+<li><p>Si la stratégie est de générer des identifiants sur les objets, alors les objets ciblés dans un groupe d’objets techniques (pour un usage, aucune version, la première version, toutes les versions et/ou la dernière) seront dotés d’un identifiant pérenne,</p></li>
+<li><p>Si la stratégie est de générer des identifiants sur les objets et si le SIP ne contient pas d’objet technique, alors aucun identifiant pérenne ne sera généré ;</p></li>
+</ul>
+</li>
+<li><p>La solution logicielle Vitam ne contrôle pas la présence d’identifiants pérennes dans les SIP versés. De facto, si un SIP contient des identifiants pérennes et si le contrat d’entrée dispose d’une stratégie d’identification pérenne, alors les archives ciblées disposeront de deux identifiants pérennes.</p></li>
+</ul>
+</section>
 <section id="option-de-generation-automatique-des-regles-de-gestion-heritees">
-<h4><span class="section-number">4.4.1.6. </span>Option de génération automatique des règles de gestion héritées<a class="headerlink" href="#option-de-generation-automatique-des-regles-de-gestion-heritees" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">4.4.1.7. </span>Option de génération automatique des règles de gestion héritées<a class="headerlink" href="#option-de-generation-automatique-des-regles-de-gestion-heritees" title="Lien vers cette rubrique"></a></h4>
 <p>Il est également possible d’enregistrer automatiquement les règles de gestion héritées par une unité archivistique en base de données, dans un champ spécifique, au moyen d’un paramétrage :</p>
 <ul class="simple">
 <li><p>Si sa valeur est égale à « true », la solution logicielle Vitam enregistrera automatiquement les règles de gestion héritées par une unité archivistique en base de données ;</p></li>
@@ -4356,6 +4436,51 @@ Point d’attention : la solution logicielle Vitam ne fait aucun contrôle de c
 </pre></div>
 </div>
 </section>
+<section id="avec-strategie-d-identification-perenne">
+<h5><span class="section-number">4.6.1.7.5. </span>Avec stratégie d’identification pérenne<a class="headerlink" href="#avec-strategie-d-identification-perenne" title="Lien vers cette rubrique"></a></h5>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="w">	</span><span class="p">{</span>
+<span class="w">		</span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MCWithIdentificationStrategy-1&quot;</span><span class="p">,</span>
+<span class="w">		</span><span class="nt">&quot;Identifier&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MCWithIdentificationStrategy-1&quot;</span><span class="p">,</span>
+<span class="w">		</span><span class="nt">&quot;Description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Contrat de gestion avec politique d&#39;identification : identification de l&#39;unité archivistique, de la version courante + avant-dernière pour tous les usages sauf BinaryMaster où l&#39;on identifie également la première&quot;</span><span class="p">,</span>
+<span class="w">		</span><span class="nt">&quot;Status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ACTIVE&quot;</span><span class="p">,</span>
+<span class="w">		</span><span class="nt">&quot;PersistentIdentifierPolicy&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">			</span><span class="p">{</span>
+<span class="w">				</span><span class="nt">&quot;PersistentIdentifierPolicyType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ARK&quot;</span><span class="p">,</span>
+<span class="w">				</span><span class="nt">&quot;PersistentIdentifierUnit&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">				</span><span class="nt">&quot;PersistentIdentifierAuthority&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">12354</span><span class="p">,</span>
+<span class="w">				</span><span class="nt">&quot;PersistentIdentifierUsages&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">					</span><span class="p">{</span>
+<span class="w">						</span><span class="nt">&quot;UsageName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BinaryMaster&quot;</span><span class="p">,</span>
+<span class="w">						</span><span class="nt">&quot;InitialVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">						</span><span class="nt">&quot;IntermediaryVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LAST&quot;</span>
+<span class="w">					</span><span class="p">},</span>
+<span class="w">					</span><span class="p">{</span>
+<span class="w">						</span><span class="nt">&quot;UsageName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Dissemination&quot;</span><span class="p">,</span>
+<span class="w">						</span><span class="nt">&quot;InitialVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">						</span><span class="nt">&quot;IntermediaryVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NONE&quot;</span>
+<span class="w">					</span><span class="p">},</span>
+<span class="w">					</span><span class="p">{</span>
+<span class="w">						</span><span class="nt">&quot;UsageName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Thumbnail&quot;</span><span class="p">,</span>
+<span class="w">						</span><span class="nt">&quot;InitialVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">						</span><span class="nt">&quot;IntermediaryVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ALL&quot;</span>
+<span class="w">					</span><span class="p">},</span>
+<span class="w">					</span><span class="p">{</span>
+<span class="w">						</span><span class="nt">&quot;UsageName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TextContent&quot;</span><span class="p">,</span>
+<span class="w">						</span><span class="nt">&quot;InitialVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">						</span><span class="nt">&quot;IntermediaryVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LAST&quot;</span>
+<span class="w">					</span><span class="p">},</span>
+<span class="w">					</span><span class="p">{</span>
+<span class="w">						</span><span class="nt">&quot;UsageName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PhysicalMaster&quot;</span><span class="p">,</span>
+<span class="w">						</span><span class="nt">&quot;InitialVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">						</span><span class="nt">&quot;IntermediaryVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LAST&quot;</span>
+<span class="w">					</span><span class="p">}</span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="w">	</span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
 </section>
 </section>
 <section id="annexe-2-cas-dutilisation-des-habilitations">
@@ -4890,193 +5015,181 @@ La déclaration du nœud est obligatoire, sans quoi l’application accéderait 
 </tr>
 <tr class="row-even"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Créer une demande d’accès à un objet persisté sur une offre froide (bande magnétique)</p></td>
-<td class="text-left"><p></p></td>
+<td class="text-left"><p>units:id:objects:accessrequests:create</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>units:id:objects:accessrequests:create</p></td>
-<td class="text-left"><p></p></td>
-<td class="text-left"><p></p></td>
-</tr>
-<tr class="row-even"><td class="text-left"><p></p></td>
+<tr class="row-odd"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Vérifier l’état d’un ensemble de demandes d’accès sur une offre froide (bande magnétique)</p></td>
-<td class="text-left"><p></p></td>
-</tr>
-<tr class="row-odd"><td class="text-left"><p>accessrequests:check</p></td>
-<td class="text-left"><p></p></td>
-<td class="text-left"><p></p></td>
+<td class="text-left"><p>accessrequests:check</p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Supprimer une demande d’accès à un objet persisté sur une offre froide (bande magnétique)</p></td>
-<td class="text-left"><p></p></td>
+<td class="text-left"><p>accessrequests:remove</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>accessrequests:remove</p></td>
-<td class="text-left"><p></p></td>
-<td class="text-left"><p></p></td>
-</tr>
-<tr class="row-even"><td class="text-left"><p>DIP</p></td>
+<tr class="row-odd"><td class="text-left"><p>DIP</p></td>
 <td class="text-left"><p>Générer le DIP à partir d’un DSL</p></td>
 <td class="text-left"><p>dipexport:create</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p></p></td>
+<tr class="row-even"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Récupérer le DIP</p></td>
 <td class="text-left"><p>dipexport:id:dip:read</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>Journaux</p></td>
+<tr class="row-odd"><td class="text-left"><p>Journaux</p></td>
 <td class="text-left"><p>Créer une opération externe</p></td>
 <td class="text-left"><p>logbookoperations:create</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p></p></td>
+<tr class="row-even"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Lister toutes les opérations</p></td>
 <td class="text-left"><p>logbookoperations:read</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p></p></td>
+<tr class="row-odd"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Récupérer le journal de cycle de vie d’une unité archivistique</p></td>
 <td class="text-left"><p>logbookunitlifecycles:id:read</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p></p></td>
+<tr class="row-even"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Récupérer le journal de cycle de vie d’un groupe d’objets techniques</p></td>
 <td class="text-left"><p>logbookobjectslifecycles:id:read</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p></p></td>
+<tr class="row-odd"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Récupérer le journal d’une opération donnée</p></td>
 <td class="text-left"><p>logbookoperations:id:read</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p></p></td>
+<tr class="row-even"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Télécharger les journaux d’accès</p></td>
 <td class="text-left"><p>storageaccesslog:read:binary</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>Traçabilité</p></td>
+<tr class="row-odd"><td class="text-left"><p>Traçabilité</p></td>
 <td class="text-left"><p>Télécharger le logbook sécurisé attaché à une opération de sécurisation</p></td>
 <td class="text-left"><p>traceability:id:read</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p></p></td>
+<tr class="row-even"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Tester l’intégrité d’un journal sécurisé</p></td>
 <td class="text-left"><p>traceabilitychecks:create</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p></p></td>
+<tr class="row-odd"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Audit de vérification des journaux sécurisés</p></td>
 <td class="text-left"><p>traceabilitylinkedchecks:create</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p></p></td>
+<tr class="row-even"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Génère un relevé de valeur probante</p></td>
 <td class="text-left"><p>probativevalue:create</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>Audit</p></td>
+<tr class="row-odd"><td class="text-left"><p>Audit</p></td>
 <td class="text-left"><p>Lancer un audit de l’existence des objets binaires</p></td>
 <td class="text-left"><p>audits:create</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p></p></td>
+<tr class="row-even"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Audit de traçabilité d’unités archivistiques</p></td>
 <td class="text-left"><p>evidenceaudit:check</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p></p></td>
+<tr class="row-odd"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Rectification de données suite à un audit</p></td>
 <td class="text-left"><p>rectificationaudit:check</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p></p></td>
+<tr class="row-even"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Télécharger le rapport d’audit</p></td>
 <td class="text-left"><p>batchreport:id:read</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p></p></td>
+<tr class="row-odd"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Lancer un audit de l’existence de référentiel</p></td>
 <td class="text-left"><p>referentialaudit:check</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>Élimination</p></td>
+<tr class="row-even"><td class="text-left"><p>Élimination</p></td>
 <td class="text-left"><p>Lance la phase d’analyse dans le cadre d’une élimination</p></td>
 <td class="text-left"><p>elimination:analysis</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p></p></td>
+<tr class="row-odd"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Lance la phase d’action dans le cadre d’une élimination</p></td>
 <td class="text-left"><p>elimination:action</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p></p></td>
+<tr class="row-even"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Télécharger le rapport d’élimination</p></td>
 <td class="text-left"><p>batchreport:id:read</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>Suppression d’objets</p></td>
+<tr class="row-odd"><td class="text-left"><p>Suppression d’objets</p></td>
 <td class="text-left"><p>Supprimer des versions d’usage d’objets</p></td>
 <td class="text-left"><p>objects:deleteGotVersions</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>Transfert</p></td>
+<tr class="row-even"><td class="text-left"><p>Transfert</p></td>
 <td class="text-left"><p>Générer le SIP à transférer à partir d’une requête DSL</p></td>
 <td class="text-left"><p>transfers:create</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p></p></td>
+<tr class="row-odd"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Récupérer le SIP transféré</p></td>
 <td class="text-left"><p>transfers:id:sip:read</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p></p></td>
+<tr class="row-even"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Lance un acquittement de transfert</p></td>
 <td class="text-left"><p>transfers:reply</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>Griffons</p></td>
+<tr class="row-odd"><td class="text-left"><p>Griffons</p></td>
 <td class="text-left"><p>Importer un référentiel des griffons</p></td>
 <td class="text-left"><p>griffins:create</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p></p></td>
+<tr class="row-even"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Récupérer la liste des griffons</p></td>
 <td class="text-left"><p>griffins:read</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p></p></td>
+<tr class="row-odd"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Lire un griffon donné</p></td>
 <td class="text-left"><p>griffin:read</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>Scénarios de préservation</p></td>
+<tr class="row-even"><td class="text-left"><p>Scénarios de préservation</p></td>
 <td class="text-left"><p>Importer un référentiel des scénarios de préservation</p></td>
 <td class="text-left"><p>preservationScenarios:create</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p></p></td>
+<tr class="row-odd"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Récupérer la liste des scénarios de préservation</p></td>
 <td class="text-left"><p>preservationScenarios:read</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p></p></td>
+<tr class="row-even"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Lire un scénario de préservation donné</p></td>
 <td class="text-left"><p>preservationScenario:read</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>Préservation</p></td>
+<tr class="row-odd"><td class="text-left"><p>Préservation</p></td>
 <td class="text-left"><p>Lance le processus de préservation</p></td>
 <td class="text-left"><p>preservation:update</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p></p></td>
+<tr class="row-even"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Télécharger le rapport de préservation</p></td>
 <td class="text-left"><p>batchreport:id:read</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>Gestion des opérations</p></td>
+<tr class="row-odd"><td class="text-left"><p>Gestion des opérations</p></td>
 <td class="text-left"><p>Récupérer les informations sur une opération donnée</p></td>
 <td class="text-left"><p>operations:read</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p></p></td>
+<tr class="row-even"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Récupérer le code HTTP d’une opération donnée</p></td>
 <td class="text-left"><p>operations:id:read:status</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p></p></td>
+<tr class="row-odd"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Récupérer le statut d’une opération donnée</p></td>
 <td class="text-left"><p>operations:id:read</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p></p></td>
+<tr class="row-even"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Changer le statut d’une opération donnée</p></td>
 <td class="text-left"><p>operations:id:update</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p></p></td>
+<tr class="row-odd"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Annuler une opération donnée</p></td>
 <td class="text-left"><p>operations:id:delete</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p></p></td>
+<tr class="row-even"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Récupérer la liste des tâches des workflows</p></td>
 <td class="text-left"><p>workflows:read</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p></p></td>
+<tr class="row-odd"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Force la pause sur un type d’opération et/ou sur un tenant</p></td>
 <td class="text-left"><p>forcepause:check</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p></p></td>
+<tr class="row-even"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Retire la pause sur un type d’opération et/ou sur un tenant</p></td>
 <td class="text-left"><p>removeforcepause:check</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>Index</p></td>
+<tr class="row-odd"><td class="text-left"><p>Index</p></td>
 <td class="text-left"><p>Réindexer une collection</p></td>
 <td class="text-left"><p>reindex:create</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p></p></td>
+<tr class="row-even"><td class="text-left"><p></p></td>
 <td class="text-left"><p>Switch indexes</p></td>
 <td class="text-left"><p>switchindex:create</p></td>
 </tr>

@@ -279,15 +279,19 @@
 <td class="text-center"><p>02/2022</p></td>
 <td class="text-center"><p>Cette nouvelle version du SEDA est intégrée à la solution logicielle Vitam à partir de la V6.RC.</p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p><a class="reference internal" href="SIP.html"><span class="std std-doc">Vitam – Structuration des Submission Information Package (SIP)</span></a></p></td>
+<tr class="row-odd"><td class="text-center"><p>Standard d’échange de données pour l’archivage – SEDA – v. 2.3</p></td>
+<td class="text-center"><p>06/2024</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><a class="reference internal" href="SIP.html"><span class="std std-doc">Vitam – Structuration des Submission Information Package (SIP)</span></a></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 </tr>
-<tr class="row-even"><td class="text-center"><p><a class="reference internal" href="ontologie.html"><span class="std std-doc">Vitam – Ontologie</span></a></p></td>
+<tr class="row-odd"><td class="text-center"><p><a class="reference internal" href="ontologie.html"><span class="std std-doc">Vitam – Ontologie</span></a></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p>Ce document doit être lu dans le cas où un profil d’archivage doit contenir des extensions au SEDA.</p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p><a class="reference internal" href="profil_unite_archivistique.html"><span class="std std-doc">Vitam – Profils d’unité archivistique</span></a></p></td>
+<tr class="row-even"><td class="text-center"><p><a class="reference internal" href="profil_unite_archivistique.html"><span class="std std-doc">Vitam – Profils d’unité archivistique</span></a></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p>Ce document doit être lu dans les cas où :<br>- un profil d’archivage doit contenir des profils d’unité archivistique ;<br>- en phase d’analyse, on souhaite évaluer quel est le meilleur type de profil à utiliser.</p></td>
 </tr>
@@ -305,7 +309,7 @@
 <li><p>des recommandations aux utilisateurs de la solution logicielle Vitam sur la manière d’élaborer un profil d’archivage ;</p></li>
 <li><p>quelques conseils complémentaires de mise en œuvre.</p></li>
 </ul>
-<p>Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 7.0 (octobre 2023) : il comprend particulièrement la présentation des fonctionnalités offertes par le projet PASTIS (Profil d’Archivage Simple pour le Traitement de l’Information en SEDA) intégré à l’IHM Vitam UI par l’APP Profils documentaires et également accessible par un exécutable. Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.</p>
+<p>Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 8.0 (octobre 2024). Il inclut en particulier la présentation des fonctionnalités offertes par l’outil PASTIS (Profil d’Archivage Simple pour le Traitement de l’Information en SEDA) intégré à l’IHM Vitam UI dans l’APP Profils documentaires et également disponible sous forme d’exécutable. Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.</p>
 </section>
 </section>
 <section id="presentation-de-la-notion-de-profil-darchivage">
@@ -499,6 +503,9 @@ Exemple : notice descriptive de profil d’archivage contenant uniquement les i
 </tr>
 <tr class="row-even"><td class="text-left"><p>Path</p></td>
 <td class="text-left"><p>chemin d’accès au profil d’archivage associé à la notice détaillée (champ facultatif).</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>SedaVersion</p></td>
+<td class="text-left"><p>version du SEDA du profil d’archivage associé à la notice (champ facultatif).</p></td>
 </tr>
 </tbody>
 </table>
@@ -948,7 +955,7 @@ Si l’outil SHERPA n’est pas intégré au système d’archivage électroniqu
 <p><strong>Point d’attention :</strong><br />
 SHERPA, s’il est utilisé hors système intégré d’archivage, ne livre pas un profil d’archivage complètement utilisable et conforme au schéma attendu par la solution logicielle Vitam, car :</p>
 <ul class="simple">
-<li><p>il ne gère pas d’export de fichier RNG au SEDA 2.1<a class="footnote-reference brackets" href="#id49" id="id20" role="doc-noteref"><span class="fn-bracket">[</span>20<span class="fn-bracket">]</span></a> ou au SEDA 2.2 ;</p></li>
+<li><p>il ne gère pas d’export de fichier RNG au SEDA 2.1<a class="footnote-reference brackets" href="#id49" id="id20" role="doc-noteref"><span class="fn-bracket">[</span>20<span class="fn-bracket">]</span></a>au SEDA 2.2 ou au SEDA 2.3 ;</p></li>
 <li><p>il génère des liens vers des listes d’autorité non supportées par cette dernière ;</p></li>
 <li><p>il ne génère pas certains éléments (notamment les extensions que l’outil ne connaît pas a priori, les éléments ArchivalProfile et ArchiveUnitProfile).</p></li>
 </ul>
@@ -964,7 +971,7 @@ Pour ce faire, il faut :</p>
 </ul>
 </li>
 </ul>
-<p>Au niveau de l’en-tête, déclarant les espaces de nom et autres références, il faut remplacer les références au SEDA 2.0 par des références au SEDA 2.1 ou au SEDA 2.2.</p>
+<p>Au niveau de l’en-tête, déclarant les espaces de nom et autres références, il faut remplacer les références au SEDA 2.0 par des références au SEDA 2.1, 2.2 ou 2.3.</p>
 <p><em>Exemple : modifications à apporter au niveau de l’en-tête.</em></p>
 <p><em>Ancienne version :</em></p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&#39;1.0&#39; encoding=&#39;utf-8&#39; standalone=&#39;no&#39;?&gt;</span>
@@ -981,6 +988,12 @@ Pour ce faire, il faut :</p>
 <p>OU</p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&#39;1.0&#39; encoding=&#39;utf-8&#39; standalone=&#39;no&#39;?&gt;</span>
 <span class="nt">&lt;rng:grammar</span><span class="w"> </span><span class="na">xmlns:a=</span><span class="s">&quot;http://relaxng.org/ns/compatibility/annotations/1.0&quot;</span><span class="w"> </span><span class="na">xmlns:rng=</span><span class="s">&quot;http://relaxng.org/ns/structure/1.0&quot;</span><span class="w"> </span><span class="na">xmlns:seda=</span><span class="s">&quot;fr:gouv:culture:archivesdefrance:seda:v2.2&quot;</span><span class="w"> </span><span class="na">xmlns:xlink=</span><span class="s">&quot;http://www.w3.org/1999/xlink&quot;</span><span class="w"> </span><span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;fr:gouv:culture:archivesdefrance:seda:v2.2&quot;</span><span class="w"> </span><span class="na">datatypeLibrary=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-datatypes&quot;</span><span class="w"> </span><span class="na">ns=</span><span class="s">&quot;fr:gouv:culture:archivesdefrance:seda:v2.2&quot;</span><span class="w"> </span><span class="na">seda:warnings=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>
+[...]
+</pre></div>
+</div>
+<p>OU</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version=&#39;1.0&#39; encoding=&#39;utf-8&#39; standalone=&#39;no&#39;?&gt;</span>
+<span class="nt">&lt;rng:grammar</span><span class="w"> </span><span class="na">xmlns:a=</span><span class="s">&quot;http://relaxng.org/ns/compatibility/annotations/1.0&quot;</span><span class="w"> </span><span class="na">xmlns:rng=</span><span class="s">&quot;http://relaxng.org/ns/structure/1.0&quot;</span><span class="w"> </span><span class="na">xmlns:seda=</span><span class="s">&quot;fr:gouv:culture:archivesdefrance:seda:v2.3&quot;</span><span class="w"> </span><span class="na">xmlns:xlink=</span><span class="s">&quot;http://www.w3.org/1999/xlink&quot;</span><span class="w"> </span><span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;fr:gouv:culture:archivesdefrance:seda:v2.3&quot;</span><span class="w"> </span><span class="na">datatypeLibrary=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-datatypes&quot;</span><span class="w"> </span><span class="na">ns=</span><span class="s">&quot;fr:gouv:culture:archivesdefrance:seda:v2.3&quot;</span><span class="w"> </span><span class="na">seda:warnings=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>
 [...]
 </pre></div>
 </div>
@@ -1581,8 +1594,9 @@ Pour ce faire, il faut :</p>
 <h4><span class="section-number">11.5.2.2. </span>Rédaction d’un profil d’archivage avec PASTIS<a class="headerlink" href="#redaction-dun-profil-darchivage-avec-pastis" title="Lien vers cette rubrique"></a></h4>
 <section id="etapes-de-redaction">
 <h5><span class="section-number">11.5.2.2.1. </span>Étapes de rédaction<a class="headerlink" href="#etapes-de-redaction" title="Lien vers cette rubrique"></a></h5>
-<p>Pour rédiger un profil d’archivage, il est également possible d’utiliser l’outil PASTIS (Profil d’Archivage Simple pour le Traitement de l’Information en SEDA), qui permet de générer des profils d’archivage au format Relax NG. Cet outil est utilisable sous forme d’exécutable ou d’APP intégrée aux interfaces de VitamUI (APP Profils documentaires),</p>
-<p><strong>Étape 1</strong> - l’outil requiert dans un premier temps de créer un profil d’archivage (PA).</p>
+<p>Pour rédiger un profil d’archivage, il est également possible d’utiliser l’outil PASTIS (Profil d’Archivage Simple pour le Traitement de l’Information en SEDA), qui permet de générer des profils d’archivage au format Relax NG. Cet outil est utilisable sous forme d’exécutable ou d’APP intégrée aux interfaces de VitamUI (APP Profils documentaires).</p>
+<p>Au terme de la version 8.0, il permet de générer des profils d’archivage en SEDA 2.1, 2.2 et 2.3.</p>
+<p><strong>Étape 1</strong> - l’outil requiert dans un premier temps de créer un profil d’archivage (PA) et de sélectionner la version du SEDA.</p>
 <p><strong>Étape 2</strong> - lors de la rédaction du profil d’archivage :</p>
 <ul class="simple">
 <li><p>PASTIS auto-incrémente un certain nombre de champs qu’il n’est pas nécessaire, de fait, saisir.<br />
@@ -1660,9 +1674,9 @@ Cette auto-incrémentation ne prend pas en compte les champs rendus obligatoires
 <li><p>finaliser le processus de création d’un profil d’archivage et d’insertion dans le référentiel des profils d’archivage de la solution logicielle Vitam.
 L’export s’avère nécessaire en vue de :</p></li>
 <li><p>corriger une coquille au niveau du bloc CodeListVersions ;</p></li>
-<li><p>obtenir un fichier RNG conforme au SEDA 2.2 ;</p></li>
-<li><p>intégrer un certain nombre d’éléments non supportés par l’APP Profils documentaires au terme de la version 7.0 (notamment les extensions, des champs du SEDA 2.2).
-Point d’attention : Au terme de la version 6.0, PASTIS ne gère pas d’import de fichier RNG au SEDA 2.2. Il est recommandé de réimporter le fichier depuis l’IHM de démonstration pour pouvoir l’exploiter.</p></li>
+<li><p>obtenir un fichier RNG conforme au SEDA 2.2 ou 2.3 (pour les versions antérieures à la version 8.0) ;</p></li>
+<li><p>intégrer un certain nombre d’éléments non supportés par l’APP Profils documentaires au terme de la version 8.0 (notamment les extensions).
+<strong>Point d’attention :</strong> Au terme de la version 8.0, PASTIS ne gère pas la mise à jour de fichier RNG intégrant des extensions. Il est recommandé de réimporter le fichier depuis l’IHM de démonstration pour pouvoir l’exploiter ou de créer une nouvelle notice dans l’APP Profils documentaires.</p></li>
 </ul>
 <p>Pour apporter ces corrections au fichier exporté, il faut :</p>
 <ul class="simple">
@@ -1670,7 +1684,7 @@ Point d’attention : Au terme de la version 6.0, PASTIS ne gère pas d’impor
 <li><p>Corriger les éléments suivants :</p></li>
 </ul>
 <p><strong>Corrections au niveau de l’en-tête</strong></p>
-<p>Au niveau de l’en-tête, déclarant les espaces de nom et autres références, il faut remplacer les références au SEDA 2.1 par des références au SEDA 2.2.
+<p>Au niveau de l’en-tête, déclarant les espaces de nom et autres références, il faut remplacer les références au SEDA 2.1 par des références au SEDA 2.2 ou au SEDA 2.3.
 <em>Exemple : modifications à apporter au niveau de l’en-tête.</em></p>
 <p><em>Ancienne version :</em></p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;rng:grammar</span><span class="w"> </span><span class="na">datatypeLibrary=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-datatypes&quot;</span><span class="w"> </span><span class="na">ns=</span><span class="s">&quot;fr:gouv:culture:archivesdefrance:seda:v2.1&quot;</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;fr:gouv:culture:archivesdefrance:seda:v2.1&quot;</span><span class="w"> </span><span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="w"> </span><span class="na">xmlns:a=</span><span class="s">&quot;http://relaxng.org/ns/compatibility/annotations/1.0&quot;</span><span class="w"> </span><span class="na">xmlns:seda=</span><span class="s">&quot;fr:gouv:culture:archivesdefrance:seda:v2.1&quot;</span><span class="w"> </span><span class="na">xmlns:rng=</span><span class="s">&quot;http://relaxng.org/ns/structure/1.0&quot;</span><span class="w"> </span><span class="na">xmlns:xs=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="w"> </span><span class="na">xmlns:xlink=</span><span class="s">&quot;http://www.w3.org/1999/xlink&quot;</span><span class="nt">&gt;</span>
@@ -1678,12 +1692,15 @@ Point d’attention : Au terme de la version 6.0, PASTIS ne gère pas d’impor
 </pre></div>
 </div>
 <p><em>Nouvelle Version :</em></p>
-<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;rng:grammar</span><span class="w"> </span><span class="na">datatypeLibrary=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-datatypes&quot;</span><span class="w"> </span><span class="na">ns=</span><span class="s">&quot;fr:gouv:culture:archivesdefrance:seda:v2.1&quot;</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;fr:gouv:culture:archivesdefrance:seda:v2.2&quot;</span><span class="w"> </span><span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="w"> </span><span class="na">xmlns:a=</span><span class="s">&quot;http://relaxng.org/ns/compatibility/annotations/1.0&quot;</span><span class="w"> </span><span class="na">xmlns:seda=</span><span class="s">&quot;fr:gouv:culture:archivesdefrance:seda:v2.2&quot;</span><span class="w"> </span><span class="na">xmlns:rng=</span><span class="s">&quot;http://relaxng.org/ns/structure/1.0&quot;</span><span class="w"> </span><span class="na">xmlns:xs=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="w"> </span><span class="na">xmlns:xlink=</span><span class="s">&quot;http://www.w3.org/1999/xlink&quot;</span><span class="nt">&gt;</span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;rng:grammar</span><span class="w"> </span><span class="na">datatypeLibrary=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-datatypes&quot;</span><span class="w"> </span><span class="na">ns=</span><span class="s">&quot;fr:gouv:culture:archivesdefrance:seda:v2.2&quot;</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;fr:gouv:culture:archivesdefrance:seda:v2.2&quot;</span><span class="w"> </span><span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="w"> </span><span class="na">xmlns:a=</span><span class="s">&quot;http://relaxng.org/ns/compatibility/annotations/1.0&quot;</span><span class="w"> </span><span class="na">xmlns:seda=</span><span class="s">&quot;fr:gouv:culture:archivesdefrance:seda:v2.2&quot;</span><span class="w"> </span><span class="na">xmlns:rng=</span><span class="s">&quot;http://relaxng.org/ns/structure/1.0&quot;</span><span class="w"> </span><span class="na">xmlns:xs=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="w"> </span><span class="na">xmlns:xlink=</span><span class="s">&quot;http://www.w3.org/1999/xlink&quot;</span><span class="nt">&gt;</span>
 [...]
 </pre></div>
 </div>
-<p><strong>Point d’attention :</strong><br />
-Au terme de la version 6, l’APP Profils documentaires ne permet pas d’importer un fichier RNG référençant le SEDA 2.2. Il est recommandé de réimporter le fichier depuis l’IHM de démonstration.</p>
+<p>OU</p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;rng:grammar</span><span class="w"> </span><span class="na">datatypeLibrary=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-datatypes&quot;</span><span class="w"> </span><span class="na">ns=</span><span class="s">&quot;fr:gouv:culture:archivesdefrance:seda:v2.3&quot;</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;fr:gouv:culture:archivesdefrance:seda:v2.3&quot;</span><span class="w"> </span><span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="w"> </span><span class="na">xmlns:a=</span><span class="s">&quot;http://relaxng.org/ns/compatibility/annotations/1.0&quot;</span><span class="w"> </span><span class="na">xmlns:seda=</span><span class="s">&quot;fr:gouv:culture:archivesdefrance:seda:v2.3&quot;</span><span class="w"> </span><span class="na">xmlns:rng=</span><span class="s">&quot;http://relaxng.org/ns/structure/1.0&quot;</span><span class="w"> </span><span class="na">xmlns:xs=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="w"> </span><span class="na">xmlns:xlink=</span><span class="s">&quot;http://www.w3.org/1999/xlink&quot;</span><span class="nt">&gt;</span>
+[...]
+</pre></div>
+</div>
 <p><strong>Mention du profil d’unité archivistique</strong></p>
 <p>Si l’on souhaite contrôler une unité archivistique au moyen d’un profil d’unité archivistique, il faut ajouter dans le profil d’archivage l’identifiant du profil d’unité archivistique ou, du moins, la mention de l’existence du profil d’unité archivistique<a class="footnote-reference brackets" href="#id53" id="id24" role="doc-noteref"><span class="fn-bracket">[</span>24<span class="fn-bracket">]</span></a>.
 Au terme de la version 7.0, l’APP Profils documentaires ne permet pas de déporter le contrôle des métadonnées vers le profil d’unité archivistique. En effet, il est nécessaire de déclarer dans le profil d’archivage, en plus du profil d’unité archivistique, l’ensemble des métadonnées qui feront également l’objet du contrôle dans le profil d’unité archivistique.</p>

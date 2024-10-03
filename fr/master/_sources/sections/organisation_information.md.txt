@@ -25,6 +25,7 @@ Introduction
 |NF Z 44‑022 – MEDONA – Modélisation des données pour l’archivage|18/01/2014||
 |Standard d’échange de données pour l’archivage – SEDA – v. 2.1|06/2018||
 |Standard d’échange de données pour l’archivage – SEDA – v. 2.2|02/2022|Cette nouvelle version du SEDA est intégrée à la solution logicielle Vitam à partir de la V6.RC.|
+|Standard d’échange de données pour l’archivage – SEDA – v. 2.3|06/2024|Cette nouvelle version du SEDA est intégrée à la solution logicielle Vitam à partir de la V7.1.|
 |ISAD(G) – Norme générale et internationale de description archivistique. Deuxième édition.|2000||
 |PREservation Metadata International Standard – PREMIS – v 3.0|01/11/2015|Dictionnaire de données, liste hiérarchique des unités sémantiques, diagrammes, schéma|
 |CCSDS 650.0-M-2 : Reference Model for an Open Archival Information System (OAIS) – Magenta Book|06/2012||
@@ -72,6 +73,7 @@ Le tableau ci-dessous recense l’ensemble des textes législatifs et réglement
 |NF Z 44‑022 – MEDONA – Modélisation des données pour l’archivage|18/01/2014||
 |Standard d’échange de données pour l’archivage – SEDA – v. 2.1|06/2018||
 |Standard d’échange de données pour l’archivage – SEDA – v. 2.2|02/2022||
+|Standard d’échange de données pour l’archivage – SEDA – v. 2.3|06/2024||
 |ISAD(G): Norme générale et internationale de description archivistique. Deuxième édition.|2000||
 |PREservation Metadata International Standard – PREMIS – v 3.0|01/11/2015|Dictionnaire de données, liste hiérarchique des unités sémantiques, diagrammes, schéma|
 |Note d’information DGP/SIAF/2014/005 du 8 juillet 2014 relative à la journalisation des événements|08/07/2014||
@@ -293,9 +295,9 @@ Selon la norme OAIS, les SIP correspondent aux paquets informationnels transfér
 
 **Les SIP en tant que tels**
 
-La norme OAIS indique que la forme et le contenu des SIP doivent faire l’objet d’une négociation entre le service versant et le service d’archives. S’agissant des systèmes d’archivage basés sur la solution logicielle Vitam, ils suivent les prescriptions de la norme NF Z 44‑022 et de sa déclinaison pour le secteur public, le Standard d’échanges de données pour l’archivage (SEDA), dans sa version 2.2[^2]. L’implémentation de cette norme et de ce standard est décrite dans le document « Structuration des Submission Information Packages (SIP) » mis à disposition par l’équipe projet Vitam.
+La norme OAIS indique que la forme et le contenu des SIP doivent faire l’objet d’une négociation entre le service versant et le service d’archives. S’agissant des systèmes d’archivage basés sur la solution logicielle Vitam, ils suivent les prescriptions de la norme NF Z 44‑022 et de sa déclinaison pour le secteur public, le Standard d’échanges de données pour l’archivage (SEDA), dans sa version 2.3[^2]. L’implémentation de cette norme et de ce standard est décrite dans le document « Structuration des Submission Information Packages (SIP) » mis à disposition par l’équipe projet Vitam.
 
-En application de cette norme, de ce standard et de son projet d’implémentation, les SIP transférés à un système d’archivage utilisant la solution logicielle Vitam prennent la forme d’un conteneur (de format .zip ou .tar) comprenant tous les fichiers représentant les objets à archiver, ainsi qu’un bordereau les accompagnant. Ce dernier prend la forme d’un fichier xml conforme au schéma défini dans la norme NF Z 44‑022 et le standard SEDA, dans sa version 2.2.[^3]. Ce bordereau contient :
+En application de cette norme, de ce standard et de son projet d’implémentation, les SIP transférés à un système d’archivage utilisant la solution logicielle Vitam prennent la forme d’un conteneur (de format .zip ou .tar) comprenant tous les fichiers représentant les objets à archiver, ainsi qu’un bordereau les accompagnant. Ce dernier prend la forme d’un fichier xml conforme au schéma défini dans la norme NF Z 44‑022 et le standard SEDA, dans sa version 2.3[^3]. Ce bordereau contient :
 -  la liste des fichiers à archiver, avec leur description technique (les DataObjects). Dans le cas où plusieurs fichiers constituent des représentations différentes d’un même objet à archiver, ils doivent être liés logiquement sous la forme d’un groupe d’objets (DataObjectGroup) ;
 -  la liste des objets à archiver (les unités archivistiques ou ArchiveUnit), qu’ils soient physiques ou binaires, dans une arborescence, avec leur description fonctionnelle et leurs règles de gestion ;
 -  le lien entre objets et fichiers à archiver.
@@ -340,7 +342,7 @@ Le cas étudié (cf. illustration dans le schéma ci-dessous) concerne une arbor
 -  4 sous-dossiers (Répertoires 1.1, 1.2, 1.1.1 et 1.1.2) ;
 -  5 fichiers dont deux sont identiques (Fichiers 1.1.1.1, en double 1.1.2.1, 1.1.2.2, 1.1.2.3).
 
-Conformément à la norme NF Z 44‑022 et au SEDA 2.1., le Submission Information Package correspondant à cette arborescence de fichiers se présente comme suit :
+Conformément à la norme NF Z 44‑022 et au SEDA 2.X, le Submission Information Package correspondant à cette arborescence de fichiers se présente comme suit :
 -  le bloc DataObjectPackage comprend 4 objets numériques (BinaryDataObject) correspondant aux 5 fichiers existants dans l’arborescence (groupe d’objets 1.1.1.1, 1.1.2.1, 1.1.2.2, 1.1.2.3). Le fichier présent à 2 endroits dans l’arborescence a fait l’objet d’un dédoublonnement (Fichier 1.1.1.1). Chaque objet numérique (BinaryDataObject) se voit intégré à un groupe d’objets (DataObjectGroup) qui permettrait de lier ensemble différentes représentations d’une même entité intellectuelle (une version de conservation et une version de diffusion par exemple) ;
 -  l’arborescence d’unités archivistiques dans le bloc DescriptiveMetadata reprend la structuration de l’arborescence de fichiers avec son dossier racine (Unit 1 correspondant au Folder 1), ses sous-dossiers (Units 2, 3, 5 et 9 correspondants aux Folders 1.1, 1.2, 1.1.1. et 1.1.2.) mais aussi les unités de description correspondant aux fichiers eux-mêmes (Units 4, 6, 7, 8, 10 correspondants aux fichiers 1.1.1.1., 1.1.2.1., 1.1.2.2. et 1.1.2.3.). À chaque unité archivistique correspondant à un fichier est lié le groupe d’objets correspondant à l’objet numérique lui-même. Il convient de noter que le fichier présent à 2 endroits dans l’arborescence initiale (le fichier 1.1.1.1) fait l’objet de 2 unités archivistiques dans le bordereau (Units 4 et 10) mais d’un seul groupe d’objets. Si le train binaire est unique, l’indexation dépend, elle, de la position dans l’arborescence de fichiers.
 
@@ -462,9 +464,9 @@ Selon la norme OAIS, les DIP correspondent aux paquets informationnels transmis 
 
 #### Les DIP en tant que tels
 
-La norme OAIS indique que le DIP comprend tout ou partie d’un ou plusieurs AIP et peut également contenir une Preservation Description Information (PDI) plus ou moins complète. Elle précise également qu’en cas d’empaquetage, l’information d’empaquetage, même si elle peut prendre des formes variées, doit nécessairement être présente sous une forme permettant au demandeur de distinguer clairement l’information recherchée. S’agissant des systèmes d’archivage basés sur la solution logicielle Vitam, ils suivent les prescriptions de la norme NF Z 44‑022 et de sa déclinaison pour le secteur public, le Standard d’échanges de données pour l’archivage (SEDA), dans sa version 2.2.[^4].
+La norme OAIS indique que le DIP comprend tout ou partie d’un ou plusieurs AIP et peut également contenir une Preservation Description Information (PDI) plus ou moins complète. Elle précise également qu’en cas d’empaquetage, l’information d’empaquetage, même si elle peut prendre des formes variées, doit nécessairement être présente sous une forme permettant au demandeur de distinguer clairement l’information recherchée. S’agissant des systèmes d’archivage basés sur la solution logicielle Vitam, ils suivent les prescriptions de la norme NF Z 44‑022 et de sa déclinaison pour le secteur public, le Standard d’échanges de données pour l’archivage (SEDA), dans sa version 2.3.[^4].
 
-En application de cette norme, de ce standard et de son projet d’implémentation, les DIP émis par un système d’archivage utilisant la solution logicielle Vitam prennent la forme d’un conteneur (de format .zip) comprenant tous les fichiers représentant les archives demandées, ainsi qu’un bordereau les accompagnant. Ce dernier prend la forme d’un fichier XML conforme au schéma défini dans la norme NF Z 44‑022 et le standard SEDA, dans sa version 2.2.[^5]. Ce bordereau contient :
+En application de cette norme, de ce standard et de son projet d’implémentation, les DIP émis par un système d’archivage utilisant la solution logicielle Vitam prennent la forme d’un conteneur (de format .zip) comprenant tous les fichiers représentant les archives demandées, ainsi qu’un bordereau les accompagnant. Ce dernier prend la forme d’un fichier XML conforme au schéma défini dans la norme NF Z 44‑022 et le standard SEDA, dans sa version 2.3.[^5]. Ce bordereau contient :
 -  la liste des fichiers demandés, avec leur description technique (les DataObjects). Dans le cas où plusieurs fichiers constituent des représentations différentes d’un même objet, ils peuvent être liés logiquement sous la forme d’un groupe d’objets (DataObjectGroup) ;
 -  la liste des archives demandées (les unités archivistiques ou ArchiveUnits), qu’elles soient physiques ou binaires, dans une arborescence, avec leur description fonctionnelle et leurs règles de gestion ;
 -  le lien entre archives et fichiers.
@@ -700,7 +702,8 @@ Le contrat d’accès a pour objectif de définir les droits d’une application
 Le contrat d’accès comprend :
 -  des champs d’identification : identifiant du contrat, nom du contrat, description du contrat, date de création du contrat, date d’activation/désactivation du contrat, date de dernière mise à jour du contrat ;
 -  le statut du contrat ;
--  des champs définissant le périmètre des données sur lequel l’application a des droits : tenant ; service(s) producteur(s) ; unité(s) archivistique(s) – qu’elle soit de type arbre de positionnement, plan de classement ou standard – à partir de laquelle les accès sont autorisés ; unité(s) archivistique(s) – qu’elle soit de type arbre de positionnement, plan de classement ou standard – à partir de laquelle les accès sont interdits ;
+-  des champs définissant le périmètre des données sur lequel l’application a des droits : tenant ; service(s) producteur(s) ; unité(s) archivistique(s) – qu’elle soit de type arbre de positionnement, plan de classement ou standard – à partir de laquelle les accès sont autorisés ; unité(s) archivistique(s) – qu’elle soit de type arbre de positionnement, plan de classement ou standard – à partir de laquelle les accès sont interdits ; unité(s) archivistique(s) – qu’elle soit de type plan de classement ou standard – dont les règles sont arrivées à échéance ;
+-  des champs définissant des exceptions au périmètre des données sur lequel l'application a des droits : unité(s) archivistique(s) de type plan de classement et arbre de positionnement ; unité(s) archivistique(s) librement communicable(s)  quel que soit le service producteur ;
 -  des champs définissant les droits de l’application sur ce périmètre : lecture seule, modification de toutes les métadonnées des unités archivistiques ou des seules métadonnées descriptives ;
 -  des champs définissant les modalités de dialogue entre l’application et la solution logicielle Vitam : nature des objets qui lui sont retournés (tous les objets ? Uniquement certaines versions des objets ?) ; traçabilité ou non des accès dans un log.
 
@@ -731,7 +734,7 @@ Le contrat d’entrée comprend :
 -  le statut du contrat ;
 -  des champs définissant la forme et la structure des archives destinées à être transférées dans la solution logicielle Vitam en application de ce contrat : identifiant du profil d’archivage ;
 -  un champ permettant d’identifier le périmètre sur lequel l’application a des droits : tenant ;
--  des champs permettant d’identifier les modalités de traitement des archives transférées en application du contrat : présence obligatoire ou non d’un original numérique (BinaryMaster) dans le groupe d’objets techniques – que ce soit lors de la création ou de l’enrichissement de celui-ci – ; liste des usages autorisés dans le groupe d’objets techniques ; liste de formats de fichiers acceptés ; acceptation ou non des fichiers dont le format n’est pas identifiable ; unité(s) archivistique(s) – qu’elle soit de type arbre de positionnement ou plan de classement – à laquelle rattacher les unités archivistiques positionnées à la racine du SIP ; activation ou non d’un contrôle sur les demandes de rattachements d’unités archivistiques déclarés dans le SIP ; stratégies de stockage à appliquer et génération d’identifiants pérennes en conformité avec un contrat de gestion.
+-  des champs permettant d’identifier les modalités de traitement des archives transférées en application du contrat : présence obligatoire ou non d’un original numérique (BinaryMaster) dans le groupe d’objets techniques – que ce soit lors de la création ou de l’enrichissement de celui-ci – ; liste des usages autorisés dans le groupe d’objets techniques ; liste de formats de fichiers acceptés ; acceptation ou non des fichiers dont le format n’est pas identifiable ; unité(s) archivistique(s) – qu’elle soit de type arbre de positionnement ou plan de classement – à laquelle rattacher les unités archivistiques positionnées à la racine du SIP ; activation ou non d’un contrôle sur les demandes de rattachements d’unités archivistiques déclarés dans le SIP ; stratégies de stockage à appliquer et génération d’identifiants pérennes en conformité avec un contrat de gestion ; contrôles sur les archives signées électroniquement.
 
 Le contrat d’entrée correspond à la notion d’ArchivalAgreement définie dans la norme NF Z 44‑022 et dans le Standard d’échanges de données pour l’archivage (SEDA).
 
@@ -847,7 +850,7 @@ Base MasterData – collection Contrats de gestion (ManagementContract)
 L’ontologie a pour objectifs de :
 -  décrire les métadonnées utilisées dans la solution logicielle Vitam, quelle que soit la collection concernée et lister les collections et profils d’unités archivistiques (ArchiveUnitProfile) qui les utilisent ;
 -  garantir la cohérence de l’indexation des métadonnées entre les collections MongoDB et le moteur de recherche ElasticSearch ;
--  permettre à des administrateurs de créer des métadonnées supplémentaires à celles définies dans la norme NF Z 44‑022 et dans le Standard d’échanges de données pour l’archivage (SEDA), pour répondre à des besoins de description et de recherche d’archives prise en charge dans la solution logicielle Vitam.
+-  permettre à des administrateurs de créer des métadonnées supplémentaires à celles définies dans la norme NF Z 44-022 et dans le Standard d’échanges de données pour l’archivage (SEDA), pour répondre à des besoins de description et de recherche d’archives prise en charge dans la solution logicielle Vitam.
 
 ##### Exigences associées
 
@@ -872,6 +875,50 @@ Base MasterData – collection Ontologie (Ontology)
 
 [Vitam. Ontologie.](./ontologie.md)
 
+#### Schéma
+
+##### Définition et objectifs
+
+Le schéma a pour objectifs de :
+-  décrire les métadonnées et leur chemin utilisés dans la solution logicielle Vitam, pour les collections « Unit » et « ObjectGroup » ;
+-  permettre à des administrateurs de créer des métadonnées supplémentaires à celles définies dans la norme NF Z 44-022 et dans le Standard d’échanges de données pour l’archivage (SEDA), pour répondre à des besoins de description et de recherche d’archives prise en charge dans la solution logicielle Vitam et de les utiliser dans un front-office.
+
+##### Exigences associées
+
+1.4.1., 1.4.3., 1.4.7., 1.4.8., 2.1.4., 2.2.6., 2.2.7.
+
+##### Structuration
+
+L’ontologie comprend :
+-  des champs d’identification : identifiant de la métadonnée, nom de la métadonnée dans le Standard d’échanges de données pour l’archivage (SEDA) si c’est dans ce cadre qu’elle a été créée, nom de la métadonnée telle qu’exposée dans les interfaces de programmation applicatives (API) ; une description de la métadonnée ;
+-  la traduction possible de cette métadonnée dans une interface homme-machines ;
+-  le formatage attendu de la métadonnée dans le moteur de recherche ElasticSearch (BOOLEAN, DATE, DOUBLE, GEO-POINT, KEYWORD, LONG, TEXT) ;
+-  l’origine de la métadonnée :
+    - INTERNAL si elle est héritée du Standard d’échanges de données pour l’archivage (SEDA) ou si elle correspond à une métadonnée du modèle de données de la solution logicielle Vitam ;
+    - EXTERNAL si elle correspond à une métadonnée créée par les administrateurs ;
+-  l’utilisation faite dans la solution logicielle Vitam de cette métadonnée : nom des collections MongoDB utilisant cette métadonnée.
+
+Le schéma comprend :
+-  des champs d’identification : chemin et identifiant de la métadonnée, nom de la métadonnée dans le Standard d’échanges de données pour l’archivage (SEDA) si c’est dans ce cadre qu’elle a été créée, nom et chemin de la métadonnée telle qu’exposée dans les interfaces de programmation applicatives (API) ; une description de la métadonnée ;
+-  la traduction possible de cette métadonnée dans une interface homme-machines ;
+-  le formatage attendu de la métadonnée dans le moteur de recherche ElasticSearch (BOOLEAN, DATE, DOUBLE, ENUM, KEYWORD, LONG, TEXT) ;
+-  le détail du formatage (STRING, ENUM, DATETIME, BOOLEAN, LONG, DOUBLE) ;
+-  la taille possible des métadonnées de type STRING dans une interface homme-machines  (SHORT, MEDIUM, LONG) ;
+-  la catégorie de la métadonnée (DESCRIPTIVE, MANAGEMENT, OTHER) ;
+-  l’origine de la métadonnée :
+    - INTERNAL si elle est héritée du Standard d’échanges de données pour l’archivage (SEDA) ou si elle correspond à une métadonnée du modèle de données de la solution logicielle Vitam ;
+    - EXTERNAL si elle correspond à une métadonnée créée par les administrateurs ;
+-  la version du SEDA utilisée pour une métadonnée d’origine INTERNAL ;
+-  l’utilisation faite dans la solution logicielle Vitam de cette métadonnée : nom des collections MongoDB utilisant cette métadonnée (Unit, ObjectGroup).
+
+##### Section correspondante dans le modèle de données
+
+Base MasterData – collection Schéma (Schema)
+
+##### Documentation associée
+
+[Vitam. Schéma.](./schema.md)
+
 #### Profils d’archivage et d’unité archivistique
 
 #####	Profil d’archivage
@@ -895,6 +942,7 @@ L’identifiant du profil d’archivage permet de faire le lien avec le champ Ar
 Le profil d’archivage et sa description comprennent :
 -  des champs d’identification : identifiant du profil d’archivage, nom du profil d’archivage, description du profil d’archivage, date de création du profil d’archivage, date d’activation/désactivation du profil d’archivage, date de dernière mise à jour de la description du profil d’archivage ;
 -  le statut du profil d’archivage ;
+-  la version du SEDA utilisée par le profil d'archivage ;
 -  les profils d’unité archivistique (documents types) utilisés dans le profil ;
 -  les métadonnées de gestion applicables à l’ensemble du SIP ;
 -  la structure attendue du SIP ;
@@ -932,6 +980,7 @@ L’identifiant du profil d’unité archivistique ou document type permet de fa
 Le profil d’unité archivistique comprend :
 -  des champs d’identification : identifiant du profil, nom du profil, description du profil, date de création du profil, date d’activation/désactivation du profil, date de dernière mise à jour de la description du profil ;
 -  le statut du profil ;
+-  la version du SEDA utilisée par le profil d'unité archivistique ;
 -  les métadonnées de gestion applicables à l’unité archivistique ;
 -  la liste des champs obligatoires, qui ne doit pas être restrictive par rapport à ce qui est défini dans le Standard d’échanges de données pour l’archivage (SEDA) ;
 -  la liste des champs facultatifs, que ces champs existent actuellement dans l’ontologie définie dans le Standard d’échange de données pour l’archivage (SEDA) ou qu’ils nécessitent d’être ajoutés à cette ontologie ;
@@ -984,7 +1033,7 @@ La description des unités archivistiques comprend :
 -  des champs d’identification : identifiant système, identifiants fournis par le service producteur – qu’il s’agisse d’identifiants système ou d’identifiants métiers (ex. numéro de dossier, numéro de marché, etc.) –, identifiants métiers fournis par le service d’archives (cotation) ;
 -  le niveau de description associé à l’unité archivistique ;
 -  l’identification des « acteurs » de l’unité archivistique : service producteur, service versant ;
--  des champs de description correspondant soit à une description minimale conforme à la norme ISAD (G), soit à une description enrichie conformément aux besoins du service producteur (par exemple en utilisant les champs proposés dans l’ontologie et/ou proposés dans le SEDA v. 2.1. et v. 2.2.). Conformément à la norme ISAD (G), un intitulé est obligatoire ;
+-  des champs de description correspondant soit à une description minimale conforme à la norme ISAD (G), soit à une description enrichie conformément aux besoins du service producteur (par exemple en utilisant les champs proposés dans l’ontologie et/ou proposés dans le SEDA v. 2.1, 2.2 et 2.3). Conformément à la norme ISAD (G), un intitulé est obligatoire ;
 -  la ou les dates associées à l’unité archivistique ;
 -  les règles de gestion associées à cette unité archivistique telles que décrites dans le référentiel des règles de gestion : identifiant de la règle associée, date de départ du calcul, date d’échéance de la règle, action à mettre en œuvre au terme de l’échéance, etc. ;
 -  l’identification du schéma de métadonnées utilisé pour spécifier les caractéristiques de cette unité archivistique ;
@@ -1033,7 +1082,7 @@ La description des unités archivistiques de type arbre de positionnement compre
 -  des champs d’identification : identifiant système, identifiants fournis par le service d’archives (cotation) ;
 -  le type (arbre de positionnement) ;
 -  le niveau de description associé à l’unité archivistique ;
--  des champs de description correspondant soit à une description minimale conforme à la norme ISAD (G) soit à une description enrichie conformément aux besoins du service producteur (par exemple en utilisant les champs proposés dans l’ontologie et/ou proposés dans le SEDA v. 2.1. et v. 2.2.). Conformément à la norme ISAD (G), un intitulé est obligatoire.
+-  des champs de description correspondant soit à une description minimale conforme à la norme ISAD (G) soit à une description enrichie conformément aux besoins du service producteur (par exemple en utilisant les champs proposés dans l’ontologie et/ou proposés dans le SEDA v. 2.1, 2.2 et 2.3). Conformément à la norme ISAD (G), un intitulé est obligatoire.
 
 ##### Section correspondante dans le modèle de données
 
@@ -1074,7 +1123,7 @@ La description des unités archivistiques de type plan de classement comprend :
 -  des champs d’identification : identifiant système, identifiants fournis par le service producteur (cotation) ;
 -  son type (plan de classement) ;
 -  le niveau de description associé à l’unité archivistique ;
--  des champs de description correspondant soit à une description minimale conforme à la norme ISAD (G) soit à une description enrichie conformément aux besoins du service producteur (par exemple en utilisant les champs proposés dans l’ontologie et/ou proposés dans le SEDA v. 2.1. et v. 2.2.). Conformément à la norme ISAD (G), un intitulé est obligatoire.
+-  des champs de description correspondant soit à une description minimale conforme à la norme ISAD (G) soit à une description enrichie conformément aux besoins du service producteur (par exemple en utilisant les champs proposés dans l’ontologie et/ou proposés dans le SEDA v. 2.1, 2.2 et 2.3). Conformément à la norme ISAD (G), un intitulé est obligatoire.
 
 ##### Section correspondante dans le modèle de données
 
@@ -1128,7 +1177,7 @@ Base MetaData – collection Groupes d’objets (ObjectGroup)
 
 Le journal des opérations a pour objectif d’enregistrer toutes les opérations effectuées par la solution logicielle ayant un impact significatif sur les unités archivistiques, groupes d’objets et objets pris en charge par celle-ci.
 
-À titre d’illustration, au terme de la version 6, sont enregistrées les opérations suivantes :
+À titre d’illustration, au terme de la version 7.1, sont enregistrées les opérations suivantes :
 -  réalisation d’une opération d’entrée ;
 -  réalisation d’une opération d’élimination ;
 -  réalisation d’une opération de préservation ;
@@ -1148,6 +1197,7 @@ Le journal des opérations a pour objectif d’enregistrer toutes les opération
 -  import et mise à jour de données dans le référentiel des contextes ;
 -  import et mise à jour de données dans le référentiel des profils de sécurité ;
 -  import et mise à jour de données dans l’ontologie ;
+-  import, mise à jour et suppression de données dans le schéma ;
 -  import et mise à jour de données dans le référentiel des profils d’archivage ;
 -  import et mise à jour de données dans le référentiel des profils d’unité archivistique ;
 -  réalisation d’une opération d’audit ;
@@ -1329,12 +1379,12 @@ Base MasterData – collections Registre des fonds (AccessionRegisterSummary, Ac
 
 [^1]: Voir également le rapport final du groupe de travail sur l’accès aux archives numériques élaboré par l’équipe projet Vitam [Vitam. Accès aux archives numériques. Rapport final du groupe de travail. v. 0.2. du 14 juin 2016].
 
-[^2]:  La solution logicielle Vitam est également compatible avec le SEDA 2.1.
+[^2]:  La solution logicielle Vitam est également compatible avec le SEDA 2.1 et le SEDA 2.2.
 
-[^3]:  La solution logicielle Vitam est également compatible avec le SEDA 2.1.
+[^3]:  La solution logicielle Vitam est également compatible avec le SEDA 2.1 et le SEDA 2.2.
 
-[^4]: La solution logicielle Vitam est également compatible avec le SEDA 2.1.
+[^4]: La solution logicielle Vitam est également compatible avec le SEDA 2.1 et le SEDA 2.2.
 
-[^5]: La solution logicielle Vitam est également compatible avec le SEDA 2.1.
+[^5]: La solution logicielle Vitam est également compatible avec le SEDA 2.1 et le SEDA 2.2.
 
 [^6]: [Disponibles à l’adresse suivante (lien vérifié le 16 février 2023)](http://www.nationalarchives.gov.uk/aboutapps/pronom/droid-signature-files.htm)
