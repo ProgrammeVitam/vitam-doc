@@ -11,8 +11,10 @@ Introduction
 |NF Z 44022 – MEDONA – Modélisation des données pour l’archivage|18/01/2014||
 |Standard d’échange de données pour l’archivage – SEDA – v. 2.1|06/2018||
 |Standard d’échange de données pour l’archivage – SEDA – v. 2.2|02/2022|Cette nouvelle version du SEDA est intégrée  à la solution logicielle Vitam à partir de la V6.RC.|
+|Standard d’échange de données pour l’archivage – SEDA – v. 2.3|02/2024||
 |[Vitam – Structuration des Submission Information Package (SIP)](./SIP.md)|||
 |[Vitam – Ontologie](./ontologie.md)||Ce document doit être lu en préalable au présent document.|
+|[Vitam – Schéma](./schema.md)|||
 |[Vitam – Profils d’archivage](./profil_archivage.md)||Ce document doit être lu dans les cas où, en phase d’analyse, on souhaite évaluer quel est le meilleur type de profil à utiliser.|
 
 ### Présentation du document
@@ -26,7 +28,7 @@ Il s’articule autour des axes suivants :
 - des recommandations aux utilisateurs de la solution logicielle Vitam sur l’élaboration d’un profil d’unité archivistique ;
 - quelques conseils complémentaires de mise en œuvre.
 
-Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 7.0 (octobre 2023) :  : il comprend particulièrement la présentation des fonctionnalités offertes par le projet PASTIS (Profil d’Archivage Simple pour le Traitement de l’Information en SEDA) intégré à l’IHM Vitam UI par l’APP Profils documentaires et également accessible par un exécutable. Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
+Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 8.0 (octobre 2024) :  : il comprend particulièrement la présentation des fonctionnalités offertes par le projet PASTIS (Profil d’Archivage Simple pour le Traitement de l’Information en SEDA) intégré à l’IHM Vitam UI par l’APP Profils documentaires et également accessible par un exécutable. Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
 
 Présentation de la notion de profil d’unité archivistique
 ----
@@ -175,6 +177,7 @@ Cette notice descriptive comprend les informations suivantes pour un profil d’
 |Description|description du profil d’unité archivistique, obligatoire (champ facultatif)|
 |Status|statut « ACTIVE » pour « actif » ou « INACTIVE » pour inactif (champ obligatoire).
 Si la notice importée ne contient pas de statut, la solution logicielle Vitam enregistre par défaut la valeur « INACTIVE »|
+|SedaVersion|version du SEDA du profil d'archivage associé à la notice (champ obligatoire - valeur par défaut : « 2.3 »).<br>Les valeurs possibles dont : « 2.1 », « 2.2 » ou « 2.3 »|
 |ControlSchema|schéma de contrôle, obligatoire, mais pouvant être vide<br>-  il est destiné à contenir l’ensemble des éléments qui feront l’objet d’un contrôle en entrée ou en mise à jour<br>-  les éléments (ou propriétés) qu’il définit doivent se conformer aux vocabulaires définis dans l’ontologie, que ce soit en termes de nommage ou de typage|
 |CreationDate|date de création de la notice descriptive du profil d’unité archivistique, fournie par la solution logicielle Vitam (champ obligatoire)|
 |LastUpdate|dernière date de modification de la notice descriptive du profil d’unité archivistique, fournie par la solution logicielle Vitam (champ obligatoire)|
@@ -216,6 +219,7 @@ Les champs modifiables sont :
 -  le nom du profil d’unité archivistique (Name) ;
 -  la description du profil d’unité archivistique (Description) ;
 -  le statut « Actif » ou « Inactif », correspondant aux valeurs « ACTIVE » et « INACTIVE » dans le système (Status) ;
+-  la version du SEDA, si la notice n'est pas associée à un profil d'archivage. Les valeurs possibles sont « 2.1 », « 2.2 » ou « 2.3 » (SedaVersion) ;
 -  le schéma de contrôle (ControlSchema).
 
 **Points d’attention :**
@@ -333,6 +337,85 @@ Par défaut, lorsque l’utilisateur demande à accéder au détail d’une unit
 *Exemple :* Détail d’une unité archivistique intitulée « Reportage sur Arte », associée à un profil d’unité archivistique dont l’identifiant est « AUP-000001 ».
 
 ![](./medias/PUA/detail_UA.png)
+
+#### Affichage des unités archivistiques déclarant un profil d’unité archivistique
+
+La solution logicielle Vitam permet d’accéder à la liste des métadonnées requises par un profil d’unité archivistique, qu’il s’agisse de vocabulaires internes ou, le cas échéant, de vocabulaires externes de la collection « Unit ».
+
+Exemple : Requête en vue de rechercher les vocabulaires utilisés par le profil d’unité archivistique dont l’identifiant est  « AUP-00001 » :
+
+```json
+
+GET {{url}}/admin-external/v1/archiveunitprofiles/AUP-00001/schema
+Accept: application/json
+Content-Type: application/json
+X-Tenant-Id: {{tenant}}
+X-Access-Contract-Id: {{access-contract}}
+
+```
+La solution logicielle Vitam renvoie alors :
+    - les vocabulaires internes et/ou externes non utilisés par le profil d’unité archivistique, en signalant qu’ils ne sont pas utilisés par ce dernier en exprimant une cardinalité ayant « ZERO » pour valeur (EffectiveCardinality - obligatoire) ;
+    - les vocabulaires internes et /ou externes utilisés par le profil d’unité archivistique, avec les informations suivantes :
+        - la cardinalité exprimée dans le profil d’unité archivisique, dont la valeur doit être égale à « ONE », « ONE_REQUIRED », « MANY » ou « MANY_REQUIRED » (EffectiveCardinality - obligatoire),
+        - les contrôles exprimés pour la métadonnée en question (Control – obligatoire, mais pouvant être vide) :
+            - le type de contrôle dont la valeur peut être égale à :
+                - « REGEX » pour une expression régulière ou une format de date contrôlé,
+                - « SELECT » pour une à plusieurs valeurs contrôlées ;
+            - pour un contrôle de type « REGEX », l’expression en elle-même (Value),
+            - pour un contrôle de type « SELECT », les différentes valeurs contrôlées (Values) ;
+        - un commentaire (Comment – facultatif).
+
+Exemple : Résultats possibles suite à une requête en vue de rechercher les vocabulaires utilisés par le profil d’unité archivistique dont l’identifiant est  « AUP-00001 » :
+
+```json
+
+[...]
+{ "FieldName": "SystemId", 
+"SedaField": "SystemId", 
+"Collection": "Unit", 
+"ApiPath": "SystemId", 
+"Category": "DESCRIPTION", 
+"Description": "Mapping : unit-es-mapping.json. Identifiant attribué aux objets. Il est attribué par le SAE et correspond à un identifiant interne.", 
+"Cardinality": "MANY", 
+"Type": "KEYWORD", 
+"Origin": "INTERNAL", 
+"ShortName": "Identifiant technique du système", 
+"Path": "SystemId", 
+"SedaVersions": [ "2.1", "2.2", "2.3" ], 
+"StringSize": "SHORT", 
+"Control": { 
+   "Type": "REGEX", 
+   "Value": "^[0-9]{4}$", 
+   "Comment": "systemid 1-N" }, 
+"EffectiveCardinality": "MANY_REQUIRED" } 
+[...]
+{ 
+"FieldName": "FilePlanPosition", 
+"SedaField": "FilePlanPosition", 
+"Collection": "Unit", 
+"ApiPath": "FilePlanPosition", 
+"Category": "DESCRIPTION", 
+"Description": "Mapping : unit-es-mapping.json", 
+"Cardinality": "MANY", 
+"Type": "KEYWORD",
+"Origin": "INTERNAL", 
+"ShortName": "Position dans le plan de classement", 
+"Path": "FilePlanPosition", 
+"SedaVersions": [ "2.1", "2.2", "2.3" ], 
+"StringSize": "SHORT", 
+"Control": { 
+   "Type": "SELECT", 
+   "Values": [ "REP.1.1", "REP.1.2" ], 
+   "Comment": "fileplanposition 0-N" }, 
+"EffectiveCardinality": "MANY" } 
+
+```
+Point d’attention : En résultats, la solution logicielle renvoie systématiquement l’ensemble des vocabulaires du schéma. A charge du front-office de filtrer les vocabulaires utilisés dans le profil d’unité archivistique en utilisant le schéma.
+Il est possible, en accès :
+    - d’utiliser ce filtre sur les profils d’unité archivistique comme un fichier de propriétés pour récupérer les traductions, mais aussi les restrictions et informations spécifiquement déclarées dans les profils d’unité archivistiques, plutôt que ce soit l’IHM qui porte ces informations ;
+    - d’utiliser et d’afficher la traduction des vocabulaires et les contraintes définies dans un profil d’unité archivistique dans les IHM.
+
+À titre d’exemple, au terme de la version 8.0, l’APP VitamUI « Recherche et consultation des archives » fournie avec la solution logicielle Vitam dispose d’un affichage dynamique filtré sur un profil d’unité archivistique depuis le détail des métadonnées descriptives d’une unité archivistique déclarant un profil d’unité archivistique en mode édition.
 
 #### Mise à jour des unités archivistiques
 
@@ -1040,7 +1123,7 @@ Pour les éléments de type « string », « object » ou « boolean », l
 
 *Étapes de rédaction*
 
-Pour rédiger un profil d’unité archivistique, il est également possible d’utiliser l’outil PASTIS (Profil d’Archivage Simple pour le Traitement de l’Information en SEDA), qui permet de générer des profils d’unité archivistique au format JSON.
+Pour rédiger un profil d’unité archivistique, il est également possible d’utiliser l’outil PASTIS (Profil d’Archivage Simple pour le Traitement de l’Information en SEDA), qui permet de générer des profils d’unité archivistique au format JSON en SEDA 2.1, 2.2 et 2.3.
 
 Étape 1 - l’outil requiert dans un premier temps de créer un profil d’unité archivistique (PUA).
 
@@ -1067,7 +1150,7 @@ PASTIS permet un certain nombre d’actions :
 -  ajouter des contrôles sur la valeur d’une métadonnée par rapport à une expression régulière. Pour ce faire, il suffit de se positionner sur la métadonnée en question et sélectionner « ... », puis « Contrôles de métadonnées » et ajouter le contrôle « Expression régulière ».
 
 **Points d’attention :** 
--  Au terme de la version 6, ne sont pas supportés :
+-  Au terme de la version 8.0, ne sont pas supportés :
   - les attributs lang. De fait, il n’est pas recommandé de rendre répétable les champs « Title » et « Description » ;
   - la répétabilité des champs, notamment les règles de gestion. De fait, il est recommandé de ne déclarer qu’une seule règle par catégorie de règle de gestion et il faut veiller à ne pas avoir saisi à plusieurs reprises un même champ ;
   - le blocage des règles de gestion par catégorie ou par identifiant de règle ;
@@ -1077,15 +1160,14 @@ PASTIS permet un certain nombre d’actions :
 
 *Corrections et ajouts*
 
-Une fois la rédaction du profil d’archivage réalisée, il est possible de :
+Une fois la rédaction du profil d’unité archivistique réalisée, il est possible de :
 -  l’exporter au format JSON, intégré dans une notice au format JSON, depuis l’exécutable de l’APP Profils documentaires,
 -  finaliser le processus de création d’un profil d’unité archivistique et d’insertion dans le référentiel des profils d’archivage de la solution logicielle Vitam.
 
 L’export s’avère nécessaire en vue de :
 -  corriger d’éventuelles coquilles ;
--  intégrer certains éléments non supportés par l’APP Profils documentaires au terme de la version 7.0 (notamment les extensions, des champs du SEDA 2.2) ;
+-  intégrer certains éléments non supportés par l’APP Profils documentaires au terme de la version 8.0 (notamment les extensions) ;
 -  vérifier la conformité du schéma de contrôle à une unité archivistique au moyen d’un validateur de schéma JSON.
-Point d’attention : Au terme de la version 6.0, PASTIS ne gère pas d’import de fichier JSON au SEDA 2.2. Il est recommandé de réimporter le fichier depuis l’IHM de démonstration pour pouvoir l’exploiter.
 
 Pour apporter ces corrections au fichier exporté, il faut :
 -  Ouvrir le fichier dans un éditeur de texte (ex : Notepad ++, Oxygen).
