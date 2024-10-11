@@ -30,6 +30,7 @@ L’administrateur fonctionnel constitue le référentiel des services agents à
 À chacun de ces services, il associe un identifiant et une description sommaire qui permettra de différencier au besoin deux services au nom proche, par exemple, les services des ressources humaines des différentes entités.
 
 Le référentiel des services agents n’est pas un référentiel complet comme ceux utilisés dans les applications archivistiques qui indiquent les filiations et les héritages. Pour les services qui disposent déjà d’un tel outil, une extraction simplifiée en sera réalisée pour alimenter la solution logicielle Vitam.
+Néanmoins, il peut contenir des informations historiques relatives aux services agents au terme de la version 8.0.
 
 
 ### Gestion des identifiants des services agents
@@ -46,12 +47,40 @@ Le référentiel des services agents est importé dans la solution logicielle Vi
 |Name|Nom du service|||
 |Description|Description du service|||
 
+Il peut aussi inclure les colonnes suivantes dans sa forme étendue :
 
+- dans sa forme étendue :
+
+|Nom de la colonne|Description de la colonne|Valeurs possibles|Observations|
+| :--------------- |:---------------:|:-----:|:-----------:|
+|Identifier|Identifiant du service||Cet identifiant ne doit pas comprendre d’espace, de caractère accentué, de virgule, d’apostrophe, de parenthèse, de slash, d’élément de ponctuation, ou tout autre caractère spécial. Ne sont recommandés que l’underscore et le tiret comme séparateurs.|
+|Name|Nom du service|||
+|Description|Description du service|||
+|EntityType|Type d’entité|Colonne facultative.||
+|NameEntryParallel|Formes parallèles du nom|Colonne facultative.<br>Il est possible de saisir plusieurs valeurs, séparées par des pipes.||
+|AuthorizedForm|Formes du nom normalisées selon d’autres conventions|Colonne facultative.<br>Il est possible de saisir plusieurs valeurs, séparées par des pipes.||
+|AlternativeForm|Autres formes du nom|Colonne facultative.<br>Il est possible de saisir plusieurs valeurs, séparées par des pipes.||
+|EntityId|Numéro d’immatriculation des collectivités|Colonne facultative.||
+|FromDate|Date de début d’existence|Colonne facultative.<br>Les formats de date acceptés sont AAAA-MM-JJ et JJ/MM/AAAA.||
+|ToDate|Date de fin d’existence|Colonne facultative.<br>Les formats de date acceptés sont AAAA-MM-JJ et JJ/MM/AAAA.||
+|Functions|Fonctions et activités|Colonne facultative.<br>Il est possible de saisir plusieurs valeurs, séparées par des pipes.||
+|BiogHist|Histoire|Colonne facultative.||
+|Places|Lieux|Colonne facultative.Il est possible de saisir plusieurs valeurs, séparées par des pipes.||
+|LegalStatuses|Statut juridique|Colonne facultative.<br>Il est possible de saisir plusieurs valeurs, séparées par des pipes.||
+|Mandates|Textes de référence|Colonne facultative.<br>Il est possible de saisir plusieurs valeurs, séparées par des pipes.||
+|StructureOrGenealogy|Organisation interne/généalogie|Colonne facultative.||
+|GeneralContext|Contexte général|Colonne facultative.||
+|MaintenanceStatus|Niveau d’élaboration|Colonne facultative.||
+|LocalStatus|Niveau de détail|Colonne facultative.||
+|Sources|Sources|Colonne facultative.<br>Il est possible de saisir plusieurs valeurs, séparées par des pipes.||
+|EventDescription|Notes relatives à la mise à jour de la notice|Colonne facultative.||
 
 Le fichier .csv à importer doit avoir les caractéristiques suivantes :
 - encodage des caractères : UTF-8 ;
 - séparateur de champ : la virgule ;
-- séparateur de texte : guillemets simples ou doubles, espace vide.
+- séparateur de texte : guillemets simples ou doubles, espace vide ;
+- les noms de colonnes facultatifs peuvent être absents, s'ils ne sont pas utilisés ;
+- si un champ doit contenir plusieurs valeurs, elles doivent être séparées par un pipe.
 
 Pour en savoir plus, consulter le [document VITAM. Modèle de données](./modele_de_donnees.md).
 
