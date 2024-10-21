@@ -6151,11 +6151,14 @@ La collection Agencies permet de référencer et décrire unitairement les servi
 
 Cette collection est alimentée par l’import d’un fichier CSV contenant l’ensemble des services agents. Celui doit être structuré comme ceci :
 
-| Identifier | Name | Description |
-| :-: | :-: | :-:|
-| Identifiant du service agent | Nom du service agent | Description du service agent |
+| Identifier | Name | Description | EntityType | NameEntryParallel | AuthorizedForm | AlternativeForm | EntityId | FromDate | ToDate | Functions | BiogHist | Places | LegalStatuses | Mandates | StructureOrGenealogy | GeneralContext | MaintenanceStatus | LocalStatus | Sources | EventDescription |
+| :-: | :-: | :-:| :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
+| Identifiant du service agent | Nom du service agent | Description du service agent |Type d’entité |Formes parallèles du nom |Formes du nom normalisées selon d’autres conventions |Autres formes du nom |Numéro d’immatriculation des collectivités |Date de début d’existence |Date de fin d’existence |Fonctions et activités |Histoire |Lieux |Statut juridique |Textes de référence |Organisation interne/généalogie |Contexte général |Niveau d’élaboration |Niveau de détail |Sources |Notes relatives à la mise à jour de la notice |
+
 
 Le fichier .csv doit avoir comme séparateur de champ la virgule.
+
+Les champs CreationDate et UpdateDate sont gérés automatiquement par le système.
 
 #### Exemple de JSON stocké en base comprenant l’exhaustivité des champs de la collection Agencies
 
@@ -6166,6 +6169,31 @@ Le fichier .csv doit avoir comme séparateur de champ la virgule.
     "Name": "Identifier5",
     "Description": "une description de service agent",
     "_tenant": 2,
+    "EntityType": "EntityType example2",
+    "NameEntryParallel": [
+        "NameEntryParallel12"
+      ],
+      "AuthorizedForm": [
+        "Form1"
+      ],
+      "AlternativeForm": [
+        "Forme1",
+        "Forme2"
+      ],
+      "EntityId": "Id1",
+      "FromDate": "2024-09-28",
+      "ToDate": "2021-02-15",
+      "Functions": [
+        "function1",
+        "function2",
+        "function3"
+      ],
+      "CreationDate": "2024-10-14T10:11:37.746",
+      "UpdateDate": "2024-10-14T10:11:37.746",
+      "Sources": [
+        "src1",
+        "src2"
+      ],
     "_v": 1
 }
 ```
@@ -6175,7 +6203,7 @@ Le fichier .csv doit avoir comme séparateur de champ la virgule.
 **« _id » :** identifiant unique du service agent.
 
 -   Il s’agit d’une chaîne de 36 caractères correspondant à un GUID.
-
+    
 -   Champ peuplé par la solution logicielle Vitam.
 
 -   Cardinalité : 1-1
@@ -6219,6 +6247,148 @@ Le fichier .csv doit avoir comme séparateur de champ la virgule.
 -   Cardinalité : 1-1
 
 -   0 correspond à l’enregistrement d’origine. Si le numéro est supérieur à 0, alors il s’agit du numéro de version de l’enregistrement.
+
+**« EntityType » :** Type d’entité 
+-   Ce champ est optionnel.
+
+-   Il s’agit d’une chaîne de caractères.
+
+-   Cardinalité : 0-1
+
+**« NameEntryParallel » :** Formes parallèles du nom 
+-   Ce champ est optionnel.
+
+-   Il s’agit d’un tableau de chaînes de caractères.
+
+-   Cardinalité : 0-N
+
+**« AuthorizedForm » :** Formes du nom normalisées selon d’autres conventions 
+-   Ce champ est optionnel.
+
+-   Il s’agit d’un tableau de chaînes de caractères.
+
+-   Cardinalité : 0-N
+
+**« AlternativeForm » :** Autres formes du nom 
+-   Ce champ est optionnel.
+
+-   Il s’agit d’un tableau de chaînes de caractères.
+
+-   Cardinalité : 0-N
+
+**« EntityId » :** Numéro d’immatriculation des collectivités 
+-   Ce champ est optionnel.
+
+-   Il s’agit d’une chaîne de caractères.
+
+-   Cardinalité : 0-1
+
+**« FromDate » :** Date de début d’existence 
+-   Ce champ est optionnel.
+
+-   Il s’agit d’une date au format dd/MM/yyyy ou yyyy-MM-dd
+
+-   Cardinalité : 0-1
+
+**« ToDate » :** Date de fin d’existence 
+-   Ce champ est optionnel.
+
+-   Il s’agit d’une date au format dd/MM/yyyy ou yyyy-MM-dd
+
+-   Cardinalité : 0-1
+
+**« Functions » :** Fonctions et activités 
+-   Ce champ est optionnel.
+
+-   Il s’agit d’un tableau de chaînes de caractères.
+
+-   Cardinalité : 0-N
+
+**« Places » :** Lieux 
+-   Ce champ est optionnel.
+
+-   Il s’agit d’un tableau de chaînes de caractères.
+
+-   Cardinalité : 0-N
+
+**« BiogHist » :** Histoire 
+-   Ce champ est optionnel.
+
+-   Il s’agit d’une chaîne de caractères.
+
+-   Cardinalité : 0-1
+
+**« LegalStatuses » :** Statut juridique 
+-   Ce champ est optionnel.
+
+-   Il s’agit d’un tableau de chaînes de caractères.
+
+-   Cardinalité : 0-N
+
+**« Mandates » :** Textes de référence 
+-   Ce champ est optionnel.
+
+-   Il s’agit d’un tableau de chaînes de caractères.
+
+-   Cardinalité : 0-N
+
+
+**« StructureOrGenealogy » :** Organisation interne/généalogie 
+-   Ce champ est optionnel.
+
+-   Il s’agit d’une chaîne de caractères.
+
+-   Cardinalité : 0-1
+
+**« GeneralContext » :** Contexte général 
+-   Ce champ est optionnel.
+
+-   Il s’agit d’une chaîne de caractères.
+
+-   Cardinalité : 0-1
+
+**« CreationDate » :** Date de création de la notice, Calculée automatiquement à la création de la notice
+-   Ce champ est obligatoire.
+
+-   Il s’agit d’une date au format ISO 8601.
+
+-   Cardinalité : 1-1
+
+**« UpdateDate » :** Date de dernière révision de la notice, Calculée automatiquement à l'enregistrement de la notice
+-   Ce champ est obligatoire.
+
+-   Il s’agit d’une date au format ISO 8601.
+
+-   Cardinalité : 1-1
+
+**« MaintenanceStatus »:** Niveau d’élaboration 
+-   Ce champ est optionnel.
+
+-   Il s’agit d’une chaine de caractère.
+
+-   Cardinalité : 0-1
+
+**« LocalStatus »:** Niveau de détail 
+-   Ce champ est optionnel.
+
+-   Il s’agit d’une chaine de caractère.
+
+-   Cardinalité : 0-1
+
+**« Sources »:** Sources 
+-   Ce champ est optionnel.
+
+-   Il s’agit d’un tabeau de chaines de caractère.
+
+-   Cardinalité : 0-N
+
+**« EventDescription »:** Notes relatives à la mise à jour de la notice 
+-   Ce champ est optionnel.
+
+-   Il s’agit d’une chaine de caractère.
+
+-   Cardinalité : 0-1
+
 
 ### Collection Context
 

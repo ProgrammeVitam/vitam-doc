@@ -5993,16 +5993,53 @@ archivistique sont :</p>
 <tr class="row-odd"><th class="head text-center"><p>Identifier</p></th>
 <th class="head text-center"><p>Name</p></th>
 <th class="head text-center"><p>Description</p></th>
+<th class="head text-center"><p>EntityType</p></th>
+<th class="head text-center"><p>NameEntryParallel</p></th>
+<th class="head text-center"><p>AuthorizedForm</p></th>
+<th class="head text-center"><p>AlternativeForm</p></th>
+<th class="head text-center"><p>EntityId</p></th>
+<th class="head text-center"><p>FromDate</p></th>
+<th class="head text-center"><p>ToDate</p></th>
+<th class="head text-center"><p>Functions</p></th>
+<th class="head text-center"><p>BiogHist</p></th>
+<th class="head text-center"><p>Places</p></th>
+<th class="head text-center"><p>LegalStatuses</p></th>
+<th class="head text-center"><p>Mandates</p></th>
+<th class="head text-center"><p>StructureOrGenealogy</p></th>
+<th class="head text-center"><p>GeneralContext</p></th>
+<th class="head text-center"><p>MaintenanceStatus</p></th>
+<th class="head text-center"><p>LocalStatus</p></th>
+<th class="head text-center"><p>Sources</p></th>
+<th class="head text-center"><p>EventDescription</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td class="text-center"><p>Identifiant du service agent</p></td>
 <td class="text-center"><p>Nom du service agent</p></td>
 <td class="text-center"><p>Description du service agent</p></td>
+<td class="text-center"><p>Type d’entité</p></td>
+<td class="text-center"><p>Formes parallèles du nom</p></td>
+<td class="text-center"><p>Formes du nom normalisées selon d’autres conventions</p></td>
+<td class="text-center"><p>Autres formes du nom</p></td>
+<td class="text-center"><p>Numéro d’immatriculation des collectivités</p></td>
+<td class="text-center"><p>Date de début d’existence</p></td>
+<td class="text-center"><p>Date de fin d’existence</p></td>
+<td class="text-center"><p>Fonctions et activités</p></td>
+<td class="text-center"><p>Histoire</p></td>
+<td class="text-center"><p>Lieux</p></td>
+<td class="text-center"><p>Statut juridique</p></td>
+<td class="text-center"><p>Textes de référence</p></td>
+<td class="text-center"><p>Organisation interne/généalogie</p></td>
+<td class="text-center"><p>Contexte général</p></td>
+<td class="text-center"><p>Niveau d’élaboration</p></td>
+<td class="text-center"><p>Niveau de détail</p></td>
+<td class="text-center"><p>Sources</p></td>
+<td class="text-center"><p>Notes relatives à la mise à jour de la notice</p></td>
 </tr>
 </tbody>
 </table>
 <p>Le fichier .csv doit avoir comme séparateur de champ la virgule.</p>
+<p>Les champs CreationDate et UpdateDate sont gérés automatiquement par le système.</p>
 </section>
 <section id="exemple-de-json-stocke-en-base-comprenant-lexhaustivite-des-champs-de-la-collection-agencies">
 <h4><span class="section-number">5.7.6.2. </span>Exemple de JSON stocké en base comprenant l’exhaustivité des champs de la collection Agencies<a class="headerlink" href="#exemple-de-json-stocke-en-base-comprenant-lexhaustivite-des-champs-de-la-collection-agencies" title="Lien vers cette rubrique"></a></h4>
@@ -6012,6 +6049,31 @@ archivistique sont :</p>
 <span class="w">    </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Identifier5&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;Description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;une description de service agent&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;_tenant&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;EntityType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EntityType example2&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;NameEntryParallel&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;NameEntryParallel12&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;AuthorizedForm&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;Form1&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;AlternativeForm&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;Forme1&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;Forme2&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;EntityId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Id1&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;FromDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-09-28&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;ToDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-02-15&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;Functions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;function1&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;function2&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;function3&quot;</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;CreationDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-10-14T10:11:37.746&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;UpdateDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-10-14T10:11:37.746&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;Sources&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;src1&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;src2&quot;</span>
+<span class="w">      </span><span class="p">],</span>
 <span class="w">    </span><span class="nt">&quot;_v&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
 <span class="p">}</span>
 </pre></div>
@@ -6054,6 +6116,126 @@ archivistique sont :</p>
 <li><p>Champ peuplé par la solution logicielle Vitam.</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 <li><p>0 correspond à l’enregistrement d’origine. Si le numéro est supérieur à 0, alors il s’agit du numéro de version de l’enregistrement.</p></li>
+</ul>
+<p><strong>« EntityType » :</strong> Type d’entité</p>
+<ul class="simple">
+<li><p>Ce champ est optionnel.</p></li>
+<li><p>Il s’agit d’une chaîne de caractères.</p></li>
+<li><p>Cardinalité : 0-1</p></li>
+</ul>
+<p><strong>« NameEntryParallel » :</strong> Formes parallèles du nom</p>
+<ul class="simple">
+<li><p>Ce champ est optionnel.</p></li>
+<li><p>Il s’agit d’un tableau de chaînes de caractères.</p></li>
+<li><p>Cardinalité : 0-N</p></li>
+</ul>
+<p><strong>« AuthorizedForm » :</strong> Formes du nom normalisées selon d’autres conventions</p>
+<ul class="simple">
+<li><p>Ce champ est optionnel.</p></li>
+<li><p>Il s’agit d’un tableau de chaînes de caractères.</p></li>
+<li><p>Cardinalité : 0-N</p></li>
+</ul>
+<p><strong>« AlternativeForm » :</strong> Autres formes du nom</p>
+<ul class="simple">
+<li><p>Ce champ est optionnel.</p></li>
+<li><p>Il s’agit d’un tableau de chaînes de caractères.</p></li>
+<li><p>Cardinalité : 0-N</p></li>
+</ul>
+<p><strong>« EntityId » :</strong> Numéro d’immatriculation des collectivités</p>
+<ul class="simple">
+<li><p>Ce champ est optionnel.</p></li>
+<li><p>Il s’agit d’une chaîne de caractères.</p></li>
+<li><p>Cardinalité : 0-1</p></li>
+</ul>
+<p><strong>« FromDate » :</strong> Date de début d’existence</p>
+<ul class="simple">
+<li><p>Ce champ est optionnel.</p></li>
+<li><p>Il s’agit d’une date au format dd/MM/yyyy ou yyyy-MM-dd</p></li>
+<li><p>Cardinalité : 0-1</p></li>
+</ul>
+<p><strong>« ToDate » :</strong> Date de fin d’existence</p>
+<ul class="simple">
+<li><p>Ce champ est optionnel.</p></li>
+<li><p>Il s’agit d’une date au format dd/MM/yyyy ou yyyy-MM-dd</p></li>
+<li><p>Cardinalité : 0-1</p></li>
+</ul>
+<p><strong>« Functions » :</strong> Fonctions et activités</p>
+<ul class="simple">
+<li><p>Ce champ est optionnel.</p></li>
+<li><p>Il s’agit d’un tableau de chaînes de caractères.</p></li>
+<li><p>Cardinalité : 0-N</p></li>
+</ul>
+<p><strong>« Places » :</strong> Lieux</p>
+<ul class="simple">
+<li><p>Ce champ est optionnel.</p></li>
+<li><p>Il s’agit d’un tableau de chaînes de caractères.</p></li>
+<li><p>Cardinalité : 0-N</p></li>
+</ul>
+<p><strong>« BiogHist » :</strong> Histoire</p>
+<ul class="simple">
+<li><p>Ce champ est optionnel.</p></li>
+<li><p>Il s’agit d’une chaîne de caractères.</p></li>
+<li><p>Cardinalité : 0-1</p></li>
+</ul>
+<p><strong>« LegalStatuses » :</strong> Statut juridique</p>
+<ul class="simple">
+<li><p>Ce champ est optionnel.</p></li>
+<li><p>Il s’agit d’un tableau de chaînes de caractères.</p></li>
+<li><p>Cardinalité : 0-N</p></li>
+</ul>
+<p><strong>« Mandates » :</strong> Textes de référence</p>
+<ul class="simple">
+<li><p>Ce champ est optionnel.</p></li>
+<li><p>Il s’agit d’un tableau de chaînes de caractères.</p></li>
+<li><p>Cardinalité : 0-N</p></li>
+</ul>
+<p><strong>« StructureOrGenealogy » :</strong> Organisation interne/généalogie</p>
+<ul class="simple">
+<li><p>Ce champ est optionnel.</p></li>
+<li><p>Il s’agit d’une chaîne de caractères.</p></li>
+<li><p>Cardinalité : 0-1</p></li>
+</ul>
+<p><strong>« GeneralContext » :</strong> Contexte général</p>
+<ul class="simple">
+<li><p>Ce champ est optionnel.</p></li>
+<li><p>Il s’agit d’une chaîne de caractères.</p></li>
+<li><p>Cardinalité : 0-1</p></li>
+</ul>
+<p><strong>« CreationDate » :</strong> Date de création de la notice, Calculée automatiquement à la création de la notice</p>
+<ul class="simple">
+<li><p>Ce champ est obligatoire.</p></li>
+<li><p>Il s’agit d’une date au format ISO 8601.</p></li>
+<li><p>Cardinalité : 1-1</p></li>
+</ul>
+<p><strong>« UpdateDate » :</strong> Date de dernière révision de la notice, Calculée automatiquement à l’enregistrement de la notice</p>
+<ul class="simple">
+<li><p>Ce champ est obligatoire.</p></li>
+<li><p>Il s’agit d’une date au format ISO 8601.</p></li>
+<li><p>Cardinalité : 1-1</p></li>
+</ul>
+<p><strong>« MaintenanceStatus »:</strong> Niveau d’élaboration</p>
+<ul class="simple">
+<li><p>Ce champ est optionnel.</p></li>
+<li><p>Il s’agit d’une chaine de caractère.</p></li>
+<li><p>Cardinalité : 0-1</p></li>
+</ul>
+<p><strong>« LocalStatus »:</strong> Niveau de détail</p>
+<ul class="simple">
+<li><p>Ce champ est optionnel.</p></li>
+<li><p>Il s’agit d’une chaine de caractère.</p></li>
+<li><p>Cardinalité : 0-1</p></li>
+</ul>
+<p><strong>« Sources »:</strong> Sources</p>
+<ul class="simple">
+<li><p>Ce champ est optionnel.</p></li>
+<li><p>Il s’agit d’un tabeau de chaines de caractère.</p></li>
+<li><p>Cardinalité : 0-N</p></li>
+</ul>
+<p><strong>« EventDescription »:</strong> Notes relatives à la mise à jour de la notice</p>
+<ul class="simple">
+<li><p>Ce champ est optionnel.</p></li>
+<li><p>Il s’agit d’une chaine de caractère.</p></li>
+<li><p>Cardinalité : 0-1</p></li>
 </ul>
 </section>
 </section>

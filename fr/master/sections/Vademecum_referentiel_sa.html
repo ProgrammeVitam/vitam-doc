@@ -192,7 +192,8 @@ Le référentiel sert de base au contrôle des services déclarés dans le borde
 <h3><span class="section-number">25.2.1. </span>Constitution du référentiel des services agents<a class="headerlink" href="#constitution-du-referentiel-des-services-agents" title="Lien vers cette rubrique"></a></h3>
 <p>L’administrateur fonctionnel constitue le référentiel des services agents à partir du recensement des services producteurs et versants de son entité.
 À chacun de ces services, il associe un identifiant et une description sommaire qui permettra de différencier au besoin deux services au nom proche, par exemple, les services des ressources humaines des différentes entités.</p>
-<p>Le référentiel des services agents n’est pas un référentiel complet comme ceux utilisés dans les applications archivistiques qui indiquent les filiations et les héritages. Pour les services qui disposent déjà d’un tel outil, une extraction simplifiée en sera réalisée pour alimenter la solution logicielle Vitam.</p>
+<p>Le référentiel des services agents n’est pas un référentiel complet comme ceux utilisés dans les applications archivistiques qui indiquent les filiations et les héritages. Pour les services qui disposent déjà d’un tel outil, une extraction simplifiée en sera réalisée pour alimenter la solution logicielle Vitam.
+Néanmoins, il peut contenir des informations historiques relatives aux services agents au terme de la version 8.0.</p>
 </section>
 <section id="gestion-des-identifiants-des-services-agents">
 <h3><span class="section-number">25.2.2. </span>Gestion des identifiants des services agents<a class="headerlink" href="#gestion-des-identifiants-des-services-agents" title="Lien vers cette rubrique"></a></h3>
@@ -228,11 +229,133 @@ Utiliser le référentiel des services agents en mode « esclave » permet ég
 </tr>
 </tbody>
 </table>
+<p>Il peut aussi inclure les colonnes suivantes dans sa forme étendue :</p>
+<ul class="simple">
+<li><p>dans sa forme étendue :</p></li>
+</ul>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Nom de la colonne</p></th>
+<th class="head text-center"><p>Description de la colonne</p></th>
+<th class="head text-center"><p>Valeurs possibles</p></th>
+<th class="head text-center"><p>Observations</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Identifier</p></td>
+<td class="text-center"><p>Identifiant du service</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>Cet identifiant ne doit pas comprendre d’espace, de caractère accentué, de virgule, d’apostrophe, de parenthèse, de slash, d’élément de ponctuation, ou tout autre caractère spécial. Ne sont recommandés que l’underscore et le tiret comme séparateurs.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Name</p></td>
+<td class="text-center"><p>Nom du service</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Description</p></td>
+<td class="text-center"><p>Description du service</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>EntityType</p></td>
+<td class="text-center"><p>Type d’entité</p></td>
+<td class="text-center"><p>Colonne facultative.</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>NameEntryParallel</p></td>
+<td class="text-center"><p>Formes parallèles du nom</p></td>
+<td class="text-center"><p>Colonne facultative.<br>Il est possible de saisir plusieurs valeurs, séparées par des pipes.</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>AuthorizedForm</p></td>
+<td class="text-center"><p>Formes du nom normalisées selon d’autres conventions</p></td>
+<td class="text-center"><p>Colonne facultative.<br>Il est possible de saisir plusieurs valeurs, séparées par des pipes.</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>AlternativeForm</p></td>
+<td class="text-center"><p>Autres formes du nom</p></td>
+<td class="text-center"><p>Colonne facultative.<br>Il est possible de saisir plusieurs valeurs, séparées par des pipes.</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>EntityId</p></td>
+<td class="text-center"><p>Numéro d’immatriculation des collectivités</p></td>
+<td class="text-center"><p>Colonne facultative.</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>FromDate</p></td>
+<td class="text-center"><p>Date de début d’existence</p></td>
+<td class="text-center"><p>Colonne facultative.<br>Les formats de date acceptés sont AAAA-MM-JJ et JJ/MM/AAAA.</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>ToDate</p></td>
+<td class="text-center"><p>Date de fin d’existence</p></td>
+<td class="text-center"><p>Colonne facultative.<br>Les formats de date acceptés sont AAAA-MM-JJ et JJ/MM/AAAA.</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Functions</p></td>
+<td class="text-center"><p>Fonctions et activités</p></td>
+<td class="text-center"><p>Colonne facultative.<br>Il est possible de saisir plusieurs valeurs, séparées par des pipes.</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>BiogHist</p></td>
+<td class="text-center"><p>Histoire</p></td>
+<td class="text-center"><p>Colonne facultative.</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Places</p></td>
+<td class="text-center"><p>Lieux</p></td>
+<td class="text-center"><p>Colonne facultative.Il est possible de saisir plusieurs valeurs, séparées par des pipes.</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>LegalStatuses</p></td>
+<td class="text-center"><p>Statut juridique</p></td>
+<td class="text-center"><p>Colonne facultative.<br>Il est possible de saisir plusieurs valeurs, séparées par des pipes.</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Mandates</p></td>
+<td class="text-center"><p>Textes de référence</p></td>
+<td class="text-center"><p>Colonne facultative.<br>Il est possible de saisir plusieurs valeurs, séparées par des pipes.</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>StructureOrGenealogy</p></td>
+<td class="text-center"><p>Organisation interne/généalogie</p></td>
+<td class="text-center"><p>Colonne facultative.</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>GeneralContext</p></td>
+<td class="text-center"><p>Contexte général</p></td>
+<td class="text-center"><p>Colonne facultative.</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>MaintenanceStatus</p></td>
+<td class="text-center"><p>Niveau d’élaboration</p></td>
+<td class="text-center"><p>Colonne facultative.</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>LocalStatus</p></td>
+<td class="text-center"><p>Niveau de détail</p></td>
+<td class="text-center"><p>Colonne facultative.</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Sources</p></td>
+<td class="text-center"><p>Sources</p></td>
+<td class="text-center"><p>Colonne facultative.<br>Il est possible de saisir plusieurs valeurs, séparées par des pipes.</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>EventDescription</p></td>
+<td class="text-center"><p>Notes relatives à la mise à jour de la notice</p></td>
+<td class="text-center"><p>Colonne facultative.</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+</tbody>
+</table>
 <p>Le fichier .csv à importer doit avoir les caractéristiques suivantes :</p>
 <ul class="simple">
 <li><p>encodage des caractères : UTF-8 ;</p></li>
 <li><p>séparateur de champ : la virgule ;</p></li>
-<li><p>séparateur de texte : guillemets simples ou doubles, espace vide.</p></li>
+<li><p>séparateur de texte : guillemets simples ou doubles, espace vide ;</p></li>
+<li><p>les noms de colonnes facultatifs peuvent être absents, s’ils ne sont pas utilisés ;</p></li>
+<li><p>si un champ doit contenir plusieurs valeurs, elles doivent être séparées par un pipe.</p></li>
 </ul>
 <p>Pour en savoir plus, consulter le <a class="reference internal" href="modele_de_donnees.html"><span class="std std-doc">document VITAM. Modèle de données</span></a>.</p>
 </section>
