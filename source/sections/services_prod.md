@@ -499,6 +499,15 @@ Si le fichier est « enregistré », au lieu d’être « enregistré sous �
 |:---------------:|:-----:|:-----:|
 |KO|« Échec du processus d’import du référentiel des services agents ».<br>Détail : { "agencyCheck" : "Import agency error > Unknown fields found: Toto" }<br>(IMPORT_AGENCIES.KO)|Supprimer la colonne ou corriger l'intitulé afin qu'il corresponde à un nom de colonne attendu.|
 
+- Au moins une colonne est répétée
+"Identifier","Name","Description","AlternativeForm","AlternativeForm"<br>
+"FRAN_NP_009913","Présidence sous Valéry Giscard d’Estaing","Successeur de Pompidou [...]","VGE","Valéry Giscard d'Estaing"<br>
+"FRAN_NP_009941","Veil Simone (1927-2017)","Née à Nice en 1927, […]","",""
+
+|Résultat|Message retourné par la solution logicielle Vitam|Commentaires|
+|:---------------:|:-----:|:-----:|
+|KO|« Échec du processus d’import du référentiel des services agents ».<br>Détail : { "agencyCheck" : "Import agency error > Duplicate fields found in the CSV : AlternativeForm" }<br>(IMPORT_AGENCIES.KO)|Supprimer la colonne doublonnée ou corriger l'intitulé afin qu'il corresponde à un nom de colonne différent.|
+
 - Au moins une description de service agent n’est pas renseignée  
 "Identifier","Name","Description"  
 "FRAN_NP_009913","Présidence sous Valéry Giscard d’Estaing",""  
