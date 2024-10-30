@@ -173,4 +173,3 @@ Personnalisation des rapports d’élimination (facultatif)
 Il est possible d’ajouter des informations complémentaires dans les rapports d’élimination (identifiants métier, informations système) au moyen d’un paramétrage. Il est recommandé de les définir au moment du déploiement de la solution logicielle Vitam.
 
 Vademecum lié : [Réaliser des éliminations avec la solution logicielle Vitam](./Vademecum_eliminations.md)
-
