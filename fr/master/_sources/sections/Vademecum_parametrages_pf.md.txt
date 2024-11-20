@@ -164,6 +164,10 @@ Il est possible de modifier ces paramètres au moyen d’un acte d’exploitatio
 
 Vademecum lié : [Structuration de l’information](./Vademecum_structuration_information.md)
 
+Personnalisation des accusés de réception (facultatif)
+---
+Il est possible d’ajouter des informations complémentaires dans les accusés de réception produits par la solution logicielle Vitam à l'issue d'un transfert de SIP (identifiants métier, informations système) au moyen d’un paramétrage. Il est recommandé de les définir au moment du déploiement de la solution logicielle Vitam.
+
 Personnalisation des rapports d’élimination (facultatif)
 ---
 Il est possible d’ajouter des informations complémentaires dans les rapports d’élimination (identifiants métier, informations système) au moyen d’un paramétrage. Il est recommandé de les définir au moment du déploiement de la solution logicielle Vitam.

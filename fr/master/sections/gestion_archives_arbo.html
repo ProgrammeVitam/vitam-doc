@@ -605,6 +605,7 @@ Le SIP peut être exprimé en SEDA 2.1, 2.2 ou 2.3.</p>
 <li><p>déclarer un périmètre de rattachement autorisé dans un contrat d’entrée, afin de faire des contrôles sur les rattachements déclarés dans les SIP et plans de classement.</p></li>
 </ul>
 <p>Toutes ces opérations sont tracées dans le journal des opérations (opération de type « MASTERDATA » ou « INGEST »).</p>
+<p>Chacune d’entre elles est accompagnée d’un rapport ou accusé de réception (message ArchiveTransferReply), qui renvoie la liste des archives transférées dans le système en cas de succès ou d’avertissement ou des précisions sur les erreurs rencontrées. Il est possible de personnaliser cet accusé de réception au moyen d’identifiants métier au moyen d’un paramétrage dans un fichier de configuration.</p>
 <p><strong>Point d’attention :</strong><br />
 Pour les SIP volumineux, la solution logicielle Vitam propose une API spécifique permettant d’importer ce type de SIP<a class="footnote-reference brackets" href="#id52" id="id12" role="doc-noteref"><span class="fn-bracket">[</span>12<span class="fn-bracket">]</span></a>.</p>
 </section>
@@ -849,8 +850,9 @@ L’IHM démo propose également une recherche sur les groupes d’objets techni
 <li><p>l’opération est en succès si toutes les archives ont été éliminées ;</p></li>
 <li><p>si certaines archives ne sont pas éliminables ou si le caractère éliminable d’une archives n’est pas décidable, l’opération sera en avertissement, mais le processus d’élimination ne sera pas interrompu.</p></li>
 </ul>
-<p>Le rapport d’élimination, associé à l’opération, énumère les motifs liés à l’absence d’élimination de certaines archives.<br />
-L’opération donne lieu à l’élimination des unités archivistiques et des groupes d’objets techniques associés.<br />
+<p>Le rapport d’élimination, associé à l’opération, énumère les motifs liés à l’absence d’élimination de certaines archives.
+Il est possible de personnaliser ce rapport au moyen d’identifiants métier au moyen d’un paramétrage dans un fichier de configuration.</p>
+<p>L’opération donne lieu à l’élimination des unités archivistiques et des groupes d’objets techniques associés.<br />
 Cette élimination est retranscrite dans le registre des fonds<a class="footnote-reference brackets" href="#id72" id="id32" role="doc-noteref"><span class="fn-bracket">[</span>32<span class="fn-bracket">]</span></a>.</p>
 <p>Toutes les unités archivistiques standards et de plan de classement, qui disposent de règles de gestion, ou d’arbre de positionnement peuvent être éliminées.</p>
 </section>

@@ -1164,6 +1164,26 @@ Si le fichier est « enregistré », au lieu d’être « enregistré sous �
 </tbody>
 </table>
 <ul class="simple">
+<li><p>Au moins une colonne est répétée
+« Identifier », »Name », »Description », »AlternativeForm », »AlternativeForm »<br>
+« FRAN_NP_009913 », »Présidence sous Valéry Giscard d’Estaing », »Successeur de Pompidou […] », »VGE », »Valéry Giscard d’Estaing »<br>
+« FRAN_NP_009941 », »Veil Simone (1927-2017) », »Née à Nice en 1927, […] », » », » »</p></li>
+</ul>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Résultat</p></th>
+<th class="head text-center"><p>Message retourné par la solution logicielle Vitam</p></th>
+<th class="head text-center"><p>Commentaires</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>KO</p></td>
+<td class="text-center"><p>« Échec du processus d’import du référentiel des services agents ».<br>Détail : { « agencyCheck » : « Import agency error &gt; Duplicate fields found in the CSV : AlternativeForm » }<br>(IMPORT_AGENCIES.KO)</p></td>
+<td class="text-center"><p>Supprimer la colonne doublonnée ou corriger l’intitulé afin qu’il corresponde à un nom de colonne différent.</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
 <li><p>Au moins une description de service agent n’est pas renseignée<br />
 « Identifier », »Name », »Description »<br />
 « FRAN_NP_009913 », »Présidence sous Valéry Giscard d’Estaing », » »<br />

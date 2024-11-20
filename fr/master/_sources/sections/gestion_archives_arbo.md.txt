@@ -274,6 +274,8 @@ La solution logicielle Vitam permet également de :
 
 Toutes ces opérations sont tracées dans le journal des opérations (opération de type « MASTERDATA » ou « INGEST »).
 
+Chacune d'entre elles est accompagnée d'un rapport ou accusé de réception (message ArchiveTransferReply), qui renvoie la liste des archives transférées dans le système en cas de succès ou d'avertissement ou des précisions sur les erreurs rencontrées. Il est possible de personnaliser cet accusé de réception au moyen d'identifiants métier au moyen d'un paramétrage dans un fichier de configuration.
+
 **Point d’attention :**  
 Pour les SIP volumineux, la solution logicielle Vitam propose une API spécifique permettant d’importer ce type de SIP[^12].
 
@@ -497,7 +499,9 @@ Il s’agit d’une opération d’administration de type « ELIMINATION_ACTION
 -  l’opération est en succès si toutes les archives ont été éliminées ;
 -  si certaines archives ne sont pas éliminables ou si le caractère éliminable d’une archives n’est pas décidable, l’opération sera en avertissement, mais le processus d’élimination ne sera pas interrompu.
 
-Le rapport d’élimination, associé à l’opération, énumère les motifs liés à l’absence d’élimination de certaines archives.  
+Le rapport d’élimination, associé à l’opération, énumère les motifs liés à l’absence d’élimination de certaines archives.
+Il est possible de personnaliser ce rapport au moyen d'identifiants métier au moyen d'un paramétrage dans un fichier de configuration.
+
 L’opération donne lieu à l’élimination des unités archivistiques et des groupes d’objets techniques associés.  
 Cette élimination est retranscrite dans le registre des fonds[^32].
 
