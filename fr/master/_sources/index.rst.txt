@@ -61,6 +61,7 @@ Outils connexes
 
    sections/resip.md
    sections/resip_faq.md
+   sections/pastis_standalone.md
 
 Chantier préservation
 ======
