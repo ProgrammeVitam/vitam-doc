@@ -4384,6 +4384,14 @@ Extrait d’une unité archivistique ayant un bloc « _mgt » possédant des r
 
 -   Cardinalité : 1-1
 
+**« _batchId » :** Il s'agit de l'identifiant de l'opération d'upload dans le cadre du module Collect, il sert à identifier les éléments à purger afin de pouvoir éviter la mise à l'état KO de l'ensemble de la "transaction" utilisée et ainsi poursuivre son traitement.
+
+-   Il s'agit d'une chaine de caractère.
+
+-   Champ peuplé par la solution logicielle Vitam.
+
+-   Cardinalité : 0-1
+
 ### Collection ObjectGroup
 
 #### Utilisation de la collection ObjectGroup
@@ -4592,6 +4600,14 @@ l’objet-données numérique de référence.
 -   Champ peuplé par la solution logicielle Vitam.
 
 -   Cardinalité : 1-1
+
+**« _batchId » :** Il s'agit de l'identifiant de l'opération d'upload dans le cadre du module Collect, il sert à identifier les éléments à purger afin de pouvoir éviter la mise à l'état KO de l'ensemble de la "transaction" utilisée et ainsi poursuivre son traitement.
+
+-   Il s'agit d'une chaine de caractère.
+
+-   Champ peuplé par la solution logicielle Vitam.
+
+-   Cardinalité : 0-1
 
 Base collect
 ------------
@@ -4965,7 +4981,11 @@ Cette transposition se fait comme suit :
 
 -   Cardinalité : 0-1
 
+**« Batches » :** Des numéros de lots pour permettre le suivi et le contrôle, ce champ est inscrit sur les AU lors de l'écriture afin de permettre leur purge lors d'un KO de l'API upload, ça permet d'assurer que les éléments associés soient purgée afin de pouvoir éviter la mise à l'état KO de l'ensemble de la "transaction" utilisée et ainsi poursuivre son traitement.
 
+-   Il s’agit d’une liste avec le batch id (_batchId) et un statut (_batchStatus).
+
+-   Cardinalité : 0-1
 
 Base MasterData
 ---------------
@@ -5285,6 +5305,40 @@ détenteur du contrat a accès.
 -   Si aucune catégorie de règle n’est spécifiée, alors l’utilisateur a accès à toutes les archives, que leurs règles de gestion soient échues ou non.
 
 -   Il s’agit d’un tableau de chaînes de caractères.
+
+-   Peut être vide.
+
+-   Cardinalité : 0-1
+
+    **« RuleCategoryToFilterForTheOtherOriginatingAgencies » :** Filtre Service producteur à appliquer au plan de classement => Par défaut : on filtre sur les units ET plans. 
+
+-   Il s’agit d’un tableau de chaînes de caractères.
+
+-   Peut être vide.
+
+-   Cardinalité : 0-1
+
+    **« skipFilingSchemeRuleCategoryFilter » :** Filtre Règle de gestion à appliquer au plan de classement => Par défaut : on filtre uniquement sur les units, on garde les plans.
+    
+-   Option avancée: 
+    - si null (par défaut) : RAS (on applique la valeur de DoNotFilterFilingSchemes)
+    - si false: Les filtres sur les règles s'appliquent aussi aux plans (n'a du sens que si DoNotFilterFilingSchemes = true)
+    - si true : Les filtres sur les règles ne s'appliquent pas aux plans (n'a du sens que si DoNotFilterFilingSchemes = false)
+    
+-   Il s’agit d’un boolean.
+
+-   Peut être vide.
+
+-   Cardinalité : 0-1
+
+    **« doNotFilterFilingSchemes » :** Filtre permettant de ne pas appliquer les filtres aux plans de classement.
+
+- si TRUE autorise l'accès à tous les plans de classement
+- si FALSE (par DEFAULT), on applique
+   - les filtres de services producteurs OriginatingAgencies,
+   - ainsi que les filtres sur les règles de gestion RuleCategoryToFilter/RuleCategoryToFilterForTheOtherOriginatingAgencies
+
+-   Il s’agit d’un boolean.
 
 -   Peut être vide.
 
@@ -6010,7 +6064,7 @@ Un fichier JSON peut décrire plusieurs profils d’unité archivistique.
   "LastUpdate":"10/12/2016",
   "CreationDate":"10/12/2016",
   "ActivationDate":"10/12/2016",
-  "DeactivationDate":"10/12/2016"
+  "DeactivationDate":"10/12/2016",
   "_tenant": 11,
   "_v": 0
 }
@@ -8393,13 +8447,15 @@ Un fichier d’import peut décrire plusieurs notices de profil d’archivage.
     "Name":"ArchiveProfile0",
     "Description":"Description of the Profile",
     "Status":"ACTIVE",
-    "Format":"XSD"
+    "Format":"XSD",
+    "Sedaversion": "2.2"
   },
     {
     "Name":"ArchiveProfile1",
     "Description":"Description of the profile 2",
     "Status":"ACTIVE",
-    "Format":"RNG"
+    "Format":"RNG",
+    "Sedaversion": "2.2"
   }
 ]
 ```
@@ -8410,6 +8466,8 @@ d’archivage sont :
 -   Name
 
 -   Format
+
+-   SedaVersion
 
 #### Exemple de JSON stocké en base comprenant l’exhaustivité des champs de la collection Profile
 
@@ -8427,6 +8485,7 @@ d’archivage sont :
   "DeactivationDate": "2016-12-10T00:00",
   "_v": 1,
   "_tenant": 1,
+  "SedaVersion": "2.1",
   "Path": "1_profile_aegaaaaaaehlfs7waax4iak4f52mzriaaaaq_20170522_092333.xsd"
 }
 ```
@@ -8548,6 +8607,12 @@ profil d’archivage.
 
 -   Cardinalité : 0-1
 
+**« SedaVersion » :** La version seda associée.
+
+-   Il s’agit d’une chaîne de caractères parmi les versions seda supportées : 2.1, 2.2, 2.3.
+
+-   Cardinalité : 0-1
+ 
 ### Collection SecurityProfile
 
 #### Utilisation de la collection
@@ -11835,6 +11900,9 @@ documentation Modèle de workflow.
 | Name                   | Analysé |
 | OriginatingAgencies    | Non analysé |
 | RuleCategoryToFilter   | Non analysé |
+| RuleCategoryToFilterForTheOtherOriginatingAgencies   | Non analysé |
+| SkipFilingSchemeRuleCategoryFilter   | Non analysé |
+| DoNotFilterFilingSchemes   | Non analysé |
 | RootUnits              | Non analysé |
 | Status                 | Non analysé |
 | WritingPermission      | Non analysé |
