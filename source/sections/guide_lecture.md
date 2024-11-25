@@ -838,6 +838,41 @@ Il s’articule autour des axes suivants :
     -  Vocabulaires internes de l’ontologie ;
     -  Types JSON conformes au type d’indexation des vocabulaires internes
 
+###  Schema
+
+**Présentation :** Le document présente les fonctionnalités associées à la prise en compte de la notion de schéma dans la solution logicielle Vitam.
+
+Il s’articule autour des axes suivants :
+- une présentation de la notion de schéma ;
+- une présentation de la manière dont la solution logicielle Vitam la formalise ;
+- une présentation des mécanismes mis en œuvre dans la solution logicielle Vitam pour prendre en compte cette notion ;
+- quelques conseils complémentaires de mise en œuvre.
+
+**Lien vers le document :** [Schema](./schema.md)
+
+**Public cible :** archivistes, développeurs
+
+**Sommaire :**
+-  Présentation de la notion de schéma :
+    - Qu'est-ce qu'un schéma ?
+    - Pourquoi un schéma ?
+-  Formalisation des vocabulaires du schéma : 
+    - Dans un fichier Json ; 
+    - Dans la solution logicielle Vitam ;
+    - Dans le SEDA
+-  Mécanismes mis en œuvre dans la solution logicielle Vitam :
+    -  Administration du schéma ;
+    -  Accès
+-  Conseils de mise en œuvre
+    -  Quand et comment créer un schéma ?
+    -  Quand et comment créer un vocabulaire dans le schéma ?
+    -  Quand et comment modifier un vocabulaire ?
+    -  Quand et comment supprimer un vocabulaire ?
+    -  Quel accès au schéma ?
+    -  Comment utiliser le schéma ?
+    - Accès
+-  Annexe 1 : Vocabulaires internes du schéma interne
+
 ### Gestion de multiples stratégies de stockage
 
 **Présentation :** Le document présente les fonctionnalités associées à la gestion des stratégies de stockage et de conservation des archives dans la solution logicielle Vitam.
