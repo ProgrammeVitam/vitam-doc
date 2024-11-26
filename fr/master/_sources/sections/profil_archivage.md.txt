@@ -182,7 +182,7 @@ Une notice descriptive peut comprendre les informations suivantes pour un profil
 |_tenant|tenant dans lequel le profil d’archivage s’applique, fourni par la solution logicielle Vitam (champ obligatoire).|
 |_v|version du profil d’archivage, fournie par la solution logicielle Vitam (champ obligatoire).|
 |Path|chemin d’accès au profil d’archivage associé à la notice détaillée (champ facultatif).|
-|SedaVersion|version du SEDA du profil d'archivage associé à la notice (champ facultatif).|
+|SedaVersion|version du SEDA du profil d'archivage associé à la notice (champ obligatoire - valeur par défaut : « 2.3 »).<br>Les valeurs possibles dont : « 2.1 », « 2.2 » ou « 2.3 »|
 
 #### Import du profil d’archivage lui-même
 
@@ -194,10 +194,19 @@ Le profil d’archivage doit être conforme au format déclaré dans la notice e
 - un fichier XSD si la notice déclare un format XSD,
 - un fichier RNG si la notice déclare un format Relax NG.
 
+Il peut déclarer les versions 2.1, 2.2 ou 2.3 du SEDA.
+
 Si le profil d’archivage n’est pas conforme au format annoncé dans la notice, il n’est pas possible de l’importer dans la solution logicielle Vitam.
 
 L’import d’un profil d’archivage dans la collection est un des prérequis indispensable pour pouvoir réaliser des contrôles entre un profil d’archivage et des bordereaux de transfert au moment de leur versement dans la solution logicielle Vitam.
+
 Cette action provoque la création d’une nouvelle version de la notice modifiée. Elle fait l’objet d’une journalisation dans le journal des opérations du tenant sur lequel a eu lieu l’opération (opération d’administration de type « MASTERDATA »)[^10].
+Lors de cet import, l’opération peut aboutir aux statuts suivants :
+
+|Statut|Motifs|
+|:----|:-----|
+|Succès|Opération réalisée sans rencontrer de problèmes particuliers.|
+|Échec[^12]|- téléchargement d’un profil d’archivage qui n’est ni au format XSD ni au format RNG ;<br>- import d'un profil d'archivage dont la version du SEDA n'est pas conforme avec la version du SEDA déclarée dans la notice.|
 
 #### Modification de la notice descriptive d’un profil d’archivage
 
@@ -213,7 +222,8 @@ Les champs modifiables sont :
     - le statut « Actif » ou « Inactif », correspondant aux valeurs « ACTIVE » et « INACTIVE » dans le système (Status) ;
     - le chemin d’accès au profil d’archivage associé à la notice détaillée (Path) ;
 - Depuis les API :
-    - le format, devant correspondre aux valeurs « XSD » ou « RNG ».
+    - le format, devant correspondre aux valeurs « XSD » ou « RNG » ;
+	- la version du SEDA, si la notice n'est pas associée à un profil d'archivage. Les valeurs possibles sont « 2.1 », « 2.2 » ou « 2.3 ».
 
 **Points d’attention :**
 - Le statut de la notice descriptive doit être « Actif » (« ACTIVE ») pour pouvoir procéder à des transferts de SIP devant se conformer au profil d’archivage associé ;
@@ -233,7 +243,7 @@ Lors de cette mise à jour, l’opération peut aboutir aux statuts suivants :
 |Statut|Motifs|
 |:----|:-----|
 |Succès|Opération réalisée sans rencontrer de problèmes particuliers.|
-|Échec[^12]|- téléchargement d’un profil d’archivage qui n’est ni au format XSD ni au format RNG ;<br>- mise à jour du format par une valeur ne correspondant ni à « XSD » ni à « RNG » ;<br>- mise à jour du statut par une valeur ne correspondant ni à « ACTIVE » ni à « INACTIVE ».|
+|Échec[^12]|- téléchargement d’un profil d’archivage qui n’est ni au format XSD ni au format RNG ;<br>- mise à jour du format par une valeur ne correspondant ni à « XSD » ni à « RNG » ;<br>- mise à jour du statut par une valeur ne correspondant ni à « ACTIVE » ni à « INACTIVE » ;<br>- mise à jour de la version du SEDA entraînant une non conformité avec la version du SEDA déclarée dans le profil d'archivage.|
 
 #### Activation / Désactivation d’un profil d’archivage
 
@@ -449,7 +459,7 @@ Il est conseillé de procéder par étape :
 
 ##### Étapes de rédaction d’un profil d’archivage
 
-Pour rédiger un profil d’archivage, il est possible d’utiliser le Service hébergé pour la rédaction de profils d’archivage (SHERPA)[^18]. L’outil permet de générer des profils d’archivage au format Relax NG, ainsi qu’une documentation au format HTML.
+Pour rédiger un profil d’archivage, il est possible d’utiliser le Service hébergé pour la rédaction de profils d’archivage (SHERPA)[^18]. L’outil permet de générer des profils d’archivage conformes au SEDA 2.0 au format Relax NG, ainsi qu’une documentation au format HTML.
 
 *Étape 1* - l’outil requiert dans un premier temps de créer :
 - des notices d’autorité, à l’unité ou en lots par l’intermédiaire d’import de fichiers EAC-CPF,
@@ -1175,6 +1185,11 @@ Cette auto-incrémentation ne prend pas en compte les champs rendus obligatoires
             - DescriptionLevel  (Niveau de description) : modifier la cardinalité 0-1 en 1-1 ;<br>
             - Title (Niveau de description) : modifier la cardinalité 0-1 en 1-1.<br>
             **Point d’attention :** La solution logicielle Vitam rend obligatoire le champ Title. S’il doit être répété (cardinalité 1-N) ou dupliqué, il est nécessaire d’ajouter un attribut lang. Il en va de même pour le champ Description.<br>
+			- si l'unité archivistique est associée à un groupe d'objet techniques, le bloc DataObjectReference.
+- PASTIS ne contrôle pas la cohérence d'ensemble lors de la saisie d'un profil d'archivage. Dans le cadre de la saisie d'un bloc englobant (ex. Writer), il est obligatoire de saisir
+	- soit le(s) sous-élément(s) obligatoire(s),
+	- soit au moins un sous-élément,
+afin de générer un profil d'archivage conforme au format RNG.
 - La valeur des vocabulaires correspondant à des référentiels doit reprendre des valeurs issues des référentiels utilisés dans la solution logicielle Vitam (règles de gestion, services agents, contrat d’entrée).<br>
 - Les champs de commentaires permettent d’ajouter des précisions sur les restrictions choisies. Dans le cas de champs dont la valeur n’est pas imposée, ces champs peuvent être utilisés pour expliciter la manière de les renseigner.<br>
 - Il est recommandé de créer des profils d’archivage sous forme arborescente. Pour ce faire, il faut créer une nouvelle unité d’archives :<br>
@@ -1201,7 +1216,9 @@ L’export s’avère nécessaire en vue de :
 - corriger une coquille au niveau du bloc CodeListVersions ;
 - obtenir un fichier RNG conforme au SEDA 2.2 ou 2.3 (pour les versions antérieures à la version 8.0) ;
 - intégrer un certain nombre d’éléments non supportés par l’APP Profils documentaires au terme de la version 8.0 (notamment les extensions).
-**Point d’attention :** Au terme de la version 8.0, PASTIS ne gère pas la mise à jour de fichier RNG intégrant des extensions. Il est recommandé de réimporter le fichier depuis l’IHM de démonstration pour pouvoir l’exploiter ou de créer une nouvelle notice dans l'APP Profils documentaires.
+
+**Point d’attention :** Au terme de la version 8.0, PASTIS ne gère pas la mise à jour de fichier RNG intégrant des extensions. Il est recommandé de réimporter le fichier depuis l’APP Profils documentaires pour pouvoir l’exploiter.
+
 
 Pour apporter ces corrections au fichier exporté, il faut :
 - Ouvrir le fichier dans un éditeur de texte (ex : Notepad ++, Oxygen).
@@ -1236,7 +1253,7 @@ OU
 **Mention du profil d’unité archivistique**
 
 Si l’on souhaite contrôler une unité archivistique au moyen d’un profil d’unité archivistique, il faut ajouter dans le profil d’archivage l’identifiant du profil d’unité archivistique ou, du moins, la mention de l’existence du profil d’unité archivistique[^24].
-Au terme de la version 7.0, l’APP Profils documentaires ne permet pas de déporter le contrôle des métadonnées vers le profil d’unité archivistique. En effet, il est nécessaire de déclarer dans le profil d’archivage, en plus du profil d’unité archivistique, l’ensemble des métadonnées qui feront également l’objet du contrôle dans le profil d’unité archivistique.
+Au terme de la version 8.0, l’APP Profils documentaires ne permet pas de déporter le contrôle des métadonnées vers le profil d’unité archivistique. En effet, il est nécessaire de déclarer dans le profil d’archivage, en plus du profil d’unité archivistique, l’ensemble des métadonnées qui feront également l’objet du contrôle dans le profil d’unité archivistique.
 
 Si on souhaite déporter le contrôle vers le profil d’unité archivistique, il faudra modifier les éléments suivant dans le fichier RNG :
 *Exemple : ajout de la mention du profil d’unité archivistique.*
@@ -1536,7 +1553,7 @@ Il est fortement recommandé de documenter le profil d’archivage réalisé :
 
 Ce travail permet de :
 - vérifier la structuration des données, et, le cas échéant, de corriger le profil d’archivage ;
-- vérifier la conformité au SEDA du bordereau de transfert conforme au profil d’archivage.
+- vérifier la conformité au SEDA du bordereau de transfert conforme au profil d’archivage en utilisant un validateur XML ou ReSIP.
 Point d’attention : La forme du bordereau de transfert devra nécessairement se conformer à la forme de la description choisie dans le profil d’archivage (arborescente ou « râteau »).
 
 Conseils de mise en œuvre
@@ -4184,7 +4201,9 @@ Messages d’erreur concernant le référentiel des profils d’archivage
 |5| "outDetail": "STP_IMPORT_PROFILE_JSON.KO",
 "outMessg": "Échec du processus d'import du profil d'archivage"<br>"evDetData":<br>{ "profileCheck" : "Profile file validate error : " }|Le fichier téléchargé n’est pas au format XSD ou RNG.|Télécharger un fichier XSD ou RNG.|
 |6|"outDetail": "STP_UPDATE_PROFILE_JSON.KO",<br>"outMessg": "Échec du processus de mise à jour du profil d'archivage"<br>"evDetData":<br>{ "profileCheck" : "Profile Format should be XSD or RNG : JPEG" }|Le format a été modifié par une valeur ne correspondant ni à « XSD » ni à « RNG ».|Modifier la valeur du statut par l’une de ces deux valeurs : « XSD » ou « RNG ».|
-|7|"outDetail": "STP_UPDATE_PROFILE_JSON.NOT_IN_ENUM.KO",<br>"outMessg": "Échec du processus de mise à jour  du profil d'archivage : une valeur ne correspond pas aux valeurs attendues",<br>"evDetData":<br>{ "Not in Enum" : "The profile status must be ACTIVE or INACTIVE but not Blabla" }|Le statut a été modifié par une valeur ne correspondant ni à « ACTIVE » ni à « INACTIVE ».|Modifier la valeur du statut par l’une de ces deux valeurs : « ACTIVE » ou « INACTIVE ».|
+
+|7|"outDetail": "STP_UPDATE_PROFILE_JSON.KO",<br>"outMessg": "Échec du processus de mise à jour du profil d'archivage"<br>"evDetData":<br>{  " profileCheck" : "The new SEDA version value '2.1' does not match the one in the schema definition file '2.2',The new SEDA version value '2.1' does not match the one in the profile '2.2'"}|Le fichier téléchargé ne déclare pas la même version du SEDA que celle déclarée dans la notice.|Modifier la version du SEDA dans la notice ou dans le fichier RNG ou XSD afin qu'ils déclarent la même version du SEDA.|
+|8|"outDetail": "STP_UPDATE_PROFILE_JSON.NOT_IN_ENUM.KO",<br>"outMessg": "Échec du processus de mise à jour  du profil d'archivage : une valeur ne correspond pas aux valeurs attendues",<br>"evDetData":<br>{ "Not in Enum" : "The profile status must be ACTIVE or INACTIVE but not Blabla" }|Le statut a été modifié par une valeur ne correspondant ni à « ACTIVE » ni à « INACTIVE ».|Modifier la valeur du statut par l’une de ces deux valeurs : « ACTIVE » ou « INACTIVE ».|
 
 #### Messages d’erreur concernant le versement d’un bordereau de transfert
 
@@ -4206,19 +4225,20 @@ Messages d’erreur concernant le référentiel des profils d’archivage
 
 ### Annexe 5 : Contrôle de conformité à un profil d’archivage avec ReSIP
 
-ReSIP permet de contrôler le manifeste chargé sur l’interface par rapport à un profil d’archivage au format XSD ou RNG. La présente annexe a pour vocation à expliquer comment réaliser ce contrôle de conformité avec ReSIP et quels sont les écueils à éviter lorsque l’on manipule un profil d’archivage au format RNG.
+ReSIP permet de contrôler le manifeste chargé sur l’interface par rapport à un profil d’archivage conforme au SEDA 2.1 ou 2.2 au format XSD ou RNG. La présente annexe a pour vocation à expliquer comment réaliser ce contrôle de conformité avec ReSIP et quels sont les écueils à éviter lorsque l’on manipule un profil d’archivage au format RNG.
 
 #### Procédure de contrôle
 
-Afin de vérifier la conformité d’une structure arborescente d’archives et de sa description par rapport à un profil d’archivage conforme au SEDA 2.1., il convient, dans la moulinette ReSIP, de cliquer sur l’action « Traiter » puis sur la sous-action « Vérifier la conformité à un profil SEDA 2.1 » (cf. copie d’écran ci-dessous).  
+Afin de vérifier la conformité d’une structure arborescente d’archives et de sa description par rapport à un profil d’archivage conforme au SEDA 2.1., il convient, dans la moulinette ReSIP, de cliquer sur l’action « Traiter » puis sur la sous-action « Vérifier la conformité à un profil SEDA 2.1 » (cf. copie d’écran ci-dessous) « Vérifier la conformité à un profil SEDA 2.2 ».  
 ![reSIP](./medias/PA/ReSIP1.png)  
 
-Le clic sur la sous-action « Vérifier la conformité à un profil SEDA 2.1 », ouvre l’explorateur Windows de l’utilisateur et permet à celui-ci de sélectionner un fichier correspondant à un profil d’archivage – au format XSD ou RNG – et de l’importer dans la moulinette ReSIP en cliquant sur le bouton d’action « Ouvrir » (cf. copie d’écran ci-dessous).
+Le clic sur la sous-action « Vérifier la conformité à un profil SEDA 2.1 » ou « Vérifier la conformité à un profil SEDA 2.2 », ouvre l’explorateur Windows de l’utilisateur et permet à celui-ci de sélectionner un fichier correspondant à un profil d’archivage – au format XSD ou RNG – et de l’importer dans la moulinette ReSIP en cliquant sur le bouton d’action « Ouvrir » (cf. copie d’écran ci-dessous).
 
 Attention : il n’est possible de sélectionner qu’un seul fichier.
 ![reSIP](./medias/PA/ReSIP2.png)  
 
-Le clic sur le bouton d’action « Ouvrir » lance une fenêtre de dialogue « Vérification profil SEDA 2.1 », indiquant que l’opération de vérification est lancée. Cette opération peut être annulée en cliquant sur le bouton d’action « Annuler » de la fenêtre de dialogue. Une fois l’opération de vérification, la fenêtre de dialogue indique son résultat et les éventuelles non conformités identifiées31. La fenêtre de dialogue peut être fermée en cliquant sur le bouton d’action « Fermer » (cf. copie d’écran ci-dessous).  
+Le clic sur le bouton d’action « Ouvrir » lance une fenêtre de dialogue « Vérification profil SEDA 2.1 » ou « Vérifier la conformité à un profil SEDA 2.2 », indiquant que l’opération de vérification est lancée. Cette opération peut être annulée en cliquant sur le bouton d’action « Annuler » de la fenêtre de dialogue. Une fois l’opération de vérification, la fenêtre de dialogue indique son résultat et les éventuelles non conformités identifiées[^31]. La fenêtre de dialogue peut être fermée en cliquant sur le bouton d’action « Fermer » (cf. copie d’écran ci-dessous).  
+Le clic sur le bouton d’action « Ouvrir » lance une fenêtre de dialogue « Vérification profil SEDA 2.1 » ou « Vérifier la conformité à un profil SEDA 2.2 », indiquant que l’opération de vérification est lancée. Cette opération peut être annulée en cliquant sur le bouton d’action « Annuler » de la fenêtre de dialogue. Une fois l’opération de vérification, la fenêtre de dialogue indique son résultat et les éventuelles non conformités identifiées31. La fenêtre de dialogue peut être fermée en cliquant sur le bouton d’action « Fermer » (cf. copie d’écran ci-dessous).  
 ![reSIP](./medias/PA/ReSIP3.png)
 
 **Attention :**
@@ -4229,7 +4249,7 @@ Le clic sur le bouton d’action « Ouvrir » lance une fenêtre de dialogue �
 
 ##### Dans la rédaction du profil d’archivage
 
-Il est recommandé de créer un profil d’archivage à l’aide du Service hébergé pour la rédaction de profils d’archivage (SHERPA)32, mis à disposition par le Service interministériel des Archives de France, ou depuis un éditeur XML, puis de procéder à des modifications manuelles sur le profil d’archivage extrait de SHERPA, à l’aide d’un éditeur XML33.
+Il est recommandé de créer un profil d’archivage, ou depuis un éditeur XML, puis de procéder à des modifications manuelles sur le profil d’archivage si besoin est, à l’aide d’un éditeur XML[^32].
 Pour utiliser le profil d’archivage dans ReSIP, il faut prendre en compte deux spécificités :
 **La déclaration des groupes d’objets techniques**
 Le SEDA permet de déclarer les objets techniques de deux manières :
@@ -4319,7 +4339,7 @@ Le contrôle de conformité par rapport à un profil d’archivage ne fonctionne
 
 Dans ReSIP, il faut veiller à paramétrer le mode d’enregistrement des unités archivistiques avant leur import dans l’outil.
 Pour ce faire, depuis l’interface d’édition des paramètres, ouverte par un clic sur la sous-action « Préférences », depuis l’onglet « Export » (cf. copie d’écran ci-dessous) :
-- les unités archivistiques doivent être exportées de manière **imbriquée** (les unités archivistiques sont exportées de manière « arborescente » et sont imbriquées les unes dans les autres, en utilisant le champ ArchiveUnit du SEDA 2.1.), et non pas « à plat » (toutes les unités archivistiques sont exportées au même niveau et la structure arborescente est restituée par l’utilisation du champ ArchiveUnitRefId du SEDA 2.1.) ;
+- les unités archivistiques doivent être exportées de manière **imbriquée** (les unités archivistiques sont exportées de manière « arborescente » et sont imbriquées les unes dans les autres, en utilisant le champ ArchiveUnit du SEDA), et non pas « à plat » (toutes les unités archivistiques sont exportées au même niveau et la structure arborescente est restituée par l’utilisation du champ ArchiveUnitRefId du SEDA) ;
 - dans le SIP, les unités archivistiques doivent se présenter sous forme **linéaire** et non pas indentée.
 ![ReSIP](./medias/PA/ReSIP4.png)
 
@@ -5473,3 +5493,7 @@ erreur brute: character content of element "Comment" invalid; must be equal to "
 [^29]: Le service et sa documentation sont disponibles à l’adresse suivante : <https://sherpa.francearchives.fr/> (Lien consulté le  18 février 2022 ).
 
 [^30]: Le service et sa documentation sont disponibles à l’adresse suivante : <https://sherpa.francearchives.fr/> (Lien consulté le 18 février 2022 ).
+
+[^31]: Pour plus de précisions sur les contrôles de conformité, consulter l’annexe « Contrôle de conformité à un profil d’archivage » du présent document.
+
+[^32]: Se référer au chapitre « Structuration des données à verser » du présent document.

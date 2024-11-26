@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>3. Gestion des archives et des arborescences &mdash; Vitam documentation fonctionnelle</title>
+  <title>2. Gestion des archives et des arborescences &mdash; Vitam documentation fonctionnelle</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=eea1f72d" />
@@ -23,8 +23,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Recherche" href="../search.html" />
-    <link rel="next" title="4. Gestion des habilitations" href="gestion_habilitations.html" />
-    <link rel="prev" title="2. Le gel d’archives avec la solution logicielle Vitam" href="gel.html" /> 
+    <link rel="next" title="3. Modèle de données" href="modele_de_donnees.html" />
+    <link rel="prev" title="1. Organisation de l’information" href="organisation_information.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -57,116 +57,117 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">documentation métier</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="eliminations.html">1. Les éliminations avec la solution logicielle Vitam</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gel.html">2. Le gel d’archives avec la solution logicielle Vitam</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">3. Gestion des archives et des arborescences</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#introduction">3.1. Introduction</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#documents-de-reference">3.1.1. Documents de référence</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#presentation-du-document">3.1.2. Présentation du document</a></li>
+<li class="toctree-l1"><a class="reference internal" href="organisation_information.html">1. Organisation de l’information</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2. Gestion des archives et des arborescences</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">2.1. Introduction</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#documents-de-reference">2.1.1. Documents de référence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#presentation-du-document">2.1.2. Présentation du document</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#presentation">3.2. Présentation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#description">3.2.1. Description</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#les-arbres-de-positionnement">3.2.1.1. Les arbres de positionnement</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#les-plans-de-classement">3.2.1.2. Les plans de classement</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#les-unites-archivistiques-standards">3.2.1.3. Les unités archivistiques standards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#presentation">2.2. Présentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#description">2.2.1. Description</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#les-arbres-de-positionnement">2.2.1.1. Les arbres de positionnement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#les-plans-de-classement">2.2.1.2. Les plans de classement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#les-unites-archivistiques-standards">2.2.1.3. Les unités archivistiques standards</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#formalisation">3.2.2. Formalisation</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#dans-le-standard-dechanges-de-donnees-pour-larchivage-seda">3.2.2.1. Dans le Standard d’échanges de données pour l’archivage (SEDA)</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#a-des-fins-de-transfert">3.2.2.1.1. à des fins de transfert</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#a-des-fins-de-diffusion">3.2.2.1.2. à des fins de diffusion</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#a-des-fins-de-reversibilite">3.2.2.1.3. à des fins de réversibilité</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#formalisation">2.2.2. Formalisation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#dans-le-standard-dechanges-de-donnees-pour-larchivage-seda">2.2.2.1. Dans le Standard d’échanges de données pour l’archivage (SEDA)</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#a-des-fins-de-transfert">2.2.2.1.1. à des fins de transfert</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#a-des-fins-de-diffusion">2.2.2.1.2. à des fins de diffusion</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#a-des-fins-de-reversibilite">2.2.2.1.3. à des fins de réversibilité</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#dans-la-solution-logicielle-vitam">3.2.2.2. Dans la solution logicielle Vitam</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#mecanismes-mis-en-oeuvre-dans-la-solution-logicielle-vitam">3.3. Mécanismes mis en œuvre dans la solution logicielle Vitam</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#import">3.3.1. Import</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#preparation-de-limport">3.3.1.1. Préparation de l’import</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#processus-dimport">3.3.1.2. Processus d’import</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#gestion-des-imports">3.3.1.3. Gestion des imports</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#acces">3.3.2. Accès</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#dans-les-unites-archivistiques">3.3.2.1. Dans les unités archivistiques</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#recherche-et-affichage">3.3.2.1.1. Recherche et affichage</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#generation-de-dissemination-information-packages">3.3.2.1.2. Génération de Dissemination Information Packages</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#droits-dacces-aux-unites-archivistiques">3.3.2.1.3. Droits d’accès aux unités archivistiques</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#dans-les-groupes-dobjets-techniques">3.3.2.2. Dans les groupes d’objets techniques</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#dans-le-registre-des-fonds">3.3.2.3. Dans le registre des fonds</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#gestion-des-archives">3.3.3. Gestion des archives</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#modification-des-archives">3.3.3.1. Modification des archives</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#modification-des-metadonnees">3.3.3.1.1. Modification des métadonnées</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#calcul-des-echeances">3.3.3.1.2. Calcul des échéances</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#reorganisation-darborescence">3.3.3.1.3. Réorganisation d’arborescence</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#elimination">3.3.3.2. Élimination</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#analyse-delimination">3.3.3.2.1. Analyse d’élimination</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#operation-delimination">3.3.3.2.2. Opération d’élimination</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#transfert-darchives">3.3.3.3. Transfert d’archives</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#securite-et-preservation-des-archives">3.3.3.4. Sécurité et préservation des archives</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#audit-de-coherence">3.3.3.4.1. Audit de cohérence</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#restauration-des-metadonnees-essentielles">3.3.3.4.2. Restauration des métadonnées essentielles</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#extraction-de-metadonnees-descriptives">3.3.3.4.3. Extraction de métadonnées descriptives</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dans-la-solution-logicielle-vitam">2.2.2.2. Dans la solution logicielle Vitam</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#mecanismes-mis-en-oeuvre-dans-la-solution-logicielle-vitam">2.3. Mécanismes mis en œuvre dans la solution logicielle Vitam</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#import">2.3.1. Import</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#preparation-de-limport">2.3.1.1. Préparation de l’import</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#processus-dimport">2.3.1.2. Processus d’import</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gestion-des-imports">2.3.1.3. Gestion des imports</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#conseils-de-mise-en-oeuvre">3.4. Conseils de mise en œuvre</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#quand-faut-il-creer-un-arbre-de-positionnement-ou-un-plan-de-classement">3.4.1. Quand faut-il créer un arbre de positionnement ou un plan de classement ?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#faut-il-associer-des-regles-de-gestion-a-un-plan-de-classement">3.4.2. Faut-il associer des règles de gestion à un plan de classement ?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#peut-on-mettre-a-jour-un-arbre-de-positionnement-ou-un-plan-de-classement">3.4.3. Peut-on mettre à jour un arbre de positionnement ou un plan de classement ?</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#mise-a-jour-au-moyen-dune-operation-dimport">3.4.3.1. Mise à jour au moyen d’une opération d’import</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#rattachement-declare-dans-un-bordereau-de-transfert">3.4.3.1.1. Rattachement déclaré dans un bordereau de transfert</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#rattachement-declare-dans-un-contrat-dentree">3.4.3.1.2. Rattachement déclaré dans un contrat d’entrée</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#acces">2.3.2. Accès</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#dans-les-unites-archivistiques">2.3.2.1. Dans les unités archivistiques</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#recherche-et-affichage">2.3.2.1.1. Recherche et affichage</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#generation-de-dissemination-information-packages">2.3.2.1.2. Génération de Dissemination Information Packages</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#droits-dacces-aux-unites-archivistiques">2.3.2.1.3. Droits d’accès aux unités archivistiques</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#mise-a-jour-au-moyen-dune-operation-de-reorganisation-de-larborescence">3.4.3.2. Mise à jour au moyen d’une opération de réorganisation de l’arborescence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dans-les-groupes-dobjets-techniques">2.3.2.2. Dans les groupes d’objets techniques</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dans-le-registre-des-fonds">2.3.2.3. Dans le registre des fonds</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#comment-gerer-la-mise-a-jour-dunites-archivistiques-initiee-par-un-systeme-dinformation-metier">3.4.4. Comment gérer la mise à jour d’unités archivistiques initiée par un système d’information métier ?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#est-il-possible-de-faire-cohabiter-plusieurs-arbres-de-positionnement-et-plusieurs-plans-de-classement">3.4.5. Est-il possible de faire cohabiter plusieurs arbres de positionnement et plusieurs plans de classement ?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#comment-articuler-plan-de-classement-et-profil-darchivage">3.4.6. Comment articuler plan de classement et profil d’archivage ?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#comment-restituer-graphiquement-des-arbres-de-positionnement-et-des-plans-de-classement">3.4.7. Comment restituer graphiquement des arbres de positionnement et des plans de classement ?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#comment-supprimer-des-archives-entrees-par-erreur-dans-le-systeme">3.4.8. Comment supprimer des archives entrées par erreur dans le système ?</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#pour-des-unites-de-type-standard-et-plan-de-classement">3.4.8.1. Pour des unités de type « Standard » et « Plan de classement »</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#pour-des-unites-archivistiques-de-type-arbre-de-positionnement">3.4.8.2. Pour des unités archivistiques de type « Arbre de positionnement »</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gestion-des-archives">2.3.3. Gestion des archives</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#modification-des-archives">2.3.3.1. Modification des archives</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#modification-des-metadonnees">2.3.3.1.1. Modification des métadonnées</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#calcul-des-echeances">2.3.3.1.2. Calcul des échéances</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#reorganisation-darborescence">2.3.3.1.3. Réorganisation d’arborescence</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#faut-il-archiver-des-journaux-en-plus-des-archives">3.4.9. Faut-il archiver des journaux en plus des archives ?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#elimination">2.3.3.2. Élimination</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#analyse-delimination">2.3.3.2.1. Analyse d’élimination</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#operation-delimination">2.3.3.2.2. Opération d’élimination</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#transfert-darchives">2.3.3.3. Transfert d’archives</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#securite-et-preservation-des-archives">2.3.3.4. Sécurité et préservation des archives</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#audit-de-coherence">2.3.3.4.1. Audit de cohérence</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#restauration-des-metadonnees-essentielles">2.3.3.4.2. Restauration des métadonnées essentielles</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#extraction-de-metadonnees-descriptives">2.3.3.4.3. Extraction de métadonnées descriptives</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="gestion_habilitations.html">4. Gestion des habilitations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modele_de_donnees.html">5. Modèle de données</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modele_de_workflow.html">6. Description des workflows et des opérations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="module_de_collecte.html">7. Module de collecte</a></li>
-<li class="toctree-l1"><a class="reference internal" href="organisation_information.html">8. Organisation de l’information</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ontologie.html">9. Ontologie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="preservation.html">10. Gestion de la préservation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="profil_archivage.html">11. Profils d’archivage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="profil_unite_archivistique.html">12. Profils d’unité archivistique</a></li>
-<li class="toctree-l1"><a class="reference internal" href="regles_gestion.html">13. Règles de gestion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="services_prod.html">14. Services producteurs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SIP.html">15. Structuration des <em>Submission Information Packages</em> (SIP)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="DIP.html">16. Structuration des <em>Dissemination Information Packages</em> (DIP)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="stockage.html">17. Gestion de multiples stratégies de stockage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="transfert.html">18. Le transfert avec la solution logicielle Vitam</a></li>
-<li class="toctree-l1"><a class="reference internal" href="valeur_probante.html">19. Conservation de la valeur probante</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#conseils-de-mise-en-oeuvre">2.4. Conseils de mise en œuvre</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#quand-faut-il-creer-un-arbre-de-positionnement-ou-un-plan-de-classement">2.4.1. Quand faut-il créer un arbre de positionnement ou un plan de classement ?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#faut-il-associer-des-regles-de-gestion-a-un-plan-de-classement">2.4.2. Faut-il associer des règles de gestion à un plan de classement ?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#peut-on-mettre-a-jour-un-arbre-de-positionnement-ou-un-plan-de-classement">2.4.3. Peut-on mettre à jour un arbre de positionnement ou un plan de classement ?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#mise-a-jour-au-moyen-dune-operation-dimport">2.4.3.1. Mise à jour au moyen d’une opération d’import</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#rattachement-declare-dans-un-bordereau-de-transfert">2.4.3.1.1. Rattachement déclaré dans un bordereau de transfert</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#rattachement-declare-dans-un-contrat-dentree">2.4.3.1.2. Rattachement déclaré dans un contrat d’entrée</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#mise-a-jour-au-moyen-dune-operation-de-reorganisation-de-larborescence">2.4.3.2. Mise à jour au moyen d’une opération de réorganisation de l’arborescence</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#comment-gerer-la-mise-a-jour-dunites-archivistiques-initiee-par-un-systeme-dinformation-metier">2.4.4. Comment gérer la mise à jour d’unités archivistiques initiée par un système d’information métier ?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#est-il-possible-de-faire-cohabiter-plusieurs-arbres-de-positionnement-et-plusieurs-plans-de-classement">2.4.5. Est-il possible de faire cohabiter plusieurs arbres de positionnement et plusieurs plans de classement ?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#comment-articuler-plan-de-classement-et-profil-darchivage">2.4.6. Comment articuler plan de classement et profil d’archivage ?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#comment-restituer-graphiquement-des-arbres-de-positionnement-et-des-plans-de-classement">2.4.7. Comment restituer graphiquement des arbres de positionnement et des plans de classement ?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#comment-supprimer-des-archives-entrees-par-erreur-dans-le-systeme">2.4.8. Comment supprimer des archives entrées par erreur dans le système ?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#pour-des-unites-de-type-standard-et-plan-de-classement">2.4.8.1. Pour des unités de type « Standard » et « Plan de classement »</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pour-des-unites-archivistiques-de-type-arbre-de-positionnement">2.4.8.2. Pour des unités archivistiques de type « Arbre de positionnement »</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#faut-il-archiver-des-journaux-en-plus-des-archives">2.4.9. Faut-il archiver des journaux en plus des archives ?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_donnees.html">3. Modèle de données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SIP.html">4. Structuration des <em>Submission Information Packages</em> (SIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DIP.html">5. Structuration des <em>Dissemination Information Packages</em> (DIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gestion_habilitations.html">6. Gestion des habilitations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regles_gestion.html">7. Règles de gestion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services_prod.html">8. Services producteurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_archivage.html">9. Profils d’archivage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_unite_archivistique.html">10. Profils d’unité archivistique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ontologie.html">11. Ontologie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="schema.html">12. schéma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_workflow.html">13. Description des workflows et des opérations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_de_collecte.html">14. Module de collecte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eliminations.html">15. Les éliminations avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gel.html">16. Le gel d’archives avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preservation.html">17. Gestion de la préservation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stockage.html">18. Gestion de multiples stratégies de stockage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transfert.html">19. Le transfert avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="valeur_probante.html">20. Conservation de la valeur probante</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">documentation Vitam UI</span></p>
 <ul>
@@ -232,7 +233,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active"><span class="section-number">3. </span>Gestion des archives et des arborescences</li>
+      <li class="breadcrumb-item active"><span class="section-number">2. </span>Gestion des archives et des arborescences</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/sections/gestion_archives_arbo.md.txt" rel="nofollow"> Afficher la source de la page</a>
       </li>
@@ -245,11 +246,11 @@
            <div itemprop="articleBody">
              
   <section id="gestion-des-archives-et-des-arborescences">
-<h1><span class="section-number">3. </span>Gestion des archives et des arborescences<a class="headerlink" href="#gestion-des-archives-et-des-arborescences" title="Lien vers cette rubrique"></a></h1>
+<h1><span class="section-number">2. </span>Gestion des archives et des arborescences<a class="headerlink" href="#gestion-des-archives-et-des-arborescences" title="Lien vers cette rubrique"></a></h1>
 <section id="introduction">
-<h2><span class="section-number">3.1. </span>Introduction<a class="headerlink" href="#introduction" title="Lien vers cette rubrique"></a></h2>
+<h2><span class="section-number">2.1. </span>Introduction<a class="headerlink" href="#introduction" title="Lien vers cette rubrique"></a></h2>
 <section id="documents-de-reference">
-<h3><span class="section-number">3.1.1. </span>Documents de référence<a class="headerlink" href="#documents-de-reference" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">2.1.1. </span>Documents de référence<a class="headerlink" href="#documents-de-reference" title="Lien vers cette rubrique"></a></h3>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head text-left"><p>Document</p></th>
@@ -310,7 +311,7 @@
 </table>
 </section>
 <section id="presentation-du-document">
-<h3><span class="section-number">3.1.2. </span>Présentation du document<a class="headerlink" href="#presentation-du-document" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">2.1.2. </span>Présentation du document<a class="headerlink" href="#presentation-du-document" title="Lien vers cette rubrique"></a></h3>
 <p>Le présent document décrit les fonctionnalités associées à l’utilisation des arborescences et des unités archivistiques – arbres de positionnement, plans de classement, unités standards – dans la solution logicielle Vitam.</p>
 <p>Il s’articule autour des axes suivants :</p>
 <ul class="simple">
@@ -322,12 +323,12 @@
 </section>
 </section>
 <section id="presentation">
-<h2><span class="section-number">3.2. </span>Présentation<a class="headerlink" href="#presentation" title="Lien vers cette rubrique"></a></h2>
+<h2><span class="section-number">2.2. </span>Présentation<a class="headerlink" href="#presentation" title="Lien vers cette rubrique"></a></h2>
 <section id="description">
-<h3><span class="section-number">3.2.1. </span>Description<a class="headerlink" href="#description" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">2.2.1. </span>Description<a class="headerlink" href="#description" title="Lien vers cette rubrique"></a></h3>
 <p><img alt="Organisation hiérarchique de l’information dans la solution logicielle Vitam" src="../_images/orga_hierarchique.JPG" /></p>
 <section id="les-arbres-de-positionnement">
-<h4><span class="section-number">3.2.1.1. </span>Les arbres de positionnement<a class="headerlink" href="#les-arbres-de-positionnement" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">2.2.1.1. </span>Les arbres de positionnement<a class="headerlink" href="#les-arbres-de-positionnement" title="Lien vers cette rubrique"></a></h4>
 <p>Les arbres de positionnement correspondent à des ensembles logiques hiérarchisés sous forme arborescente. Ils permettent à un service d’archives d’organiser des fonds. Ils s’apparentent à la notion de cadre de classement.</p>
 <p>Ils sont destinés à faciliter la navigation et la recherche dans les fonds d’archives placés sous la responsabilité d’un service d’archives. Ils permettent en effet de situer et de rechercher un ensemble d’archives au sein d’une organisation plus globale.</p>
 <p>Les principes retenus par l’équipe du programme Vitam dans la spécification des arbres de positionnement sont les suivants :</p>
@@ -339,7 +340,7 @@
 </ul>
 </section>
 <section id="les-plans-de-classement">
-<h4><span class="section-number">3.2.1.2. </span>Les plans de classement<a class="headerlink" href="#les-plans-de-classement" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">2.2.1.2. </span>Les plans de classement<a class="headerlink" href="#les-plans-de-classement" title="Lien vers cette rubrique"></a></h4>
 <p>Les plans de classement correspondent à des ensembles logiques hiérarchisés sous forme arborescente. Ils s’apparentent à la notion définie par la norme ISO 15 489 utilisée dans les organisations pour la gestion des documents d’activité/records management.</p>
 <p>Ils sont destinés à faciliter l’organisation et la recherche des dossiers, documents et données produits ou reçus par un service producteur dans l’exercice de ses activités.</p>
 <p>Ils permettent en effet de situer et de rechercher des unités archivistiques au sein d’une organisation.</p>
@@ -355,7 +356,7 @@
 </ul>
 </section>
 <section id="les-unites-archivistiques-standards">
-<h4><span class="section-number">3.2.1.3. </span>Les unités archivistiques standards<a class="headerlink" href="#les-unites-archivistiques-standards" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">2.2.1.3. </span>Les unités archivistiques standards<a class="headerlink" href="#les-unites-archivistiques-standards" title="Lien vers cette rubrique"></a></h4>
 <p>Les unités archivistiques standards correspondent, au sens de l’OAIS, à des paquets d’informations transférés à un service d’archives en vue de leur prise en charge par celui-ci.</p>
 <p>Ces unités archivistiques, issues d’un SIP<a class="footnote-reference brackets" href="#id41" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>, peuvent être constituées d’objets, de leurs informations de représentation, de description et de préservation.</p>
 <p>Elles peuvent être représentées sous la forme d’une arborescence d’unités archivistiques d’un type spécifique.</p>
@@ -364,11 +365,11 @@
 </section>
 </section>
 <section id="formalisation">
-<h3><span class="section-number">3.2.2. </span>Formalisation<a class="headerlink" href="#formalisation" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">2.2.2. </span>Formalisation<a class="headerlink" href="#formalisation" title="Lien vers cette rubrique"></a></h3>
 <section id="dans-le-standard-dechanges-de-donnees-pour-larchivage-seda">
-<h4><span class="section-number">3.2.2.1. </span>Dans le Standard d’échanges de données pour l’archivage (SEDA)<a class="headerlink" href="#dans-le-standard-dechanges-de-donnees-pour-larchivage-seda" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">2.2.2.1. </span>Dans le Standard d’échanges de données pour l’archivage (SEDA)<a class="headerlink" href="#dans-le-standard-dechanges-de-donnees-pour-larchivage-seda" title="Lien vers cette rubrique"></a></h4>
 <section id="a-des-fins-de-transfert">
-<h5><span class="section-number">3.2.2.1.1. </span>à des fins de transfert<a class="headerlink" href="#a-des-fins-de-transfert" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">2.2.2.1.1. </span>à des fins de transfert<a class="headerlink" href="#a-des-fins-de-transfert" title="Lien vers cette rubrique"></a></h5>
 <p>Les arbres de positionnement et les plans de classement sont importés dans la solution logicielle VITAM sous la forme de SIP contenant un bordereau de transfert (message ArchiveTransfer), mais sans aucun objet associé, contrairement aux unités archivistiques standards<a class="footnote-reference brackets" href="#id42" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>.
 Le SIP peut être exprimé en SEDA 2.1, 2.2 ou 2.3.</p>
 <p>Chaque niveau d’arborescence est signalé et décrit dans une unité archivistique (ou <ArchiveUnit>). Pour chacun, il est possible de renseigner les éléments suivants :</p>
@@ -419,7 +420,7 @@ Le SIP peut être exprimé en SEDA 2.1, 2.2 ou 2.3.</p>
 <p>Un arbre de positionnement ne déclare pas de service producteur.</p>
 </section>
 <section id="a-des-fins-de-diffusion">
-<h5><span class="section-number">3.2.2.1.2. </span>à des fins de diffusion<a class="headerlink" href="#a-des-fins-de-diffusion" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">2.2.2.1.2. </span>à des fins de diffusion<a class="headerlink" href="#a-des-fins-de-diffusion" title="Lien vers cette rubrique"></a></h5>
 <p>Quel que soit leur type, les unités archivistiques sont exportables depuis la solution logicielle VITAM sous la forme de DIP contenant un message ArchiveDeliveryRequestReply<a class="footnote-reference brackets" href="#id44" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a>.</p>
 <p>Si on n’exporte que des unités archivistiques de type « arbre de positionnement » ou « plan de classement », aucun objet ne sera associé. Mais, si l’export inclut des unités archivistiques standards, il peut y en avoir.</p>
 <p>L’export peut être exprimé en SEDA 2.1, 2.2 ou 2.3.</p>
@@ -464,7 +465,7 @@ Le SIP peut être exprimé en SEDA 2.1, 2.2 ou 2.3.</p>
 </ul>
 </section>
 <section id="a-des-fins-de-reversibilite">
-<h5><span class="section-number">3.2.2.1.3. </span>à des fins de réversibilité<a class="headerlink" href="#a-des-fins-de-reversibilite" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">2.2.2.1.3. </span>à des fins de réversibilité<a class="headerlink" href="#a-des-fins-de-reversibilite" title="Lien vers cette rubrique"></a></h5>
 <p>Quel que soit leur type, les unités archivistiques sont transférables depuis la solution logicielle VITAM vers une autre solution d’archivage électronique sous la forme de DIP/SIP de transfert contenant un message ArchiveTransfer<a class="footnote-reference brackets" href="#id46" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a>.</p>
 <p>Si on n’exporte que des unités archivistiques de type « arbre de positionnement » ou « plan de classement », aucun objet ne sera associé. Mais, si l’export inclut des unités archivistiques standards, il peut y en avoir.</p>
 <p>L’export peut être exprimé en SEDA 2.1, 2.2 ou 2.3.</p>
@@ -506,7 +507,7 @@ Le SIP peut être exprimé en SEDA 2.1, 2.2 ou 2.3.</p>
 </section>
 </section>
 <section id="dans-la-solution-logicielle-vitam">
-<h4><span class="section-number">3.2.2.2. </span>Dans la solution logicielle Vitam<a class="headerlink" href="#dans-la-solution-logicielle-vitam" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">2.2.2.2. </span>Dans la solution logicielle Vitam<a class="headerlink" href="#dans-la-solution-logicielle-vitam" title="Lien vers cette rubrique"></a></h4>
 <p>Les unités archivistiques sont enregistrées dans la base de données MongoDB, dans la collection « Unit », sous la forme d’enregistrements au format JSON.</p>
 <p>Chaque enregistrement est construit comme suit<a class="footnote-reference brackets" href="#id47" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></a> :</p>
 <ul class="simple">
@@ -543,7 +544,7 @@ Le SIP peut être exprimé en SEDA 2.1, 2.2 ou 2.3.</p>
 </section>
 </section>
 <section id="mecanismes-mis-en-oeuvre-dans-la-solution-logicielle-vitam">
-<h2><span class="section-number">3.3. </span>Mécanismes mis en œuvre dans la solution logicielle Vitam<a class="headerlink" href="#mecanismes-mis-en-oeuvre-dans-la-solution-logicielle-vitam" title="Lien vers cette rubrique"></a></h2>
+<h2><span class="section-number">2.3. </span>Mécanismes mis en œuvre dans la solution logicielle Vitam<a class="headerlink" href="#mecanismes-mis-en-oeuvre-dans-la-solution-logicielle-vitam" title="Lien vers cette rubrique"></a></h2>
 <p>La solution logicielle Vitam offre à un service d’archives plusieurs fonctionnalités lui permettant de gérer les arbres de positionnement, les plans de classement et les unités archivistiques standards :</p>
 <ul class="simple">
 <li><p>leur import dans le système ;</p></li>
@@ -565,9 +566,9 @@ Le SIP peut être exprimé en SEDA 2.1, 2.2 ou 2.3.</p>
 <li><p>INGEST pour les unités archivistiques issues d’un SIP.</p></li>
 </ul>
 <section id="import">
-<h3><span class="section-number">3.3.1. </span>Import<a class="headerlink" href="#import" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">2.3.1. </span>Import<a class="headerlink" href="#import" title="Lien vers cette rubrique"></a></h3>
 <section id="preparation-de-limport">
-<h4><span class="section-number">3.3.1.1. </span>Préparation de l’import<a class="headerlink" href="#preparation-de-limport" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">2.3.1.1. </span>Préparation de l’import<a class="headerlink" href="#preparation-de-limport" title="Lien vers cette rubrique"></a></h4>
 <p>Dans la solution logicielle Vitam, il est possible de préparer le versement d’un SIP au moyen du module de collecte<a class="footnote-reference brackets" href="#id50" id="id10" role="doc-noteref"><span class="fn-bracket">[</span>10<span class="fn-bracket">]</span></a>.</p>
 <p>Ce module permet de :</p>
 <ul class="simple">
@@ -592,7 +593,7 @@ Le SIP peut être exprimé en SEDA 2.1, 2.2 ou 2.3.</p>
 <p>Après réception, le module formate ces différentes informations sous la forme de SIP conformes au standard SEDA, puis les envoie vers le back-office de la solution logicielle Vitam (opération d’INGEST).</p>
 </section>
 <section id="processus-dimport">
-<h4><span class="section-number">3.3.1.2. </span>Processus d’import<a class="headerlink" href="#processus-dimport" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">2.3.1.2. </span>Processus d’import<a class="headerlink" href="#processus-dimport" title="Lien vers cette rubrique"></a></h4>
 <p>Dans la solution logicielle Vitam, il est possible d’importer un SIP, un plan de classement et un arbre de positionnement.</p>
 <p>Il s’agit :</p>
 <ul class="simple">
@@ -611,7 +612,7 @@ Le SIP peut être exprimé en SEDA 2.1, 2.2 ou 2.3.</p>
 Pour les SIP volumineux, la solution logicielle Vitam propose une API spécifique permettant d’importer ce type de SIP<a class="footnote-reference brackets" href="#id52" id="id12" role="doc-noteref"><span class="fn-bracket">[</span>12<span class="fn-bracket">]</span></a>.</p>
 </section>
 <section id="gestion-des-imports">
-<h4><span class="section-number">3.3.1.3. </span>Gestion des imports<a class="headerlink" href="#gestion-des-imports" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">2.3.1.3. </span>Gestion des imports<a class="headerlink" href="#gestion-des-imports" title="Lien vers cette rubrique"></a></h4>
 <p>Un contrat d’entrée, obligatoirement défini dans un SIP, un plan de classement ou un arbre de positionnement détermine les droits associés à leur entrée dans le système.</p>
 <p>Il détermine en option :</p>
 <ul class="simple">
@@ -629,11 +630,11 @@ Pour les SIP volumineux, la solution logicielle Vitam propose une API spécifiqu
 </section>
 </section>
 <section id="acces">
-<h3><span class="section-number">3.3.2. </span>Accès<a class="headerlink" href="#acces" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">2.3.2. </span>Accès<a class="headerlink" href="#acces" title="Lien vers cette rubrique"></a></h3>
 <section id="dans-les-unites-archivistiques">
-<h4><span class="section-number">3.3.2.1. </span>Dans les unités archivistiques<a class="headerlink" href="#dans-les-unites-archivistiques" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">2.3.2.1. </span>Dans les unités archivistiques<a class="headerlink" href="#dans-les-unites-archivistiques" title="Lien vers cette rubrique"></a></h4>
 <section id="recherche-et-affichage">
-<h5><span class="section-number">3.3.2.1.1. </span>Recherche et affichage<a class="headerlink" href="#recherche-et-affichage" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">2.3.2.1.1. </span>Recherche et affichage<a class="headerlink" href="#recherche-et-affichage" title="Lien vers cette rubrique"></a></h5>
 <p>Par défaut, l’utilisateur peut rechercher un niveau d’un arbre de positionnement ou d’un plan de classement et accéder à son détail, de la même manière qu’il le ferait pour les unités archivistiques issues d’un SIP.</p>
 <p>Il est possible de :</p>
 <ul class="simple">
@@ -669,7 +670,7 @@ Pour les SIP volumineux, la solution logicielle Vitam propose une API spécifiqu
 </ul>
 </section>
 <section id="generation-de-dissemination-information-packages">
-<h5><span class="section-number">3.3.2.1.2. </span>Génération de Dissemination Information Packages<a class="headerlink" href="#generation-de-dissemination-information-packages" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">2.3.2.1.2. </span>Génération de Dissemination Information Packages<a class="headerlink" href="#generation-de-dissemination-information-packages" title="Lien vers cette rubrique"></a></h5>
 <p>La solution logicielle Vitam permet de générer un Dissemination Information Package (ou DIP) au sens de l’OAIS à partir d’une sélection d’unités archivistiques, quel que soit leur type.</p>
 <p>Ce DIP prend la forme d’un message ArchiveDeliveryRequestReply<a class="footnote-reference brackets" href="#id54" id="id14" role="doc-noteref"><span class="fn-bracket">[</span>14<span class="fn-bracket">]</span></a>, contenant :</p>
 <ul class="simple">
@@ -698,7 +699,7 @@ Ce DIP est alors téléchargeable depuis l’APP « Journal des opérations »
 </ul>
 </section>
 <section id="droits-dacces-aux-unites-archivistiques">
-<h5><span class="section-number">3.3.2.1.3. </span>Droits d’accès aux unités archivistiques<a class="headerlink" href="#droits-dacces-aux-unites-archivistiques" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">2.3.2.1.3. </span>Droits d’accès aux unités archivistiques<a class="headerlink" href="#droits-dacces-aux-unites-archivistiques" title="Lien vers cette rubrique"></a></h5>
 <p>Dans la solution logicielle Vitam, il est possible de filtrer les accès aux unités archivistiques  au moyen d’un contrat d’accès, qui permet de déterminer :</p>
 <ul class="simple">
 <li><p>le(s) niveau(x) de l’arborescence à partir du(es)quel(s) un service externe pourra effectuer des recherches ou obtenir des résultats ;</p></li>
@@ -719,7 +720,7 @@ Dans les deux cas, il peut s’agir de tout ou partie d’un arbre de positionne
 </section>
 </section>
 <section id="dans-les-groupes-dobjets-techniques">
-<h4><span class="section-number">3.3.2.2. </span>Dans les groupes d’objets techniques<a class="headerlink" href="#dans-les-groupes-dobjets-techniques" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">2.3.2.2. </span>Dans les groupes d’objets techniques<a class="headerlink" href="#dans-les-groupes-dobjets-techniques" title="Lien vers cette rubrique"></a></h4>
 <p>Seules les unités archivistiques de type « Standard » peuvent être associées à un groupe d’objets techniques et à 1 à N fichier numérique.
 Par défaut, l’utilisateur peut accéder à un groupe d’objets techniques à partir :</p>
 <ul class="simple">
@@ -753,7 +754,7 @@ L’IHM démo propose également une recherche sur les groupes d’objets techni
 <p><img alt="IHM Démo - registre des fonds" src="sections/medias/archives_arbo/gotsearch.png" /></p>
 </section>
 <section id="dans-le-registre-des-fonds">
-<h4><span class="section-number">3.3.2.3. </span>Dans le registre des fonds<a class="headerlink" href="#dans-le-registre-des-fonds" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">2.3.2.3. </span>Dans le registre des fonds<a class="headerlink" href="#dans-le-registre-des-fonds" title="Lien vers cette rubrique"></a></h4>
 <p>Dans le registre des fonds, les SIP correspondant à des plans de classement sont comptabilisés au même titre que les autres SIP : les unités archivistiques contenues dans un plan de classement y sont enregistrées et s’ajoutent au nombre des unités archivistiques déjà transférées par un producteur donné.</p>
 <p>Cette fonctionnalité n’est pas utilisée pour les unités archivistiques des arbres de positionnement, dans la mesure où ces derniers ne déclarent pas de service producteur<a class="footnote-reference brackets" href="#id58" id="id18" role="doc-noteref"><span class="fn-bracket">[</span>18<span class="fn-bracket">]</span></a>.</p>
 <p>Dans le registre des fonds, il est possible de rechercher :</p>
@@ -774,11 +775,11 @@ L’IHM démo propose également une recherche sur les groupes d’objets techni
 </section>
 </section>
 <section id="gestion-des-archives">
-<h3><span class="section-number">3.3.3. </span>Gestion des archives<a class="headerlink" href="#gestion-des-archives" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">2.3.3. </span>Gestion des archives<a class="headerlink" href="#gestion-des-archives" title="Lien vers cette rubrique"></a></h3>
 <section id="modification-des-archives">
-<h4><span class="section-number">3.3.3.1. </span>Modification des archives<a class="headerlink" href="#modification-des-archives" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">2.3.3.1. </span>Modification des archives<a class="headerlink" href="#modification-des-archives" title="Lien vers cette rubrique"></a></h4>
 <section id="modification-des-metadonnees">
-<h5><span class="section-number">3.3.3.1.1. </span>Modification des métadonnées<a class="headerlink" href="#modification-des-metadonnees" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">2.3.3.1.1. </span>Modification des métadonnées<a class="headerlink" href="#modification-des-metadonnees" title="Lien vers cette rubrique"></a></h5>
 <p>La solution logicielle Vitam permet de modifier les métadonnées associées à une unité archivistique issue d’un SIP, d’un plan de classement ou d’un arbre de positionnement, déjà entrées dans le système. Il est possible de :</p>
 <ul class="simple">
 <li><p>modifier la valeur d’une métadonnée déjà renseignée dans l’unité archivistique,</p></li>
@@ -800,7 +801,7 @@ L’IHM démo propose également une recherche sur les groupes d’objets techni
 <p><strong>Point d’attention :</strong> l’opération de type « UPDATE » a vocation à être dépréciée dans les prochaines versions de la solution logicielle Vitam. Il est recommandé d’utiliser à partir de la version 4 les autres services de mise à jour proposés par la solution logicielle Vitam.</p>
 </section>
 <section id="calcul-des-echeances">
-<h5><span class="section-number">3.3.3.1.2. </span>Calcul des échéances<a class="headerlink" href="#calcul-des-echeances" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">2.3.3.1.2. </span>Calcul des échéances<a class="headerlink" href="#calcul-des-echeances" title="Lien vers cette rubrique"></a></h5>
 <p>La solution logicielle Vitam enregistre également en base à la demande pour chaque unité archivistique les règles de gestion applicables et les échéances de ces règles, que les règles soient déclarées par l’unité archivistique ou héritées d’unités archivistiques parentes<a class="footnote-reference brackets" href="#id65" id="id25" role="doc-noteref"><span class="fn-bracket">[</span>25<span class="fn-bracket">]</span></a>.</p>
 <p>Il s’agit d’une opération de type « COMPUTE_INHERITED_RULES », tracée dans le journal des opérations de la solution logicielle Vitam<a class="footnote-reference brackets" href="#id66" id="id26" role="doc-noteref"><span class="fn-bracket">[</span>26<span class="fn-bracket">]</span></a>.</p>
 <p>Ce service, optionnel, est configurable lors du paramétrage initial de la plate-forme par les administrateurs – fonctionnel pour la définition du besoin et technique<a class="footnote-reference brackets" href="#id67" id="id27" role="doc-noteref"><span class="fn-bracket">[</span>27<span class="fn-bracket">]</span></a> pour la saisie réelle des informations – de chaque implémentation de la solution logicielle Vitam et définit, pour chaque tenant le type d’indexation requis.</p>
@@ -809,7 +810,7 @@ L’IHM démo propose également une recherche sur les groupes d’objets techni
 <p><strong>Point d’attention :</strong> les arbres de positionnement n’utilisant pas de règles de gestion, ce service vaut uniquement pour les unités archivistiques de type « plan de classement » et « standard », qui acceptent des règles de gestion.</p>
 </section>
 <section id="reorganisation-darborescence">
-<h5><span class="section-number">3.3.3.1.3. </span>Réorganisation d’arborescence<a class="headerlink" href="#reorganisation-darborescence" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">2.3.3.1.3. </span>Réorganisation d’arborescence<a class="headerlink" href="#reorganisation-darborescence" title="Lien vers cette rubrique"></a></h5>
 <p>La solution logicielle Vitam permet également de modifier l’arborescence d’unités archivistiques issues d’un SIP, d’un plan de classement ou d’un arbre de positionnement, déjà entrées dans le système<a class="footnote-reference brackets" href="#id69" id="id29" role="doc-noteref"><span class="fn-bracket">[</span>29<span class="fn-bracket">]</span></a>. Il est possible de :</p>
 <ul class="simple">
 <li><p>rattacher une unité archivistique à une unité archivistique, en respectant l’organisation hiérarchique de l’information, à savoir :</p>
@@ -826,9 +827,9 @@ L’IHM démo propose également une recherche sur les groupes d’objets techni
 </section>
 </section>
 <section id="elimination">
-<h4><span class="section-number">3.3.3.2. </span>Élimination<a class="headerlink" href="#elimination" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">2.3.3.2. </span>Élimination<a class="headerlink" href="#elimination" title="Lien vers cette rubrique"></a></h4>
 <section id="analyse-delimination">
-<h5><span class="section-number">3.3.3.2.1. </span>Analyse d’élimination<a class="headerlink" href="#analyse-delimination" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">2.3.3.2.1. </span>Analyse d’élimination<a class="headerlink" href="#analyse-delimination" title="Lien vers cette rubrique"></a></h5>
 <p>L’utilisateur peut lancer une opération d’analyse d’élimination, en vue d’étudier le caractère éliminable d’ensembles d’unités archivistiques.   Son résultat permet de définir le statut des unités archivistiques concernées :</p>
 <ul class="simple">
 <li><p>KEEP (à conserver),</p></li>
@@ -840,7 +841,7 @@ L’IHM démo propose également une recherche sur les groupes d’objets techni
 <p>Au terme de la Version 5.RC toutes les unités archivistiques, qu’elles soient standards, de plan de classement, qui disposent de règles de gestion, ou d’arbre de positionnement peuvent être analysées.</p>
 </section>
 <section id="operation-delimination">
-<h5><span class="section-number">3.3.3.2.2. </span>Opération d’élimination<a class="headerlink" href="#operation-delimination" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">2.3.3.2.2. </span>Opération d’élimination<a class="headerlink" href="#operation-delimination" title="Lien vers cette rubrique"></a></h5>
 <p>La solution logicielle Vitam permet d’éliminer :</p>
 <ul class="simple">
 <li><p>des archives standards et de plan de classement dont la durée d’utilité administrative est échue et qui ne sont pas gelées,</p></li>
@@ -859,7 +860,7 @@ Cette élimination est retranscrite dans le registre des fonds<a class="footnote
 </section>
 </section>
 <section id="transfert-darchives">
-<h4><span class="section-number">3.3.3.3. </span>Transfert d’archives<a class="headerlink" href="#transfert-darchives" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">2.3.3.3. </span>Transfert d’archives<a class="headerlink" href="#transfert-darchives" title="Lien vers cette rubrique"></a></h4>
 <p>La solution logicielle Vitam permet de constituer, à partir d’une sélection d’unités archivistiques, des DIP de transfert destinés à être pris en charge par une plate-forme.</p>
 <p>Ce DIP prend la forme d’un message ArchiveTransfer<a class="footnote-reference brackets" href="#id73" id="id33" role="doc-noteref"><span class="fn-bracket">[</span>33<span class="fn-bracket">]</span></a>, contenant métadonnées et journaux du cycle de vie. Il peut être exprimé en SEDA 2.1, en SEDA 2.2 ou en SEDA 2.3.</p>
 <p>Il s’agit d’une opération d’administration de type « ARCHIVE_TRANSFER », tracée dans le journal des opérations de la solution logicielle Vitam<a class="footnote-reference brackets" href="#id74" id="id34" role="doc-noteref"><span class="fn-bracket">[</span>34<span class="fn-bracket">]</span></a>. Au terme de la version 6, cette opération inclut l’empreinte du DIP calculée en SHA-512.</p>
@@ -882,9 +883,9 @@ Ce DIP est alors téléchargeable depuis l’APP « Journal des opérations »
 </ul>
 </section>
 <section id="securite-et-preservation-des-archives">
-<h4><span class="section-number">3.3.3.4. </span>Sécurité et préservation des archives<a class="headerlink" href="#securite-et-preservation-des-archives" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">2.3.3.4. </span>Sécurité et préservation des archives<a class="headerlink" href="#securite-et-preservation-des-archives" title="Lien vers cette rubrique"></a></h4>
 <section id="audit-de-coherence">
-<h5><span class="section-number">3.3.3.4.1. </span>Audit de cohérence<a class="headerlink" href="#audit-de-coherence" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">2.3.3.4.1. </span>Audit de cohérence<a class="headerlink" href="#audit-de-coherence" title="Lien vers cette rubrique"></a></h5>
 <p>L’audit de cohérence consiste en des actions d’évaluation, de vérification de l’existence et, le cas échéant, de l’intégrité d’une liste d’objets binaires, de groupes d’objets techniques et d’unités archivistiques, de leurs journaux de cycle de vie, ainsi que de leur cohérence par rapport aux journaux sécurisés. Il permet ainsi de contrôler l’intégrité des unités archivistiques et de leurs journaux, quel que soit leur type.</p>
 <p>Suite à cette analyse, une action corrective peut être lancée afin de rétablir l’accessibilité des objets absents ou corrompus, et ce à des fins de préservation numérique<a class="footnote-reference brackets" href="#id76" id="id36" role="doc-noteref"><span class="fn-bracket">[</span>36<span class="fn-bracket">]</span></a>.</p>
 <p>L’audit de cohérence et l’opération corrective sont tous deux tracés dans le journal des opérations de la solution logicielle Vitam,</p>
@@ -894,7 +895,7 @@ Ce DIP est alors téléchargeable depuis l’APP « Journal des opérations »
 </ul>
 </section>
 <section id="restauration-des-metadonnees-essentielles">
-<h5><span class="section-number">3.3.3.4.2. </span>Restauration des métadonnées essentielles<a class="headerlink" href="#restauration-des-metadonnees-essentielles" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">2.3.3.4.2. </span>Restauration des métadonnées essentielles<a class="headerlink" href="#restauration-des-metadonnees-essentielles" title="Lien vers cette rubrique"></a></h5>
 <p>La solution logicielle Vitam permet de rétablir l’état antérieur des métadonnées dites essentielles d’une à plusieurs unités archivistiques.</p>
 <p>Les métadonnées restaurées sont les suivantes :</p>
 <ul class="simple">
@@ -906,7 +907,7 @@ Ce DIP est alors téléchargeable depuis l’APP « Journal des opérations »
 <p>Elle donne également lieu à une trace dans le journal du cycle de vie de(s) unité(s) archivistique(s) ayant fait l’objet de l’opération.</p>
 </section>
 <section id="extraction-de-metadonnees-descriptives">
-<h5><span class="section-number">3.3.3.4.3. </span>Extraction de métadonnées descriptives<a class="headerlink" href="#extraction-de-metadonnees-descriptives" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">2.3.3.4.3. </span>Extraction de métadonnées descriptives<a class="headerlink" href="#extraction-de-metadonnees-descriptives" title="Lien vers cette rubrique"></a></h5>
 <p>Parmi les fonctionnalités associées à la préservation numérique, la solution logicielle Vitam permet d’extraire des métadonnées issues des métadonnées techniques encapsulées dans les objets binaires en vue d’enrichir les métadonnées des unités archivistiques<a class="footnote-reference brackets" href="#id79" id="id39" role="doc-noteref"><span class="fn-bracket">[</span>39<span class="fn-bracket">]</span></a>.</p>
 <p>Ces nouvelles métadonnées sont enregistrées et indexées en tant que métadonnées de l’unité archivistique.</p>
 <p>Il s’agit d’une opération d’administration de type « PRESERVATION », tracée dans le journal des opérations de la solution logicielle Vitam<a class="footnote-reference brackets" href="#id80" id="id40" role="doc-noteref"><span class="fn-bracket">[</span>40<span class="fn-bracket">]</span></a>.</p>
@@ -920,9 +921,9 @@ Ce DIP est alors téléchargeable depuis l’APP « Journal des opérations »
 </section>
 </section>
 <section id="conseils-de-mise-en-oeuvre">
-<h2><span class="section-number">3.4. </span>Conseils de mise en œuvre<a class="headerlink" href="#conseils-de-mise-en-oeuvre" title="Lien vers cette rubrique"></a></h2>
+<h2><span class="section-number">2.4. </span>Conseils de mise en œuvre<a class="headerlink" href="#conseils-de-mise-en-oeuvre" title="Lien vers cette rubrique"></a></h2>
 <section id="quand-faut-il-creer-un-arbre-de-positionnement-ou-un-plan-de-classement">
-<h3><span class="section-number">3.4.1. </span>Quand faut-il créer un arbre de positionnement ou un plan de classement ?<a class="headerlink" href="#quand-faut-il-creer-un-arbre-de-positionnement-ou-un-plan-de-classement" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">2.4.1. </span>Quand faut-il créer un arbre de positionnement ou un plan de classement ?<a class="headerlink" href="#quand-faut-il-creer-un-arbre-de-positionnement-ou-un-plan-de-classement" title="Lien vers cette rubrique"></a></h3>
 <p>Avant de commencer à réaliser des transferts, il est fortement recommandé de travailler sur l’organisation hiérarchique des arbres et des plans au sein de la solution logicielle Vitam, et ceci pour trois raisons :</p>
 <ul class="simple">
 <li><p>contextualiser les archives consultées et se conformer à la norme générale et internationale de description archivistique (ISAD/G) qui prescrit une structuration hiérarchique de l’information ;</p></li>
@@ -952,7 +953,7 @@ Ce DIP est alors téléchargeable depuis l’APP « Journal des opérations »
 <p><img alt="Cas 2" src="../_images/cas2.png" /></p>
 </section>
 <section id="faut-il-associer-des-regles-de-gestion-a-un-plan-de-classement">
-<h3><span class="section-number">3.4.2. </span>Faut-il associer des règles de gestion à un plan de classement ?<a class="headerlink" href="#faut-il-associer-des-regles-de-gestion-a-un-plan-de-classement" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">2.4.2. </span>Faut-il associer des règles de gestion à un plan de classement ?<a class="headerlink" href="#faut-il-associer-des-regles-de-gestion-a-un-plan-de-classement" title="Lien vers cette rubrique"></a></h3>
 <p>La solution logicielle Vitam permet d’associer des règles de gestion à des unités archivistiques d’un plan de classement. Cependant, cette association peut être inadéquate dans certains cas.</p>
 <p><strong>Cas n°1.</strong> Les unités archivistiques à rattacher au plan de classement ont toutes la même date de départ pour calculer la durée de conservation.<br />
 Dans ce cas-là, il peut être envisagé de placer des règles de gestion au niveau d’une unité archivistique de plan de classement quand, à ce niveau, on attend des SIP pour lesquels on est en mesure de qualifier et la règle et sa date de début. Cette date peut correspondre soit au début d’une année civile, soit à la date de fin d’année civile.<br />
@@ -964,16 +965,16 @@ Dans l’exemple ci-dessous, il n’est pas pertinent d’énoncer une règle de
 <p><img alt="Cas 2" src="../_images/cas2bis.png" /></p>
 </section>
 <section id="peut-on-mettre-a-jour-un-arbre-de-positionnement-ou-un-plan-de-classement">
-<h3><span class="section-number">3.4.3. </span>Peut-on mettre à jour un arbre de positionnement ou un plan de classement ?<a class="headerlink" href="#peut-on-mettre-a-jour-un-arbre-de-positionnement-ou-un-plan-de-classement" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">2.4.3. </span>Peut-on mettre à jour un arbre de positionnement ou un plan de classement ?<a class="headerlink" href="#peut-on-mettre-a-jour-un-arbre-de-positionnement-ou-un-plan-de-classement" title="Lien vers cette rubrique"></a></h3>
 <p>Un arbre de positionnement ou un plan de classement peuvent être mis à jour. Actuellement, la solution logicielle Vitam permet d’ajouter des niveaux inférieurs à ces deux types de structures arborescentes :</p>
 <ul class="simple">
 <li><p>par l’import d’unité(s) archivistique(s) ;</p></li>
 <li><p>par la mise à jour de la hiérarchie entre deux unités archivistiques déjà entrées dans la solution.</p></li>
 </ul>
 <section id="mise-a-jour-au-moyen-dune-operation-dimport">
-<h4><span class="section-number">3.4.3.1. </span>Mise à jour au moyen d’une opération d’import<a class="headerlink" href="#mise-a-jour-au-moyen-dune-operation-dimport" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">2.4.3.1. </span>Mise à jour au moyen d’une opération d’import<a class="headerlink" href="#mise-a-jour-au-moyen-dune-operation-dimport" title="Lien vers cette rubrique"></a></h4>
 <section id="rattachement-declare-dans-un-bordereau-de-transfert">
-<h5><span class="section-number">3.4.3.1.1. </span>Rattachement déclaré dans un bordereau de transfert<a class="headerlink" href="#rattachement-declare-dans-un-bordereau-de-transfert" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">2.4.3.1.1. </span>Rattachement déclaré dans un bordereau de transfert<a class="headerlink" href="#rattachement-declare-dans-un-bordereau-de-transfert" title="Lien vers cette rubrique"></a></h5>
 <p>Cette opération peut s’effectuer par l’import d’un SIP de plan de classement ou d’arbre de positionnement où l’on va définir l’unité archivistique à laquelle le rattacher. Dans le bloc Management de l’unité archivistique destinée à être rattachée à un niveau supérieur, il faut ajouter un sous-bloc UpdateOperation dans lequel on dispose :</p>
 <ul class="simple">
 <li><p>soit un SystemId correspondant au GUID de l’unité archivistique de rattachement ;</p></li>
@@ -985,13 +986,13 @@ Dans l’exemple ci-dessous, il n’est pas pertinent d’énoncer une règle de
 <p>Si l’on souhaite éviter qu’une unité archivistique déclare un nœud de rattachement ne convenant pas, il est recommandé d’ajouter dans le contrat d’entrée un nœud pour déclarer un périmètre de rattachement autorisé.</p>
 </section>
 <section id="rattachement-declare-dans-un-contrat-dentree">
-<h5><span class="section-number">3.4.3.1.2. </span>Rattachement déclaré dans un contrat d’entrée<a class="headerlink" href="#rattachement-declare-dans-un-contrat-dentree" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">2.4.3.1.2. </span>Rattachement déclaré dans un contrat d’entrée<a class="headerlink" href="#rattachement-declare-dans-un-contrat-dentree" title="Lien vers cette rubrique"></a></h5>
 <p>Le contrat d’entrée permet d’automatiser la mise à jour d’un niveau d’un plan de classement ou d’un arbre de positionnement en déclarant ce dernier comme nœud de rattachement. L’unité archivistique racine d’un SIP ou d’un plan de classement sera alors automatiquement placée sous ce nœud.</p>
 <p><strong>Point d’attention :</strong> cette option ne permet actuellement pas de contrôler si des unités archivistiques contenues dans le bordereau de transfert déclarent des rattachements à d’autres unités archivistiques n’ayant aucun lien avec le nœud de rattachement présent dans le contrat d’entrée.</p>
 </section>
 </section>
 <section id="mise-a-jour-au-moyen-dune-operation-de-reorganisation-de-larborescence">
-<h4><span class="section-number">3.4.3.2. </span>Mise à jour au moyen d’une opération de réorganisation de l’arborescence<a class="headerlink" href="#mise-a-jour-au-moyen-dune-operation-de-reorganisation-de-larborescence" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">2.4.3.2. </span>Mise à jour au moyen d’une opération de réorganisation de l’arborescence<a class="headerlink" href="#mise-a-jour-au-moyen-dune-operation-de-reorganisation-de-larborescence" title="Lien vers cette rubrique"></a></h4>
 <p>Au sein de la solution logicielle Vitam, il est également possible de :</p>
 <ul class="simple">
 <li><p>supprimer des niveaux d’arbre de positionnement ou de plan de classement.
@@ -1021,7 +1022,7 @@ On peut déplacer :</p>
 </section>
 </section>
 <section id="comment-gerer-la-mise-a-jour-dunites-archivistiques-initiee-par-un-systeme-dinformation-metier">
-<h3><span class="section-number">3.4.4. </span>Comment gérer la mise à jour d’unités archivistiques initiée par un système d’information métier ?<a class="headerlink" href="#comment-gerer-la-mise-a-jour-dunites-archivistiques-initiee-par-un-systeme-dinformation-metier" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">2.4.4. </span>Comment gérer la mise à jour d’unités archivistiques initiée par un système d’information métier ?<a class="headerlink" href="#comment-gerer-la-mise-a-jour-dunites-archivistiques-initiee-par-un-systeme-dinformation-metier" title="Lien vers cette rubrique"></a></h3>
 <p>La solution logicielle Vitam permet à un applicatif qui crée des dossiers et les verse dès leur création alors qu’ils ne sont pas encore clos de :</p>
 <ul class="simple">
 <li><p>ajouter des fichiers aux dossiers,</p></li>
@@ -1092,7 +1093,7 @@ Ces mises à jour sont réalisées instantanément dans la solution logicielle V
 </table>
 </section>
 <section id="est-il-possible-de-faire-cohabiter-plusieurs-arbres-de-positionnement-et-plusieurs-plans-de-classement">
-<h3><span class="section-number">3.4.5. </span>Est-il possible de faire cohabiter plusieurs arbres de positionnement et plusieurs plans de classement ?<a class="headerlink" href="#est-il-possible-de-faire-cohabiter-plusieurs-arbres-de-positionnement-et-plusieurs-plans-de-classement" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">2.4.5. </span>Est-il possible de faire cohabiter plusieurs arbres de positionnement et plusieurs plans de classement ?<a class="headerlink" href="#est-il-possible-de-faire-cohabiter-plusieurs-arbres-de-positionnement-et-plusieurs-plans-de-classement" title="Lien vers cette rubrique"></a></h3>
 <p>La solution logicielle Vitam permet de faire cohabiter plusieurs arbres de positionnement et plusieurs plans de classement.</p>
 <p>Dans le cas des arbres de positionnement, il est tout à fait envisageable de créer un arbre de positionnement par grand domaine.</p>
 <p>Par exemple, pour les Archives nationales, plutôt que d’avoir un seul arbre, on pourrait avoir un arbre par type d’archives : « Archives privées », « Archives publiques », « Archives audiovisuelles » ; etc.</p>
@@ -1122,7 +1123,7 @@ Ces mises à jour sont réalisées instantanément dans la solution logicielle V
 <p><img alt="" src="../_images/version5.png" /></p>
 </section>
 <section id="comment-articuler-plan-de-classement-et-profil-darchivage">
-<h3><span class="section-number">3.4.6. </span>Comment articuler plan de classement et profil d’archivage ?<a class="headerlink" href="#comment-articuler-plan-de-classement-et-profil-darchivage" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">2.4.6. </span>Comment articuler plan de classement et profil d’archivage ?<a class="headerlink" href="#comment-articuler-plan-de-classement-et-profil-darchivage" title="Lien vers cette rubrique"></a></h3>
 <p>La solution logicielle Vitam permet de contrôler un plan de classement au moyen d’un profil d’archivage.</p>
 <p>Si on souhaite réaliser un profil d’archivage pour un plan de classement, il faudra veiller à ce que sa structure soit uniforme et n’évolue pas dans le temps, de même que la périodicité des transferts soit pertinente[^41]. À cet effet, il peut être intéressant de créer des profils d’archivage pour :</p>
 <ul class="simple">
@@ -1133,7 +1134,7 @@ Ces mises à jour sont réalisées instantanément dans la solution logicielle V
 <p>Par exemple, on a un plan de classement correspondant à un transfert de SOLON, contrôlé par un profil d’archivage. Les SIP correspondant au niveau « Item » y seront rattachés par la suite.</p>
 </section>
 <section id="comment-restituer-graphiquement-des-arbres-de-positionnement-et-des-plans-de-classement">
-<h3><span class="section-number">3.4.7. </span>Comment restituer graphiquement des arbres de positionnement et des plans de classement ?<a class="headerlink" href="#comment-restituer-graphiquement-des-arbres-de-positionnement-et-des-plans-de-classement" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">2.4.7. </span>Comment restituer graphiquement des arbres de positionnement et des plans de classement ?<a class="headerlink" href="#comment-restituer-graphiquement-des-arbres-de-positionnement-et-des-plans-de-classement" title="Lien vers cette rubrique"></a></h3>
 <p>L’IHM standard fournie avec la solution logicielle Vitam ne propose pas, en accès, de restitution arborescente de l’ensemble des fonds. Au terme de la Version 5.RC, l’APP VitamUI « Recherche et consultation des archives » propose une arborescence limitée aux unités archivistiques de type « Arbre de positionnement » et « Plan de classement » et à un fonctionnement par facette.</p>
 <p>Il est conseillé d’ajouter des fonctionnalités dans l’interface d’accès aux archives :</p>
 <ul class="simple">
@@ -1147,10 +1148,10 @@ Ces mises à jour sont réalisées instantanément dans la solution logicielle V
 </ul>
 </section>
 <section id="comment-supprimer-des-archives-entrees-par-erreur-dans-le-systeme">
-<h3><span class="section-number">3.4.8. </span>Comment supprimer des archives entrées par erreur dans le système ?<a class="headerlink" href="#comment-supprimer-des-archives-entrees-par-erreur-dans-le-systeme" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">2.4.8. </span>Comment supprimer des archives entrées par erreur dans le système ?<a class="headerlink" href="#comment-supprimer-des-archives-entrees-par-erreur-dans-le-systeme" title="Lien vers cette rubrique"></a></h3>
 <p>Il peut arriver qu’un paquet d’archives soit entré par erreur dans le système ou nécessite des corrections hors système. Il faut alors supprimer ces archives, avant, le cas échéant, de les transférer à nouveau dans la solution logicielle Vitam.</p>
 <section id="pour-des-unites-de-type-standard-et-plan-de-classement">
-<h4><span class="section-number">3.4.8.1. </span>Pour des unités de type « Standard » et « Plan de classement »<a class="headerlink" href="#pour-des-unites-de-type-standard-et-plan-de-classement" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">2.4.8.1. </span>Pour des unités de type « Standard » et « Plan de classement »<a class="headerlink" href="#pour-des-unites-de-type-standard-et-plan-de-classement" title="Lien vers cette rubrique"></a></h4>
 <p>Avant toute procédure de suppression, le référentiel des règles de gestion doit disposer en prérequis d’une règle de type « AppraisalRule », avec pour caractéristiques :</p>
 <ul class="simple">
 <li><p>RuleType : AppraisalRule,</p></li>
@@ -1171,14 +1172,14 @@ Ces mises à jour sont réalisées instantanément dans la solution logicielle V
 </ul>
 </section>
 <section id="pour-des-unites-archivistiques-de-type-arbre-de-positionnement">
-<h4><span class="section-number">3.4.8.2. </span>Pour des unités archivistiques de type « Arbre de positionnement »<a class="headerlink" href="#pour-des-unites-archivistiques-de-type-arbre-de-positionnement" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">2.4.8.2. </span>Pour des unités archivistiques de type « Arbre de positionnement »<a class="headerlink" href="#pour-des-unites-archivistiques-de-type-arbre-de-positionnement" title="Lien vers cette rubrique"></a></h4>
 <p>Avant toute procédure de suppression d’une unité de type « Arbre de positionnement », il faut veiller à déplacer vers un autre niveau de description les unités archivistiques qui lui sont associées à des niveaux inférieurs.</p>
 <p><strong>Point d’attention :</strong> Contrairement aux unités archivistiques de type « Standard » et « Plan de classement », une unité archivistique de type « Arbre de positionnement » ne dispose pas de règles de gestion. Il est de fait possible de traiter ce type d’unité archivistique via les opérations d’analyse et d’action d’élimination sans lui avoir au préalable ajouté des règles de gestion.</p>
 <p>Il est ensuite possible de procéder à l’action d’élimination. Le seul contrôle effectué par cette opération est la vérification de l’absence d’unités archivistiques de niveau inférieur à l’unité qu’on souhaite supprimer.</p>
 </section>
 </section>
 <section id="faut-il-archiver-des-journaux-en-plus-des-archives">
-<h3><span class="section-number">3.4.9. </span>Faut-il archiver des journaux en plus des archives ?<a class="headerlink" href="#faut-il-archiver-des-journaux-en-plus-des-archives" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">2.4.9. </span>Faut-il archiver des journaux en plus des archives ?<a class="headerlink" href="#faut-il-archiver-des-journaux-en-plus-des-archives" title="Lien vers cette rubrique"></a></h3>
 <p>Dans le cadre d’un projet de transfert d’archives, les unités archivistiques peuvent être associées à des éléments de journalisation, issus d’un applicatif à archiver, d’un SAE en cours de décommissionnement, d’un SAE gérant de l’archivage intermédiaire.</p>
 <p>La solution logicielle Vitam permet de les récupérer lors du transfert d’archives sous plusieurs formes en fonction de la manière dont on souhaite les exploiter :</p>
 <table class="docutils align-default">
@@ -1387,8 +1388,8 @@ Ces mises à jour sont réalisées instantanément dans la solution logicielle V
           </div>
 
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
-        <a href="gel.html" class="btn btn-neutral float-left" title="2. Le gel d’archives avec la solution logicielle Vitam" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
-        <a href="gestion_habilitations.html" class="btn btn-neutral float-right" title="4. Gestion des habilitations" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="organisation_information.html" class="btn btn-neutral float-left" title="1. Organisation de l’information" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="modele_de_donnees.html" class="btn btn-neutral float-right" title="3. Modèle de données" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
