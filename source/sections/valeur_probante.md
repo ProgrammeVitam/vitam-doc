@@ -8,16 +8,16 @@ Introduction
 
 |Document |Date de la version|Remarques|
 |:---------------:|:-----:|:-----:|
-|NF Z 42‑013 – Archivage électronique – recommandations et exigences|30/09/2020||
-|NF Z 42‑020 – Spécifications fonctionnelles d’un composant Coffre-Fort Numérique destiné à la conservation d’informations numériques dans des conditions de nature à en garantir leur intégrité dans le temps|07/2012||
-|GA Z42-019 – Guide d’application de la NF Z 42‑013 (Archivage électronique – Spécifications relatives à la conception et à l'exploitation de systèmes informatiques en vue d’assurer la conservation et l’intégrité des documents stockés dans ces systèmes)|06/2010|Cette nouvelle version du SEDA est intégrée à la solution logicielle Vitam à partir de la V6.RC.|
+|NF Z 42-013 – Archivage électronique – recommandations et exigences|30/09/2020||
+|NF Z 42-020 – Spécifications fonctionnelles d’un composant Coffre-Fort Numérique destiné à la conservation d’informations numériques dans des conditions de nature à en garantir leur intégrité dans le temps|07/2012||
+|GA Z42-019 – Guide d’application de la NF Z 42-013 (Archivage électronique – Spécifications relatives à la conception et à l'exploitation de systèmes informatiques en vue d’assurer la conservation et l’intégrité des documents stockés dans ces systèmes)|06/2010|Cette nouvelle version du SEDA est intégrée à la solution logicielle Vitam à partir de la V6.RC.|
 |[Vitam – Gestion de la préservation](./preservation.md)||Le document apporte des précisions sur le comportement de l’opération permettant de générer un relevé de valeur probante.|
 
 ### Présentation du document
 
 La conservation de la valeur probante est un sujet central d’un système d’archivage électronique. L’objectif est de rendre prouvable toute opération effectuée sur toute unité archivistique ou tout objet qui lui est associé. Toutefois, vu les volumétries envisagées dans les implémentations de la solution logicielle Vitam, il est illusoire de gérer ceci objet par objet, en mettant en œuvre des principes cryptographiques (signatures des objets, des actions unitaires, etc.) ; cela induirait une gestion lourde et porterait même des risques d’écroulement de confiance en cas de corruption de quelques clés. La sécurité d’un SAE doit être systémique, c’est-à-dire reposer sur un faisceau d’éléments redondants dont la modification simultanée et cohérente est impossible, ou plus exactement non réalisable en pratique. Les journaux constituent un élément central de cette sécurité systémique.
-Le cadre fourni pour la conservation de la valeur probante par les normes NF Z 42‑013, NF Z 42‑020 mais aussi le guide d’application GA Z42-019, a été pris en compte et complété dans la solution logicielle Vitam.
-Ce document présente rapidement, d’un point de vue fonctionnel, le mécanisme de journalisation métier et de sécurisation de ces journaux qui est une brique essentielle de la conservation de la valeur probante dans la solution logicielle Vitam . Il décrit aussi le « relevé de valeur probante », attestation au sens de la NF Z 42‑013 de la conservation de la valeur probante qui peut être obtenue via une API. Ce document devra être enrichi au fur et à mesure de l’avancement des travaux sur la gestion de la preuve.
+Le cadre fourni pour la conservation de la valeur probante par les normes NF Z 42-013, NF Z 42-020 mais aussi le guide d’application GA Z42-019, a été pris en compte et complété dans la solution logicielle Vitam.
+Ce document présente rapidement, d’un point de vue fonctionnel, le mécanisme de journalisation métier et de sécurisation de ces journaux qui est une brique essentielle de la conservation de la valeur probante dans la solution logicielle Vitam . Il décrit aussi le « relevé de valeur probante », attestation au sens de la NF Z 42-013 de la conservation de la valeur probante qui peut être obtenue via une API. Ce document devra être enrichi au fur et à mesure de l’avancement des travaux sur la gestion de la preuve.
 
 Journaux
 -----
@@ -52,7 +52,7 @@ La sécurisation des journaux consiste à apporter de la sécurité cryptographi
 
 Voici quelques éléments pris en compte dans la conception de cette sécurisation :
 1. Le guide GA Z 42-019 demande explicitement (cf 2.2.8.1.b) un chaînage des journaux, celui-ci est mis en œuvre.
-2. La norme NF Z 42‑013 demande aussi un horodatage au moins toutes les 24 heures. Un fichier spécifique est généré avec toutes les lignes présentes dans le journal depuis la dernière sécurisation. Ce fichier est horodaté sûrement avec un tampon RFC 3161. Cette opération dont le délai est paramétrable doit être faite pour être conforme à la norme au moins une fois par 24 heures.
+2. La norme NF Z 42-013 demande aussi un horodatage au moins toutes les 24 heures. Un fichier spécifique est généré avec toutes les lignes présentes dans le journal depuis la dernière sécurisation. Ce fichier est horodaté sûrement avec un tampon RFC 3161. Cette opération dont le délai est paramétrable doit être faite pour être conforme à la norme au moins une fois par 24 heures.
 3. La sécurité d’un tampon d’horodatage même ancien (plus que sa durée de validité cryptographique) peut être assurée par le chaînage et la vérification de la chaîne jusqu’à un tampon valide. Pour raccourcir ce parcours, le chaînage est fait avec des journaux du mois et de l’année précédents.
 4. Il est utile de pouvoir prouver une ligne d’un journal sans devoir montrer les autres, non seulement pour des raisons de poids de données à transmettre pour une vérification de l’ensemble des pièces, mais aussi pour des raisons de confidentialité. Un mécanisme d’arbre de Merkle[^2] est mis en œuvre pour rendre prouvable chaque ligne indépendamment des autres.
 De fait, la conjonction du chaînage et de l’arbre de Merkle constituent des principes des blockchains dont l’usage grandissant permet de garantir l’efficacité.  
@@ -326,6 +326,10 @@ La solution logicielle Vitam permet de lancer des opérations de génération de
 - depuis le panier de l’IHM démo sur un lot d’archives ;
 - depuis l’APP Relevé de valeur probante de VitamUI, à partir de l’identifiant technique d’un objet technique ;
 - par l’API, au moyen d’une requête DSL.
+
+Optionnellement, il est possible de lancer l'opération sur un document signé et ses pièces détachées au moyen d'un paramètre disponible :
+- depuis l’APP Relevé de valeur probante de VitamUI ;
+- par l’API.
 
 Il s’agit d’une opération d’audit, tracée dans le journal des opérations (« EXPORT_PROBATIVE_VALUE »). Le relevé de valeur probante est associé à cette opération sous la forme d’un fichier :
 - disponible au format JSON depuis l’IHM démo ou l’API,

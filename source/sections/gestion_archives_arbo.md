@@ -11,6 +11,7 @@ Introduction
 |NF Z 44022 – MEDONA – Modélisation des données pour l’archivage|18/01/2014||
 |Standard d’échange de données pour l’archivage – SEDA – v. 2.1|06/2018||
 |Standard d’échange de données pour l’archivage – SEDA – v. 2.2|02/2022|Cette nouvelle version du SEDA est intégrée à la solution logicielle Vitam à partir de la V6.RC.|
+|Standard d’échange de données pour l’archivage – SEDA – v. 2.3|06/2024||
 |[Vitam – Structuration des Submission Information Package (SIP)](./SIP.md)|||
 |[Vitam – Structuration des Dissemination Information Package (DIP)](./DIP.md|||
 |[Vitam – Guide d’utilisation de ReSIP](./resip.md)|||
@@ -86,7 +87,7 @@ Des unités archivistiques issues d’un même SIP peuvent être rattachées à 
 ##### à des fins de transfert
 
 Les arbres de positionnement et les plans de classement sont importés dans la solution logicielle VITAM sous la forme de SIP contenant un bordereau de transfert (message ArchiveTransfer), mais sans aucun objet associé, contrairement aux unités archivistiques standards[^2].
-Le SIP peut être exprimé en SEDA 2.1 ou en SEDA 2.2.
+Le SIP peut être exprimé en SEDA 2.1, 2.2 ou 2.3.
 
 Chaque niveau d’arborescence est signalé et décrit dans une unité archivistique (ou <ArchiveUnit>). Pour chacun, il est possible de renseigner les éléments suivants :
 -  dans le sous-bloc Management : 
@@ -126,7 +127,7 @@ Quel que soit leur type, les unités archivistiques sont exportables depuis la s
 
 Si on n’exporte que des unités archivistiques de type « arbre de positionnement » ou « plan de classement », aucun objet ne sera associé. Mais, si l’export inclut des unités archivistiques standards, il peut y en avoir.
 
-L’export peut être exprimé en SEDA 2.1 ou en SEDA 2.2.
+L’export peut être exprimé en SEDA 2.1, 2.2 ou 2.3.
 
 Chaque niveau d’arborescence est signalé et décrit dans une unité archivistique (ou <ArchiveUnit>). Pour chacun, il est possible de renseigner les éléments suivants :
 -  dans le sous-bloc Management : 
@@ -162,7 +163,7 @@ Quel que soit leur type, les unités archivistiques sont transférables depuis l
 
 Si on n’exporte que des unités archivistiques de type « arbre de positionnement » ou « plan de classement », aucun objet ne sera associé. Mais, si l’export inclut des unités archivistiques standards, il peut y en avoir.
 
-L’export peut être exprimé en SEDA 2.1 ou en SEDA 2.2.
+L’export peut être exprimé en SEDA 2.1, 2.2 ou 2.3.
 
 Chaque niveau d’arborescence est signalé et décrit dans une unité archivistique (ou <ArchiveUnit>). Pour chacun, il est possible de renseigner les éléments suivants :
 -  dans le sous-bloc Management : 
@@ -273,6 +274,8 @@ La solution logicielle Vitam permet également de :
 
 Toutes ces opérations sont tracées dans le journal des opérations (opération de type « MASTERDATA » ou « INGEST »).
 
+Chacune d'entre elles est accompagnée d'un rapport ou accusé de réception (message ArchiveTransferReply), qui renvoie la liste des archives transférées dans le système en cas de succès ou d'avertissement ou des précisions sur les erreurs rencontrées. Il est possible de personnaliser cet accusé de réception au moyen d'identifiants métier au moyen d'un paramétrage dans un fichier de configuration.
+
 **Point d’attention :**  
 Pour les SIP volumineux, la solution logicielle Vitam propose une API spécifique permettant d’importer ce type de SIP[^12].
 
@@ -335,6 +338,7 @@ La solution logicielle Vitam permet de générer un Dissemination Information Pa
 Ce DIP prend la forme d’un message ArchiveDeliveryRequestReply[^14], contenant :
 -  soit l’ensemble du message : on parle alors de « DIP full »,
 -  soit uniquement le paquet d’archives (ou DataObjectPackage) : il s’agit d’un « DIP minimal ».
+Il peut être exprimé en SEDA 2.1, en SEDA 2.2 ou en SEDA 2.3.
 
 Il peut contenir :
 -  soit l’ensemble des métadonnées des unités archivistiques et, le cas échéant, des groupes d’objets techniques associés, journaux du cycle de vie compris,
@@ -347,6 +351,12 @@ Elle peut également être journalisée dans le log des accès, si l’option es
 **Point d’attention :** 
 -  le DIP ne distingue pas les unités archivistiques standards des unités archivistiques de plan de classement et d’arbre de positionnement ; l’export de groupes d’objets techniques n’est possible que dans les cas où l’export inclus des unités archivistiques standards.
 -  Il est possible de limiter le poids des DIP au moyen de la définition d’un seuil au niveau de la requête ou au moyen d’un paramétrage de seuil de plate-forme et/ou de tenant dans un fichier de configuration.
+
+L’APP VitamUI « Recherche, consultation et gestion des archives » permet de lancer un « DIP full » après sélection d'un lot d'archives et de paramètres :
+- choix de la version du SEDA (SEDA 2.1, 2.2 ou 2.3),
+- présence des journaux du cycle de vie,
+- option sur les objets à exporter ou à exclure de l'export.
+Ce DIP est alors téléchargeable depuis l'APP « Journal des opérations ».
 
 ##### Droits d’accès aux unités archivistiques
 
@@ -363,6 +373,37 @@ Un contrat d’accès permet également de :
 -  octroyer des droits de lecture et d’écriture. Les droits d’écriture correspondent, par exemple, aux possibilités de modifier les métadonnées de description et de gestion des unités archivistiques,
 -  restreindre le droit d’écriture aux seules métadonnées de description,
 -  activer la génération de logs en cas d’accès aux objets binaires conservés sur la plate-forme[^17].
+
+#### Dans les groupes d’objets techniques
+
+Seules les unités archivistiques de type « Standard » peuvent être associées à un groupe d’objets techniques et à 1 à N fichier numérique.
+Par défaut, l’utilisateur peut accéder à un groupe d’objets techniques à partir :
+-  d’une recherche sur les unités archivistiques, via l’(les) unité(s) archivistique(s) de type « Standard » qui le référence(nt) ;
+-  d’une recherche sur les groupes d’objets techniques.
+
+Il est possible de :
+-  limiter le nombre de résultats retournés au moyen d’un seuil de requête ;
+-  interdire que les valeurs de certaines métadonnées soient retournées dans les résultats, au moyen d’un paramétrage configurable par tenant, le nom du fichier (« Filename ») étant exclu par défaut ;
+-  obtenir :
+	-  une liste de résultats, incluant l’ensemble des métadonnées des groupes d’objets techniques ou une sélection,
+	-  un résultat par facettes (nombre d’occurrences pour une métadonnée donnée),
+	-  le nombre exact de résultats, s’il dépasse les 10 000 unités d’archives, au moyen d’un paramétrage de la plate-forme.
+
+La solution logicielle Vitam permet également de rechercher au-delà de 10 000 groupes d’objets techniques au moyen d’un service de « scroll ». Ce service est configurable en termes de nombre de nombre de résultats retournés et de nombre de requêtes quotidiennes. Un suivi de son utilisation (nombre de requêtes passées et date de dernière utilisation) est disponible dans la base de données MongoDB, dans la collection « Snapshot », sous la forme d’enregistrements au format JSON.
+
+**Point d’attention :** le seuil de résultats supporté par le moteur d’indexation Elastic Search est de 10 000 unités archivistiques. Il est de fait recommandé d’utiliser des requêtes ne dépassant pas les 10 000 résultats.
+
+Il est également possible de rechercher des objets en fournissant leur identifiant pérenne en paramètre de recherche.
+
+L’affichage des groupes d’objets techniques est disponible :
+-  depuis l’IHM démo, et plus particulièrement le détail d’une unité archivistique de type « Standard » ;
+-  depuis l’APP de VitamUI «  Recherche et consultation des archives », et plus particulièrement le détail d’une unité archivistique de type « Standard ».
+L’IHM démo propose également une recherche sur les groupes d’objets techniques à partir des critères suivants :
+-  format ;
+-  usage ;
+-  volumétrie.
+
+![IHM Démo - registre des fonds](./medias/archives_arbo/gotsearch.png)
 
 #### Dans le registre des fonds
 
@@ -458,7 +499,9 @@ Il s’agit d’une opération d’administration de type « ELIMINATION_ACTION
 -  l’opération est en succès si toutes les archives ont été éliminées ;
 -  si certaines archives ne sont pas éliminables ou si le caractère éliminable d’une archives n’est pas décidable, l’opération sera en avertissement, mais le processus d’élimination ne sera pas interrompu.
 
-Le rapport d’élimination, associé à l’opération, énumère les motifs liés à l’absence d’élimination de certaines archives.  
+Le rapport d’élimination, associé à l’opération, énumère les motifs liés à l’absence d’élimination de certaines archives.
+Il est possible de personnaliser ce rapport au moyen d'identifiants métier au moyen d'un paramétrage dans un fichier de configuration.
+
 L’opération donne lieu à l’élimination des unités archivistiques et des groupes d’objets techniques associés.  
 Cette élimination est retranscrite dans le registre des fonds[^32].
 
@@ -468,7 +511,7 @@ Toutes les unités archivistiques standards et de plan de classement, qui dispos
 
 La solution logicielle Vitam permet de constituer, à partir d’une sélection d’unités archivistiques, des DIP de transfert destinés à être pris en charge par une plate-forme.
 
-Ce DIP prend la forme d’un message ArchiveTransfer[^33], contenant métadonnées et journaux du cycle de vie.
+Ce DIP prend la forme d’un message ArchiveTransfer[^33], contenant métadonnées et journaux du cycle de vie. Il peut être exprimé en SEDA 2.1, en SEDA 2.2 ou en SEDA 2.3.
 
 Il s’agit d’une opération d’administration de type « ARCHIVE_TRANSFER », tracée dans le journal des opérations de la solution logicielle Vitam[^34]. Au terme de la version 6, cette opération inclut l’empreinte du DIP calculée en SHA-512.
 
@@ -478,6 +521,14 @@ Le transfert génère un accusé de prise en charge dans le système d’archiva
 Il s’agit d’une opération d’administration de type « TRANSFER_REPLY », tracée dans le journal des opérations de la solution logicielle Vitam[^35].
 
 ![Modélisation des opérations et des objets échangés](./medias/archives_arbo/modelisation.png)
+
+L’APP VitamUI « Recherche, consultation et gestion des archives » permet de lancer :
+- un « DIP de transfert » après sélection d'un lot d'archives et de paramètres :
+	- choix de la version du SEDA (SEDA 2.1, 2.2 ou 2.3),
+	- présence des journaux du cycle de vie,
+	- option sur les objets à exporter ou à exclure de l'export.
+Ce DIP est alors téléchargeable depuis l'APP « Journal des opérations ».
+- un acquittement du transfert.
 
 #### Sécurité et préservation des archives
 

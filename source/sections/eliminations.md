@@ -13,6 +13,7 @@ Introduction
 |NF Z 44022 – MEDONA – Modélisation des données pour l’archivage|18/01/2014||
 |Standard d’échange de données pour l’archivage – SEDA – v. 2.1|06/2018||            
 |Standard d’échange de données pour l’archivage – SEDA – v. 2.2|02/2022|Cette nouvelle version du SEDA est intégrée à la solution logicielle Vitam à partir de la V6.RC.|
+|Standard d’échange de données pour l’archivage – SEDA – v. 2.3|06/2024|Cette nouvelle version du SEDA est intégrée à la solution logicielle Vitam à partir de la V7.0|
 
 ### Présentation du document
 
@@ -22,7 +23,7 @@ Ce document s’articule autour des axes suivants :
 - calcul des règles et détermination du caractère éliminable des unités archivistiques,
 - modalités d’une campagne d’évaluation du caractère éliminable des unités archivistiques (analyse),
 - modalités d’une campagne de mise en œuvre de l’élimination (action).
-Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 7.0 (octobre 2023). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
+Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 8.0 (octobre 2024). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
 
 Détermination du caractère éliminable d’une unité archivistique avec la solution logicielle Vitam
 ----
@@ -63,9 +64,11 @@ Réalisation d’une élimination avec la solution logicielle Vitam
 
 ## Configuration de la plate-forme
 
+### Personnalisation des rapports d'élimination
+
 Au terme de la version 7.0, la solution logicielle Vitam permet de personnaliser les rapports produits à la suite d'une opération d'élimination.
 
-Cette configuration, optionnelle, est établie lors du paramétrage initial de la plate-forme par les administrateurs – fonctionnel pour la définition du besoin et technique1 pour la saisie réelle des informations – de chaque implémentation de la solution logicielle Vitam et définit, pour chaque tenant les informations complémentaires à faire apparaître dans les rapports, si elles sont présentes dans la base de données.
+Cette configuration, optionnelle, est établie lors du paramétrage initial de la plate-forme par les administrateurs – fonctionnel pour la définition du besoin et technique pour la saisie réelle des informations – de chaque implémentation de la solution logicielle Vitam et définit, pour chaque tenant les informations complémentaires à faire apparaître dans les rapports, si elles sont présentes dans la base de données.
 Il est possible d'ajouter dans le rapport, pour chaque unité archivistique, les éléments suivant :
 - "#version" : version de l'unité archivistique,
 - "#unitups" : unité(s) archivistique(s) parente(s),
@@ -78,6 +81,8 @@ Il est possible d'ajouter dans le rapport, pour chaque unité archivistique, les
 - "ArchivalAgencyArchiveUnitIdentifier: identifiant(s) émanant du service d'archives,
 - "OriginatingAgencyArchiveUnitIdentifier: identifiant(s) du service producteur,
 - "TransferringAgencyArchiveUnitIdentifier: identifiant(s) du service responsable du transfert.
+
+Point d’attention : Cette configuration n'inclut pas les identifiants pérennes. S'ils référencent une archive éliminée, ils seront systématiquement enregistrés dans le rapport d'élimination.
 
 Le fichier de configuration (vitam.conf) se présente comme suit (exemple fictif) :
 ```
@@ -98,7 +103,23 @@ Dans l’exemple ci-dessus :
     • sur le tenant 1 :
         ◦ le rapport d'élimination pourra contenir la date de création et de dernière modification, ainsi que la position dans le plan de classement de chaque unité archivistique;
 	• sur le tenant 4 :
-        ◦ le rapport d'élimination pourra contenir l'identifiant émanant du service producteur.	
+        ◦ le rapport d'élimination pourra contenir l'identifiant émanant du service producteur.
+
+### Préservation des identifiants pérennes
+
+Au terme de la version 7.1, la solution logicielle Vitam permet de conserver ces identifiants pérennes dans la base de données MongoDB, malgré l'élimination des archives qu'ils référençaient.
+
+Cette configuration, optionnelle, est établie lors du paramétrage initial de la plate-forme par les administrateurs – fonctionnel pour la définition du besoin et technique pour la saisie réelle des informations – de chaque implémentation de la solution logicielle Vitam et définit, pour l'ensemble de la plate-forme, la fréquence d'enregistrement de ces informations dans le système.
+
+Le fichier de configuration (metadata.conf) se présente comme suit (exemple fictif) :
+```
+# Persistent Identifier Reconstruction configuration
+persistentIdentifierReconstructionDelayInMinutes: 5
+persistentIdentifierReconstructionThreadPoolSize: 10
+PersistentIdentifierReconstructionBulkSize: 1000
+```
+
+Dans l’exemple ci-dessus, cet enregistrement s'effectue dans un délai de 5 minutes suivant l'opération d'élimination.	
 
 ### Lancement d’une campagne d’évaluation des éliminables (analyse)
 
@@ -336,6 +357,45 @@ Il en va de même pour le détail d’une opération de préservation dans le ca
 Pour les fonds symboliques, au moment du calcul périodique des fonds symboliques de la base, les AU, GOT et OT éliminés seront décomptés et la volumétrie sera mise à jour. Depuis la notice du service agent, l’utilisateur peut accéder à l’historique des rattachements et consulter sur une période donnée les variations à la hausse ou à la baisse des fonds symboliques pour ce producteur.  
 
 **Point d’attention :** le calcul des AU, GOT et OT rattachés à un producteur au titre de son fonds symbolique n’est effectué qu’une fois par vingt-quatre heures (sauf paramétrage différent de la plate-forme). Dans ces conditions, si sur la même période de vingt-quatre heures l’archiviste effectue un ingest pour 3 AU et une élimination pour 3 AU, le total des symboliques entre deux calculs n’aura pas évolué.
+
+### Préservation des identifiants pérennes
+
+Si la plate-forme a été configurée pour conserver les identifiants pérennes qui référencent des unités archivistiques et/ou des objets éliminés, les opérations d'élimination donneront lieu à l'enregistrement d'informations liés à l'élément éliminé dans la collection PurgedPersistentIdentifier disponible dans la base Metadata.
+
+Les informations enregistrées sont les suivantes :
+- informations relatives à l'identification pérenne,
+- le type d'objet éliminé (unité archivistique ou objet technique),
+- l'identifiant du groupe d'objets techniques éliminé si l'objet identifié est un objet technique,
+- le type d'opération ayant entrainé la suppression (dans ce cas précis, l'élimination), son identifiant et sa date.
+
+#### Exemple de JSON stocké en base comprenant l’exhaustivité des champs
+
+```json
+{
+    _id: 'aeaqaaaaaeeci65iabqykamny5hmb5yaaaba',
+    persistentIdentifier: [
+        {
+            PersistentIdentifierType: 'doi',
+            PersistentIdentifierOrigin: 'OriginatingAgency',
+            PersistentIdentifierReference: 'Identifier0',
+            PersistentIdentifierContent: 'doi:10.1522/cla.ada.con'
+        }
+    ],
+    _tenant: 1,
+    _v: 0,
+    type: 'Unit',
+    idObjectGroup: 'aebaaaaaaeeci65iabqykamny5hmb2qaaaaq',
+    archivalAgencyIdentifier: null,
+    opId: 'aeeaaaaaageci65iabusuamny5hvvkiaaaaq',
+    opType: 'ELIMINATION_ACTION',
+    opEndDate: '2024-02-20T16:18:05.961',
+    lastPersistentDate: '2024-02-20T16:30:00.210'
+}
+```
+
+**Point d'attention :** L'enregistrement de ces informations ne suit pas immédiatement l'opération d'élimination. Il se fait suivant une fréquence déterminée à l'avance dans un fichier de configuration.
+
+Il est ainsi possible d'effectuer une recherche sur un identifiant pérenne dont l'archives a été éliminé et de constater que l'archive n'est plus disponible pour cause d'élimination. Cette recherche peut s'opérer au moyen des API ou depuis d'APP "Recherche, consultation et gestion des archives" de VitamUI.
 
 Conseils de mise en œuvre
 ---

@@ -1216,7 +1216,9 @@ L’export s’avère nécessaire en vue de :
 - corriger une coquille au niveau du bloc CodeListVersions ;
 - obtenir un fichier RNG conforme au SEDA 2.2 ou 2.3 (pour les versions antérieures à la version 8.0) ;
 - intégrer un certain nombre d’éléments non supportés par l’APP Profils documentaires au terme de la version 8.0 (notamment les extensions).
+
 **Point d’attention :** Au terme de la version 8.0, PASTIS ne gère pas la mise à jour de fichier RNG intégrant des extensions. Il est recommandé de réimporter le fichier depuis l’APP Profils documentaires pour pouvoir l’exploiter.
+
 
 Pour apporter ces corrections au fichier exporté, il faut :
 - Ouvrir le fichier dans un éditeur de texte (ex : Notepad ++, Oxygen).

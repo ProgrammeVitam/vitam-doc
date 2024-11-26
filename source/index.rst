@@ -22,22 +22,23 @@ Documentation métier
    :caption: documentation métier
    :numbered:
 
-   sections/eliminations.md
-   sections/gel.md
-   sections/gestion_archives_arbo.md
-   sections/gestion_habilitations.md
-   sections/modele_de_donnees.md
-   sections/modele_de_workflow.md
-   sections/module_de_collecte.md
    sections/organisation_information.md
-   sections/ontologie.md
-   sections/preservation.md
-   sections/profil_archivage.md
-   sections/profil_unite_archivistique.md
-   sections/regles_gestion.md
-   sections/services_prod.md
+   sections/gestion_archives_arbo.md
+   sections/modele_de_donnees.md
    sections/SIP.md
    sections/DIP.md
+   sections/gestion_habilitations.md
+   sections/regles_gestion.md
+   sections/services_prod.md
+   sections/profil_archivage.md
+   sections/profil_unite_archivistique.md
+   sections/ontologie.md
+   sections/schema.md
+   sections/modele_de_workflow.md
+   sections/module_de_collecte.md
+   sections/eliminations.md
+   sections/gel.md
+   sections/preservation.md
    sections/stockage.md
    sections/transfert.md
    sections/valeur_probante.md
@@ -61,6 +62,7 @@ Outils connexes
 
    sections/resip.md
    sections/resip_faq.md
+   sections/pastis_standalone.md
 
 Chantier préservation
 ======

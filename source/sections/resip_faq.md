@@ -10,7 +10,8 @@ Résumé
 |:---------------:|:-----:|:-----:|
 |NF Z 44022 – MEDONA – Modélisation des données pour l’archivage       |18/01/2014| |         
 |Standard d’échange de données pour l’archivage – SEDA – v. 2.1| 06/2018| |
-|Standard d’échange de données pour l’archivage – SEDA – v. 2.2        | 02/2022| Cette nouvelle version du SEDA est intégrée à la solution logicielle Vitam à partir de la V6.RC. |
+|Standard d’échange de données pour l’archivage – SEDA – v. 2.2| 02/2022| |
+|Standard d’échange de données pour l’archivage – SEDA – v. 2.3| 06/2024|Cette nouvelle version du SEDA n'est pas encore intégrée à ReSIP.|
 |[Vitam – ReSIP](./resip.md)| | |       
 
 
@@ -30,7 +31,7 @@ Ce document s’articule autour des axes suivants :
 
 Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
 
-**Attention :** la consultation du présent document, en cours de construction au terme de la version 7.0 (octobres 2023) doit s’accompagner de la consultation du manuel ReSIP, qui décrit l’ensemble des fonctionnalités de la moulinette ReSIP.
+**Attention :** la consultation du présent document, en cours de construction au terme de la version 8.0 (octobre 2024) doit s’accompagner de la consultation du manuel ReSIP, qui décrit l’ensemble des fonctionnalités de la moulinette ReSIP.
 
 Présentation, installation, lancement et paramétrage de la moulinette ReSIP
 ----
