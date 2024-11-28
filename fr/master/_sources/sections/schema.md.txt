@@ -1,4 +1,4 @@
-schéma
+Schéma
 =====
 
 Introduction
@@ -13197,18 +13197,18 @@ Nota bene : cette liste n’est pas forcément exhaustive.
   ]
   ```
 
-[^1] : Pour plus de précisions, consulter la section 3. « Formalisation des vocabulaires du schéma » du présent document.
+[^1]: Pour plus de précisions, consulter la section 3. « Formalisation des vocabulaires du schéma » du présent document.
 
-[^2] : Ces vocabulaires sont détaillés dans la documentation [Modèle de données](modele_de_donnees.md).
+[^2]: Ces vocabulaires sont détaillés dans la documentation [Modèle de données](modele_de_donnees.md).
 
-[^3] : Seule la collection Unit peut faire l’objet d’ajout de nouveaux vocabulaires. Il n’est pas possible d’étendre les autres collections.
+[^3]: Seule la collection Unit peut faire l’objet d’ajout de nouveaux vocabulaires. Il n’est pas possible d’étendre les autres collections.
 
-[^4] : Le type d’indexation « GEO_POINT » n’est pas supporté dans le schéma.
+[^4]: Le type d’indexation « GEO_POINT » n’est pas supporté dans le schéma.
 
-[^5] : Pour plus d’informations sur la modélisation de cette collection, consulter le document [Modèle de données](./modele_de_donnees.md), chapitre « Collection Schema ».
+[^5]: Pour plus d’informations sur la modélisation de cette collection, consulter le document [Modèle de données](./modele_de_donnees.md), chapitre « Collection Schema ».
 
-[^6] : Le type d’indexation « GEO_POINT » n’est pas supporté dans le schéma.
+[^6]: Le type d’indexation « GEO_POINT » n’est pas supporté dans le schéma.
 
-[^7] : Pour plus d’informations sur le processus d’import du référentiel, consulter le document [Modèle de workflow](./modele_de_workflow.md), « Workflow d’administration d’un référentiel des vocabulaires du schéma ».
+[^7]: Pour plus d’informations sur le processus d’import du référentiel, consulter le document [Modèle de workflow](./modele_de_workflow.md), « Workflow d’administration d’un référentiel des vocabulaires du schéma ».
 
-[^8] : Les règles propres au nommage d’un vocabulaire sont définies dans la partie « Conseils de mise en œuvre » du présent document.
+[^8]: Les règles propres au nommage d’un vocabulaire sont définies dans la partie « Conseils de mise en œuvre » du présent document.

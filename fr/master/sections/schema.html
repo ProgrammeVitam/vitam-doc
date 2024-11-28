@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>12. schéma &mdash; Vitam documentation fonctionnelle</title>
+  <title>12. Schéma &mdash; Vitam documentation fonctionnelle</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=eea1f72d" />
@@ -68,7 +68,7 @@
 <li class="toctree-l1"><a class="reference internal" href="profil_archivage.html">9. Profils d’archivage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="profil_unite_archivistique.html">10. Profils d’unité archivistique</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ontologie.html">11. Ontologie</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">12. schéma</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">12. Schéma</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#introduction">12.1. Introduction</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#documents-de-reference">12.1.1. Documents de référence</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#presentation-du-document">12.1.2. Présentation du document</a></li>
@@ -116,10 +116,10 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#comment-utiliser-le-schema">12.5.6. Comment utiliser le schéma   ?</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id1">12.5.6.1. Administration du schéma</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9">12.5.6.1. Administration du schéma</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">12.5.7. Accès</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">12.5.7. Accès</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#annexe-1-vocabulaires-internes-du-schema-interne">12.6. Annexe 1 : Vocabulaires internes du schéma interne</a><ul>
@@ -201,7 +201,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active"><span class="section-number">12. </span>schéma</li>
+      <li class="breadcrumb-item active"><span class="section-number">12. </span>Schéma</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/sections/schema.md.txt" rel="nofollow"> Afficher la source de la page</a>
       </li>
@@ -214,7 +214,7 @@
            <div itemprop="articleBody">
              
   <section id="schema">
-<h1><span class="section-number">12. </span>schéma<a class="headerlink" href="#schema" title="Lien vers cette rubrique"></a></h1>
+<h1><span class="section-number">12. </span>Schéma<a class="headerlink" href="#schema" title="Lien vers cette rubrique"></a></h1>
 <section id="introduction">
 <h2><span class="section-number">12.1. </span>Introduction<a class="headerlink" href="#introduction" title="Lien vers cette rubrique"></a></h2>
 <section id="documents-de-reference">
@@ -272,11 +272,11 @@ Il a vocation à être amendé, complété et enrichi au fur et à mesure de la 
 <h2><span class="section-number">12.2. </span>Présentation de la notion de schéma<a class="headerlink" href="#presentation-de-la-notion-de-schema" title="Lien vers cette rubrique"></a></h2>
 <section id="quest-ce-quun-schema">
 <h3><span class="section-number">12.2.1. </span>Qu’est-ce qu’un schéma ?<a class="headerlink" href="#quest-ce-quun-schema" title="Lien vers cette rubrique"></a></h3>
-<p>Le schéma référence l’ensemble des vocabulaires ou métadonnées acceptés dans la solution logicielle Vitam pour décrire des archives (unités archivistiques et groupes d’objets techniques). Pour chacun de ces vocabulaires, il définit un chemin, ainsi que des informations utiles à leur utilisation par un front-office (informations relatives au type d’indexation, à sa traduction, son type (métadonnée descriptive, métadonnée de gestion, autre), la version du SEDA, sa taille[^1]).</p>
+<p>Le schéma référence l’ensemble des vocabulaires ou métadonnées acceptés dans la solution logicielle Vitam pour décrire des archives (unités archivistiques et groupes d’objets techniques). Pour chacun de ces vocabulaires, il définit un chemin, ainsi que des informations utiles à leur utilisation par un front-office (informations relatives au type d’indexation, à sa traduction, son type (métadonnée descriptive, métadonnée de gestion, autre), la version du SEDA, sa taille<a class="footnote-reference brackets" href="#id11" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>).</p>
 <p>Le schéma se compose :</p>
 <ul class="simple">
 <li><p>des vocabulaires définis dans le Standard d’échanges de données pour l’archivage (SEDA), inclus par défaut. Ces vocabulaires correspondent aux éléments XML présents dans les messages du SEDA (ArchiveTransfer en particulier) ;</p></li>
-<li><p>des vocabulaires propres à la solution logicielle Vitam, inclus par défaut[^2] ;</p></li>
+<li><p>des vocabulaires propres à la solution logicielle Vitam, inclus par défaut<a class="footnote-reference brackets" href="#id12" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> ;</p></li>
 <li><p>de vocabulaires non gérés par les deux précédents items et ajoutés pour répondre à un besoin particulier du service utilisateur, en particulier enrichir les descriptions, en entrée ou en accès.</p></li>
 </ul>
 <p>Ces vocabulaires peuvent être utilisés pour décrire :</p>
@@ -341,7 +341,7 @@ Exemple : sont présents dans le schéma les vocabulaires « Keyword », « 
 <li><p>éviter les conflits en interdisant la définition d’un nouveau vocabulaire avec le même chemin qu’un vocabulaire préexistant ;</p></li>
 <li><p>connaître le type d’indexation des différents vocabulaires proposé par défaut par la solution logicielle Vitam, qu’ils soient de type « feuille » ou de type « objet » ;</p></li>
 <li><p>pour un profil d’unité archivistique, connaître les vocabulaires et leur type, afin de rédiger un profil conforme aux éléments indexés et gérés par la solution logicielle Vitam ;</p></li>
-<li><p>le cas échéant, ajouter des vocabulaires afin d’enrichir la description des unités archivistiques[^3] ;</p></li>
+<li><p>le cas échéant, ajouter des vocabulaires afin d’enrichir la description des unités archivistiques<a class="footnote-reference brackets" href="#id13" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a> ;</p></li>
 <li><p>restituer l’ensemble de ces métadonnées dans une interface et les rendre disponibles pour une recherche.</p></li>
 </ul>
 </section>
@@ -499,7 +499,7 @@ Chaque vocabulaire de type « objet » :</p></li>
 <td class="text-center"><p><strong>version du SEDA</strong> dans laquelle le vocabulaire peut être utilisé (champ facultatif).<br>La valeur est fournie par la solution logicielle Vitam pour les seuls vocabulaires internes.</p></td>
 </tr>
 <tr class="row-odd"><td class="text-center"><p>Type</p></td>
-<td class="text-center"><p><strong>type d’indexation</strong> du vocabulaire, correspondant à un type attendu par le moteur Elastic Search (champ obligatoire).<br>-  Dans le cas des vocabulaires de type « feuille », le type est hérité de l’ontologie. Les valeurs acceptées sont : DATE, TEXT, KEYWORD, BOOLEAN, LONG, DOUBLE, ENUM[^4].<br>-  Dans le cas des vocabulaires de type « objet », la valeur acceptée est : OBJECT.</p></td>
+<td class="text-center"><p><strong>type d’indexation</strong> du vocabulaire, correspondant à un type attendu par le moteur Elastic Search (champ obligatoire).<br>-  Dans le cas des vocabulaires de type « feuille », le type est hérité de l’ontologie. Les valeurs acceptées sont : DATE, TEXT, KEYWORD, BOOLEAN, LONG, DOUBLE, ENUM<a class="footnote-reference brackets" href="#id14" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a>.<br>-  Dans le cas des vocabulaires de type « objet », la valeur acceptée est : OBJECT.</p></td>
 </tr>
 <tr class="row-even"><td class="text-center"><p>TypeDetail</p></td>
 <td class="text-center"><p><strong>type détaillé d’indexation</strong>, uniquement présent pour les vocabulaires de type « feuille » (champ obligatoire).<br>Les valeurs acceptées sont : STRING, ENUM, DATETIME, BOOLEAN, LONG, DOUBLE.</p></td>
@@ -673,7 +673,7 @@ Un bordereau de transfert utilise de fait les vocabulaires définis dans l’ont
 </ul>
 <section id="administration-du-schema">
 <h3><span class="section-number">12.4.1. </span>Administration du schéma<a class="headerlink" href="#administration-du-schema" title="Lien vers cette rubrique"></a></h3>
-<p>La solution logicielle Vitam intègre un schéma interne, administrable par un utilisateur doté des droits adéquats (administrateur fonctionnel et administrateur technique) et gérée dans une collection particulière pour les seuls vocabulaires externes[^5].<br />
+<p>La solution logicielle Vitam intègre un schéma interne, administrable par un utilisateur doté des droits adéquats (administrateur fonctionnel et administrateur technique) et gérée dans une collection particulière pour les seuls vocabulaires externes<a class="footnote-reference brackets" href="#id15" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a>.<br />
 Ce référentiel interne à la solution logicielle Vitam a pour vocation d’être une copie locale d’un référentiel administré dans le front office des plates-formes d’archivage implémentant cette dernière.<br />
 Le schéma interne est multi-tenant et peut avoir une gestion par tenant pour les vocabulaires externes. De fait, il est administrable et journalisée depuis le tenant d’administration et peut l’être par tenant pour les vocabulaires externes.<br />
 Il est possible de réaliser les opérations présentées ci-dessous.</p>
@@ -827,7 +827,7 @@ L’ajout d’un vocabulaire externe est possible au moyen des API pour la colle
 <li><p>les informations optionnelles si elles n’ont pas été envoyées dans la solution logicielle Vitam, héritées de l’ontologie :
 - un intitulé (ShortName),
 - une description (Description),
-- le type d’indexation (Type) dont les valeurs peuvent être égales à « DATE », « TEXT », « KEYWORD », « BOOLEAN », « LONG », « DOUBLE », « ENUM »[^6] ;</p></li>
+- le type d’indexation (Type) dont les valeurs peuvent être égales à « DATE », « TEXT », « KEYWORD », « BOOLEAN », « LONG », « DOUBLE », « ENUM »<a class="footnote-reference brackets" href="#id16" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a> ;</p></li>
 <li><p>des informations générées systématiquement par la solution logicielle Vitam :</p>
 <ul>
 <li><p>un nom de vocabulaire (« FieldName »),</p></li>
@@ -875,7 +875,7 @@ L’ajout d’un vocabulaire externe est possible au moyen des API pour la colle
 <span class="w">    </span><span class="p">}</span>
 </pre></div>
 </div>
-<p>Il s’agit d’une opération d’administration (« MASTERDATA »), tracée dans le journal des opérations de la solution logicielle Vitam[^7].
+<p>Il s’agit d’une opération d’administration (« MASTERDATA »), tracée dans le journal des opérations de la solution logicielle Vitam<a class="footnote-reference brackets" href="#id17" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></a>.
 Les différentes versions du référentiel font l’objet d’une sauvegarde sur les offres de stockage utilisées par la solution logicielle Vitam.
 Lors de cette opération, l’opération peut aboutir aux statuts suivants :</p>
 <table class="docutils align-default">
@@ -892,7 +892,7 @@ Lors de cette opération, l’opération peut aboutir aux statuts suivants :</p
 <td class="text-center"><p>Sans journalisation :<br>– la valeur de la cardinalité est incorrecte.</p></td>
 </tr>
 <tr class="row-even"><td class="text-center"><p></p></td>
-<td class="text-center"><p>Avec journalisation :<br>– ajout d’un vocabulaire déjà présent dans le schéma ;<br>- ajout d’un vocabulaire de type « feuille » qui n’existe pas dans l’ontologie ;<br>- ajout d’un vocabulaire de type « feuille », associé à un vocabulaire de type « objet » qui n’a pas été préalablement créé dans le schéma ;<br>– ajout d’un vocabulaire dont le type d’indexation est « GEO_POINT » ;<br>- ajout d’un vocabulaire sans avoir défini un chemin (« Path ») ou une cardinalité  (« Cardinality »).<br>– ajout d’un vocabulaire dont l’identifiant ne correspond pas aux règles imposées par la solution logicielle Vitam[^8].</p></td>
+<td class="text-center"><p>Avec journalisation :<br>– ajout d’un vocabulaire déjà présent dans le schéma ;<br>- ajout d’un vocabulaire de type « feuille » qui n’existe pas dans l’ontologie ;<br>- ajout d’un vocabulaire de type « feuille », associé à un vocabulaire de type « objet » qui n’a pas été préalablement créé dans le schéma ;<br>– ajout d’un vocabulaire dont le type d’indexation est « GEO_POINT » ;<br>- ajout d’un vocabulaire sans avoir défini un chemin (« Path ») ou une cardinalité  (« Cardinality »).<br>– ajout d’un vocabulaire dont l’identifiant ne correspond pas aux règles imposées par la solution logicielle Vitam<a class="footnote-reference brackets" href="#id18" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>8<span class="fn-bracket">]</span></a>.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1220,8 +1220,8 @@ Point d’attention :</p></li>
 </section>
 <section id="comment-utiliser-le-schema">
 <h3><span class="section-number">12.5.6. </span>Comment utiliser le schéma   ?<a class="headerlink" href="#comment-utiliser-le-schema" title="Lien vers cette rubrique"></a></h3>
-<section id="id1">
-<h4><span class="section-number">12.5.6.1. </span>Administration du schéma<a class="headerlink" href="#id1" title="Lien vers cette rubrique"></a></h4>
+<section id="id9">
+<h4><span class="section-number">12.5.6.1. </span>Administration du schéma<a class="headerlink" href="#id9" title="Lien vers cette rubrique"></a></h4>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>Intitulé</p></th>
@@ -1274,8 +1274,8 @@ Point d’attention :</p></li>
 </table>
 </section>
 </section>
-<section id="id2">
-<h3><span class="section-number">12.5.7. </span>Accès<a class="headerlink" href="#id2" title="Lien vers cette rubrique"></a></h3>
+<section id="id10">
+<h3><span class="section-number">12.5.7. </span>Accès<a class="headerlink" href="#id10" title="Lien vers cette rubrique"></a></h3>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>Intitulé</p></th>
@@ -13739,14 +13739,41 @@ Point d’attention :</p></li>
 <span class="w">  </span><span class="p">]</span>
 </pre></div>
 </div>
-<p>[^1] : Pour plus de précisions, consulter la section 3. « Formalisation des vocabulaires du schéma » du présent document.</p>
-<p>[^2] : Ces vocabulaires sont détaillés dans la documentation <a class="reference internal" href="modele_de_donnees.html"><span class="std std-doc">Modèle de données</span></a>.</p>
-<p>[^3] : Seule la collection Unit peut faire l’objet d’ajout de nouveaux vocabulaires. Il n’est pas possible d’étendre les autres collections.</p>
-<p>[^4] : Le type d’indexation « GEO_POINT » n’est pas supporté dans le schéma.</p>
-<p>[^5] : Pour plus d’informations sur la modélisation de cette collection, consulter le document <a class="reference internal" href="modele_de_donnees.html"><span class="std std-doc">Modèle de données</span></a>, chapitre « Collection Schema ».</p>
-<p>[^6] : Le type d’indexation « GEO_POINT » n’est pas supporté dans le schéma.</p>
-<p>[^7] : Pour plus d’informations sur le processus d’import du référentiel, consulter le document <a class="reference internal" href="modele_de_workflow.html"><span class="std std-doc">Modèle de workflow</span></a>, « Workflow d’administration d’un référentiel des vocabulaires du schéma ».</p>
-<p>[^8] : Les règles propres au nommage d’un vocabulaire sont définies dans la partie « Conseils de mise en œuvre » du présent document.</p>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id11" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Pour plus de précisions, consulter la section 3. « Formalisation des vocabulaires du schéma » du présent document.</p>
+</aside>
+<aside class="footnote brackets" id="id12" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>Ces vocabulaires sont détaillés dans la documentation <a class="reference internal" href="modele_de_donnees.html"><span class="std std-doc">Modèle de données</span></a>.</p>
+</aside>
+<aside class="footnote brackets" id="id13" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">3</a><span class="fn-bracket">]</span></span>
+<p>Seule la collection Unit peut faire l’objet d’ajout de nouveaux vocabulaires. Il n’est pas possible d’étendre les autres collections.</p>
+</aside>
+<aside class="footnote brackets" id="id14" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">4</a><span class="fn-bracket">]</span></span>
+<p>Le type d’indexation « GEO_POINT » n’est pas supporté dans le schéma.</p>
+</aside>
+<aside class="footnote brackets" id="id15" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">5</a><span class="fn-bracket">]</span></span>
+<p>Pour plus d’informations sur la modélisation de cette collection, consulter le document <a class="reference internal" href="modele_de_donnees.html"><span class="std std-doc">Modèle de données</span></a>, chapitre « Collection Schema ».</p>
+</aside>
+<aside class="footnote brackets" id="id16" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">6</a><span class="fn-bracket">]</span></span>
+<p>Le type d’indexation « GEO_POINT » n’est pas supporté dans le schéma.</p>
+</aside>
+<aside class="footnote brackets" id="id17" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">7</a><span class="fn-bracket">]</span></span>
+<p>Pour plus d’informations sur le processus d’import du référentiel, consulter le document <a class="reference internal" href="modele_de_workflow.html"><span class="std std-doc">Modèle de workflow</span></a>, « Workflow d’administration d’un référentiel des vocabulaires du schéma ».</p>
+</aside>
+<aside class="footnote brackets" id="id18" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id8">8</a><span class="fn-bracket">]</span></span>
+<p>Les règles propres au nommage d’un vocabulaire sont définies dans la partie « Conseils de mise en œuvre » du présent document.</p>
+</aside>
+</aside>
 </section>
 </section>
 </section>
