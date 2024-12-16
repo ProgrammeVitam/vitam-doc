@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>12. L’attribution des identifiants dans la solution logicielle Vitam &mdash; Vitam documentation fonctionnelle</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=eea1f72d" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f4732e6d"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/translations.js?v=bf059b8c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="13. La journalisation et la conservation de la valeur probante dans la solution logicielle Vitam" href="Vademecum_journalisation.html" />
+    <link rel="prev" title="11. La gestion des droits et permissions des utilisateurs applicatifs dans la solution logicielle Vitam" href="Vademecum_habilitations.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: white" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/Vitam_Logo-CMJN.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">première approche</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="guide_lecture.html">1. Documentation Vitam - guide de lecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="presentation_programme.html">2. Présentation du programme Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="presentation_solution_logicielle.html">3. Présentation de la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_prise_en_main.html">4. Guide de prise en main de la solution logicielle Vitam – Vitam UI<br>
+<em>Réaliser une première entrée</em></a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">documentation métier</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="organisation_information.html">1. Organisation de l’information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gestion_archives_arbo.html">2. Gestion des archives et des arborescences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_donnees.html">3. Modèle de données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SIP.html">4. Structuration des <em>Submission Information Packages</em> (SIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DIP.html">5. Structuration des <em>Dissemination Information Packages</em> (DIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gestion_habilitations.html">6. Gestion des habilitations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regles_gestion.html">7. Règles de gestion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services_prod.html">8. Services producteurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_archivage.html">9. Profils d’archivage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_unite_archivistique.html">10. Profils d’unité archivistique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ontologie.html">11. Ontologie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="schema.html">12. Schéma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_workflow.html">13. Description des workflows et des opérations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_de_collecte.html">14. Module de collecte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eliminations.html">15. Les éliminations avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gel.html">16. Le gel d’archives avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preservation.html">17. Gestion de la préservation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stockage.html">18. Gestion de multiples stratégies de stockage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transfert.html">19. Le transfert avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="valeur_probante.html">20. Conservation de la valeur probante</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">documentation Vitam UI</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Autoprovisionning.html">1. Vitam UI : présentation de la fonctionnalité d’auto-provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Arbres_Plans.html">2. APP Arbres et plans</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">outils connexes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="resip.html">1. RESIP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resip_faq.html">2. RESIP : foire aux questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pastis_standalone.html">3. PASTIS STANDALONE</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Chantier préservation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="chantier_preservation_validation_format.html">1. Validation du format des fichiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_identification_format.html">2. Identification des formats de fichiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_extraction_MD.html">3. Extraction des métadonnées techniques</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Vademecum</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_sommaire.html">1. Vademecum: sommaire thématique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_glossaire.html">2. Notions utilisées dans la solution logicielle Vitam et lien vers la fiche qui les définit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_arbre.html">3. L’arbre de positionnement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_audit.html">4. Les audits dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_classification.html">5. La gestion des archives classifiées avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_acces.html">6. Le contrat d’accès dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_entree.html">7. Le contrat d’entrée dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_gestion.html">8. Le contrat de gestion dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_echeances.html">9. Le calcul des héritages des règles de gestion et l’indexation des échéances dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_eliminations.html">10. Réaliser des éliminations d’archives avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_habilitations.html">11. La gestion des droits et permissions des utilisateurs applicatifs dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">12. L’attribution des identifiants dans la solution logicielle Vitam</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#gestion-des-identifiants-pour-les-differents-referentiels">12.1. Gestion des identifiants pour les différents référentiels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#criteres-de-choix-du-mode-maitre-ou-esclave-quand-un-choix-est-possible">12.2. Critères de choix du mode « maître » ou « esclave » quand un choix est possible</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuration-du-mode-maitre-ou-esclave-quand-un-choix-est-possible">12.3. Configuration du mode « maître » ou « esclave » quand un choix est possible</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mise-a-jour-des-referentiels-en-mode-esclave">12.4. Mise à jour des référentiels en mode « esclave »</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_journalisation.html">13. La journalisation et la conservation de la valeur probante dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_ontologie.html">14. L’ontologie dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_pa.html">15. Les profils d’archivage dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_parametrages_pf.html">16. Le paramétrage fonctionnel d’une plate-forme utilisant la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_plan.html">17. Le plan de classement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_preservation.html">18. La préservation dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_pua.html">19. Les profils d’unité archivistique dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_rattachement.html">20. Faire un rattachement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_formats.html">21. Le référentiel des formats dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_griffons.html">22. Le référentiel des griffons dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_preservation.html">23. Le référentiel des scénarios de préservation dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_rg.html">24. Le référentiel des règles de gestion dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_sa.html">25. Le référentiel des services agents dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_registre_fonds.html">26. Le registre des fonds dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_structuration_information.html">27. La structuration des informations dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_suivi_acces.html">28. Le suivi des accès dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_tenant.html">29. Les tenants dans la solution logicielle Vitam</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: white" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Documentation utilisateur Vitam</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">12. </span>L’attribution des identifiants dans la solution logicielle Vitam</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/sections/Vademecum_identifiants.md.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+
+           <div itemprop="articleBody">
+             
+  <section id="lattribution-des-identifiants-dans-la-solution-logicielle-vitam">
+<h1><span class="section-number">12. </span>L’attribution des identifiants dans la solution logicielle Vitam<a class="headerlink" href="#lattribution-des-identifiants-dans-la-solution-logicielle-vitam" title="Lien vers cette rubrique"></a></h1>
+<p>Les données de référence utilisées dans la solution logicielle Vitam peuvent être identifiées de deux façons différentes :</p>
+<ul class="simple">
+<li><p>les données de référence peuvent disposer d’une identification fournie par un système externe lors de leur import dans la solution logicielle Vitam. Ces identifications sont prises en compte par la solution logicielle Vitam qui gère alors ces données de référence en mode « esclave » ;</p></li>
+<li><p>les données de référence ne disposent pas d’une identification fournie par un système externe lors de leur import dans la solution logicielle Vitam. Des identifications sont alors attribuées par la solution logicielle Vitam qui gère alors ces données de référence en mode « maître ».</p></li>
+</ul>
+<section id="gestion-des-identifiants-pour-les-differents-referentiels">
+<h2><span class="section-number">12.1. </span>Gestion des identifiants pour les différents référentiels<a class="headerlink" href="#gestion-des-identifiants-pour-les-differents-referentiels" title="Lien vers cette rubrique"></a></h2>
+<p>Certaines données de référence sont obligatoirement gérées en mode « esclave », d’autres en mode « maître ». Pour d’autres enfin, le choix est laissé à l’administrateur fonctionnel.
+Le tableau ci-dessous présente les modes de gestion autorisés.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Référentiels</p></th>
+<th class="head text-center"><p>Vitam en mode « Maître »</p></th>
+<th class="head text-center"><p>Vitam en mode « Esclave »</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Formats</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>X</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Règles de gestion</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>X</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Contextes applicatifs</p></td>
+<td class="text-center"><p>X</p></td>
+<td class="text-center"><p>X</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Profils de sécurité</p></td>
+<td class="text-center"><p>X</p></td>
+<td class="text-center"><p>X</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Contrats d’entrée</p></td>
+<td class="text-center"><p>X</p></td>
+<td class="text-center"><p>X</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Contrats d’accès</p></td>
+<td class="text-center"><p>X</p></td>
+<td class="text-center"><p>X</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Profils d’unité archivistique</p></td>
+<td class="text-center"><p>X</p></td>
+<td class="text-center"><p>X</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Ontologies</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>X</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Profils d’archivage</p></td>
+<td class="text-center"><p>X</p></td>
+<td class="text-center"><p>X</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Services agents</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>X</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Griffons</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>X</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Scénarios de préservation</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>X</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Contrats de gestion</p></td>
+<td class="text-center"><p>X</p></td>
+<td class="text-center"><p>X</p></td>
+</tr>
+</tbody>
+</table>
+<p>Pour sept référentiels, le choix est donc laissé à l’administrateur de la solution logicielle Vitam de gérer les données de référence en mode « maître » ou « esclave ».</p>
+</section>
+<section id="criteres-de-choix-du-mode-maitre-ou-esclave-quand-un-choix-est-possible">
+<h2><span class="section-number">12.2. </span>Critères de choix du mode « maître » ou « esclave » quand un choix est possible<a class="headerlink" href="#criteres-de-choix-du-mode-maitre-ou-esclave-quand-un-choix-est-possible" title="Lien vers cette rubrique"></a></h2>
+<p>Un référentiel doit être utilisé en mode « esclave » lorsque l’identification des objets métier (service agent, règle de gestion, contrat d’entrée ou d’accès…) qu’il référence est opérée à l’extérieur du système, par exemple dans un référentiel commun à plusieurs systèmes ou dans un référentiel commun aux archives physiques et électroniques.</p>
+<p>Les informations transmises à la solution logicielle Vitam sont alors pilotées par le système externe qui attribue les identifiants aux divers objets métier.</p>
+<p>Ce mode « esclave » permet à un service de conserver la main sur les identifiants des objets métier pour utiliser des identifiants normés au niveau de l’institution et/ou à un niveau national ou international.</p>
+<p>Un référentiel doit être utilisé en mode « maître » lorsqu’il n’y a pas de besoin de coordination des informations des référentiels utilisés par la solution logicielle Vitam avec des référentiels externes. C’est alors la solution logicielle Vitam qui donne ses identifiants aux divers objets métier.</p>
+</section>
+<section id="configuration-du-mode-maitre-ou-esclave-quand-un-choix-est-possible">
+<h2><span class="section-number">12.3. </span>Configuration du mode « maître » ou « esclave » quand un choix est possible<a class="headerlink" href="#configuration-du-mode-maitre-ou-esclave-quand-un-choix-est-possible" title="Lien vers cette rubrique"></a></h2>
+<p>La configuration des référentiels en mode « maître » ou « esclave » doit être faite par l’administrateur technique à l’installation de la plate-forme.</p>
+<p>Le choix se fait tenant par tenant pour chacun des référentiels pour lequel un choix est possible.
+Le fichier de configuration se présente comme suit (exemple fictif) :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#  ExternalId configuration</span>
+
+<span class="n">listEnableExternalIdentifiers</span> <span class="p">:</span>
+<span class="mi">0</span> <span class="p">:</span> 
+<span class="o">-</span> <span class="n">INGEST_CONTRACT</span>
+<span class="o">-</span> <span class="n">ACCESS_CONTRACT</span>
+<span class="mi">1</span> <span class="p">:</span>
+<span class="o">-</span> <span class="n">INGEST_CONTRACT</span>
+<span class="o">-</span> <span class="n">ACCESS_CONTRACT</span>
+<span class="o">-</span> <span class="n">PROFILE</span>
+<span class="o">-</span> <span class="n">SECURITY_PROFILE</span>
+<span class="o">-</span> <span class="n">CONTEXT</span>
+</pre></div>
+</div>
+<p>Dans cet exemple, sur le tenant 0 les contrats d’entrée et les contrats d’accès sont en mode « esclave », sur le tenant 1, les contrats d’entrée, les contrats d’accès, les profils d’archivage, les profils de sécurité et les contextes sont en mode « esclave ».</p>
+<p>Un exemple du fichier de configuration se trouve dans la documentation d’exploitation au chapitre « Exploitation des composants de la solution logicielle Vitam ».</p>
+</section>
+<section id="mise-a-jour-des-referentiels-en-mode-esclave">
+<h2><span class="section-number">12.4. </span>Mise à jour des référentiels en mode « esclave »<a class="headerlink" href="#mise-a-jour-des-referentiels-en-mode-esclave" title="Lien vers cette rubrique"></a></h2>
+<p>Lorsque le référentiel utilisé dans la solution logicielle Vitam n’est qu’un extrait d’un référentiel plus riche piloté depuis un autre outil (ex. : référentiel producteurs d’un système d’information archivistique), il convient de penser les modalités de répercussion des mises à jour du référentiel « maître » sur le référentiel « esclave » de la solution logicielle Vitam : ces mises à jour seront-elles déclenchées automatiquement à chaque mise à jour du référentiel « maître » ? Par l’administrateur fonctionnel en réponse à une alerte quotidienne ou hebdomadaire ?</p>
+<p>Dans certains cas (référentiel des services agents, référentiel des règles de gestion, ontologie, griffons, scénarios de préservation, services agents), la mise à jour dans la solution logicielle Vitam se fait par un ré-import du référentiel complet et non une mise à jour unitaire.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="Vademecum_habilitations.html" class="btn btn-neutral float-left" title="11. La gestion des droits et permissions des utilisateurs applicatifs dans la solution logicielle Vitam" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="Vademecum_journalisation.html" class="btn btn-neutral float-right" title="13. La journalisation et la conservation de la valeur probante dans la solution logicielle Vitam" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2022, Programme Vitam.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: master_8.0.x
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Branches</dt>
+      <dd><a href="../../master/sections/Vademecum_identifiants.html">master</a></dd>
+      <dd><a href="../../master_6.rc.x/index.html">master_6.rc.x</a></dd>
+      <dd><a href="../../master_7.1.x/sections/Vademecum_identifiants.html">master_7.1.x</a></dd>
+      <dd><a href="Vademecum_identifiants.html">master_8.0.x</a></dd>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>16. Le paramétrage fonctionnel d’une plate-forme utilisant la solution logicielle Vitam &mdash; Vitam documentation fonctionnelle</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=eea1f72d" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f4732e6d"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/translations.js?v=bf059b8c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="17. Le plan de classement dans la solution logicielle Vitam" href="Vademecum_plan.html" />
+    <link rel="prev" title="15. Les profils d’archivage dans la solution logicielle Vitam" href="Vademecum_pa.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: white" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/Vitam_Logo-CMJN.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">première approche</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="guide_lecture.html">1. Documentation Vitam - guide de lecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="presentation_programme.html">2. Présentation du programme Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="presentation_solution_logicielle.html">3. Présentation de la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_prise_en_main.html">4. Guide de prise en main de la solution logicielle Vitam – Vitam UI<br>
+<em>Réaliser une première entrée</em></a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">documentation métier</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="organisation_information.html">1. Organisation de l’information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gestion_archives_arbo.html">2. Gestion des archives et des arborescences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_donnees.html">3. Modèle de données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SIP.html">4. Structuration des <em>Submission Information Packages</em> (SIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DIP.html">5. Structuration des <em>Dissemination Information Packages</em> (DIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gestion_habilitations.html">6. Gestion des habilitations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regles_gestion.html">7. Règles de gestion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services_prod.html">8. Services producteurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_archivage.html">9. Profils d’archivage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_unite_archivistique.html">10. Profils d’unité archivistique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ontologie.html">11. Ontologie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="schema.html">12. Schéma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_workflow.html">13. Description des workflows et des opérations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_de_collecte.html">14. Module de collecte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eliminations.html">15. Les éliminations avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gel.html">16. Le gel d’archives avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preservation.html">17. Gestion de la préservation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stockage.html">18. Gestion de multiples stratégies de stockage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transfert.html">19. Le transfert avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="valeur_probante.html">20. Conservation de la valeur probante</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">documentation Vitam UI</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Autoprovisionning.html">1. Vitam UI : présentation de la fonctionnalité d’auto-provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Arbres_Plans.html">2. APP Arbres et plans</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">outils connexes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="resip.html">1. RESIP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resip_faq.html">2. RESIP : foire aux questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pastis_standalone.html">3. PASTIS STANDALONE</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Chantier préservation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="chantier_preservation_validation_format.html">1. Validation du format des fichiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_identification_format.html">2. Identification des formats de fichiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_extraction_MD.html">3. Extraction des métadonnées techniques</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Vademecum</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_sommaire.html">1. Vademecum: sommaire thématique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_glossaire.html">2. Notions utilisées dans la solution logicielle Vitam et lien vers la fiche qui les définit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_arbre.html">3. L’arbre de positionnement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_audit.html">4. Les audits dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_classification.html">5. La gestion des archives classifiées avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_acces.html">6. Le contrat d’accès dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_entree.html">7. Le contrat d’entrée dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_gestion.html">8. Le contrat de gestion dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_echeances.html">9. Le calcul des héritages des règles de gestion et l’indexation des échéances dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_eliminations.html">10. Réaliser des éliminations d’archives avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_habilitations.html">11. La gestion des droits et permissions des utilisateurs applicatifs dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_identifiants.html">12. L’attribution des identifiants dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_journalisation.html">13. La journalisation et la conservation de la valeur probante dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_ontologie.html">14. L’ontologie dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_pa.html">15. Les profils d’archivage dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">16. Le paramétrage fonctionnel d’une plate-forme utilisant la solution logicielle Vitam</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#definition-du-niveau-de-protection-de-la-plate-forme-recommande">16.1. Définition du niveau de protection de la plate-forme (recommandé)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#identification-des-besoins-de-cloisonnement-des-archives-au-sein-de-la-plate-forme-recommande">16.2. Identification des besoins de cloisonnement des archives au sein de la plate-forme (recommandé)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#definition-des-strategies-de-stockage-recommande">16.3. Définition des stratégies de stockage (recommandé)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#definition-des-modalites-de-gestion-des-donnees-de-reference-obligatoire">16.4. Définition des modalités de gestion des données de référence (obligatoire)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#definition-de-la-structuration-de-linformation-recommande">16.5. Définition de la structuration de l’information (recommandé)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#definition-des-habilitations-obligatoire">16.6. Définition des habilitations (obligatoire)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#definition-de-la-frequence-de-calcul-de-letat-des-fonds-symboliques-facultatif">16.7. Définition de la fréquence de calcul de l’état des fonds symboliques* (facultatif)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#definition-du-niveau-de-controle-des-archives-prises-en-charge-facultatif">16.8. Définition du niveau de contrôle des archives prises en charge (facultatif)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#definition-des-modalites-de-mise-en-oeuvre-de-la-politique-de-preservation-facultatif">16.9. Définition des modalités de mise en œuvre de la politique de préservation (facultatif)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#definition-de-strategies-didentification-perenne-facultatif">16.10. Définition de stratégies d’identification pérenne (facultatif)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#definition-des-modalites-dindexation-des-regles-de-gestion-des-unites-archivistiques-recommande">16.11. Définition des modalités d’indexation des règles de gestion des unités archivistiques (recommandé)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#definition-des-modalites-de-versement-des-archives-facultatif">16.12. Définition des modalités de versement des archives (facultatif)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#definition-de-services-de-recherche-facultatif">16.13. Définition de services de recherche (facultatif)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#definition-des-modalites-dexport-des-dip-et-sip-de-transfert-facultatif">16.14. Définition des modalités d’export des DIP et SIP de transfert (facultatif)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#personnalisation-des-accuses-de-reception-facultatif">16.15. Personnalisation des accusés de réception (facultatif)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#personnalisation-des-rapports-delimination-facultatif">16.16. Personnalisation des rapports d’élimination (facultatif)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_plan.html">17. Le plan de classement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_preservation.html">18. La préservation dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_pua.html">19. Les profils d’unité archivistique dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_rattachement.html">20. Faire un rattachement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_formats.html">21. Le référentiel des formats dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_griffons.html">22. Le référentiel des griffons dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_preservation.html">23. Le référentiel des scénarios de préservation dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_rg.html">24. Le référentiel des règles de gestion dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_sa.html">25. Le référentiel des services agents dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_registre_fonds.html">26. Le registre des fonds dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_structuration_information.html">27. La structuration des informations dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_suivi_acces.html">28. Le suivi des accès dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_tenant.html">29. Les tenants dans la solution logicielle Vitam</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: white" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Documentation utilisateur Vitam</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">16. </span>Le paramétrage fonctionnel d’une plate-forme utilisant la solution logicielle Vitam</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/sections/Vademecum_parametrages_pf.md.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+
+           <div itemprop="articleBody">
+             
+  <section id="le-parametrage-fonctionnel-dune-plate-forme-utilisant-la-solution-logicielle-vitam">
+<h1><span class="section-number">16. </span>Le paramétrage fonctionnel d’une plate-forme utilisant la solution logicielle Vitam<a class="headerlink" href="#le-parametrage-fonctionnel-dune-plate-forme-utilisant-la-solution-logicielle-vitam" title="Lien vers cette rubrique"></a></h1>
+<p>Pour pouvoir utiliser une plate-forme fonctionnant avec la solution logicielle Vitam, l’équipe chargée de son administration doit choisir ses orientations fonctionnelles et définir un certain nombre de paramètres qui sont enregistrés au moment du déploiement.
+Cette fiche mentionne les points à étudier par l’administrateur fonctionnel et renvoie vers les fiches détaillées qui présentent les différents concepts et la formalisation attendue.</p>
+<section id="definition-du-niveau-de-protection-de-la-plate-forme-recommande">
+<h2><span class="section-number">16.1. </span>Définition du niveau de protection de la plate-forme (recommandé)<a class="headerlink" href="#definition-du-niveau-de-protection-de-la-plate-forme-recommande" title="Lien vers cette rubrique"></a></h2>
+<p>La solution logicielle Vitam permet de gérer des archives déclarant un niveau de protection au titre du secret de la défense nationale et de contrôler que des archives d’un niveau non autorisé ne lui sont pas transférées, afin de réduire tout risque de compromission.</p>
+<p>Au moment du déploiement de la solution logicielle Vitam, il est recommandé de définir les niveaux de protection acceptés sur la plate-forme, notamment si celle-ci ne doit pas pouvoir prendre en charge des archives classifiées, afin de garantir une adéquation entre le niveau de protection de la plate-forme et le niveau de protection déclaré par les unités archivistiques.</p>
+<p>La liste des niveaux de protection acceptés pourra être modifiée par la suite, mais il s’agira alors d’un acte d’exploitation technique nécessitant un arrêt des opérations en cours (entrées, éliminations, transferts…).</p>
+<p>Vademecum lié : <a class="reference internal" href="Vademecum_classification.html"><span class="std std-doc">La gestion des archives classifiées avec la solution logicielle Vitam</span></a></p>
+</section>
+<section id="identification-des-besoins-de-cloisonnement-des-archives-au-sein-de-la-plate-forme-recommande">
+<h2><span class="section-number">16.2. </span>Identification des besoins de cloisonnement des archives au sein de la plate-forme (recommandé)<a class="headerlink" href="#identification-des-besoins-de-cloisonnement-des-archives-au-sein-de-la-plate-forme-recommande" title="Lien vers cette rubrique"></a></h2>
+<p>La solution logicielle Vitam permet de cloisonner les archives prises en charge via des « espaces » distincts appelés « tenant ». Elle peut être utilisée sans cloisonnement (on parle alors de plate-forme « mono-tenant ») ou avec cloisonnements (on parle alors de plate-forme « multi-tenant »).</p>
+<p>Il est recommandé de définir à l’installation de la plate-forme ce paramétrage. Il sera possible de rajouter des tenants par la suite, mais il s’agira alors d’un acte d’exploitation technique nécessitant un arrêt des opérations en cours (entrées, éliminations, transferts…).
+Vademecum lié : <a class="reference internal" href="Vademecum_tenant.html"><span class="std std-doc">Les tenants dans la solution logicielle Vitam</span></a></p>
+</section>
+<section id="definition-des-strategies-de-stockage-recommande">
+<h2><span class="section-number">16.3. </span>Définition des stratégies de stockage (recommandé)<a class="headerlink" href="#definition-des-strategies-de-stockage-recommande" title="Lien vers cette rubrique"></a></h2>
+<p>La stratégie de stockage est une configuration définissant le nombre de copies et les offres de stockage sur lesquelles ces copies seront faites.</p>
+<p>La solution logicielle Vitam est déployée par défaut avec une seule stratégie de stockage et au moins deux offres de stockage.
+Il est également possible de définir plusieurs stratégies de stockage pour répondre à des besoins spécifiques :</p>
+<ul class="simple">
+<li><p>proposer un nombre de copies à réaliser et donc des qualités de service différenciées en fonction d’une typologie (archives numérisées versus archives nativement numériques, archives d’un cabinet ministériel à conserver définitivement versus archives comptables à éliminer rapidement) ou d’un utilisateur applicatif dans le cas d’une plate-forme mutualisée ;</p></li>
+<li><p>isoler sur des offres spécifiques des archives en fonction de leur sensibilité (cas de l’hébergement des données de santé) ;</p></li>
+<li><p>stocker les fichiers numériques peu communiquées sur des offres dites « froides » (stockage sur bande par exemple) dans une optique de rationalisation des coûts.
+L’utilisation de la solution logicielle Vitam en mode multi-stratégies nécessite :</p></li>
+<li><p>de déployer les stratégies additionnelles sur la plate-forme (acte technique d’exploitation),</p></li>
+<li><p>de définir les contrats de gestion déclarant les stratégies à utiliser</p></li>
+<li><p>d’associer ces contrats de gestion aux contrats d’entrée.
+Vademecum lié : <a class="reference internal" href="Vademecum_contrat_gestion.html"><span class="std std-doc">Le contrat de gestion dans la solution logicielle Vitam</span></a></p></li>
+</ul>
+</section>
+<section id="definition-des-modalites-de-gestion-des-donnees-de-reference-obligatoire">
+<h2><span class="section-number">16.4. </span>Définition des modalités de gestion des données de référence (obligatoire)<a class="headerlink" href="#definition-des-modalites-de-gestion-des-donnees-de-reference-obligatoire" title="Lien vers cette rubrique"></a></h2>
+<p>La solution logicielle Vitam utilise des données de référence afin de mettre en œuvre ses services en toute sécurité et de garantir une cohérence interne des données.
+L’administrateur fonctionnel doit :</p>
+<ul class="simple">
+<li><p>identifier les sources des données de référence déjà administrées dans son environnement ou les outils métier déjà présents lui permettant d’élaborer ces référentiels ;</p></li>
+<li><p>dès lors qu’un référentiel externe est utilisé pour alimenter la solution logicielle Vitam (référentiels gérés dans le front-office commun aux archives physiques et électroniques ou dans des outils extérieurs à la plate-forme), définir avec l’administrateur technique les modalités de synchronisation de ces données entre la source externe et la version utilisée dans la plate-forme ;</p></li>
+<li><p>définir les modalités de gestion des identifiants des données de référence utilisées, sachant que la solution logicielle Vitam peut être paramétrée pour attribuer automatiquement un identifiant à certaines d’entre elles et que ce paramétrage n’est ensuite pas modifiable ;</p></li>
+<li><p>définir, pour les règles de gestion, une durée minimale acceptée pour chaque catégorie de règles, afin d’éviter des modifications malveillantes qui déclencheraient des actions indésirables sur la plate-forme.
+Vademecum liés : <a class="reference internal" href="Vademecum_identifiants.html"><span class="std std-doc">L’attribution des identifiants dans la solution logicielle Vitam</span></a>, <a class="reference internal" href="Vademecum_referentiel_rg.html"><span class="std std-doc">Le référentiel des règles de gestion dans la solution logicielle Vitam</span></a>, <a class="reference internal" href="Vademecum_referentiel_sa.html"><span class="std std-doc">Le référentiel des services agents dans la solution logicielle Vitam</span></a>, <a class="reference internal" href="Vademecum_referentiel_formats.html"><span class="std std-doc">Le référentiel des formats dans la solution logicielle Vitam</span></a>, <a class="reference internal" href="Vademecum_ontologie.html"><span class="std std-doc">L’ontologie dans la solution logicielle Vitam</span></a></p></li>
+</ul>
+</section>
+<section id="definition-de-la-structuration-de-linformation-recommande">
+<h2><span class="section-number">16.5. </span>Définition de la structuration de l’information (recommandé)<a class="headerlink" href="#definition-de-la-structuration-de-linformation-recommande" title="Lien vers cette rubrique"></a></h2>
+<p>La solution logicielle Vitam offre la possibilité de structurer de plusieurs manières l’information dans chaque espace cloisonné (tenant), afin de permettre un accès aux archives par une navigation dans une arborescence à laquelle sont rattachées les archives transférées : structuration thématique des archives produites par plusieurs services producteurs (« arbre de positionnement »), structuration organique des archives d’un service producteur (« plan de classement »). Ces deux types de structure peuvent se combiner.</p>
+<p>Il est recommandé à l’administrateur fonctionnel de définir avant les premiers transferts la structuration qu’il compte adopter pour chacun des tenants : présence/absence de structuration, une seule structuration/plusieurs structurations, utilisation exclusive des arbres ou des plans/utilisation combinée des arbres et des plans.</p>
+<p>Il est possible par la suite de modifier la structuration choisie au fur et à mesure de l’utilisation de la plate-forme, mais cette opération de modification de l’arborescence peut être lourde.
+Vademecum liés : <a class="reference internal" href="Vademecum_arbre.html"><span class="std std-doc">L’arbre de positionnement dans la solution logicielle Vitam</span></a>, <a class="reference internal" href="Vademecum_plan.html"><span class="std std-doc">Le plan de classement dans la solution logicielle Vitam</span></a></p>
+</section>
+<section id="definition-des-habilitations-obligatoire">
+<h2><span class="section-number">16.6. </span>Définition des habilitations (obligatoire)<a class="headerlink" href="#definition-des-habilitations-obligatoire" title="Lien vers cette rubrique"></a></h2>
+<p>La solution logicielle Vitam n’est accessible et utilisable que par des applications informatiques qui constituent ses seuls utilisateurs, même pour son administration. Il est obligatoire que ces applications soient authentifiées et habilitées pour interagir avec la plate-forme.</p>
+<p>Au démarrage, la solution doit avoir un contexte applicatif et un profil de sécurité pour son administration (installation par défaut).</p>
+<p>L’administrateur fonctionnel doit définir les droits des différentes applications, y compris l’application d’administration, en termes de fonctionnalités de la solution logicielle Vitam qu’elles seront autorisées à mobiliser (réaliser des entrées, réaliser des accès, réaliser des modifications de métadonnées, réaliser des éliminations, réaliser des actions de préservation, administrer les données de référence, réaliser des audits, accéder aux journaux, accéder au registre des fonds…). Ces droits seront formalisés dans un profil de sécurité.</p>
+<p>Pour réaliser des entrées et des accès, chaque application devra en outre disposer de contrats d’entrée et d’accès dans lesquels l’administrateur fonctionnel pourra paramétrer finement les contrôles et les périmètres autorisés.</p>
+<p>Les habilitations pourront évoluer (modification des paramètres, import de nouvelles habilitations…).</p>
+<p>Vademecums liés : <a class="reference internal" href="Vademecum_habilitations.html"><span class="std std-doc">La gestion des droits et permissions des utilisateurs applicatifs dans la solution logicielle Vitam</span></a>, <a class="reference internal" href="Vademecum_contrat_entree.html"><span class="std std-doc">Le contrat d’entrée dans la solution logicielle Vitam</span></a>, <a class="reference internal" href="Vademecum_contrat_acces.html"><span class="std std-doc">Le contrat d’accès dans la solution logicielle Vitam</span></a></p>
+</section>
+<section id="definition-de-la-frequence-de-calcul-de-letat-des-fonds-symboliques-facultatif">
+<h2><span class="section-number">16.7. </span>Définition de la fréquence de calcul de l’état des fonds symboliques* (facultatif)<a class="headerlink" href="#definition-de-la-frequence-de-calcul-de-letat-des-fonds-symboliques-facultatif" title="Lien vers cette rubrique"></a></h2>
+<p>La solution logicielle Vitam permet d’accéder à un état périodique des unités archivistiques, groupes d’objets techniques et objets techniques ayant été rattachés à un service producteur.</p>
+<p>Par défaut, cet état est produit toutes les vingt-quatre heures.</p>
+<p>Si l’administrateur fonctionnel souhaite suivre plus précisément les évolutions des fonds symboliques, il peut choisir de configurer la plate-forme pour produire plus fréquemment cet état.</p>
+<p>Vademecum lié : <a class="reference internal" href="Vademecum_registre_fonds.html"><span class="std std-doc">Le registre des fonds dans la solution logicielle Vitam</span></a></p>
+</section>
+<section id="definition-du-niveau-de-controle-des-archives-prises-en-charge-facultatif">
+<h2><span class="section-number">16.8. </span>Définition du niveau de contrôle des archives prises en charge (facultatif)<a class="headerlink" href="#definition-du-niveau-de-controle-des-archives-prises-en-charge-facultatif" title="Lien vers cette rubrique"></a></h2>
+<p>La solution logicielle Vitam permet de contrôler plus ou moins finement la structure et la description des archives qui lui sont transférées, afin de garantir la qualité des données et de permettre une restitution plus ou moins riche à l’accès. Par défaut, elle effectue un contrôle en utilisant les outils définis par le Standard d’échanges de données pour l’archivage (SEDA).</p>
+<p>L’administrateur fonctionnel peut souhaiter décliner ou renforcer les contrôles minimaux des archives garantis par le SEDA en utilisant des outils de contrôle plus restrictifs (profil d’unité archivistique, profil d’archivage).</p>
+<p>Ces contrôles peuvent être définis au démarrage de la plate-forme ou par la suite.</p>
+<p>Vademecum liés : <a class="reference internal" href="Vademecum_ontologie.html"><span class="std std-doc">L’ontologie dans la solution logicielle Vitam</span></a>, <a class="reference internal" href="Vademecum_pa.html"><span class="std std-doc">Le profil d’archivage dans la solution logicielle Vitam</span></a>, <a class="reference internal" href="Vademecum_pua.html"><span class="std std-doc">Le profil d’unité archivistique dans la solution logicielle Vitam</span></a></p>
+</section>
+<section id="definition-des-modalites-de-mise-en-oeuvre-de-la-politique-de-preservation-facultatif">
+<h2><span class="section-number">16.9. </span>Définition des modalités de mise en œuvre de la politique de préservation (facultatif)<a class="headerlink" href="#definition-des-modalites-de-mise-en-oeuvre-de-la-politique-de-preservation-facultatif" title="Lien vers cette rubrique"></a></h2>
+<p>La solution logicielle Vitam permet de mettre en œuvre la politique de préservation d’une entité en définissant des stratégies de préservation qui mobiliseront des outils spécifiques en lien avec la solution logicielle Vitam (griffons).</p>
+<p>L’administrateur fonctionnel peut définir des scénarios de préservation en fonction des formats de départ, des formats cibles, des actions à mettre en œuvre et des outils à utiliser. Il peut également lister les outils (griffons) à installer et à référencer dans le référentiels des griffons. L’installation de ces outils est un acte d’administration technique.</p>
+<p>Vademecum liés : <a class="reference internal" href="Vademecum_preservation.html"><span class="std std-doc">La préservation dans la solution logicielle Vitam</span></a>, <a class="reference internal" href="Vademecum_referentiel_griffons.html"><span class="std std-doc">Le référentiel des griffons dans la solution logicielle Vitam</span></a>, <a class="reference internal" href="Vademecum_referentiel_preservation.html"><span class="std std-doc">Le référentiel des scénarios de préservation dans la solution logicielle Vitam</span></a></p>
+</section>
+<section id="definition-de-strategies-didentification-perenne-facultatif">
+<h2><span class="section-number">16.10. </span>Définition de stratégies d’identification pérenne (facultatif)<a class="headerlink" href="#definition-de-strategies-didentification-perenne-facultatif" title="Lien vers cette rubrique"></a></h2>
+<p>Il est possible de définir des stratégies d’identification pérenne (type ARK uniquement) dans les contrats de gestion.</p>
+<p>L’utilisation de ces stratégies nécessite d’associer ces contrats de gestion aux contrats d’entrée.</p>
+<p>Vademecum lié : <a class="reference internal" href="Vademecum_contrat_gestion.html"><span class="std std-doc">Le contrat de gestion dans la solution logicielle Vitam</span></a></p>
+</section>
+<section id="definition-des-modalites-dindexation-des-regles-de-gestion-des-unites-archivistiques-recommande">
+<h2><span class="section-number">16.11. </span>Définition des modalités d’indexation des règles de gestion des unités archivistiques (recommandé)<a class="headerlink" href="#definition-des-modalites-dindexation-des-regles-de-gestion-des-unites-archivistiques-recommande" title="Lien vers cette rubrique"></a></h2>
+<p>La solution logicielle Vitam permet d’indexer, sur demande, les règles de gestion applicables à une unité archivistique, qu’elle porte ces règles en propre ou qu’elle en hérite, afin de permettre aux plate-formes d’archivage de filtrer l’accès aux unités archivistiques en fonction des échéances des règles de gestion.</p>
+<p>Cette indexation peut être plus ou moins riche en fonction du paramétrage adopté.</p>
+<p>Par défaut, elle comprend :</p>
+<ul class="simple">
+<li><p>pour chaque catégorie de règle de gestion :</p>
+<ul>
+<li><p>les propriétés associées à la catégorie de règle ;</p></li>
+<li><p>l’échéance maximale applicable en application de la règle concernée. Par exemple, si une unité archivistique hérite de quatre règles de communicabilité et/ou les déclare, avec des échéances différentes (la 1ere ayant une échéance au 31/12/2010, la 2e au 31/12/2025, la 3e au 31/12/2025 et la 4e au 31/12/2050), l’échéance maximale pour le délai de communicabilité sera le 31/12/2050 ;</p></li>
+</ul>
+</li>
+<li><p>la propriété relative au besoin d’autorisations pour gérer l’unité archivistique (champ NeedAuthorization du SEDA) ;</p></li>
+<li><p>la date de l’indexation.</p></li>
+</ul>
+<p>Dans le cas où les paramétrages correspondants sont activés, l’indexation peut également comprendre :</p>
+<ul class="simple">
+<li><p>pour chaque catégorie de règles, les règles applicables et les échéances maximales applicables ;</p></li>
+<li><p>toutes les règles retournées en cas de demande d’accès à l’unité archivistique, avec notamment l’indication des unités archivistiques par lesquelles ces règles sont héritées.</p></li>
+</ul>
+<p>Vademecum liés : <a class="reference internal" href="Vademecum_reglesgestion_fonctionnement.html"><span class="std std-doc">Positionner des règles de gestion dans la solution logicielle Vitam</span></a>, <a class="reference internal" href="Vademecum_echeances.html"><span class="std std-doc">Le calcul des héritages des règles de gestion et l’indexation des échéances dans la solution logicielle Vitam</span></a></p>
+</section>
+<section id="definition-des-modalites-de-versement-des-archives-facultatif">
+<h2><span class="section-number">16.12. </span>Définition des modalités de versement des archives (facultatif)<a class="headerlink" href="#definition-des-modalites-de-versement-des-archives-facultatif" title="Lien vers cette rubrique"></a></h2>
+<p>La solution logicielle Vitam permet de verser des archives sous la forme de SIP structurés conformément au SEDA ou sous une forme plus ouverte au moyen du module de collecte, qui servira à structurer les archives en SIP et à les verser.</p>
+<p>L’utilisation du module doit être définie à l’installation de la plate-forme. Son installation a posteriori relèvera d’un acte d’exploitation technique. En plus de cette action, il est possible de configurer la fréquence de suppression des archives versées depuis le module vers la solution logicielle Vitam, qui intervient par défaut toutes les heures.</p>
+</section>
+<section id="definition-de-services-de-recherche-facultatif">
+<h2><span class="section-number">16.13. </span>Définition de services de recherche (facultatif)<a class="headerlink" href="#definition-de-services-de-recherche-facultatif" title="Lien vers cette rubrique"></a></h2>
+<p>La solution logicielle Vitam propose des services spécifiques liés à la recherche dans les archives :</p>
+<ul class="simple">
+<li><p>un service permettant de restituer le nombre exact d’archives correspondant à une recherche dans la solution logicielle Vitam ou dans le module de collecte, si ce nombre est supérieur à 10 000 éléments. Il est recommandé d’activer ce service au moment de l’installation de la plate-forme ;</p></li>
+<li><p>un service autorisant d’afficher des informations enregistrées dans certaines métadonnées. Par défaut, le nom des fichiers numériques est masqué ;</p></li>
+<li><p>un service permettant de rechercher des archives sur des seuils dépassant les seuils autorisés (mode « stream »). Par défaut, ce service ne peut être utilisé que :</p>
+<ul>
+<li><p>trois fois par jour sur 1 million d’unités archivistiques ;</p></li>
+<li><p>trois fois par jour sur 1 million de groupes d’objets techniques.</p></li>
+</ul>
+</li>
+</ul>
+<p>La modification des paramètres par défaut passe par un acte d’exploitation.</p>
+</section>
+<section id="definition-des-modalites-dexport-des-dip-et-sip-de-transfert-facultatif">
+<h2><span class="section-number">16.14. </span>Définition des modalités d’export des DIP et SIP de transfert (facultatif)<a class="headerlink" href="#definition-des-modalites-dexport-des-dip-et-sip-de-transfert-facultatif" title="Lien vers cette rubrique"></a></h2>
+<p>La solution logicielle Vitam permet de générer des DIP et des SIP de transfert. Par défaut, ces exports sont purgés :</p>
+<ul class="simple">
+<li><p>au bout de sept jours si l’espace libre représente plus de 25% de l’espace de stockage,</p></li>
+<li><p>au bout d’une journée si l’espace libre de stockage représente moins de 25 % de l’espace de stockage.</p></li>
+</ul>
+<p>Une limite en termes de taille d’export peut également être définie, pour l’ensemble de la plate-forme ou par tenant. Lors de l’installation de la plate-forme, elle est par défaut de 1 Go.</p>
+<p>Il est possible de modifier ces paramètres au moyen d’un acte d’exploitation.</p>
+<p>Vademecum lié : <a class="reference internal" href="Vademecum_structuration_information.html"><span class="std std-doc">Structuration de l’information</span></a></p>
+</section>
+<section id="personnalisation-des-accuses-de-reception-facultatif">
+<h2><span class="section-number">16.15. </span>Personnalisation des accusés de réception (facultatif)<a class="headerlink" href="#personnalisation-des-accuses-de-reception-facultatif" title="Lien vers cette rubrique"></a></h2>
+<p>Il est possible d’ajouter des informations complémentaires dans les accusés de réception produits par la solution logicielle Vitam à l’issue d’un transfert de SIP (identifiants métier, informations système) au moyen d’un paramétrage. Il est recommandé de les définir au moment du déploiement de la solution logicielle Vitam.</p>
+</section>
+<section id="personnalisation-des-rapports-delimination-facultatif">
+<h2><span class="section-number">16.16. </span>Personnalisation des rapports d’élimination (facultatif)<a class="headerlink" href="#personnalisation-des-rapports-delimination-facultatif" title="Lien vers cette rubrique"></a></h2>
+<p>Il est possible d’ajouter des informations complémentaires dans les rapports d’élimination (identifiants métier, informations système) au moyen d’un paramétrage. Il est recommandé de les définir au moment du déploiement de la solution logicielle Vitam.</p>
+<p>Vademecum lié : <a class="reference internal" href="Vademecum_eliminations.html"><span class="std std-doc">Réaliser des éliminations avec la solution logicielle Vitam</span></a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="Vademecum_pa.html" class="btn btn-neutral float-left" title="15. Les profils d’archivage dans la solution logicielle Vitam" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="Vademecum_plan.html" class="btn btn-neutral float-right" title="17. Le plan de classement dans la solution logicielle Vitam" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2022, Programme Vitam.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: master_8.0.x
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Branches</dt>
+      <dd><a href="../../master/sections/Vademecum_parametrages_pf.html">master</a></dd>
+      <dd><a href="../../master_6.rc.x/index.html">master_6.rc.x</a></dd>
+      <dd><a href="../../master_7.1.x/sections/Vademecum_parametrages_pf.html">master_7.1.x</a></dd>
+      <dd><a href="Vademecum_parametrages_pf.html">master_8.0.x</a></dd>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

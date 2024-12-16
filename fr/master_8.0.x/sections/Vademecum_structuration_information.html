@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>27. La structuration des informations dans la solution logicielle Vitam &mdash; Vitam documentation fonctionnelle</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=eea1f72d" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f4732e6d"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/translations.js?v=bf059b8c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="28. Le suivi des accès dans la solution logicielle Vitam" href="Vademecum_suivi_acces.html" />
+    <link rel="prev" title="26. Le registre des fonds dans la solution logicielle Vitam" href="Vademecum_registre_fonds.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: white" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/Vitam_Logo-CMJN.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">première approche</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="guide_lecture.html">1. Documentation Vitam - guide de lecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="presentation_programme.html">2. Présentation du programme Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="presentation_solution_logicielle.html">3. Présentation de la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_prise_en_main.html">4. Guide de prise en main de la solution logicielle Vitam – Vitam UI<br>
+<em>Réaliser une première entrée</em></a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">documentation métier</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="organisation_information.html">1. Organisation de l’information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gestion_archives_arbo.html">2. Gestion des archives et des arborescences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_donnees.html">3. Modèle de données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SIP.html">4. Structuration des <em>Submission Information Packages</em> (SIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DIP.html">5. Structuration des <em>Dissemination Information Packages</em> (DIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gestion_habilitations.html">6. Gestion des habilitations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regles_gestion.html">7. Règles de gestion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services_prod.html">8. Services producteurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_archivage.html">9. Profils d’archivage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_unite_archivistique.html">10. Profils d’unité archivistique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ontologie.html">11. Ontologie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="schema.html">12. Schéma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_workflow.html">13. Description des workflows et des opérations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_de_collecte.html">14. Module de collecte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eliminations.html">15. Les éliminations avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gel.html">16. Le gel d’archives avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preservation.html">17. Gestion de la préservation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stockage.html">18. Gestion de multiples stratégies de stockage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transfert.html">19. Le transfert avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="valeur_probante.html">20. Conservation de la valeur probante</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">documentation Vitam UI</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Autoprovisionning.html">1. Vitam UI : présentation de la fonctionnalité d’auto-provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Arbres_Plans.html">2. APP Arbres et plans</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">outils connexes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="resip.html">1. RESIP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resip_faq.html">2. RESIP : foire aux questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pastis_standalone.html">3. PASTIS STANDALONE</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Chantier préservation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="chantier_preservation_validation_format.html">1. Validation du format des fichiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_identification_format.html">2. Identification des formats de fichiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_extraction_MD.html">3. Extraction des métadonnées techniques</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Vademecum</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_sommaire.html">1. Vademecum: sommaire thématique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_glossaire.html">2. Notions utilisées dans la solution logicielle Vitam et lien vers la fiche qui les définit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_arbre.html">3. L’arbre de positionnement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_audit.html">4. Les audits dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_classification.html">5. La gestion des archives classifiées avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_acces.html">6. Le contrat d’accès dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_entree.html">7. Le contrat d’entrée dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_gestion.html">8. Le contrat de gestion dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_echeances.html">9. Le calcul des héritages des règles de gestion et l’indexation des échéances dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_eliminations.html">10. Réaliser des éliminations d’archives avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_habilitations.html">11. La gestion des droits et permissions des utilisateurs applicatifs dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_identifiants.html">12. L’attribution des identifiants dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_journalisation.html">13. La journalisation et la conservation de la valeur probante dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_ontologie.html">14. L’ontologie dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_pa.html">15. Les profils d’archivage dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_parametrages_pf.html">16. Le paramétrage fonctionnel d’une plate-forme utilisant la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_plan.html">17. Le plan de classement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_preservation.html">18. La préservation dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_pua.html">19. Les profils d’unité archivistique dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_rattachement.html">20. Faire un rattachement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_formats.html">21. Le référentiel des formats dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_griffons.html">22. Le référentiel des griffons dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_preservation.html">23. Le référentiel des scénarios de préservation dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_rg.html">24. Le référentiel des règles de gestion dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_sa.html">25. Le référentiel des services agents dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_registre_fonds.html">26. Le registre des fonds dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">27. La structuration des informations dans la solution logicielle Vitam</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#organisation-interne-de-linformation">27.1. Organisation interne de l’information</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#presentation-dune-unite-archivistique">27.1.1. Présentation d’une unité archivistique</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#presentation-des-objets-techniques">27.1.2. Présentation des objets techniques</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#presentation-du-groupe-dobjets-techniques">27.1.3. Présentation du groupe d’objets techniques</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exemple-de-structuration-des-informations-dans-le-cadre-de-la-numerisation-dun-registre-matricule">27.1.4. Exemple de structuration des informations dans le cadre de la numérisation d’un registre matricule</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#constitution-des-paquets-dinformation">27.2. Constitution des paquets d’information</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#coexistence-avec-les-systemes-traditionnels-de-description-et-de-gestion-des-archives">27.3. Coexistence avec les systèmes traditionnels de description et de gestion des archives</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_suivi_acces.html">28. Le suivi des accès dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_tenant.html">29. Les tenants dans la solution logicielle Vitam</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: white" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Documentation utilisateur Vitam</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">27. </span>La structuration des informations dans la solution logicielle Vitam</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/sections/Vademecum_structuration_information.md.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+
+           <div itemprop="articleBody">
+             
+  <section id="la-structuration-des-informations-dans-la-solution-logicielle-vitam">
+<h1><span class="section-number">27. </span>La structuration des informations dans la solution logicielle Vitam<a class="headerlink" href="#la-structuration-des-informations-dans-la-solution-logicielle-vitam" title="Lien vers cette rubrique"></a></h1>
+<p>Les archives nativement numériques sont des objets métier que les archivistes vont collecter, décrire, conserver et communiquer comme toutes les archives. Toutefois, leur support particulier  entraîne certaines spécificités dans leur traitement archivistique par rapport aux archives traditionnelles sur support papier.<br>
+Deux normes principales concernent les archives numériques dans la sphère publique et sont à la base de l’organisation des informations dans la solution logicielle Vitam.
+La norme OAIS apporte un modèle conceptuel pour un système d’archivage électronique et définit la notion de « paquet d’information » à collecter, conserver et communiquer.<br>
+La norme MEDONA modélise les transactions entre les différents acteurs des processus d’archivage (service d’archives, service de contrôle, service producteur, service versant, demandeur d’archives) et précise, dans sa déclinaison pour les archives publiques, le SEDA, la forme que prennent les informations échangées (constitution du paquet et formalisation de la description des métadonnées).</p>
+<section id="organisation-interne-de-linformation">
+<h2><span class="section-number">27.1. </span>Organisation interne de l’information<a class="headerlink" href="#organisation-interne-de-linformation" title="Lien vers cette rubrique"></a></h2>
+<p>La solution logicielle Vitam prend en charge, conserve et donne accès à :</p>
+<ul class="simple">
+<li><p>des unités archivistiques, avec leurs métadonnées descriptives et de gestion,</p></li>
+<li><p>des groupes d’objets techniques qui regroupent les fichiers représentant les unités archivistiques,</p></li>
+<li><p>des objets techniques avec leurs métadonnées techniques.</p></li>
+</ul>
+<section id="presentation-dune-unite-archivistique">
+<h3><span class="section-number">27.1.1. </span>Présentation d’une unité archivistique<a class="headerlink" href="#presentation-dune-unite-archivistique" title="Lien vers cette rubrique"></a></h3>
+<p>Une unité archivistique correspond à un niveau de classement intellectuel (ou unité de description). Elle peut décrire un fonds, un sous-fonds, une série organique, une sous-série organique, un dossier, un sous-dossier, un document, une page d’un registre…</p>
+<p>Dans la solution logicielle Vitam, les unités archivistiques peuvent être de type arbre de positionnement, plan de classement ou standard. Les unités archivistiques déclarent un niveau de description, au sens des normes de description archivistique (Series, RecordGrp, Item…), mais la solution logicielle n’effectue pas de contrôle de cohérence sur ces niveaux de description.</p>
+<p>Une unité archivistique peut être rattachée à une ou plusieurs unités archivistiques (unités archivistiques parentes) et avoir une ou plusieurs unités archivistiques dépendantes (unité archivistiques filles), de manière à permettre une description archivistique hiérarchisée. Il est ainsi possible de naviguer dans une arborescence pour parcourir un fonds, une série, un dossier… Dans la solution logicielle Vitam, chaque point de cette arborescence est appelé nœud.</p>
+<p>L’unité archivistique porte des métadonnées de description (au minimum, un titre et un niveau de description) et peut également comporter des métadonnées de gestion (règles de gestion et/ou profil d’unité archivistique applicables à l’unité).<br>
+La description peut être enrichie en fonction des besoins du service producteur. Le SEDA propose pour cela une liste des métadonnées descriptives et de gestion pouvant être utilisées et leur cardinalité (la métadonnée est-elle obligatoire ou non ? Est-elle répétable ?).<br>
+En cas de besoin, cette liste peut être complétée (cf. ontologie).<br>
+Les possibilités offertes par le SEDA permettent une description très riche des unités archivistiques : au-delà d’un titre et d’une date, il est également possible de faire porter à l’unité archivistique des identifiants archivistiques (cote) ou métier (numéro de dossier, matricule…) et des informations issues des systèmes de production métier (date de réception, d’envoi, de transaction, identité du rédacteur, du signataire et du destinataire…). Tout ou partie de ces métadonnées de description pourra par la suite faire l’objet d’un export pour alimenter des instruments de recherche, une base de données d’un portail… Il reviendra à l’archiviste de sélectionner la granularité de description pertinente et les métadonnées utiles.</p>
+<p>Le traitement des archives électroniques implique une gestion fine à un niveau de granularité qui correspondrait au pièce à pièce dans le papier : en effet, le plus petit niveau d’unité archivistique pris en charge est le fichier. Par exemple, dans un dossier électronique de correspondance reçue par le Premier ministre, chaque courrier sera décrit séparément avec ses métadonnées. La notion d’article, qui combine unité matérielle et unité intellectuelle correspond ainsi dans le contexte électronique à l’objet nativement numérique pris en charge. Ceci permet une gestion très fine des accès puisqu’il est possible de cibler un objet très précis au sein d’un ensemble plus large pour le communiquer (par exemple, telle copie de concours, tel acte d’état civil, tel document dans un dossier).</p>
+</section>
+<section id="presentation-des-objets-techniques">
+<h3><span class="section-number">27.1.2. </span>Présentation des objets techniques<a class="headerlink" href="#presentation-des-objets-techniques" title="Lien vers cette rubrique"></a></h3>
+<p>Les objets techniques sont la forme prise par l’objet archivé. Il peut s’agir d’un objet physique (registre, maquette, dossier, carte postale…) référencé dans le SAE, comme de fichiers binaires (document bureautique, messagerie, photographie ou film numérique…).<br>
+Les objets techniques sont typés en fonction de leur version et de leur usage.<br>
+La version correspond à la génération technique d’un nouveau fichier binaire, dans le cadre des opérations de préservation, pour assurer la lisibilité dans le temps.</p>
+<p>La notion de version employée ici est différente de celle couramment utilisée pour désigner les versions successives d’un document dans le cadre d’un traitement administratif.
+Pour une nouvelle version intellectuelle d’un document, on créera une nouvelle unité archivistique, puisque les documents ne seront pas identiques : contenu informationnel différent, date de dernière modification différente… Exemple : nouvelle version de la documentation Vitam pour tenir compte des fonctionnalités développées.
+Pour une même unité archivistique, le nouveau fichier généré peut différer techniquement (par exemple, être un .pdf quand le fichier d’origine est un fichier .odt), mais son contenu informationnel est le même.</p>
+<p>Les usages sont de quatre types pour les objets binaires : original numérique, version de diffusion, vignette, contenu textuel. Pour un objet physique, son usage est « original physique ». Pur un objet physique, son usage est « original physique ».</p>
+<p>Les objets techniques sont décrits par des métadonnées techniques (format, taille, date…). Le SEDA propose une liste des métadonnées techniques pouvant être utilisées et leur cardinalité (la métadonnée est-elle obligatoire ou non ? Est-elle répétable ?). La description technique peut être minimale ou enrichie en fonction des besoins du service producteur (cf. ontologie).</p>
+</section>
+<section id="presentation-du-groupe-dobjets-techniques">
+<h3><span class="section-number">27.1.3. </span>Présentation du groupe d’objets techniques<a class="headerlink" href="#presentation-du-groupe-dobjets-techniques" title="Lien vers cette rubrique"></a></h3>
+<p>À chaque unité archivistique peut être associé un groupe d’objets techniques. Ce groupe d’objets regroupe tous les objets binaires qui représentent l’unité archivistique, selon leurs usages et leurs versions, et peut référencer un objet physique (original physique) : un groupe d’objets peut ainsi contenir, par exemple, la référence à un registre, le fichier TIFF issu de la numérisation d’une des fiches du registre et le fichier en basse résolution utilisé pour la mise en ligne.
+Le groupe d’objets techniques indique en métadonnée le nombre de copies des objets techniques réalisées par la solution logicielle en fonction de la stratégie de stockage appliquée.</p>
+<p>L’original numérique est le fichier sur lequel la solution logicielle Vitam fera reposer la valeur probante et dont elle s’engage à préserver l’accès dans le temps. C’est pourquoi, sauf exception, le groupe d’objets techniques doit toujours contenir un objet « original », qu’il s’agisse d’un original numérique (fichier) ou de la référence à un original physique conservé par le service.</p>
+</section>
+<section id="exemple-de-structuration-des-informations-dans-le-cadre-de-la-numerisation-dun-registre-matricule">
+<h3><span class="section-number">27.1.4. </span>Exemple de structuration des informations dans le cadre de la numérisation d’un registre matricule<a class="headerlink" href="#exemple-de-structuration-des-informations-dans-le-cadre-de-la-numerisation-dun-registre-matricule" title="Lien vers cette rubrique"></a></h3>
+<p>Le registre sera décrit dans une unité archivistique associée à un groupe d’objets techniques qui référencera un original physique (le registre).
+Chaque fiche matricule sera décrite dans une unité archivistique fille de l’unité archivistique décrivant le registre, associée un groupe d’objets techniques.
+Le groupe d’objets techniques comprendra :</p>
+<ul class="simple">
+<li><p>un original physique (référence à la page du registre matricule),</p></li>
+<li><p>un original numérique (le fichier TIFF, éventuellement avec plusieurs versions au fur et à mesure des opérations de transformation de formats dans le cadre de la préservation),</p></li>
+<li><p>une copie de diffusion (le fichier JPEG, éventuellement avec plusieurs versions au fur et à mesure des opérations de transformation de formats dans le cadre de la préservation),</p></li>
+<li><p>une vignette (fichier basse résolution pour affichage d’un aperçu sur le site internet),</p></li>
+<li><p>un contenu textuel (fichier issu d’une opération d’océrisation de la fiche matricule).</p></li>
+</ul>
+</section>
+</section>
+<section id="constitution-des-paquets-dinformation">
+<h2><span class="section-number">27.2. </span>Constitution des paquets d’information<a class="headerlink" href="#constitution-des-paquets-dinformation" title="Lien vers cette rubrique"></a></h2>
+<p>Le fonctionnement conceptuel d’un système d’archivage électronique repose sur la notion de paquets à soumettre, à archiver et à diffuser. On parle de « paquet » car l’objet à conserver (le fichier électronique, la base de données…) est obligatoirement accompagné des métadonnées descriptives et techniques qui vont permettre de le retrouver, de gérer son cycle de vie et de le préserver.</p>
+<p>En entrée, la solution logicielle reçoit des SIP (Submission Information Package), constitués d’un bordereau de transfert et des fichiers à archiver.
+Les fichiers à archiver sont contenus dans un répertoire informatique (la « boîte d’archives ») et sont accompagnés d’un bordereau de transfert.
+Le bordereau de transfert, encore appelé manifeste, décrit les unités archivistiques, les groupes d’objets techniques et les objets techniques associés et pointe vers les fichiers à archiver. Ce bordereau de transfert correspond à la fois à une liste de colisage et au bordereau de versement des archives puisqu’il permet de faire le contrôle du nombre d’objets versés et porte également les descriptions des archives. Il peut faire l’objet d’un contrôle automatique de sa structure et des métadonnées renseignées (cf. ontologie, profil d’archivage et profil d’unité archivistique). Il respecte un formalisme imposé par le SEDA.
+La présence de fichiers numériques n’est pas obligatoire, ce qui permet de verser dans la solution logicielle Vitam des arborescences de description indépendamment des unités archivistiques avec leurs fichiers qui pourront y être rattachées par la suite (cf. arbre de positionnement et plan de classement).</p>
+<p>Les SIP ne sont pas conservés tels quels dans la solution logicielle Vitam. Lors du processus d’entrée, chaque unité archivistique est enregistrée comme un AIP (Archival Information Package) qui référence son opération d’entrée dans la solution logicielle, sa ou ses unités archivistiques parentes et son groupe d’objets techniques. Ceci permet de reconstituer au besoin le SIP d’origine (tous les AIP ayant comme origine la même opération d’entrée) et l’arborescence des unités archivistiques, tout en offrant une grande souplesse de gestion des archives au sein de la solution logicielle puisque les traitements archivistiques peuvent porter sur des unités archivistiques individuelles et non systématiquement sur le contenu d’une entrée.</p>
+<p>Lors des demandes de communication, la solution logicielle permet de constituer des DIP (Dissemination Information Package) composés d’un bordereau conforme au SEDA et des fichiers à communiquer.
+Le bordereau décrit les unités archivistiques, les groupes d’objets techniques et les objets techniques associés et pointe vers les fichiers, réunis dans un répertoire informatique.
+Un DIP peut correspondre à une entrée, à une partie d’une entrée, à plusieurs entrées, à des unités archivistiques issues de plusieurs entrées. Il peut être constitué d’archives de services producteurs différents.</p>
+</section>
+<section id="coexistence-avec-les-systemes-traditionnels-de-description-et-de-gestion-des-archives">
+<h2><span class="section-number">27.3. </span>Coexistence avec les systèmes traditionnels de description et de gestion des archives<a class="headerlink" href="#coexistence-avec-les-systemes-traditionnels-de-description-et-de-gestion-des-archives" title="Lien vers cette rubrique"></a></h2>
+<p>Les services d’archives souhaiteront sans doute offrir à leurs publics une seule interface d’accès aux archives, quel qu’en soit le support. La coexistence des archives traditionnelles, numérisées et nativement numériques dans un même portail est tout à fait possible, dans la mesure où ces archives partagent des caractéristiques communes, mais une attention particulière devra être portée sur certains points.</p>
+<p>Les archives nativement numériques sont décrites comme les archives traditionnelles de façon hiérarchisée, ce qui permet de naviguer dans une arborescence commune. Toutefois, le niveau de granularité de description des archives électroniques étant plus fin, cette spécificité est à prendre en compte dans un système hybride pour gérer les descriptions de granularité très différente et leur restitution au lecteur : comment fournir des informations homogènes en évitant une surreprésentation des archives numériques ? Quel est le bon niveau de description des archives numériques à restituer : pièce, sous-dossier, dossier ?
+<em>Exemple :</em> une messagerie électronique peut être décrite jusqu’au niveau de la pièce jointe à un message. Dans un portail hybride, la description de la boîte de messagerie peut-elle suffire ?</p>
+<p>Les archives nativement numériques peuvent être accompagnées de métadonnées beaucoup plus riches que les métadonnées de description utilisées pour le papier : en plus du titre, des dates, de nombreuses informations issues des systèmes de production peuvent être conservées. L’archiviste devra s’interroger sur l’opportunité de publier ces métadonnées dans un portail ou un instrument de recherche, tant pour conserver un équilibre avec les descriptions des archives traditionnelles que pour assurer une minimisation des éventuelles données à caractère personnel qui pourraient ainsi être exposées.</p>
+<p>La finesse de description des archives numériques permet de fournir une réponse simple à la notion de communication par extrait puisqu’il est désormais possible de cibler très précisément et finement une unité archivistique (un courrier, un acte de naissance, un extrait signalétique des services…) au sein d’un dossier.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="Vademecum_registre_fonds.html" class="btn btn-neutral float-left" title="26. Le registre des fonds dans la solution logicielle Vitam" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="Vademecum_suivi_acces.html" class="btn btn-neutral float-right" title="28. Le suivi des accès dans la solution logicielle Vitam" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2022, Programme Vitam.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: master_8.0.x
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Branches</dt>
+      <dd><a href="../../master/sections/Vademecum_structuration_information.html">master</a></dd>
+      <dd><a href="../../master_6.rc.x/index.html">master_6.rc.x</a></dd>
+      <dd><a href="../../master_7.1.x/sections/Vademecum_structuration_information.html">master_7.1.x</a></dd>
+      <dd><a href="Vademecum_structuration_information.html">master_8.0.x</a></dd>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

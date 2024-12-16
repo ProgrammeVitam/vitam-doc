@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>6. Le contrat d’accès dans la solution logicielle Vitam &mdash; Vitam documentation fonctionnelle</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=eea1f72d" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f4732e6d"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/translations.js?v=bf059b8c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="7. Le contrat d’entrée dans la solution logicielle Vitam" href="Vademecum_contrat_entree.html" />
+    <link rel="prev" title="5. La gestion des archives classifiées avec la solution logicielle Vitam" href="Vademecum_classification.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: white" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/Vitam_Logo-CMJN.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">première approche</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="guide_lecture.html">1. Documentation Vitam - guide de lecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="presentation_programme.html">2. Présentation du programme Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="presentation_solution_logicielle.html">3. Présentation de la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_prise_en_main.html">4. Guide de prise en main de la solution logicielle Vitam – Vitam UI<br>
+<em>Réaliser une première entrée</em></a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">documentation métier</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="organisation_information.html">1. Organisation de l’information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gestion_archives_arbo.html">2. Gestion des archives et des arborescences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_donnees.html">3. Modèle de données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SIP.html">4. Structuration des <em>Submission Information Packages</em> (SIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DIP.html">5. Structuration des <em>Dissemination Information Packages</em> (DIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gestion_habilitations.html">6. Gestion des habilitations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regles_gestion.html">7. Règles de gestion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services_prod.html">8. Services producteurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_archivage.html">9. Profils d’archivage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_unite_archivistique.html">10. Profils d’unité archivistique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ontologie.html">11. Ontologie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="schema.html">12. Schéma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_workflow.html">13. Description des workflows et des opérations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_de_collecte.html">14. Module de collecte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eliminations.html">15. Les éliminations avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gel.html">16. Le gel d’archives avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preservation.html">17. Gestion de la préservation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stockage.html">18. Gestion de multiples stratégies de stockage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transfert.html">19. Le transfert avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="valeur_probante.html">20. Conservation de la valeur probante</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">documentation Vitam UI</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Autoprovisionning.html">1. Vitam UI : présentation de la fonctionnalité d’auto-provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Arbres_Plans.html">2. APP Arbres et plans</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">outils connexes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="resip.html">1. RESIP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resip_faq.html">2. RESIP : foire aux questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pastis_standalone.html">3. PASTIS STANDALONE</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Chantier préservation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="chantier_preservation_validation_format.html">1. Validation du format des fichiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_identification_format.html">2. Identification des formats de fichiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_extraction_MD.html">3. Extraction des métadonnées techniques</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Vademecum</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_sommaire.html">1. Vademecum: sommaire thématique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_glossaire.html">2. Notions utilisées dans la solution logicielle Vitam et lien vers la fiche qui les définit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_arbre.html">3. L’arbre de positionnement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_audit.html">4. Les audits dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_classification.html">5. La gestion des archives classifiées avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">6. Le contrat d’accès dans la solution logicielle Vitam</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#presentation-du-contrat-dacces">6.1. Présentation du contrat d’accès</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#perimetre-du-contrat-dacces">6.1.1. Périmètre du contrat d’accès</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#parametrage-des-actions-autorisees">6.1.2. Paramétrage des actions autorisées</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#parametrage-du-perimetre-de-consultation-autorise">6.1.3. Paramétrage du périmètre de consultation autorisé</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#restriction-des-services-producteurs-autorises">6.1.3.1. Restriction des services producteurs autorisés</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#restriction-des-usages-autorises">6.1.3.2. Restriction des usages autorisés</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#restriction-de-navigation-dans-larborescence">6.1.3.3. Restriction de navigation dans l’arborescence</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#restriction-en-fonction-des-regles-de-gestion">6.1.3.4. Restriction en fonction des règles de gestion</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#parametrage-du-niveau-de-tracabilite-attendu">6.1.4. Paramétrage du niveau de traçabilité attendu</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#configuration-du-contrat-dacces">6.2. Configuration du contrat d’accès</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#constitution-du-contrat-dacces">6.2.1. Constitution du contrat d’accès</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#les-utilisateurs-ont-ils-besoin-dacceder-aux-archives-et-ou-de-faire-des-traitements-sur-les-unites-archivistiques">6.2.1.1. Les utilisateurs ont-ils besoin d’accéder aux archives et/ou de faire des traitements sur les unités archivistiques ?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#si-les-utilisateurs-ont-besoin-dacceder-aux-archives-et-ou-de-faire-des-traitements-sur-les-unites-archivistiques-pourront-ils-acceder-a-toutes-les-archives">6.2.1.2. Si les utilisateurs ont besoin d’accéder aux archives et/ou de faire des traitements sur les unités archivistiques, pourront-ils accéder à toutes les archives ?</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#gestion-de-lidentifiant-du-contrat-dacces">6.2.2. Gestion de l’identifiant du contrat d’accès</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#formalisation-du-contrat-dacces">6.2.3. Formalisation du contrat d’accès</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#activation-desactivation-du-contrat-dacces">6.2.4. Activation/désactivation du contrat d’accès</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#modification-dun-contrat-dacces">6.3. Modification d’un contrat d’accès</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_entree.html">7. Le contrat d’entrée dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_gestion.html">8. Le contrat de gestion dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_echeances.html">9. Le calcul des héritages des règles de gestion et l’indexation des échéances dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_eliminations.html">10. Réaliser des éliminations d’archives avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_habilitations.html">11. La gestion des droits et permissions des utilisateurs applicatifs dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_identifiants.html">12. L’attribution des identifiants dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_journalisation.html">13. La journalisation et la conservation de la valeur probante dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_ontologie.html">14. L’ontologie dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_pa.html">15. Les profils d’archivage dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_parametrages_pf.html">16. Le paramétrage fonctionnel d’une plate-forme utilisant la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_plan.html">17. Le plan de classement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_preservation.html">18. La préservation dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_pua.html">19. Les profils d’unité archivistique dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_rattachement.html">20. Faire un rattachement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_formats.html">21. Le référentiel des formats dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_griffons.html">22. Le référentiel des griffons dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_preservation.html">23. Le référentiel des scénarios de préservation dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_rg.html">24. Le référentiel des règles de gestion dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_sa.html">25. Le référentiel des services agents dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_registre_fonds.html">26. Le registre des fonds dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_structuration_information.html">27. La structuration des informations dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_suivi_acces.html">28. Le suivi des accès dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_tenant.html">29. Les tenants dans la solution logicielle Vitam</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: white" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Documentation utilisateur Vitam</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">6. </span>Le contrat d’accès dans la solution logicielle Vitam</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/sections/Vademecum_contrat_acces.md.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+
+           <div itemprop="articleBody">
+             
+  <section id="le-contrat-dacces-dans-la-solution-logicielle-vitam">
+<h1><span class="section-number">6. </span>Le contrat d’accès dans la solution logicielle Vitam<a class="headerlink" href="#le-contrat-dacces-dans-la-solution-logicielle-vitam" title="Lien vers cette rubrique"></a></h1>
+<p>Le contrat d’accès permet d’octroyer sur un tenant des droits aux utilisateurs applicatifs habilités pour accéder aux unités archivistiques, qu’il s’agisse de les consulter, de modifier unitairement ou en masse leurs métadonnées descriptives et de gestion, de télécharger ou d’exporter les unités archivistiques avec les objets techniques associés, d’éliminer les archives ou de les auditer. Il octroie également des droits pour la consultation du registre des fonds.</p>
+<p>Chaque opération d’accès (consultation, modification de métadonnées, accès au registre des fonds…) doit préciser dans sa requête le contrat utilisé.</p>
+<p>Diverses configurations du contrat d’accès sont possibles en fonction des restrictions que l’on souhaite apporter aux droits des utilisateurs applicatifs.</p>
+<section id="presentation-du-contrat-dacces">
+<h2><span class="section-number">6.1. </span>Présentation du contrat d’accès<a class="headerlink" href="#presentation-du-contrat-dacces" title="Lien vers cette rubrique"></a></h2>
+<section id="perimetre-du-contrat-dacces">
+<h3><span class="section-number">6.1.1. </span>Périmètre du contrat d’accès<a class="headerlink" href="#perimetre-du-contrat-dacces" title="Lien vers cette rubrique"></a></h3>
+<p>Un contrat d’accès est propre au tenant* sur lequel il a été importé.</p>
+<p>Une application qui serait amenée à effectuer des accès sur plusieurs tenants devrait disposer d’un contrat pour chaque tenant.</p>
+</section>
+<section id="parametrage-des-actions-autorisees">
+<h3><span class="section-number">6.1.2. </span>Paramétrage des actions autorisées<a class="headerlink" href="#parametrage-des-actions-autorisees" title="Lien vers cette rubrique"></a></h3>
+<p>Le contrat d’accès permet de ne donner accès aux unités archivistiques qu’en lecture seule, c’est-à-dire sans possibilité de modifier les métadonnées. Il est recommandé de choisir ce paramétrage du contrat d’accès quand une application n’a besoin que de consulter les archives.
+Si le contrat autorise la modification de métadonnées, cette autorisation peut ne porter que sur les métadonnées descriptives ou sur les métadonnées descriptives et les métadonnées de gestion des unités archivistiques (règles de gestion et profil d’unité archivistique).
+Les métadonnées de gestion sont en effet considérées comme plus sensibles, car elles conditionnent notamment la mise en œuvre de sorts finaux (élimination, transfert) ou le statut de communicabilité des archives. La modification des métadonnées de gestion doit donc être réservée aux applications qui en ont vraiment besoin.</p>
+</section>
+<section id="parametrage-du-perimetre-de-consultation-autorise">
+<h3><span class="section-number">6.1.3. </span>Paramétrage du périmètre de consultation autorisé<a class="headerlink" href="#parametrage-du-perimetre-de-consultation-autorise" title="Lien vers cette rubrique"></a></h3>
+<section id="restriction-des-services-producteurs-autorises">
+<h4><span class="section-number">6.1.3.1. </span>Restriction des services producteurs autorisés<a class="headerlink" href="#restriction-des-services-producteurs-autorises" title="Lien vers cette rubrique"></a></h4>
+<p>Un contrat d’accès permet de restreindre la consultation des archives et du registre des fonds au(x) seul(s) producteur(s) qu’il déclare.</p>
+<p>La déclaration des services producteurs autorisés se fait par l’identifiant de ces services dans le référentiel des services agents.
+Il est également possible de donner accès à tous les services producteurs.</p>
+</section>
+<section id="restriction-des-usages-autorises">
+<h4><span class="section-number">6.1.3.2. </span>Restriction des usages autorisés<a class="headerlink" href="#restriction-des-usages-autorises" title="Lien vers cette rubrique"></a></h4>
+<p>Un contrat d’accès permet de limiter la consultation des objets techniques (visualisation et téléchargement) en n’autorisant l’accès qu’à certains usages :</p>
+<ul class="simple">
+<li><p>archives physiques (PhysicalMaster),</p></li>
+<li><p>original numérique (BinaryMaster),</p></li>
+<li><p>version de diffusion (Dissemination),</p></li>
+<li><p>contenu textuel (TextContent),</p></li>
+<li><p>vignettes (Thumbnail).</p></li>
+</ul>
+</section>
+<section id="restriction-de-navigation-dans-larborescence">
+<h4><span class="section-number">6.1.3.3. </span>Restriction de navigation dans l’arborescence<a class="headerlink" href="#restriction-de-navigation-dans-larborescence" title="Lien vers cette rubrique"></a></h4>
+<p>Un contrat d’accès permet de déclarer un ou plusieurs nœuds*, dans une arborescence, à partir desquels l’accès aux archives est accordé. Seules les unités archivistiques filles de ces nœuds de consultation seront accessibles.</p>
+<p>La déclaration des nœuds se fait sur la base de l’identifiant (GUID) d’une unité archivistique déjà présente dans le système. Le nœud peut être un nœud d’arbre de positionnement, un nœud de plan de classement ou un nœud d’unité archivistique standard.</p>
+<p>Un contrat d’accès permet également de déclarer un ou plusieurs nœuds, dans une arborescence, à partir desquels l’accès aux archives est interdit. Les unités archivistiques filles de ces nœuds seront inaccessibles.
+La déclaration des nœuds se fait sur la base de l’identifiant (GUID) d’une unité archivistique déjà présente dans le système. Le nœud peut être un nœud d’arbre de positionnement, un nœud de plan de classement ou un nœud d’unité archivistique standard.</p>
+</section>
+<section id="restriction-en-fonction-des-regles-de-gestion">
+<h4><span class="section-number">6.1.3.4. </span>Restriction en fonction des règles de gestion<a class="headerlink" href="#restriction-en-fonction-des-regles-de-gestion" title="Lien vers cette rubrique"></a></h4>
+<p>Si les échéances des règles de gestion* applicables aux unités archivistiques ont été indexées, il est possible de filtrer par contrat d’accès les résultats remontés à l’utilisateur pour ne lui donner accès qu’aux unités archivistiques dont l’échéance pour la(les) catégorie(s) de règle de gestion concernée(s) est dans le passé par rapport à la date de la requête.</p>
+<p>Le filtre s’applique uniquement aux échéances indexées. Ainsi, si une unité archivistique porte en propre une règle de communicabilité échue, mais qu’elle n’a pas fait l’objet d’une indexation des échéances, elle ne sera pas accessible avec un contrat d’accès filtrant sur la règle de communicabilité.</p>
+<p>Pour en savoir plus, consulter le <a class="reference internal" href="Vademecum_echeances.html"><span class="std std-doc">vademecum Le calcul des héritages des règles de gestion et l’indexation des échéances dans la solution logicielle Vitam</span></a>.</p>
+</section>
+</section>
+<section id="parametrage-du-niveau-de-tracabilite-attendu">
+<h3><span class="section-number">6.1.4. </span>Paramétrage du niveau de traçabilité attendu<a class="headerlink" href="#parametrage-du-niveau-de-tracabilite-attendu" title="Lien vers cette rubrique"></a></h3>
+<p>Le contrat d’accès permet de préciser si des logs d’accès doivent être générés lors d’un accès à l’objet (fichier numérique), que ce soit par téléchargement de l’objet ou export d’un DIP*.
+Les accès aux métadonnées des unités archivistiques ne sont pas concernés (cf. fiche Le suivi des accès dans la solution logicielle Vitam).
+Par défaut, cette option n’est pas activée.</p>
+</section>
+</section>
+<section id="configuration-du-contrat-dacces">
+<h2><span class="section-number">6.2. </span>Configuration du contrat d’accès<a class="headerlink" href="#configuration-du-contrat-dacces" title="Lien vers cette rubrique"></a></h2>
+<section id="constitution-du-contrat-dacces">
+<h3><span class="section-number">6.2.1. </span>Constitution du contrat d’accès<a class="headerlink" href="#constitution-du-contrat-dacces" title="Lien vers cette rubrique"></a></h3>
+<p>Pour constituer un contrat d’accès, l’administrateur fonctionnel recense les droits à accorder en fonction des besoins des utilisateurs.</p>
+<section id="les-utilisateurs-ont-ils-besoin-dacceder-aux-archives-et-ou-de-faire-des-traitements-sur-les-unites-archivistiques">
+<h4><span class="section-number">6.2.1.1. </span>Les utilisateurs ont-ils besoin d’accéder aux archives et/ou de faire des traitements sur les unités archivistiques ?<a class="headerlink" href="#les-utilisateurs-ont-ils-besoin-dacceder-aux-archives-et-ou-de-faire-des-traitements-sur-les-unites-archivistiques" title="Lien vers cette rubrique"></a></h4>
+<p>Une application transférant des archives dans la solution logicielle Vitam n’aura pas nécessairement besoin de les consulter, en ce cas il ne sera pas utile de lui attribuer un contrat d’accès.
+Cas d’usage : une chaîne de numérisation verse les documents numérisés dans le SAE, mais n’y accède pas ; dans ce cas, l’application doit disposer d’un contrat d’entrée, mais pas d’un contrat d’accès.
+Si les utilisateurs n’ont besoin que d’accéder aux archives, sans faire de traitement sur les unités archivistiques, il n’est pas utile de leur donner des droits de modification.
+Seuls les utilisateurs en ayant vraiment besoin doivent avoir des droits d’écriture sur les métadonnées de gestion.</p>
+</section>
+<section id="si-les-utilisateurs-ont-besoin-dacceder-aux-archives-et-ou-de-faire-des-traitements-sur-les-unites-archivistiques-pourront-ils-acceder-a-toutes-les-archives">
+<h4><span class="section-number">6.2.1.2. </span>Si les utilisateurs ont besoin d’accéder aux archives et/ou de faire des traitements sur les unités archivistiques, pourront-ils accéder à toutes les archives ?<a class="headerlink" href="#si-les-utilisateurs-ont-besoin-dacceder-aux-archives-et-ou-de-faire-des-traitements-sur-les-unites-archivistiques-pourront-ils-acceder-a-toutes-les-archives" title="Lien vers cette rubrique"></a></h4>
+<p>Si l’on souhaite restreindre l’accès des utilisateurs applicatifs aux seules archives dont ils sont les producteurs, il faudra autant de contrat d’accès que d’utilisateurs applicatifs, chaque contrat ne déclarant que le ou les producteurs autorisés.
+Il est également possible de restreindre les utilisateurs à un périmètre plus fin en limitant les possibilités de navigation dans l’arborescence, en déclarant des nœuds de consultation et des nœuds inaccessibles.</p>
+<p>Les droits octroyés dans le contrat d’accès doivent être compatibles avec ceux du profil de sécurité : par exemple, si le contrat d’accès autorise la modification des métadonnées, mais que le profil de sécurité ne permet pas d’accéder au service de mise à jour des unités archivistiques, l’utilisateur applicatif ne pourra pas modifier les métadonnées d’une unité archivistique.
+Une application ayant des droits d’administration de la solution logicielle Vitam, par exemple un système d’information archivistique (SIA), doit détenir un contrat d’accès lui permettant d’accéder à l’ensemble des fonds conservés dans la solution logicielle Vitam et de modifier les métadonnées descriptives et de gestion.</p>
+<p>Pour une application devant filtrer les accès en fonction de profils utilisateurs, un contrat d’accès unique peut ne pas être suffisant pour gérer les droits des utilisateurs finaux. On pourrait vouloir limiter par exemple certains utilisateurs à une partie de l’arborescence ou à certains usages seulement.
+Dans ce cas, l’application accédante peut ajouter des filtres d’accès supplémentaires afin de réduire le périmètre des archives consultables en fonction des profils utilisateurs qu’elle définit.
+Il est également possible d’attribuer plusieurs contrats d’accès à l’application.
+Exemple : tous les utilisateurs du SIA ne sont pas autorisés à consulter l’ensemble des usages des archives. Le SIA pourra avoir un contrat d’accès lui permettant de consulter tous les usages, mais des filtres seront installés dans le front-office pour trier les résultats et ne présenter que certains usages aux utilisateurs finaux en fonction de leur profil. Le SIA peut sinon disposer d’un contrat spécifique pour chaque profil d’utilisateurs finaux.</p>
+</section>
+</section>
+<section id="gestion-de-lidentifiant-du-contrat-dacces">
+<h3><span class="section-number">6.2.2. </span>Gestion de l’identifiant du contrat d’accès<a class="headerlink" href="#gestion-de-lidentifiant-du-contrat-dacces" title="Lien vers cette rubrique"></a></h3>
+<p>À l’installation de la plate-forme Vitam, l’administrateur technique peut configurer le tenant pour que les identifiants des contrats d’accès soient générés par Vitam (mode « maître ») ou par le front-office (mode « esclave »).
+Le mode « esclave » permet à un service de conserver la main sur les identifiants des contrats d’accès pour utiliser des identifiants normés au niveau de l’institution et/ou à un niveau national ou international.</p>
+</section>
+<section id="formalisation-du-contrat-dacces">
+<h3><span class="section-number">6.2.3. </span>Formalisation du contrat d’accès<a class="headerlink" href="#formalisation-du-contrat-dacces" title="Lien vers cette rubrique"></a></h3>
+<p>Un contrat d’accès prend la forme d’un fichier JSON, pouvant contenir 1 à n contrat(s) d’accès.
+Un contrat d’accès donné doit obligatoirement comporter les informations suivantes :</p>
+<ul class="simple">
+<li><p>identifiant signifiant. Ce champ est obligatoire seulement s’il est généré par l’application à l’origine de sa création. Si cet identifiant est généré par la solution logicielle Vitam, il n’est pas nécessaire de le renseigner dans le fichier JSON ;</p></li>
+<li><p>nom du contrat.
+D’autres informations, facultatives, peuvent venir compléter ces informations.</p></li>
+</ul>
+<p>Le contrat d’accès est composé des éléments suivants :</p>
+<ul class="simple">
+<li><p>Éléments obligatoires</p>
+<ul>
+<li><p>identifiant unique donné au contrat, sauf s’il est généré automatiquement par le système</p></li>
+<li><p>nom du contrat</p></li>
+<li><p>statut « Actif » ou « Inactif » ; par défaut la valeur est « INACTIVE »</p></li>
+<li><p>service(s) producteur(s) associé(s) au contrat pour déterminer les périmètres de consultation. Il peut s’agir de :</p>
+<ul>
+<li><p>tous les services producteurs (valeur par défaut : « false » – obligatoire),</p></li>
+<li><p>une sélection de services producteurs (facultatif)</p></li>
+</ul>
+</li>
+<li><p>usage(s) au(x)quel(s) le contrat donne accès. Il peut s’agir de :</p>
+<ul>
+<li><p>tous les usages (valeur par défaut : « false » – obligatoire),</p></li>
+<li><p>une sélection d’usages (facultatif)</p></li>
+</ul>
+</li>
+<li><p>droit d’écriture sur les archives (valeur par défaut : « false »)</p></li>
+<li><p>droit de modification de l’ensemble des métadonnées d’une unité archivistique ou de ses seules métadonnées descriptives (valeur par défaut : « false »)</p></li>
+<li><p>droit d’enregistrer les accès sur les objets dans un log (valeur par défaut : « INACTIVE »)</p></li>
+</ul>
+</li>
+<li><p>Éléments facultatifs</p>
+<ul>
+<li><p>description du contrat</p></li>
+<li><p>si le contrat est inactif, date de désactivation du contrat</p></li>
+<li><p>date d’activation du contrat</p></li>
+<li><p>sélection de services producteurs associés au contrat</p></li>
+<li><p>sélection d’usages</p></li>
+<li><p>identifiant du nœud ou des nœuds au(x)quel(x) et à partir des/duquel(s) on souhaite donner accès</p></li>
+<li><p>identifiant du nœud ou des nœuds à partir de(s)quel(s) on souhaite interdire l’accès</p></li>
+<li><p>sélection des catégories de règles indexées à filtrer</p></li>
+</ul>
+</li>
+</ul>
+<p>Il est obligatoire d’indiquer dans un contrat d’accès actif si le service externe, une fois authentifié par la solution logicielle Vitam, a accès</p>
+<ul class="simple">
+<li><p>à tous les services producteurs ou au moins à l’un d’entre eux,</p></li>
+<li><p>à tous les usages ou à au moins l’un d’entre eux.
+Si aucun de ces éléments n’a été renseigné, même si le contrat d’accès est actif, le service externe ne pourra accéder à aucun service de la solution logicielle Vitam.</p></li>
+</ul>
+<p>Pour plus d’information sur la formalisation des contrats d’accès, consulter le <a class="reference internal" href="modele_de_donnees.html"><span class="std std-doc">document VITAM. Modèle de données</span></a>.</p>
+<p>Il est possible d’importer, en une seule fois, un référentiel complet, comprenant plusieurs notices décrivant chacune un contrat d’accès. La solution logicielle Vitam ne comptabilisera qu’une seule opération et ne prendra pas en compte dans le journal des opérations la création unitaire des différents items compris dans le référentiel importé.</p>
+<p>Afin d’optimiser la traçabilité de la création des différents contrats d’accès, il est recommandé de créer ces derniers un par un.</p>
+</section>
+<section id="activation-desactivation-du-contrat-dacces">
+<h3><span class="section-number">6.2.4. </span>Activation/désactivation du contrat d’accès<a class="headerlink" href="#activation-desactivation-du-contrat-dacces" title="Lien vers cette rubrique"></a></h3>
+<p>Un contrat d’accès peut être importé avec un statut inactif ou être désactivé lors d’une mise à jour du contrat.
+Cette fonctionnalité est utile quand on souhaite créer un contrat d’accès et l’importer avant d’autoriser des applications à l’utiliser ou lorsqu’on souhaite désactiver temporairement ou définitivement un contrat d’accès.</p>
+<p>Un contrat au statut inactif ne permet pas de réaliser un accès.</p>
+</section>
+</section>
+<section id="modification-dun-contrat-dacces">
+<h2><span class="section-number">6.3. </span>Modification d’un contrat d’accès<a class="headerlink" href="#modification-dun-contrat-dacces" title="Lien vers cette rubrique"></a></h2>
+<p>Les contrats d’accès peuvent être modifiés unitairement pour permettre d’activer ou de désactiver certaines options.</p>
+<p>Cette action provoque la création d’une nouvelle version du contrat d’accès. Les différentes versions font l’objet d’une sauvegarde sur les offres de stockage utilisées par la solution logicielle Vitam.</p>
+<p>Les champs « Identifiant », « Date de création », « Dernière modification » et « Tenant » ne sont pas modifiables.</p>
+<p>Il est possible de modifier un contrat d’accès utilisé dans un contexte applicatif particulier. Il est conseillé de suivre les étapes suivantes en fonction du contexte d’utilisation du contrat :</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Contexte</p></th>
+<th class="head text-left"><p>Action</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Avec un contrat d’accès</p></td>
+<td class="text-left"><p>Désactivation du contexte ou du seul contrat d’accès, le temps de procéder à la modification</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Avec un contrat d’accès et un contrat d’entrée</p></td>
+<td class="text-left"><p>Désactivation du seul contrat d’accès, le temps de procéder à la modification, de manière à ne pas interrompre les transferts du contrat d’entrée associé au contexte applicatif.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Avec plusieurs contrats d’accès</p></td>
+<td class="text-left"><p>Désactivation d’un seul contrat d’accès, le temps de procéder à la modification, de manière à ne pas interrompre l’utilisation des autres contrats d’accès associés au contexte applicatif.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Avec un ou plusieurs contrats d’accès</p></td>
+<td class="text-left"><p>- Création d’un nouveau contrat d’accès contenant les modifications à apporter.<br>- Association de ce contrat d’accès au contexte applicatif.<br>- Activation de ce contrat d’accès.<br>- Désactivation de l’ancien contrat d’accès.<br>- Suppression du lien entre l’ancien contrat d’accès et le contexte applicatif.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Pour aller plus loin, consulter le <a class="reference internal" href="gestion_habilitations.html"><span class="std std-doc">document VITAM. Gestion des habilitations</span></a>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="Vademecum_classification.html" class="btn btn-neutral float-left" title="5. La gestion des archives classifiées avec la solution logicielle Vitam" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="Vademecum_contrat_entree.html" class="btn btn-neutral float-right" title="7. Le contrat d’entrée dans la solution logicielle Vitam" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2022, Programme Vitam.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: master_8.0.x
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Branches</dt>
+      <dd><a href="../../master/sections/Vademecum_contrat_acces.html">master</a></dd>
+      <dd><a href="../../master_6.rc.x/index.html">master_6.rc.x</a></dd>
+      <dd><a href="../../master_7.1.x/sections/Vademecum_contrat_acces.html">master_7.1.x</a></dd>
+      <dd><a href="Vademecum_contrat_acces.html">master_8.0.x</a></dd>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

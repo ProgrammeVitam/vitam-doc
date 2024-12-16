@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>14. L’ontologie dans la solution logicielle Vitam &mdash; Vitam documentation fonctionnelle</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=eea1f72d" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f4732e6d"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/translations.js?v=bf059b8c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="15. Les profils d’archivage dans la solution logicielle Vitam" href="Vademecum_pa.html" />
+    <link rel="prev" title="13. La journalisation et la conservation de la valeur probante dans la solution logicielle Vitam" href="Vademecum_journalisation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: white" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/Vitam_Logo-CMJN.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">première approche</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="guide_lecture.html">1. Documentation Vitam - guide de lecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="presentation_programme.html">2. Présentation du programme Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="presentation_solution_logicielle.html">3. Présentation de la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_prise_en_main.html">4. Guide de prise en main de la solution logicielle Vitam – Vitam UI<br>
+<em>Réaliser une première entrée</em></a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">documentation métier</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="organisation_information.html">1. Organisation de l’information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gestion_archives_arbo.html">2. Gestion des archives et des arborescences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_donnees.html">3. Modèle de données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SIP.html">4. Structuration des <em>Submission Information Packages</em> (SIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DIP.html">5. Structuration des <em>Dissemination Information Packages</em> (DIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gestion_habilitations.html">6. Gestion des habilitations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regles_gestion.html">7. Règles de gestion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services_prod.html">8. Services producteurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_archivage.html">9. Profils d’archivage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_unite_archivistique.html">10. Profils d’unité archivistique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ontologie.html">11. Ontologie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="schema.html">12. Schéma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_workflow.html">13. Description des workflows et des opérations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_de_collecte.html">14. Module de collecte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eliminations.html">15. Les éliminations avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gel.html">16. Le gel d’archives avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preservation.html">17. Gestion de la préservation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stockage.html">18. Gestion de multiples stratégies de stockage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transfert.html">19. Le transfert avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="valeur_probante.html">20. Conservation de la valeur probante</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">documentation Vitam UI</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Autoprovisionning.html">1. Vitam UI : présentation de la fonctionnalité d’auto-provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Arbres_Plans.html">2. APP Arbres et plans</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">outils connexes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="resip.html">1. RESIP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resip_faq.html">2. RESIP : foire aux questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pastis_standalone.html">3. PASTIS STANDALONE</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Chantier préservation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="chantier_preservation_validation_format.html">1. Validation du format des fichiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_identification_format.html">2. Identification des formats de fichiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_extraction_MD.html">3. Extraction des métadonnées techniques</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Vademecum</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_sommaire.html">1. Vademecum: sommaire thématique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_glossaire.html">2. Notions utilisées dans la solution logicielle Vitam et lien vers la fiche qui les définit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_arbre.html">3. L’arbre de positionnement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_audit.html">4. Les audits dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_classification.html">5. La gestion des archives classifiées avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_acces.html">6. Le contrat d’accès dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_entree.html">7. Le contrat d’entrée dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_gestion.html">8. Le contrat de gestion dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_echeances.html">9. Le calcul des héritages des règles de gestion et l’indexation des échéances dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_eliminations.html">10. Réaliser des éliminations d’archives avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_habilitations.html">11. La gestion des droits et permissions des utilisateurs applicatifs dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_identifiants.html">12. L’attribution des identifiants dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_journalisation.html">13. La journalisation et la conservation de la valeur probante dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">14. L’ontologie dans la solution logicielle Vitam</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#presentation-de-lontologie">14.1. Présentation de l’ontologie</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#perimetre-de-lontologie">14.1.1. Périmètre de l’ontologie</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#composition-de-lontologie">14.1.2. Composition de l’ontologie</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#controles-effectues-a-partir-de-lontologie">14.1.3. Contrôles effectués à partir de l’ontologie</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#utilisation-de-lontologie-pour-gerer-les-affichages-dans-linterface-graphique">14.1.4. Utilisation de l’ontologie pour gérer les affichages dans l’interface graphique</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#configuration-de-lontologie">14.2. Configuration de l’ontologie</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#constitution-de-lontologie">14.2.1. Constitution de l’ontologie</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#transposition-des-outils-existants-dans-une-ontologie-conforme-aux-attendus-de-la-solution-logicielle-vitam">14.2.2. Transposition des outils existants dans une ontologie conforme aux attendus de la solution logicielle Vitam</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#illustration-pour-un-versement-de-dossier-de-personnel">14.2.2.1. Illustration pour un versement de dossier de personnel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#illustration-pour-un-versement-de-dossiers-de-marche">14.2.2.2. Illustration pour un versement de dossiers de marché</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#gestion-des-identifiants-de-lontologie">14.2.3. Gestion des identifiants de l’ontologie</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#formalisation-de-lontologie">14.2.4. Formalisation de l’ontologie</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#modification-de-lontologie">14.3. Modification de l’ontologie</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_pa.html">15. Les profils d’archivage dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_parametrages_pf.html">16. Le paramétrage fonctionnel d’une plate-forme utilisant la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_plan.html">17. Le plan de classement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_preservation.html">18. La préservation dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_pua.html">19. Les profils d’unité archivistique dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_rattachement.html">20. Faire un rattachement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_formats.html">21. Le référentiel des formats dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_griffons.html">22. Le référentiel des griffons dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_preservation.html">23. Le référentiel des scénarios de préservation dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_rg.html">24. Le référentiel des règles de gestion dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_sa.html">25. Le référentiel des services agents dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_registre_fonds.html">26. Le registre des fonds dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_structuration_information.html">27. La structuration des informations dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_suivi_acces.html">28. Le suivi des accès dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_tenant.html">29. Les tenants dans la solution logicielle Vitam</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: white" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Documentation utilisateur Vitam</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">14. </span>L’ontologie dans la solution logicielle Vitam</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/sections/Vademecum_ontologie.md.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+
+           <div itemprop="articleBody">
+             
+  <section id="lontologie-dans-la-solution-logicielle-vitam">
+<h1><span class="section-number">14. </span>L’ontologie dans la solution logicielle Vitam<a class="headerlink" href="#lontologie-dans-la-solution-logicielle-vitam" title="Lien vers cette rubrique"></a></h1>
+<p>L’ontologie référence l’ensemble des vocabulaires (ou métadonnées) acceptés dans la solution logicielle Vitam. Pour chacun de ces vocabulaires, elle définit un intitulé et un type d’indexation particulier, ainsi que la ou les collections de la base de données de la solution logicielle Vitam qui l’utilise.</p>
+<p>L’ontologie regroupe toutes les façons de nommer un même objet intellectuel. Elle permet d’éviter la multiplication des vocabulaires faisant référence à une même notion et de fiabiliser la manière dont ces vocabulaires et métadonnées sont indexés dans la solution logicielle Vitam pour optimiser les facultés de recherche.</p>
+<section id="presentation-de-lontologie">
+<h2><span class="section-number">14.1. </span>Présentation de l’ontologie<a class="headerlink" href="#presentation-de-lontologie" title="Lien vers cette rubrique"></a></h2>
+<section id="perimetre-de-lontologie">
+<h3><span class="section-number">14.1.1. </span>Périmètre de l’ontologie<a class="headerlink" href="#perimetre-de-lontologie" title="Lien vers cette rubrique"></a></h3>
+<p>L’ontologie est valable pour la plate-forme. Elle est dite trans-tenant.</p>
+</section>
+<section id="composition-de-lontologie">
+<h3><span class="section-number">14.1.2. </span>Composition de l’ontologie<a class="headerlink" href="#composition-de-lontologie" title="Lien vers cette rubrique"></a></h3>
+<p>L’ontologie référence :</p>
+<ul class="simple">
+<li><p>les vocabulaires définis dans le SEDA, inclus par défaut,</p></li>
+<li><p>les vocabulaires propres à la solution logicielle Vitam, inclus par défaut,</p></li>
+<li><p>d’autres vocabulaires dits « externes » ajoutés pour répondre à un besoin de description particulier du service utilisateur non couvert dans les vocabulaires par défaut.</p></li>
+</ul>
+<p>L’ontologie référence uniquement les vocabulaires pouvant contenir des valeurs. Cela signifie qu’un élément XML englobant un sous-élément XML (par exemple, les balises <em>Writer</em> ou <em>Management</em> du SEDA) n’est pas référencé.</p>
+<p>L’ontologie définit pour chaque vocabulaire un type d’indexation qui correspond à la manière dont l’information doit être renseignée : attend-on une date, une chaîne de caractères, un mot-clé, un nombre entier, un nombre décimal, un booléen ?</p>
+</section>
+<section id="controles-effectues-a-partir-de-lontologie">
+<h3><span class="section-number">14.1.3. </span>Contrôles effectués à partir de l’ontologie<a class="headerlink" href="#controles-effectues-a-partir-de-lontologie" title="Lien vers cette rubrique"></a></h3>
+<p>Lors de la création ou de la mise à jour d’un profil d’unité archivistique, la solution logicielle Vitam vérifie que les vocabulaires déclarés dans les profils existent dans l’ontologie.</p>
+<p>La solution logicielle Vitam n’effectue pas de contrôle sur la conformité des vocabulaires par rapport à leur type d’indexation dans l’ontologie lors de la création de profils d’unité archivistique. Néanmoins, il est obligatoire que le type du vocabulaire défini dans le schéma de contrôle corresponde au type d’indexation du vocabulaire tel qu’il est défini dans l’ontologie.</p>
+<p>Lors d’une entrée, la solution logicielle Vitam vérifie que :</p>
+<ul class="simple">
+<li><p>pour les unités archivistiques ne déclarant pas de profil d’unité archivistique, la valeur de leurs métadonnées est conforme à celle attendue dans l’ontologie (par exemple qu’une métadonnée dont la valeur doit être une date est bien une date et pas un chiffre ou une chaîne de caractères), si ces métadonnées existent dans l’ontologie,</p></li>
+<li><p>pour les unités archivistiques qui déclarent un profil d’unité archivistique, la valeur de toutes leurs métadonnées est conforme à celle définie dans le schéma de contrôle associé.</p></li>
+</ul>
+<p>Lors de la modification des métadonnées :</p>
+<ul class="simple">
+<li><p>pour les unités archivistiques ne déclarant pas de profil d’unité archivistique, si la métadonnée existe dans l’ontologie, la solution logicielle Vitam vérifie que la mise à jour demandée est conforme au type d’indexation du vocabulaire dans l’ontologie ;</p></li>
+<li><p>pour les unités archivistiques déclarant un profil d’unité archivistique, la solution logicielle Vitam vérifie que la mise à jour demandée reste conforme au profil d’unité archivistique et, de fait, à l’ontologie, aussi bien pour les métadonnées que les valeurs utilisées.</p></li>
+</ul>
+</section>
+<section id="utilisation-de-lontologie-pour-gerer-les-affichages-dans-linterface-graphique">
+<h3><span class="section-number">14.1.4. </span>Utilisation de l’ontologie pour gérer les affichages dans l’interface graphique<a class="headerlink" href="#utilisation-de-lontologie-pour-gerer-les-affichages-dans-linterface-graphique" title="Lien vers cette rubrique"></a></h3>
+<p>L’ontologie contenant la traduction des différents vocabulaires supportés par la solution logicielle Vitam, il est possible, en accès :</p>
+<ul class="simple">
+<li><p>d’utiliser ce référentiel comme un fichier de propriétés pour récupérer les traductions, plutôt que de faire porter par l’interface graphique ces informations. Ainsi, cela évitera de constater des absences de traduction des vocabulaires externes récemment créés ;</p></li>
+<li><p>d’utiliser et d’afficher la traduction des vocabulaires dans les interfaces graphiques, rendue administrable dans ce référentiel, afin qu’un administrateur fonctionnel ait la possibilité de modifier les intitulés (ou traductions) de certains vocabulaires (par exemple, modifier « Description », traduction textuelle du bloc <em>Description</em> du SEDA, par « Présentation du contenu », terme issu de la norme ISAD/G).</p></li>
+</ul>
+</section>
+</section>
+<section id="configuration-de-lontologie">
+<h2><span class="section-number">14.2. </span>Configuration de l’ontologie<a class="headerlink" href="#configuration-de-lontologie" title="Lien vers cette rubrique"></a></h2>
+<section id="constitution-de-lontologie">
+<h3><span class="section-number">14.2.1. </span>Constitution de l’ontologie<a class="headerlink" href="#constitution-de-lontologie" title="Lien vers cette rubrique"></a></h3>
+<p>La création d’une ontologie est un préalable à l’utilisation des vocabulaires dans la solution logicielle Vitam, c’est pourquoi lors de l’installation de la solution logicielle Vitam une ontologie est configurée par défaut. Cette ontologie contient l’ensemble des vocabulaires de type interne, c’est-à-dire les vocabulaires issus du SEDA et les vocabulaires propres à la solution.</p>
+<p>Un administrateur fonctionnel n’a donc pas besoin, a priori, de créer une ontologie. Il s’agit d’un acte d’exploitation technique.</p>
+<p>Néanmoins, dans certains cas, l’administrateur fonctionnel pourra être amené à vouloir enrichir l’ontologie par de nouveaux vocabulaires pour décrire des éléments propres aux archives qu’il souhaite prendre en charge qui ne figurent pas dans l’ontologie par défaut de la solution logicielle Vitam.</p>
+<p>La création d’un nouveau vocabulaire n’est pas un acte anodin. Il est conseillé de prendre en considération les éléments suivants :</p>
+<ul class="simple">
+<li><p>est-ce qu’un vocabulaire déjà existant peut couvrir le même champ sémantique et signifiant ?</p></li>
+<li><p>pour quels usages a-t-on besoin d’ajouter ce nouveau vocabulaire ?</p></li>
+<li><p>est-il possible de rendre ce vocabulaire plus générique pour faciliter son utilisation dans un contexte plus large ? Par exemple, créer un vocabulaire « Somme » et non des vocabulaires « SommeDepense », « SommeFraisDeplacement », « SommeDue », etc.</p></li>
+</ul>
+</section>
+<section id="transposition-des-outils-existants-dans-une-ontologie-conforme-aux-attendus-de-la-solution-logicielle-vitam">
+<h3><span class="section-number">14.2.2. </span>Transposition des outils existants dans une ontologie conforme aux attendus de la solution logicielle Vitam<a class="headerlink" href="#transposition-des-outils-existants-dans-une-ontologie-conforme-aux-attendus-de-la-solution-logicielle-vitam" title="Lien vers cette rubrique"></a></h3>
+<p>Pour étudier son besoin de créer ou non de nouveaux vocabulaires dans l’ontologie, l’administrateur fonctionnel peut examiner les différents modèles de bordereaux de transfert utilisés dans son service pour étudier les notions métier décrites et leurs valeurs attendues (date, texte, nombre…) et déterminer ainsi son besoin en vocabulaires spécifiques non pris en charge dans le SEDA et leur type d’indexation.</p>
+<section id="illustration-pour-un-versement-de-dossier-de-personnel">
+<h4><span class="section-number">14.2.2.1. </span>Illustration pour un versement de dossier de personnel<a class="headerlink" href="#illustration-pour-un-versement-de-dossier-de-personnel" title="Lien vers cette rubrique"></a></h4>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Nom</p></th>
+<th class="head text-left"><p>Prénom</p></th>
+<th class="head text-left"><p>Date de naissance</p></th>
+<th class="head text-left"><p>Matricule</p></th>
+<th class="head text-left"><p>Corps</p></th>
+<th class="head text-left"><p>Grade</p></th>
+<th class="head text-left"><p>Nombre d’enfants</p></th>
+<th class="head text-left"><p>Date de départ en retraite</p></th>
+<th class="head text-left"><p>Décorations</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p></p></td>
+<td class="text-left"><p></p></td>
+<td class="text-left"><p></p></td>
+<td class="text-left"><p></p></td>
+<td class="text-left"><p></p></td>
+<td class="text-left"><p></p></td>
+<td class="text-left"><p></p></td>
+<td class="text-left"><p></p></td>
+<td class="text-left"><p></p></td>
+</tr>
+</tbody>
+</table>
+<p>Les « Nom », « Prénom », « Date de naissance » et « Matricule » correspondent à des balises déjà existantes dans le SEDA. Le type d’indexation de ces balises est défini dans le SEDA.<br>
+La « Date de départ en retraite » pourra soit être exprimée à l’aide d’une des dates proposées par le SEDA (<em>EndDate</em> par exemple), soit par un vocabulaire spécifique <em>DateDepartRetraite</em> qui pourrait également être utilisé pour décrire des dossiers de pension. Le type d’indexation de cette <em>DateDepartRetraite</em> sera une date conforme au format date standardisé (exprimée par exemple sous la forme « 1794-02-01 » et non « 1er février 1794 » ou « 13 pluviôse an II »).
+Les « Corps », « Grade », « Nombre d’enfants » et « Décorations » ne correspondent à aucune notion présente dans le SEDA. Il conviendra donc de créer des vocabulaires spécifiques. Leur type d’indexation sera une chaîne de caractères, sauf pour le « Nombre d’enfants » où un nombre entier est attendu.</p>
+</section>
+<section id="illustration-pour-un-versement-de-dossiers-de-marche">
+<h4><span class="section-number">14.2.2.2. </span>Illustration pour un versement de dossiers de marché<a class="headerlink" href="#illustration-pour-un-versement-de-dossiers-de-marche" title="Lien vers cette rubrique"></a></h4>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Type de marché</p></th>
+<th class="head text-left"><p>Numéro attribué aux marchés</p></th>
+<th class="head text-left"><p>Titulaire</p></th>
+<th class="head text-left"><p>Intitulé des marchés</p></th>
+<th class="head text-left"><p>Date de notification</p></th>
+<th class="head text-left"><p>Date de liquidation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p></p></td>
+<td class="text-left"><p></p></td>
+<td class="text-left"><p></p></td>
+<td class="text-left"><p></p></td>
+<td class="text-left"><p></p></td>
+<td class="text-left"><p></p></td>
+</tr>
+</tbody>
+</table>
+<p>Le « Type de marché » peut être traité par la balise <em>DocumentType</em> du SEDA.</p>
+<p>Le « Numéro attribué aux marchés » peut être traité par les nombreux identifiants prévus par le SEDA.</p>
+<p>Le titulaire sera une personne physique ou morale. La balise utilisée pour le décrire sera une balise englobante qui inclura des sous-éléments de type PersonOrEntityGroup ou BusinessGroup. Elle ne doit donc pas être déclarée en tant que telle dans l’ontologie.
+L’intitulé du marché pourra correspondre à la balise <em>Title</em>.</p>
+<p>Pour les « Date de notification » et « Date de liquidation », on pourra utiliser des balises du groupe DateGroup comme <em>TransactedDate</em> ou <em>EndDate</em> plutôt que de créer des vocabulaires spécifiques de type « DateDeLiquidation ».</p>
+<p>Le type d’indexation des balises sera conforme à leur type d’indexation défini dans le SEDA.</p>
+</section>
+</section>
+<section id="gestion-des-identifiants-de-lontologie">
+<h3><span class="section-number">14.2.3. </span>Gestion des identifiants de l’ontologie<a class="headerlink" href="#gestion-des-identifiants-de-lontologie" title="Lien vers cette rubrique"></a></h3>
+<p>L’ontologie fonctionne en mode « esclave ». Ce référentiel interne à la solution logicielle Vitam a vocation à être une copie locale d’un référentiel administré dans le front-office des plates-formes d’archivage, de façon à permettre le partage des vocabulaires entre applications ou entre archives physiques et électroniques. C’est donc le front office qui fournit les identifiants, pour les vocabulaires externes uniquement.</p>
+</section>
+<section id="formalisation-de-lontologie">
+<h3><span class="section-number">14.2.4. </span>Formalisation de l’ontologie<a class="headerlink" href="#formalisation-de-lontologie" title="Lien vers cette rubrique"></a></h3>
+<p>L’ontologie est importée dans la solution logicielle Vitam sous la forme d’un fichier au format JSON.
+Un vocabulaire doit comporter les éléments suivants :</p>
+<ul class="simple">
+<li><p>identifiant unique dans l’ensemble du système (obligatoire) ;</p></li>
+<li><p>nom du vocabulaire (facultatif) ;</p></li>
+<li><p>traduction du vocabulaire, explicitant de manière intelligible le nom du vocabulaire (facultatif) ;</p></li>
+<li><p>description (facultatif) ;</p></li>
+<li><p>type d’indexation du vocabulaire, correspondant à un type attendu par le moteur de recherche Elastic Search (obligatoire) ;</p></li>
+<li><p>origine du vocabulaire, précisant la provenance du vocabulaire (facultatif). Sa valeur peut être égale à :</p>
+<ul>
+<li><p>INTERNAL : pour les vocabulaires conformes au SEDA et les vocabulaires propres à la solution logicielle Vitam ;</p></li>
+<li><p>EXTERNAL : pour les vocabulaires non gérés nativement par les deux précédents items et ajoutés pour répondre à un besoin particulier ;</p></li>
+</ul>
+</li>
+<li><p>collection(s) de la base de données MongoDB qui utilise(nt) le vocabulaire en question (obligatoire).</p></li>
+</ul>
+<p>Pour en savoir plus, consulter le <a class="reference internal" href="modele_de_donnees.html"><span class="std std-doc">document VITAM. Modèle de données</span></a>.</p>
+</section>
+</section>
+<section id="modification-de-lontologie">
+<h2><span class="section-number">14.3. </span>Modification de l’ontologie<a class="headerlink" href="#modification-de-lontologie" title="Lien vers cette rubrique"></a></h2>
+<p>La modification de l’ontologie s’effectue par un ré-import de l’ontologie, en mode « annule et remplace ». C’est un acte d’administration lourd, car il peut nécessiter à la suite du ré-import une réindexation potentiellement longue. Cette réindexation est un acte d’administration technique.</p>
+<p>La solution logicielle Vitam permet :</p>
+<ul class="simple">
+<li><p>d’ajouter un nouveau vocabulaire ;</p></li>
+<li><p>de modifier les informations associées à un vocabulaire (dont le type d’indexation) ;</p></li>
+<li><p>de supprimer un vocabulaire.
+Cette action provoque la création d’une nouvelle version du référentiel.</p></li>
+</ul>
+<p>La suppression d’un vocabulaire concerne exclusivement les vocabulaires d’origine externe, sauf en cas de mise à jour du modèle de données Vitam ou de publication d’une nouvelle version du SEDA.</p>
+<p>La solution logicielle Vitam permet de paramétrer les possibilités de mise à jour de l’ontologie à l’initialisation de la plate-forme :</p>
+<ul class="simple">
+<li><p>elle peut interdire toute modification des vocabulaires internes, qui ont vocation à ne pas être modifiés ni surtout supprimés en production ;</p></li>
+<li><p>elle peut forcer la mise à jour des types d’indexation, sans tenir compte des règles prédéfinies.</p></li>
+</ul>
+<p>Pour un vocabulaire externe et, si le paramétrage de l’ontologie le permet, pour un vocabulaire interne, les champs modifiables sont :</p>
+<ul class="simple">
+<li><p>le nom du vocabulaire :</p>
+<ul>
+<li><p>tel qu’il est défini dans la nomenclature du SEDA ;</p></li>
+<li><p>tel qu’il est retourné via la solution logicielle ;</p></li>
+</ul>
+</li>
+<li><p>la traduction du vocabulaire ;</p></li>
+<li><p>la description ;</p></li>
+<li><p>le type d’indexation du vocabulaire, correspondant à un type attendu par le moteur de recherche Elastic Search ;</p></li>
+<li><p>l’origine du vocabulaire (les valeurs acceptées sont : INTERNAL, EXTERNAL) ;</p></li>
+<li><p>la collection de la base de données MongoDB qui utilise le vocabulaire en question (ce champ doit toujours contenir une référence à au moins une collection).</p></li>
+</ul>
+<p>La mise à jour du référentiel peut échouer pour les motifs suivants :</p>
+<ul class="simple">
+<li><p>ajout d’un vocabulaire dont l’identifiant est déjà utilisé par un autre vocabulaire de l’ontologie ;</p></li>
+<li><p>ajout d’un vocabulaire dont l’identifiant ne correspond pas aux règles imposées par la solution logicielle Vitam ;</p></li>
+<li><p>incompatibilité entre le nouveau et l’ancien type d’indexation ;</p></li>
+<li><p>suppression d’un vocabulaire utilisé dans un profil d’unité archivistique.</p></li>
+</ul>
+<p>Les opérations de modification des types d’indexation doivent obligatoirement être accompagnées d’un acte technique d’exploitation, afin que la nouvelle indexation soit effective et prise en compte par le moteur de recherche Elastic Search et que les données soient ré-indexées en base.
+La suppression d’un vocabulaire doit être accompagnée d’un acte d’exploitation technique visant à supprimer l’indexation du vocabulaire concerné dans le moteur de recherche Elastic Search, sans quoi le vocabulaire ne sera pas complètement supprimé de la solution logicielle Vitam.</p>
+<p>Pour plus d’information, consulter la <a class="reference external" href="http://www.programmevitam.fr/ressources/DocCourante/html/exploitation/">documentation d’exploitation</a>.</p>
+<p>Les différentes versions de l’ontologie font l’objet d’une sauvegarde sur les offres de stockage utilisées par l’implémentation de la solution logicielle Vitam.</p>
+<p>Pour aller plus loin, consulter le <a class="reference internal" href="ontologie.html"><span class="std std-doc">document VITAM. Ontologie</span></a>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="Vademecum_journalisation.html" class="btn btn-neutral float-left" title="13. La journalisation et la conservation de la valeur probante dans la solution logicielle Vitam" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="Vademecum_pa.html" class="btn btn-neutral float-right" title="15. Les profils d’archivage dans la solution logicielle Vitam" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2022, Programme Vitam.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: master_8.0.x
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Branches</dt>
+      <dd><a href="../../master/sections/Vademecum_ontologie.html">master</a></dd>
+      <dd><a href="../../master_6.rc.x/index.html">master_6.rc.x</a></dd>
+      <dd><a href="../../master_7.1.x/sections/Vademecum_ontologie.html">master_7.1.x</a></dd>
+      <dd><a href="Vademecum_ontologie.html">master_8.0.x</a></dd>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>
