@@ -11,6 +11,7 @@ Introduction
 |NF Z 44022 – MEDONA – Modélisation des données pour l’archivage|18/01/2014||
 |Standard d’échange de données pour l’archivage – SEDA – v. 2.1|06/2018||
 |Standard d’échange de données pour l’archivage – SEDA – v. 2.2|02/2022|Cette nouvelle version du SEDA est intégrée à la solution logicielle Vitam à partir de la V6.RC.|
+|Standard d’échange de données pour l’archivage – SEDA – v. 2.3|06/2023||
 |[Vitam – Structuration des *Submission Information Package* (SIP)](./SIP.md)|||           
 |[Vitam – Modèle de données](./modele_de_donnees.md)|||
 |[Vitam – Ontologie](./ontologie.md)|||           
@@ -2234,8 +2235,6 @@ Annexe 3 : Liste des points d’API
 |                   | Mise à jour d’un projet de versement | project:update        | PUT           | /collect-external/v1/projects  |
 |                   | Supprime un projet de versement   | project:id:delete        | DELETE        | /collect-external/v1/projects/{projectId}/ |
 |                   | Verser une archive arborescente ZIP à un projet de versement automatique sans transaction | project:id:zip:create | POST        | /collect-external/v1/projects/{projectId}/upload/ |
-
-
 |                   | Récupérer la liste des transactions du projet | project:id:transactions | GET |/collect-external/v1/projects/{projectId}/transactions/ |
 | transaction       | Création de la transaction        | transaction:create       | POST          | /collect-external/v1/projects/{projectId}/transactions/ |
 |                   | Mise à jour d’une transaction     | transaction:update       | PUT           | /collect-external/v1/transactions/ |
@@ -2245,8 +2244,11 @@ Annexe 3 : Liste des points d’API
 |                   | Abandonner une transaction        | transaction:abort        | PUT           | /collect-external/v1/transactions/{transactionId}/abort/ |
 |                   | Rouvrir une transaction           | transaction:reopen       | PUT           | /collect-external/v1/transactions/{transactionId}/reopen/|
 |                   | Charge les binaires en lot        | transaction:zip:create   | POST          | /collect-external/v1/transactions/{transactionId}/upload/|
+|                   | Mettre à jour les unités archivistiques via fichier CSV de métadonnées       | transaction:id:units:metadata:csv:update   | PUT          | /collect-external/v1/transactions/{transactionId}/units/metadata/csv/|
+|                   | Mettre à jour les unités archivistiques via fichier JSON-Lines de métadonnées        | transaction:id:units:metadata:jsonl:update   | PUT         | /collect-external/v1/transactions/{transactionId}/units/metadata/jsonl/|
 |                   | Crée une unité archivistique      | transaction:unit:create  | POST          | /collect-external/v1/transactions/{transactionId}/units/|
 |                   | Récupère toutes les unités archivistiques | transaction:unit:read | GET      | /collect-external/v1/transactions/{transactionId}/units/|
+|                   | Récupérer la liste des unités archivistiques avec leurs règles de gestion héritées | transaction:unitsWithInheritedRules:read | GET      | /collect-external/v1/transactions/{transactionId}/unitsWithInheritedRules/|
 |                   | Supprime une transaction          | transaction:id:delete    | DELETE        | /collect-external/v1/transactions/{transactionId}/|
 | units             | Crée ou modifie un groupe d’objets techniques | transaction:object:upsert | POST | /collect-external/v1/units/{unitId}/objects/{usage}/{version}/|
 |                   | Insère ou modifie un objet binaire| transaction:binary:upsert | POST         | /collect-external/v1/units/{unitId}/objects/{usage}/{version}/binary/ |
