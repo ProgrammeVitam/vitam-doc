@@ -2738,6 +2738,11 @@ Liste des permissions qui peuvent être associées à :
 |Ontologie|Importer le référentiel ontologique|ontologies:create:json|
 ||Lister le contenu du référentiel ontologique|ontologies:read|
 ||Lire un vocabulaire|ontologies:id:read:json|
+|Schéma|Récuperer le schéma des unités archivistiques|schema:unit:read|
+||Importer des schémas externes dans le référentiel|schema:unit:create|
+||Supprimer un ou plusieurs schémas liés à des unités archivistiques|schema:unit:delete|
+||récuperer le schéma d'un profil d'unité archivistique|schema:archiveunitprofile:read|
+||Récuperer le schéma des groupes d'objets|schema:objectgroup:read|
 |Profils d’unité archivistique|Importer un ou plusieurs profils d’unité archivistique dans le référentiel|archiveunitprofiles:create:binary|
 ||Ecrire un ou plusieurs profils d’unité archivistique dans le référentiel|archiveunitprofiles:create:json|
 ||Lister le contenu du référentiel des profils d’unité archivistique|archiveunitprofiles:read|
@@ -2765,15 +2770,14 @@ Liste des permissions qui peuvent être associées à :
 ||Trouver un service agents avec son identifier|agencies:id:read|
 ||Lister le contenu du référentiel des services agents|agencies:read|
 ||Récupérer le référentiel pour une opération d’import de référentiel des services agents|agenciesreferential:id:read|
-||Création d’un projet de versement|project:create|
+|Collecte|Création d’un projet de versement|project:create|
 ||Récupère la liste des projets de versement|project:read|
 ||Récupère la liste des projets de versement par critère de recherche|project:query:read|
 ||Récupère un projet de versement|project:id:read|
 ||Récupérer la liste des transactions du projet|project:id:transactions|
 ||Mise à jour d’un projet de versement|project:update|
 ||Supprime un projet de versement|project:id:delete|
-||Récupère toutes les unités archivistiques associées à un projet|project:id:units|
-|Collect|Création de la transaction|transaction:create|
+||Création de la transaction|transaction:create|
 ||Mise à jour d’une transaction|transaction:update|
 ||Clôture de la transaction|transaction:close|
 ||Envoi de la transaction|transaction:send|
@@ -2781,11 +2785,12 @@ Liste des permissions qui peuvent être associées à :
 ||Rouvrir une transaction|transaction:reopen|
 ||Récupère une transaction|transaction:id:read|
 ||Supprime une transaction|transaction:id:delete|
-||Charge les binaires en lot|transaction:zip:create|
+||Mettre à jour les unités archivistiques via fichier CSV de métadonnées|transaction:id:units:metadata:csv:update|
+||Mettre à jour les unités archivistiques via fichier JSON-Lines de métadonnées|transaction:id:units:metadata:jsonl:update|
 ||Créer une unité archivistique|transaction:unit:create|
-||Verser une archive arborescente ZIP à un projet de versement automatique sans transaction|createproject:id:zip:create|
+||Verser une archive arborescente ZIP à un projet de versement automatique sans transaction|project:id:zip:create|
 ||Récupère toutes les unités archivistiques|transaction:unit:read|
-||Récupère les unités archivistiques d’une transaction|transaction:id:units|
+||Récupérer la liste des unités archivistiques avec leurs règles de gestion héritées|transaction:unitsWithInheritedRules:read|
 ||Récupère une unité archivistique|transaction:unit:id:read|
 ||Mettre à jour les unités archivistiques|transaction:id:units:update|
 ||Créer un groupe d’objets techniques|transaction:object:upsert|
@@ -2803,12 +2808,13 @@ Liste des permissions qui peuvent être associées à :
 ||Lister le contenu du référentiel détails des registres des fonds|accessionregisterdetails:read|
 |Unités archivistiques et objets|Récupérer la liste des unités archivistiques|units:read|
 ||Récupérer une liste de plus de 10 000 unités archivistiques|units:stream|
-||Récupérer une unité archivistique par identifiant pérenne|units:unitsbypersistentidentifier:id:read|
+||Récupérer une unité archivistique par identifiant pérenne|units:unitpid:id:read|
 ||Récupérer la liste des unités archivistiques avec leurs règles de gestion héritées|unitsWithInheritedRules:read|
 ||Lancer le processus de calcul des règles héritées à des fins de recherche|computeInheritedRules:action|
 ||Lancer la suppression du calcul des règles héritées à des fins de recherche|computeInheritedRules:delete|
 ||Récupérer la liste des unités archivistiques avec leurs règles de gestion héritées|unitsWithInheritedRules:read|
 ||Récupérer la liste des groupes d'objets techniques|objects:read|
+||Récupérer une liste de plus de 10 000 groupes d'objets techniques|objects:stream|
 ||Obtenir le détail d'une unité archivistique au format JSON|units:id:read:json|
 ||Réaliser la mise à jour d'une unité archivistique|units:id:update|
 ||Mise à jour en masse des unités archivistiques|units:update|
@@ -2818,9 +2824,10 @@ Liste des permissions qui peuvent être associées à :
 ||Téléchargement de rapports liés aux mises à jour de masse|distributionreport:id:read|
 ||Reclassification d'unités archivistiques|reclassification:update|
 ||Télécharger le groupe d'objets techniques de l'unité archivistique donnée|units:id:objects:read:json|
+||Récupérer la liste des objets par identifiant pérenne|objects:objectpid:id:read|
 ||Télécharger un objet binaire|units:id:objects:read:binary|
-||Télécharger un objet binaire avec l'identifiant pérenne d'une unité archivistique|objects:unitsbypersistentidentifier:id:objects:read:binary|
-||Télécharger un objet binaire avec identifiant pérenne|objects:objectsbypersistentidentifier:id:read:binary|
+||Télécharger un objet binaire avec l'identifiant pérenne d'une unité archivistique|objects:unitpid:id:objects:read:binary|
+||Télécharger un objet binaire avec identifiant pérenne|objects:objectpid:id:read:binary|
 ||Créer une demande d'accès à un objet persisté sur une offre froide (bande magnétique)|units:id:objects:accessrequests:create|
 ||Vérifier l'état d'un ensemble de demandes d'accès sur une offre froide (bande magnétique)|accessrequests:check|
 ||Supprimer une demande d'accès à un objet persisté sur une offre froide (bande magnétique)|accessrequests:remove|
@@ -2865,7 +2872,8 @@ Liste des permissions qui peuvent être associées à :
 ||Force la pause sur un type d'opération et/ou sur un tenant|forcepause:check|
 ||Retire la pause sur un type d'opération et/ou sur un tenant|removeforcepause:check|
 |Index|Réindexer une collection|reindex:create|
-||Switch indexes|switchindex:create|
+|Exploitation|Récupérer la liste des jobs|job:read|
+||Récupérer la configuration publique (bêta)|configuration:read|
 
 ### Annexe 4 : fonctionnement du log des accès
 
