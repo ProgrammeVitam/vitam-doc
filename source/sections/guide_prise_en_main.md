@@ -116,7 +116,7 @@ L’utilisateur doit importer un référentiel des règles de gestion via l’AP
 
 ![](./medias/guide_prise_en_main/RG.png)
 
-- Pour les tests effectués à partir du jeu de tests « Jeu_de_tests_Guide_de_prise_en_main_V8-1.zip », il faut utiliser le fichier nommé « jeu_donnees_OK_regles_CSV.csv » 3 en cliquant sur le bouton « Autres actions » et en sélectionnant l’action « Importer ».
+- Pour les tests effectués à partir du jeu de tests « Jeu_de_tests_Guide_de_prise_en_main_V8-1.zip », il faut utiliser le fichier nommé « jeu_donnees_OK_regles_CSV.csv » en cliquant sur le bouton « Autres actions » et en sélectionnant l’action « Importer ».
 - L’utilisateur peut également constituer son propre référentiel des règles de gestion au format .csv sur le même modèle. 
 - Il peut également créer unitairement une règle de gestion en cliquant sur le bouton « Créer une règle de gestion » et en renseignant les champs obligatoires.
 
