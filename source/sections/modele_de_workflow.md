@@ -1371,6 +1371,168 @@ Ce rapport est en plusieurs parties :
   "Warnings" : [ "4 identifiers removed." ]}
 ```
 
+Collecte
+----
+
+Cette section décrit les processus (workflow) de suppression et de reclassement d'unités archivistiques du module Collecte
+
+### Workflow de suppression des unités archivistiques
+
+La suppression est un traitement de masse permettant d'évaluer dans un lot conséquent d'unités archivistiques, celles qui sont supprimables (la durée d'utilité administrative est échue et le sort final déclaré est « Supprimer », arbre de positionnement, workflow d'analyse) et de procéder à leur suppression du système (workflow d'action).<br>
+Toutes les étapes, tâches et traitements sont journalisés dans le journal des opérations et décrivent le processus (clé et description de la clé associée dans le journal des opérations) tel qu’implémenté dans la version actuelle de la solution logicielle Vitam.<br>
+
+#### Processus de préparation de la suppression des unités archivistiques (STP_COLLECT_DELETION_PREPARATION)
+-   **Règle** : étape consistant à préparer la suppression des unités archivistiques
+-   **Type** : bloquant
+-   **Statuts** :
+    -   OK : la préparation de la suppression des unités archivistiques a bien été effectuée (STP_COLLECT_DELETION_PREPARATION.OK = Succès du processus de préparation de la suppression définitive des unités archivistiques dans Collect)
+    -   KO : la préparation de la suppression des unités archivistiques n'a pas été effectuée (STP_COLLECT_DELETION_PREPARATION.KO = Échec du processus de préparation de la suppression définitive des unités archivistiques dans Collect)
+    -   WARNING : avertissement lors de la préparation de la suppression des unités archivistiques (STP_COLLECT_DELETION_PREPARATION.WARNING = Avertissement lors du processus de préparation de la suppression définitive des unités archivistiques dans Collect)
+    -   FATAL : une erreur technique est survenue lors de la préparation de la suppression des unités archivistiques (STP_COLLECT_DELETION_PREPARATION.FATAL = Erreur technique lors du processus de préparation de la suppression définitive des unités archivistiques dans Collect)
+
+##### Vérification des processus concurrents (CHECK_CONCURRENT_WORKFLOW_LOCK)
+-   **Règle** : tâche consistant à détecter s'il n’y a pas d'autre processus d’élimination en cours. Si tel est le cas, le processus n’est pas lancé.
+-   **Type** : bloquant
+-   **Statuts** :
+    -   OK : aucun processus concurrent d'élimination n'a été détecté (CHECK_CONCURRENT_WORKFLOW_LOCK.OK = Succès de la détection de processus concurrents d'élimination)
+    -   KO : un processus concurrent d'élimination a été détecté (CHECK_CONCURRENT_WORKFLOW_LOCK.KO = Échec de la détection de processus concurrents d’élimination)
+    -   WARNING : avertissement lors de la détection de processus concurrents d'élimination (CHECK_CONCURRENT_WORKFLOW_LOCK.WARNING = Avertissement lors de la détection de processus concurrents d'élimination)
+    -   FATAL : une erreur technique est survenue lors de la détection de processus concurrents d'élimination (CHECK_CONCURRENT_WORKFLOW_LOCK.FATAL = Erreur technique lors de la détection de processus concurrents d'élimination)
+
+##### Vérification des seuils de l'élimination définitive des unités archivistiques (ELIMINATION_ACTION_CHECK_DISTRIBUTION_THRESHOLD)
+-   **Règle** : tâche consistant à vérifier les seuils de traitement des unités archivistiques par rapport à la liste des unités archivistiques à traiter
+-   **Type** : bloquant
+-   **Statuts** : 
+    -   OK : la vérification des seuils de l’élimination définitive des unités archivistiques a bien été effectuée (ELIMINATION_ACTION_CHECK_DISTRIBUTION_THRESHOLD.OK = Succès de la vérification des seuils de l’élimination définitive des unités archivistiques)
+    -   KO : une incohérence à été détectée entre le seuil et le nombre d’unités archivistiques à traiter (ELIMINATION_ACTION_CHECK_DISTRIBUTION_THRESHOLD.KO = Échec de la vérification des seuils de l’élimination définitive des unités archivistiques)
+    -   WARNING : avertissement lors de la vérification des seuils de l'élimination définitive des unités archivistiques (ELIMINATION_ACTION_CHECK_DISTRIBUTION_THRESHOLD.WARNING = Avertissement lors de la vérification des seuils de l'élimination définitive des unités archivistiques)
+    -   FATAL : une erreur technique est survenue lors de la vérification des seuils de l'élimination définitive des unités archivistiques (ELIMINATION_ACTION_CHECK_DISTRIBUTION_THRESHOLD.FATAL = Erreur technique lors de la vérification des seuils de l'élimination définitive des unités archivistiques)
+
+##### Préparation de la suppression définitive des unités archivistiques (COLLECT_DELETION_UNIT_PREPARATION)
+-   **Règle** : tâche consistant à préparer la suppression définitive des unités archivistiques
+-   **Type** : bloquant
+-   **Statuts** :
+    -   OK : la préparation de la suppression définitive des unités archivistiques a bien été effectuée (COLLECT_DELETION_UNIT_PREPARATION.OK = Succès de la préparation de la suppression définitive des unités archivistiques)
+    -   KO : la préparation de la suppression définitive des unités archivistiques n'a pas été effectuée (COLLECT_DELETION_UNIT_PREPARATION.KO=Échec de la préparation de la suppression définitive des unités archivistiques)
+    -   WARNING :avertissement lors de la préparation de la suppression définitive des unités archivistiques (COLLECT_DELETION_UNIT_PREPARATION.WARNING = Avertissement lors de la préparation de la suppression définitive des unités archivistiques)
+    -   FATAL : une erreur technique est survenue lors de la préparation de la suppression définitive des unités archivistiques (COLLECT_DELETION_UNIT_PREPARATION.FATAL = Erreur technique lors de la préparation de la suppression définitive des unités archivistiques)
+
+
+#### Processus de suppression définitive des unités archivistiques supprimables (STP_COLLECT_DELETION_DELETE_UNIT)
+-   **Règle** : étape consistant à supprimer définitivement des unités archivistiques supprimables
+-   **Type** : bloquant
+-   **Statuts** :
+    -   OK : la suppression définitive des unités archivistiques supprimables a bien été effectué (STP_COLLECT_DELETION_DELETE_UNIT.OK = Succès du processus de suppression définitive des unités archivistiques supprimables dans Collect)
+    -   KO : la suppression définitive des unités archivistiques supprimables n'a pas été effectué (STP_COLLECT_DELETION_DELETE_UNIT.KO = Échec du processus de suppression définitive des unités archivistiques supprimables dans Collect)
+    -   WARNING : avertissement lors de la suppression des unités archivistiques supprimables (STP_COLLECT_DELETION_DELETE_UNIT.WARNING = Avertissement lors du processus de suppression définitive des unités archivistiques supprimables dans Collect)
+    -   FATAL : erreur technique lors de la suppression des unités archivistiques supprimables (STP_COLLECT_DELETION_DELETE_UNIT.FATAL = Erreur technique lors du processus de suppression définitive des unités archivistiques supprimables)
+
+##### Élimination définitive des unités archivistiques éliminables (ELIMINATION_ACTION_DELETE_UNIT)
+-   **Règle** : tâche consistant à supprimer définitivement des unités archivistiques supprimables
+-   **Type** : bloquant
+-   **Statuts** :
+    -   OK : l'élimination définitive des unités archivistiques éliminables a bien été effectuée (ELIMINATION_ACTION_DELETE_UNIT.OK = Succès de l'élimination définitive des unités archivistiques éliminables)
+    -   KO : l'élimination définitive des unités archivistiques éliminables n'a pas été effectuée (ELIMINATION_ACTION_DELETE_UNIT.KO = Échec de l'élimination définitive des unités archivistiques éliminables)
+    -   WARNING : avertissement lors de l'élimination définitive des unités archivistiques éliminables (STP_ELIMINATION_ACTION_DELETE_UNIT.WARNING = Avertissement lors de l'élimination définitive des unités archivistiques éliminables)
+    -   FATAL : une erreur technique est survenue lors de l'élimination définitive des unités archivistiques éliminables (STP_ELIMINATION_ACTION_DELETE_UNIT.FATAL = Erreur technique lors de l'élimination définitive des unités archivistiques éliminables)
+
+
+#### Processus de préparation de la suppression définitive des groupes d'objets techniques dont toutes les unités archivistiques parentes ont été supprimées (STP_COLLECT_DELETION_OBJECT_GROUP_PREPARATION)
+-   **Règle** : étape consistant à préparer la suppression défiinitive des groupes d'objets dont toutes les unités archivistiques parentes ont été supprimées
+-   **Type** : bloquant
+-   **Statuts** :
+    -   OK : la préparation de la suppression défiinitive des groupes d'objets dont toutes les unités archivistiques parentes ont été supprimées a bien été effectuée (STP_COLLECT_DELETION_OBJECT_GROUP_PREPARATION.OK = Succès du processus de préparation de la suppression définitive des groupes d'objets techniques dans Collect)
+    -   KO : la préparation de la suppression défiinitive des groupes d'objets dont toutes les unités archivistiques parentes ont été supprimées n'a pas été effectuée (STP_COLLECT_DELETION_OBJECT_GROUP_PREPARATION.KO = Échec du processus de préparation de la suppression définitive des groupes d'objets techniques dans Collect)
+    -   WARNING : avertissement lors de la préparation de la suppression défiinitive des groupes d'objets dont toutes les unités archivistiques parentes ont été supprimées (STP_COLLECT_DELETION_OBJECT_GROUP_PREPARATION.WARNING = Avertissement lors du processus de préparation de la suppression définitive des groupes d''objets techniques dans Collect)
+    -   FATAL : une erreur technique lors de la préparation de la suppression défiinitive des groupes d'objets dont toutes les unités archivistiques parentes ont été supprimées (STP_COLLECT_DELETION_OBJECT_GROUP_PREPARATION.FATAL = Erreur technique lors du processus de préparation de la suppression définitive des groupes d'objets techniques dans Collect)
+
+##### Préparation de l'élimination définitive des groupes d'objets techniques dont toutes les unités archivistiques parentes ont été éliminées (ELIMINATION_ACTION_OBJECT_GROUP_PREPARATION)
+-   **Règle** : tâche et traitement consistant à préparer l'élimination définitive des groupes d'objets techniques dont les unités archivistiques parentes ont été éliminées
+-   **Type** : bloquant
+-   **Statuts** :
+    -   OK : la préparation de l'élimination définitive des groupes d'objets techniques a bien été effectuée (ELIMINATION_ACTION_OBJECT_GROUP_PREPARATION.OK = Succès de la préparation de l'élimination définitive des groupes d'objets techniques)
+    -   KO : la préparation de l'élimination définitive des groupes d'objets techniques n'a pas été effectuée (ELIMINATION_ACTION_OBJECT_GROUP_PREPARATION.KO = Échec de la préparation de l'élimination définitive des groupes d'objets techniques)
+    -   WARNING : la préparation de l'élimination définitive des groupes d'objets techniques est en warning (ELIMINATION_ACTION_OBJECT_GROUP_PREPARATION.WARNING = Avertissement lors de la préparation de l'élimination définitive des groupes d'objets techniques)
+    -   FATAL : une erreur technique est survenue lors de la préparation de l'élimination définitive des groupes d'objets techniques (ELIMINATION_ACTION_OBJECT_GROUP_PREPARATION.FATAL = Erreur technique lors de la préparation de l'élimination définitive des groupes d’objets techniques)
+
+
+#### Processus de suppression définitive des groupes d'objets techniques dont toutes les unités archivistiques parentes ont été supprimées (STP_COLLECT_DELETION_DELETE_OBJECT_GROUP)
+-   **Règle** : étape consistant à supprimer définitivement des groupes d'objets techniques dont toutes les unités archivistiques parentes ont été supprimées
+-   **Type** : bloquant
+-   **Statuts** :
+    -   OK : la suppression définitive des groupes d'objets techniques dont toutes les unités archivistiques parentes ont été supprimées a bien été effectuée (STP_COLLECT_DELETION_DELETE_OBJECT_GROUP.OK = Succès du processus de suppression définitive des groupes d'objets techniques dont les unités archivistiques parentes sont supprimées dans Collect)
+    -   KO : la suppression définitive des groupes d'objets techniques dont toutes les unités archivistiques parentes ont été supprimées n'a pas été effectuée (STP_COLLECT_DELETION_DELETE_OBJECT_GROUP.KO=Échec du processus de suppression définitive des groupes d'objets techniques dont les unités archivistiques parentes sont supprimées dans Collect)
+    -   WARNING : avertissement lors de la suppression définitive des groupes d'objets techniques dont toutes les unités archivistiques parentes ont été supprimées (STP_COLLECT_DELETION_DELETE_OBJECT_GROUP.WARNING = Avertissement lors du processus de suppression définitive des groupes d'objets techniques dont les unités archivistiques parentes sont supprimées dans Collect)
+    -   FATAL : une erreur technique est survenue lors de la suppression définitive des groupes d'objets techniques dont toutes les unités archivistiques parentes ont été supprimées (STP_COLLECT_DELETION_DELETE_OBJECT_GROUP.FATAL = Erreur technique lors du processus de suppression définitive des groupes d'objets techniques dont les unités archivistiques parentes sont supprimées dans Collect)
+
+##### Élimination définitive des groupes d'objets techniques dont toutes les unités archivistiques parentes ont été éliminées (ELIMINATION_ACTION_DELETE_OBJECT_GROUP)
+-   **Règle** : tâche et traitement consistant à éliminer définitivement les groupes d'objets techniques dont toutes les unités archivistiques parentes ont été éliminées
+-   **Type** :
+-   **Statuts** :
+    -   OK : l'élimination définitive des groupes d'objets techniques dont les unités archivistiques parentes sont éliminées a bien été effectuée (ELIMINATION_ACTION_DELETE_OBJECT_GROUP.OK = Succès de l'élimination définitive des groupes d'objets techniques dont les unités archivistiques parentes sont éliminées)
+    -   KO : l'élimination définitive des groupes d'objets techniques dont les unités archivistiques parentes sont éliminées n'a pas été effectuée (ELIMINATION_ACTION_DELETE_OBJECT_GROUP.KO = Échec de l'élimination définitive des groupes d'objets techniques dont les unités archivistiques parentes sont éliminées)
+    -   WARNING : avertissement lors de l'élimination définitive des groupes d'objets techniques dont les unités archivistiques parentes sont éliminées (ELIMINATION_ACTION_DELETE_OBJECT_GROUP.WARNING = Avertissement lors de l'élimination définitive des groupes d'objets techniques dont les unités archivistiques parentes sont éliminées)
+    -   FATAL : une erreur technique est survenue lors de l'élimination définitive des groupes d'objets techniques dont les unités archivistiques parentes sont éliminées (ELIMINATION_ACTION_DELETE_OBJECT_GROUP.FATAL = Erreur technique lors de l'élimination définitive des groupes d'objets techniques dont les unités archivistiques parentes sont éliminées)
+
+
+#### Processus de détachement des groupes d'objets techniques dont certaines unités archivistiques parentes sont supprimées (STP_COLLECT_DELETION_DETACH_OBJECT_GROUP)
+-   **Règle** : étape consistant à détacher des groupes d'objets techniques dont certaines unités archivistiques parentes sont supprimées
+-   **Type** : bloquant
+-   **Statuts** :
+    -   OK : le détachement des groupes d'objets techniques dont certaines unités archivistiques parentes sont supprimées a bien été effectué (STP_COLLECT_DELETION_DETACH_OBJECT_GROUP.OK = Succès du processus de détachement des groupes d'objets techniques dont certaines unités archivistiques parentes sont supprimées dans Collect)
+    -   KO : le détachement des groupes d'objets techniques dont certaines unités archivistiques parentes sont supprimées n'a pas été effectué (STP_COLLECT_DELETION_DETACH_OBJECT_GROUP.KO = Échec du processus de détachement des groupes d'objets techniques dont certaines unités archivistiques parentes sont supprimées dans Collect)
+    -   WARNING : avertissement lors du détachement des groupes d'objets techniques dont certaines unités archivistiques parentes sont supprimées (STP_COLLECT_DELETION_DETACH_OBJECT_GROUP.WARNING = Avertissement lors du processus de détachement des groupes d'objets techniques dont certaines unités archivistiques parentes sont supprimées dans Collect)
+    -   FATAL : une erreur technique est survenue lors du détachement des groupes d'objets techniques dont certaines unités archivistiques parentes sont supprimées (STP_COLLECT_DELETION_DETACH_OBJECT_GROUP.FATAL = Erreur technique lors du processus de détachement des groupes d'objets techniques dont certaines unités archivistiques parentes sont supprimées dans Collect)
+
+##### Établissement de la liste des objets (OBJECTS_LIST_EMPTY)
+-   **Règle** : tâche consistant à établir la liste des objets
+-   **Type** :
+-   **Statuts** :
+    -   OK : le processus d'établissement de la liste des objets a été établie avec succès (OBJECTS_LIST_EMPTY.OK = Succès lors de l'établissement de la liste des objets : il n'y a pas d’objet pour cette étape)
+    -   FATAL : une erreur technique est survenue lors de l'établissement de la liste des objets (OBJECTS_LIST_EMPTY.FATAL = Erreur technique lors de l'établissement de la liste des objets)
+
+
+#### Processus de génération du rapport de suppression définitive des unités archivistiques (STP_COLLECT_DELETION_REPORT_GENERATION)
+-   **Règle** : étape consistant à générer le rapport de suppression définitive des unités archivistiques
+-   **Type** : bloquant
+-   **Statuts** :
+    -   OK : la génération du rapport d'élimination définitive des unités archivistiques a bien été effectuée (STP_COLLECT_DELETION_REPORT_GENERATION.OK = Succès du processus de génération du rapport de suppression définitive des unités archivistiques dans Collect)
+    -   KO : la génération du rapport d'élimination définitive des unités archivistiques n'a pas été effectuée (STP_COLLECT_DELETION_REPORT_GENERATION.KO = Échec du processus de génération du rapport de suppression définitive des unités archivistiques dans Collect)
+    -   WARNING : avertissement lors de la génération du rapport d'élimination définitive des unités archivistiques (STP_COLLECT_DELETION_REPORT_GENERATION.WARNING = Avertissement lors du processus de génération du rapport de suppression définitive des unités archivistiques dans Collect)
+    -   FATAL : une erreur technique est survenue lors de la génération du rapport d'élimination définitive des unités archivistiques (STP_COLLECT_DELETION_REPORT_GENERATION.FATAL = Erreur technique lors du processus de génération du rapport de suppression définitive des unités archivistiques dans Collect)
+
+##### Génération du rapport d'élimination définitive des unités archivistiques (ELIMINATION_ACTION_REPORT_GENERATION)
+-   **Règle** : tâche consistant à générer le rapport d'élimination définitive des unités archivistiques
+-   **Type** : bloquant
+-   **Statuts** :
+    -   OK : la génération du rapport d'élimination définitive des unités archivistiques a bien été effectuée (ELIMINATION_ACTION_REPORT_GENERATION.OK = Succès de la génération du rapport d'élimination définitive des unités archivistiques)
+    -   KO : la génération du rapport d'élimination définitive des unités archivistiques n'a pas été effectuée (ELIMINATION_ACTION_REPORT_GENERATION.KO = Échec de la génération du rapport d'élimination définitive des unités archivistiques)
+    -   WARNING : avertissement lors de la génération du rapport d'élimination définitive des unités archivistiques (ELIMINATION_ACTION_REPORT_GENERATION.WARNING = Avertissement lors de la génération du rapport d'élimination définitive des unités archivistiques)
+    -   FATAL : une erreur technique est survenue lors de la génération du rapport d'élimination définitive des unités archivistiques (ELIMINATION_ACTION_REPORT_GENERATION.FATAL = Erreur technique lors de la génération du rapport d'élimination définitive des unités archivistiques)
+
+#### Processus de finalisation de la suppression définitive des unités archivistiques (STP_COLLECT_DELETION_FINALIZATION)
+-   **Règle** : étape consistant à finaliser la suppression définitive des unités archivistiques
+-   **Type** : bloquant
+-   **Statuts** :
+    -   OK : la finalisation de la suppression définitive des unités archivistiques a bien été effectuée (STP_COLLECT_DELETION_REPORT_GENERATION.OK = Succès du processus de génération du rapport de suppression définitive des unités archivistiques dans Collect)
+    -   KO : la finalisation de la suppression définitive des unités archivistiques n'a pas été effectuée
+    -   WARNING : avertissement lors de la finalisation de la suppression définitive des unités archivistiques
+    -   FATAL : erreur technique lors de la finalisation de la suppression définitive des unités archivistiques
+
+##### Finalisation de l'élimination définitive des unités archivistiques (ELIMINATION_ACTION_FINALIZATION)
+-   **Règle** : tâche consistant à finaliser l'élimination définitive des unités archivistiques
+-   **Type** : bloquant
+-   **Statuts** :
+    -   OK : La finalisation de l'élimination définitive des unités archivistiques a bien été effectuée (ELIMINATION_ACTION_FINALIZATION.OK = Succès de la finalisation de l'élimination définitive des unités archivistiques)
+    -   KO : La finalisation de l'élimination définitive des unités archivistiques n'a pas été effectuée (ELIMINATION_ACTION_FINALIZATION.KO = Échec de la finalisation de l'élimination définitive des unités archivistiques)
+    -   WARNING : avertissement lors de la finalisation de l'élimination définitive des unités archivistiques (ELIMINATION_ACTION_FINALIZATION.WARNING = Avertissement lors de la finalisation de l'élimination définitive des unités archivistiques)
+    -   FATAL : une erreur technique est survenue lors de la finalisation de l'élimination définitive des unités archivistiques (ELIMINATION_ACTION_FINALIZATION.FATAL = Erreur technique lors de la finalisation de l'élimination définitive des unités archivistiques)
+
+#### Structure de workflow de suppression dans Collecte
+
+![](./medias/modele_workflow/suppression_collect_1.png)
+![](./medias/modele_workflow/suppression_collect_2.png)
+
 Ingest
 ----
 
