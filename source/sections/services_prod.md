@@ -154,6 +154,26 @@ Lors d’une mise à jour du référentiel sont appliquées les règles suivante
 Il est également possible d’ajouter un service agent, de modifier ses informations ou de le supprimer depuis l’APP VitamUI « Services agents » sous forme unitaire ou par un (ré)import complet du référentiel sous la forme d’un fichier CSV. Cette APP permet aussi d’effectuer une recherche dans le référentiel et d’en exporter son contenu sous la forme d’un fichier CSV.
 Les différentes versions du référentiel font l’objet d’une sauvegarde sur les offres de stockage gérées par la solution logicielle Vitam et peuvent être récupérées depuis le front-office via un service particulier (cf. RAML).
 
+#### Accès au référentiel
+
+La solution logicielle Vitam permet d'effectuer des recherches dans le référentiel des services agents.
+Il est possible d'obtenir :
+-  une liste de résultats,
+-  un résultat par facettes (nombre d’occurrences pour une métadonnée donnée).
+Sont disponibles les facettes de type :
+-  "terms" : pour obtenir des catégories basées sur les valeurs distinctes d'un champ spécifique et le nombre associé,
+-  "filters" : pour obtenir des résultats d'agrégations par filtres sur les résultats,
+-  "range" : pour obtenir des agrégations par plages de dates,
+-  "sum" : pour obtenir des totaux sur des champs,
+-  "count" : pour obtenir le nombre de valeurs présentes sur des champs,
+-  "cardinality" : pour obtenir le nombre exact de valeurs présentes sur des champs (usage non recommandé).
+
+Par ailleurs, la solution logicielle permet de consulter le détail d'un service en particulier.
+
+L'accès au référentiel est possible depuis :
+-  les API,
+-  l'APP VitamUI « Services agents ».
+
 ### Entrées
 Dans le cadre du processus d’entrée d’un ensemble d’archives, suite à la réception d’un message ArchiveTransfer du SEDA, la solution logicielle Vitam effectue les tâches et traitements suivants pour les archives :
 - vérification de la déclaration d’un service producteur dans le message ArchiveTransfer ;
