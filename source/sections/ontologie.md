@@ -35,7 +35,7 @@ Il s’articule autour des axes suivants :
 - quelques conseils complémentaires de mise en œuvre.
 
 Le présent document décrit les fonctionnalités qui sont offertes par la
-solution logicielle Vitam au terme de la version 8.0 (octobre 2024).
+solution logicielle Vitam au terme de la version 8.1 (printemps 2025).
 Il a vocation a être amendé, complété et enrichi au fur et à mesure de
 la réalisation de la solution logicielle Vitam et des retours et
 commentaires formulés par les ministères porteurs et les partenaires du
@@ -218,7 +218,6 @@ Chaque enregistrement est modélisé comme suit[^5] :
 | StringSize            | **taille** du vocabulaire, disponible uniquement pour les vocabulaires dont le type détaillé a pour valeur STRING (champ obligatoire).</br> Les valeurs acceptées sont : SHORT, MEDIUM, LONG.</br> Si ce champ n’est pas renseigné, la valeur MEDIUM sera enregistrée.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | Origin                | **origine** du vocabulaire, précisant la provenance du vocabulaire (champ obligatoire). Sa valeur peut être égale à :</br>-   INTERNAL : pour les vocabulaires conformes au SEDA et les vocabulaires propres à la solution logicielle Vitam ;</br>-   EXTERNAL : pour les vocabulaires non gérés nativement par les deux précédents items et ajoutés pour répondre à un besoin particulier.                                                                                                                                                                                                                                                                                                                                                 |
 | Collections           | **collection(s)** de la base de données MongoDB qui utilise(nt) le vocabulaire en question (champ facultatif). </br>   Les valeurs acceptées sont : </br>   -   pour les métadonnées : Unit, ObjectGroup, PurgedPersistentIdentifier ; </br>   -   pour le registre des fonds : AccessionRegisterSummary, AccessionRegisterDetail, AccessionRegisterSymbolic ; </br>   -   pour les référentiels : Context, SecurityProfile, ManagementContract, IngestContract, AccessContract, FileFormat, PreservationScenario, Griffin, FileRules, Agencies, Profile, ArchiveUnitProfile, Ontology, Schema ;</br>-   pour les journaux : LogbookOperation, LogbookLifeCycleUnit, LogbookLifeCycleObjectGroup.                                                                              |
-
 | CreationDate          | **date de création** du vocabulaire, fournie par le système (champ obligatoire).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | LastUpdate           | **dernière date de modification** du vocabulaire, fournie et mise à jour par le système (champ obligatoire).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | _tenant              | **tenant** dans lequel le vocabulaire a été créé, fourni par le système (champ obligatoire).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
@@ -357,6 +356,26 @@ Point d’attention :
 Lors de la suppression d'un vocabulaire externe dans l'ontologie, la solution logicielle Vitam vérifie que le vocabulaire n'est pas utilisé dans le schéma.
 
 L’import ou la mise à jour de l'ontologie peut échouer si le vocabulaire est utilisé dans le schéma.
+
+### Accès au référentiel
+
+La solution logicielle Vitam permet d'effectuer des recherches dans l'ontologie.
+Il est possible d'obtenir :
+-  une liste de résultats,
+-  un résultat par facettes (nombre d’occurrences pour une métadonnée donnée).
+Sont disponibles les facettes de type :
+-  "terms" : pour obtenir des catégories basées sur les valeurs distinctes d'un champ spécifique et le nombre associé,
+-  "filters" : pour obtenir des résultats d'agrégations par filtres sur les résultats,
+-  "range" : pour obtenir des agrégations par plages de dates,
+-  "sum" : pour obtenir des totaux sur des champs,
+-  "count" : pour obtenir le nombre de valeurs présentes sur des champs,
+-  "cardinality" : pour obtenir le nombre exact de valeurs présentes sur des champs (usage non recommandé).
+
+Par ailleurs, la solution logicielle permet de consulter le détail d'un vocabulaire en particulier.
+
+L'accès au référentiel est possible depuis :
+-  les API,
+-  l'APP VitamUI « Ontologie ».
 
 #### Processus d’entrée
 
