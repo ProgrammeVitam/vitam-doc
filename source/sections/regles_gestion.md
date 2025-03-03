@@ -887,12 +887,12 @@ Les échéances associées aux règles modifiées sont alors recalculées ;
 - pour les unités archivistiques déclarant une ClassificationRule – durée de classification, en cas de modification du niveau de protection du secret de la défense nationale (ClassificationLevel), enregistrement de la précédente valeur du bloc ClassificationRule dans la description des archives (création d’un nouveau bloc « _history »). Cette fonction a pour objectif de permettre l’identification via une recherche des unités archivistiques déclassées ou déclassifiées. Ces informations seront exportées en cas de génération d’un Dissemination Information Package (DIP).
 Il est également possible de mettre à jour des règles de gestion au moyen des interfaces de VitamUI :
 - par un réimport complet du référentiel depuis l’APP « Règles de gestion » ;
-- par une action de mise à jour en masse des règles de gestion sur un lot d’archives depuis l’APP « Recherche et consultation des archives ». Au terme de la version 6.RC, cette action peut s’effectuer sur les catégories de règle suivantes :
+- par une action de mise à jour en masse des règles de gestion sur un lot d’archives depuis l’APP « Recherche et consultation des archives ». Au terme de la version 8.1, cette action peut s’effectuer sur les catégories de règle suivantes :
     - durée d’utilité administrative,
     - durée d’utilité courante,
     - communicabilité,
     - réutilisation,
-    - diffustion.
+    - diffusion.
 
 #### Indexation/désindexation des règles de gestion héritées
 
@@ -1034,7 +1034,12 @@ Si le paramétrage correspondant est activé, la solution logicielle ne retourne
 Points d’attention :
 - Si aucune indexation des règles n’a été réalisée, aucune réponse ne pourra être retournée.
 - Les unités archivistiques d’arbre, qui ne portent pas de règles de gestion, ne sont pas consultables si ce filtre est utilisé.
-- Au terme de la release 16 – version 4, ce filtre supporte également la catégorie de règle correspondant au gel.
+- A partir de la version 4, ce filtre supporte également la catégorie de règle correspondant au gel.
+
+Deux autres filtres ont également trait à un filtrage sur les règles de gestion :
+- le premier exclut les unités archivistiques de type "plan de classement" du filtre ne donnant accès aux archives dont la règle de gestion est échue,
+- l'autre permet d'élargir l'accès des utilisateurs à des archives produites par d'autres services producteurs dont la règle de gestion serait échue en plus que de les autoriser à accéder à des archives dont les règles peuvent ne pas être arrivées à échéance.
+
 
 Conseils de mise en œuvre
 -----
