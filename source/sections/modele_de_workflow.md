@@ -1372,13 +1372,14 @@ Ce rapport est en plusieurs parties :
 ```
 
 Collecte
-----
+--------
 
-Cette section décrit les processus (workflow) de suppression et de reclassement d'unités archivistiques du module Collecte
+Cette section décrit les processus (workflow) de suppression et de reclassement d'unités archivistiques du module de collecte.
 
-### Workflow de suppression des unités archivistiques
+### Workflow de suppression des unités archivistiques (Collect_Deletion)
 
-La suppression est un traitement de masse permettant d'évaluer dans un lot conséquent d'unités archivistiques, celles qui sont supprimables (la durée d'utilité administrative est échue et le sort final déclaré est « Supprimer », arbre de positionnement, workflow d'analyse) et de procéder à leur suppression du système (workflow d'action).<br>
+La suppression est un traitement de masse permettant de procéder à la suppression d'unités archivistiques et d'objets d'une transaction du module de collecte.<br>
+
 Toutes les étapes, tâches et traitements sont journalisés dans le journal des opérations et décrivent le processus (clé et description de la clé associée dans le journal des opérations) tel qu’implémenté dans la version actuelle de la solution logicielle Vitam.<br>
 
 #### Processus de préparation de la suppression des unités archivistiques (STP_COLLECT_DELETION_PREPARATION)
