@@ -15,6 +15,8 @@ Introduction
 |[Vitam – Structuration des Submission Information Package (SIP)](./SIP.md)|||
 |[Vitam – Ontologie](./ontologie.md)||Ce document doit être lu dans le cas où un profil d’archivage doit contenir des extensions au SEDA.|
 |[Vitam – Profils d’unité archivistique](./profil_unite_archivistique.md)||Ce document doit être lu dans les cas où :<br>- un profil d’archivage doit contenir des profils d’unité archivistique ;<br>- en phase d’analyse, on souhaite évaluer quel est le meilleur type de profil à utiliser.|
+|[Vitam – PASTIS](./pastis_standalone.md)|||
+
 
 
 ### Présentation du document
@@ -28,7 +30,7 @@ Il s’articule autour des axes suivants :
 - des recommandations aux utilisateurs de la solution logicielle Vitam sur la manière d’élaborer un profil d’archivage ;
 - quelques conseils complémentaires de mise en œuvre.
 
-Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 8.0 (octobre 2024). Il inclut en particulier la présentation des fonctionnalités offertes par l'outil PASTIS (Profil d’Archivage Simple pour le Traitement de l’Information en SEDA) intégré à l’IHM Vitam UI dans l’APP Profils documentaires et également disponible sous forme d'exécutable. Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
+Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 8.1 (printemps 2025). Il inclut en particulier la présentation des fonctionnalités offertes par l'outil PASTIS (Profil d’Archivage Simple pour le Traitement de l’Information en SEDA) intégré à l’IHM Vitam UI dans l’APP Profils documentaires et également disponible sous forme d'exécutable. Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
 
 Présentation de la notion de profil d’archivage
 ----
@@ -274,6 +276,26 @@ La date d'activation correspond à la date à laquelle la notice et, par conséq
 La date de désactivation correspond à la date où la notice et par conséquent le profil d’archivage sont rendus inactifs. Il peut s'agir de :
 - sa date d'import, si elle a un statut « Inactif » ou non renseigné au moment de son import ;
 - la date correspondant à l'action de désactivation, si celle-ci est postérieure à l’import de la notice dans la solution logicielle Vitam.
+
+#### Accès au référentiel
+
+La solution logicielle Vitam permet d'effectuer des recherches dans le référentiel des profils d'archivage.
+Il est possible d'obtenir :
+-  une liste de résultats,
+-  un résultat par facettes (nombre d’occurrences pour une métadonnée donnée).
+Sont disponibles les facettes de type :
+-  "terms" : pour obtenir des catégories basées sur les valeurs distinctes d'un champ spécifique et le nombre associé,
+-  "filters" : pour obtenir des résultats d'agrégations par filtres sur les résultats,
+-  "range" : pour obtenir des agrégations par plages de dates,
+-  "sum" : pour obtenir des totaux sur des champs,
+-  "count" : pour obtenir le nombre de valeurs présentes sur des champs,
+-  "cardinality" : pour obtenir le nombre exact de valeurs présentes sur des champs (usage non recommandé).
+
+Par ailleurs, la solution logicielle permet de consulter le détail d'une règle en particulier.
+
+L'accès au référentiel est possible depuis :
+-  les API,
+-  l'APP VitamUI « Profils documentaires ».
 
 #### Audit d’intégrité du référentiel
 
@@ -1165,6 +1187,7 @@ Il est recommandé aux utilisateurs de :
 Pour rédiger un profil d’archivage, il est également possible d’utiliser l’outil PASTIS (Profil d’Archivage Simple pour le Traitement de l’Information en SEDA), qui permet de générer des profils d’archivage au format Relax NG. Cet outil est utilisable sous forme d’exécutable ou d’APP intégrée aux interfaces de VitamUI (APP Profils documentaires).
 
 Au terme de la version 8.0, il permet de générer des profils d'archivage en SEDA 2.1, 2.2 et 2.3.
+Au terme de la version 8.1, il intègre également la possibilité d'ajouter des extensions au SEDA au niveau du bloc « Content ».
 
 **Étape 1** - l’outil requiert dans un premier temps de créer un profil d’archivage (PA) et de sélectionner la version du SEDA.
 
@@ -1206,6 +1229,10 @@ afin de générer un profil d'archivage conforme au format RNG.
     **Point d’attention :** l’APP Profils documentaires génère automatiquement un groupe d’objets techniques, visible dans l’onglet « Objets », mais ne gère pas le lien entre ce groupe d’objets techniques et l’unité archivistique associée. Si usage d’objets il y a dans les bordereaux à transférer, il est recommandé de :
         - conserver ce groupe d’objets générique ;
         - ne pas signaler dans le bloc DataObjectGroupReferenceId la référence à l’objet (que ce soit un titre ou un identifiant).
+- PASTIS permet d'ajouter des extensions au SEDA dans le bloc « Content » d'une unité archivistique au terme de la version 8.1 de la solution logicielle Vitam.
+Afin de pouvoir les obtenir dans l'outil, il est nécessaire de déclarer ces extensions :
+	-  soit dans un fichier de configuration dans le cas où PASTIS est utilisé en mode standalone,
+	-  soit dans le schéma de la solution logicielle Vitam[^33].
 
 ##### Corrections et ajouts
 
@@ -1215,10 +1242,7 @@ Une fois la rédaction du profil d’archivage réalisée, il est possible de :
 L’export s’avère nécessaire en vue de :
 - corriger une coquille au niveau du bloc CodeListVersions ;
 - obtenir un fichier RNG conforme au SEDA 2.2 ou 2.3 (pour les versions antérieures à la version 8.0) ;
-- intégrer un certain nombre d’éléments non supportés par l’APP Profils documentaires au terme de la version 8.0 (notamment les extensions).
-
-**Point d’attention :** Au terme de la version 8.0, PASTIS ne gère pas la mise à jour de fichier RNG intégrant des extensions. Il est recommandé de réimporter le fichier depuis l’APP Profils documentaires pour pouvoir l’exploiter.
-
+- intégrer un certain nombre d’éléments non supportés par l’APP Profils documentaires en fonction des versions du SEDA utilisées (notamment les extensions).
 
 Pour apporter ces corrections au fichier exporté, il faut :
 - Ouvrir le fichier dans un éditeur de texte (ex : Notepad ++, Oxygen).
@@ -1376,7 +1400,7 @@ En cas d’archives gelées, il faut ajouter les références à la règle de ge
 
 **Mention d’un agent générique**
 
-Dans la version 5, la solution logicielle Vitam supporte un bloc Agent générique au niveau de l’extension AgentAbstract, alors que dans les versions précédentes ce bloc ne pouvait être déclaré qu’au niveau de l’extension ObjectGroupExtenstionAbstract.
+La solution logicielle Vitam supporte un bloc Agent générique au niveau de l’extension AgentAbstract, alors que dans les versions précédentes ce bloc ne pouvait être déclaré qu’au niveau de l’extension ObjectGroupExtenstionAbstract.
 
 Le bloc Agent doit être positionné :
 - entre les blocs SubmissionAgency et AuthorizedAgent, s’ils sont présents dans la version 5 de la solution,
@@ -5497,3 +5521,5 @@ erreur brute: character content of element "Comment" invalid; must be equal to "
 [^31]: Pour plus de précisions sur les contrôles de conformité, consulter l’annexe « Contrôle de conformité à un profil d’archivage » du présent document.
 
 [^32]: Se référer au chapitre « Structuration des données à verser » du présent document.
+
+[^33]: Pour plus d'informations, se référer au chapitre « Extension du modèle du SEDA par des métadonnées externes » du document [Vitam – PASTIS](./pastis_standalone.md).
