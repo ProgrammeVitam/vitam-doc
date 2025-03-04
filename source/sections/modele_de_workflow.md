@@ -1371,10 +1371,18 @@ Ce rapport est en plusieurs parties :
   "Warnings" : [ "4 identifiers removed." ]}
 ```
 
-### Workflow de modification d'arborescence (Reclassification)
 
-Cette section décrit le processus permettant la modification d’arborescence d’archives, c’est-à-dire de modifier les rattachements d’une unité archivistique présente dans le système.
-Le processus de modification d’arborescence est lié à des ajouts et des suppressions de liens de parenté, en sachant que les unités archivistiques modifiées ou rattachées doivent être accessibles par le même contrat d’accès.
+Collect
+-------
+
+Cette section décrit les processus utilisés dans le module de collecte.
+
+Toutes les étapes, tâches et traitements sont journalisés dans le journal des opérations et décrivent le processus (clé et description de la clé associée dans le journal des opérations) tel qu’implémenté dans la version actuelle de la solution logicielle Vitam.
+
+### Workflow de modification d'arborescence (Collect_Reclassification)
+
+Cette section décrit le processus permettant la modification d’arborescence d’archives, c’est-à-dire de modifier les rattachements d’une unité archivistique présente dans une transaction du module de collecte.
+Le processus de modification d’arborescence est lié à des ajouts et des suppressions de liens de parenté.
 Toutes les étapes, tâches et traitements sont journalisés dans le journal des opérations et décrivent le processus (clé et description de la clé associée dans le journal des opérations) tel qu’implémenté dans la version actuelle de la solution logicielle Vitam.
 
 #### Étape de préparation de la modification d’arborescence des unités archivistiques (STP_RECLASSIFICATION_PREPARATION)
