@@ -16,6 +16,7 @@ Introduction
 |[Vitam – Ontologie](./ontologie.md)||Ce document doit être lu en préalable au présent document.|
 |[Vitam – Schéma](./schema.md)|||
 |[Vitam – Profils d’archivage](./profil_archivage.md)||Ce document doit être lu dans les cas où, en phase d’analyse, on souhaite évaluer quel est le meilleur type de profil à utiliser.|
+|[Vitam – PASTIS](./pastis_standalone.md)|||
 
 ### Présentation du document
 Le document présente les fonctionnalités associées à la prise en compte de la notion de profil d’unité archivistique dans la solution logicielle Vitam.
@@ -28,7 +29,7 @@ Il s’articule autour des axes suivants :
 - des recommandations aux utilisateurs de la solution logicielle Vitam sur l’élaboration d’un profil d’unité archivistique ;
 - quelques conseils complémentaires de mise en œuvre.
 
-Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 8.0 (octobre 2024) :  : il comprend particulièrement la présentation des fonctionnalités offertes par le projet PASTIS (Profil d’Archivage Simple pour le Traitement de l’Information en SEDA) intégré à l’IHM Vitam UI par l’APP Profils documentaires et également accessible par un exécutable. Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
+Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 8.1 (printemps 2025) :  : il comprend particulièrement la présentation des fonctionnalités offertes par le projet PASTIS (Profil d’Archivage Simple pour le Traitement de l’Information en SEDA) intégré à l’IHM Vitam UI par l’APP Profils documentaires et également accessible par un exécutable. Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
 
 Présentation de la notion de profil d’unité archivistique
 ----
@@ -177,7 +178,7 @@ Cette notice descriptive comprend les informations suivantes pour un profil d’
 |Description|description du profil d’unité archivistique, obligatoire (champ facultatif)|
 |Status|statut « ACTIVE » pour « actif » ou « INACTIVE » pour inactif (champ obligatoire).
 Si la notice importée ne contient pas de statut, la solution logicielle Vitam enregistre par défaut la valeur « INACTIVE »|
-|SedaVersion|version du SEDA du profil d'archivage associé à la notice (champ obligatoire - valeur par défaut : « 2.3 »).<br>Les valeurs possibles dont : « 2.1 », « 2.2 » ou « 2.3 »|
+|SedaVersion|version du SEDA du profil d'unité archivistique associé à la notice (champ obligatoire - valeur par défaut : « 2.3 »).<br>Les valeurs possibles dont : « 2.1 », « 2.2 » ou « 2.3 »|
 |ControlSchema|schéma de contrôle, obligatoire, mais pouvant être vide<br>-  il est destiné à contenir l’ensemble des éléments qui feront l’objet d’un contrôle en entrée ou en mise à jour<br>-  les éléments (ou propriétés) qu’il définit doivent se conformer aux vocabulaires définis dans l’ontologie, que ce soit en termes de nommage ou de typage|
 |CreationDate|date de création de la notice descriptive du profil d’unité archivistique, fournie par la solution logicielle Vitam (champ obligatoire)|
 |LastUpdate|dernière date de modification de la notice descriptive du profil d’unité archivistique, fournie par la solution logicielle Vitam (champ obligatoire)|
@@ -270,6 +271,26 @@ La date d’activation correspond à la date à laquelle la notice et, par cons�
 La date de désactivation correspond à la date à laquelle la notice et par conséquent le profil d’unité archivistique sont rendus inactifs. Il peut s’agir de :
 -  sa date d’import, si elle a un statut « Inactif » ou non renseigné au moment de son import ;
 -  la date correspondant à l’action de désactivation, si celle-ci est postérieure à l’import de la notice dans la solution logicielle Vitam.
+
+#### Accès au référentiel
+
+La solution logicielle Vitam permet d'effectuer des recherches dans le référentiel des profils d'unité archivistique.
+Il est possible d'obtenir :
+-  une liste de résultats,
+-  un résultat par facettes (nombre d’occurrences pour une métadonnée donnée).
+Sont disponibles les facettes de type :
+-  "terms" : pour obtenir des catégories basées sur les valeurs distinctes d'un champ spécifique et le nombre associé,
+-  "filters" : pour obtenir des résultats d'agrégations par filtres sur les résultats,
+-  "range" : pour obtenir des agrégations par plages de dates,
+-  "sum" : pour obtenir des totaux sur des champs,
+-  "count" : pour obtenir le nombre de valeurs présentes sur des champs,
+-  "cardinality" : pour obtenir le nombre exact de valeurs présentes sur des champs (usage non recommandé).
+
+Par ailleurs, la solution logicielle permet de consulter le détail d'un profil en particulier.
+
+L'accès au référentiel est possible depuis :
+-  les API,
+-  l'APP VitamUI « Profils documentaires ».
 
 #### Audit d’intégrité du référentiel
 
@@ -428,6 +449,10 @@ En mise à jour, la solution logicielle Vitam permet :
 Cette opération de mise à jour n’est possible qu’aux conditions suivantes :
 -  l’unité archivistique doit être conforme au profil d’unité archivistique à laquelle on souhaite l’associer ;
 -  le profil d’unité archivistique doit être actif et disposer d’un schéma de contrôle détaillé.
+
+Ces actions sont possibles depuis :
+-  les API,
+-  l'APP VitamUI « Recherche et consultation des archives ».
 
 Si l’une de ces conditions n’est pas présente, la modification n’aura pas lieu.
 Cette opération fait l’objet d’un enregistrement dans le journal des opérations en tant qu’opération de mise à jour des règles de gestion.
@@ -1125,6 +1150,9 @@ Pour les éléments de type « string », « object » ou « boolean », l
 
 Pour rédiger un profil d’unité archivistique, il est également possible d’utiliser l’outil PASTIS (Profil d’Archivage Simple pour le Traitement de l’Information en SEDA), qui permet de générer des profils d’unité archivistique au format JSON en SEDA 2.1, 2.2 et 2.3.
 
+Au terme de la version 8.0, il permet de générer des profils d'unité archivistique en SEDA 2.1, 2.2 et 2.3.
+Au terme de la version 8.1, il intègre également la possibilité d'ajouter des extensions au SEDA au niveau du bloc « Content ».
+
 Étape 1 - l’outil requiert dans un premier temps de créer un profil d’unité archivistique (PUA).
 
 Étape 2 - lors de la rédaction du profil d’unité archivistique :
@@ -1157,6 +1185,11 @@ PASTIS permet un certain nombre d’actions :
   - le bloc « Logbook » ;
   - le bloc « DataObjectReference », et son sous-élément « DataObjectGroupReferenceId ». De fait, on ne peut contrôler si l’unité archivistique est associée ou non à un objet numérique.
 -  Pour les champs attendant une liste de valeurs contrôlées par le SEDA, il est interdit de rajouter une valeur en utilisant le contrôle « Enumération ».
+
+PASTIS permet d'ajouter des extensions au SEDA dans le bloc « Content » d'une unité archivistique au terme de la version 8.1 de la solution logicielle Vitam.
+Afin de pouvoir les obtenir dans l'outil, il est nécessaire de déclarer ces extensions :
+	-  soit dans un fichier de configuration dans le cas où PASTIS est utilisé en mode standalone,
+	-  soit dans le schéma de la solution logicielle Vitam[^59].
 
 *Corrections et ajouts*
 
@@ -3622,3 +3655,5 @@ Ajouter au moins un vocabulaire Beneficiary dans l’unité archivistique, conte
 [^57]: outMessg est à employer en lieu et place de la balise OutcomeDetailMessage dans un schéma de contrôle pour se conformer aux attendus de la solution logicielle Vitam.
 
 [^58]: evDetData est à employer en lieu et place de la balise EventDetailData dans un schéma de contrôle pour se conformer aux attendus de la solution logicielle Vitam.
+
+[^59]: Pour plus d'informations, se référer au chapitre « Extension du modèle du SEDA par des métadonnées externes » du document [Vitam – PASTIS](./pastis_standalone.md).
