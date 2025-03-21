@@ -2231,7 +2231,11 @@ L’audit d’intégrité des objets binaires (ou fichiers numériques) permet d
 
 La solution logicielle Vitam permet de lancer des opérations d’audit d’existence et/ou d’intégrité :
 - depuis l’IHM démo sur l’ensemble d’un tenant ou en sélectionnant un service producteur en particulier ;
-- depuis l’APP VitamUI « Audits », sur l’ensemble d’un coffre (tenant) ou en sélectionnant un ou plusieurs services producteurs en particulier ;
+- depuis l’APP VitamUI « Audits », sur l’ensemble d’un coffre (tenant) ou en sélectionnant :
+  - un ou plusieurs services producteurs en particulier (pouvant être associé à une période),
+  - un à plusieurs identifiants d'opération d'entrée,
+  - une à plusieurs positions de rattachement  (pouvant être associé à une période),
+  - une période d'entrée dans le système ;
 - par l’API, au moyen d’une requête DSL.
 
 Les raisons pouvant amener à réaliser un audit d’existence des objets sont les suivantes :
@@ -2540,7 +2544,11 @@ Il offre une garantie supplémentaire en prouvant, au moyen de son rapport, que 
 
 La solution logicielle Vitam permet de lancer des opérations d’audit de cohérence à partir d’un lot d’archives préalablement sélectionné. L’opération peut s’effectuer :
 - depuis le panier de l’IHM démo sur un lot d’archives ;
-- depuis l’APP VitamUI « Audits », sur l’ensemble d’un coffre (tenant) ou en sélectionnant dans l’arborescence d’archives un ou plusieurs niveaux d’archives (nœuds) en particulier ;
+- depuis l’APP VitamUI « Audits », sur l’ensemble d’un coffre (tenant) ou en sélectionnant :
+  - un ou plusieurs services producteurs en particulier (pouvant être associé à une période),
+  - un à plusieurs identifiants d'opération d'entrée,
+  - une à plusieurs positions de rattachement  (pouvant être associé à une période),
+  - une période d'entrée dans le système ;
 - par l’API, au moyen d’une requête DSL.
 
 Les raisons pouvant amener à réaliser un audit de cohérence sont les suivantes :
