@@ -18,6 +18,7 @@ Introduction
 |[Vitam – Profils d’archivage](./profil_archivage.md)|||
 |[Vitam – Profils d’unité archivistique](./profil_unite_archivistique.md)|||
 |[Vitam – Ontologie](./ontologie.md)|||
+|[Vitam – Schéma](./schema.md)|||
 
 ### Présentation du document
 
@@ -1154,7 +1155,7 @@ Exemple pour la méthode 2 (demande de rattachement de l’ID3 à l’ArchiveUni
 </ArchiveUnit>
 ```
 
-[^1]: Disponible à l’adresse suivante (lien vérifié le 15/02/2023) : [pour le SEDA 2.1](https://francearchives.fr/seda/) et [pour le SEDA 2.2](https://github.com/culturecommunication/seda).
+[^1]: Disponible à l’adresse suivante (lien vérifié le 21/03/2025) : [pour le SEDA 2.1](https://francearchives.fr/seda/), [pour le SEDA 2.2](https://github.com/culturecommunication/seda) et  [pour le SEDA 2.3](https://github.com/culturecommunication/seda).
 
 [^2]: Voir la documentation spécifique aux profils d’archivage et/ou aux profils d’unité archivistique. À noter que le SEDA 2.2. introduit la notion de profil d’objet, non implémentée par la solution logicielle Vitam au terme de la version 6.
 
