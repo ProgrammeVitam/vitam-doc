@@ -6,22 +6,26 @@
 
 |**Document**|**Date de la version**|**Remarques**|
 |:---------------:|:-----:|:-----:|
+|NF Z 44022 – MEDONA – Modélisation des données pour l’archivage       |18/01/2014| |         
+|Standard d’échange de données pour l’archivage – SEDA – v. 2.1 | 06/2018| |
+|Standard d’échange de données pour l’archivage – SEDA – v. 2.2 | 02/2022| |
+|Standard d’échange de données pour l’archivage – SEDA – v. 2.3 | 06/2024| |
 
 ### Présentation du document
 
-Le présent document présente l'application Pastis Standalone, qui est une version de l'application Profils Documentaire indépendante de la plateforme VITAM.
+Le présent document présente l'application Pastis Standalone, qui est une version de l'application Profils Documentaires indépendante de la plateforme VITAM.
 
 ## Présentation, installation, et lancement de Pastis Standalone
 
 ### Présentation de Pastis Standalone
 
-TODO
+[EN CONSTRUCTION]
 
 ### Installation de Pastis Standalone
 
 L'application Pastis Standalone est téléchargeable sur le site internet du programme Vitam à l’adresse suivante : https://download.programmevitam.fr/pastis-standalone/
 
-Le fichier Zip a un unique répertoire contenant :
+Le fichier ZIP a un unique répertoire contenant :
 - un environnement d'exécution Java 17, nécessaire si vous n'avez pas Java installé sur votre poste
 - un fichier `readme.txt` décrivant succintement la procédure pour lancer l'application
 - un fichier de configuration `PASTIS-APP.url`
@@ -33,9 +37,9 @@ Le lancement de Pastis Standalone se fait via un double-clic sur le fichier .exe
 
 ### Extension du modèle du SEDA par des métadonnées externes
 
-Depuis la version 8.1 de Vitam, il est possible d'enrichir le modèle des Profils d'Archives et des Profils d'Unité Archivistique en ajoutant des champs personnalisés, qui viendront enrichir les informations des unités archivistiques.
+Depuis la version 8.1 de Vitam, il est possible d'enrichir le modèle des Profils d'archivage (PA) et des Profils d'unité archivistique (PUA) en ajoutant des champs personnalisés, qui viendront enrichir les informations des unités archivistiques.
 
-Pour cela, il conviendra de créer un fichier de configuration nommé `external-schema-definition.json` placé dans le même répertoire que le fichier .exe
+Pour cela, il conviendra de créer un fichier de configuration nommé `external-schema-definition.json` placé dans le même répertoire que le fichier .exe.
 
 Le contenu du fichier est au format JSON, avec la syntaxe suivante :
 
@@ -57,7 +61,7 @@ Les champs attendus sont les suivants :
 
 | **Champ** |**Description**|
 |:---------:|:-----:|
-|FieldName|Nom du champ, tel qu'il sera présent dans le contenu de l'Unité Archivistique|
+|FieldName|Nom du champ, tel qu'il sera présent dans le contenu de l'unité archivistique|
 |Path|Nom complet, depuis la racine. Les différents parents seront séparés par des '.'|
 |ShortName|Libellé court du champ|
 |Type|Type du champ. Voir plus bas pour les différentes valeurs possibles|
@@ -80,9 +84,9 @@ Valeurs possibles pour le champ "Cardinality" :
 - MANY : le champ est répétable plusieurs fois, mais peut ne pas être présent
 - MANY_REQUIRED : le champ est répétable plusieurs fois, mais doit apparaître au moins une fois
 
-Il est possible de regrouper les métadonnées en arbre, en utilisant des métadonnées de type OBJECT, qui vont elle-même contenir d'autres métadonnées. L'organisation de l'arbre des métdonnées se fera avec la propriété `Path` de chaque métadonnée.
+Il est possible de regrouper les métadonnées en arbre, en utilisant des métadonnées de type OBJECT, qui vont elle-même contenir d'autres métadonnées. L'organisation de l'arbre des métadonnées se fera avec la propriété `Path` de chaque métadonnée.
 
-Par exemple, si nous avons créé une métadonnée `A` de type objet, on pourra créer une métadonnée `B` de type texte imbriquée dans `A` si pour `B` on défini la valeur `Path` à `A.B`. Attention, il faut bien s'assurer que tous les parents d'une métadonnée, tels que définis dans son `Path` existent bien.
+Par exemple, si nous avons créé une métadonnée `A` de type objet, on pourra créer une métadonnée `B` de type texte imbriquée dans `A` si pour `B` on définit la valeur `Path` à `A.B`. Attention, il faut bien s'assurer que tous les parents d'une métadonnée, tels que définis dans son `Path` existent bien.
 
 Si, par exemple, nous souhaitons créer la structure suivante :
 ```
