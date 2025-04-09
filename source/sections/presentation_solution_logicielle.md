@@ -49,10 +49,9 @@ Enfin toujours dans un esprit de facilité de réutilisation, la solution logici
 ###  … enrichie d’un front-office
 
 Lancée en 2019 par des membres du Club utilisateurs du Programme Vitam, l’initiative Vitam UI (User Interface) vise à doter la solution logicielle Vitam d’un front-office de référence.
-Construit de manière mutualisée par le CEA, le CINES, Xelians et les acteurs du projet VaS[^7], ce front-office propose un portail d’applications (appelées APP) dédiées à une fonctionnalité métier. Destiné à être enrichi à chaque version, le portail a pour objectif en V6.RC (fin 2022) de permettre à :
+Construit de manière mutualisée par le CEA, le CINES, Xelians et les acteurs du projet VaS[^7], ce front-office propose un portail d’applications (appelées APP) dédiées à une fonctionnalité métier. Destiné à être enrichi à chaque version, le portail a pour objectif en V8.1 (printemps 2025) de permettre à :
 -  des administrateurs de plateforme de gérer techniquement et fonctionnellement celle-ci ;
 -  à des archivistes de procéder à des versements et de rechercher des archives en vue de les consulter.
-![Couverture fonctionnelle du front-office Vitam UI en v7.0](./medias/presentation_solution_logicielle/VitamUI_7_0.jpg)      
 
 ### Parties prenantes et méthodes Agile
 
