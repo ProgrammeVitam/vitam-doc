@@ -23,7 +23,7 @@ Ce document s’articule autour des axes suivants :
 - calcul des règles et détermination du caractère éliminable des unités archivistiques,
 - modalités d’une campagne d’évaluation du caractère éliminable des unités archivistiques (analyse),
 - modalités d’une campagne de mise en œuvre de l’élimination (action).
-Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 8.0 (octobre 2024). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
+Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 8.1 (printemps 2025). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
 
 Détermination du caractère éliminable d’une unité archivistique avec la solution logicielle Vitam
 ----
@@ -300,7 +300,9 @@ Pour une unité archivistique en conflit en raison de son caractère gelé (stat
 
 La solution logicielle permet de lancer par :
 - l’IHM démo une opération d’élimination des unités archivistiques placées dans le panier ;
-- l’IHM VitamUI une opération d’élimination sur un lot d’archives depuis l’APP « Recherche et consultation des archives ».  
+- l’IHM VitamUI une opération d’élimination sur un lot d’archives depuis l’APP « Recherche et consultation des archives » en distinguant :
+  - l'élimination des unités archivistiques de type "standard" et "plan de classement",
+  - la suppression des unités archivistiques de type "arbre de positionnement". 
 Cette opération peut être lancée indépendamment d’une campagne d’évaluation des éliminables et porter sur des unités archivistiques n’ayant encore jamais été analysées par la solution logicielle.
 
 Point d’attention : dans l’IHM démo, le panier a une taille limitée, il est préférable d’y placer des unités archivistiques avec leur descendance (une unité comptabilisée dans le panier) plutôt que des entrées (autant d’unités comptabilisées que d’unités dans le SIP).

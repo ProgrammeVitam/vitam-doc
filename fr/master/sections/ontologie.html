@@ -89,14 +89,15 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#controle-de-l-ontologie-sur-les-profils-dunite-archivistique">11.3.6. Contrôle de l’ontologie sur les profils d’unité archivistique</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#controle-du-schema-sur-l-ontologie">11.3.7. Contrôle du schéma sur l’ontologie</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#processus-dentree">11.3.7.1. Processus d’entrée</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#controle-du-schema-sur-l-ontologie">11.3.7. Contrôle du schéma sur l’ontologie</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#acces-au-referentiel">11.3.8. Accès au référentiel</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#processus-dentree">11.3.8.1. Processus d’entrée</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#acces">11.3.8. Accès</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#affichage-dynamique-des-traductions">11.3.8.1. Affichage dynamique des traductions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#optimisation-de-la-recherche">11.3.8.2. Optimisation de la recherche</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#controle-lors-de-la-mise-a-jour-des-unites-archivistiques">11.3.8.3. Contrôle lors de la mise à jour des unités archivistiques</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#acces">11.3.9. Accès</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#affichage-dynamique-des-traductions">11.3.9.1. Affichage dynamique des traductions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#optimisation-de-la-recherche">11.3.9.2. Optimisation de la recherche</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controle-lors-de-la-mise-a-jour-des-unites-archivistiques">11.3.9.3. Contrôle lors de la mise à jour des unités archivistiques</a></li>
 </ul>
 </li>
 </ul>
@@ -274,7 +275,7 @@ logicielle Vitam pour prendre en compte cette notion ;</p></li>
 <li><p>quelques conseils complémentaires de mise en œuvre.</p></li>
 </ul>
 <p>Le présent document décrit les fonctionnalités qui sont offertes par la
-solution logicielle Vitam au terme de la version 8.0 (octobre 2024).
+solution logicielle Vitam au terme de la version 8.1 (printemps 2025).
 Il a vocation a être amendé, complété et enrichi au fur et à mesure de
 la réalisation de la solution logicielle Vitam et des retours et
 commentaires formulés par les ministères porteurs et les partenaires du
@@ -488,12 +489,20 @@ programme.</p>
 <tr class="row-odd"><td><p>Collections</p></td>
 <td><p><strong>collection(s)</strong> de la base de données MongoDB qui utilise(nt) le vocabulaire en question (champ facultatif). </br>   Les valeurs acceptées sont : </br>   -   pour les métadonnées : Unit, ObjectGroup, PurgedPersistentIdentifier ; </br>   -   pour le registre des fonds : AccessionRegisterSummary, AccessionRegisterDetail, AccessionRegisterSymbolic ; </br>   -   pour les référentiels : Context, SecurityProfile, ManagementContract, IngestContract, AccessContract, FileFormat, PreservationScenario, Griffin, FileRules, Agencies, Profile, ArchiveUnitProfile, Ontology, Schema ;</br>-   pour les journaux : LogbookOperation, LogbookLifeCycleUnit, LogbookLifeCycleObjectGroup.</p></td>
 </tr>
+<tr class="row-even"><td><p>CreationDate</p></td>
+<td><p><strong>date de création</strong> du vocabulaire, fournie par le système (champ obligatoire).</p></td>
+</tr>
+<tr class="row-odd"><td><p>LastUpdate</p></td>
+<td><p><strong>dernière date de modification</strong> du vocabulaire, fournie et mise à jour par le système (champ obligatoire).</p></td>
+</tr>
+<tr class="row-even"><td><p>_tenant</p></td>
+<td><p><strong>tenant</strong> dans lequel le vocabulaire a été créé, fourni par le système (champ obligatoire).</p></td>
+</tr>
+<tr class="row-odd"><td><p>_v</p></td>
+<td><p><strong>version</strong> du vocabulaire, fournie par le système (champ obligatoire).</p></td>
+</tr>
 </tbody>
 </table>
-<p>| CreationDate          | <strong>date de création</strong> du vocabulaire, fournie par le système (champ obligatoire).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| LastUpdate           | <strong>dernière date de modification</strong> du vocabulaire, fournie et mise à jour par le système (champ obligatoire).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| _tenant              | <strong>tenant</strong> dans lequel le vocabulaire a été créé, fourni par le système (champ obligatoire).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| _v                   | <strong>version</strong> du vocabulaire, fournie par le système (champ obligatoire).                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |</p>
 </section>
 <section id="dans-le-standard-dechange-de-donnees-pour-larchivage-seda">
 <h3><span class="section-number">11.3.3. </span>Dans le Standard d’échange de données pour l’archivage (SEDA)<a class="headerlink" href="#dans-le-standard-dechange-de-donnees-pour-larchivage-seda" title="Lien vers cette rubrique"></a></h3>
@@ -677,8 +686,30 @@ programme.</p>
 <h3><span class="section-number">11.3.7. </span>Contrôle du schéma sur l’ontologie<a class="headerlink" href="#controle-du-schema-sur-l-ontologie" title="Lien vers cette rubrique"></a></h3>
 <p>Lors de la suppression d’un vocabulaire externe dans l’ontologie, la solution logicielle Vitam vérifie que le vocabulaire n’est pas utilisé dans le schéma.</p>
 <p>L’import ou la mise à jour de l’ontologie peut échouer si le vocabulaire est utilisé dans le schéma.</p>
+</section>
+<section id="acces-au-referentiel">
+<h3><span class="section-number">11.3.8. </span>Accès au référentiel<a class="headerlink" href="#acces-au-referentiel" title="Lien vers cette rubrique"></a></h3>
+<p>La solution logicielle Vitam permet d’effectuer des recherches dans l’ontologie.
+Il est possible d’obtenir :</p>
+<ul class="simple">
+<li><p>une liste de résultats,</p></li>
+<li><p>un résultat par facettes (nombre d’occurrences pour une métadonnée donnée).
+Sont disponibles les facettes de type :</p></li>
+<li><p>« terms » : pour obtenir des catégories basées sur les valeurs distinctes d’un champ spécifique et le nombre associé,</p></li>
+<li><p>« filters » : pour obtenir des résultats d’agrégations par filtres sur les résultats,</p></li>
+<li><p>« range » : pour obtenir des agrégations par plages de dates,</p></li>
+<li><p>« sum » : pour obtenir des totaux sur des champs,</p></li>
+<li><p>« count » : pour obtenir le nombre de valeurs présentes sur des champs,</p></li>
+<li><p>« cardinality » : pour obtenir le nombre exact de valeurs présentes sur des champs (usage non recommandé).</p></li>
+</ul>
+<p>Par ailleurs, la solution logicielle permet de consulter le détail d’un vocabulaire en particulier.</p>
+<p>L’accès au référentiel est possible depuis :</p>
+<ul class="simple">
+<li><p>les API,</p></li>
+<li><p>l’APP VitamUI « Ontologie ».</p></li>
+</ul>
 <section id="processus-dentree">
-<h4><span class="section-number">11.3.7.1. </span>Processus d’entrée<a class="headerlink" href="#processus-dentree" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">11.3.8.1. </span>Processus d’entrée<a class="headerlink" href="#processus-dentree" title="Lien vers cette rubrique"></a></h4>
 <p>Dans le cadre du processus d’entrée d’un ensemble d’archives, suite à la réception d’un message ArchiveTransfer du SEDA, parmi les tâches et traitements internes qu’elle effectue, la solution logicielle Vitam <strong>vérifie :</strong></p>
 <ul>
 <li><p>pour les unités archivistiques, que :</p>
@@ -702,9 +733,9 @@ programme.</p>
 </section>
 </section>
 <section id="acces">
-<h3><span class="section-number">11.3.8. </span>Accès<a class="headerlink" href="#acces" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">11.3.9. </span>Accès<a class="headerlink" href="#acces" title="Lien vers cette rubrique"></a></h3>
 <section id="affichage-dynamique-des-traductions">
-<h4><span class="section-number">11.3.8.1. </span>Affichage dynamique des traductions<a class="headerlink" href="#affichage-dynamique-des-traductions" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">11.3.9.1. </span>Affichage dynamique des traductions<a class="headerlink" href="#affichage-dynamique-des-traductions" title="Lien vers cette rubrique"></a></h4>
 <p>L’ontologie contenant la traduction des différents vocabulaires supportés par la solution logicielle Vitam, il est possible, en accès :</p>
 <ul class="simple">
 <li><p>d’utiliser ce référentiel comme un fichier de propriétés pour récupérer les traductions, plutôt que ce soit l’IHM qui porte ces informations. Ainsi, cela évitera de constater des absences de traduction des vocabulaires externes récemment créés ;</p></li>
@@ -716,11 +747,11 @@ programme.</p>
 <p><img alt="illustration 2" src="../_images/10000201000002AB00000168AC1949D42C34E522.png" /></p>
 </section>
 <section id="optimisation-de-la-recherche">
-<h4><span class="section-number">11.3.8.2. </span>Optimisation de la recherche<a class="headerlink" href="#optimisation-de-la-recherche" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">11.3.9.2. </span>Optimisation de la recherche<a class="headerlink" href="#optimisation-de-la-recherche" title="Lien vers cette rubrique"></a></h4>
 <p>L’ontologie définit les types d’indexation des différents vocabulaires, sur lesquels il faut s’appuyer afin de pouvoir optimiser les modalités de recherche.</p>
 </section>
 <section id="controle-lors-de-la-mise-a-jour-des-unites-archivistiques">
-<h4><span class="section-number">11.3.8.3. </span>Contrôle lors de la mise à jour des unités archivistiques<a class="headerlink" href="#controle-lors-de-la-mise-a-jour-des-unites-archivistiques" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">11.3.9.3. </span>Contrôle lors de la mise à jour des unités archivistiques<a class="headerlink" href="#controle-lors-de-la-mise-a-jour-des-unites-archivistiques" title="Lien vers cette rubrique"></a></h4>
 <p>La solution logicielle Vitam permet en outre de modifier :</p>
 <ul class="simple">
 <li><p>les métadonnées d’une <strong>unité archivistique déclarant un profil d’unité archivistique</strong>, à la condition que l’unité archivistique reste conforme à ce profil d’unité archivistique et, de fait, aux vocabulaires définis dans le profil d’unité archivistique. Cette conformité vaut aussi bien pour les vocabulaires utilisés que pour les valeurs utilisées<a class="footnote-reference brackets" href="#id68" id="id18" role="doc-noteref"><span class="fn-bracket">[</span>17<span class="fn-bracket">]</span></a>. Par exemple, un vocabulaire de type « entier » tel que « AgeDuCapitaine » ne peut être mis à jour pour inclure une valeur textuelle s’il est

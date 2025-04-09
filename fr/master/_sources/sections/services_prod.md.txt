@@ -22,7 +22,7 @@ Il s’articule autour des axes suivants :
 - une présentation des mécanismes mis en œuvre dans la solution logicielle Vitam pour prendre en compte cette notion, en application du SEDA ;
 - des recommandations aux ministères porteurs, partenaires et utilisateurs de la solution logicielle Vitam sur la manière d’utiliser les fonctionnalités associées aux services producteurs. 
 
-Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 8.0 (octobre 2024). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
+Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 8.1 (printemps 2025). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
 
 Présentation de la notion de service producteur
 ---
@@ -95,7 +95,7 @@ La solution logicielle Vitam offre à un service d’archives plusieurs fonction
 La solution logicielle Vitam intègre un référentiel des services agents (qu’ils agissent comme services producteurs ou services versants) administrable (import initial ou mise à jour) par un utilisateur doté des droits adéquats (**administrateur fonctionnel**). 
 Ce référentiel interne à la solution logicielle Vitam a pour vocation :
 - soit d’être une copie locale d’un référentiel administré dans le front office des plate-formes d’archivage implémentant cette dernière. Il n’a pas vocation à gérer la hiérarchie et l’historique des services producteurs, contrairement à la version administrée dans un front office et structurée conformément à la norme ISAAR (CPF).
-- soit de gérer l'historique des services producteurs, conformément à la norme ISAAR (CPF). Au terme de la version 8.0, la hiérarchie n'est pas gérée.
+- soit de gérer l'historique des services producteurs, conformément à la norme ISAAR (CPF). Au terme de la version 8.1, la hiérarchie n'est pas gérée.
 
 Ce référentiel a pour vocation d’être utilisé par la solution logicielle Vitam pour effectuer localement les contrôles des services déclarés par les administrateurs et les utilisateurs en entrée et en accès. Il est propre à chaque tenant de la plate-forme.
 
@@ -153,6 +153,26 @@ Lors d’une mise à jour du référentiel sont appliquées les règles suivante
 
 Il est également possible d’ajouter un service agent, de modifier ses informations ou de le supprimer depuis l’APP VitamUI « Services agents » sous forme unitaire ou par un (ré)import complet du référentiel sous la forme d’un fichier CSV. Cette APP permet aussi d’effectuer une recherche dans le référentiel et d’en exporter son contenu sous la forme d’un fichier CSV.
 Les différentes versions du référentiel font l’objet d’une sauvegarde sur les offres de stockage gérées par la solution logicielle Vitam et peuvent être récupérées depuis le front-office via un service particulier (cf. RAML).
+
+#### Accès au référentiel
+
+La solution logicielle Vitam permet d'effectuer des recherches dans le référentiel des services agents.
+Il est possible d'obtenir :
+-  une liste de résultats,
+-  un résultat par facettes (nombre d’occurrences pour une métadonnée donnée).
+Sont disponibles les facettes de type :
+-  "terms" : pour obtenir des catégories basées sur les valeurs distinctes d'un champ spécifique et le nombre associé,
+-  "filters" : pour obtenir des résultats d'agrégations par filtres sur les résultats,
+-  "range" : pour obtenir des agrégations par plages de dates,
+-  "sum" : pour obtenir des totaux sur des champs,
+-  "count" : pour obtenir le nombre de valeurs présentes sur des champs,
+-  "cardinality" : pour obtenir le nombre exact de valeurs présentes sur des champs (usage non recommandé).
+
+Par ailleurs, la solution logicielle permet de consulter le détail d'un service en particulier.
+
+L'accès au référentiel est possible depuis :
+-  les API,
+-  l'APP VitamUI « Services agents ».
 
 ### Entrées
 Dans le cadre du processus d’entrée d’un ensemble d’archives, suite à la réception d’un message ArchiveTransfer du SEDA, la solution logicielle Vitam effectue les tâches et traitements suivants pour les archives :
@@ -252,7 +272,7 @@ Elle autorise également :
 - la consultation du détail de chaque entrée effectuée dans la solution logicielle Vitam par un service producteur, avec  le détail de chaque opération, quelle que soit sa nature (élimination, transfert), ayant eu un impact sur l’entrée, avec la volumétrie associée.
 
 **Nota bene :**  
- Au terme de la version 5, l’APP VitamUI « Registre des fonds » fait appel uniquement aux traitements ayant trait aux opérations d’entrée et ne prend pas en compte les traitements relatifs aux opérations de préservation et de suppression de versions d’objets.
+ Au terme de la version 8.1, l’APP VitamUI « Registre des fonds » fait appel uniquement aux traitements ayant trait aux opérations d’entrée et ne prend pas en compte les traitements relatifs aux opérations de préservation et de suppression de versions d’objets.
 
 ### Accès
 

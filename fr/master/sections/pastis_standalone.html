@@ -181,23 +181,41 @@
 <th class="head text-center"><p><strong>Remarques</strong></p></th>
 </tr>
 </thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>NF Z 44022 – MEDONA – Modélisation des données pour l’archivage</p></td>
+<td class="text-center"><p>18/01/2014</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Standard d’échange de données pour l’archivage – SEDA – v. 2.1</p></td>
+<td class="text-center"><p>06/2018</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>Standard d’échange de données pour l’archivage – SEDA – v. 2.2</p></td>
+<td class="text-center"><p>02/2022</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Standard d’échange de données pour l’archivage – SEDA – v. 2.3</p></td>
+<td class="text-center"><p>06/2024</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+</tbody>
 </table>
 </section>
 <section id="presentation-du-document">
 <h3><span class="section-number">3.1.2. </span>Présentation du document<a class="headerlink" href="#presentation-du-document" title="Lien vers cette rubrique"></a></h3>
-<p>Le présent document présente l’application Pastis Standalone, qui est une version de l’application Profils Documentaire indépendante de la plateforme VITAM.</p>
+<p>Le présent document présente l’application Pastis Standalone, qui est une version de l’application Profils Documentaires indépendante de la plateforme VITAM.</p>
 </section>
 </section>
 <section id="presentation-installation-et-lancement-de-pastis-standalone">
 <h2><span class="section-number">3.2. </span>Présentation, installation, et lancement de Pastis Standalone<a class="headerlink" href="#presentation-installation-et-lancement-de-pastis-standalone" title="Lien vers cette rubrique"></a></h2>
 <section id="presentation-de-pastis-standalone">
 <h3><span class="section-number">3.2.1. </span>Présentation de Pastis Standalone<a class="headerlink" href="#presentation-de-pastis-standalone" title="Lien vers cette rubrique"></a></h3>
-<p>TODO</p>
+<p>[EN CONSTRUCTION]</p>
 </section>
 <section id="installation-de-pastis-standalone">
 <h3><span class="section-number">3.2.2. </span>Installation de Pastis Standalone<a class="headerlink" href="#installation-de-pastis-standalone" title="Lien vers cette rubrique"></a></h3>
 <p>L’application Pastis Standalone est téléchargeable sur le site internet du programme Vitam à l’adresse suivante : https://download.programmevitam.fr/pastis-standalone/</p>
-<p>Le fichier Zip a un unique répertoire contenant :</p>
+<p>Le fichier ZIP a un unique répertoire contenant :</p>
 <ul class="simple">
 <li><p>un environnement d’exécution Java 17, nécessaire si vous n’avez pas Java installé sur votre poste</p></li>
 <li><p>un fichier <code class="docutils literal notranslate"><span class="pre">readme.txt</span></code> décrivant succintement la procédure pour lancer l’application</p></li>
@@ -211,8 +229,8 @@
 </section>
 <section id="extension-du-modele-du-seda-par-des-metadonnees-externes">
 <h3><span class="section-number">3.2.4. </span>Extension du modèle du SEDA par des métadonnées externes<a class="headerlink" href="#extension-du-modele-du-seda-par-des-metadonnees-externes" title="Lien vers cette rubrique"></a></h3>
-<p>Depuis la version 8.1 de Vitam, il est possible d’enrichir le modèle des Profils d’Archives et des Profils d’Unité Archivistique en ajoutant des champs personnalisés, qui viendront enrichir les informations des unités archivistiques.</p>
-<p>Pour cela, il conviendra de créer un fichier de configuration nommé <code class="docutils literal notranslate"><span class="pre">external-schema-definition.json</span></code> placé dans le même répertoire que le fichier .exe</p>
+<p>Depuis la version 8.1 de Vitam, il est possible d’enrichir le modèle des Profils d’archivage (PA) et des Profils d’unité archivistique (PUA) en ajoutant des champs personnalisés, qui viendront enrichir les informations des unités archivistiques.</p>
+<p>Pour cela, il conviendra de créer un fichier de configuration nommé <code class="docutils literal notranslate"><span class="pre">external-schema-definition.json</span></code> placé dans le même répertoire que le fichier .exe.</p>
 <p>Le contenu du fichier est au format JSON, avec la syntaxe suivante :</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
 <span class="w">  </span><span class="p">{</span>
@@ -236,7 +254,7 @@
 </thead>
 <tbody>
 <tr class="row-even"><td class="text-center"><p>FieldName</p></td>
-<td class="text-center"><p>Nom du champ, tel qu’il sera présent dans le contenu de l’Unité Archivistique</p></td>
+<td class="text-center"><p>Nom du champ, tel qu’il sera présent dans le contenu de l’unité archivistique</p></td>
 </tr>
 <tr class="row-odd"><td class="text-center"><p>Path</p></td>
 <td class="text-center"><p>Nom complet, depuis la racine. Les différents parents seront séparés par des “.”</p></td>
@@ -272,8 +290,8 @@
 <li><p>MANY : le champ est répétable plusieurs fois, mais peut ne pas être présent</p></li>
 <li><p>MANY_REQUIRED : le champ est répétable plusieurs fois, mais doit apparaître au moins une fois</p></li>
 </ul>
-<p>Il est possible de regrouper les métadonnées en arbre, en utilisant des métadonnées de type OBJECT, qui vont elle-même contenir d’autres métadonnées. L’organisation de l’arbre des métdonnées se fera avec la propriété <code class="docutils literal notranslate"><span class="pre">Path</span></code> de chaque métadonnée.</p>
-<p>Par exemple, si nous avons créé une métadonnée <code class="docutils literal notranslate"><span class="pre">A</span></code> de type objet, on pourra créer une métadonnée <code class="docutils literal notranslate"><span class="pre">B</span></code> de type texte imbriquée dans <code class="docutils literal notranslate"><span class="pre">A</span></code> si pour <code class="docutils literal notranslate"><span class="pre">B</span></code> on défini la valeur <code class="docutils literal notranslate"><span class="pre">Path</span></code> à <code class="docutils literal notranslate"><span class="pre">A.B</span></code>. Attention, il faut bien s’assurer que tous les parents d’une métadonnée, tels que définis dans son <code class="docutils literal notranslate"><span class="pre">Path</span></code> existent bien.</p>
+<p>Il est possible de regrouper les métadonnées en arbre, en utilisant des métadonnées de type OBJECT, qui vont elle-même contenir d’autres métadonnées. L’organisation de l’arbre des métadonnées se fera avec la propriété <code class="docutils literal notranslate"><span class="pre">Path</span></code> de chaque métadonnée.</p>
+<p>Par exemple, si nous avons créé une métadonnée <code class="docutils literal notranslate"><span class="pre">A</span></code> de type objet, on pourra créer une métadonnée <code class="docutils literal notranslate"><span class="pre">B</span></code> de type texte imbriquée dans <code class="docutils literal notranslate"><span class="pre">A</span></code> si pour <code class="docutils literal notranslate"><span class="pre">B</span></code> on définit la valeur <code class="docutils literal notranslate"><span class="pre">Path</span></code> à <code class="docutils literal notranslate"><span class="pre">A.B</span></code>. Attention, il faut bien s’assurer que tous les parents d’une métadonnée, tels que définis dans son <code class="docutils literal notranslate"><span class="pre">Path</span></code> existent bien.</p>
 <p>Si, par exemple, nous souhaitons créer la structure suivante :</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoice</span> <span class="o">-</span> <span class="n">Informations</span> <span class="n">de</span> <span class="n">facture</span> <span class="p">(</span><span class="n">objet</span><span class="p">,</span> <span class="n">optionnel</span><span class="p">,</span> <span class="n">répétable</span><span class="p">)</span>
     <span class="o">+---</span> <span class="n">FactDate</span> <span class="o">-</span> <span class="n">date</span> <span class="n">de</span> <span class="n">la</span> <span class="n">facture</span> <span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="n">obligatoire</span><span class="p">,</span> <span class="n">non</span> <span class="n">répétable</span><span class="p">)</span>

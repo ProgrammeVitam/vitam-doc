@@ -862,6 +862,8 @@ L’ontologie comprend :
 -  des champs d’identification : identifiant de la métadonnée, nom de la métadonnée dans le Standard d’échanges de données pour l’archivage (SEDA) si c’est dans ce cadre qu’elle a été créée, nom de la métadonnée telle qu’exposée dans les interfaces de programmation applicatives (API) ; une description de la métadonnée ;
 -  la traduction possible de cette métadonnée dans une interface homme-machines ;
 -  le formatage attendu de la métadonnée dans le moteur de recherche ElasticSearch (BOOLEAN, DATE, DOUBLE, GEO-POINT, KEYWORD, LONG, TEXT) ;
+-  le détail du formatage (STRING, ENUM, DATETIME, BOOLEAN, LONG, DOUBLE) ;
+-  la taille possible des métadonnées de type STRING dans une interface homme-machines  (SHORT, MEDIUM, LONG) ;
 -  l’origine de la métadonnée :
     - INTERNAL si elle est héritée du Standard d’échanges de données pour l’archivage (SEDA) ou si elle correspond à une métadonnée du modèle de données de la solution logicielle Vitam ;
     - EXTERNAL si elle correspond à une métadonnée créée par les administrateurs ;
@@ -888,15 +890,6 @@ Le schéma a pour objectifs de :
 1.4.1., 1.4.3., 1.4.7., 1.4.8., 2.1.4., 2.2.6., 2.2.7.
 
 ##### Structuration
-
-L’ontologie comprend :
--  des champs d’identification : identifiant de la métadonnée, nom de la métadonnée dans le Standard d’échanges de données pour l’archivage (SEDA) si c’est dans ce cadre qu’elle a été créée, nom de la métadonnée telle qu’exposée dans les interfaces de programmation applicatives (API) ; une description de la métadonnée ;
--  la traduction possible de cette métadonnée dans une interface homme-machines ;
--  le formatage attendu de la métadonnée dans le moteur de recherche ElasticSearch (BOOLEAN, DATE, DOUBLE, GEO-POINT, KEYWORD, LONG, TEXT) ;
--  l’origine de la métadonnée :
-    - INTERNAL si elle est héritée du Standard d’échanges de données pour l’archivage (SEDA) ou si elle correspond à une métadonnée du modèle de données de la solution logicielle Vitam ;
-    - EXTERNAL si elle correspond à une métadonnée créée par les administrateurs ;
--  l’utilisation faite dans la solution logicielle Vitam de cette métadonnée : nom des collections MongoDB utilisant cette métadonnée.
 
 Le schéma comprend :
 -  des champs d’identification : chemin et identifiant de la métadonnée, nom de la métadonnée dans le Standard d’échanges de données pour l’archivage (SEDA) si c’est dans ce cadre qu’elle a été créée, nom et chemin de la métadonnée telle qu’exposée dans les interfaces de programmation applicatives (API) ; une description de la métadonnée ;
@@ -1306,7 +1299,7 @@ Le log des accès a pour objectif de tracer les accès aux objets, qu’il s’a
 
 1.6.1., 1.6.8., 2.4.2.
 
-##### CStructuration
+##### Structuration
 
 Le log des accès comprend :
 -  la date et l’heure de l’accès ;

@@ -49,7 +49,7 @@ Il s’articule autour des axes suivants :
 - une présentation des mécanismes mis en œuvre dans la solution logicielle Vitam pour gérer et réaliser des opérations de préservation numérique ;
 - des recommandations aux utilisateurs de la solution logicielle Vitam sur la manière d’utiliser les fonctionnalités associées à ces outils de préservation numérique ;
 - des exemples de référentiels, de paramétrages, et de messages retournés par la solution logicielle Vitam à l’issue d’une opération en lien avec la préservation.
-Le présent document décrit les fonctionnalités qui sont offertes par la deuxième version de production de la solution logicielle Vitam au terme de la version 7.0 (octobre 2023). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
+Le présent document décrit les fonctionnalités qui sont offertes par la deuxième version de production de la solution logicielle Vitam au terme de la version 8.1 (printemps 2024). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
 
 Administration de la préservation numérique
 ---
@@ -245,6 +245,26 @@ Un rapport au format JSON est généré et précise les éléments suivants[^11]
 - la liste des PUID supprimés ;
 - le motif d’un avertissement.
 
+##### Accès au référentiel
+
+La solution logicielle Vitam permet d'effectuer des recherches dans le référentiel des formats.
+Il est possible d'obtenir :
+-  une liste de résultats,
+-  un résultat par facettes (nombre d’occurrences pour une métadonnée donnée).
+Sont disponibles les facettes de type :
+-  "terms" : pour obtenir des catégories basées sur les valeurs distinctes d'un champ spécifique et le nombre associé,
+-  "filters" : pour obtenir des résultats d'agrégations par filtres sur les résultats,
+-  "range" : pour obtenir des agrégations par plages de dates,
+-  "sum" : pour obtenir des totaux sur des champs,
+-  "count" : pour obtenir le nombre de valeurs présentes sur des champs,
+-  "cardinality" : pour obtenir le nombre exact de valeurs présentes sur des champs (usage non recommandé).
+
+Par ailleurs, la solution logicielle permet de consulter le détail d'un format en particulier.
+
+L'accès au référentiel est possible depuis :
+-  les API,
+-  l'APP VitamUI « Formats ».
+
 #### Conseils de mise en œuvre
 
 À l’issue de cette phase de réalisation de fonctionnalités concernant le référentiel des formats, l’équipe projet Vitam est en mesure de fournir plusieurs recommandations de mise en œuvre.
@@ -433,6 +453,24 @@ Lors de ce ré-import ou de cette mise à jour, l’opération peut aboutir aux 
 |Avertissement|mise à jour d’un référentiel dont au moins un griffon est déclaré dans un scénario de préservation.|
 |Échec[^24]|sans journalisation :<br>- ré-import d’un référentiel sous la forme d’un fichier qui n’est pas au format JSON ;<br>- import d’un référentiel dont au moins un des champs contient une injection HTML.|
 |Échec|avec journalisation :<br>- mise à jour d’un référentiel dans lequel deux griffons portent le même identifiant métier ;<br>- mise à jour d’un référentiel dans lequel un griffon ne déclare pas d’identifiant, d’intitulé, de nom technique d’outil ou de version d’exécutable ;<br>- import d’un référentiel dans lequel un champ ne contient pas de valeur. Il peut s’agir des champs : Identifier, Name, ExecutableName, ExecutableVersion ;<br>- import d’un référentiel dans lequel une valeur ne correspond pas au type d’indexation du champ défini dans l’ontologie (ex : valeur textuelle dans un champ de type « DATE ») ;<br>- import d’un référentiel dans lequel on a supprimé un griffon déclaré dans un scénario de préservation.|
+
+##### Accès au référentiel
+
+La solution logicielle Vitam permet d'effectuer des recherches dans le référentiel des griffons.
+Il est possible d'obtenir :
+-  une liste de résultats,
+-  un résultat par facettes (nombre d’occurrences pour une métadonnée donnée).
+Sont disponibles les facettes de type :
+-  "terms" : pour obtenir des catégories basées sur les valeurs distinctes d'un champ spécifique et le nombre associé,
+-  "filters" : pour obtenir des résultats d'agrégations par filtres sur les résultats,
+-  "range" : pour obtenir des agrégations par plages de dates,
+-  "sum" : pour obtenir des totaux sur des champs,
+-  "count" : pour obtenir le nombre de valeurs présentes sur des champs,
+-  "cardinality" : pour obtenir le nombre exact de valeurs présentes sur des champs (usage non recommandé).
+
+Par ailleurs, la solution logicielle permet de consulter le détail d'un griffon en particulier.
+
+L'accès au référentiel est possible uniquement depuis les API.
 
 #### Conseils de mise en œuvre
 
@@ -723,6 +761,24 @@ Lors de ce ré-import ou de cette mise à jour, l’opération peut aboutir aux 
 |Succès|l’opération a été réalisée sans rencontrer de problèmes particuliers.|
 |Échec[^36]|sans journalisation :<br>- import ou ré-import d’un référentiel dont le format ne correspond pas au format JSON ;<br>- import d’un référentiel dont au moins un des champs contient une injection HTML.|
 ||avec journalisation :<br>- mise à jour d’un référentiel dans lequel deux scénarios portent le même identifiant métier ;<br>- mise à jour d’un référentiel dans lequel un scénario ne comporte pas au moins un champ obligatoire. Il peut s’agir, par exemple, des champs : Identifier, Name ;<br>- import d’un référentiel dans lequel un champ ne contient pas de valeur. Il peut s’agir, par exemple, des champs : Identifier, Name ;<br>- import d’un référentiel dans lequel une valeur ne correspond pas au type d’indexation du champ défini dans l’ontologie (ex : valeur textuelle dans un champ de type « DATE ») ;<br>- import d’un référentiel dans lequel un scénario de préservation déclare un griffon non référencé dans le référentiel des griffons ;<br>- import d’un référentiel dans lequel un scénario de préservation déclare un format non référencé dans le référentiel des formats.
+
+##### Accès au référentiel
+
+La solution logicielle Vitam permet d'effectuer des recherches dans le référentiel des scénarios de préservation.
+Il est possible d'obtenir :
+-  une liste de résultats,
+-  un résultat par facettes (nombre d’occurrences pour une métadonnée donnée).
+Sont disponibles les facettes de type :
+-  "terms" : pour obtenir des catégories basées sur les valeurs distinctes d'un champ spécifique et le nombre associé,
+-  "filters" : pour obtenir des résultats d'agrégations par filtres sur les résultats,
+-  "range" : pour obtenir des agrégations par plages de dates,
+-  "sum" : pour obtenir des totaux sur des champs,
+-  "count" : pour obtenir le nombre de valeurs présentes sur des champs,
+-  "cardinality" : pour obtenir le nombre exact de valeurs présentes sur des champs (usage non recommandé).
+
+Par ailleurs, la solution logicielle permet de consulter le détail d'un scénario en particulier.
+
+L'accès au référentiel est possible uniquement depuis les API.
 
 #### Conseils de mise en œuvre
 
@@ -2175,7 +2231,11 @@ L’audit d’intégrité des objets binaires (ou fichiers numériques) permet d
 
 La solution logicielle Vitam permet de lancer des opérations d’audit d’existence et/ou d’intégrité :
 - depuis l’IHM démo sur l’ensemble d’un tenant ou en sélectionnant un service producteur en particulier ;
-- depuis l’APP VitamUI « Audits », sur l’ensemble d’un coffre (tenant) ou en sélectionnant un ou plusieurs services producteurs en particulier ;
+- depuis l’APP VitamUI « Audits », sur l’ensemble d’un coffre (tenant) ou en sélectionnant :
+  - un ou plusieurs services producteurs en particulier (pouvant être associé à une période),
+  - un à plusieurs identifiants d'opération d'entrée,
+  - une à plusieurs positions de rattachement  (pouvant être associé à une période),
+  - une période d'entrée dans le système ;
 - par l’API, au moyen d’une requête DSL.
 
 Les raisons pouvant amener à réaliser un audit d’existence des objets sont les suivantes :
@@ -2484,7 +2544,11 @@ Il offre une garantie supplémentaire en prouvant, au moyen de son rapport, que 
 
 La solution logicielle Vitam permet de lancer des opérations d’audit de cohérence à partir d’un lot d’archives préalablement sélectionné. L’opération peut s’effectuer :
 - depuis le panier de l’IHM démo sur un lot d’archives ;
-- depuis l’APP VitamUI « Audits », sur l’ensemble d’un coffre (tenant) ou en sélectionnant dans l’arborescence d’archives un ou plusieurs niveaux d’archives (nœuds) en particulier ;
+- depuis l’APP VitamUI « Audits », sur l’ensemble d’un coffre (tenant) ou en sélectionnant :
+  - un ou plusieurs services producteurs en particulier (pouvant être associé à une période),
+  - un à plusieurs identifiants d'opération d'entrée,
+  - une à plusieurs positions de rattachement  (pouvant être associé à une période),
+  - une période d'entrée dans le système ;
 - par l’API, au moyen d’une requête DSL.
 
 Les raisons pouvant amener à réaliser un audit de cohérence sont les suivantes :

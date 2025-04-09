@@ -91,6 +91,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#controles-effectues-lors-de-limport-et-de-la-mise-a-jour-du-referentiel">7.3.2.2. Contrôles effectués lors de l’import et de la mise à jour du référentiel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#mise-a-jour-du-referentiel">7.3.2.3. Mise à jour du référentiel</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#sauvegarde-du-referentiel">7.3.2.4. Sauvegarde du référentiel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#acces-au-referentiel">7.3.2.5. Accès au référentiel</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#entrees">7.3.3. Entrées</a></li>
@@ -1233,6 +1234,28 @@ Le fichier de configuration se présente comme suit (exemple fictif)<a class="fo
 <h4><span class="section-number">7.3.2.4. </span>Sauvegarde du référentiel<a class="headerlink" href="#sauvegarde-du-referentiel" title="Lien vers cette rubrique"></a></h4>
 <p>Les différentes versions du référentiel font l’objet d’une sauvegarde sur les offres de stockage utilisées par l’implémentation de la solution logicielle Vitam.</p>
 </section>
+<section id="acces-au-referentiel">
+<h4><span class="section-number">7.3.2.5. </span>Accès au référentiel<a class="headerlink" href="#acces-au-referentiel" title="Lien vers cette rubrique"></a></h4>
+<p>La solution logicielle Vitam permet d’effectuer des recherches dans le référentiel des règles de gestion.
+Il est possible d’obtenir :</p>
+<ul class="simple">
+<li><p>une liste de résultats,</p></li>
+<li><p>un résultat par facettes (nombre d’occurrences pour une métadonnée donnée).
+Sont disponibles les facettes de type :</p></li>
+<li><p>« terms » : pour obtenir des catégories basées sur les valeurs distinctes d’un champ spécifique et le nombre associé,</p></li>
+<li><p>« filters » : pour obtenir des résultats d’agrégations par filtres sur les résultats,</p></li>
+<li><p>« range » : pour obtenir des agrégations par plages de dates,</p></li>
+<li><p>« sum » : pour obtenir des totaux sur des champs,</p></li>
+<li><p>« count » : pour obtenir le nombre de valeurs présentes sur des champs,</p></li>
+<li><p>« cardinality » : pour obtenir le nombre exact de valeurs présentes sur des champs (usage non recommandé).</p></li>
+</ul>
+<p>Par ailleurs, la solution logicielle permet de consulter le détail d’une règle en particulier.</p>
+<p>L’accès au référentiel est possible depuis :</p>
+<ul class="simple">
+<li><p>les API,</p></li>
+<li><p>l’APP VitamUI « Règles de gestion ».</p></li>
+</ul>
+</section>
 </section>
 <section id="entrees">
 <h3><span class="section-number">7.3.3. </span>Entrées<a class="headerlink" href="#entrees" title="Lien vers cette rubrique"></a></h3>
@@ -1356,13 +1379,13 @@ Les échéances associées aux règles modifiées sont alors recalculées ;</p>
 <li><p>pour les unités archivistiques déclarant une ClassificationRule – durée de classification, en cas de modification du niveau de protection du secret de la défense nationale (ClassificationLevel), enregistrement de la précédente valeur du bloc ClassificationRule dans la description des archives (création d’un nouveau bloc « _history »). Cette fonction a pour objectif de permettre l’identification via une recherche des unités archivistiques déclassées ou déclassifiées. Ces informations seront exportées en cas de génération d’un Dissemination Information Package (DIP).
 Il est également possible de mettre à jour des règles de gestion au moyen des interfaces de VitamUI :</p></li>
 <li><p>par un réimport complet du référentiel depuis l’APP « Règles de gestion » ;</p></li>
-<li><p>par une action de mise à jour en masse des règles de gestion sur un lot d’archives depuis l’APP « Recherche et consultation des archives ». Au terme de la version 6.RC, cette action peut s’effectuer sur les catégories de règle suivantes :</p>
+<li><p>par une action de mise à jour en masse des règles de gestion sur un lot d’archives depuis l’APP « Recherche et consultation des archives ». Au terme de la version 8.1, cette action peut s’effectuer sur les catégories de règle suivantes :</p>
 <ul>
 <li><p>durée d’utilité administrative,</p></li>
 <li><p>durée d’utilité courante,</p></li>
 <li><p>communicabilité,</p></li>
 <li><p>réutilisation,</p></li>
-<li><p>diffustion.</p></li>
+<li><p>diffusion.</p></li>
 </ul>
 </li>
 </ul>
@@ -1523,7 +1546,12 @@ Il est également possible, en activant le paramétrage correspondant dans le co
 <ul class="simple">
 <li><p>Si aucune indexation des règles n’a été réalisée, aucune réponse ne pourra être retournée.</p></li>
 <li><p>Les unités archivistiques d’arbre, qui ne portent pas de règles de gestion, ne sont pas consultables si ce filtre est utilisé.</p></li>
-<li><p>Au terme de la release 16 – version 4, ce filtre supporte également la catégorie de règle correspondant au gel.</p></li>
+<li><p>A partir de la version 4, ce filtre supporte également la catégorie de règle correspondant au gel.</p></li>
+</ul>
+<p>Deux autres filtres ont également trait à un filtrage sur les règles de gestion :</p>
+<ul class="simple">
+<li><p>le premier exclut les unités archivistiques de type « plan de classement » du filtre ne donnant accès aux archives dont la règle de gestion est échue,</p></li>
+<li><p>l’autre permet d’élargir l’accès des utilisateurs à des archives produites par d’autres services producteurs dont la règle de gestion serait échue en plus que de les autoriser à accéder à des archives dont les règles peuvent ne pas être arrivées à échéance.</p></li>
 </ul>
 </section>
 </section>

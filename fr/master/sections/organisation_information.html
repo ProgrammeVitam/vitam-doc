@@ -311,15 +311,15 @@
 <li class="toctree-l4"><a class="reference internal" href="#log-des-acces">1.4.6.4. Log des accès</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="#id104">1.4.6.4.1. Définition et objectifs</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#id105">1.4.6.4.2. Exigences fonctionnelles</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#cstructuration">1.4.6.4.3. CStructuration</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id106">1.4.6.4.3. Structuration</a></li>
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="#registre-des-fonds">1.4.6.5. Registre des fonds</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="#objectif">1.4.6.5.1. Objectif</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id106">1.4.6.5.2. Exigences associées</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id107">1.4.6.5.3. Structuration</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id108">1.4.6.5.4. Section correspondante dans le modèle de données</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id109">1.4.6.5.5. Documentation associée</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id107">1.4.6.5.2. Exigences associées</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id108">1.4.6.5.3. Structuration</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id109">1.4.6.5.4. Section correspondante dans le modèle de données</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id110">1.4.6.5.5. Documentation associée</a></li>
 </ul>
 </li>
 </ul>
@@ -1019,7 +1019,7 @@ Le présent document doit permettre aux ministères porteurs, aux partenaires, a
 </table>
 </section>
 <section id="recherche-acces-et-consultation-des-objets-archives-et-des-fichiers-qui-leur-sont-associes1">
-<h4><span class="section-number">1.2.2.2. </span>Recherche, accès et consultation des objets archivés et des fichiers qui leur sont associés<a class="footnote-reference brackets" href="#id110" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a><a class="headerlink" href="#recherche-acces-et-consultation-des-objets-archives-et-des-fichiers-qui-leur-sont-associes1" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">1.2.2.2. </span>Recherche, accès et consultation des objets archivés et des fichiers qui leur sont associés<a class="footnote-reference brackets" href="#id111" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a><a class="headerlink" href="#recherche-acces-et-consultation-des-objets-archives-et-des-fichiers-qui-leur-sont-associes1" title="Lien vers cette rubrique"></a></h4>
 <section id="recherche">
 <h5><span class="section-number">1.2.2.2.1. </span>Recherche<a class="headerlink" href="#recherche" title="Lien vers cette rubrique"></a></h5>
 <table class="docutils align-default">
@@ -1366,8 +1366,8 @@ La norme précise enfin qu’aucune équivalence n’est obligatoire entre les d
 <h3><span class="section-number">1.3.1. </span>Les paquets transmis au système d’archivage : les Submission Information Packages (SIP)<a class="headerlink" href="#les-paquets-transmis-au-systeme-darchivage-les-submission-information-packages-sip" title="Lien vers cette rubrique"></a></h3>
 <p>Selon la norme OAIS, les SIP correspondent aux paquets informationnels transférés au système d’archivage par le producteur des objets à archiver.</p>
 <p><strong>Les SIP en tant que tels</strong></p>
-<p>La norme OAIS indique que la forme et le contenu des SIP doivent faire l’objet d’une négociation entre le service versant et le service d’archives. S’agissant des systèmes d’archivage basés sur la solution logicielle Vitam, ils suivent les prescriptions de la norme NF Z 44‑022 et de sa déclinaison pour le secteur public, le Standard d’échanges de données pour l’archivage (SEDA), dans sa version 2.3<a class="footnote-reference brackets" href="#id111" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>. L’implémentation de cette norme et de ce standard est décrite dans le document « Structuration des Submission Information Packages (SIP) » mis à disposition par l’équipe projet Vitam.</p>
-<p>En application de cette norme, de ce standard et de son projet d’implémentation, les SIP transférés à un système d’archivage utilisant la solution logicielle Vitam prennent la forme d’un conteneur (de format .zip ou .tar) comprenant tous les fichiers représentant les objets à archiver, ainsi qu’un bordereau les accompagnant. Ce dernier prend la forme d’un fichier xml conforme au schéma défini dans la norme NF Z 44‑022 et le standard SEDA, dans sa version 2.3<a class="footnote-reference brackets" href="#id112" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>. Ce bordereau contient :</p>
+<p>La norme OAIS indique que la forme et le contenu des SIP doivent faire l’objet d’une négociation entre le service versant et le service d’archives. S’agissant des systèmes d’archivage basés sur la solution logicielle Vitam, ils suivent les prescriptions de la norme NF Z 44‑022 et de sa déclinaison pour le secteur public, le Standard d’échanges de données pour l’archivage (SEDA), dans sa version 2.3<a class="footnote-reference brackets" href="#id112" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>. L’implémentation de cette norme et de ce standard est décrite dans le document « Structuration des Submission Information Packages (SIP) » mis à disposition par l’équipe projet Vitam.</p>
+<p>En application de cette norme, de ce standard et de son projet d’implémentation, les SIP transférés à un système d’archivage utilisant la solution logicielle Vitam prennent la forme d’un conteneur (de format .zip ou .tar) comprenant tous les fichiers représentant les objets à archiver, ainsi qu’un bordereau les accompagnant. Ce dernier prend la forme d’un fichier xml conforme au schéma défini dans la norme NF Z 44‑022 et le standard SEDA, dans sa version 2.3<a class="footnote-reference brackets" href="#id113" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>. Ce bordereau contient :</p>
 <ul class="simple">
 <li><p>la liste des fichiers à archiver, avec leur description technique (les DataObjects). Dans le cas où plusieurs fichiers constituent des représentations différentes d’un même objet à archiver, ils doivent être liés logiquement sous la forme d’un groupe d’objets (DataObjectGroup) ;</p></li>
 <li><p>la liste des objets à archiver (les unités archivistiques ou ArchiveUnit), qu’ils soient physiques ou binaires, dans une arborescence, avec leur description fonctionnelle et leurs règles de gestion ;</p></li>
@@ -1620,8 +1620,8 @@ Si les opérations de conversion constituent des opérations importantes de mise
 <p>Selon la norme OAIS, les DIP correspondent aux paquets informationnels transmis de quelque manière que ce soit par le système d’archivage à un demandeur, générés à partir d’un ou de plusieurs AIP conservés par le système d’archivage.</p>
 <section id="les-dip-en-tant-que-tels">
 <h4><span class="section-number">1.3.3.1. </span>Les DIP en tant que tels<a class="headerlink" href="#les-dip-en-tant-que-tels" title="Lien vers cette rubrique"></a></h4>
-<p>La norme OAIS indique que le DIP comprend tout ou partie d’un ou plusieurs AIP et peut également contenir une Preservation Description Information (PDI) plus ou moins complète. Elle précise également qu’en cas d’empaquetage, l’information d’empaquetage, même si elle peut prendre des formes variées, doit nécessairement être présente sous une forme permettant au demandeur de distinguer clairement l’information recherchée. S’agissant des systèmes d’archivage basés sur la solution logicielle Vitam, ils suivent les prescriptions de la norme NF Z 44‑022 et de sa déclinaison pour le secteur public, le Standard d’échanges de données pour l’archivage (SEDA), dans sa version 2.3.<a class="footnote-reference brackets" href="#id113" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a>.</p>
-<p>En application de cette norme, de ce standard et de son projet d’implémentation, les DIP émis par un système d’archivage utilisant la solution logicielle Vitam prennent la forme d’un conteneur (de format .zip) comprenant tous les fichiers représentant les archives demandées, ainsi qu’un bordereau les accompagnant. Ce dernier prend la forme d’un fichier XML conforme au schéma défini dans la norme NF Z 44‑022 et le standard SEDA, dans sa version 2.3.<a class="footnote-reference brackets" href="#id114" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a>. Ce bordereau contient :</p>
+<p>La norme OAIS indique que le DIP comprend tout ou partie d’un ou plusieurs AIP et peut également contenir une Preservation Description Information (PDI) plus ou moins complète. Elle précise également qu’en cas d’empaquetage, l’information d’empaquetage, même si elle peut prendre des formes variées, doit nécessairement être présente sous une forme permettant au demandeur de distinguer clairement l’information recherchée. S’agissant des systèmes d’archivage basés sur la solution logicielle Vitam, ils suivent les prescriptions de la norme NF Z 44‑022 et de sa déclinaison pour le secteur public, le Standard d’échanges de données pour l’archivage (SEDA), dans sa version 2.3.<a class="footnote-reference brackets" href="#id114" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a>.</p>
+<p>En application de cette norme, de ce standard et de son projet d’implémentation, les DIP émis par un système d’archivage utilisant la solution logicielle Vitam prennent la forme d’un conteneur (de format .zip) comprenant tous les fichiers représentant les archives demandées, ainsi qu’un bordereau les accompagnant. Ce dernier prend la forme d’un fichier XML conforme au schéma défini dans la norme NF Z 44‑022 et le standard SEDA, dans sa version 2.3.<a class="footnote-reference brackets" href="#id115" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a>. Ce bordereau contient :</p>
 <ul class="simple">
 <li><p>la liste des fichiers demandés, avec leur description technique (les DataObjects). Dans le cas où plusieurs fichiers constituent des représentations différentes d’un même objet, ils peuvent être liés logiquement sous la forme d’un groupe d’objets (DataObjectGroup) ;</p></li>
 <li><p>la liste des archives demandées (les unités archivistiques ou ArchiveUnits), qu’elles soient physiques ou binaires, dans une arborescence, avec leur description fonctionnelle et leurs règles de gestion ;</p></li>
@@ -1715,7 +1715,7 @@ Il est propre à chaque tenant partageant une même implémentation de la soluti
 <section id="id6">
 <h5><span class="section-number">1.4.1.2.1. </span>Définition et objectifs<a class="headerlink" href="#id6" title="Lien vers cette rubrique"></a></h5>
 <p>Le référentiel des formats a pour objectif de décrire et documenter les formats de fichier susceptibles d’avoir été utilisés pour créer des objets transférés et pris en charge par la solution logicielle Vitam.<br />
-Ce référentiel est alimenté à partir des fichiers de signature DROID publiés par The National Archives<a class="footnote-reference brackets" href="#id115" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a>.
+Ce référentiel est alimenté à partir des fichiers de signature DROID publiés par The National Archives<a class="footnote-reference brackets" href="#id116" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a>.
 L’identifiant métier permet de faire le lien entre le référentiel, les contrats d’entrée (cf. 4.2.) et les scénarios de préservation (cf. 4.3.), mais aussi les groupes d’objets (cf. 4.5.).<br />
 Le référentiel des formats est unique par implémentation de la solution logicielle Vitam.</p>
 </section>
@@ -2072,6 +2072,8 @@ Il définit une stratégie de stockage déterminée pour :</p>
 <li><p>des champs d’identification : identifiant de la métadonnée, nom de la métadonnée dans le Standard d’échanges de données pour l’archivage (SEDA) si c’est dans ce cadre qu’elle a été créée, nom de la métadonnée telle qu’exposée dans les interfaces de programmation applicatives (API) ; une description de la métadonnée ;</p></li>
 <li><p>la traduction possible de cette métadonnée dans une interface homme-machines ;</p></li>
 <li><p>le formatage attendu de la métadonnée dans le moteur de recherche ElasticSearch (BOOLEAN, DATE, DOUBLE, GEO-POINT, KEYWORD, LONG, TEXT) ;</p></li>
+<li><p>le détail du formatage (STRING, ENUM, DATETIME, BOOLEAN, LONG, DOUBLE) ;</p></li>
+<li><p>la taille possible des métadonnées de type STRING dans une interface homme-machines  (SHORT, MEDIUM, LONG) ;</p></li>
 <li><p>l’origine de la métadonnée :</p>
 <ul>
 <li><p>INTERNAL si elle est héritée du Standard d’échanges de données pour l’archivage (SEDA) ou si elle correspond à une métadonnée du modèle de données de la solution logicielle Vitam ;</p></li>
@@ -2106,19 +2108,6 @@ Il définit une stratégie de stockage déterminée pour :</p>
 </section>
 <section id="id63">
 <h5><span class="section-number">1.4.4.2.3. </span>Structuration<a class="headerlink" href="#id63" title="Lien vers cette rubrique"></a></h5>
-<p>L’ontologie comprend :</p>
-<ul class="simple">
-<li><p>des champs d’identification : identifiant de la métadonnée, nom de la métadonnée dans le Standard d’échanges de données pour l’archivage (SEDA) si c’est dans ce cadre qu’elle a été créée, nom de la métadonnée telle qu’exposée dans les interfaces de programmation applicatives (API) ; une description de la métadonnée ;</p></li>
-<li><p>la traduction possible de cette métadonnée dans une interface homme-machines ;</p></li>
-<li><p>le formatage attendu de la métadonnée dans le moteur de recherche ElasticSearch (BOOLEAN, DATE, DOUBLE, GEO-POINT, KEYWORD, LONG, TEXT) ;</p></li>
-<li><p>l’origine de la métadonnée :</p>
-<ul>
-<li><p>INTERNAL si elle est héritée du Standard d’échanges de données pour l’archivage (SEDA) ou si elle correspond à une métadonnée du modèle de données de la solution logicielle Vitam ;</p></li>
-<li><p>EXTERNAL si elle correspond à une métadonnée créée par les administrateurs ;</p></li>
-</ul>
-</li>
-<li><p>l’utilisation faite dans la solution logicielle Vitam de cette métadonnée : nom des collections MongoDB utilisant cette métadonnée.</p></li>
-</ul>
 <p>Le schéma comprend :</p>
 <ul class="simple">
 <li><p>des champs d’identification : chemin et identifiant de la métadonnée, nom de la métadonnée dans le Standard d’échanges de données pour l’archivage (SEDA) si c’est dans ce cadre qu’elle a été créée, nom et chemin de la métadonnée telle qu’exposée dans les interfaces de programmation applicatives (API) ; une description de la métadonnée ;</p></li>
@@ -2585,8 +2574,8 @@ Base Logbook – collections Journal du cycle de vie des unités archivistiques 
 <h5><span class="section-number">1.4.6.4.2. </span>Exigences fonctionnelles<a class="headerlink" href="#id105" title="Lien vers cette rubrique"></a></h5>
 <p>1.6.1., 1.6.8., 2.4.2.</p>
 </section>
-<section id="cstructuration">
-<h5><span class="section-number">1.4.6.4.3. </span>CStructuration<a class="headerlink" href="#cstructuration" title="Lien vers cette rubrique"></a></h5>
+<section id="id106">
+<h5><span class="section-number">1.4.6.4.3. </span>Structuration<a class="headerlink" href="#id106" title="Lien vers cette rubrique"></a></h5>
 <p>Le log des accès comprend :</p>
 <ul class="simple">
 <li><p>la date et l’heure de l’accès ;</p></li>
@@ -2610,12 +2599,12 @@ Base Logbook – collections Journal du cycle de vie des unités archivistiques 
 <li><p>permettre de suivre l’évolution des fonds d’archives pris en charge par le service d’archives, en fonction des traitements qui sont effectués sur celui-ci (éliminations, transferts, opérations de préservation, suppression de versions d’objets).</p></li>
 </ul>
 </section>
-<section id="id106">
-<h5><span class="section-number">1.4.6.5.2. </span>Exigences associées<a class="headerlink" href="#id106" title="Lien vers cette rubrique"></a></h5>
+<section id="id107">
+<h5><span class="section-number">1.4.6.5.2. </span>Exigences associées<a class="headerlink" href="#id107" title="Lien vers cette rubrique"></a></h5>
 <p>1.2.1., 1.3.5., 2.1.5., 2.2.3., 2.2.4., 2.2.9., 2.8.1.</p>
 </section>
-<section id="id107">
-<h5><span class="section-number">1.4.6.5.3. </span>Structuration<a class="headerlink" href="#id107" title="Lien vers cette rubrique"></a></h5>
+<section id="id108">
+<h5><span class="section-number">1.4.6.5.3. </span>Structuration<a class="headerlink" href="#id108" title="Lien vers cette rubrique"></a></h5>
 <p>Le registre des fonds comprend, pour chaque service producteur :</p>
 <ul class="simple">
 <li><p>un état actualisé de son fond, indiquant :</p>
@@ -2670,36 +2659,36 @@ Base Logbook – collections Journal du cycle de vie des unités archivistiques 
 </li>
 </ul>
 </section>
-<section id="id108">
-<h5><span class="section-number">1.4.6.5.4. </span>Section correspondante dans le modèle de données<a class="headerlink" href="#id108" title="Lien vers cette rubrique"></a></h5>
+<section id="id109">
+<h5><span class="section-number">1.4.6.5.4. </span>Section correspondante dans le modèle de données<a class="headerlink" href="#id109" title="Lien vers cette rubrique"></a></h5>
 <p>Base MasterData – collections Registre des fonds (AccessionRegisterSummary, AccessionRegisterDetail et AccessionRegisterSymbolic)</p>
 </section>
-<section id="id109">
-<h5><span class="section-number">1.4.6.5.5. </span>Documentation associée<a class="headerlink" href="#id109" title="Lien vers cette rubrique"></a></h5>
+<section id="id110">
+<h5><span class="section-number">1.4.6.5.5. </span>Documentation associée<a class="headerlink" href="#id110" title="Lien vers cette rubrique"></a></h5>
 <p><a class="reference internal" href="services_prod.html"><span class="std std-doc">Vitam. Services producteurs.</span></a></p>
 <hr class="footnotes docutils" />
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id110" role="doc-footnote">
+<aside class="footnote brackets" id="id111" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
 <p>Voir également le rapport final du groupe de travail sur l’accès aux archives numériques élaboré par l’équipe projet Vitam [Vitam. Accès aux archives numériques. Rapport final du groupe de travail. v. 0.2. du 14 juin 2016].</p>
 </aside>
-<aside class="footnote brackets" id="id111" role="doc-footnote">
+<aside class="footnote brackets" id="id112" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
 <p>La solution logicielle Vitam est également compatible avec le SEDA 2.1 et le SEDA 2.2.</p>
 </aside>
-<aside class="footnote brackets" id="id112" role="doc-footnote">
+<aside class="footnote brackets" id="id113" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">3</a><span class="fn-bracket">]</span></span>
 <p>La solution logicielle Vitam est également compatible avec le SEDA 2.1 et le SEDA 2.2.</p>
 </aside>
-<aside class="footnote brackets" id="id113" role="doc-footnote">
+<aside class="footnote brackets" id="id114" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">4</a><span class="fn-bracket">]</span></span>
 <p>La solution logicielle Vitam est également compatible avec le SEDA 2.1 et le SEDA 2.2.</p>
 </aside>
-<aside class="footnote brackets" id="id114" role="doc-footnote">
+<aside class="footnote brackets" id="id115" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">5</a><span class="fn-bracket">]</span></span>
 <p>La solution logicielle Vitam est également compatible avec le SEDA 2.1 et le SEDA 2.2.</p>
 </aside>
-<aside class="footnote brackets" id="id115" role="doc-footnote">
+<aside class="footnote brackets" id="id116" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">6</a><span class="fn-bracket">]</span></span>
 <p><a class="reference external" href="http://www.nationalarchives.gov.uk/aboutapps/pronom/droid-signature-files.htm">Disponibles à l’adresse suivante (lien vérifié le 16 février 2023)</a></p>
 </aside>

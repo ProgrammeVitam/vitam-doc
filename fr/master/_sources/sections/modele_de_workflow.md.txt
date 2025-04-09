@@ -1371,6 +1371,163 @@ Ce rapport est en plusieurs parties :
   "Warnings" : [ "4 identifiers removed." ]}
 ```
 
+
+Collect
+-------
+
+Cette section décrit les processus utilisés dans le module de collecte.
+
+Toutes les étapes, tâches et traitements sont journalisés dans le journal des opérations et décrivent le processus (clé et description de la clé associée dans le journal des opérations) tel qu’implémenté dans la version actuelle de la solution logicielle Vitam.
+
+### Workflow de modification d'arborescence (Collect_Reclassification)
+
+Cette section décrit le processus permettant la modification d’arborescence d’archives, c’est-à-dire de modifier les rattachements d’une unité archivistique présente dans une transaction du module de collecte.
+Le processus de modification d’arborescence est lié à des ajouts et des suppressions de liens de parenté.
+Toutes les étapes, tâches et traitements sont journalisés dans le journal des opérations et décrivent le processus (clé et description de la clé associée dans le journal des opérations) tel qu’implémenté dans la version actuelle de la solution logicielle Vitam.
+
+#### Étape de préparation de la modification d’arborescence des unités archivistiques (STP_RECLASSIFICATION_PREPARATION)
+
+-   **Règle** : étape de préparation de la modification d’arborescence des unités archivistiques
+-   **Type** : bloquant
+-   **Statuts** :
+    -   OK : l’étape de préparation de la modification d’arborescence des unités archivistiques a bien été effectué (STP_RECLASSIFICATION_PREPARATION.OK = Succès du processus de préparation de la modification d “arborescence des unités archivistiques)
+    -   KO : erreur lors de la préparation de la modification d’arborescence des unités archivistiques n’a pas été effectué (STP_RECLASSIFICATION_PREPARATION.KO = Échec du processus de préparation de la modification d’arborescence des unités archivistiques)
+    -   FATAL : une erreur technique a eu lieu lors de l’étape de préparation de la modification d’arborescence des unités archivistiques (STP_RECLASSIFICATION_PREPARATION.FATAL = Erreur technique lors du processus de préparation de la modification d’arborescence des unités archivistiques)
+
+##### Vérification des processus concurrents (CHECK_CONCURRENT_WORKFLOW_LOCK)
+
+-   **Règle** : tâche ayant pour but de détecter s’il n’y a pas d’autre processus de modification d’arborescence en cours. Si tel est le cas, le processus n’est pas lancé afin d’éviter les cycles rattachements/détachements concernant plusieurs unités archivistiques.
+-   **Type** : bloquant
+-   **Statuts** : 
+    -   OK : aucun processus concurrent de modification d’arborescence n’a été détecté (CHECK_CONCURRENT_WORKFLOW_LOCK.OK = Succès de la vérification des processus concurrents)
+    -   KO : un processus concurrent de modification d’arborescence a été détecté (CHECK_CONCURRENT_WORKFLOW_LOCK.KO = Échec lors de la vérification des processus concurrents)
+    -   FATAL : une erreur technique est survenue lors de la détection de processus concurrents de modification d’arborescence (CHECK_CONCURRENT_WORKFLOW_LOCK.FATAL = Erreur technique lors de la détection de processus concurrents de modification d’arborescence)
+
+##### Chargement des unités archivistiques (RECLASSIFICATION_PREPARATION_LOAD_REQUEST)
+
+-   **Règle** : tâche consistant à charger les unités archivistiques
+-   **Type** : bloquant
+-   **Statuts** :
+    -   OK : le chargement des unités archivistiques a bien été effectué (RECLASSIFICATION_PREPARATION_LOAD_REQUEST.OK = Succès du chargement des unités archivistiques au moment de la modification d’arborescence des unités archivistiques)
+    -   KO : le chargement des unités archivistiques n’a pas pu s’effectuer (RECLASSIFICATION_PREPARATION_LOAD_REQUEST.KO = Échec du chargement des unités archivistiques au moment de la modification d’arborescence des unités archivistiques)
+    -   FATAL : une erreur technique est survenue lors du chargement des unités archivistiques (RECLASSIFICATION_PREPARATION_LOAD_REQUEST.FATAL = Erreur technique lors du chargement des unités archivistiques au moment de la modification d’arborescence des unités archivistiques)
+
+##### Vérification de la cohérence du graphe (RECLASSIFICATION_PREPARATION_CHECK_GRAPH)
+
+-   **Règle** : tâche consistant à vérifier que le graphe est cohérent, c’est-à-dire à vérifier que les rattachements s’effectuent de façon cohérente entre les différents types d’unités archivistiques : arbre de positionnement, plan de classement, unités simples
+-   **Type** : bloquant
+-   **Statuts** :
+    -   OK : le graphe des unités archivistiques est cohérent (RECLASSIFICATION_PREPARATION_CHECK_GRAPH.OK = Succès du contrôle de cohérence du graphe au moment de la modification d’arborescence des unités archivistiques)
+    -   KO : le graphe de l’arborescence des unités archivistiques est incohérent (RECLASSIFICATION_PREPARATION_CHECK_GRAPH.KO = Échec du contrôle de cohérence du graphe au moment de la modification d’arborescence des unités archivistiques)
+    -   FATAL : une erreur technique est survenue lors du contrôle de cohérence du graphe des unités archivistiques (RECLASSIFICATION_PREPARATION_CHECK_GRAPH.FATAL = Erreur technique lors du contrôle de cohérence du graphe au moment de la modification d’arborescence des unités archivistiques)
+
+##### Préparation de la mise à jour du graphe (RECLASSIFICATION_PREPARATION_UPDATE_DISTRIBUTION)
+
+-   **Règle** : tâche consistant à préparer la mise à jour du graphe des unités archivistiques
+-   **Type** : bloquant
+-   **Statuts** :
+    -   OK : la mise à jour du graphe au moment de la modification d’arborescence des unités a bien été préparée (RECLASSIFICATION_PREPARATION_UPDATE_DISTRIBUTION.OK = Succès de la préparation de la mise à jour du graphe au moment de la modification d’arborescence des unités archivistiques)
+    -   KO : la mise à jour du graphe au moment de la modification d’arborescence des unités n’a pas pu être préparée (RECLASSIFICATION_PREPARATION_UPDATE_DISTRIBUTION.KO = Échec lors de la préparation de la mise à jour du graphe au moment de la modification d’arborescence des unités archivistiques)
+    -   FATAL : une erreur technique est survenue lors de la préparation de la mise à jour du graphe (RECLASSIFICATION_PREPARATION_UPDATE_DISTRIBUTION.FATAL = Erreur technique lors de la préparation de la mise à jour du graphe au moment de la modification d’arborescence des unités archivistiques)
+
+
+#### Étape de détachement des unités archivistiques (STP_UNIT_DETACHMENT)
+
+-   **Règle** : tâche ou traitement consistant à supprimer des liens entre unités archivistiques
+-   **Type** : bloquant
+-   **Statuts** :
+    -   OK : la suppression de liens entre unités archivistiques a bien été effectué (UNIT_DETACHMENT.OK = Succès de la suppression de liens entre unités archivistiques)
+    -   KO : la suppression de liens entre des unités archivistiques n’a pas pu s’effectuer (UNIT_DETACHMENT.KO = Échec lors de la suppression de liens entre les unités archivistiques)
+    -   FATAL : une erreur technique est survenue lors de la suppression de liens entre unités archivistiques (UNIT_DETACHMENT.FATAL = Erreur technique lors de la suppression de liens entre unités archivistiques)
+
+##### Établissement de la liste des objets (OBJECTS_LIST_EMPTY)
+
+-   **Règle** : tâche consistant à établir la liste des objets, en cas d’absence de liens à supprimer
+-   **Type** : bloquant
+-   **Statuts** :
+    -   OK : la liste des objets a été établie avec succès (OBJECTS_LIST_EMPTY.OK = Succès lors de l’établissement de la liste des objets : il n’y a pas d’objet pour cette étape)
+    -   FATAL : une erreur technique est survenue lors de l’établissement de la liste des objets (OBJECTS_LIST_EMPTY.FATAL = Erreur technique lors de l’établissement de la liste des objets)
+
+#### Processus de rattachement des unités archivistiques (STP_UNIT_ATTACHMENT)
+
+-   **Règle** : étape consistant à établir des liens entre unités archivistiques
+-   **Type** : bloquant
+-   **Statuts** :
+    -   OK : l’établissement de liens entre unités archivistiques a bien été effectué (STP_UNIT_ATTACHMENT.OK = Succès du processus d’établissement de liens entre unités archivistiques)
+    -   KO : l’établissement de liens entre unités archivistiques n’a pas pu s’effectuer (STP_UNIT_ATTACHMENT.KO = Échec du processus d’établissement de liens entre unités archivistiques)
+    -   FATAL : Erreur technique lors de l’établissement de liens entre unités archivistiques (STP_UNIT_ATTACHMENT.FATAL = Erreur technique lors du processus d’établissement de liens entre unités archivistiques)
+
+##### Processus de rattachement des unités archivistiques (UNIT_ATTACHMENT)
+
+-   **Règle** : tâche et traitement consistant à établir des liens entre unités archivistiques
+-   **Type** : bloquant
+-   **Statuts** :
+    -   OK : l’établissement de liens entre unités archivistiques a bien été effectué (UNIT_ATTACHMENT.OK = Succès de l’’établissement de liens entre unités archivistiques)
+    -   KO : l’établissement de liens entre unités archivistiques n’a pas pu s’effectuer (UNIT_ATTACHMENT.KO = Échec lors de l’’établissement de liens entre unités archivistiques)
+    -   FATAL : Erreur technique lors de l’établissement de liens entre unités archivistiques (UNIT_ATTACHMENT.FATAL = Erreur technique lors de l’établissement de liens entre unités archivistiques)
+
+#### Mise à jour des graphes des unités archivistiques (STP_UNIT_GRAPH_COMPUTE)
+
+-   **Règle** : étape consistant à recalculer le graphe des unités archivistiques
+-   **Type** : bloquant
+-   **Statuts** :
+    -   OK : la mise à jour des graphes des unités archivistiques a bien été effectuée (STP_UNIT_GRAPH_COMPUTE.OK = Succès du processus de mise à jour des graphes des unités archivistiques)
+    -   KO : la mise à jour des graphes des unités archivistiques n’a pas pu s’effectuer (STP_UNIT_GRAPH_COMPUTE.KO = Échec lors du processus de mise à jour des graphes des unités archivistiques)
+    -   FATAL : une erreur technique est survenue lors de la mise à jour des graphes des unités archivistiques (STP_UNIT_GRAPH_COMPUTE.FATAL = Erreur technique lors du processus de mise à jour des graphes des unités archivistiques)
+
+##### Calcul du graphe des unités archivistiques (UNIT_GRAPH_COMPUTE)
+
+-   **Règle** : tâche consistant à recalculer le graphe des unités archivistiques
+-   **Type** : bloquant
+-   **Statuts** :
+    -   OK : la mise à jour des graphes des unités archivistiques a bien été effectuée (UNIT_GRAPH_COMPUTE.OK = Succès de la mise à jour des graphes des unités archivistiques)
+    -   KO : la mise à jour des graphes des unités archivistiques n’a pas pu s’effectuer (UNIT_GRAPH_COMPUTE.KO = échec de la mise à jour des graphes des unités archivistiques)
+    -   FATAL : une erreur technique est survenue lors de la mise à jour des graphes des unités archivistiques (UNIT_GRAPH_COMPUTE.FATAL = Erreur technique lors de la mise à jour des graphes des unités archivistiques)
+
+#### Mise à jour des graphes des groupes d’objets (STP_OBJECT_GROUP_GRAPH_COMPUTE)
+
+-   **Règle** : étape consistant à recalculer le graphe des groupes d’objets.
+-   **Type** : bloquant
+-   **Statuts** :
+    -   OK : le processus de mise à jour des graphes des groupes d’objets techniques a bien été effectué (STP_OBJECT_GROUP_GRAPH_COMPUTE.OK = Succès de l’étape de mise à jour des graphes des groupes d’objets techniques)
+    -   KO : le processus de mise à jour de mise à jour des graphes du groupe d’objets techniques n’a pas pu s’effectuer (STP_OBJECT_GROUP_GRAPH_COMPUTE.KO = Échec de l’étape de mise à jour des graphes du groupe d’objets techniques)
+    -   FATAL : erreur technique lors du processus de mise à jour des graphes du groupe d’objets techniques (STP_OBJECT_GROUP_GRAPH_COMPUTE.FATAL = Erreur technique lors de l’étape de mise à jour des graphes du groupe d’objets techniques)
+
+##### Calcul des graphes des groupes d’objets (OBJECT_GROUP_GRAPH_COMPUTE)
+
+-   **Règle** : tâche ou traitement consistant à recalculer le graphe des groupes d’objets.
+-   **Type** : bloquant
+-   **Statuts** :
+    -   OK : la mise à jour des graphes du groupe d’objets techniques a bien été effectuée (OBJECT_GROUP_GRAPH_COMPUTE.OK = Succès de l’étape de mise à jour des graphes des groupes d’objets techniques)
+    -   KO : la mise à jour des graphes du groupe d’objets techniques n’a pas pu s’effectuer (OBJECT_GROUP_GRAPH_COMPUTE.KO = Échec de l’étape de mise à jour des graphes des groupes d’objets techniques)
+    -   FATAL : erreur technique lors de la mise à jour des graphes des groupes d’objets techniques (OBJECT_GROUP_GRAPH_COMPUTE.FATAL = Erreur technique lors de l’étape de mise à jour des graphes du groupe d’objets techniques)
+
+#### Finalisation de la modification d’arborescence des unités archivistiques (STP_RECLASSIFICATION_FINALIZATION)
+
+-   **Règle** : étape consistant à finaliser le processus de modification d’arborescence pour des unités archivistiques présentes dans le système
+-   **Type** : bloquant
+-   **Statuts** :
+    -   OK : le processus de finalisation de la modification d’arborescence des unités archivistiques a été effectué (STP_RECLASSIFICATION_FINALIZATION.OK = Succès du processus de finalisation de la modification d’arborescence des unités archivistiques)
+    -   KO : le processus de finalisation de la modification d’arborescence des unités archivistiques n’a pas pu être effectué (STP_RECLASSIFICATION_FINALIZATION.KO = Échec du processus de finalisation de la modification d’arborescence des unités archivistiques)
+    -   FATAL : erreur technique lors du processus de finalisation de la modification d’arborescence des unités archivistiques (STP_RECLASSIFICATION_FINALIZATION.FATAL = Erreur technique lors du processus de finalisation de la modification d’arborescence des unités archivistiques)
+
+##### Finalisation de la modification d’arborescence des unités archivistiques (RECLASSIFICATION_FINALIZATION)
+
+-   **Règle** : tâche consistant à finaliser le processus de modification d’arborescence pour des unités archivistiques existantes dans le système.
+-   **Type** : bloquant
+-   **Statuts** :
+    -   OK : la finalisation de la modification d’arborescence des unités archivistiques a bien été effectuée (RECLASSIFICATION_FINALIZATION.OK = Succès de la finalisation de la modification d’arborescence des unités archivistiques)
+    -   KO : la finalisation de la modification d’arborescence des unités archivistiques n’a pas pu être effectuée (RECLASSIFICATION_FINALIZATION.KO = Échec lors de la finalisation de la modification d’arborescence des unités archivistiques)
+    -   FATAL : erreur technique lors de la mise à jour des graphes du groupe d’objets (RECLASSIFICATION_FINALIZATION.FATAL = Erreur technique lors de la finalisation de la modification d’arborescence des unités archivistiques)
+
+#### Structure de workflow de modification d’arborescence
+
+D’une façon synthétique, le workflow est décrit ainsi :
+
+![](./medias/modele_workflow/reclassification_collect_1.png)
+![](./medias/modele_workflow/reclassification_collect_2.png)
+
+
 Ingest
 ----
 

@@ -40,7 +40,7 @@ Ce document s’articule autour des axes suivants :
 -   modalités de dégel d’archives.
 
 Le présent document décrit les fonctionnalités qui sont offertes par la
-solution logicielle Vitam au terme de la Version 5.RC (septembre 2021).
+solution logicielle Vitam au terme de la Version 8.1 (printemps 2025).
 Il a vocation à être amendé, complété et enrichi au fur et à mesure de
 la réalisation de la solution logicielle Vitam et des retours et
 commentaires formulés par les ministères porteurs et les partenaires du
@@ -77,7 +77,7 @@ définies dans les normes suivantes :
 -   Modular Requirements for Records Systems 2010 (MoReq2010) : recueil
     d’exigences pour l'organisation de l'archivage numérique, élaboré
     dans le cadre de l’Union européenne ;
--   NF Z 42‑013  : Archivage électronique, recommandations et exigences.
+-   NF Z 42-013  : Archivage électronique, recommandations et exigences.
 
 La procédure s’effectue en deux temps :
 
@@ -107,7 +107,7 @@ Exemple:
 ### Formalisation du gel dans le Standard d’échanges de données pour l’archivage (SEDA)
 
 La règle de gel a été intégrée par la solution logicielle Vitam en
-**extension** à la norme NF Z 44‑022, intitulée « Modèle d’Échange de
+**extension** à la norme NF Z 44-022, intitulée « Modèle d’Échange de
 DONnées pour l’Archivage » ou MEDONA, et sa déclinaison pour les acteurs
 du service public, le Standard d’Échanges de Données pour l’Archivage
 (SEDA), qui ne définissent pas actuellement ce type d’information.

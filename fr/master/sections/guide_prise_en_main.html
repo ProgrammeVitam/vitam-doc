@@ -263,8 +263,8 @@
 <h3><span class="section-number">4.1.3. </span>Avertissements<a class="headerlink" href="#avertissements" title="Lien vers cette rubrique"></a></h3>
 <section id="jeux-de-tests-disponibles">
 <h4><span class="section-number">4.1.3.1. </span>Jeux de tests disponibles<a class="headerlink" href="#jeux-de-tests-disponibles" title="Lien vers cette rubrique"></a></h4>
-<p>Un dossier de jeux test spécifique « Jeu_de_tests_Guide_de_prise_en_main_V8.zip » a été établi pour accompagner la documentation « Guide de prise en main », il comporte tous les éléments cités dans le document (contrats d’entrée et d’accès, référentiels des services agents et des règles de gestion). Il est publié sur le site www.programmevitam.fr.</p>
-<p>Il est également possible d’effectuer des tests fonctionnels se rapportant au « Cahier de tests métier » à partir des jeux de données mis à disposition dans le dossier « Jeux_de_tests_fonctionnels_V8.zip ». Le dossier zippé comporte les jeux de tests : paquets d’information à archiver (SIP) et objets de référence : contrats d’entrée et d’accès, référentiels des services agents et des règles de gestion, arbres de positionnement, plans de classement, etc. Ce ZIP est publié sur le site www.programmevitam.fr.</p>
+<p>Un dossier de jeux test spécifique « Jeu_de_tests_Guide_de_prise_en_main_V8-1.zip » a été établi pour accompagner la documentation « Guide de prise en main », il comporte tous les éléments cités dans le document (contrats d’entrée et d’accès, référentiels des services agents et des règles de gestion). Il est publié sur le site www.programmevitam.fr.</p>
+<p>Il est également possible d’effectuer des tests fonctionnels se rapportant au « Cahier de tests métier » à partir des jeux de données mis à disposition dans le dossier « Jeux_de_tests_fonctionnels_V8-1.zip ». Le dossier zippé comporte les jeux de tests : paquets d’information à archiver (SIP) et objets de référence : contrats d’entrée et d’accès, référentiels des services agents et des règles de gestion, arbres de positionnement, plans de classement, etc. Ce ZIP est publié sur le site www.programmevitam.fr.</p>
 <p>Enfin, il existe également des tests système automatisés accessibles via le projet Git « Vitam-itests ».1 Cet espace comporte des tests de non-régression, des exemples de paquets d’information à archiver (SIP) et d’objets de référence : contrats d’entrée et d’accès, référentiels des services agents et des règles de gestion. Ces tests peuvent être lancés depuis l’IHM de recette et sont décrits dans la documentation « IHM Recette ».</p>
 </section>
 <section id="utilisation-des-jeux-de-tests">
@@ -278,7 +278,7 @@ En cas de purge totale d’un tenant à l’aide de l’IHM de recette (vidé de
 </section>
 <section id="selection-des-tenants">
 <h4><span class="section-number">4.1.3.4. </span>Sélection des tenants*<a class="headerlink" href="#selection-des-tenants" title="Lien vers cette rubrique"></a></h4>
-<p>Il est nécessaire de sélectionner un tenant2, espace réservé à une entité utilisatrice, qui sera paramétré et qui recevra les référentiels et archives versées (certains référentiels sont valables pour toute la plate-forme tandis que d’autres ne concernent qu’un seul tenant).</p>
+<p>Il est nécessaire de sélectionner un tenant, espace réservé à une entité utilisatrice, qui sera paramétré et qui recevra les référentiels et archives versées (certains référentiels sont valables pour toute la plate-forme tandis que d’autres ne concernent qu’un seul tenant).</p>
 <p>Il existe des tenants d’administration, dont le numéro varie selon le paramétrage de l’installation. Dans l’environnement partenaires de Vitam (part.programmevitam.fr), les tenants 0, 1 et 2 sont des tenants d’administration ou réservés aux tests de non régression (TNR) qui ne doivent pas être utilisés pour la réalisation de tests utilisateurs.</p>
 </section>
 <section id="contrats-dentree-et-contrat-dacces">
@@ -334,33 +334,33 @@ Pour cela il réalise :</p>
 <p>L’utilisateur doit importer un référentiel des règles de gestion via l’APP Règles de gestion. Le référentiel des règles de gestion est propre à chaque coffre de la plate-forme.</p>
 <p><img alt="" src="../_images/RG.png" /></p>
 <ul class="simple">
-<li><p>Pour les tests effectués à partir du jeu de tests « Jeu_de_tests_Guide_de_prise_en_main_V8 », il faut utiliser le fichier nommé « jeu_donnees_OK_regles_CSV.csv » 3 en cliquant sur le bouton « Autres actions » et en sélectionnant l’action « Importer ».</p></li>
+<li><p>Pour les tests effectués à partir du jeu de tests « Jeu_de_tests_Guide_de_prise_en_main_V8-1.zip », il faut utiliser le fichier nommé « jeu_donnees_OK_regles_CSV.csv » en cliquant sur le bouton « Autres actions » et en sélectionnant l’action « Importer ».</p></li>
 <li><p>L’utilisateur peut également constituer son propre référentiel des règles de gestion au format .csv sur le même modèle.</p></li>
 <li><p>Il peut également créer unitairement une règle de gestion en cliquant sur le bouton « Créer une règle de gestion » et en renseignant les champs obligatoires.</p></li>
 </ul>
 </section>
 <section id="import-dun-referentiel-des-services-agents">
 <h4><span class="section-number">4.3.3.2. </span>Import d’un référentiel des services agents*<a class="headerlink" href="#import-dun-referentiel-des-services-agents" title="Lien vers cette rubrique"></a></h4>
-<p>La deuxième étape consiste à importer un référentiel des services agents* au format .csv dans la solution logicielle Vitam via l’APP Services agents. Ce référentiel a pour vocation d’être utilisé par la solution logicielle Vitam pour effectuer localement les contrôles des services (producteurs ou versants) déclarés par les administrateurs et les utilisateurs en entrée et en accès. Le référentiel des services agents est propre à chaque coffre de la plate-forme.</p>
+<p>La deuxième étape consiste à importer un référentiel des services agents au format .csv dans la solution logicielle Vitam via l’APP Services agents. Ce référentiel a pour vocation d’être utilisé par la solution logicielle Vitam pour effectuer localement les contrôles des services (producteurs ou versants) déclarés par les administrateurs et les utilisateurs en entrée et en accès. Le référentiel des services agents est propre à chaque coffre de la plate-forme.</p>
 <p><img alt="" src="../_images/SA.png" /></p>
 <ul class="simple">
-<li><p>Pour les tests effectués à partir du jeu de données « Jeu_de_tests_Guide_de_prise_en_main_V8 », il faut utiliser le fichier nommé « agencies_init.csv » 4 en cliquant sur le bouton « Autres actions » et en sélectionnant l’action « Importer ».</p></li>
+<li><p>Pour les tests effectués à partir du jeu de données « Jeu_de_tests_Guide_de_prise_en_main_V8-1.zip », il faut utiliser le fichier nommé « agencies_init.csv » 4 en cliquant sur le bouton « Autres actions » et en sélectionnant l’action « Importer ».</p></li>
 <li><p>L’utilisateur peut également constituer son propre référentiel des services agents au format .csv sur le même modèle.</p></li>
 <li><p>Il peut également créer unitairement un service agent en cliquant sur le bouton « Créer un service agent » et en renseignant les champs obligatoires.</p></li>
 </ul>
 </section>
 <section id="import-dun-arbre-de-positionnement-et-ou-dun-plan-de-classement">
 <h4><span class="section-number">4.3.3.3. </span>Import d’un arbre de positionnement et/ou d’un plan de classement*<a class="headerlink" href="#import-dun-arbre-de-positionnement-et-ou-dun-plan-de-classement" title="Lien vers cette rubrique"></a></h4>
-<p>Dans un troisième temps, il est nécessaire d’importer un référentiel d’arbre de positionnement* et/ou de plan de classement* au format .zip  via l’APP VitamUI « Arbres et plans ». L’arbre de positionnement et/ou le plan de classement importés sont propres à chaque coffre.</p>
+<p>Dans un troisième temps, il est nécessaire d’importer un référentiel d’arbre de positionnement et/ou de plan de classement au format .zip  via l’APP VitamUI « Arbres et plans ». L’arbre de positionnement et/ou le plan de classement importés sont propres à chaque coffre.</p>
 <p><img alt="" src="../_images/arbre_plan.png" /></p>
 <ul class="simple">
-<li><p>Pour les tests effectués à partir du jeu de données « Jeu_de_tests_Guide_de_prise_en_main_V8 », il faut importer successivement le fichier nommé « Import_arbre.zip » et le fichier intitulé « Import_plan.zip » 5  en cliquant respectivement sur les boutons « Nouvel arbre de positionnement » et « Nouveau plan de classement » puis en téléchargeant les jeux de tests fournis.</p></li>
+<li><p>Pour les tests effectués à partir du jeu de données « Jeu_de_tests_Guide_de_prise_en_main_V8-1.zip », il faut importer successivement le fichier nommé « Import_arbre.zip » et le fichier intitulé « Import_plan.zip » en cliquant respectivement sur les boutons « Nouvel arbre de positionnement » et « Nouveau plan de classement » puis en téléchargeant les jeux de tests fournis.</p></li>
 <li><p>L’utilisateur peut également constituer son propre arbre de positionnement et/ou son propre plan de classement au format .xml.</p></li>
 </ul>
 </section>
 <section id="creation-du-contrat-dentree">
 <h4><span class="section-number">4.3.3.4. </span>Création du contrat d’entrée*<a class="headerlink" href="#creation-du-contrat-dentree" title="Lien vers cette rubrique"></a></h4>
-<p>Enfin, ce dernier point, facultatif, consiste à créer un contrat d’entrée* via l’APP VitamUI « Contrats d’entrée ». Un contrat d’entrée est propre à un coffre.</p>
+<p>Enfin, ce dernier point, facultatif, consiste à créer un contrat d’entrée via l’APP VitamUI « Contrats d’entrée ». Un contrat d’entrée est propre à un coffre.</p>
 <p><img alt="" src="../_images/contrat_entree.png" /></p>
 <p>Le bordereau de transfert du SIP doit, par défaut, déclarer l’identifiant du contrat enregistré dans la solution logicielle Vitam.</p>
 <p><strong>Point important :</strong></p>
@@ -369,7 +369,7 @@ Pour cela il réalise :</p>
 <li><p>Soit l’utilisateur attribue l’identifiant du contrat avant import,</p></li>
 <li><p>Soit la solution logicielle Vitam le générera automatiquement lors de l’import, sous la forme IC-0000x.</p></li>
 </ul>
-<p>Certains SIP fournis dans les jeux de tests (Jeux_de_tests_fonctionnels_V8.zip) spécifient des contrats d’entrée qui leur sont propres dans la balise <em>ArchivalAgreement</em>. Pour pouvoir effectuer une entrée avec ces SIP, il faut :</p>
+<p>Certains SIP fournis dans les jeux de tests (Jeux_de_tests_fonctionnels_V8-1.zip) spécifient des contrats d’entrée qui leur sont propres dans la balise <em>ArchivalAgreement</em>. Pour pouvoir effectuer une entrée avec ces SIP, il faut :</p>
 <ul class="simple">
 <li><p>soit créer le contrat d’entrée correspondant, désigné dans la balise ArchivalAgreement du bordereau de transfert,</p></li>
 <li><p>soit modifier le bordereau de transfert, en remplaçant la valeur de la balise ArchivalAgreement par « IC-000001 » par exemple ou l’identifiant d’un contrat d’entrée déjà importé dans la solution logicielle Vitam.</p></li>
@@ -394,18 +394,18 @@ Pour cela il réalise :</p>
 <p>L’utilisateur peut ensuite importer le SIP dans la solution logicielle Vitam, via l’APP « Dépôt et suivi des versements ».</p>
 <ul class="simple">
 <li><p>En cliquant sur le bouton « Dépôt d’un versement » ;</p></li>
-<li><p>Puis en sélectionnant le SIP à verser. Pour les tests effectués à partir du jeu de données « Jeu_de_tests_Guide_de_prise_en_main_V8 », il faut utiliser le fichier nommé « SIP-Kit_de_prise_en_main.zip ».</p></li>
+<li><p>Puis en sélectionnant le SIP à verser. Pour les tests effectués à partir du jeu de données « Jeu_de_tests_Guide_de_prise_en_main_V8-1.zip », il faut utiliser le fichier nommé « SIP-Kit_de_prise_en_main.zip ».</p></li>
 </ul>
 <p><img alt="" src="../_images/depot.png" /></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>• Le suivi du versement s’affiche dans le tableau du bas. L’utilisateur doit cliquer sur le bouton rafraîchir pour afficher la mise à jour des informations.
-• Lorsque l’opération de versement est terminée (en échec ou en succès), l’utilisateur peut consulter le détail de l’opération dans le panneau latéral de droite en cliquant sur la ligne de l’opération souhaitée.
-</pre></div>
-</div>
+<ul class="simple">
+<li><p>Le suivi du versement s’affiche dans le tableau du bas. L’utilisateur doit cliquer sur le bouton rafraîchir pour afficher la mise à jour des informations.</p></li>
+<li><p>Lorsque l’opération de versement est terminée (en échec ou en succès), l’utilisateur peut consulter le détail de l’opération dans le panneau latéral de droite en cliquant sur la ligne de l’opération souhaitée.</p></li>
+</ul>
 <p><img alt="" src="../_images/depot2.png" /></p>
 <p>L’utilisateur peut également tester le processus, en effectuant une entrée « à blanc ». Cette fonctionnalité est disponible depuis le bouton d’actions secondaires « … ».</p>
 <p><img alt="" src="../_images/entree_blanc.png" /></p>
-<p><strong>Point important :</strong>
-En cas d’échec de l’import, vérifier que les identifiants du contrat d’entrée et du service producteur déclarés dans le manifeste (bordereau de versement) existent dans la solution logicielle Vitam.</p>
+<p><strong>Point important :</strong></p>
+<p>En cas d’échec de l’import, vérifier que les identifiants du contrat d’entrée et du service producteur déclarés dans le manifeste (bordereau de versement) existent dans la solution logicielle Vitam.</p>
 <p>Les causes les plus fréquentes d’échec de l’import peuvent être les suivantes :</p>
 <ul class="simple">
 <li><p>mauvais identifiant du contrat d’entrée,</p></li>
@@ -416,11 +416,11 @@ En cas d’échec de l’import, vérifier que les identifiants du contrat d’e
 </section>
 <section id="etape-6-effectuer-une-recherche">
 <h3><span class="section-number">4.3.6. </span>Etape 6 : Effectuer une recherche<a class="headerlink" href="#etape-6-effectuer-une-recherche" title="Lien vers cette rubrique"></a></h3>
-<p>Afin de rechercher une archive, l’utilisateur doit accéder à l’APP « Recherche, consultation et gestion des archives ».
-<img alt="" src="../_images/entree_blanc.png" />
-L’utilisateur saisit un ou plusieurs critère(s) de recherche (par exemple l’identifiant technique du versement copié-collé depuis l’APP « Dépôt et suivi des versements »). La solution logicielle Vitam effectuera la recherche dans le périmètre désigné par le contrat d’accès.</p>
-<p><strong>Point important :</strong>
-Dans le détail du contrat d’accès, le statut du contrat doit être actif, les producteurs sélectionnés et des droits autorisés, sans quoi la recherche dans les archives ne retournera aucun résultat.</p>
+<p>Afin de rechercher une archive, l’utilisateur doit accéder à l’APP « Recherche, consultation et gestion des archives ».</p>
+<p><img alt="" src="../_images/entree_blanc.png" /></p>
+<p>L’utilisateur saisit un ou plusieurs critère(s) de recherche (par exemple l’identifiant technique du versement copié-collé depuis l’APP « Dépôt et suivi des versements »). La solution logicielle Vitam effectuera la recherche dans le périmètre désigné par le contrat d’accès.</p>
+<p><strong>Point important :</strong></p>
+<p>Dans le détail du contrat d’accès, le statut du contrat doit être actif, les producteurs sélectionnés et des droits autorisés, sans quoi la recherche dans les archives ne retournera aucun résultat.</p>
 </section>
 </section>
 <section id="lexique">
@@ -465,7 +465,7 @@ Dans le détail du contrat d’accès, le statut du contrat doit être actif, le
 <td class="text-left"><p>– Manuel utilisateur, chapitre 6. Partie 1.E<br>– Organisation de l’information Partie 4.2<br>– <a class="reference internal" href="gestion_habilitations.html"><span class="std std-doc">Gestion des habilitations</span></a> Partie 2.2.6</p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>SIP<br><em>Submission Information Package</em></p></td>
-<td class="text-left"><p>Il s’agit des paquets informationnels transférés au système d’archivage<b>Il s’agit d’un conteneur (de format .zip ou .tar) comprenant tous les objets à archiver (quel que soit leur format), ainsi qu’un bordereau les accompagnant (fichier xml conforme au schéma de la norme NF Z44-022 et au SEDA 2.0.).</p></td>
+<td class="text-left"><p>Il s’agit des paquets informationnels transférés au système d’archivage<b>Il s’agit d’un conteneur (de format .zip ou .tar) comprenant tous les objets à archiver (quel que soit leur format), ainsi qu’un bordereau les accompagnant (fichier xml conforme au schéma de la norme NF Z44-022 et au SEDA 2.x.).</p></td>
 <td class="text-left"><p>Obligatoire</p></td>
 <td class="text-left"><p>– Manuel utilisateur, chapitre 3<br>– Organisation de l’information Partie 3.1<br>– Structuration des SIP</p></td>
 </tr>

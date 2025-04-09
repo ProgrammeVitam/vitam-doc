@@ -274,23 +274,27 @@
 <td class="text-center"><p>02/2022</p></td>
 <td class="text-center"><p>Cette nouvelle version du SEDA est intégrée à la solution logicielle Vitam à partir de la V6.RC.</p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p><a class="reference internal" href="SIP.html"><span class="std std-doc">Vitam – Structuration des <em>Submission Information Package</em> (SIP)</span></a></p></td>
+<tr class="row-odd"><td class="text-center"><p>Standard d’échange de données pour l’archivage – SEDA – v. 2.3</p></td>
+<td class="text-center"><p>06/2023</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><a class="reference internal" href="SIP.html"><span class="std std-doc">Vitam – Structuration des <em>Submission Information Package</em> (SIP)</span></a></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 </tr>
-<tr class="row-even"><td class="text-center"><p><a class="reference internal" href="modele_de_donnees.html"><span class="std std-doc">Vitam – Modèle de données</span></a></p></td>
+<tr class="row-odd"><td class="text-center"><p><a class="reference internal" href="modele_de_donnees.html"><span class="std std-doc">Vitam – Modèle de données</span></a></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p><a class="reference internal" href="ontologie.html"><span class="std std-doc">Vitam – Ontologie</span></a></p></td>
+<tr class="row-even"><td class="text-center"><p><a class="reference internal" href="ontologie.html"><span class="std std-doc">Vitam – Ontologie</span></a></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 </tr>
-<tr class="row-even"><td class="text-center"><p><a class="reference internal" href="profil_archivage.html"><span class="std std-doc">Vitam – Profils d’archivage</span></a></p></td>
+<tr class="row-odd"><td class="text-center"><p><a class="reference internal" href="profil_archivage.html"><span class="std std-doc">Vitam – Profils d’archivage</span></a></p></td>
 <td class="text-center"><p>31/03/2023</p></td>
 <td class="text-center"><p></p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p><a class="reference internal" href="profil_unite_archivistique.html"><span class="std std-doc">Vitam – Profils d’unité archivistiques</span></a></p></td>
+<tr class="row-even"><td class="text-center"><p><a class="reference internal" href="profil_unite_archivistique.html"><span class="std std-doc">Vitam – Profils d’unité archivistiques</span></a></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 </tr>
@@ -3975,27 +3979,140 @@ Dans le cas d’un flux automatisé, à l’exception de l’intitulé (« Name
 <td><p>POST</p></td>
 <td><p>/collect-external/v1/projects/{projectId}/upload/</p></td>
 </tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Récupérer la liste des transactions du projet</p></td>
+<td><p>project:id:transactions</p></td>
+<td><p>GET</p></td>
+<td><p>/collect-external/v1/projects/{projectId}/transactions/</p></td>
+</tr>
+<tr class="row-even"><td><p>transaction</p></td>
+<td><p>Création de la transaction</p></td>
+<td><p>transaction:create</p></td>
+<td><p>POST</p></td>
+<td><p>/collect-external/v1/projects/{projectId}/transactions/</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Mise à jour d’une transaction</p></td>
+<td><p>transaction:update</p></td>
+<td><p>PUT</p></td>
+<td><p>/collect-external/v1/transactions/</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Récupère une transaction</p></td>
+<td><p>transaction:id:read</p></td>
+<td><p>GET</p></td>
+<td><p>/collect-external/v1/transactions/{transactionId}/</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Clôture de la transaction</p></td>
+<td><p>transaction:close</p></td>
+<td><p>POST</p></td>
+<td><p>/collect-external/v1/transactions/{transactionId}/close/</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Envoi de la transaction</p></td>
+<td><p>transaction:send</p></td>
+<td><p>POST</p></td>
+<td><p>/collect-external/v1/transactions/{transactionId}/send/</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Abandonner une transaction</p></td>
+<td><p>transaction:abort</p></td>
+<td><p>PUT</p></td>
+<td><p>/collect-external/v1/transactions/{transactionId}/abort/</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Rouvrir une transaction</p></td>
+<td><p>transaction:reopen</p></td>
+<td><p>PUT</p></td>
+<td><p>/collect-external/v1/transactions/{transactionId}/reopen/</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Charge les binaires en lot</p></td>
+<td><p>transaction:zip:create</p></td>
+<td><p>POST</p></td>
+<td><p>/collect-external/v1/transactions/{transactionId}/upload/</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Mettre à jour les unités archivistiques via fichier CSV de métadonnées</p></td>
+<td><p>transaction:id:units:metadata:csv:update</p></td>
+<td><p>PUT</p></td>
+<td><p>/collect-external/v1/transactions/{transactionId}/units/metadata/csv/</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Mettre à jour les unités archivistiques via fichier JSON-Lines de métadonnées</p></td>
+<td><p>transaction:id:units:metadata:jsonl:update</p></td>
+<td><p>PUT</p></td>
+<td><p>/collect-external/v1/transactions/{transactionId}/units/metadata/jsonl/</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Crée une unité archivistique</p></td>
+<td><p>transaction:unit:create</p></td>
+<td><p>POST</p></td>
+<td><p>/collect-external/v1/transactions/{transactionId}/units/</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Récupère toutes les unités archivistiques</p></td>
+<td><p>transaction:unit:read</p></td>
+<td><p>GET</p></td>
+<td><p>/collect-external/v1/transactions/{transactionId}/units/</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Récupérer la liste des unités archivistiques avec leurs règles de gestion héritées</p></td>
+<td><p>transaction:unitsWithInheritedRules:read</p></td>
+<td><p>GET</p></td>
+<td><p>/collect-external/v1/transactions/{transactionId}/unitsWithInheritedRules/</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Supprime une transaction</p></td>
+<td><p>transaction:id:delete</p></td>
+<td><p>DELETE</p></td>
+<td><p>/collect-external/v1/transactions/{transactionId}/</p></td>
+</tr>
+<tr class="row-even"><td><p>units</p></td>
+<td><p>Crée ou modifie un groupe d’objets techniques</p></td>
+<td><p>transaction:object:upsert</p></td>
+<td><p>POST</p></td>
+<td><p>/collect-external/v1/units/{unitId}/objects/{usage}/{version}/</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Insère ou modifie un objet binaire</p></td>
+<td><p>transaction:binary:upsert</p></td>
+<td><p>POST</p></td>
+<td><p>/collect-external/v1/units/{unitId}/objects/{usage}/{version}/binary/</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Récupère une unité archivistique</p></td>
+<td><p>transaction:unit:id:read</p></td>
+<td><p>GET</p></td>
+<td><p>/collect-external/v1/units/{{unit-id}}/</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Mettre à jour les unités archivistiques</p></td>
+<td><p>transaction:id:units:update</p></td>
+<td><p>PUT</p></td>
+<td><p>/collect-external/v1/transactions/{transactionId}/units/</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>Télécharge un usage/version du binaire<br> d’un groupe d’objets techniques</p></td>
+<td><p>transaction:binary:read</p></td>
+<td><p>GET</p></td>
+<td><p>/collect-external/v1/units/{unitId}/objects/{usage}/{version}/binary/</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>Mettre à jour en masse les unités archivistiques</p></td>
+<td><p>transaction:id:units:bulk:update</p></td>
+<td><p>POST</p></td>
+<td><p>/collect-external/v1/transactions/{transactionId}/units/bulk</p></td>
+</tr>
+<tr class="row-even"><td><p>objects</p></td>
+<td><p>Récupère un groupe d’objets techniques</p></td>
+<td><p>transaction:object:read</p></td>
+<td><p>GET</p></td>
+<td><p>/collect-external/v1/objects/{gotId}/</p></td>
+</tr>
 </tbody>
 </table>
-<p>|                   | Récupérer la liste des transactions du projet | project:id:transactions | GET |/collect-external/v1/projects/{projectId}/transactions/ |
-| transaction       | Création de la transaction        | transaction:create       | POST          | /collect-external/v1/projects/{projectId}/transactions/ |
-|                   | Mise à jour d’une transaction     | transaction:update       | PUT           | /collect-external/v1/transactions/ |
-|                   | Récupère une transaction          | transaction:id:read      | GET           | /collect-external/v1/transactions/{transactionId}/ |
-|                   | Clôture de la transaction         | transaction:close        | POST          | /collect-external/v1/transactions/{transactionId}/close/ |
-|                   | Envoi de la transaction           | transaction:send         | POST          | /collect-external/v1/transactions/{transactionId}/send/ |
-|                   | Abandonner une transaction        | transaction:abort        | PUT           | /collect-external/v1/transactions/{transactionId}/abort/ |
-|                   | Rouvrir une transaction           | transaction:reopen       | PUT           | /collect-external/v1/transactions/{transactionId}/reopen/|
-|                   | Charge les binaires en lot        | transaction:zip:create   | POST          | /collect-external/v1/transactions/{transactionId}/upload/|
-|                   | Crée une unité archivistique      | transaction:unit:create  | POST          | /collect-external/v1/transactions/{transactionId}/units/|
-|                   | Récupère toutes les unités archivistiques | transaction:unit:read | GET      | /collect-external/v1/transactions/{transactionId}/units/|
-|                   | Supprime une transaction          | transaction:id:delete    | DELETE        | /collect-external/v1/transactions/{transactionId}/|
-| units             | Crée ou modifie un groupe d’objets techniques | transaction:object:upsert | POST | /collect-external/v1/units/{unitId}/objects/{usage}/{version}/|
-|                   | Insère ou modifie un objet binaire| transaction:binary:upsert | POST         | /collect-external/v1/units/{unitId}/objects/{usage}/{version}/binary/ |
-|                   | Récupère une unité archivistique  | transaction:unit:id:read | GET           | /collect-external/v1/units/{{unit-id}}/ |
-|                   | Mettre à jour les unités archivistiques | transaction:id:units:update | PUT  | /collect-external/v1/transactions/{transactionId}/units/|
-|                   | Télécharge un usage/version du binaire<br> d’un groupe d’objets techniques| transaction:binary:read | GET | /collect-external/v1/units/{unitId}/objects/{usage}/{version}/binary/|
-|                   | Mettre à jour en masse les unités archivistiques | transaction:id:units:bulk:update | POST  | /collect-external/v1/transactions/{transactionId}/units/bulk|
-| objects           | Récupère un groupe d’objets techniques | transaction:object:read | GET       | /collect-external/v1/objects/{gotId}/|</p>
 <hr class="footnotes docutils" />
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="id65" role="doc-footnote">
