@@ -183,7 +183,7 @@ Il est également possible de récupérer l’empreinte du DIP générée depuis
 Le DIP complet
 ----
 
-La solution logicielle Vitam permet d’exporter un DIP dit complet, composé du répertoire contenant les objets numériques demandés et d’un manifeste correspondant au message SEDA  ArchiveDeliveryRequestReply.
+La solution logicielle Vitam permet d’exporter un DIP dit complet, composé du répertoire contenant les objets numériques demandés et d’un manifest correspondant au message SEDA  ArchiveDeliveryRequestReply.
 
 ### Les modalités de lancement de l’opération de mise à disposition du DIP complet
 
@@ -214,6 +214,11 @@ La constitution du DIP complet nécessite de définir plusieurs paramètres qui 
     - identifiant du service versant (SubmissionAgencyIdentifier).
 
 Les valeurs de ces paramètres ne sont pas contrôlées par rapport aux référentiels présents dans la solution logicielle Vitam. Ainsi, il est tout à fait possible, par exemple, d’indiquer un identifiant de service d’archives qui ne figure pas dans le référentiel des services agents.
+
+Au cours de cette constitution il est également possible de définir la forme que prennent les fichiers exportés : 
+- à plat, nommés par leur GUID (dans Vitam UI et par API)
+- dans des dossiers reconstituants l'arborescence d'origine de ces fichiers, nommés par leur Title (dans Vitam UI et par API)
+- dans des dossiers reconstituants l'arborescence d'origine de ces fichiers, nommés par leur GUID (par API uniquement)
 
 Au lancement de l’opération, la solution logicielle Vitam génère un identifiant de l’opération. Le DIP constitué a pour nom cet identifiant d’opération.
 
