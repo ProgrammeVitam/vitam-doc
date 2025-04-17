@@ -427,7 +427,7 @@ Cette transaction peut également s’appliquer pour des transferts entre deux S
 </section>
 <section id="le-dip-complet">
 <h2><span class="section-number">5.5. </span>Le DIP complet<a class="headerlink" href="#le-dip-complet" title="Lien vers cette rubrique"></a></h2>
-<p>La solution logicielle Vitam permet d’exporter un DIP dit complet, composé du répertoire contenant les objets numériques demandés et d’un manifeste correspondant au message SEDA  ArchiveDeliveryRequestReply.</p>
+<p>La solution logicielle Vitam permet d’exporter un DIP dit complet, composé du répertoire contenant les objets numériques demandés et d’un manifest correspondant au message SEDA  ArchiveDeliveryRequestReply.</p>
 <section id="les-modalites-de-lancement-de-loperation-de-mise-a-disposition-du-dip-complet">
 <h3><span class="section-number">5.5.1. </span>Les modalités de lancement de l’opération de mise à disposition du DIP complet<a class="headerlink" href="#les-modalites-de-lancement-de-loperation-de-mise-a-disposition-du-dip-complet" title="Lien vers cette rubrique"></a></h3>
 <p>Depuis l’IHM standard accompagnant la solution logicielle Vitam, à partir de la page de détail d’une unité archivistique, il est possible de demander à générer un DIP complet de l’unité archivistique uniquement ou de l’unité archivistique et de ses filles, ou bien un DIP complet correspondant à l’opération d’entrée (ingest) initiale.</p>
@@ -463,6 +463,12 @@ Cette transaction peut également s’appliquer pour des transferts entre deux S
 </li>
 </ul>
 <p>Les valeurs de ces paramètres ne sont pas contrôlées par rapport aux référentiels présents dans la solution logicielle Vitam. Ainsi, il est tout à fait possible, par exemple, d’indiquer un identifiant de service d’archives qui ne figure pas dans le référentiel des services agents.</p>
+<p>Au cours de cette constitution il est également possible de définir la forme que prennent les fichiers exportés :</p>
+<ul class="simple">
+<li><p>à plat, nommés par leur GUID (dans Vitam UI et par API)</p></li>
+<li><p>dans des dossiers reconstituants l’arborescence d’origine de ces fichiers, nommés par leur Title (dans Vitam UI et par API)</p></li>
+<li><p>dans des dossiers reconstituants l’arborescence d’origine de ces fichiers, nommés par leur GUID (par API uniquement)</p></li>
+</ul>
 <p>Au lancement de l’opération, la solution logicielle Vitam génère un identifiant de l’opération. Le DIP constitué a pour nom cet identifiant d’opération.</p>
 <p>L’opération est journalisée. Suivant l’activation ou non de la fonctionnalité dans le contrat d’accès associé à la demande de génération du DIP, l’opération sera tracée dans les logs d’accès.</p>
 <p>Elle peut aboutir aux statuts suivants :</p>
