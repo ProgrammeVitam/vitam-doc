@@ -20,12 +20,12 @@ Phase maintenance et amélioration continue
 
 La phase projet du Programme Vitam s’est achevée début 2020 avec la publication de la V3 de la solution logicielle et le lancement de la phase produit, définie par une convention de maintenance et amélioration continue entre les ministères porteurs et les services du Premier ministre. Cette nouvelle phase maintient le pilotage stratégique interministériel et confie le pilotage opérationnel au ministère de la Culture. La place des utilisateurs est renforcée par la création du Club utilisateurs, dont un représentant participe aux instances de gouvernance et qui a vocation à permettre les échanges, les retours d’expériences, l’entraide, la définition d’évolution, les contributions, etc.
 
-Le rythme d’une publication majeure par an est maintenu avec la publication début 2021 de la V4 de la solution logicielle Vitam, enrichie par un front-office développé par des utilisateurs et nommé Vitam UI. Une version « release candidate » est également publiée à l’automne.
+Le rythme d’une publication par an est maintenu avec la publication depuis début 2021, et maintenant à chaque printemps, de la V4 de la solution logicielle Vitam, enrichie par un front-office développé par des utilisateurs (CEA, Cines, Xelians et l'équipe-projet VaS] et nommé Vitam UI. Ce rythme est même renforcé avec la publication d'une version intermédiaire, elle aussi dotée d'un dossier d'homologation, à l'automne.
 
 Licence
 -------
 
-La solution logicielle VITAM est publiée sous la licence CeCILL 2.1 ; la documentation associée (comprenant le présent document) est publiée sous [Licence Ouverte V2.0](https://www.etalab.gouv.fr/wp-content/uploads/2017/04/ETALAB-Licence-Ouverte-v2.0.pdf).
+La solution logicielle VITAM est publiée sous la licence CeCILL 2.1, sauf pour les librairies « externes » -client java des API externes et librairie communes externes- et pour le composant Vitam UI qui sont sous CeCILL-C ; la documentation associée (comprenant le présent document) est publiée sous [Licence Ouverte V2.0](https://www.etalab.gouv.fr/wp-content/uploads/2017/04/ETALAB-Licence-Ouverte-v2.0.pdf).
 
 
 [^1]: Valeurs Immatérielles Transmises aux Archives Pour Mémoire
