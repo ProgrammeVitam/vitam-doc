@@ -24,16 +24,17 @@ Lire la documentation  : à chaque besoin, sa documentation…
 
 En plus des documents pour les développeurs et intégrateurs et des présentations des différentes APP (pour application) métier, deux documents font le point sur des sujets techniques :
 - [présentation de la fonctionnalité d’auto-provisioning](./VitamUI_Autoprovisionning.md),
-- authentification, administration et habilitation des utilisateurs et cloisonnement des données.
+- authentification, administration et habilitation des utilisateurs et cloisonnement des données (mise à jour en cours).
 
-Un [guide de prise en main de Vitam UI pour premier versement a également été initié](./guide_prise_en_main.md).
+Un [guide de prise en main de Vitam UI pour premier versement est également proposé](./guide_prise_en_main.md).
 
 |Ordre d'exécution|Je souhaite ?|APP VITAM UI|Rôle|Documentation|
 |:---------------:|:-----:|:-----:|:-----:|:-----:|
+|Organisation et droits utilisateurs|||||
 |1.1 (Obligatoire)|Créer une nouvelle organisation et lui associer 1 ou plusieurs coffre(s)|Organisation|Administrateur du service (si vous exposez VITAM UI en tant que service pour d'autres utilisateurs)<br>Administrateur technique VitamUI (si vous utilisez VITAM UI hébergé en propre)|VitamUI_DocAPP_Organisation|
 |1.2 (Obligatoire)|Créer le compte nominatif de l'administrateur fonctionnel d'une organisation à des fins d'activation|Prendre la main sur la session d'un utilisateur à des fins de support|Subrogation|VitamUI_DocAPP_Subrogation|
 |1.3 (Facultatif)|Définir des droits fins sur la gestion des utilisateurs de mon organisation en créant un nouveau profil de droits(*) pour cette APP|Profil APP Utilisateurs|Administrateur fonctionnel VITAM UI|VitamUI_DocAPP_Profil_APP_Utilisateur|
-|1.4 (Obligatoire sauf si le groupe existe déjà)|Définir des regroupements de droits sur une ou plusieurs APPs du portail pour mes utilisateurs	Groupes de profils	Administrateur fonctionnel|VITAM UI	VitamUI_DocAPP_Groupe_profil|
+|1.4 (Obligatoire<br>sauf si le groupe existe déjà)|Définir des regroupements de droits sur une ou plusieurs APPs du portail pour mes utilisateurs	Groupes de profils	Administrateur fonctionnel|VITAM UI	VitamUI_DocAPP_Groupe_profil|
 |1.5 (Obligatoire)|Créer mes utilisateurs et leur attribuer des droits|Utilisateur|Administrateur fonctionnel VITAM UI|VitamUI_DocAPP_Utilisateur|
 |NA|Paramétrer des profils de droits permettant d’associer un contrat d’accès à un utilisateur|Profil APP Paramétrages externes|Administrateur fonctionnel VITAM UI|VitamUI_DocAPP_Profil_APP_Parametrages_externes|
 |NA|Créer de nouveaux profils de niveaux inférieurs, limiter l’attribution de profils à une portée d’utilisateurs et adapter la séparation des rôles|Hiérarchisation des profils|Opérateur d’instance|VitamUI_DocAPP_Hierarchisation_profils|
@@ -44,10 +45,10 @@ Un [guide de prise en main de Vitam UI pour premier versement a également été
 |2.5 (Facultatif)|Déclarer un nouveau vocabulaire non présent dans l'ontologie SEDA|Ontologie|Administrateur technique VITAM UI|VitamUI_DocAPP_Ontologie|
 |2.6 (Facultatif)|Importer un arbre de positionnement ou un plan de classement|Arbres et plans|Administrateur fonctionnel VITAM UI|VitamUI_DocAPP_Arbres_plans|
 |2.7 (Facultatif)|Rechercher et consulter un contrat de gestion, le créer et le mettre à jour|Contrat de gestion|Administrateur fonctionnel VITAM UI|VitamUI_DocAPP_Contrat_gestion|
-|3.1 (Obligatoire sauf si le contrat est inchangé)|Paramétrer des droits pour le versement d'archives dans un coffre par une application|Contrat d'entrée|Administrateur fonctionnel VITAM UI|VitamUI_DocAPP_Contrat_entree|
-|3.2 (Obligatoire sauf si le contrat est inchangé)|Paramétrer des droits pour la consultation ou mise à jour d'archives dans un coffre par une application|Contrat d'accès|Administrateur fonctionnel VITAM UI|VitamUI_DocAPP_Contrat_acces|
-|3.3 (Obligatoire sauf si le profil est inchangé)|Définir les droits d'une application sur les services VITAM|Profil de sécurité|Administrateur technique VITAM UI|VitamUI_DocAPP_Profil_securité|
-|3.4 (Obligatoire sauf si le contexte est inchangé)|Authentifier une application interconnectée avec VITAM et lui attribuer des droits|Contexte applicatif|Administrateur technique VITAM UI|VitamUI_DocAPP_Contexte_applicatif|
+|3.1 (Obligatoire<br>sauf si le contrat est inchangé)|Paramétrer des droits pour le versement d'archives dans un coffre par une application|Contrat d'entrée|Administrateur fonctionnel VITAM UI|VitamUI_DocAPP_Contrat_entree|
+|3.2 (Obligatoire<br>sauf si le contrat est inchangé)|Paramétrer des droits pour la consultation ou mise à jour d'archives dans un coffre par une application|Contrat d'accès|Administrateur fonctionnel VITAM UI|VitamUI_DocAPP_Contrat_acces|
+|3.3 (Obligatoire<br>sauf si le profil est inchangé)|Définir les droits d'une application sur les services VITAM|Profil de sécurité|Administrateur technique VITAM UI|VitamUI_DocAPP_Profil_securité|
+|3.4 (Obligatoire<br>sauf si le contexte est inchangé)|Authentifier une application interconnectée avec VITAM et lui attribuer des droits|Contexte applicatif|Administrateur technique VITAM UI|VitamUI_DocAPP_Contexte_applicatif|
 |NA|Consulter le journal des opérations VITAM (entrées, éliminations et données de base)|Journal des opérations|Administrateur fonctionnel VITAM UI<br>Administrateur technique VITAM UI<br>Super-archiviste|VitamUI_DocAPP_Journal_operations|
 |NA|Visualiser les opérations de sécurisation et accéder aux journaux du cycle de vie des objets|Opération de sécurisations|Administrateur technique VITAM UI|VitamUI_DocAPP_Operations_securisation|
 |NA|Effectuer des requêtes complexes sur les bases de données documentaires en vue de retrouver des objets|Requêtes DSL|Administrateur technique VITAM UI|VitamUI_DocAPP_RequetesDSL|
@@ -166,24 +167,26 @@ Chaque action peut avoir les modèles d’exécution suivants (toutes les étape
 -  Bloquant : Si une action est identifiée en erreur, l’étape en cours est alors arrêtée et le workflow passe à un nouvel état.
 -  Non bloquant : Si une action est identifiée en erreur, le reste des actions de l’étape est exécuté avant que le statut de l’étape passe à « erreur ». Le workflow passe alors à un nouvel état.
 
-**Lien vers le document :** [Modèle de Workflow](./modele_de_workflow.md)
+**Lien vers le document :** [Description des workflow et des opérations](./modele_de_workflow.md)
 
 **Public cible :** administrateurs aussi bien techniques que fonctionnels, archivistes souhaitant une connaissance plus avancée du logiciel, développeurs.
 
 **Sommaire :**
--  Audit
--  Export d’un DIP (Dissemination Information Package)
--  Ingest
+-  Ingest de plan de classement
 -  MasterData
--  Traceability
+-  Ingest
 -  Mise à jour unitaire (Update)
 -  Mise à jour de masse (Mass Update)
+-  Mise à jour unitaire de masse (Bulk Update)
+-  Export d’un DIP (Dissemination Information Package)
 -  Élimination
 -  Modification d’arborescences (Reclassification)
--  Préservation
 -  Transfert
--  Nettoyage d’entrées en erreur
--  Workflow de suppression d’objets
+-  Restauration de métadonnées essentielles (Revert Essentiel Metadata)
+-  Traceability
+-  Audit
+-  Préservation
+-  Suppression des versions des Got
 
 ### Dossier d’architecture technique (DAT)
 
@@ -396,23 +399,6 @@ Pour chaque test, on détaille les éléments suivants :
 
 ## Utiliser la solution logicielle
 
-### Manuel utilisateur de l’IHM de démonstration
-
-**Présentation :** Le document[^1] présente pas à pas l’utilisation de la solution logicielle Vitam au travers des Interfaces standard (IHM) fournies, dites de démonstration. Il a pour objectif de guider l’utilisateur de la solution logicielle Vitam dans la gestion de ses archives, tout en lui permettant de se familiariser avec les principales fonctionnalités.
-
-**Public cible :** archivistes
-
-**Lien vers le document :** [Manuel utilisateur de l'IHM de démonstration](https://www.programmevitam.fr/ressources/DocCourante/autres/fonctionnel/VITAM_Manuel_utilisateur.pdf)
-
-**Sommaire :**
--  Généralités
--  Authentification
--  Entrée de SIP et de plan de classement
--  Recherche, consultation et modification
--  Gestion des archives
--  Administration
--  Traitements de masse
-
 ###  Manuel ReSIP
 
 **Présentation :** Le présent document présente la moulinette ReSIP construite autour d’une bibliothèque JAVA appelée Sedalib et fédérant les moulinettes précédemment développées et mises à disposition par l’équipe Vitam :
@@ -525,7 +511,7 @@ Il s’articule autour des axes suivants :
 
 ###  Gestion des archives et des arborescences
 
-**Présentation :** Le document[^2] présente les fonctionnalités associées à l’utilisation des arbres de positionnement et plans de classement par rapport à des unités archivistiques « standard » dans la solution logicielle Vitam.
+**Présentation :** Le document[^1] présente les fonctionnalités associées à l’utilisation des arbres de positionnement et plans de classement par rapport à des unités archivistiques « standard » dans la solution logicielle Vitam.
 Il s’articule autour des axes suivants :
 -  une présentation des arbres de positionnement et plans de classement et de la manière dont le Standard d’échanges de données pour l’archivage (SEDA) est utilisé pour les formaliser ;
 -  une présentation des mécanismes mis en œuvre dans la solution logicielle Vitam pour gérer ces arbres et plans ;
@@ -1380,6 +1366,4 @@ Utiliser Vitam UI
 
 **Public cible :** Administrateur fonctionnel
 
-[^1]: Ce document ne sera plus maintenu au-delà de la version 6.RC de la solution logicielle Vitam. Les [documents décrivant l’IHM Vitam UI](#la-documentation-vitam-ui) ont vocation à le remplacer.
-
-[^2]: Renommage de cette documentation et dépréciation de la documentation « Arbre de positionnement et plans de classement », en vue d’élargir son périmètre.
+[^1]: Renommage de cette documentation et dépréciation de la documentation « Arbre de positionnement et plans de classement », en vue d’élargir son périmètre.
