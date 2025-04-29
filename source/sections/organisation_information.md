@@ -399,7 +399,7 @@ Le schéma ci-dessous donne une vue détaillée des relations logiques entre inf
 
 ![](./medias/organisation_information/AIP.jpg)
 
-Le tableau ci-dessous fournit une correspondance entre ces différents types d’information et les objets et informations gérés à ce jour dans la solution logicielle Vitam – la description des différents types d’objets et d’informations est fournie dans le chapitre 4 du présent document. Ce tableau sera amené à évoluer en fonction des nouveaux concepts et objets métiers mis en œuvre dans la solution logicielle Vitam.
+Le tableau ci-dessous fournit une correspondance entre ces différents types d’information et les objets et informations gérés à ce jour dans la solution logicielle Vitam – la description des différents types d’objets et d’informations est fournie dans le [chapitre 1.4. du présent document](#structuration-proposee). Ce tableau sera amené à évoluer en fonction des nouveaux concepts et objets métiers mis en œuvre dans la solution logicielle Vitam.
 
 ##### *Content information*
 
@@ -538,7 +538,7 @@ Ce référentiel comprend :
 -  des champs textuels de description de la règle ;
 -  une durée et une unité de mesure, permettant à la solution logicielle Vitam d’effectuer des calculs d’échéances.
 
-L’identifiant métier permet de faire le lien entre le référentiel et la description des unités archivistiques (cf. 4.5.).
+L’identifiant métier permet de faire le lien entre le référentiel et la description des unités archivistiques ([cf. 1.4.5.](#descriptions)).
 
 ##### Section correspondante dans le modèle de données
 
@@ -554,7 +554,7 @@ Base MasterData – collection Règles de gestion (FileRules)
 
 Le référentiel des formats a pour objectif de décrire et documenter les formats de fichier susceptibles d’avoir été utilisés pour créer des objets transférés et pris en charge par la solution logicielle Vitam.  
 Ce référentiel est alimenté à partir des fichiers de signature DROID publiés par The National Archives[^6].
-L’identifiant métier permet de faire le lien entre le référentiel, les contrats d’entrée (cf. 4.2.) et les scénarios de préservation (cf. 4.3.), mais aussi les groupes d’objets (cf. 4.5.).  
+L’identifiant métier permet de faire le lien entre le référentiel, les contrats d’entrée ([cf. 1.4.2.](#objets-permettant-la-gestion-des-droits)) et les scénarios de préservation ([cf. 1.4.3.](#strategies-liees-à-la-gestion)), mais aussi les groupes d’objets ([cf. 1.4.5.](#descriptions)).  
 Le référentiel des formats est unique par implémentation de la solution logicielle Vitam.
 
 ##### Exigences associées
@@ -570,7 +570,7 @@ Ce référentiel comprend :
 -  des champs permettant aux administrateurs de la solution logicielle de signaler l’obsolescence de ce format ;
 -  des champs contextualisant la création de la notice, précisant à partir de quelle version des signatures DROID publiées par The National Archives l’enregistrement a été créé.
 
-L’identifiant métier permet de faire le lien entre le référentiel et la description des objets dans les groupes d’objets techniques (cf. 4.5.).
+L’identifiant métier permet de faire le lien entre le référentiel et la description des objets dans les groupes d’objets techniques ([cf. 1.4.5.](#descriptions)).
 
 ##### Section correspondante dans le modèle de données
 
@@ -924,7 +924,7 @@ Un profil d’archivage a pour objectifs de :
 
 Le profil d’archivage correspond à la notion d’ArchiveProfile définie dans la norme NF Z 44-022 et dans le Standard d’échanges de données pour l’archivage (SEDA).
 
-L’identifiant du profil d’archivage permet de faire le lien avec le champ ArchiveProfile enregistré dans les journaux des opérations correspondant aux opérations d’entrée, ainsi que dans le registre des fonds (cf. 4.6.).
+L’identifiant du profil d’archivage permet de faire le lien avec le champ ArchiveProfile enregistré dans les journaux des opérations correspondant aux opérations d’entrée, ainsi que dans le registre des fonds ([cf. 1.4.6.](#journaux-et-registres)).
 
 ###### Exigences associées
 
@@ -1372,12 +1372,12 @@ Base MasterData – collections Registre des fonds (AccessionRegisterSummary, Ac
 
 [^1]: Voir également le rapport final du groupe de travail sur l’accès aux archives numériques élaboré par l’équipe projet Vitam [Vitam. Accès aux archives numériques. Rapport final du groupe de travail. v. 0.2. du 14 juin 2016].
 
-[^2]:  La solution logicielle Vitam est également compatible avec le SEDA 2.1 et le SEDA 2.2.
+[^2]:  La solution logicielle Vitam est compatible avec le SEDA 2.1, le SEDA 2.2. et le SEDA 2.3.
 
-[^3]:  La solution logicielle Vitam est également compatible avec le SEDA 2.1 et le SEDA 2.2.
+[^3]:  La solution logicielle Vitam est compatible avec le SEDA 2.1, le SEDA 2.2. et le SEDA 2.3.
 
-[^4]: La solution logicielle Vitam est également compatible avec le SEDA 2.1 et le SEDA 2.2.
+[^4]: La solution logicielle Vitam est compatible avec le SEDA 2.1, le SEDA 2.2. et le SEDA 2.3.
 
-[^5]: La solution logicielle Vitam est également compatible avec le SEDA 2.1 et le SEDA 2.2.
+[^5]: La solution logicielle Vitam est compatible avec le SEDA 2.1, le SEDA 2.2. et le SEDA 2.3.
 
 [^6]: [Disponibles à l’adresse suivante (lien vérifié le 16 février 2023)](http://www.nationalarchives.gov.uk/aboutapps/pronom/droid-signature-files.htm)
