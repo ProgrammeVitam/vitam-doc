@@ -76,9 +76,9 @@ Les développements ont commencé le 13 avril 2016. Les grands jalons du plannin
 -  La V4, première version de la phase produit, a été publiée en mars 2021. Elle propose pour la première fois les interfaces homme-machine issues de la contribution Vitam UI ;
 -  La V5 a été publiée en mars 2022. En plus de proposer une version plus aboutie de l’IHM Vitam UI, elle offre la possibilité de gérer des stratégies de stockage avec une offre froide en offre unique ;
 -  La V6 a été publiée en avril 2023. Le SEDA 2.2 est dorévavant pris en charge. Des améliorations sur l’exploitation et la supervision facilitent la gestion des plateformes. Le front-office Vitam UI est enrichi de nombreuses fonctionnalités et en particulier des APP Profils documentaires et Collecte et préparation des versements. 
+- La V7.0 a été publiée en décembre 2023 puis la v7.1 en juillet 2024. 
+- La V8.0 a été publiée en décembre 2024 et a été suivi par la publication de la v8.1 au printemps 2025. 
       
-Un nouveau rythme de publication a été acté avec la livraison d’une version « release candidate » en fin d’année, initiant la version « long time support » publiée au début de l’année suivante.
-
 ###  Contenu des versions
 
 La version 1 utilisable en production assurait les fonctions permettant de réaliser des entrées unitaires ou par flux applicatif, des recherches et consultations et de gérer le cycle de vie des archives pour garantir le maintien de la valeur probante.
@@ -92,6 +92,10 @@ La version 5 poursuit ce travail d’amélioration du produit, en apportant un s
 
 La version 6.RC implémente la version 2.2 du SEDA et ajoute des services supplémentaires de recherche sur un très grand nombre d’archives, ainsi que sur le module de collecte.
 La version 6 permet d’utiliser le module de collecte, tant pour la préparation de projets de versements de flux automatisés que de versements manuels, ainsi que la gestion des profils documentaires grâce au front-office. 
+
+Les versions 7.0 et 7.1 offrent la prise en charge du SEDA 2.3, ainsi que des archives signées électroniquement et des identifiants pérennes type Ark.
+
+Les versions 8.0 et 8.1 proposent la conteneurisation prod-ready, une gestion plus fine des droits pour le module de collecte avec ajout de fonctionnalités pour la préparation de versements par flux, le reclassement, etc., la personnalisation des ATR, l'ajout de facettes pour différents objets métier...
 
 Une définition plus fine des fonctions de la « StoryMap » portées par chaque version est le fruit du raffinement du « backlog » (liste des unités à développer) au cours du développement Agile, dans le respect de la vision globale donnée ci-dessus.
 
@@ -237,10 +241,6 @@ Une APP c’est :
 -  Une IHM centrée sur un objet métier et un type d’utilisateur
 -  Les fonctions d’accès humaines et techniques
 -  Des API de communication avec le back-office
-
-La version 6 de Vitam est livrée au printemps 2023 avec les fonctionnalités suivantes pour Vitam UI :
-
-![Fonctionnalités de Vitam v7](./medias/presentation_solution_logicielle/VitamUI_7_0.jpg)
 
 ## Vision technique
 
