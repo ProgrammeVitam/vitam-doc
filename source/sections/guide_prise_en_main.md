@@ -7,19 +7,19 @@ Introduction
 
 ### Documents de référence
 
-|Document|Date de la version|Remarques|
-|:---|:----|:----|
-|NF Z 44022 – MEDONA – Modélisation des données pour l’archivage|18/01/2014||
-|Standard d’échange de données pour l’archivage – SEDA – v. 2.1|06/2018||
-|Standard d’échange de données pour l’archivage – SEDA – v. 2.2|02/2022|Cette nouvelle version du SEDA est intégrée à la solution logicielle Vitam à partir de la V6.RC.|
-|Standard d’échange de données pour l’archivage – SEDA – v. 2.3|06/2024||
-|[Vitam – Organisation de l’information](./organisation_information.md)|||
-|[Vitam – Manuel Utilisateur](https://www.programmevitam.fr/ressources/DocCourante/autres/fonctionnel/VITAM_Manuel_utilisateur.pdf)|Décembre 2023||
-|[Vitam – Services producteurs](./services_prod.md)|||
-|[Vitam – Règles de gestion](./regles_gestion.md)|||
-|[Vitam – Gestion des habilitations](./gestion_habilitations.md)|||
-|[Vitam – Structuration des Submission Information Package (SIP)](./SIP.md)|||
-|[Vitam – Structuration des Dissemination Information Package (DIP)](./DIP.md)|||
+|Document|Date de la version|
+|:---|:----|
+|NF Z 44022 – MEDONA – Modélisation des données pour l’archivage|18/01/2014|
+|Standard d’échange de données pour l’archivage – SEDA – v. 2.1|06/2018|
+|Standard d’échange de données pour l’archivage – SEDA – v. 2.2|02/2022|
+|Standard d’échange de données pour l’archivage – SEDA – v. 2.3|06/2024|
+|[Vitam – Organisation de l’information](./organisation_information.md)||
+|[Vitam – Manuel Utilisateur](https://www.programmevitam.fr/ressources/DocCourante/autres/fonctionnel/VITAM_Manuel_utilisateur.pdf)|Décembre 2023|
+|[Vitam – Services producteurs](./services_prod.md)||
+|[Vitam – Règles de gestion](./regles_gestion.md)||
+|[Vitam – Gestion des habilitations](./gestion_habilitations.md)||
+|[Vitam – Structuration des Submission Information Package (SIP)](./SIP.md)||
+|[Vitam – Structuration des Dissemination Information Package (DIP)](./DIP.md)||
 
 ### Présentation du document
 
@@ -27,17 +27,17 @@ Le présent document décrit comment effectuer une première entrée dans la sol
 
 Un lexique en annexe explicite et détaille les principaux objets métiers signalés dans le texte par un astérisque*. Pour chaque terme, il donne une description, un statut obligatoire ou facultatif pour l’opération d’entrée et renvoie vers un document permettant d’approfondir cette notion (« manuel utilisateur » par exemple).
 
-*Nota bene :* Les captures d’écran du présent document sont issues de l’IHM Vitam UI. Toutefois les principes et fonctionnalités présentées ici sont valables également pour l’IHM démo. 
+*Nota bene :* Les captures d’écran du présent document sont issues de l’IHM Vitam UI. L'IHM appelée IHM Démo utilisable pour les versions antérieures à la v4 n'est plus maintenue.
 
 ### Avertissements
 
 #### Jeux de tests disponibles
 
-Un dossier de jeux test spécifique « Jeu_de_tests_Guide_de_prise_en_main_V8-1.zip » a été établi pour accompagner la documentation « Guide de prise en main », il comporte tous les éléments cités dans le document (contrats d’entrée et d’accès, référentiels des services agents et des règles de gestion). Il est publié sur le site www.programmevitam.fr.
+Un dossier de jeux test spécifique « Jeu_de_tests_Guide_de_prise_en_main_V8-1.zip » a été établi pour accompagner la documentation « Guide de prise en main », il comporte tous les éléments cités dans le document (contrats d’entrée et d’accès, référentiels des services agents et des règles de gestion). Il est publié [sur le site](www.programmevitam.fr).
 
-Il est également possible d’effectuer des tests fonctionnels se rapportant au « Cahier de tests métier » à partir des jeux de données mis à disposition dans le dossier « Jeux_de_tests_fonctionnels_V8-1.zip ». Le dossier zippé comporte les jeux de tests : paquets d’information à archiver (SIP) et objets de référence : contrats d’entrée et d’accès, référentiels des services agents et des règles de gestion, arbres de positionnement, plans de classement, etc. Ce ZIP est publié sur le site www.programmevitam.fr.
+Il est également possible d’effectuer des tests fonctionnels se rapportant au « Cahier de tests métier » à partir des jeux de données mis à disposition dans le dossier « Jeux_de_tests_fonctionnels_V8-1.zip ». Le dossier zippé comporte les jeux de tests : paquets d’information à archiver (SIP) et objets de référence : contrats d’entrée et d’accès, référentiels des services agents et des règles de gestion, arbres de positionnement, plans de classement, etc. Ce ZIP est publié [sur le site](www.programmevitam.fr).
 
-Enfin, il existe également des tests système automatisés accessibles via le projet Git « Vitam-itests ».1 Cet espace comporte des tests de non-régression, des exemples de paquets d’information à archiver (SIP) et d’objets de référence : contrats d’entrée et d’accès, référentiels des services agents et des règles de gestion. Ces tests peuvent être lancés depuis l’IHM de recette et sont décrits dans la documentation « IHM Recette ».
+Enfin, il existe également des tests système automatisés accessibles via le projet Git « Vitam-itests »[^1]. Cet espace comporte des tests de non-régression, des exemples de paquets d’information à archiver (SIP) et d’objets de référence : contrats d’entrée et d’accès, référentiels des services agents et des règles de gestion. Ces tests peuvent être lancés depuis l’IHM de recette et sont décrits dans la documentation « IHM Recette ».
 
 #### Utilisation des jeux de tests
 
@@ -81,7 +81,7 @@ Processus
 
 ![](./medias/guide_prise_en_main/process.png)
 
-Sur les environnements partenaires, les étapes 1 et 2 sont réalisées par l’équipe Vitam. Les jeux de tests mis à disposition permettent de réaliser les étapes 3 à 5.
+Sur les environnements partenaires, accessibles aux membres du Club utilisateurs, les étapes 1 et 2 sont réalisées par l’équipe Vitam. Les jeux de tests mis à disposition permettent de réaliser les étapes 3 à 5.
 
 ### Etape 1 : Installation de la plateforme
 
@@ -126,7 +126,7 @@ La deuxième étape consiste à importer un référentiel des services agents au
 
 ![](./medias/guide_prise_en_main/SA.png)
 
-- Pour les tests effectués à partir du jeu de données « Jeu_de_tests_Guide_de_prise_en_main_V8-1.zip », il faut utiliser le fichier nommé « agencies_init.csv » 4 en cliquant sur le bouton « Autres actions » et en sélectionnant l’action « Importer ».
+- Pour les tests effectués à partir du jeu de données « Jeu_de_tests_Guide_de_prise_en_main_V8-1.zip », il faut utiliser le fichier nommé « agencies_init.csv » en cliquant sur le bouton « Autres actions » et en sélectionnant l’action « Importer ».
 - L’utilisateur peut également constituer son propre référentiel des services agents au format .csv sur le même modèle. 
 - Il peut également créer unitairement un service agent en cliquant sur le bouton « Créer un service agent » et en renseignant les champs obligatoires.
  
@@ -174,6 +174,9 @@ ReSIP permet également d’importer des SIP déjà créés pour les modifier. I
 
 ### Etape 5 : Versement d’un SIP* dans la solution logicielle Vitam
 
+*Nota bene* : depuis la version 7.0 de la solution logicielle Vitam, l'APP Collecte et préparation des versements permet de constituer des projets de versement de fichiers et dossiers, qui, une fois validés, deviendront des SIP. Le formatage au format SEDA est alors assuré par la solution logicielle Vitam[^2].
+
+
 L’utilisateur peut ensuite importer le SIP dans la solution logicielle Vitam, via l’APP « Dépôt et suivi des versements ».
 - En cliquant sur le bouton « Dépôt d’un versement » ;
 - Puis en sélectionnant le SIP à verser. Pour les tests effectués à partir du jeu de données « Jeu_de_tests_Guide_de_prise_en_main_V8-1.zip », il faut utiliser le fichier nommé « SIP-Kit_de_prise_en_main.zip ».
@@ -203,7 +206,7 @@ Les causes les plus fréquentes d’échec de l’import peuvent être les suiva
 
 Afin de rechercher une archive, l’utilisateur doit accéder à l’APP « Recherche, consultation et gestion des archives ». 
 
-![](./medias/guide_prise_en_main/entree_blanc.png)
+![](./medias/guide_prise_en_main/recherche.png)
 
 L’utilisateur saisit un ou plusieurs critère(s) de recherche (par exemple l’identifiant technique du versement copié-collé depuis l’APP « Dépôt et suivi des versements »). La solution logicielle Vitam effectuera la recherche dans le périmètre désigné par le contrat d’accès.
 
@@ -222,5 +225,9 @@ Lexique
 |Référentiel des services agents|Décrit les services agents (service producteur, service versant) applicables aux entrées de SIP dans la solution logicielle Vitam. Il permet d’effectuer des contrôles des services déclarés lors de l’entrée ou de l’accès.|Obligatoire|– Manuel utilisateur, chapitre 6. Partie 1.C<br>– [Services Agents](./services_prod.md)<br>– Organisation de l’information Partie 4.1|
 |Contrat d’entrée|Définit les droits d’une application connectée à la solution logicielle Vitam en termes de transfert d’archives,<br>Précise le contenu et la forme des archives que ces utilisateurs souhaitent transférer dans la solution logicielle Vitam,<br>Définit les modalités de transfert de ces archives à la solution logicielle Vitam<br>Précise les services mis en œuvre par la solution logicielle Vitam pour les archives à transférer.|Obligatoire|– Manuel utilisateur, chapitre 6. Partie 1.D<br>– Organisation de l’information Partie 4.2<br>– [Gestion des habilitations](./gestion_habilitations.md) Partie 2.2.5|
 |Contrat d’accès|Définit les droits d’une application connectée à la solution logicielle Vitam en termes de recherche, de consultation, de mise à jour et de gestion des archives prises en charge par la solution logicielle Vitam.|Obligatoire|– Manuel utilisateur, chapitre 6. Partie 1.E<br>– Organisation de l’information Partie 4.2<br>– [Gestion des habilitations](./gestion_habilitations.md) Partie 2.2.6|
-|SIP<br>*Submission Information Package*|Il s’agit des paquets informationnels transférés au système d’archivage<b>Il s’agit d’un conteneur (de format .zip ou .tar) comprenant tous les objets à archiver (quel que soit leur format), ainsi qu’un bordereau les accompagnant (fichier xml conforme au schéma de la norme NF Z44-022 et au SEDA 2.x.).|Obligatoire|– Manuel utilisateur, chapitre 3<br>– Organisation de l’information Partie 3.1<br>– Structuration des SIP|
+|SIP<br>*Submission Information Package*|Il s’agit des paquets informationnels transférés au système d’archivage.<br>Il s’agit d’un conteneur (de format .zip ou .tar) comprenant tous les objets à archiver (quel que soit leur format), ainsi qu’un bordereau les accompagnant (fichier xml conforme au schéma de la norme NF Z44-022 et au SEDA 2.x.).|Obligatoire|– Manuel utilisateur, chapitre 3<br>– Organisation de l’information Partie 3.1<br>– Structuration des SIP|
 |DIP<br>*Dissemination Information Packages*|Il s’agit des paquets informationnels générés par le système d’archivage mis à disposition pour consultation.<br>Il s’agit d’un conteneur (de format .zip ou .tar) comprenant tous les objets archivés (quel que soit leur format), ainsi qu’un bordereau les accompagnant.|Obligatoire|– Manuel utilisateur, chapitre 4 Partie V<br>– Organisation de l’information Partie 3.3<br>– Structuration des DIP|
+
+[^1]: [Espace vitam-itests dans GitHub](https://github.com/ProgrammeVitam/vitam-itests)
+
+[^2]: Renseignements sur le [module de collecte](./module_de_collecte.md) et sur l'[APP Collecte et préparation des versements](https://www.programmevitam.fr/ressources/DocCourante/autres/fonctionnel/VitamUI_DocAPP_Collecte_et_preparation_des_versements.pdf).
