@@ -1473,7 +1473,7 @@ L’arborescence initiale est donc préservée dans l’indexation de la solutio
 <h4><span class="section-number">1.3.2.1. </span>Représentation dans la solution logicielle Vitam des entités constituant un AIP au sens de la norme OAIS<a class="headerlink" href="#representation-dans-la-solution-logicielle-vitam-des-entites-constituant-un-aip-au-sens-de-la-norme-oais" title="Lien vers cette rubrique"></a></h4>
 <p>Le schéma ci-dessous donne une vue détaillée des relations logiques entre informations constituant un AIP au sens de la norme OAIS (section 4.2.2.3.).</p>
 <p><img alt="" src="../_images/AIP.jpg" /></p>
-<p>Le tableau ci-dessous fournit une correspondance entre ces différents types d’information et les objets et informations gérés à ce jour dans la solution logicielle Vitam – la description des différents types d’objets et d’informations est fournie dans le chapitre 4 du présent document. Ce tableau sera amené à évoluer en fonction des nouveaux concepts et objets métiers mis en œuvre dans la solution logicielle Vitam.</p>
+<p>Le tableau ci-dessous fournit une correspondance entre ces différents types d’information et les objets et informations gérés à ce jour dans la solution logicielle Vitam – la description des différents types d’objets et d’informations est fournie dans le <a class="reference internal" href="#structuration-proposee"><span class="xref myst">chapitre 1.4. du présent document</span></a>. Ce tableau sera amené à évoluer en fonction des nouveaux concepts et objets métiers mis en œuvre dans la solution logicielle Vitam.</p>
 <section id="content-information">
 <h5><span class="section-number">1.3.2.1.1. </span><em>Content information</em><a class="headerlink" href="#content-information" title="Lien vers cette rubrique"></a></h5>
 <table class="docutils align-default">
@@ -1699,7 +1699,7 @@ Il est propre à chaque tenant partageant une même implémentation de la soluti
 <li><p>des champs textuels de description de la règle ;</p></li>
 <li><p>une durée et une unité de mesure, permettant à la solution logicielle Vitam d’effectuer des calculs d’échéances.</p></li>
 </ul>
-<p>L’identifiant métier permet de faire le lien entre le référentiel et la description des unités archivistiques (cf. 4.5.).</p>
+<p>L’identifiant métier permet de faire le lien entre le référentiel et la description des unités archivistiques (<a class="reference internal" href="#descriptions"><span class="xref myst">cf. 1.4.5.</span></a>).</p>
 </section>
 <section id="section-correspondante-dans-le-modele-de-donnees">
 <h5><span class="section-number">1.4.1.1.4. </span>Section correspondante dans le modèle de données<a class="headerlink" href="#section-correspondante-dans-le-modele-de-donnees" title="Lien vers cette rubrique"></a></h5>
@@ -1716,7 +1716,7 @@ Il est propre à chaque tenant partageant une même implémentation de la soluti
 <h5><span class="section-number">1.4.1.2.1. </span>Définition et objectifs<a class="headerlink" href="#id6" title="Lien vers cette rubrique"></a></h5>
 <p>Le référentiel des formats a pour objectif de décrire et documenter les formats de fichier susceptibles d’avoir été utilisés pour créer des objets transférés et pris en charge par la solution logicielle Vitam.<br />
 Ce référentiel est alimenté à partir des fichiers de signature DROID publiés par The National Archives<a class="footnote-reference brackets" href="#id116" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a>.
-L’identifiant métier permet de faire le lien entre le référentiel, les contrats d’entrée (cf. 4.2.) et les scénarios de préservation (cf. 4.3.), mais aussi les groupes d’objets (cf. 4.5.).<br />
+L’identifiant métier permet de faire le lien entre le référentiel, les contrats d’entrée (<a class="reference internal" href="#objets-permettant-la-gestion-des-droits"><span class="xref myst">cf. 1.4.2.</span></a>) et les scénarios de préservation (<a class="reference internal" href="#strategies-liees-%C3%A0-la-gestion"><span class="xref myst">cf. 1.4.3.</span></a>), mais aussi les groupes d’objets (<a class="reference internal" href="#descriptions"><span class="xref myst">cf. 1.4.5.</span></a>).<br />
 Le référentiel des formats est unique par implémentation de la solution logicielle Vitam.</p>
 </section>
 <section id="id8">
@@ -1733,7 +1733,7 @@ Le référentiel des formats est unique par implémentation de la solution logic
 <li><p>des champs permettant aux administrateurs de la solution logicielle de signaler l’obsolescence de ce format ;</p></li>
 <li><p>des champs contextualisant la création de la notice, précisant à partir de quelle version des signatures DROID publiées par The National Archives l’enregistrement a été créé.</p></li>
 </ul>
-<p>L’identifiant métier permet de faire le lien entre le référentiel et la description des objets dans les groupes d’objets techniques (cf. 4.5.).</p>
+<p>L’identifiant métier permet de faire le lien entre le référentiel et la description des objets dans les groupes d’objets techniques (<a class="reference internal" href="#descriptions"><span class="xref myst">cf. 1.4.5.</span></a>).</p>
 </section>
 <section id="id10">
 <h5><span class="section-number">1.4.1.2.4. </span>Section correspondante dans le modèle de données<a class="headerlink" href="#id10" title="Lien vers cette rubrique"></a></h5>
@@ -2147,7 +2147,7 @@ Il définit une stratégie de stockage déterminée pour :</p>
 <li><p>contrôler les règles de gestion à appliquer aux unités archivistiques lors du processus d’entrée.</p></li>
 </ul>
 <p>Le profil d’archivage correspond à la notion d’ArchiveProfile définie dans la norme NF Z 44-022 et dans le Standard d’échanges de données pour l’archivage (SEDA).</p>
-<p>L’identifiant du profil d’archivage permet de faire le lien avec le champ ArchiveProfile enregistré dans les journaux des opérations correspondant aux opérations d’entrée, ainsi que dans le registre des fonds (cf. 4.6.).</p>
+<p>L’identifiant du profil d’archivage permet de faire le lien avec le champ ArchiveProfile enregistré dans les journaux des opérations correspondant aux opérations d’entrée, ainsi que dans le registre des fonds (<a class="reference internal" href="#journaux-et-registres"><span class="xref myst">cf. 1.4.6.</span></a>).</p>
 </section>
 <section id="id67">
 <h6><span class="section-number">1.4.4.3.1.2. </span>Exigences associées<a class="headerlink" href="#id67" title="Lien vers cette rubrique"></a></h6>
@@ -2674,19 +2674,19 @@ Base Logbook – collections Journal du cycle de vie des unités archivistiques 
 </aside>
 <aside class="footnote brackets" id="id112" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
-<p>La solution logicielle Vitam est également compatible avec le SEDA 2.1 et le SEDA 2.2.</p>
+<p>La solution logicielle Vitam est compatible avec le SEDA 2.1, le SEDA 2.2. et le SEDA 2.3.</p>
 </aside>
 <aside class="footnote brackets" id="id113" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">3</a><span class="fn-bracket">]</span></span>
-<p>La solution logicielle Vitam est également compatible avec le SEDA 2.1 et le SEDA 2.2.</p>
+<p>La solution logicielle Vitam est compatible avec le SEDA 2.1, le SEDA 2.2. et le SEDA 2.3.</p>
 </aside>
 <aside class="footnote brackets" id="id114" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">4</a><span class="fn-bracket">]</span></span>
-<p>La solution logicielle Vitam est également compatible avec le SEDA 2.1 et le SEDA 2.2.</p>
+<p>La solution logicielle Vitam est compatible avec le SEDA 2.1, le SEDA 2.2. et le SEDA 2.3.</p>
 </aside>
 <aside class="footnote brackets" id="id115" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">5</a><span class="fn-bracket">]</span></span>
-<p>La solution logicielle Vitam est également compatible avec le SEDA 2.1 et le SEDA 2.2.</p>
+<p>La solution logicielle Vitam est compatible avec le SEDA 2.1, le SEDA 2.2. et le SEDA 2.3.</p>
 </aside>
 <aside class="footnote brackets" id="id116" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">6</a><span class="fn-bracket">]</span></span>

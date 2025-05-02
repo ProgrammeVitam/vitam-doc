@@ -202,52 +202,40 @@
 <thead>
 <tr class="row-odd"><th class="head text-left"><p>Document</p></th>
 <th class="head text-left"><p>Date de la version</p></th>
-<th class="head text-left"><p>Remarques</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td class="text-left"><p>NF Z 44022 – MEDONA – Modélisation des données pour l’archivage</p></td>
 <td class="text-left"><p>18/01/2014</p></td>
-<td class="text-left"><p></p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>Standard d’échange de données pour l’archivage – SEDA – v. 2.1</p></td>
 <td class="text-left"><p>06/2018</p></td>
-<td class="text-left"><p></p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>Standard d’échange de données pour l’archivage – SEDA – v. 2.2</p></td>
 <td class="text-left"><p>02/2022</p></td>
-<td class="text-left"><p>Cette nouvelle version du SEDA est intégrée à la solution logicielle Vitam à partir de la V6.RC.</p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>Standard d’échange de données pour l’archivage – SEDA – v. 2.3</p></td>
 <td class="text-left"><p>06/2024</p></td>
-<td class="text-left"><p></p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p><a class="reference internal" href="organisation_information.html"><span class="std std-doc">Vitam – Organisation de l’information</span></a></p></td>
-<td class="text-left"><p></p></td>
 <td class="text-left"><p></p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p><a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/autres/fonctionnel/VITAM_Manuel_utilisateur.pdf">Vitam – Manuel Utilisateur</a></p></td>
 <td class="text-left"><p>Décembre 2023</p></td>
-<td class="text-left"><p></p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p><a class="reference internal" href="services_prod.html"><span class="std std-doc">Vitam – Services producteurs</span></a></p></td>
-<td class="text-left"><p></p></td>
 <td class="text-left"><p></p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p><a class="reference internal" href="regles_gestion.html"><span class="std std-doc">Vitam – Règles de gestion</span></a></p></td>
 <td class="text-left"><p></p></td>
-<td class="text-left"><p></p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p><a class="reference internal" href="gestion_habilitations.html"><span class="std std-doc">Vitam – Gestion des habilitations</span></a></p></td>
-<td class="text-left"><p></p></td>
 <td class="text-left"><p></p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p><a class="reference internal" href="SIP.html"><span class="std std-doc">Vitam – Structuration des Submission Information Package (SIP)</span></a></p></td>
 <td class="text-left"><p></p></td>
-<td class="text-left"><p></p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p><a class="reference internal" href="DIP.html"><span class="std std-doc">Vitam – Structuration des Dissemination Information Package (DIP)</span></a></p></td>
-<td class="text-left"><p></p></td>
 <td class="text-left"><p></p></td>
 </tr>
 </tbody>
@@ -257,15 +245,15 @@
 <h3><span class="section-number">4.1.2. </span>Présentation du document<a class="headerlink" href="#presentation-du-document" title="Lien vers cette rubrique"></a></h3>
 <p>Le présent document décrit comment effectuer une première entrée dans la solution logicielle Vitam adossée au front-office Vitam UI. Il explicite les étapes obligatoires de paramétrage et de préparation des lots d’archives pour un utilisateur archiviste. Le pré-requis est que les actes d’installation et d’administration technique aient été réalisés pour configurer la plateforme et les coffres (tenants), comme par exemple sur les environnements partenaires de Vitam.</p>
 <p>Un lexique en annexe explicite et détaille les principaux objets métiers signalés dans le texte par un astérisque*. Pour chaque terme, il donne une description, un statut obligatoire ou facultatif pour l’opération d’entrée et renvoie vers un document permettant d’approfondir cette notion (« manuel utilisateur » par exemple).</p>
-<p><em>Nota bene :</em> Les captures d’écran du présent document sont issues de l’IHM Vitam UI. Toutefois les principes et fonctionnalités présentées ici sont valables également pour l’IHM démo.</p>
+<p><em>Nota bene :</em> Les captures d’écran du présent document sont issues de l’IHM Vitam UI. L’IHM appelée IHM Démo utilisable pour les versions antérieures à la v4 n’est plus maintenue.</p>
 </section>
 <section id="avertissements">
 <h3><span class="section-number">4.1.3. </span>Avertissements<a class="headerlink" href="#avertissements" title="Lien vers cette rubrique"></a></h3>
 <section id="jeux-de-tests-disponibles">
 <h4><span class="section-number">4.1.3.1. </span>Jeux de tests disponibles<a class="headerlink" href="#jeux-de-tests-disponibles" title="Lien vers cette rubrique"></a></h4>
-<p>Un dossier de jeux test spécifique « Jeu_de_tests_Guide_de_prise_en_main_V8-1.zip » a été établi pour accompagner la documentation « Guide de prise en main », il comporte tous les éléments cités dans le document (contrats d’entrée et d’accès, référentiels des services agents et des règles de gestion). Il est publié sur le site www.programmevitam.fr.</p>
-<p>Il est également possible d’effectuer des tests fonctionnels se rapportant au « Cahier de tests métier » à partir des jeux de données mis à disposition dans le dossier « Jeux_de_tests_fonctionnels_V8-1.zip ». Le dossier zippé comporte les jeux de tests : paquets d’information à archiver (SIP) et objets de référence : contrats d’entrée et d’accès, référentiels des services agents et des règles de gestion, arbres de positionnement, plans de classement, etc. Ce ZIP est publié sur le site www.programmevitam.fr.</p>
-<p>Enfin, il existe également des tests système automatisés accessibles via le projet Git « Vitam-itests ».1 Cet espace comporte des tests de non-régression, des exemples de paquets d’information à archiver (SIP) et d’objets de référence : contrats d’entrée et d’accès, référentiels des services agents et des règles de gestion. Ces tests peuvent être lancés depuis l’IHM de recette et sont décrits dans la documentation « IHM Recette ».</p>
+<p>Un dossier de jeux test spécifique « Jeu_de_tests_Guide_de_prise_en_main_V8-1.zip » a été établi pour accompagner la documentation « Guide de prise en main », il comporte tous les éléments cités dans le document (contrats d’entrée et d’accès, référentiels des services agents et des règles de gestion). Il est publié <a class="reference internal" href="#www.programmevitam.fr"><span class="xref myst">sur le site</span></a>.</p>
+<p>Il est également possible d’effectuer des tests fonctionnels se rapportant au « Cahier de tests métier » à partir des jeux de données mis à disposition dans le dossier « Jeux_de_tests_fonctionnels_V8-1.zip ». Le dossier zippé comporte les jeux de tests : paquets d’information à archiver (SIP) et objets de référence : contrats d’entrée et d’accès, référentiels des services agents et des règles de gestion, arbres de positionnement, plans de classement, etc. Ce ZIP est publié <a class="reference internal" href="#www.programmevitam.fr"><span class="xref myst">sur le site</span></a>.</p>
+<p>Enfin, il existe également des tests système automatisés accessibles via le projet Git « Vitam-itests »<a class="footnote-reference brackets" href="#id3" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>. Cet espace comporte des tests de non-régression, des exemples de paquets d’information à archiver (SIP) et d’objets de référence : contrats d’entrée et d’accès, référentiels des services agents et des règles de gestion. Ces tests peuvent être lancés depuis l’IHM de recette et sont décrits dans la documentation « IHM Recette ».</p>
 </section>
 <section id="utilisation-des-jeux-de-tests">
 <h4><span class="section-number">4.1.3.2. </span>Utilisation des jeux de tests<a class="headerlink" href="#utilisation-des-jeux-de-tests" title="Lien vers cette rubrique"></a></h4>
@@ -305,7 +293,7 @@ Chaque APP dispose d’un documentation d’utilisation disponible sur le site d
 <h2><span class="section-number">4.3. </span>Processus<a class="headerlink" href="#processus" title="Lien vers cette rubrique"></a></h2>
 <p>Étapes du processus de premier import dans une plate-forme utilisant la solution logicielle Vitam.</p>
 <p><img alt="" src="../_images/process.png" /></p>
-<p>Sur les environnements partenaires, les étapes 1 et 2 sont réalisées par l’équipe Vitam. Les jeux de tests mis à disposition permettent de réaliser les étapes 3 à 5.</p>
+<p>Sur les environnements partenaires, accessibles aux membres du Club utilisateurs, les étapes 1 et 2 sont réalisées par l’équipe Vitam. Les jeux de tests mis à disposition permettent de réaliser les étapes 3 à 5.</p>
 <section id="etape-1-installation-de-la-plateforme">
 <h3><span class="section-number">4.3.1. </span>Etape 1 : Installation de la plateforme<a class="headerlink" href="#etape-1-installation-de-la-plateforme" title="Lien vers cette rubrique"></a></h3>
 <p>L’étape d’installation et de paramétrage de Vitam et de Vitam UI est réalisée par un administrateur technique ou un exploitant.</p>
@@ -344,7 +332,7 @@ Pour cela il réalise :</p>
 <p>La deuxième étape consiste à importer un référentiel des services agents au format .csv dans la solution logicielle Vitam via l’APP Services agents. Ce référentiel a pour vocation d’être utilisé par la solution logicielle Vitam pour effectuer localement les contrôles des services (producteurs ou versants) déclarés par les administrateurs et les utilisateurs en entrée et en accès. Le référentiel des services agents est propre à chaque coffre de la plate-forme.</p>
 <p><img alt="" src="../_images/SA.png" /></p>
 <ul class="simple">
-<li><p>Pour les tests effectués à partir du jeu de données « Jeu_de_tests_Guide_de_prise_en_main_V8-1.zip », il faut utiliser le fichier nommé « agencies_init.csv » 4 en cliquant sur le bouton « Autres actions » et en sélectionnant l’action « Importer ».</p></li>
+<li><p>Pour les tests effectués à partir du jeu de données « Jeu_de_tests_Guide_de_prise_en_main_V8-1.zip », il faut utiliser le fichier nommé « agencies_init.csv » en cliquant sur le bouton « Autres actions » et en sélectionnant l’action « Importer ».</p></li>
 <li><p>L’utilisateur peut également constituer son propre référentiel des services agents au format .csv sur le même modèle.</p></li>
 <li><p>Il peut également créer unitairement un service agent en cliquant sur le bouton « Créer un service agent » et en renseignant les champs obligatoires.</p></li>
 </ul>
@@ -391,6 +379,7 @@ Pour cela il réalise :</p>
 </section>
 <section id="etape-5-versement-dun-sip-dans-la-solution-logicielle-vitam">
 <h3><span class="section-number">4.3.5. </span>Etape 5 : Versement d’un SIP* dans la solution logicielle Vitam<a class="headerlink" href="#etape-5-versement-dun-sip-dans-la-solution-logicielle-vitam" title="Lien vers cette rubrique"></a></h3>
+<p><em>Nota bene</em> : depuis la version 7.0 de la solution logicielle Vitam, l’APP Collecte et préparation des versements permet de constituer des projets de versement de fichiers et dossiers, qui, une fois validés, deviendront des SIP. Le formatage au format SEDA est alors assuré par la solution logicielle Vitam<a class="footnote-reference brackets" href="#id4" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>.</p>
 <p>L’utilisateur peut ensuite importer le SIP dans la solution logicielle Vitam, via l’APP « Dépôt et suivi des versements ».</p>
 <ul class="simple">
 <li><p>En cliquant sur le bouton « Dépôt d’un versement » ;</p></li>
@@ -417,7 +406,7 @@ Pour cela il réalise :</p>
 <section id="etape-6-effectuer-une-recherche">
 <h3><span class="section-number">4.3.6. </span>Etape 6 : Effectuer une recherche<a class="headerlink" href="#etape-6-effectuer-une-recherche" title="Lien vers cette rubrique"></a></h3>
 <p>Afin de rechercher une archive, l’utilisateur doit accéder à l’APP « Recherche, consultation et gestion des archives ».</p>
-<p><img alt="" src="../_images/entree_blanc.png" /></p>
+<p><img alt="" src="../_images/recherche.png" /></p>
 <p>L’utilisateur saisit un ou plusieurs critère(s) de recherche (par exemple l’identifiant technique du versement copié-collé depuis l’APP « Dépôt et suivi des versements »). La solution logicielle Vitam effectuera la recherche dans le périmètre désigné par le contrat d’accès.</p>
 <p><strong>Point important :</strong></p>
 <p>Dans le détail du contrat d’accès, le statut du contrat doit être actif, les producteurs sélectionnés et des droits autorisés, sans quoi la recherche dans les archives ne retournera aucun résultat.</p>
@@ -465,7 +454,7 @@ Pour cela il réalise :</p>
 <td class="text-left"><p>– Manuel utilisateur, chapitre 6. Partie 1.E<br>– Organisation de l’information Partie 4.2<br>– <a class="reference internal" href="gestion_habilitations.html"><span class="std std-doc">Gestion des habilitations</span></a> Partie 2.2.6</p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>SIP<br><em>Submission Information Package</em></p></td>
-<td class="text-left"><p>Il s’agit des paquets informationnels transférés au système d’archivage<b>Il s’agit d’un conteneur (de format .zip ou .tar) comprenant tous les objets à archiver (quel que soit leur format), ainsi qu’un bordereau les accompagnant (fichier xml conforme au schéma de la norme NF Z44-022 et au SEDA 2.x.).</p></td>
+<td class="text-left"><p>Il s’agit des paquets informationnels transférés au système d’archivage.<br>Il s’agit d’un conteneur (de format .zip ou .tar) comprenant tous les objets à archiver (quel que soit leur format), ainsi qu’un bordereau les accompagnant (fichier xml conforme au schéma de la norme NF Z44-022 et au SEDA 2.x.).</p></td>
 <td class="text-left"><p>Obligatoire</p></td>
 <td class="text-left"><p>– Manuel utilisateur, chapitre 3<br>– Organisation de l’information Partie 3.1<br>– Structuration des SIP</p></td>
 </tr>
@@ -476,6 +465,17 @@ Pour cela il réalise :</p>
 </tr>
 </tbody>
 </table>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id3" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p><a class="reference external" href="https://github.com/ProgrammeVitam/vitam-itests">Espace vitam-itests dans GitHub</a></p>
+</aside>
+<aside class="footnote brackets" id="id4" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>Renseignements sur le <a class="reference internal" href="module_de_collecte.html"><span class="std std-doc">module de collecte</span></a> et sur l”<a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/autres/fonctionnel/VitamUI_DocAPP_Collecte_et_preparation_des_versements.pdf">APP Collecte et préparation des versements</a>.</p>
+</aside>
+</aside>
 </section>
 </section>
 
