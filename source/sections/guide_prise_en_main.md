@@ -81,7 +81,7 @@ Processus
 
 ![](./medias/guide_prise_en_main/process.png)
 
-Sur les environnements partenaires pour les membres du Club utilisateurs, les étapes 1 et 2 sont réalisées par l’équipe Vitam. Les jeux de tests mis à disposition permettent de réaliser les étapes 3 à 5.
+Sur les environnements partenaires, accessibles aux membres du Club utilisateurs, les étapes 1 et 2 sont réalisées par l’équipe Vitam. Les jeux de tests mis à disposition permettent de réaliser les étapes 3 à 5.
 
 ### Etape 1 : Installation de la plateforme
 
@@ -174,7 +174,8 @@ ReSIP permet également d’importer des SIP déjà créés pour les modifier. I
 
 ### Etape 5 : Versement d’un SIP* dans la solution logicielle Vitam
 
-*Nota bene* : depuis la version 7.0 de la solution logicielle Vitam, l'APP Collecte et préparation des versements permet de constituer des projets de versement de fichiers et dossiers, qui, une fois validés, deviendront des SIP. Le formalise SEDA est alors assuré par la solution logicielle Vitam. Renseignements sur le [module de collecte](./module_de_collecte.md) et sur l'[APP Collecte et préparation des versements](https://www.programmevitam.fr/ressources/DocCourante/autres/fonctionnel/VitamUI_DocAPP_Collecte_et_preparation_des_versements.pdf).
+*Nota bene* : depuis la version 7.0 de la solution logicielle Vitam, l'APP Collecte et préparation des versements permet de constituer des projets de versement de fichiers et dossiers, qui, une fois validés, deviendront des SIP. Le formatage au format SEDA est alors assuré par la solution logicielle Vitam[^2].
+
 
 L’utilisateur peut ensuite importer le SIP dans la solution logicielle Vitam, via l’APP « Dépôt et suivi des versements ».
 - En cliquant sur le bouton « Dépôt d’un versement » ;
@@ -228,3 +229,5 @@ Lexique
 |DIP<br>*Dissemination Information Packages*|Il s’agit des paquets informationnels générés par le système d’archivage mis à disposition pour consultation.<br>Il s’agit d’un conteneur (de format .zip ou .tar) comprenant tous les objets archivés (quel que soit leur format), ainsi qu’un bordereau les accompagnant.|Obligatoire|– Manuel utilisateur, chapitre 4 Partie V<br>– Organisation de l’information Partie 3.3<br>– Structuration des DIP|
 
 [^1]: [Espace vitam-itests dans GitHub](https://github.com/ProgrammeVitam/vitam-itests)
+
+[^2]: Renseignements sur le [module de collecte](./module_de_collecte.md) et sur l'[APP Collecte et préparation des versements](https://www.programmevitam.fr/ressources/DocCourante/autres/fonctionnel/VitamUI_DocAPP_Collecte_et_preparation_des_versements.pdf).
