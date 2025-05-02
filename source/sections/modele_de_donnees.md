@@ -7,43 +7,27 @@ Introduction
 
 ### Avertissement
 
-Ce document fait état du travail en cours. Il est susceptible de changer
-de manière conséquente au fur et à mesure de l’avancée des
-développements.
+Ce document fait état du travail en cours. Il est susceptible de changer de manière conséquente au fur et à mesure de l’avancée des développements.
 
 ### Objectif du document
 
-Ce document a pour objectif de présenter la structure générale des
-collections utilisées dans la solution logicielle Vitam. Il est destiné
-principalement aux développeurs, afin de leur présenter l’organisation
-des données dans la solution logicielle Vitam, ainsi qu’à tous les
-autres acteurs du programme pour leur permettre de connaître ce qui
-existe en l’état actuel.
+Ce document a pour objectif de présenter la structure générale des collections utilisées dans la solution logicielle Vitam. Il est destiné principalement aux développeurs, afin de leur présenter l’organisation des données dans la solution logicielle Vitam, ainsi qu’à tous les autres acteurs du programme pour leur permettre de connaître ce qui existe en l’état actuel.
 
-Il explicite chaque champ, précise la relation avec les sources (par
-exemple bordereau de transfert conforme au standard SEDA v.2.2,
-référentiel Pronom, etc.) et la structuration JSON stockée dans la base
-de données MongoDB. Ce document est structuré de façon à suivre l’ordre
-des bases et collections dans Mongo.
+Il explicite chaque champ, précise la relation avec les sources (par exemple bordereau de transfert conforme au standard SEDA v.2.2, référentiel Pronom, etc.) et la structuration JSON stockée dans la base
+de données MongoDB. Ce document est structuré de façon à suivre l’ordre des bases et collections dans Mongo.
 
 Pour chacun des champs, cette documentation apporte :
 
 -   une liste des valeurs licites,
-
 -   la sémantique ou syntaxe du champ,
-
 -   la codification en JSON.
 
-Il décrit aussi parfois une utilisation particulière faite à une
-itération donnée. Cette indication différant de la cible finale, le
-numéro de l’itération de cet usage est mentionné.
+Il décrit aussi parfois une utilisation particulière faite à une itération donnée. Cette indication différant de la cible finale, le numéro de l’itération de cet usage est mentionné.
 
 ### Création des index
 
-Les différents index sont créés par ansible, plate-forme logicielle
-libre. Les fichiers à renseigner pour rajouter un nouvel index sont
-stockés dans le répertoire
-deployment/ansible-vitam/roles/mongo\_configure/templates/init-{nom-base}-database.js.j2
+Les différents index sont créés par ansible, plate-forme logicielle libre. Les fichiers à renseigner pour rajouter un nouvel index sont stockés dans le répertoire
+```deployment/ansible-vitam/roles/mongo\_configure/templates/init-{nom-base}-database.js.j2```
 
 ### Généralités
 
@@ -55,16 +39,14 @@ Les bases contiennent différentes collections. Les collections peuvent être ra
 
 #### Cardinalité
 
-La cardinalité présentée pour chacun des champs correspond aux exigences
-de la base de données Mongo.
+La cardinalité présentée pour chacun des champs correspond aux exigences de la base de données Mongo.
 
 Certains champs ayant une cardinalité 1-1 sont directement renseignés par la solution logicielle Vitam et sont donc obligatoirement présents dans la base de données, mais ne le sont pas forcément dans les données
 envoyées.
 
 #### Nommage des champs
 
-Les champs des fichiers JSON présents dans les collections peuvent être
-nommés de deux manières :
+Les champs des fichiers JSON présents dans les collections peuvent être nommés de deux manières :
 
 -   « champ » : un champ sans underscore est modifiable via les API,
 -   « _champ » : un champ commençant par un underscore n’est pas modifiable via les API. Une fois renseigné dans la solution logicielle Vitam par le bordereau de transfert ou la solution logicielle Vitam, il ne pourra plus être modifié depuis l’extérieur.
@@ -85,14 +67,11 @@ Exemple : "2017-11-02T13:50:28.922".
 
 #### Limite de caractères acceptés dans les champs
 
-Mongo est un type de base de données dite « schemaless », soit sans
-schéma. Ainsi, les champs contenus dans les collections décrites dans ce
-document sont, sauf mention contraire, sans limite de caractères.
+Mongo est un type de base de données dite « schemaless », soit sans schéma. Ainsi, les champs contenus dans les collections décrites dans ce document sont, sauf mention contraire, sans limite de caractères.
 
 #### Type d’indexation dans ElasticSearch
 
-Les champs peuvent être indexés de deux façons différentes dans
-ElasticSearch :
+Les champs peuvent être indexés de deux façons différentes dans ElasticSearch :
 
 -   **les champs analysés :** les informations contenues dans ces champs peuvent être retrouvées par une recherche full-text. Par exemple, les champs *Description*, *Name*.
 
@@ -101,15 +80,13 @@ ElasticSearch :
 Base Identity
 -------------
 
-La base Identity contient les collections relatives aux certificats
-applicatifs et personnels utilisés par la solution logicielle Vitam.
+La base Identity contient les collections relatives aux certificats applicatifs et personnels utilisés par la solution logicielle Vitam.
 
 ### Collection Certificate
 
 #### Utilisation de la collection Certificate
 
-La collection Certificate permet de référencer et décrire unitairement
-les certificats utilisés par les contextes applicatifs.
+La collection Certificate permet de référencer et décrire unitairement les certificats utilisés par les contextes applicatifs.
 
 #### Exemple de JSON stocké en base comprenant l’exhaustivité des champs
 
@@ -447,7 +424,7 @@ de l’initialisation de l’opération.
 
 -   Issu de la définition du workflow structuré en JSON (fichier default-workflow.json).
 
--   La liste des valeurs possibles pour ce champ se trouve en [annexe](#annexe-1-valeurs-possibles-pour-le-champ-evtype-du-logbook-operation). Seul le code est stocké dans ce champ, la traduction se faisant via un fichier properties (vitam-logbook-message-fr.properties).
+-   La liste des valeurs possibles pour ce champ se trouve en [annexe 1](#annexe-1-valeurs-possibles-pour-le-champ-evtype-du-logbook-operation). Seul le code est stocké dans ce champ, la traduction se faisant via un fichier properties (vitam-logbook-message-fr.properties).
 
 -   Cardinalité : 1-1
 
@@ -560,7 +537,7 @@ de l’initialisation de l’opération.
 
 -   Il s’agit d’une chaîne de caractères.
 
--   Nom du processus, parmi une liste de processus possibles fixée. Cette liste est disponible en [l’annexe 3](#annexe-3-valeurs-possibles-pour-le-champ-evtypeproc-type-de-processus)
+-   Nom du processus, parmi une liste de processus possibles fixée. Cette liste est disponible en [l’annexe 3](#annexe-3-valeurs-possibles-pour-le-champ-evtypeproc-type-de-processus).
 
 -   Cardinalité : 1-1
 
@@ -588,7 +565,7 @@ de l’initialisation de l’opération.
 
 -   Il s’agit d’une chaîne de caractères.
 
--   Il contient le code correspondant au résultat de l’événement, incluant le statut. La liste des valeurs possibles pour ce champ se trouve en [annexe](#annexe-1-valeurs-possibles-pour-le-champ-evtype-du-logbook-operation). Seul le code doit être stocké dans ce champ, la traduction doit se faire via un fichier properties (vitam-logbook-message-fr.properties).
+-   Il contient le code correspondant au résultat de l’événement, incluant le statut. La liste des valeurs possibles pour ce champ se trouve en [annexe 1](#annexe-1-valeurs-possibles-pour-le-champ-evtype-du-logbook-operation). Seul le code doit être stocké dans ce champ, la traduction doit se faire via un fichier properties (vitam-logbook-message-fr.properties).
 
 -   Cardinalité : 1-1
 
@@ -1075,7 +1052,7 @@ parent.
 
 -   Il s’agit d’une chaîne de caractères.
 
--   La liste des valeurs possibles pour ce champ se trouve en [annexe](#annexe-2-valeurs-possibles-pour-le-champ-evtype-du-logbook-lifecycle). Seul le code est stocké dans ce champ, la traduction se fait via un fichier properties (vitam-logbook-message-fr.properties).
+-   La liste des valeurs possibles pour ce champ se trouve en [annexe 2](#annexe-2-valeurs-possibles-pour-le-champ-evtype-du-logbook-lifecycle). Seul le code est stocké dans ce champ, la traduction se fait via un fichier properties (vitam-logbook-message-fr.properties).
 
 -   Cardinalité : 1-1
 
@@ -1108,7 +1085,7 @@ parent.
 
 -   Il s’agit d’une chaîne de caractères.
 
--   Nom du processus parmi une liste de processus possibles fixée. Cette liste est disponible en [annexe](#annexe-3-valeurs-possibles-pour-le-champ-evtypeproc-type-de-processus).
+-   Nom du processus parmi une liste de processus possibles fixée. Cette liste est disponible en [annexe 3](#annexe-3-valeurs-possibles-pour-le-champ-evtypeproc-type-de-processus).
 
 -   Cardinalité : 1-1
 
@@ -1133,7 +1110,7 @@ l’événement.
 
 -   Il s’agit d’une chaîne de caractères.
 
--   Il contient le code correspondant au résultat de l’événement, incluant le statut. La liste des valeurs possibles pour ce champ se trouve en [annexe](#annexe-2-valeurs-possibles-pour-le-champ-evtype-du-logbook-lifecycle). Seul le code est stocké dans ce champ, la traduction se fait via le fichier properties (vitam-logbook-message-fr.properties).
+-   Il contient le code correspondant au résultat de l’événement, incluant le statut. La liste des valeurs possibles pour ce champ se trouve en [annexe 2](#annexe-2-valeurs-possibles-pour-le-champ-evtype-du-logbook-lifecycle). Seul le code est stocké dans ce champ, la traduction se fait via le fichier properties (vitam-logbook-message-fr.properties).
 
 -   Cardinalité : 1-1
 
@@ -1385,7 +1362,7 @@ parent.
 
 -   Il s’agit d’une chaîne de caractères.
 
--   La liste des valeurs possibles pour ce champ se trouve en [annexe](#annexe-2-valeurs-possibles-pour-le-champ-evtype-du-logbook-lifecycle). Seul le code doit être stocké dans ce champ, la traduction doit se faire via le fichier properties (vitam-logbook-message-fr.properties).
+-   La liste des valeurs possibles pour ce champ se trouve en [annexe 2](#annexe-2-valeurs-possibles-pour-le-champ-evtype-du-logbook-lifecycle). Seul le code doit être stocké dans ce champ, la traduction doit se faire via le fichier properties (vitam-logbook-message-fr.properties).
 
 -   Cardinalité : 1-1
 
@@ -1417,7 +1394,7 @@ parent.
 
 -   Il s’agit d’une chaîne de caractères.
 
--   Nom du processus parmi une liste de processus possibles fixée. Cette liste est disponible en [annexe](#annexe-3-valeurs-possibles-pour-le-champ-evtypeproc-type-de-processus).
+-   Nom du processus parmi une liste de processus possibles fixée. Cette liste est disponible en [annexe 3](#annexe-3-valeurs-possibles-pour-le-champ-evtypeproc-type-de-processus).
 
 -   Cardinalité : 1-1
 
@@ -1445,7 +1422,7 @@ parent.
 
 -   Il s’agit d’une chaîne de caractères.
 
--   Il contient le code fin de l’événement, incluant le statut. La liste des valeurs possibles pour ce champ se trouve en [annexe](#annexe-2-valeurs-possibles-pour-le-champ-evtype-du-logbook-lifecycle). Seul le code est stocké dans ce champ, la traduction doit se faire via le fichier properties (vitam-logbook-message-fr.properties)
+-   Il contient le code fin de l’événement, incluant le statut. La liste des valeurs possibles pour ce champ se trouve en [annexe 2](#annexe-2-valeurs-possibles-pour-le-champ-evtype-du-logbook-lifecycle). Seul le code est stocké dans ce champ, la traduction doit se faire via le fichier properties (vitam-logbook-message-fr.properties)
 
 -   Cardinalité : 1-1
 
@@ -3245,12 +3222,8 @@ dans ce groupe d’objets.
 
     -   **« qualifier » :** usage de l’objet.
 
-        -   Correspond à la valeur contenue dans le champ
-             &lt;DataObjectVersion&gt; du bordereau de transfert. Par
-             exemple pour ```xml
-             &lt;DataObjectVersion&gt;BinaryMaster_1&lt;/DataObjectVersion&gt;,
-             ```
-             c’est la valeur « BinaryMaster » qui est reportée.
+        -   Correspond à la valeur contenue dans le champ  < DataObjectVersion> du bordereau de transfert. Par exemple pour < DataObjectVersion>BinaryMaster_1</ DataObjectVersion>, c’est la valeur
+« BinaryMaster » qui est reportée.
 
         -   Cardinalité : 1-1
 
@@ -6976,7 +6949,7 @@ Par exemple :
 
 -   Il s’agit d’une chaîne de caractères.
 
--   Il correspond à la valeur située dans la colonne RuleType du fichier d’import. Les valeurs possibles pour ce champ sont indiquées en [annexe](#annexe-4-categories-de-regles-possibles).
+-   Il correspond à la valeur située dans la colonne RuleType du fichier d’import. Les valeurs possibles pour ce champ sont indiquées en [annexe 4](#annexe-4-categories-de-regles-possibles).
 
 -   Cardinalité : 1-1
 
@@ -8779,7 +8752,7 @@ Ces identifiants sont généralement composés d’un préfixe de deux lettres, 
 
 **« Name » :** préfixe utilisé pour générer un identifiant signifiant.
 
--   La valeur contenue dans ce champ doit correspondre à la table de concordance du service VitamCounterService.java. La liste des valeurs possibles est détaillée en [annexe](#annexe-6-valeurs-possibles-pour-le-champ-name-de-la-collection-vitamsequence).
+-   La valeur contenue dans ce champ doit correspondre à la table de concordance du service VitamCounterService.java. La liste des valeurs possibles est détaillée en [annexe 6](#annexe-6-valeurs-possibles-pour-le-champ-name-de-la-collection-vitamsequence).
 
 -   Il s’agit d’une chaîne de caractères.
 
@@ -11008,23 +10981,23 @@ La collection OfferLog contient les ordres d'écriture ou de suppression reçus 
 
 #### Détail des champs du JSON stocké dans la collection
 
-"_id" : identifiant unique Mongo.
+**"_id"** : identifiant unique Mongo.
 * Il s’agit d’un champ de type Mongo composé comme suit : ObjectId( < hexadecimal > ).
 * Champ peuplé par la solution logicielle Vitam.
 * Cardinalité : 1-1
 
-"Sequence" : numéro incrémental.
+**"Sequence"** : numéro incrémental.
 * Il s’agit du dernier numéro utilisé pour définir l'ordre des données.
 * Il s’agit d’un entier.
 * Champ peuplé par la solution logicielle Vitam.
 * Cardinalité : 1-1
 
-"Time" : date.
+**"Time"** : date.
 * Il s’agit d’une date au format ISO8601 AAAA-MM-JJ+ "T" +hh:mm:ss:[3 digits de millisecondes]
 * Champ peuplé par la solution logicielle Vitam.
 * Cardinalité : 1-1
 
-"Container" : identifiant du conteneur de la donnée
+**"Container"** : identifiant du conteneur de la donnée
 * Il s’agit d’une chaîne de caractères.
 * Le format du conteneur est {environnement}\_{tenant}\_{repertoire}, où :
   * {environnement} est l'identifiant de l'environnement Vitam configuré
@@ -11033,12 +11006,12 @@ La collection OfferLog contient les ordres d'écriture ou de suppression reçus 
 * Ne peut être vide.
 * Cardinalité : 1-1
 
-"FileName" : nom de l'objet stocké dans l'offre
+**"FileName"** : nom de l'objet stocké dans l'offre
 * Il s’agit d’une chaîne de caractères.
 * Ne peut être vide.
 * Cardinalité : 1-1
 
-"Action" : action de l'ordre d'écriture
+**"Action"** : action de l'ordre d'écriture
 * Il s’agit d’une chaîne de caractères.
 * Les valeurs attendues dans ce champ sont :
   * "write" : indique un ordre d'écriture de type "écriture"
@@ -11047,7 +11020,7 @@ La collection OfferLog contient les ordres d'écriture ou de suppression reçus 
 * Cardinalité : 1-1
 
 
-"_FormatVersion" : version du schéma du modèle de données de l'ordre
+**"_FormatVersion"** : version du schéma du modèle de données de l'ordre
 * Il s’agit d’une chaîne de caractères.
 * Les valeurs possibles dans ce champ sont :
   * "V1" : ancienne version dépréciée
@@ -11096,27 +11069,27 @@ La collection CompactedOfferLog contient un regroupement d'anciens ordres d'écr
 
 #### Détail des champs du JSON stocké dans la collection
 
-"_id" : identifiant unique Mongo.
+**"_id"** : identifiant unique Mongo.
 * Il s’agit d’un champ de type Mongo composé comme suit : ObjectId( < hexadecimal > ).
 * Champ peuplé par la solution logicielle Vitam.
 * Cardinalité : 1-1
 
-"SequenceStart" : numéro de séquence du premier ordre du lot.
+**"SequenceStart"** : numéro de séquence du premier ordre du lot.
 * Il s’agit d’un entier.
 * Champ peuplé par la solution logicielle Vitam.
 * Cardinalité : 1-1
 
-"SequenceEnd" : numéro de séquence du dernier ordre du lot.
+**"SequenceEnd"** : numéro de séquence du dernier ordre du lot.
 * Il s’agit d’un entier.
 * Champ peuplé par la solution logicielle Vitam.
 * Cardinalité : 1-1
 
-"CompactionDateTime" : date de la compaction des ordres d'écriture.
+**"CompactionDateTime"** : date de la compaction des ordres d'écriture.
 * Il s’agit d’une date au format ISO8601 AAAA-MM-JJ+ "T" +hh:mm:ss:[3 digits de millisecondes]
 * Champ peuplé par la solution logicielle Vitam.
 * Cardinalité : 1-1
 
-"Container": identifiant du conteneur de la donnée
+**"Container"** : identifiant du conteneur de la donnée
 * Il s’agit d’une chaîne de caractères.
 * Le format du conteneur est {environnement}\_{tenant}\_{repertoire}, où :
   * {environnement} est l'identifiant de l'environnement Vitam configuré
@@ -11125,7 +11098,7 @@ La collection CompactedOfferLog contient un regroupement d'anciens ordres d'écr
 * Ne peut être vide.
 * Cardinalité : 1-1
 
-"Logs" : tableau de structure de type "OfferLog" 
+**"Logs"** : tableau de structure de type "OfferLog" 
 * Pour la structure incluante, le tableau contient n structures incluses dans l’ordre par le champ "Sequence" pour un même "Container".
 * Cardinalité : 1-1
 * S’agissant d’un tableau, les structures incluses ont pour cardinalités 1-n.
@@ -11152,14 +11125,14 @@ Cette collection permet de générer des identifiants ordonnés pour les enregis
 #### Détail des champs du JSON stocké dans la collection
 
 
-"_id" : identifiant unique.
+**"_id"** : identifiant unique.
 * Il s’agit d’une chaîne de caractères.
 * Les valeurs possibles dans ce champ sont :
   * "Backup_Log_Sequence" : identifiant de la séquence des ordres d'écriture
 * Champ peuplé par la solution logicielle Vitam.
 * Cardinalité : 1-1
 
-"Counter" : numéro incrémental.
+**"Counter"** : numéro incrémental.
 * Il s’agit du dernier numéro utilisé comme identifiant ordonné.
 * Il s’agit d’un entier.
 * Champ peuplé par la solution logicielle Vitam.
@@ -11213,12 +11186,12 @@ La collection TapeCatalog regroupe l'ensemble des bandes magnétiques connues du
 #### Détail des champs du JSON stocké dans la collection
 
 
-"_id" : identifiant unique.
+**"_id"** : identifiant unique.
 * Il s’agit d’une chaîne de 36 caractères correspondant à un GUID.
 * Champ peuplé par la solution logicielle Vitam.
 * Cardinalité : 1-1
 
-"queue_state" : état de la bande dans la file d'attente interne à Vitam
+**"queue_state"** : état de la bande dans la file d'attente interne à Vitam
 * Il s’agit d’une chaîne de caractères.
 * Les valeurs possibles dans ce champ sont :
   * "READY" : la bande est disponible
@@ -11228,39 +11201,39 @@ La collection TapeCatalog regroupe l'ensemble des bandes magnétiques connues du
 * Champ peuplé par la solution logicielle Vitam.
 * Cardinalité : 1-1
 
-"queue_last-update" : date de modification technique de l'état de la bande dans la file.
+**"queue_last-update"** : date de modification technique de l'état de la bande dans la file.
 * Il s’agit d’une date au format ISO8601 AAAA-MM-JJ+ "T" +hh:mm:ss:[3 digits de millisecondes]
 * Champ peuplé par la solution logicielle Vitam.
 * Cardinalité : 1-1
 
-"queue_creation_date" : date technique de création de l'enregistrement.
+**"queue_creation_date"** : date technique de création de l'enregistrement.
 * Il s’agit d’une date au format ISO8601 AAAA-MM-JJ+ "T" +hh:mm:ss:[3 digits de millisecondes]
 * Champ peuplé par la solution logicielle Vitam.
 * Cardinalité : 1-1
 
-"queue_message_type" : type technique de la file.
+**"queue_message_type"** : type technique de la file.
 * Il s’agit d’une chaîne de caractères.
 * Valeur fixe : "TapeCatalog"
 * Champ peuplé par la solution logicielle Vitam.
 * Cardinalité : 1-1
 
-"queue_priority" : réservé à un usage futur.
+**"queue_priority"** : réservé à un usage futur.
 * Il s’agit d’un entier.
 * Valeur fixe : 1.
 * Champ peuplé par la solution logicielle Vitam.
 * Cardinalité : 1-1
 
-"code" : code à barres identifiant la bande magnétique.
+**"code"** : code à barres identifiant la bande magnétique.
 * Il s’agit d’une chaîne de caractères.
 * Ne peut être vide.
 * Cardinalité : 1-1
 
-"bucket" : identifiant permettant d'isoler physiquement les données d'une bande selon le tenant. 
+**"bucket"** : identifiant permettant d'isoler physiquement les données d'une bande selon le tenant. 
 * Il s’agit d’une chaîne de caractères.
 * Non renseigné si la bande est encore vide ("tape_state" est "EMPTY").
 * Cardinalité : 0-1
 
-"label" : décrit le tout premier fichier écrit sur une bande, qui a un rôle de "marqueur" pour l'identification unique de la bande. Il est notamment utilisé pour éviter toute erreur de manipulation de la bande par un autre applicatif (autre que l'offre froide de Vitam).
+**"label"** : décrit le tout premier fichier écrit sur une bande, qui a un rôle de "marqueur" pour l'identification unique de la bande. Il est notamment utilisé pour éviter toute erreur de manipulation de la bande par un autre applicatif (autre que l'offre froide de Vitam).
 * Cet objet, s'il existe, doit contenir les champs suivants :
   * "_id" : identifiant unique du format.
     * Il s’agit d’une chaîne de 36 caractères correspondant à un GUID.
@@ -11277,17 +11250,17 @@ La collection TapeCatalog regroupe l'ensemble des bandes magnétiques connues du
     * Cardinalité : 1-1
 * Cardinalité : 0-1
 
-"library" : identifiant de la bibliothèque de bandes.
+**"library"** : identifiant de la bibliothèque de bandes.
 * Il s’agit d’une chaîne de caractères.
 * Ne peut être vide.
 * Cardinalité : 1-1
 
-"written_bytes" : nombre de bytes écrits sur la bande.
+**"written_bytes"** : nombre de bytes écrits sur la bande.
 * Il s'agit d'un entier.
 * Ne peut être vide.
 * Cardinalité : 1-1
 
-"tape_state" : état de la bande magnétique.
+**"tape_state"** : état de la bande magnétique.
 * Il s’agit d’une chaîne de caractères.
 * Les valeurs possibles dans ce champ sont :
   * "EMPTY" : vierge
@@ -11297,12 +11270,12 @@ La collection TapeCatalog regroupe l'ensemble des bandes magnétiques connues du
 * Ne peut être vide.
 * Cardinalité : 1-1
 
-"file_count" : nombre de fichiers écrits sur la bande.
+**"file_count"** : nombre de fichiers écrits sur la bande.
 * Il s'agit d'un entier.
 * Ne peut être vide.
 * Cardinalité : 1-1
 
-"current_location" : localisation la bande magnétique dans la bibliothèque de bandes.
+**"current_location"** : localisation la bande magnétique dans la bibliothèque de bandes.
 * Cet objet, s'il existe, doit contenir les champs suivants :
   * "index" : numéro du lecteur ou de l'emplacement dans lequel se trouve la bande
     * Il s'agit d'un entier.
@@ -11317,7 +11290,7 @@ La collection TapeCatalog regroupe l'ensemble des bandes magnétiques connues du
     * Cardinalité : 1-1
 * Cardinalité : 0-1
 
-"previous_location" : précédente localisation la bande magnétique dans la bibliothèque de bandes.
+**"previous_location"** : précédente localisation la bande magnétique dans la bibliothèque de bandes.
 * Cet objet, s'il existe, doit contenir les champs suivants :
   * "index" : Numéro du lecteur ou de l'emplacement dans lequel se trouvait précédemment la bande
     * Il s'agit d'un entier.
@@ -11332,28 +11305,26 @@ La collection TapeCatalog regroupe l'ensemble des bandes magnétiques connues du
     * Cardinalité : 1-1
 * Cardinalité : 0-1
 
-"compressed" : indicateur si la compression matérielle est activée.
+**"compressed"** : indicateur si la compression matérielle est activée.
 * Il s’agit d’un booléen.
 * Cardinalité : 1-1
 
-"worm" : indicateur si la bande est non réinscriptible.
+**"worm"** : indicateur si la bande est non réinscriptible.
 * Il s’agit d’un booléen.
 * Cardinalité : 1-1
 
-"_v" : version de l’enregistrement décrit.
+**"_v"** : version de l’enregistrement décrit.
 * Il s’agit d’un entier.
 * Si le numéro est supérieur à 0, alors il s’agit du numéro de version de l’enregistrement.
 * Cardinalité : 1-1
 
 ### Collections TapeQueueMessage (offre froide)
 
-
 #### Utilisation de la collection TapeQueueMessage
 
 La collection TapeQueueMessage contient la liste (file d'attente) des ordres d'écriture vers une bande ou de lecture depuis une bande.
 
 #### Exemples de JSON stockés en base comprenant l’exhaustivité des champs
-
 
 ```json
 {
@@ -11371,7 +11342,6 @@ La collection TapeQueueMessage contient la liste (file d'attente) des ordres d'�
     "archiveId" : "myArchiveId1"
 }
 ```
-
 
 ```json
 {
@@ -11409,12 +11379,12 @@ La collection TapeQueueMessage contient la liste (file d'attente) des ordres d'�
 
 #### Détail des champs du JSON stocké dans la collection
 
-"_id" : identifiant unique.
+**"_id"** : identifiant unique.
 * Il s’agit d’une chaîne de 36 caractères correspondant à un GUID.
 * Champ peuplé par la solution logicielle Vitam.
 * Cardinalité : 1-1
 
-"queue_state" : état de traitement de l'ordre dans la file d'attente.
+**"queue_state"** : état de traitement de l'ordre dans la file d'attente.
 * Il s’agit d’une chaîne de caractères.
 * Les valeurs possibles dans ce champ sont :
   * "READY" : ordre prêt à être exécuté
@@ -11424,17 +11394,17 @@ La collection TapeQueueMessage contient la liste (file d'attente) des ordres d'�
 * Champ peuplé par la solution logicielle Vitam.
 * Cardinalité : 1-1
 
-"queue_last-update" : date et heure de la dernière mise à jour l'ordre.
+**"queue_last-update"** : date et heure de la dernière mise à jour l'ordre.
 * Il s’agit d’une date au format ISO8601 AAAA-MM-JJ+ "T" +hh:mm:ss:[3 digits de millisecondes]
 * Champ peuplé par la solution logicielle Vitam.
 * Cardinalité : 1-1
 
-"queue_creation_date" : date et heure de création de l'ordre.
+**"queue_creation_date"** : date et heure de création de l'ordre.
 * Il s’agit d’une date au format ISO8601 AAAA-MM-JJ+ "T" +hh:mm:ss:[3 digits de millisecondes]
 * Champ peuplé par la solution logicielle Vitam.
 * Cardinalité : 1-1
 
-"queue_message_type" : type de l'ordre.
+**"queue_message_type"** : type de l'ordre.
 * Il s’agit d’une chaîne de caractères.
 * Les valeurs possibles dans ce champ sont :
   * "ReadOrder" : ordre de lecture d'un fichier sur bande
@@ -11443,65 +11413,62 @@ La collection TapeQueueMessage contient la liste (file d'attente) des ordres d'�
 * Champ peuplé par la solution logicielle Vitam.
 * Cardinalité : 1-1
 
-"queue_priority" : priorité de l'ordre. Réservée à un usage futur.
+**"queue_priority"** : priorité de l'ordre. Réservée à un usage futur.
 * Il s’agit d’un entier.
 * Valeur fixe : 1.
 * Champ peuplé par la solution logicielle Vitam.
 * Cardinalité : 1-1
 
-"tapeCode" : identifiant de la bande magnétique cible (code à barres).
+**"tapeCode"** : identifiant de la bande magnétique cible (code à barres).
 * Il s’agit d’une chaîne de caractères.
 * Présent uniquement dans les cas d'un ordre de lecture (ReadOrder)
 * Cardinalité : 0-1
 
-"bucket" : identifiant permettant d'isoler physiquement les données d'une bande selon le tenant.
+**"bucket"** : identifiant permettant d'isoler physiquement les données d'une bande selon le tenant.
 * Il s’agit d’une chaîne de caractères.
 * Ne peut être vide.
 * Cardinalité : 1-1
 
-"filePosition" : position sur la bande magnétique.
+**"filePosition"** : position sur la bande magnétique.
 * Présent uniquement dans les cas d'un ordre de lecture (ReadOrder)
 * Il s'agit d'un entier.
 * Cardinalité : 0-1
 
-"FileName" : nom de l'archive à écrire sur disque.
+**"FileName"** : nom de l'archive à écrire sur disque.
 * Présent uniquement dans les cas d'un ordre de lecture (ReadOrder)
 * Il s’agit d’une chaîne de caractères.
 * Cardinalité : 0-1
 
-"fileBucketId" : identifiant permettant de regrouper les objets par type (metadata, objet binaire ou autre) au sein d'un bucket.
+**"fileBucketId"** : identifiant permettant de regrouper les objets par type (metadata, objet binaire ou autre) au sein d'un bucket.
 * Il s’agit d’une chaîne de caractères.
 * Cardinalité : 0-1
 
-"filePath" : chemin de l'archive à écrire sur disque
+**"filePath"** : chemin de l'archive à écrire sur disque
 * Présent uniquement dans les cas d'un ordre d'écriture (WriteOrder ou WriteBackupOrder)
 * Il s’agit d’une chaîne de caractères.
 * Cardinalité : 0-1
 
-"size": taille du fichier en octets.
+**"size"** : taille du fichier en octets.
 * Il s'agit d'un entier.
 * Ne peut être vide
 * Cardinalité : 1-1
 
-"digest" : empreinte du fichier.
+**"digest"** : empreinte du fichier.
 * Il s’agit d’une chaîne de caractères
 * Cardinalité : 0-1
 
-"archiveId" : identifiant unique de l'archive.
+**"archiveId"** : identifiant unique de l'archive.
 * Présent uniquement dans les cas d'un ordre d'écriture (WriteOrder ou WriteBackupOrder)
 * Il s’agit d’une chaîne de caractères
 * Cardinalité : 0-1
 
-
 ### Collection TapeObjectReferential (offre froide)
-
 
 #### Utilisation de la collection TapeObjectReferential
 
 La collection TapeObjectReferential écrit un objet archivé dans l'offre froide.
 
 #### Exemple de JSON stocké en base comprenant l’exhaustivité des champs
-
 
 ```json
 {
@@ -11532,29 +11499,28 @@ La collection TapeObjectReferential écrit un objet archivé dans l'offre froide
 
 #### Détail des champs du JSON stocké dans la collection
 
-
-"_id" : identifiant technique du fichier objet.
+**"_id"** : identifiant technique du fichier objet.
 * Il s’agit d’un object composé des champs suivants :
   * "containerName" : identifiant du conteneur du fichier objet
   * "objectName" : nom de l'objet à persister
 * Cardinalité : 1-1
 
-"size": taille du fichier d'objet en octets.
+**"size"** : taille du fichier d'objet en octets.
 * Il s'agit d'un entier.
 * Ne peut être vide
 * Cardinalité : 1-1
 
-"digestType" : algorithme de hachage.
+**"digestType"** : algorithme de hachage.
 * Il s’agit d’une chaîne de caractères.
 * Il s’agit du nom de l’algorithme de hachage utilisé pour l'empreinte.
 * Cardinalité : 1-1
 
-"digest" : empreinte du fichier d'objet.
+**"digest"** : empreinte du fichier d'objet.
 * Il s’agit d’une chaîne de caractères.
 * Ne peut être vide
 * Cardinalité : 1-1
 
-"storageId" : identifiant unique de la version de l'objet.
+**"storageId"** : identifiant unique de la version de l'objet.
 * Il s’agit d’une chaîne de caractères au format {objectName}-{guid}, où :
   * {objectName} est le nom de l'objet
   * {guid} est une chaîne de 36 caractères correspondant à un GUID.
@@ -11562,7 +11528,7 @@ La collection TapeObjectReferential écrit un objet archivé dans l'offre froide
 * Champ peuplé par la solution logicielle Vitam à chaque écriture ou réécriture d'un objet.
 * Cardinalité : 1-1
 
-"location" : localisation physique de l'objet.
+**"location"** : localisation physique de l'objet.
 * Cet objet, doit contenir les champs suivants :
   * "type" : Type de stockage de l'objet
     * Il s’agit d’une chaîne de caractères.
@@ -11594,27 +11560,23 @@ La collection TapeObjectReferential écrit un objet archivé dans l'offre froide
         * Cardinalité : 1-1
     * Cardinalité : 0-n
 
-"lastObjectModifiedDate" : date et heure de l'écriture de la dernière version de l'objet.
+**"lastObjectModifiedDate"** : date et heure de l'écriture de la dernière version de l'objet.
 * Il s’agit d’une date au format ISO8601 AAAA-MM-JJ+ "T" +hh:mm:ss:[3 digits de millisecondes]
 * Champ peuplé par la solution logicielle Vitam.
 * Cardinalité : 1-1
 
-"lastUpdateDate" : date et heure de la dernière modification technique du document.
+**"lastUpdateDate"** : date et heure de la dernière modification technique du document.
 * Il s’agit d’une date au format ISO8601 AAAA-MM-JJ+ "T" +hh:mm:ss:[3 digits de millisecondes]
 * Champ peuplé par la solution logicielle Vitam.
 * Cardinalité : 1-1
-
 
 ### Collection TapeArchiveReferential (offre froide)
-
-
 
 #### Utilisation de la collection TapeArchiveReferential
 
 La collection TapeArchiveReferential écrit une archive de données archivée sur une bande magnétique ou en cours d'archivage.
 
 #### Exemples de JSON stockés en base comprenant les différents cas possibles
-
 
 ```json
 {
@@ -11644,7 +11606,6 @@ La collection TapeArchiveReferential écrit une archive de données archivée su
 }
 ```
 
-
 ```json
 {
     "_id": "20211225001023845-cca8fa6a-acd5-4192-8132-ba2d907ef6df.tar",
@@ -11658,14 +11619,14 @@ La collection TapeArchiveReferential écrit une archive de données archivée su
 
 #### Détail des champs du JSON stocké dans la collection
 
-"_id" : identifiant unique de l'archive.
+**"_id"** : identifiant unique de l'archive.
 * Il s’agit d’une chaîne de caractères.
 * Le format est {timestamp}_{guid}.tar, où
   * {timestamp} est la date et heure de création de l'archive an format AAAAMMJJhhmmssmmmm.
   * {guid} est une chaîne de 36 caractères correspondant à un GUID.
 * Cardinalité : 1-1
 
-"location" : décrit la localisation de l'archive TAR
+**"location"** : décrit la localisation de l'archive TAR
 * Cet objet doit contenir les champs suivants :
   * "type" : Type de localisation
     * Il s’agit d’une chaîne de caractères.
@@ -11684,30 +11645,29 @@ La collection TapeArchiveReferential écrit une archive de données archivée su
     * Cardinalité : 0-1
 * Cardinalité : 1-1
 
-"entry_type" : type de l'archive
+**"entry_type"** : type de l'archive
 * Il s’agit d’une chaîne de caractères.
 * Les valeurs possibles dans ce champ sont :
   * "DATA" : Archive de type TAR contenant des données standard Vitam à archiver
   * "BACKUP" : Pour les archives spéciales contenant des back-ups de la base de données (WriteBackupOrder)
 * Cardinalité : 1-1
 
-"lastUpdateDate" : date de dernière mise à jour technique du document.
+**"lastUpdateDate"** : date de dernière mise à jour technique du document.
 * Il s’agit d’une date au format ISO8601 AAAA-MM-JJ+ "T" +hh:mm:ss:[3 digits de millisecondes]
 * Champ peuplé par la solution logicielle Vitam.
 * Cardinalité : 1-1
 
-"digest" : empreinte définitive de l'archive TAR.
+**"digest"** : empreinte définitive de l'archive TAR.
 * Il s’agit d’une chaîne de caractères.
 * Doit être renseigné dans les cas où "location.type" est "ready_on_disk" ou "on_tape"
 * Cardinalité : 0-1
 
-"size" : taille définitive en octets de l'archive TAR.
+**"size"** : taille définitive en octets de l'archive TAR.
 * Il s'agit d'un entier.
 * Doit être renseigné dans les cas où "location.type" est "ready_on_disk" ou "on_tape"
 * Cardinalité : 0-1
 
 ### Collection TapeAccessRequestReferential (offre froide)
-
 
 #### Utilisation de la collection TapeAccessRequestReferential
 
@@ -11729,7 +11689,6 @@ Cette collection contient les demandes d'accès aux archives contenues sur un st
 }
 ```
 
-
 ```json
 {
     "_id": "aeaaaaaaaahjp2jaabukyal6nxps3eaaaaaq",
@@ -11746,12 +11705,12 @@ Cette collection contient les demandes d'accès aux archives contenues sur un st
 
 #### Détail des champs du JSON stocké dans la collection
 
-"_id" : identifiant de la requête d'accès.
+**"_id"** : identifiant de la requête d'accès.
 * Il s’agit d’une chaîne de 36 caractères correspondant à un GUID.
 * Champ peuplé par la solution logicielle Vitam.
 * Cardinalité : 1-1
 
-"containerName" : identifiant du conteneur de la donnée concernée par la requête d'accès.
+**"containerName"** : identifiant du conteneur de la donnée concernée par la requête d'accès.
 * Il s’agit d’une chaîne de caractères.
 * Le format du conteneur est {environnement}\_{tenant}\_{repertoire}, où :
   * {environnement} est l'identifiant de l'environnement Vitam configuré
@@ -11760,36 +11719,36 @@ Cette collection contient les demandes d'accès aux archives contenues sur un st
 * Ne peut être vide.
 * Cardinalité : 1-1
 
-"objectNames" : liste des objets concernés par la requête d'accès.
+**"objectNames"** : liste des objets concernés par la requête d'accès.
 * le tableau contient des chaînes de caractères.
 * Ne peut être vide.
 * Cardinalité : 1-n
 
-"creationDate" : date de création de la requête d'accès.
+**"creationDate"** : date de création de la requête d'accès.
 * Il s’agit d’une date au format ISO8601 AAAA-MM-JJ+ "T" +hh:mm:ss:[3 digits de millisecondes]
 * Champ peuplé par la solution logicielle Vitam.
 * Cardinalité : 1-1
 
-"readyDate" : date à laquelle la demande d'accès est devenue prête. Une demande d'accès est prête lorsque tous ses objets sont disponibles pour lecture immédiate depuis le disque.
+**"readyDate"** : date à laquelle la demande d'accès est devenue prête. Une demande d'accès est prête lorsque tous ses objets sont disponibles pour lecture immédiate depuis le disque.
 * Il s’agit d’une date au format ISO8601 AAAA-MM-JJ+ "T" +hh:mm:ss:[3 digits de millisecondes]
 * Champ peuplé par la solution logicielle Vitam.
 * Cardinalité : 0-1
 
-"expirationDate" : date à laquelle la demande d'accès prête expirera. Une demande d'accès expire automatiquement après un délai configurable à partir du moment où elle devient prête.  
+**"expirationDate"** : date à laquelle la demande d'accès prête expirera. Une demande d'accès expire automatiquement après un délai configurable à partir du moment où elle devient prête.  
 * Il s’agit d’une date au format ISO8601 AAAA-MM-JJ+ "T" +hh:mm:ss:[3 digits de millisecondes]
 * Champ peuplé par la solution logicielle Vitam.
 * Cardinalité : 0-1
 
-"purgeDate" : date à laquelle la demande d'accès prête sera purgée de la base de données. Une demande d'accès est purgée automatiquement après un délai configurable à partir du moment où elle devient prête.
+**"purgeDate"** : date à laquelle la demande d'accès prête sera purgée de la base de données. Une demande d'accès est purgée automatiquement après un délai configurable à partir du moment où elle devient prête.
 * Il s’agit d’une date au format ISO8601 AAAA-MM-JJ+ "T" +hh:mm:ss:[3 digits de millisecondes]
 * Champ peuplé par la solution logicielle Vitam.
 * Cardinalité : 0-1
 
-"unavailableArchiveIds" : liste des identifiants des archives actuellement indisponibles sur disque et dont la lecture depuis une bande est en cours.
+**"unavailableArchiveIds"** : liste des identifiants des archives actuellement indisponibles sur disque et dont la lecture depuis une bande est en cours.
 * le tableau contient des chaînes de caractères.
 * Cardinalité : 0-n
 
-_v": version de la requête d'accès.
+**"_v"** : version de la requête d'accès.
 * Il s’agit d’un entier.
 * Si le numéro est supérieur à 0, alors il s’agit du numéro de version de l’enregistrement.
 * Cardinalité : 1-1
@@ -11799,16 +11758,13 @@ Annexes
 
 ### Annexe 1 : Valeurs possibles pour le champ evType du LogBook Operation
 
-L’ensemble des étapes, tâches et traitements sont détaillés dans la
-documentation Modèle de workflow.
+L’ensemble des étapes, tâches et traitements sont détaillés dans la documentation [Modèle de workflow](./modele_de_workflow.md).
 
 ### Annexe 2 : Valeurs possibles pour le champ evType du LogBook LifeCycle
 
-L’ensemble des étapes, tâches et traitements sont détaillées dans la
-documentation Modèle de workflow.
+L’ensemble des étapes, tâches et traitements sont détaillées dans la documentation [Modèle de workflow](./modele_de_workflow.md).
 
 ### Annexe 3: Valeurs possibles pour le champ evTypeProc (type de processus)
-
 
 | Process Type                                     | Valeur                    | Description                                       |
 |:-------------------------------------------------|:--------------------------|:--------------------------------------------------|
@@ -11838,9 +11794,7 @@ documentation Modèle de workflow.
 | Traceability type process                        | TRACEABILITY              | Sécurisation                                      |
 | Update process                                   | UPDATE                    | Mise à jour                                       | 
 
-
 ### Annexe 4 : Catégories de règles possibles
-
 
 | Prefixe (Peut être modifié) | Type de règle correspondante | Description du type de règle |
 | :-: | :-: | :-: |
