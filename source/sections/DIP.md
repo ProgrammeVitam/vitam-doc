@@ -7,18 +7,19 @@ Introduction
 ### Documents de référence
 
 
-|**Document**|**Date de la version**|**Remarques**|
-|:---------------:|:-----:|:-----:|
-|NF Z 44022 – MEDONA – Modélisation des données pour l’archivage|18/01/2014||
-|Standard d’échange de données pour l’archivage – SEDA – v. 2.1|06/2018||            
-|Standard d’échange de données pour l’archivage – SEDA – v. 2.2|02/2022|Cette nouvelle version du SEDA est intégrée à la solution logicielle Vitam à partir de la V6.RC.|
-|Référentiel général de sécurité (RGS) – v. 2.0|10/06/2015||
-|ISO 14 721:2012 – Systèmes de transfert des informations et données spatiales -- Système ouvert d’archivage d’information (SOAI) -- Modèle de référence|01/09/2012||
+|**Document**|**Date de la version**|
+|:---------------:|:-----:|
+|NF Z 44022 – MEDONA – Modélisation des données pour l’archivage|18/01/2014|
+|Standard d’échange de données pour l’archivage – SEDA – v. 2.1|06/2018|         
+|Standard d’échange de données pour l’archivage – SEDA – v. 2.2|02/2022|
+|Référentiel général de sécurité (RGS) – v. 2.0|10/06/2015|
+|ISO 14 721:2012 – Systèmes de transfert des informations et données spatiales -- Système ouvert d’archivage d’information (SOAI) -- Modèle de référence|01/09/2012|
 
 ### Présentation du document
 
 Le présent document constitue une présentation des fonctionnalités associées au Dissemination Information Package dans la solution logicielle Vitam.  
-Il décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 6 (mars 2023). Il a vocation à être amendé, complété et enrichi au fur et à mesure des développements de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
+
+Il décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 8.1 (printemps 2025). Il a vocation à être amendé, complété et enrichi au fur et à mesure des développements de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
 
 Présentation du DIP
 ----
@@ -65,7 +66,7 @@ Un paquet d’archives destiné à être mis à disposition de tiers par une pla
 La norme MEDONA et le standard SEDA constituent des modèles standards pour les transactions d’échanges entre les acteurs de l’archivage, et notamment entre le service d’archives et le demandeur d’une communication.  
 La norme AFNOR NF Z 44‑022, intitulée "Modèle d’Échange de DONnées pour l’Archivage" ou MEDONA a été publiée en 2014. Elle apporte un cadre normatif pour les différents échanges d’informations (données comme métadonnées) entre le service d’archives et ses partenaires comme le demandeur (toute personne physique ou morale qui souhaite consulter les informations conservées par le service d’archives dans le respect des conditions légales, réglementaires ou contractuelles en vigueur) et la façon dont s’organisent ces échanges. Elle définit des diagrammes d’activités et des modèles de données selon le formalisme UML. Les échanges se traduisent par des messages formalisés par des schémas XML.
 
-Le SEDA est le « Standard d’Échange de Données pour l’Archivage » relatif aux données d’archives publiques. Créé en 2006 par la Direction des Archives de France et la Direction Générale pour la Modernisation de L’État, il a été révisé en 2010 (v0.2), en 2012 (v1.0), en 2015 (v2.0) pour assurer sa compatibilité avec la norme MEDONA et plus récemment en 2018 (v2.1) et 2022 (v.2.2). Il comporte à la fois le modèle fonctionnel et un modèle de données pour les échanges de données d’archives entre acteurs de la sphère publique : description, acteurs, règles de gestion, référentiels métier et techniques.
+Le SEDA est le « Standard d’Échange de Données pour l’Archivage » relatif aux données d’archives publiques. Créé en 2006 par la Direction des Archives de France et la Direction Générale pour la Modernisation de L’État, il a été révisé en 2010 (v0.2), en 2012 (v1.0), en 2015 (v2.0) pour assurer sa compatibilité avec la norme MEDONA et plus récemment en 2018 (v2.1), 2022 (v2.2) et 2024 (v2.3). Il comporte à la fois le modèle fonctionnel et un modèle de données pour les échanges de données d’archives entre acteurs de la sphère publique : description, acteurs, règles de gestion, référentiels métier et techniques.
 
 Selon ce standard, les fonctions de mise à disposition couvertes par le DIP correspondent à deux cas d’utilisation : la communication et la restitution.
 
@@ -76,14 +77,18 @@ Après instruction de la demande et, si nécessaire, une phase de demande d’au
 Une fois la réponse reçue, le demandeur peut émettre un message d’accusé de réception (Acknowledgement).
 Le schéma ci-dessous modélise les échanges associés à la requête et au transfert d’un ensemble d’archives à communiquer – le DIP au sens de la norme OAIS.  
 ![](./medias/DIP/comm.png)  
-**Point d’attention :** la phase de demande d’autorisation est du ressort du front-office et non du back-office.
 
+**Point d’attention :** la phase de demande d’autorisation est du ressort du front-office et non du back-office.
+<br>
+<br>
 - La restitution  
 La transaction de restitution est découpée en deux séquences : une séquence de demande de restitution suivie d’une séquence de transfert.  
 La demande de restitution (ArchiveRestitutionRequest) peut être à l’initiative soit du service d’archives qui détient les informations à restituer, soit du service producteur.  
 La demande s’effectue en mentionnant les identifiants des données concernées (éventuellement accompagnées de leurs métadonnées). Le service qui reçoit la demande, en accuse la réception. S’ensuit l’envoi de sa réponse (acceptation ou refus de la demande de restitution – ArchiveRestitutionRequestReply) dont l’initiateur de la demande accuse la réception  (Acknowledgement).  
 En cas d’acceptation de la demande de restitution, le transfert effectif des informations entre les acteurs suit le modèle normal d’un transfert (ArchiveTransfer).  
-![](./medias/DIP/restitution.png)
+
+![](./medias/DIP/restitution.png)  
+
 Cette transaction peut également s’appliquer pour des transferts entre deux SAE.
 
 Si le SEDA explique de manière générale à quoi ressemblent les processus de communication ou de restitution de données numériques, ce standard ne spécifie pas les règles de constitution du paquet à mettre à disposition.
@@ -92,7 +97,7 @@ C’est pourquoi le présent document vise à :
 - apporter des précisions sur la constitution des DIP qui seront mis à disposition par une plate-forme utilisant la solution logicielle Vitam ;
 - expliciter les choix faits par l’équipe projet Vitam quand le standard SEDA en laissait la responsabilité aux implémentations.
 
-À défaut de précision apportée par le présent document, la documentation accompagnant le standard SEDA  dans ses versions 2.1. et 2.2. et accessible sur le site internet du Service interministériel des Archives de France s’applique[^1].
+À défaut de précision apportée par le présent document, la documentation accompagnant le standard SEDA  dans ses versions 2.1., 2.2. et 2.3. et accessible sur le site internet du Service interministériel des Archives de France s’applique[^1].
 
 Présentation du Dissemination Information Package (DIP)
 ----
@@ -113,89 +118,26 @@ Il est possible d’exporter dans le manifeste les journaux du cycle de vie des 
 
 Si pour un usage donné le groupe d’objets techniques comprend plusieurs versions, c’est l’objet technique correspondant à la dernière version qui sera exporté.
 
-Le DIP minimal
-----
-
-La solution logicielle Vitam permet d’exporter un DIP dit minimal, composé du répertoire contenant les objets numériques demandés et d’un manifeste simplifié, constitué autour du DataObjectPackage.
-
-Ce bordereau minimal peut être enrichi par la suite par l’utilisateur applicatif qui l’a demandé pour constituer l’une des demandes d’autorisation prévues par le SEDA (AuthorizationOriginatingAgencyRequest, AuthorizationOriginatingAgencyRequestReply, AuthorizationControlAuthorityRequest et AuthorizationControlAuthorityRequestReply).
-
-### Les modalités de lancement de l’opération de mise à disposition du DIP minimal
-
-Depuis l’IHM standard accompagnant la solution logicielle Vitam, à partir de la page de détail d’une unité archivistique, il est possible de demander à générer un DIP minimal de l’unité archivistique uniquement ou de l’unité archivistique et de ses filles, ou bien un DIP correspondant à l’opération d’entrée (ingest) initiale.
-
-Le DIP peut être filtré sur un type d’usage. Le ou les usages retenus doivent être cohérents avec les droits octroyés par le contrat d’accès associé à la demande de génération du DIP.
-
-![](./medias/DIP/ihm.png)
-
-Depuis l’IHM standard, il est également possible de demander à générer un DIP du panier ou d’une sélection présente dans le panier. Le panier permet de constituer un DIP avec des unités archivistiques de services producteurs différents ; par défaut, le nom du service producteur figurant dans le bordereau du DIP (balise ManagementMetadata) sera une valeur définie par configuration.
-
-![](./medias/DIP/ihm2.png)
-
-Dans l’état actuel des développements de la solution logicielle, la fonctionnalité de filtre du DIP sur un type d’usage n’est pas présente dans le panier. Tous les usages autorisés par le contrat d’accès associé à la demande de génération du DIP sont exportés.
-
-Via les API aux bornes de la solution logicielle Vitam, plusieurs critères de constitution du DIP sont utilisables : identifiant d’une opération d’entrée, unité archivistique précise, ensemble des unités archivistiques dépendant d’une unité archivistique précise, etc. Des filtres supplémentaires peuvent être demandés sur : 
-- les usages. Ce filtre sera contrôlé par rapport aux droits octroyés par le contrat accès ;
-- la version du SEDA. Ce filtre fonctionne de la manière suivante :
-    - S’il n’est pas utilisé, le DIP généré sera déclaré en SEDA 2.2 ;
-    - Un contrôle de compatibilité est effectué entre la version du SEDA demandée dans le DIP et celle des unités archivistiques devant intégrer ce dernier.
-
-Au lancement de l’opération, la solution logicielle Vitam génère un identifiant de l’opération. Le DIP constitué a pour nom cet identifiant d’opération.
-
-L’opération est journalisée. Suivant l’activation ou non de la fonctionnalité dans le contrat d’accès associé à la demande de génération du DIP, l’opération sera tracée dans les logs d’accès.
-
-Elle peut aboutir aux statuts suivants :
-
-|Statut|Motifs|
-|:---|:---|
-|Succès|Opération réalisée sans rencontrer de problèmes particuliers.|
-|Avertissement|- Le lot d’archives sélectionné n’a pas d’objets binaires.<br>- Le poids du DIP est supérieur ou égal au seuil de tenant qui a été défini avec autorisation d’être dépassé.<br>- Le poids du DIP est supérieur ou égal au seuil de plate-forme qui a été défini sans qu’aucun seuil de tenant n’ait été défini.|
-|Erreur|- Le poids du DIP est supérieur au seuil de requête.<br>- Le poids du DIP est supérieur ou égal au seuil de tenant qui a été défini sans autorisation d’être dépassé et dépasse le seuil de plate-forme.<br>- La version du SEDA des unités archivistiques est incompatible avec celle demandée pour le DIP.|
-|Erreur technique|Erreur technique lors du déplacement des objets binaires de l'offre de stockage vers l'espace de travail interne.|
-
-**Point d’attention :** 
-- Dans le cas d’un DIP correspondant à une opération d’entrée, le paquet comprendra toutes les unités importées dans le système via cette opération d’entrée dans leur état au moment de la demande d’export du DIP : certaines unités archivistiques pourront avoir été modifiées ou éliminées depuis l’opération d’entrée initiale.
-- Si pour un usage donné le groupe d’objets techniques comprend plusieurs versions, c’est l’objet technique correspondant à la dernière version qui sera exporté.
-
-### Les modalités de récupération du DIP minimal
-
-Lorsque l’opération d’export du DIP est terminée, le DIP peut être récupéré :
-- depuis l’IHM standard, à partir du journal des opérations en cliquant sur la ligne de l’opération d’export du DIP pour accéder à l’écran de détail, puis en affichant le champ « rapport » (via le sélecteur « Informations supplémentaires »),
-
-![](./medias/DIP/ihm3.png)
-
-![](./medias/DIP/ihm4.png)
-
-- par API, en utilisant le service fourni par le endpoint access-external/v1/dipexport, au moyen de l’identifiant de l’opération d’export ;
-- depuis VitamUI, à partir de l’APP Journal des opérations.
-
-Il est également possible de récupérer l’empreinte du DIP générée depuis le journal des opérations et disponible à la tâche de Création de l’archive et de son déplacement vers l’espace de stockage.
-
-### Le bordereau du DIP minimal
-
-À la racine du DIP se trouve le bordereau de mise à disposition qui décrit l’ensemble des métadonnées du paquet. Il est composé :
-- d’une déclaration des objets binaires (DataObjectPackage > BinaryDataObject) ou des objets physiques (DataObjectPackage > PhysicalDataObject), le cas échéant avec les journaux du cycle de vie des objets ;
-- d’une déclaration des unités archivistiques représentées par ces objets (DataObjectPackage > DescriptiveMetadata) :
-    - avec leurs métadonnées de gestion, avec, le cas échéant, les journaux du cycle de vie associés ;
-    - avec leurs métadonnées descriptives ;
-- de métadonnées communes à toute l’arborescence d’unités archivistiques : déclaration du service producteur (hérité de la balise OriginatingAgencyIdentifier présente dans le ManagementMetadata du SIP à l’origine de l’entrée pour les DIP mono-producteurs ; pour les DIP multi-producteurs, la valeur de ce champ est « Export VITAM »[^2]).
-
 Le DIP complet
 ----
 
-La solution logicielle Vitam permet d’exporter un DIP dit complet, composé du répertoire contenant les objets numériques demandés et d’un manifest correspondant au message SEDA  ArchiveDeliveryRequestReply.
+La solution logicielle Vitam permet d’exporter un DIP dit complet [^2], composé du répertoire contenant les objets numériques demandés et d’un manifest correspondant au message SEDA  ArchiveDeliveryRequestReply.
 
 ### Les modalités de lancement de l’opération de mise à disposition du DIP complet
 
-Depuis l’IHM standard accompagnant la solution logicielle Vitam, à partir de la page de détail d’une unité archivistique, il est possible de demander à générer un DIP complet de l’unité archivistique uniquement ou de l’unité archivistique et de ses filles, ou bien un DIP complet correspondant à l’opération d’entrée (ingest) initiale.
+Depuis l’IHM Vitam UI accompagnant la solution logicielle Vitam, à partir l'APP Recherche et consultation des archives, il est possible de demander à générer un DIP complet 
+- de l’unité archivistique uniquement
+- de l’unité archivistique et de ses filles,-
+- d'une sélection d'unités archivistitiques,
+- d'une opération d’entrée (ingest) initiale.
+
+![](./medias/DIP/ihm.png)
+
+![](./medias/DIP/ihm2.png)
 
 Le DIP complet peut être filtré sur un type d’usage. Le ou les usages retenus doivent être cohérents avec les droits octroyés par le contrat d’accès associé à la demande de génération du DIP.
 
-![](./medias/DIP/ihm5.png)
-
-Dans l’état actuel des développements, il n’est pas possible, depuis l’IHM standard, de demander à générer un DIP complet du panier ou d’une sélection présente dans le panier.
-
-Depuis VitamUI, il est également possible de demander à générer un DIP dans l’APP Recherche et consultation des archives, après avoir préalablement sélectionné un lot d’archives.
+![](./medias/DIP/ihm2bis.png)
 
 Via les API aux bornes de la solution logicielle Vitam, plusieurs critères de constitution du DIP complet sont utilisables : identifiant d’une opération d’entrée, unité archivistique précise, ensemble des unités archivistiques dépendant d’une unité archivistique précise, etc. Des filtres supplémentaires peuvent être demandés sur : 
 - les usages. Ce filtre sera contrôlé par rapport aux droits octroyés par le contrat accès ;
@@ -242,8 +184,7 @@ Elle peut aboutir aux statuts suivants :
 Lorsque l’opération d’export du DIP complet est terminée, le DIP peut être récupéré :
 - depuis l’IHM standard, à partir du journal des opérations en cliquant sur la ligne de l’opération d’export du DIP pour accéder à l’écran de détail, puis en affichant le champ « rapport » (via le sélecteur « Informations supplémentaires »),
 
-![](./medias/DIP/ihm6.png)  
-![](./medias/DIP/ihm7.png)
+![](./medias/DIP/ihm3.png)  
 
 - par API, en utilisant le service fourni par le endpoint access-external/v2/dipexport, au moyen de l’identifiant de l’opération d’export ;
 - depuis VitamUI, à partir de l’APP Journal des opérations.
@@ -348,7 +289,7 @@ Par défaut, la solution logicielle Vitam retient les DIP, quel que soit leur ty
 - durant 7 jours, et les efface au moyen d’un batch qui est lancé chaque jour à 2h20 si l’espace libre du workspace représente plus de 25% de la taille totale du workspace ;
 - durant 1 jour si ce dernier représente moins de 25% de la taille totale du workspace, et les efface au moyen d’un batch qui est lancé chaque heure à 0 minute 0 seconde.
 
-Cette configuration par défaut peut être modifiée lors du paramétrage initial de la plate-forme par les administrateurs – fonctionnel pour la définition du besoin et technique[^5] pour la saisie réelle des informations – de chaque implémentation de la solution logicielle Vitam et définit, pour tous les tenants et pour chaque type de DIP – DIP générés dans le cadre d’une demande de communication et SIP générés dans le cadre d’une demande de transfert –  la durée de rétention minimale et maximale dans l’espace de stockage et la fréquence du batch permettant de les purger du système.
+Cette configuration par défaut peut être modifiée lors du paramétrage initial de la plate-forme par les administrateurs – fonctionnel pour la définition du besoin et technique[^6] pour la saisie réelle des informations – de chaque implémentation de la solution logicielle Vitam et définit, pour tous les tenants et pour chaque type de DIP – DIP générés dans le cadre d’une demande de communication et SIP générés dans le cadre d’une demande de transfert –  la durée de rétention minimale et maximale dans l’espace de stockage et la fréquence du batch permettant de les purger du système.
 
 Le fichier de configuration[^6] se présente comme suit (paramétrage par défaut) :
 ```yaml
@@ -407,247 +348,10 @@ Dans l’exemple ci-dessus :
     - les DIP sont limités à 100 megabytes ;
     - l’utilisateur est autorisé à dépasser ce seuil, mais sera averti de son dépassement.
 
-
 Annexes
 ---
 
-### Annexe 1 : Exemple de bordereau de mise à disposition pour un DIP mono-producteur (DIP minimal)
-
-```xml
-<ArchiveRestitutionRequest xmlns:xlink="http://www.w3.org/1999/xlink"
-    xmlns:pr="info:lc/xmlns/premis-v2" xmlns="fr:gouv:culture:archivesdefrance:seda:v2.1"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="fr:gouv:culture:archivesdefrance:seda:v2.1 seda-vitam-2.1-main.xsd">
-    <DataObjectPackage>
-        <DataObjectGroup id="aebaaaaaayhjq73zabr2oaldu4kqq4qaaabq">
-            <BinaryDataObject id="aeaaaaaaaahjq73zabr2oaldu4kqq4qaaaba">
-                <DataObjectVersion>BinaryMaster_1</DataObjectVersion>
-                <Uri>Content/aeaaaaaaaahjq73zabr2oaldu4kqq4qaaaba</Uri>
-                <MessageDigest algorithm="SHA-512"
-                    >664ac614a819df2a97d2a5df57dcad91d6ec38b0fffc793e80c56b4553a14ac7a5f0bce3bb71af419b0bb8f151ad3d512867454eeb818e01818a31989c13319b</MessageDigest>
-                <Size>6</Size>
-                <FormatIdentification>
-                    <FormatLitteral>Plain Text File</FormatLitteral>
-                    <MimeType>text/plain</MimeType>
-                    <FormatId>x-fmt/111</FormatId>
-                </FormatIdentification>
-                <FileInfo>
-                    <Filename>Pereire.txt</Filename>
-                    <LastModified>2017-04-04T08:07:27.825+02:00</LastModified>
-                </FileInfo>
-            </BinaryDataObject>
-        </DataObjectGroup>
-        <DescriptiveMetadata>
-            <ArchiveUnit id="aeaqaaaaayhjq73zabr2oaldu4kqq6iaaaga">
-                <Management>
-                    <DisseminationRule>
-                        <Rule>DIS-00002</Rule>
-                        <StartDate>2000-01-01</StartDate>
-                        <RefNonRuleId>DIS-00001</RefNonRuleId>
-                    </DisseminationRule>
-                </Management>
-                <Content>
-                    <DescriptionLevel>RecordGrp</DescriptionLevel>
-                    <Title>Gare du Nord</Title>
-                    <Description>Cette unité de description hérite de son parent de la règle
-                        ACC-00003 avec pour StartDate 01/01/2000, bloque l'héritage de la règle
-                        DIS-00001 mais déclare la règle DIS-00002 avec pour StartDate
-                        01/01/2000</Description>
-                    <StartDate>2017-04-05T08:11:56</StartDate>
-                    <EndDate>2017-04-05T08:11:56</EndDate>
-                </Content>
-                <ArchiveUnit id="aeaaaaaaaahi3waqabrz6aldwa2nx5iaaaaq">
-                    <ArchiveUnitRefId>aeaqaaaaayhjq73zabr2oaldu4kqq6aaaada</ArchiveUnitRefId>
-                </ArchiveUnit>
-            </ArchiveUnit>
-            <ArchiveUnit id="aeaqaaaaayhjq73zabr2oaldu4kqq6aaaaea">
-                <Management/>
-                <Content>
-                    <DescriptionLevel>Item</DescriptionLevel>
-                    <Title>Pereire.txt</Title>
-                    <Description/>
-                    <TransactedDate>2017-04-04T08:07:27</TransactedDate>
-                </Content>
-                <DataObjectReference>
-                    <DataObjectGroupReferenceId>aebaaaaaayhjq73zabr2oaldu4kqq4qaaabq</DataObjectGroupReferenceId>
-                </DataObjectReference>
-            </ArchiveUnit>
-            <ArchiveUnit id="aeaqaaaaayhjq73zabr2oaldu4kqq6aaaada">
-                <Management>
-                    <AccessRule>
-                        <Rule>ACC-00001</Rule>
-                        <StartDate>2000-01-01</StartDate>
-                        <PreventInheritance>true</PreventInheritance>
-                    </AccessRule>
-                    <DisseminationRule>
-                        <Rule>DIS-00001</Rule>
-                        <StartDate>2000-01-01</StartDate>
-                        <RefNonRuleId>DIS-00002</RefNonRuleId>
-                    </DisseminationRule>
-                </Management>
-                <Content>
-                    <DescriptionLevel>RecordGrp</DescriptionLevel>
-                    <Title>Réaumur</Title>
-                    <Description>Cette unité de description bloque l'héritage de toutes les règles
-                        AccessRule et de la DIS-00002 mais déclare ACC-00001 avec pour StartDate
-                        01/01/2000 et DIS-00001 avec pour StartDate 01/01/2000</Description>
-                    <StartDate>2017-04-04T08:07:27</StartDate>
-                    <EndDate>2017-04-04T08:07:27</EndDate>
-                </Content>
-                <ArchiveUnit id="aeaaaaaaaahi3waqabrz6aldwa2nx6iaaaaq">
-                    <ArchiveUnitRefId>aeaqaaaaayhjq73zabr2oaldu4kqq6aaaaea</ArchiveUnitRefId>
-                </ArchiveUnit>
-            </ArchiveUnit>
-            <ArchiveUnit id="aeaqaaaaayhjq73zabr2oaldu4kqq6iaaaeq">
-                <Management>
-                    <AccessRule>
-                        <Rule>ACC-00003</Rule>
-                        <StartDate>2000-01-01</StartDate>
-                        <PreventInheritance>true</PreventInheritance>
-                    </AccessRule>
-                </Management>
-                <Content>
-                    <DescriptionLevel>RecordGrp</DescriptionLevel>
-                    <Title>Château Rouge</Title>
-                    <Description>Cette unité de description bloque l'héritage des règles AccessRule
-                        mais déclare la règle ACC-00003 avec pour StartDate 01/01/2000 et hérite de
-                        la règle DIS-00001 avec pour StartDate 01/01/2000</Description>
-                    <StartDate>2017-04-05T08:11:56</StartDate>
-                    <EndDate>2017-04-05T08:11:56</EndDate>
-                </Content>
-                <ArchiveUnit id="aeaaaaaaaahi3waqabrz6aldwa2nx7aaaaaq">
-                    <ArchiveUnitRefId>aeaqaaaaayhjq73zabr2oaldu4kqq6iaaaga</ArchiveUnitRefId>
-                </ArchiveUnit>
-            </ArchiveUnit>
-        </DescriptiveMetadata>
-        <ManagementMetadata>
-            <OriginatingAgencyIdentifier>RATP</OriginatingAgencyIdentifier>
-        </ManagementMetadata>
-    </DataObjectPackage>
-</ArchiveRestitutionRequest>
-```
-
-
-### Annexe 2 : Exemple de bordereau de mise à disposition pour un DIP multi-producteurs (DIP minimal)
-
-```xml
-<ArchiveRestitutionRequest xmlns:xlink="http://www.w3.org/1999/xlink"
-    xmlns:pr="info:lc/xmlns/premis-v2" xmlns="fr:gouv:culture:archivesdefrance:seda:v2.1"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="fr:gouv:culture:archivesdefrance:seda:v2.1 seda-vitam-2.1-main.xsd">
-    <DataObjectPackage>
-        <DataObjectGroup id="aebaaaaaayhi3waqabrz6aldu4mgbeiaaaaq">
-            <BinaryDataObject id="aeaaaaaaaahi3waqabrz6aldu4mgbeiaaaba">
-                <DataObjectVersion>Dissemination_1</DataObjectVersion>
-                <Uri>Content/aeaaaaaaaahi3waqabrz6aldu4mgbeiaaaba</Uri>
-                <MessageDigest algorithm="SHA-512"
-                    >461071d0c6f721ca8b9aeed434811293b987e6106cb25594072b3c2cd02f8fd9bb5ecf7d75f06b609ae74f253e2fb81bc81dfc4997eefd075a1fab78a9cdb8ff</MessageDigest>
-                <Size>5779643</Size>
-                <FormatIdentification>
-                    <FormatLitteral>Exchangeable Image File Format (Compressed)</FormatLitteral>
-                    <MimeType>image/jpeg</MimeType>
-                    <FormatId>fmt/645</FormatId>
-                </FormatIdentification>
-                <FileInfo>
-                    <Filename>chirac-zuchowic.JPG</Filename>
-                    <LastModified>2007-06-08T11:30:30.000+02:00</LastModified>
-                </FileInfo>
-            </BinaryDataObject>
-            <BinaryDataObject id="aeaaaaaaaahi3waqabrz6aldu4mgbeaaaabq">
-                <DataObjectVersion>BinaryMaster_1</DataObjectVersion>
-                <Uri>Content/aeaaaaaaaahi3waqabrz6aldu4mgbeaaaabq</Uri>
-                <MessageDigest algorithm="SHA-512"
-                    >461071d0c6f721ca8b9aeed434811293b987e6106cb25594072b3c2cd02f8fd9bb5ecf7d75f06b609ae74f253e2fb81bc81dfc4997eefd075a1fab78a9cdb8ff</MessageDigest>
-                <Size>5779643</Size>
-                <FormatIdentification>
-                    <FormatLitteral>Exchangeable Image File Format (Compressed)</FormatLitteral>
-                    <MimeType>image/jpeg</MimeType>
-                    <FormatId>fmt/645</FormatId>
-                </FormatIdentification>
-                <FileInfo>
-                    <Filename>chirac-zuchowicz.JPG</Filename>
-                    <LastModified>2007-06-08T11:30:30.000+02:00</LastModified>
-                </FileInfo>
-            </BinaryDataObject>
-        </DataObjectGroup>
-        <DataObjectGroup id="aebaaaaaayhjq73zabr2oaldu4kqq4yaaabq">
-            <BinaryDataObject id="aeaaaaaaaahjq73zabr2oaldu4kqq4yaaaba">
-                <DataObjectVersion>BinaryMaster_1</DataObjectVersion>
-                <Uri>Content/aeaaaaaaaahjq73zabr2oaldu4kqq4yaaaba</Uri>
-                <MessageDigest algorithm="SHA-512"
-                    >86c0bc701ef6b5dd21b080bc5bb2af38097baa6237275da83a52f092c9eae3e4e4b0247391620bd732fe824d18bd3bb6c37e62ec73a8cf3585c6a799399861b1</MessageDigest>
-                <Size>6</Size>
-                <FormatIdentification>
-                    <FormatLitteral>Plain Text File</FormatLitteral>
-                    <MimeType>text/plain</MimeType>
-                    <FormatId>x-fmt/111</FormatId>
-                </FormatIdentification>
-                <FileInfo>
-                    <Filename>Bolivar.txt</Filename>
-                    <LastModified>2017-04-04T08:07:06.487+02:00</LastModified>
-                </FileInfo>
-            </BinaryDataObject>
-        </DataObjectGroup>
-        <DescriptiveMetadata>
-            <ArchiveUnit id="aeaqaaaaayhjq73zabr2oaldu4kqq6yaaahq">
-                <Management/>
-                <Content>
-                    <DescriptionLevel>Item</DescriptionLevel>
-                    <Title>Bolivar.txt</Title>
-                    <Description/>
-                    <TransactedDate>2017-04-04T08:07:06</TransactedDate>
-                </Content>
-                <DataObjectReference>
-                    <DataObjectGroupReferenceId>aebaaaaaayhjq73zabr2oaldu4kqq4yaaabq</DataObjectGroupReferenceId>
-                </DataObjectReference>
-            </ArchiveUnit>
-            <ArchiveUnit id="aeaqaaaaayhjq73zabr2oaldu4kqq6yaaagq">
-                <Management/>
-                <Content>
-                    <DescriptionLevel>RecordGrp</DescriptionLevel>
-                    <Title>Buttes-Chaumont</Title>
-                    <Description>Cette unité de description hérite de la même règle (DIS-00001 avec
-                        pour StartDate 01/01/2000 par 2 chemins) et hérite de 2 règles
-                        contradictoires de ses 2 parents (ACC-00001 et ACC-00036 toutes deux avec
-                        pour StartDate 01/01/2000)</Description>
-                    <StartDate>2017-04-04T08:07:06</StartDate>
-                    <EndDate>2017-04-04T08:07:06</EndDate>
-                </Content>
-                <ArchiveUnit id="aeaaaaaaaahi3waqabrz6aldwa46kgaaaaaq">
-                    <ArchiveUnitRefId>aeaqaaaaayhjq73zabr2oaldu4kqq6yaaahq</ArchiveUnitRefId>
-                </ArchiveUnit>
-            </ArchiveUnit>
-            <ArchiveUnit id="aeaqaaaaayhi3waqabrz6aldu4mgbfqaaaeq">
-                <Management/>
-                <Content>
-                    <DescriptionLevel>Item</DescriptionLevel>
-                    <Title xml:lang="fr">Jacques Chirac et Xavier de Zuchowicz</Title>
-                    <Title/>
-                    <Description xml:lang="fr">Jacques Chirac serrant la main de Xavier de&#xa;
-                        Zuchowicz, gouverneur militaire de Paris.</Description>
-                    <Description/>
-                    <OriginatingAgency>
-                        <Identifier>FRAN_NP_009915</Identifier>
-                    </OriginatingAgency>
-                    <SubmissionAgency>
-                        <Identifier>FRAN_NP_005061</Identifier>
-                    </SubmissionAgency>
-                    <TransactedDate>2007-06-08T11:30:30</TransactedDate>
-                </Content>
-                <DataObjectReference>
-                    <DataObjectGroupReferenceId>aebaaaaaayhi3waqabrz6aldu4mgbeiaaaaq</DataObjectGroupReferenceId>
-                </DataObjectReference>
-            </ArchiveUnit>
-        </DescriptiveMetadata>
-        <ManagementMetadata>
-            <OriginatingAgencyIdentifier>Export VITAM</OriginatingAgencyIdentifier>
-        </ManagementMetadata>
-    </DataObjectPackage>
-</ArchiveRestitutionRequest>
-```
-
-
-### Annexe 3 : Exemple de bordereau de mise à disposition pour un DIP complet sans les journaux de cycle de vie
+### Annexe 1 : Exemple de bordereau de mise à disposition pour un DIP complet sans les journaux de cycle de vie
 
 ```xml
 <ArchiveDeliveryRequestReply xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -1055,7 +759,7 @@ Annexes
 </ArchiveDeliveryRequestReply>
 ```
 
-### Annexe 4 : Exemple de bordereau de mise à disposition avec export du journal du cycle de vie de l’unité archivistique (DIP minimal)
+### Annexe 2 : Exemple de bordereau de mise à disposition avec export du journal du cycle de vie de l’unité archivistique (DIP minimal)
 
 ```xml
 <ArchiveDeliveryRequestReply xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -1296,18 +1000,18 @@ Annexes
 </ArchiveDeliveryRequestReply>
 ```
 
-[^1] : Disponible à l’adresse suivante (lien vérifié le 14/02/2023): [pour le SEDA 2.1](https://francearchives.fr/seda/) et [pour le SEDA 2.2](https://github.com/culturecommunication/seda).
+[^1]: Disponible à l’adresse suivante (lien vérifié le 14/02/2023): [pour le SEDA 2.1](https://francearchives.fr/seda/) et [pour le SEDA 2.2](https://github.com/culturecommunication/seda).
 
-[^2] : Cette valeur peut être modifiée en configuration.
+[^2]: La solution logicielle Vitam permet également d’exporter un DIP dit minimal, composé du répertoire contenant les objets numériques demandés et d’un manifeste simplifié, constitué autour du DataObjectPackage. La documentation des précédentes versions de Vitam expose le fonctionnement de ce DIP minimal en back-office.
 
-[^3] : Cette valeur peut être modifiée en configuration.
+[^3]: Cette valeur peut être modifiée en configuration.
 
-[^4] : Pour plus d’information sur l’opération de transfert, consulter le [document VITAM - Le transfert avec la solution logicielle Vitam](./transfert.md).
+[^4]: Pour plus d’information sur l’opération de transfert, consulter le [document VITAM - Le transfert avec la solution logicielle Vitam](./transfert.md).
 
-[^5] :  Pour plus d’informations, consulter le document Document d’installation, chapitre 4.2.5.12 « Fichiers complémentaires » ; Document d’architecture, chapitre 5.13.2 « Stockage », Document d’exploitation, chapitre 5.25 « Suppression des DIP et des fichiers de transfert ».
+[^5]:  Pour plus d’informations, consulter le document Document d’installation, chapitre 4.2.5.12 « Fichiers complémentaires » ; Document d’architecture, chapitre 5.13.2 « Stockage », Document d’exploitation, chapitre 5.25 « Suppression des DIP et des fichiers de transfert ».
 
-[^6] : Il s’agit du fichier de configuration intitulé « environments /group_vars/all/vitam_vars.yml ».
+[^6]: Il s’agit du fichier de configuration intitulé « environments /group_vars/all/vitam_vars.yml ».
 
-[^7] : Pour plus d’informations, consulter le document  Document d’exploitation, chapitre 8.2.1.8 « Fichier /vitam/conf/<composant>/vitam.conf ».
+[^7]: Pour plus d’informations, consulter le document  Document d’exploitation, chapitre 8.2.1.8 « Fichier /vitam/conf/<composant>/vitam.conf ».
 
-[^8] : Il s’agit du fichier de configuration intitulé « vitam.conf ».
+[^8]: Il s’agit du fichier de configuration intitulé « vitam.conf ».
