@@ -599,39 +599,25 @@
 <h2><span class="section-number">3.1. </span>Introduction<a class="headerlink" href="#introduction" title="Lien vers cette rubrique"></a></h2>
 <section id="avertissement">
 <h3><span class="section-number">3.1.1. </span>Avertissement<a class="headerlink" href="#avertissement" title="Lien vers cette rubrique"></a></h3>
-<p>Ce document fait état du travail en cours. Il est susceptible de changer
-de manière conséquente au fur et à mesure de l’avancée des
-développements.</p>
+<p>Ce document fait état du travail en cours. Il est susceptible de changer de manière conséquente au fur et à mesure de l’avancée des développements.</p>
 </section>
 <section id="objectif-du-document">
 <h3><span class="section-number">3.1.2. </span>Objectif du document<a class="headerlink" href="#objectif-du-document" title="Lien vers cette rubrique"></a></h3>
-<p>Ce document a pour objectif de présenter la structure générale des
-collections utilisées dans la solution logicielle Vitam. Il est destiné
-principalement aux développeurs, afin de leur présenter l’organisation
-des données dans la solution logicielle Vitam, ainsi qu’à tous les
-autres acteurs du programme pour leur permettre de connaître ce qui
-existe en l’état actuel.</p>
-<p>Il explicite chaque champ, précise la relation avec les sources (par
-exemple bordereau de transfert conforme au standard SEDA v.2.2,
-référentiel Pronom, etc.) et la structuration JSON stockée dans la base
-de données MongoDB. Ce document est structuré de façon à suivre l’ordre
-des bases et collections dans Mongo.</p>
+<p>Ce document a pour objectif de présenter la structure générale des collections utilisées dans la solution logicielle Vitam. Il est destiné principalement aux développeurs, afin de leur présenter l’organisation des données dans la solution logicielle Vitam, ainsi qu’à tous les autres acteurs du programme pour leur permettre de connaître ce qui existe en l’état actuel.</p>
+<p>Il explicite chaque champ, précise la relation avec les sources (par exemple bordereau de transfert conforme au standard SEDA v.2.2, référentiel Pronom, etc.) et la structuration JSON stockée dans la base
+de données MongoDB. Ce document est structuré de façon à suivre l’ordre des bases et collections dans Mongo.</p>
 <p>Pour chacun des champs, cette documentation apporte :</p>
 <ul class="simple">
 <li><p>une liste des valeurs licites,</p></li>
 <li><p>la sémantique ou syntaxe du champ,</p></li>
 <li><p>la codification en JSON.</p></li>
 </ul>
-<p>Il décrit aussi parfois une utilisation particulière faite à une
-itération donnée. Cette indication différant de la cible finale, le
-numéro de l’itération de cet usage est mentionné.</p>
+<p>Il décrit aussi parfois une utilisation particulière faite à une itération donnée. Cette indication différant de la cible finale, le numéro de l’itération de cet usage est mentionné.</p>
 </section>
 <section id="creation-des-index">
 <h3><span class="section-number">3.1.3. </span>Création des index<a class="headerlink" href="#creation-des-index" title="Lien vers cette rubrique"></a></h3>
-<p>Les différents index sont créés par ansible, plate-forme logicielle
-libre. Les fichiers à renseigner pour rajouter un nouvel index sont
-stockés dans le répertoire
-deployment/ansible-vitam/roles/mongo_configure/templates/init-{nom-base}-database.js.j2</p>
+<p>Les différents index sont créés par ansible, plate-forme logicielle libre. Les fichiers à renseigner pour rajouter un nouvel index sont stockés dans le répertoire
+<code class="docutils literal notranslate"><span class="pre">deployment/ansible-vitam/roles/mongo\_configure/templates/init-{nom-base}-database.js.j2</span></code></p>
 </section>
 <section id="generalites">
 <h3><span class="section-number">3.1.4. </span>Généralités<a class="headerlink" href="#generalites" title="Lien vers cette rubrique"></a></h3>
@@ -642,15 +628,13 @@ deployment/ansible-vitam/roles/mongo_configure/templates/init-{nom-base}-databas
 </section>
 <section id="cardinalite">
 <h4><span class="section-number">3.1.4.2. </span>Cardinalité<a class="headerlink" href="#cardinalite" title="Lien vers cette rubrique"></a></h4>
-<p>La cardinalité présentée pour chacun des champs correspond aux exigences
-de la base de données Mongo.</p>
+<p>La cardinalité présentée pour chacun des champs correspond aux exigences de la base de données Mongo.</p>
 <p>Certains champs ayant une cardinalité 1-1 sont directement renseignés par la solution logicielle Vitam et sont donc obligatoirement présents dans la base de données, mais ne le sont pas forcément dans les données
 envoyées.</p>
 </section>
 <section id="nommage-des-champs">
 <h4><span class="section-number">3.1.4.3. </span>Nommage des champs<a class="headerlink" href="#nommage-des-champs" title="Lien vers cette rubrique"></a></h4>
-<p>Les champs des fichiers JSON présents dans les collections peuvent être
-nommés de deux manières :</p>
+<p>Les champs des fichiers JSON présents dans les collections peuvent être nommés de deux manières :</p>
 <ul class="simple">
 <li><p>« champ » : un champ sans underscore est modifiable via les API,</p></li>
 <li><p>« _champ » : un champ commençant par un underscore n’est pas modifiable via les API. Une fois renseigné dans la solution logicielle Vitam par le bordereau de transfert ou la solution logicielle Vitam, il ne pourra plus être modifié depuis l’extérieur.</p></li>
@@ -672,14 +656,11 @@ nommés de deux manières :</p>
 </section>
 <section id="limite-de-caracteres-acceptes-dans-les-champs">
 <h4><span class="section-number">3.1.4.6. </span>Limite de caractères acceptés dans les champs<a class="headerlink" href="#limite-de-caracteres-acceptes-dans-les-champs" title="Lien vers cette rubrique"></a></h4>
-<p>Mongo est un type de base de données dite « schemaless », soit sans
-schéma. Ainsi, les champs contenus dans les collections décrites dans ce
-document sont, sauf mention contraire, sans limite de caractères.</p>
+<p>Mongo est un type de base de données dite « schemaless », soit sans schéma. Ainsi, les champs contenus dans les collections décrites dans ce document sont, sauf mention contraire, sans limite de caractères.</p>
 </section>
 <section id="type-dindexation-dans-elasticsearch">
 <h4><span class="section-number">3.1.4.7. </span>Type d’indexation dans ElasticSearch<a class="headerlink" href="#type-dindexation-dans-elasticsearch" title="Lien vers cette rubrique"></a></h4>
-<p>Les champs peuvent être indexés de deux façons différentes dans
-ElasticSearch :</p>
+<p>Les champs peuvent être indexés de deux façons différentes dans ElasticSearch :</p>
 <ul class="simple">
 <li><p><strong>les champs analysés :</strong> les informations contenues dans ces champs peuvent être retrouvées par une recherche full-text. Par exemple, les champs <em>Description</em>, <em>Name</em>.</p></li>
 <li><p><strong>les champs non analysés :</strong> les informations contenues dans ces champs peuvent être retrouvées par une recherche exacte uniquement. Par exemple, les champs <em>Identifier</em> ou <em>OriginatingAgency</em>.</p></li>
@@ -689,14 +670,12 @@ ElasticSearch :</p>
 </section>
 <section id="base-identity">
 <h2><span class="section-number">3.2. </span>Base Identity<a class="headerlink" href="#base-identity" title="Lien vers cette rubrique"></a></h2>
-<p>La base Identity contient les collections relatives aux certificats
-applicatifs et personnels utilisés par la solution logicielle Vitam.</p>
+<p>La base Identity contient les collections relatives aux certificats applicatifs et personnels utilisés par la solution logicielle Vitam.</p>
 <section id="collection-certificate">
 <h3><span class="section-number">3.2.1. </span>Collection Certificate<a class="headerlink" href="#collection-certificate" title="Lien vers cette rubrique"></a></h3>
 <section id="utilisation-de-la-collection-certificate">
 <h4><span class="section-number">3.2.1.1. </span>Utilisation de la collection Certificate<a class="headerlink" href="#utilisation-de-la-collection-certificate" title="Lien vers cette rubrique"></a></h4>
-<p>La collection Certificate permet de référencer et décrire unitairement
-les certificats utilisés par les contextes applicatifs.</p>
+<p>La collection Certificate permet de référencer et décrire unitairement les certificats utilisés par les contextes applicatifs.</p>
 </section>
 <section id="exemple-de-json-stocke-en-base-comprenant-lexhaustivite-des-champs">
 <h4><span class="section-number">3.2.1.2. </span>Exemple de JSON stocké en base comprenant l’exhaustivité des champs<a class="headerlink" href="#exemple-de-json-stocke-en-base-comprenant-lexhaustivite-des-champs" title="Lien vers cette rubrique"></a></h4>
@@ -987,7 +966,7 @@ de l’initialisation de l’opération.</p>
 <p><strong>« evType » (event Type):</strong> code du type de l’opération.</p>
 <ul class="simple">
 <li><p>Issu de la définition du workflow structuré en JSON (fichier default-workflow.json).</p></li>
-<li><p>La liste des valeurs possibles pour ce champ se trouve en <a class="reference internal" href="#annexe-1-valeurs-possibles-pour-le-champ-evtype-du-logbook-operation"><span class="xref myst">annexe</span></a>. Seul le code est stocké dans ce champ, la traduction se faisant via un fichier properties (vitam-logbook-message-fr.properties).</p></li>
+<li><p>La liste des valeurs possibles pour ce champ se trouve en <a class="reference internal" href="#annexe-1-valeurs-possibles-pour-le-champ-evtype-du-logbook-operation"><span class="xref myst">annexe 1</span></a>. Seul le code est stocké dans ce champ, la traduction se faisant via un fichier properties (vitam-logbook-message-fr.properties).</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 <li><p>Ce champ existe pour les structures incluantes et incluses.</p></li>
 </ul>
@@ -1086,7 +1065,7 @@ reprennent pour ce champ la valeur du champ « _id ». Dans le cas où une op�
 <p><strong>« evTypeProc » (event Type Process):</strong> type de processus.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de caractères.</p></li>
-<li><p>Nom du processus, parmi une liste de processus possibles fixée. Cette liste est disponible en <a class="reference internal" href="#annexe-3-valeurs-possibles-pour-le-champ-evtypeproc-type-de-processus"><span class="xref myst">l’annexe 3</span></a></p></li>
+<li><p>Nom du processus, parmi une liste de processus possibles fixée. Cette liste est disponible en <a class="reference internal" href="#annexe-3-valeurs-possibles-pour-le-champ-evtypeproc-type-de-processus"><span class="xref myst">l’annexe 3</span></a>.</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 <li><p>Ce champ existe pour les structures incluantes et incluses.</p></li>
 </ul>
@@ -1107,7 +1086,7 @@ reprennent pour ce champ la valeur du champ « _id ». Dans le cas où une op�
 <p><strong>« outDetail » (outcome Detail):</strong> code correspondant au résultat de l’événement.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de caractères.</p></li>
-<li><p>Il contient le code correspondant au résultat de l’événement, incluant le statut. La liste des valeurs possibles pour ce champ se trouve en <a class="reference internal" href="#annexe-1-valeurs-possibles-pour-le-champ-evtype-du-logbook-operation"><span class="xref myst">annexe</span></a>. Seul le code doit être stocké dans ce champ, la traduction doit se faire via un fichier properties (vitam-logbook-message-fr.properties).</p></li>
+<li><p>Il contient le code correspondant au résultat de l’événement, incluant le statut. La liste des valeurs possibles pour ce champ se trouve en <a class="reference internal" href="#annexe-1-valeurs-possibles-pour-le-champ-evtype-du-logbook-operation"><span class="xref myst">annexe 1</span></a>. Seul le code doit être stocké dans ce champ, la traduction doit se faire via un fichier properties (vitam-logbook-message-fr.properties).</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 <li><p>Ce champ existe pour les structures incluantes et incluses.</p></li>
 </ul>
@@ -1513,7 +1492,7 @@ parent.</p>
 <p><strong>« evType » (event Type):</strong> code du type d’événement.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de caractères.</p></li>
-<li><p>La liste des valeurs possibles pour ce champ se trouve en <a class="reference internal" href="#annexe-2-valeurs-possibles-pour-le-champ-evtype-du-logbook-lifecycle"><span class="xref myst">annexe</span></a>. Seul le code est stocké dans ce champ, la traduction se fait via un fichier properties (vitam-logbook-message-fr.properties).</p></li>
+<li><p>La liste des valeurs possibles pour ce champ se trouve en <a class="reference internal" href="#annexe-2-valeurs-possibles-pour-le-champ-evtype-du-logbook-lifecycle"><span class="xref myst">annexe 2</span></a>. Seul le code est stocké dans ce champ, la traduction se fait via un fichier properties (vitam-logbook-message-fr.properties).</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 <li><p>Ce champ existe pour les structures incluantes et incluses.</p></li>
 </ul>
@@ -1536,7 +1515,7 @@ journal du cycle de vie partagent la même valeur, qui est celle du champ « _i
 <p><strong>« evTypeProc » (event Type Process):</strong> type de processus.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de caractères.</p></li>
-<li><p>Nom du processus parmi une liste de processus possibles fixée. Cette liste est disponible en <a class="reference internal" href="#annexe-3-valeurs-possibles-pour-le-champ-evtypeproc-type-de-processus"><span class="xref myst">annexe</span></a>.</p></li>
+<li><p>Nom du processus parmi une liste de processus possibles fixée. Cette liste est disponible en <a class="reference internal" href="#annexe-3-valeurs-possibles-pour-le-champ-evtypeproc-type-de-processus"><span class="xref myst">annexe 3</span></a>.</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 <li><p>Ce champ existe pour les structures incluantes et incluses.</p></li>
 </ul>
@@ -1558,7 +1537,7 @@ journal du cycle de vie partagent la même valeur, qui est celle du champ « _i
 l’événement.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de caractères.</p></li>
-<li><p>Il contient le code correspondant au résultat de l’événement, incluant le statut. La liste des valeurs possibles pour ce champ se trouve en <a class="reference internal" href="#annexe-2-valeurs-possibles-pour-le-champ-evtype-du-logbook-lifecycle"><span class="xref myst">annexe</span></a>. Seul le code est stocké dans ce champ, la traduction se fait via le fichier properties (vitam-logbook-message-fr.properties).</p></li>
+<li><p>Il contient le code correspondant au résultat de l’événement, incluant le statut. La liste des valeurs possibles pour ce champ se trouve en <a class="reference internal" href="#annexe-2-valeurs-possibles-pour-le-champ-evtype-du-logbook-lifecycle"><span class="xref myst">annexe 2</span></a>. Seul le code est stocké dans ce champ, la traduction se fait via le fichier properties (vitam-logbook-message-fr.properties).</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 <li><p>Ce champ existe pour les structures incluantes et incluses.</p></li>
 </ul>
@@ -1777,7 +1756,7 @@ parent.</p>
 <p><strong>« evType »</strong> (event Type): nom de l’événement.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de caractères.</p></li>
-<li><p>La liste des valeurs possibles pour ce champ se trouve en <a class="reference internal" href="#annexe-2-valeurs-possibles-pour-le-champ-evtype-du-logbook-lifecycle"><span class="xref myst">annexe</span></a>. Seul le code doit être stocké dans ce champ, la traduction doit se faire via le fichier properties (vitam-logbook-message-fr.properties).</p></li>
+<li><p>La liste des valeurs possibles pour ce champ se trouve en <a class="reference internal" href="#annexe-2-valeurs-possibles-pour-le-champ-evtype-du-logbook-lifecycle"><span class="xref myst">annexe 2</span></a>. Seul le code doit être stocké dans ce champ, la traduction doit se faire via le fichier properties (vitam-logbook-message-fr.properties).</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 <li><p>Ce champ existe pour les structures incluantes et incluses.</p></li>
 </ul>
@@ -1800,7 +1779,7 @@ parent.</p>
 <p><strong>« evTypeProc » (event Type Process):</strong> type de processus.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de caractères.</p></li>
-<li><p>Nom du processus parmi une liste de processus possibles fixée. Cette liste est disponible en <a class="reference internal" href="#annexe-3-valeurs-possibles-pour-le-champ-evtypeproc-type-de-processus"><span class="xref myst">annexe</span></a>.</p></li>
+<li><p>Nom du processus parmi une liste de processus possibles fixée. Cette liste est disponible en <a class="reference internal" href="#annexe-3-valeurs-possibles-pour-le-champ-evtypeproc-type-de-processus"><span class="xref myst">annexe 3</span></a>.</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 <li><p>Ce champ existe pour les structures incluantes et incluses</p></li>
 </ul>
@@ -1821,7 +1800,7 @@ parent.</p>
 <p><strong>« outDetail » (outcome Detail):</strong> code correspondant à l’erreur.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de caractères.</p></li>
-<li><p>Il contient le code fin de l’événement, incluant le statut. La liste des valeurs possibles pour ce champ se trouve en <a class="reference internal" href="#annexe-2-valeurs-possibles-pour-le-champ-evtype-du-logbook-lifecycle"><span class="xref myst">annexe</span></a>. Seul le code est stocké dans ce champ, la traduction doit se faire via le fichier properties (vitam-logbook-message-fr.properties)</p></li>
+<li><p>Il contient le code fin de l’événement, incluant le statut. La liste des valeurs possibles pour ce champ se trouve en <a class="reference internal" href="#annexe-2-valeurs-possibles-pour-le-champ-evtype-du-logbook-lifecycle"><span class="xref myst">annexe 2</span></a>. Seul le code est stocké dans ce champ, la traduction doit se faire via le fichier properties (vitam-logbook-message-fr.properties)</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 <li><p>Ce champ existe pour les structures incluantes et incluses.</p></li>
 </ul>
@@ -3463,16 +3442,9 @@ dans ce groupe d’objets.</p>
 <li><p>Une structure est composée comme suit :</p>
 <ul>
 <li><p><strong>« qualifier » :</strong> usage de l’objet.</p>
-<ul>
-<li><p>Correspond à la valeur contenue dans le champ
-&lt;DataObjectVersion&gt; du bordereau de transfert. Par
-exemple pour ```xml
-&lt;DataObjectVersion&gt;BinaryMaster_1&lt;/DataObjectVersion&gt;,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>c’est la valeur « BinaryMaster » qui est reportée.
-
-</pre></div>
-</div>
-</li>
+<ul class="simple">
+<li><p>Correspond à la valeur contenue dans le champ  &lt; DataObjectVersion&gt; du bordereau de transfert. Par exemple pour &lt; DataObjectVersion&gt;BinaryMaster_1&lt;/ DataObjectVersion&gt;, c’est la valeur
+« BinaryMaster » qui est reportée.</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 </ul>
 </li>
@@ -6757,7 +6729,7 @@ archivistique sont :</p>
 <p><strong>« RuleType » :</strong> type de règle.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de caractères.</p></li>
-<li><p>Il correspond à la valeur située dans la colonne RuleType du fichier d’import. Les valeurs possibles pour ce champ sont indiquées en <a class="reference internal" href="#annexe-4-categories-de-regles-possibles"><span class="xref myst">annexe</span></a>.</p></li>
+<li><p>Il correspond à la valeur située dans la colonne RuleType du fichier d’import. Les valeurs possibles pour ce champ sont indiquées en <a class="reference internal" href="#annexe-4-categories-de-regles-possibles"><span class="xref myst">annexe 4</span></a>.</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 </ul>
 <p><strong>« RuleValue » :</strong> intitulé de la règle.</p>
@@ -8458,7 +8430,7 @@ enregistrements des collections suivantes :</p>
 </ul>
 <p><strong>« Name » :</strong> préfixe utilisé pour générer un identifiant signifiant.</p>
 <ul class="simple">
-<li><p>La valeur contenue dans ce champ doit correspondre à la table de concordance du service VitamCounterService.java. La liste des valeurs possibles est détaillée en <a class="reference internal" href="#annexe-6-valeurs-possibles-pour-le-champ-name-de-la-collection-vitamsequence"><span class="xref myst">annexe</span></a>.</p></li>
+<li><p>La valeur contenue dans ce champ doit correspondre à la table de concordance du service VitamCounterService.java. La liste des valeurs possibles est détaillée en <a class="reference internal" href="#annexe-6-valeurs-possibles-pour-le-champ-name-de-la-collection-vitamsequence"><span class="xref myst">annexe 6</span></a>.</p></li>
 <li><p>Il s’agit d’une chaîne de caractères.</p></li>
 <li><p>Champ peuplé par la solution logicielle Vitam.</p></li>
 <li><p>Cardinalité : 1-1</p></li>
@@ -10310,26 +10282,26 @@ d’objets.</p>
 </section>
 <section id="id115">
 <h4><span class="section-number">3.9.1.3. </span>Détail des champs du JSON stocké dans la collection<a class="headerlink" href="#id115" title="Lien vers cette rubrique"></a></h4>
-<p>« _id » : identifiant unique Mongo.</p>
+<p><strong>« _id »</strong> : identifiant unique Mongo.</p>
 <ul class="simple">
 <li><p>Il s’agit d’un champ de type Mongo composé comme suit : ObjectId( &lt; hexadecimal &gt; ).</p></li>
 <li><p>Champ peuplé par la solution logicielle Vitam.</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 </ul>
-<p>« Sequence » : numéro incrémental.</p>
+<p><strong>« Sequence »</strong> : numéro incrémental.</p>
 <ul class="simple">
 <li><p>Il s’agit du dernier numéro utilisé pour définir l’ordre des données.</p></li>
 <li><p>Il s’agit d’un entier.</p></li>
 <li><p>Champ peuplé par la solution logicielle Vitam.</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 </ul>
-<p>« Time » : date.</p>
+<p><strong>« Time »</strong> : date.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une date au format ISO8601 AAAA-MM-JJ+ « T » +hh:mm:ss:[3 digits de millisecondes]</p></li>
 <li><p>Champ peuplé par la solution logicielle Vitam.</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 </ul>
-<p>« Container » : identifiant du conteneur de la donnée</p>
+<p><strong>« Container »</strong> : identifiant du conteneur de la donnée</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de caractères.</p></li>
 <li><p>Le format du conteneur est {environnement}_{tenant}_{repertoire}, où :</p>
@@ -10342,13 +10314,13 @@ d’objets.</p>
 <li><p>Ne peut être vide.</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 </ul>
-<p>« FileName » : nom de l’objet stocké dans l’offre</p>
+<p><strong>« FileName »</strong> : nom de l’objet stocké dans l’offre</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de caractères.</p></li>
 <li><p>Ne peut être vide.</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 </ul>
-<p>« Action » : action de l’ordre d’écriture</p>
+<p><strong>« Action »</strong> : action de l’ordre d’écriture</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de caractères.</p></li>
 <li><p>Les valeurs attendues dans ce champ sont :</p>
@@ -10360,7 +10332,7 @@ d’objets.</p>
 <li><p>Ne peut être vide.</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 </ul>
-<p>« _FormatVersion » : version du schéma du modèle de données de l’ordre</p>
+<p><strong>« _FormatVersion »</strong> : version du schéma du modèle de données de l’ordre</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de caractères.</p></li>
 <li><p>Les valeurs possibles dans ce champ sont :</p>
@@ -10413,31 +10385,31 @@ d’objets.</p>
 </section>
 <section id="id117">
 <h4><span class="section-number">3.9.2.3. </span>Détail des champs du JSON stocké dans la collection<a class="headerlink" href="#id117" title="Lien vers cette rubrique"></a></h4>
-<p>« _id » : identifiant unique Mongo.</p>
+<p><strong>« _id »</strong> : identifiant unique Mongo.</p>
 <ul class="simple">
 <li><p>Il s’agit d’un champ de type Mongo composé comme suit : ObjectId( &lt; hexadecimal &gt; ).</p></li>
 <li><p>Champ peuplé par la solution logicielle Vitam.</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 </ul>
-<p>« SequenceStart » : numéro de séquence du premier ordre du lot.</p>
+<p><strong>« SequenceStart »</strong> : numéro de séquence du premier ordre du lot.</p>
 <ul class="simple">
 <li><p>Il s’agit d’un entier.</p></li>
 <li><p>Champ peuplé par la solution logicielle Vitam.</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 </ul>
-<p>« SequenceEnd » : numéro de séquence du dernier ordre du lot.</p>
+<p><strong>« SequenceEnd »</strong> : numéro de séquence du dernier ordre du lot.</p>
 <ul class="simple">
 <li><p>Il s’agit d’un entier.</p></li>
 <li><p>Champ peuplé par la solution logicielle Vitam.</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 </ul>
-<p>« CompactionDateTime » : date de la compaction des ordres d’écriture.</p>
+<p><strong>« CompactionDateTime »</strong> : date de la compaction des ordres d’écriture.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une date au format ISO8601 AAAA-MM-JJ+ « T » +hh:mm:ss:[3 digits de millisecondes]</p></li>
 <li><p>Champ peuplé par la solution logicielle Vitam.</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 </ul>
-<p>« Container »: identifiant du conteneur de la donnée</p>
+<p><strong>« Container »</strong> : identifiant du conteneur de la donnée</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de caractères.</p></li>
 <li><p>Le format du conteneur est {environnement}_{tenant}_{repertoire}, où :</p>
@@ -10450,7 +10422,7 @@ d’objets.</p>
 <li><p>Ne peut être vide.</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 </ul>
-<p>« Logs » : tableau de structure de type « OfferLog »</p>
+<p><strong>« Logs »</strong> : tableau de structure de type « OfferLog »</p>
 <ul class="simple">
 <li><p>Pour la structure incluante, le tableau contient n structures incluses dans l’ordre par le champ « Sequence » pour un même « Container ».</p></li>
 <li><p>Cardinalité : 1-1</p></li>
@@ -10476,7 +10448,7 @@ d’objets.</p>
 </section>
 <section id="id119">
 <h4><span class="section-number">3.9.3.3. </span>Détail des champs du JSON stocké dans la collection<a class="headerlink" href="#id119" title="Lien vers cette rubrique"></a></h4>
-<p>« _id » : identifiant unique.</p>
+<p><strong>« _id »</strong> : identifiant unique.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de caractères.</p></li>
 <li><p>Les valeurs possibles dans ce champ sont :</p>
@@ -10487,7 +10459,7 @@ d’objets.</p>
 <li><p>Champ peuplé par la solution logicielle Vitam.</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 </ul>
-<p>« Counter » : numéro incrémental.</p>
+<p><strong>« Counter »</strong> : numéro incrémental.</p>
 <ul class="simple">
 <li><p>Il s’agit du dernier numéro utilisé comme identifiant ordonné.</p></li>
 <li><p>Il s’agit d’un entier.</p></li>
@@ -10540,13 +10512,13 @@ d’objets.</p>
 </section>
 <section id="id121">
 <h4><span class="section-number">3.9.4.3. </span>Détail des champs du JSON stocké dans la collection<a class="headerlink" href="#id121" title="Lien vers cette rubrique"></a></h4>
-<p>« _id » : identifiant unique.</p>
+<p><strong>« _id »</strong> : identifiant unique.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de 36 caractères correspondant à un GUID.</p></li>
 <li><p>Champ peuplé par la solution logicielle Vitam.</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 </ul>
-<p>« queue_state » : état de la bande dans la file d’attente interne à Vitam</p>
+<p><strong>« queue_state »</strong> : état de la bande dans la file d’attente interne à Vitam</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de caractères.</p></li>
 <li><p>Les valeurs possibles dans ce champ sont :</p>
@@ -10560,45 +10532,45 @@ d’objets.</p>
 <li><p>Champ peuplé par la solution logicielle Vitam.</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 </ul>
-<p>« queue_last-update » : date de modification technique de l’état de la bande dans la file.</p>
+<p><strong>« queue_last-update »</strong> : date de modification technique de l’état de la bande dans la file.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une date au format ISO8601 AAAA-MM-JJ+ « T » +hh:mm:ss:[3 digits de millisecondes]</p></li>
 <li><p>Champ peuplé par la solution logicielle Vitam.</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 </ul>
-<p>« queue_creation_date » : date technique de création de l’enregistrement.</p>
+<p><strong>« queue_creation_date »</strong> : date technique de création de l’enregistrement.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une date au format ISO8601 AAAA-MM-JJ+ « T » +hh:mm:ss:[3 digits de millisecondes]</p></li>
 <li><p>Champ peuplé par la solution logicielle Vitam.</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 </ul>
-<p>« queue_message_type » : type technique de la file.</p>
+<p><strong>« queue_message_type »</strong> : type technique de la file.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de caractères.</p></li>
 <li><p>Valeur fixe : « TapeCatalog »</p></li>
 <li><p>Champ peuplé par la solution logicielle Vitam.</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 </ul>
-<p>« queue_priority » : réservé à un usage futur.</p>
+<p><strong>« queue_priority »</strong> : réservé à un usage futur.</p>
 <ul class="simple">
 <li><p>Il s’agit d’un entier.</p></li>
 <li><p>Valeur fixe : 1.</p></li>
 <li><p>Champ peuplé par la solution logicielle Vitam.</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 </ul>
-<p>« code » : code à barres identifiant la bande magnétique.</p>
+<p><strong>« code »</strong> : code à barres identifiant la bande magnétique.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de caractères.</p></li>
 <li><p>Ne peut être vide.</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 </ul>
-<p>« bucket » : identifiant permettant d’isoler physiquement les données d’une bande selon le tenant.</p>
+<p><strong>« bucket »</strong> : identifiant permettant d’isoler physiquement les données d’une bande selon le tenant.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de caractères.</p></li>
 <li><p>Non renseigné si la bande est encore vide (« tape_state » est « EMPTY »).</p></li>
 <li><p>Cardinalité : 0-1</p></li>
 </ul>
-<p>« label » : décrit le tout premier fichier écrit sur une bande, qui a un rôle de « marqueur » pour l’identification unique de la bande. Il est notamment utilisé pour éviter toute erreur de manipulation de la bande par un autre applicatif (autre que l’offre froide de Vitam).</p>
+<p><strong>« label »</strong> : décrit le tout premier fichier écrit sur une bande, qui a un rôle de « marqueur » pour l’identification unique de la bande. Il est notamment utilisé pour éviter toute erreur de manipulation de la bande par un autre applicatif (autre que l’offre froide de Vitam).</p>
 <ul class="simple">
 <li><p>Cet objet, s’il existe, doit contenir les champs suivants :</p>
 <ul>
@@ -10631,19 +10603,19 @@ d’objets.</p>
 </li>
 <li><p>Cardinalité : 0-1</p></li>
 </ul>
-<p>« library » : identifiant de la bibliothèque de bandes.</p>
+<p><strong>« library »</strong> : identifiant de la bibliothèque de bandes.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de caractères.</p></li>
 <li><p>Ne peut être vide.</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 </ul>
-<p>« written_bytes » : nombre de bytes écrits sur la bande.</p>
+<p><strong>« written_bytes »</strong> : nombre de bytes écrits sur la bande.</p>
 <ul class="simple">
 <li><p>Il s’agit d’un entier.</p></li>
 <li><p>Ne peut être vide.</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 </ul>
-<p>« tape_state » : état de la bande magnétique.</p>
+<p><strong>« tape_state »</strong> : état de la bande magnétique.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de caractères.</p></li>
 <li><p>Les valeurs possibles dans ce champ sont :</p>
@@ -10657,13 +10629,13 @@ d’objets.</p>
 <li><p>Ne peut être vide.</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 </ul>
-<p>« file_count » : nombre de fichiers écrits sur la bande.</p>
+<p><strong>« file_count »</strong> : nombre de fichiers écrits sur la bande.</p>
 <ul class="simple">
 <li><p>Il s’agit d’un entier.</p></li>
 <li><p>Ne peut être vide.</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 </ul>
-<p>« current_location » : localisation la bande magnétique dans la bibliothèque de bandes.</p>
+<p><strong>« current_location »</strong> : localisation la bande magnétique dans la bibliothèque de bandes.</p>
 <ul class="simple">
 <li><p>Cet objet, s’il existe, doit contenir les champs suivants :</p>
 <ul>
@@ -10691,7 +10663,7 @@ d’objets.</p>
 </li>
 <li><p>Cardinalité : 0-1</p></li>
 </ul>
-<p>« previous_location » : précédente localisation la bande magnétique dans la bibliothèque de bandes.</p>
+<p><strong>« previous_location »</strong> : précédente localisation la bande magnétique dans la bibliothèque de bandes.</p>
 <ul class="simple">
 <li><p>Cet objet, s’il existe, doit contenir les champs suivants :</p>
 <ul>
@@ -10719,17 +10691,17 @@ d’objets.</p>
 </li>
 <li><p>Cardinalité : 0-1</p></li>
 </ul>
-<p>« compressed » : indicateur si la compression matérielle est activée.</p>
+<p><strong>« compressed »</strong> : indicateur si la compression matérielle est activée.</p>
 <ul class="simple">
 <li><p>Il s’agit d’un booléen.</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 </ul>
-<p>« worm » : indicateur si la bande est non réinscriptible.</p>
+<p><strong>« worm »</strong> : indicateur si la bande est non réinscriptible.</p>
 <ul class="simple">
 <li><p>Il s’agit d’un booléen.</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 </ul>
-<p>« _v » : version de l’enregistrement décrit.</p>
+<p><strong>« _v »</strong> : version de l’enregistrement décrit.</p>
 <ul class="simple">
 <li><p>Il s’agit d’un entier.</p></li>
 <li><p>Si le numéro est supérieur à 0, alors il s’agit du numéro de version de l’enregistrement.</p></li>
@@ -10796,13 +10768,13 @@ d’objets.</p>
 </section>
 <section id="id122">
 <h4><span class="section-number">3.9.5.3. </span>Détail des champs du JSON stocké dans la collection<a class="headerlink" href="#id122" title="Lien vers cette rubrique"></a></h4>
-<p>« _id » : identifiant unique.</p>
+<p><strong>« _id »</strong> : identifiant unique.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de 36 caractères correspondant à un GUID.</p></li>
 <li><p>Champ peuplé par la solution logicielle Vitam.</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 </ul>
-<p>« queue_state » : état de traitement de l’ordre dans la file d’attente.</p>
+<p><strong>« queue_state »</strong> : état de traitement de l’ordre dans la file d’attente.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de caractères.</p></li>
 <li><p>Les valeurs possibles dans ce champ sont :</p>
@@ -10816,19 +10788,19 @@ d’objets.</p>
 <li><p>Champ peuplé par la solution logicielle Vitam.</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 </ul>
-<p>« queue_last-update » : date et heure de la dernière mise à jour l’ordre.</p>
+<p><strong>« queue_last-update »</strong> : date et heure de la dernière mise à jour l’ordre.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une date au format ISO8601 AAAA-MM-JJ+ « T » +hh:mm:ss:[3 digits de millisecondes]</p></li>
 <li><p>Champ peuplé par la solution logicielle Vitam.</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 </ul>
-<p>« queue_creation_date » : date et heure de création de l’ordre.</p>
+<p><strong>« queue_creation_date »</strong> : date et heure de création de l’ordre.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une date au format ISO8601 AAAA-MM-JJ+ « T » +hh:mm:ss:[3 digits de millisecondes]</p></li>
 <li><p>Champ peuplé par la solution logicielle Vitam.</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 </ul>
-<p>« queue_message_type » : type de l’ordre.</p>
+<p><strong>« queue_message_type »</strong> : type de l’ordre.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de caractères.</p></li>
 <li><p>Les valeurs possibles dans ce champ sont :</p>
@@ -10841,60 +10813,60 @@ d’objets.</p>
 <li><p>Champ peuplé par la solution logicielle Vitam.</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 </ul>
-<p>« queue_priority » : priorité de l’ordre. Réservée à un usage futur.</p>
+<p><strong>« queue_priority »</strong> : priorité de l’ordre. Réservée à un usage futur.</p>
 <ul class="simple">
 <li><p>Il s’agit d’un entier.</p></li>
 <li><p>Valeur fixe : 1.</p></li>
 <li><p>Champ peuplé par la solution logicielle Vitam.</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 </ul>
-<p>« tapeCode » : identifiant de la bande magnétique cible (code à barres).</p>
+<p><strong>« tapeCode »</strong> : identifiant de la bande magnétique cible (code à barres).</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de caractères.</p></li>
 <li><p>Présent uniquement dans les cas d’un ordre de lecture (ReadOrder)</p></li>
 <li><p>Cardinalité : 0-1</p></li>
 </ul>
-<p>« bucket » : identifiant permettant d’isoler physiquement les données d’une bande selon le tenant.</p>
+<p><strong>« bucket »</strong> : identifiant permettant d’isoler physiquement les données d’une bande selon le tenant.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de caractères.</p></li>
 <li><p>Ne peut être vide.</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 </ul>
-<p>« filePosition » : position sur la bande magnétique.</p>
+<p><strong>« filePosition »</strong> : position sur la bande magnétique.</p>
 <ul class="simple">
 <li><p>Présent uniquement dans les cas d’un ordre de lecture (ReadOrder)</p></li>
 <li><p>Il s’agit d’un entier.</p></li>
 <li><p>Cardinalité : 0-1</p></li>
 </ul>
-<p>« FileName » : nom de l’archive à écrire sur disque.</p>
+<p><strong>« FileName »</strong> : nom de l’archive à écrire sur disque.</p>
 <ul class="simple">
 <li><p>Présent uniquement dans les cas d’un ordre de lecture (ReadOrder)</p></li>
 <li><p>Il s’agit d’une chaîne de caractères.</p></li>
 <li><p>Cardinalité : 0-1</p></li>
 </ul>
-<p>« fileBucketId » : identifiant permettant de regrouper les objets par type (metadata, objet binaire ou autre) au sein d’un bucket.</p>
+<p><strong>« fileBucketId »</strong> : identifiant permettant de regrouper les objets par type (metadata, objet binaire ou autre) au sein d’un bucket.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de caractères.</p></li>
 <li><p>Cardinalité : 0-1</p></li>
 </ul>
-<p>« filePath » : chemin de l’archive à écrire sur disque</p>
+<p><strong>« filePath »</strong> : chemin de l’archive à écrire sur disque</p>
 <ul class="simple">
 <li><p>Présent uniquement dans les cas d’un ordre d’écriture (WriteOrder ou WriteBackupOrder)</p></li>
 <li><p>Il s’agit d’une chaîne de caractères.</p></li>
 <li><p>Cardinalité : 0-1</p></li>
 </ul>
-<p>« size »: taille du fichier en octets.</p>
+<p><strong>« size »</strong> : taille du fichier en octets.</p>
 <ul class="simple">
 <li><p>Il s’agit d’un entier.</p></li>
 <li><p>Ne peut être vide</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 </ul>
-<p>« digest » : empreinte du fichier.</p>
+<p><strong>« digest »</strong> : empreinte du fichier.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de caractères</p></li>
 <li><p>Cardinalité : 0-1</p></li>
 </ul>
-<p>« archiveId » : identifiant unique de l’archive.</p>
+<p><strong>« archiveId »</strong> : identifiant unique de l’archive.</p>
 <ul class="simple">
 <li><p>Présent uniquement dans les cas d’un ordre d’écriture (WriteOrder ou WriteBackupOrder)</p></li>
 <li><p>Il s’agit d’une chaîne de caractères</p></li>
@@ -10939,7 +10911,7 @@ d’objets.</p>
 </section>
 <section id="id124">
 <h4><span class="section-number">3.9.6.3. </span>Détail des champs du JSON stocké dans la collection<a class="headerlink" href="#id124" title="Lien vers cette rubrique"></a></h4>
-<p>« _id » : identifiant technique du fichier objet.</p>
+<p><strong>« _id »</strong> : identifiant technique du fichier objet.</p>
 <ul class="simple">
 <li><p>Il s’agit d’un object composé des champs suivants :</p>
 <ul>
@@ -10949,25 +10921,25 @@ d’objets.</p>
 </li>
 <li><p>Cardinalité : 1-1</p></li>
 </ul>
-<p>« size »: taille du fichier d’objet en octets.</p>
+<p><strong>« size »</strong> : taille du fichier d’objet en octets.</p>
 <ul class="simple">
 <li><p>Il s’agit d’un entier.</p></li>
 <li><p>Ne peut être vide</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 </ul>
-<p>« digestType » : algorithme de hachage.</p>
+<p><strong>« digestType »</strong> : algorithme de hachage.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de caractères.</p></li>
 <li><p>Il s’agit du nom de l’algorithme de hachage utilisé pour l’empreinte.</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 </ul>
-<p>« digest » : empreinte du fichier d’objet.</p>
+<p><strong>« digest »</strong> : empreinte du fichier d’objet.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de caractères.</p></li>
 <li><p>Ne peut être vide</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 </ul>
-<p>« storageId » : identifiant unique de la version de l’objet.</p>
+<p><strong>« storageId »</strong> : identifiant unique de la version de l’objet.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de caractères au format {objectName}-{guid}, où :</p>
 <ul>
@@ -10979,7 +10951,7 @@ d’objets.</p>
 <li><p>Champ peuplé par la solution logicielle Vitam à chaque écriture ou réécriture d’un objet.</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 </ul>
-<p>« location » : localisation physique de l’objet.</p>
+<p><strong>« location »</strong> : localisation physique de l’objet.</p>
 <ul class="simple">
 <li><p>Cet objet, doit contenir les champs suivants :</p>
 <ul>
@@ -11042,13 +11014,13 @@ d’objets.</p>
 </ul>
 </li>
 </ul>
-<p>« lastObjectModifiedDate » : date et heure de l’écriture de la dernière version de l’objet.</p>
+<p><strong>« lastObjectModifiedDate »</strong> : date et heure de l’écriture de la dernière version de l’objet.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une date au format ISO8601 AAAA-MM-JJ+ « T » +hh:mm:ss:[3 digits de millisecondes]</p></li>
 <li><p>Champ peuplé par la solution logicielle Vitam.</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 </ul>
-<p>« lastUpdateDate » : date et heure de la dernière modification technique du document.</p>
+<p><strong>« lastUpdateDate »</strong> : date et heure de la dernière modification technique du document.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une date au format ISO8601 AAAA-MM-JJ+ « T » +hh:mm:ss:[3 digits de millisecondes]</p></li>
 <li><p>Champ peuplé par la solution logicielle Vitam.</p></li>
@@ -11103,7 +11075,7 @@ d’objets.</p>
 </section>
 <section id="id125">
 <h4><span class="section-number">3.9.7.3. </span>Détail des champs du JSON stocké dans la collection<a class="headerlink" href="#id125" title="Lien vers cette rubrique"></a></h4>
-<p>« _id » : identifiant unique de l’archive.</p>
+<p><strong>« _id »</strong> : identifiant unique de l’archive.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de caractères.</p></li>
 <li><p>Le format est {timestamp}_{guid}.tar, où</p>
@@ -11114,7 +11086,7 @@ d’objets.</p>
 </li>
 <li><p>Cardinalité : 1-1</p></li>
 </ul>
-<p>« location » : décrit la localisation de l’archive TAR</p>
+<p><strong>« location »</strong> : décrit la localisation de l’archive TAR</p>
 <ul class="simple">
 <li><p>Cet objet doit contenir les champs suivants :</p>
 <ul>
@@ -11149,7 +11121,7 @@ d’objets.</p>
 </li>
 <li><p>Cardinalité : 1-1</p></li>
 </ul>
-<p>« entry_type » : type de l’archive</p>
+<p><strong>« entry_type »</strong> : type de l’archive</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de caractères.</p></li>
 <li><p>Les valeurs possibles dans ce champ sont :</p>
@@ -11160,19 +11132,19 @@ d’objets.</p>
 </li>
 <li><p>Cardinalité : 1-1</p></li>
 </ul>
-<p>« lastUpdateDate » : date de dernière mise à jour technique du document.</p>
+<p><strong>« lastUpdateDate »</strong> : date de dernière mise à jour technique du document.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une date au format ISO8601 AAAA-MM-JJ+ « T » +hh:mm:ss:[3 digits de millisecondes]</p></li>
 <li><p>Champ peuplé par la solution logicielle Vitam.</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 </ul>
-<p>« digest » : empreinte définitive de l’archive TAR.</p>
+<p><strong>« digest »</strong> : empreinte définitive de l’archive TAR.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de caractères.</p></li>
 <li><p>Doit être renseigné dans les cas où « location.type » est « ready_on_disk » ou « on_tape »</p></li>
 <li><p>Cardinalité : 0-1</p></li>
 </ul>
-<p>« size » : taille définitive en octets de l’archive TAR.</p>
+<p><strong>« size »</strong> : taille définitive en octets de l’archive TAR.</p>
 <ul class="simple">
 <li><p>Il s’agit d’un entier.</p></li>
 <li><p>Doit être renseigné dans les cas où « location.type » est « ready_on_disk » ou « on_tape »</p></li>
@@ -11217,13 +11189,13 @@ d’objets.</p>
 </section>
 <section id="id127">
 <h4><span class="section-number">3.9.8.3. </span>Détail des champs du JSON stocké dans la collection<a class="headerlink" href="#id127" title="Lien vers cette rubrique"></a></h4>
-<p>« _id » : identifiant de la requête d’accès.</p>
+<p><strong>« _id »</strong> : identifiant de la requête d’accès.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de 36 caractères correspondant à un GUID.</p></li>
 <li><p>Champ peuplé par la solution logicielle Vitam.</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 </ul>
-<p>« containerName » : identifiant du conteneur de la donnée concernée par la requête d’accès.</p>
+<p><strong>« containerName »</strong> : identifiant du conteneur de la donnée concernée par la requête d’accès.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de caractères.</p></li>
 <li><p>Le format du conteneur est {environnement}_{tenant}_{repertoire}, où :</p>
@@ -11236,42 +11208,42 @@ d’objets.</p>
 <li><p>Ne peut être vide.</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 </ul>
-<p>« objectNames » : liste des objets concernés par la requête d’accès.</p>
+<p><strong>« objectNames »</strong> : liste des objets concernés par la requête d’accès.</p>
 <ul class="simple">
 <li><p>le tableau contient des chaînes de caractères.</p></li>
 <li><p>Ne peut être vide.</p></li>
 <li><p>Cardinalité : 1-n</p></li>
 </ul>
-<p>« creationDate » : date de création de la requête d’accès.</p>
+<p><strong>« creationDate »</strong> : date de création de la requête d’accès.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une date au format ISO8601 AAAA-MM-JJ+ « T » +hh:mm:ss:[3 digits de millisecondes]</p></li>
 <li><p>Champ peuplé par la solution logicielle Vitam.</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 </ul>
-<p>« readyDate » : date à laquelle la demande d’accès est devenue prête. Une demande d’accès est prête lorsque tous ses objets sont disponibles pour lecture immédiate depuis le disque.</p>
+<p><strong>« readyDate »</strong> : date à laquelle la demande d’accès est devenue prête. Une demande d’accès est prête lorsque tous ses objets sont disponibles pour lecture immédiate depuis le disque.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une date au format ISO8601 AAAA-MM-JJ+ « T » +hh:mm:ss:[3 digits de millisecondes]</p></li>
 <li><p>Champ peuplé par la solution logicielle Vitam.</p></li>
 <li><p>Cardinalité : 0-1</p></li>
 </ul>
-<p>« expirationDate » : date à laquelle la demande d’accès prête expirera. Une demande d’accès expire automatiquement après un délai configurable à partir du moment où elle devient prête.</p>
+<p><strong>« expirationDate »</strong> : date à laquelle la demande d’accès prête expirera. Une demande d’accès expire automatiquement après un délai configurable à partir du moment où elle devient prête.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une date au format ISO8601 AAAA-MM-JJ+ « T » +hh:mm:ss:[3 digits de millisecondes]</p></li>
 <li><p>Champ peuplé par la solution logicielle Vitam.</p></li>
 <li><p>Cardinalité : 0-1</p></li>
 </ul>
-<p>« purgeDate » : date à laquelle la demande d’accès prête sera purgée de la base de données. Une demande d’accès est purgée automatiquement après un délai configurable à partir du moment où elle devient prête.</p>
+<p><strong>« purgeDate »</strong> : date à laquelle la demande d’accès prête sera purgée de la base de données. Une demande d’accès est purgée automatiquement après un délai configurable à partir du moment où elle devient prête.</p>
 <ul class="simple">
 <li><p>Il s’agit d’une date au format ISO8601 AAAA-MM-JJ+ « T » +hh:mm:ss:[3 digits de millisecondes]</p></li>
 <li><p>Champ peuplé par la solution logicielle Vitam.</p></li>
 <li><p>Cardinalité : 0-1</p></li>
 </ul>
-<p>« unavailableArchiveIds » : liste des identifiants des archives actuellement indisponibles sur disque et dont la lecture depuis une bande est en cours.</p>
+<p><strong>« unavailableArchiveIds »</strong> : liste des identifiants des archives actuellement indisponibles sur disque et dont la lecture depuis une bande est en cours.</p>
 <ul class="simple">
 <li><p>le tableau contient des chaînes de caractères.</p></li>
 <li><p>Cardinalité : 0-n</p></li>
 </ul>
-<p>_v »: version de la requête d’accès.</p>
+<p><strong>« _v »</strong> : version de la requête d’accès.</p>
 <ul class="simple">
 <li><p>Il s’agit d’un entier.</p></li>
 <li><p>Si le numéro est supérieur à 0, alors il s’agit du numéro de version de l’enregistrement.</p></li>
@@ -11284,13 +11256,11 @@ d’objets.</p>
 <h2><span class="section-number">3.10. </span>Annexes<a class="headerlink" href="#annexes" title="Lien vers cette rubrique"></a></h2>
 <section id="annexe-1-valeurs-possibles-pour-le-champ-evtype-du-logbook-operation">
 <h3><span class="section-number">3.10.1. </span>Annexe 1 : Valeurs possibles pour le champ evType du LogBook Operation<a class="headerlink" href="#annexe-1-valeurs-possibles-pour-le-champ-evtype-du-logbook-operation" title="Lien vers cette rubrique"></a></h3>
-<p>L’ensemble des étapes, tâches et traitements sont détaillés dans la
-documentation Modèle de workflow.</p>
+<p>L’ensemble des étapes, tâches et traitements sont détaillés dans la documentation <a class="reference internal" href="modele_de_workflow.html"><span class="std std-doc">Modèle de workflow</span></a>.</p>
 </section>
 <section id="annexe-2-valeurs-possibles-pour-le-champ-evtype-du-logbook-lifecycle">
 <h3><span class="section-number">3.10.2. </span>Annexe 2 : Valeurs possibles pour le champ evType du LogBook LifeCycle<a class="headerlink" href="#annexe-2-valeurs-possibles-pour-le-champ-evtype-du-logbook-lifecycle" title="Lien vers cette rubrique"></a></h3>
-<p>L’ensemble des étapes, tâches et traitements sont détaillées dans la
-documentation Modèle de workflow.</p>
+<p>L’ensemble des étapes, tâches et traitements sont détaillées dans la documentation <a class="reference internal" href="modele_de_workflow.html"><span class="std std-doc">Modèle de workflow</span></a>.</p>
 </section>
 <section id="annexe-3-valeurs-possibles-pour-le-champ-evtypeproc-type-de-processus">
 <h3><span class="section-number">3.10.3. </span>Annexe 3: Valeurs possibles pour le champ evTypeProc (type de processus)<a class="headerlink" href="#annexe-3-valeurs-possibles-pour-le-champ-evtypeproc-type-de-processus" title="Lien vers cette rubrique"></a></h3>
