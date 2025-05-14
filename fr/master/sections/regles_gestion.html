@@ -239,24 +239,22 @@
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>Document</p></th>
 <th class="head text-center"><p>Date de la version</p></th>
-<th class="head text-center"><p>Remarques</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td class="text-center"><p>NF Z 44022 – MEDONA – Modélisation des données pour l’archivage</p></td>
 <td class="text-center"><p>18/01/2014</p></td>
-<td class="text-center"><p></p></td>
 </tr>
 <tr class="row-odd"><td class="text-center"><p>Standard d’échange de données pour l’archivage – SEDA – v. 2.1</p></td>
 <td class="text-center"><p>06/2018</p></td>
-<td class="text-center"><p></p></td>
 </tr>
 <tr class="row-even"><td class="text-center"><p>Standard d’échange de données pour l’archivage – SEDA – v. 2.2</p></td>
 <td class="text-center"><p>02/2022</p></td>
-<td class="text-center"><p>Cette nouvelle version du SEDA est intégrée à la solution logicielle Vitam à partir de la V6.RC.</p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p><a class="reference internal" href="SIP.html"><span class="std std-doc">Vitam - Structuration des Submission Information Package (SIP)</span></a></p></td>
-<td class="text-center"><p></p></td>
+<tr class="row-odd"><td class="text-center"><p>Standard d’échange de données pour l’archivage – SEDA – v. 2.3</p></td>
+<td class="text-center"><p>06/2024</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><a class="reference internal" href="SIP.html"><span class="std std-doc">Vitam - Structuration des Submission Information Package (SIP)</span></a></p></td>
 <td class="text-center"><p></p></td>
 </tr>
 </tbody>
@@ -269,10 +267,10 @@ Il s’articule autour des axes suivants :</p>
 <ul class="simple">
 <li><p>une présentation des règles de gestion associées aux archives et de la manière dont le Standard d’échanges de données pour l’archivage (SEDA) les formalise ;</p></li>
 <li><p>une présentation des mécanismes mis en œuvre dans la solution logicielle Vitam pour gérer ces règles de gestion, en application du SEDA ;</p></li>
-<li><p>des recommandations aux ministères porteurs, partenaires et utilisateurs de la solution logicielle Vitam sur la manière d’utiliser les fonctionnalités associées aux règles de gestion.
-Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam dans l’état actuel des développements. Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam, et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
-Il ne décrit pas les services mis en œuvre en application des règles, notamment les services d’élimination, de déclassification, de gel et de transfert qui font l’objet de documentations séparées.</p></li>
+<li><p>des recommandations aux ministères porteurs, partenaires et utilisateurs de la solution logicielle Vitam sur la manière d’utiliser les fonctionnalités associées aux règles de gestion.</p></li>
 </ul>
+<p>Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam dans l’état actuel des développements. Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam, et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
+Il ne décrit pas les services mis en œuvre en application des règles, notamment les services d’élimination, de déclassification, de gel et de transfert qui font l’objet de documentations séparées.</p>
 </section>
 </section>
 <section id="presentation-des-regles-de-gestion">
@@ -334,11 +332,14 @@ Il ne décrit pas les services mis en œuvre en application des règles, notamme
 <ul class="simple">
 <li><p>déclarer la ou les règles de gestion qui s’appliquent à elle et aux unités archivistiques qui dépendent d’elles (ses « filles ») ;</p></li>
 <li><p>hériter de la ou des règles de gestions déclarées par les unités archivistiques dont elle dépend (ses « parentes »).
-Si elles sont déclarées, les règles de gestion peuvent être décrites, au moment de la demande de transfert à un service d’archives (message ArchiveTransfer, bloc DataObjectPackage) :</p></li>
+Si elles sont déclarées, les règles de gestion peuvent être décrites, au moment de la demande de transfert à un service d’archives (message ArchiveTransfer, bloc DataObjectPackage) :</p>
+<ul>
 <li><p>dans le bloc ManagementMetadata pour toute une entrée ;</p></li>
 <li><p>dans le sous-bloc Management de chaque unité archivistique pour une unité archivistique ou un ensemble d’unités archivistiques décrites dans le bloc DescriptiveMetadata.
-Le schéma ci-après, issu de la documentation publiée par le Service interministériel des archives de France (SIAF), illustre ces différentes possibilités.
+Le schéma ci-après, issu de la documentation publiée par le Service interministériel des archives de France (SIAF), illustre ces différentes possibilités.<br />
 <img alt="Les objets échangés" src="../_images/objets_echanges.png" /></p></li>
+</ul>
+</li>
 </ul>
 <p>Le bloc ManagementMetadata et le sous-bloc Management des unités archivistiques ont une structure identique :</p>
 <ul class="simple">
@@ -362,7 +363,7 @@ Le schéma ci-après, issu de la documentation publiée par le Service intermini
 <ul>
 <li><p>l’identifiant de la règle applicable (RuleId) ;</p></li>
 <li><p>la date de départ, à partir de laquelle la règle s’applique (StartDate).
-Cette information est facultative et peut être renseignée a posteriori, ce qui permet de commencer l’archivage d’un dossier et de ses composants dès le début de la procédure associée (voir infra section 3.3.).
+Cette information est facultative et peut être renseignée <em>a posteriori</em>, ce qui permet de commencer l’archivage d’un dossier et de ses composants dès le début de la procédure associée (voir <a class="reference internal" href="#entrees"><span class="xref myst">infra section Entrée</span></a>).
 Par exemple, un dossier d’exécution d’un marché public peut être archivé dès le début de l’exécution, alors que la durée d’utilité administrative débute à partir du solde comptable du marché, lequel, par essence, n’est pas connu au lancement de la procédure d’exécution du marché ;</p></li>
 </ul>
 </li>
@@ -390,9 +391,12 @@ Par exemple, un dossier d’exécution d’un marché public peut être archivé
 </li>
 <li><p>des attributs spécifiques à une règle de gel : la date de fin du gel (HoldEndDate), l’émetteur du gel (HoldOwner), la raison du gel (HoldReason), la date de réévaluation du gel (HoldReassessingDate), le blocage du reclassement de l’archives gelée (PreventRearrangement) ;</p></li>
 <li><p>des métadonnées de gestion d’héritage, avec indication des règles héritées des unités archivistiques parentes qui ne doivent pas s’appliquer à l’unité archivistique concernée et à ses unités archivistiques filles.<br>
-Ce blocage de règle peut être :<br>
-- global (blocage de toutes les règles héritées dans une catégorie via l’élément PreventInheritance) ;<br>
-- ou partiel (blocage d’une ou plusieurs règles de la catégorie concernée via l’élément RefNonRuleId).</p></li>
+Ce blocage de règle peut être :<br></p>
+<ul>
+<li><p>global (blocage de toutes les règles héritées dans une catégorie via l’élément PreventInheritance) ;<br></p></li>
+<li><p>ou partiel (blocage d’une ou plusieurs règles de la catégorie concernée via l’élément RefNonRuleId).</p></li>
+</ul>
+</li>
 </ul>
 <p>Le schéma ci-dessous montre la structuration des informations pour la règle AppraisalRule, qu’elle soit déclarée dans le bloc ManagementMetadata ou dans le sous-bloc Management d’une unité archivistique :
 <img alt="structuration des informations pour la règle AppraisalRule" src="../_images/AppraisalRule.png" /></p>
@@ -418,7 +422,7 @@ Ce blocage de règle peut être :<br>
 </ul>
 </li>
 </ul>
-<p>Le schéma ci-dessous montre la structuration spécifique des informations pour la règle ClassificationRule.
+<p>Le schéma ci-dessous montre la structuration spécifique des informations pour la règle ClassificationRule.<br />
 <img alt="structuration des informations pour la règle ClassificationRule" src="../_images/ClassificationRule.png" /></p>
 <ul class="simple">
 <li><p>Enfin, certaines informations sont associées à :</p>
@@ -715,8 +719,8 @@ Il peut contenir les éléments suivants :</p>
 <li><p>l’origine des règles, qu’elles soient portées, héritées ou les deux (InheritanceOrigin – obligatoire). Les valeurs peuvent être : « Inherited », « Local », « LocalAndInherited » ;</p></li>
 <li><p>l’identifiant des règles héritées (InheritedRuleIds – facultatif) ;</p></li>
 <li><p>la date d’échéance la plus lointaine par règle de gestion (EndDates – facultatif).<br>
-Ce champ contient une à plusieurs règles de gestion, caractérisée(s) par son(leur) identifiant et ayant pour valeur associée la date de fin de validité la plus longue.
-Point d’attention : ce champ, ainsi que ses sous-éléments, sont en cours de dépréciation. Ils ont été désindexés et, de fait, ne sont plus requêtables.</p></li>
+Ce champ contient une à plusieurs règles de gestion, caractérisée(s) par son(leur) identifiant et ayant pour valeur associée la date de fin de validité la plus longue.<br />
+<strong>Point d’attention :</strong> ce champ, ainsi que ses sous-éléments, sont en cours de dépréciation. Ils ont été désindexés et, de fait, ne sont plus requêtables.</p></li>
 <li><p>une à plusieurs règles de gel (Rules – facultatif).<br>
 Chacune d’elle est modélisée comme suit :</p>
 <ul>
@@ -1118,7 +1122,7 @@ Cette configuration, optionnelle, est établie lors du paramétrage initial de l
 <p>Il est aussi possible, en configurant la plate-forme, de compléter ce service pour :</p>
 <ul class="simple">
 <li><p>indexer également les échéances maximales applicables, dans chaque catégorie de règle, à chaque règle en particulier au moyen du paramètre « indexInheritedRulesWithAPIV2OutputByTenant » (ex. : la date de libre communicabilité en fonction de la règle A et celle en fonction de la règle B) ;</p></li>
-<li><p>rendre requêtables toutes les règles retournées en cas de demande d’accès à l’unité archivistique au moyen du paramètre « indexInheritedRulesWithRulesIdByTenant » (cf. service décrit dans la section 3.5.)<a class="footnote-reference brackets" href="#id29" id="id13" role="doc-noteref"><span class="fn-bracket">[</span>13<span class="fn-bracket">]</span></a>.
+<li><p>rendre requêtables toutes les règles retournées en cas de demande d’accès à l’unité archivistique au moyen du paramètre « indexInheritedRulesWithRulesIdByTenant » (cf. service décrit dans la <a class="reference internal" href="#acces"><span class="xref myst">section</span></a>)<a class="footnote-reference brackets" href="#id29" id="id13" role="doc-noteref"><span class="fn-bracket">[</span>13<span class="fn-bracket">]</span></a>.
 Le fichier de configuration se présente comme suit (exemple fictif)<a class="footnote-reference brackets" href="#id30" id="id14" role="doc-noteref"><span class="fn-bracket">[</span>14<span class="fn-bracket">]</span></a> :</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">indexInheritedRulesWithAPIV2OutputByTenant</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;0&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">]</span>
@@ -1151,7 +1155,7 @@ Le fichier de configuration se présente comme suit (exemple fictif)<a class="fo
 <tr class="row-even"><td class="text-center"><p>RuleId</p></td>
 <td class="text-center"><p>Identifiant de la règle</p></td>
 <td class="text-center"><p></p></td>
-<td class="text-center"><p>Cet identifiant :<br>- doit être unique par catégorie de règle,<br> - ne doit pas comprendre d’espace ou de caractère accentué, de virgule, d’apostrophe, de parenthèse, de slash, d’élément de ponctuation, ou tout autre caractère spécial. Ne sont recommandés que l’underscore et le tiret comme séparateurs.</p></td>
+<td class="text-center"><p>Cet identifiant :<br>- doit être unique par catégorie de règle,<br> - ne doit pas comprendre d’espace ou de caractère accentué, de virgule, d’apostrophe, de parenthèse, de slash, d’élément de ponctuation, ou tout autre caractère spécial.<br>Ne sont recommandés que l’underscore et le tiret comme séparateurs.</p></td>
 </tr>
 <tr class="row-odd"><td class="text-center"><p>RuleType</p></td>
 <td class="text-center"><p>Type de règle</p></td>
@@ -1203,7 +1207,7 @@ Le fichier de configuration se présente comme suit (exemple fictif)<a class="fo
 </li>
 <li><p>vérification que l’association de la durée et de l’unité de mesure saisies pour chaque règle est bien inférieure ou égale à 999 ans (1000 YEAR sera rejeté comme 370 000 DAY).</p></li>
 </ul>
-<p>La tentative d’import ou de mise à jour d’un référentiel déclarant des associations durées et unité de valeur inférieures ou égales aux données minimales saisies dans le fichier de configuration décrit dans la section 3.1.1, déclenchera une alerte de sécurité qui sera transmise à l’administrateur technique de la plate-forme. L’import et la mise à jour seront alors rejetés.</p>
+<p>La tentative d’import ou de mise à jour d’un référentiel déclarant des associations durées et unité de valeur inférieures ou égales aux données minimales saisies dans le fichier de configuration décrit dans la <a class="reference internal" href="#configuration-des-durees-minimales-autorisees-dans-le-referentiel-des-regles-de-gestion"><span class="xref myst">section</span></a>, déclenchera une alerte de sécurité qui sera transmise à l’administrateur technique de la plate-forme. L’import et la mise à jour seront alors rejetés.</p>
 <p>L’import ou la mise à jour du référentiel peut se réaliser :</p>
 <ul class="simple">
 <li><p>via les API de la solution logicielle Vitam ;</p></li>
@@ -1261,7 +1265,7 @@ Sont disponibles les facettes de type :</p></li>
 <h3><span class="section-number">7.3.3. </span>Entrées<a class="headerlink" href="#entrees" title="Lien vers cette rubrique"></a></h3>
 <p>Dans le cadre du processus d’entrée d’un ensemble d’unités archivistiques, suite à la réception d’un message ArchiveTransfer du SEDA, la solution logicielle Vitam effectue les tâches et traitements suivants pour les unités archivistiques déclarant des règles de gestion :</p>
 <ul class="simple">
-<li><p>vérification de la conformité du bordereau avec le schéma par défaut associé à la version 2.1. ou à la version 2.2. du SEDA ou avec les exigences portées dans un profil d’archivage et/ou dans un profil d’unité archivistique ;</p></li>
+<li><p>vérification de la conformité du bordereau avec le schéma par défaut associé à la version 2.1., à la version 2.2. ou à la version 2.3. du SEDA ou avec les exigences portées dans un profil d’archivage et/ou dans un profil d’unité archivistique ;</p></li>
 <li><p>vérification que les règles déclarées (règles à appliquer et/ou règles à bloquer) existent bien dans le référentiel des règles de gestion pour la catégorie de règle correspondante ;</p></li>
 <li><p>récupération des règles déclarées dans le bloc ManagementMetadata, pour enregistrement au niveau des unités archivistiques déclarées à la racine du bloc DescriptiveMetadata. Cette récupération comprend la gestion des éventuels conflits identifiés, notamment lorsqu’une même règle est déclarée, pour une même catégorie, par le bloc ManagementMetadata et par les unités archivistiques à la racine du bloc DescriptiveMetadata. Dans le cas particulier où une même règle est déclarée avec des dates de départ différentes, la date déclarée par les unités archivistiques l’emporte sur celle déclarée dans le bloc ManagementMetadata ;</p></li>
 <li><p>traitement des redéclarations de règles :</p>
@@ -1350,7 +1354,7 @@ Sont disponibles les facettes de type :</p></li>
 <p><strong>Nota bene :</strong></p>
 <ul class="simple">
 <li><p>seules les unités archivistiques déclarant une règle sont concernées par le calcul de l’échéance et l’enregistrement des informations sur les règles en base ;</p></li>
-<li><p>les autres unités archivistiques n’ont pas de règles enregistrées en base lors de leur prise en charge. Les règles qui leur sont applicables sont héritées des unités archivistiques parentes et sont soit indexées en utilisant le service correspondant (cf. section 3.4.2), soit calculées lorsque des opérations qui les concernent sont mises en œuvre (demande de consultation, mise en œuvre des sorts finaux) mais sans être conservées en base ;</p></li>
+<li><p>les autres unités archivistiques n’ont pas de règles enregistrées en base lors de leur prise en charge. Les règles qui leur sont applicables sont héritées des unités archivistiques parentes et sont soit indexées en utilisant le service correspondant (<a class="reference internal" href="#indexationdesindexation-des-regles-de-gestion-heritees"><span class="xref myst">cf. section</span></a>), soit calculées lorsque des opérations qui les concernent sont mises en œuvre (demande de consultation, mise en œuvre des sorts finaux) mais sans être conservées en base ;</p></li>
 <li><p>si les règles sont déclarées dans le bloc ManagementMetadata, seules les unités archivistiques racines porteront ces règles en base.</p></li>
 </ul>
 </section>
@@ -1401,7 +1405,7 @@ Il est également possible de mettre à jour des règles de gestion au moyen des
 <li><p>depuis l’APP « Recherche et consultation des archives » de VitamUI sur une sélection d’archives.
 Il est également possible, en activant le paramétrage correspondant dans le contrat d’entrée, de marquer toutes les unités archivistiques entrées avec ce contrat pour que l’indexation de leurs échéances soit réalisée par traitement automatique programmé (batch).</p></li>
 </ul>
-<p>L’indexation peut être plus ou moins riche en fonction du paramétrage adopté (cf. section 3.1.3.).</p>
+<p>L’indexation peut être plus ou moins riche en fonction du paramétrage adopté (<a class="reference internal" href="#configuration-des-indexations-en-base-des-regles-de-gestion"><span class="xref myst">cf. section</span></a>).</p>
 <p>Par défaut, elle comprend :</p>
 <ul class="simple">
 <li><p>pour chaque catégorie de règle de gestion :</p>
@@ -1416,7 +1420,7 @@ Il est également possible, en activant le paramétrage correspondant dans le co
 <p>Dans le cas où les paramétrages correspondants sont activés, l’indexation peut également comprendre :</p>
 <ul class="simple">
 <li><p>pour chaque catégorie de règles, les règles applicables et les échéances maximales applicables ;</p></li>
-<li><p>toutes les règles retournées en cas de demande d’accès à l’unité archivistique (cf. service décrit dans la section 3.5.).</p></li>
+<li><p>toutes les règles retournées en cas de demande d’accès à l’unité archivistique (cf. service décrit <a class="reference internal" href="#acces"><span class="xref myst">dans la section</span></a>).</p></li>
 </ul>
 <p>Voici un exemple d’indexation par défaut :</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="nt">&quot;_computedInheritedRules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -1542,7 +1546,7 @@ Il est également possible, en activant le paramétrage correspondant dans le co
 <h4><span class="section-number">7.3.5.2. </span>Filtrage par contrat d’accès sur les échéances indexées<a class="headerlink" href="#filtrage-par-contrat-dacces-sur-les-echeances-indexees" title="Lien vers cette rubrique"></a></h4>
 <p>Le contrat d’accès permet de filtrer les résultats retournés à l’utilisateur en filtrant sur les échéances des règles de gestion indexées.</p>
 <p>Si le paramétrage correspondant est activé, la solution logicielle ne retournera en réponse à une requête que les unités archivistiques ayant fait l’objet d’une indexation des règles applicables pour lesquelles la ou les règles de gestion sélectionnées dans le contrat d’accès sont échues à la date à laquelle est faite la requête.</p>
-<p>Points d’attention :</p>
+<p><strong>Points d’attention :</strong></p>
 <ul class="simple">
 <li><p>Si aucune indexation des règles n’a été réalisée, aucune réponse ne pourra être retournée.</p></li>
 <li><p>Les unités archivistiques d’arbre, qui ne portent pas de règles de gestion, ne sont pas consultables si ce filtre est utilisé.</p></li>
@@ -1561,7 +1565,7 @@ Il est également possible, en activant le paramétrage correspondant dans le co
 <p>À l’issue de la réalisation de fonctionnalités concernant les règles de gestion associées aux unités archivistiques, l’équipe projet Vitam est en mesure de fournir quelques recommandations de mise en œuvre.</p>
 <section id="comment-elaborer-le-referentiel-des-regles-de-gestion">
 <h3><span class="section-number">7.4.1. </span>Comment élaborer le référentiel des règles de gestion ?<a class="headerlink" href="#comment-elaborer-le-referentiel-des-regles-de-gestion" title="Lien vers cette rubrique"></a></h3>
-<p>Le référentiel des règles de gestion décrit dans la section 3.1. peut être alimenté, pour chaque catégorie de règle :</p>
+<p>Le référentiel des règles de gestion décrit dans la <a class="reference internal" href="#configuration-dune-plate-forme-utilisant-la-solution-logicielle-vitam"><span class="xref myst">section</span></a> peut être alimenté, pour chaque catégorie de règle :</p>
 <ul class="simple">
 <li><p>d’une manière très générique, en se focalisant uniquement sur les durées associées aux règles. À titre d’exemple, il est possible de déclarer, pour les règles d’utilité courante ou les règles d’utilité administrative, des règles correspondant à des durées d’1 an, de 2 ans, de 3 ans, etc. Dans ce cas, la règle pourra être utilisée pour différentes catégories de dossiers ;</p></li>
 <li><p>d’une manière plus spécifique, en se focalisant sur les spécificités de chaque catégorie de dossier. À titre d’exemple, pour les règles d’utilité administrative correspondant à une durée de 10 ans, on pourra distinguer la règle applicable à la conservation des archives associées à la construction d’immeubles (garantie décennale) de la règle applicable à la conservation des pièces comptables par les ordonnateurs publics.</p></li>
@@ -1623,7 +1627,7 @@ Seuls les profils d’unités archivistiques et les profils d’archivage permet
 </ul>
 </li>
 </ul>
-<p>Points d’attention :</p>
+<p><strong>Points d’attention :</strong></p>
 <ul class="simple">
 <li><p>Quand on crée un profil d’archivage ou un profil d’unité archivistique déclarant des règles de gestion et quand on l’importe dans la solution logicielle Vitam, aucun contrôle de cohérence de ces règles n’est effectué avec celles contenues dans le référentiel des règles de gestion ;</p></li>
 <li><p>De fait, en cas de mise à jour du référentiel des règles de gestion, notamment de suppression de règles, il sera nécessaire de veiller à mettre à jour les profils et/ou les profils d’unité archivistique comportant les règles mises à jour ou supprimées.</p></li>
@@ -1701,7 +1705,7 @@ Seuls les profils d’unités archivistiques et les profils d’archivage permet
 <section id="comment-utiliser-les-regles-de-gestion-associees-aux-unites-archivistiques-pour-gerer-les-droits-dacces-des-utilisateurs">
 <h3><span class="section-number">7.4.7. </span>Comment utiliser les règles de gestion associées aux unités archivistiques pour gérer les droits d’accès des utilisateurs ?<a class="headerlink" href="#comment-utiliser-les-regles-de-gestion-associees-aux-unites-archivistiques-pour-gerer-les-droits-dacces-des-utilisateurs" title="Lien vers cette rubrique"></a></h3>
 <p>Le back-office de la solution logicielle Vitam ne connaît que des utilisateurs applicatifs, et pas des utilisateurs individuels. Or, en vertu de la réglementation en vigueur, tous les utilisateurs individuels n’ont pas les mêmes droits d’accès aux archives. Ce sont les règles de gestion qui vont permettre aux applications utilisant les services de la solution logicielle Vitam de gérer la problématique des accès individuels en application de la réglementation en vigueur.</p>
-<p>Point d’attention : l’implémentation de ces règles de gestion est un point d’attention lors des opérations de transfert. À défaut de renseignement des règles de gestion dans le bordereau de transfert associé à ce transfert ou de règles de gestion par défaut définies au niveau du contrat d’entrée, les restrictions d’accès aux utilisateurs individuels ne pourront être mises en œuvre.</p>
+<p><strong>Point d’attention :</strong> l’implémentation de ces règles de gestion est un point d’attention lors des opérations de transfert. À défaut de renseignement des règles de gestion dans le bordereau de transfert associé à ce transfert ou de règles de gestion par défaut définies au niveau du contrat d’entrée, les restrictions d’accès aux utilisateurs individuels ne pourront être mises en œuvre.</p>
 <p>L’équipe projet Vitam peut fournir à ce stade les recommandations suivantes :</p>
 <table class="docutils align-default">
 <thead>
@@ -1712,7 +1716,7 @@ Seuls les profils d’unités archivistiques et les profils d’archivage permet
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-center"><p>Service producteur (utilisateurs assurant le traitement de dossiers individuels)</p></td>
+<tr class="row-even"><td class="text-center"><p>Service producteur<br>(utilisateurs assurant le traitement de dossiers individuels)</p></td>
 <td class="text-center"><p>Application métier considérée comme un traitement de données personnelles</p></td>
 <td class="text-center"><p>Unités archivistiques (avec ou sans groupes d’objets techniques)</p></td>
 <td class="text-center"><p>Il est recommandé de ne donner accès sans autorisation qu’aux archives dont la DUC n’est pas échue. Elles correspondent aux unités archivistiques déclarant ou héritant d’une DUC (StorageRule) dont l’échéance est dans le futur.</p></td>
@@ -1849,40 +1853,32 @@ Il existe d’autres séparateurs de champ (point virgule, deux points, tabulati
 <td class="text-center"><p>Recommandé</p></td>
 </tr>
 <tr class="row-even"><td class="text-center"><p>Import d’un référentiel au format CSV avec séparateurs de texte</p></td>
-<td class="text-center"><p>Il est obligatoire d’utiliser un séparateur de texte quand la valeur textuelle contient une virgule, qui correspond à un séparateur de champ.</p></td>
-<td class="text-center"><p></p></td>
-</tr>
-<tr class="row-odd"><td class="text-center"><p>Sans séparateur de texte, le champ contenant une virgule sera interprété non pas comme un champ unique, mais sera interprété comme correspondant à deux champs distincts lors de l’import d’un référentiel.</p></td>
+<td class="text-center"><p>Il est obligatoire d’utiliser un séparateur de texte quand la valeur textuelle contient une virgule, qui correspond à un séparateur de champ. Sans séparateur de texte, le champ contenant une virgule sera interprété non pas comme un champ unique, mais sera interprété comme correspondant à deux champs distincts lors de l’import d’un référentiel.</p></td>
 <td class="text-center"><p>Obligatoire</p></td>
-<td class="text-center"><p></p></td>
 </tr>
-<tr class="row-even"><td class="text-center"><p>Import d’un référentiel au format CSV avec séparateurs de texte</p></td>
+<tr class="row-odd"><td class="text-center"><p>Import d’un référentiel au format CSV avec séparateurs de texte</p></td>
 <td class="text-center"><p>Il est recommandé d’utiliser uniformément le même séparateur de texte, en utilisant celui qu’on est le moins susceptible d’utiliser dans une chaîne de caractères du référentiel.</p></td>
 <td class="text-center"><p>Recommandé</p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p>Import d’un référentiel au format CSV avec séparateurs de texte</p></td>
+<tr class="row-even"><td class="text-center"><p>Import d’un référentiel au format CSV avec séparateurs de texte</p></td>
 <td class="text-center"><p>Si une chaîne de caractères contient le même séparateur de texte que celui utilisé, avant le premier caractère et après le dernier, il est recommandé de doubler l’utilisation de ce séparateur.</p></td>
 <td class="text-center"><p>Recommandé</p></td>
 </tr>
-<tr class="row-even"><td class="text-center"><p>Import d’un référentiel contenant des champs vides</p></td>
+<tr class="row-odd"><td class="text-center"><p>Import d’un référentiel contenant des champs vides</p></td>
 <td class="text-center"><p>Certains champs sont facultatifs et ne contiennent pas nécessairement de données. Ce champ devra obligatoirement être représenté vide, séparé par deux virgules.<br>Si les valeurs contenues dans les autres champs sont séparées par un séparateur de texte (guillemets simples ou doubles), le champ vide devra lui aussi figurer entre guillemets.</p></td>
 <td class="text-center"><p>Obligatoire</p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p>Import d’un référentiel contenant des lignes blanches / vides</p></td>
+<tr class="row-even"><td class="text-center"><p>Import d’un référentiel contenant des lignes blanches / vides</p></td>
 <td class="text-center"><p>Il est interdit de laisser une ligne blanche ou vide dans un référentiel que l’on souhaite importer dans la solution logicielle Vitam.</p></td>
 <td class="text-center"><p>Interdit</p></td>
 </tr>
-<tr class="row-even"><td class="text-center"><p>Import d’un référentiel contenant des espaces vides en début ou en fin de ligne</p></td>
+<tr class="row-odd"><td class="text-center"><p>Import d’un référentiel contenant des espaces vides en début ou en fin de ligne</p></td>
 <td class="text-center"><p>Il n’est pas recommandé d’importer un référentiel dont certaines lignes contiennent, en début ou fin, des espaces vides. Ces espaces vides peuvent en effet ne pas être interprété ou mal interprété par l’outil d’import de fichier CSV utilisé par la solution logicielle Vitam.<br>Avant l’import d’un référentiel, il est recommandé de retirer tout espace vide du fichier CSV que l’on souhaite importer dans la solution logicielle Vitam.</p></td>
 <td class="text-center"><p>Non recommandé</p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p>Import d’un référentiel contenant des sauts de ligne dans certaines cellules</p></td>
-<td class="text-center"><p>Il n’est pas recommandé d’importer un référentiel dont certaines lignes contiennent des sauts de ligne, hérités d’un formatage antérieur. Ces sauts de ligne peuvent en effet être interprété par l’outil d’import de fichier CSV utilisé par la solution logicielle Vitam comme un véritable saut de ligne dans le fichier CSV et entraîner des erreurs et décalages dans la liste des règles de gestion et/ou des services agents en en créant plus que nécessaires, avec des données ne correspondant pas à leur titre de colonne.</p></td>
-<td class="text-center"><p></p></td>
-</tr>
-<tr class="row-even"><td class="text-center"><p>Avant l’import d’un référentiel, il est recommandé d’ôter tout formatage présent dans le fichier.</p></td>
+<tr class="row-even"><td class="text-center"><p>Import d’un référentiel contenant des sauts de ligne dans certaines cellules</p></td>
+<td class="text-center"><p>Il n’est pas recommandé d’importer un référentiel dont certaines lignes contiennent des sauts de ligne, hérités d’un formatage antérieur. Ces sauts de ligne peuvent en effet être interprété par l’outil d’import de fichier CSV utilisé par la solution logicielle Vitam comme un véritable saut de ligne dans le fichier CSV et entraîner des erreurs et décalages dans la liste des règles de gestion et/ou des services agents en en créant plus que nécessaires, avec des données ne correspondant pas à leur titre de colonne. Avant l’import d’un référentiel, il est recommandé d’ôter tout formatage présent dans le fichier.</p></td>
 <td class="text-center"><p>Non recommandé</p></td>
-<td class="text-center"><p></p></td>
 </tr>
 <tr class="row-odd"><td class="text-center"><p>Import d’un référentiel contenant des sauts de ligne dans certaines cellules</p></td>
 <td class="text-center"><p>Il n’est pas recommandé d’importer un référentiel dont certaines lignes contiennent des lignes fusionnées, héritées d’un formatage antérieur. Ces lignes fusionnées sont  interprétées par l’outil d’import de fichier CSV utilisé par la solution logicielle Vitam comme une seule et même valeur, ce qui entraîne des décalages dans la liste des règles de gestion et/ou des services agents, avec un nombre de données ne correspondant pas au nombre de colonnes attendues.<br>Avant l’import d’un référentiel, il est recommandé d’ôter tout formatage présent dans le fichier.</p></td>
@@ -1993,7 +1989,7 @@ Pour modifier un fichier de ce format, il faut suivre la procédure suivante :<
 </ul>
 </li>
 </ul>
-<p>Point d’attention : Si le fichier est « enregistré », au lieu d’être « enregistré sous », ce nouvel enregistrement n’est plus au format CSV et l’encodage peut avoir également été modifié.</p>
+<p><strong>Point d’attention :</strong> Si le fichier est « enregistré », au lieu d’être « enregistré sous », ce nouvel enregistrement n’est plus au format CSV et l’encodage peut avoir également été modifié.</p>
 <ul class="simple">
 <li><p>Il est recommandé, avant toute modification, de faire une sauvegarde du fichier CSV ;</p></li>
 <li><p>Il ne faut pas enregistrer le fichier CSV dans le tableur dans lequel il est ouvert à des fins de visualisation.</p></li>
@@ -3306,7 +3302,7 @@ Détail : nom du fichier CSV</p></li>
 </aside>
 <aside class="footnote brackets" id="id23" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">7</a><span class="fn-bracket">]</span></span>
-<p>Pour plus d’informations, consulter le document Document d’installation, chapitres 4.2.5.11 « Durées minimales permettant de contrôler les valeurs saisies » et 4.2.5.12 « Fichiers complémentaires » ; Document d’exploitation, chapitre 8.2.6.2.4 « Configuration du Functional administration ».</p>
+<p>Pour plus d’informations, consulter le document <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/html/installation">Document d’installation</a>, chapitres 4.2.5.11 « Durées minimales permettant de contrôler les valeurs saisies » et 4.2.5.12 « Fichiers complémentaires » ; <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/html/exploitation">Document d’exploitation</a>, chapitre 8.2.6.2.4 « Configuration du Functional administration ».</p>
 </aside>
 <aside class="footnote brackets" id="id24" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id8">8</a><span class="fn-bracket">]</span></span>
@@ -3314,7 +3310,7 @@ Détail : nom du fichier CSV</p></li>
 </aside>
 <aside class="footnote brackets" id="id25" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id9">9</a><span class="fn-bracket">]</span></span>
-<p>Pour plus d’informations, consulter le document Document d’installation, chapitre 4.2.5.12 « Fichiers complémentaires » ; Document d’exploitation, chapitre 8.2.1.8 « Fichier vitam.conf ».</p>
+<p>Pour plus d’informations, consulter le document <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/html/installation">Document d’installation</a>, chapitre 4.2.5.12 « Fichiers complémentaires » ; <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/html/exploitation">Document d’exploitation</a>, chapitre 8.2.1.8 « Fichier vitam.conf ».</p>
 </aside>
 <aside class="footnote brackets" id="id26" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id10">10</a><span class="fn-bracket">]</span></span>
@@ -3322,7 +3318,7 @@ Détail : nom du fichier CSV</p></li>
 </aside>
 <aside class="footnote brackets" id="id27" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id11">11</a><span class="fn-bracket">]</span></span>
-<p>Pour plus d’informations, consulter le document Document d’installation, chapitres 4.2.5.10 « Paramétrage du batch de calcul pour l’indexation des règles héritées » et 4.2.5.12 « Fichiers complémentaires » ; Document d’exploitation, chapitre 8.2.6.2.3 « Paramétrage du batch de calcul pour l’indexation des règles héritées ».</p>
+<p>Pour plus d’informations, consulter le document <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/html/installation">Document d’installation</a>, chapitres 4.2.5.10 « Paramétrage du batch de calcul pour l’indexation des règles héritées » et 4.2.5.12 « Fichiers complémentaires » ; <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/html/exploitation">Document d’exploitation</a>, chapitre 8.2.6.2.3 « Paramétrage du batch de calcul pour l’indexation des règles héritées ».</p>
 </aside>
 <aside class="footnote brackets" id="id28" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id12">12</a><span class="fn-bracket">]</span></span>
@@ -3330,7 +3326,7 @@ Détail : nom du fichier CSV</p></li>
 </aside>
 <aside class="footnote brackets" id="id29" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id13">13</a><span class="fn-bracket">]</span></span>
-<p>Le <a class="reference internal" href="#formalisation-des-regles-dans-la-solution-logicielle-vitam"><span class="xref myst">chapitre 2.3 du présent document</span></a> présente le résultat de chacun de ces paramétrages.</p>
+<p>Le <a class="reference internal" href="#formalisation-des-regles-dans-la-solution-logicielle-vitam"><span class="xref myst">chapitre suivant du présent document</span></a> présente le résultat de chacun de ces paramétrages.</p>
 </aside>
 <aside class="footnote brackets" id="id30" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id14">14</a><span class="fn-bracket">]</span></span>

@@ -255,56 +255,43 @@
 <thead>
 <tr class="row-odd"><th class="head text-left"><p>Document</p></th>
 <th class="head text-center"><p>Date de la version</p></th>
-<th class="head text-center"><p>Remarques</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td class="text-left"><p>NF Z 44022 – MEDONA – Modélisation des données pour l’archivage</p></td>
 <td class="text-center"><p>18/01/2014</p></td>
-<td class="text-center"><p></p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>Standard d’échange de données pour l’archivage – SEDA – v. 2.1</p></td>
 <td class="text-center"><p>06/2018</p></td>
-<td class="text-center"><p></p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>Standard d’échange de données pour l’archivage – SEDA – v. 2.2</p></td>
 <td class="text-center"><p>02/2022</p></td>
-<td class="text-center"><p>Cette nouvelle version du SEDA est intégrée à la solution logicielle Vitam à partir de la V6.RC.</p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>Standard d’échange de données pour l’archivage – SEDA – v. 2.3</p></td>
 <td class="text-center"><p>06/2024</p></td>
-<td class="text-center"><p></p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p><a class="reference internal" href="SIP.html"><span class="std std-doc">Vitam – Structuration des Submission Information Package (SIP)</span></a></p></td>
-<td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>[Vitam – Structuration des Dissemination Information Package (DIP)](./DIP.md</p></td>
 <td class="text-center"><p></p></td>
-<td class="text-center"><p></p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p><a class="reference internal" href="resip.html"><span class="std std-doc">Vitam – Guide d’utilisation de ReSIP</span></a></p></td>
-<td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p><a class="reference internal" href="module_de_collecte.html"><span class="std std-doc">Vitam – Module de collecte</span></a></p></td>
 <td class="text-center"><p></p></td>
-<td class="text-center"><p></p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p><a class="reference internal" href="eliminations.html"><span class="std std-doc">Vitam – Les éliminations dans la solution logicielle Vitam</span></a></p></td>
-<td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p><a class="reference internal" href="transfert.html"><span class="std std-doc">Vitam – Le transfert avec la solution logicielle Vitam</span></a></p></td>
 <td class="text-center"><p></p></td>
-<td class="text-center"><p></p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p><a class="reference internal" href="preservation.html"><span class="std std-doc">Vitam – Gestion de la préservation</span></a></p></td>
 <td class="text-center"><p></p></td>
-<td class="text-center"><p></p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p><a class="reference internal" href="modele_de_workflow.html"><span class="std std-doc">Vitam – Modèle de workflow</span></a></p></td>
-<td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 </tr>
 </tbody>
@@ -319,7 +306,7 @@
 <li><p>une présentation des mécanismes mis en œuvre dans la solution logicielle Vitam pour gérer ces arborescences ;</p></li>
 <li><p>des recommandations aux utilisateurs de la solution logicielle Vitam sur la manière d’utiliser les fonctionnalités associées aux arbres et plans.</p></li>
 </ul>
-<p>Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la Version 7.0 (automne 2023). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.</p>
+<p>Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la Version 8.1 (printemps 2025). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.</p>
 </section>
 </section>
 <section id="presentation">
@@ -675,7 +662,7 @@ Pour les SIP volumineux, la solution logicielle Vitam propose une API spécifiqu
 <p>Ce DIP prend la forme d’un message ArchiveDeliveryRequestReply<a class="footnote-reference brackets" href="#id54" id="id14" role="doc-noteref"><span class="fn-bracket">[</span>14<span class="fn-bracket">]</span></a>, contenant :</p>
 <ul class="simple">
 <li><p>soit l’ensemble du message : on parle alors de « DIP full »,</p></li>
-<li><p>soit uniquement le paquet d’archives (ou DataObjectPackage) : il s’agit d’un « DIP minimal ».
+<li><p>soit uniquement le paquet d’archives (ou DataObjectPackage) : il s’agit d’un « DIP minimal ».<br>
 Il peut être exprimé en SEDA 2.1, en SEDA 2.2 ou en SEDA 2.3.</p></li>
 </ul>
 <p>Il peut contenir :</p>
@@ -687,14 +674,14 @@ Il peut être exprimé en SEDA 2.1, en SEDA 2.2 ou en SEDA 2.3.</p></li>
 <p>Elle peut également être journalisée dans le log des accès, si l’option est activée dans le contrat d’accès utilisé.</p>
 <p><strong>Point d’attention :</strong></p>
 <ul class="simple">
-<li><p>le DIP ne distingue pas les unités archivistiques standards des unités archivistiques de plan de classement et d’arbre de positionnement ; l’export de groupes d’objets techniques n’est possible que dans les cas où l’export inclus des unités archivistiques standards.</p></li>
+<li><p>Le DIP ne distingue pas les unités archivistiques standards des unités archivistiques de plan de classement et d’arbre de positionnement ; l’export de groupes d’objets techniques n’est possible que dans les cas où l’export inclus des unités archivistiques standards.</p></li>
 <li><p>Il est possible de limiter le poids des DIP au moyen de la définition d’un seuil au niveau de la requête ou au moyen d’un paramétrage de seuil de plate-forme et/ou de tenant dans un fichier de configuration.</p></li>
 </ul>
 <p>L’APP VitamUI « Recherche, consultation et gestion des archives » permet de lancer un « DIP full » après sélection d’un lot d’archives et de paramètres :</p>
 <ul class="simple">
 <li><p>choix de la version du SEDA (SEDA 2.1, 2.2 ou 2.3),</p></li>
 <li><p>présence des journaux du cycle de vie,</p></li>
-<li><p>option sur les objets à exporter ou à exclure de l’export.
+<li><p>option sur les objets à exporter ou à exclure de l’export.<br>
 Ce DIP est alors téléchargeable depuis l’APP « Journal des opérations ».</p></li>
 </ul>
 </section>
@@ -703,7 +690,7 @@ Ce DIP est alors téléchargeable depuis l’APP « Journal des opérations »
 <p>Dans la solution logicielle Vitam, il est possible de filtrer les accès aux unités archivistiques  au moyen d’un contrat d’accès, qui permet de déterminer :</p>
 <ul class="simple">
 <li><p>le(s) niveau(x) de l’arborescence à partir du(es)quel(s) un service externe pourra effectuer des recherches ou obtenir des résultats ;</p></li>
-<li><p>le(s) niveau(x) de l’arborescence à partir du(es)quel(s) un service externe n’aura pas accès.
+<li><p>le(s) niveau(x) de l’arborescence à partir du(es)quel(s) un service externe n’aura pas accès.<br>
 Dans les deux cas, il peut s’agir de tout ou partie d’un arbre de positionnement, d’un plan de classement ou d’unités archivistiques issues d’un bordereau de transfert (dites « standard »).</p></li>
 </ul>
 <p>Il est également possible de restreindre les accès aux archives en fonction des critères suivants, paramétrés dans un contrat d’accès :</p>
@@ -742,16 +729,8 @@ Par défaut, l’utilisateur peut accéder à un groupe d’objets techniques à
 <p>La solution logicielle Vitam permet également de rechercher au-delà de 10 000 groupes d’objets techniques au moyen d’un service de « scroll ». Ce service est configurable en termes de nombre de nombre de résultats retournés et de nombre de requêtes quotidiennes. Un suivi de son utilisation (nombre de requêtes passées et date de dernière utilisation) est disponible dans la base de données MongoDB, dans la collection « Snapshot », sous la forme d’enregistrements au format JSON.</p>
 <p><strong>Point d’attention :</strong> le seuil de résultats supporté par le moteur d’indexation Elastic Search est de 10 000 unités archivistiques. Il est de fait recommandé d’utiliser des requêtes ne dépassant pas les 10 000 résultats.</p>
 <p>Il est également possible de rechercher des objets en fournissant leur identifiant pérenne en paramètre de recherche.</p>
-<p>L’affichage des groupes d’objets techniques est disponible :</p>
-<ul class="simple">
-<li><p>depuis l’IHM démo, et plus particulièrement le détail d’une unité archivistique de type « Standard » ;</p></li>
-<li><p>depuis l’APP de VitamUI «  Recherche et consultation des archives », et plus particulièrement le détail d’une unité archivistique de type « Standard ».
-L’IHM démo propose également une recherche sur les groupes d’objets techniques à partir des critères suivants :</p></li>
-<li><p>format ;</p></li>
-<li><p>usage ;</p></li>
-<li><p>volumétrie.</p></li>
-</ul>
-<p><img alt="IHM Démo - registre des fonds" src="sections/medias/archives_arbo/gotsearch.png" /></p>
+<p>L’affichage des groupes d’objets techniques est disponible depuis l’APP de VitamUI «  Recherche et consultation des archives », et plus particulièrement le détail d’une unité archivistique de type « Standard ».</p>
+<p><img alt="Affichage d'une UA et de ses objets dans l'APP Recherche et consultation des archives" src="../_images/gotsearch.PNG" /></p>
 </section>
 <section id="dans-le-registre-des-fonds">
 <h4><span class="section-number">2.3.2.3. </span>Dans le registre des fonds<a class="headerlink" href="#dans-le-registre-des-fonds" title="Lien vers cette rubrique"></a></h4>
@@ -763,14 +742,7 @@ L’IHM démo propose également une recherche sur les groupes d’objets techni
 <li><p>parmi les entrées qui y sont enregistrées au moyen d’une recherche par service producteur, par date, par contrat d’entrée, par identifiant du message ou toute autre information pouvant être enregistrée dans le détail d’un fonds<a class="footnote-reference brackets" href="#id59" id="id19" role="doc-noteref"><span class="fn-bracket">[</span>19<span class="fn-bracket">]</span></a> ;</p></li>
 <li><p>des opérations de préservation liées à un service producteur ou à une entrée<a class="footnote-reference brackets" href="#id60" id="id20" role="doc-noteref"><span class="fn-bracket">[</span>20<span class="fn-bracket">]</span></a>.</p></li>
 </ul>
-<p>À titre d’exemple :</p>
-<ul class="simple">
-<li><p>L’IHM démo permet d’y accéder via un service producteur et affiche, pour ce service producteur, son fonds propre, le cas échéant ses fonds symboliques, ainsi que le détail des opérations qui lui sont associées, entrées comme traitements de préservation.</p></li>
-</ul>
-<p><img alt="IHM Démo - registre des fonds" src="../_images/registre_fonds.png" /></p>
-<ul class="simple">
-<li><p>Au terme de la Version 6, l’APP VitamUI « Registre des fonds », quant à elle, donne accès, à la liste et au détail des entrées, quels que soient les services producteurs concernés, afin de se présenter comme un registre des entrées. Des filtres de recherche permettent d’en affiner la liste : recherche par date, par service producteur, etc. et des facettes permettent d’apprécier l’ensemble des archives conservées en fonction de ces filtres.</p></li>
-</ul>
+<p>À titre d’exemple, l’APP VitamUI « Registre des fonds » donne accès à la liste et au détail des entrées, quels que soient les services producteurs concernés, afin de se présenter comme un registre des entrées. Des filtres de recherche permettent d’en affiner la liste : recherche par date, par service producteur, etc. et des facettes permettent d’apprécier l’ensemble des archives conservées en fonction de ces filtres.</p>
 <p><img alt="Vitam UI - registre des fonds" src="../_images/registre_fonds2.png" /></p>
 </section>
 </section>

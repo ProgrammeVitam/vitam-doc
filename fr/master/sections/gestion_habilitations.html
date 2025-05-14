@@ -440,40 +440,31 @@
 <thead>
 <tr class="row-odd"><th class="head text-left"><p>Document</p></th>
 <th class="head text-center"><p>Date de la version</p></th>
-<th class="head text-center"><p>Remarques</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td class="text-left"><p>NF Z 44022 – MEDONA – Modélisation des données pour l’archivage</p></td>
 <td class="text-center"><p>18/01/2014</p></td>
-<td class="text-center"><p></p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>Standard d’échange de données pour l’archivage – SEDA – v. 2.1</p></td>
 <td class="text-center"><p>06/2018</p></td>
-<td class="text-center"><p></p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>Standard d’échange de données pour l’archivage – SEDA – v. 2.2</p></td>
 <td class="text-center"><p>02/2022</p></td>
-<td class="text-center"><p>Cette nouvelle version du SEDA est intégrée à la solution logicielle Vitam à partir de la V6.RC.</p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>Standard d’échange de données pour l’archivage – SEDA – v. 2.3</p></td>
 <td class="text-center"><p>06/2023</p></td>
-<td class="text-center"><p></p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p><a class="reference internal" href="SIP.html"><span class="std std-doc">Vitam – Structuration des Submission Information Package (SIP)</span></a></p></td>
 <td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p><a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/html/installation/">Vitam – Documentation d’installation</a></p></td>
 <td class="text-center"><p></p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>Vitam – Documentation d’installation</p></td>
-<td class="text-center"><p></p></td>
-<td class="text-center"><p></p></td>
-</tr>
-<tr class="row-even"><td class="text-left"><p>Vitam – Documentation d’exploitation</p></td>
-<td class="text-center"><p></p></td>
+<tr class="row-even"><td class="text-left"><p><a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/html/exploitation/">Vitam – Documentation d’exploitation</a></p></td>
 <td class="text-center"><p></p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p><a class="reference internal" href="stockage.html"><span class="std std-doc">Vitam – Gestion de multiples stratégies de stockage </span></a></p></td>
-<td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 </tr>
 </tbody>
@@ -486,9 +477,9 @@
 <ul class="simple">
 <li><p>une présentation des différentes habilitations : certificat applicatif, certificat personnel, profil de sécurité, contexte applicatif, contrat d’entrée, contrat d’accès, et de la manière dont le Standard d’échanges de données pour l’archivage (SEDA) et le modèle de données de la solution logicielle Vitam sont utilisés pour les formaliser ;</p></li>
 <li><p>une présentation des mécanismes mis en œuvre dans la solution logicielle Vitam pour gérer ces habilitations ;</p></li>
-<li><p>des recommandations aux ministères porteurs, partenaires et utilisateurs de la solution logicielle Vitam sur la manière d’utiliser les fonctionnalités associées à ces habilitations.
-Le présent document décrit les fonctionnalités qui seront offertes par la première version de production de la solution logicielle Vitam au terme de la version 6 (mars 2023). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.</p></li>
+<li><p>des recommandations aux ministères porteurs, partenaires et utilisateurs de la solution logicielle Vitam sur la manière d’utiliser les fonctionnalités associées à ces habilitations.</p></li>
 </ul>
+<p>Le présent document décrit les fonctionnalités offertes au terme de la version 8.1 (printemps 2025). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.</p>
 </section>
 </section>
 <section id="administration-des-habilitations">
@@ -570,8 +561,8 @@ Enregistrement d’un certificat :</p>
 <h5><span class="section-number">6.2.1.3.1. </span>Import<a class="headerlink" href="#import" title="Lien vers cette rubrique"></a></h5>
 <p><strong>Au moment de l’installation de la solution logicielle Vitam</strong></p>
 <p>La solution logicielle Vitam intègre par défaut des habilitations, automatiquement importées lors de l’initialisation de la plate-forme, dans le but de permettre un accès direct à l’ensemble de ses services. En plus d’un contexte applicatif, donnant accès à l’ensemble des tenants, et d’un profil de sécurité, référençant l’ensemble des permissions, elle fournit un certificat applicatif, utilisé pour déployer la solution logicielle Vitam<a class="footnote-reference brackets" href="#id169" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>.<br />
-Cette action, relevant d’un acte d’administration technique, fait l’objet d’une journalisation dans les logs, contrairement aux actions d’import du contexte applicatif et du profil de sécurité fournis par défaut par la solution logicielle Vitam, qui sont tracées dans le journal des opérations du tenant d’administration.
-<strong>Points d’attention :</strong> le certificat applicatif fourni par défaut par la solution logicielle Vitam n’est pas destiné à être utilisé par une plate-forme en production. Il a vocation à :</p>
+Cette action, relevant d’un acte d’administration technique, fait l’objet d’une journalisation dans les logs, contrairement aux actions d’import du contexte applicatif et du profil de sécurité fournis par défaut par la solution logicielle Vitam, qui sont tracées dans le journal des opérations du tenant d’administration.</p>
+<p><strong>Points d’attention :</strong> le certificat applicatif fourni par défaut par la solution logicielle Vitam n’est pas destiné à être utilisé par une plate-forme en production. Il a vocation à :</p>
 <ul class="simple">
 <li><p>faciliter le déploiement d’une plate-forme et précéder l’utilisation d’un certificat de production ;</p></li>
 <li><p>être utilisé par une plate-forme de tests.</p></li>
@@ -592,13 +583,13 @@ Cette action, relevant d’un acte d’administration technique, fait l’objet 
 </section>
 <section id="mise-a-jour">
 <h5><span class="section-number">6.2.1.3.3. </span>Mise à jour<a class="headerlink" href="#mise-a-jour" title="Lien vers cette rubrique"></a></h5>
-<p>La solution logicielle permet de mettre à jour unitairement des certificats<a class="footnote-reference brackets" href="#id172" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a>. Cette mise à jour consiste à remplacer un certificat en fin de vie par un nouveau certificat et, de fait, entraîne la suppression du certificat en fin de vie.
+<p>La solution logicielle permet de mettre à jour unitairement des certificats<a class="footnote-reference brackets" href="#id172" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a>. Cette mise à jour consiste à remplacer un certificat en fin de vie par un nouveau certificat et, de fait, entraîne la suppression du certificat en fin de vie.<br />
 Cette mise à jour peut avoir un impact sur les interactions entre l’application versante et/ou accédante et la solution logicielle Vitam. Cette opération ne s’effectue qu’au moyen des API et relève d’une opération d’administration technique.</p>
 <p>Cette action, relevant d’un acte d’administration technique, fait l’objet d’une journalisation dans les logs fournis par défaut par la solution logicielle Vitam.</p>
 </section>
 <section id="suppression">
 <h5><span class="section-number">6.2.1.3.4. </span>Suppression<a class="headerlink" href="#suppression" title="Lien vers cette rubrique"></a></h5>
-<p>La solution logicielle permet de supprimer unitairement des certificats<a class="footnote-reference brackets" href="#id173" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></a>.
+<p>La solution logicielle permet de supprimer unitairement des certificats<a class="footnote-reference brackets" href="#id173" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></a>.<br />
 Cette suppression peut avoir un impact sur les interactions entre l’application versante et/ou accédante et la solution logicielle Vitam. Cette opération ne s’effectue qu’au moyen des API et relève d’une opération d’administration technique.</p>
 <p>Cette action, relevant d’un acte d’administration technique, fait l’objet d’une journalisation dans les logs fournis par défaut par la solution logicielle Vitam.</p>
 </section>
@@ -620,7 +611,7 @@ Cette dernière propose un certificat par défaut, destiné à être utilisé da
 </li>
 <li><p>lors de l’intégration d’une nouvelle application devant accéder aux services de la solution logicielle Vitam.</p></li>
 </ul>
-<p>La déclaration d’un certificat applicatif dans la solution logicielle Vitam relève d’une opération d’administration technique<a class="footnote-reference brackets" href="#id174" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>8<span class="fn-bracket">]</span></a>.
+<p>La déclaration d’un certificat applicatif dans la solution logicielle Vitam relève d’une opération d’administration technique<a class="footnote-reference brackets" href="#id174" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>8<span class="fn-bracket">]</span></a>.<br />
 De fait, au moment de l’initialisation d’un nouveau certificat, il est recommandé de suivre les étapes suivantes :</p>
 <table class="docutils align-default">
 <thead>
@@ -728,7 +719,7 @@ De fait, au moment de l’initialisation d’un nouveau certificat, il est recom
 <h3><span class="section-number">6.2.2. </span>Certificat personnel<a class="headerlink" href="#certificat-personnel" title="Lien vers cette rubrique"></a></h3>
 <section id="id12">
 <h4><span class="section-number">6.2.2.1. </span>Description<a class="headerlink" href="#id12" title="Lien vers cette rubrique"></a></h4>
-<p>Le certificat personnel correspond à un certificat propre à une personne physique utilisatrice en particulier de l’application souhaitant accéder aux services de la solution logicielle Vitam. Le certificat personnel ne se substitue pas au certificat applicatif qui authentifie une application, et il sert juste à identifier et non à authentifier une personne qui se connecte derrière une application. Le principe de délégation de la phase d’authentification des utilisateurs humains par les front-offices est conservé même dans ce cas, et ce certificat est simplement transmis par le front-office dans les appels REST. À minima, la solution logicielle Vitam vérifie que ce certificat est présent dans la liste des certificats connus.</p>
+<p>Le certificat personnel correspond à un certificat propre à une personne physique utilisatrice en particulier de l’application souhaitant accéder aux services de la solution logicielle Vitam. Le certificat personnel ne se substitue pas au certificat applicatif qui authentifie une application, et il sert juste à identifier et non à authentifier une personne qui se connecte derrière une application. Le principe de délégation de la phase d’authentification des utilisateurs humains par les front-offices est conservé même dans ce cas, et ce certificat est simplement transmis par le front-office dans les appels REST. A minima, la solution logicielle Vitam vérifie que ce certificat est présent dans la liste des certificats connus.</p>
 <p>Son utilisation répond à un besoin de sécurité supplémentaire, associé aux fonctions d’administration avancées ou considérées comme sensibles. L’accès à certaines fonctions (EndPoints) est soumis d’une part à l’autorisation de l’application par son contexte applicatif et d’autre part à la présence d’un certificat personnel connu pour identification de l’utilisateur.</p>
 </section>
 <section id="id13">
@@ -781,7 +772,7 @@ De fait, au moment de l’initialisation d’un nouveau certificat, il est recom
 </tr>
 </tbody>
 </table>
-<p>Au niveau de la plate-forme un fichier de configuration définit les services qui peuvent être rendus accessibles aux seuls détenteurs d’un certificat personnel<a class="footnote-reference brackets" href="#id179" id="id15" role="doc-noteref"><span class="fn-bracket">[</span>13<span class="fn-bracket">]</span></a>.
+<p>Au niveau de la plate-forme un fichier de configuration définit les services qui peuvent être rendus accessibles aux seuls détenteurs d’un certificat personnel<a class="footnote-reference brackets" href="#id179" id="id15" role="doc-noteref"><span class="fn-bracket">[</span>13<span class="fn-bracket">]</span></a>.<br />
 Par ailleurs, le certificat personnel est enregistré dans le journal des opérations sous forme d’identifiant (agIdPers).</p>
 </section>
 <section id="id16">
@@ -791,13 +782,13 @@ Par ailleurs, le certificat personnel est enregistré dans le journal des opéra
 <section id="id18">
 <h5><span class="section-number">6.2.2.3.1. </span>Import<a class="headerlink" href="#id18" title="Lien vers cette rubrique"></a></h5>
 <p>Dans la solution logicielle Vitam, il est possible de générer 0 à n certificat(s) personnel(s). Cet ajout relève d’opérations d’administration technique et s’effectue au moyen des API.</p>
-<p>Lors d’un import, 1 à n certificat(s) personnel(s) sont ajoutés au référentiel des certificats personnels<a class="footnote-reference brackets" href="#id181" id="id19" role="doc-noteref"><span class="fn-bracket">[</span>15<span class="fn-bracket">]</span></a>.
+<p>Lors d’un import, 1 à n certificat(s) personnel(s) sont ajoutés au référentiel des certificats personnels<a class="footnote-reference brackets" href="#id181" id="id19" role="doc-noteref"><span class="fn-bracket">[</span>15<span class="fn-bracket">]</span></a>.<br />
 Cette action, relevant d’un acte d’administration technique, fait l’objet d’une journalisation dans les logs de la solution logicielle Vitam.</p>
 <p>Point d’attention : cette action requiert au préalable le paramétrage d’un fichier de configuration définissant les services qui peuvent être rendus accessibles aux seuls détenteurs du certificat personnel<a class="footnote-reference brackets" href="#id182" id="id20" role="doc-noteref"><span class="fn-bracket">[</span>16<span class="fn-bracket">]</span></a>.</p>
 </section>
 <section id="id21">
 <h5><span class="section-number">6.2.2.3.2. </span>Suppression<a class="headerlink" href="#id21" title="Lien vers cette rubrique"></a></h5>
-<p>La solution logicielle permet de supprimer unitairement des certificats personnels<a class="footnote-reference brackets" href="#id183" id="id22" role="doc-noteref"><span class="fn-bracket">[</span>17<span class="fn-bracket">]</span></a>.
+<p>La solution logicielle permet de supprimer unitairement des certificats personnels<a class="footnote-reference brackets" href="#id183" id="id22" role="doc-noteref"><span class="fn-bracket">[</span>17<span class="fn-bracket">]</span></a>.<br />
 Cette suppression peut avoir un impact sur les interactions entre l’application versante et/ou accédante et la solution logicielle Vitam. Cette opération ne s’effectue qu’au moyen des API et relève d’une opération d’administration technique.</p>
 <p>Cette action, relevant d’un acte d’administration technique, fait l’objet d’une journalisation dans les logs de la solution logicielle Vitam.</p>
 </section>
@@ -808,7 +799,7 @@ Cette suppression peut avoir un impact sur les interactions entre l’applicatio
 <section id="quand-et-comment-creer-un-certificat-personnel">
 <h5><span class="section-number">6.2.2.4.1. </span>Quand et comment créer un certificat personnel ?<a class="headerlink" href="#quand-et-comment-creer-un-certificat-personnel" title="Lien vers cette rubrique"></a></h5>
 <p>Un service externe souhaitant utiliser les services de la solution logicielle Vitam peut disposer de certificats personnels pour tracer les actions de certains utilisateurs.</p>
-<p>La création d’un certificat personnel et l’attribution des privilèges qui lui sont associés relèvent d’une opération d’administration technique<a class="footnote-reference brackets" href="#id184" id="id24" role="doc-noteref"><span class="fn-bracket">[</span>18<span class="fn-bracket">]</span></a>.
+<p>La création d’un certificat personnel et l’attribution des privilèges qui lui sont associés relèvent d’une opération d’administration technique<a class="footnote-reference brackets" href="#id184" id="id24" role="doc-noteref"><span class="fn-bracket">[</span>18<span class="fn-bracket">]</span></a>.<br />
 La création d’un certificat personnel peut intervenir à différents moments :</p>
 <ul class="simple">
 <li><p>lors de l’initialisation de la plate-forme : il n’est pas obligatoire de disposer d’un certificat personnel pour pouvoir utiliser les services de la solution logicielle Vitam, mais sa création répond à des besoins supplémentaires d’authentification ;</p></li>
@@ -1419,7 +1410,7 @@ Il s’agit d’une opération d’administration (« MASTERDATA »), tracée 
 <tr class="row-odd"><td class="text-left"><p>Échec<a class="footnote-reference brackets" href="#id214" id="id65" role="doc-noteref"><span class="fn-bracket">[</span>48<span class="fn-bracket">]</span></a></p></td>
 <td class="text-left"><p>Sans journalisation :<br>- Import d’un référentiel sous la forme d’un fichier qui n’est pas au format JSON ;<br>- Import d’un référentiel sous la forme d’un fichier qui n’est pas correctement formaté au format JSON ;<br>- Import d’un référentiel dont au moins un des champs contient une injection HTML ;<br>- import d’un contexte applicatif dans lequel une valeur ne correspond pas au type d’indexation du champ défini dans l’ontologie (ex : valeur textuelle dans un champ de type « DATE »).</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p></p></td>
+<tr class="row-even"><td class="text-left"><p>Échec</p></td>
 <td class="text-left"><p>Avec journalisation :<br>- import d’un contexte applicatif dont l’identifiant existe déjà dans le système sur un tenant en mode « esclave » ;<br>- import d’un fichier JSON dans lequel un contexte ne déclare pas d’identifiant<a class="footnote-reference brackets" href="#id215" id="id66" role="doc-noteref"><span class="fn-bracket">[</span>49<span class="fn-bracket">]</span></a>, d’intitulé, de profil de sécurité, de permissions<a class="footnote-reference brackets" href="#id216" id="id67" role="doc-noteref"><span class="fn-bracket">[</span>50<span class="fn-bracket">]</span></a> ;<br>- import d’un contexte applicatif dans lequel un champ ne contient pas de valeur. Il peut s’agir des champs : Identifier<a class="footnote-reference brackets" href="#id217" id="id68" role="doc-noteref"><span class="fn-bracket">[</span>51<span class="fn-bracket">]</span></a>, Name, SecurityProfile, Status, IngestContracts et AccessContracts<a class="footnote-reference brackets" href="#id218" id="id69" role="doc-noteref"><span class="fn-bracket">[</span>52<span class="fn-bracket">]</span></a> ;<br>- import d’un contexte applicatif qui déclare un contrat d’entrée et/ou d’accès non référencé(s) dans la solution logicielle Vitam.</p></td>
 </tr>
 </tbody>
@@ -1438,17 +1429,9 @@ Cette action relève d’un acte d’administration technique et ne fait pas l�
 </section>
 <section id="id72">
 <h5><span class="section-number">6.2.4.3.3. </span>Modification<a class="headerlink" href="#id72" title="Lien vers cette rubrique"></a></h5>
-<p>La modification des champs des contextes applicatifs est possible au moyen des API, de l’IHM standard et de l’APP VitamUI « Contextes applicatifs »  depuis le tenant d’administration.
+<p>La modification des champs des contextes applicatifs est possible au moyen des API et de l’APP VitamUI « Contextes applicatifs »  depuis le tenant d’administration.
 Les champs modifiables sont :</p>
 <ul class="simple">
-<li><p>depuis l’IHM standard :</p>
-<ul>
-<li><p>le nom du contexte applicatif (Name) ;</p></li>
-<li><p>le statut « Actif » ou « Inactif », correspondant aux valeurs « ACTIVE » et « INACTIVE » dans le système (Status) ;</p></li>
-<li><p>le contrôle sur les tenants « Actif » ou « Inactif », correspondant aux valeurs « true » et « false » dans le système (EnableControl) ;</p></li>
-<li><p>les dates d’activation (ActivationDate) et de désactivation (DeactivationDate) ;</p></li>
-</ul>
-</li>
 <li><p>depuis les API :</p>
 <ul>
 <li><p>le profil de sécurité (SecurityProfile) ;</p></li>
@@ -1711,7 +1694,7 @@ Au travers de ces différents référentiels, il s’agira de paramétrer les ha
 Pour ce faire, il faut modifier le fichier de configuration « functional-administration.conf », qui définit, entre autres, par tenant, les habilitations dont la solution logicielle Vitam ne génère pas d’identifiant<a class="footnote-reference brackets" href="#id225" id="id80" role="doc-noteref"><span class="fn-bracket">[</span>59<span class="fn-bracket">]</span></a>.</p></li>
 </ul>
 <p><img alt="" src="../_images/config_hab.png" /><br />
-Fichier de configuration listant, par tenant, les habilitations dont l’identifiant n’est pas généré par Vitam</p>
+<em>Fichier de configuration listant, par tenant, les habilitations dont l’identifiant n’est pas généré par Vitam</em></p>
 <p>Il est possible d’associer à un tenant l’habilitation pour laquelle on souhaite voir généré l’identifiant par une application externe, en ajoutant au tenant concerné le nom de l’habilitation concerné.
 Le nom de l’habilitation concernée doit être écrit de la manière suivante :</p>
 <ul class="simple">
@@ -1957,10 +1940,10 @@ Il est possible d’importer un référentiel complet, comprenant plusieurs item
 </section>
 <section id="id95">
 <h5><span class="section-number">6.2.5.3.2. </span>Modification<a class="headerlink" href="#id95" title="Lien vers cette rubrique"></a></h5>
-<p>La modification des champs des contrats d’entrée est possible au moyen des API, de l’IHM standard et de l’APP VitamUI « Contrats d’entrée » depuis le tenant où ces derniers ont été importés.</p>
+<p>La modification des champs des contrats d’entrée est possible au moyen des API et de l’APP VitamUI « Contrats d’entrée » depuis le tenant où ces derniers ont été importés.</p>
 <p>Les champs modifiables sont :</p>
 <ul class="simple">
-<li><p>depuis l’IHM standard et depuis l’APP VitamUI « Contrats d’entrée » :</p>
+<li><p>depuis l’APP VitamUI « Contrats d’entrée » :</p>
 <ul>
 <li><p>le nom du contrat d’entrée (Name) ;</p></li>
 <li><p>la description (Description) ;</p></li>
@@ -2218,7 +2201,7 @@ Il est, bien sûr, possible de modifier ce paramétrage par défaut.</p></li>
 </ul>
 <p>Pour ce faire, il faut modifier le fichier de configuration « functional-administration.conf », qui définit, entre autres, par tenant, les habilitations dont la solution logicielle Vitam ne génère pas d’identifiant<a class="footnote-reference brackets" href="#id237" id="id101" role="doc-noteref"><span class="fn-bracket">[</span>71<span class="fn-bracket">]</span></a>.</p>
 <p><img alt="" src="../_images/config_hab2.png" /><br />
-Fichier de configuration listant, par tenant, les habilitations dont l’identifiant n’est pas généré par Vitam</p>
+<em>Fichier de configuration listant, par tenant, les habilitations dont l’identifiant n’est pas généré par Vitam</em></p>
 <p>Il est possible d’associer à un tenant l’habilitation pour laquelle on souhaite voir généré l’identifiant par une application externe, en ajoutant au tenant concerné le nom de l’habilitation concerné.
 Le nom de l’habilitation concernée doit être écrit de la manière suivante :</p>
 <ul class="simple">
@@ -2241,8 +2224,8 @@ Cette opération relève d’un acte d’exploitation technique. Elle implique l
 </section>
 <section id="quel-acces-aux-contrats-dentree">
 <h5><span class="section-number">6.2.5.4.4. </span>Quel accès aux contrats d’entrée ?<a class="headerlink" href="#quel-acces-aux-contrats-dentree" title="Lien vers cette rubrique"></a></h5>
-<p><em>Gestion des droits</em>
-La gestion des habilitations relève d’opérations d’administration. Il est donc recommandé d’en limiter l’accès :</p>
+<p><em>Gestion des droits</em></p>
+<p>La gestion des habilitations relève d’opérations d’administration. Il est donc recommandé d’en limiter l’accès :</p>
 <ul class="simple">
 <li><p>un administrateur fonctionnel et/ou technique peut avoir accès à l’exhaustivité de ces référentiels et les mettre à jour ;</p></li>
 <li><p>seul un administrateur technique a vocation à gérer les certificats applicatifs et les certificats personnels ;</p></li>
@@ -2450,10 +2433,10 @@ Il est possible d’importer un référentiel complet, comprenant plusieurs item
 </section>
 <section id="id116">
 <h5><span class="section-number">6.2.6.3.2. </span>Modification<a class="headerlink" href="#id116" title="Lien vers cette rubrique"></a></h5>
-<p>La modification des champs des contrats d’accès est possible au moyen des API, de l’IHM standard et l’APP VitamUI « Contrat d’accès » depuis le tenant où ces derniers ont été importés.</p>
+<p>La modification des champs des contrats d’accès est possible au moyen des API et l’APP VitamUI « Contrat d’accès » depuis le tenant où ces derniers ont été importés.</p>
 <p>Les champs modifiables sont :</p>
 <ul class="simple">
-<li><p>depuis l’IHM standard et l’APP VitamUI « Contrats d’accès » :</p>
+<li><p>depuis l’APP VitamUI « Contrats d’accès » :</p>
 <ul>
 <li><p>le nom du contrat d’accès (Name) ;</p></li>
 <li><p>la description (Description) ;</p></li>
@@ -2735,7 +2718,7 @@ Dans VitamUI, l’APP « Contrats d’accès » permet de :</p>
 <li><p>une politique de préservation des objets numériques de manière générique ou de manière spécifique,</p></li>
 <li><p>une stratégie d’identification pérenne.</p></li>
 </ul>
-<p><strong>Point d’attention :</strong></p>
+<p><strong>Points d’attention :</strong></p>
 <ul class="simple">
 <li><p>Au terme de la version 8.0, les paramètres liés à la définition d’une politique de préservation ne sont qu’informatifs. En effet, ils ne sont actuellement pas applicables dans des workflows existants (opérations de préservation, opérations de suppression de versions d’objets à la demande).</p></li>
 <li><p>Au terme de la version 8.0, la stratégie d’identification pérenne qu’il est possible de mettre en œuvre ne couvre que l’identification ARK.</p></li>
@@ -2860,10 +2843,10 @@ Par cet import, 1 à n contrat(s) de gestion sont ajoutés au référentiel des 
 </section>
 <section id="id138">
 <h5><span class="section-number">6.2.7.3.2. </span>Modification<a class="headerlink" href="#id138" title="Lien vers cette rubrique"></a></h5>
-<p>La modification des champs des contrats de gestion est possible au moyen des API,de l’IHM standard et l’APP VitamUI « Contrat de gestion » depuis le tenant où ces derniers ont été importés.
+<p>La modification des champs des contrats de gestion est possible au moyen des API et de l’APP VitamUI « Contrat de gestion » depuis le tenant où ces derniers ont été importés.
 Les champs modifiables sont :</p>
 <ul class="simple">
-<li><p>depuis l’IHM standard et l’APP VitamUI « Contrats de gestion » :</p>
+<li><p>depuis l’APP VitamUI « Contrats de gestion » :</p>
 <ul>
 <li><p>le nom du contrat de gestion (Name) ;</p></li>
 <li><p>la description (Description) ;</p></li>
@@ -2881,7 +2864,7 @@ Concernant les options contenues dans un contrat de gestion, il est possible de�
 <li><p>ajouter, modifier ou supprimer une stratégie de stockage appliquées aux objets binaires (ObjectStrategy) ;</p></li>
 <li><p>ajouter, modifier ou supprimer une stratégie d’identification pérenne (PersistentIdentifierPolicy).</p></li>
 </ul>
-<p><strong>Point d’attention :</strong></p>
+<p><strong>Points d’attention :</strong></p>
 <ul class="simple">
 <li><p>Le statut du contrat de gestion doit être « Actif » (« ACTIVE ») pour pouvoir appliquer la stratégie de stockage qu’il définit.</p></li>
 <li><p>Il n’est pas possible de supprimer une stratégie de stockage ou une stratégie d’identification pérenne depuis l’APP VitamUI « Contrats de gestion ».</p></li>
