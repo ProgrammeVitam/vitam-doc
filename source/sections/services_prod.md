@@ -6,13 +6,13 @@ Introduction
 
 ### Documents de référence
 
-|Document |Date de la version|Remarques|
-|:---------------:|:-----:|:-----:|
-|NF Z 44022 – MEDONA – Modélisation des données pour l’archivage|18/01/2014||
-|Standard d’échange de données pour l’archivage – SEDA – v. 2.1|06/2018||
-|Standard d’échange de données pour l’archivage – SEDA – v. 2.2|02/2022|Cette nouvelle version du SEDA est intégrée à la solution logicielle Vitam à partir de la V6.RC.|
-|Standard d’échange de données pour l’archivage – SEDA – v. 2.3|06/2024||
-|ISAAR (CPF) – v. 2.0|2004||
+|Document |Date de la version|
+|:---------------:|:-----:|
+|NF Z 44022 – MEDONA – Modélisation des données pour l’archivage|18/01/2014|
+|Standard d’échange de données pour l’archivage – SEDA – v. 2.1|06/2018|
+|Standard d’échange de données pour l’archivage – SEDA – v. 2.2|02/2022|
+|Standard d’échange de données pour l’archivage – SEDA – v. 2.3|06/2024|
+|ISAAR (CPF) – v. 2.0|2004|
 
 
 ### Présentation du document
@@ -80,7 +80,7 @@ L’équipe projet Vitam a opté pour la seconde solution pour les raisons suiva
     - exemple 2 : un dossier de passation de marché peut être alimenté avec des pièces produites par l’entité qui a exprimé le besoin, par l’acheteur ou par le service juridique ;
 - la notion de service producteur étant destinée à être utilisée pour des besoins de gestion (alimentation du registre des fonds, mise en œuvre des opérations prévues au contrat de service) et d’accès, en lien avec des contrats de service et les contrats d’accès, il a paru préférable de la positionner comme une information de gestion applicable à l’ensemble des unités archivistiques transférées dans le cadre d’un ArchiveTransfer.  
 
-Le document de *Structuration des Submission Information Packages* présente l’extension retenue pour la réalisation et l’utilisation de la solution logicielle Vitam. **Il rend obligatoire la déclaration d’un, et d’un seul, service producteur pour chaque transfert d’archives effectué dans la solution logicielle Vitam.**
+Le [document de *Structuration des Submission Information Packages*](./SIP.md) présente l’extension retenue pour la réalisation et l’utilisation de la solution logicielle Vitam. **Il rend obligatoire la déclaration d’un, et d’un seul, service producteur pour chaque transfert d’archives effectué dans la solution logicielle Vitam.**
 
 Mécanismes mis en œuvre dans la solution logicielle Vitam
 ---
@@ -140,8 +140,8 @@ Le fichier CSV à importer doit avoir les caractéristiques suivantes :
 - séparateur de champ : virgule ;
 - séparateur de texte : guillemets simples ou doubles, espace vide ;
 - les noms de colonnes facultatifs peuvent être absents, s'ils ne sont pas utilisés ;
-- si un champ doit contenir plusieurs valeurs, elles doivent être séparées par un pipe ;
-Pour plus de précisions sur l’élaboration des fichiers CSV, consulter l’annexe à la fin de ce document.
+- si un champ doit contenir plusieurs valeurs, elles doivent être séparées par un pipe.
+Pour plus de précisions sur l’élaboration des fichiers CSV, consulter l’[annexe à la fin de ce document](#annexe-préparer-un-fichier-csv).
 
 Lors d’une mise à jour du référentiel sont appliquées les règles suivantes :
 - échec de la mise à jour si :
@@ -327,7 +327,7 @@ L’équipe projet Vitam recommande les modalités de mise en œuvre ci-dessous.
 
 |Intitulé|Description|Niveau de recommandation|
 | :---------------|:---------------:|:-----:|
-|Bordereau|
+|**Bordereau**|
 |Transferts préparés manuellement|Il est recommandé de constituer des transferts pour des archives homogènes en termes de services producteurs|Recommandation|
 |Transferts effectués par des applications métiers faisant intervenir plusieurs producteurs (cas où les archives produites par chaque producteur sont bien isolées)|Si les archives produites et reçues par chaque service producteur (unités archivistiques comme objets) sont bien identifiées et isolées, il est recommandé de procéder à un transfert par service producteur.|Recommandation|
 |Transferts effectués par des applications métiers faisant intervenir plusieurs producteurs (cas où les objets sont partagés entre plusieurs producteurs, mais bien identifiés)|Si tout ou partie des archives produites ou reçues par chaque producteur sont partagées avec d’autres services producteurs (ex. : objets partagés entre plusieurs services producteurs, avec des métadonnées de description et/ou de gestion propres à chacun), il est recommandé de procéder à un transfert par service producteur, les objets n’étant transférés qu’une seule fois, sous la responsabilité d’un des deux producteurs.|Recommandation|
@@ -338,7 +338,7 @@ L’équipe projet Vitam recommande les modalités de mise en œuvre ci-dessous.
 
 |Intitulé|Description|Niveau de recommandation|
 | :--------------- |:---------------:|:-----:|
-|Contrat d’accès|||
+|**Contrat d’accès**|||
 |Cas d’une application correspondant à un système d’information archivistique|Un système d’information archivistique ayant vocation à administrer les archives de tous les services producteurs confiant des archives au service d’archives, il est recommandé d’indiquer dans le contrat d’accès que l’application concernée a accès par défaut à tous les services producteurs (dans la collection AccessContract, le champ EveryOriginatingAgency doit avoir pour valeur « true »).<br> Point d’attention : le système d’information archivistique devra ensuite filtrer lui-même les droits de ses différents utilisateurs, service producteur par service producteur.|Recommandation|
 |Cas d’une application métier donnant accès aux archives d’un seul producteur d’archives|Il est recommandé de déclarer dans le contrat d’accès le service producteur concerné dans le champ « OriginatingAgencies ».<br> Point d’attention : si l’application ne peut accéder qu’à une partie des archives de ce service producteur (ex. Archives dont la DUC est échue), il conviendra de rajouter d’autres filtres, soit dans l’application métier, soit dans la solution logicielle Vitam (contrat d’accès excluant une partie de l’arborescence des archives du service producteur).|Recommandation|
 |Cas d’une application métier donnant accès aux archives de plusieurs producteurs (cas d’une application dont les utilisateurs peuvent avoir accès à toutes les archives)|Il est recommandé d’indiquer dans le contrat d’accès que l’application concernée a accès par défaut à tous les services producteurs (dans la collection AccessContract, le champ EveryOriginatingAgency doit avoir pour valeur « true »).|Recommandation|
@@ -349,7 +349,7 @@ L’équipe projet Vitam recommande les modalités de mise en œuvre ci-dessous.
 
 |Intitulé|Description|Niveau de recommandation|
 | :--------------- |:---------------:|:-----:|
-|Référentiel des services agents|||
+|**Référentiel des services agents**|||
 |Cas d’une application correspondant à un système d’information archivistique|Un système d’information archivistique ayant vocation à administrer les archives doit nécessairement disposer d’un référentiel des services agents. Ce référentiel doit contenir au moins une référence, sans quoi aucun transfert d’archives ne sera possible.|Obligatoire|
 |Cas d’une application métier|Une application métier devant transférer des archives ou y accéder n’a pas forcément vocation à accéder au référentiel des services agents. Il est recommandé de veiller à lui attribuer les droits nécessaires dans le profil de sécurité qui lui est associé.|Recommandé|
 |Cas d’un groupe « administrateurs » du système d’information archivistique|Il est recommandé d’attribuer des droits de consultation et de modification du référentiel à un groupe d’utilisateurs ayant vocation à agir sur le référentiel des services agents, si ce référentiel a vocation à être ponctuellement révisé. <br> Par exemple, VitamUI permet d’autoriser l’accès à l’APP « Services agent » avec des droits de consultation, de modification, d’import et d’export du référentiel.|Recommandé|
