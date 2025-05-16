@@ -997,15 +997,10 @@ par défaut disponibles dans l’arborescence de fichiers :
 -   pour les fichiers, le format identifié avec l’outil DROID, le nom du
     fichier, sa taille, son empreinte avec l’algorithme SHA-512 ;
 -   pour les unités archivistiques correspondant aux fichiers, le nom du
-    fichier comme titre (champ Title du standard SEDA), la date de
-    dernière modification du fichier comme date (champ TransactedDate du
-    standard SEDA). Le niveau de description (champ DescriptionLevel du
+    fichier comme titre (champ Title du standard SEDA). Le niveau de description (champ DescriptionLevel du
     standard SEDA) est incrémenté avec la valeur « Item » ;
 -   pour les unités archivistiques correspondant à des répertoires,
-    l’intitulé de ceux-ci comme titre (champ Title du standard SEDA), la
-    date de la plus ancienne et de la plus récente unité archivistique
-    contenue dans le répertoire (champs StartDate et EndDate du standard
-    SEDA). Le niveau de description (champ DescriptionLevel du standard
+    l’intitulé de ceux-ci comme titre (champ Title du standard SEDA). Le niveau de description (champ DescriptionLevel du standard
     SEDA) est incrémenté avec la valeur « RecordGrp ».
 
 ***Point d’attention :*** Le processus retenu pour l’identification dans RESIP est le suivant[^5] :
