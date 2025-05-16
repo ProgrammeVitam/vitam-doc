@@ -10,12 +10,12 @@ Introduction
 |:---------------:|:-----:|:-----:|
 |NF Z 44022 – MEDONA – Modélisation des données pour l’archivage|18/01/2014||
 |Standard d’échange de données pour l’archivage – SEDA – v. 2.1|06/2018||
-|Standard d’échange de données pour l’archivage – SEDA – v. 2.2|02/2022|Cette nouvelle version du SEDA est intégrée  à la solution logicielle Vitam à partir de la V6.RC.|
+|Standard d’échange de données pour l’archivage – SEDA – v. 2.2|02/2022||
 |Standard d’échange de données pour l’archivage – SEDA – v. 2.3|02/2024||
 |[Vitam – Structuration des Submission Information Package (SIP)](./SIP.md)|||
-|[Vitam – Ontologie](./ontologie.md)||Ce document doit être lu en préalable au présent document.|
+|[Vitam – Ontologie](./ontologie.md)||**Ce document doit être lu en préalable au présent document.**|
 |[Vitam – Schéma](./schema.md)|||
-|[Vitam – Profils d’archivage](./profil_archivage.md)||Ce document doit être lu dans les cas où, en phase d’analyse, on souhaite évaluer quel est le meilleur type de profil à utiliser.|
+|[Vitam – Profils d’archivage](./profil_archivage.md)||**Ce document doit être lu dans les cas où, en phase d’analyse, on souhaite évaluer quel est le meilleur type de profil à utiliser.**|
 |[Vitam – PASTIS](./pastis_standalone.md)|||
 
 ### Présentation du document
@@ -29,7 +29,7 @@ Il s’articule autour des axes suivants :
 - des recommandations aux utilisateurs de la solution logicielle Vitam sur l’élaboration d’un profil d’unité archivistique ;
 - quelques conseils complémentaires de mise en œuvre.
 
-Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 8.1 (printemps 2025) :  : il comprend particulièrement la présentation des fonctionnalités offertes par le projet PASTIS (Profil d’Archivage Simple pour le Traitement de l’Information en SEDA) intégré à l’IHM Vitam UI par l’APP Profils documentaires et également accessible par un exécutable. Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
+Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 8.1 (printemps 2025) : il comprend particulièrement la présentation des fonctionnalités offertes par le projet PASTIS (Profil d’Archivage Simple pour le Traitement de l’Information en SEDA) intégré à l’IHM Vitam UI par l’APP Profils documentaires et également accessible par un exécutable. Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
 
 Présentation de la notion de profil d’unité archivistique
 ----
@@ -130,7 +130,7 @@ Il est possible de réaliser les opérations présentées ci-dessous.
 
 ##### Dans un fichier JSON
 
-Il est possible d’importer 1 à n notice(s) descriptive(s) de profil(s) d’unité archivage sous la forme d’un fichier JSON depuis les API ou l’IHM standard fournies avec la solution logicielle Vitam.  
+Il est possible d’importer 1 à n notice(s) descriptive(s) de profil(s) d’unité archivage sous la forme d’un fichier JSON depuis les API fournies avec la solution logicielle Vitam.  
 L’APP « Profils documentaires » accessible depuis l’IHM VitamUI permet quant à elle de créer une notice depuis ses interfaces.
 
 *Exemple :* notice descriptive de profil d’archivage contenant uniquement les informations obligatoires pour être importée avec succès.
@@ -194,7 +194,7 @@ Si la notice importée ne contient pas de statut, la solution logicielle Vitam e
 -  Dès son import, la notice détaillée peut inclure un schéma de contrôle détaillé, dans la mesure où tous deux sont au format JSON. Il s’agit d’une opération d’import (opération d’administration de type « MASTERDATA »).
 -  Néanmoins, la notice peut être importée sans schéma détaillé. Il est alors possible, a posteriori, de lui adjoindre ce schéma de contrôle et de vérifier sa validité par rapport au format JSON. Il s’agit alors d’une opération de mise à jour (opération d’administration de type « MASTERDATA »).
 
-Cet ajout peut s’effectuer depuis les API ou l’IHM standard fournies avec la solution logicielle Vitam. L’APP « Profils documentaires » accessible depuis l’IHM VitamUI permet quant à elle d’importer un profil d’unité archivistique, intégré dans une notice depuis son poste ou de le créer depuis ses interfaces.
+Cet ajout peut s’effectuer depuis les API fournies avec la solution logicielle Vitam. L’APP « Profils documentaires » accessible depuis l’IHM VitamUI permet quant à elle d’importer un profil d’unité archivistique, intégré dans une notice depuis son poste ou de le créer depuis ses interfaces.
 
 L’ajout d’un schéma de contrôle dans la collection est un des prérequis indispensable pour pouvoir réaliser des contrôles entre un profil d’unité archivistique et des unités archivistiques présentes dans des bordereaux de transfert au moment de leur transfert dans la solution logicielle Vitam ou déjà prises en charge dans la solution logicielle Vitam et en cours de modification.
 
@@ -214,7 +214,6 @@ L’import ou la mise à jour d’un profil d’unité archivistique peut échou
 
 La modification des champs des notices décrivant les profils d’unité archivistique est possible au moyen :
 -  des API,
--  de l’IHM standard fournies avec la solution logicielle Vitam,
 -  de l’APP « Profils documentaires » accessible depuis l’IHM VitamUI.
 Les champs modifiables sont :
 -  le nom du profil d’unité archivistique (Name) ;
@@ -278,6 +277,7 @@ La solution logicielle Vitam permet d'effectuer des recherches dans le référen
 Il est possible d'obtenir :
 -  une liste de résultats,
 -  un résultat par facettes (nombre d’occurrences pour une métadonnée donnée).
+
 Sont disponibles les facettes de type :
 -  "terms" : pour obtenir des catégories basées sur les valeurs distinctes d'un champ spécifique et le nombre associé,
 -  "filters" : pour obtenir des résultats d'agrégations par filtres sur les résultats,
@@ -363,7 +363,7 @@ Par défaut, lorsque l’utilisateur demande à accéder au détail d’une unit
 
 La solution logicielle Vitam permet d’accéder à la liste des métadonnées requises par un profil d’unité archivistique, qu’il s’agisse de vocabulaires internes ou, le cas échéant, de vocabulaires externes de la collection « Unit ».
 
-Exemple : Requête en vue de rechercher les vocabulaires utilisés par le profil d’unité archivistique dont l’identifiant est  « AUP-00001 » :
+*Exemple :* Requête en vue de rechercher les vocabulaires utilisés par le profil d’unité archivistique dont l’identifiant est  « AUP-00001 » :
 
 ```json
 
@@ -375,18 +375,18 @@ X-Access-Contract-Id: {{access-contract}}
 
 ```
 La solution logicielle Vitam renvoie alors :
-    - les vocabulaires internes et/ou externes non utilisés par le profil d’unité archivistique, en signalant qu’ils ne sont pas utilisés par ce dernier en exprimant une cardinalité ayant « ZERO » pour valeur (EffectiveCardinality - obligatoire) ;
-    - les vocabulaires internes et /ou externes utilisés par le profil d’unité archivistique, avec les informations suivantes :
-        - la cardinalité exprimée dans le profil d’unité archivisique, dont la valeur doit être égale à « ONE », « ONE_REQUIRED », « MANY » ou « MANY_REQUIRED » (EffectiveCardinality - obligatoire),
-        - les contrôles exprimés pour la métadonnée en question (Control – obligatoire, mais pouvant être vide) :
-            - le type de contrôle dont la valeur peut être égale à :
-                - « REGEX » pour une expression régulière ou une format de date contrôlé,
-                - « SELECT » pour une à plusieurs valeurs contrôlées ;
-            - pour un contrôle de type « REGEX », l’expression en elle-même (Value),
-            - pour un contrôle de type « SELECT », les différentes valeurs contrôlées (Values) ;
-        - un commentaire (Comment – facultatif).
+- les vocabulaires internes et/ou externes non utilisés par le profil d’unité archivistique, en signalant qu’ils ne sont pas utilisés par ce dernier en exprimant une cardinalité ayant « ZERO » pour valeur (EffectiveCardinality - obligatoire) ;
+  - les vocabulaires internes et /ou externes utilisés par le profil d’unité archivistique, avec les informations suivantes :
+    - la cardinalité exprimée dans le profil d’unité archivisique, dont la valeur doit être égale à « ONE », « ONE_REQUIRED », « MANY » ou « MANY_REQUIRED » (EffectiveCardinality - obligatoire),
+    - les contrôles exprimés pour la métadonnée en question (Control – obligatoire, mais pouvant être vide) :
+        - le type de contrôle dont la valeur peut être égale à :
+            - « REGEX » pour une expression régulière ou une format de date contrôlé,
+            - « SELECT » pour une à plusieurs valeurs contrôlées ;
+        - pour un contrôle de type « REGEX », l’expression en elle-même (Value),
+        - pour un contrôle de type « SELECT », les différentes valeurs contrôlées (Values) ;
+  - un commentaire (Comment – facultatif).
 
-Exemple : Résultats possibles suite à une requête en vue de rechercher les vocabulaires utilisés par le profil d’unité archivistique dont l’identifiant est  « AUP-00001 » :
+*Exemple :* Résultats possibles suite à une requête en vue de rechercher les vocabulaires utilisés par le profil d’unité archivistique dont l’identifiant est  « AUP-00001 » :
 
 ```json
 
@@ -431,10 +431,10 @@ Exemple : Résultats possibles suite à une requête en vue de rechercher les v
 "EffectiveCardinality": "MANY" } 
 
 ```
-Point d’attention : En résultats, la solution logicielle renvoie systématiquement l’ensemble des vocabulaires du schéma. A charge du front-office de filtrer les vocabulaires utilisés dans le profil d’unité archivistique en utilisant le schéma.
+**Point d’attention :** En résultats, la solution logicielle renvoie systématiquement l’ensemble des vocabulaires du schéma. A charge du front-office de filtrer les vocabulaires utilisés dans le profil d’unité archivistique en utilisant le schéma.  
 Il est possible, en accès :
-    - d’utiliser ce filtre sur les profils d’unité archivistique comme un fichier de propriétés pour récupérer les traductions, mais aussi les restrictions et informations spécifiquement déclarées dans les profils d’unité archivistiques, plutôt que ce soit l’IHM qui porte ces informations ;
-    - d’utiliser et d’afficher la traduction des vocabulaires et les contraintes définies dans un profil d’unité archivistique dans les IHM.
+- d’utiliser ce filtre sur les profils d’unité archivistique comme un fichier de propriétés pour récupérer les traductions, mais aussi les restrictions et informations spécifiquement déclarées dans les profils d’unité archivistiques, plutôt que ce soit l’IHM qui porte ces informations ;
+- d’utiliser et d’afficher la traduction des vocabulaires et les contraintes définies dans un profil d’unité archivistique dans les IHM.
 
 À titre d’exemple, au terme de la version 8.0, l’APP VitamUI « Recherche et consultation des archives » fournie avec la solution logicielle Vitam dispose d’un affichage dynamique filtré sur un profil d’unité archivistique depuis le détail des métadonnées descriptives d’une unité archivistique déclarant un profil d’unité archivistique en mode édition.
 
@@ -562,7 +562,8 @@ Il s’agit de récupérer non pas l’ensemble des éléments retournés par l�
 Parmi ces éléments, il ne faudra retenir en outre uniquement :
 -  les éléments qui ne sont pas préfixés par un dièse qui n’ont pas vocation à faire l’objet d’un contrôle au moyen d’un profil d’unité archivistique. Ainsi, on retiendra « Title » ou « Description », mais pas « #id » et #tenant ;
 -  s’il est présent, #management, seul élément précédé par un dièse que le profil d’unité archivistique supporte.
-Exemple : résultat d’une requête DSL sur une unité archivistique intitulée « Gallieni ». Figurent en gras les éléments qu’on récupère pour schématiser les données.
+
+*Exemple :* résultat d’une requête DSL sur une unité archivistique intitulée « Gallieni ». Figurent en gras les éléments qu’on récupère pour schématiser les données.  
 ```json
 {
   "httpCode": 200,
@@ -645,6 +646,7 @@ Pour en rédiger un, il est conseillé de :
 Cette méthode permet de vérifier directement la conformité du profil d’unité archivistique par rapport à une unité archivistique dès la phase de conception du schéma de contrôle.
 
 *Structure d’un schéma de contrôle*
+
 Un schéma de contrôle associé à un profil d’unité archivistique comprend deux parties[^25] :
 -  une partie déclarative ou en-tête (obligatoire),
 -  une partie listant les propriétés du schéma de contrôle (obligatoire), c’est-à-dire énumérant les éléments du SEDA ou de l’ontologie qui feront l’objet d’un contrôle[^26]. Le contenu de la liste est laissé à l’appréciation de chacun.
@@ -658,6 +660,7 @@ Un schéma de contrôle associé à un profil d’unité archivistique comprend 
 Le schéma ci-dessous distingue l’en-tête des propriétés d’un schéma de contrôle.
 
 *En-tête d’un schéma de contrôle*
+
 Comme dans un fichier au format XML, le schéma de contrôle JSON comporte des éléments d’information propres au fichier, permettant :
 -  d’identifier son format :
   - $schema : référence au schéma JSON. La solution logicielle Vitam supportant la version 4 du schéma JSON, la référence doit être égale à « http://json-schema.org/draft-04/schema » ;
@@ -677,7 +680,8 @@ Comme dans un fichier au format XML, le schéma de contrôle JSON comporte des �
 -  de déterminer des règles propres aux objets (notion de type « object » JSON) à appliquer aux propriétés qui vont être définies dans le schéma. La solution logicielle Vitam supporte seulement la règle additionalProperties , de type booléen :
   - si sa valeur est égale à « true », une unité archivistique pourra contenir des éléments (métadonnées) supplémentaires, non définis dans le schéma de contrôle, pouvant être aussi bien des métadonnées de gestion, des métadonnées descriptives, internes ou externes ;
   - si sa valeur est égale à « false », une unité archivistique contenant des éléments supplémentaires, non définis dans le schéma de contrôle, ne sera pas conforme à son profil et ne pourra pas être versée dans la solution logicielle Vitam.
-          Point d’attention : si additionnalProperties est absent du schéma de contrôle, une valeur par défaut, égale à « true », s’applique ;
+
+**Point d’attention :** si additionnalProperties est absent du schéma de contrôle, une valeur par défaut, égale à « true », s’applique ;
 
 -  de déterminer des règles génériques à appliquer aux propriétés qui vont être définies dans le schéma :
   - required : liste d’éléments de type texte (= string) obligatoires. Ces éléments doivent ensuite être définis en tant que propriétés du schéma de contrôle.
@@ -729,10 +733,12 @@ Comme dans un fichier au format XML, le schéma de contrôle JSON comporte des �
 -  de déterminer des propriétés à exclure du schéma de contrôle, que ce soit lors d’un transfert ou lors d’une mise à jour :
   - patternProperties : liste les vocabulaires à exclure du contrôle qui sera effectué par le schéma de contrôle. 
     - Dans la solution logicielle Vitam, il est obligatoire de référencer le bloc Management, si aucune règle de gestion n’est définie dans le schéma de contrôle.
-    - Si on souhaite contrôler des titres ou des descriptions avec des attributs, il faudra également utiliser patternProperties et y déclarer l’expression régulière « _^ ».
-      Si additionnalProperties est égal à « false » et si aucune règle de gestion ne doit être contrôlée, il est obligatoire d’utiliser patternProperties, sans quoi les unités archivistiques ne seront pas conformes au profil d’unité archivistique qui leur est associé.  
+    - Si on souhaite contrôler des titres ou des descriptions avec des attributs, il faudra également utiliser patternProperties et y déclarer l’expression régulière « _^ ».<br>
+      Si additionnalProperties est égal à « false » et si aucune règle de gestion ne doit être contrôlée, il est obligatoire d’utiliser patternProperties, sans quoi les unités archivistiques ne seront pas conformes au profil d’unité archivistique qui leur est associé.<br>  
       Si additionalProperties est égal à « true », il n’est pas obligatoire d’utiliser patternProperties, car la valeur « true » annule le contrôle effectué sur les règles de gestion non référencées dans le schéma de contrôle.
-      Point d’attention : patternProperties ne permet pas d’interdire une liste de vocabulaires. Cette propriété définit uniquement des vocabulaires destinés à ne pas être contrôlés lors d’une vérification de conformité entre une unité archivistique et un profil d’unité archivistique.
+
+**Point d’attention :** patternProperties ne permet pas d’interdire une liste de vocabulaires. Cette propriété définit uniquement des vocabulaires destinés à ne pas être contrôlés lors d’une vérification de conformité entre une unité archivistique et un profil d’unité archivistique.
+
 *Exemple 1 :* sont autorisés et ne feront pas l’objet d’un contrôle par le profil d’unité archivistique les vocabulaires du bloc Management.
 ```json
 {
@@ -808,7 +814,8 @@ Si certains éléments du SEDA ne doivent pas faire l’objet d’un contrôle, 
 
 *Généralités*
 
-Un élément (ou vocabulaire) présent dans un schéma de contrôle doit toujours avoir été préalablement créé dans l’ontologie. Dans un schéma de contrôle, il est désigné par son nom, qui peut être explicité par un titre et/ou une description, tous deux facultatifs et, s’ils sont utilisés, devant obligatoirement contenir des éléments textuels.  
+Un élément (ou vocabulaire) présent dans un schéma de contrôle doit toujours avoir été préalablement créé dans l’ontologie. Dans un schéma de contrôle, il est désigné par son nom, qui peut être explicité par un titre et/ou une description, tous deux facultatifs et, s’ils sont utilisés, devant obligatoirement contenir des éléments textuels. 
+
 *Exemple :* l’élément suivant se nomme Description. Il dispose d’un titre et d’une description apportant des précisions sur son origine.
 ```json
 "Description": {
@@ -836,6 +843,7 @@ Un élément (ou vocabulaire) présent dans un schéma de contrôle doit toujour
 *Types*
 
 L’élément (ou vocabulaire) est associé à un type particulier[^28].
+
 *Exemple :* l’élément Description attend une chaîne de caractères, car il est de type string.
 ```json
 "Description": {
@@ -872,6 +880,7 @@ Par analogie au SEDA et au langage XML, il convient de prêter attention aux él
   - un élément répétable, tel que Tag ou OriginatingAgencyArchiveUnitIdentifier,
   - un vocabulaire externe ;
 -  certains éléments du SEDA (PreventInheritance, NeedAuthorization, NeedReassessingAuthorization) doivent contenir un booléen.
+
 Dans une unité archivistique, on trouvera essentiellement les types suivants :
 -  pour les vocabulaires internes, propres au SEDA, les principaux types rencontrés sont : « string », « array » et « object », auxquels s’ajoute un unique « boolean »[^30].
 -  quant aux vocabulaires externes, ajoutés pour répondre à des besoins et transferts spécifiques, la solution logicielle Vitam les identifie systématiquement comme des « array » (ou tableaux), c’est-à-dire des éléments répétables. Ces tableaux peuvent inclure ensuite un type particulier de chaînes : texte, entier, décimal ou booléen.
@@ -939,6 +948,7 @@ Un élément peut également définir les règles suivantes :
   - les différentes cardinalités possibles ;
   - des patterns particuliers (ex : date).
       Seules les propriétés du schéma de contrôle qui ne sont pas de type objet peuvent utiliser cette règle.
+
 *Exemple :* l’élément Tag fait référence à l’expression one-one précisant qu’il a une cardinalité 1 – 1, tandis que Description est facultatif ou unique car sa cardinalité correspond à l’expression zero-one.
 ```json
 {
@@ -1010,7 +1020,8 @@ Certains types d’éléments peuvent spécifier des règles particulières :
 
 -  Un élément de type « number », correspondant à une valeur numérique, peut contenir les règles suivantes :
 -  minimum, maximum : nombres entiers permettant de spécifier la valeur minimale et la valeur maximale attendues comme valeur dans un champ numérique.
-Exemple : l’élément ChildrenNumber (exemple fictif) attend une valeur numérique comprise entre 0 et 22. Toute unité archivistique déclarant une valeur supérieure à 22 ne sera pas validée. En revanche, une unité archivistique déclarant une valeur de 0 ou de 22 sera acceptée.
+
+*Exemple :* l’élément ChildrenNumber (exemple fictif) attend une valeur numérique comprise entre 0 et 22. Toute unité archivistique déclarant une valeur supérieure à 22 ne sera pas validée. En revanche, une unité archivistique déclarant une valeur de 0 ou de 22 sera acceptée.
 ```json 
 	"ChildrenNumber": {
                    "type": "array",
@@ -1061,7 +1072,8 @@ La gestion des cardinalités diffère en fonction du type de l’élément :
 |Vocabulaires externes|array (pouvant définir un sous-type particulier)|0 – 1, 1 – 1, 0 – n, 1 – n|
 
 Pour un élément de type array (ou tableau), correspondant à un élément répétable dans le SEDA ou à un vocabulaire externe, la cardinalité se paramètre au moyen de minItems et maxItems, nombres entiers permettant de spécifier le nombre minimal et le nombre maximal d’entrées attendues dans le tableau ou la liste de valeurs.
-Exemple : la métadonnée OriginatingAgencyArchiveUnitIdentifier pourra être absente ou présente une fois dans le bordereau. Une unité archivistique qui déclarera plus de 2 fois la métadonnée OriginatingAgencyArchiveUnitIdentifier ne sera pas acceptée.
+
+*Exemple :* la métadonnée OriginatingAgencyArchiveUnitIdentifier pourra être absente ou présente une fois dans le bordereau. Une unité archivistique qui déclarera plus de 2 fois la métadonnée OriginatingAgencyArchiveUnitIdentifier ne sera pas acceptée.
 ```json 
     "OriginatingAgencyArchiveUnitIdentifier": {
       "description": "Part of IdentifierGroup – cardinalité = 0 – 1",
@@ -1153,9 +1165,9 @@ Pour rédiger un profil d’unité archivistique, il est également possible d�
 Au terme de la version 8.0, il permet de générer des profils d'unité archivistique en SEDA 2.1, 2.2 et 2.3.
 Au terme de la version 8.1, il intègre également la possibilité d'ajouter des extensions au SEDA au niveau du bloc « Content ».
 
-Étape 1 - l’outil requiert dans un premier temps de créer un profil d’unité archivistique (PUA).
+***Étape 1*** - l’outil requiert dans un premier temps de créer un profil d’unité archivistique (PUA).
 
-Étape 2 - lors de la rédaction du profil d’unité archivistique :
+***Étape 2*** - lors de la rédaction du profil d’unité archivistique :
 -  PASTIS auto-incrémente un certain nombre de champs qu’il n’est pas nécessaire, de fait, saisir.
 Point d’attention : 
 -  Cette auto-incrémentation ne prend pas en compte les champs rendus obligatoires par la solution logicielle Vitam ou qu’il s’avère nécessaire de spécifier dans un profil d’unité archivistique. De fait, il est recommandé :
@@ -1178,18 +1190,18 @@ PASTIS permet un certain nombre d’actions :
 -  ajouter des contrôles sur la valeur d’une métadonnée par rapport à une expression régulière. Pour ce faire, il suffit de se positionner sur la métadonnée en question et sélectionner « ... », puis « Contrôles de métadonnées » et ajouter le contrôle « Expression régulière ».
 
 **Points d’attention :** 
--  Au terme de la version 8.0, ne sont pas supportés :
+- Au terme de la version 8.0, ne sont pas supportés :
   - les attributs lang. De fait, il n’est pas recommandé de rendre répétable les champs « Title » et « Description » ;
   - la répétabilité des champs, notamment les règles de gestion. De fait, il est recommandé de ne déclarer qu’une seule règle par catégorie de règle de gestion et il faut veiller à ne pas avoir saisi à plusieurs reprises un même champ ;
   - le blocage des règles de gestion par catégorie ou par identifiant de règle ;
   - le bloc « Logbook » ;
   - le bloc « DataObjectReference », et son sous-élément « DataObjectGroupReferenceId ». De fait, on ne peut contrôler si l’unité archivistique est associée ou non à un objet numérique.
--  Pour les champs attendant une liste de valeurs contrôlées par le SEDA, il est interdit de rajouter une valeur en utilisant le contrôle « Enumération ».
+- Pour les champs attendant une liste de valeurs contrôlées par le SEDA, il est interdit de rajouter une valeur en utilisant le contrôle « Enumération ».
 
 PASTIS permet d'ajouter des extensions au SEDA dans le bloc « Content » d'une unité archivistique au terme de la version 8.1 de la solution logicielle Vitam.
 Afin de pouvoir les obtenir dans l'outil, il est nécessaire de déclarer ces extensions :
 	-  soit dans un fichier de configuration dans le cas où PASTIS est utilisé en mode standalone,
-	-  soit dans le schéma de la solution logicielle Vitam[^59].
+	-  soit dans le schéma de la solution logicielle Vitam[^36].
 
 *Corrections et ajouts*
 
@@ -1285,7 +1297,7 @@ Il est, néanmoins, possible de paramétrer ces identifiants, afin qu’ils soie
 
 Dans ce cas-là, une interruption temporaire de service sera à prévoir.
 
-Pour ce faire, il faut modifier le fichier de configuration « functional-administration.conf », qui définit, entre autres, par tenant, les collections dont la solution logicielle Vitam ne génère pas d’identifiant[^36].
+Pour ce faire, il faut modifier le fichier de configuration « functional-administration.conf », qui définit, entre autres, par tenant, les collections dont la solution logicielle Vitam ne génère pas d’identifiant[^37].
 
 *Exemple :* fichier de configuration « functional-administration.conf ».
 
@@ -1307,14 +1319,15 @@ Cette opération relève d’un acte d’exploitation technique. Elle implique l
 ### Quand et comment mettre à jour le référentiel des profils d’unité archivistique ?
 
 La mise à jour du référentiel des profils d’unité archivistique s’avère nécessaire pour répondre aux besoins suivants :
--  mise à jour des informations relatives à une ou plusieurs notices descriptives (ex : modification d’une description, changement de statut, ajout d’un schéma de contrôle[^37]) ;
+-  mise à jour des informations relatives à une ou plusieurs notices descriptives (ex : modification d’une description, changement de statut, ajout d’un schéma de contrôle[^38]) ;
 -  ajout d’une nouvelle notice.
+
 La solution logicielle Vitam permet de mettre à jour le référentiel, en procédant à :
 -  une opération de mise à jour unitaire d’une notice descriptive en particulier ;
 -  une opération d’import d’une à plusieurs notices descriptives.
 
 **Points d’attention :**
--  Il est possible d’importer en une seule fois un référentiel complet, comprenant plusieurs notices décrivant chacune un profil d’archivage. La solution logicielle Vitam ne comptabilisera qu’une seule opération, et ne prendra pas en compte dans le journal des opérations la création unitaire des différents items compris dans le référentiel importé. Afin d’optimiser la traçabilité de la création des différentes notices, il est recommandé de créer ces dernières une par une.
+Il est possible d’importer en une seule fois un référentiel complet, comprenant plusieurs notices décrivant chacune un profil d’archivage. La solution logicielle Vitam ne comptabilisera qu’une seule opération, et ne prendra pas en compte dans le journal des opérations la création unitaire des différents items compris dans le référentiel importé. Afin d’optimiser la traçabilité de la création des différentes notices, il est recommandé de créer ces dernières une par une.
 
 ### Quand et comment mettre à jour un schéma de contrôle ?
 
@@ -1329,11 +1342,11 @@ Après utilisation, la mise à jour d’un schéma de contrôle peut s’avérer
 La solution logicielle Vitam permet de mettre à jour le référentiel, en procédant à une opération de mise à jour unitaire d’une notice descriptive en particulier.
 
 **Points d’attention :**
--  Un profil d’unité archivistique pouvant être utilisé dans un ou plusieurs unité(s) archivistique(s) et faire l’objet de contrôles dans des opérations d’entrée ou de mise à jour en cours, il est recommandé de désactiver le service (entrées, notice descriptive de profil d’unité archivistique), avant de procéder à la modification du schéma de contrôle.
+Un profil d’unité archivistique pouvant être utilisé dans un ou plusieurs unité(s) archivistique(s) et faire l’objet de contrôles dans des opérations d’entrée ou de mise à jour en cours, il est recommandé de désactiver le service (entrées, notice descriptive de profil d’unité archivistique), avant de procéder à la modification du schéma de contrôle.
 
 Pour mettre à jour un profil d’unité archivistique, il est recommandé de suivre les étapes suivantes :
 
-|Qui ?|Quoi ?|Via l’IHM démo Vitam ?|
+|Qui ?|Quoi ?|Via l’IHM Vitam ?|
 |:----|:---|:-----|
 |Administrateur fonctionnel|- émet le souhait de modifier un profil d’unité archivistique ;<br>- si le profil d’unité archivistique est utilisé dans des opérations d’entrée en cours, demande à l’administrateur technique d’arrêter pour un temps donné les transferts concernés dans la solution logicielle Vitam ;<br>- si le profil d’unité archivistique est utilisé dans des opérations de mise à jour en cours, demande aux utilisateurs d’arrêter pour un temps donné les traitements en cours sur les unités archivistiques concernées dans la solution logicielle Vitam.|Non|
 |Administrateur technique|si le profil d’unité archivistique est utilisé dans des opérations d’entrée en cours, arrête pour un temps donné les transferts concernés dans la solution logicielle Vitam.|Non|
@@ -1404,23 +1417,15 @@ La gestion du référentiel des profils d’unité archivistique relève d’op�
 
 #### Restitution sur une IHM
 
-La solution logicielle Vitam propose de :
--  depuis l’IHM démo :
-  - consulter le référentiel des profils d’unité archivistique, 
-  - accéder à une notice de profil d’unité archivistique,
-  - lui associer un schéma de contrôle,
-  - contrôler la validité de ce dernier par rapport au schéma JSON ;
--  depuis l’APP Profils documentaires :
-  - consulter le référentiel des profils d’unité archivistique, 
-  - accéder à une notice de profil d’unité archivistique,
-  - lui associer un schéma de contrôle,
-  - importer un schéma de contrôle,
-  - créer un schéma de contrôle,
-  - le modifier s’il n’est pas référencé par une unité archivistique,
-  - créer une notice de profil d’unité archivistique,
-  - exporter un schéma de contrôle et sa notice au format JSON ;
-
-Elle propose également, depuis l’IHM démo, d’afficher et d’associer un identifiant de profil d’unité archivistique dans le détail d’une unité archivistique. Ces actions ne sont pas possibles depuis l’IHM VitamUI au terme de la version 7.0.
+La solution logicielle Vitam propose depuis l’APP Profils documentaires de[^39] :
+- consulter le référentiel des profils d’unité archivistique, 
+- accéder à une notice de profil d’unité archivistique,
+- lui associer un schéma de contrôle,
+- importer un schéma de contrôle,
+- créer un schéma de contrôle,
+- le modifier s’il n’est pas référencé par une unité archivistique,
+- créer une notice de profil d’unité archivistique,
+- exporter un schéma de contrôle et sa notice au format JSON.
 
 S’il y a conception d’écrans, il est conseillé que cet écran permette d’afficher ou d’associer un profil d’unité archivistique au moyen d’un sélecteur affichant les intitulés des notices descriptives de profil d’unité archivistique plutôt que son identifiant.
 
@@ -1434,10 +1439,12 @@ Pour réaliser un profil d’unité archivistique et un bordereau de transfert c
   - créer une notice descriptive au format JSON, destinée à gérer le profil d’unité archivistique lui-même au format JSON,
   - si le schéma de contrôle contient des vocabulaires externes, ajouter ces derniers dans l’ontologie et mettre à jour l’ontologie sur le tenant d’administration,
   - une fois le schéma de contrôle réalisé, l’insérer dans la notice descriptive ;
+
 -  Dans le schéma de contrôle :
   - ajouter une propriété contrôlant le profil d’unité archivistique (propriété « ArchiveUnitProfile »), et y reporter l’identifiant du profil d’unité archivistique, si la valeur de cet identifiant est obligatoire dans le profil d’unité archivistique. Si cette valeur n’est pas imposée dans le profil, il n’est pas nécessaire de la reporter dans le schéma de contrôle ;
+
 -  Dans le bordereau de transfert :
-  - reporter l’identifiant du profil d’unité archivistique dans le champ <ArchiveUnitProfile> des unités archivistiques devant faire l’objet d’un contrôle par un profil d’unité archivistique.
+  - reporter l’identifiant du profil d’unité archivistique dans le champ < ArchiveUnitProfile > des unités archivistiques devant faire l’objet d’un contrôle par un profil d’unité archivistique.
 
 ### Comment utiliser les profils d’unité archivistique ?
 
@@ -1470,8 +1477,7 @@ Pour réaliser un profil d’unité archivistique et un bordereau de transfert c
 |:---|:---|:---|
 |Modélisation des données|Lors de la phase d’analyse et de modélisation des données, il est conseillé de chercher des correspondances (ou mapping) entre les métadonnées initiales et le modèle de données du SEDA, pris en charge nativement par la solution logicielle Vitam, avant de chercher à créer des métadonnées supplémentaires dans l’ontologie.|Recommandé|
 |Modélisation des données|Si le profil d’unité archivistique a vocation à être utilisé dans différents contextes, il est recommandé d’adopter un modèle assez souple, notamment au niveau des cardinalités, afin que le profil d’unité archivistique puisse s’adapter à ces différents contextes.|Recommandé|
-|Modélisation des données|Lors de la modélisation des données, il faut prendre en compte la possibilité de la mise à jour des unités archivistiques déclarant le profil d’unité archivistique.
-Si l’on sait que les modifications à apporter seront importantes, il est recommandé de prévoir une modélisation assez souple, notamment au niveau des cardinalités, afin que les unités archivistiques restent conformes au même profil d’unité archivistique.|Recommandé|
+|Modélisation des données|Lors de la modélisation des données, il faut prendre en compte la possibilité de la mise à jour des unités archivistiques déclarant le profil d’unité archivistique. Si l’on sait que les modifications à apporter seront importantes, il est recommandé de prévoir une modélisation assez souple, notamment au niveau des cardinalités, afin que les unités archivistiques restent conformes au même profil d’unité archivistique.|Recommandé|
 |Modélisation des données|Après avoir analysé les données à contrôler et avant de commencer à rédiger un schéma de contrôle, il est recommandé de réaliser un bordereau de transfert contenant :<br>-  soit une unité archivistique conforme à la modélisation préalablement réalisée,<br>-  soit plusieurs unités archivistiques, chacune faisant état de différentes propositions de modélisation.<br>Puis, il est conseillé de le transférer sur une plate-forme de tests et de récupérer un enregistrement d’unité archivistique dans la base de données MongoDB au moyen d’une requête DSL, afin qu’il serve de base de contrôle lors de la rédaction du schéma de contrôle.|Recommandé|
 |Éléments à déclarer dans un schéma de contrôle – en-tête|L’unité archivistique enregistrée dans la base de données MongoDB dispose d’informations techniques, signalées par un préfixe (undescore dans la base de données et dièse dans la requête DSL). Ces informations n’ont aucune vocation à être contrôlées par un schéma de contrôle.<br>De fait, il n’est pas recommandé de les référencer dans un schéma de contrôle.|Non recommandé|
 |Éléments à déclarer dans un schéma de contrôle – en-tête|La solution logicielle Vitam effectue un contrôle sur le bloc Management d’une unité archivistique enregistré dans la base de données, qu’il déclare ou non des règles de gestion.<br>Pour l’écarter de son contrôle, il est obligatoire de le détailler dans une règle « patternProperties », d’autant plus si « additionnalProperties » est égal à « false ».<br>Est donc à déclarer le bloc Management s’il n’est pas précisé en tant que propriété dans le schéma de contrôle.|Obligatoire|
@@ -3375,7 +3381,7 @@ Pour les éléments propres au SEDA, le tableau suivant précise les types de ce
 ||string|number|boolean|object|array|
 |:---|:---:|:---:|:---:|:---:|:---:|
 |ArchiveUnitProfile|x|||||
-|#management[^38]||||x||
+|#management[^40]||||x||
 |AccessRule||||x||
 |AppraisalRule||||x||
 |StorageRule||||x||
@@ -3383,19 +3389,19 @@ Pour les éléments propres au SEDA, le tableau suivant précise les types de ce
 |ClassificationRule||||x||
 |HoldRule||||x||
 |Rule|x|||||
-|StartDate|x[^39]|||||
-|EndDate|x[^40]|||||
-|FinalAction[^41]|x|||||
+|StartDate|x[^41]|||||
+|EndDate|x[^42]|||||
+|FinalAction[^43]|x|||||
 |Inheritance||||x||
 |PreventInheritance|||x|||
-|PreventRulesId|||||x[^42]|
-|HoldEndDate|x[^43]|||||
+|PreventRulesId|||||x[^44]|
+|HoldEndDate|x[^45]|||||
 |HoldOwner|x|||||
 |HoldReason|x|||||
-|HoldReassessingDate|x[^44]|||||
+|HoldReassessingDate|x[^46]|||||
 |PreventRearrangement|||x|||
 |ClassificationOwner|x|||||
-|ClassificationReassessingDate|x[^45]|||||
+|ClassificationReassessingDate|x[^47]|||||
 |NeedReassessingAuthorization|||x|||
 |ClassificationLevel|x|||||
 |ClassificationAudience|x|||||
@@ -3414,8 +3420,8 @@ Pour les éléments propres au SEDA, le tableau suivant précise les types de ce
 |CustodialHistoryItem|x||||x|
 |Type|x|||||
 |DocumentType|x|||||
-|Language|x[^46]||||x|
-|DescriptionLanguage|x[^47]|||||
+|Language|x[^48]||||x|
+|DescriptionLanguage|x[^49]|||||
 |Status|x|||||
 |Version|x|||||
 |Tag|x||||x|
@@ -3441,8 +3447,8 @@ Pour les éléments propres au SEDA, le tableau suivant précise les types de ce
 |FullName|x|||||
 |GivenName|x|||||
 |Gender|x|||||
-|BirthDate|x[^48]|||||
-|DeathDate|x[^49]|||||
+|BirthDate|x[^50]|||||
+|DeathDate|x[^51]|||||
 |BirthPlace||||x||
 |DeathPlace||||x||
 |Geogname|x|||||
@@ -3480,15 +3486,15 @@ Pour les éléments propres au SEDA, le tableau suivant précise les types de ce
 |StartDate|x|||||
 |EndDate|x|||||
 |Event||||x||
-|evId[^50]|x|||||
-|evTypeProc[^51]|x|||||
-|evType[^52]|x|||||
-|EvDateTime[^53]|x|||||
-|evTypeDetail[^54]|x|||||
-|outcome[^55]|x|||||
-|outDetail[^56]|x|||||
-|outMessg[^57]|x|||||
-|evDetData[^58]|x|||||
+|evId[^52]|x|||||
+|evTypeProc[^53]|x|||||
+|evType[^54]|x|||||
+|EvDateTime[^55]|x|||||
+|evTypeDetail[^56]|x|||||
+|outcome[^57]|x|||||
+|outDetail[^58]|x|||||
+|outMessg[^59]|x|||||
+|evDetData[^60]|x|||||
 |Signature||||x||
 |Signer||||x||
 |Validator||||x||
@@ -3533,8 +3539,7 @@ Pour les éléments propres au SEDA, le tableau suivant précise les types de ce
 |12|{"ArchiveUnit":"ID3","ArchiveUnitProfile":"AUP-000001","evDetTechData":"{\"validateUnitReport\":[{\"level\":\"error\",\"schema\":{\"loadingURI\":\"#\",\"pointer\":\"\"},\"instance\":{\"pointer\":\"\"},\"domain\":\"validation\",\"keyword\":\"additionalProperties\",\"message\":\"object instance has properties which are not allowed by the schema:  [\\\"ArchivalAgencyArchiveUnitIdentifier\\\"]\",\"unwanted\":[\"ArchivalAgencyArchiveUnitIdentifier\"]}]}"}|Présence dans le bordereau de transfert d’une métadonnée non autorisée dans le schéma ( ArchivalAgencyArchiveUnitIdentifier)|3 solutions :<br>-  modifier la valeur du champ additionalProperties dans l’en-tête du schéma de contrôle pour autoriser les métadonnées supplémentaires<br>-  déclarer dans le schéma de contrôle l’objet correspondant à la métadonnée  ArchivalAgencyArchiveUnitIdentifier<br>-  modifier le manifeste du SIP pour retirer la métadonnée correspondante|
 |13|{"ArchiveUnit":"ID3","ArchiveUnitProfile":"AUP-000003","evDetTechData":"{\"validateUnitReport\":[{\"level\":\"error\",\"schema\":{\"loadingURI\":\"#\",\"pointer\":\"/properties/Tag\"},\"instance\":{\"pointer\":\"/Tag\"},\"domain\":\"validation\",\"keyword\":\"maxItems\",\"message\":\"array is too long: must have at most 1 elements but instance has 3 elements\",\"maxItems\":1,\"found\":3}]}"}|L’élément Tag, présent dans l’uniitulé archivistique dont l’identifiant est ID3 est répété à trois reprises, alors que le profil d’unité archivistique n’en requiert qu’une seule occurrence.|Enlever au moins deux des trois éléments Tag dans l’unité archivistique.|
 |14|{"ArchiveUnit":"ID6","ArchiveUnitProfile":"AUP-000018","evDetTechData":"{\"validateUnitReport\":[{\"level\":\"error\",\"schema\":{\"loadingURI\":\"#\",\"pointer\":\"/properties/Age/items\"},\"instance\":{\"pointer\":\"/Age/0\"},\"domain\":\"validation\",\"keyword\":\"maximum\",\"message\":\"numeric instance is greater than the required maximum (maximum: 150, found:158)\",\"maximum\":150,\"found\":158}]}"}|L’unité archivistique doit l’identifiant est ID6 contient un vocabulaire Age avec une valeur égale à « 158 », alors que sa valeur maximale doit être égale à 150.|Corriger l’unité archivistique, en précisant un âge inférieur à 150.|
-|15|{"ArchiveUnit":"ID6","ArchiveUnitProfile":"AUP-000018","evDetTechData":"{\"validateUnitReport\":[{\"level\":\"error\",\"schema\":{\"loadingURI\":\"#\",\"pointer\":\"/properties/Beneficiary\"},\"instance\":{\"pointer\":\"/Beneficiary\"},\"domain\":\"validation\",\"keyword\":\"minItems\",\"message\":\"array is too short: must have at least 1 elements but instance has 0 elements\",\"minItems\":1,\"found\":0}]}"}|Le vocabulaire Beneficiary présent dans l’unité archivistique dont l’identifiant est ID6 est absent, alors que le profil d’unité archivistique attend au moins une occurrence de ce vocabulaire, ainsi qu’un nombre minimal de caractères.
-Ajouter au moins un vocabulaire Beneficiary dans l’unité archivistique, contenant une chaîne de caractères minimale.|
+|15|{"ArchiveUnit":"ID6","ArchiveUnitProfile":"AUP-000018","evDetTechData":"{\"validateUnitReport\":[{\"level\":\"error\",\"schema\":{\"loadingURI\":\"#\",\"pointer\":\"/properties/Beneficiary\"},\"instance\":{\"pointer\":\"/Beneficiary\"},\"domain\":\"validation\",\"keyword\":\"minItems\",\"message\":\"array is too short: must have at least 1 elements but instance has 0 elements\",\"minItems\":1,\"found\":0}]}"}|Le vocabulaire Beneficiary présent dans l’unité archivistique dont l’identifiant est ID6 est absent, alors que le profil d’unité archivistique attend au moins une occurrence de ce vocabulaire, ainsi qu’un nombre minimal de caractères. Ajouter au moins un vocabulaire Beneficiary dans l’unité archivistique, contenant une chaîne de caractères minimale.|
 |16|{"ArchiveUnit":"ID26","ArchiveUnitProfile":"AUP-000002","evDetTechData":"{\"validateUnitReport\":[{\"level\":\"error\",\"schema\":{\"loadingURI\":\"#\",\"pointer\":\"\"},\"instance\":{\"pointer\":\"\"},\"domain\":\"validation\",\"keyword\":\"additionalProperties\",\"message\":\"object instance has properties which are not allowed by the schema: [\\\"DataObjectReference\\\",\\\"Management\\\"]\",\"unwanted\":[\"DataObjectReference\",\"Management\"]}]}"} |L’en-tête du profil déclare la valeur « false » dans le champ additionalProperties.<br>Or l’objet JSON correspondant au bloc DataObjectReference du schéma SEDA n’est pas déclaré dans le schéma de contrôle et l’unité archivistique déclare un groupe d’objets dans le bordereau de transfert.<br>Donc le schéma de l’unité archivistique n’est pas conforme à son schéma de contrôle.|2 solutions :<br>-  modifier la valeur du champ additionalProperties dans l’en-tête du schéma de contrôle<br>-  déclarer dans le schéma de contrôle l’objet correspondant au bloc DataObjectReference du schéma SEDA|
 |17|{"ArchiveUnit":"ID3","ArchiveUnitProfile":"AUP-000005","evDetTechData":"{\"validateUnitReport\":[{\"level\":\"warning\",\"schema\":{\"loadingURI\":\"#\",\"pointer\":\"/properties/Management/properties/AppraisalRule\"},\"domain\":\"syntax\",\"message\":\"the following keywords are unknown and will be ignored: [FinalAction]\",\"ignored\":[\"FinalAction\"]},{\"level\":\"error\",\"schema\":{\"loadingURI\":\"#\",\"pointer\":\"\"},\"instance\":{\"pointer\":\"\"},\"domain\":\"validation\",\"keyword\":\"additionalProperties\",\"message\":\"object instance has properties which are not allowed by the schema: [\\\"ChildrenNumber\\\"]\",\"unwanted\":[\"ChildrenNumber\"]}]}"}|Présence dans le bordereau de transfert d’une métadonnée non autorisée dans le schéma|3 solutions :<br>-  modifier la valeur du champ additionalProperties dans l’en-tête du schéma de contrôle pour autoriser les métadonnées supplémentaires<br>-  déclarer dans le schéma de contrôle l’objet correspondant à la métadonnée ChildrenNumber<br>-  modifier le manifeste du SIP pour retirer la métadonnée correspondante|
 |18|{"ArchiveUnit":"ID3","ArchiveUnitProfile":"AUP-000005","evDetTechData":"{\"validateUnitReport\":[{\"level\":\"warning\",\"schema\":{\"loadingURI\":\"#\",\"pointer\":\"/properties/Management/properties/AppraisalRule\"},\"domain\":\"syntax\",\"message\":\"the following keywords are unknown and will be ignored: [FinalAction]\",\"ignored\":[\"FinalAction\"]},{\"level\":\"error\",\"schema\":{\"loadingURI\":\"#\",\"pointer\":\"\"},\"instance\":{\"pointer\":\"\"},\"domain\":\"validation\",\"keyword\":\"anyOf\",\"message\":\"instance failed to match at least one required schema among 1\",\"nrSchemas\":1,\"reports\":{\"/anyOf/0\":[{\"level\":\"error\",\"schema\":{\"loadingURI\":\"#\",\"pointer\":\"/anyOf/0\"},\"instance\":{\"pointer\":\"\"},\"domain\":\"validation\",\"keyword\":\"required\",\"message\":\"object has missing required properties ([\\\"ChildrenNumber\\\"])\",\"required\":[\"ChildrenNumber\",\"DescriptionLevel\",\"Management\",\"RecruitmentDate\",\"StartDate\",\"Title\"],\"missing\":[\"ChildrenNumber\"]}]}}]}"}|Absence d’une métadonnée attendue (ChildrenNumber).|Corriger le bordereau de transfert pour rajouter la métadonnée attendue.|
@@ -3610,50 +3615,52 @@ Ajouter au moins un vocabulaire Beneficiary dans l’unité archivistique, conte
 
 [^35]: La solution logicielle Vitam rend obligatoire le champ Title. S’il doit être répété (cardinalité 1-N) ou dupliqué, il est nécessaire d’ajouter un attribut lang. Il en va de même pour le champ Description. L’attribut lang n’est pas supporté par Pastis au terme de la version 6.
 
-[^36]: Documentation d’exploitation, chapitre 8.2.6.2.2 « Passage des identifiants des référentiels en mode esclave ».
+[^36]: Pour plus d'informations, se référer au chapitre « Extension du modèle du SEDA par des métadonnées externes » du document [Vitam – PASTIS](./pastis_standalone.md).
 
-[^37]: Le cas particulier de la modification du fichier RNG ou XSD est traité dans le [chapitre « Quand et comment mettre à jour un profil d’unité archivistique » du présent document](#modification-dun-profil-dunite-archivistique-declare-dans-une-unite-archivistique).
+[^37]: Documentation d’exploitation, chapitre 8.2.6.2.2 « Passage des identifiants des référentiels en mode esclave ».
 
-[^38]: #management est à employer en lieu et place de la balise Management dans un schéma de contrôle pour se conformer aux attendus de la solution logicielle Vitam.
+[^38]: Le cas particulier de la modification du fichier RNG ou XSD est traité dans le [chapitre « Quand et comment mettre à jour un profil d’unité archivistique » du présent document](#modification-dun-profil-dunite-archivistique-declare-dans-une-unite-archivistique).
 
-[^39]: Avec un pattern date.
+[^39]: La solution logicielle Vitam proposait également, depuis l’IHM démo, d’afficher et d’associer un identifiant de profil d’unité archivistique dans le détail d’une unité archivistique. Ces actions ne sont pas possibles depuis l’IHM VitamUI au terme de la version 7.0.
 
-[^40]: Avec un pattern date.
+[^40]: #management est à employer en lieu et place de la balise Management dans un schéma de contrôle pour se conformer aux attendus de la solution logicielle Vitam.
 
-[^41]: Simple énumération.
+[^41]: Avec un pattern date.
 
-[^42]: Tableau contenant des éléments de type string.
+[^42]: Avec un pattern date.
 
-[^43]: Avec un pattern date.
+[^43]: Simple énumération.
 
-[^44]: Avec un pattern date.
+[^44]: Tableau contenant des éléments de type string.
 
 [^45]: Avec un pattern date.
 
-[^46]: Le SEDA attend plus précisément un pattern langue.
+[^46]: Avec un pattern date.
 
-[^47]: Le SEDA attend plus précisément un pattern langue.
+[^47]: Avec un pattern date.
 
-[^48]: Avec un pattern date.
+[^48]: Le SEDA attend plus précisément un pattern langue.
 
-[^49]: Avec un pattern date.
+[^49]: Le SEDA attend plus précisément un pattern langue.
 
-[^50]: evId est à employer en lieu et place de la balise EventIdentifier dans un schéma de contrôle pour se conformer aux attendus de la solution logicielle Vitam.
+[^50]: Avec un pattern date.
 
-[^51]: evTypeProc est à employer en lieu et place de la balise EventTypeCode dans un schéma de contrôle pour se conformer aux attendus de la solution logicielle Vitam.
+[^51]: Avec un pattern date.
 
-[^52]: evType est à employer en lieu et place de la balise EventType dans un schéma de contrôle pour se conformer aux attendus de la solution logicielle Vitam. 
+[^52]: evId est à employer en lieu et place de la balise EventIdentifier dans un schéma de contrôle pour se conformer aux attendus de la solution logicielle Vitam.
 
-[^53]: evDateTime est à employer en lieu et place de la balise EventDateTime dans un schéma de contrôle pour se conformer aux attendus de la solution logicielle Vitam.
+[^53]: evTypeProc est à employer en lieu et place de la balise EventTypeCode dans un schéma de contrôle pour se conformer aux attendus de la solution logicielle Vitam.
 
-[^54]: evTypeDetail est à employer en lieu et place de la balise EventDetail dans un schéma de contrôle pour se conformer aux attendus de la solution logicielle Vitam.
+[^54]: evType est à employer en lieu et place de la balise EventType dans un schéma de contrôle pour se conformer aux attendus de la solution logicielle Vitam. 
 
-[^55]: outcome est à employer en lieu et place de la balise Outcome dans un schéma de contrôle pour se conformer aux attendus de la solution logicielle Vitam.
+[^55]: evDateTime est à employer en lieu et place de la balise EventDateTime dans un schéma de contrôle pour se conformer aux attendus de la solution logicielle Vitam.
 
-[^56]: outDetail est à employer en lieu et place de la balise OutcomeDetail dans un schéma de contrôle pour se conformer aux attendus de la solution logicielle Vitam.
+[^56]: evTypeDetail est à employer en lieu et place de la balise EventDetail dans un schéma de contrôle pour se conformer aux attendus de la solution logicielle Vitam.
 
-[^57]: outMessg est à employer en lieu et place de la balise OutcomeDetailMessage dans un schéma de contrôle pour se conformer aux attendus de la solution logicielle Vitam.
+[^57]: outcome est à employer en lieu et place de la balise Outcome dans un schéma de contrôle pour se conformer aux attendus de la solution logicielle Vitam.
 
-[^58]: evDetData est à employer en lieu et place de la balise EventDetailData dans un schéma de contrôle pour se conformer aux attendus de la solution logicielle Vitam.
+[^58]: outDetail est à employer en lieu et place de la balise OutcomeDetail dans un schéma de contrôle pour se conformer aux attendus de la solution logicielle Vitam.
 
-[^59]: Pour plus d'informations, se référer au chapitre « Extension du modèle du SEDA par des métadonnées externes » du document [Vitam – PASTIS](./pastis_standalone.md).
+[^59]: outMessg est à employer en lieu et place de la balise OutcomeDetailMessage dans un schéma de contrôle pour se conformer aux attendus de la solution logicielle Vitam.
+
+[^60]: evDetData est à employer en lieu et place de la balise EventDetailData dans un schéma de contrôle pour se conformer aux attendus de la solution logicielle Vitam.
