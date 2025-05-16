@@ -289,7 +289,7 @@
 </tr>
 <tr class="row-even"><td class="text-center"><p>Standard d’échange de données pour l’archivage – SEDA – v. 2.2</p></td>
 <td class="text-center"><p>02/2022</p></td>
-<td class="text-center"><p>Cette nouvelle version du SEDA est intégrée  à la solution logicielle Vitam à partir de la V6.RC.</p></td>
+<td class="text-center"><p></p></td>
 </tr>
 <tr class="row-odd"><td class="text-center"><p>Standard d’échange de données pour l’archivage – SEDA – v. 2.3</p></td>
 <td class="text-center"><p>02/2024</p></td>
@@ -301,7 +301,7 @@
 </tr>
 <tr class="row-odd"><td class="text-center"><p><a class="reference internal" href="ontologie.html"><span class="std std-doc">Vitam – Ontologie</span></a></p></td>
 <td class="text-center"><p></p></td>
-<td class="text-center"><p>Ce document doit être lu en préalable au présent document.</p></td>
+<td class="text-center"><p><strong>Ce document doit être lu en préalable au présent document.</strong></p></td>
 </tr>
 <tr class="row-even"><td class="text-center"><p><a class="reference internal" href="schema.html"><span class="std std-doc">Vitam – Schéma</span></a></p></td>
 <td class="text-center"><p></p></td>
@@ -309,7 +309,7 @@
 </tr>
 <tr class="row-odd"><td class="text-center"><p><a class="reference internal" href="profil_archivage.html"><span class="std std-doc">Vitam – Profils d’archivage</span></a></p></td>
 <td class="text-center"><p></p></td>
-<td class="text-center"><p>Ce document doit être lu dans les cas où, en phase d’analyse, on souhaite évaluer quel est le meilleur type de profil à utiliser.</p></td>
+<td class="text-center"><p><strong>Ce document doit être lu dans les cas où, en phase d’analyse, on souhaite évaluer quel est le meilleur type de profil à utiliser.</strong></p></td>
 </tr>
 <tr class="row-even"><td class="text-center"><p><a class="reference internal" href="pastis_standalone.html"><span class="std std-doc">Vitam – PASTIS</span></a></p></td>
 <td class="text-center"><p></p></td>
@@ -330,7 +330,7 @@
 <li><p>des recommandations aux utilisateurs de la solution logicielle Vitam sur l’élaboration d’un profil d’unité archivistique ;</p></li>
 <li><p>quelques conseils complémentaires de mise en œuvre.</p></li>
 </ul>
-<p>Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 8.1 (printemps 2025) :  : il comprend particulièrement la présentation des fonctionnalités offertes par le projet PASTIS (Profil d’Archivage Simple pour le Traitement de l’Information en SEDA) intégré à l’IHM Vitam UI par l’APP Profils documentaires et également accessible par un exécutable. Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.</p>
+<p>Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 8.1 (printemps 2025) : il comprend particulièrement la présentation des fonctionnalités offertes par le projet PASTIS (Profil d’Archivage Simple pour le Traitement de l’Information en SEDA) intégré à l’IHM Vitam UI par l’APP Profils documentaires et également accessible par un exécutable. Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.</p>
 </section>
 </section>
 <section id="presentation-de-la-notion-de-profil-dunite-archivistique">
@@ -393,7 +393,7 @@ Il accompagne l’unité archivistique tout au long de sa prise en charge par le
 <h2><span class="section-number">10.3. </span>Formalisation des profils d’unité archivistique<a class="headerlink" href="#formalisation-des-profils-dunite-archivistique" title="Lien vers cette rubrique"></a></h2>
 <section id="dans-un-fichier-propre">
 <h3><span class="section-number">10.3.1. </span>Dans un fichier propre<a class="headerlink" href="#dans-un-fichier-propre" title="Lien vers cette rubrique"></a></h3>
-<p>Les profils d’unité archivistique prennent la forme de fichiers au format JSON<a class="footnote-reference brackets" href="#id60" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>. En termes de syntaxe et de grammaire, ils correspondent plus exactement à des schémas de contrôle, permettant de valider des contenus exprimés au format JSON, qui est le format de structuration des données utilisé dans la solution logicielle Vitam<a class="footnote-reference brackets" href="#id61" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>.</p>
+<p>Les profils d’unité archivistique prennent la forme de fichiers au format JSON<a class="footnote-reference brackets" href="#id61" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>. En termes de syntaxe et de grammaire, ils correspondent plus exactement à des schémas de contrôle, permettant de valider des contenus exprimés au format JSON, qui est le format de structuration des données utilisé dans la solution logicielle Vitam<a class="footnote-reference brackets" href="#id62" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>.</p>
 <p>Ces profils d’unité archivistique doivent se conformer :</p>
 <ul class="simple">
 <li><p>aux règles émises par le Standard d’échange de données pour l’archivage (SEDA). Ainsi, ils peuvent :</p></li>
@@ -404,14 +404,14 @@ Il accompagne l’unité archivistique tout au long de sa prise en charge par le
 <li><p>métadonnées de contrôle et de gestion (profil d’unité archivistique et règles de gestion) ;</p></li>
 </ul>
 </li>
-<li><p>aux vocabulaires définis dans l’ontologie<a class="footnote-reference brackets" href="#id62" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>. Ils doivent en effet définir des éléments et types compatibles avec ceux référencés dans l’ontologie<a class="footnote-reference brackets" href="#id63" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a>.</p></li>
+<li><p>aux vocabulaires définis dans l’ontologie<a class="footnote-reference brackets" href="#id63" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>. Ils doivent en effet définir des éléments et types compatibles avec ceux référencés dans l’ontologie<a class="footnote-reference brackets" href="#id64" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a>.</p></li>
 </ul>
 </section>
 <section id="dans-le-standard-dechange-de-donnees-pour-larchivage-seda">
 <h3><span class="section-number">10.3.2. </span>Dans le Standard d’échange de données pour l’archivage (SEDA)<a class="headerlink" href="#dans-le-standard-dechange-de-donnees-pour-larchivage-seda" title="Lien vers cette rubrique"></a></h3>
 <p>La manière de déclarer un profil d’unité archivistique est définie dans le Standard d’échanges de données pour l’archivage (SEDA).<br />
 Le SEDA offre la possibilité de déclarer un profil d’unité archivistique dans un bordereau de transfert, au moment de la demande de transfert à un service d’archives (message ArchiveTransfer, bloc DataObjectPackage) dans les blocs ArchiveUnit pour chaque unité archivistique qui le nécessite.<br />
-Dans le sous-bloc ArchiveUnitProfile est indiqué l’identifiant du profil d’unité archivistique correspondant à l’unité archivistique que l’on souhaite contrôler, tel qu’il figure dans le référentiel des profils d’unité archivistique (dit des documents-type) de la solution logicielle Vitam. Cet identifiant renvoie au référentiel des profils d’unité archivistique et correspond à l’identifiant de la notice détaillée du profil d’unité archivage qui doit être associée à une unité archivistique<a class="footnote-reference brackets" href="#id64" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a>.</p>
+Dans le sous-bloc ArchiveUnitProfile est indiqué l’identifiant du profil d’unité archivistique correspondant à l’unité archivistique que l’on souhaite contrôler, tel qu’il figure dans le référentiel des profils d’unité archivistique (dit des documents-type) de la solution logicielle Vitam. Cet identifiant renvoie au référentiel des profils d’unité archivistique et correspond à l’identifiant de la notice détaillée du profil d’unité archivage qui doit être associée à une unité archivistique<a class="footnote-reference brackets" href="#id65" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a>.</p>
 <p>Le schéma ci-dessous montre la structuration des informations pour une unité archivistique :</p>
 <p><img alt="Schéma de structuration UA" src="../_images/structuration_pua.png" /></p>
 </section>
@@ -426,14 +426,14 @@ Dans le sous-bloc ArchiveUnitProfile est indiqué l’identifiant du profil d’
 </ul>
 <section id="administration-dun-referentiel-des-profils-dunite-archivistique">
 <h3><span class="section-number">10.4.1. </span>Administration d’un référentiel des profils d’unité archivistique<a class="headerlink" href="#administration-dun-referentiel-des-profils-dunite-archivistique" title="Lien vers cette rubrique"></a></h3>
-<p>La solution logicielle Vitam intègre un référentiel des profils d’unité archivistique, administrable par un utilisateur doté des droits adéquats (administrateur fonctionnel et/ou technique) et géré dans une collection particulière<a class="footnote-reference brackets" href="#id65" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a>.</p>
+<p>La solution logicielle Vitam intègre un référentiel des profils d’unité archivistique, administrable par un utilisateur doté des droits adéquats (administrateur fonctionnel et/ou technique) et géré dans une collection particulière<a class="footnote-reference brackets" href="#id66" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a>.</p>
 <p>Ce référentiel est propre à chaque tenant de la solution logicielle Vitam. Il se compose de notices descriptives au format JSON, qui incluent nativement un schéma de contrôle au format JSON ou auxquelles il est possible d’associer a posteriori un schéma.</p>
 <p>Il est possible de réaliser les opérations présentées ci-dessous.</p>
 <section id="import-de-la-notice-descriptive-du-profil-dunite-archivistique">
 <h4><span class="section-number">10.4.1.1. </span>Import de la notice descriptive du profil d’unité archivistique<a class="headerlink" href="#import-de-la-notice-descriptive-du-profil-dunite-archivistique" title="Lien vers cette rubrique"></a></h4>
 <section id="dans-un-fichier-json">
 <h5><span class="section-number">10.4.1.1.1. </span>Dans un fichier JSON<a class="headerlink" href="#dans-un-fichier-json" title="Lien vers cette rubrique"></a></h5>
-<p>Il est possible d’importer 1 à n notice(s) descriptive(s) de profil(s) d’unité archivage sous la forme d’un fichier JSON depuis les API ou l’IHM standard fournies avec la solution logicielle Vitam.<br />
+<p>Il est possible d’importer 1 à n notice(s) descriptive(s) de profil(s) d’unité archivage sous la forme d’un fichier JSON depuis les API fournies avec la solution logicielle Vitam.<br />
 L’APP « Profils documentaires » accessible depuis l’IHM VitamUI permet quant à elle de créer une notice depuis ses interfaces.</p>
 <p><em>Exemple :</em> notice descriptive de profil d’archivage contenant uniquement les informations obligatoires pour être importée avec succès.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
@@ -451,7 +451,7 @@ L’APP « Profils documentaires » accessible depuis l’IHM VitamUI permet q
 <li><p>schéma de contrôle, destiné à contenir le profil d’unité archivistique. Ce champ peut être vide lors de l’import du fichier JSON.</p></li>
 </ul>
 <p>D’autres informations, facultatives, peuvent venir compléter ces informations. Elles sont détaillées dans la section suivante du présent document.</p>
-<p>Il s’agit d’une opération d’administration (« MASTERDATA »), tracée dans le journal des opérations du tenant sur lequel a eu lieu l’opération<a class="footnote-reference brackets" href="#id66" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></a>.</p>
+<p>Il s’agit d’une opération d’administration (« MASTERDATA »), tracée dans le journal des opérations du tenant sur lequel a eu lieu l’opération<a class="footnote-reference brackets" href="#id67" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></a>.</p>
 <p>Lors de cet import, l’opération peut aboutir aux statuts suivants :</p>
 <table class="docutils align-default">
 <thead>
@@ -463,18 +463,18 @@ L’APP « Profils documentaires » accessible depuis l’IHM VitamUI permet q
 <tr class="row-even"><td class="text-left"><p>Succès</p></td>
 <td class="text-left"><p>Opération réalisée sans rencontrer de problèmes particuliers.</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>Échec<a class="footnote-reference brackets" href="#id67" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>8<span class="fn-bracket">]</span></a></p></td>
+<tr class="row-odd"><td class="text-left"><p>Échec<a class="footnote-reference brackets" href="#id68" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>8<span class="fn-bracket">]</span></a></p></td>
 <td class="text-left"><p>Sans journalisation :<br>- import d’un référentiel sous la forme d’un fichier qui n’est pas au format JSON ;<br>- import d’un référentiel sous la forme d’un fichier qui n’est pas correctement formaté au format JSON ;<br>- import d’un référentiel dont au moins un des champs contient une injection HTML ;<br>- import d’une notice de profil d’unité archivistique dans laquelle le statut n’est pas renseigné ou est mal renseigné.</p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p></p></td>
-<td class="text-left"><p>Avec journalisation :<br>- import d’une notice de profil d’unité archivistique dont l’identifiant existe déjà dans le système sur un tenant en mode « esclave » ;<br>- import d’un fichier JSON dans lequel une notice de profil d’unité archivistique ne déclare pas d’identifiant<a class="footnote-reference brackets" href="#id68" id="id9" role="doc-noteref"><span class="fn-bracket">[</span>9<span class="fn-bracket">]</span></a>, d’intitulé, de schéma de contrôle<a class="footnote-reference brackets" href="#id69" id="id10" role="doc-noteref"><span class="fn-bracket">[</span>10<span class="fn-bracket">]</span></a> ;<br>- import d’une notice de profil d’unité archivistique dans laquelle un champ ne contient pas de valeur. Il peut s’agir des champs : Identifier<a class="footnote-reference brackets" href="#id70" id="id11" role="doc-noteref"><span class="fn-bracket">[</span>11<span class="fn-bracket">]</span></a>, Name ;<br>- import d’une notice de profil d’unité archivistique contenant un schéma de contrôle détaillé, déclarant en particulier un vocabulaire externe non référencé dans l’ontologie ;<br>- import d’une notice de profil d’unité archivistique contenant un schéma de contrôle détaillé, non conforme par rapport au format JSON attendu pour un schéma de contrôle ;<br>- import d’une notice de profil d’unité archivistique dans laquelle une valeur ne correspond pas au type d’indexation du champ défini dans l’ontologie (ex : valeur textuelle dans un champ de type « DATE »).</p></td>
+<td class="text-left"><p>Avec journalisation :<br>- import d’une notice de profil d’unité archivistique dont l’identifiant existe déjà dans le système sur un tenant en mode « esclave » ;<br>- import d’un fichier JSON dans lequel une notice de profil d’unité archivistique ne déclare pas d’identifiant<a class="footnote-reference brackets" href="#id69" id="id9" role="doc-noteref"><span class="fn-bracket">[</span>9<span class="fn-bracket">]</span></a>, d’intitulé, de schéma de contrôle<a class="footnote-reference brackets" href="#id70" id="id10" role="doc-noteref"><span class="fn-bracket">[</span>10<span class="fn-bracket">]</span></a> ;<br>- import d’une notice de profil d’unité archivistique dans laquelle un champ ne contient pas de valeur. Il peut s’agir des champs : Identifier<a class="footnote-reference brackets" href="#id71" id="id11" role="doc-noteref"><span class="fn-bracket">[</span>11<span class="fn-bracket">]</span></a>, Name ;<br>- import d’une notice de profil d’unité archivistique contenant un schéma de contrôle détaillé, déclarant en particulier un vocabulaire externe non référencé dans l’ontologie ;<br>- import d’une notice de profil d’unité archivistique contenant un schéma de contrôle détaillé, non conforme par rapport au format JSON attendu pour un schéma de contrôle ;<br>- import d’une notice de profil d’unité archivistique dans laquelle une valeur ne correspond pas au type d’indexation du champ défini dans l’ontologie (ex : valeur textuelle dans un champ de type « DATE »).</p></td>
 </tr>
 </tbody>
 </table>
 <p><strong>Points d’attention :</strong></p>
 <ul class="simple">
 <li><p>Il est possible d’importer en une seule fois un référentiel complet, comprenant plusieurs notices décrivant chacune un profil d’unité archivistique. La solution logicielle Vitam ne comptabilisera qu’une seule opération, et ne prendra pas en compte dans le journal des opérations la création unitaire des différents items compris dans le référentiel importé. Afin d’optimiser la traçabilité de la création des différentes notices, il est recommandé de créer ces dernières une par une.</p></li>
-<li><p>La solution logicielle Vitam permet d’importer une notice détaillée avec un schéma de contrôle déjà détaillé ou vide de tout contenu<a class="footnote-reference brackets" href="#id71" id="id12" role="doc-noteref"><span class="fn-bracket">[</span>12<span class="fn-bracket">]</span></a>. Dans ce dernier cas, l’import d’une notice ne suffit pas pour utiliser un profil d’unité archivistique dans la solution logicielle Vitam. Il est nécessaire, après cette opération, d’ajouter le schéma de contrôle correspondant au profil d’unité archivistique lui-même et de l’associer à la notice qui le référence, afin qu’il soit pris en compte dans la solution logicielle Vitam<a class="footnote-reference brackets" href="#id72" id="id13" role="doc-noteref"><span class="fn-bracket">[</span>13<span class="fn-bracket">]</span></a>.</p></li>
+<li><p>La solution logicielle Vitam permet d’importer une notice détaillée avec un schéma de contrôle déjà détaillé ou vide de tout contenu<a class="footnote-reference brackets" href="#id72" id="id12" role="doc-noteref"><span class="fn-bracket">[</span>12<span class="fn-bracket">]</span></a>. Dans ce dernier cas, l’import d’une notice ne suffit pas pour utiliser un profil d’unité archivistique dans la solution logicielle Vitam. Il est nécessaire, après cette opération, d’ajouter le schéma de contrôle correspondant au profil d’unité archivistique lui-même et de l’associer à la notice qui le référence, afin qu’il soit pris en compte dans la solution logicielle Vitam<a class="footnote-reference brackets" href="#id73" id="id13" role="doc-noteref"><span class="fn-bracket">[</span>13<span class="fn-bracket">]</span></a>.</p></li>
 <li><p>S’il est généré par une application externe, l’identifiant de la notice ne doit comprendre ni caractère accentué, ni virgule, ni apostrophe, ni parenthèse, ni espace, ni slash, ni élément de ponctuation, ou tout autre caractère spécial. Ne sont recommandés que l’underscore et le tiret comme séparateurs.</p></li>
 </ul>
 </section>
@@ -493,7 +493,7 @@ Cette notice descriptive comprend les informations suivantes pour un profil d’
 <td class="text-left"><p>identifiant système unique de la notice correspondant à un GUID attribué automatiquement par la solution logicielle Vitam (champ obligatoire)</p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>Identifier</p></td>
-<td class="text-left"><p>identifiant de la notice qui peut être attribué au profil d’unité archivistique, généré automatiquement par la solution logicielle Vitam ou par l’application à l’origine de sa création (champ obligatoire)<a class="footnote-reference brackets" href="#id73" id="id14" role="doc-noteref"><span class="fn-bracket">[</span>14<span class="fn-bracket">]</span></a>.<br>S’il est généré par la solution logicielle Vitam, cet identifiant se compose du préfixe AUP, suivi d’un tiret et d’une suite de 6 chiffres incrémentés automatiquement.<br>S’il est généré par une application externe, l’identifiant de la notice ne doit comprendre ni caractère accentué, ni virgule, ni apostrophe, ni parenthèse, ni espace, ni slash, ni élément de ponctuation, ou tout autre caractère spécial. Ne sont recommandés que l’underscore et le tiret comme séparateurs.</p></td>
+<td class="text-left"><p>identifiant de la notice qui peut être attribué au profil d’unité archivistique, généré automatiquement par la solution logicielle Vitam ou par l’application à l’origine de sa création (champ obligatoire)<a class="footnote-reference brackets" href="#id74" id="id14" role="doc-noteref"><span class="fn-bracket">[</span>14<span class="fn-bracket">]</span></a>.<br>S’il est généré par la solution logicielle Vitam, cet identifiant se compose du préfixe AUP, suivi d’un tiret et d’une suite de 6 chiffres incrémentés automatiquement.<br>S’il est généré par une application externe, l’identifiant de la notice ne doit comprendre ni caractère accentué, ni virgule, ni apostrophe, ni parenthèse, ni espace, ni slash, ni élément de ponctuation, ou tout autre caractère spécial. Ne sont recommandés que l’underscore et le tiret comme séparateurs.</p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>Name</p></td>
 <td class="text-left"><p>nom du profil d’unité archivistique, qui doit être obligatoirement renseigné dans la solution logicielle Vitam (champ obligatoire)</p></td>
@@ -545,17 +545,17 @@ Cette notice descriptive comprend les informations suivantes pour un profil d’
 <li><p>Dès son import, la notice détaillée peut inclure un schéma de contrôle détaillé, dans la mesure où tous deux sont au format JSON. Il s’agit d’une opération d’import (opération d’administration de type « MASTERDATA »).</p></li>
 <li><p>Néanmoins, la notice peut être importée sans schéma détaillé. Il est alors possible, a posteriori, de lui adjoindre ce schéma de contrôle et de vérifier sa validité par rapport au format JSON. Il s’agit alors d’une opération de mise à jour (opération d’administration de type « MASTERDATA »).</p></li>
 </ul>
-<p>Cet ajout peut s’effectuer depuis les API ou l’IHM standard fournies avec la solution logicielle Vitam. L’APP « Profils documentaires » accessible depuis l’IHM VitamUI permet quant à elle d’importer un profil d’unité archivistique, intégré dans une notice depuis son poste ou de le créer depuis ses interfaces.</p>
+<p>Cet ajout peut s’effectuer depuis les API fournies avec la solution logicielle Vitam. L’APP « Profils documentaires » accessible depuis l’IHM VitamUI permet quant à elle d’importer un profil d’unité archivistique, intégré dans une notice depuis son poste ou de le créer depuis ses interfaces.</p>
 <p>L’ajout d’un schéma de contrôle dans la collection est un des prérequis indispensable pour pouvoir réaliser des contrôles entre un profil d’unité archivistique et des unités archivistiques présentes dans des bordereaux de transfert au moment de leur transfert dans la solution logicielle Vitam ou déjà prises en charge dans la solution logicielle Vitam et en cours de modification.</p>
 <p>Lors de cette opération, la solution logicielle Vitam vérifie que les vocabulaires déclarés dans le schéma de contrôle existent dans l’ontologie.</p>
-<p><strong>Point d’attention :</strong> la solution logicielle ne vérifie pas que, si des types sont associés aux vocabulaires dans le schéma, ces types correspondent au type de chacun de ces vocabulaires dans l’ontologie<a class="footnote-reference brackets" href="#id74" id="id15" role="doc-noteref"><span class="fn-bracket">[</span>15<span class="fn-bracket">]</span></a>.</p>
-<p>Cette action provoque la création d’une nouvelle version de la notice modifiée. Elle fait l’objet d’une journalisation dans le journal des opérations du tenant sur lequel a eu lieu l’opération (opération d’administration de type « MASTERDATA »)<a class="footnote-reference brackets" href="#id75" id="id16" role="doc-noteref"><span class="fn-bracket">[</span>16<span class="fn-bracket">]</span></a>.</p>
+<p><strong>Point d’attention :</strong> la solution logicielle ne vérifie pas que, si des types sont associés aux vocabulaires dans le schéma, ces types correspondent au type de chacun de ces vocabulaires dans l’ontologie<a class="footnote-reference brackets" href="#id75" id="id15" role="doc-noteref"><span class="fn-bracket">[</span>15<span class="fn-bracket">]</span></a>.</p>
+<p>Cette action provoque la création d’une nouvelle version de la notice modifiée. Elle fait l’objet d’une journalisation dans le journal des opérations du tenant sur lequel a eu lieu l’opération (opération d’administration de type « MASTERDATA »)<a class="footnote-reference brackets" href="#id76" id="id16" role="doc-noteref"><span class="fn-bracket">[</span>16<span class="fn-bracket">]</span></a>.</p>
 <p>L’import ou la mise à jour d’un profil d’unité archivistique peut échouer pour les motifs suivants :</p>
 <ul class="simple">
 <li><p>le schéma de contrôle est invalide, c’est-dire qu’il n’est pas conforme au format attendu pour un schéma JSON. À noter que la solution logicielle Vitam ne vérifie pas si le schéma de contrôle est cohérent :</p></li>
 <li><p>d’un point de vue métier. Par exemple, on peut rendre obligatoire un élément qui n’est pas défini dans les propriétés d’un même schéma ou imposer des cardinalités telles que 10 – 5. La solution logicielle Vitam enregistrera le schéma de contrôle en l’état.</p></li>
 <li><p>par rapport au SEDA. Par exemple, la solution logicielle Vitam enregistrera le schéma de contrôle sans contrôler si ce dernier respecte les cardinalités imposées par le SEDA.</p></li>
-<li><p>le schéma de contrôle contient un vocabulaire inconnu de l’ontologie<a class="footnote-reference brackets" href="#id76" id="id17" role="doc-noteref"><span class="fn-bracket">[</span>17<span class="fn-bracket">]</span></a>.</p></li>
+<li><p>le schéma de contrôle contient un vocabulaire inconnu de l’ontologie<a class="footnote-reference brackets" href="#id77" id="id17" role="doc-noteref"><span class="fn-bracket">[</span>17<span class="fn-bracket">]</span></a>.</p></li>
 </ul>
 </section>
 <section id="modification-de-la-notice-descriptive-dun-profil-dunite-archivistique">
@@ -563,7 +563,6 @@ Cette notice descriptive comprend les informations suivantes pour un profil d’
 <p>La modification des champs des notices décrivant les profils d’unité archivistique est possible au moyen :</p>
 <ul class="simple">
 <li><p>des API,</p></li>
-<li><p>de l’IHM standard fournies avec la solution logicielle Vitam,</p></li>
 <li><p>de l’APP « Profils documentaires » accessible depuis l’IHM VitamUI.
 Les champs modifiables sont :</p></li>
 <li><p>le nom du profil d’unité archivistique (Name) ;</p></li>
@@ -575,10 +574,10 @@ Les champs modifiables sont :</p></li>
 <p><strong>Points d’attention :</strong></p>
 <ul class="simple">
 <li><p>le statut de la notice descriptive doit être « Actif » (« ACTIVE ») pour pouvoir procéder à des transferts de SIP comprenant des unités archivistiques devant se conformer à un profil d’unité archivistique ;</p></li>
-<li><p>la solution logicielle Vitam permet de modifier le  schéma de contrôle associée à la notice descriptive, tant que cette dernière n’est pas utilisée par une unité archivistique en entrée ou déjà transférée dans la solution logicielle Vitam. S’il l’est, il n’est plus possible de le modifier<a class="footnote-reference brackets" href="#id77" id="id18" role="doc-noteref"><span class="fn-bracket">[</span>18<span class="fn-bracket">]</span></a>. En revanche, il est toujours possible de mettre à jour l’intitulé, la description ou le statut de la notice descriptive.</p></li>
+<li><p>la solution logicielle Vitam permet de modifier le  schéma de contrôle associée à la notice descriptive, tant que cette dernière n’est pas utilisée par une unité archivistique en entrée ou déjà transférée dans la solution logicielle Vitam. S’il l’est, il n’est plus possible de le modifier<a class="footnote-reference brackets" href="#id78" id="id18" role="doc-noteref"><span class="fn-bracket">[</span>18<span class="fn-bracket">]</span></a>. En revanche, il est toujours possible de mettre à jour l’intitulé, la description ou le statut de la notice descriptive.</p></li>
 </ul>
 <p>Cette action provoque la création d’une nouvelle version de la notice modifiée. Les différentes versions du référentiel font l’objet d’une sauvegarde sur les offres de stockage utilisées par la solution logicielle Vitam.
-Elle fait l’objet d’une journalisation dans le journal des opérations du tenant sur lequel a eu lieu l’opération (opération d’administration de type « MASTERDATA »)<a class="footnote-reference brackets" href="#id78" id="id19" role="doc-noteref"><span class="fn-bracket">[</span>19<span class="fn-bracket">]</span></a>.</p>
+Elle fait l’objet d’une journalisation dans le journal des opérations du tenant sur lequel a eu lieu l’opération (opération d’administration de type « MASTERDATA »)<a class="footnote-reference brackets" href="#id79" id="id19" role="doc-noteref"><span class="fn-bracket">[</span>19<span class="fn-bracket">]</span></a>.</p>
 <p>Lors de cette mise à jour, l’opération peut aboutir aux statuts suivants :</p>
 <table class="docutils align-default">
 <thead>
@@ -590,11 +589,11 @@ Elle fait l’objet d’une journalisation dans le journal des opérations du te
 <tr class="row-even"><td class="text-left"><p>Succès</p></td>
 <td class="text-left"><p>Opération réalisée sans rencontrer de problèmes particuliers.</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>Échec<a class="footnote-reference brackets" href="#id79" id="id20" role="doc-noteref"><span class="fn-bracket">[</span>20<span class="fn-bracket">]</span></a></p></td>
+<tr class="row-odd"><td class="text-left"><p>Échec<a class="footnote-reference brackets" href="#id80" id="id20" role="doc-noteref"><span class="fn-bracket">[</span>20<span class="fn-bracket">]</span></a></p></td>
 <td class="text-left"><p>Sans journalisation :<br>– mise à jour qui n’est pas correctement formatée au format JSON ;<br>– mise à jour d’une notice dont au moins un des champs contient une injection HTML ;<br>– mise à jour d’une notice de profil d’unité archivistique dans laquelle le statut n’est pas renseigné ou est mal renseigné.</p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p></p></td>
-<td class="text-left"><p>Avec journalisation :<br>– modification de l’identifiant par un identifiant existant déjà dans le système sur un tenant en mode « esclave » ;<br>– suppression d’un champ obligatoire. Il peut s’agir des champs suivants : identifiant, d’intitulé, schéma de contrôle<a class="footnote-reference brackets" href="#id80" id="id21" role="doc-noteref"><span class="fn-bracket">[</span>21<span class="fn-bracket">]</span></a> ;<br>– suppression d’un champ dont la valeur est obligatoire. Il peut s’agir des champs : Identifier, Name ;<br>– ajout d’un schéma de contrôle détaillé, déclarant en particulier un vocabulaire externe non référencé dans l’ontologie ;<br>– ajout d’un schéma de contrôle détaillé non conforme par rapport au format JSON attendu pour un schéma de contrôle ou contenant des champs erronés ;<br>– modification du schéma de contrôle contenu dans une notice de profil d’unité archivistique, alors que celle-ci est déclarée dans au moins une unité archivistique ;<br>- mise à jour d’un champ d’une notice de profil d’unité archivistique par  une valeur ne correspondant pas au type d’indexation attendu pour ce champ dans l’ontologie (ex : valeur textuelle dans un champ de type « DATE »).</p></td>
+<td class="text-left"><p>Avec journalisation :<br>– modification de l’identifiant par un identifiant existant déjà dans le système sur un tenant en mode « esclave » ;<br>– suppression d’un champ obligatoire. Il peut s’agir des champs suivants : identifiant, d’intitulé, schéma de contrôle<a class="footnote-reference brackets" href="#id81" id="id21" role="doc-noteref"><span class="fn-bracket">[</span>21<span class="fn-bracket">]</span></a> ;<br>– suppression d’un champ dont la valeur est obligatoire. Il peut s’agir des champs : Identifier, Name ;<br>– ajout d’un schéma de contrôle détaillé, déclarant en particulier un vocabulaire externe non référencé dans l’ontologie ;<br>– ajout d’un schéma de contrôle détaillé non conforme par rapport au format JSON attendu pour un schéma de contrôle ou contenant des champs erronés ;<br>– modification du schéma de contrôle contenu dans une notice de profil d’unité archivistique, alors que celle-ci est déclarée dans au moins une unité archivistique ;<br>- mise à jour d’un champ d’une notice de profil d’unité archivistique par  une valeur ne correspondant pas au type d’indexation attendu pour ce champ dans l’ontologie (ex : valeur textuelle dans un champ de type « DATE »).</p></td>
 </tr>
 </tbody>
 </table>
@@ -692,8 +691,10 @@ En fonction du statut, seront autorisés ou non :</p></li>
 Il est possible d’obtenir :</p>
 <ul class="simple">
 <li><p>une liste de résultats,</p></li>
-<li><p>un résultat par facettes (nombre d’occurrences pour une métadonnée donnée).
-Sont disponibles les facettes de type :</p></li>
+<li><p>un résultat par facettes (nombre d’occurrences pour une métadonnée donnée).</p></li>
+</ul>
+<p>Sont disponibles les facettes de type :</p>
+<ul class="simple">
 <li><p>« terms » : pour obtenir des catégories basées sur les valeurs distinctes d’un champ spécifique et le nombre associé,</p></li>
 <li><p>« filters » : pour obtenir des résultats d’agrégations par filtres sur les résultats,</p></li>
 <li><p>« range » : pour obtenir des agrégations par plages de dates,</p></li>
@@ -710,7 +711,7 @@ Sont disponibles les facettes de type :</p></li>
 </section>
 <section id="audit-dintegrite-du-referentiel">
 <h4><span class="section-number">10.4.1.6. </span>Audit d’intégrité du référentiel<a class="headerlink" href="#audit-dintegrite-du-referentiel" title="Lien vers cette rubrique"></a></h4>
-<p>La solution logicielle Vitam permet de réaliser un audit sur le référentiel des profils d’unité archivistique. Cet audit se lance depuis un tenant donné et vérifie que les profils d’unité archivistique déclarés dans la base de données sont bien stockés dans les offres de stockage<a class="footnote-reference brackets" href="#id81" id="id22" role="doc-noteref"><span class="fn-bracket">[</span>22<span class="fn-bracket">]</span></a>.</p>
+<p>La solution logicielle Vitam permet de réaliser un audit sur le référentiel des profils d’unité archivistique. Cet audit se lance depuis un tenant donné et vérifie que les profils d’unité archivistique déclarés dans la base de données sont bien stockés dans les offres de stockage<a class="footnote-reference brackets" href="#id82" id="id22" role="doc-noteref"><span class="fn-bracket">[</span>22<span class="fn-bracket">]</span></a>.</p>
 <p>Il s’agit d’un acte technique. Il donne lieu à un log et non pas à une opération journalisée.
 À l’issue de l’audit, le log peut aboutir aux statuts suivants :</p>
 <table class="docutils align-default">
@@ -749,7 +750,7 @@ Sont disponibles les facettes de type :</p></li>
 <li><p>le profil d’unité archivistique déclaré est inconnu,</p></li>
 <li><p>le profil d’unité archivistique déclaré est inactif,</p></li>
 <li><p>la notice descriptive du profil d’unité archivistique est active, mais son schéma de contrôle est vide,</p>
-<p>-&gt; alors le transfert du SIP échouera à la tâche de vérification de conformité aux profils d’unité archivistique, passera à la tâche suivante, mais n’aboutira pas. Un message de réponse (ArchiveTransferReply ou ATR) indiquera que le transfert a échoué à la tâche de vérification de la conformité au profil d’unité archivistique et précisera la première erreur rencontrée dans le détail de l’événement (EventDetailData)<a class="footnote-reference brackets" href="#id82" id="id23" role="doc-noteref"><span class="fn-bracket">[</span>23<span class="fn-bracket">]</span></a>.</p>
+<p>-&gt; alors le transfert du SIP échouera à la tâche de vérification de conformité aux profils d’unité archivistique, passera à la tâche suivante, mais n’aboutira pas. Un message de réponse (ArchiveTransferReply ou ATR) indiquera que le transfert a échoué à la tâche de vérification de la conformité au profil d’unité archivistique et précisera la première erreur rencontrée dans le détail de l’événement (EventDetailData)<a class="footnote-reference brackets" href="#id83" id="id23" role="doc-noteref"><span class="fn-bracket">[</span>23<span class="fn-bracket">]</span></a>.</p>
 </li>
 </ul>
 <p><em>Exemple :</em> message d’erreur sur la tâche de contrôle de conformité au profil d’unité archivistique.</p>
@@ -788,7 +789,7 @@ Sont disponibles les facettes de type :</p></li>
 <section id="affichage-des-unites-archivistiques-declarant-un-profil-dunite-archivistique">
 <h4><span class="section-number">10.4.3.2. </span>Affichage des unités archivistiques déclarant un profil d’unité archivistique<a class="headerlink" href="#affichage-des-unites-archivistiques-declarant-un-profil-dunite-archivistique" title="Lien vers cette rubrique"></a></h4>
 <p>La solution logicielle Vitam permet d’accéder à la liste des métadonnées requises par un profil d’unité archivistique, qu’il s’agisse de vocabulaires internes ou, le cas échéant, de vocabulaires externes de la collection « Unit ».</p>
-<p>Exemple : Requête en vue de rechercher les vocabulaires utilisés par le profil d’unité archivistique dont l’identifiant est  « AUP-00001 » :</p>
+<p><em>Exemple :</em> Requête en vue de rechercher les vocabulaires utilisés par le profil d’unité archivistique dont l’identifiant est  « AUP-00001 » :</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="err">GET</span><span class="w"> </span><span class="p">{{</span><span class="err">url</span><span class="p">}}</span><span class="err">/admi</span><span class="kc">n</span><span class="mf">-e</span><span class="err">x</span><span class="kc">ternal</span><span class="err">/v</span><span class="mi">1</span><span class="err">/archiveu</span><span class="kc">n</span><span class="err">i</span><span class="kc">t</span><span class="err">pro</span><span class="kc">f</span><span class="err">iles/AUP</span><span class="mi">-00001</span><span class="err">/schema</span>
 <span class="err">Accep</span><span class="kc">t</span><span class="p">:</span><span class="w"> </span><span class="err">applica</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="err">/jso</span><span class="kc">n</span>
 <span class="err">Co</span><span class="kc">ntent</span><span class="mi">-</span><span class="err">Type</span><span class="p">:</span><span class="w"> </span><span class="err">applica</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="err">/jso</span><span class="kc">n</span>
@@ -796,18 +797,32 @@ Sont disponibles les facettes de type :</p></li>
 <span class="err">X</span><span class="mi">-</span><span class="err">Access</span><span class="mi">-</span><span class="err">Co</span><span class="kc">ntra</span><span class="err">c</span><span class="kc">t</span><span class="mi">-</span><span class="err">Id</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">access</span><span class="mi">-</span><span class="err">co</span><span class="kc">ntra</span><span class="err">c</span><span class="kc">t</span><span class="p">}}</span>
 </pre></div>
 </div>
-<p>La solution logicielle Vitam renvoie alors :
-- les vocabulaires internes et/ou externes non utilisés par le profil d’unité archivistique, en signalant qu’ils ne sont pas utilisés par ce dernier en exprimant une cardinalité ayant « ZERO » pour valeur (EffectiveCardinality - obligatoire) ;
-- les vocabulaires internes et /ou externes utilisés par le profil d’unité archivistique, avec les informations suivantes :
-- la cardinalité exprimée dans le profil d’unité archivisique, dont la valeur doit être égale à « ONE », « ONE_REQUIRED », « MANY » ou « MANY_REQUIRED » (EffectiveCardinality - obligatoire),
-- les contrôles exprimés pour la métadonnée en question (Control – obligatoire, mais pouvant être vide) :
-- le type de contrôle dont la valeur peut être égale à :
-- « REGEX » pour une expression régulière ou une format de date contrôlé,
-- « SELECT » pour une à plusieurs valeurs contrôlées ;
-- pour un contrôle de type « REGEX », l’expression en elle-même (Value),
-- pour un contrôle de type « SELECT », les différentes valeurs contrôlées (Values) ;
-- un commentaire (Comment – facultatif).</p>
-<p>Exemple : Résultats possibles suite à une requête en vue de rechercher les vocabulaires utilisés par le profil d’unité archivistique dont l’identifiant est  « AUP-00001 » :</p>
+<p>La solution logicielle Vitam renvoie alors :</p>
+<ul class="simple">
+<li><p>les vocabulaires internes et/ou externes non utilisés par le profil d’unité archivistique, en signalant qu’ils ne sont pas utilisés par ce dernier en exprimant une cardinalité ayant « ZERO » pour valeur (EffectiveCardinality - obligatoire) ;</p>
+<ul>
+<li><p>les vocabulaires internes et /ou externes utilisés par le profil d’unité archivistique, avec les informations suivantes :</p>
+<ul>
+<li><p>la cardinalité exprimée dans le profil d’unité archivisique, dont la valeur doit être égale à « ONE », « ONE_REQUIRED », « MANY » ou « MANY_REQUIRED » (EffectiveCardinality - obligatoire),</p></li>
+<li><p>les contrôles exprimés pour la métadonnée en question (Control – obligatoire, mais pouvant être vide) :</p>
+<ul>
+<li><p>le type de contrôle dont la valeur peut être égale à :</p>
+<ul>
+<li><p>« REGEX » pour une expression régulière ou une format de date contrôlé,</p></li>
+<li><p>« SELECT » pour une à plusieurs valeurs contrôlées ;</p></li>
+</ul>
+</li>
+<li><p>pour un contrôle de type « REGEX », l’expression en elle-même (Value),</p></li>
+<li><p>pour un contrôle de type « SELECT », les différentes valeurs contrôlées (Values) ;</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>un commentaire (Comment – facultatif).</p></li>
+</ul>
+</li>
+</ul>
+<p><em>Exemple :</em> Résultats possibles suite à une requête en vue de rechercher les vocabulaires utilisés par le profil d’unité archivistique dont l’identifiant est  « AUP-00001 » :</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="err">...</span><span class="p">]</span>
 <span class="p">{</span><span class="w"> </span><span class="nt">&quot;FieldName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SystemId&quot;</span><span class="p">,</span><span class="w"> </span>
 <span class="nt">&quot;SedaField&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SystemId&quot;</span><span class="p">,</span><span class="w"> </span>
@@ -849,10 +864,12 @@ Sont disponibles les facettes de type :</p></li>
 <span class="nt">&quot;EffectiveCardinality&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MANY&quot;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span>
 </pre></div>
 </div>
-<p>Point d’attention : En résultats, la solution logicielle renvoie systématiquement l’ensemble des vocabulaires du schéma. A charge du front-office de filtrer les vocabulaires utilisés dans le profil d’unité archivistique en utilisant le schéma.
-Il est possible, en accès :
-- d’utiliser ce filtre sur les profils d’unité archivistique comme un fichier de propriétés pour récupérer les traductions, mais aussi les restrictions et informations spécifiquement déclarées dans les profils d’unité archivistiques, plutôt que ce soit l’IHM qui porte ces informations ;
-- d’utiliser et d’afficher la traduction des vocabulaires et les contraintes définies dans un profil d’unité archivistique dans les IHM.</p>
+<p><strong>Point d’attention :</strong> En résultats, la solution logicielle renvoie systématiquement l’ensemble des vocabulaires du schéma. A charge du front-office de filtrer les vocabulaires utilisés dans le profil d’unité archivistique en utilisant le schéma.<br />
+Il est possible, en accès :</p>
+<ul class="simple">
+<li><p>d’utiliser ce filtre sur les profils d’unité archivistique comme un fichier de propriétés pour récupérer les traductions, mais aussi les restrictions et informations spécifiquement déclarées dans les profils d’unité archivistiques, plutôt que ce soit l’IHM qui porte ces informations ;</p></li>
+<li><p>d’utiliser et d’afficher la traduction des vocabulaires et les contraintes définies dans un profil d’unité archivistique dans les IHM.</p></li>
+</ul>
 <p>À titre d’exemple, au terme de la version 8.0, l’APP VitamUI « Recherche et consultation des archives » fournie avec la solution logicielle Vitam dispose d’un affichage dynamique filtré sur un profil d’unité archivistique depuis le détail des métadonnées descriptives d’une unité archivistique déclarant un profil d’unité archivistique en mode édition.</p>
 </section>
 <section id="mise-a-jour-des-unites-archivistiques">
@@ -916,7 +933,7 @@ Il s’agit d’une opération de mise à jour, faisant l’objet d’une journa
 <li><p>les métadonnées associées à ces données, permettant de les identifier, de les gérer et de les retrouver après transfert dans le système d’archivage électronique (métadonnées de pérennisation, de représentation et de description au sens de la norme OAIS) ;</p></li>
 <li><p>le contenu de données, à savoir la nature des données à archiver (catégorie ou typologie d’archives).</p></li>
 </ul>
-<p>En prenant l’exemple d’un projet de dématérialisation d’archives, il est recommandé, lors de ce travail préparatoire, de se poser les questions suivantes<a class="footnote-reference brackets" href="#id83" id="id24" role="doc-noteref"><span class="fn-bracket">[</span>24<span class="fn-bracket">]</span></a> :</p>
+<p>En prenant l’exemple d’un projet de dématérialisation d’archives, il est recommandé, lors de ce travail préparatoire, de se poser les questions suivantes<a class="footnote-reference brackets" href="#id84" id="id24" role="doc-noteref"><span class="fn-bracket">[</span>24<span class="fn-bracket">]</span></a> :</p>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head text-left"><p>Etapes</p></th>
@@ -1076,9 +1093,9 @@ Cette étape peut être réalisée par un informaticien ou par un prestataire en
 <p>Parmi ces éléments, il ne faudra retenir en outre uniquement :</p>
 <ul class="simple">
 <li><p>les éléments qui ne sont pas préfixés par un dièse qui n’ont pas vocation à faire l’objet d’un contrôle au moyen d’un profil d’unité archivistique. Ainsi, on retiendra « Title » ou « Description », mais pas « #id » et #tenant ;</p></li>
-<li><p>s’il est présent, #management, seul élément précédé par un dièse que le profil d’unité archivistique supporte.
-Exemple : résultat d’une requête DSL sur une unité archivistique intitulée « Gallieni ». Figurent en gras les éléments qu’on récupère pour schématiser les données.</p></li>
+<li><p>s’il est présent, #management, seul élément précédé par un dièse que le profil d’unité archivistique supporte.</p></li>
 </ul>
+<p><em>Exemple :</em> résultat d’une requête DSL sur une unité archivistique intitulée « Gallieni ». Figurent en gras les éléments qu’on récupère pour schématiser les données.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;httpCode&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;$hits&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -1160,11 +1177,11 @@ Exemple : résultat d’une requête DSL sur une unité archivistique intitulé
 <li><p>rédiger au fur et à mesure le schéma de contrôle, en contrôlant sa validité par rapport à l’unité archivistique.</p></li>
 </ul>
 <p>Cette méthode permet de vérifier directement la conformité du profil d’unité archivistique par rapport à une unité archivistique dès la phase de conception du schéma de contrôle.</p>
-<p><em>Structure d’un schéma de contrôle</em>
-Un schéma de contrôle associé à un profil d’unité archivistique comprend deux parties<a class="footnote-reference brackets" href="#id84" id="id25" role="doc-noteref"><span class="fn-bracket">[</span>25<span class="fn-bracket">]</span></a> :</p>
+<p><em>Structure d’un schéma de contrôle</em></p>
+<p>Un schéma de contrôle associé à un profil d’unité archivistique comprend deux parties<a class="footnote-reference brackets" href="#id85" id="id25" role="doc-noteref"><span class="fn-bracket">[</span>25<span class="fn-bracket">]</span></a> :</p>
 <ul class="simple">
 <li><p>une partie déclarative ou en-tête (obligatoire),</p></li>
-<li><p>une partie listant les propriétés du schéma de contrôle (obligatoire), c’est-à-dire énumérant les éléments du SEDA ou de l’ontologie qui feront l’objet d’un contrôle<a class="footnote-reference brackets" href="#id85" id="id26" role="doc-noteref"><span class="fn-bracket">[</span>26<span class="fn-bracket">]</span></a>. Le contenu de la liste est laissé à l’appréciation de chacun.
+<li><p>une partie listant les propriétés du schéma de contrôle (obligatoire), c’est-à-dire énumérant les éléments du SEDA ou de l’ontologie qui feront l’objet d’un contrôle<a class="footnote-reference brackets" href="#id86" id="id26" role="doc-noteref"><span class="fn-bracket">[</span>26<span class="fn-bracket">]</span></a>. Le contenu de la liste est laissé à l’appréciation de chacun.
 Cette partie peut elle-même être décomposée en deux ou trois sous-parties :</p></li>
 <li><p>contexte d’utilisation de l’unité archivistique,</p></li>
 <li><p>règles de gestion à contrôler au moyen du profil d’unité archivistique (équivalent au contenu du bloc Management du SEDA),</p></li>
@@ -1172,8 +1189,8 @@ Cette partie peut elle-même être décomposée en deux ou trois sous-parties :
 </ul>
 <p><img alt="" src="../_images/schema_controle.png" /></p>
 <p>Le schéma ci-dessous distingue l’en-tête des propriétés d’un schéma de contrôle.</p>
-<p><em>En-tête d’un schéma de contrôle</em>
-Comme dans un fichier au format XML, le schéma de contrôle JSON comporte des éléments d’information propres au fichier, permettant :</p>
+<p><em>En-tête d’un schéma de contrôle</em></p>
+<p>Comme dans un fichier au format XML, le schéma de contrôle JSON comporte des éléments d’information propres au fichier, permettant :</p>
 <ul class="simple">
 <li><p>d’identifier son format :</p></li>
 <li><p>$schema : référence au schéma JSON. La solution logicielle Vitam supportant la version 4 du schéma JSON, la référence doit être égale à « http://json-schema.org/draft-04/schema » ;</p></li>
@@ -1193,8 +1210,10 @@ Comme dans un fichier au format XML, le schéma de contrôle JSON comporte des �
 <ul class="simple">
 <li><p>de déterminer des règles propres aux objets (notion de type « object » JSON) à appliquer aux propriétés qui vont être définies dans le schéma. La solution logicielle Vitam supporte seulement la règle additionalProperties , de type booléen :</p></li>
 <li><p>si sa valeur est égale à « true », une unité archivistique pourra contenir des éléments (métadonnées) supplémentaires, non définis dans le schéma de contrôle, pouvant être aussi bien des métadonnées de gestion, des métadonnées descriptives, internes ou externes ;</p></li>
-<li><p>si sa valeur est égale à « false », une unité archivistique contenant des éléments supplémentaires, non définis dans le schéma de contrôle, ne sera pas conforme à son profil et ne pourra pas être versée dans la solution logicielle Vitam.
-Point d’attention : si additionnalProperties est absent du schéma de contrôle, une valeur par défaut, égale à « true », s’applique ;</p></li>
+<li><p>si sa valeur est égale à « false », une unité archivistique contenant des éléments supplémentaires, non définis dans le schéma de contrôle, ne sera pas conforme à son profil et ne pourra pas être versée dans la solution logicielle Vitam.</p></li>
+</ul>
+<p><strong>Point d’attention :</strong> si additionnalProperties est absent du schéma de contrôle, une valeur par défaut, égale à « true », s’applique ;</p>
+<ul class="simple">
 <li><p>de déterminer des règles génériques à appliquer aux propriétés qui vont être définies dans le schéma :</p></li>
 <li><p>required : liste d’éléments de type texte (= string) obligatoires. Ces éléments doivent ensuite être définis en tant que propriétés du schéma de contrôle.
 S’il s’agit de sous-propriétés (ex : KeywordContent, sous-élément et sous-propriété du bloc Keyword), la règle ne s’appliquera pas.</p></li>
@@ -1217,7 +1236,7 @@ S’il s’agit de sous-propriétés (ex : KeywordContent, sous-élément et so
 <li><p>definitions : liste permettant de définir des expressions à utiliser dans les propriétés du schéma de contrôle. L’équipe projet Vitam recommande son utilisation dans l’en-tête des schémas afin de déterminer :</p></li>
 <li><p>les différentes cardinalités possibles ;</p></li>
 <li><p>des patterns particuliers (ex : date).
-Ces expressions sont destinées à être ensuite déclarées comme références dans les propriétés du schéma de contrôle qui ne sont pas de type objet<a class="footnote-reference brackets" href="#id86" id="id27" role="doc-noteref"><span class="fn-bracket">[</span>27<span class="fn-bracket">]</span></a>.</p></li>
+Ces expressions sont destinées à être ensuite déclarées comme références dans les propriétés du schéma de contrôle qui ne sont pas de type objet<a class="footnote-reference brackets" href="#id87" id="id27" role="doc-noteref"><span class="fn-bracket">[</span>27<span class="fn-bracket">]</span></a>.</p></li>
 </ul>
 <p><em>Exemple :</em> ont été définies :</p>
 <ul class="simple">
@@ -1249,14 +1268,14 @@ Ces expressions sont destinées à être ensuite déclarées comme références 
 <li><p>patternProperties : liste les vocabulaires à exclure du contrôle qui sera effectué par le schéma de contrôle.</p>
 <ul>
 <li><p>Dans la solution logicielle Vitam, il est obligatoire de référencer le bloc Management, si aucune règle de gestion n’est définie dans le schéma de contrôle.</p></li>
-<li><p>Si on souhaite contrôler des titres ou des descriptions avec des attributs, il faudra également utiliser patternProperties et y déclarer l’expression régulière « _^ ».
-Si additionnalProperties est égal à « false » et si aucune règle de gestion ne doit être contrôlée, il est obligatoire d’utiliser patternProperties, sans quoi les unités archivistiques ne seront pas conformes au profil d’unité archivistique qui leur est associé.<br />
-Si additionalProperties est égal à « true », il n’est pas obligatoire d’utiliser patternProperties, car la valeur « true » annule le contrôle effectué sur les règles de gestion non référencées dans le schéma de contrôle.
-Point d’attention : patternProperties ne permet pas d’interdire une liste de vocabulaires. Cette propriété définit uniquement des vocabulaires destinés à ne pas être contrôlés lors d’une vérification de conformité entre une unité archivistique et un profil d’unité archivistique.
-<em>Exemple 1 :</em> sont autorisés et ne feront pas l’objet d’un contrôle par le profil d’unité archivistique les vocabulaires du bloc Management.</p></li>
+<li><p>Si on souhaite contrôler des titres ou des descriptions avec des attributs, il faudra également utiliser patternProperties et y déclarer l’expression régulière « _^ ».<br>
+Si additionnalProperties est égal à « false » et si aucune règle de gestion ne doit être contrôlée, il est obligatoire d’utiliser patternProperties, sans quoi les unités archivistiques ne seront pas conformes au profil d’unité archivistique qui leur est associé.<br><br />
+Si additionalProperties est égal à « true », il n’est pas obligatoire d’utiliser patternProperties, car la valeur « true » annule le contrôle effectué sur les règles de gestion non référencées dans le schéma de contrôle.</p></li>
 </ul>
 </li>
 </ul>
+<p><strong>Point d’attention :</strong> patternProperties ne permet pas d’interdire une liste de vocabulaires. Cette propriété définit uniquement des vocabulaires destinés à ne pas être contrôlés lors d’une vérification de conformité entre une unité archivistique et un profil d’unité archivistique.</p>
+<p><em>Exemple 1 :</em> sont autorisés et ne feront pas l’objet d’un contrôle par le profil d’unité archivistique les vocabulaires du bloc Management.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;$schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://json-schema.org/draft-04/schema&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span><span class="p">,</span>
@@ -1328,8 +1347,8 @@ S’il n’est pas renseigné, le nombre minimum d’éléments attendus est ég
 <p>Après l’en-tête, viennent les propriétés associées au schéma de contrôle. Ces propriétés correspondent à une liste d’éléments, clés ou vocabulaires que l’on souhaite contrôler.
 Si certains éléments du SEDA ne doivent pas faire l’objet d’un contrôle, il n’est pas nécessaire de les référencer dans le profil d’unité archivistique.</p>
 <p><em>Généralités</em></p>
-<p>Un élément (ou vocabulaire) présent dans un schéma de contrôle doit toujours avoir été préalablement créé dans l’ontologie. Dans un schéma de contrôle, il est désigné par son nom, qui peut être explicité par un titre et/ou une description, tous deux facultatifs et, s’ils sont utilisés, devant obligatoirement contenir des éléments textuels.<br />
-<em>Exemple :</em> l’élément suivant se nomme Description. Il dispose d’un titre et d’une description apportant des précisions sur son origine.</p>
+<p>Un élément (ou vocabulaire) présent dans un schéma de contrôle doit toujours avoir été préalablement créé dans l’ontologie. Dans un schéma de contrôle, il est désigné par son nom, qui peut être explicité par un titre et/ou une description, tous deux facultatifs et, s’ils sont utilisés, devant obligatoirement contenir des éléments textuels.</p>
+<p><em>Exemple :</em> l’élément suivant se nomme Description. Il dispose d’un titre et d’une description apportant des précisions sur son origine.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;Description&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Description&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Element du SEDA, faisant partie du groupe DescriptionGroup.&quot;</span>
@@ -1357,8 +1376,8 @@ Si certains éléments du SEDA ne doivent pas faire l’objet d’un contrôle, 
 <li><p>les éléments Title et Description, s’ils contiennent des attributs, seront intitulés « Title_ » et « Description_ » et devront définir des propriétés.</p></li>
 </ul>
 <p><em>Types</em></p>
-<p>L’élément (ou vocabulaire) est associé à un type particulier<a class="footnote-reference brackets" href="#id87" id="id28" role="doc-noteref"><span class="fn-bracket">[</span>28<span class="fn-bracket">]</span></a>.
-<em>Exemple :</em> l’élément Description attend une chaîne de caractères, car il est de type string.</p>
+<p>L’élément (ou vocabulaire) est associé à un type particulier<a class="footnote-reference brackets" href="#id88" id="id28" role="doc-noteref"><span class="fn-bracket">[</span>28<span class="fn-bracket">]</span></a>.</p>
+<p><em>Exemple :</em> l’élément Description attend une chaîne de caractères, car il est de type string.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;Description&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span>
 <span class="w">    </span><span class="p">}</span>
@@ -1374,7 +1393,7 @@ Si certains éléments du SEDA ne doivent pas faire l’objet d’un contrôle, 
 <li><p>« array » : liste ou tableau de valeurs textuelles.</p></li>
 </ul>
 <p>Leur usage est facultatif dans un schéma de contrôle, dans la mesure où l’ontologie référence un type d’indexation particulier pour chacun des vocabulaires.<br />
-Néanmoins, si un type est déclaré dans le schéma de contrôle, il doit alors être cohérent avec celui du vocabulaire tel qu’il est déclaré dans l’ontologie<a class="footnote-reference brackets" href="#id88" id="id29" role="doc-noteref"><span class="fn-bracket">[</span>29<span class="fn-bracket">]</span></a> :</p>
+Néanmoins, si un type est déclaré dans le schéma de contrôle, il doit alors être cohérent avec celui du vocabulaire tel qu’il est déclaré dans l’ontologie<a class="footnote-reference brackets" href="#id89" id="id29" role="doc-noteref"><span class="fn-bracket">[</span>29<span class="fn-bracket">]</span></a> :</p>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head text-left"><p>Type d’indexation dans l’ontologie</p></th>
@@ -1437,9 +1456,11 @@ Néanmoins, si un type est déclaré dans le schéma de contrôle, il doit alors
 <li><p>sera qualifié en tableau (ou « array ») :</p></li>
 <li><p>un élément répétable, tel que Tag ou OriginatingAgencyArchiveUnitIdentifier,</p></li>
 <li><p>un vocabulaire externe ;</p></li>
-<li><p>certains éléments du SEDA (PreventInheritance, NeedAuthorization, NeedReassessingAuthorization) doivent contenir un booléen.
-Dans une unité archivistique, on trouvera essentiellement les types suivants :</p></li>
-<li><p>pour les vocabulaires internes, propres au SEDA, les principaux types rencontrés sont : « string », « array » et « object », auxquels s’ajoute un unique « boolean »<a class="footnote-reference brackets" href="#id89" id="id30" role="doc-noteref"><span class="fn-bracket">[</span>30<span class="fn-bracket">]</span></a>.</p></li>
+<li><p>certains éléments du SEDA (PreventInheritance, NeedAuthorization, NeedReassessingAuthorization) doivent contenir un booléen.</p></li>
+</ul>
+<p>Dans une unité archivistique, on trouvera essentiellement les types suivants :</p>
+<ul class="simple">
+<li><p>pour les vocabulaires internes, propres au SEDA, les principaux types rencontrés sont : « string », « array » et « object », auxquels s’ajoute un unique « boolean »<a class="footnote-reference brackets" href="#id90" id="id30" role="doc-noteref"><span class="fn-bracket">[</span>30<span class="fn-bracket">]</span></a>.</p></li>
 <li><p>quant aux vocabulaires externes, ajoutés pour répondre à des besoins et transferts spécifiques, la solution logicielle Vitam les identifie systématiquement comme des « array » (ou tableaux), c’est-à-dire des éléments répétables. Ces tableaux peuvent inclure ensuite un type particulier de chaînes : texte, entier, décimal ou booléen.</p></li>
 </ul>
 <p>Les éléments de type « array » et « object » ont une structuration plus complexe qu’un type simple :</p>
@@ -1499,12 +1520,12 @@ Dans une unité archivistique, on trouvera essentiellement les types suivants :
 <p><em>Règles</em></p>
 <p>Un élément peut également définir les règles suivantes :</p>
 <ul class="simple">
-<li><p>$ref : référence à une définition déclarée dans l’en-tête du schéma de contrôle<a class="footnote-reference brackets" href="#id90" id="id31" role="doc-noteref"><span class="fn-bracket">[</span>31<span class="fn-bracket">]</span></a>. Cette règle permet de pointer exactement vers une expression pouvant caractériser :</p></li>
+<li><p>$ref : référence à une définition déclarée dans l’en-tête du schéma de contrôle<a class="footnote-reference brackets" href="#id91" id="id31" role="doc-noteref"><span class="fn-bracket">[</span>31<span class="fn-bracket">]</span></a>. Cette règle permet de pointer exactement vers une expression pouvant caractériser :</p></li>
 <li><p>les différentes cardinalités possibles ;</p></li>
 <li><p>des patterns particuliers (ex : date).
-Seules les propriétés du schéma de contrôle qui ne sont pas de type objet peuvent utiliser cette règle.
-<em>Exemple :</em> l’élément Tag fait référence à l’expression one-one précisant qu’il a une cardinalité 1 – 1, tandis que Description est facultatif ou unique car sa cardinalité correspond à l’expression zero-one.</p></li>
+Seules les propriétés du schéma de contrôle qui ne sont pas de type objet peuvent utiliser cette règle.</p></li>
 </ul>
+<p><em>Exemple :</em> l’élément Tag fait référence à l’expression one-one précisant qu’il a une cardinalité 1 – 1, tandis que Description est facultatif ou unique car sa cardinalité correspond à l’expression zero-one.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;$schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://json-schema.org/draft-04/schema&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span><span class="p">,</span>
@@ -1563,7 +1584,7 @@ Seules les propriétés du schéma de contrôle qui ne sont pas de type objet pe
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>format : liste permettant d’effectuer des contrôles prédéfinis pour un certain nombre de valeurs, notamment une date (vérification de la conformité de la valeur saisie par rapport au standard RFC3339<a class="footnote-reference brackets" href="#id91" id="id32" role="doc-noteref"><span class="fn-bracket">[</span>32<span class="fn-bracket">]</span></a>) ou une adresse électronique (vérification de la conformité de la valeur saisie par rapport au standard RFC5322<a class="footnote-reference brackets" href="#id92" id="id33" role="doc-noteref"><span class="fn-bracket">[</span>33<span class="fn-bracket">]</span></a>)</p></li>
+<li><p>format : liste permettant d’effectuer des contrôles prédéfinis pour un certain nombre de valeurs, notamment une date (vérification de la conformité de la valeur saisie par rapport au standard RFC3339<a class="footnote-reference brackets" href="#id92" id="id32" role="doc-noteref"><span class="fn-bracket">[</span>32<span class="fn-bracket">]</span></a>) ou une adresse électronique (vérification de la conformité de la valeur saisie par rapport au standard RFC5322<a class="footnote-reference brackets" href="#id93" id="id33" role="doc-noteref"><span class="fn-bracket">[</span>33<span class="fn-bracket">]</span></a>)</p></li>
 </ul>
 <p><em>Exemple :</em> L’élément EventDateTime attend une valeur correspondant à une date conforme à la RFC3339, c’est-à-dire se présentant sous la forme AAAA-MM-JJThh:mm:ss. Tout unité archivistique déclarant dans l’élément EventDateTime une date non exprimée sous ce format ne sera pas validée.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;EventDateTime&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -1575,9 +1596,9 @@ Seules les propriétés du schéma de contrôle qui ne sont pas de type objet pe
 </div>
 <ul class="simple">
 <li><p>Un élément de type « number », correspondant à une valeur numérique, peut contenir les règles suivantes :</p></li>
-<li><p>minimum, maximum : nombres entiers permettant de spécifier la valeur minimale et la valeur maximale attendues comme valeur dans un champ numérique.
-Exemple : l’élément ChildrenNumber (exemple fictif) attend une valeur numérique comprise entre 0 et 22. Toute unité archivistique déclarant une valeur supérieure à 22 ne sera pas validée. En revanche, une unité archivistique déclarant une valeur de 0 ou de 22 sera acceptée.</p></li>
+<li><p>minimum, maximum : nombres entiers permettant de spécifier la valeur minimale et la valeur maximale attendues comme valeur dans un champ numérique.</p></li>
 </ul>
+<p><em>Exemple :</em> l’élément ChildrenNumber (exemple fictif) attend une valeur numérique comprise entre 0 et 22. Toute unité archivistique déclarant une valeur supérieure à 22 ne sera pas validée. En revanche, une unité archivistique déclarant une valeur de 0 ou de 22 sera acceptée.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="w">	</span><span class="nt">&quot;ChildrenNumber&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">                   </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;array&quot;</span><span class="p">,</span>
 <span class="w">                   </span><span class="nt">&quot;items&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -1645,8 +1666,8 @@ Exemple : l’élément ChildrenNumber (exemple fictif) attend une valeur numé
 </tr>
 </tbody>
 </table>
-<p>Pour un élément de type array (ou tableau), correspondant à un élément répétable dans le SEDA ou à un vocabulaire externe, la cardinalité se paramètre au moyen de minItems et maxItems, nombres entiers permettant de spécifier le nombre minimal et le nombre maximal d’entrées attendues dans le tableau ou la liste de valeurs.
-Exemple : la métadonnée OriginatingAgencyArchiveUnitIdentifier pourra être absente ou présente une fois dans le bordereau. Une unité archivistique qui déclarera plus de 2 fois la métadonnée OriginatingAgencyArchiveUnitIdentifier ne sera pas acceptée.</p>
+<p>Pour un élément de type array (ou tableau), correspondant à un élément répétable dans le SEDA ou à un vocabulaire externe, la cardinalité se paramètre au moyen de minItems et maxItems, nombres entiers permettant de spécifier le nombre minimal et le nombre maximal d’entrées attendues dans le tableau ou la liste de valeurs.</p>
+<p><em>Exemple :</em> la métadonnée OriginatingAgencyArchiveUnitIdentifier pourra être absente ou présente une fois dans le bordereau. Une unité archivistique qui déclarera plus de 2 fois la métadonnée OriginatingAgencyArchiveUnitIdentifier ne sera pas acceptée.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="w">    </span><span class="nt">&quot;OriginatingAgencyArchiveUnitIdentifier&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Part of IdentifierGroup – cardinalité = 0 – 1&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;array&quot;</span><span class="p">,</span>
@@ -1679,7 +1700,7 @@ Exemple : la métadonnée OriginatingAgencyArchiveUnitIdentifier pourra être a
 <span class="w">      </span><span class="p">}</span>
 </pre></div>
 </div>
-<p>Il est également possible de faire référence à une définition présente dans l’en-tête pour qualifier la cardinalité souhaitée. Cela vaut uniquement pour les propriétés qui ne sont pas incluses dans des objets<a class="footnote-reference brackets" href="#id93" id="id34" role="doc-noteref"><span class="fn-bracket">[</span>34<span class="fn-bracket">]</span></a>.</p>
+<p>Il est également possible de faire référence à une définition présente dans l’en-tête pour qualifier la cardinalité souhaitée. Cela vaut uniquement pour les propriétés qui ne sont pas incluses dans des objets<a class="footnote-reference brackets" href="#id94" id="id34" role="doc-noteref"><span class="fn-bracket">[</span>34<span class="fn-bracket">]</span></a>.</p>
 <p><em>Exemple :</em> language a pour cardinalité 0 – 1 et Tag 0 – n.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;$schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://json-schema.org/draft-04/schema&quot;</span><span class="p">,</span>
@@ -1734,8 +1755,8 @@ Exemple : la métadonnée OriginatingAgencyArchiveUnitIdentifier pourra être a
 <p>Pour rédiger un profil d’unité archivistique, il est également possible d’utiliser l’outil PASTIS (Profil d’Archivage Simple pour le Traitement de l’Information en SEDA), qui permet de générer des profils d’unité archivistique au format JSON en SEDA 2.1, 2.2 et 2.3.</p>
 <p>Au terme de la version 8.0, il permet de générer des profils d’unité archivistique en SEDA 2.1, 2.2 et 2.3.
 Au terme de la version 8.1, il intègre également la possibilité d’ajouter des extensions au SEDA au niveau du bloc « Content ».</p>
-<p>Étape 1 - l’outil requiert dans un premier temps de créer un profil d’unité archivistique (PUA).</p>
-<p>Étape 2 - lors de la rédaction du profil d’unité archivistique :</p>
+<p><em><strong>Étape 1</strong></em> - l’outil requiert dans un premier temps de créer un profil d’unité archivistique (PUA).</p>
+<p><em><strong>Étape 2</strong></em> - lors de la rédaction du profil d’unité archivistique :</p>
 <ul class="simple">
 <li><p>PASTIS auto-incrémente un certain nombre de champs qu’il n’est pas nécessaire, de fait, saisir.
 Point d’attention :</p></li>
@@ -1745,7 +1766,7 @@ Point d’attention :</p></li>
 <li><p>de modifier les cardinalités des champs suivants dans une unité archivistique :</p>
 <ul>
 <li><p>DescriptionLevel  (Niveau de description) : modifier la cardinalité 0-1 en 1-1 ;</p></li>
-<li><p>Title  (Niveau de description) : modifier la cardinalité 0-1 en 1-1<a class="footnote-reference brackets" href="#id94" id="id35" role="doc-noteref"><span class="fn-bracket">[</span>35<span class="fn-bracket">]</span></a>.</p></li>
+<li><p>Title  (Niveau de description) : modifier la cardinalité 0-1 en 1-1<a class="footnote-reference brackets" href="#id95" id="id35" role="doc-noteref"><span class="fn-bracket">[</span>35<span class="fn-bracket">]</span></a>.</p></li>
 </ul>
 </li>
 <li><p>La valeur des vocabulaires correspondant à des référentiels doit reprendre des valeurs issues des référentiels utilisés dans la solution logicielle Vitam (règles de gestion, services agents, contrat d’entrée).</p></li>
@@ -1763,18 +1784,21 @@ Point d’attention :</p></li>
 </ul>
 <p><strong>Points d’attention :</strong></p>
 <ul class="simple">
-<li><p>Au terme de la version 8.0, ne sont pas supportés :</p></li>
+<li><p>Au terme de la version 8.0, ne sont pas supportés :</p>
+<ul>
 <li><p>les attributs lang. De fait, il n’est pas recommandé de rendre répétable les champs « Title » et « Description » ;</p></li>
 <li><p>la répétabilité des champs, notamment les règles de gestion. De fait, il est recommandé de ne déclarer qu’une seule règle par catégorie de règle de gestion et il faut veiller à ne pas avoir saisi à plusieurs reprises un même champ ;</p></li>
 <li><p>le blocage des règles de gestion par catégorie ou par identifiant de règle ;</p></li>
 <li><p>le bloc « Logbook » ;</p></li>
 <li><p>le bloc « DataObjectReference », et son sous-élément « DataObjectGroupReferenceId ». De fait, on ne peut contrôler si l’unité archivistique est associée ou non à un objet numérique.</p></li>
+</ul>
+</li>
 <li><p>Pour les champs attendant une liste de valeurs contrôlées par le SEDA, il est interdit de rajouter une valeur en utilisant le contrôle « Enumération ».</p></li>
 </ul>
 <p>PASTIS permet d’ajouter des extensions au SEDA dans le bloc « Content » d’une unité archivistique au terme de la version 8.1 de la solution logicielle Vitam.
 Afin de pouvoir les obtenir dans l’outil, il est nécessaire de déclarer ces extensions :
 -  soit dans un fichier de configuration dans le cas où PASTIS est utilisé en mode standalone,
--  soit dans le schéma de la solution logicielle Vitam<a class="footnote-reference brackets" href="#id95" id="id36" role="doc-noteref"><span class="fn-bracket">[</span>59<span class="fn-bracket">]</span></a>.</p>
+-  soit dans le schéma de la solution logicielle Vitam<a class="footnote-reference brackets" href="#id96" id="id36" role="doc-noteref"><span class="fn-bracket">[</span>36<span class="fn-bracket">]</span></a>.</p>
 <p><em>Corrections et ajouts</em></p>
 <p>Une fois la rédaction du profil d’unité archivistique réalisée, il est possible de :</p>
 <ul class="simple">
@@ -1913,7 +1937,7 @@ Il est conseillé de prévoir, dans cette phase de tests, des unités archivisti
 <li><p>soit après installation, sur une plate-forme en activité.</p></li>
 </ul>
 <p>Dans ce cas-là, une interruption temporaire de service sera à prévoir.</p>
-<p>Pour ce faire, il faut modifier le fichier de configuration « functional-administration.conf », qui définit, entre autres, par tenant, les collections dont la solution logicielle Vitam ne génère pas d’identifiant<a class="footnote-reference brackets" href="#id96" id="id37" role="doc-noteref"><span class="fn-bracket">[</span>36<span class="fn-bracket">]</span></a>.</p>
+<p>Pour ce faire, il faut modifier le fichier de configuration « functional-administration.conf », qui définit, entre autres, par tenant, les collections dont la solution logicielle Vitam ne génère pas d’identifiant<a class="footnote-reference brackets" href="#id97" id="id37" role="doc-noteref"><span class="fn-bracket">[</span>37<span class="fn-bracket">]</span></a>.</p>
 <p><em>Exemple :</em> fichier de configuration « functional-administration.conf ».</p>
 <p><img alt="" src="../_images/config3.png" /></p>
 <p>Il est possible d’associer à un tenant la collection pour laquelle on souhaite voir généré l’identifiant par une application externe, en ajoutant au tenant concerné le nom de la collection concernée, dans le cas présent : « ARCHIVEUNITPROFILE ».</p>
@@ -1934,16 +1958,16 @@ Il est conseillé de prévoir, dans cette phase de tests, des unités archivisti
 <h3><span class="section-number">10.6.3. </span>Quand et comment mettre à jour le référentiel des profils d’unité archivistique ?<a class="headerlink" href="#quand-et-comment-mettre-a-jour-le-referentiel-des-profils-dunite-archivistique" title="Lien vers cette rubrique"></a></h3>
 <p>La mise à jour du référentiel des profils d’unité archivistique s’avère nécessaire pour répondre aux besoins suivants :</p>
 <ul class="simple">
-<li><p>mise à jour des informations relatives à une ou plusieurs notices descriptives (ex : modification d’une description, changement de statut, ajout d’un schéma de contrôle<a class="footnote-reference brackets" href="#id97" id="id38" role="doc-noteref"><span class="fn-bracket">[</span>37<span class="fn-bracket">]</span></a>) ;</p></li>
-<li><p>ajout d’une nouvelle notice.
-La solution logicielle Vitam permet de mettre à jour le référentiel, en procédant à :</p></li>
+<li><p>mise à jour des informations relatives à une ou plusieurs notices descriptives (ex : modification d’une description, changement de statut, ajout d’un schéma de contrôle<a class="footnote-reference brackets" href="#id98" id="id38" role="doc-noteref"><span class="fn-bracket">[</span>38<span class="fn-bracket">]</span></a>) ;</p></li>
+<li><p>ajout d’une nouvelle notice.</p></li>
+</ul>
+<p>La solution logicielle Vitam permet de mettre à jour le référentiel, en procédant à :</p>
+<ul class="simple">
 <li><p>une opération de mise à jour unitaire d’une notice descriptive en particulier ;</p></li>
 <li><p>une opération d’import d’une à plusieurs notices descriptives.</p></li>
 </ul>
-<p><strong>Points d’attention :</strong></p>
-<ul class="simple">
-<li><p>Il est possible d’importer en une seule fois un référentiel complet, comprenant plusieurs notices décrivant chacune un profil d’archivage. La solution logicielle Vitam ne comptabilisera qu’une seule opération, et ne prendra pas en compte dans le journal des opérations la création unitaire des différents items compris dans le référentiel importé. Afin d’optimiser la traçabilité de la création des différentes notices, il est recommandé de créer ces dernières une par une.</p></li>
-</ul>
+<p><strong>Points d’attention :</strong>
+Il est possible d’importer en une seule fois un référentiel complet, comprenant plusieurs notices décrivant chacune un profil d’archivage. La solution logicielle Vitam ne comptabilisera qu’une seule opération, et ne prendra pas en compte dans le journal des opérations la création unitaire des différents items compris dans le référentiel importé. Afin d’optimiser la traçabilité de la création des différentes notices, il est recommandé de créer ces dernières une par une.</p>
 </section>
 <section id="quand-et-comment-mettre-a-jour-un-schema-de-controle">
 <h3><span class="section-number">10.6.4. </span>Quand et comment mettre à jour un schéma de contrôle ?<a class="headerlink" href="#quand-et-comment-mettre-a-jour-un-schema-de-controle" title="Lien vers cette rubrique"></a></h3>
@@ -1955,16 +1979,14 @@ La solution logicielle Vitam permet de mettre à jour le référentiel, en proc�
 <li><p>il y a eu erreur de saisie dans le schéma importé et on souhaite le remplacer par une version corrigée.</p></li>
 </ul>
 <p>La solution logicielle Vitam permet de mettre à jour le référentiel, en procédant à une opération de mise à jour unitaire d’une notice descriptive en particulier.</p>
-<p><strong>Points d’attention :</strong></p>
-<ul class="simple">
-<li><p>Un profil d’unité archivistique pouvant être utilisé dans un ou plusieurs unité(s) archivistique(s) et faire l’objet de contrôles dans des opérations d’entrée ou de mise à jour en cours, il est recommandé de désactiver le service (entrées, notice descriptive de profil d’unité archivistique), avant de procéder à la modification du schéma de contrôle.</p></li>
-</ul>
+<p><strong>Points d’attention :</strong>
+Un profil d’unité archivistique pouvant être utilisé dans un ou plusieurs unité(s) archivistique(s) et faire l’objet de contrôles dans des opérations d’entrée ou de mise à jour en cours, il est recommandé de désactiver le service (entrées, notice descriptive de profil d’unité archivistique), avant de procéder à la modification du schéma de contrôle.</p>
 <p>Pour mettre à jour un profil d’unité archivistique, il est recommandé de suivre les étapes suivantes :</p>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head text-left"><p>Qui ?</p></th>
 <th class="head text-left"><p>Quoi ?</p></th>
-<th class="head text-left"><p>Via l’IHM démo Vitam ?</p></th>
+<th class="head text-left"><p>Via l’IHM Vitam ?</p></th>
 </tr>
 </thead>
 <tbody>
@@ -2064,14 +2086,8 @@ On pourrait envisager de seulement désactiver la notice descriptive afin de plu
 </section>
 <section id="restitution-sur-une-ihm">
 <h4><span class="section-number">10.6.6.2. </span>Restitution sur une IHM<a class="headerlink" href="#restitution-sur-une-ihm" title="Lien vers cette rubrique"></a></h4>
-<p>La solution logicielle Vitam propose de :</p>
+<p>La solution logicielle Vitam propose depuis l’APP Profils documentaires de<a class="footnote-reference brackets" href="#id99" id="id39" role="doc-noteref"><span class="fn-bracket">[</span>39<span class="fn-bracket">]</span></a> :</p>
 <ul class="simple">
-<li><p>depuis l’IHM démo :</p></li>
-<li><p>consulter le référentiel des profils d’unité archivistique,</p></li>
-<li><p>accéder à une notice de profil d’unité archivistique,</p></li>
-<li><p>lui associer un schéma de contrôle,</p></li>
-<li><p>contrôler la validité de ce dernier par rapport au schéma JSON ;</p></li>
-<li><p>depuis l’APP Profils documentaires :</p></li>
 <li><p>consulter le référentiel des profils d’unité archivistique,</p></li>
 <li><p>accéder à une notice de profil d’unité archivistique,</p></li>
 <li><p>lui associer un schéma de contrôle,</p></li>
@@ -2079,9 +2095,8 @@ On pourrait envisager de seulement désactiver la notice descriptive afin de plu
 <li><p>créer un schéma de contrôle,</p></li>
 <li><p>le modifier s’il n’est pas référencé par une unité archivistique,</p></li>
 <li><p>créer une notice de profil d’unité archivistique,</p></li>
-<li><p>exporter un schéma de contrôle et sa notice au format JSON ;</p></li>
+<li><p>exporter un schéma de contrôle et sa notice au format JSON.</p></li>
 </ul>
-<p>Elle propose également, depuis l’IHM démo, d’afficher et d’associer un identifiant de profil d’unité archivistique dans le détail d’une unité archivistique. Ces actions ne sont pas possibles depuis l’IHM VitamUI au terme de la version 7.0.</p>
 <p>S’il y a conception d’écrans, il est conseillé que cet écran permette d’afficher ou d’associer un profil d’unité archivistique au moyen d’un sélecteur affichant les intitulés des notices descriptives de profil d’unité archivistique plutôt que son identifiant.</p>
 </section>
 </section>
@@ -2097,7 +2112,7 @@ On pourrait envisager de seulement désactiver la notice descriptive afin de plu
 <li><p>Dans le schéma de contrôle :</p></li>
 <li><p>ajouter une propriété contrôlant le profil d’unité archivistique (propriété « ArchiveUnitProfile »), et y reporter l’identifiant du profil d’unité archivistique, si la valeur de cet identifiant est obligatoire dans le profil d’unité archivistique. Si cette valeur n’est pas imposée dans le profil, il n’est pas nécessaire de la reporter dans le schéma de contrôle ;</p></li>
 <li><p>Dans le bordereau de transfert :</p></li>
-<li><p>reporter l’identifiant du profil d’unité archivistique dans le champ <ArchiveUnitProfile> des unités archivistiques devant faire l’objet d’un contrôle par un profil d’unité archivistique.</p></li>
+<li><p>reporter l’identifiant du profil d’unité archivistique dans le champ &lt; ArchiveUnitProfile &gt; des unités archivistiques devant faire l’objet d’un contrôle par un profil d’unité archivistique.</p></li>
 </ul>
 </section>
 <section id="comment-utiliser-les-profils-dunite-archivistique">
@@ -2199,62 +2214,58 @@ On pourrait envisager de seulement désactiver la notice descriptive afin de plu
 <td class="text-left"><p>Recommandé</p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>Modélisation des données</p></td>
-<td class="text-left"><p>Lors de la modélisation des données, il faut prendre en compte la possibilité de la mise à jour des unités archivistiques déclarant le profil d’unité archivistique.</p></td>
-<td class="text-left"><p></p></td>
-</tr>
-<tr class="row-odd"><td class="text-left"><p>Si l’on sait que les modifications à apporter seront importantes, il est recommandé de prévoir une modélisation assez souple, notamment au niveau des cardinalités, afin que les unités archivistiques restent conformes au même profil d’unité archivistique.</p></td>
+<td class="text-left"><p>Lors de la modélisation des données, il faut prendre en compte la possibilité de la mise à jour des unités archivistiques déclarant le profil d’unité archivistique. Si l’on sait que les modifications à apporter seront importantes, il est recommandé de prévoir une modélisation assez souple, notamment au niveau des cardinalités, afin que les unités archivistiques restent conformes au même profil d’unité archivistique.</p></td>
 <td class="text-left"><p>Recommandé</p></td>
-<td class="text-left"><p></p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>Modélisation des données</p></td>
+<tr class="row-odd"><td class="text-left"><p>Modélisation des données</p></td>
 <td class="text-left"><p>Après avoir analysé les données à contrôler et avant de commencer à rédiger un schéma de contrôle, il est recommandé de réaliser un bordereau de transfert contenant :<br>-  soit une unité archivistique conforme à la modélisation préalablement réalisée,<br>-  soit plusieurs unités archivistiques, chacune faisant état de différentes propositions de modélisation.<br>Puis, il est conseillé de le transférer sur une plate-forme de tests et de récupérer un enregistrement d’unité archivistique dans la base de données MongoDB au moyen d’une requête DSL, afin qu’il serve de base de contrôle lors de la rédaction du schéma de contrôle.</p></td>
 <td class="text-left"><p>Recommandé</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>Éléments à déclarer dans un schéma de contrôle – en-tête</p></td>
+<tr class="row-even"><td class="text-left"><p>Éléments à déclarer dans un schéma de contrôle – en-tête</p></td>
 <td class="text-left"><p>L’unité archivistique enregistrée dans la base de données MongoDB dispose d’informations techniques, signalées par un préfixe (undescore dans la base de données et dièse dans la requête DSL). Ces informations n’ont aucune vocation à être contrôlées par un schéma de contrôle.<br>De fait, il n’est pas recommandé de les référencer dans un schéma de contrôle.</p></td>
 <td class="text-left"><p>Non recommandé</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>Éléments à déclarer dans un schéma de contrôle – en-tête</p></td>
+<tr class="row-odd"><td class="text-left"><p>Éléments à déclarer dans un schéma de contrôle – en-tête</p></td>
 <td class="text-left"><p>La solution logicielle Vitam effectue un contrôle sur le bloc Management d’une unité archivistique enregistré dans la base de données, qu’il déclare ou non des règles de gestion.<br>Pour l’écarter de son contrôle, il est obligatoire de le détailler dans une règle « patternProperties », d’autant plus si « additionnalProperties » est égal à « false ».<br>Est donc à déclarer le bloc Management s’il n’est pas précisé en tant que propriété dans le schéma de contrôle.</p></td>
 <td class="text-left"><p>Obligatoire</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>Éléments à déclarer dans un schéma de contrôle – en-tête</p></td>
+<tr class="row-even"><td class="text-left"><p>Éléments à déclarer dans un schéma de contrôle – en-tête</p></td>
 <td class="text-left"><p>Dans l’en-tête du schéma de contrôle, il est recommandé de déclarer une règle « additionalProperties » avec une valeur égale à « false », sans quoi le schéma de contrôle permettra à une unité archivistique de contenir des éléments supplémentaires qu’il ne définit pas.</p></td>
 <td class="text-left"><p>Recommandé</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>Éléments à déclarer dans un schéma de contrôle – en-tête</p></td>
+<tr class="row-odd"><td class="text-left"><p>Éléments à déclarer dans un schéma de contrôle – en-tête</p></td>
 <td class="text-left"><p>L’équipe projet Vitam recommande l’utilisation des définitions dans l’en-tête des schémas afin de déterminer :<br>-  les différentes cardinalités possibles ;<br>-  des patterns particuliers (ex : date).<br>Ces expressions sont destinées à être ensuite déclarées comme références dans les propriétés du schéma de contrôle qui ne sont pas de type objet. Elles évitent ainsi de répéter une même information à plusieurs endroits dans le schéma de contrôle.</p></td>
 <td class="text-left"><p>Recommandé</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>Éléments à déclarer dans un schéma de contrôle – en-tête</p></td>
+<tr class="row-even"><td class="text-left"><p>Éléments à déclarer dans un schéma de contrôle – en-tête</p></td>
 <td class="text-left"><p>La solution logicielle Vitam ne supporte actuellement pas les règles suivantes au niveau de l’en-tête : minProperties, maxProperties, dependencies, additionnalProperties  (liste), anyOf, allOf, oneOf, not.<br>De fait, leur utilisation dans un schéma de contrôle n’est pas recommandée.</p></td>
 <td class="text-left"><p>Non recommandé</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>Éléments à déclarer dans un schéma de contrôle – propriétés</p></td>
+<tr class="row-odd"><td class="text-left"><p>Éléments à déclarer dans un schéma de contrôle – propriétés</p></td>
 <td class="text-left"><p>Il est recommandé de déclarer dans un profil d’unité archivistique la liste des propriétés (= éléments XML du bordereau de transfert) que l’on souhaite voir contrôler.<br>Si certains éléments du SEDA ne doivent pas faire l’objet d’un contrôle, il n’est pas nécessaire de les référencer parmi les propriétés définies dans le profil d’unité archivistique.</p></td>
 <td class="text-left"><p>Recommandé</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>Éléments à déclarer dans un schéma de contrôle – propriétés</p></td>
+<tr class="row-even"><td class="text-left"><p>Éléments à déclarer dans un schéma de contrôle – propriétés</p></td>
 <td class="text-left"><p>Il est obligatoire de déclarer dans un profil d’unité archivistique les éléments rendus obligatoires en entrée du système, à savoir : le titre et le niveau de description.<br>-  Si « additionnalProperties » est égal à « false », le contrôle entre l’unité archivistique et le profil d’unité archivistique sera en erreur ;<br>-  Si « additionnalProperties » est égal à « true »,<br>-&gt; si l’unité archivistique contient néanmoins un titre et un niveau de description, son transfert ou sa mise à jour seront en succès ;<br>-&gt; si l’unité archivistique ne contient pas de titre et de niveau de description, son transfert ou sa mise à jour seront en échec, car ce sont des éléments rendus obligatoires.</p></td>
 <td class="text-left"><p>Obligatoire</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>Éléments à déclarer dans un schéma de contrôle – propriétés</p></td>
+<tr class="row-odd"><td class="text-left"><p>Éléments à déclarer dans un schéma de contrôle – propriétés</p></td>
 <td class="text-left"><p>L’usage des types d’indexation est facultatif dans un schéma de contrôle, dans la mesure où l’ontologie référence un type d’indexation particulier pour chacun des vocabulaires.</p></td>
 <td class="text-left"><p>Recommandé</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>Éléments à déclarer dans un schéma de contrôle – propriétés</p></td>
+<tr class="row-even"><td class="text-left"><p>Éléments à déclarer dans un schéma de contrôle – propriétés</p></td>
 <td class="text-left"><p>Un vocabulaire externe doit être préalablement créé dans l’ontologie avant d’être utilisé dans un profil d’unité archivistique.<br>Dans ce profil, si on indique son type, il faut obligatoirement le qualifier de tableau (ou array). Ce tableau peut ensuite contenir des valeurs de type texte ou autre (entier, décimal, booléen…), voire définir un contrôle sur une liste de valeurs prédéterminées (au moyen de la règle « enum »).</p></td>
 <td class="text-left"><p>Obligatoire</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>Éléments à déclarer dans un schéma de contrôle – propriétés</p></td>
+<tr class="row-odd"><td class="text-left"><p>Éléments à déclarer dans un schéma de contrôle – propriétés</p></td>
 <td class="text-left"><p>Le type date n’existant pas dans le format JSON, il est recommandé d’utiliser un pattern pour préciser le format de date attendu, dans le cas où l’on veut indiquer un type particulier pour une propriété donnée.</p></td>
 <td class="text-left"><p>Recommandé</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>Éléments à déclarer dans un schéma de contrôle – propriétés</p></td>
+<tr class="row-even"><td class="text-left"><p>Éléments à déclarer dans un schéma de contrôle – propriétés</p></td>
 <td class="text-left"><p>Si on souhaite forcer à ce qu’un élément de type textuel ait au moins une valeur renseignée dans une unité archivistique, en entrée ou lors d’une mise à jour, il est recommandé d’utiliser la règle « minLength » et de lui associer une valeur égale à 1.</p></td>
 <td class="text-left"><p>Recommandé</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>Éléments à déclarer dans un schéma de contrôle – propriétés</p></td>
+<tr class="row-odd"><td class="text-left"><p>Éléments à déclarer dans un schéma de contrôle – propriétés</p></td>
 <td class="text-left"><p>La solution logicielle Vitam ne supporte actuellement pas les règles suivantes au niveau des propriétés : anyOf, allOf, oneOf, not.<br>De fait, leur utilisation dans un schéma de contrôle n’est pas recommandée.</p></td>
 <td class="text-left"><p>Non recommandé</p></td>
 </tr>
@@ -4165,7 +4176,7 @@ On pourrait envisager de seulement désactiver la notice descriptive afin de plu
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>#management<a class="footnote-reference brackets" href="#id98" id="id39" role="doc-noteref"><span class="fn-bracket">[</span>38<span class="fn-bracket">]</span></a></p></td>
+<tr class="row-odd"><td class="text-left"><p>#management<a class="footnote-reference brackets" href="#id100" id="id40" role="doc-noteref"><span class="fn-bracket">[</span>40<span class="fn-bracket">]</span></a></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
@@ -4222,20 +4233,20 @@ On pourrait envisager de seulement désactiver la notice descriptive afin de plu
 <td class="text-center"><p></p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>StartDate</p></td>
-<td class="text-center"><p>x<a class="footnote-reference brackets" href="#id99" id="id40" role="doc-noteref"><span class="fn-bracket">[</span>39<span class="fn-bracket">]</span></a></p></td>
+<td class="text-center"><p>x<a class="footnote-reference brackets" href="#id101" id="id41" role="doc-noteref"><span class="fn-bracket">[</span>41<span class="fn-bracket">]</span></a></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>EndDate</p></td>
-<td class="text-center"><p>x<a class="footnote-reference brackets" href="#id100" id="id41" role="doc-noteref"><span class="fn-bracket">[</span>40<span class="fn-bracket">]</span></a></p></td>
+<td class="text-center"><p>x<a class="footnote-reference brackets" href="#id102" id="id42" role="doc-noteref"><span class="fn-bracket">[</span>42<span class="fn-bracket">]</span></a></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>FinalAction<a class="footnote-reference brackets" href="#id101" id="id42" role="doc-noteref"><span class="fn-bracket">[</span>41<span class="fn-bracket">]</span></a></p></td>
+<tr class="row-odd"><td class="text-left"><p>FinalAction<a class="footnote-reference brackets" href="#id103" id="id43" role="doc-noteref"><span class="fn-bracket">[</span>43<span class="fn-bracket">]</span></a></p></td>
 <td class="text-center"><p>x</p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
@@ -4261,10 +4272,10 @@ On pourrait envisager de seulement désactiver la notice descriptive afin de plu
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
-<td class="text-center"><p>x<a class="footnote-reference brackets" href="#id102" id="id43" role="doc-noteref"><span class="fn-bracket">[</span>42<span class="fn-bracket">]</span></a></p></td>
+<td class="text-center"><p>x<a class="footnote-reference brackets" href="#id104" id="id44" role="doc-noteref"><span class="fn-bracket">[</span>44<span class="fn-bracket">]</span></a></p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>HoldEndDate</p></td>
-<td class="text-center"><p>x<a class="footnote-reference brackets" href="#id103" id="id44" role="doc-noteref"><span class="fn-bracket">[</span>43<span class="fn-bracket">]</span></a></p></td>
+<td class="text-center"><p>x<a class="footnote-reference brackets" href="#id105" id="id45" role="doc-noteref"><span class="fn-bracket">[</span>45<span class="fn-bracket">]</span></a></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
@@ -4285,7 +4296,7 @@ On pourrait envisager de seulement désactiver la notice descriptive afin de plu
 <td class="text-center"><p></p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>HoldReassessingDate</p></td>
-<td class="text-center"><p>x<a class="footnote-reference brackets" href="#id104" id="id45" role="doc-noteref"><span class="fn-bracket">[</span>44<span class="fn-bracket">]</span></a></p></td>
+<td class="text-center"><p>x<a class="footnote-reference brackets" href="#id106" id="id46" role="doc-noteref"><span class="fn-bracket">[</span>46<span class="fn-bracket">]</span></a></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
@@ -4306,7 +4317,7 @@ On pourrait envisager de seulement désactiver la notice descriptive afin de plu
 <td class="text-center"><p></p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>ClassificationReassessingDate</p></td>
-<td class="text-center"><p>x<a class="footnote-reference brackets" href="#id105" id="id46" role="doc-noteref"><span class="fn-bracket">[</span>45<span class="fn-bracket">]</span></a></p></td>
+<td class="text-center"><p>x<a class="footnote-reference brackets" href="#id107" id="id47" role="doc-noteref"><span class="fn-bracket">[</span>47<span class="fn-bracket">]</span></a></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
@@ -4439,14 +4450,14 @@ On pourrait envisager de seulement désactiver la notice descriptive afin de plu
 <td class="text-center"><p></p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>Language</p></td>
-<td class="text-center"><p>x<a class="footnote-reference brackets" href="#id106" id="id47" role="doc-noteref"><span class="fn-bracket">[</span>46<span class="fn-bracket">]</span></a></p></td>
+<td class="text-center"><p>x<a class="footnote-reference brackets" href="#id108" id="id48" role="doc-noteref"><span class="fn-bracket">[</span>48<span class="fn-bracket">]</span></a></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p>x</p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>DescriptionLanguage</p></td>
-<td class="text-center"><p>x<a class="footnote-reference brackets" href="#id107" id="id48" role="doc-noteref"><span class="fn-bracket">[</span>47<span class="fn-bracket">]</span></a></p></td>
+<td class="text-center"><p>x<a class="footnote-reference brackets" href="#id109" id="id49" role="doc-noteref"><span class="fn-bracket">[</span>49<span class="fn-bracket">]</span></a></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
@@ -4628,14 +4639,14 @@ On pourrait envisager de seulement désactiver la notice descriptive afin de plu
 <td class="text-center"><p></p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>BirthDate</p></td>
-<td class="text-center"><p>x<a class="footnote-reference brackets" href="#id108" id="id49" role="doc-noteref"><span class="fn-bracket">[</span>48<span class="fn-bracket">]</span></a></p></td>
+<td class="text-center"><p>x<a class="footnote-reference brackets" href="#id110" id="id50" role="doc-noteref"><span class="fn-bracket">[</span>50<span class="fn-bracket">]</span></a></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>DeathDate</p></td>
-<td class="text-center"><p>x<a class="footnote-reference brackets" href="#id109" id="id50" role="doc-noteref"><span class="fn-bracket">[</span>49<span class="fn-bracket">]</span></a></p></td>
+<td class="text-center"><p>x<a class="footnote-reference brackets" href="#id111" id="id51" role="doc-noteref"><span class="fn-bracket">[</span>51<span class="fn-bracket">]</span></a></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
@@ -4900,63 +4911,63 @@ On pourrait envisager de seulement désactiver la notice descriptive afin de plu
 <td class="text-center"><p>x</p></td>
 <td class="text-center"><p></p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>evId<a class="footnote-reference brackets" href="#id110" id="id51" role="doc-noteref"><span class="fn-bracket">[</span>50<span class="fn-bracket">]</span></a></p></td>
+<tr class="row-even"><td class="text-left"><p>evId<a class="footnote-reference brackets" href="#id112" id="id52" role="doc-noteref"><span class="fn-bracket">[</span>52<span class="fn-bracket">]</span></a></p></td>
 <td class="text-center"><p>x</p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>evTypeProc<a class="footnote-reference brackets" href="#id111" id="id52" role="doc-noteref"><span class="fn-bracket">[</span>51<span class="fn-bracket">]</span></a></p></td>
+<tr class="row-odd"><td class="text-left"><p>evTypeProc<a class="footnote-reference brackets" href="#id113" id="id53" role="doc-noteref"><span class="fn-bracket">[</span>53<span class="fn-bracket">]</span></a></p></td>
 <td class="text-center"><p>x</p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>evType<a class="footnote-reference brackets" href="#id112" id="id53" role="doc-noteref"><span class="fn-bracket">[</span>52<span class="fn-bracket">]</span></a></p></td>
+<tr class="row-even"><td class="text-left"><p>evType<a class="footnote-reference brackets" href="#id114" id="id54" role="doc-noteref"><span class="fn-bracket">[</span>54<span class="fn-bracket">]</span></a></p></td>
 <td class="text-center"><p>x</p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>EvDateTime<a class="footnote-reference brackets" href="#id113" id="id54" role="doc-noteref"><span class="fn-bracket">[</span>53<span class="fn-bracket">]</span></a></p></td>
+<tr class="row-odd"><td class="text-left"><p>EvDateTime<a class="footnote-reference brackets" href="#id115" id="id55" role="doc-noteref"><span class="fn-bracket">[</span>55<span class="fn-bracket">]</span></a></p></td>
 <td class="text-center"><p>x</p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>evTypeDetail<a class="footnote-reference brackets" href="#id114" id="id55" role="doc-noteref"><span class="fn-bracket">[</span>54<span class="fn-bracket">]</span></a></p></td>
+<tr class="row-even"><td class="text-left"><p>evTypeDetail<a class="footnote-reference brackets" href="#id116" id="id56" role="doc-noteref"><span class="fn-bracket">[</span>56<span class="fn-bracket">]</span></a></p></td>
 <td class="text-center"><p>x</p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>outcome<a class="footnote-reference brackets" href="#id115" id="id56" role="doc-noteref"><span class="fn-bracket">[</span>55<span class="fn-bracket">]</span></a></p></td>
+<tr class="row-odd"><td class="text-left"><p>outcome<a class="footnote-reference brackets" href="#id117" id="id57" role="doc-noteref"><span class="fn-bracket">[</span>57<span class="fn-bracket">]</span></a></p></td>
 <td class="text-center"><p>x</p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>outDetail<a class="footnote-reference brackets" href="#id116" id="id57" role="doc-noteref"><span class="fn-bracket">[</span>56<span class="fn-bracket">]</span></a></p></td>
+<tr class="row-even"><td class="text-left"><p>outDetail<a class="footnote-reference brackets" href="#id118" id="id58" role="doc-noteref"><span class="fn-bracket">[</span>58<span class="fn-bracket">]</span></a></p></td>
 <td class="text-center"><p>x</p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>outMessg<a class="footnote-reference brackets" href="#id117" id="id58" role="doc-noteref"><span class="fn-bracket">[</span>57<span class="fn-bracket">]</span></a></p></td>
+<tr class="row-odd"><td class="text-left"><p>outMessg<a class="footnote-reference brackets" href="#id119" id="id59" role="doc-noteref"><span class="fn-bracket">[</span>59<span class="fn-bracket">]</span></a></p></td>
 <td class="text-center"><p>x</p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>evDetData<a class="footnote-reference brackets" href="#id118" id="id59" role="doc-noteref"><span class="fn-bracket">[</span>58<span class="fn-bracket">]</span></a></p></td>
+<tr class="row-even"><td class="text-left"><p>evDetData<a class="footnote-reference brackets" href="#id120" id="id60" role="doc-noteref"><span class="fn-bracket">[</span>60<span class="fn-bracket">]</span></a></p></td>
 <td class="text-center"><p>x</p></td>
 <td class="text-center"><p></p></td>
 <td class="text-center"><p></p></td>
@@ -5178,30 +5189,25 @@ On pourrait envisager de seulement désactiver la notice descriptive afin de plu
 </tr>
 <tr class="row-even"><td class="text-center"><p>15</p></td>
 <td class="text-left"><p>{« ArchiveUnit »: »ID6 », »ArchiveUnitProfile »: »AUP-000018 », »evDetTechData »: »{« validateUnitReport »:[{« level »: »error », »schema »:{« loadingURI »: »# », »pointer »: »/properties/Beneficiary »}, »instance »:{« pointer »: »/Beneficiary »}, »domain »: »validation », »keyword »: »minItems », »message »: »array is too short: must have at least 1 elements but instance has 0 elements », »minItems »:1, »found »:0}]} »}</p></td>
-<td class="text-left"><p>Le vocabulaire Beneficiary présent dans l’unité archivistique dont l’identifiant est ID6 est absent, alors que le profil d’unité archivistique attend au moins une occurrence de ce vocabulaire, ainsi qu’un nombre minimal de caractères.</p></td>
+<td class="text-left"><p>Le vocabulaire Beneficiary présent dans l’unité archivistique dont l’identifiant est ID6 est absent, alors que le profil d’unité archivistique attend au moins une occurrence de ce vocabulaire, ainsi qu’un nombre minimal de caractères. Ajouter au moins un vocabulaire Beneficiary dans l’unité archivistique, contenant une chaîne de caractères minimale.</p></td>
 <td class="text-left"><p></p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p>Ajouter au moins un vocabulaire Beneficiary dans l’unité archivistique, contenant une chaîne de caractères minimale.</p></td>
-<td class="text-left"><p></p></td>
-<td class="text-left"><p></p></td>
-<td class="text-left"><p></p></td>
-</tr>
-<tr class="row-even"><td class="text-center"><p>16</p></td>
+<tr class="row-odd"><td class="text-center"><p>16</p></td>
 <td class="text-left"><p>{« ArchiveUnit »: »ID26 », »ArchiveUnitProfile »: »AUP-000002 », »evDetTechData »: »{« validateUnitReport »:[{« level »: »error », »schema »:{« loadingURI »: »# », »pointer »: » »}, »instance »:{« pointer »: » »}, »domain »: »validation », »keyword »: »additionalProperties », »message »: »object instance has properties which are not allowed by the schema: [&quot;DataObjectReference&quot;,&quot;Management&quot;] », »unwanted »:[« DataObjectReference », »Management »]}]} »}</p></td>
 <td class="text-left"><p>L’en-tête du profil déclare la valeur « false » dans le champ additionalProperties.<br>Or l’objet JSON correspondant au bloc DataObjectReference du schéma SEDA n’est pas déclaré dans le schéma de contrôle et l’unité archivistique déclare un groupe d’objets dans le bordereau de transfert.<br>Donc le schéma de l’unité archivistique n’est pas conforme à son schéma de contrôle.</p></td>
 <td class="text-left"><p>2 solutions :<br>-  modifier la valeur du champ additionalProperties dans l’en-tête du schéma de contrôle<br>-  déclarer dans le schéma de contrôle l’objet correspondant au bloc DataObjectReference du schéma SEDA</p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p>17</p></td>
+<tr class="row-even"><td class="text-center"><p>17</p></td>
 <td class="text-left"><p>{« ArchiveUnit »: »ID3 », »ArchiveUnitProfile »: »AUP-000005 », »evDetTechData »: »{« validateUnitReport »:[{« level »: »warning », »schema »:{« loadingURI »: »# », »pointer »: »/properties/Management/properties/AppraisalRule »}, »domain »: »syntax », »message »: »the following keywords are unknown and will be ignored: [FinalAction] », »ignored »:[« FinalAction »]},{« level »: »error », »schema »:{« loadingURI »: »# », »pointer »: » »}, »instance »:{« pointer »: » »}, »domain »: »validation », »keyword »: »additionalProperties », »message »: »object instance has properties which are not allowed by the schema: [&quot;ChildrenNumber&quot;] », »unwanted »:[« ChildrenNumber »]}]} »}</p></td>
 <td class="text-left"><p>Présence dans le bordereau de transfert d’une métadonnée non autorisée dans le schéma</p></td>
 <td class="text-left"><p>3 solutions :<br>-  modifier la valeur du champ additionalProperties dans l’en-tête du schéma de contrôle pour autoriser les métadonnées supplémentaires<br>-  déclarer dans le schéma de contrôle l’objet correspondant à la métadonnée ChildrenNumber<br>-  modifier le manifeste du SIP pour retirer la métadonnée correspondante</p></td>
 </tr>
-<tr class="row-even"><td class="text-center"><p>18</p></td>
+<tr class="row-odd"><td class="text-center"><p>18</p></td>
 <td class="text-left"><p>{« ArchiveUnit »: »ID3 », »ArchiveUnitProfile »: »AUP-000005 », »evDetTechData »: »{« validateUnitReport »:[{« level »: »warning », »schema »:{« loadingURI »: »# », »pointer »: »/properties/Management/properties/AppraisalRule »}, »domain »: »syntax », »message »: »the following keywords are unknown and will be ignored: [FinalAction] », »ignored »:[« FinalAction »]},{« level »: »error », »schema »:{« loadingURI »: »# », »pointer »: » »}, »instance »:{« pointer »: » »}, »domain »: »validation », »keyword »: »anyOf », »message »: »instance failed to match at least one required schema among 1 », »nrSchemas »:1, »reports »:{« /anyOf/0 »:[{« level »: »error », »schema »:{« loadingURI »: »# », »pointer »: »/anyOf/0 »}, »instance »:{« pointer »: » »}, »domain »: »validation », »keyword »: »required », »message »: »object has missing required properties ([&quot;ChildrenNumber&quot;]) », »required »:[« ChildrenNumber », »DescriptionLevel », »Management », »RecruitmentDate », »StartDate », »Title »], »missing »:[« ChildrenNumber »]}]}}]} »}</p></td>
 <td class="text-left"><p>Absence d’une métadonnée attendue (ChildrenNumber).</p></td>
 <td class="text-left"><p>Corriger le bordereau de transfert pour rajouter la métadonnée attendue.</p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p>19</p></td>
+<tr class="row-even"><td class="text-center"><p>19</p></td>
 <td class="text-left"><p>{« ArchiveUnit »: »ID3 », »ArchiveUnitProfile »: »AUP-000005 », »evDetTechData »: »{« validateUnitReport »:[{« level »: »warning », »schema »:{« loadingURI »: »# », »pointer »: »/properties/Management/properties/AppraisalRule »}, »domain »: »syntax », »message »: »the following keywords are unknown and will be ignored: [FinalAction] », »ignored »:[« FinalAction »]},{« level »: »error », »schema »:{« loadingURI »: »# », »pointer »: »/properties/ChildrenNumber »}, »instance »:{« pointer »: »/ChildrenNumber »}, »domain »: »validation », »keyword »: »type », »message »: »instance type (array) does not match any allowed primitive type (allowed: [&quot;integer&quot;,&quot;number&quot;]) », »found »: »array », »expected »:[« integer », »number »]},{« level »: »warning », »schema »:{« loadingURI »: »# », »pointer »: »/properties/Management/properties/AppraisalRule »}, »domain »: »syntax », »message »: »the following keywords are unknown and will be ignored: [FinalAction] », »ignored »:[« FinalAction »]}]} »}</p></td>
 <td class="text-left"><p>La valeur du champ ChildrenNumber est incompatible avec le type déclaré dans le profil d’unité archivistique.</p></td>
 <td class="text-left"><p>Corriger le manifeste du SIP pour rendre la valeur du champ ChildrenNumber compatible avec le type déclaré dans le profil d’unité archivistique.</p></td>
@@ -5210,240 +5216,244 @@ On pourrait envisager de seulement désactiver la notice descriptive afin de plu
 </table>
 <hr class="footnotes docutils" />
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id60" role="doc-footnote">
+<aside class="footnote brackets" id="id61" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
 <p>Un exemple de profil d’unité archivistique est présenté dans l’<a class="reference internal" href="#annexe-3-exemples-de-profil-dunite-archivistique"><span class="xref myst">annexe 3 « Exemples de profil d’unité archivistique » du présent document</span></a>.</p>
 </aside>
-<aside class="footnote brackets" id="id61" role="doc-footnote">
+<aside class="footnote brackets" id="id62" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
 <p>Pour plus d’informations sur la rédaction d’un schéma de contrôle, <a class="reference internal" href="#schematisation-des-donnees-a-controler"><span class="xref myst">consulter la section « Schématisation des données à contrôler » du présent document</span></a>.</p>
 </aside>
-<aside class="footnote brackets" id="id62" role="doc-footnote">
+<aside class="footnote brackets" id="id63" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">3</a><span class="fn-bracket">]</span></span>
 <p>Pour plus d’informations sur les vocabulaires, se référer au <a class="reference internal" href="ontologie.html"><span class="std std-doc">document VITAM.Ontologies</span></a></p>
 </aside>
-<aside class="footnote brackets" id="id63" role="doc-footnote">
+<aside class="footnote brackets" id="id64" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">4</a><span class="fn-bracket">]</span></span>
 <p>Un tableau de concordance entre les types définis dans l’ontologie et ceux présents dans un schéma de contrôle JSON est présent dans la <a class="reference internal" href="#methode-de-redaction-dun-schema-de-controle-au-format-json"><span class="xref myst">section « Rédaction d’un schéma de contrôle »</span></a>.</p>
 </aside>
-<aside class="footnote brackets" id="id64" role="doc-footnote">
+<aside class="footnote brackets" id="id65" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">5</a><span class="fn-bracket">]</span></span>
 <p>Pour plus d’informations sur le référentiel des profils d’unité archivistique, <a class="reference internal" href="#administration-dun-referentiel-des-profils-dunite-archivistique"><span class="xref myst">consulter la partie « Administration d’un référentiel des profils d’unité archivistique »</span></a>.</p>
 </aside>
-<aside class="footnote brackets" id="id65" role="doc-footnote">
+<aside class="footnote brackets" id="id66" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">6</a><span class="fn-bracket">]</span></span>
 <p>Pour plus d’informations sur la modélisation de cette collection, consulter le <a class="reference internal" href="modele_de_donnees.html"><span class="std std-doc">document VITAM. Modèle de données</span></a>, chapitre « Collection ArchiveUnitProfile ».</p>
 </aside>
-<aside class="footnote brackets" id="id66" role="doc-footnote">
+<aside class="footnote brackets" id="id67" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">7</a><span class="fn-bracket">]</span></span>
 <p>Pour plus d’informations sur le processus d’import du référentiel, consulter le <a class="reference internal" href="modele_de_workflow.html"><span class="std std-doc">document VITAM. Modèle de workflow</span></a>, chapitre « Workflow d’administration d’un référentiel des profils d’unité archivistique ».</p>
 </aside>
-<aside class="footnote brackets" id="id67" role="doc-footnote">
+<aside class="footnote brackets" id="id68" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id8">8</a><span class="fn-bracket">]</span></span>
 <p>Des précisions sur les messages d’erreur sont apportées dans l’<a class="reference internal" href="#annexe-5-messages-derreur"><span class="xref myst">annexe 5 « Messages d’erreur » du présent document</span></a>.</p>
 </aside>
-<aside class="footnote brackets" id="id68" role="doc-footnote">
+<aside class="footnote brackets" id="id69" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id9">9</a><span class="fn-bracket">]</span></span>
 <p>Ce champ est obligatoire seulement s’il est généré par l’application à l’origine de sa création.</p>
 </aside>
-<aside class="footnote brackets" id="id69" role="doc-footnote">
+<aside class="footnote brackets" id="id70" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id10">10</a><span class="fn-bracket">]</span></span>
 <p>À noter que ce champ doit être obligatoirement présent, mais peut être vide, c’est-à-dire ne contenir aucune information.</p>
 </aside>
-<aside class="footnote brackets" id="id70" role="doc-footnote">
+<aside class="footnote brackets" id="id71" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id11">11</a><span class="fn-bracket">]</span></span>
 <p>Seulement quand l’identifiant est généré par l’application à l’origine de la création du contexte.</p>
 </aside>
-<aside class="footnote brackets" id="id71" role="doc-footnote">
+<aside class="footnote brackets" id="id72" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id12">12</a><span class="fn-bracket">]</span></span>
 <p>Un exemple de chacun de ces deux cas est présenté dans l’<a class="reference internal" href="#annexe-2-exemples-de-notice-detaillee-dun-profil-dunite-archivistique"><span class="xref myst">annexe 2 « Exemples de notice détaillée d’un profil d’unité archivistique » du présent document</span></a>.</p>
 </aside>
-<aside class="footnote brackets" id="id72" role="doc-footnote">
+<aside class="footnote brackets" id="id73" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id13">13</a><span class="fn-bracket">]</span></span>
 <p>Cf <a class="reference internal" href="#ajout-du-profil-dunite-archivistique-lui-meme"><span class="xref myst">section « Ajout du profil d’unité archivistique lui-même »</span></a>.</p>
 </aside>
-<aside class="footnote brackets" id="id73" role="doc-footnote">
+<aside class="footnote brackets" id="id74" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id14">14</a><span class="fn-bracket">]</span></span>
 <p>Le paramétrage de l’identifiant est décrit dans le <a class="reference internal" href="#comment-parametrer-les-identifiants-des-notices-de-profil-dunite-archivistique"><span class="xref myst">chapitre « Comment paramétrer les identifiants des notices de profil d’unité archivistique ? »</span></a>.</p>
 </aside>
-<aside class="footnote brackets" id="id74" role="doc-footnote">
+<aside class="footnote brackets" id="id75" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id15">15</a><span class="fn-bracket">]</span></span>
 <p>Les règles propres à la cohérence des types définis dans un profil d’unité archivistique et dans l’ontologie sont définies dans la <a class="reference internal" href="#elaboration-dun-schema-de-controle"><span class="xref myst">partie « Elaboration d’un schéma de contrôle »</span></a>.</p>
 </aside>
-<aside class="footnote brackets" id="id75" role="doc-footnote">
+<aside class="footnote brackets" id="id76" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id16">16</a><span class="fn-bracket">]</span></span>
 <p>Pour plus d’informations sur le processus d’import du référentiel, consulter le <a class="reference internal" href="modele_de_workflow.html"><span class="std std-doc">document VITAM.Modèle de workflow</span></a>, chapitre « Workflow d’administration d’un référentiel des profils d’unité archivistique ».</p>
 </aside>
-<aside class="footnote brackets" id="id76" role="doc-footnote">
+<aside class="footnote brackets" id="id77" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id17">17</a><span class="fn-bracket">]</span></span>
 <p>Des précisions sur les messages d’erreur sont apportées dans l’<a class="reference internal" href="#annexe-5-messages-derreur"><span class="xref myst">annexe 5 « Messages d’erreur » du présent document</span></a>.</p>
 </aside>
-<aside class="footnote brackets" id="id77" role="doc-footnote">
+<aside class="footnote brackets" id="id78" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id18">18</a><span class="fn-bracket">]</span></span>
 <p>Si on a besoin de modifier un profil d’unité archivistique déjà utilisé par au moins une unité archivistique, <a class="reference internal" href="#conseils-de-mise-en-oeuvre"><span class="xref myst">consulter la section « Conseils de mise en œuvre » du présent document</span></a>.</p>
 </aside>
-<aside class="footnote brackets" id="id78" role="doc-footnote">
+<aside class="footnote brackets" id="id79" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id19">19</a><span class="fn-bracket">]</span></span>
 <p>Pour plus d’informations sur le processus d’import du référentiel, consulter le <a class="reference internal" href="modele_de_workflow.html"><span class="std std-doc">document VITAM.Modèle de workflow</span></a>, chapitre « Workflow d’administration d’un référentiel des profils d’unité archivistique ».</p>
 </aside>
-<aside class="footnote brackets" id="id79" role="doc-footnote">
+<aside class="footnote brackets" id="id80" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id20">20</a><span class="fn-bracket">]</span></span>
 <p>Des précisions sur les messages d’erreur sont apportées dans l’<a class="reference internal" href="#annexe-5-messages-derreur"><span class="xref myst">annexe 5 « Messages d’erreur » du présent document</span></a>.</p>
 </aside>
-<aside class="footnote brackets" id="id80" role="doc-footnote">
+<aside class="footnote brackets" id="id81" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id21">21</a><span class="fn-bracket">]</span></span>
 <p>À noter que ce champ doit être obligatoirement présent, mais peut être vide, c’est-à-dire ne contenir aucune information.</p>
 </aside>
-<aside class="footnote brackets" id="id81" role="doc-footnote">
+<aside class="footnote brackets" id="id82" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id22">22</a><span class="fn-bracket">]</span></span>
 <p>Pour plus d’informations sur cet audit, consulter le document Documentation d’exploitation, chapitre 6.5.2 « Audit sur les collections d’administration ».</p>
 </aside>
-<aside class="footnote brackets" id="id82" role="doc-footnote">
+<aside class="footnote brackets" id="id83" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id23">23</a><span class="fn-bracket">]</span></span>
 <p>Des précisions sur les messages d’erreur sont apportées dans l’<a class="reference internal" href="#annexe-5-messages-derreur"><span class="xref myst">annexe 5 « Messages d’erreur » du présent document</span></a>.</p>
 </aside>
-<aside class="footnote brackets" id="id83" role="doc-footnote">
+<aside class="footnote brackets" id="id84" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id24">24</a><span class="fn-bracket">]</span></span>
 <p>Le tableau suivant est une libre adaptation du tableau présenté dans « Fiche pratique n°13 : positionnement de l’archiviste face à un projet de dématérialisation », Association des archivistes françcais – groupe AM&#64;E.</p>
 </aside>
-<aside class="footnote brackets" id="id84" role="doc-footnote">
+<aside class="footnote brackets" id="id85" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id25">25</a><span class="fn-bracket">]</span></span>
 <p>Pour plus d’informations sur la manière de rédiger un schéma de contrôle JSON, consulter l’ouvrage suivant : <a class="reference external" href="https://json-schema.org/understanding-json-schema/index.html">DROETTBOOM Michael Understanding JSON Schema</a>, Space Telescope Science Institute, 2013, 2018 (dernière version).</p>
 </aside>
-<aside class="footnote brackets" id="id85" role="doc-footnote">
+<aside class="footnote brackets" id="id86" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id26">26</a><span class="fn-bracket">]</span></span>
 <p>En d’autres termes, le schéma de contrôle ne contient que les éléments du SEDA ou de l’ontologie qui feront l’objet d’un contrôle. Il n’est donc pas nécessaire d’y déclarer l’ensemble des éléments attendus par le SEDA et l’ontologie avec des cardinalités 0 – 0 s’ils n’ont pas vocation à être présents dans une unité archivistique à contrôler par un profil d’unité archivistique.</p>
 </aside>
-<aside class="footnote brackets" id="id86" role="doc-footnote">
+<aside class="footnote brackets" id="id87" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id27">27</a><span class="fn-bracket">]</span></span>
 <p>Cf <a class="reference internal" href="#elaboration-dun-schema-de-controle"><span class="xref myst">chapitre « Elaboration d’un schéma de contrôle » du présent document</span></a>.</p>
 </aside>
-<aside class="footnote brackets" id="id87" role="doc-footnote">
+<aside class="footnote brackets" id="id88" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id28">28</a><span class="fn-bracket">]</span></span>
 <p>Les types des éléments propres au SEDA sont listés dans l’<a class="reference internal" href="#annexe-4-types-json"><span class="xref myst">annexe 4 « Types JSON »</span></a>. Il est conseillé de se reporter à cette annexe, afin de typer correctement les propriétés d’un schéma de contrôle.</p>
 </aside>
-<aside class="footnote brackets" id="id88" role="doc-footnote">
+<aside class="footnote brackets" id="id89" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id29">29</a><span class="fn-bracket">]</span></span>
 <p>La présence de crochets dans le tableau de correspondances indique que le vocabulaire employé dans le profil d’unité archivistique peut ou doit se présenter sous la forme d’un tableau ou « array », pouvant contenir un type de valeur en particulier. Le vocabulaire représenté entre crochets est également répétable.</p>
 </aside>
-<aside class="footnote brackets" id="id89" role="doc-footnote">
+<aside class="footnote brackets" id="id90" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id30">30</a><span class="fn-bracket">]</span></span>
 <p>Les types des éléments propres au SEDA sont listés dans l’<a class="reference internal" href="#annexe-4-types-json"><span class="xref myst">annexe 4 « Types JSON ». du présent document</span></a>.</p>
 </aside>
-<aside class="footnote brackets" id="id90" role="doc-footnote">
+<aside class="footnote brackets" id="id91" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id31">31</a><span class="fn-bracket">]</span></span>
 <p>Cf. supra : mention de la règle générique « definitions », in <a class="reference internal" href="#elaboration-dun-schema-de-controle"><span class="xref myst">chapitre « En-tête d’un schéma de contrôle » du présent document</span></a>.</p>
 </aside>
-<aside class="footnote brackets" id="id91" role="doc-footnote">
+<aside class="footnote brackets" id="id92" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id32">32</a><span class="fn-bracket">]</span></span>
 <p>IETF, RFC3339. Date and Time on the Internet : Timestamps, in : https://www.ietf.org/rfc/rfc3339.txt (Dernière consultation : 25 septembre 2018).</p>
 </aside>
-<aside class="footnote brackets" id="id92" role="doc-footnote">
+<aside class="footnote brackets" id="id93" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id33">33</a><span class="fn-bracket">]</span></span>
 <p>IETF, RFC5322. Internet Message Format, in : https://tools.ietf.org/html/rfc5322 (Dernière consultation : 25 septembre 2018).</p>
 </aside>
-<aside class="footnote brackets" id="id93" role="doc-footnote">
+<aside class="footnote brackets" id="id94" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id34">34</a><span class="fn-bracket">]</span></span>
 <p>Cf. supra : mention de la règle générique « definitions », in chapitre « En-tête d’un schéma de contrôle » et des références à cette règle, in chapitre « Règles ».</p>
 </aside>
-<aside class="footnote brackets" id="id94" role="doc-footnote">
+<aside class="footnote brackets" id="id95" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id35">35</a><span class="fn-bracket">]</span></span>
 <p>La solution logicielle Vitam rend obligatoire le champ Title. S’il doit être répété (cardinalité 1-N) ou dupliqué, il est nécessaire d’ajouter un attribut lang. Il en va de même pour le champ Description. L’attribut lang n’est pas supporté par Pastis au terme de la version 6.</p>
 </aside>
-<aside class="footnote brackets" id="id95" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id36">59</a><span class="fn-bracket">]</span></span>
+<aside class="footnote brackets" id="id96" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id36">36</a><span class="fn-bracket">]</span></span>
 <p>Pour plus d’informations, se référer au chapitre « Extension du modèle du SEDA par des métadonnées externes » du document <a class="reference internal" href="pastis_standalone.html"><span class="std std-doc">Vitam – PASTIS</span></a>.</p>
 </aside>
-<aside class="footnote brackets" id="id96" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id37">36</a><span class="fn-bracket">]</span></span>
+<aside class="footnote brackets" id="id97" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id37">37</a><span class="fn-bracket">]</span></span>
 <p>Documentation d’exploitation, chapitre 8.2.6.2.2 « Passage des identifiants des référentiels en mode esclave ».</p>
 </aside>
-<aside class="footnote brackets" id="id97" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id38">37</a><span class="fn-bracket">]</span></span>
+<aside class="footnote brackets" id="id98" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id38">38</a><span class="fn-bracket">]</span></span>
 <p>Le cas particulier de la modification du fichier RNG ou XSD est traité dans le <a class="reference internal" href="#modification-dun-profil-dunite-archivistique-declare-dans-une-unite-archivistique"><span class="xref myst">chapitre « Quand et comment mettre à jour un profil d’unité archivistique » du présent document</span></a>.</p>
 </aside>
-<aside class="footnote brackets" id="id98" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id39">38</a><span class="fn-bracket">]</span></span>
-<p>#management est à employer en lieu et place de la balise Management dans un schéma de contrôle pour se conformer aux attendus de la solution logicielle Vitam.</p>
-</aside>
 <aside class="footnote brackets" id="id99" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id40">39</a><span class="fn-bracket">]</span></span>
-<p>Avec un pattern date.</p>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id39">39</a><span class="fn-bracket">]</span></span>
+<p>La solution logicielle Vitam proposait également, depuis l’IHM démo, d’afficher et d’associer un identifiant de profil d’unité archivistique dans le détail d’une unité archivistique. Ces actions ne sont pas possibles depuis l’IHM VitamUI au terme de la version 7.0.</p>
 </aside>
 <aside class="footnote brackets" id="id100" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id41">40</a><span class="fn-bracket">]</span></span>
-<p>Avec un pattern date.</p>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id40">40</a><span class="fn-bracket">]</span></span>
+<p>#management est à employer en lieu et place de la balise Management dans un schéma de contrôle pour se conformer aux attendus de la solution logicielle Vitam.</p>
 </aside>
 <aside class="footnote brackets" id="id101" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id42">41</a><span class="fn-bracket">]</span></span>
-<p>Simple énumération.</p>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id41">41</a><span class="fn-bracket">]</span></span>
+<p>Avec un pattern date.</p>
 </aside>
 <aside class="footnote brackets" id="id102" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id43">42</a><span class="fn-bracket">]</span></span>
-<p>Tableau contenant des éléments de type string.</p>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id42">42</a><span class="fn-bracket">]</span></span>
+<p>Avec un pattern date.</p>
 </aside>
 <aside class="footnote brackets" id="id103" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id44">43</a><span class="fn-bracket">]</span></span>
-<p>Avec un pattern date.</p>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id43">43</a><span class="fn-bracket">]</span></span>
+<p>Simple énumération.</p>
 </aside>
 <aside class="footnote brackets" id="id104" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id45">44</a><span class="fn-bracket">]</span></span>
-<p>Avec un pattern date.</p>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id44">44</a><span class="fn-bracket">]</span></span>
+<p>Tableau contenant des éléments de type string.</p>
 </aside>
 <aside class="footnote brackets" id="id105" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id46">45</a><span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id45">45</a><span class="fn-bracket">]</span></span>
 <p>Avec un pattern date.</p>
 </aside>
 <aside class="footnote brackets" id="id106" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id47">46</a><span class="fn-bracket">]</span></span>
-<p>Le SEDA attend plus précisément un pattern langue.</p>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id46">46</a><span class="fn-bracket">]</span></span>
+<p>Avec un pattern date.</p>
 </aside>
 <aside class="footnote brackets" id="id107" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id48">47</a><span class="fn-bracket">]</span></span>
-<p>Le SEDA attend plus précisément un pattern langue.</p>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id47">47</a><span class="fn-bracket">]</span></span>
+<p>Avec un pattern date.</p>
 </aside>
 <aside class="footnote brackets" id="id108" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id49">48</a><span class="fn-bracket">]</span></span>
-<p>Avec un pattern date.</p>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id48">48</a><span class="fn-bracket">]</span></span>
+<p>Le SEDA attend plus précisément un pattern langue.</p>
 </aside>
 <aside class="footnote brackets" id="id109" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id50">49</a><span class="fn-bracket">]</span></span>
-<p>Avec un pattern date.</p>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id49">49</a><span class="fn-bracket">]</span></span>
+<p>Le SEDA attend plus précisément un pattern langue.</p>
 </aside>
 <aside class="footnote brackets" id="id110" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id51">50</a><span class="fn-bracket">]</span></span>
-<p>evId est à employer en lieu et place de la balise EventIdentifier dans un schéma de contrôle pour se conformer aux attendus de la solution logicielle Vitam.</p>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id50">50</a><span class="fn-bracket">]</span></span>
+<p>Avec un pattern date.</p>
 </aside>
 <aside class="footnote brackets" id="id111" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id52">51</a><span class="fn-bracket">]</span></span>
-<p>evTypeProc est à employer en lieu et place de la balise EventTypeCode dans un schéma de contrôle pour se conformer aux attendus de la solution logicielle Vitam.</p>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id51">51</a><span class="fn-bracket">]</span></span>
+<p>Avec un pattern date.</p>
 </aside>
 <aside class="footnote brackets" id="id112" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id53">52</a><span class="fn-bracket">]</span></span>
-<p>evType est à employer en lieu et place de la balise EventType dans un schéma de contrôle pour se conformer aux attendus de la solution logicielle Vitam.</p>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id52">52</a><span class="fn-bracket">]</span></span>
+<p>evId est à employer en lieu et place de la balise EventIdentifier dans un schéma de contrôle pour se conformer aux attendus de la solution logicielle Vitam.</p>
 </aside>
 <aside class="footnote brackets" id="id113" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id54">53</a><span class="fn-bracket">]</span></span>
-<p>evDateTime est à employer en lieu et place de la balise EventDateTime dans un schéma de contrôle pour se conformer aux attendus de la solution logicielle Vitam.</p>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id53">53</a><span class="fn-bracket">]</span></span>
+<p>evTypeProc est à employer en lieu et place de la balise EventTypeCode dans un schéma de contrôle pour se conformer aux attendus de la solution logicielle Vitam.</p>
 </aside>
 <aside class="footnote brackets" id="id114" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id55">54</a><span class="fn-bracket">]</span></span>
-<p>evTypeDetail est à employer en lieu et place de la balise EventDetail dans un schéma de contrôle pour se conformer aux attendus de la solution logicielle Vitam.</p>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id54">54</a><span class="fn-bracket">]</span></span>
+<p>evType est à employer en lieu et place de la balise EventType dans un schéma de contrôle pour se conformer aux attendus de la solution logicielle Vitam.</p>
 </aside>
 <aside class="footnote brackets" id="id115" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id56">55</a><span class="fn-bracket">]</span></span>
-<p>outcome est à employer en lieu et place de la balise Outcome dans un schéma de contrôle pour se conformer aux attendus de la solution logicielle Vitam.</p>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id55">55</a><span class="fn-bracket">]</span></span>
+<p>evDateTime est à employer en lieu et place de la balise EventDateTime dans un schéma de contrôle pour se conformer aux attendus de la solution logicielle Vitam.</p>
 </aside>
 <aside class="footnote brackets" id="id116" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id57">56</a><span class="fn-bracket">]</span></span>
-<p>outDetail est à employer en lieu et place de la balise OutcomeDetail dans un schéma de contrôle pour se conformer aux attendus de la solution logicielle Vitam.</p>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id56">56</a><span class="fn-bracket">]</span></span>
+<p>evTypeDetail est à employer en lieu et place de la balise EventDetail dans un schéma de contrôle pour se conformer aux attendus de la solution logicielle Vitam.</p>
 </aside>
 <aside class="footnote brackets" id="id117" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id58">57</a><span class="fn-bracket">]</span></span>
-<p>outMessg est à employer en lieu et place de la balise OutcomeDetailMessage dans un schéma de contrôle pour se conformer aux attendus de la solution logicielle Vitam.</p>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id57">57</a><span class="fn-bracket">]</span></span>
+<p>outcome est à employer en lieu et place de la balise Outcome dans un schéma de contrôle pour se conformer aux attendus de la solution logicielle Vitam.</p>
 </aside>
 <aside class="footnote brackets" id="id118" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id59">58</a><span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id58">58</a><span class="fn-bracket">]</span></span>
+<p>outDetail est à employer en lieu et place de la balise OutcomeDetail dans un schéma de contrôle pour se conformer aux attendus de la solution logicielle Vitam.</p>
+</aside>
+<aside class="footnote brackets" id="id119" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id59">59</a><span class="fn-bracket">]</span></span>
+<p>outMessg est à employer en lieu et place de la balise OutcomeDetailMessage dans un schéma de contrôle pour se conformer aux attendus de la solution logicielle Vitam.</p>
+</aside>
+<aside class="footnote brackets" id="id120" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id60">60</a><span class="fn-bracket">]</span></span>
 <p>evDetData est à employer en lieu et place de la balise EventDetailData dans un schéma de contrôle pour se conformer aux attendus de la solution logicielle Vitam.</p>
 </aside>
 </aside>
