@@ -7,14 +7,14 @@ Introduction
 ### Documents de référence
 
 
-|**Document**|**Date de la version**|**Remarques**|
+|**Document**|**Date de la version**|
 |:---------------:|:-----:|:-----:|
-|NF Z 44022 – MEDONA – Modélisation des données pour l’archivage|18/01/2014||
-|Standard d’échange de données pour l’archivage – SEDA – v. 2.1|06/2018||            
-|Standard d’échange de données pour l’archivage – SEDA – v. 2.2|02/2022|Cette nouvelle version du SEDA est intégrée à la solution logicielle Vitam à partir de la V6.RC.|
-|Standard d’échange de données pour l’archivage – SEDA – v. 2.3|06/2024||
-|[Structuration des *Submission Information Packages* (SIP)](./SIP.md)|||
-|[Ontologie](./ontologie.md)|||
+|NF Z 44022 – MEDONA – Modélisation des données pour l’archivage|18/01/2014|
+|Standard d’échange de données pour l’archivage – SEDA – v. 2.1|06/2018||           
+|Standard d’échange de données pour l’archivage – SEDA – v. 2.2|02/2022|
+|Standard d’échange de données pour l’archivage – SEDA – v. 2.3|06/2024|
+|[Structuration des *Submission Information Packages* (SIP)](./SIP.md)||
+|[Ontologie](./ontologie.md)||
 
 ### Présentation du document
 
@@ -25,7 +25,7 @@ Il s’articule autour des axes suivants :
 - une présentation des mécanismes mis en œuvre dans la solution logicielle Vitam pour prendre en compte cette notion ;
 - quelques conseils complémentaires de mise en œuvre.
 
-Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 8.0 (octobre 2024).
+Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 8.1 (printemps 2025).
 Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
 
 
@@ -45,11 +45,12 @@ Ces vocabulaires peuvent être utilisés pour décrire :
 -  0 à n groupe(s) d’objets,
 -  0 à n unité(s) archivistique(s),
 -  0 à n vocabulaire(s).
-Points d'attention :
+
+**Points d'attention :**
 -  les chemins sont uniques dans la solution logicielle Vitam ;
 -  contrairement à l’ontologie, les vocabulaires utilisés par la solution logicielle Vitam de type « objet », c’est-à-dire ne contenant pas de valeurs informationnelles, sont référencés dans le schéma. Il peut s’agir de :
     - vocabulaires conformes au SEDA de type « objet », c'est-à-dire correspondant à un élément XML englobant un sous-élément XML (par exemple, Writer ou Management) ;
-Exemple : sont présents dans le schéma les vocabulaires « Keyword », « Keyword.Keyword Content », « Keyword.KeywordType ».
+*Exemple :* sont présents dans le schéma les vocabulaires « Keyword », « Keyword.Keyword Content », « Keyword.KeywordType ».
 
 ```xml
 <Keyword>
@@ -59,7 +60,7 @@ Exemple : sont présents dans le schéma les vocabulaires « Keyword », « 
 ```
 
     - vocabulaires générés par la solution logicielle Vitam, correspondant à un élément JSON de type « objet ».
-Exemple : sont présents dans le schéma les éléments JSON _mgt, _v.
+*Exemple :* sont présents dans le schéma les éléments JSON _mgt, _v.
 
 ```json
 "_mgt": {
@@ -105,7 +106,7 @@ Formalisation des vocabulaires du schéma
 ### Dans un fichier JSON
 
 Un à plusieurs vocabulaire(s) externe(s) peu(ven)t être importé(s) sous la forme d’un fichier JSON.
-Exemple : trois vocabulaires externes, « Invoice », « Provider » et « BirthDate », contenant les informations nécessaires pour être importés avec succès.
+*Exemple :* trois vocabulaires externes, « Invoice », « Provider » et « BirthDate », contenant les informations nécessaires pour être importés avec succès.
 ```json
 [
 {
@@ -155,7 +156,7 @@ Les vocabulaires du schéma sont enregistrés sous deux formes :
 
 Les vocabulaires internes et, le cas échéant, les vocabulaires externes, sont enregistrés dans un fichier interne, sous la forme d’enregistrements au format JSON.
 
-Exemple : deux vocabulaires, le premier de type « objet » et le second de type « feuille ».
+*Exemple :* deux vocabulaires, le premier de type « objet » et le second de type « feuille ».
 ```json
 [
 {
@@ -221,9 +222,9 @@ Chaque enregistrement est modélisé comme suit :
 
 Les vocabulaires externes sont enregistrés dans la base de données MongoDB, dans la collection « Schema », sous la forme d’enregistrements au format JSON.
 
-Point d'attention : Les vocabulaires internes ne sont pas enregistrés dans cette collection.
+**Point d'attention :** Les vocabulaires internes ne sont pas enregistrés dans cette collection.
 
-Exemple : deux vocabulaires, l’un de type « objet » et l’autre de type « feuille »/
+*Exemple :* deux vocabulaires, l’un de type « objet » et l’autre de type « feuille »/
 ```json
 {
     _id: 'aeaaaaaaaaecx2k6abhpuamq4m36uqiaaaaq',
@@ -256,7 +257,7 @@ Exemple : deux vocabulaires, l’un de type « objet » et l’autre de type 
 
 Chaque enregistrement est modélisé comme suit :
 
-|**Champ**|**Description*|
+|**Champ**|**Description**|
 |:----:|:----:|
 |_id|identifiant unique, fourni par le système (champ obligatoire).|
 |Path|**chemin** du vocabulaire, correspondant à l'identifiant du vocabulaire dans la collection Schéma (champ obligatoire).<br>Pour les vocabulaires de type « feuille », un vocabulaire unique dans l’ontologie peut avoir plusieurs chemins dans le schéma (Exemple : StartDate, AccessRule.StartDate, StorageRule.StartDate, etc.).|
@@ -345,7 +346,7 @@ Chaque vocabulaire de type « objet » :
     - un intitulé (ShortName),
     - une description (Description).
 
-Exemple : Création d’un objet et d’un vocabulaire de type « feuille ».
+*Exemple :* Création d’un objet et d’un vocabulaire de type « feuille ».
 ```json
 POST {{url}}/admin-external/v1/schema/unit
 Accept: application/json
@@ -399,7 +400,7 @@ Cette action provoque :
         - la version de l’enregistrement (« _v »),
         - le tenant dans lequel a été créé le vocabulaire (« _tenant ») ;
 
-Exemple : Enregistrement d’un vocabulaire de type « feuille » dans la collection « Unit » (base « Masterdata »).
+*Exemple :* Enregistrement d’un vocabulaire de type « feuille » dans la collection « Unit » (base « Masterdata »).
 ```json
 {
     _id: 'aeaaaaaaaagtfhyvadjsqamrbc6fvsiaaaaq',
@@ -421,9 +422,9 @@ Exemple : Enregistrement d’un vocabulaire de type « feuille » dans la col
         - un chemin (Path),
         - une cardinalité, dont la valeur doit être égale à « ONE », « ONE_REQUIRED », « MANY » ou « MANY_REQUIRED » (Cardinality),
     - les informations optionnelles si elles n’ont pas été envoyées dans la solution logicielle Vitam, héritées de l’ontologie :
-            - un intitulé (ShortName),
-            - une description (Description),
-            - le type d’indexation (Type) dont les valeurs peuvent être égales à « DATE », « TEXT », « KEYWORD », « BOOLEAN », « LONG », « DOUBLE », « ENUM »[^6] ;
+        - un intitulé (ShortName),
+        - une description (Description),
+        - le type d’indexation (Type) dont les valeurs peuvent être égales à « DATE », « TEXT », « KEYWORD », « BOOLEAN », « LONG », « DOUBLE », « ENUM »[^6] ;
     - des informations générées systématiquement par la solution logicielle Vitam :
         - un nom de vocabulaire (« FieldName »),
         - une origine dont la valeur est égale à « EXTERNAL »,
@@ -444,7 +445,7 @@ Exemple : Enregistrement d’un vocabulaire de type « feuille » dans la col
         - une collection dont la valeur est égale à « Unit » ou « ObjectGroup »,
         - le tenant dans lequel a été créé le vocabulaire (« _tenant ») .
 
-Exemple : Enregistrement d’un vocabulaire de type « feuille » dans le schéma interne.
+*Exemple :* Enregistrement d’un vocabulaire de type « feuille » dans le schéma interne.
 ```json
 {
       "FieldName": "MyText",
@@ -480,7 +481,7 @@ Point d’attention : Au terme de la version 8.0, il n’est pas possible de :
 -  supprimer un vocabulaire externe dans le schéma depuis les interfaces de VitamUI ;
 -  supprimer un vocabulaire externe pour la collection « ObjectGroup ».
 
-Exemple : Suppression d’un vocabulaire externe « MyText ».
+*Exemple :* Suppression d’un vocabulaire externe « MyText ».
 ```json
 DELETE {{url}}/admin-external/v1/schema/unit
 Accept: application/json
@@ -511,7 +512,7 @@ La solution logicielle Vitam permet d’accéder à :
 -  la liste des vocabulaires internes et, le cas échéant, externes de la collection « Unit »,
 -  la liste des vocabulaires internes de la collection « ObjectGroup ».
 
-Exemple : Requête en vue de rechercher les vocabulaires de la collection « Unit ».
+*Exemple :* Requête en vue de rechercher les vocabulaires de la collection « Unit ».
 
 ```json
 GET {{url}}/admin-external/v1/schema/unit 
@@ -521,7 +522,7 @@ X-Tenant-Id: 2
 X-Access-Contract-Id: {{access-contract}}
 ```
 
-Exemple : Requête en vue de rechercher les vocabulaires de la collection « ObjectGroup ».
+*Exemple :* Requête en vue de rechercher les vocabulaires de la collection « ObjectGroup ».
 
 ```json
 GET {{url}}/admin-external/v1/schema/object
@@ -545,11 +546,11 @@ Le schéma contenant la traduction des différents vocabulaires supportés par l
 -  depuis le détail des métadonnées descriptives d’une unité archivistique.
 
 
-Exemple 1 : Recherche dite « Autres critères » accessible depuis l’APP « Recherche et consultation des archives »
+*Exemple 1 :* Recherche dite « Autres critères » accessible depuis l’APP « Recherche et consultation des archives »
 
 ![](./medias/schema/APP_recherche_1.png)
 
-Exemple 2 : Edition dynamique de métadonnées descriptives pour modification d’une unité archivistique
+*Exemple 2 :* Edition dynamique de métadonnées descriptives pour modification d’une unité archivistique
 
 ![](./medias/schema/APP_recherche_2.png)
 
@@ -557,7 +558,7 @@ Exemple 2 : Edition dynamique de métadonnées descriptives pour modification d
 
 La solution logicielle Vitam permet d’accéder à la liste des métadonnées requises par un profil d’unité archivistique, qu’il s’agisse de vocabulaires internes ou, le cas échéant, de vocabulaires externes de la collection « Unit ».
 
-Exemple : Requête en vue de rechercher les vocabulaires utilisés par le profil d’unité archivistique dont l’identifiant est  « AUP-00001 » :
+*Exemple :* Requête en vue de rechercher les vocabulaires utilisés par le profil d’unité archivistique dont l’identifiant est  « AUP-00001 » :
 ```json
 GET {{url}}/admin-external/v1/archiveunitprofiles/AUP-00001/schema
 Accept: application/json
@@ -577,7 +578,7 @@ La solution logicielle Vitam renvoie alors :
         - pour un contrôle de type « SELECT », les différentes valeurs contrôlées (Values) ;
     - un commentaire (Comment – facultatif).
 
-Exemple : Résultats possibles suite à une requête en vue de rechercher les vocabulaires utilisés par le profil d’unité archivistique dont l’identifiant est  « AUP-00001 » :
+*Exemple :* Résultats possibles suite à une requête en vue de rechercher les vocabulaires utilisés par le profil d’unité archivistique dont l’identifiant est  « AUP-00001 » :
 
 ```json
 [...]
@@ -13197,7 +13198,7 @@ Nota bene : cette liste n’est pas forcément exhaustive.
   ]
   ```
 
-[^1]: Pour plus de précisions, consulter la section 3. « Formalisation des vocabulaires du schéma » du présent document.
+[^1]: Pour plus de précisions, consulter la [section « Formalisation des vocabulaires du schéma » du présent document](#formalisation-des-vocabulaires-du-schema).
 
 [^2]: Ces vocabulaires sont détaillés dans la documentation [Modèle de données](modele_de_donnees.md).
 
@@ -13211,4 +13212,4 @@ Nota bene : cette liste n’est pas forcément exhaustive.
 
 [^7]: Pour plus d’informations sur le processus d’import du référentiel, consulter le document [Modèle de workflow](./modele_de_workflow.md), « Workflow d’administration d’un référentiel des vocabulaires du schéma ».
 
-[^8]: Les règles propres au nommage d’un vocabulaire sont définies dans la partie « Conseils de mise en œuvre » du présent document.
+[^8]: Les règles propres au nommage d’un vocabulaire sont définies dans la [partie « Conseils de mise en œuvre » du présent document](#conseils-de-mise-en-œuvre).
