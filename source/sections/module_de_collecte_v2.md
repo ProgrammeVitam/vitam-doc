@@ -728,7 +728,7 @@ Chaque unité archivistique :
 -   Au terme de la version 8.1, aucun contrôle n’est effectué avec les référentiels présents dans la solution logicielle Vitam. De fait, il est fortement recommandé de veiller à :
 
     -   inclure les métadonnées obligatoires attendues par la solution logicielle Vitam, à savoir un titre (Title) et un niveau de description (DescriptionLevel) ;
-    -   inclure des règles de gestion ou des identifiants de profil d’unité archivistique existant dans la solution, de manière à éviter de possibles échecs lors des étapes de contrôles des données référentielles du processus d’entrée (opération « INGEST ») ;
+    -   inclure des règles de gestion existant dans la solution, de manière à éviter de possibles échecs lors des étapes de contrôles des données référentielles du processus d’entrée (opération « INGEST ») ;
     -   veiller au bon nommage des éléments (ou vocabulaires internes), tout en respectant leurs caractéristiques (s’il s’agit d’une chaîne de caractères, d’une date, etc.), et à leur insertion dans l’ontologie, s’il s’agit de vocabulaires externes ;
     -   ne pas envoyer dans le module de collecte des éléments sans valeurs, en particulier ceux qui sont obligatoires et doivent nécessairement être renseignés.
 
@@ -847,7 +847,7 @@ Lors de cette action, l’opération peut aboutir aux résultats suivants :
 | Statut | Motifs |
 | --- | --- |
 | Succès | Action réalisée sans rencontrer de problèmes particuliers. |
-| Échec  | - L’unité archivistique n’a pas été associée à une transaction ; <br>- La transaction associée à l’unité archivistique n’existe pas ; <br> - La transaction associée à l’unité archivistique a été clôturée. <br>|
+| Échec  | - L’unité archivistique n’a pas été associée à une transaction ; <br>- La transaction associée à l’unité archivistique n’existe pas ; <br> - La transaction associée à l’unité archivistique a été clôturée; <br> - L'unité archivistique n'est pas conforme au profil d'unité archivistique qu'elle déclare. |
 
 ###### Utilisation dans VitamUI
 
@@ -974,7 +974,7 @@ L’APP « Collecte et préparation des versements » du front-office VitamUI 
   X-Tenant-Id: {{tenant}}
   X-Access-Contract-Id: ContratTNR
   
-  < /MichelMercier/Discours/ Test01.jpeg
+  < /MichelMercier/Discours/Test01.jpeg
 ```  
 
 Cette action provoque :
@@ -1011,10 +1011,10 @@ Cette action provoque :
    "FormatId": "fmt/43"
   ** }**,
    "FileInfo": {
-   "Filename": "Test01.pdf"
+   "Filename": "Test01.jpeg"
    },
    ** "Size": 7702,**
-   "Uri": "Content/Test01jpeg",
+   "Uri": "Content/Test01.jpeg",
    "MessageDigest": "0e0cec05a1d72ee5610eaa5afbc904c012d190037cbc827d08272102cdecf0226efcad122b86e7699f767c661c9f3702379b8c2cb01c4f492f69deb200661bb9",
    "Algorithm": "SHA-512"
    }
@@ -1065,12 +1065,14 @@ Pour une transaction donnée est envoyée une arborescence bureautique sous form
 ``` 
   @transaction-id = **aeeaaaaaaghiyso4ablmyal74slqwtqaaaaq**
   @tenant = 1
+  
   POST {{url}}/collect-external/v1/transactions/{{transaction-id}}/upload
   Accept: application/json
   Content-Type: application/zip
   X-Tenant-Id: {{tenant}}
   X-Access-Contract-Id: {{access-contract}}
-  &lt; /path\_tozip/**stream.zip**
+  
+  < /path_tozip/**stream.zip**
 ```
 
 Cette action provoque :
@@ -1084,11 +1086,15 @@ Cette action provoque :
 
     -   un intitulé (Title), correspondant au nom d’un répertoire ou d’un objet binaire présent dans l’arborescence bureautique.
 
-    À chaque enregistrement, est associé l’identifiant de la transaction (\_opi).
+    À chaque enregistrement, est associé :
+		-   l’identifiant de la transaction (_opi),
+        -   l'identifiant du service producteur (_sp et _sps);
 
 -   la création de métadonnées techniques dans la base de données MongoDB, dans la collection « ObjectGroup » (base *MetadataCollect[^12]*) ;
 
-    À chaque enregistrement, est associé l’identifiant de la transaction (\_opi) ;
+    À chaque enregistrement, est associé :
+		-   l’identifiant de la transaction (_opi),
+        -   l'identifiant du service producteur (_sp);
 
 -   l’enregistrement des objets numériques sur les offres de stockage.
 -   la mise à jour des métadonnées techniques de l’objet avec, calculés lors de l’envoi du fichier numérique :
@@ -1110,12 +1116,13 @@ Point d’attention :
 
 -   Aucun fichier ne doit avoir un poids équivalent à 0 octet.
 -   Au terme de la V.8.1, il est recommandé que les noms de répertoires et de fichiers ne contiennent ni caractère accentué, ni virgule, ni apostrophe, ni parenthèse, ni espace, ni élément de ponctuation, ou tout autre caractère spécial. Ne sont à privilégier que l’underscore et le tiret comme séparateurs.
-
     Néanmoins, s’ils en contiennent et si l’arborescence bureautique émane d’un environnement Windows, il est recommandé d’utiliser l’outil Winzip pour la zipper, afin d’éviter des problèmes d’encodage.
 
 ###### Utilisation dans VitamUI
 
-TO DO
+L’APP « Collecte et préparation des versements » du front-office VitamUI fournie avec la solution logicielle Vitam permet de verser une arborescence bureautique, le cas échéant accompagnée d’un fichier « metatadata.csv », lors de la création d’un projet de versement manuel au moyen d’un wizard ou boîte de dialogue.
+
+Le détail du projet de versement, ainsi que les archives qui lui sont associées sont par ailleurs accessibles depuis l’APP.
 
 ##### Envoi d’une arborescence bureautique avec fichier .csv de métadonnées
 
