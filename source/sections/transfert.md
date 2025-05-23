@@ -6,11 +6,12 @@ Introduction
 
 ### Documents de référence
 
-|Document |Date de la version|Remarques|
-|:---------------:|:-----:|:-----:|
-|  NF Z 44022 – MEDONA – Modélisation des données pour l’archivage|18/01/2014||
-|Standard d’échange de données pour l’archivage – SEDA – v. 2.1|06/2018||
-|Standard d’échange de données pour l’archivage – SEDA – v. 2.2|02/2022|Cette nouvelle version du SEDA est intégrée à la solution logicielle Vitam à partir de la V6.RC.|
+|Document |Date de la version|
+|:---------------:|:-----:|
+|  NF Z 44022 – MEDONA – Modélisation des données pour l’archivage|18/01/2014|
+|Standard d’échange de données pour l’archivage – SEDA – v. 2.1|06/2018|
+|Standard d’échange de données pour l’archivage – SEDA – v. 2.2|02/2022|
+|Standard d’échange de données pour l’archivage – SEDA – v. 2.3|07/2024|
 |[Vitam – Modèle de workflow](./modele_de_workflow.md)||
 
 ### Présentation du document
@@ -20,7 +21,7 @@ Ce document s’articule autour des axes suivants :
 - détermination du caractère transférable des unités archivistiques,
 - modalités d’une demande de transfert,
 - modalités de mise en œuvre d’un transfert.
-Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 6 (mars 2023). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
+Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 8.1 (printemps 2025). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
 
 Définitions
 ----
@@ -30,7 +31,9 @@ Il peut intervenir à plusieurs occasions :
 - Un service producteur demande à ré-activer un dossier archivé. La restitution peut alors être partielle et ne pas porter sur l’ensemble des archives composant le transfert d’origine.  
 - Le transfert peut être à l’initiative d’un service producteur ou d’un service d’archives, notamment lors de la fin d’un contrat liant un service producteur et un tiers-archiveur.
 - Des règles de gestion associées à des archives arrivent à échéance et impliquent un transfert de responsabilité en termes de conservation de ces dernières, et, de fait, un transfert vers un autre système d’archivage électronique.  
-La manière de procéder à une restitution d’archives est définie dans la norme NF Z 44‑022 et dans sa déclinaison pour les acteurs du service public, le Standard d’échanges de données pour l’archivage (SEDA).  
+
+La manière de procéder à une restitution d’archives est définie dans la norme NF Z 44‑022 et dans sa déclinaison pour les acteurs du service public, le Standard d’échanges de données pour l’archivage (SEDA). 
+
 La transaction s’effectue en deux temps :
 - un transfert des archives, après une éventuelle demande, vers une plate-forme de destination ;
 - après confirmation du transfert, suppression des archives de la plate-forme d’origine.
@@ -68,7 +71,6 @@ Une unité archivistique ou un lot d’archives peuvent être transférables san
 Après confirmation de la réception de ces archives par le système d’archivage électronique de destination, il faudra veiller à procéder à leur purge dans le système d’archivage électronique d’origine, afin que ne subsiste pas deux copies de ces archives dans deux systèmes différents. Cette purge est automatisable.
 
 ### Cas où l’utilisation de la fonctionnalité de transfert est déconseillée
-=======
 
 Après confirmation de la réception de ces archives par le système d’archivage électronique de destination, il faudra veiller à procéder à leur purge dans le système d’archivage électronique d’origine, afin que ne subsiste pas deux copies de ces archives dans deux systèmes différents. Cette purge est automatisable.  
 
@@ -91,7 +93,6 @@ Modélisation des opérations et des objets échangés :
 #### Constitution d’un lot d’archives à transférer
 
 La solution logicielle permet de préparer un lot d’archives à transférer.
-- Par l’IHM de démonstration, cette opération se fait via le détail d’une unité archivistique et peut porter sur l’unité archivistique en question, l’unité archivistique et sa descendance ou sur l’ensemble de l’entrée par laquelle cette unité archivistique a été transférée dans la solution logicielle Vitam.
 - Depuis l’APP « Recherche et consultation des archives » de VitamUI, cette opération se fait après sélection d’un lot d’archives.
 - Par API, plusieurs critères de constitution d’un lot d’archives à transférer sont utilisables : identifiant d’une opération d’entrée, unité(s) archivistique(s) précise(s), ensemble des unités archivistiques dépendant d’une unité archivistique précise, etc.
 - Des filtres supplémentaires peuvent être demandés sur :
@@ -121,7 +122,6 @@ L’utilisateur autorisé doit renseigner un certain nombre de paramètres qui p
 #### Consultation des résultats de la demande de transfert
 
 Le résultat de l’opération de demande de transfert (ARCHIVE_TRANSFER / Transfert des unités archivistiques et des groupes d'objets) peut être consulté :
-- en allant dans le menu « Opérations », sur l’IHM de démonstration ;
 - depuis l’APP « Journal des opérations » de l’IHM VitamUI ;
 - via les API.
 L’opération peut aboutir aux résultats suivants :
@@ -138,12 +138,13 @@ Sont également disponibles :
     - OK : l’unité archivistique est transférable et fait partie du lot à transférer,
     - ALREADY_IN_TRANSFER : l’unité archivistique fait déjà l’objet d’une demande de transfert et ne fait pas partie du lot à transférer ;
 
-Exemple de rapport au format JSONL :
+*Exemple de rapport au format JSONL :*
 
-``````
+```json
 {"DslQuery":{"$roots":[],"$query":[{"$eq":{"#id":"aeaqaaaabahftfesaab6yalqlwe54laaaaba"},"$depth":1000}],"$filter":{"$limit":10000},"$projection":{},"$facets":[]}}
 {"id":"aeaqaaaabahftfesaab6yalqlwe54laaaaba","status":"OK"}
-``````
+```
+
 Un DIP dit de « transfert » dont l’intitulé correspond au préfixe « TRANSFER- », suivi de l’identifiant de l’opération, et qui prend la forme d’un fichier ZIP. Ce DIP contient :
 - un fichier « manifest.xml » correspondant à un message « ArchiveTransfer » du SEDA et dont l’identifiant du message correspond à l’identifiant de l’opération (MessageIdentifier) ;
 - un répertoire Content contenant l’ensemble des objets binaires (fichiers numériques) associés au bordereau, dans le cas où des objets sont transférés.
@@ -160,7 +161,7 @@ Un DIP dit de « transfert » dont l’intitulé correspond au préfixe « TR
 L’appartenance d’une unité archivistique à une opération de transfert est enregistrée dans les métadonnées de celle-ci.  
 En effet, l’identifiant de l’opération de transfert est indexé dans les métadonnées des unités archivistiques concernées (champ « _opts). Cela permet de rechercher les unités archivistiques faisant l’objet d’une demande de transfert en général ou en particulier.  
 
-Exemple d’unité archivistique ayant fait l’objet d’une demande de transfert :  
+*Exemple d’unité archivistique ayant fait l’objet d’une demande de transfert :*  
 
 ```json
 {
@@ -216,7 +217,7 @@ Le DIP dit « de transfert » peut être alors transféré :
 
 ### Finalisation du transfert dans la solution logicielle Vitam (TRANSFER_REPLY)
 
-La solution logicielle ne permet pas de confirmer et d’acquitter un transfert depuis l’IHM de démonstration. Cette opération est réalisable :
+La solution logicielle permet de confirmer et d’acquitter un transfert :
 - au moyen des API ;
 - depuis l’APP « Recherche, consultation et gestion des archives » de l’IHM VitamUI.
 
@@ -225,6 +226,7 @@ Pour des raisons liées aux problématiques de calcul de graphe, il n’est pas 
 L’opération de transfert implique en outre que la mise en œuvre de l’acquittement du transfert proprement dite (TRANSFER_REPLY) soit précédée dans la solution logicielle d’une phase de constitution d’un lot d’archives à transférer dans le cadre d’une opération de demande de transfert (ARCHIVE_TRANSFER). Cette dernière, visant à constituer un lot permet en effet d’indiquer dans les métadonnées que des unités archivistiques sont en cours de transfert, et de fait purgeables suite à la confirmation du transfert par le message « ArchiveTransferReply ».  
 Lors de cette opération d’acquittement du transfert ou de purge, le système d’archivage électronique d’origine procède à la vérification du statut du message « ArchiveTransferReply » (statut OK, WARNING ou KO) et à la vérification de l’identifiant d’opération qu’il renvoie (bloc MessageRequestIdentifier). En d’autres termes, il vérifie que les unités archivistiques qui sont référencées dans le message « ArchiveTransferReply » comme prises en charge par le système d’archivage électronique de destination sont bien comprises dans l’opération de transfert préalablement lancée et pas une autre. Ainsi, il évite de déclencher une purge d’unité archivistique qui n’ont pas fait l’objet de la demande de transfert.  
 Si le message « ArchiveTransferReply » a un statut OK ou WARNING et si l’identifiant d’opération est connu du système d’archivage électronique d’origine (bloc MessageRequestIdentifier), le message « ArchiveTransferReply » récupéré du système destinataire du lot à transférer est stocké par le système d’archivage électronique d’origine.  
+
 Le système d’archivage électronique d’origine déclenche alors la purge des unités archivistiques, des groupes d’objets techniques et des objets binaires (fichiers numériques) concernés par l’opération de transfert acquittée et référencés dans le message « ArchiveTransferReply ». Cette purge obéit à des règles similaires à celles mises en place dans l’opération d’élimination[^1] :
 - conservation des unités archivistiques qui ont des unités archivistiques filles (orphelinage),
 - détachement des groupes d’objets techniques rattachés à plusieurs unités archivistiques si une unité archivistique seule est purgée,
@@ -243,7 +245,7 @@ Le statut de l’opération à l’issue de la mise en œuvre de la purge pourra
 Si l’opération s’effectue avec succès, les unités archivistiques, des groupes d’objets techniques et des objets binaires (fichiers numériques) sont purgés du système.  
 L’opération d’acquittement du transfert produit un rapport au format JSONL qui récapitule le contexte de l’opération et liste les unités archivistiques, les groupes d’objets techniques et les objets binaires (fichiers numériques) ayant fait l’objet de l’opération.  
 
-Exemple de rapport au format JSONL :
+*Exemple de rapport au format JSONL :*
 
 ```json
 {"tenant":8,"evId":"aeeaaaaabchhfmwoaanoualqlx7lbiyaaaaq","evType":"","outcome":"","outDetail":"","outMsg":"","rightsStatementIdentifier":{},"evDetData":{}}
@@ -261,19 +263,19 @@ Pour chaque unité archivistique et groupe d’objets techniques, l’opération
 - ALREADY_DELETED : l’unité archivistique et/ou le groupe d’objets techniques a déjà été transféré et purgé du système.
 
 Si une unité archivistique ne peut pas être purgée, un événement est enregistré dans son journal de cycle de vie.  
-Exemple d’événement enregistré dans le journal du cycle de vie d’une unité archivistique :
+*Exemple d’événement enregistré dans le journal du cycle de vie d’une unité archivistique :*
 ![exemple d’événement enregistré dans le journal du cycle de vie d’une unité archivistique](./medias/transfert/exemple_evenement_journal_cycledevie.png)
 
 ### Mise à jour du registre des fonds
 
 Le transfert d’unités archivistiques a des conséquences sur le registre des fonds propres et symboliques.  
 Pour les fonds propres, les totaux d’unités archivistiques (AU), groupes d’objets techniques (GOT), objets techniques (OT) et la volumétrie sont mis à jour immédiatement. Le détail de l’opération d’entrée concernée est également mis à jour.   
-- Dans l’IHM de démonstration, en cliquant sur la ligne de cette opération, l’utilisateur peut connaître toutes les opérations qui ont affecté cette entrée et le nombre d’unités archivistiques (AU), groupes d’objets techniques (GOT), objets techniques (OT) ainsi que la volumétrie concernée pour chacune des opérations, celle de l’entrée initiale comme celles de l’acquittement du transfert qui ont ensuite affecté cette entrée.
-- Dans l’IHM VitamUI, ces opérations de transfert sont visibles en cliquant sur la ligne de cette opération au terme de la version 6.RC.
+
+Dans l’IHM VitamUI, ces opérations de transfert sont visibles en cliquant sur la ligne de cette opération au terme de la version 6.RC.
 
 Pour les fonds symboliques, au moment du calcul périodique des fonds symboliques de la base, les unités archivistiques (AU), groupes d’objets techniques (GOT), objets techniques (OT) transférés et éliminés du système d’origine seront décomptés et la volumétrie sera mise à jour. Depuis la notice du service agent, l’utilisateur peut accéder à l’historique des rattachements et consulter sur une période donnée les variations à la hausse ou à la baisse des fonds symboliques pour ce producteur.  
 
-Exemple d’entrée impactée par un transfert d’archives dans le registre des fonds :
+*Exemple d’entrée impactée par un transfert d’archives dans le registre des fonds :*
 
 ```json
 {
@@ -342,4 +344,4 @@ Exemple d’entrée impactée par un transfert d’archives dans le registre des
 
 Le calcul des unités archivistiques (AU), groupes d’objets techniques (GOT), objets techniques (OT) rattachés à un producteur au titre de son fonds symbolique n’est effectué qu’une fois par vingt-quatre heures (sauf paramétrage différent de la plate-forme). Dans ces conditions, si sur la même période de vingt-quatre heures l’archiviste effectue une entrée pour 3 unités archivistiques et un transfert acquitté pour 3 unités archivistiques, le total des symboliques entre deux calculs n’aura pas évolué.
 
-[^1] Pour plus d’informations sur le processus d’élimination, consulter le document [Les éliminations avec la solution logicielle Vitam](./eliminations.md).
+[^1]: Pour plus d’informations sur le processus d’élimination, consulter le document [Les éliminations avec la solution logicielle Vitam](./eliminations.md).
