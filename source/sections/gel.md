@@ -15,12 +15,13 @@ technologique.
 
 ### Documents de référence
 
-|Document|Date|Remarques|
-|:---|:---:|:---|
-|NF Z44-022 – MEDONA - Modélisation des données pour l’archivage|18/01/2014||
-|Standard d’échange de données pour l’archivage – SEDA – v. 2.1|06/2018||
-|Standard d’échange de données pour l’archivage – SEDA – v. 2.2|02/2022|Cette nouvelle version du SEDA est intégrée à la solution logicielle Vitam à partir de la V6.RC.|
-|[Vitam – Règles de gestion](./regles_gestion.md)|||
+|Document|Date|
+|:---|:---:|
+|NF Z44-022 – MEDONA - Modélisation des données pour l’archivage|18/01/2014|
+|Standard d’échange de données pour l’archivage – SEDA – v. 2.1|06/2018|
+|Standard d’échange de données pour l’archivage – SEDA – v. 2.2|02/2022|
+|Standard d’échange de données pour l’archivage – SEDA – v. 2.3|07/2024|
+|[Vitam – Règles de gestion](./regles_gestion.md)||
 
 ### Présentation du document
 
@@ -101,7 +102,7 @@ Elle peut être définie de deux manières :
     gérées dans ce référentiel ;
 -   sans durée ni mesure, si on n’est pas en mesure de les qualifier.
 
-Exemple:
+*Exemple:*
 ``` La première règle de gel définit une durée et une mesure, contrairement à la deuxième règle de gel.```
   
 ### Formalisation du gel dans le Standard d’échanges de données pour l’archivage (SEDA)
@@ -145,7 +146,7 @@ archivistiques dispose d’un sous-bloc correspondant à la règle de gel
 
     -   l’**identifiant** de la règle applicable (RuleId –
         obligatoire) ;
-    -   la** date de départ, **à partir de laquelle la règle s’applique
+    -   la **date de départ**, à partir de laquelle la règle s’applique
         (StartDate – facultatif) ;
 
 -   des **attributs** spécifiques à une règle de gel :
@@ -181,7 +182,7 @@ archivistiques dispose d’un sous-bloc correspondant à la règle de gel
     rapport aux autres règles de gestion ;
 -   Les attributs sont propres à chaque règle de gel.
 
-  Exemple de modélisation d’une règle de gel en XML :
+  *Exemple de modélisation d’une règle de gel en XML :*
 ```xml
 <HoldRule>
       <Rule>HOLD-00001</RuleId>
@@ -217,7 +218,7 @@ Dans les autres cas, l’unité archivistique ne contiendra pas de règles
 enregistrées en base. Elles seront calculées automatiquement par la
 solution logicielle Vitam.
 
-Exemple d’enregistrement de règles de gel pour une unité archivistique :
+*Exemple d’enregistrement de règles de gel pour une unité archivistique :*
 ```json
 "_mgt": {
         "HoldRule": {
@@ -333,7 +334,7 @@ Elle peut contenir :
     -   **blocage du reclassement** de l’archives gelée
         (PreventRearrangement – facultatif).
 
-Exemple d’enregistrement par défaut des catégories de règle de gestion :
+*Exemple d’enregistrement par défaut des catégories de règle de gestion :*
 
 ```json
 "_computedInheritedRules": {
@@ -424,7 +425,7 @@ Exemple d’enregistrement par défaut des catégories de règle de gestion :
 ```
 
 **Pour une configuration indexant en plus, pour chaque règle, les
-dates d’échéance maximales **(indexInheritedRulesWithRulesIdByTenant),
+dates d’échéance maximales** (indexInheritedRulesWithRulesIdByTenant),
 est enregistrée la catégorie liée au gel (HoldRule) parmi l’ensemble
 de **catégories de règle indexées pour une unité
 archivistique** (computedInheritedRule –
@@ -453,9 +454,9 @@ Cette catégorie peut contenir :
     -   la date de réévaluation de la règle de gel
         (Hold ReassessingDate – facultatif),
     -   **blocage du reclassement** de l’archives gelée
-        (****PreventRearrangement**** – facultatif).****
+        (****PreventRearrangement**** – facultatif).
 
-Exemple d’enregistrement par défaut des catégories de règle de gestion :
+*Exemple d’enregistrement par défaut des catégories de règle de gestion :*
 
 ```json
 "_computedInheritedRules": {
@@ -548,7 +549,7 @@ Cette catégorie peut contenir :
             provient la règle de gestion (Paths –
             obligatoire),
         -   **identifiant de la règle**, correspondant au champ
-            « RuleId » du référentiel des règles de gestion****
+            « RuleId » du référentiel des règles de gestion
             (Rule – obligatoire, mais pouvant être
             vide),
         -   **date de début** du calcul de l’échéance (StartDate –
@@ -590,7 +591,7 @@ Cette catégorie peut contenir :
         -   **blocage du reclassement** de l’archives gelée
             (PreventRearrangement – facultatif).
 
-Exemple d’enregistrement par défaut des catégories de règle de gestion :
+*Exemple d’enregistrement par défaut des catégories de règle de gestion :*
 
 ```json
 "inheritedRulesAPIOutput": {
@@ -756,15 +757,14 @@ fonctionnalités lui permettant de gérer les règles de gel associées aux
 archives :
 
 -   la **configuration** des règles de gel au niveau de la plate-forme ;
--   l’**administration des règles de gel dans le référentiel **de règles
+-   l’**administration des règles de gel dans le référentiel** de règles
     de gestion ;
 -   en entrée du système, le **calcul des échéances** associées aux
     unités archivistiques gelées et **l’indexation des métadonnées**
     liées au gel et associées à ces unités archivistiques ;
 -   en gestion des archives existantes :
 
-    -   le **gel d’archives, visant à interdire leur élimination et, le
-        cas échéant, leur reclassement,** et l’indexation des règles de
+    -   le **gel d’archives, visant à interdire leur élimination et, le cas échéant, leur reclassement**, et l’indexation des règles de
         gel et échéances héritées par les unités archivistiques ;
     -   le **dégel** d’archives ;
     -   à la demande, le calcul des échéances applicables aux unités
@@ -773,23 +773,22 @@ archives :
         les résultats ;
 
 -   en accès, le **calcul des échéances** pour toutes les unités
-    archivistiques conservées dans le système, ainsi qu’un **filtre sur
-    les catégories de règles échues** au moyen d’un contrat d’accès.
+    archivistiques conservées dans le système, ainsi qu’un **filtre sur les catégories de règles échues** au moyen d’un contrat d’accès.
 
 Les fonctionnalités ont été conçues et réalisées pour prendre en compte
 toutes les situations susceptibles d’être rencontrées par les services
 d’archives[^5], notamment en termes de structuration des archives prises
 en charge, avec la possibilité d’avoir :
 
--   **0 à n unités archivistiques **à la racine du bloc
+-   **0 à n unités archivistiques** à la racine du bloc
     DescriptionMetadata du message de transfert d’archives
-    (ArchiveTransfer)** **;
--   **0 à n parents **pour une unité archivistique ;
--   **0 à n enfants **pour une unité archivistique.
+    (ArchiveTransfer);
+-   **0 à n parents** pour une unité archivistique ;
+-   **0 à n enfants** pour une unité archivistique.
 
 Le présent document détaille uniquement les mécanismes permettant de
 **geler et dégeler** une archives. Les autres fonctionnalités sont
-décrites dans la documentation *Règles de gestion*.
+décrites dans la [documentation *Règles de gestion*](./regles_gestion.md).
 
 ### Réalisation du gel d’archives
 
@@ -937,14 +936,14 @@ règle de gel, unité(s) archivistique(s) contenant ou héritant d’une
 règle de gel arrivée à échéance, date de réévaluation du caractère gelé
 d’unité(s) archivistique(s), etc.
 
-***Point d’attention :*** La sélection est réalisée en fonction des
+**Point d’attention :** La sélection est réalisée en fonction des
 droits octroyés par le contrat d’accès utilisé.
 
 L’action de dégel d’archives s’effectue au moyen de l’opération de mise
 à jour en masse des règles de gestion. Elle consiste en la suppression
 d’une à plusieurs règles de gel sur le lot d’archives sélectionnées.
 
-***Point d’attention :*** Il n’est pas possible de supprimer une règle
+**Point d’attention :** Il n’est pas possible de supprimer une règle
 de gel au moyen d’une opération de mise à jour unitaire de règle de
 gestion. Ce service fourni par la solution logicielle Vitam est en cours
 de dépréciation.
@@ -954,7 +953,7 @@ L’opération est journalisée dans le journal des opérations.
 Elle donne lieu à un enregistrement dans le journal du cycle de vie de
 l’(des) unité(s) archivistique(s) ayant fait l’objet d’un gel.
 
-***Point d’attention :*** L’information n’est enregistrée que dans le
+**Point d’attention :** L’information n’est enregistrée que dans le
 journal du cycle de vie de l’(des) unité(s) archivistique(s) racine(s).
 
 ***Dégel automatisé***
@@ -974,7 +973,7 @@ d’archives dans deux cas :
 
 Aucune opération n’est alors réalisée, ni journalisée.
 
-***Point d’attention :*** il est recommandé d’utiliser cette option de
+**Point d’attention :** il est recommandé d’utiliser cette option de
 dégel, si on souhaite pouvoir conserver traces dans les métadonnées des
 unités archivistiques que certaines ont été gelées durant une certaine
 période.
