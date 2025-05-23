@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>22. Le référentiel des griffons dans la solution logicielle Vitam &mdash; Vitam documentation fonctionnelle</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=eea1f72d" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f4732e6d"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/translations.js?v=bf059b8c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="23. Le référentiel des scénarios de préservation dans la solution logicielle Vitam" href="Vademecum_referentiel_preservation.html" />
+    <link rel="prev" title="21. Le référentiel des formats dans la solution logicielle Vitam" href="Vademecum_referentiel_formats.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: white" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/Vitam_Logo-CMJN.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">première approche</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="guide_lecture.html">1. Documentation Vitam - guide de lecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="presentation_programme.html">2. Présentation du programme Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="presentation_solution_logicielle.html">3. Présentation de la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_prise_en_main.html">4. Guide de prise en main de la solution logicielle Vitam – Vitam UI<br>
+<em>Réaliser une première entrée</em></a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">documentation métier</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="organisation_information.html">1. Organisation de l’information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gestion_archives_arbo.html">2. Gestion des archives et des arborescences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_donnees.html">3. Modèle de données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SIP.html">4. Structuration des <em>Submission Information Packages</em> (SIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DIP.html">5. Structuration des <em>Dissemination Information Packages</em> (DIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gestion_habilitations.html">6. Gestion des habilitations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regles_gestion.html">7. Règles de gestion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services_prod.html">8. Services producteurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_archivage.html">9. Profils d’archivage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_unite_archivistique.html">10. Profils d’unité archivistique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ontologie.html">11. Ontologie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="schema.html">12. Schéma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_workflow.html">13. Description des workflows et des opérations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_de_collecte.html">14. Module de collecte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eliminations.html">15. Les éliminations avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gel.html">16. Le gel d’archives avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preservation.html">17. Gestion de la préservation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stockage.html">18. Gestion de multiples stratégies de stockage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transfert.html">19. Le transfert avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="valeur_probante.html">20. Conservation de la valeur probante</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">documentation Vitam UI</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Autoprovisionning.html">1. Vitam UI : présentation de la fonctionnalité d’auto-provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Arbres_Plans.html">2. APP Arbres et plans</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">outils connexes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="resip.html">1. RESIP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resip_faq.html">2. RESIP : foire aux questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pastis_standalone.html">3. PASTIS STANDALONE</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Chantier préservation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="chantier_preservation_validation_format.html">1. Validation du format des fichiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_identification_format.html">2. Identification des formats de fichiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_extraction_MD.html">3. Extraction des métadonnées techniques</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Vademecum</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_sommaire.html">1. Vademecum: sommaire thématique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_glossaire.html">2. Notions utilisées dans la solution logicielle Vitam et lien vers la fiche qui les définit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_arbre.html">3. L’arbre de positionnement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_audit.html">4. Les audits dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_classification.html">5. La gestion des archives classifiées avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_acces.html">6. Le contrat d’accès dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_entree.html">7. Le contrat d’entrée dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_gestion.html">8. Le contrat de gestion dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_echeances.html">9. Le calcul des héritages des règles de gestion et l’indexation des échéances dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_eliminations.html">10. Réaliser des éliminations d’archives avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_habilitations.html">11. La gestion des droits et permissions des utilisateurs applicatifs dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_identifiants.html">12. L’attribution des identifiants dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_journalisation.html">13. La journalisation et la conservation de la valeur probante dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_ontologie.html">14. L’ontologie dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_pa.html">15. Les profils d’archivage dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_parametrages_pf.html">16. Le paramétrage fonctionnel d’une plate-forme utilisant la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_plan.html">17. Le plan de classement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_preservation.html">18. La préservation dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_pua.html">19. Les profils d’unité archivistique dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_rattachement.html">20. Faire un rattachement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_formats.html">21. Le référentiel des formats dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">22. Le référentiel des griffons dans la solution logicielle Vitam</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#presentation-du-referentiel-des-griffons">22.1. Présentation du référentiel des griffons</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#perimetre">22.1.1. Périmètre</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#controles-effectues">22.1.2. Contrôles effectués</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#configurer-un-referentiel-des-griffons">22.2. Configurer un référentiel des griffons</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#installation-des-griffons-et-constitution-du-referentiel">22.2.1. Installation des griffons et constitution du référentiel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gestion-des-identifiants-des-griffons">22.2.2. Gestion des identifiants des griffons</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#formalisation-du-referentiel">22.2.3. Formalisation du référentiel</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#modification-du-referentiel">22.3. Modification du référentiel</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#suppression-dun-griffon">22.3.1. Suppression d’un griffon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mise-a-jour-du-referentiel-des-griffons">22.3.2. Mise à jour du référentiel des griffons</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_preservation.html">23. Le référentiel des scénarios de préservation dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_rg.html">24. Le référentiel des règles de gestion dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_sa.html">25. Le référentiel des services agents dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_registre_fonds.html">26. Le registre des fonds dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_structuration_information.html">27. La structuration des informations dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_suivi_acces.html">28. Le suivi des accès dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_tenant.html">29. Les tenants dans la solution logicielle Vitam</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: white" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Documentation utilisateur Vitam</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">22. </span>Le référentiel des griffons dans la solution logicielle Vitam</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/sections/Vademecum_referentiel_griffons.md.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+
+           <div itemprop="articleBody">
+             
+  <section id="le-referentiel-des-griffons-dans-la-solution-logicielle-vitam">
+<h1><span class="section-number">22. </span>Le référentiel des griffons dans la solution logicielle Vitam<a class="headerlink" href="#le-referentiel-des-griffons-dans-la-solution-logicielle-vitam" title="Lien vers cette rubrique"></a></h1>
+<p>Les griffons sont des outils logiciels permettant d’effectuer dans la solution logicielle Vitam des traitements sur les objets binaires en fonction de leur format.
+Le référentiel des griffons permet d’administrer l’ensemble des griffons installés et pouvant être utilisés par la solution logicielle Vitam.<br>
+L’objectif du référentiel est de :</p>
+<ul class="simple">
+<li><p>connaître l’ensemble des griffons installés, gérés et utilisables dans la solution logicielle Vitam ;</p></li>
+<li><p>permettre l’utilisation des griffons ainsi référencés dans un à plusieurs scénario(s) de préservation.</p></li>
+</ul>
+<section id="presentation-du-referentiel-des-griffons">
+<h2><span class="section-number">22.1. </span>Présentation du référentiel des griffons<a class="headerlink" href="#presentation-du-referentiel-des-griffons" title="Lien vers cette rubrique"></a></h2>
+<section id="perimetre">
+<h3><span class="section-number">22.1.1. </span>Périmètre<a class="headerlink" href="#perimetre" title="Lien vers cette rubrique"></a></h3>
+<p>Le référentiel des griffons est valable pour la plate-forme. Il est dit trans-tenant.</p>
+</section>
+<section id="controles-effectues">
+<h3><span class="section-number">22.1.2. </span>Contrôles effectués<a class="headerlink" href="#controles-effectues" title="Lien vers cette rubrique"></a></h3>
+<p>Les identifiants des griffons sont utilisés dans la solution logicielle Vitam dans les scénarios de préservation, pour indiquer le griffon à utiliser. Si l’identifiant du griffon indiqué dans le scénario de préservation n’est pas présent dans le référentiel des griffons, la création ou la modification du scénario de préservation est rejetée.</p>
+<p>Pour pouvoir être utilisé dans un scénario de préservation, le griffon doit avoir préalablement été installé au moyen d’un acte technique.</p>
+</section>
+</section>
+<section id="configurer-un-referentiel-des-griffons">
+<h2><span class="section-number">22.2. </span>Configurer un référentiel des griffons<a class="headerlink" href="#configurer-un-referentiel-des-griffons" title="Lien vers cette rubrique"></a></h2>
+<section id="installation-des-griffons-et-constitution-du-referentiel">
+<h3><span class="section-number">22.2.1. </span>Installation des griffons et constitution du référentiel<a class="headerlink" href="#installation-des-griffons-et-constitution-du-referentiel" title="Lien vers cette rubrique"></a></h3>
+<p>Un griffon est construit autour d’un outil logiciel interfacé avec la solution logicielle Vitam pour effectuer différents traitements de préservation sur les objets binaires en fonction de leur format, dans le cadre d’un scénario de préservation.<br>
+Un même griffon peut être utilisé pour effectuer plusieurs traitements, plusieurs griffons peuvent être utilisés pour effectuer un traitement identique sur un même périmètre.</p>
+<p>Le choix des griffons à installer est fait par l’administrateur fonctionnel en fonction de ses besoins en matière de préservation et de la nature des fonds qu’il conserve (fichiers bureautiques, fichiers image, fichiers son, plans en 2D…). Par défaut, plusieurs griffons sont disponibles avec la solution logicielle Vitam et peuvent être installés.<br>
+L’installation et l’exploitation des griffons constituent un acte d’administration technique.</p>
+<p>L’installation des griffons lors de l’initialisation de la plate-forme est facultative, mais leur absence interdira toute opération de préservation.</p>
+<p>L’installation des griffons doit être suivie de leur déclaration dans le référentiel des griffons, afin que le griffon puisse être utilisé lors d’une opération de préservation.</p>
+</section>
+<section id="gestion-des-identifiants-des-griffons">
+<h3><span class="section-number">22.2.2. </span>Gestion des identifiants des griffons<a class="headerlink" href="#gestion-des-identifiants-des-griffons" title="Lien vers cette rubrique"></a></h3>
+<p>Le référentiel des griffons fonctionne en mode « esclave ». L’identifiant des différents griffons est géré dans un outil externe.</p>
+</section>
+<section id="formalisation-du-referentiel">
+<h3><span class="section-number">22.2.3. </span>Formalisation du référentiel<a class="headerlink" href="#formalisation-du-referentiel" title="Lien vers cette rubrique"></a></h3>
+<p>Le référentiel des griffons est importé dans la solution logicielle Vitam sous la forme d’un fichier JSON contenant l’ensemble des griffons installés.
+Pour un griffon donné, il comporte obligatoirement les informations suivantes :</p>
+<ul class="simple">
+<li><p>identifiant signifiant du griffon, généré par l’application à l’origine de sa création (Identifier) ;</p></li>
+<li><p>nom du griffon (Name)</p></li>
+<li><p>nom technique du griffon, utilisé pour lancer son exécution dans la solution logicielle Vitam (ExecutableName)</p></li>
+<li><p>version du griffon (ExecutableVersion)
+Une description (Description) et une date de création (CreationDate), facultatives, peuvent venir compléter ces informations.</p></li>
+</ul>
+<p>Pour plus d’informations, consulter le <a class="reference internal" href="modele_de_donnees.html"><span class="std std-doc">document VITAM. Modèle de données</span></a>.</p>
+</section>
+</section>
+<section id="modification-du-referentiel">
+<h2><span class="section-number">22.3. </span>Modification du référentiel<a class="headerlink" href="#modification-du-referentiel" title="Lien vers cette rubrique"></a></h2>
+<section id="suppression-dun-griffon">
+<h3><span class="section-number">22.3.1. </span>Suppression d’un griffon<a class="headerlink" href="#suppression-dun-griffon" title="Lien vers cette rubrique"></a></h3>
+<p>La solution logicielle Vitam ne permet pas de désinstaller un griffon, au sens technique du terme.
+Si on souhaite ne plus utiliser un griffon, il faut l’ôter du référentiel des griffons. Ainsi, il ne peut plus être utilisé dans un scénario de préservation.
+Les raisons pouvant amener à supprimer un griffon sont les suivantes :</p>
+<ul class="simple">
+<li><p>Le griffon n’est jamais utilisé. Par souci de clarté, on souhaite le supprimer du référentiel ;</p></li>
+<li><p>Le griffon est obsolète et a été remplacé par une version plus récente. Plutôt que de maintenir deux griffons de version différente dans le référentiel, on souhaite en supprimer un du référentiel ;</p></li>
+<li><p>Il y a eu erreur de saisie, qui a entraîné la création d’un griffon qui n’est pas installé et/ou supporté par la solution logicielle Vitam.
+Quand on supprime un griffon, il est indispensable de vérifier s’il est utilisé par un ou plusieurs scénarios de préservation et de modifier au préalable ces derniers avant la suppression du griffon.</p></li>
+</ul>
+</section>
+<section id="mise-a-jour-du-referentiel-des-griffons">
+<h3><span class="section-number">22.3.2. </span>Mise à jour du référentiel des griffons<a class="headerlink" href="#mise-a-jour-du-referentiel-des-griffons" title="Lien vers cette rubrique"></a></h3>
+<p>La mise à jour du référentiel des griffons s’effectue par un réimport du fichier JSON, en mode « annule et remplace ». Il est possible :</p>
+<ul class="simple">
+<li><p>d’ajouter un nouveau griffon ;</p></li>
+<li><p>de modifier les informations associées à un ou plusieurs griffons (ex : modification de la description) ;</p></li>
+<li><p>de supprimer un griffon à condition qu’il ne soit pas utilisé par un scénario de préservation.</p></li>
+</ul>
+<p>Les différentes versions du référentiel font l’objet d’une sauvegarde sur les offres de stockage.</p>
+<p><em>Points d’attention :</em></p>
+<ul class="simple">
+<li><p>Après la mise à jour du référentiel, il est recommandé à l’administrateur technique de vérifier que la liste des griffons présents dans le référentiel correspond aux différents griffons installés sur la plate-forme ;</p></li>
+<li><p>Un griffon pouvant être utilisé dans un ou plusieurs scénario(s) de préservation, il est recommandé de vérifier son utilisation avant de procéder à sa suppression dans le référentiel des griffons.</p></li>
+</ul>
+<p>Pour en savoir plus, consulter le <a class="reference internal" href="preservation.html"><span class="std std-doc">document VITAM. Gestion de la préservation</span></a>.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="Vademecum_referentiel_formats.html" class="btn btn-neutral float-left" title="21. Le référentiel des formats dans la solution logicielle Vitam" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="Vademecum_referentiel_preservation.html" class="btn btn-neutral float-right" title="23. Le référentiel des scénarios de préservation dans la solution logicielle Vitam" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2022, Programme Vitam.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: v81_valeur_probante
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Branches</dt>
+      <dd><a href="../../master/sections/Vademecum_referentiel_griffons.html">master</a></dd>
+      <dd><a href="../../master_7.1.x/sections/Vademecum_referentiel_griffons.html">master_7.1.x</a></dd>
+      <dd><a href="../../master_8.0.x/sections/Vademecum_referentiel_griffons.html">master_8.0.x</a></dd>
+      <dd><a href="../../v8.1_Resip_mathilde/sections/Vademecum_referentiel_griffons.html">v8.1_Resip_mathilde</a></dd>
+      <dd><a href="../../v81_preservation/sections/Vademecum_referentiel_griffons.html">v81_preservation</a></dd>
+      <dd><a href="../../v81_transfert/sections/Vademecum_referentiel_griffons.html">v81_transfert</a></dd>
+      <dd><a href="Vademecum_referentiel_griffons.html">v81_valeur_probante</a></dd>
+      <dd><a href="../../v81_workflow/sections/Vademecum_referentiel_griffons.html">v81_workflow</a></dd>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

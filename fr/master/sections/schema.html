@@ -219,40 +219,14 @@
 <h2><span class="section-number">12.1. </span>Introduction<a class="headerlink" href="#introduction" title="Lien vers cette rubrique"></a></h2>
 <section id="documents-de-reference">
 <h3><span class="section-number">12.1.1. </span>Documents de référence<a class="headerlink" href="#documents-de-reference" title="Lien vers cette rubrique"></a></h3>
-<table class="docutils align-default">
-<thead>
-<tr class="row-odd"><th class="head text-center"><p><strong>Document</strong></p></th>
-<th class="head text-center"><p><strong>Date de la version</strong></p></th>
-<th class="head text-center"><p><strong>Remarques</strong></p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-center"><p>NF Z 44022 – MEDONA – Modélisation des données pour l’archivage</p></td>
-<td class="text-center"><p>18/01/2014</p></td>
-<td class="text-center"><p></p></td>
-</tr>
-<tr class="row-odd"><td class="text-center"><p>Standard d’échange de données pour l’archivage – SEDA – v. 2.1</p></td>
-<td class="text-center"><p>06/2018</p></td>
-<td class="text-center"><p></p></td>
-</tr>
-<tr class="row-even"><td class="text-center"><p>Standard d’échange de données pour l’archivage – SEDA – v. 2.2</p></td>
-<td class="text-center"><p>02/2022</p></td>
-<td class="text-center"><p>Cette nouvelle version du SEDA est intégrée à la solution logicielle Vitam à partir de la V6.RC.</p></td>
-</tr>
-<tr class="row-odd"><td class="text-center"><p>Standard d’échange de données pour l’archivage – SEDA – v. 2.3</p></td>
-<td class="text-center"><p>06/2024</p></td>
-<td class="text-center"><p></p></td>
-</tr>
-<tr class="row-even"><td class="text-center"><p><a class="reference internal" href="SIP.html"><span class="std std-doc">Structuration des <em>Submission Information Packages</em> (SIP)</span></a></p></td>
-<td class="text-center"><p></p></td>
-<td class="text-center"><p></p></td>
-</tr>
-<tr class="row-odd"><td class="text-center"><p><a class="reference internal" href="ontologie.html"><span class="std std-doc">Ontologie</span></a></p></td>
-<td class="text-center"><p></p></td>
-<td class="text-center"><p></p></td>
-</tr>
-</tbody>
-</table>
+<p>|<strong>Document</strong>|<strong>Date de la version</strong>|
+|:—————:|:—–:|:—–:|
+|NF Z 44022 – MEDONA – Modélisation des données pour l’archivage|18/01/2014|
+|Standard d’échange de données pour l’archivage – SEDA – v. 2.1|06/2018||<br />
+|Standard d’échange de données pour l’archivage – SEDA – v. 2.2|02/2022|
+|Standard d’échange de données pour l’archivage – SEDA – v. 2.3|06/2024|
+|<a class="reference internal" href="SIP.html"><span class="std std-doc">Structuration des <em>Submission Information Packages</em> (SIP)</span></a>||
+|<a class="reference internal" href="ontologie.html"><span class="std std-doc">Ontologie</span></a>||</p>
 </section>
 <section id="presentation-du-document">
 <h3><span class="section-number">12.1.2. </span>Présentation du document<a class="headerlink" href="#presentation-du-document" title="Lien vers cette rubrique"></a></h3>
@@ -264,7 +238,7 @@ Il s’articule autour des axes suivants :</p>
 <li><p>une présentation des mécanismes mis en œuvre dans la solution logicielle Vitam pour prendre en compte cette notion ;</p></li>
 <li><p>quelques conseils complémentaires de mise en œuvre.</p></li>
 </ul>
-<p>Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 8.0 (octobre 2024).
+<p>Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 8.1 (printemps 2025).
 Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.</p>
 </section>
 </section>
@@ -283,13 +257,15 @@ Il a vocation à être amendé, complété et enrichi au fur et à mesure de la 
 <ul class="simple">
 <li><p>0 à n groupe(s) d’objets,</p></li>
 <li><p>0 à n unité(s) archivistique(s),</p></li>
-<li><p>0 à n vocabulaire(s).
-Points d’attention :</p></li>
+<li><p>0 à n vocabulaire(s).</p></li>
+</ul>
+<p><strong>Points d’attention :</strong></p>
+<ul class="simple">
 <li><p>les chemins sont uniques dans la solution logicielle Vitam ;</p></li>
 <li><p>contrairement à l’ontologie, les vocabulaires utilisés par la solution logicielle Vitam de type « objet », c’est-à-dire ne contenant pas de valeurs informationnelles, sont référencés dans le schéma. Il peut s’agir de :</p>
 <ul>
 <li><p>vocabulaires conformes au SEDA de type « objet », c’est-à-dire correspondant à un élément XML englobant un sous-élément XML (par exemple, Writer ou Management) ;
-Exemple : sont présents dans le schéma les vocabulaires « Keyword », « Keyword.Keyword Content », « Keyword.KeywordType ».</p></li>
+<em>Exemple :</em> sont présents dans le schéma les vocabulaires « Keyword », « Keyword.Keyword Content », « Keyword.KeywordType ».</p></li>
 </ul>
 </li>
 </ul>
@@ -302,7 +278,7 @@ Exemple : sont présents dans le schéma les vocabulaires « Keyword », « 
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- vocabulaires générés par la solution logicielle Vitam, correspondant à un élément JSON de type « objet ».
 </pre></div>
 </div>
-<p>Exemple : sont présents dans le schéma les éléments JSON _mgt, _v.</p>
+<p><em>Exemple :</em> sont présents dans le schéma les éléments JSON _mgt, _v.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;_mgt&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nt">&quot;AccessRule&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">            </span><span class="nt">&quot;Rules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
@@ -351,7 +327,7 @@ Exemple : sont présents dans le schéma les vocabulaires « Keyword », « 
 <section id="dans-un-fichier-json">
 <h3><span class="section-number">12.3.1. </span>Dans un fichier JSON<a class="headerlink" href="#dans-un-fichier-json" title="Lien vers cette rubrique"></a></h3>
 <p>Un à plusieurs vocabulaire(s) externe(s) peu(ven)t être importé(s) sous la forme d’un fichier JSON.
-Exemple : trois vocabulaires externes, « Invoice », « Provider » et « BirthDate », contenant les informations nécessaires pour être importés avec succès.</p>
+<em>Exemple :</em> trois vocabulaires externes, « Invoice », « Provider » et « BirthDate », contenant les informations nécessaires pour être importés avec succès.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;IsObject&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
@@ -414,7 +390,7 @@ Chaque vocabulaire de type « objet » :</p></li>
 <section id="dans-le-schema-interne">
 <h4><span class="section-number">12.3.2.1. </span>Dans le schéma interne<a class="headerlink" href="#dans-le-schema-interne" title="Lien vers cette rubrique"></a></h4>
 <p>Les vocabulaires internes et, le cas échéant, les vocabulaires externes, sont enregistrés dans un fichier interne, sous la forme d’enregistrements au format JSON.</p>
-<p>Exemple : deux vocabulaires, le premier de type « objet » et le second de type « feuille ».</p>
+<p><em>Exemple :</em> deux vocabulaires, le premier de type « objet » et le second de type « feuille ».</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
 <span class="p">{</span>
 <span class="w">      </span><span class="nt">&quot;FieldName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Addressee&quot;</span><span class="p">,</span>
@@ -513,8 +489,8 @@ Chaque vocabulaire de type « objet » :</p></li>
 <section id="dans-la-base-de-donnees-mongodb">
 <h4><span class="section-number">12.3.2.2. </span>Dans la base de données MongoDB<a class="headerlink" href="#dans-la-base-de-donnees-mongodb" title="Lien vers cette rubrique"></a></h4>
 <p>Les vocabulaires externes sont enregistrés dans la base de données MongoDB, dans la collection « Schema », sous la forme d’enregistrements au format JSON.</p>
-<p>Point d’attention : Les vocabulaires internes ne sont pas enregistrés dans cette collection.</p>
-<p>Exemple : deux vocabulaires, l’un de type « objet » et l’autre de type « feuille »/</p>
+<p><strong>Point d’attention :</strong> Les vocabulaires internes ne sont pas enregistrés dans cette collection.</p>
+<p><em>Exemple :</em> deux vocabulaires, l’un de type « objet » et l’autre de type « feuille »/</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">    </span><span class="err">_id</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;aeaaaaaaaaecx</span><span class="mi">2</span><span class="err">k</span><span class="mi">6</span><span class="err">abhpuamq</span><span class="mi">4</span><span class="err">m</span><span class="mi">36</span><span class="err">uqiaaaaq&#39;</span><span class="p">,</span>
 <span class="w">    </span><span class="err">Origi</span><span class="kc">n</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;EXTERNAL&#39;</span><span class="p">,</span>
@@ -548,7 +524,7 @@ Chaque vocabulaire de type « objet » :</p></li>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p><strong>Champ</strong></p></th>
-<th class="head text-center"><p>*<em>Description</em></p></th>
+<th class="head text-center"><p><strong>Description</strong></p></th>
 </tr>
 </thead>
 <tbody>
@@ -723,7 +699,7 @@ L’ajout d’un vocabulaire externe est possible au moyen des API pour la colle
 </ul>
 </li>
 </ul>
-<p>Exemple : Création d’un objet et d’un vocabulaire de type « feuille ».</p>
+<p><em>Exemple :</em> Création d’un objet et d’un vocabulaire de type « feuille ».</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="err">POST</span><span class="w"> </span><span class="p">{{</span><span class="err">url</span><span class="p">}}</span><span class="err">/admi</span><span class="kc">n</span><span class="mf">-e</span><span class="err">x</span><span class="kc">ternal</span><span class="err">/v</span><span class="mi">1</span><span class="err">/schema/u</span><span class="kc">n</span><span class="err">i</span><span class="kc">t</span>
 <span class="err">Accep</span><span class="kc">t</span><span class="p">:</span><span class="w"> </span><span class="err">applica</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="err">/jso</span><span class="kc">n</span>
 <span class="err">Co</span><span class="kc">ntent</span><span class="mi">-</span><span class="err">Type</span><span class="p">:</span><span class="w"> </span><span class="err">applica</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="err">/jso</span><span class="kc">n</span>
@@ -798,7 +774,7 @@ L’ajout d’un vocabulaire externe est possible au moyen des API pour la colle
 </ul>
 </li>
 </ul>
-<p>Exemple : Enregistrement d’un vocabulaire de type « feuille » dans la collection « Unit » (base « Masterdata »).</p>
+<p><em>Exemple :</em> Enregistrement d’un vocabulaire de type « feuille » dans la collection « Unit » (base « Masterdata »).</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">    </span><span class="err">_id</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;aeaaaaaaaag</span><span class="kc">tf</span><span class="err">hyvadjsqamrbc</span><span class="mi">6</span><span class="kc">f</span><span class="err">vsiaaaaq&#39;</span><span class="p">,</span>
 <span class="w">    </span><span class="err">Origi</span><span class="kc">n</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;EXTERNAL&#39;</span><span class="p">,</span>
@@ -824,10 +800,13 @@ L’ajout d’un vocabulaire externe est possible au moyen des API pour la colle
 <li><p>une cardinalité, dont la valeur doit être égale à « ONE », « ONE_REQUIRED », « MANY » ou « MANY_REQUIRED » (Cardinality),</p></li>
 </ul>
 </li>
-<li><p>les informations optionnelles si elles n’ont pas été envoyées dans la solution logicielle Vitam, héritées de l’ontologie :
-- un intitulé (ShortName),
-- une description (Description),
-- le type d’indexation (Type) dont les valeurs peuvent être égales à « DATE », « TEXT », « KEYWORD », « BOOLEAN », « LONG », « DOUBLE », « ENUM »<a class="footnote-reference brackets" href="#id16" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a> ;</p></li>
+<li><p>les informations optionnelles si elles n’ont pas été envoyées dans la solution logicielle Vitam, héritées de l’ontologie :</p>
+<ul>
+<li><p>un intitulé (ShortName),</p></li>
+<li><p>une description (Description),</p></li>
+<li><p>le type d’indexation (Type) dont les valeurs peuvent être égales à « DATE », « TEXT », « KEYWORD », « BOOLEAN », « LONG », « DOUBLE », « ENUM »<a class="footnote-reference brackets" href="#id16" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a> ;</p></li>
+</ul>
+</li>
 <li><p>des informations générées systématiquement par la solution logicielle Vitam :</p>
 <ul>
 <li><p>un nom de vocabulaire (« FieldName »),</p></li>
@@ -859,7 +838,7 @@ L’ajout d’un vocabulaire externe est possible au moyen des API pour la colle
 </ul>
 </li>
 </ul>
-<p>Exemple : Enregistrement d’un vocabulaire de type « feuille » dans le schéma interne.</p>
+<p><em>Exemple :</em> Enregistrement d’un vocabulaire de type « feuille » dans le schéma interne.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">      </span><span class="nt">&quot;FieldName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MyText&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;tenant&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
@@ -906,7 +885,7 @@ La suppression d’un vocabulaire externe est possible au moyen des API pour la 
 <li><p>supprimer un vocabulaire externe dans le schéma depuis les interfaces de VitamUI ;</p></li>
 <li><p>supprimer un vocabulaire externe pour la collection « ObjectGroup ».</p></li>
 </ul>
-<p>Exemple : Suppression d’un vocabulaire externe « MyText ».</p>
+<p><em>Exemple :</em> Suppression d’un vocabulaire externe « MyText ».</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="err">DELETE</span><span class="w"> </span><span class="p">{{</span><span class="err">url</span><span class="p">}}</span><span class="err">/admi</span><span class="kc">n</span><span class="mf">-e</span><span class="err">x</span><span class="kc">ternal</span><span class="err">/v</span><span class="mi">1</span><span class="err">/schema/u</span><span class="kc">n</span><span class="err">i</span><span class="kc">t</span>
 <span class="err">Accep</span><span class="kc">t</span><span class="p">:</span><span class="w"> </span><span class="err">applica</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="err">/jso</span><span class="kc">n</span>
 <span class="err">Co</span><span class="kc">ntent</span><span class="mi">-</span><span class="err">Type</span><span class="p">:</span><span class="w"> </span><span class="err">applica</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="err">/jso</span><span class="kc">n</span>
@@ -939,7 +918,7 @@ La suppression d’un vocabulaire externe est possible au moyen des API pour la 
 <li><p>la liste des vocabulaires internes et, le cas échéant, externes de la collection « Unit »,</p></li>
 <li><p>la liste des vocabulaires internes de la collection « ObjectGroup ».</p></li>
 </ul>
-<p>Exemple : Requête en vue de rechercher les vocabulaires de la collection « Unit ».</p>
+<p><em>Exemple :</em> Requête en vue de rechercher les vocabulaires de la collection « Unit ».</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="err">GET</span><span class="w"> </span><span class="p">{{</span><span class="err">url</span><span class="p">}}</span><span class="err">/admi</span><span class="kc">n</span><span class="mf">-e</span><span class="err">x</span><span class="kc">ternal</span><span class="err">/v</span><span class="mi">1</span><span class="err">/schema/u</span><span class="kc">n</span><span class="err">i</span><span class="kc">t</span><span class="w"> </span>
 <span class="err">Accep</span><span class="kc">t</span><span class="p">:</span><span class="w"> </span><span class="err">applica</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="err">/jso</span><span class="kc">n</span><span class="w"> </span>
 <span class="err">Co</span><span class="kc">ntent</span><span class="mi">-</span><span class="err">Type</span><span class="p">:</span><span class="w"> </span><span class="err">applica</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="err">/jso</span><span class="kc">n</span><span class="w"> </span>
@@ -947,7 +926,7 @@ La suppression d’un vocabulaire externe est possible au moyen des API pour la 
 <span class="err">X</span><span class="mi">-</span><span class="err">Access</span><span class="mi">-</span><span class="err">Co</span><span class="kc">ntra</span><span class="err">c</span><span class="kc">t</span><span class="mi">-</span><span class="err">Id</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">access</span><span class="mi">-</span><span class="err">co</span><span class="kc">ntra</span><span class="err">c</span><span class="kc">t</span><span class="p">}}</span>
 </pre></div>
 </div>
-<p>Exemple : Requête en vue de rechercher les vocabulaires de la collection « ObjectGroup ».</p>
+<p><em>Exemple :</em> Requête en vue de rechercher les vocabulaires de la collection « ObjectGroup ».</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="err">GET</span><span class="w"> </span><span class="p">{{</span><span class="err">url</span><span class="p">}}</span><span class="err">/admi</span><span class="kc">n</span><span class="mf">-e</span><span class="err">x</span><span class="kc">ternal</span><span class="err">/v</span><span class="mi">1</span><span class="err">/schema/objec</span><span class="kc">t</span>
 <span class="err">Accep</span><span class="kc">t</span><span class="p">:</span><span class="w"> </span><span class="err">applica</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="err">/jso</span><span class="kc">n</span><span class="w"> </span>
 <span class="err">Co</span><span class="kc">ntent</span><span class="mi">-</span><span class="err">Type</span><span class="p">:</span><span class="w"> </span><span class="err">applica</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="err">/jso</span><span class="kc">n</span><span class="w"> </span>
@@ -970,15 +949,15 @@ La suppression d’un vocabulaire externe est possible au moyen des API pour la 
 <li><p>depuis la recherche sur l’ensemble des métadonnées, internes comme externes,</p></li>
 <li><p>depuis le détail des métadonnées descriptives d’une unité archivistique.</p></li>
 </ul>
-<p>Exemple 1 : Recherche dite « Autres critères » accessible depuis l’APP « Recherche et consultation des archives »</p>
+<p><em>Exemple 1 :</em> Recherche dite « Autres critères » accessible depuis l’APP « Recherche et consultation des archives »</p>
 <p><img alt="" src="../_images/APP_recherche_1.png" /></p>
-<p>Exemple 2 : Edition dynamique de métadonnées descriptives pour modification d’une unité archivistique</p>
+<p><em>Exemple 2 :</em> Edition dynamique de métadonnées descriptives pour modification d’une unité archivistique</p>
 <p><img alt="" src="../_images/APP_recherche_2.png" /></p>
 </section>
 <section id="personnalisation-des-masques-de-saisie">
 <h4><span class="section-number">12.4.2.3. </span>Personnalisation des masques de saisie<a class="headerlink" href="#personnalisation-des-masques-de-saisie" title="Lien vers cette rubrique"></a></h4>
 <p>La solution logicielle Vitam permet d’accéder à la liste des métadonnées requises par un profil d’unité archivistique, qu’il s’agisse de vocabulaires internes ou, le cas échéant, de vocabulaires externes de la collection « Unit ».</p>
-<p>Exemple : Requête en vue de rechercher les vocabulaires utilisés par le profil d’unité archivistique dont l’identifiant est  « AUP-00001 » :</p>
+<p><em>Exemple :</em> Requête en vue de rechercher les vocabulaires utilisés par le profil d’unité archivistique dont l’identifiant est  « AUP-00001 » :</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="err">GET</span><span class="w"> </span><span class="p">{{</span><span class="err">url</span><span class="p">}}</span><span class="err">/admi</span><span class="kc">n</span><span class="mf">-e</span><span class="err">x</span><span class="kc">ternal</span><span class="err">/v</span><span class="mi">1</span><span class="err">/archiveu</span><span class="kc">n</span><span class="err">i</span><span class="kc">t</span><span class="err">pro</span><span class="kc">f</span><span class="err">iles/AUP</span><span class="mi">-00001</span><span class="err">/schema</span>
 <span class="err">Accep</span><span class="kc">t</span><span class="p">:</span><span class="w"> </span><span class="err">applica</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="err">/jso</span><span class="kc">n</span>
 <span class="err">Co</span><span class="kc">ntent</span><span class="mi">-</span><span class="err">Type</span><span class="p">:</span><span class="w"> </span><span class="err">applica</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="err">/jso</span><span class="kc">n</span>
@@ -1008,7 +987,7 @@ La suppression d’un vocabulaire externe est possible au moyen des API pour la 
 </ul>
 </li>
 </ul>
-<p>Exemple : Résultats possibles suite à une requête en vue de rechercher les vocabulaires utilisés par le profil d’unité archivistique dont l’identifiant est  « AUP-00001 » :</p>
+<p><em>Exemple :</em> Résultats possibles suite à une requête en vue de rechercher les vocabulaires utilisés par le profil d’unité archivistique dont l’identifiant est  « AUP-00001 » :</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="err">...</span><span class="p">]</span>
 <span class="p">{</span><span class="w"> </span><span class="nt">&quot;FieldName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SystemId&quot;</span><span class="p">,</span><span class="w"> </span>
 <span class="nt">&quot;SedaField&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SystemId&quot;</span><span class="p">,</span><span class="w"> </span>
@@ -13743,7 +13722,7 @@ Point d’attention :</p></li>
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="id11" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
-<p>Pour plus de précisions, consulter la section 3. « Formalisation des vocabulaires du schéma » du présent document.</p>
+<p>Pour plus de précisions, consulter la <a class="reference internal" href="#formalisation-des-vocabulaires-du-schema"><span class="xref myst">section « Formalisation des vocabulaires du schéma » du présent document</span></a>.</p>
 </aside>
 <aside class="footnote brackets" id="id12" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
@@ -13771,7 +13750,7 @@ Point d’attention :</p></li>
 </aside>
 <aside class="footnote brackets" id="id18" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id8">8</a><span class="fn-bracket">]</span></span>
-<p>Les règles propres au nommage d’un vocabulaire sont définies dans la partie « Conseils de mise en œuvre » du présent document.</p>
+<p>Les règles propres au nommage d’un vocabulaire sont définies dans la <a class="reference internal" href="#conseils-de-mise-en-%C5%93uvre"><span class="xref myst">partie « Conseils de mise en œuvre » du présent document</span></a>.</p>
 </aside>
 </aside>
 </section>
@@ -13817,6 +13796,10 @@ Point d’attention :</p></li>
       <dd><a href="../../master_7.1.x/index.html">master_7.1.x</a></dd>
       <dd><a href="../../master_8.0.x/sections/schema.html">master_8.0.x</a></dd>
       <dd><a href="../../v8.1_Resip_mathilde/sections/schema.html">v8.1_Resip_mathilde</a></dd>
+      <dd><a href="../../v81_preservation/sections/schema.html">v81_preservation</a></dd>
+      <dd><a href="../../v81_transfert/sections/schema.html">v81_transfert</a></dd>
+      <dd><a href="../../v81_valeur_probante/sections/schema.html">v81_valeur_probante</a></dd>
+      <dd><a href="../../v81_workflow/sections/schema.html">v81_workflow</a></dd>
     </dl>
   </div>
 </div><script>

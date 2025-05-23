@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>24. Le référentiel des règles de gestion dans la solution logicielle Vitam &mdash; Vitam documentation fonctionnelle</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=eea1f72d" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f4732e6d"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/translations.js?v=bf059b8c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="25. Le référentiel des services agents dans la solution logicielle Vitam" href="Vademecum_referentiel_sa.html" />
+    <link rel="prev" title="23. Le référentiel des scénarios de préservation dans la solution logicielle Vitam" href="Vademecum_referentiel_preservation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: white" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/Vitam_Logo-CMJN.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">première approche</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="guide_lecture.html">1. Documentation Vitam - guide de lecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="presentation_programme.html">2. Présentation du programme Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="presentation_solution_logicielle.html">3. Présentation de la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_prise_en_main.html">4. Guide de prise en main de la solution logicielle Vitam – Vitam UI<br>
+<em>Réaliser une première entrée</em></a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">documentation métier</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="organisation_information.html">1. Organisation de l’information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gestion_archives_arbo.html">2. Gestion des archives et des arborescences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_donnees.html">3. Modèle de données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SIP.html">4. Structuration des <em>Submission Information Packages</em> (SIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DIP.html">5. Structuration des <em>Dissemination Information Packages</em> (DIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gestion_habilitations.html">6. Gestion des habilitations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regles_gestion.html">7. Règles de gestion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services_prod.html">8. Services producteurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_archivage.html">9. Profils d’archivage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_unite_archivistique.html">10. Profils d’unité archivistique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ontologie.html">11. Ontologie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="schema.html">12. Schéma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_workflow.html">13. Description des workflows et des opérations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_de_collecte.html">14. Module de collecte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eliminations.html">15. Les éliminations avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gel.html">16. Le gel d’archives avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preservation.html">17. Gestion de la préservation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stockage.html">18. Gestion de multiples stratégies de stockage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transfert.html">19. Le transfert avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="valeur_probante.html">20. Conservation de la valeur probante</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">documentation Vitam UI</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Autoprovisionning.html">1. Vitam UI : présentation de la fonctionnalité d’auto-provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Arbres_Plans.html">2. APP Arbres et plans</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">outils connexes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="resip.html">1. RESIP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resip_faq.html">2. RESIP : foire aux questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pastis_standalone.html">3. PASTIS STANDALONE</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Chantier préservation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="chantier_preservation_validation_format.html">1. Validation du format des fichiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_identification_format.html">2. Identification des formats de fichiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_extraction_MD.html">3. Extraction des métadonnées techniques</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Vademecum</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_sommaire.html">1. Vademecum: sommaire thématique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_glossaire.html">2. Notions utilisées dans la solution logicielle Vitam et lien vers la fiche qui les définit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_arbre.html">3. L’arbre de positionnement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_audit.html">4. Les audits dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_classification.html">5. La gestion des archives classifiées avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_acces.html">6. Le contrat d’accès dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_entree.html">7. Le contrat d’entrée dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_gestion.html">8. Le contrat de gestion dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_echeances.html">9. Le calcul des héritages des règles de gestion et l’indexation des échéances dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_eliminations.html">10. Réaliser des éliminations d’archives avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_habilitations.html">11. La gestion des droits et permissions des utilisateurs applicatifs dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_identifiants.html">12. L’attribution des identifiants dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_journalisation.html">13. La journalisation et la conservation de la valeur probante dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_ontologie.html">14. L’ontologie dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_pa.html">15. Les profils d’archivage dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_parametrages_pf.html">16. Le paramétrage fonctionnel d’une plate-forme utilisant la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_plan.html">17. Le plan de classement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_preservation.html">18. La préservation dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_pua.html">19. Les profils d’unité archivistique dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_rattachement.html">20. Faire un rattachement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_formats.html">21. Le référentiel des formats dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_griffons.html">22. Le référentiel des griffons dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_preservation.html">23. Le référentiel des scénarios de préservation dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">24. Le référentiel des règles de gestion dans la solution logicielle Vitam</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#presentation-du-referentiel-des-regles-de-gestion">24.1. Présentation du référentiel des règles de gestion</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#perimetre-du-referentiel-des-regles-de-gestion">24.1.1. Périmètre du référentiel des règles de gestion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#controles-effectues-a-partir-du-referentiel-des-regles-de-gestion">24.1.2. Contrôles effectués à partir du référentiel des règles de gestion</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#configuration-du-referentiel-des-regles-de-gestion">24.2. Configuration du référentiel des règles de gestion</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#constitution-du-referentiel-des-regles-de-gestion">24.2.1. Constitution du référentiel des règles de gestion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#transposition-dun-referentiel-existant-dans-un-referentiel-des-regles-de-gestion-conforme-aux-attendus-de-la-solution-logicielle-vitam">24.2.2. Transposition d’un référentiel existant dans un référentiel des règles de gestion conforme aux attendus de la solution logicielle Vitam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gestion-des-identifiants-des-regles-de-gestion">24.2.3. Gestion des identifiants des règles de gestion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuration-dune-duree-minimale-acceptable-pour-une-categorie-de-regle-sur-un-tenant">24.2.4. Configuration d’une durée minimale acceptable pour une catégorie de règle sur un tenant</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#formalisation-du-referentiel-des-regles-de-gestion">24.2.5. Formalisation du référentiel des règles de gestion</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#modification-du-referentiel-des-regles-de-gestion">24.3. Modification du référentiel des règles de gestion</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_sa.html">25. Le référentiel des services agents dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_registre_fonds.html">26. Le registre des fonds dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_structuration_information.html">27. La structuration des informations dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_suivi_acces.html">28. Le suivi des accès dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_tenant.html">29. Les tenants dans la solution logicielle Vitam</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: white" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Documentation utilisateur Vitam</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">24. </span>Le référentiel des règles de gestion dans la solution logicielle Vitam</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/sections/Vademecum_referentiel_rg.md.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+
+           <div itemprop="articleBody">
+             
+  <section id="le-referentiel-des-regles-de-gestion-dans-la-solution-logicielle-vitam">
+<h1><span class="section-number">24. </span>Le référentiel des règles de gestion dans la solution logicielle Vitam<a class="headerlink" href="#le-referentiel-des-regles-de-gestion-dans-la-solution-logicielle-vitam" title="Lien vers cette rubrique"></a></h1>
+<p>Le référentiel des règles de gestion recense toutes les règles applicables aux archives. C’est un outil  structurant et essentiel pour la mise en œuvre dans le SAE de la politique d’archivage.<br>
+En effet, il permet le calcul automatique des dates d’échéance ainsi que la mise en œuvre des traitements d’élimination, de transfert ou de déclassification.<br>
+Il est structuré autour des six catégories de règles applicables aux archives définies par le SEDA : durée d’utilité courante (StorageRule), durée d’utilité administrative (AppraisalRule), délai de communicabilité (AccessRule), délai de réutilisation (ReuseRule), délai de diffusion (DisseminationRule), durée de classification (ClassificationRule), auxquelles s’ajoute le gel (HoldRule).</p>
+<section id="presentation-du-referentiel-des-regles-de-gestion">
+<h2><span class="section-number">24.1. </span>Présentation du référentiel des règles de gestion<a class="headerlink" href="#presentation-du-referentiel-des-regles-de-gestion" title="Lien vers cette rubrique"></a></h2>
+<section id="perimetre-du-referentiel-des-regles-de-gestion">
+<h3><span class="section-number">24.1.1. </span>Périmètre du référentiel des règles de gestion<a class="headerlink" href="#perimetre-du-referentiel-des-regles-de-gestion" title="Lien vers cette rubrique"></a></h3>
+<p>Un référentiel des règles de gestion est propre au tenant sur lequel il a été importé.</p>
+</section>
+<section id="controles-effectues-a-partir-du-referentiel-des-regles-de-gestion">
+<h3><span class="section-number">24.1.2. </span>Contrôles effectués à partir du référentiel des règles de gestion<a class="headerlink" href="#controles-effectues-a-partir-du-referentiel-des-regles-de-gestion" title="Lien vers cette rubrique"></a></h3>
+<p>Lors d’une entrée, la solution logicielle Vitam vérifie que les règles de gestion déclarées dans le bordereau, au niveau global ou au niveau de chaque unité archivistique, sont bien décrites dans le référentiel et relèvent de la bonne catégorie.
+Si une date de départ pour le calcul de la règle est présente, la solution logicielle calcule automatiquement la date d’échéance.</p>
+<p><em>Point d’attention :</em> Si des règles de gestion sont déclarées dans le bordereau de transfert, un référentiel des règles de gestion permettant de les contrôler est obligatoire. En cas d’absence de ce référentiel, la vérification de la conformité des identifiants de règle présents dans le bordereau de transfert ne pourra être réalisée et l’entrée sera rejetée.</p>
+<p>En cas de mise à jour des règles de gestion applicables à une ou plusieurs unités archivistiques, la solution logicielle Vitam effectue les actions suivantes :</p>
+<ul class="simple">
+<li><p>vérification que les identifiants de règle déclarés sont bien présents dans le référentiel des règles de gestion et sont dans la bonne catégorie ;</p></li>
+<li><p>si une date de départ est déclarée pour cette règle, calcul de la date d’échéance ;</p></li>
+<li><p>si la date de départ est modifiée, calcul de la nouvelle date d’échéance.</p></li>
+</ul>
+</section>
+</section>
+<section id="configuration-du-referentiel-des-regles-de-gestion">
+<h2><span class="section-number">24.2. </span>Configuration du référentiel des règles de gestion<a class="headerlink" href="#configuration-du-referentiel-des-regles-de-gestion" title="Lien vers cette rubrique"></a></h2>
+<section id="constitution-du-referentiel-des-regles-de-gestion">
+<h3><span class="section-number">24.2.1. </span>Constitution du référentiel des règles de gestion<a class="headerlink" href="#constitution-du-referentiel-des-regles-de-gestion" title="Lien vers cette rubrique"></a></h3>
+<p>L’administrateur fonctionnel constitue le référentiel des règles de gestion à partir du recensement des règles applicables dans son entité.
+Par exemple :</p>
+<ul class="simple">
+<li><p>délais de communicabilité du code du patrimoine applicables au secret des délibérations du gouvernement, aux registres de l’état civil, aux dossiers d’agents ;</p></li>
+<li><p>durée d’utilité administrative applicable aux dossiers de marchés publics ou aux dossiers de travaux ;</p></li>
+<li><p>durée d’utilité courante applicable aux données personnelles d’une application recensant les bénéficiaires d’une allocation ;</p></li>
+<li><p>délai de diffusion des archives numérisées (état civil, recensement..) ;</p></li>
+<li><p>délai de réutilisation des archives publiques sur lequel un tiers a un droit de propriété intellectuelle ;</p></li>
+<li><p>durée de classification des documents relatifs aux opérations extérieures protégés au titre du secret de la défense nationale ;</p></li>
+<li><p>gel judiciaire…
+À chaque motif, à l’exception du gel où c’est optionnel, l’administrateur fonctionnel associe une durée qui peut être exprimée en années, mais également en mois ou en jours</p></li>
+</ul>
+<p>Le référentiel des règles de gestion peut être alimenté, pour chaque catégorie de règle :</p>
+<ul class="simple">
+<li><p>d’une manière très générique, en se focalisant uniquement sur les durées associées aux règles. À titre d’exemple, il est possible de déclarer, pour les règles d’utilité courante ou les règles d’utilité administrative, des règles correspondant à des durées d’1 an, de 2 ans, de 3 ans, etc. Dans ce cas, la règle pourra être utilisée pour différentes catégories de dossiers ;</p></li>
+<li><p>d’une manière plus spécifique, en distinguant finement, pour chaque catégorie, les différentes typologies ou motifs, ce qui facilitera les mises à jour ultérieures, par exemple en cas de changement de réglementation. Ainsi :</p>
+<ul>
+<li><p>pour un délai de communicabilité dont la durée est de 25 ans, il est intéressant de créer autant de règles que de motifs définis par le code du patrimoine, de sorte que si ce délai changeait uniquement pour les documents relatifs à la recherche par les services compétents des infractions fiscales et douanières, par exemple, seule la règle concernant ces derniers serait à mettre à jour dans le référentiel en indiquant la nouvelle durée applicable, sans qu’une vérification systématique de tous les documents communicables à 25 ans soit nécessaire pour déterminer la catégorie de secret applicable ;</p></li>
+<li><p>pour la catégorie « Durée d’utilité administrative », la création d’autant de règles que de motifs ou de typologies documentaires permet de discriminer plus facilement les documents lors d’une campagne d’évaluation des documents éliminables en permettant à l’archiviste de regrouper les documents par catégories documentaires (documents éliminables en application d’une règle concernant les offres rejetées, documents éliminables en application d’une règle concernant les bulletins de salaire, etc.).</p></li>
+</ul>
+</li>
+</ul>
+<p>La première solution présente l’avantage de limiter le nombre de règles à administrer ; la seconde, de permettre d’effectuer des mises à jour de règles plus ciblées et de faciliter l’évaluation d’archives éliminables.</p>
+</section>
+<section id="transposition-dun-referentiel-existant-dans-un-referentiel-des-regles-de-gestion-conforme-aux-attendus-de-la-solution-logicielle-vitam">
+<h3><span class="section-number">24.2.2. </span>Transposition d’un référentiel existant dans un référentiel des règles de gestion conforme aux attendus de la solution logicielle Vitam<a class="headerlink" href="#transposition-dun-referentiel-existant-dans-un-referentiel-des-regles-de-gestion-conforme-aux-attendus-de-la-solution-logicielle-vitam" title="Lien vers cette rubrique"></a></h3>
+<p>Pour constituer son référentiel des règles de gestion, l’administrateur fonctionnel peut reprendre, pour la catégorie « Durée d’utilité administrative », les tableaux de gestion/référentiels de conservation existants dans son entité.</p>
+<p><em>Exemple avec un extrait du tableau de gestion publié par le Service interministériel des archives de France « Préconisations relatives au tri et à la conservation des archives produites par les communes et structures intercommunales dans leurs domaines d’activité spécifiques » (DGP/SIAF/2014/006).</em>
+<img alt="exemple" src="../_images/referentiel_rg.png" /></p>
+<p>Pour transposer ce document dans la formalisation attendue dans la solution logicielle Vitam (pour plus de détails, cf. infra Formalisation du référentiel des règles de gestion), l’administrateur fonctionnel reprendra pour chacune des règles :</p>
+<ul class="simple">
+<li><p>l’identifiant (« Id. ») pour renseigner la colonne « RuleId » du référentiel des règles de gestion (identifiant de la règle),</p></li>
+<li><p>le chiffre indiqué dans la DUA pour renseigner la colonne « RuleDuration » du référentiel (dans cet exemple, les valeurs sont 1, 3, 5 ou 10),</p></li>
+<li><p>l’unité de mesure de la DUA pour renseigner la colonne « RuleMeasurement » du référentiel (dans cet exemple, c’est systématiquement l’année),</p></li>
+<li><p>la typologie des documents pour renseigner la colonne « RuleValue » du référentiel (intitulé de la règle),</p></li>
+<li><p>les informations en observation pour alimenter si besoin la colonne « RuleDescription » du référentiel (description de la règle).
+L’administrateur du référentiel devra ensuite ajouter un « RuleType » correspondant à la catégorie de la règle (ici, « Durée d’utilité administrative », soit « AppraisalRule » dans la solution logicielle Vitam).</p></li>
+</ul>
+<p>Le fichier .csv se présentera comme suit :
+<img alt="fichier csv" src="../_images/referentiel_rg2.png" /></p>
+<p>Dans l’interface de démonstration de la solution logicielle Vitam, le référentiel des règles de gestion se présentera comme suit :
+<img alt="interface" src="../_images/referentiel_rg3.png" /></p>
+<p>Dans cet exemple, on a fait le choix de reprendre les titres de rubrique (Service national, Jury d’assises…) comme préfixe de chaque intitulé de règle pour permettre un tri par intitulé.<br>
+Le service d’archives peut également attribuer des identifiants signifiants aux règles de gestion. On pourrait par exemple attribuer à toutes les règles de durée d’utilité administrative concernant le recensement de la population un identifiant de type 1XXX, à toutes les règles de durée d’utilité administrative concernant les jurys d’assises un identifiant de type 2XXX, ce qui permettrait de grouper facilement les règles relatives à une même action administrative lors de l’affichage dans une interface graphique.</p>
+<p>Le sort final pour les catégories « Durée d’utilité administrative » et « Durée d’utilité courante » ne fait pas partie de la règle : c’est une propriété qui sera déclarée au niveau de l’unité archivistique en plus de l’identifiant de la règle applicable.</p>
+<p><em>Exemple :</em> l’instruction « Préconisations relatives au tri et à la conservation des archives produites par les communes et structures intercommunales dans leurs domaines d’activité spécifiques » (DGP/SIAF/2014/006) distingue pour les rapports d’usage d’une arme le rapport adressé au maire (DUA de 3 ans et sort final Détruire) et le rapport du maire adressé au préfet et au procureur (DUA de 3 ans et Verser). Dans le référentiel des règles de gestion, il n’y aura qu’une règle de DUA de 3 ans pour cette typologie et chaque unité archivistique qui portera cette règle déclarera le sort final applicable.</p>
+<p><em>Nota bene :</em> Pour les délais de communicabilité, un référentiel validé par le Service interministériel des archives de France a été établi. Pour les délais de réutilisation et de diffusion, d’autres référentiels sont actuellement en cours de finalisation.</p>
+</section>
+<section id="gestion-des-identifiants-des-regles-de-gestion">
+<h3><span class="section-number">24.2.3. </span>Gestion des identifiants des règles de gestion<a class="headerlink" href="#gestion-des-identifiants-des-regles-de-gestion" title="Lien vers cette rubrique"></a></h3>
+<p>Le référentiel des règles de gestion fonctionne en mode « esclave ». Le plus souvent en effet, le référentiel du SAE sera constitué d’un export du référentiel maître applicable aux archives papier comme électroniques piloté par le SIA. Cela permet de garder une unité dans la dénomination (identifiant) des règles, quel que soit le support auquel elles s’appliquent.</p>
+</section>
+<section id="configuration-dune-duree-minimale-acceptable-pour-une-categorie-de-regle-sur-un-tenant">
+<h3><span class="section-number">24.2.4. </span>Configuration d’une durée minimale acceptable pour une catégorie de règle sur un tenant<a class="headerlink" href="#configuration-dune-duree-minimale-acceptable-pour-une-categorie-de-regle-sur-un-tenant" title="Lien vers cette rubrique"></a></h3>
+<p>Afin de se prémunir contre une alimentation du référentiel des règles de gestion avec des durées trop courtes susceptibles de déclencher des actions indésirables sur la plate-forme (ex. éliminations), la solution logicielle Vitam vérifie que la durée de chaque règle est supérieure ou égale à une durée minimale définie lors du paramétrage de la plate-forme, dans un fichier de configuration.
+Cette configuration, optionnelle, est établie par les administrateurs – fonctionnel pour la définition du besoin et technique pour la saisie réelle des informations – de chaque implémentation de la solution logicielle Vitam et définit, pour chaque tenant et pour chaque catégorie de règle, les durées minimales acceptables.
+Le fichier de configuration se présente comme suit (exemple fictif) :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">listMinimumRuleDuration</span><span class="p">:</span>
+  <span class="mi">2</span><span class="p">:</span>
+    <span class="n">AppraisalRule</span> <span class="p">:</span> <span class="mi">1</span> <span class="n">year</span>
+    <span class="n">DisseminationRule</span> <span class="p">:</span> <span class="mi">10</span> <span class="n">year</span>
+
+  <span class="mi">3</span><span class="p">:</span>
+    <span class="n">AppraisaleRule</span> <span class="p">:</span> <span class="mi">5</span> <span class="n">year</span>
+    <span class="n">StorageRule</span> <span class="p">:</span> <span class="mi">5</span> <span class="n">year</span>
+    <span class="n">ReuseRule</span> <span class="p">:</span> <span class="mi">2</span> <span class="n">year</span>
+</pre></div>
+</div>
+<p>Dans cet exemple, il n’est pas possible d’importer sur le tenant 2 un référentiel des règles de gestion déclarant une règle dans la catégorie « Durée d’utilité administrative » dont la durée est égale ou inférieure à un an ni déclarant une règle dans la catégorie « Délai de diffusion » dont la durée est inférieure ou égale à dix ans. Pour les autres catégories de règle, aucune vérification sur une durée minimale n’est effectuée.<br>
+Sur le tenant 3, les contrôles portent sur les catégories « Durée d’utilité administrative » (pas de règle dont la durée est inférieure ou égale à cinq ans), « Durée d’utilité courante » (pas de règle dont la durée est inférieure ou égale à cinq ans) et « Délai de réutilisation » (pas de règle dont la durée est inférieure ou égale à deux ans).</p>
+<p>La tentative d’import ou de mise à jour d’un référentiel déclarant des règles dont la durée est inférieure ou égale aux données minimales saisies dans le fichier de configuration, déclenchera une alerte de sécurité qui sera transmise à l’administrateur technique de la plate-forme. L’import et la mise à jour seront alors rejetés.</p>
+</section>
+<section id="formalisation-du-referentiel-des-regles-de-gestion">
+<h3><span class="section-number">24.2.5. </span>Formalisation du référentiel des règles de gestion<a class="headerlink" href="#formalisation-du-referentiel-des-regles-de-gestion" title="Lien vers cette rubrique"></a></h3>
+<p>Le référentiel des règles de gestion est importé dans la solution logicielle Vitam sous la forme d’un fichier .csv comportant les colonnes suivantes :</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Nom de la colonne</p></th>
+<th class="head text-left"><p>Description de la colonne</p></th>
+<th class="head text-left"><p>Valeurs possibles</p></th>
+<th class="head text-left"><p>Observations</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>RuleId</p></td>
+<td class="text-left"><p>Identifiant de la règle</p></td>
+<td class="text-left"><p></p></td>
+<td class="text-left"><p>Cet identifiant :<br>- doit être unique par catégorie de règle<br>- ne doit pas comprendre d’espace ou de caractère accentué</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>RuleType</p></td>
+<td class="text-left"><p>Type de règle</p></td>
+<td class="text-left"><p>AccessRule<br>AppraisalRule<br>ClassificationRule<br>DisseminationRule<br>ReuseRule<br>StorageRule<br>HoldRule</p></td>
+<td class="text-left"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>RuleValue</p></td>
+<td class="text-left"><p>Intitulé de la règle</p></td>
+<td class="text-left"><p></p></td>
+<td class="text-left"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>RuleDescription</p></td>
+<td class="text-left"><p>Description de la règle</p></td>
+<td class="text-left"><p></p></td>
+<td class="text-left"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>RuleDuration</p></td>
+<td class="text-left"><p>Durée</p></td>
+<td class="text-left"><p></p></td>
+<td class="text-left"><p>La valeur de ce champ doit être un entier positif compris entre 0 et 999</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>RuleMeasurement</p></td>
+<td class="text-left"><p>Unité de mesure de la durée</p></td>
+<td class="text-left"><p>DAY<br>MONTH<br>YEAR</p></td>
+<td class="text-left"><p></p></td>
+</tr>
+</tbody>
+</table>
+<p>Le fichier .csv à importer doit avoir les caractéristiques suivantes :</p>
+<ul class="simple">
+<li><p>encodage des caractères : UTF-8 ;</p></li>
+<li><p>séparateur de champ : la virgule ;</p></li>
+<li><p>séparateur de texte : guillemets simples ou doubles, espace vide.</p></li>
+</ul>
+<p>Pour en savoir plus, consulter le <a class="reference internal" href="modele_de_donnees.html"><span class="std std-doc">document VITAM. Modèle de données</span></a>.</p>
+<p>Les erreurs ou données en avertissement présentes dans le référentiel lors de la demande d’import initial sont retournées au demandeur sous la forme d’un fichier .json qui comprend les informations suivantes :</p>
+<ul class="simple">
+<li><p>indication du type d’opération concernée et date de celle-ci ;</p></li>
+<li><p>pour chaque ligne en erreur, le champ concerné, un message permettant à l’utilisateur de corriger l’erreur ainsi que la valeur erronée.</p></li>
+</ul>
+</section>
+</section>
+<section id="modification-du-referentiel-des-regles-de-gestion">
+<h2><span class="section-number">24.3. </span>Modification du référentiel des règles de gestion<a class="headerlink" href="#modification-du-referentiel-des-regles-de-gestion" title="Lien vers cette rubrique"></a></h2>
+<p>Le référentiel des règles de gestion ne peut pas être mis à jour unitairement (pour une règle uniquement). Il convient d’importer un nouveau fichier .csv contenant l’ensemble des règles de gestion en mode « annule et remplace ».</p>
+<p>Lors d’une mise à jour du référentiel, des contrôles sont effectués sur les règles déjà utilisées dans la solution logicielle Vitam, c’est-à-dire les règles déclarées par des unités archivistiques.
+Sont appliqués les cas suivants :</p>
+<ul class="simple">
+<li><p>échec de la mise à jour si celle-ci a demandé la suppression d’une règle déjà utilisée ;</p></li>
+<li><p>avertissement de la mise à jour si celle-ci a demandé la modification d’une règle déjà utilisée, que cette modification porte sur sa durée (valeur et/ou unité de mesure) ou sur sa description.</p></li>
+</ul>
+<p>Le rapport indique :</p>
+<ul class="simple">
+<li><p>la liste des règles dont la suppression est demandée alors qu’elles sont utilisées dans le système ;</p></li>
+<li><p>la liste des règles dont la modification est demandée alors qu’elles sont utilisées dans le système.</p></li>
+</ul>
+<p>La modification de la durée d’une règle de gestion (par exemple, une DUA qui passerait de trois à cinq ans) entraîne le recalcul automatique de toutes les dates d’échéance des unités archivistiques qui portent cette règle. L’opération est journalisée et les journaux de cycle de vie des unités archivistiques concernées sont mis à jour.</p>
+<p>Les différentes versions du référentiel font l’objet d’une sauvegarde sur les offres de stockage utilisées par l’implémentation de la solution logicielle Vitam.</p>
+<p>Pour aller plus loin, consulter le <a class="reference internal" href="regles_gestion.html"><span class="std std-doc">document VITAM. Règles de gestion</span></a>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="Vademecum_referentiel_preservation.html" class="btn btn-neutral float-left" title="23. Le référentiel des scénarios de préservation dans la solution logicielle Vitam" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="Vademecum_referentiel_sa.html" class="btn btn-neutral float-right" title="25. Le référentiel des services agents dans la solution logicielle Vitam" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2022, Programme Vitam.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: v81_workflow
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Branches</dt>
+      <dd><a href="../../master/sections/Vademecum_referentiel_rg.html">master</a></dd>
+      <dd><a href="../../master_7.1.x/sections/Vademecum_referentiel_rg.html">master_7.1.x</a></dd>
+      <dd><a href="../../master_8.0.x/sections/Vademecum_referentiel_rg.html">master_8.0.x</a></dd>
+      <dd><a href="../../v8.1_Resip_mathilde/sections/Vademecum_referentiel_rg.html">v8.1_Resip_mathilde</a></dd>
+      <dd><a href="../../v81_preservation/sections/Vademecum_referentiel_rg.html">v81_preservation</a></dd>
+      <dd><a href="../../v81_transfert/sections/Vademecum_referentiel_rg.html">v81_transfert</a></dd>
+      <dd><a href="../../v81_valeur_probante/sections/Vademecum_referentiel_rg.html">v81_valeur_probante</a></dd>
+      <dd><a href="Vademecum_referentiel_rg.html">v81_workflow</a></dd>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1. Vitam UI : présentation de la fonctionnalité d’auto-provisioning &mdash; Vitam documentation fonctionnelle</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=eea1f72d" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f4732e6d"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/translations.js?v=bf059b8c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="2. APP Arbres et plans" href="VitamUI_Arbres_Plans.html" />
+    <link rel="prev" title="20. Conservation de la valeur probante" href="valeur_probante.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: white" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/Vitam_Logo-CMJN.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">première approche</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="guide_lecture.html">1. Documentation Vitam - guide de lecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="presentation_programme.html">2. Présentation du programme Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="presentation_solution_logicielle.html">3. Présentation de la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_prise_en_main.html">4. Guide de prise en main de la solution logicielle Vitam – Vitam UI<br>
+<em>Réaliser une première entrée</em></a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">documentation métier</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="organisation_information.html">1. Organisation de l’information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gestion_archives_arbo.html">2. Gestion des archives et des arborescences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_donnees.html">3. Modèle de données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SIP.html">4. Structuration des <em>Submission Information Packages</em> (SIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DIP.html">5. Structuration des <em>Dissemination Information Packages</em> (DIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gestion_habilitations.html">6. Gestion des habilitations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regles_gestion.html">7. Règles de gestion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services_prod.html">8. Services producteurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_archivage.html">9. Profils d’archivage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_unite_archivistique.html">10. Profils d’unité archivistique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ontologie.html">11. Ontologie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="schema.html">12. Schéma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_workflow.html">13. Description des workflows et des opérations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_de_collecte.html">14. Module de collecte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eliminations.html">15. Les éliminations avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gel.html">16. Le gel d’archives avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preservation.html">17. Gestion de la préservation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stockage.html">18. Gestion de multiples stratégies de stockage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transfert.html">19. Le transfert avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="valeur_probante.html">20. Conservation de la valeur probante</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">documentation Vitam UI</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Vitam UI : présentation de la fonctionnalité d’auto-provisioning</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#besoins-et-contraintes-actuelles">1.1. Besoins et contraintes actuelles</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#synthese-des-trois-besoins-devolution-des-fonctions-dauthentification">1.1.1. Synthèse des trois besoins d’évolution des fonctions d’authentification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rappel-du-fonctionnement-actuel">1.1.2. Rappel du fonctionnement actuel</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#specification-fonctionnelle-pour-le-provisioning-automatise-des-utilisateurs">1.2. Spécification fonctionnelle pour le provisioning automatisé des utilisateurs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#principes-generaux">1.2.1. Principes généraux</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#concept-dunite">1.2.2. Concept d’unité</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#processus-dauto-provisioning-standard">1.2.3. Processus d’auto-provisioning standard</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#exemple">1.2.4. Exemple</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#evolution-des-interfaces-pour-gerer-lauto-provisioning-quand-lunite-est-fournie-par-un-referentiel-tiers">1.2.5. Evolution des interfaces pour gérer l’auto-provisioning quand l’unité est fournie par un référentiel tiers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#parametrages-des-unites-dans-les-groupes-de-profils">1.2.5.1. Paramétrages des unités dans les groupes de profils</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#parametrages-des-fournisseurs-didentite-idp-avec-auto-provisioning">1.2.5.2. Paramétrages des fournisseurs d’identité (IdP) avec auto-provisioning</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#parametrages-de-lauto-provisioning-au-niveau-de-lutilisateur">1.2.6. Paramétrages de l’auto-provisioning au niveau de l’utilisateur</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Arbres_Plans.html">2. APP Arbres et plans</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">outils connexes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="resip.html">1. RESIP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resip_faq.html">2. RESIP : foire aux questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pastis_standalone.html">3. PASTIS STANDALONE</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Chantier préservation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="chantier_preservation_validation_format.html">1. Validation du format des fichiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_identification_format.html">2. Identification des formats de fichiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_extraction_MD.html">3. Extraction des métadonnées techniques</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Vademecum</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_sommaire.html">1. Vademecum: sommaire thématique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_glossaire.html">2. Notions utilisées dans la solution logicielle Vitam et lien vers la fiche qui les définit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_arbre.html">3. L’arbre de positionnement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_audit.html">4. Les audits dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_classification.html">5. La gestion des archives classifiées avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_acces.html">6. Le contrat d’accès dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_entree.html">7. Le contrat d’entrée dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_gestion.html">8. Le contrat de gestion dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_echeances.html">9. Le calcul des héritages des règles de gestion et l’indexation des échéances dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_eliminations.html">10. Réaliser des éliminations d’archives avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_habilitations.html">11. La gestion des droits et permissions des utilisateurs applicatifs dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_identifiants.html">12. L’attribution des identifiants dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_journalisation.html">13. La journalisation et la conservation de la valeur probante dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_ontologie.html">14. L’ontologie dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_pa.html">15. Les profils d’archivage dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_parametrages_pf.html">16. Le paramétrage fonctionnel d’une plate-forme utilisant la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_plan.html">17. Le plan de classement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_preservation.html">18. La préservation dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_pua.html">19. Les profils d’unité archivistique dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_rattachement.html">20. Faire un rattachement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_formats.html">21. Le référentiel des formats dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_griffons.html">22. Le référentiel des griffons dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_preservation.html">23. Le référentiel des scénarios de préservation dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_rg.html">24. Le référentiel des règles de gestion dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_sa.html">25. Le référentiel des services agents dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_registre_fonds.html">26. Le registre des fonds dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_structuration_information.html">27. La structuration des informations dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_suivi_acces.html">28. Le suivi des accès dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_tenant.html">29. Les tenants dans la solution logicielle Vitam</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: white" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Documentation utilisateur Vitam</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">1. </span>Vitam UI : présentation de la fonctionnalité d’auto-provisioning</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/sections/VitamUI_Autoprovisionning.md.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+
+           <div itemprop="articleBody">
+             
+  <section id="vitam-ui-presentation-de-la-fonctionnalite-dauto-provisioning">
+<h1><span class="section-number">1. </span>Vitam UI : présentation de la fonctionnalité d’auto-provisioning<a class="headerlink" href="#vitam-ui-presentation-de-la-fonctionnalite-dauto-provisioning" title="Lien vers cette rubrique"></a></h1>
+<section id="besoins-et-contraintes-actuelles">
+<h2><span class="section-number">1.1. </span>Besoins et contraintes actuelles<a class="headerlink" href="#besoins-et-contraintes-actuelles" title="Lien vers cette rubrique"></a></h2>
+<section id="synthese-des-trois-besoins-devolution-des-fonctions-dauthentification">
+<h3><span class="section-number">1.1.1. </span>Synthèse des trois besoins d’évolution des fonctions d’authentification<a class="headerlink" href="#synthese-des-trois-besoins-devolution-des-fonctions-dauthentification" title="Lien vers cette rubrique"></a></h3>
+<p>La road-map VITAM UI a planifié trois besoins d’évolutions des fonctions du portail, par ordre de priorité :</p>
+<ul class="simple">
+<li><p>Assurer les créations et modifications d’utilisateurs au moment de l’authentification (auto-provisioning), ainsi que de leurs droits selon deux cas d’usages :</p>
+<ul>
+<li><p>le groupe de profils VITAM UI est préalablement connu dans le référentiel utilisateur tiers de l’organisation ;</p></li>
+<li><p>le groupe de profils doit être déduit au moment de l’authentification, selon plusieurs critères du référentiel utilisateur de l’organisation.</p></li>
+</ul>
+</li>
+<li><p>Permettre un nouveau mode d’authentification des utilisateurs par carte à puce portant un certificat d’identité de personne de type X509 ;</p></li>
+<li><p>Permettre à un utilisateur d’accéder à plusieurs organisations.</p></li>
+</ul>
+<p>Cette première fonctionnalité est en particulier nécessaire pour le CEA, avec un mode d’authentification par certificat.</p>
+<p>A noter que ces trois fonctions sont dépendantes :</p>
+<ul class="simple">
+<li><p>Le provisioning sera réalisé au moment de l’authentification (procédure synchrone) pour les opérations de création et de modification des utilisateurs.
+Ce système permet de provisionner uniquement les utilisateurs qui se sont authentifiés une première fois. Ceci permet de minimiser les charges d’administration.</p></li>
+<li><p>Le provisioning sera réalisé dans le processus d’authentification « délégué », soit en SSO, soit par certificat X509,</p></li>
+<li><p>En cas d’accès multi-organisation, le provisioning devra, à terme, permettre de provisionner des utilisateurs dans une ou plusieurs organisations.</p></li>
+</ul>
+<p>Ce document spécifie l’auto-provisioning pour le premier lot de développement.</p>
+</section>
+<section id="rappel-du-fonctionnement-actuel">
+<h3><span class="section-number">1.1.2. </span>Rappel du fonctionnement actuel<a class="headerlink" href="#rappel-du-fonctionnement-actuel" title="Lien vers cette rubrique"></a></h3>
+<p>Les fonctions portail sont documentées dans la <a class="reference external" href="http://www.programmevitam.fr/ressources/DocCourante/autres/fonctionnel/VitamUI_Doc_produit.pdf">documentation produit VITAM UI</a>.</p>
+<p>En synthèse, les modes d’authentification actuellement proposés sont :</p>
+<ul class="simple">
+<li><p>Login + mot de passe,</p></li>
+<li><p>OTP par validation d’un code SMS en option, paramétrable au niveau de l’organisation et/ou de l’utilisateur,</p></li>
+<li><p>SSO avec implémentation d’un protocole (OpenID, SAML V2 …).</p></li>
+</ul>
+<p>Techniquement, en cas d’usage d’un login / mot de passe, la mire d’authentification VITAM UI prend le rôle d’un fournisseur d’identité (IdP), l’authentification externe est bien réalisée en SSO après la saisie du login / mot de passe par l’utilisateur.<br />
+Après authentification au portail, l’accès à chaque APP est sécurisé par un cookie de session interne à l’écosystème VITAM UI.<br />
+L’utilisateur peut accéder uniquement aux APPs dans lequel un profil de droits lui est attribué, via un groupe de profils.</p>
+<p>L’administration des droits d’un utilisateur consiste à simplement lui affecter un groupe de profils préalablement configuré :</p>
+<ul class="simple">
+<li><p>Actuellement par une action d’administration dans l’APP Utilisateurs,</p></li>
+<li><p>Par une fonction de provisioning automatisé, lorsque l’IdP connait la référence du groupe de profil (nouvelle fonctionnalité, objet de ce document).</p></li>
+</ul>
+<p>Ceci induit qu’en cas d’usage d’un système de fédération d’identité et de droits par une organisation, il est de la responsabilité de ce référentiel tiers de gérer l’attribution des groupes de profils aux utilisateurs.</p>
+<p>Paramétrage des modes d’authentification :</p>
+<ul class="simple">
+<li><p>Le mode d’authentification est paramétré au niveau de l’instance, dans l’APP Organisation.</p></li>
+<li><p>Chaque organisation peut disposer d’un ou plusieurs IdP (Identity provider), identifiés par un pattern email (domaine).</p></li>
+</ul>
+<p>Administration des utilisateurs :</p>
+<ul class="simple">
+<li><p>Il est de la prérogative de l’administrateur d’une organisation d’attribuer des droits à ses utilisateurs</p></li>
+<li><p>Les groupes de profils sont spécifiques à chaque organisation</p></li>
+<li><p>Le groupe de profils est un concept cross-tenant à l’organisation : un utilisateur de l’organisation peut accéder à un ou plusieurs tenants de l’organisation</p></li>
+<li><p>Un utilisateur ne peut être affecté qu’à une organisation dans une instance, avec le même identifiant</p></li>
+<li><p>Un utilisateur doit disposer d’un email avec un des pattern email autorisés dans l’organisation (lié à un IdP de l’organisation)</p></li>
+</ul>
+<p>Identification de l’utilisateur :</p>
+<ul class="simple">
+<li><p>La solution dispose d’un annuaire interne. Chaque utilisateur dispose d’un identifiant unique « VITAM UI »</p></li>
+<li><p>L’annuaire interne gère les attributs de l’utilisateur, notamment l’email lui permettant de s’authentifier. L’utilisateur peut également disposer d’un identifiant technique de l’IdP, utilisé dans certaines implémentations du SSO.</p></li>
+<li><p>L’annuaire interne ne peut pas être substitué par un annuaire tiers car certaines informations sont nécessaires au fonctionnement de l’application (paramètres de langues…).</p></li>
+</ul>
+</section>
+</section>
+<section id="specification-fonctionnelle-pour-le-provisioning-automatise-des-utilisateurs">
+<h2><span class="section-number">1.2. </span>Spécification fonctionnelle pour le provisioning automatisé des utilisateurs<a class="headerlink" href="#specification-fonctionnelle-pour-le-provisioning-automatise-des-utilisateurs" title="Lien vers cette rubrique"></a></h2>
+<section id="principes-generaux">
+<h3><span class="section-number">1.2.1. </span>Principes généraux<a class="headerlink" href="#principes-generaux" title="Lien vers cette rubrique"></a></h3>
+<p>Le provisioning automatisé des utilisateurs sera réalisé de manière synchrone au processus d’authentification :</p>
+<ul class="simple">
+<li><p>Pour un nouvel utilisateur : création automatique d’un utilisateur</p></li>
+<li><p>Pour un utilisateur existant : modification automatisé en cas de changement des informations utilisateurs, dont ses droits.</p></li>
+</ul>
+<p>Le processus d’élimination d’utilisateur n’est pas implémenté car aucun utilisateur n’est supprimé de l’annuaire VITAM UI pour conserver le lien de traçabilité des informations systèmes. Les informations nominatives sont anonymisées par l’administrateur fonctionnel au bout d’une durée paramétrable (72 mois par défaut). Un utilisateur peut être désactivé</p>
+</section>
+<section id="concept-dunite">
+<h3><span class="section-number">1.2.2. </span>Concept d’unité<a class="headerlink" href="#concept-dunite" title="Lien vers cette rubrique"></a></h3>
+<p><img alt="" src="../_images/concept_unite.png" /></p>
+<p>Pour octroyer des droits à un utilisateur, son identifiant est associé à un groupe de profil VITAM UI préalablement configuré.<br />
+Chaque groupe de profil dispose d’un identifiant unique dans le modèle de données des groupes de profil VITAM UI.</p>
+<p>Afin d’octroyer automatiquement les droits au moment du provisioning, VITAM UI doit disposer d’une information utilisateur qui permettra au système d’affecter un groupe de profil à l’utilisateur.<br />
+A ce titre, le référentiel des utilisateurs doit fournir une information utilisateur appelée « Unité » qui déterminera quel groupe de profil utiliser :</p>
+<ul class="simple">
+<li><p>Pour des raisons de sécurité, car la base des groupes de profils n’est exposée qu’après authentification.</p></li>
+<li><p>Pour des raisons d’unicité d’identifiant « Groupe de profils » (maître VITAM UI) et unité (maître référentiel externe des utilisateurs)</p></li>
+</ul>
+<p>Cardinalité :</p>
+<ul class="simple">
+<li><p>Une unité ne peut se référer qu’à un seul groupe de profils</p></li>
+<li><p>Un groupe de profils peut se référer à plusieurs unités</p></li>
+<li><p>Un utilisateur est affecté à un et un seul groupe de profils (et donc ne peut posséder qu’une seule unité)</p></li>
+</ul>
+</section>
+<section id="processus-dauto-provisioning-standard">
+<h3><span class="section-number">1.2.3. </span>Processus d’auto-provisioning standard<a class="headerlink" href="#processus-dauto-provisioning-standard" title="Lien vers cette rubrique"></a></h3>
+<p>Le processus d’auto-provisioning sera paramétré pour deux cas d’usages :</p>
+<ul class="simple">
+<li><p>Fournisseur d’identité (IdP) configuré en SSO</p></li>
+<li><p>Fournisseur d’identité (IdP) configuré en authentification X509</p></li>
+</ul>
+<p>L’authentification par login et mot de passe ne permettra pas un auto-provisioning car pour provisionner un nouvel utilisateur, celui-ci doit préalablement être authentifié du côté de l’organisation pour des raisons de sécurité.</p>
+<p><img alt="" src="../_images/processus.png" /></p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Etape</p></th>
+<th class="head text-left"><p>Fonctionnel</p></th>
+<th class="head text-left"><p>Technique</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>1</p></td>
+<td class="text-left"><p>Authentification auprès du fournisseur d’identité de l’organisation, redirection vers Vitam UI et authentification dans Vitam UI</p></td>
+<td class="text-left"><p>L’utilisateur accède à la page de l’authentification de l’IDP de son client, l’authentification se déroule via le mode fourni par le client (local ou SSO)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>2</p></td>
+<td class="text-left"><p>Vérification de l’authentification SAML</p></td>
+<td class="text-left"><p>Le protocole CAS indique à VITAM UI si l’authentification a réussi</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>3</p></td>
+<td class="text-left"><p>Vérification que l’utilisateur existe</p></td>
+<td class="text-left"><p>Si l’ utilisateur n’existe pas dans Vitam UI et que le fournisseur d’identité autorise l’auto-provisioning, le processus de récupération des informations utilisateurs est exécuté</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>4</p></td>
+<td class="text-left"><p>Accès aux informations de l’utilisateur via le service spécifique (développement à la charge des organisations)</p></td>
+<td class="text-left"><p>Si le web service client connaît l’utilisateur, alors le mapping vers l’unité est exécuté</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>5</p></td>
+<td class="text-left"><p>Une fois toutes les informations récupérées, déduction du groupe de profils à partir de l’unité et création de l’utilisateur</p></td>
+<td class="text-left"><p>Vitam UI déduit le groupe de profils correspondant à l’unité d’appartenance de l’utilisateur, ensuite une opération d’ajout de l’utilisateur avec ce groupe de profils dans la base de Vitam UI est réalisé.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>6</p></td>
+<td class="text-left"><p>Si l’utilisateur existe déjà et qu’il est actif, vérification qu’il est géré par auto-provisioning</p></td>
+<td class="text-left"><p>Lorsque l’utilisateur existe déjà dans VITAM UI, le système vérifie que l’utilisateur est actif</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>7</p></td>
+<td class="text-left"><p>Si l’option auto-provisioning est désactivée, l’utilisateur est authentifié sans mise à jour</p></td>
+<td class="text-left"><p>Le système vérifie que l’utilisateur est éligible à l’auto-provisioning.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>8</p></td>
+<td class="text-left"><p>Si l’option est activée, vérification que les informations ont besoin d’être mises à jour</p></td>
+<td class="text-left"><p>Si l’auto-provisioning est activé pour un utilisateur, Vitam UI appelle les informations de l’utilisateur via le web-service spécifique de l’organisation</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>9</p></td>
+<td class="text-left"><p>Si l’unité n’est pas fournie, exécution du module spécifique afin de vérifier si l’unité a changé</p></td>
+<td class="text-left"><p>Si le web service client connaît l’utilisateur, alors le mapping vers l’unité est exécuté</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>10</p></td>
+<td class="text-left"><p>Une fois toutes les informations récupérées, déduction du groupe de profils à partir de l’unité et création de l’utilisateur</p></td>
+<td class="text-left"><p>Vitam UI déduit le groupe de profils correspondant à l’unité d’appartenance de l’utilisateur</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>11</p></td>
+<td class="text-left"><p>Une fois le processus de mise à jour terminé, accès au portail</p></td>
+<td class="text-left"><p>Le système met à jour les propriétés de l’utilisateur</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="exemple">
+<h3><span class="section-number">1.2.4. </span>Exemple<a class="headerlink" href="#exemple" title="Lien vers cette rubrique"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Etape</p></th>
+<th class="head text-left"><p>Unité</p></th>
+<th class="head text-left"><p>Groupe de profil</p></th>
+<th class="head text-left"><p>Opération</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>L’utilisateur A se connecte pour la première fois à VITAM UI</p></td>
+<td class="text-left"><p>Unité 1</p></td>
+<td class="text-left"><p>Groupe 1</p></td>
+<td class="text-left"><p>Création de l’utilisateur car il s’agit de sa première connexion<br></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>L’utilisateur A se connecte les fois suivantes à VITAM UI</p></td>
+<td class="text-left"><p>Unité 1</p></td>
+<td class="text-left"><p>Groupe 1</p></td>
+<td class="text-left"><p>Mise à jour du groupe de profils s’il a changé (dans ce cas précis non)</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>L’utilisateur A change de service</p></td>
+<td class="text-left"><p>Unité 2</p></td>
+<td class="text-left"><p>Groupe 1</p></td>
+<td class="text-left"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>L’utilisateur A se connecte à VITAM UI</p></td>
+<td class="text-left"><p>Unité 2</p></td>
+<td class="text-left"><p>Groupe 2</p></td>
+<td class="text-left"><p>Mise à jour du groupe de profils et des habilitations en conséquence</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>L’administrateur fonctionnel de l’organisation de l’utilisateur A modifie manuellement le groupe de profils de A. Il ne désactive pas l’auto-provisioning.</p></td>
+<td class="text-left"><p>Unité 2</p></td>
+<td class="text-left"><p>Groupe 3</p></td>
+<td class="text-left"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>L’utilisateur A s’authentifie</p></td>
+<td class="text-left"><p>Unité 2</p></td>
+<td class="text-left"><p>Groupe 2</p></td>
+<td class="text-left"><p>L’utilisateur A retrouve son groupe d’origine car l’auto-provisioning n’a pas été désactivé</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>L’administrateur fonctionnel de l’organisation de l’utilisateur A modifie manuellement le groupe de profils de A et désactive l’auto-provisioning pour l’utilisateur A</p></td>
+<td class="text-left"><p>Unité 2</p></td>
+<td class="text-left"><p>Groupe 3</p></td>
+<td class="text-left"><p>L’auto-provisioning est désactivé</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>L’utilisateur A s’authentifie</p></td>
+<td class="text-left"><p>Unité 2</p></td>
+<td class="text-left"><p>Groupe 3</p></td>
+<td class="text-left"><p>L’auto-provisioning est désactivé =&gt; pas de changement</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>L’administrateur fonctionnel de l’organisation de l’utilisateur A réactive la mise à jour automatique pour cet utilisateur</p></td>
+<td class="text-left"><p>Unité 2</p></td>
+<td class="text-left"><p>Groupe 3</p></td>
+<td class="text-left"><p>L’auto-provisioning est activé</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>L’utilisateur A s’authentifie</p></td>
+<td class="text-left"><p>Unité 2</p></td>
+<td class="text-left"><p>Groupe 2</p></td>
+<td class="text-left"><p>L’utilisateur A retrouve son groupe d’origine car l’auto-provisioning a été réactivé</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="evolution-des-interfaces-pour-gerer-lauto-provisioning-quand-lunite-est-fournie-par-un-referentiel-tiers">
+<h3><span class="section-number">1.2.5. </span>Evolution des interfaces pour gérer l’auto-provisioning quand l’unité est fournie par un référentiel tiers<a class="headerlink" href="#evolution-des-interfaces-pour-gerer-lauto-provisioning-quand-lunite-est-fournie-par-un-referentiel-tiers" title="Lien vers cette rubrique"></a></h3>
+<section id="parametrages-des-unites-dans-les-groupes-de-profils">
+<h4><span class="section-number">1.2.5.1. </span>Paramétrages des unités dans les groupes de profils<a class="headerlink" href="#parametrages-des-unites-dans-les-groupes-de-profils" title="Lien vers cette rubrique"></a></h4>
+<p>L’évolution de l’APP « Groupe de profils » consiste à activer un champ unité, multi-valué.
+Cela nécessite l’ajout du champ unité dans le modèle MongoDB des groupes de profils VITAM UI.</p>
+<p>Les écrans à faire évoluer sont les suivants :</p>
+<p><img alt="" src="../_images/ecran1.png" /></p>
+<p><img alt="" src="../_images/ecran2.png" /></p>
+<p>Le composant « tag » multi-valué existant pourra être réutilisé avec la règle d’alimentation suivante : texte libre avec la syntaxe exacte de l’unité telle que fournie par l’API tiers dans la transaction de consultation du référentiel.</p>
+</section>
+<section id="parametrages-des-fournisseurs-didentite-idp-avec-auto-provisioning">
+<h4><span class="section-number">1.2.5.2. </span>Paramétrages des fournisseurs d’identité (IdP) avec auto-provisioning<a class="headerlink" href="#parametrages-des-fournisseurs-didentite-idp-avec-auto-provisioning" title="Lien vers cette rubrique"></a></h4>
+<p>L’évolution de l’APP « Organisations » consiste à paramétrer le service de provisioning dans le paramétrage de l’IdP.</p>
+<p><img alt="" src="../_images/ecran3.png" /></p>
+</section>
+</section>
+<section id="parametrages-de-lauto-provisioning-au-niveau-de-lutilisateur">
+<h3><span class="section-number">1.2.6. </span>Paramétrages de l’auto-provisioning au niveau de l’utilisateur<a class="headerlink" href="#parametrages-de-lauto-provisioning-au-niveau-de-lutilisateur" title="Lien vers cette rubrique"></a></h3>
+<p>Si la fonction est utilisée, la plupart des utilisateurs seront auto-provisionnés. Cependant, pour plus de souplesse notamment au niveau de l’administration des utilisateurs à haut privilèges, il devra être possible de le provisionner « manuellement » via l’APP Utilisateur.</p>
+<p>Si un utilisateur est auto-provisionné, les modifications d’informations utilisateurs et des groupes de profil ne sera pas possible dans l’APP Utilisateur</p>
+<p>L’APP utilisateur évolue en ce sens avec l’ajout d’un toggle « autoprovisionné » automatiquement activé si l’IdP est configuré ainsi, mais débrayable.</p>
+<p><img alt="" src="../_images/ecran4.png" /></p>
+<p>Il devra être possible de :</p>
+<ul class="simple">
+<li><p>Désactiver l’auto-provisioning quand on crée un utilisateur manuellement</p></li>
+<li><p>Pouvoir désactiver à posteriori l’auto-provisioning d’un utilisateur automatiquement créé</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="valeur_probante.html" class="btn btn-neutral float-left" title="20. Conservation de la valeur probante" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="VitamUI_Arbres_Plans.html" class="btn btn-neutral float-right" title="2. APP Arbres et plans" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2022, Programme Vitam.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: v81_preservation
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Branches</dt>
+      <dd><a href="../../master/sections/VitamUI_Autoprovisionning.html">master</a></dd>
+      <dd><a href="../../master_7.1.x/sections/VitamUI_Autoprovisionning.html">master_7.1.x</a></dd>
+      <dd><a href="../../master_8.0.x/sections/VitamUI_Autoprovisionning.html">master_8.0.x</a></dd>
+      <dd><a href="../../v8.1_Resip_mathilde/sections/VitamUI_Autoprovisionning.html">v8.1_Resip_mathilde</a></dd>
+      <dd><a href="VitamUI_Autoprovisionning.html">v81_preservation</a></dd>
+      <dd><a href="../../v81_transfert/sections/VitamUI_Autoprovisionning.html">v81_transfert</a></dd>
+      <dd><a href="../../v81_valeur_probante/sections/VitamUI_Autoprovisionning.html">v81_valeur_probante</a></dd>
+      <dd><a href="../../v81_workflow/sections/VitamUI_Autoprovisionning.html">v81_workflow</a></dd>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

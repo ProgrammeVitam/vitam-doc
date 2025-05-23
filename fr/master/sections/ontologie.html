@@ -319,7 +319,7 @@ programme.</p>
 <li><p>les vocabulaires utilisés par la solution logicielle Vitam de type « objet », c’est-à-dire ne contenant pas de valeurs informationnelles, ne sont pas référencés dans l’ontologie<a class="footnote-reference brackets" href="#id53" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>50<span class="fn-bracket">]</span></a>. Il peut s’agir de :</p>
 <ul>
 <li><p>vocabulaires conformes au SEDA de type « objet », c’est-à-dire correspondant à un élément XML englobant un sous-élément XML (par exemple, Writer ou Management) ;</p>
-<p>Exemple : ne sont pas présents dans l’ontologie les éléments XML <ManagementMetadata>, <StorageRule> et <AccessRule>. Les autres, qui contiennent des valeurs informationnelles, le sont.</p>
+<p><em>Exemple :</em> ne sont pas présents dans l’ontologie les éléments XML <ManagementMetadata>, <StorageRule> et <AccessRule>. Les autres, qui contiennent des valeurs informationnelles, le sont.</p>
 </li>
 </ul>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;ManagementMetadata&gt;</span>
@@ -339,7 +339,7 @@ programme.</p>
 </div>
 <ul>
 <li><p>vocabulaires générés par la solution logicielle Vitam, correspondant à un élément JSON de type « objet ».</p>
-<p>Exemple : ne sont pas présents dans l’ontologie les éléments JSON _mgt, AccessRule, Rules, CustodialHistory. Les autres, qui contiennent des valeurs informationnelles, le sont.</p>
+<p><em>Exemple :</em> ne sont pas présents dans l’ontologie les éléments JSON _mgt, AccessRule, Rules, CustodialHistory. Les autres, qui contiennent des valeurs informationnelles, le sont.</p>
 </li>
 </ul>
 </li>
@@ -397,7 +397,7 @@ programme.</p>
 <section id="dans-un-fichier-json">
 <h3><span class="section-number">11.3.1. </span>Dans un fichier JSON<a class="headerlink" href="#dans-un-fichier-json" title="Lien vers cette rubrique"></a></h3>
 <p>Un référentiel ontologique, ou ontologie, liste l’ensemble des vocabulaires pouvant être utilisés par la solution logicielle Vitam. Ce référentiel est importé sous la forme d’un fichier JSON, contenant systématiquement l’ensemble des vocabulaires utilisés.</p>
-<p>Exemple : deux vocabulaires contenant uniquement les informations obligatoires pour être importés avec succès.</p>
+<p><em>Exemple :</em> deux vocabulaires contenant uniquement les informations obligatoires pour être importés avec succès.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
 <span class="p">{</span>
 <span class="w"> </span><span class="nt">&quot;Identifier&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Vocabulaire1&quot;</span><span class="p">,</span>
@@ -466,7 +466,7 @@ programme.</p>
 <td><p><strong>identifiant</strong> unique dans l’ensemble du système (champ obligatoire).</br>- Pour les vocabulaires internes, cet identifiant correspond au nom de la métadonnée telle qu’elle est définie dans le modèle de données de la solution logicielle Vitam. </br>Pour un vocabulaire interne issu du SEDA, l’identifiant peut prendre deux formes différentes: </br>1. une dénomination interne au système (ex :_sp, équivalent du bloc OriginatingAgencyIdentifier),</br> 2. une dénomination correspondant à la nomenclature du SEDA (ex : Tag) ;</br> -   Pour les vocabulaires externes, cet identifiant correspond au nom de la métadonnée telle qu’elle est nommée dans un bordereau de transfert ou dans un profil d’unité archivistique.</p></td>
 </tr>
 <tr class="row-even"><td><p>SedaField et ApiField</p></td>
-<td><p><strong>nom</strong> du vocabulaire : </br>-   tel qu’il est défini dans la nomenclature du SEDA (champ facultatif). Ce champ est utilisé uniquement pour les vocabulaires référençant une unité archivistique et un groupe d’objets ; </br>-   tel qu’il est retourné via le DSL (champ facultatif. Exemple : #sp).</p></td>
+<td><p><strong>nom</strong> du vocabulaire : </br>-   tel qu’il est défini dans la nomenclature du SEDA (champ facultatif). Ce champ est utilisé uniquement pour les vocabulaires référençant une unité archivistique et un groupe d’objets ; </br>-   tel qu’il est retourné via le DSL (champ facultatif. <em>Exemple :</em> #sp).</p></td>
 </tr>
 <tr class="row-odd"><td><p>ShortName</p></td>
 <td><p><strong>traduction</strong> du vocabulaire, explicitant de manière intelligible le nom du vocabulaire (champ facultatif).</p></td>
@@ -579,7 +579,7 @@ programme.</p>
 <ul class="simple">
 <li><p>en termes d’administration :</p>
 <ul>
-<li><p>la **gestion d’un référentiel **appelé « Ontologie » ;</p></li>
+<li><p>la <strong>gestion d’un référentiel</strong> appelé « Ontologie » ;</p></li>
 <li><p>une vérification que les <strong>profils d’unité archivistique</strong> (ou documents type) <strong>déclarent des vocabulaires conformément à leur référencement</strong> dans l’ontologie ;</p></li>
 </ul>
 </li>
@@ -741,8 +741,8 @@ Sont disponibles les facettes de type :</p></li>
 <li><p>d’utiliser ce référentiel comme un fichier de propriétés pour récupérer les traductions, plutôt que ce soit l’IHM qui porte ces informations. Ainsi, cela évitera de constater des absences de traduction des vocabulaires externes récemment créés ;</p></li>
 <li><p>d’utiliser et d’afficher la traduction des vocabulaires dans les IHM, rendue administrable dans ce référentiel, afin qu’un administrateur fonctionnel ait la possibilité de modifier les intitulés (ou traductions) de certains vocabulaires (par exemple, modifier « Description », traduction textuelle du bloc Description du SEDA, par « Présentation du contenu », terme issu de la norme ISAD/G, davantage usité par les archivistes).</p></li>
 </ul>
-<p>À titre d’exemple, l’IHM de démonstration de la solution logicielle Vitam dispose de vocabulaires écrits en dur dans l’IHM de démonstration. Dès qu’on transfère un bordereau contenant des vocabulaires externes, l’IHM ne les traduit pas. Il est alors nécessaire de demander un acte d’exploitation en vue de corriger ces éléments.a</p>
-<p>Exemple illustration 2 :
+<p>À titre d’exemple, l’IHM de la solution logicielle Vitam dispose de vocabulaires écrits en dur dans l’IHM. Dès qu’on transfère un bordereau contenant des vocabulaires externes, l’IHM ne les traduit pas. Il est alors nécessaire de demander un acte d’exploitation en vue de corriger ces éléments.</p>
+<p><em>Exemple illustration 2 :</em><br />
 <em>« Prénom », « Nom de naissance », « Identifiant », « Date d’envoi », « Date de réception », qui correspondent à des vocabulaires internes, sont des intitulés gravés en dur. « Licence », également gravé en dur, correspond à un vocabulaire externe. Dans l’ontologie, on a introduit une traduction conforme à la norme ISAD/G : « 3.4.2. Conditions de reproduction ».</em></p>
 <p><img alt="illustration 2" src="../_images/10000201000002AB00000168AC1949D42C34E522.png" /></p>
 </section>
@@ -936,7 +936,7 @@ indexé comme entier ;</p></li>
 <thead>
 <tr class="row-odd"><th class="head"><p>Qui ?</p></th>
 <th class="head"><p>Quoi ?</p></th>
-<th class="head"><p>Via l’IHM démo Vitam ?</p></th>
+<th class="head"><p>Via l’IHM Vitam ?</p></th>
 </tr>
 </thead>
 <tbody>
@@ -1041,7 +1041,7 @@ indexé comme entier ;</p></li>
 <thead>
 <tr class="row-odd"><th class="head"><p>Qui ?</p></th>
 <th class="head"><p>Quoi ?</p></th>
-<th class="head"><p>Via l’IHM démo Vitam ?</p></th>
+<th class="head"><p>Via l’IHM Vitam ?</p></th>
 </tr>
 </thead>
 <tbody>
@@ -1140,7 +1140,7 @@ indexé comme entier ;</p></li>
 <tr class="row-odd"><td><p>ENUM</p></td>
 <td><p>[string] + pattern énumératif</p></td>
 <td><p>[string] + pattern énumératif</p></td>
-<td><p>« </p></td>
+<td><p></p></td>
 </tr>
 </tbody>
 </table>
@@ -1171,7 +1171,7 @@ indexé comme entier ;</p></li>
 <thead>
 <tr class="row-odd"><th class="head"><p>Qui ?</p></th>
 <th class="head"><p>Quoi ?</p></th>
-<th class="head"><p>Via l’IHM démo Vitam ?</p></th>
+<th class="head"><p>Via l’IHM Vitam ?</p></th>
 </tr>
 </thead>
 <tbody>
@@ -1326,17 +1326,12 @@ deux vocabulaires internes et externes <a class="footnote-reference brackets" hr
 </section>
 <section id="restitution-sur-une-ihm">
 <h4><span class="section-number">11.4.8.2. </span>Restitution sur une IHM<a class="headerlink" href="#restitution-sur-une-ihm" title="Lien vers cette rubrique"></a></h4>
-<p>La solution logicielle Vitam propose une IHM pour représenter l’ontologie. Elle permet :</p>
+<p>La solution logicielle Vitam propose une IHM pour représenter l’ontologie. Elle permet depuis l’APP « Ontologie » de VitamUI, de :</p>
 <ul class="simple">
-<li><p>depuis l’IHM démo, d’importer une ontologie et de la consulter, d’accéder à un vocabulaire ;</p></li>
-<li><p>depuis l’APP « Ontologie » de VitamUI, de :</p>
-<ul>
 <li><p>consulter l’ontologie,</p></li>
 <li><p>importer une ontologie,</p></li>
 <li><p>accéder au détail d’un vocabulaire interne,</p></li>
 <li><p>créer, modifier et accéder à un vocabulaire externe.</p></li>
-</ul>
-</li>
 </ul>
 <p>Étant donné les liens étroits de l’ontologie avec les profils d’unité archivistique, il est possible d’envisager d’associer pour chaque vocabulaire la liste des profils d’unité archivistique l’utilisant.</p>
 </section>
@@ -1351,8 +1346,8 @@ deux vocabulaires internes et externes <a class="footnote-reference brackets" hr
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p></p></td>
-<td><p><font color="navy"> Administration de l’ontologie</font></p></td>
+<tr class="row-even"><td><p><font color="navy"> Administration de l’ontologie</font></p></td>
+<td><p></p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p>Import ou modification de l’ontologie</p></td>
@@ -1365,7 +1360,7 @@ deux vocabulaires internes et externes <a class="footnote-reference brackets" hr
 </tr>
 <tr class="row-odd"><td><p>Ajout d’un vocabulaire externe</p></td>
 <td><p>Recommandé</p></td>
-<td><p>La solution logicielle Vitam rend possible l’ajout d’un vocabulaire externe par un renvoi complet de l’ontologie depuis le tenant d’administration.<br/>Il peut s’agir d’un acte d’administration fonctionnelle, qui doit néanmoins être accompagné<br/> d’un acte d’exploitation visant à réindexer le nouveau vocabulaire dans le moteur de recherche Elastic Search.<br/>Il faut veiller à ce que le vocabulaire présent dans l’ontologie et les mappings du moteur de recherche Elastic Search soient cohérents.<br/>Exemple : si j’ajoute un vocabulaire sur les unités archivistiques,<br/> le mapping de la collection Unit Elastic Search devra être mise à jour.</p></td>
+<td><p>La solution logicielle Vitam rend possible l’ajout d’un vocabulaire externe par un renvoi complet de l’ontologie depuis le tenant d’administration.<br/>Il peut s’agir d’un acte d’administration fonctionnelle, qui doit néanmoins être accompagné<br/> d’un acte d’exploitation visant à réindexer le nouveau vocabulaire dans le moteur de recherche Elastic Search.<br/>Il faut veiller à ce que le vocabulaire présent dans l’ontologie et les mappings du moteur de recherche Elastic Search soient cohérents.<br/><em>Exemple :</em> si j’ajoute un vocabulaire sur les unités archivistiques,<br/> le mapping de la collection Unit Elastic Search devra être mise à jour.</p></td>
 </tr>
 <tr class="row-even"><td><p>Ajout d’un vocabulaire interne pour évolution<br/> du modèle de données ou évolution du SEDA</p></td>
 <td><p>Recommandé</p></td>
@@ -1391,7 +1386,7 @@ deux vocabulaires internes et externes <a class="footnote-reference brackets" hr
 <td><p>Possible</p></td>
 <td><p>Si un vocabulaire externe n’est pas utilisé par un profil d’unité archivistique, il est possible de le supprimer de l’ontologie.<br/><br/><em>Point d’attention :</em> il est ensuite nécessaire de procéder à une suppression de ce vocabulaire dans le moteur de recherche Elastic Search au moyen d’une opération technique d’exploitation</p></td>
 </tr>
-<tr class="row-even"><td><p>Paramétrage d’interdiction de la Suppression d’un vocabulaire interne par un administrateur fonctionnel</p></td>
+<tr class="row-even"><td><p>Paramétrage d’interdiction de la suppression d’un vocabulaire interne par un administrateur fonctionnel</p></td>
 <td><p>Recommandé</p></td>
 <td><p>La solution logicielle Vitam rend possible la suppression d’un vocabulaire interne au moyen d’un paramétrage visant à forcer cette suppression.<br/>Néanmoins, il est recommandé d’activer le paramétrage technique interdisant cette suppression. En effet, un vocabulaire interne n’a pas vocation a être supprimé en production.</p></td>
 </tr>
@@ -1411,8 +1406,8 @@ deux vocabulaires internes et externes <a class="footnote-reference brackets" hr
 <td><p>Recommandé</p></td>
 <td><p>Si un vocabulaire externe est utilisé par un profil d’unité archivistique, la solution logicielle Vitam ne permet pas de le supprimer de l’ontologie. <br/>Si l’on souhaite vraiment le supprimer, il est alors conseiller de procéder comme suit :<br/>- vérifier que le profil d’unité archivistique n’est pas utilisé par des unités archivistiques ;<br/>- le cas échéant, modifier le profil d’unité archivistique déclaré par ces unités archivistiques, l’objectif étant que le profil d’unité archivistique ne soit plus utilisé en accès ;<br/>- modifier le profil d’unité archivistique et supprimer le vocabulaire externe ;<br/>- supprimer le vocabulaire externe de l’ontologie.</p></td>
 </tr>
-<tr class="row-odd"><td><p></p></td>
-<td><p><font color="navy">Entrée</font></p></td>
+<tr class="row-odd"><td><p><font color="navy">Entrée</font></p></td>
+<td><p></p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-even"><td><p>Transfert d’un SIP déclarant un profil d’unité archivistique et contenant des vocabulaires externes</p></td>
@@ -1423,8 +1418,8 @@ deux vocabulaires internes et externes <a class="footnote-reference brackets" hr
 <td><p>Recommandé</p></td>
 <td><p>La solution logicielle Vitam autorise le transfert de bordereau contenant des extensions au SEDA.<br/> Ces extensions sont alors automatiquement indexées sous un type TEXT et peuvent <em>a posteriori</em> entrer en confliti<br/> avec des vocabulaires externes de l’ontologie.<br/>Avant un transfert de bordereau contenant des extensions, il est fortement recommandé de créer les vocabulaires correspondant dans l’ontologie.</p></td>
 </tr>
-<tr class="row-even"><td><p></p></td>
-<td><p><font color="navy">Accès</font></p></td>
+<tr class="row-even"><td><p><font color="navy">Accès</font></p></td>
+<td><p></p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p>Modification des traductions des vocabulaires internes</p></td>
@@ -6692,11 +6687,11 @@ deux vocabulaires internes et externes <a class="footnote-reference brackets" hr
 </aside>
 <aside class="footnote brackets" id="id52" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
-<p>Ces vocabulaires sont détaillés dans la documentation <em>Modèle de données</em>.</p>
+<p>Ces vocabulaires sont détaillés dans la <a class="reference internal" href="modele_de_donnees.html"><span class="std std-doc">documentation <em>Modèle de données</em></span></a>.</p>
 </aside>
 <aside class="footnote brackets" id="id53" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">50</a><span class="fn-bracket">]</span></span>
-<p>A noter qu’ils sont référencés dans le schéma de la solution logicielle Vitam. Pour plus d’informations, consulter le document <em>Schéma</em>.</p>
+<p>A noter qu’ils sont référencés dans le schéma de la solution logicielle Vitam. Pour plus d’informations, consulter le <a class="reference internal" href="schema.html"><span class="std std-doc">document <em>Schéma</em></span></a>.</p>
 </aside>
 <aside class="footnote brackets" id="id54" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">3</a><span class="fn-bracket">]</span></span>
@@ -6704,39 +6699,39 @@ deux vocabulaires internes et externes <a class="footnote-reference brackets" hr
 </aside>
 <aside class="footnote brackets" id="id55" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">4</a><span class="fn-bracket">]</span></span>
-<p>Des précisions sur les types d’indexation supportés par la solution logicielle Vitam sont apportées dans la partie 5.2. « Quand et comment créer un vocabulaire ? ».</p>
+<p>Des précisions sur les types d’indexation supportés par la solution logicielle Vitam sont apportées dans la <a class="reference internal" href="#quand-et-comment-creer-un-vocabulaire"><span class="xref myst">partie « Quand et comment créer un vocabulaire ? »</span></a>.</p>
 </aside>
 <aside class="footnote brackets" id="id56" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">5</a><span class="fn-bracket">]</span></span>
-<p>Pour plus d’informations, consulter le document <em>Modèle de données</em>, chapitre « Collection Ontology ». Un exemple d’ontologie se trouve dans l’<a class="reference internal" href="#annexe-1-vocabulaires-internes-de-lontologie"><span class="xref myst">annexe 1</span></a> du présent document.</p>
+<p>Pour plus d’informations, consulter le <a class="reference internal" href="modele_de_donnees.html"><span class="std std-doc">document <em>Modèle de données</em></span></a>, chapitre « Collection Ontology ». Un exemple d’ontologie se trouve dans l’<a class="reference internal" href="#annexe-1-vocabulaires-internes-de-lontologie"><span class="xref myst">annexe 1</span></a> du présent document.</p>
 </aside>
 <aside class="footnote brackets" id="id57" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">6</a><span class="fn-bracket">]</span></span>
-<p>Des précisions sur les types d’indexation supportés par la solution logicielle Vitam sont apportées dans la partie 5.2. « Quand et comment créer un vocabulaire ? ».</p>
+<p>Des précisions sur les types d’indexation supportés par la solution logicielle Vitam sont apportées dans la <a class="reference internal" href="#quand-et-comment-creer-un-vocabulaire"><span class="xref myst">partie « Quand et comment créer un vocabulaire ? »</span></a>.</p>
 </aside>
 <aside class="footnote brackets" id="id58" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id8">7</a><span class="fn-bracket">]</span></span>
-<p>Pour plus d’informations sur la modélisation de cette collection, consulter le document <em>Modèle de données</em>, chapitre « Collection Ontology ».</p>
+<p>Pour plus d’informations sur la modélisation de cette collection, consulter le <a class="reference internal" href="modele_de_donnees.html"><span class="std std-doc">document <em>Modèle de données</em></span></a>, chapitre « Collection Ontology ».</p>
 </aside>
 <aside class="footnote brackets" id="id59" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id9">8</a><span class="fn-bracket">]</span></span>
-<p>Pour plus d’informations sur le processus d’import du référentiel, consulter le document <em>Modèle de workflow</em>, chapitre 5.11 « Workflow d’administration d’un référentiel des vocabulaires de l’ontologie ».</p>
+<p>Pour plus d’informations sur le processus d’import du référentiel, consulter le <a class="reference internal" href="modele_de_workflow.html"><span class="std std-doc">document <em>Modèle de workflow</em></span></a>, chapitre 5.11 « Workflow d’administration d’un référentiel des vocabulaires de l’ontologie ».</p>
 </aside>
 <aside class="footnote brackets" id="id60" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id10">9</a><span class="fn-bracket">]</span></span>
-<p>Pour plus d’informations sur le processus d’import du référentiel, consulter le document <em>Modèle de workflow</em>, chapitre 5.11 « Workflow d’administration d’un référentiel des vocabulaires de l’ontologie ».</p>
+<p>Pour plus d’informations sur le processus d’import du référentiel, consulter le <a class="reference internal" href="modele_de_workflow.html"><span class="std std-doc">document <em>Modèle de workflow</em></span></a>, chapitre 5.11 « Workflow d’administration d’un référentiel des vocabulaires de l’ontologie ».</p>
 </aside>
 <aside class="footnote brackets" id="id61" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id11">10</a><span class="fn-bracket">]</span></span>
-<p>Les règles propres à la mise à jour du type d’indexation d’un vocabulaire sont définies dans la partie 5.3. « Quand et comment modifier un type d’indexation ? » du présent document.</p>
+<p>Les règles propres à la mise à jour du type d’indexation d’un vocabulaire sont définies dans la <a class="reference internal" href="#quand-et-comment-modifier-un-type-dindexation"><span class="xref myst">partie « Quand et comment modifier un type d’indexation ? »</span></a> du présent document.</p>
 </aside>
 <aside class="footnote brackets" id="id62" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id12">11</a><span class="fn-bracket">]</span></span>
-<p>La procédure est détaillée dans la documentation d’exploitation, chapitre 5.19. « L’ontologie externe suite à la montée de version de Vitam ». Ce service permet de ne pas mettre à jour les vocabulaires externes. Il s’applique notamment lors des montées de version du modèle de données interne à la solution logicielle Vitam ou du SEDA.</p>
+<p>La procédure est détaillée dans la <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/html/exploitation">documentation d’exploitation</a>, chapitre 5.19. « L’ontologie externe suite à la montée de version de Vitam ». Ce service permet de ne pas mettre à jour les vocabulaires externes. Il s’applique notamment lors des montées de version du modèle de données interne à la solution logicielle Vitam ou du SEDA.</p>
 </aside>
 <aside class="footnote brackets" id="id63" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id13">12</a><span class="fn-bracket">]</span></span>
-<p>Les règles propres à la mise à jour du type d’indexation d’un vocabulaire sont définies dans la partie 5.3. « Quand et comment modifier un type d’indexation ? » du présent document.</p>
+<p>Les règles propres à la mise à jour du type d’indexation d’un vocabulaire sont définies dans la <a class="reference internal" href="#quand-et-comment-modifier-un-type-dindexation"><span class="xref myst">partie « Quand et comment modifier un type d’indexation ? »</span></a> du présent document.</p>
 </aside>
 <aside class="footnote brackets" id="id64" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id14">13</a><span class="fn-bracket">]</span></span>
@@ -6744,31 +6739,31 @@ deux vocabulaires internes et externes <a class="footnote-reference brackets" hr
 </aside>
 <aside class="footnote brackets" id="id65" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id15">14</a><span class="fn-bracket">]</span></span>
-<p>Les règles propres au nommage d’un vocabulaire sont définies dans la partie « Conseils de mise en œuvre » du présent document.</p>
+<p>Les règles propres au nommage d’un vocabulaire sont définies dans la <a class="reference internal" href="#conseils-de-mise-en-%C5%93uvre"><span class="xref myst">partie « Conseils de mise en œuvre »</span></a> du présent document.</p>
 </aside>
 <aside class="footnote brackets" id="id66" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id16">15</a><span class="fn-bracket">]</span></span>
-<p>Pour plus d’informations, consulter la documentation d’exploitation, chapitre 5.11. « Procédure d’exploitation suite à la création ou la modification d’une ontologie ».</p>
+<p>Pour plus d’informations, consulter la <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/html/exploitation">documentation d’exploitation</a>, chapitre 5.11. « Procédure d’exploitation suite à la création ou la modification d’une ontologie ».</p>
 </aside>
 <aside class="footnote brackets" id="id67" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id17">16</a><span class="fn-bracket">]</span></span>
-<p>Les règles propres à la cohérence des types définis dans un profil d’unité archivistique et dans l’ontologie sont définies dans la partie 5.4. « Quels sont les types d’indexation compatibles entre un profil d’unité archivistique et des vocabulaires ontologiques ? » du présent document.</p>
+<p>Les règles propres à la cohérence des types définis dans un profil d’unité archivistique et dans l’ontologie sont définies dans la <a class="reference internal" href="#quels-sont-les-types-dindexation-compatibles-entre-un-profil-dunite-archivistique-et-des-vocabulaires-ontologiques"><span class="xref myst">partie « Quels sont les types d’indexation compatibles entre un profil d’unité archivistique et des vocabulaires ontologiques ? »</span></a> du présent document.</p>
 </aside>
 <aside class="footnote brackets" id="id68" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id18">17</a><span class="fn-bracket">]</span></span>
-<p>Les règles de mise à jour d’une unité archivistique associée à un profil d’unité archivistique sont précisées dans la partie 5.5. « Comment modifier une unité archivistique associée à un profil d’unité archivistique ? » du présent document.</p>
+<p>Les règles de mise à jour d’une unité archivistique associée à un profil d’unité archivistique sont précisées dans la <a class="reference internal" href="#comment-mettre-a-jour-une-unite-archivistique-associee-ou-non-a-un-profil-dunite-archivistique"><span class="xref myst">partie « Comment modifier une unité archivistique associée à un profil d’unité archivistique ? »</span></a> du présent document.</p>
 </aside>
 <aside class="footnote brackets" id="id69" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id19">18</a><span class="fn-bracket">]</span></span>
-<p>Pour plus de précisions sur ce qu’est un élément de type objet, se référer à la présente documentation, <a class="reference internal" href="#quest-ce-quune-ontologie"><span class="xref myst">section « Qu’est-ce qu’une ontologie ? »</span></a>. Concernant le schéma, consulter la documentation « Schéma ».</p>
+<p>Pour plus de précisions sur ce qu’est un élément de type objet, se référer à la présente documentation, <a class="reference internal" href="#quest-ce-quune-ontologie"><span class="xref myst">section « Qu’est-ce qu’une ontologie ? »</span></a>. Concernant le schéma, consulter la <a class="reference internal" href="schema.html"><span class="std std-doc">documentation « Schéma »</span></a>.</p>
 </aside>
 <aside class="footnote brackets" id="id70" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id20">19</a><span class="fn-bracket">]</span></span>
-<p>Pour plus d’informations, consulter la documentation d’exploitation, chapitre 5.11. « Procédure d’exploitation suite à la création ou la modification d’une ontologie ».</p>
+<p>Pour plus d’informations, consulter la <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/html/exploitation">documentation d’exploitation</a>, chapitre 5.11. « Procédure d’exploitation suite à la création ou la modification d’une ontologie ».</p>
 </aside>
 <aside class="footnote brackets" id="id71" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id21">20</a><span class="fn-bracket">]</span></span>
-<p>Pour plus d’informations, consulter la documentation d’exploitation, chapitre 5.11 « Procédure d’exploitation suite à la création ou la modification d’une ontologie ».</p>
+<p>Pour plus d’informations, consulter la <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/html/exploitation">documentation d’exploitation</a>, chapitre 5.11 « Procédure d’exploitation suite à la création ou la modification d’une ontologie ».</p>
 </aside>
 <aside class="footnote brackets" id="id72" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id22">21</a><span class="fn-bracket">]</span></span>
@@ -6788,23 +6783,23 @@ deux vocabulaires internes et externes <a class="footnote-reference brackets" hr
 </aside>
 <aside class="footnote brackets" id="id76" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id26">25</a><span class="fn-bracket">]</span></span>
-<p>La présence de crochets dans le tableau de correspondances indique que le vocabulaire employé dans le profil d’unité archivistique doit se présenter sous la forme d’un tableau. Pour plus d’informations, consulter le document <em>Profil d’unité archivistique</em>. L’<a class="reference internal" href="#annexe-2-types-json-conformes-au-type-dindexation-des-vocabulaires-internes"><span class="xref myst">annexe 2</span></a> « Types JSON conformes au type d’indexation des vocabulaires internes » du présent document précise les types attendus dans un schéma de contrôle pour définir un vocabulaire interne, conformément à son type dans l’ontologie.</p>
+<p>La présence de crochets dans le tableau de correspondances indique que le vocabulaire employé dans le profil d’unité archivistique doit se présenter sous la forme d’un tableau. Pour plus d’informations, consulter le <a class="reference internal" href="profil_unite_archivistique.html"><span class="std std-doc">document <em>Profil d’unité archivistique</em></span></a>. L’<a class="reference internal" href="#annexe-2-types-json-conformes-au-type-dindexation-des-vocabulaires-internes"><span class="xref myst">annexe 2</span></a> « Types JSON conformes au type d’indexation des vocabulaires internes » du présent document précise les types attendus dans un schéma de contrôle pour définir un vocabulaire interne, conformément à son type dans l’ontologie.</p>
 </aside>
 <aside class="footnote brackets" id="id77" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id27">26</a><span class="fn-bracket">]</span></span>
-<p>Pour plus d’informations, consulter la documentation d’exploitation, chapitre 5.11 « Procédure d’exploitation suite à la création ou la modification d’une ontologie ».</p>
+<p>Pour plus d’informations, consulter la <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/html/exploitation">documentation d’exploitation</a>, chapitre 5.11 « Procédure d’exploitation suite à la création ou la modification d’une ontologie ».</p>
 </aside>
 <aside class="footnote brackets" id="id78" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id28">27</a><span class="fn-bracket">]</span></span>
-<p>La procédure est détaillée dans la documentation d’exploitation, chapitre 5.19. « L’ontologie externe suite à la montée de version de Vitam » et la documentation de montée de version, chapitre 4.3.7.1.1. « Gestion du référentiel de l’ontologie ».</p>
+<p>La procédure est détaillée dans la <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/html/exploitation">documentation d’exploitation</a>, chapitre 5.19. « L’ontologie externe suite à la montée de version de Vitam » et la <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/html/migration">documentation de montée de version</a>, chapitre 4.3.7.1.1. « Gestion du référentiel de l’ontologie ».</p>
 </aside>
 <aside class="footnote brackets" id="id79" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id29">28</a><span class="fn-bracket">]</span></span>
-<p>Pour plus d’informations, se référer aux chapitres précédents du présent document : chapitre 5.2. « Quand et comment créer un vocabulaire ? », chapitre 5.3. « Quand et comment modifier un type d’indexation ? », chapitre 5.5. « Quand et comment supprimer un vocabulaire ? ».</p>
+<p>Pour plus d’informations, se référer aux chapitres précédents du présent document : <a class="reference internal" href="#quand-et-comment-cr%C3%A9er-un-vocabulaire"><span class="xref myst">chapitre « Quand et comment créer un vocabulaire ? »</span></a>, <a class="reference internal" href="#quand-et-comment-modifier-un-type-dindexation"><span class="xref myst">chapitre « Quand et comment modifier un type d’indexation ? »</span></a>, <a class="reference internal" href="#quand-et-comment-modifier-un-type-dindexation"><span class="xref myst">chapitre « Quand et comment supprimer un vocabulaire ? »</span></a>.</p>
 </aside>
 <aside class="footnote brackets" id="id80" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id30">29</a><span class="fn-bracket">]</span></span>
-<p>Consulter la documentation de montée de version, chapitre 4.3.7.1.1. « Gestion du référentiel de l’ontologie ».</p>
+<p>Consulter la <a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/html/migration">documentation de montée de version</a>, chapitre 4.3.7.1.1. « Gestion du référentiel de l’ontologie ».</p>
 </aside>
 <aside class="footnote brackets" id="id81" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id31">30</a><span class="fn-bracket">]</span></span>
@@ -6812,7 +6807,7 @@ deux vocabulaires internes et externes <a class="footnote-reference brackets" hr
 </aside>
 <aside class="footnote brackets" id="id82" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id32">31</a><span class="fn-bracket">]</span></span>
-<p>Idem.</p>
+<p>Avec un pattern date.</p>
 </aside>
 <aside class="footnote brackets" id="id83" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id33">32</a><span class="fn-bracket">]</span></span>
@@ -6840,7 +6835,7 @@ deux vocabulaires internes et externes <a class="footnote-reference brackets" hr
 </aside>
 <aside class="footnote brackets" id="id89" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id39">38</a><span class="fn-bracket">]</span></span>
-<p>Idem.</p>
+<p>Le SEDA attend plus précisément un pattern langue.</p>
 </aside>
 <aside class="footnote brackets" id="id90" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id40">39</a><span class="fn-bracket">]</span></span>
@@ -6848,7 +6843,7 @@ deux vocabulaires internes et externes <a class="footnote-reference brackets" hr
 </aside>
 <aside class="footnote brackets" id="id91" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id41">40</a><span class="fn-bracket">]</span></span>
-<p>Idem.</p>
+<p>Avec un pattern date.</p>
 </aside>
 <aside class="footnote brackets" id="id92" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id42">41</a><span class="fn-bracket">]</span></span>
@@ -6929,6 +6924,10 @@ deux vocabulaires internes et externes <a class="footnote-reference brackets" hr
       <dd><a href="../../master_7.1.x/sections/ontologie.html">master_7.1.x</a></dd>
       <dd><a href="../../master_8.0.x/sections/ontologie.html">master_8.0.x</a></dd>
       <dd><a href="../../v8.1_Resip_mathilde/sections/ontologie.html">v8.1_Resip_mathilde</a></dd>
+      <dd><a href="../../v81_preservation/sections/ontologie.html">v81_preservation</a></dd>
+      <dd><a href="../../v81_transfert/sections/ontologie.html">v81_transfert</a></dd>
+      <dd><a href="../../v81_valeur_probante/sections/ontologie.html">v81_valeur_probante</a></dd>
+      <dd><a href="../../v81_workflow/sections/ontologie.html">v81_workflow</a></dd>
     </dl>
   </div>
 </div><script>

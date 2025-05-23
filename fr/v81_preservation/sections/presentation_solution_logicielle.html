@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3. Présentation de la solution logicielle Vitam &mdash; Vitam documentation fonctionnelle</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=eea1f72d" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f4732e6d"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/translations.js?v=bf059b8c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="4. Guide de prise en main de la solution logicielle Vitam – Vitam UI Réaliser une première entrée" href="guide_prise_en_main.html" />
+    <link rel="prev" title="2. Présentation du programme Vitam" href="presentation_programme.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: white" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/Vitam_Logo-CMJN.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">première approche</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="guide_lecture.html">1. Documentation Vitam - guide de lecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="presentation_programme.html">2. Présentation du programme Vitam</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3. Présentation de la solution logicielle Vitam</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#solution-logicielle-vitam">3.1. Solution logicielle Vitam</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#manifeste">3.1.1. Manifeste</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#une-solution-back-office">3.1.2. Une solution back-office…</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#enrichie-dun-front-office">3.1.3. … enrichie d’un front-office</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#parties-prenantes-et-methodes-agile">3.1.4. Parties prenantes et méthodes Agile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#planning">3.1.5. Planning</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#contenu-des-versions">3.1.6. Contenu des versions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#normes-et-textes-pris-en-compte">3.1.7. Normes et textes pris en compte</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#securite">3.1.8. Sécurité</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#agilite-et-securite">3.1.8.1. Agilité et sécurité</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#homologation-de-securite">3.1.8.2. Homologation de sécurité</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#maintenance">3.1.9. Maintenance</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#vision-fonctionnelle">3.2. Vision fonctionnelle</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#storymap">3.2.1. « StoryMap »</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#principe-delaboration-de-la-storymap">3.2.2. Principe d’élaboration de la « StoryMap »</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#contenu-de-la-storymap">3.2.3. Contenu de la « StoryMap »</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#interfaces-homme-machine-ihm">3.2.4. Interfaces Homme Machine (IHM)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ihm-demo-et-ihm-recette">3.2.4.1. IHM Démo et IHM Recette</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#linitiative-vitam-ui">3.2.4.2. L’initiative Vitam UI</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#vision-technique">3.3. Vision technique</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#architecture-generale">3.3.1. Architecture générale</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modules-du-coeur-vitam">3.3.2. Modules du Cœur Vitam</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#moteur-de-traitement">3.3.2.1. Moteur de traitement</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#moteur-de-donnees">3.3.2.2. Moteur de données</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gestion-des-journaux">3.3.2.3. Gestion des journaux</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gestion-des-offres-de-stockage">3.3.2.4. Gestion des offres de stockage</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#principes-dorganisation-des-archives">3.3.3. Principes d’organisation des archives</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#annexe-1-contenu-de-la-storymap-de-la-phase-projet-juillet-2016">3.4. Annexe 1 : Contenu de la « StoryMap » de la phase projet (juillet 2016)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#domaine-entrees">3.4.1. Domaine « Entrées »</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#domaine-stockage">3.4.2. Domaine « Stockage »</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#domaine-gestion-de-la-donnee">3.4.3. Domaine « Gestion de la donnée »</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#domaine-gestion-des-archives-existantes">3.4.4. Domaine « Gestion des archives existantes »</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#domaine-preservation">3.4.5. Domaine « Préservation »</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#domaine-acces">3.4.6. Domaine « Accès »</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#domaine-administration-fonctionnelle">3.4.7. Domaine « Administration fonctionnelle »</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#domaine-administration-technique">3.4.8. Domaine « Administration technique »</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#annexe-2-contenu-de-la-storymap-de-la-phase-produit-fevrier-2021">3.5. Annexe 2 : Contenu de la « StoryMap » de la phase produit (février 2021)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#domaine-collecte-entree">3.5.1. Domaine « Collecte / Entrée »</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#domaine-acces-recherche">3.5.2. Domaine « Accès / Recherche »</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#domaine-gestion-des-archives">3.5.3. Domaine « Gestion des archives »</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id17">3.5.4. Domaine « Préservation »</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#domaine-administration-des-referentiels">3.5.5. Domaine « Administration des référentiels »</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#domaine-exploitation">3.5.6. Domaine « Exploitation »</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id18">3.5.7. Domaine « Stockage »</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#domaine-supervision">3.5.8. Domaine « Supervision »</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#domaine-ihm-du-produit">3.5.9. Domaine « IHM du produit »</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="guide_prise_en_main.html">4. Guide de prise en main de la solution logicielle Vitam – Vitam UI<br>
+<em>Réaliser une première entrée</em></a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">documentation métier</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="organisation_information.html">1. Organisation de l’information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gestion_archives_arbo.html">2. Gestion des archives et des arborescences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_donnees.html">3. Modèle de données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SIP.html">4. Structuration des <em>Submission Information Packages</em> (SIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DIP.html">5. Structuration des <em>Dissemination Information Packages</em> (DIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gestion_habilitations.html">6. Gestion des habilitations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regles_gestion.html">7. Règles de gestion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services_prod.html">8. Services producteurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_archivage.html">9. Profils d’archivage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_unite_archivistique.html">10. Profils d’unité archivistique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ontologie.html">11. Ontologie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="schema.html">12. Schéma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_workflow.html">13. Description des workflows et des opérations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_de_collecte.html">14. Module de collecte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eliminations.html">15. Les éliminations avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gel.html">16. Le gel d’archives avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preservation.html">17. Gestion de la préservation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stockage.html">18. Gestion de multiples stratégies de stockage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transfert.html">19. Le transfert avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="valeur_probante.html">20. Conservation de la valeur probante</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">documentation Vitam UI</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Autoprovisionning.html">1. Vitam UI : présentation de la fonctionnalité d’auto-provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Arbres_Plans.html">2. APP Arbres et plans</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">outils connexes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="resip.html">1. RESIP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resip_faq.html">2. RESIP : foire aux questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pastis_standalone.html">3. PASTIS STANDALONE</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Chantier préservation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="chantier_preservation_validation_format.html">1. Validation du format des fichiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_identification_format.html">2. Identification des formats de fichiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_extraction_MD.html">3. Extraction des métadonnées techniques</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Vademecum</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_sommaire.html">1. Vademecum: sommaire thématique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_glossaire.html">2. Notions utilisées dans la solution logicielle Vitam et lien vers la fiche qui les définit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_arbre.html">3. L’arbre de positionnement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_audit.html">4. Les audits dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_classification.html">5. La gestion des archives classifiées avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_acces.html">6. Le contrat d’accès dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_entree.html">7. Le contrat d’entrée dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_gestion.html">8. Le contrat de gestion dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_echeances.html">9. Le calcul des héritages des règles de gestion et l’indexation des échéances dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_eliminations.html">10. Réaliser des éliminations d’archives avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_habilitations.html">11. La gestion des droits et permissions des utilisateurs applicatifs dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_identifiants.html">12. L’attribution des identifiants dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_journalisation.html">13. La journalisation et la conservation de la valeur probante dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_ontologie.html">14. L’ontologie dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_pa.html">15. Les profils d’archivage dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_parametrages_pf.html">16. Le paramétrage fonctionnel d’une plate-forme utilisant la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_plan.html">17. Le plan de classement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_preservation.html">18. La préservation dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_pua.html">19. Les profils d’unité archivistique dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_rattachement.html">20. Faire un rattachement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_formats.html">21. Le référentiel des formats dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_griffons.html">22. Le référentiel des griffons dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_preservation.html">23. Le référentiel des scénarios de préservation dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_rg.html">24. Le référentiel des règles de gestion dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_sa.html">25. Le référentiel des services agents dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_registre_fonds.html">26. Le registre des fonds dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_structuration_information.html">27. La structuration des informations dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_suivi_acces.html">28. Le suivi des accès dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_tenant.html">29. Les tenants dans la solution logicielle Vitam</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: white" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Documentation utilisateur Vitam</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">3. </span>Présentation de la solution logicielle Vitam</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/sections/presentation_solution_logicielle.md.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+
+           <div itemprop="articleBody">
+             
+  <section id="presentation-de-la-solution-logicielle-vitam">
+<h1><span class="section-number">3. </span>Présentation de la solution logicielle Vitam<a class="headerlink" href="#presentation-de-la-solution-logicielle-vitam" title="Lien vers cette rubrique"></a></h1>
+<section id="solution-logicielle-vitam">
+<h2><span class="section-number">3.1. </span>Solution logicielle Vitam<a class="headerlink" href="#solution-logicielle-vitam" title="Lien vers cette rubrique"></a></h2>
+<section id="manifeste">
+<h3><span class="section-number">3.1.1. </span>Manifeste<a class="headerlink" href="#manifeste" title="Lien vers cette rubrique"></a></h3>
+<p>La solution logicielle Vitam permet la prise en charge, la conservation, la pérennisation et la consultation sécurisée de très gros volumes d’archives numériques. Elle assure la gestion complète du cycle de vie des archives et donc la garantie de leur valeur probante. Elle peut être utilisée pour tout type d’archive, y compris pour des documents classifiés de défense.<br />
+Cette solution est développée en logiciel libre pour faciliter sa réutilisation, son évolution, son adaptation à des contextes particuliers si nécessaire, sa maintenance et donc globalement sa pérennité.<br />
+Cette solution est développée en mode Agile<a class="footnote-reference brackets" href="#id19" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> pour faire intervenir les archivistes au cœur du processus de développement, optimiser la production de valeur métier et permettre des adaptations même importantes pour prendre en compte l’évolution des pratiques professionnelles naissantes de l’archivage numérique. La méthode utilisée est dite « Scrum de Scrum ».<br />
+Le « manifeste<a class="footnote-reference brackets" href="#id20" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> » de la solution logicielle Vitam est :</p>
+<p><em><p align="center">« Pour les services de l’administration,<br />
+Afin de satisfaire les enjeux d’accès dans le temps à leurs informations numériques,<br />
+Vitam propose une solution logicielle libre d’archivage, évolutive, simple et facilement interfaçable,<br />
+Qui permet la gestion unitaire et sécurisée de milliards d’objets<br />
+Et vise son adoption par le plus grand nombre d’acteurs<a class="footnote-reference brackets" href="#id21" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a> »</p></em></p>
+</section>
+<section id="une-solution-back-office">
+<h3><span class="section-number">3.1.2. </span>Une solution back-office…<a class="headerlink" href="#une-solution-back-office" title="Lien vers cette rubrique"></a></h3>
+<p>L’obligation de mettre en œuvre une solution d’archivage numérique dans les contextes très différents des trois ministères porteurs, tant en termes de pratiques archivistiques qu’en termes de production informatique, a orienté notre choix vers la réalisation d’un back-office. L’objectif est de prendre en compte dans la solution logicielle Vitam, le maximum de fonctions mutualisables et technologiquement complexes, d’autant plus quand elles s’appliquent à de très grands nombres d’objets, et de laisser chaque entité porter ses propres spécificités de processus. Cette vision permet ainsi la réutilisation la plus large, tout en assurant la réalisation d’un outil générique intégrable selon les besoins d’acteurs variés dans leur système d’information.</p>
+<p>Positionnée comme une brique d’infrastructure, la solution logicielle Vitam prend en charge toutes les opérations nécessaires pour garantir le maintien de leur valeur probante et pour assurer la pérennisation des documents numériques versés.</p>
+<p>Pour permettre un usage mutualisé à plusieurs organisations, elle est multi-tenants avec un cloisonnement systématique de toutes les archives et informations du système par organisation utilisatrice.</p>
+<p>Elle permet la prise en charge de tous les documents numériques (bureautique, audio, vidéo, image, plan, bases de données, etc.) que l’administration souhaite conserver à des fins d’archivage courant<a class="footnote-reference brackets" href="#id22" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a>, intermédiaire<a class="footnote-reference brackets" href="#id23" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a> ou définitif<a class="footnote-reference brackets" href="#id24" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a>.</p>
+<p>Elle assure, pour de très gros volumes de documents numériques, des fonctionnalités :</p>
+<ul class="simple">
+<li><p>d’indexation,</p></li>
+<li><p>de gestion des métadonnées,</p></li>
+<li><p>de gestion des infrastructures de stockage,</p></li>
+<li><p>de transformation des fichiers,</p></li>
+<li><p>de recherche et de consultation,</p></li>
+<li><p>et de gestion sécurisée de l’ensemble du cycle vie des archives.</p></li>
+</ul>
+<p>Elle offre des interfaces applicatives (API) permettant principalement :</p>
+<ul class="simple">
+<li><p>le versement de documents,</p></li>
+<li><p>la recherche sur les méta-données et les journaux,</p></li>
+<li><p>l’accès aux documents,</p></li>
+<li><p>la mise à jour des référentiels internes.</p></li>
+</ul>
+<p>La solution logicielle contient également des interfaces de démonstration permettant aux entités ne disposant pas de front-office de réaliser des opérations de base (import des référentiels, entrées de SIP, recherche et accès aux documents, gestion des archives). Depuis la version 4 de la solution logicielle, les interfaces de démonstration sont complétées par l’initiative Vitam UI grâce à laquelle des utilisateurs de la solution logicielle Vitam ont mutualisé leurs réflexions et développements pour proposer à la communauté des interfaces pensées par et pour les archivistes, designés et ergonomiques.</p>
+<p>Enfin toujours dans un esprit de facilité de réutilisation, la solution logicielle Vitam est aussi neutre technologiquement que possible. La solution logicielle Vitam :</p>
+<ul class="simple">
+<li><p>n’impose pas d’infrastructures particulières, comme des baies de stockages adaptées ou des matériels spécifiques ;</p></li>
+<li><p>s’installe sur un environnement serveur x86 physique, virtualisé ou en Cloud, au choix de ceux qui l’implémentent, avec plus ou moins d’automatisation selon le degré de virtualisation ;</p></li>
+<li><p>est développée pour s’exécuter sur un environnement Linux et distribuée pour un déploiement CentOS ;</p></li>
+<li><p>amène une solution de stockage déployable sur toute infrastructure serveurs en lien avec une capacité de stockage disque ou, quand ils existent, peut utiliser des moyens existants de stockage Objet (Swift) ou de stockage à froid (cf partie 4 – vision technique).</p></li>
+</ul>
+</section>
+<section id="enrichie-dun-front-office">
+<h3><span class="section-number">3.1.3. </span>… enrichie d’un front-office<a class="headerlink" href="#enrichie-dun-front-office" title="Lien vers cette rubrique"></a></h3>
+<p>Lancée en 2019 par des membres du Club utilisateurs du Programme Vitam, l’initiative Vitam UI (User Interface) vise à doter la solution logicielle Vitam d’un front-office de référence.
+Construit de manière mutualisée par le CEA, le CINES, Xelians et les acteurs du projet VaS<a class="footnote-reference brackets" href="#id25" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></a>, ce front-office propose un portail d’applications (appelées APP) dédiées à une fonctionnalité métier. Destiné à être enrichi à chaque version, le portail a pour objectif en V8.1 (printemps 2025) de permettre à :</p>
+<ul class="simple">
+<li><p>des administrateurs de plateforme de gérer techniquement et fonctionnellement celle-ci ;</p></li>
+<li><p>à des archivistes de procéder à des versements et de rechercher des archives en vue de les consulter.</p></li>
+</ul>
+</section>
+<section id="parties-prenantes-et-methodes-agile">
+<h3><span class="section-number">3.1.4. </span>Parties prenantes et méthodes Agile<a class="headerlink" href="#parties-prenantes-et-methodes-agile" title="Lien vers cette rubrique"></a></h3>
+<p>Le développement Agile a pour objectif de prendre en considération les besoins des « parties prenantes ». Dans le cadre de la solution logicielle Vitam, trois types de parties prenantes sont clairement pris en compte :</p>
+<ul class="simple">
+<li><p>Les archivistes<br />
+Ce sont des experts de la gestion de l’information à long terme. Cette expertise qui s’est appliquée pendant des siècles au papier, peut se transposer sur bien des points au numérique. Ils sont donc porteurs du besoin fonctionnel, des concepts archivistiques manipulés et dans certains cas, de leur évolution ou de leur enrichissement pour tirer tout le profit possible du numérique. Leur objectif est que la solution logicielle Vitam puisse prendre en charge des archives, en assurer la pérennisation, en faciliter l’accès dans les contextes d’usage connus et en garantir la valeur probante, dans le respect des pratiques et normes archivistiques.</p></li>
+<li><p>Les informaticiens chargés de production<br />
+La solution logicielle Vitam est porteuse de fonctionnalités archivistiques, mais c’est aussi un objet technique qui vient s’intégrer dans un système de production. Plus la volumétrie prise en charge doit être importante, plus les exigences de sécurité et résilience sont élevées, plus le système sera complexe. Il convient pourtant de maîtriser cette complexité et de faciliter la mise en œuvre du logiciel. Les informaticiens chargés de production sont porteurs de besoins de simplicité d’intégration sur un socle existant, y compris pour la supervision et la sauvegarde, et de besoins d’automatisation des tâches techniques comme l’installation ou la mise à jour. Leur objectif est que la solution logicielle Vitam puisse être intégrée et exploitée de manière sûre avec un minimum de charge.</p></li>
+<li><p>Les développeurs utilisant les API<br />
+La solution logicielle Vitam, en tant que back-office, offre de multiples API à l’usage d’autres applications versant ou consultant des archives. Toutefois intégrer l’usage d’API dans des applications existantes n’est pas toujours simple. L’objectif des développeurs en charge de ces applications pouvant utiliser les API de la solution logicielle Vitam est que celles-ci soient facilement manipulables avec des concepts clairs, et mobilisables dans des contextes technologiques variés.<br />
+Des interfaces de recette peuvent également être installées sur des environnements de développement pour effectuer des tests automatiques, des tests de performance et pour faire « simplement » la purge de référentiels.<br />
+Il est évident que le besoin fonctionnel archivistique est fondamental. C’est à ce titre que des archivistes travaillent au sein de l’équipe Vitam, pour le définir et le traduire en « User Stories »<a class="footnote-reference brackets" href="#id26" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>8<span class="fn-bracket">]</span></a> sur l’essentiel des sujets. Reste que, pour assurer l’adoption de la solution logicielle, il ne faut pas négliger les besoins techniques. Ceux-ci sont relayés par les architectes et gestionnaires de plateforme de l’équipe Vitam au travers d’« Items techniques » définissant des contraintes de développement ou des « User Stories » pour les utilisateurs informaticiens.</p></li>
+</ul>
+</section>
+<section id="planning">
+<h3><span class="section-number">3.1.5. </span>Planning<a class="headerlink" href="#planning" title="Lien vers cette rubrique"></a></h3>
+<p>Les développements ont commencé le 13 avril 2016. Les grands jalons du planning sont les suivants :</p>
+<ul class="simple">
+<li><p>Pour faciliter l’appropriation par les développeurs et l’ensemble des acteurs concernés par l’intégration applicative de la solution logicielle Vitam, les API principales ont été publiées en juillet 2016. Une documentation, des fichiers de descriptions et des interfaces « bouchonnées » sont mises à disposition à l’adresse api.programmevitam.fr ;</p></li>
+<li><p>Pour permettre l’appropriation par les équipes de production en avance de phase, une version dite « Bêta » de la solution logicielle Vitam a été mise à disposition des ministères porteurs et des partenaires du programme en novembre 2016 et publiée sur Internet en janvier 2017 ;</p></li>
+<li><p>La première version utilisable en production est la V1 publiée en mars 2018 ;</p></li>
+<li><p>Ensuite la V2 a été finalisée en décembre 2018 et publiée sur internet début 2019 ;</p></li>
+<li><p>Et la V3, version finale de la phase projet, a été publiée en mars 2020 ;</p></li>
+<li><p>La V4, première version de la phase produit, a été publiée en mars 2021. Elle propose pour la première fois les interfaces homme-machine issues de la contribution Vitam UI ;</p></li>
+<li><p>La V5 a été publiée en mars 2022. En plus de proposer une version plus aboutie de l’IHM Vitam UI, elle offre la possibilité de gérer des stratégies de stockage avec une offre froide en offre unique ;</p></li>
+<li><p>La V6 a été publiée en avril 2023. Le SEDA 2.2 est dorévavant pris en charge. Des améliorations sur l’exploitation et la supervision facilitent la gestion des plateformes. Le front-office Vitam UI est enrichi de nombreuses fonctionnalités et en particulier des APP Profils documentaires et Collecte et préparation des versements.</p></li>
+<li><p>La V7.0 a été publiée en décembre 2023 et la V7.1 en juillet 2024.</p></li>
+<li><p>La V8.0 a été publiée en décembre 2024 et la V8.1 au printemps 2025.</p></li>
+</ul>
+</section>
+<section id="contenu-des-versions">
+<h3><span class="section-number">3.1.6. </span>Contenu des versions<a class="headerlink" href="#contenu-des-versions" title="Lien vers cette rubrique"></a></h3>
+<p>La version 1 utilisable en production assurait les fonctions permettant de réaliser des entrées unitaires ou par flux applicatif, des recherches et consultations et de gérer le cycle de vie des archives pour garantir le maintien de la valeur probante.</p>
+<p>La version 2 apporte un enrichissement fonctionnel en particulier sur les processus de traitements internes dont ceux de préservation (gestion des transformations), gestion du cycle de vie (mise en œuvre des éliminations) et du classifié de défense.</p>
+<p>La version 3 apporte des améliorations fonctionnelles pour la gestion des archives existantes (transfert), fait l’objet d’une optimisation technique prenant en compte les possibilités des technologies Cloud, si elles sont mises en œuvre pour le déploiement de la solution logicielle. La V3 permet la mise en œuvre d’une offre de stockage sur bande, par exemple LTO (la Release 10 apporte une version Beta de l’offre froide) pour plus de sécurité et ouvre des voies prospectives sur l’enrichissement sémantique automatique.</p>
+<p>La version 4 offre de nouveaux services tels que le gel et la mise à jour unitaires et différentes de métadonnées sur un ensemble d’archives. Elle propose également des services permettant d’optimiser l’exploitation du système et la sauvegarde des données (outil de supervision, restauration de l’état antérieur de métadonnées essentielles, audits du système).
+La version 5 poursuit ce travail d’amélioration du produit, en apportant un service de suppression de versions d’objets, des services de recherche sur un très grand nombre d’archives et sur les détails du registre des fonds. Elle permet la mise en œuvre d’une offre de stockage complètement sur bande. Elle propose enfin, dans une version Beta, un module de collecte et de préparation des versements.</p>
+<p>La version 6.RC implémente la version 2.2 du SEDA et ajoute des services supplémentaires de recherche sur un très grand nombre d’archives, ainsi que sur le module de collecte.
+La version 6 permet d’utiliser le module de collecte, tant pour la préparation de projets de versements de flux automatisés que de versements manuels, ainsi que la gestion des profils documentaires grâce au front-office.</p>
+<p>Les versions 7.0 et 7.1 supportent la version 2.3 du SEDA, offrent la prise en charge des archives signées électroniquement et la possibilité de gérer des identifiants pérennes (notamment les identifiants ARK).</p>
+<p>Les versions 8.0 et 8.1 proposent la conteneurisation (utilisable en production), des évolutions concernant le module de collecte (gestion plus fine des droits, ajout de fonctionnalités pour la préparation de versements par flux et le traitement des archives tel que le reclassement, etc.), ou encore la personnalisation des accusés de réception d’un transfert (ATR), l’ajout de facettes.</p>
+<p>Une définition plus fine des fonctions de la « StoryMap » portées par chaque version est le fruit du raffinement du « backlog » (liste des unités à développer) au cours du développement Agile, dans le respect de la vision globale donnée ci-dessus.</p>
+</section>
+<section id="normes-et-textes-pris-en-compte">
+<h3><span class="section-number">3.1.7. </span>Normes et textes pris en compte<a class="headerlink" href="#normes-et-textes-pris-en-compte" title="Lien vers cette rubrique"></a></h3>
+<p>La conception de la solution logicielle Vitam s’appuie sur l’analyse du cadre normatif et réglementaire régissant l’archivage numérique.<br />
+Certaines normes ont accompagné la réflexion, elles guident le choix des concepts utilisés dans la définition fonctionnelle et technique, mais ne sont pas contraignantes. On citera en particulier :</p>
+<ul class="simple">
+<li><p>Open Archival Information System (OAIS – ISO 14 721) : modèle conceptuel destiné à la gestion, à l’archivage et à la préservation à long terme de documents numériques, élaboré pour le pilotage du Consultative Committee for Space Data Systems (US) ;</p></li>
+<li><p>ICA-Req (ISO 16 175) : principes et exigences fonctionnels pour l’archivage dans un environnement électronique, élaboré dans le cadre du Conseil International des Archives ;</p></li>
+<li><p>Modular Requirements for Records Systems 2010 (MoReq2010) : recueil d’exigences pour l’organisation de l’archivage numérique, élaboré dans le cadre de l’Union européenne.
+D’autres normes, établissant les exigences et bonnes pratiques de l’archivage numérique en France, sont prises en compte directement dans la conception :</p></li>
+<li><p>NF Z 42‑013  : Archivage électronique, recommandations et exigences ;</p></li>
+<li><p>GA Z42-019 : guide d’application de la NF Z 42‑013 (ancienne version) ;</p></li>
+<li><p>NF Z 42‑020 : spécifications fonctionnelles d’un composant Coffre-Fort Numérique destiné à la conservation d’informations numériques dans des conditions de nature à en garantir leur intégrité dans le temps ;</p></li>
+<li><p>NF Z 44‑022 (MEDONA) : modélisation des échanges de données pour l’archivage ;</p></li>
+<li><p>SEDA : standard d’échange de données pour l’archivage, donnant une implémentation XML des échanges MEDONA.
+Enfin des textes réglementaires s’imposent :</p></li>
+<li><p>Code du patrimoine : rassemble l’ensemble des lois s’appliquant entre autres à l’archivage, y compris numérique ;</p></li>
+<li><p>IGI 1300 : Instruction Générale Interministérielle sur la protection du secret de la défense nationale, la solution logicielle Vitam devant être capable de gérer des documents classifiés ;</p></li>
+<li><p>eIdas : règlement européen sur l’identification électronique et les services de confiance pour les transactions électroniques au sein du marché intérieur ;</p></li>
+<li><p>RGPD : règlement général sur la protection des données, texte de référence en matière de protection des données à caractère personnel.</p></li>
+</ul>
+</section>
+<section id="securite">
+<h3><span class="section-number">3.1.8. </span>Sécurité<a class="headerlink" href="#securite" title="Lien vers cette rubrique"></a></h3>
+<p>La sécurité est une caractéristique essentielle d’un système d’archivage électronique (SAE) et donc de la solution logicielle Vitam. La réalisation doit la prendre en charge au plus tôt. Qui plus est, il faut apporter aux utilisateurs une garantie sur laquelle ils puissent s’appuyer.</p>
+<section id="agilite-et-securite">
+<h4><span class="section-number">3.1.8.1. </span>Agilité et sécurité<a class="headerlink" href="#agilite-et-securite" title="Lien vers cette rubrique"></a></h4>
+<p>L’organisation traditionnelle du cycle projet en V s’appuie sur l’alliance de travaux de sécurité en cours de conception et d’audits en phase de recette. En mode Agile, qui multiplie les phases de conception et livraison, cette organisation n’est pas adaptée.</p>
+<p>Il a été retenu une organisation prenant en compte le rythme Agile :</p>
+<ul class="simple">
+<li><p>une analyse de sécurité a été élaborée à partir de la « StoryMap » et des premiers éléments de conception technique,</p></li>
+<li><p>un outil d’analyse automatique de faille de sécurité est mis en œuvre sur le code dans la plate-forme d’intégration continue,</p></li>
+<li><p>lors de chaque Release, l’analyse de risques est revue pour prendre en compte les éventuelles évolutions de conception,</p></li>
+<li><p>à la finalisation de chaque version majeure, un audit de sécurité poussé est mené par des experts sur l’application pour relever des problèmes résiduels, ainsi qu’à chaque version release candidate.</p></li>
+</ul>
+</section>
+<section id="homologation-de-securite">
+<h4><span class="section-number">3.1.8.2. </span>Homologation de sécurité<a class="headerlink" href="#homologation-de-securite" title="Lien vers cette rubrique"></a></h4>
+<p>L’homologation d’un système est, dans le contexte réglementaire actuel, applicable uniquement à un système dans son contexte de production, pour prendre en compte tous les aspects de la sécurité. La solution logicielle Vitam, fournie à des organisations devant la mettre en œuvre dans leur propre contexte, ne peut donc pas faire l’objet d’une homologation au sens strict. Toutefois, un ensemble d’éléments utiles à l’homologation du système peut être constitué dans le cadre du projet.</p>
+<p>Dans le cadre d’un chantier piloté par le ministère des Armées, en concertation avec l’ANSSI, il a donc été décidé de faire une homologation dite de « référence » du logiciel, réunissant tous les éléments utiles à l’homologation d’un système utilisant le logiciel. Cette homologation est traitée par la commission d’homologation mise en place pour le Programme Vitam réunissant les acteurs de la sécurité des ministères porteurs et partenaires.</p>
+<p>L’homologation s’appuie sur le référentiel documentaire suivant :</p>
+<ul class="simple">
+<li><p>stratégie d’homologation, explicitant les acteurs et le processus de gestion de l’homologation,</p></li>
+<li><p>analyse de risques,</p></li>
+<li><p>dossier d’architecture,</p></li>
+<li><p>préconisations d’implémentation, pointant des points particuliers à prendre en compte lors de la mise en œuvre du logiciel,</p></li>
+<li><p>résultats d’audits de sécurité et plans d’action associés.</p></li>
+</ul>
+<p>Cette homologation de référence de la V1 de production de la solution logicielle a été validée par la commission le 12 avril 2018.</p>
+<p>À la suite de la tenue de la commission d’homologation le 14 février 2019, l’homologation de référence de la version 2 de la solution logicielle a été prononcée par le DINum. Elle s’accompagne d’une réserve formulée comme ceci : « cette version de Vitam ne mettant pas encore en œuvre de mesure d’isolation particulière des griffons, il est recommandé de veiller à ce que l’usage de chaque griffon soit en conformité avec la politique de sécurité de l’entité. Il est en particulier déconseillé d’utiliser un griffon qui utiliserait un outil externe qui n’est plus maintenu. »</p>
+<p>Ainsi, une réunion s’est tenue sur ce sujet de l’isolation des griffons le 7 juin 2019 afin de déterminer comment réaliser un compromis entre les moyens matériels, les besoins de développement, la complexité d’exploitation et les contraintes de sécurité. Il a été décidé tout d’abord de mettre en place le service d’exploitation Linux sur tous les griffons et, ensuite, de réaliser une expérimentation sur une isolation totale du griffon dans une autre machine virtuelle. Cette dernière solution a l’inconvénient d’augmenter les besoins en ressources mais présente l’avantage de permettre l’exécution des griffons sur des systèmes différents (Windows, Mac OS).</p>
+<p>Suite à une réunion en mars 2020, la version 3 a également été homologuée le 2 juin 2020 par une note du DINnum pour une durée de 2 ans, soit jusqu’au 30 mars 2022. Une attention particulière est portée sur l’importance des montées de version régulières à opérer par les utilisateurs.
+L’homologation de la version 4 a été prononcée en mai 2021, puis celle de la 5.RC en décembre 2021. L’homologation de la version 5 a été prononcée en octobre 2022.</p>
+</section>
+</section>
+<section id="maintenance">
+<h3><span class="section-number">3.1.9. </span>Maintenance<a class="headerlink" href="#maintenance" title="Lien vers cette rubrique"></a></h3>
+<p>Pendant la phase projet, une maintenance est d’ores et déjà assurée sur certaines versions, pour permettre aux porteurs et partenaires du programme d’utiliser la solution logicielle en production avant la fin du projet.</p>
+<p>Le cycle de développement est le suivant :</p>
+<ul class="simple">
+<li><p>Les développements sont séquencés en itérations pouvant aller de 2 à 4 semaines, mais durant en général 3 semaines. Chaque itération donne lieu à une version mineure en interne.</p></li>
+<li><p>Chaque année, une version majeure est construite pour publication au printemps et une version mineure, dite « release candidate » est publiée et homologuée elle aussi à l’automne.</p></li>
+</ul>
+</section>
+</section>
+<section id="vision-fonctionnelle">
+<h2><span class="section-number">3.2. </span>Vision fonctionnelle<a class="headerlink" href="#vision-fonctionnelle" title="Lien vers cette rubrique"></a></h2>
+<section id="storymap">
+<h3><span class="section-number">3.2.1. </span>« StoryMap »<a class="headerlink" href="#storymap" title="Lien vers cette rubrique"></a></h3>
+<p>La méthode Agile exclut la rédaction de spécifications préalables au développement. Toutefois une approche générale de l’objectif à atteindre et des fonctionnalités souhaitées est nécessaire pour donner une vision aux parties prenantes et garder un cap sans se perdre dans la fragmentation des développements en « User Stories ».</p>
+<p>L’outil utilisé à cette fin en mode Agile est la « StoryMap ». Elle identifie et répartit en grandes thématiques toutes les « User stories », vues de très haut, qui doivent, devraient ou pourraient être prises en compte. Elle permet aussi de les ordonner par priorité et de définir une Roadmap.</p>
+<p>Dans une première phase, en avril 2015, dans le cadre d’une formation sur la méthodologie Agile, les membres de l’équipe interministérielle Vitam et les responsables des projets ministériels ont réalisé une première ébauche de Storymap. Ce travail s’est notamment alimenté de l’expression de besoins formulée par l’équipe de préfiguration du programme Vitam entre l’automne 2013 et l’automne 2014, et du résultat des échanges avec les équipes projets ministériels sur l’interfaçage entre les frontaux et la solution logicielle Vitam ainsi que sur la répartition des fonctions entre les deux applicatifs.</p>
+<p>Dans une seconde phase, entre octobre 2015 et février 2016, l’équipe interministérielle a repris le travail d’élaboration de la Storymap, et a partagé cette vision lors d’ateliers collaboratifs avec des archivistes des projets ministériels et d’autres horizons. Des actualisations et priorisations ont été faites en janvier 2017 et janvier 2018, avec les porteurs et partenaires.
+Dans le cadre de la MAC Vitam, une nouvelle ébauche de Storymap a été réalisée, entre juillet et décembre 2020, en se basant sur une expression libre des besoins des utilisateurs de la solution logicielle Vitam et sur une co-construction en ateliers. Elle a abouti en l’identification d’une quinzaine d’axes de travail, validés début 2021.</p>
+</section>
+<section id="principe-delaboration-de-la-storymap">
+<h3><span class="section-number">3.2.2. </span>Principe d’élaboration de la « StoryMap »<a class="headerlink" href="#principe-delaboration-de-la-storymap" title="Lien vers cette rubrique"></a></h3>
+<p>Par définition, les méthodes Agiles positionnent les utilisateurs au centre de la réflexion. La logique de back-office de la solution logicielle Vitam complique cette approche. Les seuls utilisateurs du back-office sont en effet des applications. Pour partager efficacement la vision avec les archivistes, il fallait sortir de ce point de vue technique.</p>
+<p>Il a été fait le choix d’étendre le périmètre couvert par la « StoryMap », au-delà d’une simple vue back-office, jusqu’aux bornes des interfaces pour les utilisateurs humains. Ainsi construite, la « StoryMap » permet au plus grand nombre de bien percevoir ce qu’il sera possible de faire au travers des frontaux utilisant comme back-office la solution logicielle Vitam.</p>
+</section>
+<section id="contenu-de-la-storymap">
+<h3><span class="section-number">3.2.3. </span>Contenu de la « StoryMap »<a class="headerlink" href="#contenu-de-la-storymap" title="Lien vers cette rubrique"></a></h3>
+<p>Dans ses travaux, l’équipe Vitam s’était efforcée de respecter le modèle OAIS<a class="footnote-reference brackets" href="#id27" id="id9" role="doc-noteref"><span class="fn-bracket">[</span>9<span class="fn-bracket">]</span></a> et avait donc repris ce modèle fonctionnel pour découper la « StoryMap » en six grandes thématiques : entrées, stockage, gestion de la donnée, administration, préservation, accès.</p>
+<p>Mais à l’usage, il s’est avéré que le modèle OAIS présente un certain nombre de manques liés à une vision anglo-saxonne des archives qui distinguent nettement deux missions : le records management (gestion des archives courantes et intermédiaires) et l’archivage historique portant sur des archives « définitives », « mortes ». Cette vision fait donc porter l’archivage numérique sur la conservation à long terme d’objets numérique et exclut notamment la prise en compte des activités liées à la gestion du cycle de vie des archives et à la mise en œuvre de leur sort final (destruction ou conservation) aujourd’hui assurées par les services d’archives français.</p>
+<p>En conséquence, il a été décidé de regrouper dans un domaine fonctionnel spécifique, intitulé « gestion des archives existantes », toutes les activités de gestion du cycle de vie des archives.</p>
+<p>Par ailleurs, le domaine fonctionnel « administration » qui rassemble toutes les fonctions transverses de pilotage de la solution logicielle Vitam a été éclaté entre l’administration fonctionnelle et l’administration technique pour marquer une séparation forte de l’objectif et des pouvoirs.</p>
+<p>Les domaines couverts par la « StoryMap » sont donc :</p>
+<ul class="simple">
+<li><p>Les entrées : réception, contrôle et validation des objets à archiver. À l’issue de cette étape, les objets sont stockés, les métadonnées et autres informations nécessaires à leur description et à leur gestion dans le temps sont indexées, toutes ces opérations sont journalisées.</p></li>
+<li><p>Le stockage : conservation binaire des objets archivés. Ceci prend en compte la gestion d’offres multiples de stockage, de stratégies de stockage différentes par lots d’objets archivés ainsi que leur évolution dans le temps.</p></li>
+<li><p>La gestion de la donnée : indexation et recherche de toutes les informations internes nécessaires au système d’archivage notamment métadonnées et journaux.<a class="footnote-reference brackets" href="#id28" id="id10" role="doc-noteref"><span class="fn-bracket">[</span>10<span class="fn-bracket">]</span></a></p></li>
+<li><p>La gestion des archives existantes : gestion du cycle de vie des archives et mise en œuvre de leur sort final, notamment élimination, modification des métadonnées (y compris de gestion), reclassement/retraitement, déclassification, préparation d’un transfert vers un autre service d’archives ou sortie définitive, etc.</p></li>
+<li><p>La préservation : planification et gestion des opérations de conversion de formats et d’audit interne, au travers de stratégies applicables par lots d’objets archivés.</p></li>
+<li><p>L’accès : recherche et consultation des objets archivés.</p></li>
+<li><p>L’administration fonctionnelle : coordination fonctionnelle du système, dont la gestion des règles internes, le suivi de la qualité globale du service rendu et son amélioration.</p></li>
+<li><p>L’administration technique : surveillance et gestion du maintien en condition opérationnelle de l’application (supervision, processus, mise à jour applicative…) et des interconnexions avec d’autres applications.</p></li>
+</ul>
+<p>Le contenu détaillé est consultable en annexe 1. Cette vision détaillée en date de juillet 2016 a évolué dans le cadre des arbitrages (MoSCoW<a class="footnote-reference brackets" href="#id29" id="id11" role="doc-noteref"><span class="fn-bracket">[</span>11<span class="fn-bracket">]</span></a>) et au cours des développements (actualisation effectuée début 2017 et début 2018).</p>
+<p>Un nouveau travail de construction d’une storymap pour la phase produit à partir de 2020 a été entamé en 2 temps : tout d’abord, des développements fonctionnels et techniques pour les releases 15 et 16 ont été proposés et arbitrés par les ministères porteurs et le représentant du club utilisateurs, avant une phase plus classique de construction pour les prochaines années.
+Cette deuxième phase a abouti début 2021 en l’identification d’une quinzaine d’axes de travail. Le contenu détaillé est consultable en annexe 2.</p>
+<p><img alt="Vitam selon l'OAIS" src="../_images/202206_archi.jpg" /></p>
+</section>
+<section id="interfaces-homme-machine-ihm">
+<h3><span class="section-number">3.2.4. </span>Interfaces Homme Machine (IHM)<a class="headerlink" href="#interfaces-homme-machine-ihm" title="Lien vers cette rubrique"></a></h3>
+<section id="ihm-demo-et-ihm-recette">
+<h4><span class="section-number">3.2.4.1. </span>IHM Démo et IHM Recette<a class="headerlink" href="#ihm-demo-et-ihm-recette" title="Lien vers cette rubrique"></a></h4>
+<p>Même si en tant que back-office, la solution logicielle Vitam n’avait, a priori, pas d’interface utilisateur, à l’exception de celle d’administration, le mode de développement Agile impliquait une visibilité des fonctions par les parties prenantes, que de simples API ne peuvent pas assurer. Il a donc été nécessaire d’avoir des interfaces homme-machine qui permettent de mettre en œuvre toutes les fonctionnalités et de constater leur bonne adéquation au besoin.</p>
+<p>Qui plus est, hors d’un contexte ayant permis de mettre en place un frontal archivistique<a class="footnote-reference brackets" href="#id30" id="id12" role="doc-noteref"><span class="fn-bracket">[</span>12<span class="fn-bracket">]</span></a>, qui aura une visibilité complète sur les archives contenues dans le back-office et leur gestion, ou avant que celui-ci n’ait pu être finalisé, il peut être utile d’avoir accès à toutes les fonctionnalités du back-office. Il a donc été décidé de développer une interface dite « de démonstration ». Celle-ci complétait une IHM d’administration fonctionnelle et technique, devant être pérenne et ergonomique, dont le développement et l’implémentation restaient à la charge des utilisateurs.</p>
+<p>L’IHM, fournie par l’équipe programme Vitam, dite « de démonstration », permet aux utilisateurs :</p>
+<ul class="simple">
+<li><p>à défaut d’un frontal archivistique connecté à leur back-office Vitam, de réaliser, a minima, les activités utilisateurs associées aux domaines fonctionnels « entrées », « accès » et « gestion des archives existantes ». Cette interface est dotée d’une ergonomie limitée et ne permettra pas de mettre en place des workflows ou une gestion des droits fine en fonction de différents profils. Elle ne pourra être utilisée que par un faible nombre d’utilisateurs, et ne sera pérenne que dans les implémentations non dotées de frontaux archivistiques ;</p></li>
+<li><p>d’expérimenter des modalités de réalisation innovantes des activités utilisateurs dans des environnements de recette et de démonstration.</p></li>
+</ul>
+<p>Enfin, dans le processus de développement, une IHM adaptée aux tâches de recette utilisée par les équipes de développement s’est avérée nécessaire. Faiblement ergonomique, elle permet aux testeurs de vérifier que les tâches réalisées par la solution logicielle Vitam s’exécutent bien, par exemple, au travers de l’analyse des logs ou de la vérification de paramétrages.</p>
+</section>
+<section id="linitiative-vitam-ui">
+<h4><span class="section-number">3.2.4.2. </span>L’initiative Vitam UI<a class="headerlink" href="#linitiative-vitam-ui" title="Lien vers cette rubrique"></a></h4>
+<p>Mi-2019, des partenaires du Programme Vitam ont fait le constat de besoins communs pour des interfaces aussi bien d’administration que fonctionnel. Ils se sont mis d’accord pour mutualiser les réflexions, se répartir les fonctionnalités à développer et organiser les procédures permettant de mettre en commun leurs travaux.</p>
+<p><img alt="Acteurs de Vitam UI" src="../_images/Acteurs_VitamUI.png" /></p>
+<p>Ainsi, le CINES, le CEA, la société Xelians-Locarchives et le projet Vitam accessible en service<a class="footnote-reference brackets" href="#id31" id="id13" role="doc-noteref"><span class="fn-bracket">[</span>13<span class="fn-bracket">]</span></a>, ont mis en place :</p>
+<ul class="simple">
+<li><p>une gouvernance organisée avec un comité de cohérence et un comité technique auxquels sont associés un représentant de chaque projet contributeur, ainsi qu’un représentant de Vitam muni d’un droit de veto au titre de son engagement dans la durée pour la maintenabilité et la correction de tous les outils Vitam ;</p></li>
+<li><p>un accord contributeur qui fixe les règles de contribution. Le texte établit une copropriété du code et la délégation des droits intellectuels et de gestion de ce code au Programme Vitam ;</p></li>
+<li><p>la mutualisation du design system ;</p></li>
+<li><p>la publication des sources avec la livraison de code vers le Programme Vitam par un processus de pull-request (ou demande de versement) de code, avec analyse par le Programme Vitam et un contributeur autre que celui qui a livré le code, et une action finale de merge-request (ou acceptation de versement) par le Programme ;</p></li>
+<li><p>la mutualisation des tests.</p></li>
+</ul>
+<p>Vitam UI est construit autour d’un portail d’applications (appelées APP).</p>
+<p>Une APP c’est :</p>
+<ul class="simple">
+<li><p>Une IHM centrée sur un objet métier et un type d’utilisateur</p></li>
+<li><p>Les fonctions d’accès humaines et techniques</p></li>
+<li><p>Des API de communication avec le back-office</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="vision-technique">
+<h2><span class="section-number">3.3. </span>Vision technique<a class="headerlink" href="#vision-technique" title="Lien vers cette rubrique"></a></h2>
+<section id="architecture-generale">
+<h3><span class="section-number">3.3.1. </span>Architecture générale<a class="headerlink" href="#architecture-generale" title="Lien vers cette rubrique"></a></h3>
+<p>Une plate-forme d’archivage utilisant la solution logicielle Vitam comprend :</p>
+<ul class="simple">
+<li><p>des applications tierces versant et consultant des objets dans la plate-forme,</p></li>
+<li><p>des applications de front office, permettant à des utilisateurs d’accéder aux objets archivés à des fins de recherche, consultation, gestion du cycle de vie ou préservation :</p>
+<ul>
+<li><p>le frontal de gestion et administration de la plateforme, voir le frontal archivistique (IHM Système d’Information Archivistique),</p></li>
+<li><p>des applications tierces, notamment les applications métier des services producteurs,</p></li>
+</ul>
+</li>
+<li><p>le back-office appuyé sur des offres de stockage, dont certaines sont potentiellement tierces, qui assurent la conservation binaire des objets archivés.</p></li>
+</ul>
+<p>L’ensemble fourni par l’équipe programme Vitam comprend le code, sous licence libre, nécessaire pour mettre en œuvre :</p>
+<ul class="simple">
+<li><p>le cœur Vitam, le back-office proprement dit. Il n’a que des API (de type REST/JSON), y compris pour son administration. Il se doit d’être intégrable complètement, et que toute fonction puisse être mobilisée via les API par un frontal non Vitam,</p></li>
+<li><p>le front-office VitamUI,</p></li>
+<li><p>une couche de gestion des offres de stockage.
+Il est possible d’utiliser des offres externes de stockage objet, ou d’en mettre en œuvre avec la solution logicielle logiciel Vitam.</p></li>
+</ul>
+</section>
+<section id="modules-du-coeur-vitam">
+<h3><span class="section-number">3.3.2. </span>Modules du Cœur Vitam<a class="headerlink" href="#modules-du-coeur-vitam" title="Lien vers cette rubrique"></a></h3>
+<p>Parmi les différents modules internes du cœur Vitam, l’essentiel des fonctionnalités de l’application est porté par quatre modules :</p>
+<ul class="simple">
+<li><p>moteur de traitement,</p></li>
+<li><p>moteur de données,</p></li>
+<li><p>gestion des journaux,</p></li>
+<li><p>gestion des offres de stockage.</p></li>
+</ul>
+<section id="moteur-de-traitement">
+<h4><span class="section-number">3.3.2.1. </span>Moteur de traitement<a class="headerlink" href="#moteur-de-traitement" title="Lien vers cette rubrique"></a></h4>
+<p>Ce module permet l’exécution de processus pour un lot d’archives en fonction de paramètres additionnels (contrats, stratégies…), utilisant in fine les ressources d’exécution de serveurs effectuant des tâches élémentaires, dits « Workers ». Un processus peut tout aussi bien concerner un processus d’entrée, de transformations de formats, d’audit, d’élimination…
+Le moteur de traitement prend en charge la gestion des processus concurrents, ainsi que l’affectation in fine au « Workers », et masque leur gestion fine. Il doit par contre globalement (en fonction des niveaux dans des strates différentes) fournir des informations d’avancement du processus pour assurer le suivi, tant d’un point de vue humain que d’activité du système global (priorisation, équilibrage…).</p>
+<p>Un objectif majeur de la solution logicielle Vitam est de pouvoir traiter de grandes volumétries d’archives. Par exemple, lors d’une campagne de transformation bureautique, on peut s’attendre à des centaines de millions d’objets à traiter. Toutefois, il est important de garder une vision macroscopique des processus, l’enjeu sera donc d’allier celle-ci à la gestion unitaire de grands nombres d’opérations élémentaires.</p>
+<p>Pour l’ajout de nouveaux types d’opérations, il sera possible d’ajouter des greffons. Ceux-ci pourront, par exemple, prendre en charge une transformation d’un format A en un format B, traiter un format de fichier pour en extraire le texte brut, calculer un nouveau type d’empreinte… L’ajout de fonctions par greffons permet aussi de mobiliser des logiciels propriétaires, ce qui est par exemple indispensable pour certaines transformations de formats fermés.</p>
+<p>Les « Workers » sont des serveurs (physiques ou logiques) hébergeant les outils permettant d’exécuter les opérations élémentaires (identification de format, transformations, conversion XML/JSON/PDF et contrôle pour les métadonnées, écriture suivant une stratégie de conservation/stockage/… et autre appel de greffons). Les outils peuvent être isolés dans des conteneurs (type Docker) pour respecter leur contexte d’exécution particulier, voire obsolète.</p>
+<p>Le moteur de traitement, associé à cette logique de greffons, permet d’appliquer toutes sortes d’opérations sur de très grands volumes d’archives. On peut envisager à terme des opérations d’extraction sémantique de thématiques, d’entités nommées, des expérimentations seront faites en ce sens d’ici la version 3 de la solution logicielle.</p>
+</section>
+<section id="moteur-de-donnees">
+<h4><span class="section-number">3.3.2.2. </span>Moteur de données<a class="headerlink" href="#moteur-de-donnees" title="Lien vers cette rubrique"></a></h4>
+<p>Ce module permet l’indexation et la recherche des métadonnées des archives, des journaux et de certains référentiels complexes. Il constitue une couche d’abstraction avec les moteurs réels de manipulation des données (métadonnées), de façon à avoir un couplage lâche et permettre des évolutions facilitées.</p>
+<p>L’efficacité de ce moteur est au centre de l’efficacité de tous les traitements puisqu’il est utilisé aussi par les processus internes pour rechercher les archives sur lesquels appliquer les traitements et pour manipuler les journaux.</p>
+<p>Il est à noter qu’en aucun cas ce moteur n’est considéré comme un espace de conservation. Il est toujours possible de perdre un index et de devoir le reconstruire. Aussi toutes les métadonnées et informations (notamment journaux) qui y sont indexées pour les utiliser en recherche, sont aussi conservées dans le stockage de manière sûre.</p>
+<p>L’objectif de gérer des milliards d’objets étant primordial, une « preuve de concept » reposant sur les technologies MongoDB et ElasticSearch a permis d’en prouver la faisabilité sur un nombre de serveurs raisonnable<a class="footnote-reference brackets" href="#id32" id="id14" role="doc-noteref"><span class="fn-bracket">[</span>14<span class="fn-bracket">]</span></a>. L’alliance des deux technologies permet, grâce à MongoDB, d’assurer des opérations de type transactionnel (incrément, manipulation de listes…) et de gérer les aspects arborescences précis et, grâce à ElasticSearch, d’améliorer les capacités de recherche de type plein texte sur les métadonnées et les journaux.</p>
+</section>
+<section id="gestion-des-journaux">
+<h4><span class="section-number">3.3.2.3. </span>Gestion des journaux<a class="headerlink" href="#gestion-des-journaux" title="Lien vers cette rubrique"></a></h4>
+<p>Ce module permet la journalisation des différents types d’événements fonctionnels et techniques survenus dans le SAE, avec trois buts :</p>
+<ul class="simple">
+<li><p>sur les aspects archivistiques : suivre et contrôler des activités du SAE,</p></li>
+<li><p>sur les aspects de valeur probante : assurer l’établissement des preuves de bonne gestion et de pérennisation,</p></li>
+<li><p>sur les aspects SI : superviser et exploiter le système.</p></li>
+</ul>
+<p>Les journaux métiers, portant sur les archives et traçant les opérations à portée archivistique, et leur bonne gestion sont la base du maintien de la valeur probante des archives contenues dans le SAE. Pour marquer leur différence de nature, les journaux à usage technique seront qualifiés de « logs ».</p>
+<p>En journaux métiers sont notamment prévus :</p>
+<ul class="simple">
+<li><p>le journal des opérations : il conserve la trace de toutes les opérations générales effectuées par le SAE (entrée, modifications de méta-données, transformation…),</p></li>
+<li><p>le journal du cycle de vie des archives : il est défini pour chaque archives, individuellement et porte la trace de toutes les opérations ayant été effectuées sur celle-ci,</p></li>
+<li><p>le journal des écritures : il porte la trace de toutes les opérations de stockage et l’empreinte des écritures. Il s’agit d’un journal en profondeur, accessibles uniquement par les applications environnantes ayant pouvoir d’administration et dont la consultation permettra de renforcer la valeur probante.</p></li>
+</ul>
+<p>La sécurisation, avec horodatage, chaînage et conservation, dans le respect des normes archivistiques, de ces journaux permet de garantir le traçage et le croisement de tous les événements ayant un effet sur les archives contenues dans le SAE et ainsi d’apporter une preuve « systémique »<a class="footnote-reference brackets" href="#id33" id="id15" role="doc-noteref"><span class="fn-bracket">[</span>15<span class="fn-bracket">]</span></a> du maintien de la valeur probante de son contenu.</p>
+</section>
+<section id="gestion-des-offres-de-stockage">
+<h4><span class="section-number">3.3.2.4. </span>Gestion des offres de stockage<a class="headerlink" href="#gestion-des-offres-de-stockage" title="Lien vers cette rubrique"></a></h4>
+<p>Ce module permet de gérer les différentes offres de stockage et de les utiliser au mieux pour réaliser les opérations demandées (lecture, écriture, effacement, mise à jour, check, lister, compter…).</p>
+<p>La première fonction de ce module est l’abstraction du stockage via son API. Un client ne demande pas une opération sur une offre mais sur une « stratégie » de stockage (qui précise les offres sous-jacentes à utiliser). Il peut aussi, par ce biais, demander des contrôles de conformité par rapport à une stratégie de stockage (nombre de copies conformes pour chaque stratégie de transformation, version, stockage).</p>
+<p>Sa deuxième fonction est la gestion de ces offres de stockage :</p>
+<ul class="simple">
+<li><p>Écriture : décision des opérations à mener, gestion de l’asynchronisme,</p></li>
+<li><p>Lecture : décision de la « meilleure » offre pour répondre rapidement aux demandes,</p></li>
+<li><p>Fournitures d’informations transverses : journaux, multi-tenant, statistiques…</p></li>
+</ul>
+<p>Sa troisième fonction est d’assurer la liaison avec les offres via le principe d’un SPI (Service Provider Interface). Chaque offre de stockage propose un driver (pilote) qui est conforme aux API spécifiées par Vitam pour une offre de stockage. Ce driver est ajouté à la configuration de Vitam. L’ajout d’une offre réelle de stockage consiste ensuite à déclarer qu’une offre de stockage utilise tel driver et avec tels paramètres (connexions, adresses, spécificités…).</p>
+<p>Il est possible de connecter une offre de stockage objet externe, soit à travers une interface Swift standard, soit en développant un connecteur sur l’API « client stockage ». Il est aussi prévu dans le cadre du projet Vitam de fournir le logiciel nécessaire pour monter une offre de stockage dite « chaude » sur disque, et une autre dite « froide » sur bandes.</p>
+<p>L’ensemble du module « gestion des offres de stockage » et des offres de stockage elles-mêmes répond aux attentes de la norme NF Z 42‑020 Composant Coffre-Fort Numérique<a class="footnote-reference brackets" href="#id34" id="id16" role="doc-noteref"><span class="fn-bracket">[</span>16<span class="fn-bracket">]</span></a>.</p>
+</section>
+</section>
+<section id="principes-dorganisation-des-archives">
+<h3><span class="section-number">3.3.3. </span>Principes d’organisation des archives<a class="headerlink" href="#principes-dorganisation-des-archives" title="Lien vers cette rubrique"></a></h3>
+<p>Pour permettre une organisation souple des archives, y compris en mutualisant certains objets, le modèle de données permet un classement multi-hiérarchique dans des dossiers et sous-dossiers de pièces, représentant des unités intellectuelles d’archives.</p>
+<p>Chacun des niveaux représentant un dossier, un sous-dossier ou une pièce, nommés génériquement « unités archivistiques » ou « Archive Units », peut être porteur de méta-données descriptives (nature du document, titre, identifiant, dates, personne concernée…) et de gestion (DUA, sort final, communicabilité…).</p>
+<p><img alt="Structure multi-hiérarchique" src="../_images/structure.png" /></p>
+<p>Par ailleurs, chaque unité archivistique correspondant à une pièce peut contenir un groupe d’objets réunissant différentes formes techniques d’une même unité intellectuelle, des objets se différenciant par leur usage (pour conservation, pour diffusion, en référence papier…) et par leur version dans le temps.</p>
+<p>Cette structuration est de fait reprise dans les collections exposées par les API.</p>
+<p><img alt="Structure item / groupe d'objets / objets" src="../_images/structure2.png" /></p>
+</section>
+</section>
+<section id="annexe-1-contenu-de-la-storymap-de-la-phase-projet-juillet-2016">
+<h2><span class="section-number">3.4. </span>Annexe 1 : Contenu de la « StoryMap » de la phase projet (juillet 2016)<a class="headerlink" href="#annexe-1-contenu-de-la-storymap-de-la-phase-projet-juillet-2016" title="Lien vers cette rubrique"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Colonne</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Activité utilisateur</p></td>
+<td class="text-left"><p>Action élémentaire lancée volontairement par un acteur qui veut la voir réalisée comme un tout ayant un sens métier. Quand cela est pertinent elle sera découpée en tâches dans le processus de rédaction des users stories.<br>Cette action est destinée à être réalisée depuis les front offices ou les IHM du back office Vitam</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Description et présentation</p></td>
+<td class="text-left"><p>Présentation détaillée de l’activité utilisateur</p></td>
+</tr>
+</tbody>
+</table>
+<section id="domaine-entrees">
+<h3><span class="section-number">3.4.1. </span>Domaine « Entrées »<a class="headerlink" href="#domaine-entrees" title="Lien vers cette rubrique"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Activité utilisateur</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Tester un nouveau flux d’entrée applicatif à blanc</p></td>
+<td class="text-left"><p>Tester en ayant les résultats des différentes étapes de l’entrée mais sans stocker les archives dans le SAE.<br>Il s’agit bien du test en vision métier des flux, l’interconnexion technique sera, quant à elle, d’abord testée sur une plate-forme de recette.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Effectuer une entrée par flux applicatif d’un ensemble d’archives</p></td>
+<td class="text-left"><p>Réaliser une entrée d’un ensemble d’archives transférées par une application métier selon le formalisme SEDA, depuis l’initialisation jusqu’à la clôture de l’opération</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Effectuer une entrée unitaire d’un ensemble d’archives</p></td>
+<td class="text-left"><p>Réaliser une entrée unitaire d’un ensemble d’archives selon le formalisme SEDA, depuis l’initialisation jusqu’à la clôture de l’opération</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Gérer les entrées en anomalie</p></td>
+<td class="text-left"><p>Gérer les anomalies détectées lors du processus de transfert et d’entrée</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Gérer les contrats d’entrées</p></td>
+<td class="text-left"><p>Gérer les contrats d’entrées correspondant à des filières d’archives (création, modification, désactivation, suppression de contrats, des filières et des profils associés)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Prendre en charge une entrée d’un ensemble d’archives venant d’un autre SAE</p></td>
+<td class="text-left"><p>Importer un ensemble d’archives venant d’un autre SAE avec l’ensemble des données associées (journaux, éléments de valeur probante…)</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Prendre en charge une entrée d’un ensemble de références d’archives externes</p></td>
+<td class="text-left"><p>Effectuer une entrée de références à des archives qui ne sont pas stockées dans le SAE (version papier ou archive stockée dans un autre SAE, comme le classifié)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="domaine-stockage">
+<h3><span class="section-number">3.4.2. </span>Domaine « Stockage »<a class="headerlink" href="#domaine-stockage" title="Lien vers cette rubrique"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Activité utilisateur</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Gérer les offres de stockage</p></td>
+<td class="text-left"><p>Ajouter, modifier et supprimer les offres de stockage</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Gérer les stratégies de stockage</p></td>
+<td class="text-left"><p>Ajouter, modifier et supprimer des regroupements d’offres de stockage en fonction de la politique de stockage (ex. : groupes d’offres de stockage de conservation, de diffusion…)</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Débrancher en urgence/rebrancher une offre de stockage</p></td>
+<td class="text-left"><p>Arrêter en urgence toutes les opérations sur une offre de stockage et la remettre en œuvre</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="domaine-gestion-de-la-donnee">
+<h3><span class="section-number">3.4.3. </span>Domaine « Gestion de la donnée »<a class="headerlink" href="#domaine-gestion-de-la-donnee" title="Lien vers cette rubrique"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Activité utilisateur</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Gérer les types et modes d’indexation</p></td>
+<td class="text-left"><p>Gérer les types et les modes d’indexation des champs de l’ontologie commune et des métadonnées particulières à certaines filières</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="domaine-gestion-des-archives-existantes">
+<h3><span class="section-number">3.4.4. </span>Domaine « Gestion des archives existantes »<a class="headerlink" href="#domaine-gestion-des-archives-existantes" title="Lien vers cette rubrique"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Activité utilisateur</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Reprendre l’organisation de l’ensemble d’archives d’une entrée effectuée</p></td>
+<td class="text-left"><p>Reprendre le tri, le classement et l’édition des métadonnées de l’ensemble des archives d’une entrée déjà effectuée sans reprendre les fichiers de données</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Modifier des métadonnées d’archives</p></td>
+<td class="text-left"><p>Modifier les métadonnées d’archives</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Modifier l’organisation de classement</p></td>
+<td class="text-left"><p>Modifier les structures arborescentes dans lesquelles sont placées les archives</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Enrichir les métadonnées par analyse automatique des contenus</p></td>
+<td class="text-left"><p>Enrichir les métadonnées d’un ensemble d’archives en lançant une analyse automatique des données et métadonnées existantes</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Administrer les référentiels métiers partagés (producteurs, fonctions)</p></td>
+<td class="text-left"><p>Rechercher dans les référentiels métiers SIA et SAE (services producteurs, services par fonction…)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Auditer des archives en croisant les informations du SAE</p></td>
+<td class="text-left"><p>Croiser l’ensemble des informations internes sur un ensemble d’archives (journaux d’entrée, de sortie, base de métadonnées)</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Construire un état de référence d’un ensemble d’archives</p></td>
+<td class="text-left"><p>Établir un état de référence dans un objectif de récolement</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Récoler des archives par rapport à un état de référence</p></td>
+<td class="text-left"><p>Croiser l’ensemble des informations internes sur un ensemble d’archives avec un état de référence externe au système</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Administrer les référentiels de règles de gestion</p></td>
+<td class="text-left"><p>Gérer les règles de gestion dans le temps (création, modification, désactivation, suppression)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Éliminer selon les règles de gestion</p></td>
+<td class="text-left"><p>Éliminer les archives dont le calcul sur les règles de gestion induit un sort final en élimination</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Transférer un ensemble d’archives vers un autre SAE</p></td>
+<td class="text-left"><p>Exporter un ensemble d’archives avec les métadonnées et autres informations associées (journaux, éléments de valeur probante…) vers un autre SAE</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Classifier/déclassifier un ensemble d’archives</p></td>
+<td class="text-left"><p>Changer le niveau de classification d’un ensemble d’archives</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Geler un ensemble d’archives</p></td>
+<td class="text-left"><p>Empêcher l’élimination et la modification d’un ensemble d’archives</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Dégeler un ensemble d’archives</p></td>
+<td class="text-left"><p>Remettre des archives gelées dans le circuit de gestion standard des éliminations et modifications</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Gérer un instrument de recherche</p></td>
+<td class="text-left"><p>Créer, modifier, détruire un instrument de recherche</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="domaine-preservation">
+<h3><span class="section-number">3.4.5. </span>Domaine « Préservation »<a class="headerlink" href="#domaine-preservation" title="Lien vers cette rubrique"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Activité utilisateur</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Gérer les stratégies de conversion</p></td>
+<td class="text-left"><p>Gérer les stratégies de conversion à mettre en œuvre et précisant par domaines définis (a priori filières d’entrées) les méthodes de conversion retenues et les actions à effectuer (génération d’une nouvelle version, conservation ou non des anciennes…)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Gérer les méthodes de conversion</p></td>
+<td class="text-left"><p>Gérer les méthodes permettant de valider un format ou de passer d’un format à un autre en utilisant des greffons de conversion de formats (à noter un greffon est un module technique interfaçable de manière standardisée en anglais « plug-in »)</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Tester les méthodes de conversion</p></td>
+<td class="text-left"><p>Tester sur des fichiers réels le bon fonctionnement de méthodes de conversion</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Administrer le référentiel des formats</p></td>
+<td class="text-left"><p>Gérer les formats avec leurs caractéristiques techniques, ainsi que les liens avec les outils d’identification et les greffons de conversion</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Définir la date d’obsolescence d’un format</p></td>
+<td class="text-left"><p>Enregistrer dans le SAE à quelle date un format sera considéré comme obsolescent</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Identifier des archives aux formats obsolètes</p></td>
+<td class="text-left"><p>Identifier les archives concernées par l’obsolescence de format dans un ensemble d’archives</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Convertir pour cause d’obsolescence</p></td>
+<td class="text-left"><p>Convertir pour cause d’obsolescence de format les archives concernées selon des stratégies de conversion</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Gérer les stratégies d’audit d’intégrité</p></td>
+<td class="text-left"><p>Définir les modalités d’audit applicables à un ensemble d’archives défini (empreintes, répartition adéquate sur les offres de stockage, fréquence, profondeur, caractère aléatoire, échantillonnage, etc.)</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Auditer selon les stratégies d’audit</p></td>
+<td class="text-left"><p>Auditer les archives conformément aux stratégies d’audit</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Traiter les fichiers infectés</p></td>
+<td class="text-left"><p>Traiter les fichiers détectés comme infectés après entrée dans le système</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="domaine-acces">
+<h3><span class="section-number">3.4.6. </span>Domaine « Accès »<a class="headerlink" href="#domaine-acces" title="Lien vers cette rubrique"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Activité utilisateur</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Rechercher une unité d’archives bien définie dans une transaction automatique</p></td>
+<td class="text-left"><p>Obtenir une unité d’archives correspondant à une requête ciblée faite par une application connectée au SAE</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Rechercher des archives par recherche complexe manuelle sur les archives</p></td>
+<td class="text-left"><p>Obtenir la liste des archives correspondant à une requête complexe composée par un humain</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Rechercher des archives via le journal des entrées</p></td>
+<td class="text-left"><p>Identifier une entrée et obtenir la liste des archives associées avec leurs métadonnées</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Consulter un ensemble d’archives</p></td>
+<td class="text-left"><p>Obtenir le contenu des archives identifiées, pour export, visualisation, transmission…</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Exporter des métadonnées d’un ensemble d’archives</p></td>
+<td class="text-left"><p>Obtenir les métadonnées des archives identifiées</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Exporter un relevé de valeur probante pour un ensemble d’archives</p></td>
+<td class="text-left"><p>Obtenir un relevé établissant la bonne conservation de la valeur probante d’un ensemble d’archives</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Gérer les contrats d’accès</p></td>
+<td class="text-left"><p>Gérer les contrats d’accès correspondant à des filières archives (création, modification, désactivation, suppression)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Rendre un ensemble d’archives plus rapidement accessible de manière temporaire</p></td>
+<td class="text-left"><p>Rapatrier un ensemble d’archives le temps d’une opération particulière demandant un accès fréquent (principe du « petit dépôt »). L’ensemble d’archives est mis dans un espace de stockage rapide/facilement accessible.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="domaine-administration-fonctionnelle">
+<h3><span class="section-number">3.4.7. </span>Domaine « Administration fonctionnelle »<a class="headerlink" href="#domaine-administration-fonctionnelle" title="Lien vers cette rubrique"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Activité utilisateur</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Gérer les actions en attente de décisions</p></td>
+<td class="text-left"><p>Identifier et statuer sur les tâches fonctionnelles nécessitant une intervention humaine</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Gérer et consulter les journaux</p></td>
+<td class="text-left"><p>Interroger les différents journaux du SAE→ export des données brutes selon sélection</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Consulter les statistiques fonctionnelles</p></td>
+<td class="text-left"><p>Consulter les statistiques : sur les objets gérés, sur les actions effectuées par le SAE</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Suivre l’avancée des opérations en masse et de fond</p></td>
+<td class="text-left"><p>Lister et vérifier l’avancée des opérations de masse (migration de format, audit d’intégrité, maintien de valeur probante…) en cours</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Surveiller les valeurs atypiques des flux</p></td>
+<td class="text-left"><p>Identifier les comportements anormaux par rapport à une norme définie à l’avance (ex. Flux d’entrée ou d’accès anormaux en nombre ou en taille, requêtes de longue durée, etc.)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Surveiller les événements de sécurité</p></td>
+<td class="text-left"><p>Identifier les comportements anormaux par rapport aux règles de sécurité (ex. Requêtes ne correspondant pas aux droits accordés, erreurs d’authentification…)</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Gérer les « autres » référentiels archivistiques du SAE</p></td>
+<td class="text-left"><p>Créer les référentiels internes non pris en compte dans d’autres domaines et les mettre à jour (par exemple ontologie…)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Gérer les espaces de stockage rapide/facilement accessibles (« petit dépôt »)</p></td>
+<td class="text-left"><p>Vérifier la capacité et la disponibilité dans les espaces de stockage temporaire, réaliser des opérations de purge, placer des copies d’objets dans ces espaces</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Gérer les droits archivistiques des applications connectées au SAE</p></td>
+<td class="text-left"><p>Attribuer un périmètre et des droits aux applications pour les entrées et les accès aux archives dans le SAE, en lien avec les contrats d’entrée et d’accès sur des filières d’archives</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Planifier et prioriser les types de tâches</p></td>
+<td class="text-left"><p>Gérer la priorité des différentes tâches (entrées, accès, etc.) en cours ou à venir</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Gérer les utilisateurs des IHM</p></td>
+<td class="text-left"><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="domaine-administration-technique">
+<h3><span class="section-number">3.4.8. </span>Domaine « Administration technique »<a class="headerlink" href="#domaine-administration-technique" title="Lien vers cette rubrique"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Activité utilisateur</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Tester l’interconnexion technique entre une application et le SAE</p></td>
+<td class="text-left"><p>Se connecter au SAE et vérifier que le SAE répond</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Gérer les applications connectées au SAE</p></td>
+<td class="text-left"><p>Enregistrer les applications avec les informations techniques nécessaires aux échanges (IP, moyens d’authentification…)</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Gestion et consultation des logs</p></td>
+<td class="text-left"><p>Accéder aux différents logs techniques du SAE</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Consulter les statistiques techniques</p></td>
+<td class="text-left"><p>Consulter les statistiques : performance en nombre et en bande passante, nombre d’objets traités, en CPU, etc.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Mettre à jour la solution logicielle</p></td>
+<td class="text-left"><p>Ajouter, supprimer ou installer une nouvelle version d’un module applicatif ou d’une configuration</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Gérer les greffons</p></td>
+<td class="text-left"><p>Ajouter, mettre à jour, activer/désactiver un greffon</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Effectuer la supervision technique</p></td>
+<td class="text-left"><p>Vérifier qu’un service technique est actif/inactif, lancer une surveillance des réseaux par des sondes, etc.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Lancer/arrêter les services</p></td>
+<td class="text-left"><p>Lancer ou arrêter des services applicatifs ou d’infrastructure</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Gérer l’élasticité</p></td>
+<td class="text-left"><p>Déployer des nouvelles capacités de traitement technique, en fonction de l’évolution du volume d’activité, de manière à les rendre opérables et supervisables</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Assurer le PCA/PRA</p></td>
+<td class="text-left"><p>Gérer la continuité et la reprise d’activité, notamment en cas de maintenance ou de sinistre</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Accéder aux informations techniques d’un ensemble d’archives</p></td>
+<td class="text-left"><p>Effectuer des recherches et obtenir les informations techniques sur un ensemble d’archives</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="annexe-2-contenu-de-la-storymap-de-la-phase-produit-fevrier-2021">
+<h2><span class="section-number">3.5. </span>Annexe 2 : Contenu de la « StoryMap » de la phase produit (février 2021)<a class="headerlink" href="#annexe-2-contenu-de-la-storymap-de-la-phase-produit-fevrier-2021" title="Lien vers cette rubrique"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Colonne</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Activité utilisateur</p></td>
+<td class="text-left"><p>Action élémentaire lancée volontairement par un acteur qui veut la voir réalisée comme un tout ayant un sens métier. Quand cela est pertinent elle sera découpée en tâches dans le processus de rédaction des users stories.<br>Cette action est destinée à être réalisée depuis les front offices ou les IHM du back office Vitam</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Description et présentation</p></td>
+<td class="text-left"><p>Présentation détaillée de l’activité utilisateur</p></td>
+</tr>
+</tbody>
+</table>
+<section id="domaine-collecte-entree">
+<h3><span class="section-number">3.5.1. </span>Domaine « Collecte / Entrée »<a class="headerlink" href="#domaine-collecte-entree" title="Lien vers cette rubrique"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Activité utilisateur</p></th>
+<th class="head text-left"><p>Description et précision</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Faciliter le versement d’archives<br><br>Planification et organisation de la prise en charge des entrées dans le SAE<br><br>Faciliter le versement et la consultation d’archives liées a des formats conteneurs (messageries, bases de données)</p></td>
+<td class="text-left"><p>Faciliter la collecte et le versement d’archives par l’intégration de connecteurs pour :<br>- la collecte de vracs numériques (SEDAccord) ;<br>- la collecte, la gestion et l’accès à des formats conteneur, en particulier les messageries ;<br>- l’intégration de flux applicatifs :<br>-&gt; d’applications de référence de la fonction publique (RH),<br>-&gt; de produits leaders du marché ayant vocation à produire des archives (GED, etc.),<br>-&gt; d’applications spécifiques en isolant la part des traitements « communs » (structuration d’une filière de collecte / versement, traitement des métadonnées/SEDA, création de SIP, contrôle du transport) ;<br>- fluidifier le transport de collecte et d’entrée par des moyens de supervision, d’administration et le contrôle sur un ensemble de flux.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="domaine-acces-recherche">
+<h3><span class="section-number">3.5.2. </span>Domaine « Accès / Recherche »<a class="headerlink" href="#domaine-acces-recherche" title="Lien vers cette rubrique"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Activité utilisateur</p></th>
+<th class="head text-left"><p>Description et précision</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Optimiser et personnaliser la recherche d’archives</p></td>
+<td class="text-left"><p>Améliorer les capacités de recherche :<br>- Optimiser, enrichir de manière automatique et personnaliser la recherche d’archives suivant les contextes, <br>- Faciliter l’interopérabilité des recherches</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Recherche sur les « méta » données non structurées et capacité à corréler (Approche « lac de données ») et à faciliter la description à l’entrée</p></td>
+<td class="text-left"><p>Développer la possibilité d’usage de Vitam comme « data lake »<br>Permettre la découverte des métadonnées<br>Permettre la recherche sur des données non structurées<br>Lever les contraintes dans la description des archives (facilitation de l’entrée)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="domaine-gestion-des-archives">
+<h3><span class="section-number">3.5.3. </span>Domaine « Gestion des archives »<a class="headerlink" href="#domaine-gestion-des-archives" title="Lien vers cette rubrique"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Activité utilisateur</p></th>
+<th class="head text-left"><p>Description et précision</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Prise en charge et gestion des archives physiques</p></td>
+<td class="text-left"><p>Prise en charge et gestion des archives physiques<br>- Faciliter l’intégration dans les SIA<br>- Intégrer des fonctions liées spécifiquement à la gestion des archives papier (fonctions SIA)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Améliorer les possibilités d’enrichissement et de traitement des métadonnées de manière semi-automatisée</p></td>
+<td class="text-left"><p>Faciliter la gestion des archives par l’intégration de moyens d’automatiser l’analyse et les traitements en support du métier de e-archiviste, afin de :<br>.  Faciliter la gestion des archives : notamment des règles de gestion de manière aussi automatisée que possible<br>- Open Data : faciliter l’identification et les actes de gestion (RGPD,…) afin de rendre des archives diffusables et permettre un accès et des moyens d’analyse « en masse » et « avec une approche data » qui soit en lien avec les usages de l’open data et de manière aussi automatisée que possible<br>- Faciliter les recherches dans différents contextes (l’interopérabilité) en permettant d’uniformiser l’usage de descriptions par des métadonnées de référence pour des types de documents de manière aussi automatisée que possible</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Transfert d’archives entre instances ou SAE</p></td>
+<td class="text-left"><p>Faciliter l’interconnexion et l’interopérabilité entre SAE<br>- Gérer l’interopérabilité en particulier entre un SAE intermédiaire et un SAE définitif (notamment par rapport aux référentiels)<br>- Faciliter le transfert entre instances plus ou moins sensibles (médicales, classifiées)</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id17">
+<h3><span class="section-number">3.5.4. </span>Domaine « Préservation »<a class="headerlink" href="#id17" title="Lien vers cette rubrique"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Activité utilisateur</p></th>
+<th class="head text-left"><p>Description et précision</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Préservation par émulation</p></td>
+<td class="text-left"><p>Préservation par émulation<br>- Archivage d’une collection d’outils permettant la lecture de formats.<br>- Utiliser ces outils pour relire des fichiers numériques.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Améliorer l’identification des formats et gérer leur obsolescence</p></td>
+<td class="text-left"><p>Faciliter le développement de politiques de préservation de manière concrète et exploitable<br>- Faciliter et automatiser la mise en place de scénarios/ stratégies de préservation<br>- Ceci vient en complément de la poursuite de développement et d’intégration de nouveaux griffons de préservation, liés aux stratégie de préservation par transformation</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="domaine-administration-des-referentiels">
+<h3><span class="section-number">3.5.5. </span>Domaine « Administration des référentiels »<a class="headerlink" href="#domaine-administration-des-referentiels" title="Lien vers cette rubrique"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Activité utilisateur</p></th>
+<th class="head text-left"><p>Description et précision</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Gestion des services producteurs</p></td>
+<td class="text-left"><p>Permettre la vision dans le temps de l’évolution des services producteurs<br>- Interopérabilité des référentiels (listes de valeurs / codes de référence)<br>- Faciliter l’intégration avec des référentiels de services producteurs externes<br>- Intégrer les liens hiérarchiques et chronologiques des référentiels de services producteurs</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="domaine-exploitation">
+<h3><span class="section-number">3.5.6. </span>Domaine « Exploitation »<a class="headerlink" href="#domaine-exploitation" title="Lien vers cette rubrique"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Activité utilisateur</p></th>
+<th class="head text-left"><p>Description et précision</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Faciliter l’exploitation de Vitam et la rationaliser à des fins écologiques</p></td>
+<td class="text-left"><p>Rationaliser Vitam à des fins écologiques et économiques<br>- Prendre en compte différentes qualités de service en consultation,<br>- Diminuer les coûts et l’empreinte carbone de la solution logicielle Vitam par une rationalisation de l’usage des différents types de stockage.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Gérer et exploiter plus simplement des très grands volumes de données</p></td>
+<td class="text-left"><p>Mettre en œuvre des améliorations et les changements nécessaires afin de gérer simplement le milliard d’archives et au-delà.<br>- Améliorer et faciliter l’exploitabilité du logiciel dans le cadre de la gestion du milliards d’archives<br>- Permettre d’adresser dans le logiciel Vitam des contextes de 5 à 10 milliards d’archives</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Faciliter les montées de version Vitam</p></td>
+<td class="text-left"><p>Faciliter l’exploitation de Vitam et améliorer sa maintenabilité dans le temps<br>- Faciliter les montées de version<br>- Simplifier l’exploitation par la documentation et l’orchestration des tâches</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id18">
+<h3><span class="section-number">3.5.7. </span>Domaine « Stockage »<a class="headerlink" href="#id18" title="Lien vers cette rubrique"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Activité utilisateur</p></th>
+<th class="head text-left"><p>Description et précision</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Gérer de nouvelles configurations de stockage</p></td>
+<td class="text-left"><p>Proposer de nouvelles configurations de stockage</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="domaine-supervision">
+<h3><span class="section-number">3.5.8. </span>Domaine « Supervision »<a class="headerlink" href="#domaine-supervision" title="Lien vers cette rubrique"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Activité utilisateur</p></th>
+<th class="head text-left"><p>Description et précision</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Mettre en place des outils d’aide à la décision et statistiques</p></td>
+<td class="text-left"><p>Permettre une approche data analytique pour la recherche et l’analyse d’un grand volume d’archives.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="domaine-ihm-du-produit">
+<h3><span class="section-number">3.5.9. </span>Domaine « IHM du produit »<a class="headerlink" href="#domaine-ihm-du-produit" title="Lien vers cette rubrique"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Activité utilisateur</p></th>
+<th class="head text-left"><p>Description et précision</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Disposer d’un front-office de référence</p></td>
+<td class="text-left"><p>Améliorer la diffusion du produit vitam en simplifiant son adoption et son utilisabilité<br>- Pour les fonctions d’administration technique et fonctionnelle<br>- Pour les fonctions archivistiques, dans le but d’une plus grande diffusion de la solution, afin d’avoir des processus de référence sur lesquels échanger</p></td>
+</tr>
+</tbody>
+</table>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id19" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Les méthodes Agiles sont des méthodes de gestion de projets fonctionnant sur une base itérative et incrémentale, visant à créer de la valeur métier rapidement même sur des contours réduits, dans une interaction permanente avec les porteurs de besoins fonctionnels, tant pour l’expression de leurs attentes que pour le contrôle de l’adéquation avec ce qui est réalisé. (Voir <a class="reference external" href="https://agilemanifesto.org/iso/fr/manifesto.html">« Manifeste pour le développement Agile de logiciels – Agile Manifesto »</a>)</p>
+</aside>
+<aside class="footnote brackets" id="id20" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>Le « Manifeste » est une phrase résumant l’essentiel d’un projet, utilisée comme fondement dans les méthodes Agiles.</p>
+</aside>
+<aside class="footnote brackets" id="id21" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">3</a><span class="fn-bracket">]</span></span>
+<p>A l’origine, le manifeste s’achevait par cette ligne : « Et vise son adoption par le plus grand nombre d’acteurs publics ». Elle a été mise à jour en 2020 suite au passage en phase produit.</p>
+</aside>
+<aside class="footnote brackets" id="id22" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">4</a><span class="fn-bracket">]</span></span>
+<p>Avant la clôture d’une affaire ou d’un dossier, par exemple, le dossier RH d’un agent travaillant toujours dans le service.</p>
+</aside>
+<aside class="footnote brackets" id="id23" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">5</a><span class="fn-bracket">]</span></span>
+<p>Avant l’expiration de la durée d’utilité administrative (DUA), les données peuvent faire l’objet d’un contrôle, d’un recours contentieux ou d’une demande du public à des fins administratives.</p>
+</aside>
+<aside class="footnote brackets" id="id24" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">6</a><span class="fn-bracket">]</span></span>
+<p>À l’issue de la DUA, les données n’ont plus d’utilité administrative mais sont conservées pour des raisons historiques, statistiques mais aussi juridiques. Les données ayant un effet de droit sans limite dans le temps, par exemple l’état-civil, sont aussi archivées à titre définitif. À ce stade, elles doivent pouvoir être communiquées au public, en conformité avec les délais légaux de communicabilité.</p>
+</aside>
+<aside class="footnote brackets" id="id25" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">7</a><span class="fn-bracket">]</span></span>
+<p>Pour Vitam accessible en service</p>
+</aside>
+<aside class="footnote brackets" id="id26" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id8">8</a><span class="fn-bracket">]</span></span>
+<p>Dans les méthodes Agiles, une « User Story » (traduisible par « Récit Utilisateur ») est un énoncé simple dans le langage de tous les jours permettant de décrire avec suffisamment de précision le contenu d’une fonctionnalité à développer. Elle est complétée d’éléments plus techniques au fur et à mesure des échanges avec les membres de l’équipe Agile pour obtenir une formulation suffisamment claire pour engager les développements.</p>
+</aside>
+<aside class="footnote brackets" id="id27" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id9">9</a><span class="fn-bracket">]</span></span>
+<p>L’Open Archival Information System ou OAIS (Système ouvert d’archivage d’information) est un modèle conceptuel destiné à la gestion, à l’archivage et à la préservation à long terme de documents numériques. La mise au point de l’OAIS a été pilotée par le Consultative Committee for Space Data Systems. L’OAIS est enregistré comme norme ISO sous la référence 14 721:2003. (source Wikipedia).</p>
+</aside>
+<aside class="footnote brackets" id="id28" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id10">10</a><span class="fn-bracket">]</span></span>
+<p>Peu visibles de l’utilisateur ces fonctions sont en fait appelées au travers des autres domaines.</p>
+</aside>
+<aside class="footnote brackets" id="id29" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id11">11</a><span class="fn-bracket">]</span></span>
+<p>La méthode MoSCoW est une technique visant à prioriser des besoins ou des exigences en matière d’assistance à maîtrise d’ouvrage et de développement logiciel. L’objectif est que le maître d’œuvre et le maître d’ouvrage s’accordent sur l’importance des tâches à réaliser par rapport aux délais prévus.</p>
+</aside>
+<aside class="footnote brackets" id="id30" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id12">12</a><span class="fn-bracket">]</span></span>
+<p>Le frontal archivistique (ou encore Système d’Information Archivistique - SIA) gère tous les aspects métiers d’un service d’archives y compris dans le domaine papier. Il assure donc des fonctions comme la gestion des salles de lecture, des localisations physiques, des processus de dérogation… qui n’ont aucun lien avec le back-office d’archivage numérique.</p>
+</aside>
+<aside class="footnote brackets" id="id31" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id13">13</a><span class="fn-bracket">]</span></span>
+<p>Le projet Vitam accessible en service vise à proposer une solution cloud Vitam pour l’archivage intermédiaire interministériel. Il est porté par le ministère de la Culture, le ministère de la Transition écologique et les ministères sociaux, conjointement par les missions archives et les services du numérique.</p>
+</aside>
+<aside class="footnote brackets" id="id32" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id14">14</a><span class="fn-bracket">]</span></span>
+<p>Dans le cadre du POC réalisé en 2013, 200 millions d’items ont pu être pris en charge sur un serveur de type 2 cœurs/16 Go avec des temps de réponse de recherche de l’ordre de la seconde sur des requêtes simples. Qui plus est, la linéarité par ajout de serveurs a été excellente : 8 serveurs amenant à des temps similaires pour 1,5 milliards d’archives.</p>
+</aside>
+<aside class="footnote brackets" id="id33" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id15">15</a><span class="fn-bracket">]</span></span>
+<p>Une vision globale du système, soit « systémique », permet non seulement d’apporter les éléments de preuves, mais de vérifier leur cohérence à partir de sources multiples et relativement indépendantes.</p>
+</aside>
+<aside class="footnote brackets" id="id34" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id16">16</a><span class="fn-bracket">]</span></span>
+<p>Le sous-titre explicite de la norme est « Spécifications fonctionnelles d’un composant Coffre-Fort Numérique destiné à la conservation d’informations numériques dans des conditions de nature à en garantir leur intégrité dans le temps. »</p>
+</aside>
+</aside>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="presentation_programme.html" class="btn btn-neutral float-left" title="2. Présentation du programme Vitam" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="guide_prise_en_main.html" class="btn btn-neutral float-right" title="4. Guide de prise en main de la solution logicielle Vitam – Vitam UI Réaliser une première entrée" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2022, Programme Vitam.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: v81_preservation
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Branches</dt>
+      <dd><a href="../../master/sections/presentation_solution_logicielle.html">master</a></dd>
+      <dd><a href="../../master_7.1.x/sections/presentation_solution_logicielle.html">master_7.1.x</a></dd>
+      <dd><a href="../../master_8.0.x/sections/presentation_solution_logicielle.html">master_8.0.x</a></dd>
+      <dd><a href="../../v8.1_Resip_mathilde/sections/presentation_solution_logicielle.html">v8.1_Resip_mathilde</a></dd>
+      <dd><a href="presentation_solution_logicielle.html">v81_preservation</a></dd>
+      <dd><a href="../../v81_transfert/sections/presentation_solution_logicielle.html">v81_transfert</a></dd>
+      <dd><a href="../../v81_valeur_probante/sections/presentation_solution_logicielle.html">v81_valeur_probante</a></dd>
+      <dd><a href="../../v81_workflow/sections/presentation_solution_logicielle.html">v81_workflow</a></dd>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>
