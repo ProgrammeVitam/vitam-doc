@@ -22,23 +22,23 @@ Pour chacun de ces éléments, le document décrit :
 - Des informations complémentaires, selon le type d’élément traité.
 
 Un « traitement » désigne ci-dessous une opération, une étape ou une tâche. Chaque traitement peut avoir à son issue un des statuts suivant :
-- OK : le traitement s’est déroulé comme attendu et le système a été modifié en conséquence.
-- Warning : le traitement a atteint son objectif mais le système émet une réserve. Soit :
+- **OK** : le traitement s’est déroulé comme attendu et le système a été modifié en conséquence.
+- **Warning** : le traitement a atteint son objectif mais le système émet une réserve. Soit :
     - Le système suspecte une anomalie lors du déroulement du traitement sans pouvoir le confirmer lui-même et lève une alerte à destination de l’utilisateur afin que celui-ci puisse valider qu’il s’agit du comportement souhaité.<br>
-    Exemple : un SIP versé sans objet provoque une opération en warning, car le fait de ne verser qu’une arborescence d’unités archivistiques sans aucun objet peut être suspect (au sens métier).
+    *Exemple :* un SIP versé sans objet provoque une opération en warning, car le fait de ne verser qu’une arborescence d’unités archivistiques sans aucun objet peut être suspect (au sens métier).
     - Le système a effectué un traitement entraînant une modification de données initialement non prévue par l’utilisateur.<br>
-    Exemple : la solution logicielle Vitam a détecté un format de fichier en contradiction avec le format décrit dans le bordereau de transfert. Elle enregistre alors ses propres valeurs en base de données au lieu de prendre celles du bordereau et utilise le warning pour en avertir l’utilisateur.
+    *Exemple :* la solution logicielle Vitam a détecté un format de fichier en contradiction avec le format décrit dans le bordereau de transfert. Elle enregistre alors ses propres valeurs en base de données au lieu de prendre celles du bordereau et utilise le warning pour en avertir l’utilisateur.
     - Le système a effectué un traitement dont seule une partie a entraîné une modification de données. L’autre partie de ce traitement s’est terminée en échec sans modification (KO).<br>
-    Exemple : une modification de métadonnées en masse d’unités archivistiques dont une partie de la modification est OK et une partie est KO : le statut de l’étape et de l’opération sera Warning.
-- KO : le traitement s’est terminé en échec et le système n’a pas été modifié en dehors des éléments de traçabilités tels que les journaux et les logs. L’intégralité du traitement pourrait être rejouée sans provoquer l’insertion de doublons.
-- Fatal : le traitement s’est terminé en échec a cause d’un problème technique. L’état du système dépend de la nature du traitement en fatal et une intervention humaine est requise pour expertiser et résoudre la situation. Lorsque le statut FATAL survient à l’intérieur d’une étape (par exemple dans une des tâches ou une des actions de l’étape), c’est toute l’étape qui est mise en pause. Si cette étape est rejouée, les objets déjà traités avant le problème technique ne sont pas traités à nouveau : le workflow reprend exactement là où il s’était arrêté et commence par rejouer l’action sur l’objet qui a provoqué l’erreur.
+    *Exemple :* une modification de métadonnées en masse d’unités archivistiques dont une partie de la modification est OK et une partie est KO : le statut de l’étape et de l’opération sera Warning.
+- **KO** : le traitement s’est terminé en échec et le système n’a pas été modifié en dehors des éléments de traçabilités tels que les journaux et les logs. L’intégralité du traitement pourrait être rejouée sans provoquer l’insertion de doublons.
+- **Fatal** : le traitement s’est terminé en échec a cause d’un problème technique. L’état du système dépend de la nature du traitement en fatal et une intervention humaine est requise pour expertiser et résoudre la situation. Lorsque le statut FATAL survient à l’intérieur d’une étape (par exemple dans une des tâches ou une des actions de l’étape), c’est toute l’étape qui est mise en pause. Si cette étape est rejouée, les objets déjà traités avant le problème technique ne sont pas traités à nouveau : le workflow reprend exactement là où il s’était arrêté et commence par rejouer l’action sur l’objet qui a provoqué l’erreur.
 
 Un workflow peut être terminé, en cours d’exécution ou être en pause. Un workflow en pause représente le processus arrêté à une étape donnée. Chaque étape peut être mise en pause : ce choix dépend du mode de versement (le mode pas à pas marque une pause à chaque étape), ou du statut (le statut FATAL met l’étape en pause). Les workflows en pause sont visibles dans l’IHM dans l’écran « Gestion des opérations ».
 
 Chaque action peut avoir les modèles d’exécutions suivants (toutes les étapes sont par défaut bloquantes) :
-- Bloquant
+- **Bloquant**
     - Si une action bloquante est identifiée en erreur, le workflow est alors arrêté en erreur. Seules les actions nécessaires à l’arrêt du workflow sont alors exécutées.
-- Non bloquant
+- **Non bloquant**
     - Si une action non bloquante est identifiée en erreur, elle seule sera en erreur et le workflow continuera normalement.
 
 ### Structure d’un fichier Properties du Workflow
@@ -999,13 +999,13 @@ Les données suivantes, optionnelles, si elles sont remplies, le sont en respect
     - Le champ « Status » est peuplé avec la valeur « ACTIVE » ou la valeur « INACTIVE »
 - **Type** : bloquant
 - **Statuts** :
-- OK : les règles ci-dessus sont respectées (IMPORT_ARCHIVEUNITPROFILE.OK = Succès du processus d’import du profil d’unité archivistique)
-- KO :
-    - Cas n°1 : une des règles ci-dessus n’a pas été respectée (IMPORT_ARCHIVEUNITPROFILE.KO = Échec du processus d’import du profil d’unité archivistique)
-    - Cas n°2 : l’identifiant est déjà utilisé (IMPORT_ARCHIVEUNITPROFILE.IDENTIFIER_DUPLICATION.KO = Échec de l’import du profil d’unité archivistique  : l’identifiant est déjà utilisé)
-    - Cas n°3 : au moins un des champs obligatoires n’est pas renseigné (IMPORT_ARCHIVEUNITPROFILE.EMPTY_REQUIRED_FIELD.KO = Échec de l’import du profil d’unité archivistique  : au moins un des champs obligatoires n’est pas renseigné)
-    - Cas n°4 : Schéma JSON invalide (IMPORT_ARCHIVEUNITPROFILE.INVALID_JSON_SCHEMA.KO = Échec de l’import du profil d’unité archivistique  : schéma JSON non valide)
-- FATAL : une erreur technique est survenue lors de la vérification de l’import du profil d’unité archivistique (document type) (IMPORT_ARCHIVEUNITPROFILE.FATAL = Erreur technique lors du processus d’import du profil d’unité archivistique (document type)
+    - OK : les règles ci-dessus sont respectées (IMPORT_ARCHIVEUNITPROFILE.OK = Succès du processus d’import du profil d’unité archivistique)
+    - KO :
+        - Cas n°1 : une des règles ci-dessus n’a pas été respectée (IMPORT_ARCHIVEUNITPROFILE.KO = Échec du processus d’import du profil d’unité archivistique)
+        - Cas n°2 : l’identifiant est déjà utilisé (IMPORT_ARCHIVEUNITPROFILE.IDENTIFIER_DUPLICATION.KO = Échec de l’import du profil d’unité archivistique  : l’identifiant est déjà utilisé)
+        - Cas n°3 : au moins un des champs obligatoires n’est pas renseigné (IMPORT_ARCHIVEUNITPROFILE.EMPTY_REQUIRED_FIELD.KO = Échec de l’import du profil d’unité archivistique  : au moins un des champs obligatoires n’est pas renseigné)
+        - Cas n°4 : Schéma JSON invalide (IMPORT_ARCHIVEUNITPROFILE.INVALID_JSON_SCHEMA.KO = Échec de l’import du profil d’unité archivistique  : schéma JSON non valide)
+    - FATAL : une erreur technique est survenue lors de la vérification de l’import du profil d’unité archivistique (document type) (IMPORT_ARCHIVEUNITPROFILE.FATAL = Erreur technique lors du processus d’import du profil d’unité archivistique (document type)
 
 #####  Sauvegarde du JSON STP_BACKUP_ARCHIVEUNITPROFILE (ArchiveUnitProfileManager.java)
 
@@ -1163,7 +1163,8 @@ Ce rapport est en plusieurs parties :
 - « deteledOntologies » : liste des vocabulaires supprimés
 - « updatedOntologies » : liste des vocabulaires mis à jour
 - « createdOntologies » : liste des vocabulaires ajoutés
-Exemple :
+
+*Exemple :*
 ```
 {
 	"Operation": {
@@ -1244,6 +1245,7 @@ Ce rapport est en plusieurs parties :
 - « AddedIdentifiers » : la liste des griffons qui ont été ajoutés ;
 - « UpdatedIdentifiers » : la liste des griffons qui ont été mis à jour ;
 - « Warnings » : les messages d’avertissement.
+
 *Exemple :*
 ```
 {  "Operation" : {"evType" : "IMPORT_GRIFFIN","evDateTime" : "2019-01-30T12:58:05.176","evId" : "aeeaaaaaaghfj4pcabeloalit3lip3yaaaaq"},
@@ -1359,6 +1361,7 @@ Ce rapport est en plusieurs parties :
 - « AddedIdentifiers » : la liste des scénarios qui ont été ajoutés ;
 - « UpdatedIdentifiers » : la liste des scénarios qui ont été mis à jour ;
 - « Warnings » : les messages d’avertissement.
+
 *Exemple :*
 ```
 {  "Operation" : {"evType" : "IMPORT_GRIFFIN","evDateTime" : "2019-01-30T12:58:05.176","evId" : "aeeaaaaaaghfj4pcabeloalit3lip3yaaaaq"},
@@ -1716,7 +1719,7 @@ Ce traitement n’est exécuté que si la valeur IN de *checkProfile* est « tr
     -   vignette (Thumbnail),
     -   contenu brut (TextContent).
         Les numéros de versions sont optionnels, il s'agit d'un entier positif ou nul (0, 1, 2…).
-        La grammaire est : « usage\_version ». Exemples : « BinaryMaster\_2 », « TextContent\_10 » ou sans numéro de versions « PhysicalMaster ».
+        La grammaire est : « usage\_version ». *Exemples :* « BinaryMaster\_2 », « TextContent\_10 » ou sans numéro de versions « PhysicalMaster ».
 -   **Type** : bloquant
 -   **Statuts** :
     -   OK : les objets contenus dans le SIP déclarent tous dans le bordereau de transfert un usage cohérent avec ceux acceptés et optionnellement un numéro de version respectant la norme de ce champ usage, par exemple « BinaryMaster\_2 » (CHECK\_DATAOBJECTPACKAGE.CHECK\_MANIFEST.DATAOBJECT.VERSION.OK = Succès de la vérification des usages des objets)
@@ -4327,7 +4330,7 @@ TRACEABILITY_FINALIZATION (TraceabilityFinalizationPlugin.java)
       
 #### Audit de la vérification des journaux sécurisés (LINKED_CHECK_SECURISATION)
 
-- **Règle** : Affichage du résultat du workflow d’audit des sécurisations dans l’IHM démo
+- **Règle** : Affichage du résultat du workflow d’audit des sécurisations dans l’IHM
 - **Type** : N/A
 - **Statuts** :
     - OK : Le résultat global de l’audit des sécurisations est conforme à l’attendu (LINKED_CHECK_SECURISATION.OK=Succès d'audit de la vérification des journaux sécurisés)
