@@ -190,24 +190,22 @@
 <thead>
 <tr class="row-odd"><th class="head text-center"><p>Document</p></th>
 <th class="head text-center"><p>Date de la version</p></th>
-<th class="head text-center"><p>Remarques</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td class="text-center"><p>NF Z 44022 – MEDONA – Modélisation des données pour l’archivage</p></td>
 <td class="text-center"><p>18/01/2014</p></td>
-<td class="text-center"><p></p></td>
 </tr>
 <tr class="row-odd"><td class="text-center"><p>Standard d’échange de données pour l’archivage – SEDA – v. 2.1</p></td>
 <td class="text-center"><p>06/2018</p></td>
-<td class="text-center"><p></p></td>
 </tr>
 <tr class="row-even"><td class="text-center"><p>Standard d’échange de données pour l’archivage – SEDA – v. 2.2</p></td>
 <td class="text-center"><p>02/2022</p></td>
-<td class="text-center"><p>Cette nouvelle version du SEDA est intégrée à la solution logicielle Vitam à partir de la V6.RC.</p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p><a class="reference internal" href="modele_de_workflow.html"><span class="std std-doc">Vitam – Modèle de workflow</span></a></p></td>
-<td class="text-center"><p></p></td>
+<tr class="row-odd"><td class="text-center"><p>Standard d’échange de données pour l’archivage – SEDA – v. 2.3</p></td>
+<td class="text-center"><p>07/2024</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><a class="reference internal" href="modele_de_workflow.html"><span class="std std-doc">Vitam – Modèle de workflow</span></a></p></td>
 <td class="text-center"><p></p></td>
 </tr>
 </tbody>
@@ -221,7 +219,7 @@ Ce document s’articule autour des axes suivants :</p>
 <li><p>détermination du caractère transférable des unités archivistiques,</p></li>
 <li><p>modalités d’une demande de transfert,</p></li>
 <li><p>modalités de mise en œuvre d’un transfert.
-Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 6 (mars 2023). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.</p></li>
+Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 8.1 (printemps 2025). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.</p></li>
 </ul>
 </section>
 </section>
@@ -232,9 +230,11 @@ Il peut intervenir à plusieurs occasions :</p>
 <ul class="simple">
 <li><p>Un service producteur demande à ré-activer un dossier archivé. La restitution peut alors être partielle et ne pas porter sur l’ensemble des archives composant le transfert d’origine.</p></li>
 <li><p>Le transfert peut être à l’initiative d’un service producteur ou d’un service d’archives, notamment lors de la fin d’un contrat liant un service producteur et un tiers-archiveur.</p></li>
-<li><p>Des règles de gestion associées à des archives arrivent à échéance et impliquent un transfert de responsabilité en termes de conservation de ces dernières, et, de fait, un transfert vers un autre système d’archivage électronique.<br />
-La manière de procéder à une restitution d’archives est définie dans la norme NF Z 44‑022 et dans sa déclinaison pour les acteurs du service public, le Standard d’échanges de données pour l’archivage (SEDA).<br />
-La transaction s’effectue en deux temps :</p></li>
+<li><p>Des règles de gestion associées à des archives arrivent à échéance et impliquent un transfert de responsabilité en termes de conservation de ces dernières, et, de fait, un transfert vers un autre système d’archivage électronique.</p></li>
+</ul>
+<p>La manière de procéder à une restitution d’archives est définie dans la norme NF Z 44‑022 et dans sa déclinaison pour les acteurs du service public, le Standard d’échanges de données pour l’archivage (SEDA).</p>
+<p>La transaction s’effectue en deux temps :</p>
+<ul class="simple">
 <li><p>un transfert des archives, après une éventuelle demande, vers une plate-forme de destination ;</p></li>
 <li><p>après confirmation du transfert, suppression des archives de la plate-forme d’origine.</p></li>
 </ul>
@@ -272,7 +272,6 @@ Que ce soit dans le premier ou dans le second cas, la solution logicielle Vitam 
 </section>
 <section id="cas-ou-lutilisation-de-la-fonctionnalite-de-transfert-est-deconseillee">
 <h3><span class="section-number">19.3.3. </span>Cas où l’utilisation de la fonctionnalité de transfert est déconseillée<a class="headerlink" href="#cas-ou-lutilisation-de-la-fonctionnalite-de-transfert-est-deconseillee" title="Lien vers cette rubrique"></a></h3>
-<p>=======</p>
 <p>Après confirmation de la réception de ces archives par le système d’archivage électronique de destination, il faudra veiller à procéder à leur purge dans le système d’archivage électronique d’origine, afin que ne subsiste pas deux copies de ces archives dans deux systèmes différents. Cette purge est automatisable.</p>
 <p>La constitution d’un lot d’archives à transférer et la fonctionnalité de transfert doivent être utilisées lorsque l’on veut transmettre à la fois des archives et la responsabilité de leur conservation avec une traçabilité des événements ayant concerné ces archives dans le système d’archivage d’origine. Après acquittement du transfert, le lot d’archives est supprimé du système d’origine.<br />
 De fait, pour un transfert d’archives sans transfert de responsabilité, il est conseillé de recourir à la fonctionnalité de constitution d’un Dissemination Information Package (DIP) minimal ou complet qui permet de transmettre des archives (métadonnées et objets techniques) sans les supprimer ensuite du système d’origine.<br />
@@ -290,7 +289,6 @@ Pour une simple transmission d’objet technique, il est conseillé d’utiliser
 <h4><span class="section-number">19.4.1.1. </span>Constitution d’un lot d’archives à transférer<a class="headerlink" href="#constitution-dun-lot-darchives-a-transferer" title="Lien vers cette rubrique"></a></h4>
 <p>La solution logicielle permet de préparer un lot d’archives à transférer.</p>
 <ul class="simple">
-<li><p>Par l’IHM de démonstration, cette opération se fait via le détail d’une unité archivistique et peut porter sur l’unité archivistique en question, l’unité archivistique et sa descendance ou sur l’ensemble de l’entrée par laquelle cette unité archivistique a été transférée dans la solution logicielle Vitam.</p></li>
 <li><p>Depuis l’APP « Recherche et consultation des archives » de VitamUI, cette opération se fait après sélection d’un lot d’archives.</p></li>
 <li><p>Par API, plusieurs critères de constitution d’un lot d’archives à transférer sont utilisables : identifiant d’une opération d’entrée, unité(s) archivistique(s) précise(s), ensemble des unités archivistiques dépendant d’une unité archivistique précise, etc.</p></li>
 <li><p>Des filtres supplémentaires peuvent être demandés sur :</p>
@@ -336,7 +334,6 @@ Par exemple, dans le cas d’un transfert regroupant les divers versements faits
 <h4><span class="section-number">19.4.1.2. </span>Consultation des résultats de la demande de transfert<a class="headerlink" href="#consultation-des-resultats-de-la-demande-de-transfert" title="Lien vers cette rubrique"></a></h4>
 <p>Le résultat de l’opération de demande de transfert (ARCHIVE_TRANSFER / Transfert des unités archivistiques et des groupes d’objets) peut être consulté :</p>
 <ul class="simple">
-<li><p>en allant dans le menu « Opérations », sur l’IHM de démonstration ;</p></li>
 <li><p>depuis l’APP « Journal des opérations » de l’IHM VitamUI ;</p></li>
 <li><p>via les API.
 L’opération peut aboutir aux résultats suivants :</p></li>
@@ -363,9 +360,9 @@ L’opération peut aboutir aux résultats suivants :</p></li>
 </ul>
 </li>
 </ul>
-<p>Exemple de rapport au format JSONL :</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;DslQuery&quot;</span><span class="p">:{</span><span class="s2">&quot;$roots&quot;</span><span class="p">:[],</span><span class="s2">&quot;$query&quot;</span><span class="p">:[{</span><span class="s2">&quot;$eq&quot;</span><span class="p">:{</span><span class="s2">&quot;#id&quot;</span><span class="p">:</span><span class="s2">&quot;aeaqaaaabahftfesaab6yalqlwe54laaaaba&quot;</span><span class="p">},</span><span class="s2">&quot;$depth&quot;</span><span class="p">:</span><span class="mi">1000</span><span class="p">}],</span><span class="s2">&quot;$filter&quot;</span><span class="p">:{</span><span class="s2">&quot;$limit&quot;</span><span class="p">:</span><span class="mi">10000</span><span class="p">},</span><span class="s2">&quot;$projection&quot;</span><span class="p">:{},</span><span class="s2">&quot;$facets&quot;</span><span class="p">:[]}}</span>
-<span class="p">{</span><span class="s2">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;aeaqaaaabahftfesaab6yalqlwe54laaaaba&quot;</span><span class="p">,</span><span class="s2">&quot;status&quot;</span><span class="p">:</span><span class="s2">&quot;OK&quot;</span><span class="p">}</span>
+<p><em>Exemple de rapport au format JSONL :</em></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">&quot;DslQuery&quot;</span><span class="p">:{</span><span class="nt">&quot;$roots&quot;</span><span class="p">:[],</span><span class="nt">&quot;$query&quot;</span><span class="p">:[{</span><span class="nt">&quot;$eq&quot;</span><span class="p">:{</span><span class="nt">&quot;#id&quot;</span><span class="p">:</span><span class="s2">&quot;aeaqaaaabahftfesaab6yalqlwe54laaaaba&quot;</span><span class="p">},</span><span class="nt">&quot;$depth&quot;</span><span class="p">:</span><span class="mi">1000</span><span class="p">}],</span><span class="nt">&quot;$filter&quot;</span><span class="p">:{</span><span class="nt">&quot;$limit&quot;</span><span class="p">:</span><span class="mi">10000</span><span class="p">},</span><span class="nt">&quot;$projection&quot;</span><span class="p">:{},</span><span class="nt">&quot;$facets&quot;</span><span class="p">:[]}}</span>
+<span class="p">{</span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="s2">&quot;aeaqaaaabahftfesaab6yalqlwe54laaaaba&quot;</span><span class="p">,</span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="s2">&quot;OK&quot;</span><span class="p">}</span>
 </pre></div>
 </div>
 <p>Un DIP dit de « transfert » dont l’intitulé correspond au préfixe « TRANSFER- », suivi de l’identifiant de l’opération, et qui prend la forme d’un fichier ZIP. Ce DIP contient :</p>
@@ -387,7 +384,7 @@ L’opération peut aboutir aux résultats suivants :</p></li>
 <h3><span class="section-number">19.4.2. </span>Consultation des résultats de la demande de transfert en base de données<a class="headerlink" href="#consultation-des-resultats-de-la-demande-de-transfert-en-base-de-donnees" title="Lien vers cette rubrique"></a></h3>
 <p>L’appartenance d’une unité archivistique à une opération de transfert est enregistrée dans les métadonnées de celle-ci.<br />
 En effet, l’identifiant de l’opération de transfert est indexé dans les métadonnées des unités archivistiques concernées (champ « _opts). Cela permet de rechercher les unités archivistiques faisant l’objet d’une demande de transfert en général ou en particulier.</p>
-<p>Exemple d’unité archivistique ayant fait l’objet d’une demande de transfert :</p>
+<p><em>Exemple d’unité archivistique ayant fait l’objet d’une demande de transfert :</em></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aeaqaaaabahftfesaab6yalqlwe54laaaaba&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;DescriptionLevel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;RecordGrp&quot;</span><span class="p">,</span>
@@ -445,7 +442,7 @@ En effet, l’identifiant de l’opération de transfert est indexé dans les m�
 </section>
 <section id="finalisation-du-transfert-dans-la-solution-logicielle-vitam-transfer-reply">
 <h3><span class="section-number">19.4.4. </span>Finalisation du transfert dans la solution logicielle Vitam (TRANSFER_REPLY)<a class="headerlink" href="#finalisation-du-transfert-dans-la-solution-logicielle-vitam-transfer-reply" title="Lien vers cette rubrique"></a></h3>
-<p>La solution logicielle ne permet pas de confirmer et d’acquitter un transfert depuis l’IHM de démonstration. Cette opération est réalisable :</p>
+<p>La solution logicielle permet de confirmer et d’acquitter un transfert :</p>
 <ul class="simple">
 <li><p>au moyen des API ;</p></li>
 <li><p>depuis l’APP « Recherche, consultation et gestion des archives » de l’IHM VitamUI.</p></li>
@@ -454,8 +451,8 @@ En effet, l’identifiant de l’opération de transfert est indexé dans les m�
 Pour des raisons liées aux problématiques de calcul de graphe, il n’est pas possible de lancer cette action si une autre action de constitution d’un lot d’archives à transférer est en cours (ou en pause) ou en parallèle d’une action telle que la modification d’arborescence ou l’élimination. Pour ce faire, la solution logicielle vérifie si des processus concurrents ne sont pas en cours au lancement du processus d’acquittement du transfert.<br />
 L’opération de transfert implique en outre que la mise en œuvre de l’acquittement du transfert proprement dite (TRANSFER_REPLY) soit précédée dans la solution logicielle d’une phase de constitution d’un lot d’archives à transférer dans le cadre d’une opération de demande de transfert (ARCHIVE_TRANSFER). Cette dernière, visant à constituer un lot permet en effet d’indiquer dans les métadonnées que des unités archivistiques sont en cours de transfert, et de fait purgeables suite à la confirmation du transfert par le message « ArchiveTransferReply ».<br />
 Lors de cette opération d’acquittement du transfert ou de purge, le système d’archivage électronique d’origine procède à la vérification du statut du message « ArchiveTransferReply » (statut OK, WARNING ou KO) et à la vérification de l’identifiant d’opération qu’il renvoie (bloc MessageRequestIdentifier). En d’autres termes, il vérifie que les unités archivistiques qui sont référencées dans le message « ArchiveTransferReply » comme prises en charge par le système d’archivage électronique de destination sont bien comprises dans l’opération de transfert préalablement lancée et pas une autre. Ainsi, il évite de déclencher une purge d’unité archivistique qui n’ont pas fait l’objet de la demande de transfert.<br />
-Si le message « ArchiveTransferReply » a un statut OK ou WARNING et si l’identifiant d’opération est connu du système d’archivage électronique d’origine (bloc MessageRequestIdentifier), le message « ArchiveTransferReply » récupéré du système destinataire du lot à transférer est stocké par le système d’archivage électronique d’origine.<br />
-Le système d’archivage électronique d’origine déclenche alors la purge des unités archivistiques, des groupes d’objets techniques et des objets binaires (fichiers numériques) concernés par l’opération de transfert acquittée et référencés dans le message « ArchiveTransferReply ». Cette purge obéit à des règles similaires à celles mises en place dans l’opération d’élimination[^1] :</p>
+Si le message « ArchiveTransferReply » a un statut OK ou WARNING et si l’identifiant d’opération est connu du système d’archivage électronique d’origine (bloc MessageRequestIdentifier), le message « ArchiveTransferReply » récupéré du système destinataire du lot à transférer est stocké par le système d’archivage électronique d’origine.</p>
+<p>Le système d’archivage électronique d’origine déclenche alors la purge des unités archivistiques, des groupes d’objets techniques et des objets binaires (fichiers numériques) concernés par l’opération de transfert acquittée et référencés dans le message « ArchiveTransferReply ». Cette purge obéit à des règles similaires à celles mises en place dans l’opération d’élimination<a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> :</p>
 <ul class="simple">
 <li><p>conservation des unités archivistiques qui ont des unités archivistiques filles (orphelinage),</p></li>
 <li><p>détachement des groupes d’objets techniques rattachés à plusieurs unités archivistiques si une unité archivistique seule est purgée,</p></li>
@@ -478,7 +475,7 @@ Le système d’archivage électronique d’origine déclenche alors la purge de
 Si l’opération s’effectue avec succès, les unités archivistiques, des groupes d’objets techniques et des objets binaires (fichiers numériques) sont purgés du système.<br />
 L’opération d’acquittement du transfert produit un rapport au format JSONL qui récapitule le contexte de l’opération et liste les unités archivistiques, les groupes d’objets techniques et les objets binaires (fichiers numériques) ayant fait l’objet de l’opération.</p></li>
 </ul>
-<p>Exemple de rapport au format JSONL :</p>
+<p><em>Exemple de rapport au format JSONL :</em></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">&quot;tenant&quot;</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span><span class="nt">&quot;evId&quot;</span><span class="p">:</span><span class="s2">&quot;aeeaaaaabchhfmwoaanoualqlx7lbiyaaaaq&quot;</span><span class="p">,</span><span class="nt">&quot;evType&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;outcome&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;outDetail&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;outMsg&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="nt">&quot;rightsStatementIdentifier&quot;</span><span class="p">:{},</span><span class="nt">&quot;evDetData&quot;</span><span class="p">:{}}</span>
 <span class="p">{</span><span class="nt">&quot;evEndDateTime&quot;</span><span class="p">:</span><span class="s2">&quot;2020-02-19T15:09:03.566&quot;</span><span class="p">,</span><span class="nt">&quot;reportType&quot;</span><span class="p">:</span><span class="s2">&quot;TRANSFER_REPLY&quot;</span><span class="p">,</span><span class="nt">&quot;vitamResults&quot;</span><span class="p">:{},</span><span class="nt">&quot;extendedInfo&quot;</span><span class="p">:{}}</span>
 <span class="p">{}</span>
@@ -495,19 +492,16 @@ L’opération d’acquittement du transfert produit un rapport au format JSONL 
 <li><p>ALREADY_DELETED : l’unité archivistique et/ou le groupe d’objets techniques a déjà été transféré et purgé du système.</p></li>
 </ul>
 <p>Si une unité archivistique ne peut pas être purgée, un événement est enregistré dans son journal de cycle de vie.<br />
-Exemple d’événement enregistré dans le journal du cycle de vie d’une unité archivistique :
+<em>Exemple d’événement enregistré dans le journal du cycle de vie d’une unité archivistique :</em>
 <img alt="exemple d’événement enregistré dans le journal du cycle de vie d’une unité archivistique" src="../_images/exemple_evenement_journal_cycledevie.png" /></p>
 </section>
 <section id="mise-a-jour-du-registre-des-fonds">
 <h3><span class="section-number">19.4.5. </span>Mise à jour du registre des fonds<a class="headerlink" href="#mise-a-jour-du-registre-des-fonds" title="Lien vers cette rubrique"></a></h3>
 <p>Le transfert d’unités archivistiques a des conséquences sur le registre des fonds propres et symboliques.<br />
 Pour les fonds propres, les totaux d’unités archivistiques (AU), groupes d’objets techniques (GOT), objets techniques (OT) et la volumétrie sont mis à jour immédiatement. Le détail de l’opération d’entrée concernée est également mis à jour.</p>
-<ul class="simple">
-<li><p>Dans l’IHM de démonstration, en cliquant sur la ligne de cette opération, l’utilisateur peut connaître toutes les opérations qui ont affecté cette entrée et le nombre d’unités archivistiques (AU), groupes d’objets techniques (GOT), objets techniques (OT) ainsi que la volumétrie concernée pour chacune des opérations, celle de l’entrée initiale comme celles de l’acquittement du transfert qui ont ensuite affecté cette entrée.</p></li>
-<li><p>Dans l’IHM VitamUI, ces opérations de transfert sont visibles en cliquant sur la ligne de cette opération au terme de la version 6.RC.</p></li>
-</ul>
+<p>Dans l’IHM VitamUI, ces opérations de transfert sont visibles en cliquant sur la ligne de cette opération au terme de la version 6.RC.</p>
 <p>Pour les fonds symboliques, au moment du calcul périodique des fonds symboliques de la base, les unités archivistiques (AU), groupes d’objets techniques (GOT), objets techniques (OT) transférés et éliminés du système d’origine seront décomptés et la volumétrie sera mise à jour. Depuis la notice du service agent, l’utilisateur peut accéder à l’historique des rattachements et consulter sur une période donnée les variations à la hausse ou à la baisse des fonds symboliques pour ce producteur.</p>
-<p>Exemple d’entrée impactée par un transfert d’archives dans le registre des fonds :</p>
+<p><em>Exemple d’entrée impactée par un transfert d’archives dans le registre des fonds :</em></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aehaaaaabahi7u6oaabzialqlwhptjiaaaaq&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;ObjectSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -572,7 +566,13 @@ Pour les fonds propres, les totaux d’unités archivistiques (AU), groupes d’
 </div>
 <p><strong>Point d’attention :</strong></p>
 <p>Le calcul des unités archivistiques (AU), groupes d’objets techniques (GOT), objets techniques (OT) rattachés à un producteur au titre de son fonds symbolique n’est effectué qu’une fois par vingt-quatre heures (sauf paramétrage différent de la plate-forme). Dans ces conditions, si sur la même période de vingt-quatre heures l’archiviste effectue une entrée pour 3 unités archivistiques et un transfert acquitté pour 3 unités archivistiques, le total des symboliques entre deux calculs n’aura pas évolué.</p>
-<p>[^1] Pour plus d’informations sur le processus d’élimination, consulter le document <a class="reference internal" href="eliminations.html"><span class="std std-doc">Les éliminations avec la solution logicielle Vitam</span></a>.</p>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id2" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Pour plus d’informations sur le processus d’élimination, consulter le document <a class="reference internal" href="eliminations.html"><span class="std std-doc">Les éliminations avec la solution logicielle Vitam</span></a>.</p>
+</aside>
+</aside>
 </section>
 </section>
 </section>
@@ -617,7 +617,6 @@ Pour les fonds propres, les totaux d’unités archivistiques (AU), groupes d’
       <dd><a href="../../master_8.0.x/sections/transfert.html">master_8.0.x</a></dd>
       <dd><a href="../../v8.1_Resip_mathilde/sections/transfert.html">v8.1_Resip_mathilde</a></dd>
       <dd><a href="../../v81_preservation/sections/transfert.html">v81_preservation</a></dd>
-      <dd><a href="../../v81_transfert/sections/transfert.html">v81_transfert</a></dd>
       <dd><a href="../../v81_valeur_probante/sections/transfert.html">v81_valeur_probante</a></dd>
       <dd><a href="../../v81_workflow/sections/transfert.html">v81_workflow</a></dd>
     </dl>
