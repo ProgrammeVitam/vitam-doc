@@ -1418,7 +1418,15 @@ le seuil de résultats supporté par le moteur d’indexation Elastic Search est
 
 ##### Utilisation dans VitamUI
 
-TO DO
+L’APP « Collecte et préparation des versements » du front-office VitamUI fournie avec la solution logicielle Vitam permet d'accéder aux unités archivistiques d'une transaction.
+
+Ce service est disponible :
+
+-   depuis la page permettant de visualiser l’ensemble des projets de versement,
+
+-   depuis la page permettant de visualiser l’ensemble des transactions (ou versements) 
+
+Ces deux accès mènent à une page permettant de visualiser l’ensemble des unités archivistiques d'une transaction ainsi que de rechercher dans cette liste selon de nombreux critères. 
 
 #### Accès aux groupes d'objets techniques
 
@@ -1461,7 +1469,9 @@ L’utilisateur peut récupérer :
 
 ##### Utilisation dans VitamUI
 
-TO DO
+L’APP « Collecte et préparation des versements » du front-office VitamUI fournie avec la solution logicielle Vitam permet d'accéder aux métadonnées techniques d'un groupe d'objets techniques ainsi qu'aux différents usages et versions d'un objet technique.
+
+Ce service est disponible depuis la page permettant de visualiser l’ensemble des unités archivistiques d'une transaction au sein de l'onglet "Objet" du panneau latéral d'une unité archivistique. Il est également possible d'y télécharger les différents objets techniques. 
 
 
 ######################################################################################################
@@ -1554,7 +1564,7 @@ Lors de cette action, l’opération peut aboutir aux résultats suivants :
 
 ##### Utilisation dans VitamUI
 
-TO DO
+TO DO 
 
 #### Suppression d'une transaction
 
