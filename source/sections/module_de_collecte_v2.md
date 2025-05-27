@@ -2157,7 +2157,7 @@ Accept: application/json
 Content-Type: application/zip
 X-Tenant-Id: {{tenant}}
 X-Access-Contract-Id: {{access-contract}}
-X-Attachement-Id : guid-de-au-cible
+*X-Attachement-Id : guid-de-au-cible*
 
 < C:\Users\doc_a_ajouter.zip
 ```  
@@ -2173,11 +2173,11 @@ Cette action provoque :
 
     -   un intitulé (Title), correspondant au nom d’un répertoire ou d’un objet binaire présent dans l’arborescence bureautique.
 
-    À chaque enregistrement, est associé l’identifiant de la transaction (\_opi).
+    À chaque enregistrement, est associé l’identifiant de la transaction (_opi).
 
 -   la création de métadonnées techniques dans la base de données MongoDB, dans la collection « ObjectGroup » (base *MetadataCollect[^12]*) ;
 
-    À chaque enregistrement, est associé l’identifiant de la transaction (\_opi) ;
+    À chaque enregistrement, est associé l’identifiant de la transaction (_opi) ;
 
 -   l’enregistrement des objets numériques sur les offres de stockage.
 -   la mise à jour des métadonnées techniques de l’objet avec, calculés lors de l’envoi du fichier numérique :
@@ -2198,14 +2198,13 @@ Elle n’est pas journalisée dans le journal des opérations.
 Point d’attention :
 
 -   Aucun fichier ne doit avoir un poids équivalent à 0 octet.
--   Au terme de la V.6, il est recommandé que les noms de répertoires et de fichiers ne contiennent ni caractère accentué, ni virgule, ni apostrophe, ni parenthèse, ni espace, ni élément de ponctuation, ou tout autre caractère spécial. Ne sont à privilégier que l’underscore et le tiret comme séparateurs.
+-   Au terme de la V.8.1, il est recommandé que les noms de répertoires et de fichiers ne contiennent ni caractère accentué, ni virgule, ni apostrophe, ni parenthèse, ni espace, ni élément de ponctuation, ou tout autre caractère spécial. Ne sont à privilégier que l’underscore et le tiret comme séparateurs.
 
     Néanmoins, s’ils en contiennent et si l’arborescence bureautique émane d’un environnement Windows, il est recommandé d’utiliser l’outil Winzip pour la zipper, afin d’éviter des problèmes d’encodage.
 
 ##### Utilisation dans VitamUI
 
 L’APP « Collecte et préparation des versements » du front-office VitamUI fournie avec la solution logicielle Vitam permet d'ajouter des unités archivistiques dans une transaction, à l'endroit de l'arborescence défini, au moyen d’un wizard ou boîte de dialogue contenant une fenêtre d'upload.
-
 
 #### Suppression d'archives
 
