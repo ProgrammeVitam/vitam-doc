@@ -2143,11 +2143,69 @@ TO DO
 
 ##### Utilisation des API
 
-TO DO
+La solution logicielle Vitam permet d'ajouter des unités archivistiques à une transaction donnée.
+
+***Point d’attention :*** En prérequis à cette action, il faut avoir au préalable créé une transaction et le signaler dans l’API. Le(s) document(s) ajouté(s) doivent être compressé(s) au format zip.
+
+*Exemple : requête en vue d'ajouter une ou plusieurs unité(s) d'archives à une transaction dont l’identifiant est «  aeeaaaaaachj3m7nabjocamcdqr2rqaaaaaq »*
+
+```  
+  @transaction-id= *aeeaaaaaachj3m7nabjocamcdqr2rqaaaaaq*
+  
+POST {{url}}/collect-external/v1/transactions/{{transaction-id}}/upload
+Accept: application/json
+Content-Type: application/zip
+X-Tenant-Id: {{tenant}}
+X-Access-Contract-Id: {{access-contract}}
+X-Attachement-Id : guid-de-au-cible
+
+< C:\Users\doc_a_ajouter.zip
+```  
+
+Cette action provoque :
+
+-   la création des unités archivistiques dans la base de données MongoDB, dans la collection « Unit » (base *MetadataCollect[^10]*). Sont enregistrés automatiquement[^11] :
+
+    -   un niveau de description (DescriptionLevel) dont la valeur est :
+
+        -   « RecordGrp » pour une unité archivistique référençant un répertoire,
+        -   « Item » pour une unité archivistique référençant un objet numérique ;
+
+    -   un intitulé (Title), correspondant au nom d’un répertoire ou d’un objet binaire présent dans l’arborescence bureautique.
+
+    À chaque enregistrement, est associé l’identifiant de la transaction (\_opi).
+
+-   la création de métadonnées techniques dans la base de données MongoDB, dans la collection « ObjectGroup » (base *MetadataCollect[^12]*) ;
+
+    À chaque enregistrement, est associé l’identifiant de la transaction (\_opi) ;
+
+-   l’enregistrement des objets numériques sur les offres de stockage.
+-   la mise à jour des métadonnées techniques de l’objet avec, calculés lors de l’envoi du fichier numérique :
+
+    -   ajout de l’empreinte d’un fichier numérique,
+    -   ajout de l’identification de son format,
+    -   mise à jour de son poids exprimé en octets.
+
+Lors de cette action, l’opération peut aboutir aux résultats suivants :
+
+| Statut | Motifs |
+| --- | --- |
+| Succès | Action réalisée sans rencontrer de problèmes particuliers. |
+| Échec |  Le fichier .zip n’a pas été téléchargé pour cause de nom erroné ou de chemin introuvable<br> La transaction n’existe pas ou est erronée.<br>La transaction a été clôturée.<br>Le GUID de la position cible est erroné |
+
+Elle n’est pas journalisée dans le journal des opérations.
+
+Point d’attention :
+
+-   Aucun fichier ne doit avoir un poids équivalent à 0 octet.
+-   Au terme de la V.6, il est recommandé que les noms de répertoires et de fichiers ne contiennent ni caractère accentué, ni virgule, ni apostrophe, ni parenthèse, ni espace, ni élément de ponctuation, ou tout autre caractère spécial. Ne sont à privilégier que l’underscore et le tiret comme séparateurs.
+
+    Néanmoins, s’ils en contiennent et si l’arborescence bureautique émane d’un environnement Windows, il est recommandé d’utiliser l’outil Winzip pour la zipper, afin d’éviter des problèmes d’encodage.
 
 ##### Utilisation dans VitamUI
 
-TO DO
+L’APP « Collecte et préparation des versements » du front-office VitamUI fournie avec la solution logicielle Vitam permet d'ajouter des unités archivistiques dans une transaction, à l'endroit de l'arborescence défini, au moyen d’un wizard ou boîte de dialogue contenant une fenêtre d'upload.
+
 
 #### Suppression d'archives
 

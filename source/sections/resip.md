@@ -3348,10 +3348,10 @@ défaut ouverts par un clic sur la sous-action « Préférences » :
     -   l’identifiant de la réponse transmise suite à une demande
         d’entrée (champ TransferRequestReplyIdentifier du SEDA 2.1. et 2.2.) ;
     -   la description détaillée du service d’archives (champ
-        ArchivalAgency.OrganizationDescriptiveMetadata du SEDA 2.1. et 2.2.) ;
+        ArchivalAgency.OrganizationDescriptiveMetadata du SEDA 2.1. et 2.2.) si les informations sont entre les balises <OrganizationDescriptiveMetadata> </OrganizationDescriptiveMetadata> puis alimenté par une sous-balise extension du SEDA;
     -   la description détaillée du service de transfert (champ
         TransferringAgency.OrganizationDescriptiveMetadata du SEDA
-        2.1. et 2.2.).
+        2.1. et 2.2.) si les informations sont entre les balises <OrganizationDescriptiveMetadata> </OrganizationDescriptiveMetadata> puis alimenté par une sous-balise extension du SEDA.
 
         ![](medias/resip/Pictures/1000020100000555000002D8C00D11C099678E99.png)
 
