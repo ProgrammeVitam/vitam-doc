@@ -1662,7 +1662,17 @@ Lors de cette action, l’opération peut aboutir aux résultats suivants :
 
 ##### Utilisation dans VitamUI
 
-TO DO
+L’APP « Collecte et préparation des versements » du front-office VitamUI fournie avec la solution logicielle Vitam permet d'abandonner une transaction. Son statut passe alors à "ABORTED".
+
+Ce service est disponible depuis la page permettant de visualiser l’ensemble des transactions (ou versements) via un bouton d'actions secondaires.
+
+Des droits utilisateurs sont par ailleurs définis :
+
+| Profil utilisateur | Suppression d'archives |
+|---|---|
+| Administrateur     | oui |
+| Archiviste         | non |
+| Service producteur | non |
 
 #### Réouverture d'une transaction
 
