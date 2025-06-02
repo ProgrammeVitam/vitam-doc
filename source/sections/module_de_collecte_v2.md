@@ -807,6 +807,16 @@ Cette action provoque la création d’un enregistrement dans la base de donnée
 - l’identifiant de la transaction (_opi),
 - l'identifiant du service producteur (_sp et _sps).
 
+Le cas échéant, l'action provoque également :
+    - si le projet de versement déclarait un rattachement unique, la création d'une unité archivistique dans la base de données MongoDB, dans la collection « Unit » (base *MetadataCollect[^10]*). Sont enregistrés automatiquement :
+      -   un niveau de description (DescriptionLevel) dont la valeur est « Series »,
+      -   un intitulé (Title) dont la valeur est « STATIC_ATTACHEMENT »,
+      -   l'identifiant de l'unité archivistique de rattachement (champ SystemId inclus dans un bloc UpdateOperation);
+    - si le projet de versement déclarait un rattachement par clé / valeur, la création d'une unité archivistique dans la base de données MongoDB, dans la collection « Unit » (base *MetadataCollect[^10]*). Sont enregistrés automatiquement :
+      -   un niveau de description (DescriptionLevel) dont la valeur est « Series »,
+      -   un intitulé (Title) dont la valeur est « DYNAMIC_ATTACHEMENT »,
+      -   l'identifiant de l'unité archivistique de rattachement (champ SystemId inclus dans un bloc UpdateOperation).
+
  *Exemple : enregistrement de l’unité archivistique dans la collection « Unit » de la base « MetadataCollect ».*
 ```
   {
@@ -1103,6 +1113,17 @@ Cette action provoque :
     -   ajout de l’identification de son format,
     -   mise à jour de son poids exprimé en octets.
 
+-   le cas échéant :
+
+    - si le projet de versement déclarait un rattachement unique, la création d'une unité archivistique dans la base de données MongoDB, dans la collection « Unit » (base *MetadataCollect[^10]*). Sont enregistrés automatiquement :
+      -   un niveau de description (DescriptionLevel) dont la valeur est « Series »,
+      -   un intitulé (Title) dont la valeur est « STATIC_ATTACHEMENT »,
+      -   l'identifiant de l'unité archivistique de rattachement (champ SystemId inclus dans un bloc UpdateOperation);
+    - si le projet de versement déclarait un rattachement par clé / valeur, la création d'une unité archivistique dans la base de données MongoDB, dans la collection « Unit » (base *MetadataCollect[^10]*). Sont enregistrés automatiquement :
+      -   un niveau de description (DescriptionLevel) dont la valeur est « Series »,
+      -   un intitulé (Title) dont la valeur est « DYNAMIC_ATTACHEMENT »,
+      -   l'identifiant de l'unité archivistique de rattachement (champ SystemId inclus dans un bloc UpdateOperation).
+
 Lors de cette action, l’opération peut aboutir aux résultats suivants :
 
 | Statut | Motifs |
@@ -1133,8 +1154,9 @@ Pour une transaction donnée peut être envoyé sous forme de zip en plus d’un
 Le fichier .csv, obligatoirement intitulé « metadata.csv », est composé de x colonnes[^14] :
 
 -   File : chemin relatif à partir de l’emplacement où est enregistré le fichier .csv (colonne obligatoire) ;
--   DescriptionLevel : niveau de description de l’unité archivistique (colonne obligatoire) ;
--   Title : intitulé de l’unité archivistique (colonne obligatoire) ;
+-   ObjectFiles : chemin relatif des fichiers numériques dont certains peuvent être rattachés à des répertoires déclarés dans la colonne File (colonne facultative) ;
+-   DescriptionLevel : niveau de description de l’unité archivistique (colonne facultative) ;
+-   Title : intitulé de l’unité archivistique (colonne facultative) ;
 -   toute colonne correspondant à un champ du standard SEDA (colonnes facultatives).
 
  *Exemple : contenu d’un fichier « metadata.csv ».*
@@ -1145,15 +1167,41 @@ Le fichier .csv, obligatoirement intitulé « metadata.csv », est composé de
   "AU1\\27juillet1888";"RecordGrp";"Clichés du 27 juillet 1888";;;;;;;;"fre";"fre";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ```
 
+ *Exemple : contenu d’un fichier « metadata.csv » décrivant un contexte de signature détachée.*
+
+```csv  
+  "File";"ObjectFiles";"Content.DescriptionLevel";"Content.Title";"Content.Description";"Content.DocumentType";"Content.Tag";"Content.EndDate";"Content.SigningInformation.SigningRole.0";"Content.SigningInformation.SigningRole.1";"Content.SigningInformation.SigningRole.2";"Content.SigningInformation.SignatureDescription.0.Signer.FullName";"Content.SigningInformation.SignatureDescription.0.Signer.SigningTime";"Content.SigningInformation.TimestampingInformation.TimeStamp";"Content.SigningInformation.AdditionalProof.0.AdditionalProofInformation.0";"Content.SigningInformation.AdditionalProof.0.AdditionalProofInformation.1";"Management.AppraisalRule.Rule";"Management.AppraisalRule.StartDate";"Management.AppraisalRule.FinalAction";"Management.AccessRule.Rule";"Management.AccessRule.StartDate"
+  "**Parapheur**";"Parapheur\20230615_note_Vu AB.pdf";"Item";"20230615_note_Vu AB.pdf";"Parapheur créé par Al Capone. Note";"Document signé";"Note";"2023-06-15";"SignedDocument";"Signature";"Timestamp";"Al Capone";"2023-06-15T11:18:12";"2023-06-15T11:18:12";"EvidenceRecords";"Report";"APP-00003";"2023-06-15";"Keep";"ACC-00020";"2023-06-15"
+  "Parapheur\aeaaaaaaaaecb7ovabhryamreeao2oyaaaaq-evidenceRecord.pdf";"**Parapheur\aeaaaaaaaaecb7ovabhryamreeao2oyaaaaq-evidenceRecord.pdf**";"Item";"aeaaaaaaaaecb7ovabhryamreeao2oyaaaaq-evidenceRecord.pdf";;"Fichier de preuve";;;"AdditionalProof";;;;;;;;;;;;
+  "Parapheur\report_aeaaaaaaaaecb7ovabhryamreeao2oyaaaaq.pdf";"**Parapheur\report_aeaaaaaaaaecb7ovabhryamreeao2oyaaaaq.pdf**";"Item";"report_aeaaaaaaaaecb7ovabhryamreeao2oyaaaaq.pdf";;"Rapport";;;"AdditionalProof";;;;;;;;;;;;```
+```
+
+ *Exemple : contenu d’un fichier « metadata.csv » déclarant un rattachement.*
+
+```csv  
+  "File";"Content.DescriptionLevel";"Content.Title";**"Management.UpdateOperation.ArchiveUnitIdentifierKey.MetadataName**";"**Management.UpdateOperation.ArchiveUnitIdentifierKey.MetadataValue**"
+  "Discours hors parlement";"RecordGrp";"Discours hors parlement";"**ArchivalAgencyArchiveUnitIdentifier**";"**20130456/3**"
+  "Discours hors parlement\Discours d'inauguration";"RecordGrp";"Discours d’inauguration";;
+  "Discours hors parlement\Discours d'inauguration\Inauguration de Notre-Dame.odt";"Item";"Inauguration de Notre-Dame";;
+```
+
 ***Points d’attention :***
 
--   l’ordre des premières colonnes ne doit pas être modifié ;
+-   la colonne File doit toujours être placée en première position ;
 -   une première ligne d’en-tête donnant le nom des colonnes doit être présente, chaque ligne décrivant ensuite une unité archivistique ;
--   le séparateur entre les colonnes est le point-virgule, le séparateur de texte les guillemets doubles et l’encodage est « UTF-8 » ;
--   le fichier .csv ne référence que des métadonnées propres aux unités archivistiques (métadonnées descriptives et de gestion).
+-   le séparateur entre les colonnes est le *point-virgule*, le séparateur de texte les guillemets doubles et l’encodage est « *UTF-8* » ;
+-   le fichier .csv ne référence que des métadonnées propres aux unités archivistiques (métadonnées descriptives et de gestion). Il ne supporte pas les métadonnées techniques propres aux fichiers numériques ;
 -   seul un objet peut être associé à un enregistrement. Ce format d’import ne permet pas de facto de gérer l’import de groupe d’objets techniques disposant de plusieurs objets aux usages différents devant être référencés par la même unité archivistique.
 -   le fichier .csv à importer doit se trouver dans le même répertoire que le répertoire correspondant à la racine de la structure arborescente de fichiers à importer.
 -   chaque répertoire et objet numérique devant contenir des métadonnées particulières doit être référencé dans le fichier .csv ;
+-   si le fichier .csv déclare un rattachement à une unité archivistique, il doit matérialiser cette unité archivistique par une ligne dédiée correspondant à un dossier dans l'arborescence bureautique. 
+    Dans cette ligne :
+    -   Ne devront être renseignées que les informations suivantes : 
+	    -  DescriptionLevel, 
+		-  Title,
+		-  UpdateOperation.ArchiveUnitIdentifierKey.MetadataName et Management.UpdateOperation.ArchiveUnitIdentifierKey.MetadataValue OU UpdateOperation.SystemId.
+    -   Un rattachement ne peut être déclaré que dans un répertoire racine.
+
 -   concernant le nommage des colonnes :
 
     -   pour les colonnes correspondant à des champs du standard SEDA, l’intitulé de la colonne doit correspondre à celui du champ dans le standard SEDA, précédé de « Management. » s’il s’agit d’une métadonnée de gestion (ex. « Management.AccessRule.Rule » pour une règle de communicabilité) ou de « Content » s’il s’agit d’une métadonnée descriptive (ex. « Content.DocumentType ») ;
@@ -1173,26 +1221,45 @@ Le fichier .csv, obligatoirement intitulé « metadata.csv », est composé de
 
 -   Aucun fichier ne doit avoir un poids équivalent à 0 octet.
 -   Les dates de début (Content.StartDate) doivent être antérieures aux dates de fin (Content.EndDate).
--   Au terme de la V.6 RC, il est recommandé que les noms de répertoires et de fichiers ne contiennent ni caractère accentué, ni virgule, ni apostrophe, ni parenthèse, ni espace, ni élément de ponctuation, ou tout autre caractère spécial. Ne sont à privilégier que l’underscore et le tiret comme séparateurs.
+-   Au terme de la V.8.1, il est recommandé que les noms de répertoires et de fichiers ne contiennent ni caractère accentué, ni virgule, ni apostrophe, ni parenthèse, ni espace, ni élément de ponctuation, ou tout autre caractère spécial. Ne sont à privilégier que l’underscore et le tiret comme séparateurs.
 
     Néanmoins, s’ils en contiennent et si l’arborescence bureautique émane d’un environnement Windows, il est recommandé d’utiliser l’outil Winzip pour la zipper, afin d’éviter des problèmes d’encodage.
 
-L’import du fichier zip incluant un fichier .csv et une arborescence bureautique provoque :
+L’import du fichier .zip incluant un fichier .csv et une arborescence bureautique provoque :
 
 -   la création des unités archivistiques dans la base de données MongoDB, dans la collection « Unit » (base *MetadataCollect[^15]*). Sont enregistrées automatiquement les valeurs portées dans le fichier .csv si l’enregistrement ne contient pas d’erreur.
 
-    À chaque enregistrement, est associé l’identifiant de la transaction (\_opi).
+    À chaque enregistrement, est associé :
+	
+	-   l’identifiant de la transaction (_opi) ;
+	-   un identifiant de batch (_batchId) ;
+	-   la localisation initiale du dossier ou du fichier dans l'arborescence (_uploadPath),
+	-   l'identifiant du service producteur (_sp et _sps) ;
 
 -   la création de métadonnées techniques dans la base de données MongoDB, dans la collection « ObjectGroup » (base *MetadataCollect[^16]*).
 
-    À chaque enregistrement, est associé l’identifiant de la transaction (\_opi) ;
+    À chaque enregistrement, est associé :
+	-  l’identifiant de la transaction (_opi) ;
+    -   un identifiant de batch (_batchId) ;
+	-  l'identifiant du service producteur (_sp) ;
 
 -   l’enregistrement des objets numériques sur les offres de stockage.
 -   la mise à jour des métadonnées techniques de l’objet avec :
 
     -   ajout de l’empreinte d’un fichier numérique,
     -   ajout de l’identification de son format,
-    -   mise à jour de son poids exprimé en octets, calculés lors de l’envoi du fichier numérique.
+    -   mise à jour de son poids exprimé en octets, calculés lors de l’envoi du fichier numérique ;
+	
+-   le cas échéant :
+
+    - si le projet de versement déclarait un rattachement unique, la création d'une unité archivistique dans la base de données MongoDB, dans la collection « Unit » (base *MetadataCollect[^10]*). Sont enregistrés automatiquement :
+      -   un niveau de description (DescriptionLevel) dont la valeur est « Series »,
+      -   un intitulé (Title) dont la valeur est « STATIC_ATTACHEMENT »,
+      -   l'identifiant de l'unité archivistique de rattachement (champ SystemId inclus dans un bloc UpdateOperation);
+    - si le projet de versement déclarait un rattachement par clé / valeur, la création d'une unité archivistique dans la base de données MongoDB, dans la collection « Unit » (base *MetadataCollect[^10]*). Sont enregistrés automatiquement :
+      -   un niveau de description (DescriptionLevel) dont la valeur est « Series »,
+      -   un intitulé (Title) dont la valeur est « DYNAMIC_ATTACHEMENT »,
+      -   l'identifiant de l'unité archivistique de rattachement (champ SystemId inclus dans un bloc UpdateOperation).
 
 Lors de cette action, l’opération peut aboutir aux résultats suivants :
 
@@ -1205,24 +1272,30 @@ Cette action n’est pas journalisée dans le journal des opérations.
 
 ***Point d’attention :*****
 
--   Au terme de la V.6, le module de collecte ne bloque pas l’opération d’import de l’arborescence bureautique accompagnée d’un fichier CSV si ce dernier comporte les erreurs suivantes :
-    -   il inverse les colonnes Title et DescriptionLevel ;
-    -   il ne contient pas au moins une colonne obligatoire (File, Title, DescriptionLevel) ;
-    -   il dispose d’un champ dont le contenu est mal formaté (ex. ReceivedDate écrite en chaîne de caractères) ;
-    -   il ne contient aucune information ;
-    -   il contient des virgules, des espaces, des pipes comme séparateurs de champs ;
-    -   le fichier contient des simples guillemets comme séparateurs de texte ;
-    -   il contient un champ obligatoire non renseigné (Title) ;
-    -   il n'est pas au format CSV ;
-    -   il ne contient pas de séparateurs de champs.
+-   Au terme de la V.8.1, le module de collecte peut :
 
--    Si le fichier CSV est erroné, une erreur peut être renvoyée par l’API, le contenu du fichier CSV sera ignoré et seule l’arborescence bureautique sera téléchargée selon le comportement décrit dans la sous-section précédente.
+	-  bloquer l'import de l’arborescence bureautique accompagnée d’un fichier CSV si ce dernier comporte les erreurs suivantes :
+	   -   il ne contient pas au moins la colonne obligatoire File ;
+	   -   au moins un fichier référencé dans le fichier .csv n'est pas présent dans l'arborescence bureautique,
+	   -   il ne contient aucune information ;
+	   -   il ne contient pas de séparateurs de champs ;
+	   -   il contient des virgules, des espaces, des pipes comme séparateurs de champs ;
+	   -   le fichier contient des simples guillemets comme séparateurs de texte ;
+	   -   etc.
+	   L'API peut :
+	       - soit renvoyer une seule erreur, si cette erreur est bloquante,
+		   - soit renvoyer jusqu'à 20 erreurs, si ces erreurs sont cumulables.
+	   L'arborescence bureautique ne sera pas importée.
+	
+	-  ne pas bloquer l'import de l’arborescence bureautique accompagnée d’un fichier CSV si ce dernier comporte les erreurs suivantes :
+       -   il dispose d’un champ dont le contenu est mal formaté (ex. ReceivedDate écrite en chaîne de caractères) ;
+    Une erreur est alors renvoyée par l’API, le contenu du fichier CSV sera ignoré et seule l’arborescence bureautique sera téléchargée selon le comportement décrit dans la sous-section précédente.
 
 -   Aucun contrôle n’est effectué entre le nombre de répertoires et d’objets binaires présents dans l’arborescence bureautique et les éléments décrits dans le fichier .csv. Il est recommandé de veiller à ne pas ajouter de niveaux intermédiaires dans l’arborescence bureautique non référencés dans le fichier .csv, car ils seront automatiquement créés dans le module de collecte selon le comportement décrit dans la sous-section précédente.
 
 ###### Utilisation dans VitamUI
 
-L’APP « Collecte et préparation des versements » du front-office VitamUI fournie avec la solution logicielle Vitam permet de verser une arborescence bureautique, le cas échéant accompagnée d’un fichier « metatadata.csv », lors de la création d’un projet de versement manuel au moyen d’un wizard ou boîte de dialogue.
+L’APP « Collecte et préparation des versements » du front-office VitamUI fournie avec la solution logicielle Vitam permet de verser une arborescence bureautique, le cas échéant accompagnée d’un fichier « metadata.csv », lors de la création d’un projet de versement manuel au moyen d’un wizard ou boîte de dialogue.
 
 Le détail du projet de versement, ainsi que les archives qui lui sont associées sont par ailleurs accessibles depuis l’APP.
 
@@ -1230,20 +1303,7 @@ Le détail du projet de versement, ainsi que les archives qui lui sont associée
 
 -   Si un fichier metadata.csv est associé à une arborescence bureautique, il faut d’abord télécharger cette dernière dans le wizard ou boîte de dialogue, puis faire de même avec le fichier « metadata.csv » ;
 -   Si le nom du fichier .csv est erroné, l’interface VitamUI l’interprétera comme un fichier numérique à collecter au même titre que l’arborescence bureautique associée ;
--   Au terme de la V.6, l’APP « Collecte et préparation des versements » ne bloque pas l’opération d’import de l’arborescence bureautique accompagnée d’un fichier CSV si ce dernier comporte les erreurs suivantes :
-    -   il inverse les colonnes Title et DescriptionLevel ;
-    -   il ne contient pas au moins une colonne obligatoire (File, Title, DescriptionLevel) ;
-    -   il dispose d’un champ dont le contenu est mal formaté (ex. ReceivedDate écrite en chaîne de caractères) ;
-    -   il ne contient aucune information ;
-    -   il contient des virgules, des espaces, des pipes comme séparateurs de champs ;
-    -   le fichier contient des simples guillemets comme séparateurs de texte ;
-    -   il contient un champ obligatoire non renseigné (Title) ;
-    -   il n'est pas au format CSV ;
-    -   il ne contient pas de séparateurs de champs.
-
--   Si le fichier CSV est erroné, une erreur peut être renvoyée, le contenu du fichier CSV sera ignoré et seule l’arborescence bureautique sera téléchargée.
--   Aucun contrôle n’est effectué entre le nombre de répertoires et d’objets binaires présents dans l’arborescence bureautique et les éléments décrits dans le fichier .csv.
--   Au terme de la V.6 , il est recommandé que les noms de répertoires et de fichiers ne contiennent ni caractère accentué, ni virgule, ni apostrophe, ni parenthèse, ni espace, ni élément de ponctuation, ou tout autre caractère spécial. Ne sont à privilégier que l’underscore et le tiret comme séparateurs.
+-   Au terme de la V.8.1, l’APP « Collecte et préparation des versements » ne renvoie pas d'erreurs lors de l’import de l’arborescence bureautique accompagnée d’un fichier CSV si ce dernier comporte les erreurs suivantes.
 
 ##### Envoi d’une arborescence bureautique avec fichier .jsonl de métadonnées
 
@@ -2010,7 +2070,7 @@ La solution logicielle permet de modifier des métadonnées descriptives et de g
   X-Tenant-Id: {{tenant}}
   X-Access-Contract-Id: {{access-contract}}
   
-  &lt; /path\_tozip/stream.csv
+  < /path\_tozip/stream.csv
 ```  
 
 Pour une transaction donnée, peut être envoyé un fichier .csv contenant des métadonnées détaillant unitairement tout ou partie des unités archivistiques préalablement envoyées.
@@ -2027,7 +2087,6 @@ Le fichier .csv est composé de x colonnes[^17] :
 -   une première ligne d’en-tête donnant le nom des colonnes doit être présente, chaque ligne décrivant ensuite une unité archivistique ;
 -   le séparateur entre les colonnes est le point-virgule, le séparateur de texte les guillemets doubles et l’encodage est « UTF-8 » ;
 -   le fichier .csv ne référence que des métadonnées propres aux unités archivistiques (métadonnées descriptives et de gestion).
--   seul un objet peut être associé à un enregistrement. Ce format d’import ne permet pas de facto de gérer l’import de groupe d’objets techniques disposant de plusieurs objets aux usages différents devant être référencé par la même unité archivistique.
 -   concernant le nommage des colonnes :
     -   pour les colonnes correspondant à des champs du standard SEDA, l’intitulé de la colonne doit correspondre à celui du champ dans le standard SEDA, précédé de « Management. » s’il s’agit d’une métadonnée de gestion (ex. « Management.AccessRule.Rule » pour une règle de communicabilité) ou de « Content » s’il s’agit d’une métadonnée descriptive (ex. « Content.DocumentType »). Toutefois, si le fichier d’import ne décrit que des métadonnées descriptives, la présence du préfixe « Content » est facultative ;
     -   quand le schéma XML du standard SEDA propose une structure complexe de balises (par exemple pour décrire un auteur via l’objet XML &lt;Writer&gt; qui contient plusieurs balises XML comme FullName ou BirthName), il convient d’intituler la colonne de la manière suivante : Content.Writer.FullName ou Content.Writer.BirthName ;
@@ -2064,18 +2123,29 @@ Lors de cette action, l’opération peut aboutir aux résultats suivants :
 Elle n’est pas journalisée dans le journal des opérations.
 
 ***Point d’attention :***
-Au terme de la V.8.1, le module de collecte :
+-   Au terme de la V.8.1, le module de collecte peut :
 
--   ne bloque pas l’opération de mise à jour de métadonnées si le fichier .csv comporte les erreurs suivantes :
+	-  bloquer la mise à jour si le fichier .csv dernier comporte les erreurs suivantes :
+	   -   il ne contient pas au moins la colonne obligatoire File ;
+	   -   au moins un fichier référencé dans le fichier .csv n'est pas présent dans l'arborescence bureautique,
+	   -   il ne contient aucune information ;
+	   -   il ne contient pas de séparateurs de champs ;
+	   -   il contient des virgules, des espaces, des pipes comme séparateurs de champs ;
+	   -   le fichier contient des simples guillemets comme séparateurs de texte ;
+	   -   etc.
+	   L'API peut :
+	       - soit renvoyer une seule erreur, si cette erreur est bloquante,
+		   - soit renvoyer jusqu'à 20 erreurs, si ces erreurs sont cumulables.
+	   L'arborescence bureautique ne sera pas importée.
+	
+	-  ne pas bloquer la mise à jour si le fichier .csv dernier comporte les erreurs suivantes :
+       -   il dispose d’un champ dont le contenu est mal formaté (ex. ReceivedDate écrite en chaîne de caractères) ;
+    Une erreur est alors renvoyée par l’API, le contenu du fichier CSV sera ignoré et seule l’arborescence bureautique sera téléchargée selon le comportement décrit dans la sous-section précédente.
 
-    -   il inverse les colonnes Title et DescriptionLevel ;
-    -   il ne contient pas au moins une colonne de métadonnées obligatoires (Title, DescriptionLevel) ;
-    -   il dispose d’un champ dont le contenu est mal formaté (ex. ReceivedDate écrite en chaîne de caractères) ;
-    -   il contient des virgules, des espaces, des pipes comme séparateurs de champs ;
-    -   le fichier contient des simples guillemets comme séparateurs de texte ;
-    -   il contient un champ obligatoire non renseigné (Title) :<br>Si le fichier CSV est erroné, une erreur peut être renvoyée par l’API, l’(les) unité(s) archivistique(s) en erreur sera(seront) ignorée(s) et seule(s) l’(les) unité(s) archivistique(s) sans erreur fera(feront) l’objet de la mise à jour ;
+-   Il ne permet pas de :
 
--   ne permet pas de supprimer une métadonnée avec ce mode de mise à jour par envoi de fichier .csv.
+    - supprimer une métadonnée avec ce mode de mise à jour par envoi de fichier .csv ;
+	- ajouter un rattachement à une unité archivistique (UpdateOperation).
 
 ###### Utilisation dans VitamUI
 
