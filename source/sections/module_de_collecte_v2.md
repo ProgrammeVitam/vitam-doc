@@ -1163,8 +1163,8 @@ Le fichier .csv, obligatoirement intitulé « metadata.csv », est composé de
 
 ```csv  
   "File";"Content.DescriptionLevel";"Content.Title";"Content.FilePlanPosition";"Content.ArchivalAgencyArchiveUnitIdentifier";"Content.Description";"Content.CustodialHistory.CustodialHistoryItem.0";"Content.CustodialHistory.CustodialHistoryItem.1";"Content.CustodialHistory.CustodialHistoryItem.2";"Content.DocumentType";"Content.Language";"Content.DescriptionLanguage";"Content.Version";"Content.Tag.0";"Content.Tag.1";"Content.Tag.2";"Content.Tag.3";"Content.Tag.4";"Content.Keyword.0.KeywordContent";"Content.Keyword.0.KeywordType";"Content.Keyword.1.KeywordContent";"Content.Keyword.1.KeywordType";"Content.Keyword.2.KeywordContent";"Content.Keyword.2.KeywordType";"Content.Keyword.3.KeywordContent";"Content.Keyword.3.KeywordType";"Content.Keyword.4.KeywordContent";"Content.Keyword.4.KeywordType";"Content.Coverage.Spatial.0";"Content.Coverage.Spatial.1";"Content.Coverage.Spatial.2";"Content.Coverage.Spatial.3";"Content.Coverage.Temporal";"Content.Coverage.Juridictional.0";"Content.Coverage.Juridictional.1";"Content.Coverage.Juridictional.2";"Content.Coverage.Juridictional.3";"Content.OriginatingAgency.Identifier";"Content.SubmissionAgency.Identifier";"Content.StartDate";"Content.EndDate";"Management.AccessRule.Rule";"Management.AccessRule.StartDate"
-  "AU1\\27juillet1888\\5FI6\_5FI6\_16";"RecordGrp";"Brantes. Combe de la Mure.";"instrument\_recherche/5FI6/5FI6\_16";"5 Fi 6/16";"Dim. 18x24 cm.";;;;;"fre";"fre";"Original";"Combe de la Mure (Brantes, Vaucluse, France)";"Brantes (Vaucluse, France)";;;;"Combe de la Mure (Brantes, Vaucluse, France)";"geogname";"Brantes (Vaucluse, France)";"geogname";;;;;;;"Combe de la Mure (Brantes, Vaucluse, France)";"Brantes (Vaucluse, France)";;;1888;"Combe de la Mure (Brantes, Vaucluse, France)";"Brantes (Vaucluse, France)";;;;;;"1888-12-30T00:00:00";"ACC-00001";"1888-12-30"
-  "AU1\\27juillet1888";"RecordGrp";"Clichés du 27 juillet 1888";;;;;;;;"fre";"fre";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  "AU1\27juillet1888\5FI6\_5FI6\_16";"RecordGrp";"Brantes. Combe de la Mure.";"instrument_recherche/5FI6/5FI6_16";"5 Fi 6/16";"Dim. 18x24 cm.";;;;;"fre";"fre";"Original";"Combe de la Mure (Brantes, Vaucluse, France)";"Brantes (Vaucluse, France)";;;;"Combe de la Mure (Brantes, Vaucluse, France)";"geogname";"Brantes (Vaucluse, France)";"geogname";;;;;;;"Combe de la Mure (Brantes, Vaucluse, France)";"Brantes (Vaucluse, France)";;;1888;"Combe de la Mure (Brantes, Vaucluse, France)";"Brantes (Vaucluse, France)";;;;;;"1888-12-30T00:00:00";"ACC-00001";"1888-12-30"
+  "AU1\27juillet1888";"RecordGrp";"Clichés du 27 juillet 1888";;;;;;;;"fre";"fre";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ```
 
  *Exemple : contenu d’un fichier « metadata.csv » décrivant un contexte de signature détachée.*
@@ -1309,11 +1309,149 @@ Le détail du projet de versement, ainsi que les archives qui lui sont associée
 
 ###### Utilisation des API
 
-TO DO
+Pour une transaction donnée peut être envoyé sous forme de zip en plus d’une arborescence bureautique[^13] un fichier .jsonl contenant des métadonnées détaillant unitairement les unités archivistiques.
+
+Le fichier .jsonl, obligatoirement intitulé « metadata.jsonl », est composé de :
+
+-   File : chemin relatif à partir de l’emplacement où est enregistré le fichier .jsonl (champ obligatoire) ;
+-   Selector : liste de conditions permettant l'enregistrement des métadonnées dans une unité archivistique correspond à ces conditions (champ obligatoire) ;
+-   ObjectFiles : chemin relatif des fichiers numériques dont certains peuvent être rattachés à des répertoires déclarés dans la colonne File (champ facultatif) ;
+-   UnitContent : bloc dans lequel sont insérées les métadonnées descriptives et de gestion d'une unité archivistique (champ obligatoire), dont :
+    -   DescriptionLevel : niveau de description de l’unité archivistique (champ facultatif) ;
+    -   Title : intitulé de l’unité archivistique (champ facultatif) ;
+    -   tout champ correspondant à un champ du standard SEDA (champs facultatifs).
+
+ *Exemple : contenu d’un fichier « metadata.jsonl ».*
+
+```
+{ "File": "File", "UnitContent": { "DescriptionLevel": "Collection", "Title": "File", "Description": "Ceci est un versement de bulletins de paie", "StartDate": "2023-01-01", "EndDate": "2023-01-31", "Tag": [ "Paie", "Bulletin" ] } }
+{ "File": "File/BP_123456_20230131.pdf", "UnitContent": { "DescriptionLevel": "Item", "Title": "BP_123456_20230131.pdf", "OriginatingSystemId": [ "BP_123456_20230131" ], "Agent": [ { "FirstName": "DUPONT", "BirthName": "Charles", "Identifier": [ "123456" ] } ], "SentDate": "2023-01-31", "AcquiredDate": "2023-01-20", "Tag": [ "Salaire" ], "#management": { "AppraisalRule": { "Rules": [ { "Rule": "APP-00001", "StartDate": "2023-01-20" } ], "FinalAction": "Destroy" }, "AccessRule": { "Rules": [ { "Rule": "ACC-00016", "StartDate": "2023-01-20" } ] } } } }
+{ "File": "File/BP_123463_20230131.pdf", "UnitContent": { "DescriptionLevel": "Item", "Title": "BP_123463_20230131.pdf", "OriginatingSystemId": [ "BP_123463_20230131" ], "Agent": [ { "FirstName": "DUPOND", "BirthName": "Victor", "Identifier": [ "123463" ] } ], "SentDate": "2023-01-31", "AcquiredDate": "2023-01-20", "Tag": [ "Salaire" ], "#management": { "AppraisalRule": { "Rules": [ { "Rule": "APP-00002", "StartDate": "2023-01-20" } ], "FinalAction": "Destroy" }, "AccessRule": { "Rules": [ { "Rule": "ACC-00016", "StartDate": "2023-01-20" } ] } } } }
+{ "File": "File/BP_123464_20230131.pdf", "UnitContent": { "DescriptionLevel": "Item", "Title": "BP_123464_20230131.pdf", "OriginatingSystemId": [ "BP_123464_20230131" ], "Agent": [ { "FirstName": "CHARLES", "BirthName": "Ray", "Identifier": [ "123464" ] } ], "SentDate": "2023-01-31", "AcquiredDate": "2023-01-20", "Tag": [ "Salaire" ], "#management": { "AppraisalRule": { "Rules": [ { "Rule": "APP-00002", "StartDate": "2023-01-20" } ], "FinalAction": "Destroy" }, "AccessRule": { "Rules": [ { "Rule": "ACC-00016", "StartDate": "2023-01-20" } ] } } } } 
+```
+
+ *Exemple : contenu d’un fichier « metadata.jsonl » décrivant un contexte de signature détachée.*
+
+```  
+{ "File" : "My Root Folder", "ObjectFiles": "SomeFile.xml", "UnitContent": { "Title": "My Root Folder (with attached SomeFile.xml)" } }
+{ "File" : "My Root Folder/MyFile1.txt", "ObjectFiles": null, "UnitContent": { "Title": "My Root Folder/MyFile1.txt" } }
+{ "File" : "My Root Folder/MyFile2.txt", "ObjectFiles": "My Root Folder/MyFile2.txt", "UnitContent": { "Title": "My Root Folder/MyFile2.txt" } }
+{ "File" : "My Root Folder/SubFolder", "ObjectFiles": "My Root Folder/SubFolder/MyFile3.txt", "UnitContent": { "Title": "My Root Folder/SubFolder (with attached MyFile3.txt)" } }
+{ "Selector" : { "#uploadPath" : "Yet Another Folder" }, "ObjectFiles": "My Root Folder/SubFolder/MyFile4.txt", "UnitContent": { "Title": "Yet Another Folder (with attached MyFile4.txt)" } }
+```
+
+ *Exemple : contenu d’un fichier « metadata.jsonl » déclarant un rattachement.*
+
+```
+{ "File": "Discours hors parlement", "UnitContent": { "DescriptionLevel": "RecordGrp", "Title": "Discours hors parlement", "#management": { "UpdateOperation": { "ArchiveUnitIdentifierKey" : { "MetadataName" : "ArchivalAgencyArchiveUnitIdentifier", "MetadataValue" : "20130456/3"} }  } } }
+{ "File": "Discours hors parlement/Discours d'inauguration", "UnitContent": { "DescriptionLevel": "RecordGrp", "Title": "Discours d’inauguration" } }
+{ "File": "Discours hors parlement/Discours d'inauguration/Inauguration de Notre-Dame.odt", "UnitContent": { "DescriptionLevel": "Item", "Title": "Inauguration de Notre-Dame" } }
+ 
+```
+
+***Points d’attention :***
+
+-   le fichier .jsonl doit toujours contenir un champ File *ou* un champ Selector. Celui-ci doit toujours être placée en première position ;
+-   les métadonnées pouvant être utilisées comme conditions dans le champ Selector doivent des éléments simples de type string, boolean, long ou double.
+-   le fichier .jsonl ne référence que des métadonnées propres aux unités archivistiques (métadonnées descriptives et de gestion). Il ne supporte pas les métadonnées techniques propres aux fichiers numériques ;
+-   seul un objet peut être associé à un enregistrement. Ce format d’import ne permet pas de facto de gérer l’import de groupe d’objets techniques disposant de plusieurs objets aux usages différents devant être référencés par la même unité archivistique.
+-   le fichier .jsonl à importer doit se trouver dans le même répertoire que le répertoire correspondant à la racine de la structure arborescente de fichiers à importer.
+-   chaque répertoire et objet numérique devant contenir des métadonnées particulières doit être référencé dans le fichier .jsonl ;
+-   si le fichier .jsonl déclare un rattachement à une unité archivistique, il doit matérialiser cette unité archivistique par une ligne dédiée correspondant à un dossier dans l'arborescence bureautique. 
+    Dans cette ligne :
+    -   Ne devront être renseignées que les informations suivantes : 
+	    -  DescriptionLevel, 
+		-  Title,
+		-  UpdateOperation.ArchiveUnitIdentifierKey.MetadataName et Management.UpdateOperation.ArchiveUnitIdentifierKey.MetadataValue OU UpdateOperation.SystemId.
+    -   Un rattachement ne peut être déclaré que dans un répertoire racine.
+
+-   le nommage des champs et leur structuration en JSON doivent se conformer au modèle de données de la solution logicielle Vitam.
+
+-   concernant le contenu des champs :
+
+    -   la colonne File :
+
+        -   ne doit pas comprendre d’espace avant ou après les « \\ » ;
+        -   doit correspondre à un chemin tel que décrit par l’explorateur de fichiers (avec des « \\ » et non des « / ») ;
+
+    -   le champ DescriptionLevel ne doit comprendre que les valeurs autorisées par le standard SEDA : Collection, Fonds, Series, SubSeries, RecordGrp, File, Item ;
+    -   les champs correspondant à des champs Date dans le standard SEDA doivent être formatés conformément à la norme ISO 8601 (AAAA-MM-JJ) ;
+    -   les références à des règles de gestion et à des profils d’unité archivistique doivent se conformer aux identifiants de règles présents dans le SAE
+
+-   Aucun fichier ne doit avoir un poids équivalent à 0 octet.
+-   Les dates de début (Content.StartDate) doivent être antérieures aux dates de fin (Content.EndDate).
+-   Au terme de la V.8.1, il est recommandé que les noms de répertoires et de fichiers ne contiennent ni caractère accentué, ni virgule, ni apostrophe, ni parenthèse, ni espace, ni élément de ponctuation, ou tout autre caractère spécial. Ne sont à privilégier que l’underscore et le tiret comme séparateurs.
+
+    Néanmoins, s’ils en contiennent et si l’arborescence bureautique émane d’un environnement Windows, il est recommandé d’utiliser l’outil Winzip pour la zipper, afin d’éviter des problèmes d’encodage.
+
+L’import du fichier .zip incluant un fichier .jsonl et une arborescence bureautique provoque :
+
+-   la création des unités archivistiques dans la base de données MongoDB, dans la collection « Unit » (base *MetadataCollect[^15]*). Sont enregistrées automatiquement les valeurs portées dans le fichier .csv si l’enregistrement ne contient pas d’erreur.
+
+    À chaque enregistrement, est associé :
+	
+	-   l’identifiant de la transaction (_opi) ;
+	-   un identifiant de batch (_batchId) ;
+	-   la localisation initiale du dossier ou du fichier dans l'arborescence (_uploadPath),
+	-   l'identifiant du service producteur (_sp et _sps) ;
+
+-   la création de métadonnées techniques dans la base de données MongoDB, dans la collection « ObjectGroup » (base *MetadataCollect[^16]*).
+
+    À chaque enregistrement, est associé :
+	-  l’identifiant de la transaction (_opi) ;
+    -   un identifiant de batch (_batchId) ;
+	-  l'identifiant du service producteur (_sp) ;
+
+-   l’enregistrement des objets numériques sur les offres de stockage.
+-   la mise à jour des métadonnées techniques de l’objet avec :
+
+    -   ajout de l’empreinte d’un fichier numérique,
+    -   ajout de l’identification de son format,
+    -   mise à jour de son poids exprimé en octets, calculés lors de l’envoi du fichier numérique ;
+	
+-   le cas échéant :
+
+    - si le projet de versement déclarait un rattachement unique, la création d'une unité archivistique dans la base de données MongoDB, dans la collection « Unit » (base *MetadataCollect[^10]*). Sont enregistrés automatiquement :
+      -   un niveau de description (DescriptionLevel) dont la valeur est « Series »,
+      -   un intitulé (Title) dont la valeur est « STATIC_ATTACHEMENT »,
+      -   l'identifiant de l'unité archivistique de rattachement (champ SystemId inclus dans un bloc UpdateOperation);
+    - si le projet de versement déclarait un rattachement par clé / valeur, la création d'une unité archivistique dans la base de données MongoDB, dans la collection « Unit » (base *MetadataCollect[^10]*). Sont enregistrés automatiquement :
+      -   un niveau de description (DescriptionLevel) dont la valeur est « Series »,
+      -   un intitulé (Title) dont la valeur est « DYNAMIC_ATTACHEMENT »,
+      -   l'identifiant de l'unité archivistique de rattachement (champ SystemId inclus dans un bloc UpdateOperation).
+
+Lors de cette action, l’opération peut aboutir aux résultats suivants :
+
+| Statut | Motifs |
+| --- | --- |
+| Succès | Action réalisée sans rencontrer de problèmes particuliers. |
+| Échec  | Le fichier .zip n’a pas été téléchargé pour cause de nom erroné ou de chemin introuvable ; Le fichier .jsonl contient au moins une erreur ; La transaction n’existe pas ou est erronée ; La transaction est clôturée. |
+
+Cette action n’est pas journalisée dans le journal des opérations.
+
+***Point d’attention :*****
+
+-   Au terme de la V.8.1, le module de collecte peut :
+
+	-  bloquer l'import de l’arborescence bureautique accompagnée d’un fichier .jsonl si ce dernier comporte les erreurs suivantes :
+	   -   il ne contient pas au moins le champ obligatoire File ;
+	   -   au moins un bloc UnitContent ne contient aucune information ;
+	   -   au moins un fichier référencé dans le fichier .jsonl n'est pas présent dans l'arborescence bureautique,
+	   -   il ne contient aucune information ;
+	   -   une date de fin de règle a été intégrée dans le fichier .jsonl ;
+	   -   il dispose d’un champ dont le contenu est mal formaté (ex. ReceivedDate écrite en chaîne de caractères) ;
+    
+	   -   etc.
+	   L'API peut :
+	       - soit renvoyer une seule erreur, si cette erreur est bloquante,
+		   - soit renvoyer jusqu'à 20 erreurs, si ces erreurs sont cumulables.
+	   L'arborescence bureautique ne sera pas importée.
+
+-   Aucun contrôle n’est effectué entre le nombre de répertoires et d’objets binaires présents dans l’arborescence bureautique et les éléments décrits dans le fichier .jsonl. Il est recommandé de veiller à ne pas ajouter de niveaux intermédiaires dans l’arborescence bureautique non référencés dans le fichier .jsonl, car ils seront automatiquement créés dans le module de collecte selon le comportement décrit dans la sous-section précédente.
 
 ###### Utilisation dans VitamUI
 
-TO DO
+Il n'est pas possible d'importer une arborescence bureautique accompagnée d'un fichier .jsonl depuis l’APP « Collecte et préparation des versements » du front-office VitamUI fournie avec la solution logicielle Vitam.
 
 
 ######################################################################################################
@@ -2165,11 +2303,267 @@ TO DO
 
 ###### Utilisation des API
 
+La solution logicielle permet de modifier des métadonnées descriptives et de gestion au moyen de l'import d’un fichier au format .jsonl. Il est plus précisement possible de :
+
+- modifier des métadonnées descriptives et/ou de gestion,
+- ajouter des métadonnées descriptives et/ou de gestion.
+
+***Points d'attention***
+-   En prérequis à la mise à jour des unités archivistiques, il faut avoir au préalable créé :
+
+    -   une transaction et le signaler dans l’API ;
+    -   les unités archivistiques qui sont référencées dans le fichier .jsonl ;
+
+-   Il n’est pas possible de :
+
+    -   supprimer une métadonnée avec ce mode ;
+    -   ajouter une unité archivistique lors de cette action de mise à jour.
+
+  *Exemple : requête en vue de modifier des métadonnées d’unités archivistiques associées à une transaction dont l’identifiant est «  aeeaaaaaachj3m7nabjocamcdqr2rqaaaaaq »*
+
+```  
+  @transaction-id = aeeaaaaaachj3m7nabjocamcdqr2rqaaaaaq
+  
+  PUT {{url}}/collect-external/v1/transactions/{{**transaction-id**}}/units
+  Accept: application/json
+  Content-Type: application/octet-stream
+  X-Tenant-Id: {{tenant}}
+  X-Access-Contract-Id: {{access-contract}}
+  
+  < /path_tozip/stream.jsonl
+```  
+
+Pour une transaction donnée, peut être envoyé un fichier .jsonl contenant des métadonnées détaillant unitairement tout ou partie des unités archivistiques préalablement envoyées.
+
+Le fichier .jsonl, obligatoirement intitulé « metadata.jsonl », est composé de :
+
+-   File : chemin relatif à partir de l’emplacement où est positionnée l’unité archivistique faisant l’objet de la modification. Il s’agit d’une concaténation des intitulés des différentes unités archivistiques (champ obligatoire) ;
+-   Selector : liste de conditions permettant l'enregistrement des métadonnées dans une unité archivistique correspond à ces conditions (champ obligatoire) ;
+-   ObjectFiles : chemin relatif des fichiers numériques dont certains peuvent être rattachés à des répertoires déclarés dans la colonne File (champ facultatif) ;
+-   UnitContent : bloc dans lequel sont insérées les métadonnées descriptives et de gestion d'une unité archivistique nécessitant d'être modifiée (champ obligatoire), dont :
+    -   DescriptionLevel : niveau de description de l’unité archivistique (champ facultatif) ;
+    -   Title : intitulé de l’unité archivistique (champ facultatif) ;
+    -   tout champ correspondant à un champ du standard SEDA (champs facultatifs).
+
+AAAAAAA
+
+
+
+
+***Points d’attention :***
+
+-   le fichier .csv n’est pas obligatoirement intitulé « metadata.csv » ;
+-   l’ordre des premières colonnes ne doit pas être modifié ;
+-   une première ligne d’en-tête donnant le nom des colonnes doit être présente, chaque ligne décrivant ensuite une unité archivistique ;
+-   le séparateur entre les colonnes est le point-virgule, le séparateur de texte les guillemets doubles et l’encodage est « UTF-8 » ;
+-   le fichier .csv ne référence que des métadonnées propres aux unités archivistiques (métadonnées descriptives et de gestion).
+-   concernant le nommage des colonnes :
+    -   pour les colonnes correspondant à des champs du standard SEDA, l’intitulé de la colonne doit correspondre à celui du champ dans le standard SEDA, précédé de « Management. » s’il s’agit d’une métadonnée de gestion (ex. « Management.AccessRule.Rule » pour une règle de communicabilité) ou de « Content » s’il s’agit d’une métadonnée descriptive (ex. « Content.DocumentType »). Toutefois, si le fichier d’import ne décrit que des métadonnées descriptives, la présence du préfixe « Content » est facultative ;
+    -   quand le schéma XML du standard SEDA propose une structure complexe de balises (par exemple pour décrire un auteur via l’objet XML &lt;Writer&gt; qui contient plusieurs balises XML comme FullName ou BirthName), il convient d’intituler la colonne de la manière suivante : Content.Writer.FullName ou Content.Writer.BirthName ;
+    -   quand un champ ou un objet XML est multivalué dans le standard SEDA (et qu’il est possible d’en décrire plusieurs dans le bordereau comme c’est le cas pour l’objet Writer par exemple), il convient de numéroter la colonne de la manière suivante : Content.Writer.0.FullName, Content.Writer.1.FullName ;
+-   concernant le contenu des colonnes :
+    -   la colonne File :
+        -   indique la position de l’unité archivistique dans l’arborescence de la transaction, depuis l’unité archivistique racine jusqu’à l’unité archivistique décrite. Il s’agit là d’une concaténation des intitulés des différentes unités archivistiques.
+        -   ne doit pas comprendre d’espace avant ou après les « \\ » ;
+        -   doit correspondre à un chemin tel que décrit par l’explorateur de fichiers (avec des « \\ » et non des « / ») ;
+
+    -   la colonne DescriptionLevel, si elle est présente, ne doit comprendre que les valeurs autorisées par le standard SEDA : Collection, Fonds, Series, SubSeries, RecordGrp, File, Item ;
+    -   les colonnes correspondant à des champs Date dans le standard SEDA doivent être formatées conformément à la norme ISO 8601 (AAAA-MM-JJ) ;
+    -   les références à des règles de gestion doivent se conformer aux identifiants de règles présents dans le SAE ;
+    -   les dates de début (Content.StartDate) doivent être antérieures aux dates de fin (Content.EndDate).
+
+  *Exemple : fichier .csv de mise à jour des métadonnées (ajout ou modification des dates de début et de fin pour les unités archivistiques intitulées « AU1 » et « AU2 »)*
+```csv  
+  File;Content.DescriptionLevel;Content.Title;Content.StartDate;Content.EndDate
+  "content/AU1";"Item";"AU1";"1970-06-03";"1980-06-03"
+  "content/AU2";"Item";"AU2";"1970-06-03";"1980-06-03"
+  "content/AU3";"Item";"AU3";"";""
+  "content/AU4";"Item";"AU4";"";""
+```
+
+Cette action provoque la mise à jour des unités archivistiques dans la base de données MongoDB, dans la collection « Unit » (base *MetadataCollect[^18]*).
+Lors de cette action, l’opération peut aboutir aux résultats suivants :
+
+| Statut       |  Motifs |
+|---|---|
+| Succès       |  Action réalisée sans rencontrer de problèmes particuliers. |
+| Avertissement|  Le formatage du fichier .csv contient au moins une erreur (ex. date mal formatée, valeur attendue erronée, date de début postérieure à la date de fin, etc.)|
+| Échec        |  Le fichier .csv n’est pas au format .csv. <br>Le fichier .csv contient des erreurs dans la colonne File :<br>Action non réalisée pour cause de nom erroné ou de chemin introuvable dans la requête.<br>La transaction n’existe pas ou est erronée.<br>La transaction a un statut « READY », « SENDING », « SEND », « ACK\_OK », « ACK\_WARNING », « ACK\_KO », « KO », « ABORTED ».|
+
+Elle n’est pas journalisée dans le journal des opérations.
+
+***Point d’attention :***
+-   Au terme de la V.8.1, le module de collecte peut :
+
+	-  bloquer la mise à jour si le fichier .csv dernier comporte les erreurs suivantes :
+	   -   il ne contient pas au moins la colonne obligatoire File ;
+	   -   au moins un fichier référencé dans le fichier .csv n'est pas présent dans l'arborescence bureautique,
+	   -   il ne contient aucune information ;
+	   -   il ne contient pas de séparateurs de champs ;
+	   -   il contient des virgules, des espaces, des pipes comme séparateurs de champs ;
+	   -   le fichier contient des simples guillemets comme séparateurs de texte ;
+	   -   etc.
+	   L'API peut :
+	       - soit renvoyer une seule erreur, si cette erreur est bloquante,
+		   - soit renvoyer jusqu'à 20 erreurs, si ces erreurs sont cumulables.
+	   L'arborescence bureautique ne sera pas importée.
+	
+	-  ne pas bloquer la mise à jour si le fichier .csv dernier comporte les erreurs suivantes :
+       -   il dispose d’un champ dont le contenu est mal formaté (ex. ReceivedDate écrite en chaîne de caractères) ;
+    Une erreur est alors renvoyée par l’API, le contenu du fichier CSV sera ignoré et seule l’arborescence bureautique sera téléchargée selon le comportement décrit dans la sous-section précédente.
+
+-   Il ne permet pas de :
+
+    - supprimer une métadonnée avec ce mode de mise à jour par envoi de fichier .csv ;
+	- ajouter un rattachement à une unité archivistique (UpdateOperation).
+
+
 TO DO
+
+Pour une transaction donnée peut être envoyé sous forme de zip en plus d’une arborescence bureautique[^13] un fichier .jsonl contenant des métadonnées détaillant unitairement les unités archivistiques.
+
+Le fichier .jsonl, obligatoirement intitulé « metadata.jsonl », est composé de :
+
+-   File : chemin relatif à partir de l’emplacement où est enregistré le fichier .jsonl (champ obligatoire) ;
+-   Selector : liste de conditions permettant l'enregistrement des métadonnées dans une unité archivistique correspond à ces conditions (champ obligatoire) ;
+-   ObjectFiles : chemin relatif des fichiers numériques dont certains peuvent être rattachés à des répertoires déclarés dans la colonne File (champ facultatif) ;
+-   UnitContent : bloc dans lequel sont insérées les métadonnées descriptives et de gestion d'une unité archivistique (champ obligatoire), dont :
+    -   DescriptionLevel : niveau de description de l’unité archivistique (champ facultatif) ;
+    -   Title : intitulé de l’unité archivistique (champ facultatif) ;
+    -   tout champ correspondant à un champ du standard SEDA (champs facultatifs).
+
+ *Exemple : contenu d’un fichier « metadata.jsonl ».*
+
+```
+{ "File": "File", "UnitContent": { "DescriptionLevel": "Collection", "Title": "File", "Description": "Ceci est un versement de bulletins de paie", "StartDate": "2023-01-01", "EndDate": "2023-01-31", "Tag": [ "Paie", "Bulletin" ] } }
+{ "File": "File/BP_123456_20230131.pdf", "UnitContent": { "DescriptionLevel": "Item", "Title": "BP_123456_20230131.pdf", "OriginatingSystemId": [ "BP_123456_20230131" ], "Agent": [ { "FirstName": "DUPONT", "BirthName": "Charles", "Identifier": [ "123456" ] } ], "SentDate": "2023-01-31", "AcquiredDate": "2023-01-20", "Tag": [ "Salaire" ], "#management": { "AppraisalRule": { "Rules": [ { "Rule": "APP-00001", "StartDate": "2023-01-20" } ], "FinalAction": "Destroy" }, "AccessRule": { "Rules": [ { "Rule": "ACC-00016", "StartDate": "2023-01-20" } ] } } } }
+{ "File": "File/BP_123463_20230131.pdf", "UnitContent": { "DescriptionLevel": "Item", "Title": "BP_123463_20230131.pdf", "OriginatingSystemId": [ "BP_123463_20230131" ], "Agent": [ { "FirstName": "DUPOND", "BirthName": "Victor", "Identifier": [ "123463" ] } ], "SentDate": "2023-01-31", "AcquiredDate": "2023-01-20", "Tag": [ "Salaire" ], "#management": { "AppraisalRule": { "Rules": [ { "Rule": "APP-00002", "StartDate": "2023-01-20" } ], "FinalAction": "Destroy" }, "AccessRule": { "Rules": [ { "Rule": "ACC-00016", "StartDate": "2023-01-20" } ] } } } }
+{ "File": "File/BP_123464_20230131.pdf", "UnitContent": { "DescriptionLevel": "Item", "Title": "BP_123464_20230131.pdf", "OriginatingSystemId": [ "BP_123464_20230131" ], "Agent": [ { "FirstName": "CHARLES", "BirthName": "Ray", "Identifier": [ "123464" ] } ], "SentDate": "2023-01-31", "AcquiredDate": "2023-01-20", "Tag": [ "Salaire" ], "#management": { "AppraisalRule": { "Rules": [ { "Rule": "APP-00002", "StartDate": "2023-01-20" } ], "FinalAction": "Destroy" }, "AccessRule": { "Rules": [ { "Rule": "ACC-00016", "StartDate": "2023-01-20" } ] } } } } 
+```
+
+ *Exemple : contenu d’un fichier « metadata.jsonl » décrivant un contexte de signature détachée.*
+
+```  
+{ "File" : "My Root Folder", "ObjectFiles": "SomeFile.xml", "UnitContent": { "Title": "My Root Folder (with attached SomeFile.xml)" } }
+{ "File" : "My Root Folder/MyFile1.txt", "ObjectFiles": null, "UnitContent": { "Title": "My Root Folder/MyFile1.txt" } }
+{ "File" : "My Root Folder/MyFile2.txt", "ObjectFiles": "My Root Folder/MyFile2.txt", "UnitContent": { "Title": "My Root Folder/MyFile2.txt" } }
+{ "File" : "My Root Folder/SubFolder", "ObjectFiles": "My Root Folder/SubFolder/MyFile3.txt", "UnitContent": { "Title": "My Root Folder/SubFolder (with attached MyFile3.txt)" } }
+{ "Selector" : { "#uploadPath" : "Yet Another Folder" }, "ObjectFiles": "My Root Folder/SubFolder/MyFile4.txt", "UnitContent": { "Title": "Yet Another Folder (with attached MyFile4.txt)" } }
+```
+
+ *Exemple : contenu d’un fichier « metadata.jsonl » déclarant un rattachement.*
+
+```
+{ "File": "Discours hors parlement", "UnitContent": { "DescriptionLevel": "RecordGrp", "Title": "Discours hors parlement", "#management": { "UpdateOperation": { "ArchiveUnitIdentifierKey" : { "MetadataName" : "ArchivalAgencyArchiveUnitIdentifier", "MetadataValue" : "20130456/3"} }  } } }
+{ "File": "Discours hors parlement/Discours d'inauguration", "UnitContent": { "DescriptionLevel": "RecordGrp", "Title": "Discours d’inauguration" } }
+{ "File": "Discours hors parlement/Discours d'inauguration/Inauguration de Notre-Dame.odt", "UnitContent": { "DescriptionLevel": "Item", "Title": "Inauguration de Notre-Dame" } }
+ 
+```
+
+***Points d’attention :***
+
+-   le fichier .jsonl doit toujours contenir un champ File *ou* un champ Selector. Celui-ci doit toujours être placée en première position ;
+-   les métadonnées pouvant être utilisées comme conditions dans le champ Selector doivent des éléments simples de type string, boolean, long ou double.
+-   le fichier .jsonl ne référence que des métadonnées propres aux unités archivistiques (métadonnées descriptives et de gestion). Il ne supporte pas les métadonnées techniques propres aux fichiers numériques ;
+-   seul un objet peut être associé à un enregistrement. Ce format d’import ne permet pas de facto de gérer l’import de groupe d’objets techniques disposant de plusieurs objets aux usages différents devant être référencés par la même unité archivistique.
+-   le fichier .jsonl à importer doit se trouver dans le même répertoire que le répertoire correspondant à la racine de la structure arborescente de fichiers à importer.
+-   chaque répertoire et objet numérique devant contenir des métadonnées particulières doit être référencé dans le fichier .jsonl ;
+-   si le fichier .jsonl déclare un rattachement à une unité archivistique, il doit matérialiser cette unité archivistique par une ligne dédiée correspondant à un dossier dans l'arborescence bureautique. 
+    Dans cette ligne :
+    -   Ne devront être renseignées que les informations suivantes : 
+	    -  DescriptionLevel, 
+		-  Title,
+		-  UpdateOperation.ArchiveUnitIdentifierKey.MetadataName et Management.UpdateOperation.ArchiveUnitIdentifierKey.MetadataValue OU UpdateOperation.SystemId.
+    -   Un rattachement ne peut être déclaré que dans un répertoire racine.
+
+-   le nommage des champs et leur structuration en JSON doivent se conformer au modèle de données de la solution logicielle Vitam.
+
+-   concernant le contenu des champs :
+
+    -   la colonne File :
+
+        -   ne doit pas comprendre d’espace avant ou après les « \\ » ;
+        -   doit correspondre à un chemin tel que décrit par l’explorateur de fichiers (avec des « \\ » et non des « / ») ;
+
+    -   le champ DescriptionLevel ne doit comprendre que les valeurs autorisées par le standard SEDA : Collection, Fonds, Series, SubSeries, RecordGrp, File, Item ;
+    -   les champs correspondant à des champs Date dans le standard SEDA doivent être formatés conformément à la norme ISO 8601 (AAAA-MM-JJ) ;
+    -   les références à des règles de gestion et à des profils d’unité archivistique doivent se conformer aux identifiants de règles présents dans le SAE
+
+-   Aucun fichier ne doit avoir un poids équivalent à 0 octet.
+-   Les dates de début (Content.StartDate) doivent être antérieures aux dates de fin (Content.EndDate).
+-   Au terme de la V.8.1, il est recommandé que les noms de répertoires et de fichiers ne contiennent ni caractère accentué, ni virgule, ni apostrophe, ni parenthèse, ni espace, ni élément de ponctuation, ou tout autre caractère spécial. Ne sont à privilégier que l’underscore et le tiret comme séparateurs.
+
+    Néanmoins, s’ils en contiennent et si l’arborescence bureautique émane d’un environnement Windows, il est recommandé d’utiliser l’outil Winzip pour la zipper, afin d’éviter des problèmes d’encodage.
+
+L’import du fichier .zip incluant un fichier .jsonl et une arborescence bureautique provoque :
+
+-   la création des unités archivistiques dans la base de données MongoDB, dans la collection « Unit » (base *MetadataCollect[^15]*). Sont enregistrées automatiquement les valeurs portées dans le fichier .csv si l’enregistrement ne contient pas d’erreur.
+
+    À chaque enregistrement, est associé :
+	
+	-   l’identifiant de la transaction (_opi) ;
+	-   un identifiant de batch (_batchId) ;
+	-   la localisation initiale du dossier ou du fichier dans l'arborescence (_uploadPath),
+	-   l'identifiant du service producteur (_sp et _sps) ;
+
+-   la création de métadonnées techniques dans la base de données MongoDB, dans la collection « ObjectGroup » (base *MetadataCollect[^16]*).
+
+    À chaque enregistrement, est associé :
+	-  l’identifiant de la transaction (_opi) ;
+    -   un identifiant de batch (_batchId) ;
+	-  l'identifiant du service producteur (_sp) ;
+
+-   l’enregistrement des objets numériques sur les offres de stockage.
+-   la mise à jour des métadonnées techniques de l’objet avec :
+
+    -   ajout de l’empreinte d’un fichier numérique,
+    -   ajout de l’identification de son format,
+    -   mise à jour de son poids exprimé en octets, calculés lors de l’envoi du fichier numérique ;
+	
+-   le cas échéant :
+
+    - si le projet de versement déclarait un rattachement unique, la création d'une unité archivistique dans la base de données MongoDB, dans la collection « Unit » (base *MetadataCollect[^10]*). Sont enregistrés automatiquement :
+      -   un niveau de description (DescriptionLevel) dont la valeur est « Series »,
+      -   un intitulé (Title) dont la valeur est « STATIC_ATTACHEMENT »,
+      -   l'identifiant de l'unité archivistique de rattachement (champ SystemId inclus dans un bloc UpdateOperation);
+    - si le projet de versement déclarait un rattachement par clé / valeur, la création d'une unité archivistique dans la base de données MongoDB, dans la collection « Unit » (base *MetadataCollect[^10]*). Sont enregistrés automatiquement :
+      -   un niveau de description (DescriptionLevel) dont la valeur est « Series »,
+      -   un intitulé (Title) dont la valeur est « DYNAMIC_ATTACHEMENT »,
+      -   l'identifiant de l'unité archivistique de rattachement (champ SystemId inclus dans un bloc UpdateOperation).
+
+Lors de cette action, l’opération peut aboutir aux résultats suivants :
+
+| Statut | Motifs |
+| --- | --- |
+| Succès | Action réalisée sans rencontrer de problèmes particuliers. |
+| Échec  | Le fichier .zip n’a pas été téléchargé pour cause de nom erroné ou de chemin introuvable ; Le fichier .jsonl contient au moins une erreur ; La transaction n’existe pas ou est erronée ; La transaction est clôturée. |
+
+Cette action n’est pas journalisée dans le journal des opérations.
+
+***Point d’attention :*****
+
+-   Au terme de la V.8.1, le module de collecte peut :
+
+	-  bloquer l'import de l’arborescence bureautique accompagnée d’un fichier .jsonl si ce dernier comporte les erreurs suivantes :
+	   -   il ne contient pas au moins le champ obligatoire File ;
+	   -   au moins un bloc UnitContent ne contient aucune information ;
+	   -   au moins un fichier référencé dans le fichier .jsonl n'est pas présent dans l'arborescence bureautique,
+	   -   il ne contient aucune information ;
+	   -   une date de fin de règle a été intégrée dans le fichier .jsonl ;
+	   -   il dispose d’un champ dont le contenu est mal formaté (ex. ReceivedDate écrite en chaîne de caractères) ;
+    
+	   -   etc.
+	   L'API peut :
+	       - soit renvoyer une seule erreur, si cette erreur est bloquante,
+		   - soit renvoyer jusqu'à 20 erreurs, si ces erreurs sont cumulables.
+	   L'arborescence bureautique ne sera pas importée.
+
+-   Aucun contrôle n’est effectué entre le nombre de répertoires et d’objets binaires présents dans l’arborescence bureautique et les éléments décrits dans le fichier .jsonl. Il est recommandé de veiller à ne pas ajouter de niveaux intermédiaires dans l’arborescence bureautique non référencés dans le fichier .jsonl, car ils seront automatiquement créés dans le module de collecte selon le comportement décrit dans la sous-section précédente.
+
 
 ###### Utilisation dans VitamUI
 
-TO DO
+Il n'est pas possible de mettre à jour des unités archivistiques au moyen d'un import de fichier .jsonl depuis l’APP « Collecte et préparation des versements » du front-office VitamUI fournie avec la solution logicielle Vitam.
 
 #### Réorganisation des arborescences
 
