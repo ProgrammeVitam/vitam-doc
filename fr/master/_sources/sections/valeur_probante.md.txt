@@ -10,12 +10,13 @@ Introduction
 |:---------------:|:-----:|:-----:|
 |NF Z 42-013 – Archivage électronique – recommandations et exigences|30/09/2020||
 |NF Z 42-020 – Spécifications fonctionnelles d’un composant Coffre-Fort Numérique destiné à la conservation d’informations numériques dans des conditions de nature à en garantir leur intégrité dans le temps|07/2012||
-|GA Z42-019 – Guide d’application de la NF Z 42-013 (Archivage électronique – Spécifications relatives à la conception et à l'exploitation de systèmes informatiques en vue d’assurer la conservation et l’intégrité des documents stockés dans ces systèmes)|06/2010|Cette nouvelle version du SEDA est intégrée à la solution logicielle Vitam à partir de la V6.RC.|
+|GA Z42-019 – Guide d’application de la NF Z 42-013 (Archivage électronique – Spécifications relatives à la conception et à l'exploitation de systèmes informatiques en vue d’assurer la conservation et l’intégrité des documents stockés dans ces systèmes)|06/2010||
 |[Vitam – Gestion de la préservation](./preservation.md)||Le document apporte des précisions sur le comportement de l’opération permettant de générer un relevé de valeur probante.|
 
 ### Présentation du document
 
 La conservation de la valeur probante est un sujet central d’un système d’archivage électronique. L’objectif est de rendre prouvable toute opération effectuée sur toute unité archivistique ou tout objet qui lui est associé. Toutefois, vu les volumétries envisagées dans les implémentations de la solution logicielle Vitam, il est illusoire de gérer ceci objet par objet, en mettant en œuvre des principes cryptographiques (signatures des objets, des actions unitaires, etc.) ; cela induirait une gestion lourde et porterait même des risques d’écroulement de confiance en cas de corruption de quelques clés. La sécurité d’un SAE doit être systémique, c’est-à-dire reposer sur un faisceau d’éléments redondants dont la modification simultanée et cohérente est impossible, ou plus exactement non réalisable en pratique. Les journaux constituent un élément central de cette sécurité systémique.
+
 Le cadre fourni pour la conservation de la valeur probante par les normes NF Z 42-013, NF Z 42-020 mais aussi le guide d’application GA Z42-019, a été pris en compte et complété dans la solution logicielle Vitam.
 Ce document présente rapidement, d’un point de vue fonctionnel, le mécanisme de journalisation métier et de sécurisation de ces journaux qui est une brique essentielle de la conservation de la valeur probante dans la solution logicielle Vitam . Il décrit aussi le « relevé de valeur probante », attestation au sens de la NF Z 42-013 de la conservation de la valeur probante qui peut être obtenue via une API. Ce document devra être enrichi au fur et à mesure de l’avancement des travaux sur la gestion de la preuve.
 
@@ -79,8 +80,7 @@ La sécurisation des journaux est opérée, tenant par tenant, par la générati
 
 Cette procédure est lancée régulièrement sur les différents journaux, tenant par tenant. La périodicité de cette sécurisation est définie lors de l’installation de la plateforme et doit être définie pour lisser la charge de sécurisation. Elle doit, pour être conforme à la NF Z 42‑013, rester inférieure à 24 heures.  
 
-> [!NOTE]
-> Le format de sécurisation mis dans le fichier « additional_information.txt » est mis à titre conservatoire pour permettre la mise en place de nouveaux formats qui seront pris en compte dans les traitements ultérieurs d’audit ou de génération de relevé de valeur probante. À ce jour seul le format « V1 » est utilisé.
+**Point d'attention :** Le format de sécurisation mis dans le fichier « additional_information.txt » est mis à titre conservatoire pour permettre la mise en place de nouveaux formats qui seront pris en compte dans les traitements ultérieurs d’audit ou de génération de relevé de valeur probante. À ce jour seul le format « V1 » est utilisé.
 
 ### Mise en œuvre sur le journal des opérations
 
@@ -323,7 +323,6 @@ Cette structure très riche et détaillée n’est pas faite pour être lue dire
 ### Génération du relevé
 
 La solution logicielle Vitam permet de lancer des opérations de génération de relevé de valeur probante :
-- depuis le panier de l’IHM démo sur un lot d’archives ;
 - depuis l’APP Relevé de valeur probante de VitamUI, à partir de l’identifiant technique d’un objet technique ;
 - par l’API, au moyen d’une requête DSL.
 
@@ -332,7 +331,7 @@ Optionnellement, il est possible de lancer l'opération sur un document signé e
 - par l’API.
 
 Il s’agit d’une opération d’audit, tracée dans le journal des opérations (« EXPORT_PROBATIVE_VALUE »). Le relevé de valeur probante est associé à cette opération sous la forme d’un fichier :
-- disponible au format JSON depuis l’IHM démo ou l’API,
+- disponible au format JSON depuis l’API,
 - formaté en PDF depuis l’APP Relevé de valeur probante de VitamUI.
 
 Annexes
@@ -906,7 +905,7 @@ En avertissement
 
 [^1]: Pour une description fine des journaux, voir le [document VITAM. Organisation de l’information](./organisation_information.md).
 
-[^2]: Pour une explication de l’arbre de Merkle et de son utilisation pour la preuve d’une partie des éléments voir (https://www.certificate-transparency.org/log-proofs-work)
+[^2]: Pour une explication de l’arbre de Merkle et de son utilisation pour la preuve d’une partie des éléments voir [https://www.certificate-transparency.org/log-proofs-work](https://www.certificate-transparency.org/log-proofs-work).
 
 [^3]: Ce délai est nécessaire pour tenir compte de la latence de la base NoSQL au cœur de Vitam.
 

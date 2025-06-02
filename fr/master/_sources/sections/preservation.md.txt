@@ -6,15 +6,15 @@ Introduction
 
 ### Documents de référence
 
-|**Document**|**Date de la version**|**Remarques**|
-|:-----|:----:|:-----|
-|NF Z 44022 – MEDONA - Modélisation des données pour l’archivage|18/01/2014||           
-|Standard d’échange de données pour l’archivage – SEDA – v. 2.1|06/2018||          
-|[Vitam – Structuration des *Submission Information Package* (SIP)](./SIP.md)|||           
-|[Vitam – Identification de format](./chantier_identification_format.md)|||
-|[Vitam – Extraction des métadonnées techniques](./chantier_preservation_extraction_MD)|||
-|[Vitam – Validation de format de fichiers](./chantier_preservation_validation_format.md)|||
-|[Vitam – Conservation de la valeur probante](./valeur_probante.md)|||
+|**Document**|**Date de la version**|
+|:-----|:----:|
+|NF Z 44022 – MEDONA - Modélisation des données pour l’archivage|18/01/2014|         
+|Standard d’échange de données pour l’archivage – SEDA – v. 2.1|06/2018|          
+|[Vitam – Structuration des *Submission Information Package* (SIP)](./SIP.md)||          
+|[Vitam – Identification de format](./chantier_identification_format.md)||
+|[Vitam – Extraction des métadonnées techniques](./chantier_preservation_extraction_MD)||
+|[Vitam – Validation de format de fichiers](./chantier_preservation_validation_format.md)||
+|[Vitam – Conservation de la valeur probante](./valeur_probante.md)||
 
 ### Résumé
 
@@ -49,7 +49,7 @@ Il s’articule autour des axes suivants :
 - une présentation des mécanismes mis en œuvre dans la solution logicielle Vitam pour gérer et réaliser des opérations de préservation numérique ;
 - des recommandations aux utilisateurs de la solution logicielle Vitam sur la manière d’utiliser les fonctionnalités associées à ces outils de préservation numérique ;
 - des exemples de référentiels, de paramétrages, et de messages retournés par la solution logicielle Vitam à l’issue d’une opération en lien avec la préservation.
-Le présent document décrit les fonctionnalités qui sont offertes par la deuxième version de production de la solution logicielle Vitam au terme de la version 8.1 (printemps 2024). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
+Le présent document décrit les fonctionnalités qui sont offertes par la deuxième version de production de la solution logicielle Vitam au terme de la version 8.1 (printemps 2025). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
 
 Administration de la préservation numérique
 ---
@@ -105,21 +105,25 @@ Les relations entre formats et signatures peuvent être modélisées de la mani�
 De ce registre, la solution logicielle Vitam ne retient pour son référentiel interne que les éléments suivants :
 - informations liées à la version et à la date de création du fichier de signatures, présents dans l’élément racine « FFSignatureFile » de ce dernier ;
 Élément racine du fichier de signatures en date du 17 septembre 2018, version 94 :
-``````
+
+```json
 <FFSignatureFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
  xsi:schemaLocation="http://www.nationalarchives.gov.uk/pronom/SignatureFile DROID_SignatureFile.xsd"
  xmlns="http://www.nationalarchives.gov.uk/pronom/SignatureFile" DateCreated="2018-09-17T12:54:53"
  Version="94">
-``````
+```
+
 - caractéristiques des formats, présentes dans l’élément « FileFormat ».
 Caractéristiques du format dont le PUID est x-fmt/17 :
-``````
+
+```json
 <FileFormat ID="44" MIMEType="application/vnd.ms-excel"
             Name="Microsoft Excel Template" PUID="x-fmt/17" Version="97-2003">
             <Extension>xlt</Extension>
             <HasPriorityOverFileFormatID>684</HasPriorityOverFileFormatID>
 </FileFormat>
-``````
+```
+
 - signatures internes, que la solution logicielle Vitam n’enregistre pas dans son référentiel interne, mais prises en compte par les outils d’identification tels que Siegfried ou Droid pour réaliser leurs opérations d’identification.
 
 Les éléments XML du fichier de signatures sont modélisés comme suit :
@@ -147,7 +151,7 @@ Les éléments XML du fichier de signatures sont modélisés comme suit :
 
 Les formats sont enregistrés dans la base de données MongoDB, dans la collection « FileFormat », sous la forme d’enregistrements au format JSON.
 Enregistrement du format dont le PUID est x-fmt/111 :
-``````
+```json
 {
     "_id": "aeaaaaaaaaho6plwab7ykalivm47lsiaabza",
     "CreatedDate": "2018-09-17T12:54:53.000",
@@ -166,7 +170,8 @@ Enregistrement du format dont le PUID est x-fmt/111 :
     "Comment": "",
     "_v": 12
 }
-``````
+```
+
 Ils sont modélisés comme suit[^6] :
 |Champ|Description|
 |:----|:----|
@@ -251,6 +256,7 @@ La solution logicielle Vitam permet d'effectuer des recherches dans le référen
 Il est possible d'obtenir :
 -  une liste de résultats,
 -  un résultat par facettes (nombre d’occurrences pour une métadonnée donnée).
+
 Sont disponibles les facettes de type :
 -  "terms" : pour obtenir des catégories basées sur les valeurs distinctes d'un champ spécifique et le nombre associé,
 -  "filters" : pour obtenir des résultats d'agrégations par filtres sur les résultats,
@@ -276,6 +282,7 @@ L’objectif du référentiel est de :
 - permettre l’utilisation de l’outil d’identification de formats retenu à ce jour, Siegfried, et de pallier les défauts de cet outil, à savoir d’être en mesure, via des requêtes API, de :
   - lister les formats connus de son référentiel interne et que l’outil est donc en mesure de pouvoir identifier ;
   - dire si un PUID est connu du référentiel interne de l’outil d’identification.
+  
 Il a également pour vocation d’être utilisé par la solution logicielle Vitam pour :
 - effectuer des contrôles sur les formats des objets binaires associés aux archives prises en charge par le système. Dans le cas présent, le contrôle est fait au moyen de l’outil d’identification Siegfried et du référentiel des formats qu’il intègre et non pas à partir du référentiel interne de la solution logicielle Vitam ;
 - sélectionner les formats dans :
@@ -802,8 +809,7 @@ De fait, afin de créer un scénario de préservation, il est recommandé de sui
 |Qui ?|Quoi ?|Via l’IHM démo Vitam ?|
 |:---:|:----|:----:|
 |Administrateur fonctionnel|- détermine le scénario de préservation qu’il veut mettre en œuvre et l’outil qu’il souhaite utiliser.|Non|
-|Administrateur technique|- vérifie si le griffon que l’on souhaite solliciter est installé et disponible dans la solution logicielle Vitam<br>- le cas échéant, installe le griffon[^37]|
-Non|
+|Administrateur technique|- vérifie si le griffon que l’on souhaite solliciter est installé et disponible dans la solution logicielle Vitam<br>- le cas échéant, installe le griffon[^37]|Non|
 |Administrateur technique et/ou fonctionnel|- vérifie si le griffon est référencé dans le référentiel des griffons ;<br>- le cas échéant, ajoute le griffon dans le référentiel des griffons|Oui|
 |Administrateur technique et  fonctionnel|crée un scénario de préservation utilisant le griffon en question|Oui|
 |Administrateur fonctionnel|lance l’opération de préservation|Oui|
@@ -878,12 +884,13 @@ Pour une action couverte par un griffon donné, il est obligatoire de paramétre
                     ◦ une liste de métadonnées internes en particulier, correspondant à des objets (ex : resolution, compression, geometry).
 
 **Point d’attention :**  
-Si le scénario de préservation a vocation à réaliser des extractions de métadonnées interne, il est recommandé d’ajouter dans l’ontologie les métadonnées destinées à être extraites et de les indexer dans le moteur de recherche Elastic Search.  
+Si le scénario de préservation a vocation à réaliser des extractions de métadonnées interne, il est recommandé d’ajouter dans l’ontologie les métadonnées destinées à être extraites et de les indexer dans le moteur de recherche Elastic Search.
+
 *Exemple :* ce scénario de préservation permet de convertir au format PDF une liste de formats avec ImageMagick et une autre liste de formats avec LibreOffice. Pour les autres formats non listés, le scénario effectue par défaut une analyse avec JHOVE.
 
 ![Exemple](./medias/preservation/exemple5_scenario.png)
 
-```
+```json
 [
   {
     "Identifier": "PSC-000001",
@@ -983,6 +990,7 @@ Assurer la préservation et garantir un archivage pérenne commence dès l’ent
 - contrôler les objets binaires transférés dans la solution logicielle Vitam en termes d’usages ;
 - vérifier l’identification des objets binaires, voire les réidentifier ;
 - valider les formats de ces objets binaires (service non implémenté).
+
 Pour ce faire, dans le cadre du processus d’entrée d’un ensemble d’archives, la solution logicielle propose différentes fonctionnalités :
 - elle effectue automatiquement et de manière générique des tâches d’identification ;
 - elle permet, le cas échéant, de rajouter des vérifications supplémentaires au moyen d’un plug-in ;
@@ -1099,7 +1107,7 @@ Le résultat de cette action est la création d’un nouvel objet binaire, ayant
 Ces nouvelles métadonnées sont enregistrées et indexées en tant que métadonnées de l’unité archivistique ou du groupe d’objets techniques ;
 - l’identification de format : il s’agit d’identifier ou de réidentifier a posteriori des fichiers déjà transférés dans la solution logicielle Vitam.
 
-Exemples :
+*Exemples :*
 |Action de préservation|Exemples|
 |:----|:-----|
 |ANALYSE|la validation d’objets binaires au format PDF par rapport aux spécifications du format PDF, en utilisant, par exemple, les griffons JHOVE ou VeraPDF.|
@@ -1274,8 +1282,7 @@ S’il y a conception d’écrans, il est conseillé de privilégier des interfa
 |:-----|:-----|:-----|
 |Identification manuelle de formats|La solution logicielle Vitam intègre actuellement le griffon Siegfried qui permet d’identifier les formats référencés dans le référentiel des formats.|Recommandé|
 |Identification de formats sur un périmètre restreint d’objets binaires|La solution logicielle Vitam permet d’identifier des formats sur tout ou partie des objets binaires qu’elle conserve.<br>Il est recommandé de procéder à une opération de ce type sur un périmètre restreint, le cas échéant faisant partie intégrante d’un programme complet d’identification de formats, afin de :<br>- ne pas impacter les performances de la solution logicielle Vitam ;<br>- avoir un temps de traitement court et la production d’un rapport d’opération rapidement disponible.|Recommandé|
-|Identification de formats sur l’ensemble des objets binaires conservés|La solution logicielle Vitam permet d’identifier des formats sur tout ou partie des objets binaires qu’elle conserve.
-Néanmoins, il n’est pas recommandé de lancer une opération de ce type sur l’ensemble des objets binaires conservés, car cette action pourrait avoir un impact sur :<br>- les performances de la solution logicielle Vitam ;<br>- le stockage disponible ;<br>- le temps de traitement de l’opération. Cette dernière pourrait, en effet, durer plusieurs jours.|Non recommandé|
+|Identification de formats sur l’ensemble des objets binaires conservés|La solution logicielle Vitam permet d’identifier des formats sur tout ou partie des objets binaires qu’elle conserve.Néanmoins, il n’est pas recommandé de lancer une opération de ce type sur l’ensemble des objets binaires conservés, car cette action pourrait avoir un impact sur :<br>- les performances de la solution logicielle Vitam ;<br>- le stockage disponible ;<br>- le temps de traitement de l’opération. Cette dernière pourrait, en effet, durer plusieurs jours.|Non recommandé|
 |Réidentification de formats|Il est recommandé de lancer des opérations de réidentification de formats à l’occasion des mises à jour du référentiel des formats, afin de vérifier, notamment, si certains fichiers, entrés dans le système sans être identifiés, le sont avec le nouveau référentiel des formats.|Recommandé|
 
 ###### Extraction de métadonnées
@@ -1388,7 +1395,7 @@ S’il y a conception d’écrans, il est conseillé de privilégier des interfa
 
 |Intitulé|Description|Niveau de recommandation|
 |:-----|:-----|:-----|
-|Gestion de la politique de préservation|S’il y a conception d’écrans, il est conseillé de privilégier des interfaces propres à ce service, en lien avec la préservation ou les audits, permettant :<br>- la sélection d’objets devant faire l’objet d’une opération de préservation à partir de critères aussi bien relatifs aux objets qu’aux unités archivistiques : type MIME, versions, PUID, usages, service producteur, type, profil d’unité archivistique, etc.<br>- partant de cette sélection, le paramétrage de l’opération de préservation, en fonction des critères suivant :<br>  - usage original des objets,<br>  - version(s) des objets concernés,<br>- le lancement de l’opération.|Conseillé|
+|Gestion de la politique de préservation|S’il y a conception d’écrans, il est conseillé de privilégier des interfaces propres à ce service, en lien avec la préservation ou les audits, permettant :<br>- la sélection d’objets devant faire l’objet d’une opération de préservation à partir de critères aussi bien relatifs aux objets qu’aux unités archivistiques : type MIME, versions, PUID, usages, service producteur, type, profil d’unité archivistique, etc.<br>- partant de cette sélection, le paramétrage de l’opération de préservation, en fonction des critères suivant :<br>-> usage original des objets,<br>-> version(s) des objets concernés,<br>- le lancement de l’opération.|Conseillé|
 
 ### Audit
 
@@ -1458,7 +1465,7 @@ Les conséquences sont les suivantes :
 
 ###### Unité archivistique enregistrée dans la base de données Mongo DB
 
-``````
+```json
 {
     "_id": "aeaqaaaaaehnbxf7abrfyalmxbmg7zyaaaea",
     "_og": "aebaaaaaaehnbxf7abrfyalmxbmg6eaaaabq",
@@ -1490,9 +1497,11 @@ Les conséquences sont les suivantes :
     "_av": 0,
     "_tenant": 1
 }
-``````````
+```json
+
 **Conséquences :**
-``````{
+```json
+{
     "_id": "aeaqaaaaaehnbxf7abrfyalmxbmg7zyaaaea",
     "_og": "aebaaaaaaehnbxf7abrfyalmxbmg6eaaaabq",
     "_mgt": {},
@@ -1525,7 +1534,7 @@ Les conséquences sont les suivantes :
     "_tenant": 1,
     "Description": "Je rajoute une description"
 }
-``````
+```
 
 Suite à une mise à jour de ses métadonnées, l’unité archivistique enregistrée dans la base de données Mongo DB contient : une description supplémentaire (« Description »), une opération supplémentaire correspondant à l’identifiant de l’opération de mise à jour (« _ops »), et sa version a été mise à jour (« _v »).
 
@@ -2152,6 +2161,7 @@ Modélisation des points de comparaison lors d’un audit d’intégrité (les d
 ###### Résultat d’une opération d’audit
 
 Quelle que soit l’action d’audit effectuée, la solution logicielle Vitam produit systématiquement un rapport au format JSONL énumérant[^59] :
+
 Ce rapport se décompose en plusieurs parties[^60] :
 - un en-tête récapitulant l’objet du rapport ;
 - un résumé de l’opération, indiquant notamment son résultat en termes de cas en succès, en avertissement et/ou en échec ;
@@ -2272,8 +2282,7 @@ Il est recommandé de procéder à une opération de ce type sur un périmètre 
 |:----|:----|:-----|
 |Vérification manuelle de l’intégrité d’objets sur un périmètre restreint d’objets binaires|Il est recommandé de procéder à une opération de ce type sur un périmètre restreint (service producteur par service producteur ou entrée par entrée), le cas échéant faisant partie intégrante d’un programme complet de vérification de l’existence d’objets binaires, afin de :<bt>- ne pas impacter les performances de la solution logicielle Vitam ;<br>- avoir un temps de traitement court et la production d’un rapport d’opération rapidement disponible.|Recommandé|
 |Vérification manuelle de l’intégrité d’objets sur l’ensemble des objets binaires conservés|Néanmoins, il n’est pas recommandé de lancer une opération de ce type sur l’ensemble des objets binaires conservés, car cette action pourrait avoir un impact sur :<br>- les performances de la solution logicielle Vitam ;<br>- le temps de traitement de l’opération. Cette dernière pourrait, en effet, durer plusieurs jours.|Non recommandé|
-|Vérification systématique de la cohérence du système|Il est recommandé de procéder à un audit d’intégrité dans le cadre d’opérations techniques ciblées, telles que :<br>- l’évolution de la stratégie de stockage ;<br>- un changement de stockage.
-L’audit permet alors de comparer l’ensemble des fonds conservés dans la solution logicielle Vitam avant et après l’opération technique.|Recommandé|
+|Vérification systématique de la cohérence du système|Il est recommandé de procéder à un audit d’intégrité dans le cadre d’opérations techniques ciblées, telles que :<br>- l’évolution de la stratégie de stockage ;<br>- un changement de stockage. L’audit permet alors de comparer l’ensemble des fonds conservés dans la solution logicielle Vitam avant et après l’opération technique.|Recommandé|
 |Vérification systématique de l’intégrité d’objets binaires|Dans le cadre de campagne de vérification de l’intégrité d’objets binaires sur l’ensemble des fonds conservés dans la solution logicielle Vitam ou sur une partie importante d’entre eux, il est recommandé de programmer un traitement automatique (batch), permettant de mener cette opération, segmentée en petits lots d’archives, en fond de tâche, durant des heures de faible utilisation du système (en soirée ou durant le week-end).|Recommandé|
 |Vérification systématique de l’intégrité d’objets binaires entrants|Dans le cas d’un audit systématique des objets transférés dans la solution logicielle Vitam, il est recommandé de programmer un traitement automatique (batch) auditant les entrées et permettant de mener cette opération :<br>- quotidiennement (en soirée), afin de vérifier que les objets binaires transférés dans la journée ont bien été stockés et sont intègres dans la solution logicielle Vitam ;<br>- une fois par semaine (durant le week-end), afin de vérifier que les objets binaires transférés dans la semaine ont bien été stockés et sont intègres dans la solution logicielle Vitam.|Recommandé|
 
@@ -3734,7 +3743,7 @@ Le tableau ci-dessus liste les griffons mis à disposition dans la solution logi
 
 [^8]: Pour plus d’informations sur le processus d’import du référentiel, consulter le [document VITAM. Modèle de workflow](./modele_de_workflow.md), chapitre 5.3 « Workflow d’administration d’un référentiel des formats ».
 
-[^9]: Pour plus d’informations sur le processus d’import du référentiel, consulter le document Modèle de workflow, chapitre 5.3 « Workflow d’administration d’un référentiel des formats ».
+[^9]: Pour plus d’informations sur le processus d’import du référentiel, consulter le [document Modèle de workflow](./modele_de_workflow.md), chapitre 5.3 « Workflow d’administration d’un référentiel des formats ».
 
 [^10]: Il s’agit d’erreurs relatives au format du fichier importé ou à son formalisme, non conforme au schéma attendu par le schéma XSD fourni par The National Archive. Ces erreurs interviennent en amont lors d’un import, ce qui explique l’absence de journalisation.
 

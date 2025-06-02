@@ -82,7 +82,7 @@ Il est possible d'ajouter dans le rapport, pour chaque unité archivistique, les
 - "OriginatingAgencyArchiveUnitIdentifier: identifiant(s) du service producteur,
 - "TransferringAgencyArchiveUnitIdentifier: identifiant(s) du service responsable du transfert.
 
-Point d’attention : Cette configuration n'inclut pas les identifiants pérennes. S'ils référencent une archive éliminée, ils seront systématiquement enregistrés dans le rapport d'élimination.
+**Point d’attention :** Cette configuration n'inclut pas les identifiants pérennes. S'ils référencent une archive éliminée, ils seront systématiquement enregistrés dans le rapport d'élimination.
 
 Le fichier de configuration (vitam.conf) se présente comme suit (exemple fictif) :
 ```
@@ -98,18 +98,20 @@ eliminationReportExtraFields:
 ```
 
 Dans l’exemple ci-dessus :
-    • sur le tenant 0 :
-        ◦ aucune information complémentaire n'est attendue dans les rapports d'élimination;
-    • sur le tenant 1 :
-        ◦ le rapport d'élimination pourra contenir la date de création et de dernière modification, ainsi que la position dans le plan de classement de chaque unité archivistique;
-	• sur le tenant 4 :
-        ◦ le rapport d'élimination pourra contenir l'identifiant émanant du service producteur.
+- sur le tenant 0 :
+    - aucune information complémentaire n'est attendue dans les rapports d'élimination;
+- sur le tenant 1 :
+    - le rapport d'élimination pourra contenir la date de création et de dernière modification, ainsi que la position dans le plan de classement de chaque unité archivistique;
+- sur le tenant 4 :
+    - le rapport d'élimination pourra contenir l'identifiant émanant du service producteur.
 
 ### Préservation des identifiants pérennes
 
 Au terme de la version 7.1, la solution logicielle Vitam permet de conserver ces identifiants pérennes dans la base de données MongoDB, malgré l'élimination des archives qu'ils référençaient.
 
-Cette configuration, optionnelle, est établie lors du paramétrage initial de la plate-forme par les administrateurs – fonctionnel pour la définition du besoin et technique pour la saisie réelle des informations – de chaque implémentation de la solution logicielle Vitam et définit, pour l'ensemble de la plate-forme, la fréquence d'enregistrement de ces informations dans le système.
+Cette configuration, optionnelle, est établie lors du paramétrage initial de la plate-forme par les administrateurs 
+– fonctionnel pour la définition du besoin et technique pour la saisie réelle des informations 
+– de chaque implémentation de la solution logicielle Vitam et définit, pour l'ensemble de la plate-forme, la fréquence d'enregistrement de ces informations dans le système.
 
 Le fichier de configuration (metadata.conf) se présente comme suit (exemple fictif) :
 ```
@@ -126,11 +128,9 @@ Dans l’exemple ci-dessus, cet enregistrement s'effectue dans un délai de 5 mi
 #### Lancement de l’opération
 La solution logicielle permet d’étudier le caractère éliminable d’ensembles d’unités archivistiques.  
 - Par API,
-- Par l’IHM démo, cette opération se fait via le panier et peut porter sur des unités isolées, sur des unités et leur descendance, sur des entrées.
 - Par l’IHM VitamUI, elle se fait depuis l’APP « Recherche et consultation des archives » et peut porter sur un lot d’archives sélectionnées à partir de critères descriptifs ou de filtres relatifs à leur durée d’utilité administrative.
 
-Point d’attention : 
-- dans l’IHM démo, le panier a une taille limitée, il est préférable d’y placer des unités archivistiques avec leur descendance (une unité comptabilisée dans le panier) plutôt que des entrées (autant d’unités comptabilisées que d’unités dans le SIP).
+**Point d’attention :** 
 - Avant de lancer une opération d’analyse, il est recommandé de sélectionner les unités archivistiques appropriées, c’est-à-dire de constituer un lot d’archives à partir de critères visant à isoler les meilleures candidates à une élimination (ex. recherche sur des unités archivistiques dont le sort final est égal à « DESTROY » et dont la date de fin est échue).
 - Il n’est pas recommandé de lancer un nombre trop important d’opérations d’analyse sur un même lot d’archives, l’analyse n’étant pas un service d’audit.
 
@@ -152,25 +152,10 @@ Pour les cas de conflits également, certaines informations supplémentaires son
 - FINAL_ACTION_INCONSISTENCY : l’unité archivistique a, par héritage, deux sorts finaux différents pour un même service producteur ; la solution logicielle indexe également le service producteur concerné (OriginatingAgenciesInConflict) ;
 - BLOCKED_BY_HOLD_RULE : l’unité archivistique ne peut être éliminée, car elle déclare en propre ou hérite d’une règle de gel qui interdit son élimination.
 
-Point d’attention :
+**Point d’attention :**
 - Un conflit résulte d’une situation où la solution logicielle ne dispose pas des éléments permettant de conclure de manière certaine au caractère éliminable ou non éliminable de l’unité archivistique.
 - Une intervention humaine est nécessaire pour décider du sort final de l’unité archivistique. L’archiviste doit alors revoir les règles posées sur l’unité archivistique ou procéder à une réorganisation d’arborescence de sorte que, lorsqu’il relancera une phase d’analyse, la solution logicielle puisse interpréter les règles applicables à cette unité.
 - Pour éliminer une unité archivistique gelée, une intervention humaine sera également nécessaire. L’archiviste doit dégeler l’unité archivistique ou, s’il en a le droit, procéder à une réorganisation d’arborescence, avant de relancer la phase d’analyse, pour que la solution logicielle Vitam puisse interpréter à nouveau les règles applicables à cette unité.
-
-#### Consultation des résultats de l’analyse d’élimination sur l’IHM démo de la solution logicielle
-
-En allant dans le menu « Gestion des archives », le résultat de l’opération d’analyse (indexation) peut être consulté sur l’IHM démo en entrant l’identifiant de l’opération d’analyse.  
-Il est possible d’ajouter également un intitulé d’unité archivistique ou une description pour limiter les réponses à certaines unités.  
-Les informations qui ont été indexées sont remontées et peuvent, pour certaines, être filtrées par des facettes afin de permettre une évaluation des résultats d’analyse pour que l’archiviste décide de prendre en compte ou non les unités archivistiques dans une campagne d’élimination :
-- services producteurs éliminables,
-- services producteurs non éliminables,
-- statut global d’élimination,
-- informations étendues d’élimination,
-- niveau de description,
-- date de début,
-- date de fin.
-
-L’archiviste peut mettre au panier des listes filtrées des résultats de l’analyse des unités archivistiques éliminables, afin de les exporter sous forme de DIP, pour permettre la génération, depuis son front office, des bordereaux de demande d’élimination destinés aux services producteurs.
 
 #### Consultation des résultats de l’analyse d’élimination sur l’IHM VitamUI  de la solution logicielle
 
@@ -299,13 +284,10 @@ Pour une unité archivistique en conflit en raison de son caractère gelé (stat
 ### Lancement d’une opération d’élimination (action)
 
 La solution logicielle permet de lancer par :
-- l’IHM démo une opération d’élimination des unités archivistiques placées dans le panier ;
 - l’IHM VitamUI une opération d’élimination sur un lot d’archives depuis l’APP « Recherche et consultation des archives » en distinguant :
-  - l'élimination des unités archivistiques de type "standard" et "plan de classement",
-  - la suppression des unités archivistiques de type "arbre de positionnement". 
+- l'élimination des unités archivistiques de type "standard" et "plan de classement",
+- la suppression des unités archivistiques de type "arbre de positionnement". 
 Cette opération peut être lancée indépendamment d’une campagne d’évaluation des éliminables et porter sur des unités archivistiques n’ayant encore jamais été analysées par la solution logicielle.
-
-Point d’attention : dans l’IHM démo, le panier a une taille limitée, il est préférable d’y placer des unités archivistiques avec leur descendance (une unité comptabilisée dans le panier) plutôt que des entrées (autant d’unités comptabilisées que d’unités dans le SIP).
 
 L’opération d’élimination peut être lancée par rapport à une date située dans le passé ou à la date du jour. Elle ne peut pas être lancée par rapport à une date située dans le futur.  
 Pour des raisons liées aux problématiques de calcul de graphe, il n’est pas possible de lancer cette action si une autre action d’élimination est en cours (ou en pause) ou en parallèle d’une action de modification d’arborescence. La solution logicielle vérifie si des processus concurrents ne sont pas en cours au lancement du processus d’élimination.  
@@ -346,15 +328,14 @@ Le rapport de l’opération de mise en œuvre de l’élimination, consultable 
 
 Les groupes d’objets techniques des unités archivistiques conservées ne sont pas listés dans le rapport.
 
-Point d’attention : on a considéré pour le développement de la fonctionnalité d’élimination que la phase de mise en œuvre de l’élimination serait déclenchée par l’archiviste sur la base d’une évaluation préalable du caractère éliminable des unités archivistiques. Dans ces conditions, la présence de documents non éliminables est une anomalie et c’est pour cette raison que le rapport liste les unités archivistiques dont le statut est « à conserver » au lieu de les ignorer comme en phase d’évaluation.
+**Point d’attention :** on a considéré pour le développement de la fonctionnalité d’élimination que la phase de mise en œuvre de l’élimination serait déclenchée par l’archiviste sur la base d’une évaluation préalable du caractère éliminable des unités archivistiques. Dans ces conditions, la présence de documents non éliminables est une anomalie et c’est pour cette raison que le rapport liste les unités archivistiques dont le statut est « à conserver » au lieu de les ignorer comme en phase d’évaluation.
 
 ### Mise à jour du registre des fonds
 
 Les éliminations d’unités archivistiques ont des conséquences sur le registre des fonds propres et symboliques.
 Pour les fonds propres, les totaux d’unités archivistiques (AU), groupes d’objets techniques (GOT), objets techniques (OT) et la volumétrie sont mis à jour immédiatement. 
 Le détail de l’opération d’entrée concernée est également mis à jour.
-- Dans l’IHM démo, en cliquant sur la ligne de cette opération, l’utilisateur peut connaître toutes les opérations qui ont affecté cette entrée et le nombre d’AU, GOT et OT ainsi que la volumétrie concernée pour chacune des opérations, celle de l’entrée initiale comme celles des éliminations qui ont ensuite affecté cette entrée ;
-- dans l’IHM VitamUI, ces opérations d’élimination sont visibles en cliquant sur la ligne de cette opération au terme de la version 6.RC.  
+Dans l’IHM VitamUI, ces opérations d’élimination sont visibles en cliquant sur la ligne de cette opération au terme de la version 6.RC.  
 Il en va de même pour le détail d’une opération de préservation dans le cas où des objets éliminés ont préalablement fait l’objet d’une opération de préservation. Peut lui être associée une à plusieurs opérations d’élimination, référençant chacune le nombre d’objets et la volumétrie retirés du système. Le détail d’une opération de préservation est par ailleurs mis à jour pour tenir compte de ces éliminations.  
 Pour les fonds symboliques, au moment du calcul périodique des fonds symboliques de la base, les AU, GOT et OT éliminés seront décomptés et la volumétrie sera mise à jour. Depuis la notice du service agent, l’utilisateur peut accéder à l’historique des rattachements et consulter sur une période donnée les variations à la hausse ou à la baisse des fonds symboliques pour ce producteur.  
 
@@ -429,14 +410,14 @@ Cette phase peut être réalisée depuis l’APP VitamUI « Recherche et consul
 Une fois un lot cohérent d’archives à éliminer constitué, il est possible de lancer une opération d’analyse. Cette opération permet de vérifier si des conflits demeurent et, le cas échéant, de les corriger.  
 Elle permet aussi de rassembler un lot d’archives autour d’un identifiant unique d’opération, rendant ainsi possible de rechercher a posteriori les archives analysées au moyen de cet identifiant technique.  
 De ce lot, on peut réaliser soit un export DIP, soit un export CSV, deux services proposés notamment par l’IHM VitamUI, en vue de réaliser un bordereau de demande d’élimination à soumettre au service producteur concerné.  
-Point d’attention : Il n’est pas recommandé de :
+**Point d’attention :** Il n’est pas recommandé de :
 - réaliser un grand nombre d’opérations d’analyse sur un même lot d’archives. C’est pourquoi, il est recommandé d’avoir au préalable bien vérifier le caractère éliminable des archives au moyen des services de recherche ;
 - réaliser une opération d’analyse sur un trop grand nombre d’unités archivistiques. Il est en effet recommandé d’avoir un seuil maximal de 100 000 unités archivistiques parcourues lors de cette phase.
 
 #### Éliminer des archives
 
 Suite à la validation du bordereau d’élimination, il est possible de retrouver les archives candidates à l’élimination au moyen de l’identifiant de l’opération d’analyse. Cette action est possible dans VitamUI, depuis l’APP « Recherche et consultation des archives », via l’onglet des filtres de recherche sur la DUA.  
-Point d’attention : la solution logicielle Vitam ne met pas à disposition le résultat de l’analyse, unité archivistique par unité archivistique, sous la forme d’un rapport JSONL, disponible dans le journal des opérations.  
+**Point d’attention :** la solution logicielle Vitam ne met pas à disposition le résultat de l’analyse, unité archivistique par unité archivistique, sous la forme d’un rapport JSONL, disponible dans le journal des opérations.  
 Si des archives, faisant partie du lot analysé, doivent être exclues de l’élimination, il est toujours possible de les retirer de la sélection. Une fois le lot à éliminer finalisé, il est possible de lancer l’opération d’action d’élimination. Celle-ci aboutit aux statuts suivants :
 - succès : toutes les archives ont été éliminées ;
 - avertissement : une partie des archives n’a pas été éliminée. Il s’agit alors de :
@@ -445,7 +426,7 @@ Si des archives, faisant partie du lot analysé, doivent être exclues de l’é
     - procéder à une nouvelle opération d’action d’élimination.
 
 Cette opération d’élimination produit un rapport sous forme JSON, disponible depuis le journal des opérations.  
-Point d’attention : Il n’est pas recommandé de réaliser une opération d’analyse sur un trop grand nombre d’unités archivistiques. Il est en effet recommandé d’avoir un seuil maximal de 10 000 unités archivistiques parcourues lors de cette phase.
+**Point d’attention :** Il n’est pas recommandé de réaliser une opération d’analyse sur un trop grand nombre d’unités archivistiques. Il est en effet recommandé d’avoir un seuil maximal de 10 000 unités archivistiques parcourues lors de cette phase.
 
 ### Comment supprimer des archives entrées par erreur dans le système ?
 
@@ -469,7 +450,7 @@ Ensuite, il est recommandé de procéder comme suit :
 
 Avant toute procédure de suppression d’une unité de type « Arbre de positionnement », il faut veiller à déplacer vers un autre niveau de description les unités archivistiques qui lui sont associées à des niveaux inférieurs.  
 
-Point d’attention : Contrairement aux unités archivistiques de type « Standard » et « Plan de classement », une unité archivistique de type « Arbre de positionnement » ne dispose pas de règles de gestion. Il est de fait possible de traiter ce type d’unité archivistique via les opérations d’analyse et d’action d’élimination sans lui avoir au préalable ajouté des règles de gestion.  
+**Point d’attention :** Contrairement aux unités archivistiques de type « Standard » et « Plan de classement », une unité archivistique de type « Arbre de positionnement » ne dispose pas de règles de gestion. Il est de fait possible de traiter ce type d’unité archivistique via les opérations d’analyse et d’action d’élimination sans lui avoir au préalable ajouté des règles de gestion.  
 
 Il est ensuite possible de procéder à l’action d’élimination. Le seul contrôle effectué par cette opération est la vérification de l’absence d’unités archivistiques de niveau inférieur à l’unité qu’on souhaite supprimer. 
 
@@ -480,15 +461,13 @@ Il est ensuite possible de procéder à l’action d’élimination. Le seul con
 La solution logicielle Vitam propose deux moyens de limiter le nombre d’unités archivistiques lors des phases d’analyse et d’action d’élimination :
 - un seuil de requête,
 - un seuil de plate-forme.
+
 Les seuils de plate-forme sont définis dans un fichier de configuration. Par défaut, ils sont paramétrés comme suit :
 - 100 000 unités archivistiques parcourues lors de la phase d’analyse d’élimination ;
 - 10 000 unités archivistiques parcourues lors de la phase d’action d’élimination.
 
 Le seuil de requête est facultatif. S’il est présent, son chiffre est :
 - soit écrit en dur dans la requête envoyée par le front-office au back-office,
-- soit laissé à la main de l’utilisateur, comme cela est le cas dans l’IHM démo. En effet, dans le panier, l’utilisateur a la possibilité d’indiquer le nombre maximum d’archives à traiter lors de l’envoi de la requête d’analyse ou d’action d’élimination.
-![IHMDemo_seuils](./medias/eliminations/seuil_ihm_demo.png)
-
 - soit paramétrable, comme cela est le cas dans l’IHM VitamUI, où il est possible, depuis l’APP « ProfilsAPP Paramétrages externes », de :
     - se conformer aux seuils de plate-forme, dont ceux relatifs à l’analyse et à l’action d’élimination ;
     - sélectionner un seuil de 100, 10 000, 100 000, 1 000 000,  10 000 000.

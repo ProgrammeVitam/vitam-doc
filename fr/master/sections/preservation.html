@@ -464,37 +464,29 @@
 <thead>
 <tr class="row-odd"><th class="head text-left"><p><strong>Document</strong></p></th>
 <th class="head text-center"><p><strong>Date de la version</strong></p></th>
-<th class="head text-left"><p><strong>Remarques</strong></p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td class="text-left"><p>NF Z 44022 – MEDONA - Modélisation des données pour l’archivage</p></td>
 <td class="text-center"><p>18/01/2014</p></td>
-<td class="text-left"><p></p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>Standard d’échange de données pour l’archivage – SEDA – v. 2.1</p></td>
 <td class="text-center"><p>06/2018</p></td>
-<td class="text-left"><p></p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p><a class="reference internal" href="SIP.html"><span class="std std-doc">Vitam – Structuration des <em>Submission Information Package</em> (SIP)</span></a></p></td>
 <td class="text-center"><p></p></td>
-<td class="text-left"><p></p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p><a class="reference internal" href="chantier_identification_format.html"><span class="std std-doc">Vitam – Identification de format</span></a></p></td>
 <td class="text-center"><p></p></td>
-<td class="text-left"><p></p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p><a class="reference internal" href="chantier_preservation_extraction_MD.html"><span class="doc std std-doc">Vitam – Extraction des métadonnées techniques</span></a></p></td>
 <td class="text-center"><p></p></td>
-<td class="text-left"><p></p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p><a class="reference internal" href="chantier_preservation_validation_format.html"><span class="std std-doc">Vitam – Validation de format de fichiers</span></a></p></td>
 <td class="text-center"><p></p></td>
-<td class="text-left"><p></p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p><a class="reference internal" href="valeur_probante.html"><span class="std std-doc">Vitam – Conservation de la valeur probante</span></a></p></td>
 <td class="text-center"><p></p></td>
-<td class="text-left"><p></p></td>
 </tr>
 </tbody>
 </table>
@@ -540,7 +532,7 @@ Il s’articule autour des axes suivants :</p>
 <li><p>une présentation des mécanismes mis en œuvre dans la solution logicielle Vitam pour gérer et réaliser des opérations de préservation numérique ;</p></li>
 <li><p>des recommandations aux utilisateurs de la solution logicielle Vitam sur la manière d’utiliser les fonctionnalités associées à ces outils de préservation numérique ;</p></li>
 <li><p>des exemples de référentiels, de paramétrages, et de messages retournés par la solution logicielle Vitam à l’issue d’une opération en lien avec la préservation.
-Le présent document décrit les fonctionnalités qui sont offertes par la deuxième version de production de la solution logicielle Vitam au terme de la version 8.1 (printemps 2024). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.</p></li>
+Le présent document décrit les fonctionnalités qui sont offertes par la deuxième version de production de la solution logicielle Vitam au terme de la version 8.1 (printemps 2025). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.</p></li>
 </ul>
 </section>
 </section>
@@ -609,21 +601,21 @@ Les relations entre formats et signatures peuvent être modélisées de la mani�
 <li><p>informations liées à la version et à la date de création du fichier de signatures, présents dans l’élément racine « FFSignatureFile » de ce dernier ;
 Élément racine du fichier de signatures en date du 17 septembre 2018, version 94 :</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">FFSignatureFile</span> <span class="n">xmlns</span><span class="p">:</span><span class="n">xsi</span><span class="o">=</span><span class="s2">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
- <span class="n">xsi</span><span class="p">:</span><span class="n">schemaLocation</span><span class="o">=</span><span class="s2">&quot;http://www.nationalarchives.gov.uk/pronom/SignatureFile DROID_SignatureFile.xsd&quot;</span>
- <span class="n">xmlns</span><span class="o">=</span><span class="s2">&quot;http://www.nationalarchives.gov.uk/pronom/SignatureFile&quot;</span> <span class="n">DateCreated</span><span class="o">=</span><span class="s2">&quot;2018-09-17T12:54:53&quot;</span>
- <span class="n">Version</span><span class="o">=</span><span class="s2">&quot;94&quot;</span><span class="o">&gt;</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="err">&lt;FFSig</span><span class="kc">nature</span><span class="err">File</span><span class="w"> </span><span class="err">xml</span><span class="kc">ns</span><span class="p">:</span><span class="err">xsi=</span><span class="s2">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+<span class="w"> </span><span class="err">xsi</span><span class="p">:</span><span class="err">schemaLoca</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="err">=</span><span class="s2">&quot;http://www.nationalarchives.gov.uk/pronom/SignatureFile DROID_SignatureFile.xsd&quot;</span>
+<span class="w"> </span><span class="err">xml</span><span class="kc">ns</span><span class="err">=</span><span class="s2">&quot;http://www.nationalarchives.gov.uk/pronom/SignatureFile&quot;</span><span class="w"> </span><span class="err">Da</span><span class="kc">te</span><span class="err">Crea</span><span class="kc">te</span><span class="err">d=</span><span class="s2">&quot;2018-09-17T12:54:53&quot;</span>
+<span class="w"> </span><span class="err">Versio</span><span class="kc">n</span><span class="err">=</span><span class="s2">&quot;94&quot;</span><span class="err">&gt;</span>
 </pre></div>
 </div>
 <ul class="simple">
 <li><p>caractéristiques des formats, présentes dans l’élément « FileFormat ».
 Caractéristiques du format dont le PUID est x-fmt/17 :</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">FileFormat</span> <span class="n">ID</span><span class="o">=</span><span class="s2">&quot;44&quot;</span> <span class="n">MIMEType</span><span class="o">=</span><span class="s2">&quot;application/vnd.ms-excel&quot;</span>
-            <span class="n">Name</span><span class="o">=</span><span class="s2">&quot;Microsoft Excel Template&quot;</span> <span class="n">PUID</span><span class="o">=</span><span class="s2">&quot;x-fmt/17&quot;</span> <span class="n">Version</span><span class="o">=</span><span class="s2">&quot;97-2003&quot;</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="n">Extension</span><span class="o">&gt;</span><span class="n">xlt</span><span class="o">&lt;/</span><span class="n">Extension</span><span class="o">&gt;</span>
-            <span class="o">&lt;</span><span class="n">HasPriorityOverFileFormatID</span><span class="o">&gt;</span><span class="mi">684</span><span class="o">&lt;/</span><span class="n">HasPriorityOverFileFormatID</span><span class="o">&gt;</span>
-<span class="o">&lt;/</span><span class="n">FileFormat</span><span class="o">&gt;</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="err">&lt;FileForma</span><span class="kc">t</span><span class="w"> </span><span class="err">ID=</span><span class="s2">&quot;44&quot;</span><span class="w"> </span><span class="err">MIMEType=</span><span class="s2">&quot;application/vnd.ms-excel&quot;</span>
+<span class="w">            </span><span class="err">Name=</span><span class="s2">&quot;Microsoft Excel Template&quot;</span><span class="w"> </span><span class="err">PUID=</span><span class="s2">&quot;x-fmt/17&quot;</span><span class="w"> </span><span class="err">Versio</span><span class="kc">n</span><span class="err">=</span><span class="s2">&quot;97-2003&quot;</span><span class="err">&gt;</span>
+<span class="w">            </span><span class="err">&lt;Ex</span><span class="kc">tens</span><span class="err">io</span><span class="kc">n</span><span class="err">&gt;xl</span><span class="kc">t</span><span class="err">&lt;/Ex</span><span class="kc">tens</span><span class="err">io</span><span class="kc">n</span><span class="err">&gt;</span>
+<span class="w">            </span><span class="err">&lt;HasPriori</span><span class="kc">t</span><span class="err">yOverFileForma</span><span class="kc">t</span><span class="err">ID&gt;</span><span class="mi">684</span><span class="err">&lt;/HasPriori</span><span class="kc">t</span><span class="err">yOverFileForma</span><span class="kc">t</span><span class="err">ID&gt;</span>
+<span class="err">&lt;/FileForma</span><span class="kc">t</span><span class="err">&gt;</span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -688,23 +680,23 @@ Caractéristiques du format dont le PUID est x-fmt/17 :</p></li>
 <h5><span class="section-number">17.2.1.2.2. </span>Dans la solution logicielle Vitam<a class="headerlink" href="#dans-la-solution-logicielle-vitam" title="Lien vers cette rubrique"></a></h5>
 <p>Les formats sont enregistrés dans la base de données MongoDB, dans la collection « FileFormat », sous la forme d’enregistrements au format JSON.
 Enregistrement du format dont le PUID est x-fmt/111 :</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="s2">&quot;_id&quot;</span><span class="p">:</span> <span class="s2">&quot;aeaaaaaaaaho6plwab7ykalivm47lsiaabza&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;CreatedDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2018-09-17T12:54:53.000&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;VersionPronom&quot;</span><span class="p">:</span> <span class="s2">&quot;94&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;UpdateDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-02-06T15:32:21.201&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;PUID&quot;</span><span class="p">:</span> <span class="s2">&quot;x-fmt/111&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Version&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;MimeType&quot;</span><span class="p">:</span> <span class="s2">&quot;text/plain&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;Plain Text File&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;HasPriorityOverFileFormatID&quot;</span><span class="p">:</span> <span class="p">[],</span>
-    <span class="s2">&quot;Extension&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="s2">&quot;txt&quot;</span>
-    <span class="p">],</span>
-    <span class="s2">&quot;Group&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Alert&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
-    <span class="s2">&quot;Comment&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;_v&quot;</span><span class="p">:</span> <span class="mi">12</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aeaaaaaaaaho6plwab7ykalivm47lsiaabza&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;CreatedDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2018-09-17T12:54:53.000&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;VersionPronom&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;94&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;UpdateDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2019-02-06T15:32:21.201&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;PUID&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x-fmt/111&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;MimeType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;text/plain&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Plain Text File&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;HasPriorityOverFileFormatID&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">    </span><span class="nt">&quot;Extension&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;txt&quot;</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;Group&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Alert&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Comment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;_v&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -851,8 +843,10 @@ Lors de ce ré-import ou de cette mise à jour, l’opération peut aboutir aux 
 Il est possible d’obtenir :</p>
 <ul class="simple">
 <li><p>une liste de résultats,</p></li>
-<li><p>un résultat par facettes (nombre d’occurrences pour une métadonnée donnée).
-Sont disponibles les facettes de type :</p></li>
+<li><p>un résultat par facettes (nombre d’occurrences pour une métadonnée donnée).</p></li>
+</ul>
+<p>Sont disponibles les facettes de type :</p>
+<ul class="simple">
 <li><p>« terms » : pour obtenir des catégories basées sur les valeurs distinctes d’un champ spécifique et le nombre associé,</p></li>
 <li><p>« filters » : pour obtenir des résultats d’agrégations par filtres sur les résultats,</p></li>
 <li><p>« range » : pour obtenir des agrégations par plages de dates,</p></li>
@@ -879,10 +873,12 @@ Sont disponibles les facettes de type :</p></li>
 <li><p>permettre l’utilisation de l’outil d’identification de formats retenu à ce jour, Siegfried, et de pallier les défauts de cet outil, à savoir d’être en mesure, via des requêtes API, de :</p>
 <ul>
 <li><p>lister les formats connus de son référentiel interne et que l’outil est donc en mesure de pouvoir identifier ;</p></li>
-<li><p>dire si un PUID est connu du référentiel interne de l’outil d’identification.
-Il a également pour vocation d’être utilisé par la solution logicielle Vitam pour :</p></li>
+<li><p>dire si un PUID est connu du référentiel interne de l’outil d’identification.</p></li>
 </ul>
 </li>
+</ul>
+<p>Il a également pour vocation d’être utilisé par la solution logicielle Vitam pour :</p>
+<ul class="simple">
 <li><p>effectuer des contrôles sur les formats des objets binaires associés aux archives prises en charge par le système. Dans le cas présent, le contrôle est fait au moyen de l’outil d’identification Siegfried et du référentiel des formats qu’il intègre et non pas à partir du référentiel interne de la solution logicielle Vitam ;</p></li>
 <li><p>sélectionner les formats dans :</p>
 <ul>
@@ -1750,21 +1746,17 @@ La création d’un scénario de préservation nécessite :</p>
 </tr>
 <tr class="row-odd"><td class="text-center"><p>Administrateur technique</p></td>
 <td class="text-left"><p>- vérifie si le griffon que l’on souhaite solliciter est installé et disponible dans la solution logicielle Vitam<br>- le cas échéant, installe le griffon<a class="footnote-reference brackets" href="#id174" id="id54" role="doc-noteref"><span class="fn-bracket">[</span>37<span class="fn-bracket">]</span></a></p></td>
-<td class="text-center"><p></p></td>
+<td class="text-center"><p>Non</p></td>
 </tr>
-<tr class="row-even"><td class="text-center"><p>Non</p></td>
-<td class="text-left"><p></p></td>
-<td class="text-center"><p></p></td>
-</tr>
-<tr class="row-odd"><td class="text-center"><p>Administrateur technique et/ou fonctionnel</p></td>
+<tr class="row-even"><td class="text-center"><p>Administrateur technique et/ou fonctionnel</p></td>
 <td class="text-left"><p>- vérifie si le griffon est référencé dans le référentiel des griffons ;<br>- le cas échéant, ajoute le griffon dans le référentiel des griffons</p></td>
 <td class="text-center"><p>Oui</p></td>
 </tr>
-<tr class="row-even"><td class="text-center"><p>Administrateur technique et  fonctionnel</p></td>
+<tr class="row-odd"><td class="text-center"><p>Administrateur technique et  fonctionnel</p></td>
 <td class="text-left"><p>crée un scénario de préservation utilisant le griffon en question</p></td>
 <td class="text-center"><p>Oui</p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p>Administrateur fonctionnel</p></td>
+<tr class="row-even"><td class="text-center"><p>Administrateur fonctionnel</p></td>
 <td class="text-left"><p>lance l’opération de préservation</p></td>
 <td class="text-center"><p>Oui</p></td>
 </tr>
@@ -1880,45 +1872,45 @@ Elle obéit à des règles strictes :</p>
 </li>
 </ul>
 <p><strong>Point d’attention :</strong><br />
-Si le scénario de préservation a vocation à réaliser des extractions de métadonnées interne, il est recommandé d’ajouter dans l’ontologie les métadonnées destinées à être extraites et de les indexer dans le moteur de recherche Elastic Search.<br />
-<em>Exemple :</em> ce scénario de préservation permet de convertir au format PDF une liste de formats avec ImageMagick et une autre liste de formats avec LibreOffice. Pour les autres formats non listés, le scénario effectue par défaut une analyse avec JHOVE.</p>
+Si le scénario de préservation a vocation à réaliser des extractions de métadonnées interne, il est recommandé d’ajouter dans l’ontologie les métadonnées destinées à être extraites et de les indexer dans le moteur de recherche Elastic Search.</p>
+<p><em>Exemple :</em> ce scénario de préservation permet de convertir au format PDF une liste de formats avec ImageMagick et une autre liste de formats avec LibreOffice. Pour les autres formats non listés, le scénario effectue par défaut une analyse avec JHOVE.</p>
 <p><img alt="Exemple" src="../_images/exemple5_scenario.png" /></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
-  <span class="p">{</span>
-    <span class="s2">&quot;Identifier&quot;</span><span class="p">:</span> <span class="s2">&quot;PSC-000001&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;Tranformation en pdf&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Description&quot;</span><span class="p">:</span> <span class="s2">&quot;Ce scénario permet de transformer un grand nombre de formats (bureautique et image) en PDF.&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;ActionList&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;GENERATE&quot;</span><span class="p">],</span>
-    <span class="s2">&quot;GriffinByFormat&quot;</span><span class="p">:</span> <span class="p">[</span>
-      <span class="p">{</span>
-        <span class="s2">&quot;FormatList&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;fmt/40&quot;</span><span class="p">,</span> <span class="s2">&quot;fmt/809&quot;</span><span class="p">],</span>
-        <span class="s2">&quot;GriffinIdentifier&quot;</span><span class="p">:</span> <span class="s2">&quot;GRI-000003&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;Timeout&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
-        <span class="s2">&quot;MaxSize&quot;</span><span class="p">:</span> <span class="mi">10000000</span><span class="p">,</span>
-        <span class="s2">&quot;Debug&quot;</span><span class="p">:</span><span class="n">true</span><span class="p">,</span>
-        <span class="s2">&quot;ActionDetail&quot;</span><span class="p">:</span> <span class="p">[</span>
-          <span class="p">{</span><span class="s2">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;GENERATE&quot;</span><span class="p">,</span><span class="s2">&quot;Values&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Extension&quot;</span><span class="p">:</span> <span class="s2">&quot;pdf&quot;</span><span class="p">,</span> <span class="s2">&quot;Args&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;-f&quot;</span><span class="p">,</span><span class="s2">&quot;pdf&quot;</span><span class="p">,</span><span class="s2">&quot;-e&quot;</span><span class="p">,</span><span class="s2">&quot;SelectedPdfVersion=1&quot;</span><span class="p">]}},</span>
-          <span class="p">{</span><span class="s2">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;ANALYSE&quot;</span><span class="p">,</span><span class="s2">&quot;Values&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Args&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;-strict&quot;</span><span class="p">]}}]</span>
-      <span class="p">},</span>
-      <span class="p">{</span>
-        <span class="s2">&quot;FormatList&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;fmt/41&quot;</span><span class="p">,</span><span class="s2">&quot;fmt/42&quot;</span><span class="p">],</span>
-        <span class="s2">&quot;GriffinIdentifier&quot;</span><span class="p">:</span> <span class="s2">&quot;GRI-000001&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;Timeout&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
-        <span class="s2">&quot;MaxSize&quot;</span><span class="p">:</span> <span class="mi">10000000</span><span class="p">,</span>
-        <span class="s2">&quot;Debug&quot;</span><span class="p">:</span><span class="n">true</span><span class="p">,</span>
-        <span class="s2">&quot;ActionDetail&quot;</span><span class="p">:</span> <span class="p">[</span>
-          <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;GENERATE&quot;</span><span class="p">,</span><span class="s2">&quot;values&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Extension&quot;</span><span class="p">:</span> <span class="s2">&quot;pdf&quot;</span><span class="p">,</span><span class="s2">&quot;Args&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;-quality&quot;</span><span class="p">,</span><span class="s2">&quot;100&quot;</span><span class="p">,</span><span class="s2">&quot;-units&quot;</span><span class="p">,</span><span class="s2">&quot;PixelsPerInch&quot;</span><span class="p">,</span><span class="s2">&quot;-density&quot;</span><span class="p">,</span><span class="s2">&quot;72x72&quot;</span><span class="p">]}}]</span>
-      <span class="p">}</span>
-    <span class="p">],</span>
-    <span class="s2">&quot;DefaultGriffin&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="s2">&quot;GriffinIdentifier&quot;</span><span class="p">:</span> <span class="s2">&quot;GRI-000005&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;Timeout&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
-      <span class="s2">&quot;MaxSize&quot;</span><span class="p">:</span> <span class="mi">10000000</span><span class="p">,</span>
-      <span class="s2">&quot;Debug&quot;</span><span class="p">:</span><span class="n">true</span><span class="p">,</span>
-      <span class="s2">&quot;ActionDetail&quot;</span><span class="p">:</span> <span class="p">[</span>
-		<span class="p">{</span><span class="s2">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;ANALYSE&quot;</span><span class="p">,</span><span class="s2">&quot;Values&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Args&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;-strict&quot;</span><span class="p">]}}]</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;Identifier&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PSC-000001&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Tranformation en pdf&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ce scénario permet de transformer un grand nombre de formats (bureautique et image) en PDF.&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ActionList&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;GENERATE&quot;</span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;GriffinByFormat&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;FormatList&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;fmt/40&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;fmt/809&quot;</span><span class="p">],</span>
+<span class="w">        </span><span class="nt">&quot;GriffinIdentifier&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GRI-000003&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Timeout&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;MaxSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10000000</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Debug&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ActionDetail&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">          </span><span class="p">{</span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GENERATE&quot;</span><span class="p">,</span><span class="nt">&quot;Values&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;Extension&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pdf&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;-f&quot;</span><span class="p">,</span><span class="s2">&quot;pdf&quot;</span><span class="p">,</span><span class="s2">&quot;-e&quot;</span><span class="p">,</span><span class="s2">&quot;SelectedPdfVersion=1&quot;</span><span class="p">]}},</span>
+<span class="w">          </span><span class="p">{</span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ANALYSE&quot;</span><span class="p">,</span><span class="nt">&quot;Values&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;Args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;-strict&quot;</span><span class="p">]}}]</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;FormatList&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;fmt/41&quot;</span><span class="p">,</span><span class="s2">&quot;fmt/42&quot;</span><span class="p">],</span>
+<span class="w">        </span><span class="nt">&quot;GriffinIdentifier&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GRI-000001&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Timeout&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;MaxSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10000000</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Debug&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ActionDetail&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">          </span><span class="p">{</span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GENERATE&quot;</span><span class="p">,</span><span class="nt">&quot;values&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;Extension&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pdf&quot;</span><span class="p">,</span><span class="nt">&quot;Args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;-quality&quot;</span><span class="p">,</span><span class="s2">&quot;100&quot;</span><span class="p">,</span><span class="s2">&quot;-units&quot;</span><span class="p">,</span><span class="s2">&quot;PixelsPerInch&quot;</span><span class="p">,</span><span class="s2">&quot;-density&quot;</span><span class="p">,</span><span class="s2">&quot;72x72&quot;</span><span class="p">]}}]</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;DefaultGriffin&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;GriffinIdentifier&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GRI-000005&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;Timeout&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;MaxSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10000000</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;Debug&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;ActionDetail&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">		</span><span class="p">{</span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ANALYSE&quot;</span><span class="p">,</span><span class="nt">&quot;Values&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;Args&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;-strict&quot;</span><span class="p">]}}]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
 <span class="p">]</span>
 </pre></div>
 </div>
@@ -2009,8 +2001,10 @@ Si le scénario de préservation a vocation à réaliser des extractions de mét
 <li><p>accepter ou non des formats non identifiés ;</p></li>
 <li><p>contrôler les objets binaires transférés dans la solution logicielle Vitam en termes d’usages ;</p></li>
 <li><p>vérifier l’identification des objets binaires, voire les réidentifier ;</p></li>
-<li><p>valider les formats de ces objets binaires (service non implémenté).
-Pour ce faire, dans le cadre du processus d’entrée d’un ensemble d’archives, la solution logicielle propose différentes fonctionnalités :</p></li>
+<li><p>valider les formats de ces objets binaires (service non implémenté).</p></li>
+</ul>
+<p>Pour ce faire, dans le cadre du processus d’entrée d’un ensemble d’archives, la solution logicielle propose différentes fonctionnalités :</p>
+<ul class="simple">
 <li><p>elle effectue automatiquement et de manière générique des tâches d’identification ;</p></li>
 <li><p>elle permet, le cas échéant, de rajouter des vérifications supplémentaires au moyen d’un plug-in ;</p></li>
 <li><p>elle propose également des paramétrages, adaptables en fonction des besoins, permettant de contrôler les objets binaires transférés, au moyen des contrats d’entrée.</p></li>
@@ -2191,7 +2185,7 @@ Le résultat de cette action est la création d’un nouvel objet binaire, ayant
 Ces nouvelles métadonnées sont enregistrées et indexées en tant que métadonnées de l’unité archivistique ou du groupe d’objets techniques ;</p></li>
 <li><p>l’identification de format : il s’agit d’identifier ou de réidentifier a posteriori des fichiers déjà transférés dans la solution logicielle Vitam.</p></li>
 </ul>
-<p>Exemples :</p>
+<p><em>Exemples :</em></p>
 <table class="docutils align-default">
 <thead>
 <tr class="row-odd"><th class="head text-left"><p>Action de préservation</p></th>
@@ -2578,14 +2572,10 @@ Un administrateur fonctionnel et/ou technique a accès à l’ensemble des servi
 <td class="text-left"><p>Recommandé</p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>Identification de formats sur l’ensemble des objets binaires conservés</p></td>
-<td class="text-left"><p>La solution logicielle Vitam permet d’identifier des formats sur tout ou partie des objets binaires qu’elle conserve.</p></td>
-<td class="text-left"><p></p></td>
-</tr>
-<tr class="row-odd"><td class="text-left"><p>Néanmoins, il n’est pas recommandé de lancer une opération de ce type sur l’ensemble des objets binaires conservés, car cette action pourrait avoir un impact sur :<br>- les performances de la solution logicielle Vitam ;<br>- le stockage disponible ;<br>- le temps de traitement de l’opération. Cette dernière pourrait, en effet, durer plusieurs jours.</p></td>
+<td class="text-left"><p>La solution logicielle Vitam permet d’identifier des formats sur tout ou partie des objets binaires qu’elle conserve.Néanmoins, il n’est pas recommandé de lancer une opération de ce type sur l’ensemble des objets binaires conservés, car cette action pourrait avoir un impact sur :<br>- les performances de la solution logicielle Vitam ;<br>- le stockage disponible ;<br>- le temps de traitement de l’opération. Cette dernière pourrait, en effet, durer plusieurs jours.</p></td>
 <td class="text-left"><p>Non recommandé</p></td>
-<td class="text-left"><p></p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>Réidentification de formats</p></td>
+<tr class="row-odd"><td class="text-left"><p>Réidentification de formats</p></td>
 <td class="text-left"><p>Il est recommandé de lancer des opérations de réidentification de formats à l’occasion des mises à jour du référentiel des formats, afin de vérifier, notamment, si certains fichiers, entrés dans le système sans être identifiés, le sont avec le nouveau référentiel des formats.</p></td>
 <td class="text-left"><p>Recommandé</p></td>
 </tr>
@@ -2795,7 +2785,7 @@ S’il y a conception d’écrans, il est conseillé de privilégier des interfa
 </thead>
 <tbody>
 <tr class="row-even"><td class="text-left"><p>Gestion de la politique de préservation</p></td>
-<td class="text-left"><p>S’il y a conception d’écrans, il est conseillé de privilégier des interfaces propres à ce service, en lien avec la préservation ou les audits, permettant :<br>- la sélection d’objets devant faire l’objet d’une opération de préservation à partir de critères aussi bien relatifs aux objets qu’aux unités archivistiques : type MIME, versions, PUID, usages, service producteur, type, profil d’unité archivistique, etc.<br>- partant de cette sélection, le paramétrage de l’opération de préservation, en fonction des critères suivant :<br>  - usage original des objets,<br>  - version(s) des objets concernés,<br>- le lancement de l’opération.</p></td>
+<td class="text-left"><p>S’il y a conception d’écrans, il est conseillé de privilégier des interfaces propres à ce service, en lien avec la préservation ou les audits, permettant :<br>- la sélection d’objets devant faire l’objet d’une opération de préservation à partir de critères aussi bien relatifs aux objets qu’aux unités archivistiques : type MIME, versions, PUID, usages, service producteur, type, profil d’unité archivistique, etc.<br>- partant de cette sélection, le paramétrage de l’opération de préservation, en fonction des critères suivant :<br>-&gt; usage original des objets,<br>-&gt; version(s) des objets concernés,<br>- le lancement de l’opération.</p></td>
 <td class="text-left"><p>Conseillé</p></td>
 </tr>
 </tbody>
@@ -2917,72 +2907,74 @@ Les conséquences sont les suivantes :</p></li>
 </ul>
 <section id="unite-archivistique-enregistree-dans-la-base-de-donnees-mongo-db">
 <h6><span class="section-number">17.4.3.1.2.1. </span>Unité archivistique enregistrée dans la base de données Mongo DB<a class="headerlink" href="#unite-archivistique-enregistree-dans-la-base-de-donnees-mongo-db" title="Lien vers cette rubrique"></a></h6>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>{
-    &quot;_id&quot;: &quot;aeaqaaaaaehnbxf7abrfyalmxbmg7zyaaaea&quot;,
-    &quot;_og&quot;: &quot;aebaaaaaaehnbxf7abrfyalmxbmg6eaaaabq&quot;,
-    &quot;_mgt&quot;: {},
-    &quot;DescriptionLevel&quot;: &quot;Item&quot;,
-    &quot;Title&quot;: &quot;ID709.doc&quot;,
-    &quot;_sedaVersion&quot;: &quot;2.1&quot;,
-    &quot;_implementationVersion&quot;: &quot;2.12.0-SNAPSHOT&quot;,
-    &quot;_storage&quot;: {
-        &quot;_nbc&quot;: 2,
-        &quot;offerIds&quot;: [
-            &quot;offer-fs-1.service.int.consul&quot;,
-            &quot;offer-fs-2.service.int.consul&quot;
-        ],
-        &quot;strategyId&quot;: &quot;default&quot;
-    },
-    &quot;_sps&quot;: [
-        &quot;Service_producteur&quot;
-    ],
-    &quot;_sp&quot;: &quot;Service_producteur&quot;,
-    &quot;_ops&quot;: [
-        &quot;aeeaaaaaaghnjq2naaf52almxbmfsoiaaaaq&quot;
-    ],
-    [ … ]
-    &quot;_min&quot;: 1,
-    &quot;_max&quot;: 3,
-    &quot;_glpd&quot;: &quot;2019-08-22T08:02:34.622&quot;,
-    &quot;_v&quot;: 0,
-    &quot;_av&quot;: 0,
-    &quot;_tenant&quot;: 1
-}
-</pre></div>
-</div>
-<p><strong>Conséquences :</strong></p>
-<div class="highlight-{ notranslate"><div class="highlight"><pre><span></span>    &quot;_id&quot;: &quot;aeaqaaaaaehnbxf7abrfyalmxbmg7zyaaaea&quot;,
-    &quot;_og&quot;: &quot;aebaaaaaaehnbxf7abrfyalmxbmg6eaaaabq&quot;,
-    &quot;_mgt&quot;: {},
-    &quot;DescriptionLevel&quot;: &quot;Item&quot;,
-    &quot;Title&quot;: &quot;ID709.doc&quot;,
-    &quot;_sedaVersion&quot;: &quot;2.1&quot;,
-    &quot;_implementationVersion&quot;: &quot;2.12.0-SNAPSHOT&quot;,
-    &quot;_storage&quot;: {
-        &quot;_nbc&quot;: 2,
-        &quot;offerIds&quot;: [
-            &quot;offer-fs-1.service.int.consul&quot;,
-            &quot;offer-fs-2.service.int.consul&quot;
-        ],
-        &quot;strategyId&quot;: &quot;default&quot;
-    },
-    &quot;_sps&quot;: [
-        &quot;Service_producteur&quot;
-    ],
-    &quot;_sp&quot;: &quot;Service_producteur&quot;,
-    &quot;_ops&quot;: [
-        &quot;aeeaaaaaaghnjq2naaf52almxbmfsoiaaaaq&quot;,
-        &quot;aeeaaaaaaghnjq2nab3jaalmxbn52laaaaaq&quot;
-    ],
-    [ … ] 
-    &quot;_min&quot;: 1,
-    &quot;_max&quot;: 3,
-    &quot;_glpd&quot;: &quot;2019-08-22T08:02:34.622&quot;,
-    &quot;_v&quot;: 1,
-    &quot;_av&quot;: 1,
-    &quot;_tenant&quot;: 1,
-    &quot;Description&quot;: &quot;Je rajoute une description&quot;
-}
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aeaqaaaaaehnbxf7abrfyalmxbmg7zyaaaea&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;_og&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aebaaaaaaehnbxf7abrfyalmxbmg6eaaaabq&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;_mgt&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">    </span><span class="nt">&quot;DescriptionLevel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Item&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ID709.doc&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;_sedaVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.1&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;_implementationVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.12.0-SNAPSHOT&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;_storage&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;_nbc&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;offerIds&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="s2">&quot;offer-fs-1.service.int.consul&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;offer-fs-2.service.int.consul&quot;</span>
+<span class="w">        </span><span class="p">],</span>
+<span class="w">        </span><span class="nt">&quot;strategyId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;default&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;_sps&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;Service_producteur&quot;</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;_sp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Service_producteur&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;_ops&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;aeeaaaaaaghnjq2naaf52almxbmfsoiaaaaq&quot;</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="w"> </span><span class="err">…</span><span class="w"> </span><span class="p">]</span>
+<span class="w">    </span><span class="nt">&quot;_min&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;_max&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;_glpd&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2019-08-22T08:02:34.622&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;_v&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;_av&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;_tenant&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="p">}</span>
+<span class="err">```jso</span><span class="kc">n</span>
+
+<span class="err">**Co</span><span class="kc">ns</span><span class="err">éque</span><span class="kc">n</span><span class="err">ces</span><span class="w"> </span><span class="p">:</span><span class="err">**</span>
+<span class="err">```jso</span><span class="kc">n</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aeaqaaaaaehnbxf7abrfyalmxbmg7zyaaaea&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;_og&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aebaaaaaaehnbxf7abrfyalmxbmg6eaaaabq&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;_mgt&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">    </span><span class="nt">&quot;DescriptionLevel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Item&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ID709.doc&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;_sedaVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.1&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;_implementationVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2.12.0-SNAPSHOT&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;_storage&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;_nbc&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;offerIds&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="s2">&quot;offer-fs-1.service.int.consul&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;offer-fs-2.service.int.consul&quot;</span>
+<span class="w">        </span><span class="p">],</span>
+<span class="w">        </span><span class="nt">&quot;strategyId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;default&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;_sps&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;Service_producteur&quot;</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;_sp&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Service_producteur&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;_ops&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;aeeaaaaaaghnjq2naaf52almxbmfsoiaaaaq&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;aeeaaaaaaghnjq2nab3jaalmxbn52laaaaaq&quot;</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="w"> </span><span class="err">…</span><span class="w"> </span><span class="p">]</span><span class="w"> </span>
+<span class="w">    </span><span class="nt">&quot;_min&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;_max&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;_glpd&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2019-08-22T08:02:34.622&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;_v&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;_av&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;_tenant&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Je rajoute une description&quot;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Suite à une mise à jour de ses métadonnées, l’unité archivistique enregistrée dans la base de données Mongo DB contient : une description supplémentaire (« Description »), une opération supplémentaire correspondant à l’identifiant de l’opération de mise à jour (« _ops »), et sa version a été mise à jour (« _v »).</p>
@@ -3642,8 +3634,8 @@ Il est possible de réaliser deux audits :</p>
 </section>
 <section id="resultat-dune-operation-daudit">
 <h6><span class="section-number">17.4.3.2.2.3. </span>Résultat d’une opération d’audit<a class="headerlink" href="#resultat-dune-operation-daudit" title="Lien vers cette rubrique"></a></h6>
-<p>Quelle que soit l’action d’audit effectuée, la solution logicielle Vitam produit systématiquement un rapport au format JSONL énumérant<a class="footnote-reference brackets" href="#id196" id="id90" role="doc-noteref"><span class="fn-bracket">[</span>59<span class="fn-bracket">]</span></a> :
-Ce rapport se décompose en plusieurs parties<a class="footnote-reference brackets" href="#id197" id="id91" role="doc-noteref"><span class="fn-bracket">[</span>60<span class="fn-bracket">]</span></a> :</p>
+<p>Quelle que soit l’action d’audit effectuée, la solution logicielle Vitam produit systématiquement un rapport au format JSONL énumérant<a class="footnote-reference brackets" href="#id196" id="id90" role="doc-noteref"><span class="fn-bracket">[</span>59<span class="fn-bracket">]</span></a> :</p>
+<p>Ce rapport se décompose en plusieurs parties<a class="footnote-reference brackets" href="#id197" id="id91" role="doc-noteref"><span class="fn-bracket">[</span>60<span class="fn-bracket">]</span></a> :</p>
 <ul class="simple">
 <li><p>un en-tête récapitulant l’objet du rapport ;</p></li>
 <li><p>un résumé de l’opération, indiquant notamment son résultat en termes de cas en succès, en avertissement et/ou en échec ;</p></li>
@@ -3832,18 +3824,14 @@ Il est recommandé de procéder à une opération de ce type sur un périmètre 
 <td class="text-left"><p>Non recommandé</p></td>
 </tr>
 <tr class="row-even"><td class="text-left"><p>Vérification systématique de la cohérence du système</p></td>
-<td class="text-left"><p>Il est recommandé de procéder à un audit d’intégrité dans le cadre d’opérations techniques ciblées, telles que :<br>- l’évolution de la stratégie de stockage ;<br>- un changement de stockage.</p></td>
-<td class="text-left"><p></p></td>
-</tr>
-<tr class="row-odd"><td class="text-left"><p>L’audit permet alors de comparer l’ensemble des fonds conservés dans la solution logicielle Vitam avant et après l’opération technique.</p></td>
+<td class="text-left"><p>Il est recommandé de procéder à un audit d’intégrité dans le cadre d’opérations techniques ciblées, telles que :<br>- l’évolution de la stratégie de stockage ;<br>- un changement de stockage. L’audit permet alors de comparer l’ensemble des fonds conservés dans la solution logicielle Vitam avant et après l’opération technique.</p></td>
 <td class="text-left"><p>Recommandé</p></td>
-<td class="text-left"><p></p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>Vérification systématique de l’intégrité d’objets binaires</p></td>
+<tr class="row-odd"><td class="text-left"><p>Vérification systématique de l’intégrité d’objets binaires</p></td>
 <td class="text-left"><p>Dans le cadre de campagne de vérification de l’intégrité d’objets binaires sur l’ensemble des fonds conservés dans la solution logicielle Vitam ou sur une partie importante d’entre eux, il est recommandé de programmer un traitement automatique (batch), permettant de mener cette opération, segmentée en petits lots d’archives, en fond de tâche, durant des heures de faible utilisation du système (en soirée ou durant le week-end).</p></td>
 <td class="text-left"><p>Recommandé</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>Vérification systématique de l’intégrité d’objets binaires entrants</p></td>
+<tr class="row-even"><td class="text-left"><p>Vérification systématique de l’intégrité d’objets binaires entrants</p></td>
 <td class="text-left"><p>Dans le cas d’un audit systématique des objets transférés dans la solution logicielle Vitam, il est recommandé de programmer un traitement automatique (batch) auditant les entrées et permettant de mener cette opération :<br>- quotidiennement (en soirée), afin de vérifier que les objets binaires transférés dans la journée ont bien été stockés et sont intègres dans la solution logicielle Vitam ;<br>- une fois par semaine (durant le week-end), afin de vérifier que les objets binaires transférés dans la semaine ont bien été stockés et sont intègres dans la solution logicielle Vitam.</p></td>
 <td class="text-left"><p>Recommandé</p></td>
 </tr>
@@ -5763,7 +5751,7 @@ En fonction des formats générés, l’outil propose une liste d’arguments sp
 </aside>
 <aside class="footnote brackets" id="id146" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id9">9</a><span class="fn-bracket">]</span></span>
-<p>Pour plus d’informations sur le processus d’import du référentiel, consulter le document Modèle de workflow, chapitre 5.3 « Workflow d’administration d’un référentiel des formats ».</p>
+<p>Pour plus d’informations sur le processus d’import du référentiel, consulter le <a class="reference internal" href="modele_de_workflow.html"><span class="std std-doc">document Modèle de workflow</span></a>, chapitre 5.3 « Workflow d’administration d’un référentiel des formats ».</p>
 </aside>
 <aside class="footnote brackets" id="id147" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id10">10</a><span class="fn-bracket">]</span></span>
@@ -6100,11 +6088,8 @@ En fonction des formats générés, l’outil propose une liste d’arguments sp
       <dt>Branches</dt>
       <dd><a href="preservation.html">master</a></dd>
       <dd><a href="../../master_7.1.x/sections/preservation.html">master_7.1.x</a></dd>
-      <dd><a href="../../master_8.0.x/sections/preservation.html">master_8.0.x</a></dd>
+      <dd><a href="../../master_8.1.x/sections/preservation.html">master_8.1.x</a></dd>
       <dd><a href="../../v8.1_Resip_mathilde/sections/preservation.html">v8.1_Resip_mathilde</a></dd>
-      <dd><a href="../../v81_preservation/sections/preservation.html">v81_preservation</a></dd>
-      <dd><a href="../../v81_valeur_probante/sections/preservation.html">v81_valeur_probante</a></dd>
-      <dd><a href="../../v81_workflow/sections/preservation.html">v81_workflow</a></dd>
     </dl>
   </div>
 </div><script>

@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>15. Les éliminations avec la solution logicielle Vitam &mdash; Vitam documentation fonctionnelle</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=eea1f72d" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f4732e6d"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/translations.js?v=bf059b8c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="16. Le gel d’archives avec la solution logicielle Vitam" href="gel.html" />
+    <link rel="prev" title="14. Module de collecte" href="module_de_collecte.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: white" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/Vitam_Logo-CMJN.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">première approche</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="guide_lecture.html">1. Documentation Vitam - guide de lecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="presentation_programme.html">2. Présentation du programme Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="presentation_solution_logicielle.html">3. Présentation de la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_prise_en_main.html">4. Guide de prise en main de la solution logicielle Vitam – Vitam UI<br>
+<em>Réaliser une première entrée</em></a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">documentation métier</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="organisation_information.html">1. Organisation de l’information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gestion_archives_arbo.html">2. Gestion des archives et des arborescences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_donnees.html">3. Modèle de données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SIP.html">4. Structuration des <em>Submission Information Packages</em> (SIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DIP.html">5. Structuration des <em>Dissemination Information Packages</em> (DIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gestion_habilitations.html">6. Gestion des habilitations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regles_gestion.html">7. Règles de gestion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services_prod.html">8. Services producteurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_archivage.html">9. Profils d’archivage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_unite_archivistique.html">10. Profils d’unité archivistique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ontologie.html">11. Ontologie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="schema.html">12. Schéma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_workflow.html">13. Description des workflows et des opérations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_de_collecte.html">14. Module de collecte</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">15. Les éliminations avec la solution logicielle Vitam</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">15.1. Introduction</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#documents-de-reference">15.1.1. Documents de référence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#presentation-du-document">15.1.2. Présentation du document</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#determination-du-caractere-eliminable-dune-unite-archivistique-avec-la-solution-logicielle-vitam">15.2. Détermination du caractère éliminable d’une unité archivistique avec la solution logicielle Vitam</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#quest-ce-quune-unite-archivistique-eliminable">15.2.1. Qu’est-ce qu’une unité archivistique éliminable ?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#calcul-des-regles-de-gestion-applicables-a-une-unite-archivistique">15.2.2. Calcul des règles de gestion applicables à une unité archivistique</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#realisation-dune-elimination-avec-la-solution-logicielle-vitam">15.3. Réalisation d’une élimination avec la solution logicielle Vitam</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuration-de-la-plate-forme">15.4. Configuration de la plate-forme</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#personnalisation-des-rapports-d-elimination">15.4.1. Personnalisation des rapports d’élimination</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#preservation-des-identifiants-perennes">15.4.2. Préservation des identifiants pérennes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lancement-dune-campagne-devaluation-des-eliminables-analyse">15.4.3. Lancement d’une campagne d’évaluation des éliminables (analyse)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#lancement-de-loperation">15.4.3.1. Lancement de l’opération</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#consultation-des-resultats-de-lanalyse-delimination-sur-lihm-vitamui-de-la-solution-logicielle">15.4.3.2. Consultation des résultats de l’analyse d’élimination sur l’IHM VitamUI  de la solution logicielle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#consultation-des-resultats-de-lanalyse-delimination-en-base-de-donnees">15.4.3.3. Consultation des résultats de l’analyse d’élimination en base de données</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#lancement-dune-operation-delimination-action">15.4.4. Lancement d’une opération d’élimination (action)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mise-a-jour-du-registre-des-fonds">15.4.5. Mise à jour du registre des fonds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">15.4.6. Préservation des identifiants pérennes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#exemple-de-json-stocke-en-base-comprenant-lexhaustivite-des-champs">15.4.6.1. Exemple de JSON stocké en base comprenant l’exhaustivité des champs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#conseils-de-mise-en-oeuvre">15.5. Conseils de mise en œuvre</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#comment-proceder-a-une-elimination">15.5.1. Comment procéder à une élimination ?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#rechercher-des-archives-a-eliminer">15.5.1.1. Rechercher des archives à éliminer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#analyser-des-archives-a-eliminer">15.5.1.2. Analyser des archives à éliminer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#eliminer-des-archives">15.5.1.3. Éliminer des archives</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#comment-supprimer-des-archives-entrees-par-erreur-dans-le-systeme">15.5.2. Comment supprimer des archives entrées par erreur dans le système ?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#pour-des-unites-de-type-standard-et-plan-de-classement">15.5.2.1. Pour des unités de type « Standard » et « Plan de classement »</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pour-des-unites-archivistiques-de-type-arbre-de-positionnement">15.5.2.2. Pour des unités archivistiques de type « Arbre de positionnement »</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#quelles-sont-les-limitations-pour-les-operations-danalyse-et-daction-delimination">15.5.3. Quelles sont les limitations pour les opérations d’analyse et d’action d’élimination ?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#definition-des-seuils">15.5.3.1. Définition des seuils</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#fonctionnement-des-seuils">15.5.3.2. Fonctionnement des seuils</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gel.html">16. Le gel d’archives avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preservation.html">17. Gestion de la préservation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stockage.html">18. Gestion de multiples stratégies de stockage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transfert.html">19. Le transfert avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="valeur_probante.html">20. Conservation de la valeur probante</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">documentation Vitam UI</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Autoprovisionning.html">1. Vitam UI : présentation de la fonctionnalité d’auto-provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Arbres_Plans.html">2. APP Arbres et plans</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">outils connexes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="resip.html">1. RESIP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resip_faq.html">2. RESIP : foire aux questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pastis_standalone.html">3. PASTIS STANDALONE</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Chantier préservation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="chantier_preservation_validation_format.html">1. Validation du format des fichiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_identification_format.html">2. Identification des formats de fichiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_extraction_MD.html">3. Extraction des métadonnées techniques</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Vademecum</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_sommaire.html">1. Vademecum: sommaire thématique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_glossaire.html">2. Notions utilisées dans la solution logicielle Vitam et lien vers la fiche qui les définit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_arbre.html">3. L’arbre de positionnement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_audit.html">4. Les audits dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_classification.html">5. La gestion des archives classifiées avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_acces.html">6. Le contrat d’accès dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_entree.html">7. Le contrat d’entrée dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_gestion.html">8. Le contrat de gestion dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_echeances.html">9. Le calcul des héritages des règles de gestion et l’indexation des échéances dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_eliminations.html">10. Réaliser des éliminations d’archives avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_habilitations.html">11. La gestion des droits et permissions des utilisateurs applicatifs dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_identifiants.html">12. L’attribution des identifiants dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_journalisation.html">13. La journalisation et la conservation de la valeur probante dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_ontologie.html">14. L’ontologie dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_pa.html">15. Les profils d’archivage dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_parametrages_pf.html">16. Le paramétrage fonctionnel d’une plate-forme utilisant la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_plan.html">17. Le plan de classement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_preservation.html">18. La préservation dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_pua.html">19. Les profils d’unité archivistique dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_rattachement.html">20. Faire un rattachement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_formats.html">21. Le référentiel des formats dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_griffons.html">22. Le référentiel des griffons dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_preservation.html">23. Le référentiel des scénarios de préservation dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_rg.html">24. Le référentiel des règles de gestion dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_sa.html">25. Le référentiel des services agents dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_registre_fonds.html">26. Le registre des fonds dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_structuration_information.html">27. La structuration des informations dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_suivi_acces.html">28. Le suivi des accès dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_tenant.html">29. Les tenants dans la solution logicielle Vitam</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: white" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Documentation utilisateur Vitam</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">15. </span>Les éliminations avec la solution logicielle Vitam</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/sections/eliminations.md.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+
+           <div itemprop="articleBody">
+             
+  <section id="les-eliminations-avec-la-solution-logicielle-vitam">
+<h1><span class="section-number">15. </span>Les éliminations avec la solution logicielle Vitam<a class="headerlink" href="#les-eliminations-avec-la-solution-logicielle-vitam" title="Lien vers cette rubrique"></a></h1>
+<section id="introduction">
+<h2><span class="section-number">15.1. </span>Introduction<a class="headerlink" href="#introduction" title="Lien vers cette rubrique"></a></h2>
+<section id="documents-de-reference">
+<h3><span class="section-number">15.1.1. </span>Documents de référence<a class="headerlink" href="#documents-de-reference" title="Lien vers cette rubrique"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p><strong>Document</strong></p></th>
+<th class="head text-center"><p><strong>Date de la version</strong></p></th>
+<th class="head text-center"><p><strong>Remarques</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>NF Z 44022 – MEDONA – Modélisation des données pour l’archivage</p></td>
+<td class="text-center"><p>18/01/2014</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Standard d’échange de données pour l’archivage – SEDA – v. 2.1</p></td>
+<td class="text-center"><p>06/2018</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>Standard d’échange de données pour l’archivage – SEDA – v. 2.2</p></td>
+<td class="text-center"><p>02/2022</p></td>
+<td class="text-center"><p>Cette nouvelle version du SEDA est intégrée à la solution logicielle Vitam à partir de la V6.RC.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Standard d’échange de données pour l’archivage – SEDA – v. 2.3</p></td>
+<td class="text-center"><p>06/2024</p></td>
+<td class="text-center"><p>Cette nouvelle version du SEDA est intégrée à la solution logicielle Vitam à partir de la V7.0</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="presentation-du-document">
+<h3><span class="section-number">15.1.2. </span>Présentation du document<a class="headerlink" href="#presentation-du-document" title="Lien vers cette rubrique"></a></h3>
+<p>L’élimination réglementaire des archives en fonction de leur durée d’utilité administrative fait partie des processus archivistiques mis en œuvre dans la solution logicielle Vitam.
+Dans un contexte d’archivage électronique, cette fonctionnalité est mise en œuvre en tenant compte des particularités liées au calcul et à l’héritage des règles de gestion et au graphe.
+Ce document s’articule autour des axes suivants :</p>
+<ul class="simple">
+<li><p>calcul des règles et détermination du caractère éliminable des unités archivistiques,</p></li>
+<li><p>modalités d’une campagne d’évaluation du caractère éliminable des unités archivistiques (analyse),</p></li>
+<li><p>modalités d’une campagne de mise en œuvre de l’élimination (action).
+Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 8.1 (printemps 2025). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.</p></li>
+</ul>
+</section>
+</section>
+<section id="determination-du-caractere-eliminable-dune-unite-archivistique-avec-la-solution-logicielle-vitam">
+<h2><span class="section-number">15.2. </span>Détermination du caractère éliminable d’une unité archivistique avec la solution logicielle Vitam<a class="headerlink" href="#determination-du-caractere-eliminable-dune-unite-archivistique-avec-la-solution-logicielle-vitam" title="Lien vers cette rubrique"></a></h2>
+<section id="quest-ce-quune-unite-archivistique-eliminable">
+<h3><span class="section-number">15.2.1. </span>Qu’est-ce qu’une unité archivistique éliminable ?<a class="headerlink" href="#quest-ce-quune-unite-archivistique-eliminable" title="Lien vers cette rubrique"></a></h3>
+<p>Pour être éliminable, une unité archivistique doit définir ou hériter d’une règle de durée d’utilité administrative dont la date d’échéance est dans le passé par rapport à une date donnée et avoir un sort final « détruire ».
+Si l’unité archivistique n’a qu’un sort final « détruire » sans règle associée permettant de calculer une date d’échéance, elle ne sera pas considérée comme éliminable.<br />
+Si l’unité archivistique est éliminable, c’est-à-dire qu’elle dispose d’une date d’échéance dans le passé par rapport à une date donnée et d’un sort final dont la valeur est « détruire », et si elle contient une règle de gel dont la date de fin n’est pas échue ou exprimée, elle ne sera pas considérée comme éliminable, dans la mesure où le gel empêche son élimination.</p>
+</section>
+<section id="calcul-des-regles-de-gestion-applicables-a-une-unite-archivistique">
+<h3><span class="section-number">15.2.2. </span>Calcul des règles de gestion applicables à une unité archivistique<a class="headerlink" href="#calcul-des-regles-de-gestion-applicables-a-une-unite-archivistique" title="Lien vers cette rubrique"></a></h3>
+<p>La solution logicielle Vitam permet de déclarer des informations de gestion au niveau de l’entrée (SIP) comme au niveau des unités archivistiques (voir documentation sur les règles de gestion).<br />
+En l’absence d’information de gestion sur une unité archivistique, cette unité archivistique hérite des règles et des propriétés définies par son ou ses parents.<br />
+Une unité archivistique peut bloquer l’héritage de toutes les règles d’une catégorie donnée (PreventInheritance). En ce cas, les règles et les propriétés de cette catégorie ne sont pas héritées et, dans le cas de la durée d’utilité administrative, un sort final (FinalAction) doit être redéfini pour l’unité.
+De même, une unité archivistique peut bloquer une règle en particulier (RefNonRuleId). Là encore, cela implique de redéfinir localement un sort final.
+Une propriété définie localement l’emporte sur les propriétés héritées. Ainsi, si une unité archivistique hérite de son parent une règle de durée d’utilité administrative « 5 ans » avec un sort final « détruire » et définit localement une autre règle « 10 ans » avec un sort final « conserver », cette unité aura deux durées d’utilité administrative, mais un seul sort final (« conserver »), au titre du service producteur principal de l’unité archivistique.</p>
+<p>Dans le schéma ci-dessus, Massy-Palaiseau (service producteur : SNCF) bloque l’héritage de la règle APP-00050 de gare de Lyon (service producteur SNCF) et redéfinit à cette occasion un sort final « détruire ». Elle hérite de gare d’Austerlitz (service producteur SNCF) la règle APP-00049, mais pas le sort final, puisqu’elle en a défini un localement. Massy-Palaiseau hérite également de Denfert-Rochereau (service producteur : RATP) à laquelle elle est rattachée une règle APP-00051, mais pas la propriété définie pour ce producteur car c’est celle définie localement qui l’emporte.</p>
+<p><img alt="Management metadata" src="../_images/management_metadata.png" /><br />
+En base, les règles applicables pour l’unité Massy-Palaiseau sont les suivantes :</p>
+<ul class="simple">
+<li><p>au titre du service producteur SNCF : une règle applicable APP-00049 et un sort final défini localement (détruire) ;</p></li>
+<li><p>au titre du service producteur RATP : une règle applicable APP-00051, mais pas de sort final (le sort final défini localement bloquant l’héritage d’un sort final).<br />
+Dans ces conditions, aucun sort final n’étant associé à la règle APP-00051 pour Massy-Palaiseau au titre du producteur RATP, l’unité archivistique ne pourra pas être considérée comme éliminable, même une fois la règle APP-00051 expirée.</p></li>
+</ul>
+<p>Rattacher des unités archivistiques à d’autres unités archivistiques peut entraîner des héritages complexes et empêcher la mise en œuvre des opérations d’élimination. L’archiviste devra identifier ces cas et procéder à des mises à jour des règles applicables à l’unité et/ou à des réorganisations d’arborescence pour pouvoir éliminer effectivement les unités archivistiques concernées.<br />
+Dans le cas spécifique de la durée d’utilité administrative, si l’unité archivistique ne déclare pas de sort final et n’en hérite pas non plus, elle est implicitement considérée par la solution logicielle Vitam comme devant être conservée et cette propriété implicite peut être héritée par ses descendants.<br />
+Ainsi, le premier niveau d’un plan de classement, sauf s’il définit une information contraire, est considéré comme devant implicitement être conservé (propriété « KEEP » implicite). Cette propriété implicite est alors définie localement par la solution logicielle Vitam et est héritée par les éventuelles unités archivistiques filles de la même entrée.<br />
+Une unité archivistique rattachée lors de l’entrée à une unité archivistique de même service producteur qui portait un sort final de durée d’utilité administrative implicite hérite également de ce sort final dans la mesure où elle n’en définit pas elle-même.<br />
+Une unité archivistique rattachée lors de l’entrée à une unité archivistique de service producteur différent, qui portait un sort final de durée d’utilité administrative implicite, définit localement, au titre de son service producteur, un sort final et cette définition locale bloque l’héritage du sort final du service producteur de rattachement.<br />
+Enfin, une unité archivistique rattachée lors de l’entrée à une unité archivistique, de même service producteur, qui portait un sort final implicite et à une unité archivistique de service producteur différent, portant également un sort final implicite, hérite les deux propriétés et n’en redéfinit pas localement.</p>
+<p>Nota bene : cette propriété implicite est calculée à l’affichage des règles de gestion, mais n’est pas enregistrée en base. Elle ne sera donc pas exportée lors de la génération d’un DIP par exemple.</p>
+</section>
+</section>
+<section id="realisation-dune-elimination-avec-la-solution-logicielle-vitam">
+<h2><span class="section-number">15.3. </span>Réalisation d’une élimination avec la solution logicielle Vitam<a class="headerlink" href="#realisation-dune-elimination-avec-la-solution-logicielle-vitam" title="Lien vers cette rubrique"></a></h2>
+</section>
+<section id="configuration-de-la-plate-forme">
+<h2><span class="section-number">15.4. </span>Configuration de la plate-forme<a class="headerlink" href="#configuration-de-la-plate-forme" title="Lien vers cette rubrique"></a></h2>
+<section id="personnalisation-des-rapports-d-elimination">
+<h3><span class="section-number">15.4.1. </span>Personnalisation des rapports d’élimination<a class="headerlink" href="#personnalisation-des-rapports-d-elimination" title="Lien vers cette rubrique"></a></h3>
+<p>Au terme de la version 7.0, la solution logicielle Vitam permet de personnaliser les rapports produits à la suite d’une opération d’élimination.</p>
+<p>Cette configuration, optionnelle, est établie lors du paramétrage initial de la plate-forme par les administrateurs – fonctionnel pour la définition du besoin et technique pour la saisie réelle des informations – de chaque implémentation de la solution logicielle Vitam et définit, pour chaque tenant les informations complémentaires à faire apparaître dans les rapports, si elles sont présentes dans la base de données.
+Il est possible d’ajouter dans le rapport, pour chaque unité archivistique, les éléments suivant :</p>
+<ul class="simple">
+<li><p>« #version » : version de l’unité archivistique,</p></li>
+<li><p>« #unitups » : unité(s) archivistique(s) parente(s),</p></li>
+<li><p>« #originating_agency » : service producteur,</p></li>
+<li><p>« #approximate_creation_date »: date de création de l’unité archivistique,</p></li>
+<li><p>« #approximate_update_date » : date de dernière modification de l’unité archivistique,</p></li>
+<li><p>« FilePlanPosition » : position(s) dans le plan de classement,</p></li>
+<li><p>« SystemId »: identifiant(s) du système,</p></li>
+<li><p>« OriginatingSystemId »: identifiant(s) du système d’origine,</p></li>
+<li><p>« ArchivalAgencyArchiveUnitIdentifier: identifiant(s) émanant du service d’archives,</p></li>
+<li><p>« OriginatingAgencyArchiveUnitIdentifier: identifiant(s) du service producteur,</p></li>
+<li><p>« TransferringAgencyArchiveUnitIdentifier: identifiant(s) du service responsable du transfert.</p></li>
+</ul>
+<p><strong>Point d’attention :</strong> Cette configuration n’inclut pas les identifiants pérennes. S’ils référencent une archive éliminée, ils seront systématiquement enregistrés dans le rapport d’élimination.</p>
+<p>Le fichier de configuration (vitam.conf) se présente comme suit (exemple fictif) :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">eliminationReportExtraFields</span><span class="p">:</span>
+ <span class="o">-</span> <span class="n">tenant</span><span class="p">:</span> <span class="mi">0</span>
+   <span class="n">metadataFields</span><span class="p">:</span> <span class="p">[]</span>
+ <span class="o">-</span> <span class="n">tenant</span><span class="p">:</span> <span class="mi">1</span>
+   <span class="n">metadataFields</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;#approximate_creation_date&quot;</span><span class="p">,</span> <span class="s2">&quot;approximate_update_date&quot;</span><span class="p">,</span> <span class="s2">&quot;FilePlanPosition&quot;</span><span class="p">,]</span>
+ <span class="o">-</span> <span class="n">tenant</span><span class="p">:</span> <span class="mi">2</span>
+   <span class="n">metadataFields</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;OriginatingAgencyArchiveUnitIdentifier&quot;</span><span class="p">]</span>
+ <span class="o">-</span> <span class="n">tenant</span><span class="p">:</span> <span class="mi">4</span>
+   <span class="n">metadataFields</span><span class="p">:</span> <span class="p">[]</span>
+</pre></div>
+</div>
+<p>Dans l’exemple ci-dessus :</p>
+<ul class="simple">
+<li><p>sur le tenant 0 :</p>
+<ul>
+<li><p>aucune information complémentaire n’est attendue dans les rapports d’élimination;</p></li>
+</ul>
+</li>
+<li><p>sur le tenant 1 :</p>
+<ul>
+<li><p>le rapport d’élimination pourra contenir la date de création et de dernière modification, ainsi que la position dans le plan de classement de chaque unité archivistique;</p></li>
+</ul>
+</li>
+<li><p>sur le tenant 4 :</p>
+<ul>
+<li><p>le rapport d’élimination pourra contenir l’identifiant émanant du service producteur.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="preservation-des-identifiants-perennes">
+<h3><span class="section-number">15.4.2. </span>Préservation des identifiants pérennes<a class="headerlink" href="#preservation-des-identifiants-perennes" title="Lien vers cette rubrique"></a></h3>
+<p>Au terme de la version 7.1, la solution logicielle Vitam permet de conserver ces identifiants pérennes dans la base de données MongoDB, malgré l’élimination des archives qu’ils référençaient.</p>
+<p>Cette configuration, optionnelle, est établie lors du paramétrage initial de la plate-forme par les administrateurs
+– fonctionnel pour la définition du besoin et technique pour la saisie réelle des informations
+– de chaque implémentation de la solution logicielle Vitam et définit, pour l’ensemble de la plate-forme, la fréquence d’enregistrement de ces informations dans le système.</p>
+<p>Le fichier de configuration (metadata.conf) se présente comme suit (exemple fictif) :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Persistent Identifier Reconstruction configuration</span>
+<span class="n">persistentIdentifierReconstructionDelayInMinutes</span><span class="p">:</span> <span class="mi">5</span>
+<span class="n">persistentIdentifierReconstructionThreadPoolSize</span><span class="p">:</span> <span class="mi">10</span>
+<span class="n">PersistentIdentifierReconstructionBulkSize</span><span class="p">:</span> <span class="mi">1000</span>
+</pre></div>
+</div>
+<p>Dans l’exemple ci-dessus, cet enregistrement s’effectue dans un délai de 5 minutes suivant l’opération d’élimination.</p>
+</section>
+<section id="lancement-dune-campagne-devaluation-des-eliminables-analyse">
+<h3><span class="section-number">15.4.3. </span>Lancement d’une campagne d’évaluation des éliminables (analyse)<a class="headerlink" href="#lancement-dune-campagne-devaluation-des-eliminables-analyse" title="Lien vers cette rubrique"></a></h3>
+<section id="lancement-de-loperation">
+<h4><span class="section-number">15.4.3.1. </span>Lancement de l’opération<a class="headerlink" href="#lancement-de-loperation" title="Lien vers cette rubrique"></a></h4>
+<p>La solution logicielle permet d’étudier le caractère éliminable d’ensembles d’unités archivistiques.</p>
+<ul class="simple">
+<li><p>Par API,</p></li>
+<li><p>Par l’IHM VitamUI, elle se fait depuis l’APP « Recherche et consultation des archives » et peut porter sur un lot d’archives sélectionnées à partir de critères descriptifs ou de filtres relatifs à leur durée d’utilité administrative.</p></li>
+</ul>
+<p><strong>Point d’attention :</strong></p>
+<ul class="simple">
+<li><p>Avant de lancer une opération d’analyse, il est recommandé de sélectionner les unités archivistiques appropriées, c’est-à-dire de constituer un lot d’archives à partir de critères visant à isoler les meilleures candidates à une élimination (ex. recherche sur des unités archivistiques dont le sort final est égal à « DESTROY » et dont la date de fin est échue).</p></li>
+<li><p>Il n’est pas recommandé de lancer un nombre trop important d’opérations d’analyse sur un même lot d’archives, l’analyse n’étant pas un service d’audit.</p></li>
+</ul>
+<p>La date par rapport à laquelle se fait l’analyse peut se situer dans le passé ou le futur ou être la date du jour.<br />
+Il est possible d’indiquer un seuil d’unités archivistiques traitées au cours de l’opération. Si ce seuil est dépassé (par exemple, le seuil est de 15 alors que l’analyse est lancée sur 17 unités archivistiques), l’opération sera en échec.<br />
+En analyse, il est recommandé d’avoir un seuil maximal de 100 000 unités archivistiques parcourues<a class="footnote-reference brackets" href="#id4" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
+<p>L’analyse permet de définir le statut des unités archivistiques concernées :</p>
+<ul class="simple">
+<li><p>KEEP (à conserver),</p></li>
+<li><p>DESTROY (éliminable),</p></li>
+<li><p>CONFLICT (non décidable).
+Les unités archivistiques de statut DESTROY et CONFLICT sont indexées en base de données.</p></li>
+</ul>
+<p>L’analyse permet également d’établir la liste des services producteurs pour lesquels les unités archivistiques sont éliminables et la liste des services producteurs pour lesquels les unités archivistiques doivent être conservées pour les unités archivistiques de statut CONFLICT.</p>
+<p>Pour les cas de conflits également, certaines informations supplémentaires sont indexées dans l’unité archivistique pour apporter des précisions sur la nature de certains conflits :</p>
+<ul class="simple">
+<li><p>KEEP_ACCESS_SP : le service producteur principal (producteur de l’entrée) demande la suppression de l’unité archivistique et un ou plusieurs services de rattachement demandent sa conservation ; en effet, la suppression du service producteur principal d’une unité archivistique et la conservation des services de rattachement entraînerait des incohérences dans la base de données ;</p></li>
+<li><p>ACCESS_LINK_INCONSISTENCY : deux règles passent par le même chemin ce qui rend impossible de couper le lien pour un parent et pas pour un autre ; la solution logicielle indexe également le nœud posant problème (ParentUnitId) et les services producteurs concernés ;</p></li>
+<li><p>FINAL_ACTION_INCONSISTENCY : l’unité archivistique a, par héritage, deux sorts finaux différents pour un même service producteur ; la solution logicielle indexe également le service producteur concerné (OriginatingAgenciesInConflict) ;</p></li>
+<li><p>BLOCKED_BY_HOLD_RULE : l’unité archivistique ne peut être éliminée, car elle déclare en propre ou hérite d’une règle de gel qui interdit son élimination.</p></li>
+</ul>
+<p><strong>Point d’attention :</strong></p>
+<ul class="simple">
+<li><p>Un conflit résulte d’une situation où la solution logicielle ne dispose pas des éléments permettant de conclure de manière certaine au caractère éliminable ou non éliminable de l’unité archivistique.</p></li>
+<li><p>Une intervention humaine est nécessaire pour décider du sort final de l’unité archivistique. L’archiviste doit alors revoir les règles posées sur l’unité archivistique ou procéder à une réorganisation d’arborescence de sorte que, lorsqu’il relancera une phase d’analyse, la solution logicielle puisse interpréter les règles applicables à cette unité.</p></li>
+<li><p>Pour éliminer une unité archivistique gelée, une intervention humaine sera également nécessaire. L’archiviste doit dégeler l’unité archivistique ou, s’il en a le droit, procéder à une réorganisation d’arborescence, avant de relancer la phase d’analyse, pour que la solution logicielle Vitam puisse interpréter à nouveau les règles applicables à cette unité.</p></li>
+</ul>
+</section>
+<section id="consultation-des-resultats-de-lanalyse-delimination-sur-lihm-vitamui-de-la-solution-logicielle">
+<h4><span class="section-number">15.4.3.2. </span>Consultation des résultats de l’analyse d’élimination sur l’IHM VitamUI  de la solution logicielle<a class="headerlink" href="#consultation-des-resultats-de-lanalyse-delimination-sur-lihm-vitamui-de-la-solution-logicielle" title="Lien vers cette rubrique"></a></h4>
+<p>Au terme de la version 5, il n’est pas possible de consulter le résultat de l’opération d’analyse (indexation), unité archivistique par unité archivistique.<br />
+L’APP « Recherche et consultation des archives » permet de retrouver l’ensemble des unités archivistiques analysées en entrant l’identifiant de l’opération d’analyse dans l’onglet de recherche spécifique aux recherches sur la DUA.<br />
+L’archiviste peut partir des listes filtrées des résultats de l’analyse des unités archivistiques éliminables, afin de :</p>
+<ul class="simple">
+<li><p>les exporter sous forme de DIP ou de fichier CSV, pour permettre la génération, depuis son front office, des bordereaux de demande d’élimination destinés aux services producteurs ;</p></li>
+<li><p>lancer une opération d’élimination.</p></li>
+</ul>
+</section>
+<section id="consultation-des-resultats-de-lanalyse-delimination-en-base-de-donnees">
+<h4><span class="section-number">15.4.3.3. </span>Consultation des résultats de l’analyse d’élimination en base de données<a class="headerlink" href="#consultation-des-resultats-de-lanalyse-delimination-en-base-de-donnees" title="Lien vers cette rubrique"></a></h4>
+<p>Les résultats de l’analyse d’élimination sont indexés dans les métadonnées des unités archivistiques.</p>
+<p>Pour une unité archivistique éliminable (statut DESTROY) :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;_elimination&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;OperationId&quot;</span><span class="p">:</span> <span class="s2">&quot;aeeaaaaaa2hfba5wabzviallxabcdriaaaaq&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;GlobalStatus&quot;</span><span class="p">:</span> <span class="s2">&quot;DESTROY&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;DestroyableOriginatingAgencies&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;SNCF&quot;</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;NonDestroyableOriginatingAgencies&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="s2">&quot;ExtendedInfo&quot;</span><span class="p">:</span> <span class="p">[]</span>
+</pre></div>
+</div>
+<p>Pour une unité archivistique en conflit, sans information supplémentaire (statut CONFLICT) :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;_elimination&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;OperationId&quot;</span><span class="p">:</span> <span class="s2">&quot;aeeaaaaaa2hfba5wabzviallxai2wsqaaaaq&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;GlobalStatus&quot;</span><span class="p">:</span> <span class="s2">&quot;CONFLICT&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;DestroyableOriginatingAgencies&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;Identifier2&quot;</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;NonDestroyableOriginatingAgencies&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;Identifier1&quot;</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;ExtendedInfo&quot;</span><span class="p">:</span> <span class="p">[]</span>
+</pre></div>
+</div>
+<p>Pour une unité archivistique en conflit, car le service producteur principal demande son élimination alors que les services producteurs de rattachement demandent sa conservation (statut CONFLICT, KEEP_ACCESS_SP) :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;_elimination&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;OperationId&quot;</span><span class="p">:</span> <span class="s2">&quot;aeeaaaaaa2hfba5wabzviallxalf3eiaaaaq&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;GlobalStatus&quot;</span><span class="p">:</span> <span class="s2">&quot;CONFLICT&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;DestroyableOriginatingAgencies&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;Identifier1&quot;</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;NonDestroyableOriginatingAgencies&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;Identifier2&quot;</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;ExtendedInfo&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;ExtendedInfoType&quot;</span><span class="p">:</span> <span class="s2">&quot;KEEP_ACCESS_SP&quot;</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+</pre></div>
+</div>
+<p>Pour une unité archivistique en conflit en raison de règles en conflit par un même chemin (statut CONFLICT, ACCESS_LINK_INCONSISTENCY) et en raison de la nécessité de conservation pour le service producteur de l’entrée (statut CONFLICT, KEEP_ACCESS_SP) :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;_elimination&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;OperationId&quot;</span><span class="p">:</span> <span class="s2">&quot;aeeaaaaaa2hfba5wabzviallxanrpzqaaaaq&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;GlobalStatus&quot;</span><span class="p">:</span> <span class="s2">&quot;CONFLICT&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;DestroyableOriginatingAgencies&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;FRAN_NP_050634_elim&quot;</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;NonDestroyableOriginatingAgencies&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;FRAN_NP_051587_elim&quot;</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;ExtendedInfo&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;ExtendedInfoType&quot;</span><span class="p">:</span> <span class="s2">&quot;KEEP_ACCESS_SP&quot;</span>
+                <span class="p">},</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;ExtendedInfoType&quot;</span><span class="p">:</span> <span class="s2">&quot;ACCESS_LINK_INCONSISTENCY&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;ExtendedInfoDetails&quot;</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="s2">&quot;ParentUnitId&quot;</span><span class="p">:</span> <span class="s2">&quot;aeaqaaaaayhhvwgpaaca2allw7wbhkiaaaba&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;DestroyableOriginatingAgencies&quot;</span><span class="p">:</span> <span class="p">[</span>
+                            <span class="s2">&quot;FRAN_NP_050634_elim&quot;</span>
+                        <span class="p">],</span>
+                        <span class="s2">&quot;NonDestroyableOriginatingAgencies&quot;</span><span class="p">:</span> <span class="p">[</span>
+                            <span class="s2">&quot;FRAN_NP_051587_elim&quot;</span>
+                        <span class="p">]</span>
+                    <span class="p">}</span>
+</pre></div>
+</div>
+<p>Pour une unité archivistique en conflit en raison d’un conflit de sort final (statut CONFLICT, FINAL_ACTION_INCONSISTENCY) :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;_elimination&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;OperationId&quot;</span><span class="p">:</span> <span class="s2">&quot;aeeaaaaaa2hfba5wabzviallw7xjlsqaaaaq&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;GlobalStatus&quot;</span><span class="p">:</span> <span class="s2">&quot;CONFLICT&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;DestroyableOriginatingAgencies&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="s2">&quot;NonDestroyableOriginatingAgencies&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="s2">&quot;ExtendedInfo&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;ExtendedInfoType&quot;</span><span class="p">:</span> <span class="s2">&quot;FINAL_ACTION_INCONSISTENCY&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;ExtendedInfoDetails&quot;</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="s2">&quot;OriginatingAgenciesInConflict&quot;</span><span class="p">:</span> <span class="p">[</span>
+                            <span class="s2">&quot;SNCF&quot;</span>
+                        <span class="p">]</span>
+</pre></div>
+</div>
+<p>Pour une unité archivistique en conflit en raison de son caractère gelé (statut CONFLICT, BLOCKED_BY_HOLD_RULE) :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;_elimination&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;OperationId&quot;</span><span class="p">:</span> <span class="s2">&quot;aeeaaaaaa2hfba5wabzviallw7xjlsqaaaaq&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;GlobalStatus&quot;</span><span class="p">:</span> <span class="s2">&quot;CONFLICT&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;DestroyableOriginatingAgencies&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="s2">&quot;NonDestroyableOriginatingAgencies&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="s2">&quot;ExtendedInfo&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;ExtendedInfoType&quot;</span><span class="p">:</span> <span class="s2">&quot;BLOCKED_BY_HOLD_RULE&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;ExtendedInfoDetails&quot;</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="s2">&quot;HoldRuleIds&quot;</span><span class="p">:</span> <span class="p">[</span>
+                            <span class="s2">&quot;HOL-00001&quot;</span>
+                        <span class="p">]</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="lancement-dune-operation-delimination-action">
+<h3><span class="section-number">15.4.4. </span>Lancement d’une opération d’élimination (action)<a class="headerlink" href="#lancement-dune-operation-delimination-action" title="Lien vers cette rubrique"></a></h3>
+<p>La solution logicielle permet de lancer par :</p>
+<ul class="simple">
+<li><p>l’IHM VitamUI une opération d’élimination sur un lot d’archives depuis l’APP « Recherche et consultation des archives » en distinguant :</p></li>
+<li><p>l’élimination des unités archivistiques de type « standard » et « plan de classement »,</p></li>
+<li><p>la suppression des unités archivistiques de type « arbre de positionnement ».
+Cette opération peut être lancée indépendamment d’une campagne d’évaluation des éliminables et porter sur des unités archivistiques n’ayant encore jamais été analysées par la solution logicielle.</p></li>
+</ul>
+<p>L’opération d’élimination peut être lancée par rapport à une date située dans le passé ou à la date du jour. Elle ne peut pas être lancée par rapport à une date située dans le futur.<br />
+Pour des raisons liées aux problématiques de calcul de graphe, il n’est pas possible de lancer cette action si une autre action d’élimination est en cours (ou en pause) ou en parallèle d’une action de modification d’arborescence. La solution logicielle vérifie si des processus concurrents ne sont pas en cours au lancement du processus d’élimination.<br />
+Il est possible d’indiquer un seuil d’unités archivistiques traitées au cours de l’opération. Si ce seuil est dépassé (par exemple, le seuil est de 15 alors que l’analyse est lancée sur 17 unités archivistiques), l’opération sera en échec.<br />
+En mise en œuvre de l’élimination, il est recommandé d’avoir un seuil maximal de 10 000 unités archivistiques parcourues<a class="footnote-reference brackets" href="#id5" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>.<br />
+Seules les unités archivistiques dont la solution logicielle peut déterminer le sort final applicable, en fonction des règles de gestion portées par les unités archivistiques (échéance expirée et sort final « détruire »), sont effectivement éliminées.<br />
+L’opération d’élimination implique donc que la mise en œuvre de l’élimination proprement dite soit immédiatement précédée dans la solution logicielle d’une phase d’analyse du caractère éliminable des unités archivistiques. Cette phase d’analyse systématique calcule les mêmes statuts qu’une campagne d’évaluation des unités archivistiques éliminables (cf. ci-dessus), mais sans indexation des résultats dans les métadonnées des unités archivistiques :</p>
+<ul class="simple">
+<li><p>unités archivistiques dont le statut est « à conserver » (Global Status : KEEP),</p></li>
+<li><p>unités archivistiques dont le statut ne peut être déterminé (Global Status : CONFLICT),</p></li>
+<li><p>unités archivistiques dont le statut est « éliminable » (Global Status : DESTROY).
+La présence d’unités archivistiques de statut KEEP conduira à une opération en avertissement, mais n’interrompt pas le processus.</p></li>
+</ul>
+<p>Une vérification supplémentaire est effectuée sur les unités archivistiques éliminables : celles qui ont des enfants encore à conserver ne sont pas éliminées afin de ne pas créer des unités archivistiques orphelines qui auraient perdu leurs parents et ne seraient plus accessibles par leurs grands-parents (statut spécifique à cette phase : NON_DESTROYABLE_HAS_CHILD_UNITS).<br />
+Ainsi, sur toutes les unités archivistiques soumises, seules celles dont le sort final est « détruire », qui ont une règle de gestion expirée, qui n’ont pas d’enfants encore à conserver et qui ne sont pas gelées sont donc effectivement éliminées.<br />
+La présence d’unités archivistiques de statut DESTROY qui ne peuvent être effectivement éliminées conduira à une opération en avertissement, mais n’interrompt pas le processus.</p>
+<p><strong>Points d’attention :</strong></p>
+<ul class="simple">
+<li><p>pour pouvoir éliminer une unité archivistique qui a encore un enfant à conserver (par exemple, un sous-dossier éliminable qui contient encore une pièce), l’archiviste doit procéder à une réorganisation d’arborescence (par exemple, placer la pièce à la racine du dossier) et relancer l’opération d’élimination sur cette unité archivistique.</p></li>
+<li><p>Pour pouvoir éliminer une unité archivistique qui hérite ou dispose d’une règle de gel, l’archiviste doit soit bloquer ou supprimer cette règle de gel, soit procéder à une réorganisation d’arborescence, s’il en a les droits, et relancer l’opération d’élimination sur cette unité archivistique.</p></li>
+</ul>
+<p>Une fois le statut des unités archivistiques déterminé, la solution logicielle étudie les groupes d’objets techniques associés aux unités archivistiques :</p>
+<ul class="simple">
+<li><p>si l’unité archivistique est conservée, le groupe d’objets techniques est conservé (KEEP),</p></li>
+<li><p>si le groupe d’objets techniques n’est associé qu’à une unité archivistique et que celle-ci est éliminée, le groupe d’objets techniques est éliminé (statut DELETED),</p></li>
+<li><p>si le groupe d’objets techniques est associé à une unité archivistique éliminée et à une unité archivistique non éliminée, le groupe d’objets techniques est détaché de la première unité (statut PARTIAL_DETACHMENT).</p></li>
+</ul>
+<p>Le statut de l’opération à l’issue de la mise en œuvre de l’élimination pourra être :</p>
+<ul class="simple">
+<li><p>succès : toutes les unités archivistiques soumises ont été éliminées ;</p></li>
+<li><p>avertissement : parmi les unités archivistiques soumises, la phase d’analyse a permis de déterminer que certaines ne devaient pas être éliminées ou ne pouvaient pas l’être ;</p></li>
+<li><p>fatal : une erreur technique s’est produite lors du processus de mise en œuvre de l’élimination.</p></li>
+</ul>
+<p>Le rapport de l’opération de mise en œuvre de l’élimination, consultable via le journal des opérations, permet de retrouver :</p>
+<ul class="simple">
+<li><p>les unités archivistiques dont le statut est « à conserver »   (GLOBAL_STATUS_KEEP),</p></li>
+<li><p>les unités archivistiques dont le statut ne peut être déterminé (GLOBAL_STATUS_CONFLICT),</p></li>
+<li><p>les unités archivistiques dont le statut est « à éliminer », mais qui ne peuvent pas être supprimées car elles ont des enfants (NON_DESTROYABLE_HAS_CHILD_UNITS),</p></li>
+<li><p>les unités archivistiques qui ont pu être supprimées (DELETED),</p></li>
+<li><p>les groupes d’objets techniques qui ont été supprimés (DELETED),</p></li>
+<li><p>les groupes d’objets techniques qui ont été détachés (PARTIAL_DETACHMENT).</p></li>
+</ul>
+<p>Les groupes d’objets techniques des unités archivistiques conservées ne sont pas listés dans le rapport.</p>
+<p><strong>Point d’attention :</strong> on a considéré pour le développement de la fonctionnalité d’élimination que la phase de mise en œuvre de l’élimination serait déclenchée par l’archiviste sur la base d’une évaluation préalable du caractère éliminable des unités archivistiques. Dans ces conditions, la présence de documents non éliminables est une anomalie et c’est pour cette raison que le rapport liste les unités archivistiques dont le statut est « à conserver » au lieu de les ignorer comme en phase d’évaluation.</p>
+</section>
+<section id="mise-a-jour-du-registre-des-fonds">
+<h3><span class="section-number">15.4.5. </span>Mise à jour du registre des fonds<a class="headerlink" href="#mise-a-jour-du-registre-des-fonds" title="Lien vers cette rubrique"></a></h3>
+<p>Les éliminations d’unités archivistiques ont des conséquences sur le registre des fonds propres et symboliques.
+Pour les fonds propres, les totaux d’unités archivistiques (AU), groupes d’objets techniques (GOT), objets techniques (OT) et la volumétrie sont mis à jour immédiatement.
+Le détail de l’opération d’entrée concernée est également mis à jour.
+Dans l’IHM VitamUI, ces opérations d’élimination sont visibles en cliquant sur la ligne de cette opération au terme de la version 6.RC.<br />
+Il en va de même pour le détail d’une opération de préservation dans le cas où des objets éliminés ont préalablement fait l’objet d’une opération de préservation. Peut lui être associée une à plusieurs opérations d’élimination, référençant chacune le nombre d’objets et la volumétrie retirés du système. Le détail d’une opération de préservation est par ailleurs mis à jour pour tenir compte de ces éliminations.<br />
+Pour les fonds symboliques, au moment du calcul périodique des fonds symboliques de la base, les AU, GOT et OT éliminés seront décomptés et la volumétrie sera mise à jour. Depuis la notice du service agent, l’utilisateur peut accéder à l’historique des rattachements et consulter sur une période donnée les variations à la hausse ou à la baisse des fonds symboliques pour ce producteur.</p>
+<p><strong>Point d’attention :</strong> le calcul des AU, GOT et OT rattachés à un producteur au titre de son fonds symbolique n’est effectué qu’une fois par vingt-quatre heures (sauf paramétrage différent de la plate-forme). Dans ces conditions, si sur la même période de vingt-quatre heures l’archiviste effectue un ingest pour 3 AU et une élimination pour 3 AU, le total des symboliques entre deux calculs n’aura pas évolué.</p>
+</section>
+<section id="id3">
+<h3><span class="section-number">15.4.6. </span>Préservation des identifiants pérennes<a class="headerlink" href="#id3" title="Lien vers cette rubrique"></a></h3>
+<p>Si la plate-forme a été configurée pour conserver les identifiants pérennes qui référencent des unités archivistiques et/ou des objets éliminés, les opérations d’élimination donneront lieu à l’enregistrement d’informations liés à l’élément éliminé dans la collection PurgedPersistentIdentifier disponible dans la base Metadata.</p>
+<p>Les informations enregistrées sont les suivantes :</p>
+<ul class="simple">
+<li><p>informations relatives à l’identification pérenne,</p></li>
+<li><p>le type d’objet éliminé (unité archivistique ou objet technique),</p></li>
+<li><p>l’identifiant du groupe d’objets techniques éliminé si l’objet identifié est un objet technique,</p></li>
+<li><p>le type d’opération ayant entrainé la suppression (dans ce cas précis, l’élimination), son identifiant et sa date.</p></li>
+</ul>
+<section id="exemple-de-json-stocke-en-base-comprenant-lexhaustivite-des-champs">
+<h4><span class="section-number">15.4.6.1. </span>Exemple de JSON stocké en base comprenant l’exhaustivité des champs<a class="headerlink" href="#exemple-de-json-stocke-en-base-comprenant-lexhaustivite-des-champs" title="Lien vers cette rubrique"></a></h4>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="err">_id</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;aeaqaaaaaeeci</span><span class="mi">65</span><span class="err">iabqykam</span><span class="kc">n</span><span class="err">y</span><span class="mi">5</span><span class="err">hmb</span><span class="mi">5</span><span class="err">yaaaba&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="err">persis</span><span class="kc">tent</span><span class="err">Ide</span><span class="kc">nt</span><span class="err">i</span><span class="kc">f</span><span class="err">ier</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="err">Persis</span><span class="kc">tent</span><span class="err">Ide</span><span class="kc">nt</span><span class="err">i</span><span class="kc">f</span><span class="err">ierType</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;doi&#39;</span><span class="p">,</span>
+<span class="w">            </span><span class="err">Persis</span><span class="kc">tent</span><span class="err">Ide</span><span class="kc">nt</span><span class="err">i</span><span class="kc">f</span><span class="err">ierOrigi</span><span class="kc">n</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;Origi</span><span class="kc">nat</span><span class="err">i</span><span class="kc">n</span><span class="err">gAge</span><span class="kc">n</span><span class="err">cy&#39;</span><span class="p">,</span>
+<span class="w">            </span><span class="err">Persis</span><span class="kc">tent</span><span class="err">Ide</span><span class="kc">nt</span><span class="err">i</span><span class="kc">f</span><span class="err">ierRe</span><span class="kc">feren</span><span class="err">ce</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;Ide</span><span class="kc">nt</span><span class="err">i</span><span class="kc">f</span><span class="err">ier</span><span class="mi">0</span><span class="err">&#39;</span><span class="p">,</span>
+<span class="w">            </span><span class="err">Persis</span><span class="kc">tent</span><span class="err">Ide</span><span class="kc">nt</span><span class="err">i</span><span class="kc">f</span><span class="err">ierCo</span><span class="kc">ntent</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;doi</span><span class="p">:</span><span class="mf">10.1522</span><span class="err">/cla.ada.co</span><span class="kc">n</span><span class="err">&#39;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="err">_</span><span class="kc">tenant</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="err">_v</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="kc">t</span><span class="err">ype</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;U</span><span class="kc">n</span><span class="err">i</span><span class="kc">t</span><span class="err">&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="err">idObjec</span><span class="kc">t</span><span class="err">Group</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;aebaaaaaaeeci</span><span class="mi">65</span><span class="err">iabqykam</span><span class="kc">n</span><span class="err">y</span><span class="mi">5</span><span class="err">hmb</span><span class="mi">2</span><span class="err">qaaaaq&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="err">archivalAge</span><span class="kc">n</span><span class="err">cyIde</span><span class="kc">nt</span><span class="err">i</span><span class="kc">f</span><span class="err">ier</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">    </span><span class="err">opId</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;aeeaaaaaageci</span><span class="mi">65</span><span class="err">iabusuam</span><span class="kc">n</span><span class="err">y</span><span class="mi">5</span><span class="err">hvvkiaaaaq&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="err">opType</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;ELIMINATION_ACTION&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="err">opE</span><span class="kc">n</span><span class="err">dDa</span><span class="kc">te</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="mi">2024-02-20</span><span class="err">T</span><span class="mi">16</span><span class="p">:</span><span class="mi">18</span><span class="p">:</span><span class="mf">05.961</span><span class="err">&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="err">las</span><span class="kc">t</span><span class="err">Persis</span><span class="kc">tent</span><span class="err">Da</span><span class="kc">te</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="mi">2024-02-20</span><span class="err">T</span><span class="mi">16</span><span class="p">:</span><span class="mi">30</span><span class="p">:</span><span class="mf">00.210</span><span class="err">&#39;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Point d’attention :</strong> L’enregistrement de ces informations ne suit pas immédiatement l’opération d’élimination. Il se fait suivant une fréquence déterminée à l’avance dans un fichier de configuration.</p>
+<p>Il est ainsi possible d’effectuer une recherche sur un identifiant pérenne dont l’archives a été éliminé et de constater que l’archive n’est plus disponible pour cause d’élimination. Cette recherche peut s’opérer au moyen des API ou depuis d’APP « Recherche, consultation et gestion des archives » de VitamUI.</p>
+</section>
+</section>
+</section>
+<section id="conseils-de-mise-en-oeuvre">
+<h2><span class="section-number">15.5. </span>Conseils de mise en œuvre<a class="headerlink" href="#conseils-de-mise-en-oeuvre" title="Lien vers cette rubrique"></a></h2>
+<p>À l’issue de la réalisation de fonctionnalités concernant l’élimination des archives, l’équipe projet Vitam est en mesure de fournir quelques recommandations de mise en œuvre.</p>
+<section id="comment-proceder-a-une-elimination">
+<h3><span class="section-number">15.5.1. </span>Comment procéder à une élimination ?<a class="headerlink" href="#comment-proceder-a-une-elimination" title="Lien vers cette rubrique"></a></h3>
+<p>En vue de procéder à une élimination, on peut suivre les étapes suivantes :
+<img alt="Etapes d'une élimination" src="../_images/etapes_eliminations.png" /></p>
+<p>Avant toute chose, pour pouvoir éliminer des archives, celles-ci doivent déclarer ou hériter d’une durée d’utilité administrative, sans quoi la solution logicielle Vitam considérera ces archives comme non éliminables et ne les intégrera pas dans ses opérations d’analyse et d’action d’élimination.</p>
+<section id="rechercher-des-archives-a-eliminer">
+<h4><span class="section-number">15.5.1.1. </span>Rechercher des archives à éliminer<a class="headerlink" href="#rechercher-des-archives-a-eliminer" title="Lien vers cette rubrique"></a></h4>
+<p>En préalable de l’élimination, il est recommandé de rechercher les archives candidates à l’élimination au moyen des règles de gestion qui leur ont été affectées, en utilisant notamment une recherche sur les règles de gestion calculées (ComputedInheritedRules). Par exemple, il s’agit de :</p>
+<ul class="simple">
+<li><p>rechercher et d’isoler les seules archives dont le sort final est égal à « DESTROY »,</p></li>
+<li><p>rechercher et d’isoler les seules archives dont la date de fin ou la date de fin maximale est arrivée à échéance.
+Lors de cette recherche, il est également fortement conseillé de :</p></li>
+<li><p>vérifier si ces archives candidates à l’élimination :</p>
+<ul>
+<li><p>héritent et/ou portent des règles ou sorts finaux contradictoires,</p></li>
+<li><p>héritent et/ou portent une ou plusieurs règles de gel,</p></li>
+</ul>
+</li>
+<li><p>le cas échéant, modifier ces règles, de manière à rendre véritablement éliminables ces archives ou à les exclure de la sélection d’archives à éliminer.</p></li>
+</ul>
+<p>Cette phase peut être réalisée depuis l’APP VitamUI « Recherche et consultation des archives » qui dispose de filtres de recherche sur la DUA.</p>
+</section>
+<section id="analyser-des-archives-a-eliminer">
+<h4><span class="section-number">15.5.1.2. </span>Analyser des archives à éliminer<a class="headerlink" href="#analyser-des-archives-a-eliminer" title="Lien vers cette rubrique"></a></h4>
+<p>Une fois un lot cohérent d’archives à éliminer constitué, il est possible de lancer une opération d’analyse. Cette opération permet de vérifier si des conflits demeurent et, le cas échéant, de les corriger.<br />
+Elle permet aussi de rassembler un lot d’archives autour d’un identifiant unique d’opération, rendant ainsi possible de rechercher a posteriori les archives analysées au moyen de cet identifiant technique.<br />
+De ce lot, on peut réaliser soit un export DIP, soit un export CSV, deux services proposés notamment par l’IHM VitamUI, en vue de réaliser un bordereau de demande d’élimination à soumettre au service producteur concerné.<br />
+<strong>Point d’attention :</strong> Il n’est pas recommandé de :</p>
+<ul class="simple">
+<li><p>réaliser un grand nombre d’opérations d’analyse sur un même lot d’archives. C’est pourquoi, il est recommandé d’avoir au préalable bien vérifier le caractère éliminable des archives au moyen des services de recherche ;</p></li>
+<li><p>réaliser une opération d’analyse sur un trop grand nombre d’unités archivistiques. Il est en effet recommandé d’avoir un seuil maximal de 100 000 unités archivistiques parcourues lors de cette phase.</p></li>
+</ul>
+</section>
+<section id="eliminer-des-archives">
+<h4><span class="section-number">15.5.1.3. </span>Éliminer des archives<a class="headerlink" href="#eliminer-des-archives" title="Lien vers cette rubrique"></a></h4>
+<p>Suite à la validation du bordereau d’élimination, il est possible de retrouver les archives candidates à l’élimination au moyen de l’identifiant de l’opération d’analyse. Cette action est possible dans VitamUI, depuis l’APP « Recherche et consultation des archives », via l’onglet des filtres de recherche sur la DUA.<br />
+<strong>Point d’attention :</strong> la solution logicielle Vitam ne met pas à disposition le résultat de l’analyse, unité archivistique par unité archivistique, sous la forme d’un rapport JSONL, disponible dans le journal des opérations.<br />
+Si des archives, faisant partie du lot analysé, doivent être exclues de l’élimination, il est toujours possible de les retirer de la sélection. Une fois le lot à éliminer finalisé, il est possible de lancer l’opération d’action d’élimination. Celle-ci aboutit aux statuts suivants :</p>
+<ul class="simple">
+<li><p>succès : toutes les archives ont été éliminées ;</p></li>
+<li><p>avertissement : une partie des archives n’a pas été éliminée. Il s’agit alors de :</p>
+<ul>
+<li><p>consulter le rapport d’élimination qui liste les unités archivistiques n’ayant pas été éliminées et les raisons associées,</p></li>
+<li><p>corriger les cas d’erreur remontés, en modifiant notamment les potentiels conflits liés aux règles de gestion,</p></li>
+<li><p>procéder à une nouvelle opération d’action d’élimination.</p></li>
+</ul>
+</li>
+</ul>
+<p>Cette opération d’élimination produit un rapport sous forme JSON, disponible depuis le journal des opérations.<br />
+<strong>Point d’attention :</strong> Il n’est pas recommandé de réaliser une opération d’analyse sur un trop grand nombre d’unités archivistiques. Il est en effet recommandé d’avoir un seuil maximal de 10 000 unités archivistiques parcourues lors de cette phase.</p>
+</section>
+</section>
+<section id="comment-supprimer-des-archives-entrees-par-erreur-dans-le-systeme">
+<h3><span class="section-number">15.5.2. </span>Comment supprimer des archives entrées par erreur dans le système ?<a class="headerlink" href="#comment-supprimer-des-archives-entrees-par-erreur-dans-le-systeme" title="Lien vers cette rubrique"></a></h3>
+<p>Il peut arriver qu’un paquet d’archives soit entré par erreur dans le système ou nécessite des corrections hors système. Il faut alors supprimer ces archives, avant, le cas échéant, de les transférer à nouveau dans la solution logicielle Vitam.</p>
+<section id="pour-des-unites-de-type-standard-et-plan-de-classement">
+<h4><span class="section-number">15.5.2.1. </span>Pour des unités de type « Standard » et « Plan de classement »<a class="headerlink" href="#pour-des-unites-de-type-standard-et-plan-de-classement" title="Lien vers cette rubrique"></a></h4>
+<p>Avant toute procédure de suppression, le référentiel des règles de gestion doit disposer en prérequis d’une règle de type « AppraisalRule », avec pour caractéristiques :</p>
+<ul class="simple">
+<li><p>RuleType : AppraisalRule,</p></li>
+<li><p>RuleDuration : 0</p></li>
+<li><p>RuleMeasurement : YEAR
+Il est recommandé d’avoir une règle spécifique pour gérer ces cas de suppression suite à une erreur.
+Ensuite, il est recommandé de procéder comme suit :</p></li>
+<li><p>mettre à jour en masse des règles de gestion qui :</p>
+<ul>
+<li><p>supprime toutes les règles de gestion de type « AppraisalRule » portées par les unités archivistiques en erreur,</p></li>
+<li><p>ajoute la règle de type « AppraisalRule » spécifique à la suppression d’éléments en erreur ;</p></li>
+</ul>
+</li>
+<li><p>calculer les échéances de manière à obtenir l’éliminabilité des archives ;</p></li>
+<li><p>procéder à l’action d’élimination.</p></li>
+</ul>
+</section>
+<section id="pour-des-unites-archivistiques-de-type-arbre-de-positionnement">
+<h4><span class="section-number">15.5.2.2. </span>Pour des unités archivistiques de type « Arbre de positionnement »<a class="headerlink" href="#pour-des-unites-archivistiques-de-type-arbre-de-positionnement" title="Lien vers cette rubrique"></a></h4>
+<p>Avant toute procédure de suppression d’une unité de type « Arbre de positionnement », il faut veiller à déplacer vers un autre niveau de description les unités archivistiques qui lui sont associées à des niveaux inférieurs.</p>
+<p><strong>Point d’attention :</strong> Contrairement aux unités archivistiques de type « Standard » et « Plan de classement », une unité archivistique de type « Arbre de positionnement » ne dispose pas de règles de gestion. Il est de fait possible de traiter ce type d’unité archivistique via les opérations d’analyse et d’action d’élimination sans lui avoir au préalable ajouté des règles de gestion.</p>
+<p>Il est ensuite possible de procéder à l’action d’élimination. Le seul contrôle effectué par cette opération est la vérification de l’absence d’unités archivistiques de niveau inférieur à l’unité qu’on souhaite supprimer.</p>
+</section>
+</section>
+<section id="quelles-sont-les-limitations-pour-les-operations-danalyse-et-daction-delimination">
+<h3><span class="section-number">15.5.3. </span>Quelles sont les limitations pour les opérations d’analyse et d’action d’élimination ?<a class="headerlink" href="#quelles-sont-les-limitations-pour-les-operations-danalyse-et-daction-delimination" title="Lien vers cette rubrique"></a></h3>
+<section id="definition-des-seuils">
+<h4><span class="section-number">15.5.3.1. </span>Définition des seuils<a class="headerlink" href="#definition-des-seuils" title="Lien vers cette rubrique"></a></h4>
+<p>La solution logicielle Vitam propose deux moyens de limiter le nombre d’unités archivistiques lors des phases d’analyse et d’action d’élimination :</p>
+<ul class="simple">
+<li><p>un seuil de requête,</p></li>
+<li><p>un seuil de plate-forme.</p></li>
+</ul>
+<p>Les seuils de plate-forme sont définis dans un fichier de configuration. Par défaut, ils sont paramétrés comme suit :</p>
+<ul class="simple">
+<li><p>100 000 unités archivistiques parcourues lors de la phase d’analyse d’élimination ;</p></li>
+<li><p>10 000 unités archivistiques parcourues lors de la phase d’action d’élimination.</p></li>
+</ul>
+<p>Le seuil de requête est facultatif. S’il est présent, son chiffre est :</p>
+<ul class="simple">
+<li><p>soit écrit en dur dans la requête envoyée par le front-office au back-office,</p></li>
+<li><p>soit paramétrable, comme cela est le cas dans l’IHM VitamUI, où il est possible, depuis l’APP « ProfilsAPP Paramétrages externes », de :</p>
+<ul>
+<li><p>se conformer aux seuils de plate-forme, dont ceux relatifs à l’analyse et à l’action d’élimination ;</p></li>
+<li><p>sélectionner un seuil de 100, 10 000, 100 000, 1 000 000,  10 000 000.
+<img alt="VitamUI_seuils" src="../_images/seuil_Vitam_UI.png" /></p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Point d’attention :</strong></p>
+<ul class="simple">
+<li><p>Il est recommandé d’avoir un seuil maximal de :</p>
+<ul>
+<li><p>100 000 unités archivistiques parcourues lors de la phase d’analyse d’élimination ;</p></li>
+<li><p>10 000 unités archivistiques parcourues lors de la phase d’action d’élimination.</p></li>
+</ul>
+</li>
+<li><p>Dans un projet d’implémentation de la solution logicielle Vitam, il est fortement conseillé de connaître les limitations qui ont été définies au niveau du front-office, au moment où il envoie une demande d’analyse ou d’action d’élimination au front-office.</p></li>
+</ul>
+</section>
+<section id="fonctionnement-des-seuils">
+<h4><span class="section-number">15.5.3.2. </span>Fonctionnement des seuils<a class="headerlink" href="#fonctionnement-des-seuils" title="Lien vers cette rubrique"></a></h4>
+<p>Les seuils mis à disposition par la solution logicielle Vitam fonctionne de la manière suivante :</p>
+<ul class="simple">
+<li><p>si un seuil a été défini dans la requête :</p>
+<ul>
+<li><p>si le nombre d’unités archivistiques sélectionnées est supérieur au seuil de requête, alors le traitement est en erreur et l’opération est interrompue ;</p></li>
+<li><p>si le nombre d’unités sélectionnées est inférieur ou égal au seuil de requête, le traitement est en succès ;</p></li>
+</ul>
+</li>
+<li><p>si un seuil de plate-forme a été défini :</p>
+<ul>
+<li><p>si le nombre d’unités archivistiques sélectionnées est inférieur ou égal au seuil de plate-forme alors l’opération est lancée et aura un statut en succès en cas de réussite ;</p></li>
+<li><p>sinon elle est lancée mais aura un statut en avertissement ;</p></li>
+</ul>
+</li>
+<li><p>si aucun seuil n’a été défini dans la requête, le seuil de plate-forme s’applique :</p>
+<ul>
+<li><p>si le nombre d’unités archivistiques sélectionnées est inférieur ou égal au seuil de plate-forme alors l’opération est lancée et aura un statut en succès en cas de réussite</p></li>
+<li><p>sinon elle est lancée mais aura un statut en erreur.</p></li>
+</ul>
+</li>
+</ul>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id4" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Des précisions sur les seuils sont apportées dans le présent document, <a class="reference external" href="https://www.programmevitam.fr/vitam-doc/fr/master/sections/eliminations.html#quelles-sont-les-limitations-pour-les-operations-danalyse-et-daction-delimination">chapitre « Quelles sont les limitations pour les opérations d’analyse et d’action d’élimination ? »</a>.</p>
+</aside>
+<aside class="footnote brackets" id="id5" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>Des précisions sur les seuils sont apportées dans le présent document, <a class="reference external" href="https://www.programmevitam.fr/vitam-doc/fr/master/sections/eliminations.html#quelles-sont-les-limitations-pour-les-operations-danalyse-et-daction-delimination">chapitre « Quelles sont les limitations pour les opérations d’analyse et d’action d’élimination ? »</a>.</p>
+</aside>
+</aside>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="module_de_collecte.html" class="btn btn-neutral float-left" title="14. Module de collecte" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="gel.html" class="btn btn-neutral float-right" title="16. Le gel d’archives avec la solution logicielle Vitam" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2022, Programme Vitam.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: master_8.1.x
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Branches</dt>
+      <dd><a href="../../master/sections/eliminations.html">master</a></dd>
+      <dd><a href="../../master_7.1.x/sections/eliminations.html">master_7.1.x</a></dd>
+      <dd><a href="eliminations.html">master_8.1.x</a></dd>
+      <dd><a href="../../v8.1_Resip_mathilde/sections/eliminations.html">v8.1_Resip_mathilde</a></dd>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1068,29 +1068,29 @@
 </ul>
 <p>Un « traitement » désigne ci-dessous une opération, une étape ou une tâche. Chaque traitement peut avoir à son issue un des statuts suivant :</p>
 <ul class="simple">
-<li><p>OK : le traitement s’est déroulé comme attendu et le système a été modifié en conséquence.</p></li>
-<li><p>Warning : le traitement a atteint son objectif mais le système émet une réserve. Soit :</p>
+<li><p><strong>OK</strong> : le traitement s’est déroulé comme attendu et le système a été modifié en conséquence.</p></li>
+<li><p><strong>Warning</strong> : le traitement a atteint son objectif mais le système émet une réserve. Soit :</p>
 <ul>
 <li><p>Le système suspecte une anomalie lors du déroulement du traitement sans pouvoir le confirmer lui-même et lève une alerte à destination de l’utilisateur afin que celui-ci puisse valider qu’il s’agit du comportement souhaité.<br>
-Exemple : un SIP versé sans objet provoque une opération en warning, car le fait de ne verser qu’une arborescence d’unités archivistiques sans aucun objet peut être suspect (au sens métier).</p></li>
+<em>Exemple :</em> un SIP versé sans objet provoque une opération en warning, car le fait de ne verser qu’une arborescence d’unités archivistiques sans aucun objet peut être suspect (au sens métier).</p></li>
 <li><p>Le système a effectué un traitement entraînant une modification de données initialement non prévue par l’utilisateur.<br>
-Exemple : la solution logicielle Vitam a détecté un format de fichier en contradiction avec le format décrit dans le bordereau de transfert. Elle enregistre alors ses propres valeurs en base de données au lieu de prendre celles du bordereau et utilise le warning pour en avertir l’utilisateur.</p></li>
+<em>Exemple :</em> la solution logicielle Vitam a détecté un format de fichier en contradiction avec le format décrit dans le bordereau de transfert. Elle enregistre alors ses propres valeurs en base de données au lieu de prendre celles du bordereau et utilise le warning pour en avertir l’utilisateur.</p></li>
 <li><p>Le système a effectué un traitement dont seule une partie a entraîné une modification de données. L’autre partie de ce traitement s’est terminée en échec sans modification (KO).<br>
-Exemple : une modification de métadonnées en masse d’unités archivistiques dont une partie de la modification est OK et une partie est KO : le statut de l’étape et de l’opération sera Warning.</p></li>
+<em>Exemple :</em> une modification de métadonnées en masse d’unités archivistiques dont une partie de la modification est OK et une partie est KO : le statut de l’étape et de l’opération sera Warning.</p></li>
 </ul>
 </li>
-<li><p>KO : le traitement s’est terminé en échec et le système n’a pas été modifié en dehors des éléments de traçabilités tels que les journaux et les logs. L’intégralité du traitement pourrait être rejouée sans provoquer l’insertion de doublons.</p></li>
-<li><p>Fatal : le traitement s’est terminé en échec a cause d’un problème technique. L’état du système dépend de la nature du traitement en fatal et une intervention humaine est requise pour expertiser et résoudre la situation. Lorsque le statut FATAL survient à l’intérieur d’une étape (par exemple dans une des tâches ou une des actions de l’étape), c’est toute l’étape qui est mise en pause. Si cette étape est rejouée, les objets déjà traités avant le problème technique ne sont pas traités à nouveau : le workflow reprend exactement là où il s’était arrêté et commence par rejouer l’action sur l’objet qui a provoqué l’erreur.</p></li>
+<li><p><strong>KO</strong> : le traitement s’est terminé en échec et le système n’a pas été modifié en dehors des éléments de traçabilités tels que les journaux et les logs. L’intégralité du traitement pourrait être rejouée sans provoquer l’insertion de doublons.</p></li>
+<li><p><strong>Fatal</strong> : le traitement s’est terminé en échec a cause d’un problème technique. L’état du système dépend de la nature du traitement en fatal et une intervention humaine est requise pour expertiser et résoudre la situation. Lorsque le statut FATAL survient à l’intérieur d’une étape (par exemple dans une des tâches ou une des actions de l’étape), c’est toute l’étape qui est mise en pause. Si cette étape est rejouée, les objets déjà traités avant le problème technique ne sont pas traités à nouveau : le workflow reprend exactement là où il s’était arrêté et commence par rejouer l’action sur l’objet qui a provoqué l’erreur.</p></li>
 </ul>
 <p>Un workflow peut être terminé, en cours d’exécution ou être en pause. Un workflow en pause représente le processus arrêté à une étape donnée. Chaque étape peut être mise en pause : ce choix dépend du mode de versement (le mode pas à pas marque une pause à chaque étape), ou du statut (le statut FATAL met l’étape en pause). Les workflows en pause sont visibles dans l’IHM dans l’écran « Gestion des opérations ».</p>
 <p>Chaque action peut avoir les modèles d’exécutions suivants (toutes les étapes sont par défaut bloquantes) :</p>
 <ul class="simple">
-<li><p>Bloquant</p>
+<li><p><strong>Bloquant</strong></p>
 <ul>
 <li><p>Si une action bloquante est identifiée en erreur, le workflow est alors arrêté en erreur. Seules les actions nécessaires à l’arrêt du workflow sont alors exécutées.</p></li>
 </ul>
 </li>
-<li><p>Non bloquant</p>
+<li><p><strong>Non bloquant</strong></p>
 <ul>
 <li><p>Si une action non bloquante est identifiée en erreur, elle seule sera en erreur et le workflow continuera normalement.</p></li>
 </ul>
@@ -2356,7 +2356,8 @@ Les données suivantes, optionnelles, si elles sont remplies, le sont en respect
 </ul>
 </li>
 <li><p><strong>Type</strong> : bloquant</p></li>
-<li><p><strong>Statuts</strong> :</p></li>
+<li><p><strong>Statuts</strong> :</p>
+<ul>
 <li><p>OK : les règles ci-dessus sont respectées (IMPORT_ARCHIVEUNITPROFILE.OK = Succès du processus d’import du profil d’unité archivistique)</p></li>
 <li><p>KO :</p>
 <ul>
@@ -2367,6 +2368,8 @@ Les données suivantes, optionnelles, si elles sont remplies, le sont en respect
 </ul>
 </li>
 <li><p>FATAL : une erreur technique est survenue lors de la vérification de l’import du profil d’unité archivistique (document type) (IMPORT_ARCHIVEUNITPROFILE.FATAL = Erreur technique lors du processus d’import du profil d’unité archivistique (document type)</p></li>
+</ul>
+</li>
 </ul>
 <section id="sauvegarde-du-json-stp-backup-archiveunitprofile-archiveunitprofilemanager-java">
 <h5><span class="section-number">13.3.11.1.1. </span>Sauvegarde du JSON STP_BACKUP_ARCHIVEUNITPROFILE (ArchiveUnitProfileManager.java)<a class="headerlink" href="#sauvegarde-du-json-stp-backup-archiveunitprofile-archiveunitprofilemanager-java" title="Lien vers cette rubrique"></a></h5>
@@ -2567,9 +2570,9 @@ L’ontologie répond aux exigences suivantes :</p>
 </li>
 <li><p>« deteledOntologies » : liste des vocabulaires supprimés</p></li>
 <li><p>« updatedOntologies » : liste des vocabulaires mis à jour</p></li>
-<li><p>« createdOntologies » : liste des vocabulaires ajoutés
-Exemple :</p></li>
+<li><p>« createdOntologies » : liste des vocabulaires ajoutés</p></li>
 </ul>
+<p><em>Exemple :</em></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 	<span class="s2">&quot;Operation&quot;</span><span class="p">:</span> <span class="p">{</span>
 		<span class="s2">&quot;evType&quot;</span><span class="p">:</span> <span class="s2">&quot;IMPORT_ONTOLOGY&quot;</span><span class="p">,</span>
@@ -2666,9 +2669,9 @@ Les données suivantes sont obligatoirement remplies :</p>
 <li><p>« RemovedIdentifiers » : la liste des griffons qui ont été supprimés ;</p></li>
 <li><p>« AddedIdentifiers » : la liste des griffons qui ont été ajoutés ;</p></li>
 <li><p>« UpdatedIdentifiers » : la liste des griffons qui ont été mis à jour ;</p></li>
-<li><p>« Warnings » : les messages d’avertissement.
-<em>Exemple :</em></p></li>
+<li><p>« Warnings » : les messages d’avertissement.</p></li>
 </ul>
+<p><em>Exemple :</em></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>  <span class="s2">&quot;Operation&quot;</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;evType&quot;</span> <span class="p">:</span> <span class="s2">&quot;IMPORT_GRIFFIN&quot;</span><span class="p">,</span><span class="s2">&quot;evDateTime&quot;</span> <span class="p">:</span> <span class="s2">&quot;2019-01-30T12:58:05.176&quot;</span><span class="p">,</span><span class="s2">&quot;evId&quot;</span> <span class="p">:</span> <span class="s2">&quot;aeeaaaaaaghfj4pcabeloalit3lip3yaaaaq&quot;</span><span class="p">},</span>
   <span class="s2">&quot;StatusCode&quot;</span> <span class="p">:</span> <span class="s2">&quot;WARNING&quot;</span><span class="p">,</span>
   <span class="s2">&quot;PreviousGriffinsVersion&quot;</span> <span class="p">:</span> <span class="s2">&quot;V1&quot;</span><span class="p">,</span>
@@ -2799,9 +2802,9 @@ Les données suivantes sont obligatoirement remplies :</p>
 <li><p>« RemovedIdentifiers » : la liste des scénarios qui ont été supprimés ;</p></li>
 <li><p>« AddedIdentifiers » : la liste des scénarios qui ont été ajoutés ;</p></li>
 <li><p>« UpdatedIdentifiers » : la liste des scénarios qui ont été mis à jour ;</p></li>
-<li><p>« Warnings » : les messages d’avertissement.
-<em>Exemple :</em></p></li>
+<li><p>« Warnings » : les messages d’avertissement.</p></li>
 </ul>
+<p><em>Exemple :</em></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>  <span class="s2">&quot;Operation&quot;</span> <span class="p">:</span> <span class="p">{</span><span class="s2">&quot;evType&quot;</span> <span class="p">:</span> <span class="s2">&quot;IMPORT_GRIFFIN&quot;</span><span class="p">,</span><span class="s2">&quot;evDateTime&quot;</span> <span class="p">:</span> <span class="s2">&quot;2019-01-30T12:58:05.176&quot;</span><span class="p">,</span><span class="s2">&quot;evId&quot;</span> <span class="p">:</span> <span class="s2">&quot;aeeaaaaaaghfj4pcabeloalit3lip3yaaaaq&quot;</span><span class="p">},</span>
   <span class="s2">&quot;StatusCode&quot;</span> <span class="p">:</span> <span class="s2">&quot;WARNING&quot;</span><span class="p">,</span>
   <span class="s2">&quot;PreviousScenariosCreationDate&quot;</span> <span class="p">:</span> <span class="s2">&quot;2019-01-30T12:58:05.377&quot;</span><span class="p">,</span>
@@ -3303,7 +3306,7 @@ La tâche Check_DataObjectPackage contient les traitements suivants :</p></li>
 <li><p>vignette (Thumbnail),</p></li>
 <li><p>contenu brut (TextContent).
 Les numéros de versions sont optionnels, il s’agit d’un entier positif ou nul (0, 1, 2…).
-La grammaire est : « usage_version ». Exemples : « BinaryMaster_2 », « TextContent_10 » ou sans numéro de versions « PhysicalMaster ».</p></li>
+La grammaire est : « usage_version ». <em>Exemples :</em> « BinaryMaster_2 », « TextContent_10 » ou sans numéro de versions « PhysicalMaster ».</p></li>
 </ul>
 </li>
 <li><p><strong>Type</strong> : bloquant</p></li>
@@ -6915,7 +6918,7 @@ Cette tache contient les traitements suivants :</p></li>
 <section id="audit-de-la-verification-des-journaux-securises-linked-check-securisation">
 <h4><span class="section-number">13.15.2.5. </span>Audit de la vérification des journaux sécurisés (LINKED_CHECK_SECURISATION)<a class="headerlink" href="#audit-de-la-verification-des-journaux-securises-linked-check-securisation" title="Lien vers cette rubrique"></a></h4>
 <ul class="simple">
-<li><p><strong>Règle</strong> : Affichage du résultat du workflow d’audit des sécurisations dans l’IHM démo</p></li>
+<li><p><strong>Règle</strong> : Affichage du résultat du workflow d’audit des sécurisations dans l’IHM</p></li>
 <li><p><strong>Type</strong> : N/A</p></li>
 <li><p><strong>Statuts</strong> :</p>
 <ul>
@@ -8572,11 +8575,8 @@ Cette section décrit la manière dont ce rapport est structuré.</p>
       <dt>Branches</dt>
       <dd><a href="modele_de_workflow.html">master</a></dd>
       <dd><a href="../../master_7.1.x/sections/modele_de_workflow.html">master_7.1.x</a></dd>
-      <dd><a href="../../master_8.0.x/sections/modele_de_workflow.html">master_8.0.x</a></dd>
+      <dd><a href="../../master_8.1.x/sections/modele_de_workflow.html">master_8.1.x</a></dd>
       <dd><a href="../../v8.1_Resip_mathilde/sections/modele_de_workflow.html">v8.1_Resip_mathilde</a></dd>
-      <dd><a href="../../v81_preservation/sections/modele_de_workflow.html">v81_preservation</a></dd>
-      <dd><a href="../../v81_valeur_probante/sections/modele_de_workflow.html">v81_valeur_probante</a></dd>
-      <dd><a href="../../v81_workflow/sections/modele_de_workflow.html">v81_workflow</a></dd>
     </dl>
   </div>
 </div><script>

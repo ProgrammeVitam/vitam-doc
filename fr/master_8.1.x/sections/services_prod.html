@@ -1,0 +1,1412 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>8. Services producteurs &mdash; Vitam documentation fonctionnelle</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=eea1f72d" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f4732e6d"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/translations.js?v=bf059b8c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="9. Profils d’archivage" href="profil_archivage.html" />
+    <link rel="prev" title="7. Règles de gestion" href="regles_gestion.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: white" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/Vitam_Logo-CMJN.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">première approche</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="guide_lecture.html">1. Documentation Vitam - guide de lecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="presentation_programme.html">2. Présentation du programme Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="presentation_solution_logicielle.html">3. Présentation de la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_prise_en_main.html">4. Guide de prise en main de la solution logicielle Vitam – Vitam UI<br>
+<em>Réaliser une première entrée</em></a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">documentation métier</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="organisation_information.html">1. Organisation de l’information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gestion_archives_arbo.html">2. Gestion des archives et des arborescences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_donnees.html">3. Modèle de données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SIP.html">4. Structuration des <em>Submission Information Packages</em> (SIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DIP.html">5. Structuration des <em>Dissemination Information Packages</em> (DIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gestion_habilitations.html">6. Gestion des habilitations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regles_gestion.html">7. Règles de gestion</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">8. Services producteurs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">8.1. Introduction</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#documents-de-reference">8.1.1. Documents de référence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#presentation-du-document">8.1.2. Présentation du document</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#presentation-de-la-notion-de-service-producteur">8.2. Présentation de la notion de service producteur</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#description-de-la-notion-de-service-producteur">8.2.1. Description de la notion de service producteur</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#formalisation-de-la-notion-de-service-producteur-dans-le-seda">8.2.2. Formalisation de la notion de service producteur dans le SEDA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#extension-du-schema-seda-pour-prendre-en-compte-la-notion-de-service-producteur">8.2.3. Extension du schéma SEDA pour prendre en compte la notion de service producteur</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#mecanismes-mis-en-oeuvre-dans-la-solution-logicielle-vitam">8.3. Mécanismes mis en œuvre dans la solution logicielle Vitam</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#import-dun-referentiel-des-services-agents">8.3.1. Import d’un référentiel des services agents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#acces-au-referentiel">8.3.1.1. Accès au référentiel</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#entrees">8.3.2. Entrées</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#registre-des-fonds">8.3.3. Registre des fonds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#acces">8.3.4. Accès</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#recherche">8.3.4.1. Recherche</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#filtrage-des-resultats-au-moyen-des-contrats-dacces">8.3.4.2. Filtrage des résultats au moyen des contrats d’accès</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#conseils-de-mise-en-oeuvre">8.4. Conseils de mise en œuvre</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#comment-decouper-ses-sip">8.4.1. Comment découper ses SIP ?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#comment-gerer-les-droits-dacces-a-la-solution-logicielle-vitam">8.4.2. Comment gérer les droits d’accès à la solution logicielle Vitam ?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#comment-gerer-les-droits-dacces-au-referentiel-des-services-agents">8.4.3. Comment gérer les droits d’accès au référentiel des services agents ?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#annexes">8.5. Annexes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#annexe-preparer-un-fichier-csv">8.5.1. Annexe : préparer un fichier CSV</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#caracteristiques-dun-fichier-csv">8.5.1.1. Caractéristiques d’un fichier CSV</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#recommandations">8.5.1.2. Recommandations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#gestion-dun-fichier-au-format-csv">8.5.1.3. Gestion d’un fichier au format CSV</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#conversion-dun-fichier-au-format-csv">8.5.1.3.1. Conversion d’un fichier au format CSV</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#modification-dun-fichier-au-format-csv">8.5.1.3.2. Modification d’un fichier au format CSV</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#exemples-de-fichier-csv-et-messages-retournes-par-la-solution-logicielle-vitam">8.5.1.3.3. Exemples de fichier CSV et messages retournés par la solution logicielle Vitam</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="profil_archivage.html">9. Profils d’archivage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_unite_archivistique.html">10. Profils d’unité archivistique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ontologie.html">11. Ontologie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="schema.html">12. Schéma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_workflow.html">13. Description des workflows et des opérations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_de_collecte.html">14. Module de collecte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eliminations.html">15. Les éliminations avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gel.html">16. Le gel d’archives avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preservation.html">17. Gestion de la préservation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stockage.html">18. Gestion de multiples stratégies de stockage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transfert.html">19. Le transfert avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="valeur_probante.html">20. Conservation de la valeur probante</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">documentation Vitam UI</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Autoprovisionning.html">1. Vitam UI : présentation de la fonctionnalité d’auto-provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Arbres_Plans.html">2. APP Arbres et plans</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">outils connexes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="resip.html">1. RESIP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resip_faq.html">2. RESIP : foire aux questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pastis_standalone.html">3. PASTIS STANDALONE</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Chantier préservation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="chantier_preservation_validation_format.html">1. Validation du format des fichiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_identification_format.html">2. Identification des formats de fichiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_extraction_MD.html">3. Extraction des métadonnées techniques</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Vademecum</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_sommaire.html">1. Vademecum: sommaire thématique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_glossaire.html">2. Notions utilisées dans la solution logicielle Vitam et lien vers la fiche qui les définit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_arbre.html">3. L’arbre de positionnement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_audit.html">4. Les audits dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_classification.html">5. La gestion des archives classifiées avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_acces.html">6. Le contrat d’accès dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_entree.html">7. Le contrat d’entrée dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_gestion.html">8. Le contrat de gestion dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_echeances.html">9. Le calcul des héritages des règles de gestion et l’indexation des échéances dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_eliminations.html">10. Réaliser des éliminations d’archives avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_habilitations.html">11. La gestion des droits et permissions des utilisateurs applicatifs dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_identifiants.html">12. L’attribution des identifiants dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_journalisation.html">13. La journalisation et la conservation de la valeur probante dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_ontologie.html">14. L’ontologie dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_pa.html">15. Les profils d’archivage dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_parametrages_pf.html">16. Le paramétrage fonctionnel d’une plate-forme utilisant la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_plan.html">17. Le plan de classement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_preservation.html">18. La préservation dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_pua.html">19. Les profils d’unité archivistique dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_rattachement.html">20. Faire un rattachement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_formats.html">21. Le référentiel des formats dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_griffons.html">22. Le référentiel des griffons dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_preservation.html">23. Le référentiel des scénarios de préservation dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_rg.html">24. Le référentiel des règles de gestion dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_sa.html">25. Le référentiel des services agents dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_registre_fonds.html">26. Le registre des fonds dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_structuration_information.html">27. La structuration des informations dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_suivi_acces.html">28. Le suivi des accès dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_tenant.html">29. Les tenants dans la solution logicielle Vitam</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: white" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Documentation utilisateur Vitam</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">8. </span>Services producteurs</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/sections/services_prod.md.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+
+           <div itemprop="articleBody">
+             
+  <section id="services-producteurs">
+<h1><span class="section-number">8. </span>Services producteurs<a class="headerlink" href="#services-producteurs" title="Lien vers cette rubrique"></a></h1>
+<section id="introduction">
+<h2><span class="section-number">8.1. </span>Introduction<a class="headerlink" href="#introduction" title="Lien vers cette rubrique"></a></h2>
+<section id="documents-de-reference">
+<h3><span class="section-number">8.1.1. </span>Documents de référence<a class="headerlink" href="#documents-de-reference" title="Lien vers cette rubrique"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Document</p></th>
+<th class="head text-center"><p>Date de la version</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>NF Z 44022 – MEDONA – Modélisation des données pour l’archivage</p></td>
+<td class="text-center"><p>18/01/2014</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Standard d’échange de données pour l’archivage – SEDA – v. 2.1</p></td>
+<td class="text-center"><p>06/2018</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>Standard d’échange de données pour l’archivage – SEDA – v. 2.2</p></td>
+<td class="text-center"><p>02/2022</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Standard d’échange de données pour l’archivage – SEDA – v. 2.3</p></td>
+<td class="text-center"><p>06/2024</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>ISAAR (CPF) – v. 2.0</p></td>
+<td class="text-center"><p>2004</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="presentation-du-document">
+<h3><span class="section-number">8.1.2. </span>Présentation du document<a class="headerlink" href="#presentation-du-document" title="Lien vers cette rubrique"></a></h3>
+<p>Le présent document présente les fonctionnalités associées à la prise en compte de la notion de service producteur dans la solution logicielle Vitam.
+Il s’articule autour des axes suivants :</p>
+<ul class="simple">
+<li><p>une présentation de la notion de service producteur et de la manière dont le Standard d’échanges de données pour l’archivage (SEDA) la formalise ;</p></li>
+<li><p>une présentation des mécanismes mis en œuvre dans la solution logicielle Vitam pour prendre en compte cette notion, en application du SEDA ;</p></li>
+<li><p>des recommandations aux ministères porteurs, partenaires et utilisateurs de la solution logicielle Vitam sur la manière d’utiliser les fonctionnalités associées aux services producteurs.</p></li>
+</ul>
+<p>Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 8.1 (printemps 2025). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.</p>
+</section>
+</section>
+<section id="presentation-de-la-notion-de-service-producteur">
+<h2><span class="section-number">8.2. </span>Présentation de la notion de service producteur<a class="headerlink" href="#presentation-de-la-notion-de-service-producteur" title="Lien vers cette rubrique"></a></h2>
+<section id="description-de-la-notion-de-service-producteur">
+<h3><span class="section-number">8.2.1. </span>Description de la notion de service producteur<a class="headerlink" href="#description-de-la-notion-de-service-producteur" title="Lien vers cette rubrique"></a></h3>
+<p>Le code du patrimoine, dans son article L211-1, définit les archives comme « l’ensemble des documents, y compris les données, quels que soient leur date, leur lieu de conservation, leur forme et leur support, produits ou reçus par toute personne physique ou morale et par tout service ou organisme public ou privé dans l’exercice de leur activité ».<br />
+La notion de service producteur correspond à la personne physique ou morale ayant produit ou reçu des documents et des données dans l’exercice de son activité.<br />
+Quand l’activité exercée par le service producteur correspond à une mission de service public, ce dernier a, en application de la réglementation en vigueur, un certain nombre de droits et de devoirs sur ses archives, entendues comme les documents et données qu’il a produits ou reçus dans le cadre de son activité :</p>
+<ul class="simple">
+<li><p>il définit, avec l’administration des archives, les documents à conserver à l’expiration de leur période d’utilité courante (article L212-2) ;</p></li>
+<li><p>tant que la sélection prévue à l’article L212-2 n’a pas été effectuée, il conserve ses archives sous le contrôle scientifique et technique de l’administration des archives, soit dans ses locaux, soit chez un tiers agréé par l’administration des archives (article L212-4) ;</p></li>
+<li><p>s’il est mis fin à son existence, et à défaut d’affectation déterminée par l’acte de suppression, il doit remettre ses archives à un service public d’archives (article L212-5) ;</p></li>
+<li><p>il donne son accord, conjointement avec l’administration des archives, aux demandes de consultation par dérogation d’archives publiques non librement communicables par des tiers (article L213-3).</p></li>
+</ul>
+<p>Au moment de la demande de transfert à un service d’archives, en cas de suppression du service producteur ou de transfert de tout ou partie de ses activités à une autre entité, c’est l’entité détentrice des archives ou responsable des activités transférées qui exerce les droits et devoirs assignés au service producteur par le code du patrimoine. Cette entité est désignée sous l’expression de service versant.</p>
+</section>
+<section id="formalisation-de-la-notion-de-service-producteur-dans-le-seda">
+<h3><span class="section-number">8.2.2. </span>Formalisation de la notion de service producteur dans le SEDA<a class="headerlink" href="#formalisation-de-la-notion-de-service-producteur-dans-le-seda" title="Lien vers cette rubrique"></a></h3>
+<p>La manière de déclarer les services producteurs est définie dans la norme NF Z 44-022 et dans sa déclinaison pour les acteurs du service public, le Standard d’échanges de données pour l’archivage (SEDA).
+La norme NF Z 44-022 définit cinq acteurs intervenant dans les transactions occasionnées par les échanges de données pour l’archivage :</p>
+<ul class="simple">
+<li><p>le service d’archives ;</p></li>
+<li><p>le service versant ;</p></li>
+<li><p>le service producteur ;</p></li>
+<li><p>le service de contrôle ;</p></li>
+<li><p>le demandeur d’archives.
+Le service producteur est défini comme « l’entité qui a produit les informations, c’est-à-dire qui les a créées ou reçues dans le cadre de son activité ». En application de la norme, il intervient dans les transactions suivantes :</p></li>
+<li><p>demande de communication d’archives :</p>
+<ul>
+<li><p>le service producteur peut être à l’origine de la demande, ayant accès à toutes les informations qu’il a produites et qui ont fait l’objet d’un transfert (message ArchiveDeliveryRequest) ;</p></li>
+<li><p>le service producteur peut être amené à autoriser une demande de communication d’archives si les dispositions légales, réglementaires ou contractuelles le nécessitent (message AuthorizationOriginatingAgencyRequest) ;</p></li>
+</ul>
+</li>
+<li><p>demande de modification d’archives : le service producteur peut être amené à autoriser une demande de modification d’archives, si l’accord de service le prévoit (message AuthorizationOriginatingAgencyRequest) ;</p></li>
+<li><p>demande d’élimination d’archives : le service producteur doit donner son accord à toute demande d’élimination proposée par le service d’archives (message AuthorizationOriginatingAgencyRequest) ;</p></li>
+<li><p>demande de restitution d’archives (message ArchiveRestitutionRequest) :</p>
+<ul>
+<li><p>au terme de l’accord de service passé entre le service producteur et le service d’archives, le service producteur est destinataire des archives jusque-là conservées par le service d’archives (notamment en cas de restitution par un tiers archiveur) ;</p></li>
+<li><p>le service producteur peut demander à tout moment la réactivation d’un dossier archivé.</p></li>
+</ul>
+</li>
+</ul>
+<p>Le service producteur est représenté par le bloc <OriginatingAgency>.
+La figure ci-dessous présente à titre d’exemple le schéma correspondant au message ArchiveRestitutionRequest :</p>
+<p><img alt="message ArchiveRestitutionRequest" src="../_images/message_ArchiveRestitutionRequest.png" /></p>
+<p>Le SEDA, dans ses versions 2.1.,2.2. et 2.3., précise les transactions définies dans la norme NF Z 44‑022 pour les services publics d’archives et spécifie dans le détail les messages échangés entre acteurs du processus d’archivage.
+Il décrit notamment le schéma de métadonnées qui doit être utilisé pour la description des archives (bloc DescriptiveMetadata du message ArchiveTransfer).<br />
+En application du SEDA version 2.1., 2.2. et 2.3., la notion de service producteur constitue une métadonnée descriptive de chaque unité archivistique (ArchiveUnit, bloc Content), dans la logique héritée de la norme de description ISAD(G) et de sa déclinaison en format d’encodage EAD (Encoded Archival Description).<br />
+Le schéma ci-dessous figure l’emplacement de ce bloc « Content » dans le schéma XSD publié dans le SEDA 2.1., 2.2. et 2.3. :
+<img alt="emplacement du bloc « Content » dans le schéma XSD" src="../_images/emplacement_bloc_content_schema_XSD.png" /></p>
+</section>
+<section id="extension-du-schema-seda-pour-prendre-en-compte-la-notion-de-service-producteur">
+<h3><span class="section-number">8.2.3. </span>Extension du schéma SEDA pour prendre en compte la notion de service producteur<a class="headerlink" href="#extension-du-schema-seda-pour-prendre-en-compte-la-notion-de-service-producteur" title="Lien vers cette rubrique"></a></h3>
+<p>Ni la norme NF Z 44-022 ni le SEDA dans ses versions 2.1., 2.2. ou 2.3. ne prévoient à ce jour que le service producteur constitue un acteur de la transaction de transfert d’archives à un service d’archives. Or, comme il a été indiqué précédemment, le service producteur joue un rôle important dans les autres transactions concernant les archives.<br />
+Le message ArchiveTransfer défini par la norme NF Z 44-022 et précisé par le SEDA 2.1., 2.2. et 2.3., dans son état actuel, offre cependant deux possibilités pour déclarer un service producteur responsable de l’ensemble des archives transférées dans ce cadre :</p>
+<ul class="simple">
+<li><p>créer, à la racine du bloc <DescriptiveMetadata> une unité archivistique « racine » qui déclare le service producteur de référence ;</p></li>
+<li><p>utiliser les possibilités d’extension du schéma pour déclarer ces notions au niveau de l’en-tête du message.</p></li>
+</ul>
+<p>L’équipe projet Vitam a opté pour la seconde solution pour les raisons suivantes :</p>
+<ul class="simple">
+<li><p>le bloc DescriptiveMetadata du message ArchiveTransfer ayant une cardinalité 0-n, imposer une unité archivistique « racine » aurait entraîné la création d’un niveau de description de peu d’utilité dans certains cas de figure, notamment pour les transferts d’archives sérielles ;</p></li>
+<li><p>au sein d’une même arborescence d’unités archivistiques, chaque unité archivistique pouvant avoir un service producteur différent, une recherche dans les unités archivistiques basées sur les métadonnées descriptives pouvait induire un biais dans les résultats, en ne remontant que les pièces produites par le service producteur dans un dossier et non le dossier lui-même :</p>
+<ul>
+<li><p>exemple 1 : le dossier de préparation d’un texte législatif ou réglementaire peut être alimenté avec des pièces produites par l’administration à l’origine du texte, par les Services du Premier ministre, par le Conseil d’État ou par les deux Assemblées ;</p></li>
+<li><p>exemple 2 : un dossier de passation de marché peut être alimenté avec des pièces produites par l’entité qui a exprimé le besoin, par l’acheteur ou par le service juridique ;</p></li>
+</ul>
+</li>
+<li><p>la notion de service producteur étant destinée à être utilisée pour des besoins de gestion (alimentation du registre des fonds, mise en œuvre des opérations prévues au contrat de service) et d’accès, en lien avec des contrats de service et les contrats d’accès, il a paru préférable de la positionner comme une information de gestion applicable à l’ensemble des unités archivistiques transférées dans le cadre d’un ArchiveTransfer.</p></li>
+</ul>
+<p>Le <a class="reference internal" href="SIP.html"><span class="std std-doc">document de <em>Structuration des Submission Information Packages</em></span></a> présente l’extension retenue pour la réalisation et l’utilisation de la solution logicielle Vitam. <strong>Il rend obligatoire la déclaration d’un, et d’un seul, service producteur pour chaque transfert d’archives effectué dans la solution logicielle Vitam.</strong></p>
+</section>
+</section>
+<section id="mecanismes-mis-en-oeuvre-dans-la-solution-logicielle-vitam">
+<h2><span class="section-number">8.3. </span>Mécanismes mis en œuvre dans la solution logicielle Vitam<a class="headerlink" href="#mecanismes-mis-en-oeuvre-dans-la-solution-logicielle-vitam" title="Lien vers cette rubrique"></a></h2>
+<p>La solution logicielle Vitam offre à un service d’archives plusieurs fonctionnalités lui permettant de prendre en compte la notion de service producteur :</p>
+<ul class="simple">
+<li><p>en administration, l’existence d’un référentiel des services agents ;</p></li>
+<li><p>en entrée, le contrôle du service producteur et du service versant par rapport au référentiel des services agents, l’enregistrement de la prise en charge d’un transfert pour un service producteur donné et l’enrichissement du registre des fonds des services producteurs ;</p></li>
+<li><p>en gestion des archives, la formalisation d’un état des archives produites par un même producteur et conservées par une plate-forme utilisant la solution logicielle Vitam sous la forme d’un registre des fonds ;</p></li>
+<li><p>en accès, le contrôle des droits sur les archives via un filtre par service producteur.</p></li>
+</ul>
+<section id="import-dun-referentiel-des-services-agents">
+<h3><span class="section-number">8.3.1. </span>Import d’un référentiel des services agents<a class="headerlink" href="#import-dun-referentiel-des-services-agents" title="Lien vers cette rubrique"></a></h3>
+<p>La solution logicielle Vitam intègre un référentiel des services agents (qu’ils agissent comme services producteurs ou services versants) administrable (import initial ou mise à jour) par un utilisateur doté des droits adéquats (<strong>administrateur fonctionnel</strong>).
+Ce référentiel interne à la solution logicielle Vitam a pour vocation :</p>
+<ul class="simple">
+<li><p>soit d’être une copie locale d’un référentiel administré dans le front office des plate-formes d’archivage implémentant cette dernière. Il n’a pas vocation à gérer la hiérarchie et l’historique des services producteurs, contrairement à la version administrée dans un front office et structurée conformément à la norme ISAAR (CPF).</p></li>
+<li><p>soit de gérer l’historique des services producteurs, conformément à la norme ISAAR (CPF). Au terme de la version 8.1, la hiérarchie n’est pas gérée.</p></li>
+</ul>
+<p>Ce référentiel a pour vocation d’être utilisé par la solution logicielle Vitam pour effectuer localement les contrôles des services déclarés par les administrateurs et les utilisateurs en entrée et en accès. Il est propre à chaque tenant de la plate-forme.</p>
+<p>Il est importé dans la solution logicielle Vitam sous la forme d’un fichier CSV comprenant les colonnes suivantes :</p>
+<ul class="simple">
+<li><p>dans sa forme la plus simple :</p></li>
+</ul>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Nom de la colonne</p></th>
+<th class="head text-center"><p>Description de la colonne</p></th>
+<th class="head text-center"><p>Valeurs possibles</p></th>
+<th class="head text-center"><p>Observations</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Identifier</p></td>
+<td class="text-center"><p>Identifiant du service</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>Cet identifiant ne doit pas comprendre d’espace, de caractère accentué, de virgule, d’apostrophe, de parenthèse, de slash, d’élément de ponctuation, ou tout autre caractère spécial. Ne sont recommandés que l’underscore et le tiret comme séparateurs.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Name</p></td>
+<td class="text-center"><p>Nom du service</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Description</p></td>
+<td class="text-center"><p>Description du service</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>dans sa forme étendue :</p></li>
+</ul>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Nom de la colonne</p></th>
+<th class="head text-center"><p>Description de la colonne</p></th>
+<th class="head text-center"><p>Valeurs possibles</p></th>
+<th class="head text-center"><p>Observations</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Identifier</p></td>
+<td class="text-center"><p>Identifiant du service</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>Cet identifiant ne doit pas comprendre d’espace, de caractère accentué, de virgule, d’apostrophe, de parenthèse, de slash, d’élément de ponctuation, ou tout autre caractère spécial. Ne sont recommandés que l’underscore et le tiret comme séparateurs.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Name</p></td>
+<td class="text-center"><p>Nom du service</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Description</p></td>
+<td class="text-center"><p>Description du service</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>EntityType</p></td>
+<td class="text-center"><p>Type d’entité</p></td>
+<td class="text-center"><p>Colonne facultative.</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>NameEntryParallel</p></td>
+<td class="text-center"><p>Formes parallèles du nom</p></td>
+<td class="text-center"><p>Colonne facultative.<br>Il est possible de saisir plusieurs valeurs, séparées par des pipes.</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>AuthorizedForm</p></td>
+<td class="text-center"><p>Formes du nom normalisées selon d’autres conventions</p></td>
+<td class="text-center"><p>Colonne facultative.<br>Il est possible de saisir plusieurs valeurs, séparées par des pipes.</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>AlternativeForm</p></td>
+<td class="text-center"><p>Autres formes du nom</p></td>
+<td class="text-center"><p>Colonne facultative.<br>Il est possible de saisir plusieurs valeurs, séparées par des pipes.</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>EntityId</p></td>
+<td class="text-center"><p>Numéro d’immatriculation des collectivités</p></td>
+<td class="text-center"><p>Colonne facultative.</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>FromDate</p></td>
+<td class="text-center"><p>Date de début d’existence</p></td>
+<td class="text-center"><p>Colonne facultative.<br>Les formats de date acceptés sont AAAA-MM-JJ et JJ/MM/AAAA.</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>ToDate</p></td>
+<td class="text-center"><p>Date de fin d’existence</p></td>
+<td class="text-center"><p>Colonne facultative.<br>Les formats de date acceptés sont AAAA-MM-JJ et JJ/MM/AAAA.</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Functions</p></td>
+<td class="text-center"><p>Fonctions et activités</p></td>
+<td class="text-center"><p>Colonne facultative.<br>Il est possible de saisir plusieurs valeurs, séparées par des pipes.</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>BiogHist</p></td>
+<td class="text-center"><p>Histoire</p></td>
+<td class="text-center"><p>Colonne facultative.</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Places</p></td>
+<td class="text-center"><p>Lieux</p></td>
+<td class="text-center"><p>Colonne facultative.Il est possible de saisir plusieurs valeurs, séparées par des pipes.</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>LegalStatuses</p></td>
+<td class="text-center"><p>Statut juridique</p></td>
+<td class="text-center"><p>Colonne facultative.<br>Il est possible de saisir plusieurs valeurs, séparées par des pipes.</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Mandates</p></td>
+<td class="text-center"><p>Textes de référence</p></td>
+<td class="text-center"><p>Colonne facultative.<br>Il est possible de saisir plusieurs valeurs, séparées par des pipes.</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>StructureOrGenealogy</p></td>
+<td class="text-center"><p>Organisation interne/généalogie</p></td>
+<td class="text-center"><p>Colonne facultative.</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>GeneralContext</p></td>
+<td class="text-center"><p>Contexte général</p></td>
+<td class="text-center"><p>Colonne facultative.</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>MaintenanceStatus</p></td>
+<td class="text-center"><p>Niveau d’élaboration</p></td>
+<td class="text-center"><p>Colonne facultative.</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>LocalStatus</p></td>
+<td class="text-center"><p>Niveau de détail</p></td>
+<td class="text-center"><p>Colonne facultative.</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Sources</p></td>
+<td class="text-center"><p>Sources</p></td>
+<td class="text-center"><p>Colonne facultative.<br>Il est possible de saisir plusieurs valeurs, séparées par des pipes.</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>EventDescription</p></td>
+<td class="text-center"><p>Notes relatives à la mise à jour de la notice</p></td>
+<td class="text-center"><p>Colonne facultative.</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+</tbody>
+</table>
+<p>Le fichier CSV à importer doit avoir les caractéristiques suivantes :</p>
+<ul class="simple">
+<li><p>encodage des caractères : UTF-8 ;</p></li>
+<li><p>séparateur de champ : virgule ;</p></li>
+<li><p>séparateur de texte : guillemets simples ou doubles, espace vide ;</p></li>
+<li><p>les noms de colonnes facultatifs peuvent être absents, s’ils ne sont pas utilisés ;</p></li>
+<li><p>si un champ doit contenir plusieurs valeurs, elles doivent être séparées par un pipe.
+Pour plus de précisions sur l’élaboration des fichiers CSV, consulter l’<a class="reference internal" href="#annexe-pr%C3%A9parer-un-fichier-csv"><span class="xref myst">annexe à la fin de ce document</span></a>.</p></li>
+</ul>
+<p>Lors d’une mise à jour du référentiel sont appliquées les règles suivantes :</p>
+<ul class="simple">
+<li><p>échec de la mise à jour si :</p>
+<ul>
+<li><p>celle-ci a demandé la suppression d’un service déjà utilisé dans la solution logicielle Vitam ;</p></li>
+<li><p>une opération d’import ou de mise à jour est déjà en cours ;</p></li>
+<li><p>le format de date ne correspond pas au format attendu ;</p></li>
+<li><p>un intitulé de colonne ne correspond pas aux intitulés attendus (ex. « toto »).</p></li>
+</ul>
+</li>
+<li><p>succès avec avertissement lors de la mise à jour si celle-ci a demandé la modification d’un service déjà utilisé (uniquement son intitulé et sa description).</p></li>
+</ul>
+<p>Il est également possible d’ajouter un service agent, de modifier ses informations ou de le supprimer depuis l’APP VitamUI « Services agents » sous forme unitaire ou par un (ré)import complet du référentiel sous la forme d’un fichier CSV. Cette APP permet aussi d’effectuer une recherche dans le référentiel et d’en exporter son contenu sous la forme d’un fichier CSV.
+Les différentes versions du référentiel font l’objet d’une sauvegarde sur les offres de stockage gérées par la solution logicielle Vitam et peuvent être récupérées depuis le front-office via un service particulier (cf. RAML).</p>
+<section id="acces-au-referentiel">
+<h4><span class="section-number">8.3.1.1. </span>Accès au référentiel<a class="headerlink" href="#acces-au-referentiel" title="Lien vers cette rubrique"></a></h4>
+<p>La solution logicielle Vitam permet d’effectuer des recherches dans le référentiel des services agents.
+Il est possible d’obtenir :</p>
+<ul class="simple">
+<li><p>une liste de résultats,</p></li>
+<li><p>un résultat par facettes (nombre d’occurrences pour une métadonnée donnée).
+Sont disponibles les facettes de type :</p></li>
+<li><p>« terms » : pour obtenir des catégories basées sur les valeurs distinctes d’un champ spécifique et le nombre associé,</p></li>
+<li><p>« filters » : pour obtenir des résultats d’agrégations par filtres sur les résultats,</p></li>
+<li><p>« range » : pour obtenir des agrégations par plages de dates,</p></li>
+<li><p>« sum » : pour obtenir des totaux sur des champs,</p></li>
+<li><p>« count » : pour obtenir le nombre de valeurs présentes sur des champs,</p></li>
+<li><p>« cardinality » : pour obtenir le nombre exact de valeurs présentes sur des champs (usage non recommandé).</p></li>
+</ul>
+<p>Par ailleurs, la solution logicielle permet de consulter le détail d’un service en particulier.</p>
+<p>L’accès au référentiel est possible depuis :</p>
+<ul class="simple">
+<li><p>les API,</p></li>
+<li><p>l’APP VitamUI « Services agents ».</p></li>
+</ul>
+</section>
+</section>
+<section id="entrees">
+<h3><span class="section-number">8.3.2. </span>Entrées<a class="headerlink" href="#entrees" title="Lien vers cette rubrique"></a></h3>
+<p>Dans le cadre du processus d’entrée d’un ensemble d’archives, suite à la réception d’un message ArchiveTransfer du SEDA, la solution logicielle Vitam effectue les tâches et traitements suivants pour les archives :</p>
+<ul class="simple">
+<li><p>vérification de la déclaration d’un service producteur dans le message ArchiveTransfer ;</p></li>
+<li><p>contrôle de l’existence du service producteur et éventuellement du service versant par rapport au référentiel des services agents ;</p></li>
+<li><p>propagation dans les métadonnées des unités archivistiques et des groupes d’objets, en tant que métadonnée de gestion, du service producteur déclaré dans le message ArchiveTransfer (champ _sp) ;</p></li>
+<li><p>identification du/des service(s) producteur(s) responsable(s) des unités archivistiques déjà transférées auxquelles sont rattachées les unités archivistiques faisant l’objet du transfert :</p>
+<ul>
+<li><p>prise en compte et propagation de cette information dans les métadonnées des unités archivistiques et des groupes d’objets, en tant que métadonnée de gestion (champ _sps) ;</p></li>
+<li><p>cette fonctionnalité permet de traiter le problème du rattachement du transfert effectué par un service producteur à un plan de classement maintenu par un autre service producteur (par exemple un service producteur plus « global » comme un ministère ou une collectivité si le transfert est effectué par une direction de ceux-ci ou comme un établissement public si le transfert est effectué par un service de celui-ci) et de garantir l’accès aux unités archivistiques transférées par le service producteur plus « global » (le ministère ou la collectivité auront alors accès aux unités archivistiques versées par la direction) ;</p></li>
+</ul>
+</li>
+<li><p>indexation en base des métadonnées des unités archivistiques où la notion de service producteur est donc représentée sous plusieurs formes :</p>
+<ul>
+<li><p>métadonnées descriptives : service producteur de l’unité archivistique concernée (bloc <OriginatingAgency>) ;</p></li>
+<li><p>métadonnées de gestion :</p>
+<ul>
+<li><p>sp : service producteur de l’ensemble des unités archivistiques transférées dans le cadre d’un ArchiveTransfer et ayant des droits sur l’ensemble de ces unités archivistiques. Il s’agit du service qui sera utilisé pour la gestion de cet ensemble dans la solution logicielle Vitam ;</p></li>
+<li><p>sps : ensemble des services producteurs ayant des droits en accès sur l’unité archivistique. Cet ensemble comprend le service producteur responsable de l’ArchiveTransfer, mais aussi les services producteurs des plans de classements auxquels a été rattachée l’unité archivistique concernée ;</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>indexation en base des métadonnées des groupes d’objets où la notion de service producteur correspond à une métadonnée de gestion (champs _sp et _sps) ;</p></li>
+<li><p>enregistrement du transfert dans le registre des fonds, dans le fonds correspondant au service producteur.</p></li>
+</ul>
+</section>
+<section id="registre-des-fonds">
+<h3><span class="section-number">8.3.3. </span>Registre des fonds<a class="headerlink" href="#registre-des-fonds" title="Lien vers cette rubrique"></a></h3>
+<p>Afin de permettre aux services d’archives de disposer d’une vue globale sur les fonds d’archives qu’ils ont en charge, la solution logicielle Vitam propose un état récapitulatif correspondant à un registre des fonds.
+Le registre des fonds enregistre les archives prises en charge par tout service producteur :</p>
+<ul class="simple">
+<li><p>indépendamment du type d’archives transféré par celui-ci (dossiers de principe, dossiers sériels) ;</p></li>
+<li><p>indépendamment de la catégorie technique des objets qui représentent ces archives (documents textuels, documents iconographiques, documents sonores ou audiovisuels, etc.) ;</p></li>
+<li><p>indépendamment de la source qui a permis la production de ces archives (application métier ou système de fichiers) ;</p></li>
+<li><p>indépendamment de la source qui a permis de transférer les archives dans la solution logicielle Vitam et des droits et habilitations qu’elle a utilisés pour le faire.</p></li>
+</ul>
+<p>Il intègre également les traitements effectués sur ces archives (opération de préservation).</p>
+<p>Celui-ci est composé comme suit :</p>
+<ul class="simple">
+<li><p>chaque service producteur fait l’objet d’un enregistrement distinct dans le registre des fonds. Sont indiqués dans cet enregistrement :</p>
+<ul>
+<li><p>l’identifiant du service producteur,</p></li>
+<li><p>la date du premier transfert effectué par ce service,</p></li>
+<li><p>pour les « entités » (unités archivistiques, groupes d’objets, objets) transférées directement par le service producteur, leur nombre et la taille globale des objets pour ce service – avec indication du nombre ou de la taille initiale :</p>
+<ul>
+<li><p>des entités prises en charge,</p></li>
+<li><p>des entités sorties de la responsabilité de la solution logicielle Vitam depuis leur prise en charge (suite à élimination ou réversibilité),</p></li>
+<li><p>des entités actuellement sous la responsabilité de la solution logicielle Vitam ;</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>chaque entrée effectuée dans la solution logicielle Vitam par un service producteur fait l’objet d’un enregistrement distinct dans le registre des fonds. Sont indiqués dans cet enregistrement :</p>
+<ul>
+<li><p>la date du premier transfert, la date du dernier transfert, la date de dernière modification de l’entrée ;</p></li>
+<li><p>les identifiants :</p>
+<ul>
+<li><p>du service producteur (OriginatingAgencyIdentifier du bordereau de transfert),</p></li>
+<li><p>du service versant (SubmissionAgencyIdentifier du bordereau de transfert) ;</p></li>
+</ul>
+</li>
+<li><p>l’identifiant du message (MessageIdentifier du bordereau de transfert) ;</p></li>
+<li><p>des commentaires (Comment du bordereau de transfert) ;</p></li>
+<li><p>le statut juridique des archives et les modalités juridiques du transfert ;</p></li>
+<li><p>l’identifiant du contrat d’entrée et du profil d’archivage associés ;</p></li>
+<li><p>le nombre d’« entités » (unités archivistiques, groupes d’objets, objets) et la taille globale des objets pour cette entrée – avec indication du nombre ou de la taille initiale :</p>
+<ul>
+<li><p>des entités prises en charge lors du transfert,</p></li>
+<li><p>des entités de ce transfert sorties de la responsabilité de la solution logicielle depuis leur prise en charge (suite à élimination ou réversibilité),</p></li>
+<li><p>des entités de ce transfert actuellement sous la responsabilité de la solution logicielle ;</p></li>
+</ul>
+</li>
+<li><p>le statut :</p>
+<ul>
+<li><p>en stock et complète,</p></li>
+<li><p>en stock et mise à jour,</p></li>
+<li><p>sortie du stock ;</p></li>
+</ul>
+</li>
+<li><p>les identifiants des opérations ayant eu un impact sur l’entrée :</p>
+<ul>
+<li><p>identifiants des opérations de transfert,</p></li>
+<li><p>identifiant et nature de la dernière opération ayant eu un impact sur l’entrée ;</p></li>
+</ul>
+</li>
+<li><p>le détail de chaque opération, quelle que soit sa nature (élimination, transfert), ayant eu un impact sur l’entrée, avec la volumétrie associée ;</p></li>
+</ul>
+</li>
+<li><p>des états périodiques des unités archivistiques, groupes d’objets, objets et de leur volumétrie qui lui sont rattachés.</p>
+<ul>
+<li><p>des champs d’identification :</p>
+<ul>
+<li><p>identifiant interne de l’état,</p></li>
+<li><p>identifiant du service producteur ;</p></li>
+</ul>
+</li>
+<li><p>un champ permettant d’associer le producteur à un tenant ;</p></li>
+<li><p>la date de création de l’état ;</p></li>
+<li><p>le nombre d’unités archivistiques, de groupes d’objets et d’objets rattachés à ce service producteur au moment de la constitution de l’état ;</p></li>
+<li><p>la volumétrie des objets associés rattachés à ce service producteur au moment de la constitution de l’état ;</p></li>
+</ul>
+</li>
+<li><p>chaque traitement lié à la préservation effectuée dans la solution logicielle Vitam fait l’objet d’un enregistrement distinct dans le registre des fonds. Sont indiqués dans cet enregistrement :</p>
+<ul>
+<li><p>la date de la première opération, la date de la dernière opération, la date de dernière modification de l’enregistrement ;</p></li>
+<li><p>l’identifiant du service producteur (correspondant au champ OriginatingAgencyIdentifier du bordereau de transfert),</p></li>
+<li><p>le nombre d’« entités » (unités archivistiques, groupes d’objets, objets) et la taille globale des objets pour cet enregistrement – avec indication du nombre ou de la taille initiale :</p>
+<ul>
+<li><p>des entités traitées lors de cette opération de préservation,</p></li>
+<li><p>des entités de cet enregistrement sorties de la responsabilité de la solution logicielle depuis leur prise en charge (suite à élimination, suppression de versions d’objets ou réversibilité),</p></li>
+<li><p>des entités de ce traitement actuellement sous la responsabilité de la solution logicielle ;</p></li>
+</ul>
+</li>
+<li><p>le statut :</p>
+<ul>
+<li><p>en stock et complète,</p></li>
+<li><p>en stock et mise à jour,</p></li>
+<li><p>sortie du stock ;</p></li>
+</ul>
+</li>
+<li><p>les identifiants des opérations ayant eu un impact sur cet enregistrement :</p>
+<ul>
+<li><p>identifiants des opérations de transfert,</p></li>
+<li><p>identifiant et nature de la dernière opération ayant eu un impact sur l’enregistrement ;</p></li>
+</ul>
+</li>
+<li><p>le détail de chaque opération, quelle que soit sa nature, ayant eu un impact sur l’enregistrement, avec la volumétrie associée.</p></li>
+</ul>
+</li>
+</ul>
+<p>Ces fonctionnalités permettent de disposer d’un état actualisé des flux et stocks d’archives sous la responsabilité de la solution logicielle, par service producteur.</p>
+<p><strong>Nota bene :</strong><br />
+Lorsqu’un transfert effectué par un service producteur demande le rattachement de tout ou partie de ses unités archivistiques à des unités archivistiques déjà présentes dans la solution logicielle Vitam mais transférées par un autre service producteur, l’identifiant du service producteur des unités archivistiques de rattachement est propagé dans les unités archivistiques et les groupes d’objets rattachées, afin de permettre l’accès à celles-ci par le service producteur de rattachement.<br />
+Ainsi, en cas de transfert, par une direction, d’unités archivistiques qui doivent être rattachées au plan de classement d’une organisation plus « globale » (ministère, collectivité, établissement public), seront mis à jour dans le registre des fonds à la fois le fonds de la direction et celui de l’organisation plus « globale » (ministère, collectivité, établissement public). La direction ayant effectué le transfert sera cependant considérée comme le seul service producteur responsable des archives transférées.<br />
+Depuis l’APP VitamUI « Registre des fonds », il est possible d’accéder à la liste des entrées effectuées et d’en isoler un certain nombre au moyen d’une recherche à partir de :</p>
+<ul class="simple">
+<li><p>l’identifiant du versement,</p></li>
+<li><p>la date du versement ou un intervalle de dates,</p></li>
+<li><p>l’identifiant ou de l’intitulé du service producteur référencé dans le référentiel des services agents,</p></li>
+<li><p>l’identifiant du contrat d’entrée,</p></li>
+<li><p>l’identifiant du profil d’archivage,</p></li>
+<li><p>les modalités d’entrée (toutes, versement, protocole, achat, copie, dation, don, dépôt, dévolution, legs, réintégration, autres, non renseigné).</p></li>
+</ul>
+<p>L’APP permet également de rechercher les entrées ayant subi des opérations d’élimination et/ou de transfert.<br />
+Elle autorise également :</p>
+<ul class="simple">
+<li><p>l’export des résultats de recherche sous la forme d’un fichier .csv dont la forme reprend partiellement la modélisation attendue par le standard national des registres d’entrée d’archives<a class="footnote-reference brackets" href="#id2" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> ;</p></li>
+<li><p>la consultation du détail de chaque entrée effectuée dans la solution logicielle Vitam par un service producteur, avec  le détail de chaque opération, quelle que soit sa nature (élimination, transfert), ayant eu un impact sur l’entrée, avec la volumétrie associée.</p></li>
+</ul>
+<p><strong>Nota bene :</strong><br />
+Au terme de la version 8.1, l’APP VitamUI « Registre des fonds » fait appel uniquement aux traitements ayant trait aux opérations d’entrée et ne prend pas en compte les traitements relatifs aux opérations de préservation et de suppression de versions d’objets.</p>
+</section>
+<section id="acces">
+<h3><span class="section-number">8.3.4. </span>Accès<a class="headerlink" href="#acces" title="Lien vers cette rubrique"></a></h3>
+<section id="recherche">
+<h4><span class="section-number">8.3.4.1. </span>Recherche<a class="headerlink" href="#recherche" title="Lien vers cette rubrique"></a></h4>
+<p>Une application connectée et authentifiée à la solution logicielle Vitam peut effectuer des recherches sur les services producteurs déclarés dans les unités archivistiques, dans la limite des droits et des filtres qui lui sont définis, en utilisant les différentes notions existantes :</p>
+<ul class="simple">
+<li><p>services producteurs déclarés par chaque unité archivistique dans ses métadonnées descriptives (bloc <OriginatingAgency>) ;</p></li>
+<li><p>service producteur ayant transféré l’unité archivistique (information correspondant au champ OriginatingAgencyIdentifier du bloc ManagementMetadata propagé dans les unités archivistiques lors du traitement du transfert) ;</p></li>
+<li><p>services producteurs ayant des droits d’accès sur l’unité archivistique en vertu de rattachements à des unités archivistiques existantes, suite à propagation dans les unités archivistiques rattachées lors du traitement du transfert.</p></li>
+</ul>
+<p>Depuis l’APP VitamUI « Recherche et consultation des archives », il est possible de rechercher les unités archivistiques à partir de l’identifiant ou de l’intitulé du service producteur référencé dans le référentiel des services agents, correspondant, dans l’unité archivistique, à la métadonnée propre au service producteur ayant transféré l’unité archivistique (information correspondant au champ OriginatingAgencyIdentifier du bloc ManagementMetadata).</p>
+</section>
+<section id="filtrage-des-resultats-au-moyen-des-contrats-dacces">
+<h4><span class="section-number">8.3.4.2. </span>Filtrage des résultats au moyen des contrats d’accès<a class="headerlink" href="#filtrage-des-resultats-au-moyen-des-contrats-dacces" title="Lien vers cette rubrique"></a></h4>
+<p>Une application connectée et authentifiée à la solution logicielle Vitam, si elle dispose des droits de recherche et de consultation d’archives, peut voir le périmètre de ses droits restreint à un nombre précis de services producteurs en vertu de son contrat d’accès.<br />
+Dans ce cas, lorsque cette application effectue une recherche d’archives dans la solution logicielle Vitam, lui sont seulement retournées en résultat les unités archivistiques transférées par l’un des services producteurs autorisés dans son contrat d’accès, ou qui sont rattachées symboliquement à ce service. Les unités archivistiques transférées par d’autres services producteurs que ceux autorisés dans le contrat d’accès ne lui seront pas retournées en réponse à sa requête.<br />
+Deux options sont possibles dans le contrat d’accès :</p>
+<ul class="simple">
+<li><p>déclarer un ou plusieurs services producteurs ;</p></li>
+<li><p>demander l’accès à tous les services producteurs.
+Il est possible d’affiner ces options en :</p></li>
+<li><p>excluant du filtre choisi les unités archivistiques de type « plan de classement » ,</p></li>
+<li><p>élargir l’accès à des archives produites par d’autres services producteurs dont la règle de gestion serait échue.</p></li>
+</ul>
+<p>À défaut de déclaration d’un service producteur, l’application connectée et authentifiée ne pourra effectuer aucune recherche.<br />
+Ce filtrage s’applique également à l’accès au registre des fonds. Ne seront retournés lors d’une requête de recherche et de consultation du registre des fonds que les fonds correspondant aux services producteurs autorisés dans le contrat d’accès. Les autres fonds existants sur le tenant de la solution logicielle Vitam ne seront pas retournés.</p>
+<p><strong>Nota bene :</strong></p>
+<ul class="simple">
+<li><p>les services producteurs déclarés dans les contrats d’accès font l’objet d’un contrôle d’existence dans le référentiel des services agents. Si un contrat est crée ou modifié avec l’identifiant d’un service inconnu du référentiel, la création ou la modification est refusée ;</p></li>
+<li><p>le filtrage des droits de recherche et de consultation d’archives par service producteur est nécessaire mais non suffisant. D’autres filtres sont mis à disposition par la solution logicielle Vitam, par exemple un filtre définissant une ou plusieurs unité(s) archivistique(s) – qu’elle soit de type arbre de positionnement, plan de classement ou standard – à partir de laquelle les accès sont autorisés.</p></li>
+</ul>
+<p>L’IHM VitamUI utilise :</p>
+<ul class="simple">
+<li><p>l’ensemble des filtres disponibles dans les contrats d’accès pour :</p>
+<ul>
+<li><p>l’APP « Recherche, consultation et gestion des archives »,</p></li>
+<li><p>l’APP « Relevé de valeur probante »,</p></li>
+<li><p>l’APP « Audits »,</p></li>
+<li><p>l’APP « Requêtes DSL » ;</p></li>
+</ul>
+</li>
+<li><p>le filtre sur les services producteurs pour :</p>
+<ul>
+<li><p>l’APP « Dépôt et suivi des versements » ;</p></li>
+<li><p>l’APP « Registre des fonds » ;</p></li>
+<li><p>l’APP « Collecte et préparation des versements »</p></li>
+</ul>
+</li>
+<li><p>le filtre sur les arborescences pour :</p>
+<ul>
+<li><p>l’APP « Collecte et préparation des versements »,</p></li>
+<li><p>l’APP « Contrats d’accès »,</p></li>
+<li><p>l’APP « Contrats d’entrée ».</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+</section>
+<section id="conseils-de-mise-en-oeuvre">
+<h2><span class="section-number">8.4. </span>Conseils de mise en œuvre<a class="headerlink" href="#conseils-de-mise-en-oeuvre" title="Lien vers cette rubrique"></a></h2>
+<p>L’équipe projet Vitam recommande les modalités de mise en œuvre ci-dessous.</p>
+<section id="comment-decouper-ses-sip">
+<h3><span class="section-number">8.4.1. </span>Comment découper ses SIP ?<a class="headerlink" href="#comment-decouper-ses-sip" title="Lien vers cette rubrique"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Intitulé</p></th>
+<th class="head text-center"><p>Description</p></th>
+<th class="head text-center"><p>Niveau de recommandation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><strong>Bordereau</strong></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Transferts préparés manuellement</p></td>
+<td class="text-center"><p>Il est recommandé de constituer des transferts pour des archives homogènes en termes de services producteurs</p></td>
+<td class="text-center"><p>Recommandation</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Transferts effectués par des applications métiers faisant intervenir plusieurs producteurs (cas où les archives produites par chaque producteur sont bien isolées)</p></td>
+<td class="text-center"><p>Si les archives produites et reçues par chaque service producteur (unités archivistiques comme objets) sont bien identifiées et isolées, il est recommandé de procéder à un transfert par service producteur.</p></td>
+<td class="text-center"><p>Recommandation</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Transferts effectués par des applications métiers faisant intervenir plusieurs producteurs (cas où les objets sont partagés entre plusieurs producteurs, mais bien identifiés)</p></td>
+<td class="text-center"><p>Si tout ou partie des archives produites ou reçues par chaque producteur sont partagées avec d’autres services producteurs (ex. : objets partagés entre plusieurs services producteurs, avec des métadonnées de description et/ou de gestion propres à chacun), il est recommandé de procéder à un transfert par service producteur, les objets n’étant transférés qu’une seule fois, sous la responsabilité d’un des deux producteurs.</p></td>
+<td class="text-center"><p>Recommandation</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Transferts effectués par des applications métiers faisant intervenir plusieurs producteurs (cas où il est impossible d’isoler les archives de chaque producteur)</p></td>
+<td class="text-center"><p>S’il est impossible d’isoler les archives de chaque producteur, il est recommandé de déclarer comme service producteur :<br>- soit le responsable du traitement au sens de la loi sur l’informatique, les fichiers et la liberté,<br>- soit le service responsable de la définition de la fonction associée (« la tête de chaîne »),<br>- soit l’application versante elle-même.</p></td>
+<td class="text-center"><p>Recommandation</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="comment-gerer-les-droits-dacces-a-la-solution-logicielle-vitam">
+<h3><span class="section-number">8.4.2. </span>Comment gérer les droits d’accès à la solution logicielle Vitam ?<a class="headerlink" href="#comment-gerer-les-droits-dacces-a-la-solution-logicielle-vitam" title="Lien vers cette rubrique"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Intitulé</p></th>
+<th class="head text-center"><p>Description</p></th>
+<th class="head text-center"><p>Niveau de recommandation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><strong>Contrat d’accès</strong></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Cas d’une application correspondant à un système d’information archivistique</p></td>
+<td class="text-center"><p>Un système d’information archivistique ayant vocation à administrer les archives de tous les services producteurs confiant des archives au service d’archives, il est recommandé d’indiquer dans le contrat d’accès que l’application concernée a accès par défaut à tous les services producteurs (dans la collection AccessContract, le champ EveryOriginatingAgency doit avoir pour valeur « true »).<br> Point d’attention : le système d’information archivistique devra ensuite filtrer lui-même les droits de ses différents utilisateurs, service producteur par service producteur.</p></td>
+<td class="text-center"><p>Recommandation</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Cas d’une application métier donnant accès aux archives d’un seul producteur d’archives</p></td>
+<td class="text-center"><p>Il est recommandé de déclarer dans le contrat d’accès le service producteur concerné dans le champ « OriginatingAgencies ».<br> Point d’attention : si l’application ne peut accéder qu’à une partie des archives de ce service producteur (ex. Archives dont la DUC est échue), il conviendra de rajouter d’autres filtres, soit dans l’application métier, soit dans la solution logicielle Vitam (contrat d’accès excluant une partie de l’arborescence des archives du service producteur).</p></td>
+<td class="text-center"><p>Recommandation</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Cas d’une application métier donnant accès aux archives de plusieurs producteurs (cas d’une application dont les utilisateurs peuvent avoir accès à toutes les archives)</p></td>
+<td class="text-center"><p>Il est recommandé d’indiquer dans le contrat d’accès que l’application concernée a accès par défaut à tous les services producteurs (dans la collection AccessContract, le champ EveryOriginatingAgency doit avoir pour valeur « true »).</p></td>
+<td class="text-center"><p>Recommandation</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Cas d’une application métier donnant accès aux archives de plusieurs producteurs (cas d’une application souhaitant filtrer les droits d’accès en fonction des différents producteurs)</p></td>
+<td class="text-center"><p>Il est recommandé :<br>- d’indiquer dans le contrat d’accès que l’application concernée a accès par défaut à tous les services producteurs (dans la collection AccessContract, le champ EveryOriginatingAgency doit avoir pour valeur « true »),<br>- de filtrer dans l’application elle-même les droits, service producteur par service producteur.<br>Point d’attention : l’application devra ensuite filtrer elle-même les droits de ses différents utilisateurs, service producteur par service producteur.</p></td>
+<td class="text-center"><p>Recommandation</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p></p></td>
+<td class="text-center"><p>Il est envisageable de créer autant de contrats d’accès que de services producteurs, en déclarant au niveau de chaque contrat d’accès le (ou les) service(s) producteur(s) concerné(s) dans le champ « OriginatingAgencies ».</p></td>
+<td class="text-center"><p>Envisageable</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="comment-gerer-les-droits-dacces-au-referentiel-des-services-agents">
+<h3><span class="section-number">8.4.3. </span>Comment gérer les droits d’accès au référentiel des services agents ?<a class="headerlink" href="#comment-gerer-les-droits-dacces-au-referentiel-des-services-agents" title="Lien vers cette rubrique"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Intitulé</p></th>
+<th class="head text-center"><p>Description</p></th>
+<th class="head text-center"><p>Niveau de recommandation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><strong>Référentiel des services agents</strong></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Cas d’une application correspondant à un système d’information archivistique</p></td>
+<td class="text-center"><p>Un système d’information archivistique ayant vocation à administrer les archives doit nécessairement disposer d’un référentiel des services agents. Ce référentiel doit contenir au moins une référence, sans quoi aucun transfert d’archives ne sera possible.</p></td>
+<td class="text-center"><p>Obligatoire</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Cas d’une application métier</p></td>
+<td class="text-center"><p>Une application métier devant transférer des archives ou y accéder n’a pas forcément vocation à accéder au référentiel des services agents. Il est recommandé de veiller à lui attribuer les droits nécessaires dans le profil de sécurité qui lui est associé.</p></td>
+<td class="text-center"><p>Recommandé</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Cas d’un groupe « administrateurs » du système d’information archivistique</p></td>
+<td class="text-center"><p>Il est recommandé d’attribuer des droits de consultation et de modification du référentiel à un groupe d’utilisateurs ayant vocation à agir sur le référentiel des services agents, si ce référentiel a vocation à être ponctuellement révisé. <br> Par exemple, VitamUI permet d’autoriser l’accès à l’APP « Services agent » avec des droits de consultation, de modification, d’import et d’export du référentiel.</p></td>
+<td class="text-center"><p>Recommandé</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Cas d’un groupe « archivistes » du système d’information archivistique</p></td>
+<td class="text-center"><p>Tous les utilisateurs du système d’information archivistique n’ont pas vocation à modifier le référentiel des services  agents. <br> Le système d’information archivistique doit pouvoir leur interdire tout accès,  toute modification ou leur donner un simple accès au référentiel. Par exemple, VitamUI permet de :<br>- interdire l’accès à l’APP « Services Agent » ;<br>- autoriser l’accès à cette l’APP en simple consultation.</p></td>
+<td class="text-center"><p>Recommandé</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="annexes">
+<h2><span class="section-number">8.5. </span>Annexes<a class="headerlink" href="#annexes" title="Lien vers cette rubrique"></a></h2>
+<section id="annexe-preparer-un-fichier-csv">
+<h3><span class="section-number">8.5.1. </span>Annexe : préparer un fichier CSV<a class="headerlink" href="#annexe-preparer-un-fichier-csv" title="Lien vers cette rubrique"></a></h3>
+<p>La solution logicielle Vitam permet d’importer deux référentiels correspondant à des fichiers CSV :</p>
+<ul class="simple">
+<li><p>le référentiel des règles de gestion,</p></li>
+<li><p>le référentiel des services agents.</p></li>
+</ul>
+<p>Ces fichiers au format CSV (Comma Separated Values) correspondent à des fichiers texte devant se conformer à des règles d’écriture particulières afin qu’ils puissent être importés avec succès dans la solution logicielle Vitam.
+La présente annexe a vocation à :</p>
+<ul class="simple">
+<li><p>expliciter la manière d’écrire et de mettre à jour ces fichiers CSV,</p></li>
+<li><p>émettre des recommandations sur les règles à respecter.</p></li>
+</ul>
+<section id="caracteristiques-dun-fichier-csv">
+<h4><span class="section-number">8.5.1.1. </span>Caractéristiques d’un fichier CSV<a class="headerlink" href="#caracteristiques-dun-fichier-csv" title="Lien vers cette rubrique"></a></h4>
+<p>Un fichier CSV représente des données tabulaires sous forme de valeurs séparées par :</p>
+<ul class="simple">
+<li><p>un séparateur de champ : virgule,</p></li>
+<li><p>un séparateur de texte : guillemets simples ou doubles, espace vide.
+Il existe d’autres séparateurs de champ (point virgule, deux points, tabulation, espace, etc.), mais la solution logicielle Vitam ne les supporte pas. Il est interdit de les utiliser.</p></li>
+</ul>
+<p><span class="bg-info">Exemple de fichier CSV dans sa forme simple :<br></p>
+<p>« Identifier », »Name », »Description »
+« FRAN_NP_009913 », »Présidence de la République sous Valéry Giscard d’Estaing », »Successeur de la Présidence de George Pompidou […] »
+« FRAN_NP_009941 », »Veil Simone (1927-2017) », »Née à Nice en 1927,  […] milieu des années 1970. »
+« FRAN_NP_050500 », »Galliffet (famille de) », »La famille de Galliffet était originaire du Dauphiné. Les principaux représentants de la branche aînée sont : Alexandre […] y exercèrent le commerce du sucre. »<br></p>
+<p>Équivalent sous forme de tableau :<br></p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Identifier</p></th>
+<th class="head text-center"><p>Name</p></th>
+<th class="head text-center"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>FRAN_NP_009913</p></td>
+<td class="text-center"><p>Présidence de la République sous Valéry Giscard d’Estaing</p></td>
+<td class="text-center"><p>Successeur de la Présidence de George Pompidou […]</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>FRAN_NP_009941</p></td>
+<td class="text-center"><p>Veil Simone (1927-2017)</p></td>
+<td class="text-center"><p>Née à Nice en 1927,  […] milieu des années 1970.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>FRAN_NP_050500</p></td>
+<td class="text-center"><p>Galliffet (famille de)</p></td>
+<td class="text-center"><p>La famille de Galliffet était originaire du Dauphiné. Les principaux représentants de la branche aînée sont : Alexandre […] y exercèrent le commerce du sucre.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p></span></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+</tbody>
+</table>
+<p><span class="bg-info">Exemple de fichier CSV dans sa forme étendue :<br></p>
+<p>« Identifier », »Name », »Description », »EntityType », »NameEntryParallel », »AuthorizedForm », »AlternativeForm », »EntityId », »FromDate », »ToDate », »Functions », »BiogHist », »Places », »LegalStatuses », »Mandates », »StructureOrGenealogy », »GeneralContext », »MaintenanceStatus », »LocalStatus », »Sources », »EventDescription »
+« Identifier0 », »Service Identifier0 », »Service Identifier0 », »EntityType example1 », »NameEntryParallel1 », »Form1 », »Forme1 », »Id1 », »14/02/2024 », »11/08/2022 », »Functions », »BiogHist », »Places », »LegalStatuses », »Mandates », »StructureOrGenealogy », »GeneralContext », »MaintenanceStatus », »LocalStatus », »Sources », »EventDescription »
+« Identifier1 », »Service Identifier1 »,,,,,,,,,,,,,,,,,,,
+« Identifier2 », »Service Identifier2 », »Service Identifier2 », »EntityType example1 », »NameEntryParallel1|NameEntryParallel2 », »Form1|Form1 », »Forme1|Forme2 », »Id1 », »2024-02-02 », »11/08/2022 », »Functions1|Functions2 », »BiogHist », »Places1|Places2 », »LegalStatuses1|LegalStatuses2 », »Mandates1|Mandates2 », »StructureOrGenealogy », »GeneralContext », »MaintenanceStatus », »LocalStatus », »Sources1|Sources2 », »EventDescription »<br></p>
+<p>Un référentiel au format CSV doit contenir :</p>
+<ul class="simple">
+<li><p>une ligne contenant les titres des champs acceptés. Dans la solution logicielle Vitam, les titres sont imposés :</p>
+<ul>
+<li><p>« Identifier », « Name » et « Description » pour le référentiel des services agents dans sa forme simple,</p></li>
+<li><p>« RuleId », « RuleType », « RuleValue », « RuleDescription », « RuleDuration » et « RuleMeasurement » pour le référentiel des règles de gestion ;</p></li>
+</ul>
+</li>
+<li><p>une à plusieurs lignes contenant les valeurs correspondant aux attendus du titre de colonne.</p></li>
+</ul>
+</section>
+<section id="recommandations">
+<h4><span class="section-number">8.5.1.2. </span>Recommandations<a class="headerlink" href="#recommandations" title="Lien vers cette rubrique"></a></h4>
+<p>La rédaction d’un fichier CSV obéit à un certain nombre de règles à suivre :</p>
+<ul class="simple">
+<li><p>afin de se conformer au format CSV et à l’encodage UTF-8 ;</p></li>
+<li><p>afin de respecter le formalisme du référentiel tel qu’il est défini par la solution logicielle Vitam ;</p></li>
+<li><p>afin, finalement, de pouvoir être parsé et importé sans erreur dans la solution logicielle Vitam.</p></li>
+</ul>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Intitulé</p></th>
+<th class="head text-center"><p>Description</p></th>
+<th class="head text-center"><p>Niveau de recommandation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Généralités</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Import d’un référentiel contenant une ligne de titre</p></td>
+<td class="text-center"><p>Un fichier CSV requiert une ligne de titres, devant correspondre aux titres attendus par la solution logicielle Vitam. Sans cette ligne de titres, l’import du référentiel sera en échec.</p></td>
+<td class="text-center"><p>Obligatoire</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Import d’un référentiel contenant des lignes de valeurs</p></td>
+<td class="text-center"><p>Chaque ligne contient le même nombre de valeurs (champs) qu’il y a de titres dans la première ligne.</p></td>
+<td class="text-center"><p>Obligatoire</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Import d’un référentiel au format CSV dont le séparateur de champ est la virgule</p></td>
+<td class="text-center"><p>La solution logicielle Vitam accepte les fichiers CSV séparés par des virgules et encodés en UTF-8.</p></td>
+<td class="text-center"><p>Obligatoire</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Import d’un référentiel au format CSV avec séparateurs de texte</p></td>
+<td class="text-center"><p>La solution logicielle Vitam accepte les séparateurs de texte suivants : guillemets simples ou doubles, espaces. Il est recommandé d’utiliser un séparateur de texte afin de marquer une séparation plus forte entre les valeurs contenues dans deux champs différents.</p></td>
+<td class="text-center"><p>Recommandé</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p></p></td>
+<td class="text-center"><p>Il est obligatoire d’utiliser un séparateur de texte quand la valeur textuelle contient une virgule, qui correspond à un séparateur de champ. Sans séparateur de texte, le champ contenant une virgule sera interprété non pas comme un champ unique, mais sera interprété comme correspondant à deux champs distincts lors de l’import d’un référentiel.</p></td>
+<td class="text-center"><p>Obligatoire</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p></p></td>
+<td class="text-center"><p>Il est recommandé d’utiliser uniformément le même séparateur de texte, en utilisant celui qu’on est le moins susceptible d’utiliser dans une chaîne de caractères du référentiel.</p></td>
+<td class="text-center"><p>Recommandé</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p></p></td>
+<td class="text-center"><p>Si une chaîne de caractères contient le même séparateur de texte que celui utilisé, avant le premier caractère et après le dernier, il est recommandé de doubler l’utilisation de ce séparateur.</p></td>
+<td class="text-center"><p>Recommandé</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Import d’un référentiel contenant des champs vides</p></td>
+<td class="text-center"><p>Certains champs sont facultatifs et ne contiennent pas nécessairement de données. Ce champ devra obligatoirement être représenté vide, séparé par deux virgules. Si les valeurs contenues dans les autres champs sont séparées par un séparateur de texte (guillemets simples ou doubles), le champ vide devra lui aussi figurer entre guillemets.</p></td>
+<td class="text-center"><p>Obligatoire</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Import d’un référentiel contenant des lignes blanches / vides</p></td>
+<td class="text-center"><p>Il est interdit de laisser une ligne blanche ou vide dans un référentiel que l’on souhaite importer dans la solution logicielle Vitam.</p></td>
+<td class="text-center"><p>Interdit</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Import d’un référentiel contenant des espaces vides en début ou en fin de ligne</p></td>
+<td class="text-center"><p>Il n’est pas recommandé d’importer un référentiel dont certaines lignes contiennent, en début ou fin, des espaces vides. Ces espaces vides peuvent en effet ne pas être interprétés ou mal interprétés par l’outil d’import de fichier CSV utilisé par la solution logicielle Vitam. Avant l’import d’un référentiel, il est recommandé de retirer tout espace vide du fichier CSV que l’on souhaite importer dans la solution logicielle Vitam.</p></td>
+<td class="text-center"><p>Non recommandé</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Import d’un référentiel contenant des sauts de ligne dans certaines cellules</p></td>
+<td class="text-center"><p>Il n’est pas recommandé d’importer un référentiel dont certaines lignes contiennent des sauts de ligne, hérités d’un formatage antérieur. Ces sauts de ligne peuvent en effet être interprété par l’outil d’import de fichier CSV utilisé par la solution logicielle Vitam comme un véritable saut de ligne dans le fichier CSV et entraîner des erreurs et décalages dans la liste des règles de gestion et/ou des services agents en en créant plus que nécessaires, avec des données ne correspondant pas à leur titre de colonne. <br>Avant l’import d’un référentiel, il est recommandé d’ôter tout formatage présent dans le fichier.</p></td>
+<td class="text-center"><p>Non recommandé</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Import d’un référentiel contenant des sauts de ligne dans certaines cellules</p></td>
+<td class="text-center"><p>Il n’est pas recommandé d’importer un référentiel dont certaines lignes contiennent des lignes fusionnées, héritées d’un formatage antérieur. Ces lignes fusionnées sont interprétées par l’outil d’import de fichier CSV utilisé par la solution logicielle Vitam comme une seule et même valeur, ce qui entraîne des décalages dans la liste des règles de gestion et/ou des services agents, avec un nombre de données ne correspondant pas au nombre de colonnes attendues. Avant l’import d’un référentiel, il est recommandé d’ôter tout formatage présent dans le fichier.</p></td>
+<td class="text-center"><p>Interdit</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Import et ré-import du référentiel des services agents</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Ligne de titres</p></td>
+<td class="text-center"><p>La ligne de titres doit obligatoirement contenir les intitulés suivants : « Identifier », « Name » et « Description »</p></td>
+<td class="text-center"><p>Obligatoire</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Ligne de titres</p></td>
+<td class="text-center"><p>La ligne de titres peut contenir les intitulés suivants : « EntityType », « NameEntryParallel », « AuthorizedForm », « AlternativeForm », « EntityId », « FromDate », « ToDate », « Functions », « BiogHist », « Places », « LegalStatuses », « Mandates », « StructureOrGenealogy », « GeneralContext », « MaintenanceStatus », « LocalStatus », « Sources », « EventDescription »</p></td>
+<td class="text-center"><p>Facultatif</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Lignes de valeurs</p></td>
+<td class="text-center"><p>Les champs correspondant à « Identifier » et « Name » doivent être obligatoirement renseignés.</p></td>
+<td class="text-center"><p>Obligatoire</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p></p></td>
+<td class="text-center"><p>L’identifiant ne doit comprendre ni caractère accentué, ni virgule, ni apostrophe, ni parenthèse, ni espace, ni slash, ni élément de ponctuation, ou tout autre caractère spécial. Ne sont autorisés que l’underscore et le tiret comme séparateurs.</p></td>
+<td class="text-center"><p>Obligatoire</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p></p></td>
+<td class="text-center"><p>Le champ correspondant à « Description » est facultatif. Il peut ne contenir aucune valeur.<br>En revanche, il doit être matérialisé dans le fichier CSV par un espace vide séparé de deux virgules.</p></td>
+<td class="text-center"><p>Facultatif</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p></p></td>
+<td class="text-center"><p>Le champ correspondant à « Identifier » ne doit pas comprendre d’espace ou de caractère accentué.</p></td>
+<td class="text-center"><p>Recommandé</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p></p></td>
+<td class="text-center"><p>Les dates saisies dans les champs « FromDate » et « ToDate » doivent prendre les formes AAAA-MM-JJ ou JJ/MM/AAAA.</p></td>
+<td class="text-center"><p>Obligatoire</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p></p></td>
+<td class="text-center"><p>Les valeurs répétées saisies dans les champs « NameEntryParallel », « AuthorizedForm », « AlternativeForm », « Functions », « Places », « LegalStatuses », « Mandates », « Sources » doivent être séparées par des pipes.</p></td>
+<td class="text-center"><p>Obligatoire</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="gestion-dun-fichier-au-format-csv">
+<h4><span class="section-number">8.5.1.3. </span>Gestion d’un fichier au format CSV<a class="headerlink" href="#gestion-dun-fichier-au-format-csv" title="Lien vers cette rubrique"></a></h4>
+<section id="conversion-dun-fichier-au-format-csv">
+<h5><span class="section-number">8.5.1.3.1. </span>Conversion d’un fichier au format CSV<a class="headerlink" href="#conversion-dun-fichier-au-format-csv" title="Lien vers cette rubrique"></a></h5>
+<p>Les référentiels des règles de gestion et des services agents doivent être au format CSV et encodés en UTF 8.
+Si le fichier d’origine n’est pas au format CSV, il faut suivre la procédure suivante :</p>
+<ul class="simple">
+<li><p>dans un tableur appartenant à une suite bureautique libre (par exemple, LibreOffice ou OpenOffice) :</p>
+<ul>
+<li><p>ouvrir le fichier XLS ou ODT ;</p></li>
+<li><p>sélectionner « Enregistrer sous », puis le format CSV et le séparateur de champs correspondant à une virgule (« , ») ;</p></li>
+<li><p>le cas échéant, choisir un séparateur de texte ;</p></li>
+<li><p>si cela est proposé, sélection l’encodage en UTF-8 ;</p></li>
+<li><p>enregistrer le fichier ;</p></li>
+</ul>
+</li>
+<li><p>si l’encodage n’a pas été enregistré à l’étape précédente, dans un logiciel de traitement de textes (par exemple, Bloc-notes, WordPad ou Notepad++) :</p>
+<ul>
+<li><p>ouvrir le fichier ;</p></li>
+<li><p>modifier l’encodage :</p>
+<ul>
+<li><p>dans un autre outil, en sélectionnant « Enregistrer sous », puis l’encodage en UTF-8, avant d’enregistrer les modifications ;</p></li>
+<li><p>dans Notepad++, en sélectionnant « Encodage », puis « Encoder en UTF-8 » et en enregistrant les modifications.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="modification-dun-fichier-au-format-csv">
+<h5><span class="section-number">8.5.1.3.2. </span>Modification d’un fichier au format CSV<a class="headerlink" href="#modification-dun-fichier-au-format-csv" title="Lien vers cette rubrique"></a></h5>
+<p>Les référentiels des règles de gestion et des services agents doivent être au format CSV et encodés en UTF 8.
+Pour modifier un fichier de ce format, il faut suivre la procédure suivante :</p>
+<ul class="simple">
+<li><p>dans un tableur appartenant à une suite bureautique libre (par exemple, LibreOffice ou OpenOffice) :</p>
+<ul>
+<li><p>ouvrir le fichier CSV ;</p></li>
+<li><p>modifier le fichier, en veillant à respecter les règles définies ci-dessus, notamment :</p>
+<ul>
+<li><p>ne pas supprimer une valeur obligatoire,</p></li>
+<li><p>ne pas laisser des espaces vides avant ou après une chaîne de caractères,</p></li>
+<li><p>ne pas faire de sauts de ligne ;</p></li>
+</ul>
+</li>
+<li><p>sélectionner « Enregistrer sous », puis le format CSV et le séparateur de champs correspondant à une virgule (« , ») ;</p></li>
+<li><p>le cas échéant, choisir un séparateur de texte ;</p></li>
+<li><p>si cela est proposé, sélection l’encodage en UTF-8 ;</p></li>
+<li><p>enregistrer le fichier.</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Attention :</strong>
+Si le fichier est « enregistré », au lieu d’être « enregistré sous », ce nouvel enregistrement n’est plus au format CSV et l’encodage peut avoir également été modifié.</p>
+<ul class="simple">
+<li><p>Il est recommandé, avant toute modification, de faire une sauvegarde du fichier CSV ;</p></li>
+<li><p>Il ne faut pas enregistrer le fichier CSV dans le tableur dans lequel il est ouvert à des fins de visualisation.</p></li>
+</ul>
+</section>
+<section id="exemples-de-fichier-csv-et-messages-retournes-par-la-solution-logicielle-vitam">
+<h5><span class="section-number">8.5.1.3.3. </span>Exemples de fichier CSV et messages retournés par la solution logicielle Vitam<a class="headerlink" href="#exemples-de-fichier-csv-et-messages-retournes-par-la-solution-logicielle-vitam" title="Lien vers cette rubrique"></a></h5>
+<p><strong>Import initial d’un référentiel des services agents</strong></p>
+<ul class="simple">
+<li><p>Tous les services agents comprennent un identifiant, un intitulé et une description
+« Identifier », »Name », »Description »<br> »FRAN_NP_009913 », »Présidence sous Valéry Giscard d’Estaing », »Successeur de Pompidou […] »<br> »FRAN_NP_009941 », »Veil Simone (1927-2017) », »Née à Nice en 1927,  […] »</p></li>
+</ul>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Résultat</p></th>
+<th class="head text-center"><p>Message retourné par la solution logicielle Vitam</p></th>
+<th class="head text-center"><p>Commentaires</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>OK</p></td>
+<td class="text-center"><p>« Succès du processus d’import du référentiel des services agents. »<br>Détail : nom du fichier CSV</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>Au moins un identifiant de service agent n’est pas renseigné<br />
+« Identifier », »Name », »Description »<br> »FRAN_NP_009913 », »Présidence sous Valéry Giscard d’Estaing », »Successeur de Pompidou […] »<br> » », »Veil Simone (1927-2017) », »Née à Nice en 1927, […] »</p></li>
+</ul>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Résultat</p></th>
+<th class="head text-center"><p>Message retourné par la solution logicielle Vitam</p></th>
+<th class="head text-center"><p>Commentaires</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>KO</p></td>
+<td class="text-center"><p>« Échec du processus d’import du référentiel des services agents ».<br>Détail : { « agencyCheck » : « Import agency error &gt; Invalid CSV File » }<br>Rapport : « Au moins une valeur obligatoire est manquante. Valeurs obligatoires : Identifier, Name, Description ».<br>Informations additionnelles : Identifier.<br>(STP_IMPORT_AGENCIES_MISSING_INFORMATIONS.KO)</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>Au moins un intitulé de service agent n’est pas renseigné<br />
+« Identifier », »Name », »Description »<br>
+« FRAN_NP_009913 », » », »Successeur de Pompidou […] »<br>
+« FRAN_NP_009941 », »Veil Simone (1927-2017) », »Née à Nice en 1927, […] »</p></li>
+</ul>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Résultat</p></th>
+<th class="head text-center"><p>Message retourné par la solution logicielle Vitam</p></th>
+<th class="head text-center"><p>Commentaires</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>KO</p></td>
+<td class="text-center"><p>« Échec du processus d’import du référentiel des services agents ».<br>Détail : { « agencyCheck » : « Import agency error &gt; Invalid CSV File » }<br>Rapport : « Au moins une valeur obligatoire est manquante. Valeurs obligatoires : Identifier, Name, Description ».<br>Informations additionnelles : Name.<br>(STP_IMPORT_AGENCIES_MISSING_INFORMATIONS.KO)</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>Au moins une date est mal saisie
+« Identifier », »Name », »Description », »FromDate »<br>
+« FRAN_NP_009913 », » », »Successeur de Pompidou […] », »20-12-2023 »<br>
+« FRAN_NP_009941 », »Veil Simone (1927-2017) », »Née à Nice en 1927, […] », » »</p></li>
+</ul>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Résultat</p></th>
+<th class="head text-center"><p>Message retourné par la solution logicielle Vitam</p></th>
+<th class="head text-center"><p>Commentaires</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>KO</p></td>
+<td class="text-center"><p>« Échec du processus d’import du référentiel des services agents ».<br>Détail : { « agencyCheck » : « Import agency error &gt; The field FromDate contains bad date format value » }<br>(IMPORT_AGENCIES.KO)</p></td>
+<td class="text-center"><p>Vérifier le format des dates dans le fichier CSV et corriger les erreurs.</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>Au moins un nom de colonne est inconnu
+« Identifier », »Name », »Description », »Toto »<br>
+« FRAN_NP_009913 », » », »Successeur de Pompidou […] », »toto »<br>
+« FRAN_NP_009941 », »Veil Simone (1927-2017) », »Née à Nice en 1927, […] », » »</p></li>
+</ul>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Résultat</p></th>
+<th class="head text-center"><p>Message retourné par la solution logicielle Vitam</p></th>
+<th class="head text-center"><p>Commentaires</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>KO</p></td>
+<td class="text-center"><p>« Échec du processus d’import du référentiel des services agents ».<br>Détail : { « agencyCheck » : « Import agency error &gt; Unknown fields found: Toto » }<br>(IMPORT_AGENCIES.KO)</p></td>
+<td class="text-center"><p>Supprimer la colonne ou corriger l’intitulé afin qu’il corresponde à un nom de colonne attendu.</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>Au moins une colonne est répétée
+« Identifier », »Name », »Description », »AlternativeForm », »AlternativeForm »<br>
+« FRAN_NP_009913 », »Présidence sous Valéry Giscard d’Estaing », »Successeur de Pompidou […] », »VGE », »Valéry Giscard d’Estaing »<br>
+« FRAN_NP_009941 », »Veil Simone (1927-2017) », »Née à Nice en 1927, […] », » », » »</p></li>
+</ul>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Résultat</p></th>
+<th class="head text-center"><p>Message retourné par la solution logicielle Vitam</p></th>
+<th class="head text-center"><p>Commentaires</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>KO</p></td>
+<td class="text-center"><p>« Échec du processus d’import du référentiel des services agents ».<br>Détail : { « agencyCheck » : « Import agency error &gt; Duplicate fields found in the CSV : AlternativeForm » }<br>(IMPORT_AGENCIES.KO)</p></td>
+<td class="text-center"><p>Supprimer la colonne doublonnée ou corriger l’intitulé afin qu’il corresponde à un nom de colonne différent.</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>Au moins une description de service agent n’est pas renseignée<br />
+« Identifier », »Name », »Description »<br />
+« FRAN_NP_009913 », »Présidence sous Valéry Giscard d’Estaing », » »<br />
+« FRAN_NP_009941 », »Veil Simone (1927-2017) », »Née à Nice en 1927, […] »</p></li>
+</ul>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Résultat</p></th>
+<th class="head text-center"><p>Message retourné par la solution logicielle Vitam</p></th>
+<th class="head text-center"><p>Commentaires</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>OK</p></td>
+<td class="text-center"><p>« Succès du processus d’import du référentiel des services agents. »</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Détail : nom du fichier CSV</p></td>
+<td class="text-center"><p>Associer une description à un service agent est facultatif à l’import du référentiel.<br>Point d’attention : même si aucune description n’est précisée pour un service agent, les séparateurs de champs et de texte doivent être obligatoirement être présents.</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>La ligne de titre déclare « Identifier » suivi d’un espace blanc / vide<br />
+« Identifier « , »Name », »Description »<br />
+« FRAN_NP_009913 », »Présidence sous Valéry Giscard d’Estaing », »Successeur de Pompidou […] »<br />
+« FRAN_NP_009941 », »Veil Simone (1927-2017) », »Née à Nice en 1927, […] »</p></li>
+</ul>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Résultat</p></th>
+<th class="head text-center"><p>Message retourné par la solution logicielle Vitam</p></th>
+<th class="head text-center"><p>Commentaires</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>OK</p></td>
+<td class="text-center"><p>« Succès du processus d’import du référentiel des services agents. »<br>Détail : nom du fichier CSV</p></td>
+<td class="text-center"><p>Même si l’import est en succès, il n’est pas recommandé de laisser des espaces blancs / vides avant ou après une chaîne de caractères dans un fichier CSV.</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>La ligne de titre déclare « Identifier » précédé d’un espace blanc / vide<br />
+«  Identifier », »Name », »Description »<br />
+« FRAN_NP_009913 », »Présidence sous Valéry Giscard d’Estaing », »Successeur de Pompidou […] »<br />
+« FRAN_NP_009941 », »Veil Simone (1927-2017) », »Née à Nice en 1927, […] »</p></li>
+</ul>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Résultat</p></th>
+<th class="head text-center"><p>Message retourné par la solution logicielle Vitam</p></th>
+<th class="head text-center"><p>Commentaires</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>OK</p></td>
+<td class="text-center"><p>« Succès du processus d’import du référentiel des services agents. »<br>Détail : nom du fichier CSV</p></td>
+<td class="text-center"><p>Même si l’import est en succès, il n’est pas recommandé de laisser des espaces blancs / vides avant ou après une chaîne de caractères dans un fichier CSV.<br>Laisser un espace vide avant « Identifier » peut entraîner une erreur lors de l’export du référentiel préalablement importé dans la solution logicielle Vitam.</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>La ligne de titre déclare « Name » suivi d’un espace blanc / vide<br />
+« Identifier », »Name « , »Description »<br />
+« FRAN_NP_009913 », »Présidence sous Valéry Giscard d’Estaing », »Successeur de Pompidou […] »<br />
+« FRAN_NP_009941 », »Veil Simone (1927-2017) », »Née à Nice en 1927, […] »</p></li>
+</ul>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Résultat</p></th>
+<th class="head text-center"><p>Message retourné par la solution logicielle Vitam</p></th>
+<th class="head text-center"><p>Commentaires</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>OK</p></td>
+<td class="text-center"><p>« Succès du processus d’import du référentiel des services agents. »<br>Détail : nom du fichier CSV</p></td>
+<td class="text-center"><p>Même si l’import est en succès, il n’est pas recommandé de laisser des espaces blancs / vides avant ou après une chaîne de caractères dans un fichier CSV.</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>La ligne de titre déclare « Name » précédé d’un espace blanc / vide<br />
+« Identifier », » Name », »Description »<br />
+« FRAN_NP_009913 », »Présidence sous Valéry Giscard d’Estaing », »Successeur de Pompidou […] »<br />
+« FRAN_NP_009941 », »Veil Simone (1927-2017) », »Née à Nice en 1927, […] »</p></li>
+</ul>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Résultat</p></th>
+<th class="head text-center"><p>Message retourné par la solution logicielle Vitam</p></th>
+<th class="head text-center"><p>Commentaires</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>OK</p></td>
+<td class="text-center"><p>« Succès du processus d’import du référentiel des services agents. »<br>Détail : nom du fichier CSV</p></td>
+<td class="text-center"><p>Même si l’import est en succès, il n’est pas recommandé de laisser des espaces blancs / vides avant ou après une chaîne de caractères dans un fichier CSV.</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>La ligne de titre déclare « Description » suivie d’un espace blanc / vide<br />
+« Identifier », » Name », »Description »<br />
+« FRAN_NP_009913 », »Présidence sous Valéry Giscard d’Estaing », »Successeur de Pompidou […] »<br />
+« FRAN_NP_009941 », »Veil Simone (1927-2017) », »Née à Nice en 1927, […] »</p></li>
+</ul>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Résultat</p></th>
+<th class="head text-center"><p>Message retourné par la solution logicielle Vitam</p></th>
+<th class="head text-center"><p>Commentaires</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>OK</p></td>
+<td class="text-center"><p>« Succès du processus d’import du référentiel des services agents. »<br>Détail : nom du fichier CSV</p></td>
+<td class="text-center"><p>Même si l’import est en succès, il n’est pas recommandé de laisser des espaces blancs / vides avant ou après une chaîne de caractères dans un fichier CSV.</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>La ligne de titre déclare « Description » précédée d’un espace blanc / vide<br />
+« Identifier », » Name », »  Description »<br />
+« FRAN_NP_009913 », »Présidence sous Valéry Giscard d’Estaing », »Successeur de Pompidou […] »<br />
+« FRAN_NP_009941 », »Veil Simone (1927-2017) », »Née à Nice en 1927, […] »</p></li>
+</ul>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Résultat</p></th>
+<th class="head text-center"><p>Message retourné par la solution logicielle Vitam</p></th>
+<th class="head text-center"><p>Commentaires</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>OK</p></td>
+<td class="text-center"><p>« Succès du processus d’import du référentiel des services agents. »<br>Détail : nom du fichier CSV</p></td>
+<td class="text-center"><p>Même si l’import est en succès, il n’est pas recommandé de laisser des espaces blancs / vides avant ou après une chaîne de caractères dans un fichier CSV.</p></td>
+</tr>
+</tbody>
+</table>
+<hr class="footnotes docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id2" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>La documentation du standard est accessible à l’<a class="reference external" href="https://schema.data.gouv.fr/Archivistes75/registre_entrees/latest/documentation.html">adresse suivante</a> (lien consulté le 27 février 2023).</p>
+</aside>
+</aside>
+</section>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="regles_gestion.html" class="btn btn-neutral float-left" title="7. Règles de gestion" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="profil_archivage.html" class="btn btn-neutral float-right" title="9. Profils d’archivage" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2022, Programme Vitam.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: master_8.1.x
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Branches</dt>
+      <dd><a href="../../master/sections/services_prod.html">master</a></dd>
+      <dd><a href="../../master_7.1.x/sections/services_prod.html">master_7.1.x</a></dd>
+      <dd><a href="services_prod.html">master_8.1.x</a></dd>
+      <dd><a href="../../v8.1_Resip_mathilde/sections/services_prod.html">v8.1_Resip_mathilde</a></dd>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

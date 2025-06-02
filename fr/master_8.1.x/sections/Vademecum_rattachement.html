@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>20. Faire un rattachement dans la solution logicielle Vitam &mdash; Vitam documentation fonctionnelle</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=eea1f72d" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f4732e6d"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/translations.js?v=bf059b8c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="21. Le référentiel des formats dans la solution logicielle Vitam" href="Vademecum_referentiel_formats.html" />
+    <link rel="prev" title="19. Les profils d’unité archivistique dans la solution logicielle Vitam" href="Vademecum_pua.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: white" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/Vitam_Logo-CMJN.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">première approche</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="guide_lecture.html">1. Documentation Vitam - guide de lecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="presentation_programme.html">2. Présentation du programme Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="presentation_solution_logicielle.html">3. Présentation de la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_prise_en_main.html">4. Guide de prise en main de la solution logicielle Vitam – Vitam UI<br>
+<em>Réaliser une première entrée</em></a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">documentation métier</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="organisation_information.html">1. Organisation de l’information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gestion_archives_arbo.html">2. Gestion des archives et des arborescences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_donnees.html">3. Modèle de données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SIP.html">4. Structuration des <em>Submission Information Packages</em> (SIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DIP.html">5. Structuration des <em>Dissemination Information Packages</em> (DIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gestion_habilitations.html">6. Gestion des habilitations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regles_gestion.html">7. Règles de gestion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services_prod.html">8. Services producteurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_archivage.html">9. Profils d’archivage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_unite_archivistique.html">10. Profils d’unité archivistique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ontologie.html">11. Ontologie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="schema.html">12. Schéma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_workflow.html">13. Description des workflows et des opérations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_de_collecte.html">14. Module de collecte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eliminations.html">15. Les éliminations avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gel.html">16. Le gel d’archives avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preservation.html">17. Gestion de la préservation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stockage.html">18. Gestion de multiples stratégies de stockage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transfert.html">19. Le transfert avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="valeur_probante.html">20. Conservation de la valeur probante</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">documentation Vitam UI</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Autoprovisionning.html">1. Vitam UI : présentation de la fonctionnalité d’auto-provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Arbres_Plans.html">2. APP Arbres et plans</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">outils connexes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="resip.html">1. RESIP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resip_faq.html">2. RESIP : foire aux questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pastis_standalone.html">3. PASTIS STANDALONE</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Chantier préservation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="chantier_preservation_validation_format.html">1. Validation du format des fichiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_identification_format.html">2. Identification des formats de fichiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_extraction_MD.html">3. Extraction des métadonnées techniques</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Vademecum</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_sommaire.html">1. Vademecum: sommaire thématique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_glossaire.html">2. Notions utilisées dans la solution logicielle Vitam et lien vers la fiche qui les définit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_arbre.html">3. L’arbre de positionnement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_audit.html">4. Les audits dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_classification.html">5. La gestion des archives classifiées avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_acces.html">6. Le contrat d’accès dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_entree.html">7. Le contrat d’entrée dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_gestion.html">8. Le contrat de gestion dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_echeances.html">9. Le calcul des héritages des règles de gestion et l’indexation des échéances dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_eliminations.html">10. Réaliser des éliminations d’archives avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_habilitations.html">11. La gestion des droits et permissions des utilisateurs applicatifs dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_identifiants.html">12. L’attribution des identifiants dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_journalisation.html">13. La journalisation et la conservation de la valeur probante dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_ontologie.html">14. L’ontologie dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_pa.html">15. Les profils d’archivage dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_parametrages_pf.html">16. Le paramétrage fonctionnel d’une plate-forme utilisant la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_plan.html">17. Le plan de classement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_preservation.html">18. La préservation dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_pua.html">19. Les profils d’unité archivistique dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">20. Faire un rattachement dans la solution logicielle Vitam</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#presentation-des-rattachements">20.1. Présentation des rattachements</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#a-quoi-sert-un-rattachement">20.1.1. À quoi sert un rattachement ?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#quand-faire-un-rattachement">20.1.2. Quand faire un rattachement ?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#controles-effectues-sur-les-rattachements-demandes">20.1.3. Contrôles effectués sur les rattachements demandés</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#recommandations-pour-declarer-une-unite-archivistique-de-rattachement-dans-un-bordereau-de-transfert">20.1.4. Recommandations pour déclarer une unité archivistique de rattachement dans un bordereau de transfert</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#configuration-des-rattachements-en-entree">20.2. Configuration des rattachements en entrée</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#le-rattachement-a-lentree-des-unites-archivistiques-racines-du-sip-a-une-unite-archivistique-deja-presente-dans-le-systeme-par-contrat-dentree">20.2.1. Le rattachement à l’entrée des unités archivistiques racines du SIP à une unité archivistique  déjà présente dans le système par contrat d’entrée</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#le-rattachement-a-lentree-dunites-archivistiques-du-sip-a-des-unites-archivistiques-deja-presentes-dans-le-systeme-par-declaration-dans-le-bordereau-de-transfert">20.2.2. Le rattachement à l’entrée d’unités archivistiques du SIP à des unités archivistiques déjà présentes dans le système par déclaration dans le bordereau de transfert</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#le-rattachement-a-lentree-dune-unite-archivistique-du-sip-a-un-groupe-dobjets-techniques-deja-present-dans-le-systeme-par-declaration-dans-le-bordereau-de-transfert">20.2.3. Le rattachement à l’entrée d’une unité archivistique du SIP à un groupe d’objets techniques déjà présent dans le système par déclaration dans le bordereau de transfert</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#le-rattachement-dun-objet-technique-a-un-groupe-dobjets-techniques-deja-present-dans-le-systeme-par-declaration-dans-le-bordereau-de-transfert-mise-a-jour-dune-unite-archivistique">20.2.4. Le rattachement d’un objet technique à un groupe d’objets techniques déjà présent dans le système par déclaration dans le bordereau de transfert (mise à jour d’une unité archivistique)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#la-reorganisation-darborescence-pour-les-unites-archivistiques-deja-presentes-dans-le-systeme">20.3. La réorganisation d’arborescence pour les unités archivistiques déjà présentes dans le système</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_formats.html">21. Le référentiel des formats dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_griffons.html">22. Le référentiel des griffons dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_preservation.html">23. Le référentiel des scénarios de préservation dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_rg.html">24. Le référentiel des règles de gestion dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_sa.html">25. Le référentiel des services agents dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_registre_fonds.html">26. Le registre des fonds dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_structuration_information.html">27. La structuration des informations dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_suivi_acces.html">28. Le suivi des accès dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_tenant.html">29. Les tenants dans la solution logicielle Vitam</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: white" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Documentation utilisateur Vitam</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">20. </span>Faire un rattachement dans la solution logicielle Vitam</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/sections/Vademecum_rattachement.md.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+
+           <div itemprop="articleBody">
+             
+  <section id="faire-un-rattachement-dans-la-solution-logicielle-vitam">
+<h1><span class="section-number">20. </span>Faire un rattachement dans la solution logicielle Vitam<a class="headerlink" href="#faire-un-rattachement-dans-la-solution-logicielle-vitam" title="Lien vers cette rubrique"></a></h1>
+<section id="presentation-des-rattachements">
+<h2><span class="section-number">20.1. </span>Présentation des rattachements<a class="headerlink" href="#presentation-des-rattachements" title="Lien vers cette rubrique"></a></h2>
+<section id="a-quoi-sert-un-rattachement">
+<h3><span class="section-number">20.1.1. </span>À quoi sert un rattachement ?<a class="headerlink" href="#a-quoi-sert-un-rattachement" title="Lien vers cette rubrique"></a></h3>
+<p>Le rattachement est une fonctionnalité offerte par la solution logicielle Vitam qui permet de faire un lien entre deux éléments présents dans le système pour :</p>
+<ul class="simple">
+<li><p>rattacher un plan de classement à un arbre de positionnement,</p></li>
+<li><p>compléter un arbre de positionnement ou un plan de classement en y ajoutant une nouvelle branche,</p></li>
+<li><p>rattacher un dossier ou une arborescence de dossiers à un nœud d’arbre de positionnement ou de plan de classement,</p></li>
+<li><p>compléter un dossier déjà ouvert dans le système en y versant les pièces de ce dossier,</p></li>
+<li><p>compléter une unité archivistique en intégrant à son groupe d’objets techniques une nouvelle représentation du document (par exemple, une version basse résolution d’une photographie).</p></li>
+</ul>
+</section>
+<section id="quand-faire-un-rattachement">
+<h3><span class="section-number">20.1.2. </span>Quand faire un rattachement ?<a class="headerlink" href="#quand-faire-un-rattachement" title="Lien vers cette rubrique"></a></h3>
+<p>La solution Vitam offre plusieurs possibilités de rattachement :</p>
+<ul class="simple">
+<li><p>à l’entrée :
+- le rattachement d’une unité archivistique à une unité archivistique déjà présente dans le système ;
+- le rattachement d’une unité archivistique à un groupe d’objets techniques (GOT) déjà présent dans le système ;
+- le rattachement d’un objet à un GOT déjà présent dans le système ;</p></li>
+<li><p>après l’entrée, la réorganisation d’arborescence pour des unités archivistiques présentes dans le système permettant de créer ou de supprimer des liens de parenté.</p></li>
+</ul>
+</section>
+<section id="controles-effectues-sur-les-rattachements-demandes">
+<h3><span class="section-number">20.1.3. </span>Contrôles effectués sur les rattachements demandés<a class="headerlink" href="#controles-effectues-sur-les-rattachements-demandes" title="Lien vers cette rubrique"></a></h3>
+<p>Un rattachement ne peut être effectué qu’entre des unités archivistiques, des groupes d’objets techniques ou des objets techniques présents sur un même tenant de la plate-forme.</p>
+<p>Les rattachements doivent respecter les règles définies en fonction de la nature des unités archivistiques :</p>
+<ul class="simple">
+<li><p>une unité archivistique standard peut se rattacher à une unité archivistique standard, une unité archivistique de plan de classement ou une unité archivistique d’arbre de positionnement,</p></li>
+<li><p>une unité archivistique de plan de classement peut se rattacher à une unité archivistique de plan de classement ou à une unité archivistique d’arbre de positionnement,</p></li>
+<li><p>une unité archivistique d’arbre de positionnement peut se rattacher à une unité archivistique d’arbre de positionnement.
+Le rattachement proposé ne doit pas créer de cycle (une unité archivistique ne peut pas devenir la mère de sa mère).
+Si ces règles ne sont pas respectées, l’entrée sera rejetée.</p></li>
+</ul>
+<p>La position d’une unité archivistique dans une arborescence et son service producteur constituent deux des filtres utilisés dans le contrat d’accès pour filtrer les accès à l’unité archivistique. Un rattachement qui modifie la position de l’unité archivistique ou lui ajoute un service producteur de rattachement peut donc avoir des conséquences sur l’accès à une unité archivistique.</p>
+</section>
+<section id="recommandations-pour-declarer-une-unite-archivistique-de-rattachement-dans-un-bordereau-de-transfert">
+<h3><span class="section-number">20.1.4. </span>Recommandations pour déclarer une unité archivistique de rattachement dans un bordereau de transfert<a class="headerlink" href="#recommandations-pour-declarer-une-unite-archivistique-de-rattachement-dans-un-bordereau-de-transfert" title="Lien vers cette rubrique"></a></h3>
+<p>La création de l’unité archivistique de rattachement se fait une fois le bordereau de transfert constitué. Il est fortement conseillé de choisir une présentation du bordereau en mode râteau (mode « à plat » pour les SIP générés avec la moulinette ReSIP) et non en mode arborescent. Les exemples donnés dans ce document correspondent tous à des bordereaux de transfert présentés en mode râteau.
+Les champs obligatoires du SEDA doivent impérativement être présents et complétés (titre et niveau de description).
+L’unité archivistique de rattachement ne sera pas créée dans la solution logicielle lors de l’entrée, aussi la valeur indiquée dans ces champs n’a pas d’importance, même si pour des raisons de facilitation de relecture du bordereau de transfert il est préférable d’indiquer les valeurs portées par l’unité archivistique de rattachement dans le système.
+Une attention particulière doit être portée au moment d’attribuer à l’unité archivistique ainsi créée un identifiant xml : cet identifiant ne doit pas être déjà attribué à une autre unité archivistique dans le manifeste.</p>
+</section>
+</section>
+<section id="configuration-des-rattachements-en-entree">
+<h2><span class="section-number">20.2. </span>Configuration des rattachements en entrée<a class="headerlink" href="#configuration-des-rattachements-en-entree" title="Lien vers cette rubrique"></a></h2>
+<section id="le-rattachement-a-lentree-des-unites-archivistiques-racines-du-sip-a-une-unite-archivistique-deja-presente-dans-le-systeme-par-contrat-dentree">
+<h3><span class="section-number">20.2.1. </span>Le rattachement à l’entrée des unités archivistiques racines du SIP à une unité archivistique  déjà présente dans le système par contrat d’entrée<a class="headerlink" href="#le-rattachement-a-lentree-des-unites-archivistiques-racines-du-sip-a-une-unite-archivistique-deja-presente-dans-le-systeme-par-contrat-dentree" title="Lien vers cette rubrique"></a></h3>
+<p><em>Cas d’usage : un service d’archives a défini un arbre de positionnement ou un plan de classement et souhaite rattacher automatiquement toutes les unités racine des SIP utilisant un même contrat d’entrée à un même nœud de cet arbre ou de ce plan.</em></p>
+<p>La solution logicielle Vitam offre la possibilité de déclarer au niveau du contrat d’entrée un nœud de rattachement qui s’appliquera à toutes les unités archivistiques racines des SIP qui utilisent ce contrat.
+Le rattachement se fait sur la base de l’identifiant (GUID) d’une unité archivistique déjà présente dans le système. Cette unité archivistique peut être de type « arbre de positionnement », « plan de classement » ou « standard ».</p>
+</section>
+<section id="le-rattachement-a-lentree-dunites-archivistiques-du-sip-a-des-unites-archivistiques-deja-presentes-dans-le-systeme-par-declaration-dans-le-bordereau-de-transfert">
+<h3><span class="section-number">20.2.2. </span>Le rattachement à l’entrée d’unités archivistiques du SIP à des unités archivistiques déjà présentes dans le système par déclaration dans le bordereau de transfert<a class="headerlink" href="#le-rattachement-a-lentree-dunites-archivistiques-du-sip-a-des-unites-archivistiques-deja-presentes-dans-le-systeme-par-declaration-dans-le-bordereau-de-transfert" title="Lien vers cette rubrique"></a></h3>
+<p><em>Cas d’usage : une application de type GED verse périodiquement les documents produits dans la GED en demandant leur rattachement au plan de classement déjà présent dans le système.</em></p>
+<p>La solution logicielle Vitam offre la possibilité de déclarer dans le bordereau de transfert une unité archivistique déjà présente dans le système à laquelle rattacher une ou plusieurs unités archivistiques du SIP. L’unité archivistique de rattachement peut être de type « arbre de positionnement », « plan de classement » ou « standard ».
+Le rattachement peut se faire soit sur la base de l’identifiant (GUID) de l’unité archivistique de rattachement, soit sur la base de la valeur d’une métadonnée de l’unité archivistique de rattachement (par exemple : <em>MetadataName</em>Title*/MetadataName*, <em>MetadataValue</em>Titre de mon AU*/MetadataValue*).</p>
+<p>Avec la deuxième solution, la balise et la valeur déclarées pour identifier l’unité archivistique de rattachement doivent renvoyer un résultat unique dans la plate-forme. Ainsi, si le rattachement se fait sur la métadonnée <em>Title</em> et que plusieurs unités archivistiques ont la même valeur pour le champ Title, le rattachement ne pourra pas être effectué et l’entrée du SIP échouera.
+Il est donc recommandé d’utiliser des éléments univoques comme un identifiant (par exemple, les balises <em>FilePlanPosition</em>, <em>OriginatingSystemId</em>, <em>ArchivalAgencyArchiveUnitIdentifier</em>, <em>OriginatingAgencyArchiveUnitIdentifier</em>, <em>TransferringAgencyArchiveUnitIdentifier</em>).</p>
+<p>Dans les deux cas, il convient de :</p>
+<ul class="simple">
+<li><p>créer dans le bordereau une unité archivistique correspondant à l’unité archivistique déjà présente dans le système, renseignée avec les champs obligatoires dans le SEDA (Title, DescriptionLevel). Cette création est indispensable afin de respecter la logique du standard SEDA ;</p></li>
+<li><p>insérer dans le sous-bloc <em>Management</em> de cette unité archivistique un sous-bloc <em>UpdateOperation</em> (extension du schéma SEDA) ;</p></li>
+<li><p>déclarer dans la balise <em>UpdateOperation</em> de cette unité archivistique les informations permettant son identification dans le système. Cette déclaration peut être faite selon 2 méthodes :
+- méthode 1 : insérer dans le sous-bloc <em>UpdateOperation</em> une balise <em>SystemId</em> comprenant l’identifiant unique attribué par la solution logicielle Vitam à l’unité archivistique déjà présente dans le système ;
+- méthode 2 : insérer dans le sous-bloc <em>UpdateOperation</em> un bloc <em>ArchiveUnitIdentifierKey</em> qui comprend lui-même 2 balises : <em>MetadataName</em> qui doit correspondre à une balise du bloc Content du schéma SEDA 2.1, et une balise <em>MetadataValue</em> qui doit correspondre à la valeur du champ de l’unité archivistique déjà présente dans le système à laquelle on veut rattacher l’unité archivistique du SIP ;</p></li>
+<li><p>faire référence aux unités archivistiques du bordereau de transfert à rattacher en utilisant la balise <em>ArchiveUnitRefId</em>.</p></li>
+</ul>
+<p><em>Exemple pour la méthode 1</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">ArchiveUnit</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;ID4&quot;</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">Management</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">UpdateOperation</span><span class="o">&gt;</span>
+                            <span class="o">&lt;</span><span class="n">SystemId</span><span class="o">&gt;</span><span class="n">aeaqaaaaaihnjdarabzvqak3m2b3qoqaaaaq</span><span class="o">&lt;/</span><span class="n">SystemId</span><span class="o">&gt;</span>
+                <span class="o">&lt;/</span><span class="n">UpdateOperation</span><span class="o">&gt;</span>
+        <span class="o">&lt;/</span><span class="n">Management</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">Content</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">DescriptionLevel</span><span class="o">&gt;</span><span class="n">RecordGrp</span><span class="o">&lt;/</span><span class="n">DescriptionLevel</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">Title</span> <span class="n">xml</span><span class="p">:</span><span class="n">lang</span><span class="o">=</span><span class="s2">&quot;fr&quot;</span><span class="o">&gt;</span><span class="n">Sénat</span><span class="o">&lt;/</span><span class="n">Title</span><span class="o">&gt;</span>
+        <span class="o">&lt;/</span><span class="n">Content</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">ArchiveUnit</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;ID20&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">ArchiveUnitRefId</span><span class="o">&gt;</span><span class="n">ID3</span><span class="o">&lt;/</span><span class="n">ArchiveUnitRefId</span><span class="o">&gt;</span>
+        <span class="o">&lt;/</span><span class="n">ArchiveUnit</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">ArchiveUnit</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p><em>Exemple pour la méthode 2</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">ArchiveUnit</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;ID4&quot;</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">Management</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">UpdateOperation</span><span class="o">&gt;</span>
+                            <span class="o">&lt;</span><span class="n">ArchiveUnitIdentifierKey</span><span class="o">&gt;</span>
+                                     <span class="o">&lt;</span><span class="n">MetadataName</span><span class="o">&gt;</span><span class="n">Title</span><span class="o">&lt;/</span><span class="n">MetadataName</span><span class="o">&gt;</span>
+                                     <span class="o">&lt;</span><span class="n">MetadataValue</span><span class="o">&gt;</span><span class="n">デモ</span><span class="o">&lt;/</span><span class="n">MetadataValue</span><span class="o">&gt;</span>
+                            <span class="o">&lt;/</span><span class="n">ArchiveUnitIdentifierKey</span><span class="o">&gt;</span>
+                <span class="o">&lt;/</span><span class="n">UpdateOperation</span><span class="o">&gt;</span>
+        <span class="o">&lt;/</span><span class="n">Management</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">Content</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">DescriptionLevel</span><span class="o">&gt;</span><span class="n">RecordGrp</span><span class="o">&lt;/</span><span class="n">DescriptionLevel</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">Title</span><span class="o">&gt;</span><span class="n">Sénat</span><span class="o">&lt;/</span><span class="n">Title</span><span class="o">&gt;</span>
+        <span class="o">&lt;/</span><span class="n">Content</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">ArchiveUnit</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;ID9&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">ArchiveUnitRefId</span><span class="o">&gt;</span><span class="n">ID3</span><span class="o">&lt;/</span><span class="n">ArchiveUnitRefId</span><span class="o">&gt;</span>
+        <span class="o">&lt;/</span><span class="n">ArchiveUnit</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">ArchiveUnit</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p><em>Contrôle sur le positionnement des rattachements déclarés dans le bordereau de transfert</em><br />
+La solution logicielle Vitam offre la possibilité de déclarer un ou plusieurs nœud(s) dans le contrat d’entrée pour faire des contrôles sur les rattachements déclarés dans les bordereaux de transfert des SIP utilisant ce contrat d’entrée. En ce cas, le système vérifiera à l’entrée que les rattachements déclarés dans le bordereau de transfert correspondent à ce nœud ou sont bien situés dans sa descendance. Si ce n’est pas le cas, l’entrée sera en échec.
+Le nœud déclaré peut être de type « arbre de positionnement », « plan de classement » ou « standard ».</p>
+<p>Le contrat d’entrée peut être paramétré pour interdire la présence d’un rattachement dans le bordereau de transfert, l’autoriser ou la rendre obligatoire.</p>
+</section>
+<section id="le-rattachement-a-lentree-dune-unite-archivistique-du-sip-a-un-groupe-dobjets-techniques-deja-present-dans-le-systeme-par-declaration-dans-le-bordereau-de-transfert">
+<h3><span class="section-number">20.2.3. </span>Le rattachement à l’entrée d’une unité archivistique du SIP à un groupe d’objets techniques déjà présent dans le système par déclaration dans le bordereau de transfert<a class="headerlink" href="#le-rattachement-a-lentree-dune-unite-archivistique-du-sip-a-un-groupe-dobjets-techniques-deja-present-dans-le-systeme-par-declaration-dans-le-bordereau-de-transfert" title="Lien vers cette rubrique"></a></h3>
+<p><em>Cas d’usage : une unité archivistique est représentée par un objet technique (au sein d’un groupe d’objets techniques) déjà présent dans le système. Le service d’archives ne souhaite pas verser une deuxième fois le fichier et veut que l’unité archivistique à verser soit rattachée au groupe d’objets techniques déjà présent dans le système.</em></p>
+<p>La solution logicielle Vitam offre la possibilité de déclarer dans le bordereau un groupe d’objets techniques déjà présent dans le système auquel se rattachera une unité archivistique.
+Afin de rattacher une unité archivistique présente dans le bordereau à un groupe d’objets déjà présent dans la plate-forme utilisant la solution logicielle Vitam, il est obligatoire :</p>
+<ul class="simple">
+<li><p>d’ajouter un sous-bloc <em>DataObjectGroup</em> à l’unité archivistique (extension du schéma SEDA) ;</p></li>
+<li><p>d’ajouter dans ce bloc un élément <em>DataObjectGroupExistingReferenceId</em> ;</p></li>
+<li><p>d’insérer dans l’élément <em>DataObjectGroupExistingReferenceId</em> une balise <em>SystemId</em> comprenant l’identifiant unique attribué par la solution logicielle Vitam au groupe d’objets techniques déjà présent dans la solution logicielle Vitam.</p></li>
+</ul>
+<p>Le rattachement d’une unité archivistique à un groupe d’objets techniques déjà présent dans le système ne nécessite aucune configuration particulière du contrat d’entrée.</p>
+</section>
+<section id="le-rattachement-dun-objet-technique-a-un-groupe-dobjets-techniques-deja-present-dans-le-systeme-par-declaration-dans-le-bordereau-de-transfert-mise-a-jour-dune-unite-archivistique">
+<h3><span class="section-number">20.2.4. </span>Le rattachement d’un objet technique à un groupe d’objets techniques déjà présent dans le système par déclaration dans le bordereau de transfert (mise à jour d’une unité archivistique)<a class="headerlink" href="#le-rattachement-dun-objet-technique-a-un-groupe-dobjets-techniques-deja-present-dans-le-systeme-par-declaration-dans-le-bordereau-de-transfert-mise-a-jour-dune-unite-archivistique" title="Lien vers cette rubrique"></a></h3>
+<p><em>Cas d’usage : un nouveau fichier représentant l’unité archivistique a été créé (par exemple, une version basse résolution d’une image fixe pour diffusion ou une vignette) et on souhaite l’ajouter au groupe d’objets techniques existant.</em>
+<em>Cas d’usage : au moment de l’entrée d’un fonds photographique, seules les versions de diffusion ont pu être collectées. Le service d’archives reçoit par la suite les versions haute définition (masters) et souhaite les ajouter aux groupes d’objets techniques existants.</em></p>
+<p>La solution logicielle Vitam offre la possibilité de déclarer dans le bordereau l’unité archivistique dont le groupe d’objets techniques doit être mis à jour par l’ajout d’un objet technique.<br />
+Seul le service producteur ayant provoqué la création du groupe d’objets techniques dans la plate-forme utilisant la solution logicielle Vitam a le droit de rajouter des objets à ce groupe d’objets. Le service producteur du SIP doit donc obligatoirement être le même que le service producteur du SIP qui a transféré le groupe d’objets techniques. Le transfert sera sinon rejeté.</p>
+<p>L’ajout d’objets à un groupe d’objets existant doit être autorisé par le contrat d’entrée utilisé. Le contrat d’entrée peut bloquer l’ajout d’un objet ou ne l’autoriser que pour certains usages.</p>
+<p>Le rattachement se fait en déclarant l’identifiant (GUID) de l’unité archivistique qui déclare le groupe d’objets à compléter.</p>
+<p>Pour cela il convient de :</p>
+<ul class="simple">
+<li><p>créer dans le bordereau une unité archivistique correspondant à l’unité archivistique dont le groupe d’objets doit être mis à jour, renseignée avec les champs obligatoires dans le SEDA (Title, DescriptionLevel). Cette création est indispensable afin de respecter la logique du standard SEDA ;</p></li>
+<li><p>insérer dans le sous-bloc <em>Management</em> de cette unité archivistique un sous-bloc <em>UpdateOperation</em> (extension du schéma SEDA) ;</p></li>
+<li><p>déclarer dans le sous-bloc <em>UpdateOperation</em> les informations permettant l’identification dans le système de l’unité archivistique dont le groupe d’objets techniques est à mettre à jour. Cette déclaration peut être faite selon 2 méthodes :
+- méthode 1 en utilisant le GUID attribué par la solution logicielle Vitam : insérer dans le sous-bloc <em>UpdateOperation</em> une balise <em>SystemId</em> comprenant l’identifiant unique attribué par la solution logicielle Vitam à l’unité archivistique déjà présente dans le système ;
+- méthode 2 en utilisant d’autres éléments de description de l’unité archivistique : insérer dans le sous-bloc <em>UpdateOperation</em> un bloc <em>ArchiveUnitIdentifierKey</em> qui comprend lui-même 2 balises : <em>MetadataName</em> qui doit correspondre à une balise du bloc Content du schéma SEDA 2.1., et une balise <em>MetadataValue</em> qui doit correspondre à la valeur du champ de l’unité archivistique présente dans le système à laquelle on veut rattacher l’objet du SIP ;</p></li>
+<li><p>déclarer les objets du bordereau de transfert à rajouter en utilisant la balise <em>DataObjectGroupReferenceId</em>.</p></li>
+</ul>
+<p><em>Exemple pour la méthode 1</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">ArchiveUnit</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;ID4&quot;</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">Management</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">UpdateOperation</span><span class="o">&gt;</span>
+                            <span class="o">&lt;</span><span class="n">SystemId</span><span class="o">&gt;</span><span class="n">aeaqaaaaaihnjdarabzvqak3m2b3qoqaaaaq</span><span class="o">&lt;/</span><span class="n">SystemId</span><span class="o">&gt;</span>
+                <span class="o">&lt;/</span><span class="n">UpdateOperation</span><span class="o">&gt;</span>
+        <span class="o">&lt;/</span><span class="n">Management</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">Content</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">DescriptionLevel</span><span class="o">&gt;</span><span class="n">Item</span><span class="o">&lt;/</span><span class="n">DescriptionLevel</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">Title</span> <span class="n">xml</span><span class="p">:</span><span class="n">lang</span><span class="o">=</span><span class="s2">&quot;fr&quot;</span><span class="o">&gt;</span><span class="n">Discours</span> <span class="n">prononcé</span> <span class="n">lors</span> <span class="n">de</span> <span class="n">la</span> <span class="n">discussion</span> <span class="n">générale</span> <span class="n">en</span> <span class="n">deuxième</span> <span class="n">lecture</span> <span class="n">de</span> <span class="n">la</span> <span class="n">proposition</span> <span class="n">de</span> <span class="n">loi</span> <span class="n">Warsmann</span> <span class="n">de</span> <span class="n">simplification</span> <span class="n">et</span> <span class="n">d</span><span class="s1">&#39;amélioration de la qualité du droit&lt;/Title&gt;</span>
+        <span class="o">&lt;/</span><span class="n">Content</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">DataObjectReference</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">DataObjectGroupReferenceId</span><span class="o">&gt;</span><span class="n">ID4</span><span class="o">&lt;/</span><span class="n">DataObjectGroupReferenceId</span><span class="o">&gt;</span>
+        <span class="o">&lt;/</span><span class="n">DataObjectReference</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">ArchiveUnit</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p><em>Exemple pour la méthode 2</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">ArchiveUnit</span> <span class="nb">id</span><span class="o">=</span><span class="s2">&quot;ID4&quot;</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">Management</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">UpdateOperation</span><span class="o">&gt;</span>
+                            <span class="o">&lt;</span><span class="n">ArchiveUnitIdentifierKey</span><span class="o">&gt;</span>
+                                     <span class="o">&lt;</span><span class="n">MetadataName</span><span class="o">&gt;</span><span class="n">Title</span><span class="o">&lt;/</span><span class="n">MetadataName</span><span class="o">&gt;</span>
+                                     <span class="o">&lt;</span><span class="n">MetadataValue</span><span class="o">&gt;</span><span class="n">デモ</span><span class="o">&lt;/</span><span class="n">MetadataValue</span><span class="o">&gt;</span>
+                            <span class="o">&lt;/</span><span class="n">ArchiveUnitIdentifierKey</span><span class="o">&gt;</span>
+                <span class="o">&lt;/</span><span class="n">UpdateOperation</span><span class="o">&gt;</span>
+        <span class="o">&lt;/</span><span class="n">Management</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">Content</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">DescriptionLevel</span><span class="o">&gt;</span><span class="n">RecordGrp</span><span class="o">&lt;/</span><span class="n">DescriptionLevel</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">Title</span><span class="o">&gt;</span><span class="n">Sénat</span><span class="o">&lt;/</span><span class="n">Title</span><span class="o">&gt;</span>
+        <span class="o">&lt;/</span><span class="n">Content</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">DataObjectReference</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">DataObjectGroupReferenceId</span><span class="o">&gt;</span><span class="n">ID4</span><span class="o">&lt;/</span><span class="n">DataObjectGroupReferenceId</span><span class="o">&gt;</span>
+        <span class="o">&lt;/</span><span class="n">DataObjectReference</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">ArchiveUnit</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="la-reorganisation-darborescence-pour-les-unites-archivistiques-deja-presentes-dans-le-systeme">
+<h2><span class="section-number">20.3. </span>La réorganisation d’arborescence pour les unités archivistiques déjà présentes dans le système<a class="headerlink" href="#la-reorganisation-darborescence-pour-les-unites-archivistiques-deja-presentes-dans-le-systeme" title="Lien vers cette rubrique"></a></h2>
+<p><em>Cas d’usage : un service d’archives a modifié son arbre de positionnement ou son plan de classement et souhaite rattacher à une branche nouvellement créée une arborescence d’unités archivistiques déjà présentes dans le système.</em></p>
+<p>La solution logicielle Vitam offre la possibilité de modifier l’arborescence des unités archivistiques déjà présentes dans la plate-forme en supprimant ou en créant un lien entre deux unités archivistiques.</p>
+<p>La modification d’arborescence :</p>
+<ul class="simple">
+<li><p>est une opération potentiellement lourde, car elle a un impact sur toute la descendance des unités archivistiques concernées. Elle doit être utilisée avec précaution et n’a pas pour objectif de permettre la réorganisation de vracs ;</p></li>
+<li><p>ne peut être réalisée si une autre modification d’arborescence ou une opération d’élimination est en cours.</p></li>
+</ul>
+<p>La modification d’arborescence s’accompagne d’une mise à jour du registre des fonds.</p>
+<p>Le détachement et le rattachement ont des conséquences sur les services producteurs et les héritages de règles de gestion. L’archiviste doit s’assurer que les unités archivistiques resteront accessibles aux utilisateurs qui ont des droits pour les consulter et que les nouveaux héritages des règles de gestion ne conduiront pas à des conflits dans l’application des règles (cf. <a class="reference internal" href="Vademecum_reglesgestion_fonctionnement.html"><span class="std std-doc">vademecum Positionner des règles de gestion dans la solution logicielle Vitam</span></a>).</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="Vademecum_pua.html" class="btn btn-neutral float-left" title="19. Les profils d’unité archivistique dans la solution logicielle Vitam" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="Vademecum_referentiel_formats.html" class="btn btn-neutral float-right" title="21. Le référentiel des formats dans la solution logicielle Vitam" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2022, Programme Vitam.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: master_8.1.x
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Branches</dt>
+      <dd><a href="../../master/sections/Vademecum_rattachement.html">master</a></dd>
+      <dd><a href="../../master_7.1.x/sections/Vademecum_rattachement.html">master_7.1.x</a></dd>
+      <dd><a href="Vademecum_rattachement.html">master_8.1.x</a></dd>
+      <dd><a href="../../v8.1_Resip_mathilde/sections/Vademecum_rattachement.html">v8.1_Resip_mathilde</a></dd>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

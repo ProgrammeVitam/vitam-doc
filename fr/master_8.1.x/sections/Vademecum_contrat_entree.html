@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>7. Le contrat d’entrée dans la solution logicielle Vitam &mdash; Vitam documentation fonctionnelle</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=eea1f72d" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f4732e6d"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/translations.js?v=bf059b8c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="8. Le contrat de gestion dans la solution logicielle Vitam" href="Vademecum_contrat_gestion.html" />
+    <link rel="prev" title="6. Le contrat d’accès dans la solution logicielle Vitam" href="Vademecum_contrat_acces.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: white" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/Vitam_Logo-CMJN.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">première approche</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="guide_lecture.html">1. Documentation Vitam - guide de lecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="presentation_programme.html">2. Présentation du programme Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="presentation_solution_logicielle.html">3. Présentation de la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_prise_en_main.html">4. Guide de prise en main de la solution logicielle Vitam – Vitam UI<br>
+<em>Réaliser une première entrée</em></a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">documentation métier</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="organisation_information.html">1. Organisation de l’information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gestion_archives_arbo.html">2. Gestion des archives et des arborescences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_donnees.html">3. Modèle de données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SIP.html">4. Structuration des <em>Submission Information Packages</em> (SIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DIP.html">5. Structuration des <em>Dissemination Information Packages</em> (DIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gestion_habilitations.html">6. Gestion des habilitations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regles_gestion.html">7. Règles de gestion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services_prod.html">8. Services producteurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_archivage.html">9. Profils d’archivage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_unite_archivistique.html">10. Profils d’unité archivistique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ontologie.html">11. Ontologie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="schema.html">12. Schéma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_workflow.html">13. Description des workflows et des opérations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_de_collecte.html">14. Module de collecte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eliminations.html">15. Les éliminations avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gel.html">16. Le gel d’archives avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preservation.html">17. Gestion de la préservation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stockage.html">18. Gestion de multiples stratégies de stockage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transfert.html">19. Le transfert avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="valeur_probante.html">20. Conservation de la valeur probante</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">documentation Vitam UI</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Autoprovisionning.html">1. Vitam UI : présentation de la fonctionnalité d’auto-provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Arbres_Plans.html">2. APP Arbres et plans</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">outils connexes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="resip.html">1. RESIP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resip_faq.html">2. RESIP : foire aux questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pastis_standalone.html">3. PASTIS STANDALONE</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Chantier préservation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="chantier_preservation_validation_format.html">1. Validation du format des fichiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_identification_format.html">2. Identification des formats de fichiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_extraction_MD.html">3. Extraction des métadonnées techniques</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Vademecum</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_sommaire.html">1. Vademecum: sommaire thématique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_glossaire.html">2. Notions utilisées dans la solution logicielle Vitam et lien vers la fiche qui les définit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_arbre.html">3. L’arbre de positionnement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_audit.html">4. Les audits dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_classification.html">5. La gestion des archives classifiées avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_acces.html">6. Le contrat d’accès dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">7. Le contrat d’entrée dans la solution logicielle Vitam</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#presentation-du-contrat-dentree">7.1. Présentation du contrat d’entrée</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#perimetre-du-contrat-dentree">7.1.1. Périmètre du contrat d’entrée</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#parametrage-des-modalites-de-controle-de-la-structure-des-entrees">7.1.2. Paramétrage des modalités de contrôle de la structure des entrées</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#parametrage-des-objets-techniques-acceptes">7.1.3. Paramétrage des objets techniques acceptés</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#restriction-des-possibilites-dajout-dun-objet-technique-a-un-groupe-dobjets-existant">7.1.3.1. Restriction des possibilités d’ajout d’un objet technique à un groupe d’objets existant</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#parametrage-des-formats-acceptes">7.1.4. Paramétrage des formats acceptés</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#definition-des-formats-dobjet-technique-attendus">7.1.4.1. Définition des formats d’objet technique attendus</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#acceptation-des-formats-dobjets-techniques-non-identifiables">7.1.4.2. Acceptation des formats d’objets techniques non identifiables</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#utilisation-des-services-de-rattachement">7.1.5. Utilisation des services de rattachement</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#declaration-dun-noeud-de-rattachement-systematique">7.1.5.1. Déclaration d’un nœud de rattachement systématique</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#acceptation-ou-non-de-la-presence-de-rattachements-dans-le-bordereau-de-transfert">7.1.5.2. Acceptation ou non de la présence de rattachements dans le bordereau de transfert</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#activation-dun-controle-sur-noeud-de-rattachement">7.1.5.3. Activation d’un contrôle sur nœud de rattachement</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#parametrage-du-calcul-des-heritages-de-regles-et-de-lindexation-des-echeances">7.1.6. Paramétrage du calcul des héritages de règles et de l’indexation des échéances</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#utilisation-dun-contrat-de-gestion-specifique">7.1.7. Utilisation d’un contrat de gestion spécifique</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#parametrage-sur-les-archives-signees-electroniquement">7.1.8. Paramétrage sur les archives signées électroniquement</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#configuration-du-contrat-dentree">7.2. Configuration du contrat d’entrée</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#constitution-du-contrat-dentree">7.2.1. Constitution du contrat d’entrée</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gestion-de-lidentifiant-du-contrat-dentree">7.2.2. Gestion de l’identifiant du contrat d’entrée</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#formalisation-du-contrat-dentree">7.2.3. Formalisation du contrat d’entrée</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#activation-desactivation-du-contrat-dentree">7.2.4. Activation/désactivation du contrat d’entrée</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#modification-dun-contrat-dentree">7.2.5. Modification d’un contrat d’entrée</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_gestion.html">8. Le contrat de gestion dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_echeances.html">9. Le calcul des héritages des règles de gestion et l’indexation des échéances dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_eliminations.html">10. Réaliser des éliminations d’archives avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_habilitations.html">11. La gestion des droits et permissions des utilisateurs applicatifs dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_identifiants.html">12. L’attribution des identifiants dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_journalisation.html">13. La journalisation et la conservation de la valeur probante dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_ontologie.html">14. L’ontologie dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_pa.html">15. Les profils d’archivage dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_parametrages_pf.html">16. Le paramétrage fonctionnel d’une plate-forme utilisant la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_plan.html">17. Le plan de classement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_preservation.html">18. La préservation dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_pua.html">19. Les profils d’unité archivistique dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_rattachement.html">20. Faire un rattachement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_formats.html">21. Le référentiel des formats dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_griffons.html">22. Le référentiel des griffons dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_preservation.html">23. Le référentiel des scénarios de préservation dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_rg.html">24. Le référentiel des règles de gestion dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_sa.html">25. Le référentiel des services agents dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_registre_fonds.html">26. Le registre des fonds dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_structuration_information.html">27. La structuration des informations dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_suivi_acces.html">28. Le suivi des accès dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_tenant.html">29. Les tenants dans la solution logicielle Vitam</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: white" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Documentation utilisateur Vitam</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">7. </span>Le contrat d’entrée dans la solution logicielle Vitam</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/sections/Vademecum_contrat_entree.md.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+
+           <div itemprop="articleBody">
+             
+  <section id="le-contrat-dentree-dans-la-solution-logicielle-vitam">
+<h1><span class="section-number">7. </span>Le contrat d’entrée dans la solution logicielle Vitam<a class="headerlink" href="#le-contrat-dentree-dans-la-solution-logicielle-vitam" title="Lien vers cette rubrique"></a></h1>
+<p>Le contrat d’entrée permet d’octroyer sur un tenant des droits aux utilisateurs applicatifs habilités pour transférer des arbres de positionnement, des plans de classement et des archives dans la solution logicielle Vitam et de paramétrer les contrôles attendus à l’entrée.</p>
+<p>Ce contrat d’entrée est obligatoirement déclaré dans le bordereau de transfert accompagnant les plans de classement et les archives.</p>
+<p>En fonction des services producteurs et des objets à transférer, diverses configurations du contrat d’entrée sont possibles qui imposeront ou non des contrôles spécifiques sur les archives transférées.</p>
+<section id="presentation-du-contrat-dentree">
+<h2><span class="section-number">7.1. </span>Présentation du contrat d’entrée<a class="headerlink" href="#presentation-du-contrat-dentree" title="Lien vers cette rubrique"></a></h2>
+<section id="perimetre-du-contrat-dentree">
+<h3><span class="section-number">7.1.1. </span>Périmètre du contrat d’entrée<a class="headerlink" href="#perimetre-du-contrat-dentree" title="Lien vers cette rubrique"></a></h3>
+<p>Un contrat est propre au tenant sur lequel il a été importé.</p>
+<p>Une application qui serait amenée à effectuer des entrées sur plusieurs tenants devrait disposer d’un contrat pour chaque tenant.</p>
+</section>
+<section id="parametrage-des-modalites-de-controle-de-la-structure-des-entrees">
+<h3><span class="section-number">7.1.2. </span>Paramétrage des modalités de contrôle de la structure des entrées<a class="headerlink" href="#parametrage-des-modalites-de-controle-de-la-structure-des-entrees" title="Lien vers cette rubrique"></a></h3>
+<p>Un ou plusieurs profils d’archivage peuvent être associés au contrat d’entrée. La déclaration du profil d’archivage se fait sur la base de l’identifiant du profil dans le référentiel des profils d’archivage.</p>
+</section>
+<section id="parametrage-des-objets-techniques-acceptes">
+<h3><span class="section-number">7.1.3. </span>Paramétrage des objets techniques acceptés<a class="headerlink" href="#parametrage-des-objets-techniques-acceptes" title="Lien vers cette rubrique"></a></h3>
+<p>Obligation de présence d’un objet technique déclaré comme « Master » dans le SIP qui crée le groupe d’objets techniques
+Le contrat d’entrée prévoit une option permettant d’autoriser ou non le transfert de groupes d’objets techniques ne contenant pas d’objet déclaré comme « Master », qu’il s’agisse d’un original physique ou binaire.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Option retenue dans le contrat d’entrée</p></th>
+<th class="head text-left"><p>Comportement à l’entrée</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Contrôle activé (valeur « true »)</p></td>
+<td class="text-left"><p>Chaque groupe d’objets techniques devra nécessairement contenir des objets déclarés comme « Master », qu’ils soient binaires (usage « BinaryMaster ») ou physiques (usage « PhysicalMaster »)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Contrôle désactivé (valeur « false »)</p></td>
+<td class="text-left"><p>Les groupes d’objets techniques seront autorisés à ne pas contenir d’objet déclaré comme « Master »</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Contrôle indéterminé (valeur par défaut « true »)</p></td>
+<td class="text-left"><p>Chaque groupe d’objets techniques devra nécessairement contenir des objets déclarés comme « Master », qu’ils soient binaires (usage « BinaryMaster ») ou physiques (usage « PhysicalMaster »)</p></td>
+</tr>
+</tbody>
+</table>
+<section id="restriction-des-possibilites-dajout-dun-objet-technique-a-un-groupe-dobjets-existant">
+<h4><span class="section-number">7.1.3.1. </span>Restriction des possibilités d’ajout d’un objet technique à un groupe d’objets existant<a class="headerlink" href="#restriction-des-possibilites-dajout-dun-objet-technique-a-un-groupe-dobjets-existant" title="Lien vers cette rubrique"></a></h4>
+<p>La solution logicielle Vitam offre la possibilité de compléter un groupe d’objets techniques déjà existant dans le système en y ajoutant un nouvel usage ou une nouvelle version d’un usage déjà existant.</p>
+<p>Toutefois, comme l’ajout d’objets depuis l’extérieur peut faire peser un risque sur la valeur probante des objets conservés, cette possibilité doit être expressément autorisée par le contrat d’entrée.</p>
+<p>Par défaut, un contrat d’entrée ne permet pas l’ajout d’un objet à un groupe d’objets existants. Si l’option d’ajout est activée, elle peut l’être pour tous les usages, ou pour certains usages seulement (exemple : une vignette peut être ajoutée, mais pas un fichier d’usage « BinaryMaster »).</p>
+<p>Seul le service producteur ayant provoqué la création du groupe d’objets techniques dans la plate-forme utilisant la solution logicielle Vitam a le droit de rajouter des objets à ce groupe d’objets.</p>
+</section>
+</section>
+<section id="parametrage-des-formats-acceptes">
+<h3><span class="section-number">7.1.4. </span>Paramétrage des formats acceptés<a class="headerlink" href="#parametrage-des-formats-acceptes" title="Lien vers cette rubrique"></a></h3>
+<p>Lors de l’import d’un SIP dans la solution logicielle Vitam, le processus d’entrée comprend une étape d’identification du format des objets techniques (fichiers). Selon les options retenues dans le contrat d’entrée, le résultat de l’identification pourra conduire à refuser en entrée certains formats ou les objets techniques dont le format est non identifiable.</p>
+<section id="definition-des-formats-dobjet-technique-attendus">
+<h4><span class="section-number">7.1.4.1. </span>Définition des formats d’objet technique attendus<a class="headerlink" href="#definition-des-formats-dobjet-technique-attendus" title="Lien vers cette rubrique"></a></h4>
+<p>La solution logicielle Vitam offre la possibilité de déterminer dans le contrat d’entrée quel(s) format(s) d’objet technique sont attendus dans les bordereaux de transfert.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Option retenue dans le contrat d’entrée</p></th>
+<th class="head text-left"><p>Comportement à l’entrée</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Tous les formats autorisés</p></td>
+<td class="text-left"><p>Le bordereau de transfert peut contenir des objets de n’importe quel format possible</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Liste blanche des formats autorisés</p></td>
+<td class="text-left"><p>Le bordereau de transfert ne peut contenir que des objets conformes au(x) format(s) déclaré(s)</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Contrôle indéterminé (valeur par défaut « tous les formats autorisés »)</p></td>
+<td class="text-left"><p>Le bordereau de transfert peut contenir des objets de n’importe quel format possible</p></td>
+</tr>
+</tbody>
+</table>
+<p>Les formats déclarés dans le contrat d’entrée doivent l’être sur la base de leur identifiant (PUID) dans le référentiel des formats de la solution logicielle Vitam.</p>
+</section>
+<section id="acceptation-des-formats-dobjets-techniques-non-identifiables">
+<h4><span class="section-number">7.1.4.2. </span>Acceptation des formats d’objets techniques non identifiables<a class="headerlink" href="#acceptation-des-formats-dobjets-techniques-non-identifiables" title="Lien vers cette rubrique"></a></h4>
+<p>La solution logicielle Vitam offre la possibilité d’autoriser dans le contrat d’entrée le transfert d’objets techniques dont le format n’est pas identifiable par un outil d’identification.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Option retenue dans le contrat d’entrée</p></th>
+<th class="head text-left"><p>Comportement à l’entrée</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Objets non identifiables autorisés</p></td>
+<td class="text-left"><p>Le bordereau de transfert peut contenir des objets dont le format est non identifiable</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Objets non identifiables interdits</p></td>
+<td class="text-left"><p>Le bordereau de transfert ne peut contenir que des objets dont le format est identifiable</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Contrôle indéterminé (valeur par défaut « objets non identifiables interdits »)</p></td>
+<td class="text-left"><p>Le bordereau de transfert ne peut contenir que des objets dont le format est identifiable</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="utilisation-des-services-de-rattachement">
+<h3><span class="section-number">7.1.5. </span>Utilisation des services de rattachement<a class="headerlink" href="#utilisation-des-services-de-rattachement" title="Lien vers cette rubrique"></a></h3>
+<section id="declaration-dun-noeud-de-rattachement-systematique">
+<h4><span class="section-number">7.1.5.1. </span>Déclaration d’un nœud de rattachement systématique<a class="headerlink" href="#declaration-dun-noeud-de-rattachement-systematique" title="Lien vers cette rubrique"></a></h4>
+<p>La solution logicielle Vitam offre la possibilité de déclarer dans le contrat d’entrée un nœud de rattachement qui s’appliquera à toutes les unités archivistiques racines des SIP qui utilisent ce contrat.
+Le rattachement se fait sur la base de l’identifiant système (GUID) d’une unité archivistique déjà présente dans le système. Cette unité archivistique peut être de type « arbre de positionnement », « plan de classement » ou « standard ». Les rattachements qui seront effectués à l’entrée doivent cependant respecter la structuration de l’information dans la solution logicielle Vitam : une unité archivistique d’arbre ne peut être rattachée qu’à une unité archivistique d’arbre, une unité archivistique de plan ne peut être rattachée qu’à une unité archivistique d’arbre ou de plan.</p>
+<p>Il est recommandé de créer autant de contrats d’entrée qu’il y aura de nœuds de rattachement auxquels rattacher les archives transférées. Lors de l’entrée, les unités archivistiques à la racine du SIP seront automatiquement rattachées à l’unité archivistique déclarée dans le contrat d’entrée.
+Si on souhaite ne pas multiplier les contrats d’entrée pour cette seule raison, il est recommandé de gérer les rattachements au niveau des unités archivistiques dans chaque bordereau de transfert.</p>
+</section>
+<section id="acceptation-ou-non-de-la-presence-de-rattachements-dans-le-bordereau-de-transfert">
+<h4><span class="section-number">7.1.5.2. </span>Acceptation ou non de la présence de rattachements dans le bordereau de transfert<a class="headerlink" href="#acceptation-ou-non-de-la-presence-de-rattachements-dans-le-bordereau-de-transfert" title="Lien vers cette rubrique"></a></h4>
+<p>La solution logicielle Vitam permet de contrôler la présence d’un rattachement déclaré dans le bordereau de transfert :</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Option retenue dans le contrat d’entrée</p></th>
+<th class="head text-left"><p>Comportement à l’entrée</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Rattachements interdits</p></td>
+<td class="text-left"><p>Le bordereau de transfert ne doit déclarer aucun rattachement</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Rattachements autorisés</p></td>
+<td class="text-left"><p>Le bordereau de transfert peut déclarer ou non un rattachement</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Rattachements obligatoires</p></td>
+<td class="text-left"><p>Le bordereau de transfert doit déclarer au moins un rattachement</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Contrôle indéterminé (valeur par défaut « autorisé »)</p></td>
+<td class="text-left"><p>Le bordereau de transfert peut déclarer ou non un rattachement</p></td>
+</tr>
+</tbody>
+</table>
+<p>Lors du processus d’entrée, si le bordereau de transfert n’est pas conforme à ce qui est attendu, l’entrée est rejetée.</p>
+<p>Cas d’usage : une application de type GED verse annuellement des documents à rattacher à un plan de classement déjà présent dans la solution logicielle Vitam. En rendant obligatoire la présence d’au moins un rattachement dans le bordereau de transfert, le service d’archives peut contrôler que les transferts issus de l’application GED portent bien au moins un rattachement.</p>
+</section>
+<section id="activation-dun-controle-sur-noeud-de-rattachement">
+<h4><span class="section-number">7.1.5.3. </span>Activation d’un contrôle sur nœud de rattachement<a class="headerlink" href="#activation-dun-controle-sur-noeud-de-rattachement" title="Lien vers cette rubrique"></a></h4>
+<p>La solution logicielle Vitam permet de contrôler le positionnement des rattachements demandés dans les bordereaux de transfert dans la descendance d’un ou plusieurs nœuds déclarés dans le contrat :</p>
+<ul class="simple">
+<li><p>Si le contrôle est activé, seuls les rattachements au(x) nœud(s) déclaré(s) ou à des unités archivistiques filles du ou des nœuds déclarés dans le contrat seront autorisés. Si le rattachement déclaré dans le bordereau de transfert n’est pas positionné correctement dans l’arborescence, le transfert sera rejeté ;</p></li>
+<li><p>Si le contrôle n’est pas activé, les unités archivistiques pourront être rattachées à n’importe quel nœud, tant que cela ne crée pas de récursivité dans le système et respecte la structuration de l’information. La solution logicielle Vitam n’empêchera pas le transfert.</p></li>
+</ul>
+<p>Cas d’usage : un service dispose dans la solution logicielle Vitam de son plan de classement et souhaite effectuer ensuite des entrées des documents produits annuellement en les classant automatiquement dans les bonnes rubriques de ce plan de classement. Il est possible de déclarer dans le bordereau de transfert pour chaque unité archivistique un rattachement et de contrôler que tous ces rattachements sont bien situés sous la racine du plan de classement à utiliser.</p>
+<p>L’unité archivistique déclarée peut être de type « arbre de positionnement », « plan de classement » ou « standard ».
+Les rattachements effectués à l’entrée doivent respecter la structuration de l’information dans la solution logicielle Vitam, sinon le transfert sera rejeté.</p>
+<p>Pour en savoir plus, consulter le <a class="reference internal" href="Vademecum_rattachement.html"><span class="std std-doc">vademecum Faire un rattachement dans la solution logicielle Vitam</span></a></p>
+</section>
+</section>
+<section id="parametrage-du-calcul-des-heritages-de-regles-et-de-lindexation-des-echeances">
+<h3><span class="section-number">7.1.6. </span>Paramétrage du calcul des héritages de règles et de l’indexation des échéances<a class="headerlink" href="#parametrage-du-calcul-des-heritages-de-regles-et-de-lindexation-des-echeances" title="Lien vers cette rubrique"></a></h3>
+<p>La solution logicielle Vitam permet d’indexer sur les unités archivistiques les échéances maximales applicables par catégorie de règle de gestion, que ces règles soit portées en propre par l’unité archivistique ou héritées.</p>
+<p>Si ce paramétrage est activé, les unités archivistiques seront marquées à l’entrée comme ayant une indexation des échéances non valide, ce qui permettra de les prendre en compte dans un processus automatique de calcul déclenché périodiquement (batch).</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Option retenue dans le contrat d’entrée</p></th>
+<th class="head text-left"><p>Comportement à l’entrée</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Contrôle activé (valeur « true »)</p></td>
+<td class="text-left"><p>Les unités archivistiques seront indexées à l’entrée avec une indexation déclarée invalide pour faire l’objet d’un calcul par batch</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Contrôle désactivé (valeur « false »)</p></td>
+<td class="text-left"><p>Aucune indexation des échéances des règles de gestion ne sera faite</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Contrôle indéterminé (valeur par défaut « false »)</p></td>
+<td class="text-left"><p>Aucune indexation des échéances des règles de gestion ne sera faite</p></td>
+</tr>
+</tbody>
+</table>
+<p>Cette fonctionnalité est un complément de l’enregistrement en base des règles de gestion portées en propre par une unité archivistique. Cet enregistrement est mis en œuvre systématiquement dans le cadre du processus d’entrée, que l’indexation des échéances soit ou non activée.</p>
+<p>Pour en savoir plus, consulter le <a class="reference internal" href="Vademecum_echeances.html"><span class="std std-doc">vademecum Calcul des héritages de règles et indexation des échéances dans la solution logicielle Vitam</span></a>.</p>
+</section>
+<section id="utilisation-dun-contrat-de-gestion-specifique">
+<h3><span class="section-number">7.1.7. </span>Utilisation d’un contrat de gestion spécifique<a class="headerlink" href="#utilisation-dun-contrat-de-gestion-specifique" title="Lien vers cette rubrique"></a></h3>
+<p>La solution logicielle Vitam permet d’indiquer dans le contrat d’entrée le contrat de gestion à utiliser pour le stockage des métadonnées et des objets techniques.</p>
+<p>Si aucun contrat n’est renseigné, c’est la stratégie de stockage par défaut qui s’appliquera.</p>
+<p>Pour en savoir plus, consulter le <a class="reference internal" href="Vademecum_contrat_gestion.html"><span class="std std-doc">vademecum Le contrat de gestion dans la solution logicielle Vitam</span></a>.</p>
+</section>
+<section id="parametrage-sur-les-archives-signees-electroniquement">
+<h3><span class="section-number">7.1.8. </span>Paramétrage sur les archives signées électroniquement<a class="headerlink" href="#parametrage-sur-les-archives-signees-electroniquement" title="Lien vers cette rubrique"></a></h3>
+<p>Le contrat d’entrée prévoit une option permettant d’autoriser ou non le transfert d’archives signées électroniquement, et de vérifier la présence de leurs pièces pièces annexes (jeton d’horodatage, signature, preuves complémentaires).</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Option retenue dans le contrat d’entrée</p></th>
+<th class="head text-left"><p>Comportement à l’entrée</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Archives signées autorisées (valeur « MANDATORY »)</p></td>
+<td class="text-left"><p>Chaque unité d’archives devra nécessairement contenir des documents signés et, le cas échéant, devra ou non contenir une signature (rôle « DeclaredSignature »), un jeton d’horodatage (rôle « DeclaredTimestamp ») et/ou des preuves complémentaires (rôle « DeclaredAdditionnalProof »)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Archives signées obligatoires (valeur « MANDATORY »)</p></td>
+<td class="text-left"><p>Chaque unité d’archives seront autorisés à contenir des documents signés et, le cas échéant, devra ou non contenir une signature (rôle « DeclaredSignature »), un jeton d’horodatage (rôle « DeclaredTimestamp ») et/ou des preuves complémentaires (rôle « DeclaredAdditionnalProof »)</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Archives signées interdites (valeur par défaut « FORBIDDEN »)</p></td>
+<td class="text-left"><p>Les archives ne devront pas contenir d’archives signées électroniquement</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="configuration-du-contrat-dentree">
+<h2><span class="section-number">7.2. </span>Configuration du contrat d’entrée<a class="headerlink" href="#configuration-du-contrat-dentree" title="Lien vers cette rubrique"></a></h2>
+<section id="constitution-du-contrat-dentree">
+<h3><span class="section-number">7.2.1. </span>Constitution du contrat d’entrée<a class="headerlink" href="#constitution-du-contrat-dentree" title="Lien vers cette rubrique"></a></h3>
+<p>Pour constituer un contrat d’entrée, l’administrateur fonctionnel recense les règles et contraintes pour une filière de versement (versements manuels, entrées de vrac numérique) ou pour une application :</p>
+<ul class="simple">
+<li><p>y a-t-il des attentes en matière de formalisation des bordereaux de transfert qui conduiront à l’utilisation d’un profil d’archivage pour contrôler la structure du bordereau ?</p></li>
+<li><p>voudra-t-on positionner systématiquement les unités archivistiques racine des SIP versés dans cette filière au même niveau d’une arborescence ?</p></li>
+<li><p>souhaitera-t-on contrôler le format des objets versés ?</p></li>
+<li><p>souhaitera-t-on imposer certains formats pour les fichiers reçus en entrée ?</p></li>
+<li><p>l’ajout d’un objet technique (nouvelle version ou nouvel usage) à un groupe d’objets techniques existant sera-t-il autorisé ? Si oui, pour tous les usages ?
+En fonction des réponses à ces questions, l’administrateur fonctionnel pourra créer un ou plusieurs contrats d’entrée et définir les options de contrôle à activer dans chaque contrat d’entrée.</p></li>
+</ul>
+<p>S’il y a très peu de contrôles à faire et aucun rattachement systématique à prévoir, il est tout à fait possible de n’avoir qu’un seul contrat d’entrée commun à toutes les filières de versement (manuel et applicatif).<br />
+Il devient intéressant d’avoir plusieurs contrats lorsque l’on veut par exemple avoir une filière de versement applicatif acceptant les formats non identifiés et une filière les refusant.<br />
+Si l’on souhaite utiliser le rattachement par contrat d’entrée pour positionner les entrées dans l’arborescence du service d’archives, il conviendra de prévoir autant de contrats d’entrée que de nœuds de rattachement différents.</p>
+<p>Une application versante peut générer des données nécessitant plus d’un profil d’archivage :</p>
+<ul class="simple">
+<li><p>ces profils peuvent être déclarés dans un même contrat d’entrée. Il reviendra au bordereau de transfert de signaler le profil qu’il utilise pour décrire le versement ;</p></li>
+<li><p>il est également possible de créer un contrat d’entrée par profil utilisé.
+Dans le cas où l’on souhaiterait combiner profil et rattachement, il est recommandé de créer un contrat d’entrée par profil. En effet, un contrat d’entrée unique ne permettrait pas a posteriori, s’il déclare plusieurs profils, de déclarer pour chacun d’eux un nœud de rattachement particulier.</p></li>
+</ul>
+<p>Il est recommandé d’indiquer dans le contrat d’entrée quel(s) est(sont) le(s) format(s) des archives à transférer par une application versante, si ce(s) format(s) sont connus ou si l’on souhaite imposer une liste de formats propre à l’archivage.
+Par exemple :</p>
+<ul class="simple">
+<li><p>une chaîne de numérisation pourrait ne devoir verser que des objets au format JPEG ;</p></li>
+<li><p>un système d’archivage électronique ne souhaitant garantir la conservation d’objets qu’aux formats ODT, ODS, ODP, PDF, TIFF pourrait ne déclarer que des contrats d’entrée n’acceptant que ces seuls formats.
+Quand on ne connaît pas les formats des archives qui pourraient être transférées dans la solution logicielle ou quand on ne souhaite pas imposer des formats pour les archives à transférer et quand on souhaite n’effectuer aucun contrôle d’identification de format au moment de leur transfert dans la solution logicielle Vitam, il est recommandé d’autoriser le transfert de groupes d’objets contenant tous les formats possibles et de désactiver le contrôle d’identification des objets.</p></li>
+</ul>
+</section>
+<section id="gestion-de-lidentifiant-du-contrat-dentree">
+<h3><span class="section-number">7.2.2. </span>Gestion de l’identifiant du contrat d’entrée<a class="headerlink" href="#gestion-de-lidentifiant-du-contrat-dentree" title="Lien vers cette rubrique"></a></h3>
+<p>À l’installation de la plate-forme Vitam, l’administrateur technique peut configurer le tenant pour que les identifiants des contrats d’entrée soient générés par Vitam (mode « maître ») ou par le front-office (mode « esclave »).
+Le mode « esclave » permet à un service de conserver la main sur les identifiants des contrats d’entrée pour utiliser des identifiants normés au niveau de l’institution et/ou à un niveau national ou international.</p>
+</section>
+<section id="formalisation-du-contrat-dentree">
+<h3><span class="section-number">7.2.3. </span>Formalisation du contrat d’entrée<a class="headerlink" href="#formalisation-du-contrat-dentree" title="Lien vers cette rubrique"></a></h3>
+<p>Un contrat d’entrée prend la forme d’un fichier JSON, pouvant contenir 1 à n contrat(s) d’entrée.
+Un contrat d’entrée donné doit obligatoirement comporter les informations suivantes :</p>
+<ul class="simple">
+<li><p>identifiant signifiant. Ce champ est obligatoire seulement s’il est généré par l’application à l’origine de sa création. Si cet identifiant est généré par la solution logicielle Vitam, il n’est pas nécessaire de le renseigner dans le fichier JSON ;</p></li>
+<li><p>nom du contrat.
+D’autres informations, facultatives, peuvent venir compléter ces informations.</p></li>
+</ul>
+<p>Le contrat d’entrée est composé des éléments suivants :</p>
+<ul class="simple">
+<li><p>Éléments obligatoires</p>
+<ul>
+<li><p>identifiant unique donné au contrat, sauf s’il est généré automatiquement par le système</p></li>
+<li><p>nom du contrat</p></li>
+<li><p>statut « Actif » ou « Inactif » ; par défaut, la valeur est « INACTIVE »</p></li>
+<li><p>option permettant d’accepter ou non la présence de rattachements dans le bordereau de transfert (obligatoire, valeur par défaut « AUTHORIZED »)</p></li>
+<li><p>option permettant de rendre obligatoire ou non la présence d’un objet déclaré comme « Master » dans un transfert (obligatoire, valeur par défaut : « true »)</p>
+<ul>
+<li><p>usage(s) autorisé(s) dans le cas de l’ajout d’un objet à un groupe d’objets existant. Il peut s’agir de :</p>
+<ul>
+<li><p>tous les usages (obligatoire, valeur par défaut : « false »)</p></li>
+<li><p>une sélection d’usages (facultatif)</p></li>
+</ul>
+</li>
+<li><p>format(s) des objets autorisé(s) dans un bordereau de transfert. Il peut s’agir de :</p>
+<ul>
+<li><p>tous les formats (obligatoire, valeur par défaut : « true »)</p></li>
+<li><p>une sélection de formats (facultatif)</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>option autorisant le transfert d’objets dont le format n’est pas identifié (obligatoire, valeur par défaut : « false »)</p></li>
+<li><p>option demandant l’indexation des échéances des règles de gestion applicables aux unités archivistiques transférées (obligatoire, valeur par défaut : « false »)</p></li>
+</ul>
+</li>
+<li><p>Éléments facultatifs</p>
+<ul>
+<li><p>description du contrat</p></li>
+<li><p>si le contrat est inactif, date de désactivation du contrat</p></li>
+<li><p>date d’activation</p></li>
+<li><p>identifiant du profil d’archivage associé au contrat</p></li>
+<li><p>identifiant du nœud auquel on souhaite rattacher les SIP versés</p></li>
+<li><p>identifiant(s) des noeud(s) de rattachement autorisé(s)</p></li>
+<li><p>sélection d’usages autorisés pour l’ajout d’un objet technique à un groupe d’objets existant</p></li>
+<li><p>sélection de formats autorisés en entrée</p></li>
+<li><p>contrat de gestion applicable aux métadonnées et objets techniques</p></li>
+<li><p>contrôle sur les archives signées électroniquement.</p></li>
+</ul>
+</li>
+</ul>
+<p>Pour plus d’informations, consulter le <a class="reference internal" href="modele_de_donnees.html"><span class="std std-doc">document VITAM. Modèle de données</span></a>.</p>
+<p>Il est possible d’importer, en une seule fois, un référentiel complet, comprenant plusieurs notices décrivant chacune un contrat d’entrée. La solution logicielle Vitam ne comptabilisera qu’une seule opération et ne prendra pas en compte dans le journal des opérations la création unitaire des différents items compris dans le référentiel importé.</p>
+<p>Afin d’optimiser la traçabilité de la création des différents contrats d’entrée, il est recommandé de créer ces derniers un par un.</p>
+</section>
+<section id="activation-desactivation-du-contrat-dentree">
+<h3><span class="section-number">7.2.4. </span>Activation/désactivation du contrat d’entrée<a class="headerlink" href="#activation-desactivation-du-contrat-dentree" title="Lien vers cette rubrique"></a></h3>
+<p>Un contrat d’entrée peut être importé avec un statut inactif ou être désactivé lors d’une mise à jour du contrat.
+Cette fonctionnalité est utile quand on souhaite créer un contrat d’entrée et l’importer avant d’autoriser des applications à l’utiliser ou lorsqu’on souhaite désactiver temporairement ou définitivement un contrat d’entrée.</p>
+<p>Un contrat au statut inactif ne permet pas de réaliser une entrée.</p>
+</section>
+<section id="modification-dun-contrat-dentree">
+<h3><span class="section-number">7.2.5. </span>Modification d’un contrat d’entrée<a class="headerlink" href="#modification-dun-contrat-dentree" title="Lien vers cette rubrique"></a></h3>
+<p>Les contrats d’entrée peuvent être modifiés unitairement pour permettre d’activer ou de désactiver certaines options.
+Cette action provoque la création d’une nouvelle version du contrat d’entrée. Les différentes versions font l’objet d’une sauvegarde sur les offres de stockage utilisées par la solution logicielle Vitam.
+Les champs « Identifiant », « Date de création », « Dernière modification » et « Tenant » ne sont pas modifiables.</p>
+<p>Il est possible de modifier un contrat d’entrée utilisé dans un contexte applicatif particulier. Il est conseillé de suivre les étapes suivantes en fonction du contexte d’utilisation du contrat :</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Contexte</p></th>
+<th class="head text-left"><p>Action</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Avec un contrat d’entrée</p></td>
+<td class="text-left"><p>Désactivation du contexte applicatif ou du seul contrat d’entrée, le temps de procéder à la modification</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Avec un contrat d’entrée et un contrat d’accès</p></td>
+<td class="text-left"><p>Désactivation du seul contrat d’entrée, le temps de procéder à la modification, de manière à ne pas interrompre l’accès associé au contexte applicatif.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Avec plusieurs contrats d’entrée</p></td>
+<td class="text-left"><p>Désactivation d’un seul contrat d’entrée, le temps de procéder à la modification, de manière à ne pas interrompre l’utilisation des autres contrats d’entrée associés au contexte applicatif.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Avec un ou plusieurs contrats d’entrée</p></td>
+<td class="text-left"><p>Création d’un nouveau contrat d’entrée contenant les modifications à apporter.<br>Association de ce contrat d’entrée au contexte applicatif.<br>Activation de ce contrat d’entrée.<br>Déclaration de ce nouveau contrat d’entrée dans les bordereaux de transfert.<br>Désactivation de l’ancien contrat d’entrée.<br>Suppression du lien entre l’ancien contrat d’entrée et le contexte applicatif.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Pour aller plus loin, consulter le <a class="reference internal" href="gestion_habilitations.html"><span class="std std-doc">document VITAM. Gestion des habilitations</span></a>.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="Vademecum_contrat_acces.html" class="btn btn-neutral float-left" title="6. Le contrat d’accès dans la solution logicielle Vitam" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="Vademecum_contrat_gestion.html" class="btn btn-neutral float-right" title="8. Le contrat de gestion dans la solution logicielle Vitam" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2022, Programme Vitam.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: master_8.1.x
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Branches</dt>
+      <dd><a href="../../master/sections/Vademecum_contrat_entree.html">master</a></dd>
+      <dd><a href="../../master_7.1.x/sections/Vademecum_contrat_entree.html">master_7.1.x</a></dd>
+      <dd><a href="Vademecum_contrat_entree.html">master_8.1.x</a></dd>
+      <dd><a href="../../v8.1_Resip_mathilde/sections/Vademecum_contrat_entree.html">v8.1_Resip_mathilde</a></dd>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

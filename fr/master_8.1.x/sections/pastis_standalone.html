@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3. PASTIS STANDALONE &mdash; Vitam documentation fonctionnelle</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=eea1f72d" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f4732e6d"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/translations.js?v=bf059b8c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="1. Validation du format des fichiers" href="chantier_preservation_validation_format.html" />
+    <link rel="prev" title="2. RESIP : foire aux questions" href="resip_faq.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: white" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/Vitam_Logo-CMJN.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">première approche</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="guide_lecture.html">1. Documentation Vitam - guide de lecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="presentation_programme.html">2. Présentation du programme Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="presentation_solution_logicielle.html">3. Présentation de la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_prise_en_main.html">4. Guide de prise en main de la solution logicielle Vitam – Vitam UI<br>
+<em>Réaliser une première entrée</em></a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">documentation métier</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="organisation_information.html">1. Organisation de l’information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gestion_archives_arbo.html">2. Gestion des archives et des arborescences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_donnees.html">3. Modèle de données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SIP.html">4. Structuration des <em>Submission Information Packages</em> (SIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DIP.html">5. Structuration des <em>Dissemination Information Packages</em> (DIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gestion_habilitations.html">6. Gestion des habilitations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regles_gestion.html">7. Règles de gestion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services_prod.html">8. Services producteurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_archivage.html">9. Profils d’archivage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_unite_archivistique.html">10. Profils d’unité archivistique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ontologie.html">11. Ontologie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="schema.html">12. Schéma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_workflow.html">13. Description des workflows et des opérations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_de_collecte.html">14. Module de collecte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eliminations.html">15. Les éliminations avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gel.html">16. Le gel d’archives avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preservation.html">17. Gestion de la préservation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stockage.html">18. Gestion de multiples stratégies de stockage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transfert.html">19. Le transfert avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="valeur_probante.html">20. Conservation de la valeur probante</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">documentation Vitam UI</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Autoprovisionning.html">1. Vitam UI : présentation de la fonctionnalité d’auto-provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Arbres_Plans.html">2. APP Arbres et plans</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">outils connexes</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="resip.html">1. RESIP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resip_faq.html">2. RESIP : foire aux questions</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3. PASTIS STANDALONE</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#resume">3.1. Résumé</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#documents-de-reference">3.1.1. Documents de référence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#presentation-du-document">3.1.2. Présentation du document</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#presentation-installation-et-lancement-de-pastis-standalone">3.2. Présentation, installation, et lancement de Pastis Standalone</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#presentation-de-pastis-standalone">3.2.1. Présentation de Pastis Standalone</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installation-de-pastis-standalone">3.2.2. Installation de Pastis Standalone</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lancement-de-pastis-standalone">3.2.3. Lancement de Pastis Standalone</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#extension-du-modele-du-seda-par-des-metadonnees-externes">3.2.4. Extension du modèle du SEDA par des métadonnées externes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Chantier préservation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="chantier_preservation_validation_format.html">1. Validation du format des fichiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_identification_format.html">2. Identification des formats de fichiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_extraction_MD.html">3. Extraction des métadonnées techniques</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Vademecum</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_sommaire.html">1. Vademecum: sommaire thématique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_glossaire.html">2. Notions utilisées dans la solution logicielle Vitam et lien vers la fiche qui les définit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_arbre.html">3. L’arbre de positionnement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_audit.html">4. Les audits dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_classification.html">5. La gestion des archives classifiées avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_acces.html">6. Le contrat d’accès dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_entree.html">7. Le contrat d’entrée dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_gestion.html">8. Le contrat de gestion dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_echeances.html">9. Le calcul des héritages des règles de gestion et l’indexation des échéances dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_eliminations.html">10. Réaliser des éliminations d’archives avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_habilitations.html">11. La gestion des droits et permissions des utilisateurs applicatifs dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_identifiants.html">12. L’attribution des identifiants dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_journalisation.html">13. La journalisation et la conservation de la valeur probante dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_ontologie.html">14. L’ontologie dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_pa.html">15. Les profils d’archivage dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_parametrages_pf.html">16. Le paramétrage fonctionnel d’une plate-forme utilisant la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_plan.html">17. Le plan de classement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_preservation.html">18. La préservation dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_pua.html">19. Les profils d’unité archivistique dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_rattachement.html">20. Faire un rattachement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_formats.html">21. Le référentiel des formats dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_griffons.html">22. Le référentiel des griffons dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_preservation.html">23. Le référentiel des scénarios de préservation dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_rg.html">24. Le référentiel des règles de gestion dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_sa.html">25. Le référentiel des services agents dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_registre_fonds.html">26. Le registre des fonds dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_structuration_information.html">27. La structuration des informations dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_suivi_acces.html">28. Le suivi des accès dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_tenant.html">29. Les tenants dans la solution logicielle Vitam</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: white" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Documentation utilisateur Vitam</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">3. </span>PASTIS STANDALONE</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/sections/pastis_standalone.md.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+
+           <div itemprop="articleBody">
+             
+  <section id="pastis-standalone">
+<h1><span class="section-number">3. </span>PASTIS STANDALONE<a class="headerlink" href="#pastis-standalone" title="Lien vers cette rubrique"></a></h1>
+<section id="resume">
+<h2><span class="section-number">3.1. </span>Résumé<a class="headerlink" href="#resume" title="Lien vers cette rubrique"></a></h2>
+<section id="documents-de-reference">
+<h3><span class="section-number">3.1.1. </span>Documents de référence<a class="headerlink" href="#documents-de-reference" title="Lien vers cette rubrique"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p><strong>Document</strong></p></th>
+<th class="head text-center"><p><strong>Date de la version</strong></p></th>
+<th class="head text-center"><p><strong>Remarques</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>NF Z 44022 – MEDONA – Modélisation des données pour l’archivage</p></td>
+<td class="text-center"><p>18/01/2014</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Standard d’échange de données pour l’archivage – SEDA – v. 2.1</p></td>
+<td class="text-center"><p>06/2018</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>Standard d’échange de données pour l’archivage – SEDA – v. 2.2</p></td>
+<td class="text-center"><p>02/2022</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Standard d’échange de données pour l’archivage – SEDA – v. 2.3</p></td>
+<td class="text-center"><p>06/2024</p></td>
+<td class="text-center"><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="presentation-du-document">
+<h3><span class="section-number">3.1.2. </span>Présentation du document<a class="headerlink" href="#presentation-du-document" title="Lien vers cette rubrique"></a></h3>
+<p>Le présent document présente l’application Pastis Standalone, qui est une version de l’application Profils Documentaires indépendante de la plateforme VITAM.</p>
+</section>
+</section>
+<section id="presentation-installation-et-lancement-de-pastis-standalone">
+<h2><span class="section-number">3.2. </span>Présentation, installation, et lancement de Pastis Standalone<a class="headerlink" href="#presentation-installation-et-lancement-de-pastis-standalone" title="Lien vers cette rubrique"></a></h2>
+<section id="presentation-de-pastis-standalone">
+<h3><span class="section-number">3.2.1. </span>Présentation de Pastis Standalone<a class="headerlink" href="#presentation-de-pastis-standalone" title="Lien vers cette rubrique"></a></h3>
+<p>[EN CONSTRUCTION]</p>
+</section>
+<section id="installation-de-pastis-standalone">
+<h3><span class="section-number">3.2.2. </span>Installation de Pastis Standalone<a class="headerlink" href="#installation-de-pastis-standalone" title="Lien vers cette rubrique"></a></h3>
+<p>L’application Pastis Standalone est téléchargeable sur le site internet du programme Vitam à l’adresse suivante : https://download.programmevitam.fr/pastis-standalone/</p>
+<p>Le fichier ZIP a un unique répertoire contenant :</p>
+<ul class="simple">
+<li><p>un environnement d’exécution Java 17, nécessaire si vous n’avez pas Java installé sur votre poste</p></li>
+<li><p>un fichier <code class="docutils literal notranslate"><span class="pre">readme.txt</span></code> décrivant succintement la procédure pour lancer l’application</p></li>
+<li><p>un fichier de configuration <code class="docutils literal notranslate"><span class="pre">PASTIS-APP.url</span></code></p></li>
+<li><p>un fichier .exe, qui contient l’application devant être lancée</p></li>
+</ul>
+</section>
+<section id="lancement-de-pastis-standalone">
+<h3><span class="section-number">3.2.3. </span>Lancement de Pastis Standalone<a class="headerlink" href="#lancement-de-pastis-standalone" title="Lien vers cette rubrique"></a></h3>
+<p>Le lancement de Pastis Standalone se fait via un double-clic sur le fichier .exe cité précédemment.</p>
+</section>
+<section id="extension-du-modele-du-seda-par-des-metadonnees-externes">
+<h3><span class="section-number">3.2.4. </span>Extension du modèle du SEDA par des métadonnées externes<a class="headerlink" href="#extension-du-modele-du-seda-par-des-metadonnees-externes" title="Lien vers cette rubrique"></a></h3>
+<p>Depuis la version 8.1 de Vitam, il est possible d’enrichir le modèle des Profils d’archivage (PA) et des Profils d’unité archivistique (PUA) en ajoutant des champs personnalisés, qui viendront enrichir les informations des unités archivistiques.</p>
+<p>Pour cela, il conviendra de créer un fichier de configuration nommé <code class="docutils literal notranslate"><span class="pre">external-schema-definition.json</span></code> placé dans le même répertoire que le fichier .exe.</p>
+<p>Le contenu du fichier est au format JSON, avec la syntaxe suivante :</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;FieldName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MyText&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Invoice.Provider.MyText&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ShortName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Mon champ texte&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TEXT&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Cardinality&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ONE&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Extension au SEDA. Elément de type texte&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="err">...</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>Les champs attendus sont les suivants :</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p><strong>Champ</strong></p></th>
+<th class="head text-center"><p><strong>Description</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p>FieldName</p></td>
+<td class="text-center"><p>Nom du champ, tel qu’il sera présent dans le contenu de l’unité archivistique</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Path</p></td>
+<td class="text-center"><p>Nom complet, depuis la racine. Les différents parents seront séparés par des “.”</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>ShortName</p></td>
+<td class="text-center"><p>Libellé court du champ</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Type</p></td>
+<td class="text-center"><p>Type du champ. Voir plus bas pour les différentes valeurs possibles</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p>Cardinality</p></td>
+<td class="text-center"><p>Cardinalité du champ. Voir plus bas pour les différentes valeurs possibles</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Description</p></td>
+<td class="text-center"><p>Description longue du champ</p></td>
+</tr>
+</tbody>
+</table>
+<p>Valeurs possibles pour le champ « Type » :</p>
+<ul class="simple">
+<li><p>OBJECT : le champ sera un objet contenant des sous-champs</p></li>
+<li><p>DATE : le champ sera de type date</p></li>
+<li><p>KEYWORD ou ENUM : champ de type énuméré, sous forme d’une chaîne de caractères</p></li>
+<li><p>LONG : champ de type numérique entier</p></li>
+<li><p>DOUBLE : champ de type numérique décimal</p></li>
+<li><p>TEXT : chaîne de caractère</p></li>
+<li><p>BOOLEAN : champ de type booléen (vrai / faux, ou oui / non)</p></li>
+</ul>
+<p>Valeurs possibles pour le champ « Cardinality » :</p>
+<ul class="simple">
+<li><p>ONE : le champ peut avoir zéro ou une seule occurrence</p></li>
+<li><p>ONE_REQUIRED : le champ est obligatoire et n’a qu’une seule occurrence</p></li>
+<li><p>MANY : le champ est répétable plusieurs fois, mais peut ne pas être présent</p></li>
+<li><p>MANY_REQUIRED : le champ est répétable plusieurs fois, mais doit apparaître au moins une fois</p></li>
+</ul>
+<p>Il est possible de regrouper les métadonnées en arbre, en utilisant des métadonnées de type OBJECT, qui vont elle-même contenir d’autres métadonnées. L’organisation de l’arbre des métadonnées se fera avec la propriété <code class="docutils literal notranslate"><span class="pre">Path</span></code> de chaque métadonnée.</p>
+<p>Par exemple, si nous avons créé une métadonnée <code class="docutils literal notranslate"><span class="pre">A</span></code> de type objet, on pourra créer une métadonnée <code class="docutils literal notranslate"><span class="pre">B</span></code> de type texte imbriquée dans <code class="docutils literal notranslate"><span class="pre">A</span></code> si pour <code class="docutils literal notranslate"><span class="pre">B</span></code> on définit la valeur <code class="docutils literal notranslate"><span class="pre">Path</span></code> à <code class="docutils literal notranslate"><span class="pre">A.B</span></code>. Attention, il faut bien s’assurer que tous les parents d’une métadonnée, tels que définis dans son <code class="docutils literal notranslate"><span class="pre">Path</span></code> existent bien.</p>
+<p>Si, par exemple, nous souhaitons créer la structure suivante :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Invoice</span> <span class="o">-</span> <span class="n">Informations</span> <span class="n">de</span> <span class="n">facture</span> <span class="p">(</span><span class="n">objet</span><span class="p">,</span> <span class="n">optionnel</span><span class="p">,</span> <span class="n">répétable</span><span class="p">)</span>
+    <span class="o">+---</span> <span class="n">FactDate</span> <span class="o">-</span> <span class="n">date</span> <span class="n">de</span> <span class="n">la</span> <span class="n">facture</span> <span class="p">(</span><span class="n">date</span><span class="p">,</span> <span class="n">obligatoire</span><span class="p">,</span> <span class="n">non</span> <span class="n">répétable</span><span class="p">)</span>
+    <span class="o">+---</span> <span class="n">FactNum</span> <span class="o">-</span> <span class="n">numéro</span> <span class="n">de</span> <span class="n">facture</span> <span class="p">(</span><span class="n">texte</span><span class="p">,</span> <span class="n">obligatoire</span><span class="p">,</span> <span class="n">non</span> <span class="n">répétable</span><span class="p">)</span>
+    <span class="o">+---</span> <span class="n">FactDetail</span> <span class="o">-</span> <span class="n">détail</span> <span class="n">de</span> <span class="n">la</span> <span class="n">facture</span> <span class="p">(</span><span class="n">objet</span><span class="p">,</span> <span class="n">obligatoire</span><span class="p">,</span> <span class="n">répétable</span><span class="p">)</span>
+             <span class="o">+---</span> <span class="n">ItemName</span> <span class="o">-</span> <span class="n">Nom</span> <span class="n">de</span> <span class="n">l</span><span class="s1">&#39;article (texte, obligatoire, non répétable)</span>
+             <span class="o">+---</span> <span class="n">ItemQty</span> <span class="o">-</span> <span class="n">Nombre</span> <span class="n">d</span><span class="s1">&#39;articles (entier, obligatoire, non répétable)</span>
+             <span class="o">+---</span> <span class="n">ItemUnitPrice</span> <span class="o">-</span> <span class="n">Prix</span> <span class="n">unitaire</span> <span class="n">de</span> <span class="n">l</span><span class="s1">&#39;article (décimal, obligatoire, non répétable)</span>
+</pre></div>
+</div>
+<p>Le fichier de configuration <code class="docutils literal notranslate"><span class="pre">external-schema-definition.json</span></code> devra avoir le contenu suivant :</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;FieldName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Invoice&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Invoice&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ShortName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Informations de facture&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OBJECT&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Cardinality&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MANY&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Informations de facture, avec le détail des articles&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;FieldName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FactDate&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Invoice.FactDate&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ShortName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Date de la facture&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DATE&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Cardinality&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ONE_REQUIRED&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Date d&#39;émission de la facture&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;FieldName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FactNum&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Invoice.FactNum&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ShortName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Numéro de facture&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TEXT&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Cardinality&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ONE_REQUIRED&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Numéro unique de la facture&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;FieldName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;FactDetail&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Invoice.FactDetail&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ShortName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Détails de la facture&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OBJECT&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Cardinality&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ONE_REQUIRED&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Détails des articles de la facture&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;FieldName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ItemName&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Invoice.FactDetail.ItemName&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ShortName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Nom de l&#39;article&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;TEXT&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Cardinality&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ONE_REQUIRED&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Nom de l&#39;article tel qu&#39;indiqué sur la facture&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;FieldName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ItemQty&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Invoice.FactDetail.ItemQty&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ShortName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Nombre d&#39;articles&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LONG&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Cardinality&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ONE_REQUIRED&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Nombre d&#39;articles de ce type&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;FieldName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ItemUnitPrice&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Invoice.FactDetail.ItemUnitPrice&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ShortName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Prix unitaire&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DOUBLE&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Cardinality&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ONE_REQUIRED&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Prix unitaire de l&#39;article&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="resip_faq.html" class="btn btn-neutral float-left" title="2. RESIP : foire aux questions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="chantier_preservation_validation_format.html" class="btn btn-neutral float-right" title="1. Validation du format des fichiers" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2022, Programme Vitam.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: master_8.1.x
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Branches</dt>
+      <dd><a href="../../master/sections/pastis_standalone.html">master</a></dd>
+      <dd><a href="../../master_7.1.x/index.html">master_7.1.x</a></dd>
+      <dd><a href="pastis_standalone.html">master_8.1.x</a></dd>
+      <dd><a href="../../v8.1_Resip_mathilde/sections/pastis_standalone.html">v8.1_Resip_mathilde</a></dd>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>
