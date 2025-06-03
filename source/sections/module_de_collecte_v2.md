@@ -1762,7 +1762,9 @@ Lors de cette action, l’opération peut aboutir aux résultats suivants :
 
 ##### Utilisation dans VitamUI
 
-TO DO 
+L’APP « Collecte et préparation des versements » du front-office VitamUI fournie avec la solution logicielle Vitam permet de modifier uniquement les informations de description et de contexte d'une transaction.
+
+Ce service est disponible depuis la modification d'un projet de versement dans son panneau latéral uniquement si le choix est fait dans la pop-in s'affichant lors de l'enregistrement des modifications de les appliquer à la transaction en cours (ou versement en édition).
 
 #### Suppression d'une transaction
 
@@ -1810,7 +1812,8 @@ Lors de cette action, l’opération peut aboutir aux résultats suivants :
 
 ##### Utilisation dans VitamUI
 
-TO DO
+Il n'est pas possible de supprimer une transaction depuis l’APP « Collecte et préparation des versements » du front-office VitamUI fournie avec la solution logicielle Vitam.
+
 
 #### Abandon d'une transaction
 
@@ -2197,7 +2200,7 @@ Elle n’est pas journalisée dans le journal des opérations.
 
 ###### Utilisation dans VitamUI
 
-TO DO
+ Depuis l’APP « Collecte et préparation des versements », le service "modification unitaire en masse" est utilisé pour une modification unitaire mais ce dernier n'est pas disponible pour de la modification de masse sur le front-office VitamUI fournie avec la solution logicielle Vitam.
 
 ##### Modification par import de fichier .csv
 
@@ -2632,7 +2635,18 @@ Elle est journalisée dans le journal des opérations (COLLECT_RECLASSIFICATION)
 
 ##### Utilisation dans VitamUI
 
-TO DO
+L’APP « Collecte et préparation des versements » du front-office VitamUI fournie avec la solution logicielle Vitam permet dans la page de consultation des archives d'un projet de versement de :
+-  modifier un rattachement préexistant,
+-  ajouter un rattachement,
+-  supprimer un lien hiérarchique entre une unité archivistique et une autre.
+
+Des droits utilisateurs sont par ailleurs définis :
+
+| Profil utilisateur | Suppression d'archives |
+|---|---|
+| Administrateur     | oui |
+| Archiviste         | oui |
+| Service producteur | non |
 
 #### Ajout d'archives
 
