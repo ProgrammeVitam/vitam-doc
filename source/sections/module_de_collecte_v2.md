@@ -1913,7 +1913,18 @@ Lors de cette action, l’opération peut aboutir aux résultats suivants :
 
 ##### Utilisation dans VitamUI
 
-TO DO
+L’APP « Collecte et préparation des versements » du front-office VitamUI fournie avec la solution logicielle Vitam permet de rouvrir ou éditer une transaction. Son statut passe alors à "OPEN".
+
+Ce service est disponible depuis la page permettant de visualiser l’ensemble des transactions (ou versements) d'un projet via un bouton "Editer" présent dans les boutons d'actions secondaires.
+
+Des droits utilisateurs sont par ailleurs définis :
+
+| Profil utilisateur | Réouverture de transaction |
+|---|---|
+| Administrateur     | oui |
+| Archiviste         | oui |
+| Service producteur | non |
+
 
 #### Validation d'une transaction
 
