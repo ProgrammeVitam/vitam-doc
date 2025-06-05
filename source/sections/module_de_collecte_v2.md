@@ -1928,7 +1928,6 @@ Des droits utilisateurs sont par ailleurs définis :
 | Archiviste         | oui |
 | Service producteur | non |
 
-
 #### Validation d'une transaction
 
 ##### Utilisation des API
@@ -2232,7 +2231,7 @@ La solution logicielle permet de modifier des métadonnées descriptives et de g
   X-Tenant-Id: {{tenant}}
   X-Access-Contract-Id: {{access-contract}}
   
-  < /path\_tozip/stream.csv
+  < /path_tozip/stream.csv
 ```  
 
 Pour une transaction donnée, peut être envoyé un fichier .csv contenant des métadonnées détaillant unitairement tout ou partie des unités archivistiques préalablement envoyées.
@@ -3055,6 +3054,84 @@ Dans le cas d’un flux automatisé, à l’exception de l’intitulé (« Name
     -   rattachement à des unités archivistiques déjà conservées dans la solution par la définition de conditions (« UnitUps »), à savoir une métadonnée (« MetadataKey »), une valeur (« MetadataValue ») et une position de rattachement (« UnitUp »). Si l’(les) unité(s) archivistique(s) racine(s) comporte(nt) la métadonnée et la valeur définies, alors elle(s) ira(ont) se rattacher à l’unité archivistique de rattachement associée ;
 
     Ces deux paramètres peuvent être utilisés séparément ou ensemble. S’ils sont utilisés ensemble, alors, le module de collecte proposera un rattachement automatique des unités archivistiques racines suivant les conditions définies dans le projet de versement. Si elles ne remplissent pas les conditions, alors elles seront rattachées à l’unité archivistique de rattachement par défaut (« UnitUp »).
+
+### Quels sont les services disponibles ?
+
+Le module de collecte met à disposition des services :
+-  via les API
+-  depuis l'APP « Collecte et préparation des versements » du front-office VitamUI fournie avec la solution logicielle Vitam.
+
+Voici un tableau récapitulatif des services disponibles, mettant en évidence les nouveautés des deux dernières versions publiées de la solution logicielle Vitam :
+
+|---|APP Collecte|Back module de collecte|
+|Configurer des versements|Crée N projets de versement :<br/>- Pour des versements manuels<br/>- Pour des versements de flux automatisés|Crée N projets de versement :<br/>- Pour des versements manuels<br/>- Pour des versements de flux automatisés|
+|(Pré-)Verser les archives|- Crée automatiquement 1 transaction associée (mode lot ou unitaire) pour 1 projet de versement manuel préalablement créé.<br/>- Ne crée pas de transaction associée à un projet de versement automatique.<br/>- **Ajouts a posteriori possibles d’archives (mode lot) - version 8.1**|- Crée N transactions associées avec ses archives (mode lot ou *unitaire*).<br/>- Ajouts a posteriori possibles d’archives (**mode lot - version 8.1** - ou unitaire)|
+|Consulter les (pré-)versement(s)|- Liste les projets de versement<br/>- Recherche dans les projets de versement<br/>- Affichage du détail d’un projet de versement<br/>- Liste les transactions associées à un projet<br/>- Liste les archives d’une transaction<br/>- Recherche simple / avancée / arborescence dans les archives d’une transaction<br/>- Affichage du détail d’une unité (métadonnées descriptives et de gestion, métadonnées techniques)<br/>- Téléchargement de l’objet numérique<br/>|- Liste les projets de versement<br/>- Recherche dans les projets de versement<br/>- Affichage du détail d’un projet de versement<br/>- Liste les transactions associées à un projet<br/>- *Affichage du détail d’une transaction*<br/>- Liste les archives d’une transaction<br/>- Recherche simple / avancée / arborescence dans les archives d’une transaction<br/>- Affichage du détail d’une unité (métadonnées descriptives et de gestion, métadonnées techniques)<br/>- Téléchargement de l’objet numérique|
+|Traiter les archives|- définition et mise à jour de métadonnées contextuelles,<br/>- identification de format,<br/>- calcul d’empreintes,<br/>- calcul du poids de l’objet numérique,<br/>- mise à jour de métadonnées descriptives et de gestion (par import de fichier .csv),<br/>- mise à jour unitaire de métadonnées descriptives,<br/>- **suppression d'archives - version 8.1**,<br/>- **réorganisation d'archives - version 8.1**,<br/>- gestion de statuts (ex. réouverture ou abandon d’un (pré-)versement)|- définition et mise à jour de métadonnées contextuelles,<br/>- identification de format,<br/>- calcul d’empreintes,<br/>- calcul du poids de l’objet numérique,<br/>- mise à jour de métadonnées descriptives et de gestion (par import de fichier .csv et *.jsonl*),<br/>- mise à jour unitaire en masse de métadonnées descriptives et de gestion,<br/>- **suppression d'archives - version 8.1**,<br/>- **réorganisation d'archives - version 8.1**,<br/>- gestion de statuts (ex. réouverture ou abandon d’un (pré-)versement),<br/>- *suppression unitaire d’un (pré-versement) et d’un projet de versement*|
+|Transférer les archives|- Générer un SIP<br/>- Suppression automatique|- Générer un SIP<br/>- Suppression automatique|
+|Gestion des droits|- **Trois groupes de profils : administrateur, archiviste, service producteur - version 8.0**,<br/>- **Possibilité de filtrage des accès aux projets par service producteur - version 8.0**.||
+
+### Quels sont les rattachements possibles ?
+
+On peut déclarer des règles de rattachement de plusieurs manières dans le module de collecte. Ces règles peuvent être cumulables en fonction de leur utilisation.
+
+Dans un **projet de versement**, il est possible de déclarer :
+-  une position unique de rattachement (champ UnitUp) ou "rattachement statique",
+-  une à plusieurs position(s) de rattachement en fonction de la définition de conditions à respecter dans le versement (champ UnitUps) ou "rattachement dynamique".
+Ces deux paramètres sont cumulables.
+
+Les règles appliquées sont les suivantes :
+-  si un projet définit ces deux paramètres et si une unité archivistique entrante répond à une condition par clé/valeur,
+   - elle sera rattachée à la position déclarée dans la condition de rattachement dynamique,
+   - la règle de rattachement statique ne sera pas pris en compte, car ce sont les règles de rattachement dynamique qui l'emportent ;
+-  si un projet définit ces deux paramètres et si une unité archivistique entrante ne répond à aucune condition par clé/valeur,
+   - elle sera rattachée à la position de rattachement statique,
+   - elle ne sera rattachée à aucune position de rattachement dynamique.
+-  si un projet définit plusieurs conditions de rattachement dynamique et si une unité archivistique entrante a des correspondances avec plusieurs conditions,
+   - elle sera rattachée à plusieurs positions de rattachement.
+-  si un projet définit plusieurs conditions de rattachement dynamique mais pas de rattachement statique et si une unité archivistique entrante n'a aucune correspondance avec ces conditions,
+   - elle ne sera rattachée à aucune position de rattachement.
+
+***Point d'attention***: Les règles de rattachement statique et dynamique ne sont pas cumulables l'APP « Collecte et préparation des versements » du front-office VitamUI fournie avec la solution logicielle Vitam.
+-  Pour un projet de versement manuel, on ne peut définir qu'un rattachement statique,
+-  Pour un projet de versement automatique, on peut :
+   - soit définir un rattachement statique,
+   - soit définir un rattachement dynamique.
+   Mais on ne peut pas définir les deux paramètres dans un même projet de versement.
+
+Il est également possible de déclarer des rattachements lors de l'**import d'une arborescence bureautique** associée à un fichier .jsonl ou .csv.
+Il est alors nécessaire de :
+-  ajouter un répertoire matérialisant l'unité archivistique dans laquelle on souhaite rattacher l'arborescence bureautique,
+-  déclarer ce répertoire dans le fichier .jsonl ou .csv accompagnant l'arborescence bureautique.
+   Ne devront être renseignées que les informations suivantes : 
+	    -  File
+		- DescriptionLevel, 
+		-  Title,
+		-  UpdateOperation.ArchiveUnitIdentifierKey.MetadataName et Management.UpdateOperation.ArchiveUnitIdentifierKey.MetadataValue OU UpdateOperation.SystemId.
+
+***Point d'attention*** :
+-  Un rattachement ne peut être déclaré que dans un répertoire racine.
+-  UpdateOperation.ArchiveUnitIdentifierKey.MetadataName et UpdateOperation.SystemId ne sont pas cumulables. Pour une unité archivistique, on ne peut renseigner que l'un ou l'autre, mais pas les deux en même temps.
+-  Si on a employé UpdateOperation.ArchiveUnitIdentifierKey.MetadataName, il faut nécessairement déclarer UpdateOperation.ArchiveUnitIdentifierKey.MetadataValue et inversement.
+-  Si le projet de versement associé à la transaction déclare un rattachement statique et/ou un rattachement dynamique et
+et si le fichier .jsonl ou .csv associé à l'arborescence bureautique déclare un rattachement, alors les règles de rattachement déclarées dans le projet de versement ne seront pas appliquées.
+Dans cette arborescence, si une unité archivistique racine ne déclare pas de rattachement, alors le rattachement statique et/ou dynamique s'appliquera. 
+-  Un rattachement ne peut être ajouté lors d'une mise à jour des métadonnées, notamment par envoi de fichier .jsonl ou .csv.
+
+Par ailleurs, un rattachement peut être :
+-  ajouté suite à l'utilisation d'une **transformation paramétrée dans un projet de versement via des commandes JSLT**.
+Si le projet déclare en plus un rattachement statique et/ou dynamique, ce dernier ne sera pas appliqué.
+Le module de collecte exécute en priorité les transformations de rattachement exprimées en JSLT.
+-  supprimé suite à l'utilisation d'une transformation paramétrée dans un projet de versement. 
+Si le projet déclare un rattachement statique et/ou dynamique, ce dernier pourra être appliqué, suivant les règles définies plus haut.
+Si les conditions de rattachement définies dans les ordres de transformation JSLT ne sont pas réunies et
+si le projet déclare un rattachement statique et/ou dynamique, ce dernier pourra être appliqué, suivant les règles définies plus haut.
+
+Enfin, il est possible d'**ajouter des répertoires dans une transaction**. Si ces répertoires sont accompagnés d'un fichier .jsonl ou .csv,
+celui-ci ne peut contenir des informations de rattachement. 
+S'il en contient, l'ajout des répertoires sera en échec.
+
+
 
 Annexe 1 : Exemples de données entrantes
 ----------------------------------------
