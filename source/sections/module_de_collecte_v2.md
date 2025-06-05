@@ -2973,24 +2973,22 @@ Le bloc définissant les **règles de gestion** contient également des particul
 ```
 ### Comment sont gérés les statuts d’une transaction ?
 
+![](medias/module_collecte/Pictures/statuts.png)
+
 Le module de collecte attribue un certain nombre de statuts à une transaction. Ces statuts sont générés à la suite d’une action :
 
 | Actions disponibles                   | Statut correspondant<br>dans le front-office | Statut correspondant<br>dans le back-office | Modification possible ? | Abandon possible ? | Purge automatique ? |
 |---|---|---|---|---|---|
-| Créer la transaction                     | Ouvert en édition            |OPEN           |          OUI       |          OUI ||
-| Clôturer / Valider                       | Validé                       |READY          |                    |          OUI ||
-| Verser / Envoyer                         | Préparation et envoi du SIP  |SENDING        |                    |              ||
-|Verser / Envoyer|  Envoyé, en cours de traitement du SAE                                |SENT           |                    |              ||
-|Verser / Envoyer|  Versé en succès                                                      |ACK_OK         |                    |              |OUI|
-|Verser / Envoyer|  Versé                                                                |ACK_WARNING    |                    |              |OUI|
-|Verser / Envoyer|  Échec du versement                                                   |ACK_KO         |                    |         OUI  ||
-|Verser / Envoyer|  Erreur technique                                                     |KO             |                    |         OUI  ||
-|  Éditer / Rouvrir                        | Ouvert en édition            |OPEN           |          OUI       |              ||
-|  Abandonner                              | Abandonné                    |ABORTED        |                    |              |OUI|
-
-### Comment sont gérés les statuts d’une transaction ? - A REVOIR
-
-TO DO
+|Créer la transaction| Ouvert en édition            |OPEN           |          OUI       |          OUI ||
+|Clôturer / Valider  | Validé                       |READY          |                    |          OUI ||
+|Verser / Envoyer    | Préparation et envoi du SIP  |SENDING        |                    |              ||
+|Verser / Envoyer    |  Envoyé, en cours de traitement du SAE                                |SENT           |                    |              ||
+|Verser / Envoyer    |  Versé en succès                                                      |ACK_OK         |                    |              |OUI|
+|Verser / Envoyer    |  Versé                                                                |ACK_WARNING    |                    |              |OUI|
+|Verser / Envoyer    |  Échec du versement                                                   |ACK_KO         |                    |         OUI  ||
+|Verser / Envoyer    |  Erreur technique                                                     |KO             |                    |         OUI  ||
+|Éditer / Rouvrir    | Ouvert en édition            |OPEN           |          OUI       |              ||
+|Abandonner          | Abandonné                    |ABORTED        |                    |              |OUI|
 
 Ces services sont disponibles depuis l'APP « Collecte et préparation des versements » du front-office VitamUI fournie avec la solution logicielle Vitam  :
 
@@ -3011,18 +3009,6 @@ Certaines de ces actions entraînent la purge des archives passé un certain dé
 
 -   « Abandonner »
 -   « Verser », si le résultat de cette action est un versement en succès ou en avertissement.
-
-|  Actions disponibles                   | Statut correspondant dans le front-office    | Statut correspondant dans le back-office| Purge automatique ? |
-|---|---|---|---|
-|  Valider   | Validé                      | READY| |
-|Verser| Préparation et envoi du SIP | SENDING | |
-|Verser| Envoyé, en cours de traitement du SAE | SENT            | |
-|Verser | Versé en succès             | ACK_OK                    |  OUI|
-|Verser | Versé                       | ACK_WARNING               |  OUI|
-|Verser | Échec du versement          | ACK_KO                    | |
-|Verser | Erreur technique            | KO                        | |
-|  Éditer    | Ouvert en édition           | OPEN                      | |
-|  Abandonner| Abandonné                   | ABORTED                   |  OUI|
 
 ### Comment paramétrer un versement ?
 
@@ -3053,7 +3039,11 @@ Dans le cas d’un flux automatisé, à l’exception de l’intitulé (« Name
     -   rattachement à une unité archivistique déjà conservée dans la solution logicielle Vitam (« UnitUp ») ;
     -   rattachement à des unités archivistiques déjà conservées dans la solution par la définition de conditions (« UnitUps »), à savoir une métadonnée (« MetadataKey »), une valeur (« MetadataValue ») et une position de rattachement (« UnitUp »). Si l’(les) unité(s) archivistique(s) racine(s) comporte(nt) la métadonnée et la valeur définies, alors elle(s) ira(ont) se rattacher à l’unité archivistique de rattachement associée ;
 
-    Ces deux paramètres peuvent être utilisés séparément ou ensemble. S’ils sont utilisés ensemble, alors, le module de collecte proposera un rattachement automatique des unités archivistiques racines suivant les conditions définies dans le projet de versement. Si elles ne remplissent pas les conditions, alors elles seront rattachées à l’unité archivistique de rattachement par défaut (« UnitUp »).
+    Ces deux paramètres peuvent être utilisés séparément ou ensemble. S’ils sont utilisés ensemble, alors, le module de collecte proposera un rattachement automatique des unités archivistiques racines suivant les conditions définies dans le projet de versement. Si elles ne remplissent pas les conditions, alors elles seront rattachées à l’unité archivistique de rattachement par défaut (« UnitUp »)[^53].
+
+-  paramétrer l'envoi automatique du SIP dans la solution logicielle Vitam dès la validation de la transaction (AutomaticIngest).
+
+- ajouter des règles de transformation exprimées dans un format JSLT[^54].
 
 ### Quels sont les services disponibles ?
 
@@ -3131,6 +3121,9 @@ Enfin, il est possible d'**ajouter des répertoires dans une transaction**. Si c
 celui-ci ne peut contenir des informations de rattachement. 
 S'il en contient, l'ajout des répertoires sera en échec.
 
+### Comment paramétrer des règles de transformation ?
+
+TO DO
 
 
 Annexe 1 : Exemples de données entrantes
@@ -3144,8 +3137,8 @@ Annexe 1 : Exemples de données entrantes
 {
   "ArchivalAgencyIdentifier": "Vitam",
   "TransferringAgencyIdentifier": "AN",
-  "OriginatingAgencyIdentifier": "MICHEL\_MERCIER",
-  "SubmissionAgencyIdentifier": "MICHEL\_MERCIER",
+  "OriginatingAgencyIdentifier": "MICHEL_MERCIER",
+  "SubmissionAgencyIdentifier": "MICHEL_MERCIER",
   "MessageIdentifier": "20220302-000005",
   "ArchivalAgreement":"IC-000001",
   "Comment": "Versement du service producteur : Cabinet de Michel Mercier"
@@ -3350,8 +3343,6 @@ Annexe 3 : Liste des points d’API
 |                   | Mise à jour d’un projet de versement | project:update        | PUT           | /collect-external/v1/projects  |
 |                   | Supprime un projet de versement   | project:id:delete        | DELETE        | /collect-external/v1/projects/{projectId}/ |
 |                   | Verser une archive arborescente ZIP à un projet de versement automatique sans transaction | project:id:zip:create | POST        | /collect-external/v1/projects/{projectId}/upload/ |
-
-
 |                   | Récupérer la liste des transactions du projet | project:id:transactions | GET |/collect-external/v1/projects/{projectId}/transactions/ |
 | transaction       | Création de la transaction        | transaction:create       | POST          | /collect-external/v1/projects/{projectId}/transactions/ |
 |                   | Mise à jour d’une transaction     | transaction:update       | PUT           | /collect-external/v1/transactions/ |
@@ -3374,41 +3365,41 @@ Annexe 3 : Liste des points d’API
 |                   | Elimine des archives | transaction:elimination:action           | POST  | /collect-external/v1/transactions/{transactionId}/elimination/action|
 | objects           | Récupère un groupe d’objets techniques | transaction:object:read | GET       | /collect-external/v1/objects/{gotId}/|
 
-[^1]:  Pour plus d’informations, consulter le document *Modèle de données*, « Collection Project ». Un exemple de projet de versement se trouve dans l’[annexe 1](#annexe-1-exemples-de-donnees-entrantes) du présent document.
+[^1]:   Pour plus d’informations, consulter le document *Modèle de données*, « Collection Project ». Un exemple de projet de versement se trouve dans l’[annexe 1](#annexe-1-exemples-de-donnees-entrantes) du présent document.
 
-[^2]:  À noter que, dans l’APP « Collecte et préparation des versements », ce champ est alimenté par la valeur du champ « MessageIdentifier ».
+[^2]:   À noter que, dans l’APP « Collecte et préparation des versements », ce champ est alimenté par la valeur du champ « MessageIdentifier ».
 
-[^3]:  Pour plus d’informations, consulter le document *Modèle de données*, « Collection Transaction ». Un exemple de contexte de collecte se trouve dans l’[annexe 1](#annexe-1-exemples-de-donnees-entrantes) du présent document.
+[^3]:   Pour plus d’informations, consulter le document *Modèle de données*, « Collection Transaction ». Un exemple de contexte de collecte se trouve dans l’[annexe 1](#annexe-1-exemples-de-donnees-entrantes) du présent document.
 
-[^4]:  À noter que cette collection est renommée « Transaction » dans la version 6 RC de la solution logicielle Vitam.
+[^4]:   À noter que cette collection est renommée « Transaction » dans la version 6 RC de la solution logicielle Vitam.
 
-[^5]:  Si la transaction est clôturée (son statut est égal à « READY »), il n’est plus possible de lui adjoindre des unités archivistiques, ainsi que des métadonnées techniques et des objets.
+[^5]:   Si la transaction est clôturée (son statut est égal à « READY »), il n’est plus possible de lui adjoindre des unités archivistiques, ainsi que des métadonnées techniques et des objets.
 
-[^6]:  Pour plus d’informations sur l’enregistrement de l’unité archivistique dans la base de données, il est recommandé de consulter le document *Modèle de données*.
+[^6]:   Pour plus d’informations sur l’enregistrement de l’unité archivistique dans la base de données, il est recommandé de consulter le document *Modèle de données*.
 
-[^7]:  Si la transaction est clôturée (son statut est égal à « READY »), il n’est plus possible de lui adjoindre des unités archivistiques, ainsi que des métadonnées techniques et des objets.
+[^7]:   Si la transaction est clôturée (son statut est égal à « READY »), il n’est plus possible de lui adjoindre des unités archivistiques, ainsi que des métadonnées techniques et des objets.
 
-[^8]:  Pour plus d’informations sur l’enregistrement de l’unité archivistique dans la base de données, il est recommandé de consulter le document *Modèle de données*.
+[^8]:   Pour plus d’informations sur l’enregistrement de l’unité archivistique dans la base de données, il est recommandé de consulter le document *Modèle de données*.
 
-[^9]:  Si la transaction est clôturée (son statut est égal à « READY »), il n’est plus possible de lui adjoindre des unités archivistiques, ainsi que des métadonnées techniques et des objets.
+[^9]:   Si la transaction est clôturée (son statut est égal à « READY »), il n’est plus possible de lui adjoindre des unités archivistiques, ainsi que des métadonnées techniques et des objets.
 
-[^10]: Pour plus d’informations sur l’enregistrement de l’unité archivistique dans la base de données, il est recommandé de consulter le document *Modèle de données*.
+[^10]:  Pour plus d’informations sur l’enregistrement de l’unité archivistique dans la base de données, il est recommandé de consulter le document *Modèle de données*.
 
 [^11]:  Le fonctionnement est identique à celui de l’import d’arborescence bureautique dans ReSIP.
 
-[^12]: Pour plus d’informations sur l’enregistrement de l’unité archivistique dans la base de données, il est recommandé de consulter le document *Modèle de données*.
+[^12]:  Pour plus d’informations sur l’enregistrement de l’unité archivistique dans la base de données, il est recommandé de consulter le document *Modèle de données*.
 
 [^13]:  Se référer à la sous-section 3.2.4.2 « Envoi d’une arborescence bureautique » du présent document.
 
 [^14]:  Son modèle est identique au modèle de fichier .csv importé dans ReSIP, hors colonnes ID et ParentID qui ne sont pas supportées par le module de collecte en l’état actuel des développements.
 
-[^15]: Pour plus d’informations sur l’enregistrement de l’unité archivistique dans la base de données, il est recommandé de consulter le document *Modèle de données*.
+[^15]:  Pour plus d’informations sur l’enregistrement de l’unité archivistique dans la base de données, il est recommandé de consulter le document *Modèle de données*.
 
-[^16]: Pour plus d’informations sur l’enregistrement de l’unité archivistique dans la base de données, il est recommandé de consulter le document *Modèle de données*.
+[^16]:  Pour plus d’informations sur l’enregistrement de l’unité archivistique dans la base de données, il est recommandé de consulter le document *Modèle de données*.
 
-[^17]: Son modèle est identique au modèle de fichier .csv importé dans ReSIP, hors colonnes ID et ParentID qui ne sont pas supportées par le module de collecte en l’état actuel des développements.
+[^17]:  Son modèle est identique au modèle de fichier .csv importé dans ReSIP, hors colonnes ID et ParentID qui ne sont pas supportées par le module de collecte en l’état actuel des développements.
 
-[^18]: Pour plus d’informations sur l’enregistrement de l’unité archivistique dans la base de données, il est recommandé de consulter le document *Modèle de données*.
+[^18]:  Pour plus d’informations sur l’enregistrement de l’unité archivistique dans la base de données, il est recommandé de consulter le document *Modèle de données*.
 
 [^19]:  Le paramétrage de la purge automatique s’effectue depuis le fichier collect.conf. Pour modifier le délai par défaut, il faut modifier les valeurs des paramètres « purgeTransactionThreadFrequency » et « purgeTransactionDelayInMinutes » pour le(s) tenant(s) concerné(s).
 
@@ -3436,7 +3427,7 @@ Annexe 3 : Liste des points d’API
 
 [^31]:  En l’état actuel des développements, le champ Comment est non répétable, alors que, dans le SEDA, il l’est.
 
-[^32]:  \#management est à employer en lieu et place de la balise Management pour se conformer aux attendus de la solution logicielle Vitam.
+[^32]:  #management est à employer en lieu et place de la balise Management pour se conformer aux attendus de la solution logicielle Vitam.
 
 [^33]:  Avec un pattern date.
 
@@ -3477,3 +3468,7 @@ Annexe 3 : Liste des points d’API
 [^51]:  outMessg est à employer en lieu et place de la balise OutcomeDetailMessage dans un schéma de contrôle pour se conformer aux attendus de la solution logicielle Vitam.
 
 [^52]:  evDetData est à employer en lieu et place de la balise EventDetailData dans un schéma de contrôle pour se conformer aux attendus de la solution logicielle Vitam.
+
+[^53]:  Se référer à la sous-section « Quels sont les rattachements possibles ? » du présent document.
+
+[^54]:  Se référer à la sous-section « Comment paramétrer des règles de transformation ? » du présent document.
