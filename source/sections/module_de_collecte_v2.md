@@ -3123,7 +3123,206 @@ S'il en contient, l'ajout des répertoires sera en échec.
 
 ### Comment paramétrer des règles de transformation ?
 
-TO DO
+La solution logicielle Vitam permet d’agir sur les métadonnées des archives versées au moyen d’une configuration au format JSLT paramétrée dans un projet de versement (TransformationRules). 
+Dans cette configuration, il est possible de demander :
+- l’ajout de métadonnées descriptives ou de gestion de manière systématique, le cas échéant en fonction de critères à définir ;
+- la suppression de métadonnées,
+- la modification de métadonnées en fonction de critères à définir ;
+- la transformation de métadonnées en des métadonnées conformes au SEDA ;
+- la modification de valeurs renseignées dans les métadonnées afin de les nettoyer (ex. ajout de majuscule, suppression d’espaces, etc).
+
+Le but d’un fichier au format JSLT est de transformer du JSON[^55]. Son application est toujours évaluée par rapport à une entrée, appelée « le nœud de contexte ». Le résultat peut être un objet, un nombre, une chaîne de caractères, une valeur nulle (« null »), etc., exprimé au format JSON, format dans lequel sont transformées les métadonnées une fois importées dans le module de collecte[^56]. 
+
+Prenons l'entrée suivante :
+
+ *Exemple : Fiche matricule d'Albert Dupont (enregistrement JSON)*
+```  
+{
+  "Title" : "Albert Dupont",
+ "DocumentType" : "Fiche matricule",
+  "Coverage" : {"Temporal" : ["XXème siècle","1ère guerre mondiale","1914-1918"],"Spatial" : ["France","Verdun"},
+  "ID-ARK" : "mon-domaine/12345/eaferzebn13bac"
+  "#management": {
+        "AccessRule": {
+                "Rules": [
+                    {
+                        "Rule": "ACC-00001",
+                        "StartDate": "2007-09-25"
+                    }
+                ]
+            }
+    }
+
+}
+```
+
+ *Exemple : Fiche matricule d'Albert Dupont (fichier .csv)*
+```  
+"File","Content.Title";"Content.DocumentType";"Content.Coverage.Temporal.0";"Content.Coverage.Temporal.1";"Content.Coverage.Temporal.2";"Content.Coverage.Spatial.0";"Content.Coverage.Spatial.1";"Content.ID-ARK";"Management.AccessRule.Rule";"Management.StartDate.Rule"
+"eaferzebn13bac.pf","Albert Dupont";"Fiche matricule";"XXème siècle";"1ère guerre mondiale";"1914-1918";"France";"Verdun";"Content.ID-ARK";"ACC-00001";"2007-09-25"
+``` 
+
+#### Absence d'actions sur les données entrantes
+
+Si l’on souhaite uniquement ajouter des métadonnées, sans agir sur les données entrantes, il faudra déclarer les métadonnées à ajouter, suivies de l’expression « * : . ».
+
+*Exemple : Ajout d’un Tag dont la valeur est « Fiche matricule » en plus des autres métadonnées entrantes.
+
+``` 
+{
+    "Tag": "Fiche matricule",
+    *: .
+}
+``` 
+
+*Exemple : Ajout d’une règle de diffusion dont la règle est DISS-00001 et la date de début 2007-09-25 en plus de la règle de communicabilité déjà présente dans les données entrantes.*
+
+``` 
+{
+    "#management": {
+        "DisseminaRule": {
+                "Rules": [
+                    {
+                        "Rule": "DISS-00001",
+                        "StartDate": "2007-09-25"
+                    }
+                ]
+            },
+        *: .
+    },
+    *: .
+}
+``` 
+
+L’expression « * : . » est présente à deux endroits :
+-  dans le bloc #management car il peut y avoir d’autres règles de gestion dans les données entrantes,
+-  dans le nœud courant afin de récupérer la globalité des informations.
+
+#### Actions sur les données entrantes
+
+Si l’on souhaite agir sur les données entrantes, il faudra **nommer** la métadonnée en la préfixant d’un point (ex. DocumentType). On parlera alors de « clé ».
+Voici quelques règles en fonction de la métadonnée concernée :
+
+|**Type d'élément**|**Nommage possible de la clé**|**Résultat obtenu en sortie**|**Commentaires**|
+|:-----:|:-----:|:-----:|:-----:|
+|Élément « feuille »|.DocumentType|"Fiche matricule"<br/>Soit la(les) valeur(s) de la métadonnée DocumentType||
+|Élément englobant|.Coverage|"Temporal" : ["XXème siècle","1ère guerre mondiale","1914-1918"],"Spatial" : ["France","Verdun"].<br/>Soit la(les) métadonnée(s) englobée(s) et leur(s) valeur(s)||
+|Élément englobé|.Coverage.Temporal|["XXème siècle","1ère guerre mondiale","1914-1918"]<br/>Soit la(les) valeur(s) de la métadonnée Temporal.||
+|Élément avec caractères spéciaux|."ID-ARK"|"mon-domaine/12345/eaferzebn13bac"<br/>Soit la(les) valeur(s) de la métadonnée ID-ARK|Si une des clés à utiliser contient des caractères spéciaux, il est nécessaire de mettre son nom entre guillemets, sans quoi la clé ne fonctionnera pas.|
+|Éléments factorisés|.Coverage | [.Temporal, .Spatial]|[ "XXème siècle", "1ère guerre mondiale", "1914-1918" ], [ "France" ]|L'expression à gauche du pipe devient le nœud de contexte pour l'expression à droite. Il permet en quelque sorte de factoriser le nœud parent commun.
+<br/>Cela équivaut à écrire "[.Coverage.Temporal, .Coverage.Spatial, .Coverage.Juridictional]".|
+|Elément variabilisé|let varDocumentType = .DocumentType<br/>Usage : $varDocumentType|"Fiche matricule"|Il est possible de définir des variables pour découper des expressions complexes ou éviter de recalculer plusieurs fois la même chose.|
+
+On pourra **insérer des expressions dans un nouvel objet** au moyen de l’appel à ces clés. En d’autres termes, on peut, par exemple, ajouter de métadonnées dans lequel on insérera les valeurs d’une clé passée en paramètre.
+
+**Point d’attention :** Si une expression produit null, {} ou [], la clé est omise.
+
+*Exemple : Ajout d’un Tag dont la valeur sera égale à la valeur de la métadonnée DocumentType en plus des autres métadonnées entrantes.*
+
+``` 
+{
+    "Tag": .DocumentType,
+    *: .
+}
+``` 
+
+Il est également possible de vouloir conserver l’ensemble des valeurs du fichier à l’exception de certaines, dans ce cas on utilisera l’expression « * - ValeurExclue : . ». 
+
+*Exemple : Ajout d’un Tag dont la valeur sera égale à la valeur de la métadonnée DocumentType et exclusion de la métadonnée DocumentType.*
+
+``` 
+{
+    "Tag": .DocumentType,
+     * - DocumentType : .
+}
+```
+
+Il est possible d'intervenir sur les données entrantes de manière à agir sur la sortie via :
+
+-  l'**indexation en tableau** avec le paramètre [index]. 
+   Ainsi, .Coverage.Temporal[0] donnerait "XXème siècle" en utilisant l’exemple général d’entrée du début de ce document.
+   On peut également découper des tableaux. Par exemple, .Coverage.Temporal[1 : 3] donnera ["XXème siècle", "1914-1918"]. Le premier indice est donc inclusif et que le dernier est exclusif. Par ailleurs, le compte de l’index commence toujours à 0.
+   Les indices négatifs sont autorisés pour référencer les éléments en partant de la fin du tableau. Ainsi, [-1] renverrait le dernier élément du tableau. 
+   Cela fonctionne aussi avec le découpage : pour supprimer le premier et le dernier élément, il faut écrire [1 : -1].
+   Ce mode permet de sélectionner les données à extraire.
+   
+-  les **fonctions intégrées** proposées par JSLT qui permettent de transformer les données[^57].
+
+   *Exemple : Passage en majuscules des valeurs de la métadonnée Title et remplacement de la valeur de la métadonnée DocumentType ("Registre matricule" devient "Fiche matricule").*
+
+   ```
+   {
+   "Title":trim(uppercase(.Title)),
+   "DocumenType": replace(.DocumentType,"Registre matricule","Fiche matricule")
+   }
+   ```
+
+-  de **nouvelles fonctions**, qu'il faut déclarer en amont des expressions de transformation du fichier JSLT.
+   La syntaxe est la suivante :
+        def Nomfonction(paramètre(s))
+	       <expression>
+   Il est possible d’utiliser des variables préalablement définies au sein de la définition d’une fonction. Les fonctions peuvent également s'appeler elles-mêmes et appeler d'autres fonctions déjà définies.
+
+**Point d'attention :** Si deux fonctions différentes utilisent le même nom, seule la dernière fonction définie sera prise en compte. 
+
+- des **opérateurs**.
+
+|**Type**|**Opérateur**|
+|:-----:|:-----:|
+|Mathématiques|+ : addition.<br/>Il sert également à la concaténation de chaînes de caractères, tableaux et objets. |<br/>- : soustraction<br/>* : multiplication<br/>/ : division|
+|Comparaisons |> : supérieur à<br/>< : inférieur à<br/>≥ : supérieur ou égal à<br/>≤ : inférieur ou égal à<br/>!= : différent de<br/>== : égal à|
+|Boléens      |and, or, not(etc.) |
+
+Dans le fichier .jslt, on peut introduire :
+-  des **expressions conditionnelles** telles que : if (<expr>) <expr> else <expr>.
+   L'expression if retourne toujours une valeur et ne fait rien d'autre. 
+   La partie else peut être omise, auquel cas l'expression if retournera null si la condition est fausse.
+   Les valeurs false, null, {} et [] sont évaluées comme false. 
+
+   *Exemple : Ajout d'un champ Tag récupérant la valeur du champ DocumenType si le champ DocumentType est présent et contient une valeur dans les données entrantes.*
+
+   ``` 
+   if (.DocumentType)
+     {
+       "Tag" : [.DocumentType]
+     }
+   else
+     { 
+       "Tag" : ["Registre matricule"]
+	 }
+  
+   *Résultat :*
+   -  Si le champ DocumentType est présent et contient une valeur dans les données entrantes :
+
+   {
+     "Tag" : [ "Registre matricule" ]
+   }
+
+   - S'il n'y a aucun résultat, la transformation ajoutera le champ Tag et la valeur "Registre matricule" :
+
+   {
+     "Tag" : [ "Registre matricule" ]
+   }
+   ```
+
+   **Points d'attention :**
+   -  Ecrire if(.DocumentType!=null) est équivalent à utiliser if(.DocumentType).
+   -  Dans l'exemple ci-dessus, utiliser des conditions permet non seulement de transformer les métadonnées entrantes (DocumentType devient Tag), mais aussi d'uniformiser les saisies de valeurs quand on sait que certaines métadonnées ne sont pas systématiquement renseignées.
+
+-  des **boucles** telles que : [for (<expr>) <expr>].
+   L'expression for permet de parcourir un tableau et de transformer chaque élément en appliquant une expression.
+   L'expression entre parenthèses est comprise comme un tableau sur lequel on boucle. Pour chaque élément du tableau, la seconde expression est évaluée.
+
+   *Exemple : Ajout d'un champ Tag récupérant les valeurs du champ Temporal que l'on souhaite transformer en majuscules.*
+
+   ``` 
+   {"Tag" : [for (.Coverage.Temporal) trim(uppercase(.))]}
+   ```
+
+   Une boucle peut être aussi utilisée pour : 
+   -   transformer les valeurs d’un tableau de nombres à chaînes de caractères en utilisant la fonction string(.), 
+   -   transformer un tableau en objet.
+
 
 
 Annexe 1 : Exemples de données entrantes
@@ -3365,6 +3564,984 @@ Annexe 3 : Liste des points d’API
 |                   | Elimine des archives | transaction:elimination:action           | POST  | /collect-external/v1/transactions/{transactionId}/elimination/action|
 | objects           | Récupère un groupe d’objets techniques | transaction:object:read | GET       | /collect-external/v1/objects/{gotId}/|
 
+
+Annexe 4 : Exemples de Exemples de transformations JSLT
+-------------------------------------------------------
+
+*Nota bene *: les cas présentés ci-dessous sont des exemples fictifs.
+
+### Exemple 1
+
+On souhaite transformer les métadonnées du fichier CSV suivant :
+
+``` 
+File;Content.NomDocument;Content.Description;Content.Cote;Content.DateDerniereModif;Content.SortFinal
+"file1.txt";"Title 1";description title 1;"1 M 59";"2007-06-17";"Destroy"
+"file2.txt";"Title 2";description title 2;"1 M 60";"2007-03-02";"Keep"
+"file3.txt";"Title 3";description title 3;"1 M 61";"2022-07-12";"Keep"
+"file4.txt";"Title 4";description title 4;"1 M 62";"2011-11-27";"Destroy"
+``` 
+
+Un enregistrement (correspondant à une ligne du fichier .csv) exprimé en JSON correspond à :
+
+```
+{
+    "NomDocument": "Title 1",
+    "Description": "description title 1",
+    "DescriptionLevel": "Item",
+    "Cote": ["1 M 59"],
+    "DateDerniereModif":["2007-06-17"],
+    "SortFinal":["Destroy"]
+}
+```
+
+En sachant qu'on souhaite :
+-   ajouter systématiquement une métadonnée DescriptionLevel avec "Item" comme valeur,
+-   créer une métadonnée ArchivalAgencyArchiveUnitIdentifier reprenant les valeurs de la métadonnée Cote,
+-   créer une métadonnée Title reprenant les valeurs de la métadonnée NomDocument,
+-   ajouter des règles de gestion :
+	- règle de communicabilité avec "ACC-00001" pour règle et les valeurs de la métadonnée DateDerniereModif pour date de début (StartDate),
+    - une DUA avec pour sort final les valeurs de la métadonnée SortFinal
+-   ne pas reprendre les contenus des colonnes NomDocument, Cote, DateDerniereModif, SortFinal,
+-   récupérere le contenu de la métadonnée Description,
+
+les commandes JSLT prendront la forme suivante :
+
+```
+{
+	"Title": .NomDocument,
+    "ArchivalAgencyArchiveUnitIdentifier": .Cote,
+    "#management": {
+        "AccessRule" : [
+            "Rules":[
+                {
+                    "Rule":"ACC-00001",
+                    "StartDate":.DateDerniereModif
+                }
+            ]
+        ],
+        "AppraisalRule":[
+            "FinalAction":.SortFinal
+        ]
+    },
+    * - NomDocument, Cote, DateDerniereModif, SortFinal : .
+}
+```
+
+Le résultat obtenu sera le suivant :
+
+```
+{
+    "Title" : "Title 1",
+    "ArchivalAgencyArchiveUnitIdentifier" : "1 M 59",
+    "#management" : {
+      "AccessRule" : [ {
+        "Rule" : "ACC-00001",
+        "StartDate" : "2007-06-17"
+      } ],
+	  "AppraisaRule" : [ {
+      },"FinalAction" : "Destroy" ] 
+    },
+    "Description" : "description title 1",
+    "DescriptionLevel" : "Item"
+  }
+```
+
+### Exemple 2
+
+On souhaite transformer les métadonnées du fichier CSV suivant :
+
+``` 
+File;Content.Title;Content.Description;Content.StartDate;Content.ArchivalAgencyArchiveUnitIdentifier;Content.Tag;Management.AppraisalRule.FinalAction
+"dossier/file1.txt";"Title 1";"description title 1";"2007-06-17";"1 M 59";"facture";"Destroy"
+"dossier/file2.txt";"Title 2";"description title 2";"2007-03-02";"1 M 60";"mail";"Keep"
+"dossier/file3.txt";"Title 3";"description title 3";"2022-07-12";"1 M 61";"dossierRH";"Keep"
+"dossier/file4.txt";"Title 4";"description title 4";"2011-11-27";"1 M 62";"dossierRH";"Keep"
+"dossier";"Dossier";"description dossier";"2003-04-13";;;"Destroy"
+``` 
+
+Un enregistrement (correspondant à une ligne du fichier .csv) exprimé en JSON correspond à :
+
+```
+{
+    "#management": {
+      "AppraisalRule": {
+        "FinalAction": "Destroy"
+      }
+    },
+    "Title": "Title 1",
+    "Description": "description title 1",
+    "StartDate":"2007-06-17",
+    "DescriptionLevel": "Item",
+    "ArchivalAgencyArchiveUnitIdentifier": "1 M 59",
+    "Tag":["facture"]
+  }
+```
+
+En sachant qu'on souhaite :
+-   ajouter une DUA en fonction des tags,
+-   utiliser la StartDate pour la Startdate de la DUA,
+
+les commandes JSLT prendront la forme suivante :
+
+```
+{
+    "#management": {
+        "AppraisalRule" : if (.Tag == ["facture"]) {
+            "Rules":[
+                {
+                    "Rule":"APP-00001",
+                    "StartDate":.StartDate
+                }
+            ],
+            *: .
+        } else if (.Tag == ["mail"])
+        {
+            "Rules":[
+                {
+                    "Rule":"APP-00002",
+                    "StartDate":.StartDate
+                }
+            ],
+            *: .
+        } else if (.Tag == ["dossierRH"]){
+            "Rules":[
+                {
+                    "Rule":"APP-00003",
+                    "StartDate":.StartDate
+                }
+            ],
+            *: .
+        } else {
+            *: .
+        },
+        *: .
+    },
+    * - StartDate: . 
+}
+```
+
+Le résultat obtenu sera le suivant :
+
+```
+{
+    "#management" : {
+      "AppraisalRule" : {
+        "Rules" : [ {
+          "Rule" : "APP-00001",
+          "StartDate" : "2007-06-17"
+        } ],
+        "FinalAction" : "Destroy"
+      }
+    },
+    "Title" : "Title 1",
+    "Description" : "description title 1",
+    "DescriptionLevel" : "Item",
+    "ArchivalAgencyArchiveUnitIdentifier" : "1 M 59",
+    "Tag":["facture"]
+  }
+```
+
+### Exemple 3
+
+On souhaite transformer les métadonnées du fichier CSV suivant :
+
+``` 
+File;Content.Title;Content.Description;Content.ArchivalAgencyArchiveUnitIdentifier;Content.Addressee.0.FirstName;Content.Addressee.0.BirthName;Content.Addressee.0.BirthDate;Content.Addressee.1.FirstName;Content.Addressee.1.BirthName;Content.Addressee.1.BirthDate;Management.AppraisalRule.Rule;Management.AppraisalRule.StartDate;Management.AppraisalRule.FinalAction
+"dossier/file1.txt";" Title 1 ";"description title 1";"1 M 59";Albert;Dupont;2000-06-17;Béré;Nice;"1998-09-17";"APP-00001";"2007-06-17";"Destroy"
+"dossier/file2.txt";" Title 2 ";"description title 2";"1 M 60";Marc;Aurèle;1987-07-11;Marc;Antoine;"1990-06-14";"APP-00001";"2007-03-02";"Keep"
+"dossier/file3.txt";" Title 3 ";"description title 3";"1 M 61";Sarah;Bernardt;2001-10-10;Edmond;Rostand;"2007-04-19";"APP-00003";"2022-07-12";"Keep"
+"dossier/file4.txt";" Title 4 ";"description title 4";"1 M 62";Marc;Aurèle;2000-01-31;Jules;César;"2000-10-14";APP-00002";"2011-11-27";"Keep"
+"dossier";"Dossier";"description dossier";;;;;;;;"APP-00002";"2003-04-13";"Destroy"
+``` 
+
+Un enregistrement (correspondant à une ligne du fichier .csv) exprimé en JSON correspond à :
+
+```
+{
+    "#management": {
+      "AppraisalRule": {
+        "Rules": [
+          {
+            "Rule": "APP-00001",
+            "StartDate": "17/06/2007"
+          }
+        ],
+        "FinalAction": "Destroy"
+      }
+    },
+    "Title": "Title 1",
+    "Description": "description title 1",
+    "DescriptionLevel": "Item",
+    "ArchivalAgencyArchiveUnitIdentifier": "1 M 59",
+    "Addressee": [
+      {
+        "FirstName": "Albert",
+        "BirthName": "Dupont",
+        "BirthDate": "2000-10-14"
+      },
+      {
+        "FirstName": "Béré",
+        "BirthName": "Nice",
+        "BirthDate": "1998-09-17"
+      }
+    ]
+  }
+```
+
+En sachant qu'on souhaite :
+-   modifier la cote de l'ensemble des unités archivistiques en la remplaçant par une empreinte calculée à partir des titres,
+-   mettre les titres en majuscules et enlever les espaces vides présents,
+-   remplacer le mot "title" présent dans la métadonnée Description par "titre",
+-   ne pas reprendre les contenus des métadonnées ArchivalAgencyArchiveUnitIdentifier, Description puisqu'elles ont été traitées spécifiquement dans des commandes,
+
+les commandes JSLT prendront la forme suivante :
+
+```
+{
+    "ArchivalAgencyArchiveUnitIdentifier":sha256-hex(.Title),
+    "Title":trim(uppercase(.Title)),
+    "Description": replace(.Description,"title","titre"),
+    *- ArchivalAgencyArchiveUnitIdentifier, Description: .
+}
+```
+
+Le résultat obtenu sera le suivant :
+
+```
+{
+    "ArchivalAgencyArchiveUnitIdentifier" : "ab03af41c2940e7584b62df48a964db37cd0202137fc60a9e782d16d4cc03843",
+    "Title" : "TITLE 1",
+    "#management" : {
+      "AppraisalRule" : {
+        "Rules" : [ {
+          "Rule" : "APP-00001",
+          "StartDate" : "17/06/2007"
+        } ],
+        "FinalAction" : "Destroy"
+      }
+    },
+    "Description" : "description titre 1",
+    "DescriptionLevel" : "Item",
+    "Addressee" : [ {
+      "FirstName" : "Marc",
+      "BirthName" : "Aurèle",
+      "BirthDate" : "2000-10-14"
+    }, {
+      "FirstName" : "Béré",
+      "BirthName" : "Nice",
+      "BirthDate" : "1998-09-17"
+    } ]
+  }
+```
+
+### Exemple 4
+
+Voici un exemple complexe de commandes JSLT contenant des variables et des expressions conditionnelles appelant ces variables :
+
+```
+let hasAppraisal = ."#management".AppraisalRule != null
+let existingAppraisalRules = ."#management".AppraisalRule.Rules
+let existingAppraisalFinalAction = ."#management".AppraisalRule.FinalAction
+
+let appraisalRuleToAdd = if      (contains(.DOSSIER[0].nomTypeDossier[0], ["DP", "PC", "PA", "PD", "DT"])) "XXX"
+                         else if (contains(.DOSSIER[0].nomTypeDossier[0], [ "CUa", "CUb"]))                "YYY"
+                         else                                                                              null
+
+let appraisalRuleStartDate = if ( contains(.TYPE_DOSSIER[0], [ "CUa", "CUb"]) ) .terrains[0].dtDecisionDossierCU[0]
+                             else                                               .decisionsUrba[0].dtDecisionUrba[0]
+
+let appraisalFinalAction = if        (contains(.DOSSIER[0].nomTypeDossier[0], ["CUa", "CUb"]) and contains(.DOSSIER[0].nomEtatsOuSousEtatsGenera[0], [ "Rejet", "Refus"] ))    "Destroy"
+                           else if   (contains(.DOSSIER[0].nomTypeDossier[0], ["CUa", "CUb"]) and contains(.DOSSIER[0].nomEtatsOuSousEtatsGenera[0], [ "Accord ", "Sursis"] )) "Keep"
+                           else                                                                                                                                                 null
+        
+{
+    "#management": {
+        // Only set AppraisalRule if existing field (rule, properties and/or inheritance) OR new rule to set
+        "AppraisalRule": if ($hasAppraisal or $appraisalRuleToAdd != null) {
+            // Add new rule to existing ones
+            "Rules": if ($appraisalRuleToAdd != null)     [ { "Rule": $appraisalRuleToAdd, "StartDate": $appraisalRuleStartDate } ] + $existingAppraisalRules
+                else if ($existingAppraisalRules != null) $existingAppraisalRules
+                else                                      [],
+            // Final action is required, if no value found set "Keep"
+            "FinalAction": if($appraisalFinalAction != null)               $appraisalFinalAction 
+                           else if ($existingAppraisalFinalAction != null) $existingAppraisalFinalAction
+                           else                                            "Keep",
+            * : .
+        } else {},
+        * : .
+    },
+    * : .
+}
+```
+
+Annexe 5 : Liste de fonctions JSLT
+----------------------------------
+
+*Nota bene *: les cas présentés ne sont pas exhaustifs et sont issus de la documentation disponible sur le site suivant : https://github.com/schibsted/jslt/blob/master/functions.md.
+
+### Fonctions générales
+
+**contains(element, sequence) -> boolean	oui**
+Renvoie "true" si *element* est contenu dans *sequence*, "false" sinon.
+*sequence* peut être un tableau, une chaîne de caractères ou un objet.
+- Si *sequence* est un tableau, *element* doit être un élément de ce tableau.
+- Si *sequence* est une chaîne de caractères, *element* est converti en chaîne et doit être une sous-chaîne de sequence. Si element est null, le résultat est false.
+- Si *sequence* est un objet, *element* est converti en chaîne et doit être une clé de l’objet.
+
+**Exemples :**
+```
+    • contains(null, [1, 2, 3])      => false  
+    • contains(1, [1, 2, 3])         => true  
+    • contains(0, [1, 2, 3])         => false  
+    • contains("no", {"no" : false}) => true  
+    • contains(1, {"1" : false})     => true  
+    • contains("ab", "abc")          => true
+```
+
+**size(sequence) -> integer**
+Renvoie le nombre d'éléments dans *sequence*, qui peut être un tableau, un objet ou une chaîne.
+Si *sequence* est "null", la fonction renvoie "null".
+
+**Exemples :**
+```
+    • size([1, 2, 3]) => 3  
+    • size({"1" : 3}) => 1  
+    • size("abcdef")  => 6  
+    • size(null)      => null
+```
+	
+**error(message)**
+Interrompt la transformation avec une erreur et affiche le message donné en paramètre.
+**Exemple :**
+```
+if (not(is-array(.things)))  
+  error("'things' is not an array")
+```
+  
+**fallback(arg1, arg2, ...) -> value**
+Renvoie le premier argument qui a une valeur, c'est-à-dire le premier qui n'est ni "null", ni un tableau vide [], ni un objet vide {}.
+
+**Exemples :**
+```
+    • fallback(.not_existing_key, .another_not_existing, 1)  => 1  
+    • fallback(null, [], {}, "value")                        => "value"
+```
+	
+**min(arg1, arg2) -> value**
+Renvoie l’argument le plus petit selon la comparaison.
+Si un des arguments est "null", le résultat est "null".
+
+**Exemple :**
+```
+    • min(10, 1)    -> 1  
+    • min("a", "b") -> "a"  
+    • min(10, null) -> null
+```
+	
+**max(arg1, arg2) -> value**
+Renvoie l’argument le plus grand selon la comparaison.
+Si un des arguments est "null", le résultat est "null".
+
+*Exemple :*
+```
+    • max(10, 1)    -> 10  
+    • max("a", "b") -> "b"  
+    • max(10, null) -> null  
+```
+
+### Fonctions string
+
+**is-string(object) -> boolean**
+Renvoie "true" si l’argument est une chaîne de caractères, sinon "false".
+
+**Exemples :**
+```
+    • is-string(null)    => false  
+    • is-string("hello") => true  
+    • is-string(123)     => false  
+    • is-string([])      => false  
+```
+**string(object, fallback?) -> string**
+Convertit l’argument en chaîne de caractères si possible.
+    • Les nombres, booléens et objets sont convertis en chaînes.
+    • "null" renvoie "null".
+    • Tout autre type provoque une erreur, sauf si un fallback est spécifié.
+	
+**Exemples :**
+```
+    • string(123)     => "123"  
+    • string(true)    => "true"  
+    • string(null)    => null  
+    • string([1, 2])  => error  
+    • string([1, 2], "fallback") => "fallback"  *
+```
+
+**test(input, regexp) -> boolean**
+Cette fonction renvoie « true » si et seulement si l'entrée correspond à l'expression régulière (regexp). Elle renvoie « true » si l'expression correspond uniquement à une partie de la chaîne, sauf si les ancres ^ et $ sont utilisées. Si l'entrée est null, la fonction retourne false.
+
+**Exemples :**
+```
+    • test("123", "\d+") => Erreur (\d n'est pas un code d'échappement connu)
+    • test("123", "\d+") => true
+    • test("abc123", "\d+") => true (une correspondance partielle suffit)
+    • test("abc123", "^\d+$") => false
+```
+
+**capture(input, regexp) -> object**
+Si l'entrée correspond à l'expression régulière (regexp), la fonction retourne un objet contenant une clé pour chaque groupe nommé dans l'expression. Si l'entrée est null, la fonction retourne null. Si l'expression ne correspond pas, un objet vide est retourné.
+Par exemple, étant donné l'entrée suivante :
+```
+{"schema" : "http://schemas.schibsted.io/thing/pulse-simple.json#1.json"}
+```
+la fonction capture() peut être utilisée avec l'expression régulière suivante :
+```
+capture(.schema, "http://(?<host>[^/]+)/(?<rest>.+)")
+```
+
+Les deux groupes nommés (host et rest) correspondent à différentes parties de la chaîne, donc la sortie contiendra une clé pour chaque groupe nommé :
+```
+{
+  "host" : "schemas.schibsted.io",
+  "rest" : "thing/pulse-simple.json#1.json"
+}
+```
+
+**split(string, separator) -> array**
+Cette fonction divise la chaîne en un tableau de sous-chaînes en utilisant *separator*.
+Si *separator* est une chaîne vide "", la chaîne est divisée caractère par caractère.
+
+**Exemples :**
+```
+    • split("a,b,c", ",")  => ["a", "b", "c"]  
+    • split("hello", "")   => ["h", "e", "l", "l", "o"]  
+    • split("one|two", "|") => ["one", "two"]
+```
+	
+**join(array, separator) -> string**
+Cette fonction concatène les éléments du tableau en une seule chaîne, séparés par *separator*.
+Si *array* est vide, une chaîne vide est renvoyée.
+
+Exemples :
+```
+    • join(["a", "b", "c"], ",")  => "a,b,c"  
+    • join(["one", "two"], "|")   => "one|two"  
+    • join([], ",")               => ""  
+```
+
+**lowercase(string) -> string**
+Convertit la chaîne en minuscules.
+Si l’argument est null, il est retourné tel quel.
+
+**Exemples :**
+```
+    • lowercase("HELLO") => "hello"  
+    • lowercase(null)    => null  
+```
+***Point d'attention***: les fonctions lowercase() et uppercase() ne comprennent que les caractères ASCII.
+
+**uppercase(string) -> string**
+Convertit la chaîne en majuscules.
+Si l’argument est null, il est retourné tel quel.
+
+**Exemples :**
+```
+    • uppercase("hello") => "HELLO"  
+    • uppercase(null)    => null
+```
+
+***Point d'attention***: les fonctions lowercase() et uppercase() ne comprennent que les caractères ASCII.
+
+**sha256-hex(string) -> string**
+Cette fonction génère une chaîne contenant la représentation hexadécimale du hachage SHA256 de la chaîne d'entrée.
+
+**Exemples :**
+ ```
+    • sha256-hex("foo") => "2c26b46b68ffc68ff99b453c1d30413413422d706483bfa0f98a5e886266e7ae"
+    • sha256-hex("42") => "73475cb40a568e8da8a045ced110137e159f890ac4da883b6b17dc651b3a8049"
+    • sha256-hex(42) => "73475cb40a568e8da8a045ced110137e159f890ac4da883b6b17dc651b3a8049"
+    • sha256-hex(null) => null
+```
+
+**starts-with(tested, prefix) -> boolean**
+Renvoie « true » si et seulement si la chaîne testée commence par le préfixe (prefix).
+
+**Exemples :**
+```
+    • starts-with("prohibition", "pro") => true
+    • starts-with("prohibition", "pre") => false
+    • starts-with(null, "pre") => false
+```
+
+**ends-with(tested, suffix) -> boolean**
+Renvoie « true » si et seulement si la chaîne testée se termine par le suffixe (suffix).
+
+**Exemples :**
+```
+    • ends-with("prohibition", "pro") => false
+    • ends-with("prohibition", "ion") => true
+    • ends-with(null, "ion") => false
+```
+
+**from-json(string, fallback?) -> value**
+Cette fonction analyse la chaîne de caractère donnée (string) en tant que JSON et retourne le résultat. Ainsi, analyser "22" retournera 22. Si la chaîne est null, la fonction retournera null.
+Si l'argument facultatif fallback n'est pas spécifié, les erreurs d'analyse JSON provoqueront une erreur. Si cet argument est précisé, cette valeur sera retournée en cas d'échec de l'analyse JSON.
+
+**Exemples :**
+```
+    • from-json("[1,2]") => [1, 2]
+    • from-json("[1,2", "BAD") => "BAD"
+    • from-json("[1,2") => erreur
+    • from-json(null) => null
+```
+
+**to-json(value) -> string**
+Cette fonction est l'inverse de *from-json*. Il prend donc une valeur JSON et la sérialise sous forme de chaîne.
+
+**Exemples :**
+```
+    • to-json([1,2]) => "[1, 2]"
+    • to-json(1) => "1"
+    • to-json("foo") => ""foo""
+    • to-json(null) => "null"
+```
+
+**replace(value, regexp, out) -> string**
+Cette fonction remplace chaque sous-chaîne de value correspondant à l'expression régulière regexp par out. Si value n'est pas une chaîne, elle est convertie en chaîne, sauf si elle est null. regexp et out doivent être des chaînes de caractères. 
+
+***Point d'attention***: *regexp* ne peut être une chaîne vide.
+
+**Exemples :**
+```
+    • replace("abc def ghi", " ", "-") => "abc-def-ghi"
+    • replace("abc def ghi", "\s+", "-") => "abc-def-ghi"
+    • replace(null, "\s+", "-") => null
+    • replace(" whoah", "^\s+", "") => "whoah"
+    • replace("abc def ghi", "[a-z]", "x") => "xxx xxx xxx"
+    • replace("abc def ghi", "[a-z]+", "x") => "x x x"
+```
+
+**trim(string) -> string**
+Cette fonction supprime les espaces au début et à la fin de la chaîne.
+Si l’argument est null, il est retourné tel quel. Les autres valeurs non textuelles sont converties en chaînes.
+
+**Exemples :**
+```
+    • trim("  hello  ") => "hello"
+    • trim(null)       => null
+    • trim("abc \t\r\n") => "abc"
+```
+	
+**uuid(long, long) -> string**
+Cette fonction génère une chaîne UUID formatée avec des tirets.
+
+**Exemples :**
+```
+    • uuid() => "b02c39c0-6f8f-4250-97cd-78500af36e27"
+    • uuid(123sh4567890, 1234567890) => "00000000-4996-102d-8000-0000499602d2"
+    • uuid(0, 0) => "00000000-0000-1000-8000-000000000000"
+    • uuid(null, null) => "00000000-0000-0000-0000-000000000000"
+```
+
+### Fonctions date
+
+**now() -> double**
+Cette fonction retourne le nombre de secondes écoulées depuis minuit, le 1er janvier 1970 UTC dans le fuseau horaire UTC. Les millisecondes sont renvoyées sous forme de décimales du nombre.
+
+**Exemples :**
+```
+    • now() -> 1.529677371698E9
+    • round(now()) -> 1529677391
+```
+
+**parse-time(time, format, fallback?) -> double**
+Analyse la date/heure en utilisant le format spécifié (au format date/heure de Java) et retourne le nombre de secondes écoulées depuis l'époque dans le fuseau horaire UTC. Si aucun fuseau horaire n'est spécifié dans la chaîne de date/heure, le fuseau horaire par défaut est UTC.
+Si le paramètre *fallback* n'est pas spécifié, la fonction génère une erreur si *time* est du mauvais type ou ne correspond pas au format. Si fallback est spécifié, cette valeur sera retournée à la place.
+
+**Exemples :**
+```
+    • parse-time("2018-05-30T11:46:37Z", "yyyy-MM-dd'T'HH:mm:ssX") => 1.527680797E9
+    • parse-time("2018-05-30T11:46:37", "yyyy-MM-dd'T'HH:mm:ssX") => error
+    • parse-time("2018-05-30T11:46:37", "yyyy-MM-dd'T'HH:mm:ssX", null) => null
+    • parse-time(null, "yyyy-MM-dd'T'HH:mm:ssX") => null
+```
+
+**format-time(timestamp, format, timezone?) -> string**
+Cette fonction formate timestamp (le nombre de secondes écoulées depuis l'époque) en utilisant le format spécifié et retourne la chaîne formatée. Le fuseau horaire par défaut est UTC, mais il peut être remplacé en utilisant l'argument timezone.
+
+**Exemples :**
+```
+    • format-time(1529677391, "yyyy-MM-dd'T'HH:mm:ss") => "2018-06-22T14:23:11"
+    • format-time(0, "yyyy-MM-dd") => "1970-01-01"
+    • format-time(null, "yyyy-MM-dd") => null
+```
+
+### Fonctions booléen
+
+**boolean(value) -> boolean**
+Cette fonction convertit la valeur d'entrée en un booléen. Tout est considéré comme vrai, sauf null, [], {}, "", false et 0.
+**Exemples :**
+```
+    • boolean(null) => false
+    • boolean("") => false
+    • boolean(" ") => true
+    • boolean(0) => false
+    • boolean(1) => true
+    • boolean(true) => true
+    • boolean(false) => false
+    • boolean([]) => false
+    • boolean([1]) => true
+```
+
+**not(boolean) -> boolean**
+Cette fonction retourne la valeur booléenne opposée au paramètre. L'entrée est automatiquement convertie en booléen, donc not(null) retournera true.
+
+**Exemples :**
+```
+    • not(null) => true
+    • not("") => true
+    • not(" ") => false
+    • not(0) => true
+    • not(1) => false
+    • not(true) => false
+    • not(false) => true
+    • not([]) => true
+    • not([1]) => false
+```
+
+**is-boolean(value) -> boolean**
+Renvoie « true » si et seulement si la valeur est un booléen.
+
+**Exemples :**
+```
+    • is-boolean(null) => false
+    • is-boolean(true) => true
+    • is-boolean(false) => true
+    • is-boolean("") => false
+    • is-boolean(" ") => false
+```
+
+### Fonctions numériques
+
+**is-number(object) -> boolean**
+Renvoie true si l’argument object est un nombre, sinon false.
+
+**Exemples :**
+```
+    • is-number(null) => false  
+    • is-number(1)    => true  
+    • is-number(1.0)  => true  
+    • is-number("1")  => false
+```
+	
+**is-integer(object) -> boolean**
+Renvoie true si l’argument object  est un entier, sinon false.
+
+**Exemples :**
+```
+    • is-integer(null) => false  
+    • is-integer(1)    => true  
+    • is-integer(1.0)  => false  
+    • is-integer("1")  => false
+```
+	
+**is-decimal(object) -> boolean**
+Renvoie true si l’argument object est un nombre à virgule flottante, sinon false.
+Dans ce contexte, 1.0 est considéré comme un nombre à virgule flottante et 1 ne l'est pas.
+
+**Exemples :**
+```
+    • is-decimal(null) => false  
+    • is-decimal(1)    => false  
+    • is-decimal(1.0)  => true  
+    • is-decimal("1.0")  => false
+```
+
+**number(object, fallback?) -> integer|float**
+Convertit l’argument object en nombre si possible.
+    • Les entiers et les nombres décimaux sont retournés tels quels.
+    • Les chaînes sont converties en nombres.
+    • null renvoie null.
+    • Tout autre type provoque une erreur, sauf si un fallback est spécifié.
+
+**Exemples :**
+```
+    • number(23)      => 23  
+    • number("23")    => 23  
+    • number("023")   => 23  
+    • number(23.0)    => 23.0  
+    • number(".23")   =>  0.23  
+    • number("-.23")  => -0.23  
+    • number(null)    => null  
+    • number("ab")    => error  
+    • number("ab", 0) => 0
+```
+	
+**round(float) -> integer**
+Arrondit l’argument à l'entier le plus proche.
+Les entiers et null sont retournés tels quels. Tout autre type provoque une erreur.
+
+**Exemples :**
+```
+    • round(1)    => 1  
+    • round(1.0)  => 1  
+    • round(1.51) => 2  
+    • round(null) => null
+```
+	
+**floor(float) -> integer**
+Arrondit l’argument à l'entier inférieur ou égal.
+
+**Exemples :**
+```
+    • floor(1)    => 1  
+    • floor(1.0)  => 1  
+    • floor(1.51) => 1  
+    • floor(null) => null
+```
+
+**ceiling(float) -> integer**
+Arrondit l’argument à l'entier supérieur ou égal.
+
+**Exemples :**
+```
+    • ceiling(1)    => 1  
+    • ceiling(1.0)  => 1  
+    • ceiling(1.51) => 2  
+    • ceiling(null) => null
+```
+
+**random() -> float**
+Renvoie un nombre aléatoire entre 0.0 et 1.0.
+
+**Exemple :**
+```
+random() => 0.24712712424
+```
+
+**sum(array) -> number**
+Returns the sum of all the numbers in the array. The parameter must be an array, and all values in it must be numbers.
+Renvoie la somme des nombres d’un tableau. Le paramètre doit obligatoirement être un tableau constitué uniquement de nombres.
+
+**Exemples :**
+```
+    • sum([1,2,3])    => 6
+    • sum([1])        => 1 
+    • sum([1.0, 2.0]) => 3.0
+    • sum([])         => 0
+    • sum(null)       => null
+```
+
+**mod(a,d) -> integer**
+Renvoie a modulo d. Cette fonction est l’équivalent de l’opérateur % de la plupart des langages de programmation. Son comportement est néanmoins différent pour les nombres négatifs. Il renvoie un résultat compris entre 0 et abs(d).
+Mathématiquement, la fonction est défini de la façon suivante :
+a = d * floor(a / d) + mod(a, d)
+
+**Exemples :**
+```
+    • mod(10, 2)    => 0
+    • mod(10, 3)    => 1
+    • mod(10, 4)    => 2
+    • mod(-10, 3)   => 2
+    • mod(-10, -3)  => 2
+    • mod(10, -3)   => 1
+    • mod(null, 2)  => null
+    • mod(10, null) => null
+    • mod(10.5, 2)  => error
+    • mod(10, 2.1)  => error
+    • mod(10, "2")  => error
+```
+
+**hash-int(object) -> int**
+Renvoie une empreinte pour un object donné. L’empreinte est constituée uniquement de chiffres. Attention, dans des environnements différents, il est possible que pour un même objet l’empreinte retournée soit différente.
+
+**Exemples :**
+```
+    • hash-int("test") => 3556808
+    • hash-int("") => 310
+    • hash-int({}) => 8
+    • hash-int([]) => 1
+    • hash-int([1,2]) => 8928
+    • hash-int([2,1]) => 9858
+    • hash-int([1,2]) != hash-int([2,1]) => true
+    • hash-int(1) => 248
+    • hash-int(null) => 6
+    • hash-int({"a":1,"b":2}) => 10519540
+    • hash-int({"b":2,"a":1}) => 10519540
+    • hash-int({"a":1,"b":2}) == hash-int({"b":2,"a":1}) => true
+```
+
+### Fonctions objet
+
+**is-object(value) -> boolean**
+Renvoie « true » si et seulement si la valeur est un objet.
+
+**Exemples :**
+```
+    • is-object(null) => false
+    • is-object({}) => true
+    • is-object([]) => false
+    • is-object("") => false
+```
+
+**get-key(object, key, fallback?) -> value**
+Fait la même chose que .key sur un objet, à la différence que la clé peut être dynamique. Autrement dit, elle peut provenir d'une variable, être recherchée dans des données d'entrée, etc.
+Si la clé n'existe pas, null est retourné si l'argument de secours (fallback) n'est pas fourni. Si fallback est spécifié, cette valeur sera retournée si la clé n'existe pas.
+
+**Exemple : Fonction retournant la valeur "Norway".**
+```
+let lookup = {  
+  "no" : "Norway",  
+  "se" : "Sweden"  
+}  
+
+get-key($lookup, "no")
+```
+
+**Exemple : Fonction utilisant une valeur de secours et retournant la valeur "<unknown>"**
+```
+let lookup = {  
+  "no" : "Norway",  
+  "se" : "Sweden"  
+}  
+
+get-key($lookup, "dk", "<unknown>") 
+``` 
+
+### Fonctions tableau (array)
+
+**array(value) -> array**
+Cette fonction convertit la valeur d'entrée en un tableau. Les nombres, les booléens et les chaînes de caractères ne peuvent pas être convertis en tableau.
+Les objets sont convertis en tableaux sous la forme suivante :
+[  
+  {"key" : première clé, "value" : première valeur},  
+  {"key" : deuxième clé, "value" : deuxième valeur},  
+  {"key" : troisième clé, "value" : troisième valeur},  
+  ...  
+]  
+
+**Exemples :**
+``` 
+    • array(null) => null
+    • array([1, 2]) => [1, 2]
+    • array("123") => error
+    • array({"a": 1, "b": 2}) =>  
+  	[  
+    		{"key" : "a", "value" : 1},  
+    		{"key" : "b", "value" : 2}  
+ 	 ]
+``` 
+
+**is-array(value) -> boolean**
+Cette fonction renvoie « true » si et seulement si la valeur est un tableau.
+
+**Exemples :**
+``` 
+    • is-array(null) => false
+    • is-array([1, 2]) => true
+    • is-array("123") => false
+``` 
+
+**flatten(array) -> array**
+Aplatit un tableau contenant d'autres tableaux de manière à ce que chaque valeur à l'intérieur d'un sous-tableau soit directement contenue dans le tableau de sortie. Tous les sous-tableaux à n'importe quel niveau d'imbrication sont aplatis, mais les objets et autres valeurs restent inchangés.
+
+**Exemples :**
+``` 
+    • flatten([[1,2], [3,4]]) => [1,2,3,4]
+    • flatten([1, 2, 3, 4]) => [1,2,3,4]
+    • flatten([1, [2, [3, [4, []]]]]) => [1,2,3,4]
+    • flatten(null) => null
+``` 
+
+**all(array) -> boolean**
+Cette fonction renvoie « true » si et seulement si tous les éléments du tableau sont évalués comme vrais.
+
+**Exemples :**
+``` 
+    • all([true, true, true]) => true
+    • all([true, true, false]) => false
+    • all(null) => null
+    • all([]) => true
+    • all("") => error
+``` 
+
+**any(array) -> boolean**
+Cette fonction renvoie « true » si et seulement si au moins un élément du tableau est évalué comme vrai.
+
+**Exemples :**
+``` 
+    • any([false, false, false]) => false
+    • any([false, false, true]) => true
+    • any(null) => null
+    • any([]) => false
+    • any("") => error
+``` 
+
+**zip(array1, array2) -> array**
+Fusionne les deux tableaux en un nouveau tableau constitué de tableaux à deux éléments. Le premier tableau à deux éléments contient le premier élément de array1 et le premier élément de array2, le second contient les deuxièmes éléments, et ainsi de suite. Une erreur est renovoyée si les deux tableaux ont des longueurs différentes.
+
+**Exemples :**
+``` 
+    • zip(["a", "b", "c"], [1, 2, 3]) => [["a", 1], ["b", 2], ["c", 3]]
+    • zip(["a", "b", "c"], null) => null
+    • zip(null, [1, 2, 3]) => null
+    • zip([], []) => []
+    • zip([1], []) => error
+``` 
+
+**zip-with-index(array) -> array**
+Cette fonction transforme un tableau en un nouveau tableau où chaque élément du tableau d'entrée est mappé à un objet sous la forme {"value" : <élément du tableau>, "index" : <index de l'élément>}.
+
+**Exemples :**
+``` 
+    • zip-with-index(["a", "b", "c"]) => [  
+          {"value" : "a", "index" : 0},  
+          {"value" : "b", "index" : 1},  
+          {"value" : "c", "index" : 2}  
+      ]  
+    • zip-with-index([]) => []
+    • zip-with-index(null) => null
+    • zip-with-index("abc") => error
+``` 
+
+**index-of(array, value) -> integer**
+Cette fonction retourne l'index de value dans array, ou -1 si la valeur ne peut pas être trouvée.
+
+**Exemples :**
+``` 
+    • index-of([], 1) => -1
+    • index-of([0, 1, 2], 1) => 1
+    • index-of([0, 1, 2, null], null) => 3
+    • index-of([0, 1, 2], null) => -1
+    • index-of(null, 1) => null
+    • index-of(1, 1) => error
+``` 
+
+### Autres fonctions
+
+**parse-url(url) -> object**
+Cette fonction analyse l'URL et renvoie un objet avec les clés [scheme, userinfo, host, port, path, query, parameters, fragment].
+
+**Exemples :**
+```
+    • parse-url("http://example.com").scheme => "http"
+    • parse-url("http://example.com").host => "example.com"
+    • parse-url("http://example.com").path => null
+    • parse-url("http://example.com/").path = "/"
+    • parse-url("https://www.example.com/?aa=1&aa=2&bb=&cc").query =>  "aa=1&aa=2&bb=&cc"
+    • parse-url("https://www.example.com/?aa=1&aa=2&bb=&cc").parameters.aa =>  ["1", "2"]
+    • parse-url("https://www.example.com/?aa=1&aa=2&bb=&cc").parameters.bb =>  [null]
+    • parse-url("https://www.example.com/?aa=1&aa=2&bb=&cc").parameters.cc =>  [null]
+    • parse-url("ftp://username:password@host.com/").userinfo => "username:password"
+    • parse-url("https://example.com:8443").port => 8443
+``` 
+
+
+
+
+
+
+
 [^1]:   Pour plus d’informations, consulter le document *Modèle de données*, « Collection Project ». Un exemple de projet de versement se trouve dans l’[annexe 1](#annexe-1-exemples-de-donnees-entrantes) du présent document.
 
 [^2]:   À noter que, dans l’APP « Collecte et préparation des versements », ce champ est alimenté par la valeur du champ « MessageIdentifier ».
@@ -3472,3 +4649,9 @@ Annexe 3 : Liste des points d’API
 [^53]:  Se référer à la sous-section « Quels sont les rattachements possibles ? » du présent document.
 
 [^54]:  Se référer à la sous-section « Comment paramétrer des règles de transformation ? » du présent document.
+
+[^55]:  Pour en savoir plus sur le formalisme JSLT, consulter la documentation disponible sur ce site : https://github.com/schibsted/jslt/blob/master/tutorial.md
+
+[^56]:  Pour en savoir plus sur le fonctionnement du format JSON, se référer à la sous-section « Comment formaliser les données dans les API du module de collecte ? » du présent document.
+
+[^57]:  Pour en savoir plus, une liste de fonctions est disponible sur ce site : https://github.com/schibsted/jslt/blob/master/functions.md.   
