@@ -1451,7 +1451,7 @@ Cette action n’est pas journalisée dans le journal des opérations.
 
 ###### Utilisation dans VitamUI
 
-Il n'est pas possible d'importer une arborescence bureautique accompagnée d'un fichier .jsonl depuis l’APP « Collecte et préparation des versements » du front-office VitamUI fournie avec la solution logicielle Vitam.
+Il n'est pas possible d'envoyer une arborescence bureautique avec un fichier .jsonl de métadonnées depuis l’APP « Collecte et préparation des versements » du front-office VitamUI fournie avec la solution logicielle Vitam.
 
 
 ######################################################################################################
@@ -1667,7 +1667,7 @@ L’utilisateur peut récupérer :
 
 ##### Utilisation dans VitamUI
 
-L’APP « Collecte et préparation des versements » du front-office VitamUI fournie avec la solution logicielle Vitam permet d'accéder aux métadonnées techniques d'un groupe d'objets techniques ainsi qu'aux différents usages et versions d'un objet technique.
+L’APP « Collecte et préparation des versements » du front-office Vitam UI fournie avec la solution logicielle Vitam permet d'accéder aux métadonnées techniques d'un groupe d'objets techniques ainsi qu'aux différents usages et versions d'un objet technique.
 
 Ce service est disponible depuis la page permettant de visualiser l’ensemble des unités archivistiques d'une transaction au sein de l'onglet "Objet" du panneau latéral d'une unité archivistique. Il est également possible d'y télécharger les différents objets techniques. 
 
@@ -1730,7 +1730,8 @@ La solution logicielle Vitam permet de modifier une transaction, et plus précis
    "ArchivalAgreement":"IC-000001",
    "Comment": "RH - bulletins de salaire (février 2020)",
    "AcquisitionInformation":"Versement",
-   "LegalStatus":"Public Archive"
+   "LegalStatus":"Public Archive",
+   "ProjectId":"aeaaaaaaaaecafogaeyu2amw2sbvtmaaaaaq"
   }
   
 ```  
@@ -1865,7 +1866,7 @@ Lors de cette action, l’opération peut aboutir aux résultats suivants :
 
 L’APP « Collecte et préparation des versements » du front-office VitamUI fournie avec la solution logicielle Vitam permet d'abandonner une transaction. Son statut passe alors à "ABORTED".
 
-Ce service est disponible depuis la page permettant de visualiser l’ensemble des transactions (ou versements) via un bouton d'actions secondaires.
+Ce service est disponible depuis la page permettant de visualiser l’ensemble des transactions (ou versements) via un bouton "Abandonner" présent dans les boutons d'actions secondaires.
 
 Des droits utilisateurs sont par ailleurs définis :
 
@@ -1927,6 +1928,7 @@ Des droits utilisateurs sont par ailleurs définis :
 | Administrateur     | oui |
 | Archiviste         | oui |
 | Service producteur | non |
+
 
 #### Validation d'une transaction
 
@@ -2149,6 +2151,8 @@ La solution logicielle Vitam permet de mettre à jour unitairement plusieurs uni
 
   *Exemple : requête en vue de modifier un titre pour une unité archivistique dont l'identifiant d'agent est "123456", de supprimer une date d'envoi et d'ajouter une description pour une unité archivistique dont l'identifiant d'agent est 1234557*
 ```  
+@transaction-id= *aeeaaaaaachj3m7nabjocamcdqr2rqaaaaaq*
+
 POST {{url}}/collect-external/v1/transactions/{{transaction-id}}/units/bulk
 Accept: application/json
 Content-Type: application/json
