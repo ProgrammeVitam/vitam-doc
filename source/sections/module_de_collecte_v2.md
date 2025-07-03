@@ -413,7 +413,7 @@ La solution logicielle Vitam permet de modifier un projet de versement, et plus 
 -   lui ajouter des métadonnées,
 -   supprimer des métadonnées.
 
-  *Exemple : requête en vue de modifier des métadonnées d’un projet de versement dont l’identifiant est «  aeeaaaaaachj3m7nabjocamcdqr2rqaaaaaq »*
+  *Exemple : requête en vue de modifier des métadonnées d’un projet de versement dont l’identifiant est « aeeaaaaaachj3m7nabjocamcdqr2rqaaaaaq »*
 ``` 
   @tenant = 1
   
@@ -498,10 +498,9 @@ La solution logicielle Vitam permet de supprimer un projet de versement.
 
 Cette action provoque la suppression de l’enregistrement dans la base de données MongoDB, dans la collection « Project » (base *Collect*).
 Si le projet de versement est associé à une transaction qui, elle-même contient des archives (unités archivistiques, objets techniques), l’ensemble des archives sont supprimées de la base de données et des offres de stockage :
-
-    -   les unités archivistiques sont supprimées de la collection « Unit » (base *MetadataCollect*) ;
-    -   les groupes d’objets techniques sont supprimées de la collection « ObjectGroup » (base *MetadataCollect*).
-    -   les objets sont supprimés des offres de stockage ;
+-   les unités archivistiques sont supprimées de la collection « Unit » (base *MetadataCollect*) ;
+-   les groupes d’objets techniques sont supprimées de la collection « ObjectGroup » (base *MetadataCollect*).
+-   les objets sont supprimés des offres de stockage.
 
 Lors de cette action, non journalisée, l’opération peut aboutir aux résultats suivants :
 
@@ -514,9 +513,6 @@ Lors de cette action, non journalisée, l’opération peut aboutir aux résulta
 
 Au terme de la version 8.1, il n'est pas possible de supprimer un projet de versement depuis l'APP « Collecte et préparation des versements » du front-office VitamUI.
 
-######################################################################################################
-##### VERSEMENT ######################################################################################
-######################################################################################################
 
 ### Versement
 
@@ -529,9 +525,9 @@ Ce module est propre à chaque tenant de la solution logicielle Vitam.
 Il permet de recevoir dans un espace de stockage et des bases de données dédiés :
 
 -   sous forme d’enregistrements JSON les informations relatives à :
-    -   des métadonnées correspondant à l’en-tête du message ArchiveTransfer (Base Collect, Collection Transaction),
-    -   des métadonnées descriptives et de gestion associées à des unités archivistiques (Base MetadataCollect, Collection Unit),
-    -   le cas échéant, des métadonnées techniques (Base MetadataCollect, Collection ObjectGroup),
+    -   des métadonnées correspondant à l’en-tête du message ArchiveTransfer (Base *Collect*, Collection « Transaction »),
+    -   des métadonnées descriptives et de gestion associées à des unités archivistiques (Base *MetadataCollect*, Collection « Unit »),
+    -   le cas échéant, des métadonnées techniques (Base *MetadataCollect*, Collection « ObjectGroup »),
 
 -   les objets associés.
 
@@ -559,7 +555,7 @@ Les fonctionnalités ont été conçues et réalisées de manière à prendre en
 
 #### Création d'une transaction
 
-#### Utilisation des API
+##### Utilisation des API
 
 À un projet de versement peu(ven)t être associée(s) 1 à n transaction(s) (ou versement(s)).
 
@@ -580,14 +576,14 @@ La transaction peut comporter les éléments suivants[^3] :
 |  Name                         |  Intitulé de la transaction (champ facultatif).|
 |  ArchivalAgreement            |  Identifiant du contrat d’entrée utilisé pour réaliser l’entrée, destiné à alimenter le champ ArchivalAgreement du message ArchiveTransfer (champ facultatif).|
 |  MessageIdentifier            |  Identifiant du lot d’objets, utilisé pour identifier les versements, destiné à alimenter le champ MessageIdentifier du message ArchiveTransfer (champ facultatif).|
-|  Comment                      |  Précisions sur la demande de transfert destiné à alimenter le champ Comment du message ArchiveTransfer (champ facultatif).|
+|  Comment                      |  Précisions sur la demande de transfert, destinées à alimenter le champ Comment du message ArchiveTransfer (champ facultatif).|
 |  OriginatingAgencyIdentifier  |  Identifiant du service producteur, destiné à alimenter le champ OriginatingAgencyIdentifier du message ArchiveTransfer (champ facultatif).|
 |  SubmissionAgencyIdentifier   |  Identifiant du service versant, destiné à alimenter le champ SubmissionAgencyIdentifier du message ArchiveTransfer (champ facultatif). <br>S’il est absent ou vide à l’initialisation de la transaction, alors la valeur contenue dans le champ OriginatingAgencyIdentifier est reportée dans ce champ.|
 |  ArchivalAgencyIdentifier     |  Identifiant du service d’archivage, destiné à alimenter le champ ArchivalAgencyIdentifier du message ArchiveTransfer (champ facultatif).|
 |  TransferringAgencyIdentifier |  Identifiant du service de transfert, destiné à alimenter le champ TransferringAgencyIdentifier du message ArchiveTransfer (champ facultatif).|
-|  ArchivalProfile               |  Identifiant du profil d’archivage utilisé pour réaliser l’entrée, destiné à alimenter le champ ArchivalProfile du message ArchiveTransfer (champ facultatif).|
-|  AcquisitionInformation       |  Modalité d’entrée.<br>Champ destiné à alimenter le champ AcquisitionInformation du message ArchiveTransfer (champ facultatif).|
-|  LegalStatus                  |  Statut légal des archives, destiné à alimenter le champ LegalStatus du message ArchiveTransfer (champ facultatif).<br>Si le champ est renseigné, les valeurs attendues sont : « Public Archive », « Private Archive », « Public and Private Archive ».|
+|  ArchivalProfile              |  Identifiant du profil d’archivage utilisé pour réaliser l’entrée, destiné à alimenter le champ ArchivalProfile du message ArchiveTransfer (champ facultatif).|
+|  AcquisitionInformation       |  Modalité d’entrée. <br>Champ destiné à alimenter le champ AcquisitionInformation du message ArchiveTransfer (champ facultatif).|
+|  LegalStatus                  |  Statut légal des archives, destiné à alimenter le champ LegalStatus du message ArchiveTransfer (champ facultatif).<br>Si le champ est renseigné, les valeurs attendues sont : « Public Archive », « Private Archive » ou « Public and Private Archive ».|
 
 ***Point d’attention :*** Au terme de la version 8.1 :
 
@@ -609,7 +605,7 @@ La transaction peut comporter les éléments suivants[^3] :
 -   s'ils ne sont pas renseignés dans la transaction, les champs suivants peuvent être hérités du projet de versement s'ils y ont été renseignés :
 
     -   le contrat d’entrée (champ « ArchivalAgreement »),
-    -   l’identifiant du message (champ « MessageIdentifier),
+    -   l’identifiant du message (champ « MessageIdentifier »),
 	-   les précisions sur la demande de transfert (« Comment »),
     -   le service producteur (champ « OriginatingAgencyIdentifier »),
     -   le service versant (champ « SubmissionAgencyIdentifier »),
@@ -617,8 +613,7 @@ La transaction peut comporter les éléments suivants[^3] :
     -   le service responsable du transfert (« TransferringAgencyIdentifier »),
 	-   le profil d'archivage (« ArchivalProfile »),
 	-   le statut légal des archives (« LegalStatus »),
-	-   les modalités d'entrée (« AcquisitionInformation »),
-	-   le profil d'archivage (« ArchivalProfile »),
+	-   les modalités d'entrée (« AcquisitionInformation »).
 
   *Exemple : requête de création d’une transaction pour le projet de versement préalablement créé dont l’identifiant est aeeaaaaaaghiyso4ablmyal74slqwtqaaaaq.*
   
@@ -642,7 +637,7 @@ La transaction peut comporter les éléments suivants[^3] :
   }
 ```
 
-Cette action provoque la création d’un enregistrement dans la base de données MongoDB, dans la collection « Transaction »[^4] (base *Collect*).
+Cette action provoque la création d’un enregistrement dans la base de données MongoDB, dans la collection « Transaction » (base *Collect*).
 
 À cet enregistrement, est associé :
 
@@ -689,6 +684,7 @@ Lors de cette action, l’opération peut aboutir aux résultats suivants :
 L’APP « Collecte et préparation des versements » du front-office VitamUI fournie avec la solution logicielle Vitam ne permet pas à l'utilisateur de créer une transaction.
 
 Néanmoins, La création d'un projet de versement manuel entraîne la création d’une unique transaction qui hérite des informations saisies dans le projet :
+
 -  description du versement (intitulé du message, description, service producteur et service versant),
 -  contexte du versement (service d’archives et service responsable du transfert des archives, contrat d’entrée, profil d’archivage, modalité d’entrée, statut légal des versements).
 
@@ -804,10 +800,12 @@ Chaque unité archivistique :
 ```  
 Cette action provoque la création d’un enregistrement dans la base de données MongoDB, dans la collection « Unit » (base *MetadataCollect*)[^6].
 À cet enregistrement, sont associés :
+
 - l’identifiant de la transaction (_opi),
 - l'identifiant du service producteur (_sp et _sps).
 
 Le cas échéant, l'action provoque également :
+
     - si le projet de versement déclarait un rattachement unique, la création d'une unité archivistique dans la base de données MongoDB, dans la collection « Unit » (base *MetadataCollect[^10]*). Sont enregistrés automatiquement :
       -   un niveau de description (DescriptionLevel) dont la valeur est « Series »,
       -   un intitulé (Title) dont la valeur est « STATIC_ATTACHEMENT »,
@@ -817,7 +815,7 @@ Le cas échéant, l'action provoque également :
       -   un intitulé (Title) dont la valeur est « DYNAMIC_ATTACHEMENT »,
       -   l'identifiant de l'unité archivistique de rattachement (champ SystemId inclus dans un bloc UpdateOperation).
 
- *Exemple : enregistrement de l’unité archivistique dans la collection « Unit » de la base « MetadataCollect ».*
+ *Exemple : enregistrement d'une unité archivistique dans la collection « Unit » de la base « MetadataCollect ».*
 ```
   {
    "_id": "aeeaaaaaaghdvam4abgoyambfxvoaoiaaaaq",
@@ -884,7 +882,7 @@ Il est possible d’associer plusieurs usages à un groupe d’objets techniques
     -   une transaction et la signaler dans l’API. En outre, la transaction associée doit avoir un statut « OPEN »[^7] ;
     -   une unité archivistique et la signaler dans l’API.
 
--   À cette étape, il n’est pas nécessaire d’envoyer les métadonnées correspondant à l’empreinte d’un fichier numérique, à l’identification de son format ou à son poids, dans la mesure où ce type de métadonnées est calculé lors de l’envoi du fichier numérique ;
+-   À cette étape, il n’est pas nécessaire d’envoyer les métadonnées correspondant à l’empreinte d’un fichier numérique, à l’identification de son format ou à son poids, dans la mesure où ce type de métadonnées est calculé lors de l’envoi du fichier numérique dans le module de collecte ;
 -   Au terme de la version 8.1, il n’est pas possible de modifier les informations envoyées dans le module de collecte. De fait, il est fortement recommandé de veiller au bon nommage des éléments (ou vocabulaires internes), tout en respectant leurs caractéristiques (s’il s’agit d’une chaîne de caractères, d’une date, etc.), et à leur insertion dans l’ontologie, s’il s’agit de vocabulaires externes.
 -   Par ailleurs, certains contrôles, disponibles au moment du transfert dans la solution logicielle Vitam n’ont pas été implémentés. Il est fortement recommandé de ne créer dans le module de collecte que des versions initiales d’objet numérique pour un usage donné.
 
@@ -910,6 +908,7 @@ Il est possible d’associer plusieurs usages à un groupe d’objets techniques
 
 Cette action provoque la création d’un enregistrement dans la base de données MongoDB, dans la collection « ObjectGroup » (base *MetadataCollect[^8]*).
 À cet enregistrement, sont associés :
+
 -  l’identifiant de la transaction (_opi),
 -  l’identifiant du service producteur (_sp).
 
@@ -953,7 +952,7 @@ Lors de cette action, l’opération peut aboutir aux résultats suivants :
 | Statut | Motifs |
 | --- | --- |
 | Succès | Action réalisée sans rencontrer de problèmes particuliers. |
-| Échec  | - L’ unité archivistique n’existe pas ou est erronée ; <br>- L’objet technique n’a pas été associé à une unité archivistique ; <br>- La requête renvoie une deuxième fois une demande de création d’un usage d’objet ayant déjà été versé dans le module de collecte ;<br>- La transaction associée n’existe pas ;<br> - La transaction associée a été clôturée.<br>
+| Échec  | - L’ unité archivistique n’existe pas ou est erronée ; <br>- L’objet technique n’a pas été associé à une unité archivistique ; <br>- La requête renvoie une deuxième fois une demande de création d’un usage d’objet ayant déjà été versé dans le module de collecte ;<br> - La transaction associée a été clôturée.<br>
 
 ###### Utilisation dans VitamUI
 
@@ -1043,7 +1042,7 @@ Lors de cette action, l’opération peut aboutir aux résultats suivants :
 | Statut | Motifs |
 | --- | --- |
 | Succès | Action réalisée sans rencontrer de problèmes particuliers. |
-| Échec  | - L’ unité archivistique n’existe pas ou est erronée ;<br>- Le groupe d’objets techniques n’existe pas ;i<br>- La transaction associée n’existe pas ;<br>- La transaction associée a été clôturée. |
+| Échec  | - L’ unité archivistique n’existe pas ou est erronée ; <br>- Le groupe d’objets techniques n’existe pas ; <br>- La transaction associée a été clôturée. |
 
 ***Point d’attention :*** Certains contrôles, disponibles au moment du transfert dans la solution logicielle Vitam n’ont pas été implémentés. Il est fortement recommandé de ne pas envoyer dans le module de collecte plusieurs objets numériques pour un usage et une version donnée.
 
@@ -1055,8 +1054,8 @@ L’APP « Collecte et préparation des versements » du front-office VitamUI 
 
 L’envoi et l’enregistrement des données dans le module de collecte peut s’effectuer en lot au moyen d’une commande pouvant fonctionner de deux façons :
 
--   envoi sous forme de zip d’une arborescence bureautique,
--   envoi sous forme de zip d’une arborescence bureautique et d’un fichier annexe intitulé « metadata.csv » ou « metadata.jsonl » référençant des métadonnées descriptives et de gestion.
+-   envoi sous forme de fichier .zip d’une arborescence bureautique,
+-   envoi sous forme de fichier .zip d’une arborescence bureautique et d’un fichier annexe intitulé « metadata.csv » ou « metadata.jsonl » référençant des métadonnées descriptives et de gestion.
 
 ***Point d’attention :*** Pour ces deux envois, la commande est unique. Seule l’association d’un fichier annexe « metadata.csv » ou « metadata.jsonl », optionnelle, diffère.
 
@@ -1064,11 +1063,9 @@ L’envoi et l’enregistrement des données dans le module de collecte peut s�
 
 ###### Utilisation des API
 
-Pour une transaction donnée est envoyée une arborescence bureautique sous forme de zip.
+Pour une transaction donnée, est envoyée une arborescence bureautique sous forme de fichier .zip.
 
-***Point d’attention :***
-
--   En prérequis à l’envoi d’une arborescence bureautique, il faut avoir au préalable créé une transaction et le signaler dans l’API.
+***Point d’attention :*** En prérequis à l’envoi d’une arborescence bureautique, il faut avoir au préalable créé une transaction et le signaler dans l’API.
 
  *Exemple : requête d’envoi d’une arborescence bureautique stream.zip pour la transaction préalablement créée dont l’identifiant est aeeaaaaaaghiyso4ablmyal74slqwtqaaaaq.*
  
@@ -1097,12 +1094,14 @@ Cette action provoque :
     -   un intitulé (Title), correspondant au nom d’un répertoire ou d’un objet binaire présent dans l’arborescence bureautique.
 
     À chaque enregistrement, est associé :
+	
 		-   l’identifiant de la transaction (_opi),
         -   l'identifiant du service producteur (_sp et _sps);
 
 -   la création de métadonnées techniques dans la base de données MongoDB, dans la collection « ObjectGroup » (base *MetadataCollect[^12]*) ;
 
     À chaque enregistrement, est associé :
+	
 		-   l’identifiant de la transaction (_opi),
         -   l'identifiant du service producteur (_sp);
 
@@ -1129,11 +1128,12 @@ Lors de cette action, l’opération peut aboutir aux résultats suivants :
 | Statut | Motifs |
 | --- | --- |
 | Succès | Action réalisée sans rencontrer de problèmes particuliers. |
-| Échec |  Le fichier .zip n’a pas été téléchargé pour cause de nom erroné ou de chemin introuvable<br> La transaction n’existe pas ou est erronée.<br>La transaction a été clôturée. |
+| Échec |  - Le fichier .zip n’a pas été téléchargé pour cause de nom erroné ou de chemin introuvable.<br> - La transaction n’existe pas ou est erronée.<br> - 
+La transaction a été clôturée. |
 
 Elle n’est pas journalisée dans le journal des opérations.
 
-Point d’attention :
+***Point d’attention :***
 
 -   Aucun fichier ne doit avoir un poids équivalent à 0 octet.
 -   Au terme de la V.8.1, il est recommandé que les noms de répertoires et de fichiers ne contiennent ni caractère accentué, ni virgule, ni apostrophe, ni parenthèse, ni espace, ni élément de ponctuation, ou tout autre caractère spécial. Ne sont à privilégier que l’underscore et le tiret comme séparateurs.
@@ -1145,7 +1145,7 @@ L’APP « Collecte et préparation des versements » du front-office VitamUI 
 
 Le détail du projet de versement, ainsi que les archives qui lui sont associées sont par ailleurs accessibles depuis l’APP.
 
-##### Envoi d’une arborescence bureautique avec fichier .csv de métadonnées
+##### Envoi d’une arborescence bureautique avec fichier .csv
 
 ###### Utilisation des API
 
@@ -1153,27 +1153,28 @@ Pour une transaction donnée peut être envoyé sous forme de zip en plus d’un
 
 Le fichier .csv, obligatoirement intitulé « metadata.csv », est composé de x colonnes[^14] :
 
--   File : chemin relatif à partir de l’emplacement où est enregistré le fichier .csv (colonne obligatoire) ;
+-   File : chemin relatif des fichiers numériques ou des répertoires à partir de l’emplacement où est enregistré le fichier .csv (colonne obligatoire) ;
 -   ObjectFiles : chemin relatif des fichiers numériques dont certains peuvent être rattachés à des répertoires déclarés dans la colonne File (colonne facultative) ;
 -   DescriptionLevel : niveau de description de l’unité archivistique (colonne facultative) ;
 -   Title : intitulé de l’unité archivistique (colonne facultative) ;
--   toute colonne correspondant à un champ du standard SEDA (colonnes facultatives).
+-   toute colonne correspondant à une métadonnée du standard SEDA (colonnes facultatives) ;
+-   le cas échéant, toute colonne correspondant à une métadonnée externe du standard SEDA (colonnes facultatives).
 
  *Exemple : contenu d’un fichier « metadata.csv ».*
 
 ```csv  
   "File";"Content.DescriptionLevel";"Content.Title";"Content.FilePlanPosition";"Content.ArchivalAgencyArchiveUnitIdentifier";"Content.Description";"Content.CustodialHistory.CustodialHistoryItem.0";"Content.CustodialHistory.CustodialHistoryItem.1";"Content.CustodialHistory.CustodialHistoryItem.2";"Content.DocumentType";"Content.Language";"Content.DescriptionLanguage";"Content.Version";"Content.Tag.0";"Content.Tag.1";"Content.Tag.2";"Content.Tag.3";"Content.Tag.4";"Content.Keyword.0.KeywordContent";"Content.Keyword.0.KeywordType";"Content.Keyword.1.KeywordContent";"Content.Keyword.1.KeywordType";"Content.Keyword.2.KeywordContent";"Content.Keyword.2.KeywordType";"Content.Keyword.3.KeywordContent";"Content.Keyword.3.KeywordType";"Content.Keyword.4.KeywordContent";"Content.Keyword.4.KeywordType";"Content.Coverage.Spatial.0";"Content.Coverage.Spatial.1";"Content.Coverage.Spatial.2";"Content.Coverage.Spatial.3";"Content.Coverage.Temporal";"Content.Coverage.Juridictional.0";"Content.Coverage.Juridictional.1";"Content.Coverage.Juridictional.2";"Content.Coverage.Juridictional.3";"Content.OriginatingAgency.Identifier";"Content.SubmissionAgency.Identifier";"Content.StartDate";"Content.EndDate";"Management.AccessRule.Rule";"Management.AccessRule.StartDate"
-  "AU1\27juillet1888\5FI6\_5FI6\_16";"RecordGrp";"Brantes. Combe de la Mure.";"instrument_recherche/5FI6/5FI6_16";"5 Fi 6/16";"Dim. 18x24 cm.";;;;;"fre";"fre";"Original";"Combe de la Mure (Brantes, Vaucluse, France)";"Brantes (Vaucluse, France)";;;;"Combe de la Mure (Brantes, Vaucluse, France)";"geogname";"Brantes (Vaucluse, France)";"geogname";;;;;;;"Combe de la Mure (Brantes, Vaucluse, France)";"Brantes (Vaucluse, France)";;;1888;"Combe de la Mure (Brantes, Vaucluse, France)";"Brantes (Vaucluse, France)";;;;;;"1888-12-30T00:00:00";"ACC-00001";"1888-12-30"
-  "AU1\27juillet1888";"RecordGrp";"Clichés du 27 juillet 1888";;;;;;;;"fre";"fre";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+  "AU1/27juillet1888/5FI6/_5FI6/_16";"RecordGrp";"Brantes. Combe de la Mure.";"instrument_recherche/5FI6/5FI6_16";"5 Fi 6/16";"Dim. 18x24 cm.";;;;;"fre";"fre";"Original";"Combe de la Mure (Brantes, Vaucluse, France)";"Brantes (Vaucluse, France)";;;;"Combe de la Mure (Brantes, Vaucluse, France)";"geogname";"Brantes (Vaucluse, France)";"geogname";;;;;;;"Combe de la Mure (Brantes, Vaucluse, France)";"Brantes (Vaucluse, France)";;;1888;"Combe de la Mure (Brantes, Vaucluse, France)";"Brantes (Vaucluse, France)";;;;;;"1888-12-30T00:00:00";"ACC-00001";"1888-12-30"
+  "AU1/27juillet1888";"RecordGrp";"Clichés du 27 juillet 1888";;;;;;;;"fre";"fre";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ```
 
  *Exemple : contenu d’un fichier « metadata.csv » décrivant un contexte de signature détachée.*
 
 ```csv  
   "File";"ObjectFiles";"Content.DescriptionLevel";"Content.Title";"Content.Description";"Content.DocumentType";"Content.Tag";"Content.EndDate";"Content.SigningInformation.SigningRole.0";"Content.SigningInformation.SigningRole.1";"Content.SigningInformation.SigningRole.2";"Content.SigningInformation.SignatureDescription.0.Signer.FullName";"Content.SigningInformation.SignatureDescription.0.Signer.SigningTime";"Content.SigningInformation.TimestampingInformation.TimeStamp";"Content.SigningInformation.AdditionalProof.0.AdditionalProofInformation.0";"Content.SigningInformation.AdditionalProof.0.AdditionalProofInformation.1";"Management.AppraisalRule.Rule";"Management.AppraisalRule.StartDate";"Management.AppraisalRule.FinalAction";"Management.AccessRule.Rule";"Management.AccessRule.StartDate"
-  "**Parapheur**";"Parapheur\20230615_note_Vu AB.pdf";"Item";"20230615_note_Vu AB.pdf";"Parapheur créé par Al Capone. Note";"Document signé";"Note";"2023-06-15";"SignedDocument";"Signature";"Timestamp";"Al Capone";"2023-06-15T11:18:12";"2023-06-15T11:18:12";"EvidenceRecords";"Report";"APP-00003";"2023-06-15";"Keep";"ACC-00020";"2023-06-15"
-  "Parapheur\aeaaaaaaaaecb7ovabhryamreeao2oyaaaaq-evidenceRecord.pdf";"**Parapheur\aeaaaaaaaaecb7ovabhryamreeao2oyaaaaq-evidenceRecord.pdf**";"Item";"aeaaaaaaaaecb7ovabhryamreeao2oyaaaaq-evidenceRecord.pdf";;"Fichier de preuve";;;"AdditionalProof";;;;;;;;;;;;
-  "Parapheur\report_aeaaaaaaaaecb7ovabhryamreeao2oyaaaaq.pdf";"**Parapheur\report_aeaaaaaaaaecb7ovabhryamreeao2oyaaaaq.pdf**";"Item";"report_aeaaaaaaaaecb7ovabhryamreeao2oyaaaaq.pdf";;"Rapport";;;"AdditionalProof";;;;;;;;;;;;```
+  "**Parapheur**";"Parapheur/20230615_note_Vu AB.pdf";"Item";"20230615_note_Vu AB.pdf";"Parapheur créé par Al Capone. Note";"Document signé";"Note";"2023-06-15";"SignedDocument";"Signature";"Timestamp";"Al Capone";"2023-06-15T11:18:12";"2023-06-15T11:18:12";"EvidenceRecords";"Report";"APP-00003";"2023-06-15";"Keep";"ACC-00020";"2023-06-15"
+  "Parapheur/aeaaaaaaaaecb7ovabhryamreeao2oyaaaaq-evidenceRecord.pdf";"**Parapheur/aeaaaaaaaaecb7ovabhryamreeao2oyaaaaq-evidenceRecord.pdf**";"Item";"aeaaaaaaaaecb7ovabhryamreeao2oyaaaaq-evidenceRecord.pdf";;"Fichier de preuve";;;"AdditionalProof";;;;;;;;;;;;
+  "Parapheur/report_aeaaaaaaaaecb7ovabhryamreeao2oyaaaaq.pdf";"**Parapheur/report_aeaaaaaaaaecb7ovabhryamreeao2oyaaaaq.pdf**";"Item";"report_aeaaaaaaaaecb7ovabhryamreeao2oyaaaaq.pdf";;"Rapport";;;"AdditionalProof";;;;;;;;;;;;```
 ```
 
  *Exemple : contenu d’un fichier « metadata.csv » déclarant un rattachement.*
@@ -1181,8 +1182,8 @@ Le fichier .csv, obligatoirement intitulé « metadata.csv », est composé de
 ```csv  
   "File";"Content.DescriptionLevel";"Content.Title";**"Management.UpdateOperation.ArchiveUnitIdentifierKey.MetadataName**";"**Management.UpdateOperation.ArchiveUnitIdentifierKey.MetadataValue**"
   "Discours hors parlement";"RecordGrp";"Discours hors parlement";"**ArchivalAgencyArchiveUnitIdentifier**";"**20130456/3**"
-  "Discours hors parlement\Discours d'inauguration";"RecordGrp";"Discours d’inauguration";;
-  "Discours hors parlement\Discours d'inauguration\Inauguration de Notre-Dame.odt";"Item";"Inauguration de Notre-Dame";;
+  "Discours hors parlement/Discours d'inauguration";"RecordGrp";"Discours d’inauguration";;
+  "Discours hors parlement/Discours d'inauguration/Inauguration de Notre-Dame.odt";"Item";"Inauguration de Notre-Dame";;
 ```
 
 ***Points d’attention :***
@@ -1205,6 +1206,7 @@ Le fichier .csv, obligatoirement intitulé « metadata.csv », est composé de
 -   concernant le nommage des colonnes :
 
     -   pour les colonnes correspondant à des champs du standard SEDA, l’intitulé de la colonne doit correspondre à celui du champ dans le standard SEDA, précédé de « Management. » s’il s’agit d’une métadonnée de gestion (ex. « Management.AccessRule.Rule » pour une règle de communicabilité) ou de « Content » s’il s’agit d’une métadonnée descriptive (ex. « Content.DocumentType ») ;
+    -   pour les colonnes correspondant à des métadonnées externes au standard SEDA, l'intitulé de la colonne doit correspondre à celui du champ, précédé de « Content. » ;
     -   quand le schéma XML du standard SEDA propose une structure complexe de balises (par exemple pour décrire un auteur via l’objet XML &lt;Writer&gt; qui contient plusieurs balises XML comme FullName ou BirthName), il convient d’intituler la colonne de la manière suivante : Content.Writer.FullName ou Content.Writer.BirthName ;
     -   quand un champ ou un objet XML est multivalué dans le standard SEDA (et qu’il est possible d’en décrire plusieurs dans le bordereau comme c’est le cas pour l’objet Writer par exemple), il convient de numéroter la colonne de la manière suivante : Content.Writer.0.FullName, Content.Writer.1.FullName ;
 
@@ -1212,12 +1214,12 @@ Le fichier .csv, obligatoirement intitulé « metadata.csv », est composé de
 
     -   la colonne File :
 
-        -   ne doit pas comprendre d’espace avant ou après les « \\ » ;
-        -   doit correspondre à un chemin tel que décrit par l’explorateur de fichiers (avec des « \\ » et non des « / ») ;
+        -   ne doit pas comprendre d’espace avant ou après les « / » ;
+        -   doit correspondre à un chemin tel que décrit par l’explorateur de fichiers (avec des « / ») ;
 
     -   la colonne DescriptionLevel ne doit comprendre que les valeurs autorisées par le standard SEDA : Collection, Fonds, Series, SubSeries, RecordGrp, File, Item ;
     -   les colonnes correspondant à des champs Date dans le standard SEDA doivent être formatées conformément à la norme ISO 8601 (AAAA-MM-JJ) ;
-    -   les références à des règles de gestion et à des profils d’unité archivistique doivent se conformer aux identifiants de règles présents dans le SAE
+    -   les références à des règles de gestion et à des profils d’unité archivistique doivent se conformer aux identifiants de règles présents dans le SAE.
 
 -   Aucun fichier ne doit avoir un poids équivalent à 0 octet.
 -   Les dates de début (Content.StartDate) doivent être antérieures aux dates de fin (Content.EndDate).
@@ -1231,6 +1233,9 @@ L’import du fichier .zip incluant un fichier .csv et une arborescence bureauti
 
     À chaque enregistrement, est associé :
 	
+	-   s'il n'a pas été défini dans le fichier .csv, un niveau de description (DescriptionLevel) dont la valeur est :
+	    -   « RecordGrp » pour une unité archivistique référençant un répertoire,
+		-   « Item » pour une unité archivistique référençant un objet numérique ;
 	-   l’identifiant de la transaction (_opi) ;
 	-   un identifiant de batch (_batchId) ;
 	-   la localisation initiale du dossier ou du fichier dans l'arborescence (_uploadPath),
@@ -1266,7 +1271,7 @@ Lors de cette action, l’opération peut aboutir aux résultats suivants :
 | Statut | Motifs |
 | --- | --- |
 | Succès | Action réalisée sans rencontrer de problèmes particuliers. |
-| Échec  | Le fichier .zip n’a pas été téléchargé pour cause de nom erroné ou de chemin introuvable ; Le fichier .csv contient au moins une erreur ; La transaction n’existe pas ou est erronée ; La transaction est clôturée. |
+| Échec  | - Le fichier .zip n’a pas été téléchargé pour cause de nom erroné ou de chemin introuvable ;<br>- Le fichier .csv contient au moins une erreur ;<br>- La transaction n’existe pas ou est erronée ;<br>- La transaction est clôturée. |
 
 Cette action n’est pas journalisée dans le journal des opérations.
 
@@ -1274,14 +1279,14 @@ Cette action n’est pas journalisée dans le journal des opérations.
 
 -   Au terme de la V.8.1, le module de collecte peut :
 
-	-  bloquer l'import de l’arborescence bureautique accompagnée d’un fichier CSV si ce dernier comporte les erreurs suivantes :
+	-  bloquer l'import de l’arborescence bureautique accompagnée d’un fichier .csv si ce dernier comporte les erreurs suivantes :
 	   -   il ne contient pas au moins la colonne obligatoire File ;
 	   -   au moins un fichier référencé dans le fichier .csv n'est pas présent dans l'arborescence bureautique,
 	   -   il ne contient aucune information ;
 	   -   il ne contient pas de séparateurs de champs ;
 	   -   il contient des virgules, des espaces, des pipes comme séparateurs de champs ;
 	   -   le fichier contient des simples guillemets comme séparateurs de texte ;
-	   -   etc.
+	   -   etc.<br>
 	   L'API peut :
 	       - soit renvoyer une seule erreur, si cette erreur est bloquante,
 		   - soit renvoyer jusqu'à 20 erreurs, si ces erreurs sont cumulables.
@@ -1289,7 +1294,7 @@ Cette action n’est pas journalisée dans le journal des opérations.
 	
 	-  ne pas bloquer l'import de l’arborescence bureautique accompagnée d’un fichier CSV si ce dernier comporte les erreurs suivantes :
        -   il dispose d’un champ dont le contenu est mal formaté (ex. ReceivedDate écrite en chaîne de caractères) ;
-    Une erreur est alors renvoyée par l’API, le contenu du fichier CSV sera ignoré et seule l’arborescence bureautique sera téléchargée selon le comportement décrit dans la sous-section précédente.
+    Une erreur est alors renvoyée par l’API, le contenu du fichier .csv sera ignoré et seule l’arborescence bureautique sera téléchargée selon le comportement décrit dans la sous-section précédente.
 
 -   Aucun contrôle n’est effectué entre le nombre de répertoires et d’objets binaires présents dans l’arborescence bureautique et les éléments décrits dans le fichier .csv. Il est recommandé de veiller à ne pas ajouter de niveaux intermédiaires dans l’arborescence bureautique non référencés dans le fichier .csv, car ils seront automatiquement créés dans le module de collecte selon le comportement décrit dans la sous-section précédente.
 
@@ -1301,25 +1306,26 @@ Le détail du projet de versement, ainsi que les archives qui lui sont associée
 
 ***Point d’attention :***
 
--   Si un fichier metadata.csv est associé à une arborescence bureautique, il faut d’abord télécharger cette dernière dans le wizard ou boîte de dialogue, puis faire de même avec le fichier « metadata.csv » ;
+-   Si un fichier « metadata.csv » est associé à une arborescence bureautique, il faut d’abord télécharger cette dernière dans le wizard ou boîte de dialogue, puis faire de même avec le fichier « metadata.csv » ;
 -   Si le nom du fichier .csv est erroné, l’interface VitamUI l’interprétera comme un fichier numérique à collecter au même titre que l’arborescence bureautique associée ;
--   Au terme de la V.8.1, l’APP « Collecte et préparation des versements » ne renvoie pas d'erreurs lors de l’import de l’arborescence bureautique accompagnée d’un fichier CSV si ce dernier comporte les erreurs suivantes.
+-   Au terme de la V.8.1, l’APP « Collecte et préparation des versements » ne renvoie pas d'erreurs lors de l’import de l’arborescence bureautique accompagnée d’un fichier .csv si ce dernier comporte des erreurs.
 
-##### Envoi d’une arborescence bureautique avec fichier .jsonl de métadonnées
+##### Envoi d’une arborescence bureautique avec fichier .jsonl
 
 ###### Utilisation des API
 
 Pour une transaction donnée peut être envoyé sous forme de zip en plus d’une arborescence bureautique[^13] un fichier .jsonl contenant des métadonnées détaillant unitairement les unités archivistiques.
 
-Le fichier .jsonl, obligatoirement intitulé « metadata.jsonl », est composé de :
+Le fichier .jsonl, obligatoirement intitulé « metadata.jsonl », est composé des informations suivantes :
 
--   File : chemin relatif à partir de l’emplacement où est enregistré le fichier .jsonl (champ obligatoire) ;
+-   File : chemin relatif des fichiers numériques ou des répertoires à partir de l’emplacement où est enregistré le fichier .jsonl (champ obligatoire) ;
 -   Selector : liste de conditions permettant l'enregistrement des métadonnées dans une unité archivistique correspond à ces conditions (champ obligatoire) ;
--   ObjectFiles : chemin relatif des fichiers numériques dont certains peuvent être rattachés à des répertoires déclarés dans la colonne File (champ facultatif) ;
+-   ObjectFiles : chemin relatif des fichiers numériques dont certains peuvent être rattachés à des répertoires déclarés dans le champ File (champ facultatif) ;
 -   UnitContent : bloc dans lequel sont insérées les métadonnées descriptives et de gestion d'une unité archivistique (champ obligatoire), dont :
     -   DescriptionLevel : niveau de description de l’unité archivistique (champ facultatif) ;
     -   Title : intitulé de l’unité archivistique (champ facultatif) ;
-    -   tout champ correspondant à un champ du standard SEDA (champs facultatifs).
+    -   tout champ correspondant à un champ du standard SEDA (champs facultatifs) ;
+    -   le cas échéant, tout champ correspondant à une métadonnée externe du standard SEDA (champs facultatifs).
 
  *Exemple : contenu d’un fichier « metadata.jsonl ».*
 
@@ -1371,8 +1377,8 @@ Le fichier .jsonl, obligatoirement intitulé « metadata.jsonl », est compos�
 
     -   la colonne File :
 
-        -   ne doit pas comprendre d’espace avant ou après les « \\ » ;
-        -   doit correspondre à un chemin tel que décrit par l’explorateur de fichiers (avec des « \\ » et non des « / ») ;
+        -   ne doit pas comprendre d’espace avant ou après les « / » ;
+        -   doit correspondre à un chemin tel que décrit par l’explorateur de fichiers (avec des « / ») ;
 
     -   le champ DescriptionLevel ne doit comprendre que les valeurs autorisées par le standard SEDA : Collection, Fonds, Series, SubSeries, RecordGrp, File, Item ;
     -   les champs correspondant à des champs Date dans le standard SEDA doivent être formatés conformément à la norme ISO 8601 (AAAA-MM-JJ) ;
@@ -1386,10 +1392,13 @@ Le fichier .jsonl, obligatoirement intitulé « metadata.jsonl », est compos�
 
 L’import du fichier .zip incluant un fichier .jsonl et une arborescence bureautique provoque :
 
--   la création des unités archivistiques dans la base de données MongoDB, dans la collection « Unit » (base *MetadataCollect[^15]*). Sont enregistrées automatiquement les valeurs portées dans le fichier .csv si l’enregistrement ne contient pas d’erreur.
+-   la création des unités archivistiques dans la base de données MongoDB, dans la collection « Unit » (base *MetadataCollect[^15]*). Sont enregistrées automatiquement les valeurs portées dans le fichier .jsonl si l’enregistrement ne contient pas d’erreur.
 
     À chaque enregistrement, est associé :
 	
+	-   s'il n'a pas été défini dans le fichier .csv, un niveau de description (DescriptionLevel) dont la valeur est :
+	    -   « RecordGrp » pour une unité archivistique référençant un répertoire,
+		-   « Item » pour une unité archivistique référençant un objet numérique ;
 	-   l’identifiant de la transaction (_opi) ;
 	-   un identifiant de batch (_batchId) ;
 	-   la localisation initiale du dossier ou du fichier dans l'arborescence (_uploadPath),
@@ -1425,11 +1434,11 @@ Lors de cette action, l’opération peut aboutir aux résultats suivants :
 | Statut | Motifs |
 | --- | --- |
 | Succès | Action réalisée sans rencontrer de problèmes particuliers. |
-| Échec  | Le fichier .zip n’a pas été téléchargé pour cause de nom erroné ou de chemin introuvable ; Le fichier .jsonl contient au moins une erreur ; La transaction n’existe pas ou est erronée ; La transaction est clôturée. |
+| Échec  | - Le fichier .zip n’a pas été téléchargé pour cause de nom erroné ou de chemin introuvable ;<br>- Le fichier .jsonl contient au moins une erreur ;<br>- La transaction n’existe pas ou est erronée ;<br>- La transaction est clôturée. |
 
 Cette action n’est pas journalisée dans le journal des opérations.
 
-***Point d’attention :*****
+***Point d’attention :***
 
 -   Au terme de la V.8.1, le module de collecte peut :
 
@@ -1440,8 +1449,7 @@ Cette action n’est pas journalisée dans le journal des opérations.
 	   -   il ne contient aucune information ;
 	   -   une date de fin de règle a été intégrée dans le fichier .jsonl ;
 	   -   il dispose d’un champ dont le contenu est mal formaté (ex. ReceivedDate écrite en chaîne de caractères) ;
-    
-	   -   etc.
+	   -   etc.<br>
 	   L'API peut :
 	       - soit renvoyer une seule erreur, si cette erreur est bloquante,
 		   - soit renvoyer jusqu'à 20 erreurs, si ces erreurs sont cumulables.
@@ -1453,10 +1461,6 @@ Cette action n’est pas journalisée dans le journal des opérations.
 
 Il n'est pas possible d'envoyer une arborescence bureautique avec un fichier .jsonl de métadonnées depuis l’APP « Collecte et préparation des versements » du front-office VitamUI fournie avec la solution logicielle Vitam.
 
-
-######################################################################################################
-##### ACCES ##########################################################################################
-######################################################################################################
 
 ### Accès
 
@@ -1526,6 +1530,7 @@ Cette action peut aboutir aux résultats suivants :
 ##### Utilisation dans VitamUI
 
 L’APP « Collecte et préparation des versements » du front-office VitamUI fournie avec la solution logicielle Vitam permet à l'utilisateur de consulter :
+
 -   la liste des transactions associées à un projet de versement.
     Au terme de la version 8.1, elle ne permet pas de consulter le détail des informations d'une transaction.
 -   les archives associées à une transaction donnée.
@@ -1608,7 +1613,7 @@ le seuil de résultats supporté par le moteur d’indexation Elastic Search est
   
   {
    "$roots": [],
-   "$query": [ { "$match": { "Title": "Bulletins" } } ],
+   "$query": [ { "$match": { "Title": "Bulletin" } } ],
    "$filter": {},
    "$projection": {}
   }
@@ -1624,7 +1629,11 @@ Ce service est disponible :
 
 -   depuis la page permettant de visualiser l’ensemble des transactions (ou versements) 
 
-Ces deux accès mènent à une page permettant de visualiser l’ensemble des unités archivistiques d'une transaction ainsi que de rechercher dans cette liste selon de nombreux critères. 
+Ces deux accès mènent à une page permettant de :
+
+-   visualiser l’ensemble des unités archivistiques d'une transaction,
+-   rechercher dans cette liste selon de nombreux critères de recherche,
+-   consulter les métadonnées d'une unité archivistique en particulier.
 
 #### Accès aux groupes d'objets techniques
 
@@ -1669,12 +1678,8 @@ L’utilisateur peut récupérer :
 
 L’APP « Collecte et préparation des versements » du front-office Vitam UI fournie avec la solution logicielle Vitam permet d'accéder aux métadonnées techniques d'un groupe d'objets techniques ainsi qu'aux différents usages et versions d'un objet technique.
 
-Ce service est disponible depuis la page permettant de visualiser l’ensemble des unités archivistiques d'une transaction au sein de l'onglet "Objet" du panneau latéral d'une unité archivistique. Il est également possible d'y télécharger les différents objets techniques. 
+Ce service est disponible depuis la page permettant de visualiser l’ensemble des unités archivistiques d'une transaction au sein de l'onglet « Objet » du panneau latéral d'une unité archivistique. Il est également possible d'y télécharger les différents objets techniques. 
 
-
-######################################################################################################
-##### GESTION DES TRANSACTIONS #######################################################################
-######################################################################################################
 
 ### Gestion des transactions
 
@@ -1689,7 +1694,7 @@ Au terme de la V8.1, il est possible de réaliser les actions suivantes :
 -   abandon d'une transaction et de son contenu,
 -   réouverture d'une transaction (ou versement),
 -   clôture et validation de la transaction (ou versement),
--   transfert de la transaction (ou versement) depuis le module de collecte vers le back-office sous la forme d’un SIP conforme au SEDA 2.2.,
+-   transfert de la transaction (ou versement) depuis le module de collecte vers le back-office de la solution logicielle Vitam sous la forme d’un SIP conforme au SEDA 2.2.,
 -   si le transfert est en succès ou en avertissement, suppression automatique des archives qui sont associées à la transaction.
 
 Ces actions sont propres à chaque tenant de la solution logicielle Vitam.
@@ -1710,7 +1715,12 @@ La solution logicielle Vitam permet de modifier une transaction, et plus précis
 - lui ajouter des métadonnées,
 - supprimer des métadonnées.
 
-  *Exemple : requête en vue de modifier des métadonnées d’une transaction dont l’identifiant est «  aeeaaaaaachj3m7nabjocamcdqr2rqaaaaaq »*
+***Point d’attention :*** En prérequis à cette action, il faut avoir au préalable créé :
+
+-   un projet de versement ;
+-   une transaction.
+
+  *Exemple : requête en vue de modifier des métadonnées d’une transaction dont l’identifiant est « aeeaaaaaachj3m7nabjocamcdqr2rqaaaaaq » et dont le projet de versement associé a l'identifiant « aeaaaaaaaaecafogaeyu2amw2sbvtmaaaaaq »*
 ```  
   @tenant = 1
   
@@ -1731,9 +1741,8 @@ La solution logicielle Vitam permet de modifier une transaction, et plus précis
    "Comment": "RH - bulletins de salaire (février 2020)",
    "AcquisitionInformation":"Versement",
    "LegalStatus":"Public Archive",
-   "ProjectId":"aeaaaaaaaaecafogaeyu2amw2sbvtmaaaaaq"
+   "ProjectId":"**aeaaaaaaaaecafogaeyu2amw2sbvtmaaaaaq**"
   }
-  
 ```  
 
 ***Points d’attention :***
@@ -1752,7 +1761,7 @@ La solution logicielle Vitam permet de modifier une transaction, et plus précis
         -   veiller à inclure des références (ex. service producteur, contrat d’entrée, etc.) existant dans la solution, de manière à éviter de possibles échecs lors des étapes de contrôles des données référentielles du processus d’entrée (opération « INGEST ») ;
         -   ne pas envoyer dans le module de collecte des éléments sans valeurs, en particulier ceux qui sont obligatoires et doivent nécessairement être renseignés.
 
-Cette action provoque la mise à jour du projet.
+Cette action provoque la mise à jour de la transaction.
 
 Lors de cette action, l’opération peut aboutir aux résultats suivants :
 
@@ -1773,14 +1782,10 @@ Ce service est disponible depuis la modification d'un projet de versement dans s
 
 La solution logicielle Vitam permet de supprimer une transaction.
 
-***Point d’attention :*** En prérequis à cette action, il faut avoir au préalable créé :
-
--   un projet de versement et le signaler dans l’API, pour une suppression de projet ;
--   une transaction et le signaler dans l’API, pour une suppression de transaction.
+***Point d’attention :*** En prérequis à cette action, il faut avoir au préalable créé une transaction et le signaler dans l’API.
 
 
   *Exemple : requête en vue de supprimer une transaction dont l’identifiant est «  aeeaaaaaachj3m7nabjocamcdqr2rqaaaaaq »*
-
 ```  
   @transaction-id= *aeeaaaaaachj3m7nabjocamcdqr2rqaaaaaq*
   
@@ -1789,14 +1794,13 @@ La solution logicielle Vitam permet de supprimer une transaction.
   content-type: application/json
   X-Tenant-Id: {{tenant}}
   X-Access-Contract-Id: {{access-contract}}
-  
+ 
 ```  
 
 Ces actions provoquent :
 
 -   la suppression de l’enregistrement dans la base de données MongoDB, dans la collection « Transaction » (base *Collect*).
-
--    si la transaction contient des archives (unités archivistiques, objets techniques), la suppression de l’ensemble des données associées à cette transaction de la base de données et des offres de stockage :
+-   si la transaction contient des archives (unités archivistiques, objets techniques), la suppression de l’ensemble des données associées à cette transaction de la base de données et des offres de stockage :
 
     -   les unités archivistiques sont supprimées de la collection « Unit » (base *MetadataCollect*) ;
     -   les groupes d’objets techniques sont supprimés de la collection « ObjectGroup » (base *MetadataCollect*).
@@ -1815,18 +1819,16 @@ Lors de cette action, l’opération peut aboutir aux résultats suivants :
 
 Il n'est pas possible de supprimer une transaction depuis l’APP « Collecte et préparation des versements » du front-office VitamUI fournie avec la solution logicielle Vitam.
 
-
 #### Abandon d'une transaction
 
 ##### Utilisation des API
 
-La solution logicielle Vitam permet également d’abandonner une transaction.
+La solution logicielle Vitam permet également d’abandonner une transaction[^58].
 
 ***Point d’attention :*** 
 En prérequis à cette action, il faut avoir au préalable créé une transaction et le signaler dans l’API.
 
   *Exemple : requête en vue d’abandonner une transaction dont l’identifiant est «  aeeaaaaaachj3m7nabjocamcdqr2rqaaaaaq »*
-
 ```  
   @transaction-id= *aeeaaaaaachj3m7nabjocamcdqr2rqaaaaaq*
   
@@ -1847,11 +1849,12 @@ Cette action provoque :
 
 -   Une transaction peut être abandonnée uniquement lorsque son statut est égal à « OPEN », « READY », « ACK_KO », « KO ».
 
-    Si elle a un statut égal à « SENDING », « SENT », « ACK_OK », « ACK_WARNING », elle ne peut pas l’être.
+    Si elle a un statut égal à « SENDING », « SENT », « ACK_OK », « ACK_WARNING », elle ne peut pas l’être[^58].
 
 -   La différence avec l’action de suppression est que l’abandon :
 
     -   ne purge pas les archives directement, mais de manière automatisée, passé un certain délai ;
+	-   ne supprime pas la transaction ;
     -   donne lieu à une mise à jour du statut de la transaction.
 
 Lors de cette action, l’opération peut aboutir aux résultats suivants :
@@ -1861,16 +1864,17 @@ Lors de cette action, l’opération peut aboutir aux résultats suivants :
 | Succès | Action réalisée sans rencontrer de problèmes particuliers.|
 | Échec  | - La transaction n’existe pas.<br>- La transaction n’est pas reconnue dans la requête.<br>- La transaction a un statut égal à « SENDING », « SENT », « ACK_OK », « ACK_WARNING ».|
 
-
 ##### Utilisation dans VitamUI
 
-L’APP « Collecte et préparation des versements » du front-office VitamUI fournie avec la solution logicielle Vitam permet d'abandonner une transaction. Son statut passe alors à "ABORTED".
+L’APP « Collecte et préparation des versements » du front-office VitamUI fournie avec la solution logicielle Vitam permet d'abandonner une transaction. Son statut passe alors à « Abandonné »[^58].
 
-Ce service est disponible depuis la page permettant de visualiser l’ensemble des transactions (ou versements) via un bouton "Abandonner" présent dans les boutons d'actions secondaires.
+Ce service est disponible depuis la page permettant de visualiser l’ensemble des transactions (ou versements) via un bouton « Abandonner » présent dans les boutons d'actions secondaires.
+
+***Point d'attention:*** Le bouton est inactif quand la transaction a un statut « Préparation et envoi du SIP » (« SENDING »), « Envoyé, en cours de traitement du SAE » (« SENT »), « Versé avec succès » (« ACK_OK »), « Versé en avertissement » (« ACK_WARNING »).
 
 Des droits utilisateurs sont par ailleurs définis :
 
-| Profil utilisateur | Suppression d'archives |
+| Profil utilisateur | Abandon d'une transaction |
 |---|---|
 | Administrateur     | oui |
 | Archiviste         | non |
@@ -1880,7 +1884,7 @@ Des droits utilisateurs sont par ailleurs définis :
 
 ##### Utilisation des API
 
-La solution logicielle Vitam permet également de rouvrir (ou rééditer) une transaction.
+La solution logicielle Vitam permet également de rouvrir (ou rééditer) une transaction[^58].
 
 ***Point d’attention :*** En prérequis à cette action, il faut avoir au préalable créé une transaction et le signaler dans l’API.
 
@@ -1902,7 +1906,7 @@ Cette action provoque la modification de l’enregistrement dans la base de donn
 Dès lors, il est à nouveau possible de :
 
 -   associer à la transaction rouverte des unités archivistiques, ainsi que des groupes d’objets techniques et des objets numériques ;
--   modifier des unités archivistiques.
+-   modifier, réorganiser et supprimer des unités archivistiques.
 
 ***Point d’attention :***
 -   Une transaction peut être rouverte uniquement lorsque son statut est égal à « READY », « ACK_KO », « KO ».
@@ -1917,9 +1921,11 @@ Lors de cette action, l’opération peut aboutir aux résultats suivants :
 
 ##### Utilisation dans VitamUI
 
-L’APP « Collecte et préparation des versements » du front-office VitamUI fournie avec la solution logicielle Vitam permet de rouvrir ou éditer une transaction. Son statut passe alors à "OPEN".
+L’APP « Collecte et préparation des versements » du front-office VitamUI fournie avec la solution logicielle Vitam permet de rouvrir ou éditer une transaction[^58]. Son statut passe alors à « Ouvert en édition ».
 
-Ce service est disponible depuis la page permettant de visualiser l’ensemble des transactions (ou versements) d'un projet via un bouton "Editer" présent dans les boutons d'actions secondaires.
+Ce service est disponible depuis la page permettant de visualiser l’ensemble des transactions (ou versements) d'un projet via un bouton « Editer » présent dans les boutons d'actions secondaires.
+
+***Point d'attention***: Le bouton est inactif quand la transaction a un statut « Ouvert en édition » (« OPEN »), « Préparation et envoi du SIP » (« SENDING »), « Envoyé, en cours de traitement du SAE » (« SENT »), « Versé avec succès » (« ACK_OK »), « Versé en avertissement » (« ACK_WARNING »), « Abandonné » (« ABORTED »).
 
 Des droits utilisateurs sont par ailleurs définis :
 
@@ -1929,12 +1935,11 @@ Des droits utilisateurs sont par ailleurs définis :
 | Archiviste         | oui |
 | Service producteur | non |
 
-
 #### Validation d'une transaction
 
 ##### Utilisation des API
 
-La solution logicielle permet de clôturer une transaction, une fois l’ensemble des archives liées à cette transaction envoyées dans la solution logicielle Vitam.
+La solution logicielle permet de clôturer une transaction[^58], une fois l’ensemble des archives liées à cette transaction envoyées dans cette dernière et ne nécessitant plus de traitements.
 
 ***Points d’attention :***
 
@@ -1956,7 +1961,9 @@ La solution logicielle permet de clôturer une transaction, une fois l’ensembl
   {}
 ```  
 
-Cette action provoque la modification de l’enregistrement dans la base de données MongoDB, dans la collection « Transaction » (base *Collect*) : la valeur du champ « Status » est désormais « READY ».
+Cette action provoque la modification de l’enregistrement dans la base de données MongoDB, dans la collection « Transaction » (base *Collect*) : 
+-   la valeur du champ « Status » est désormais « READY » ;
+-   si le paramètre « AutomaticIngest » présent dans le projet de versement associé à la transaction a une valeur « true », la valeur du champ « Status » est désormais « SENDING » et/ou « SENT », car la transaction est directement clôturée et envoyée dans la solution logicielle Vitam.
 
  *Exemple : enregistrement de la transaction dans la collection « Transaction »*
   
@@ -1980,10 +1987,14 @@ Cette action provoque la modification de l’enregistrement dans la base de donn
   }
 ```  
 
-Dès lors, il n’est plus possible de :
+Dès lors, si la transaction a un statut « READY », il n’est plus possible de :
 
 - associer à cette transaction des unités archivistiques, ainsi que des groupes d’objets techniques et des objets numériques ;
-- modifier des unités archivistiques.
+- modifier, réorganiser et supprimer des unités archivistiques.
+
+***Point d’attention :***
+-   Une transaction peut être validée uniquement lorsque son statut est égal à « OPEN ».
+-   Si elle a un statut égal à « SENDING », « SENT », « ACK_OK », « ACK_WARNING », « ACK_KO », « ABORTED », « KO », elle ne peut pas l’être.
 
 Lors de cette action, l’opération peut aboutir aux résultats suivants :
 
@@ -1993,7 +2004,7 @@ Lors de cette action, l’opération peut aboutir aux résultats suivants :
 | Échec  | - La transaction associée n’existe pas ;<br>- La transaction associée a déjà été clôturée.|
 
 ***Point d’attention :***
-S’il s’avère nécessaire de modifier le contenu de la transaction, il est toujours possible à ce stade la rouvrir[^21].
+S’il s’avère nécessaire de modifier le contenu d'une transaction ayant un statut « READY », il est toujours possible à ce stade la rouvrir[^21].
 
 ##### Utilisation dans VitamUI
 
@@ -2003,32 +2014,34 @@ Ce service est disponible :
 
 -   depuis la page permettant de visualiser l’ensemble des archives d’un projet de versement, où il est possible de :
 
-    -   « Valider » un versement, action correspondant à la clôture du versement.
+    -   « Valider » un versement, action correspondant à la clôture du versement ;
 
 -   depuis la page permettant de visualiser l’ensemble des transactions (ou versements) associées à un projet de versement, où il est possible de :
 
-    -   « Valider » un versement, action correspondant à la clôture du versement.
+    -   « Valider » un versement, action correspondant à la clôture du versement[^58].
 
-|  Actions disponibles                   | Statut correspondant dans le front-office    | Statut correspondant dans le back-office| Purge automatique ? |
-|---|---|---|---|
-|  **Valider**   | Validé                      | READY| |
-|Verser| Préparation et envoi du SIP | SENDING | |
-|Verser| Envoyé, en cours de traitement du SAE | SENT            | |
-|Verser | Versé en succès             | ACK_OK                    |  OUI|
-|Verser | Versé                       | ACK_WARNING               |  OUI|
-|Verser | Échec du versement          | ACK_KO                    | |
-|Verser | Erreur technique            | KO                        | |
-|  Éditer    | Ouvert en édition           | OPEN                      | |
-|  Abandonner| Abandonné                   | ABORTED                   |  OUI|
+***Point d'attention :*** Le bouton est :
+
+-   actif quand la transaction a un statut « Ouvert en édition » (« OPEN »),
+-   inactif quand la transaction a un statut « Préparation et envoi du SIP » (« SENDING »), « Envoyé, en cours de traitement du SAE » (« SENT »), « Versé avec succès » (« ACK_OK »), « Versé en avertissement » (« ACK_WARNING »), « Echec du versement » (« ACK_KO »), « Erreur technique » (« KO »), « Abandonné » (« ABORTED »).
+
+Des droits utilisateurs sont par ailleurs définis :
+
+| Profil utilisateur | Validation d'une transaction |
+|---|---|
+| Administrateur     | oui |
+| Archiviste         | oui |
+| Service producteur | oui |
 
 #### Envoi d'une transaction
 
 ##### Utilisation des API
 
-Pour une transaction donnée, une fois celle-ci clôturée, le module de collecte permet de générer un SIP et de le transférer au moyen d’une opération de type « INGEST ».
+Pour une transaction donnée, une fois celle-ci clôturée, le module de collecte permet de générer un SIP et de le transférer au moyen d’une opération de type « INGEST »[^58].
 
 ***Point d’attention :***
-En prérequis à l’envoi du SIP, il faut avoir au préalable clôturé la transaction (son statut doit être égal à « READY ») et signaler cette dernière dans l’API.
+-  En prérequis à l’envoi du SIP, il faut avoir au préalable clôturé la transaction (son statut doit être égal à « READY ») et signaler cette dernière dans l’API.
+-  Cette action peut être automatisée si le paramètre « AutomaticIngest » présent dans le projet de versement associé à la transaction a une valeur « true ». Dès lors, dès validation de la transaction, la transaction est directement clôturée et envoyée dans la solution logicielle Vitam.
 
  *Exemple : requête d’envoi du SIP vers la solution logicielle Vitam pour conservation*
 ```  
@@ -2046,7 +2059,7 @@ En prérequis à l’envoi du SIP, il faut avoir au préalable clôturé la tran
   }
 ```  
 
-Cette action provoque :
+Cette action provoque[^58] :
 
 -   si elle est en erreur technique :
     -   la modification de l’enregistrement dans la base de données MongoDB, dans la collection « Transaction » (base *Collect*) : la valeur du champ « Status » est « KO » ;
@@ -2059,8 +2072,8 @@ Cette action provoque :
             -   « SENT » quand l’opération de type « INGEST » est en cours ;
         -   un champ correspondant à l’identifiant de l’opération d’entrée est ajouté (VitamOperationId).Une fois l’opération de type « INGEST » terminée, le statut est :
         
-            -   si l’opération est en succès, la valeur du champ « Status » est désormais « ACK\_OK » ; si l’opération est en avertissement, la valeur du champ « Status » est « ACK\_WARNING » ;
-            -   si l’opération est en erreur, la valeur du champ « Status » est « ACK\_KO ».
+            -   si l’opération est en succès, la valeur du champ « Status » est désormais « ACK_OK » ; si l’opération est en avertissement, la valeur du champ « Status » est « ACK_WARNING » ;
+            -   si l’opération est en erreur, la valeur du champ « Status » est « ACK_KO ».
 
 Lors de cette action, l’opération peut aboutir aux résultats suivants :
 
@@ -2084,26 +2097,23 @@ Ce service est disponible :
 
 -   depuis la page permettant de visualiser l’ensemble des transactions (ou versements) associées à un projet de versement, où il est possible de :
 
-    -   « Verser » un versement, action correspondant à l’envoi du SIP.
+    -   « Verser » un versement, action correspondant à l’envoi du SIP[^58].
+
+***Point d'attention :*** Le bouton est :
+
+-   actif quand la transaction a un statut « Validé » (« READY »),
+-   inactif quand la transaction a un statut « Ouvert en édition » (« OPEN »), « Préparation et envoi du SIP » (« SENDING »), « Envoyé, en cours de traitement du SAE » (« SENT »), « Versé avec succès » (« ACK_OK »), « Versé en avertissement » (« ACK_WARNING »), « Echec du versement » (« ACK_KO »), « Erreur technique » (« KO »), « Abandonné » (« ABORTED »).
 
 Cette action entraîne la purge des archives passé un certain délai, si le résultat est un versement en succès ou en avertissement.
 
-|  Actions disponibles                   | Statut correspondant dans le front-office    | Statut correspondant dans le back-office| Purge automatique ? |
-|---|---|---|---|
-|  Valider   | Validé                      | READY| |
-|**Verser**| Préparation et envoi du SIP | SENDING | |
-|**Verser**| Envoyé, en cours de traitement du SAE | SENT            | |
-|**Verser** | Versé en succès             | ACK_OK                    |  OUI|
-|**Verser** | Versé                       | ACK_WARNING               |  OUI|
-|**Verser** | Échec du versement          | ACK_KO                    | |
-|**Verser** | Erreur technique            | KO                        | |
-|  Éditer    | Ouvert en édition           | OPEN                      | |
-|  Abandonner| Abandonné                   | ABORTED                   |  OUI|
+Des droits utilisateurs sont par ailleurs définis :
 
+| Profil utilisateur | Validation d'une transaction |
+|---|---|
+| Administrateur     | oui |
+| Archiviste         | oui |
+| Service producteur | non |
 
-######################################################################################################
-##### GESTION DES ARCHIVES ###########################################################################
-######################################################################################################
 
 ### Gestion des archives
 
@@ -2131,9 +2141,9 @@ Ne sont pas journalisées dans le journal des opérations :
 
 La solution logicielle Vitam permet de modifier des unités archivistiques par :
 
+- une mise à jour unitaire en masse de métadonnées,
 - import d'un fichier au format .csv,
-- import d'un fichier au format .jsonl,
-- une mise à jour unitaire en masse de métadonnées.
+- import d'un fichier au format .jsonl.
 
 ##### Modification unitaire en masse
 
@@ -2145,11 +2155,12 @@ La solution logicielle Vitam permet de mettre à jour unitairement plusieurs uni
 - ajouter des métadonnées,
 - supprimer des métadonnées.
 
-***Points d'attention***
+***Points d'attention :***
+
 -   En prérequis à la mise à jour unitaire en masse des unités archivistiques, il faut avoir au préalable créé une transaction et le signaler dans l’API ;
 -   Il n’est pas possible d'ajouter une unité archivistique lors de cette action de mise à jour.
 
-  *Exemple : requête en vue de modifier un titre pour une unité archivistique dont l'identifiant d'agent est "123456", de supprimer une date d'envoi et d'ajouter une description pour une unité archivistique dont l'identifiant d'agent est 1234557*
+  *Exemple : requête en vue de modifier un titre pour une unité archivistique dont l'identifiant d'agent est « 123456 », de supprimer une date d'envoi et d'ajouter une description pour une unité archivistique dont l'identifiant d'agent est « 123457 »*
 ```  
 @transaction-id= *aeeaaaaaachj3m7nabjocamcdqr2rqaaaaaq*
 
@@ -2184,7 +2195,7 @@ X-Tenant-Id: {{tenant}}
 
 Cette action provoque la mise à jour des unités archivistiques dans la base de données MongoDB, dans la collection « Unit » (base *MetadataCollect[^18]*).
 
-***Points d'attention***
+***Points d'attention :***
 L'API est synchrone et bloquante. L'action de mise à jour peut donc prendre quelques instants avant d'être effective.
 
 Lors de cette action, l’opération peut aboutir aux résultats suivants :
@@ -2194,7 +2205,7 @@ Lors de cette action, l’opération peut aboutir aux résultats suivants :
 | Succès       |  Action réalisée sans rencontrer de problèmes particuliers. |
 | Échec        |  - Le seuil de requête est dépassé. <br>- Plusieurs unités archivistiques ont été trouvées. <br>- Aucune unité archivistique n'a été trouvée. <br>- Le format de la métadonnées à modifier n'est pas conforme au type d'indexation défini dans l'ontologie. |
 
-***Points d'attention***
+***Points d'attention :***
 - L'échec ne concerne pas l'action en général, mais est spécifique à une unité archivistique en particulier.
 - La requête utilise le langage de requête DSL de type mise à jour unitaire de masse (BULK UPDATE) de la solution logicielle Vitam en entrée.
 - Le nombre de requêtes unitaires doit rester raisonnable, idéalement pas plus de 1000 par appel. Il est limité à un seuil maximum de 100 000 unités archivistiques par défaut. Ce seuil peut être redéfini dans la requête via le paramètre de seuil (threshold).
@@ -2203,7 +2214,8 @@ Elle n’est pas journalisée dans le journal des opérations.
 
 ###### Utilisation dans VitamUI
 
- Depuis l’APP « Collecte et préparation des versements », le service "modification unitaire en masse" est utilisé pour une modification unitaire mais ce dernier n'est pas disponible pour de la modification de masse sur le front-office VitamUI fournie avec la solution logicielle Vitam.
+ Depuis l’APP « Collecte et préparation des versements », le service de « modification unitaire en masse » est utilisé pour une modification unitaire.
+ Il n'est pas disponible pour effectuer une modification de masse depuis cette APP.
 
 ##### Modification par import de fichier .csv
 
@@ -2214,7 +2226,8 @@ La solution logicielle permet de modifier des métadonnées descriptives et de g
 - modifier des métadonnées descriptives et/ou de gestion,
 - ajouter des métadonnées descriptives et/ou de gestion.
 
-***Points d'attention***
+***Points d'attention :***
+
 -   En prérequis à la mise à jour des unités archivistiques, il faut avoir au préalable créé :
 
     -   une transaction et le signaler dans l’API ;
@@ -2229,7 +2242,7 @@ La solution logicielle permet de modifier des métadonnées descriptives et de g
 ```  
   @transaction-id = aeeaaaaaachj3m7nabjocamcdqr2rqaaaaaq
   
-  PUT {{url}}/collect-external/v1/transactions/{{**transaction-id**}}/units
+  PUT {{url}}/collect-external/v1/transactions/{{**transaction-id**}}/units/metadata/csv
   Accept: application/json
   Content-Type: application/octet-stream
   X-Tenant-Id: {{tenant}}
@@ -2243,7 +2256,8 @@ Pour une transaction donnée, peut être envoyé un fichier .csv contenant des m
 Le fichier .csv est composé de x colonnes[^17] :
 
 -   File : chemin relatif à partir de l’emplacement où est positionnée l’unité archivistique faisant l’objet de la modification. Il s’agit d’une concaténation des intitulés des différentes unités archivistiques (colonne obligatoire) ;
--   toute colonne correspondant à un champ du standard SEDA et nécessitant une modification et/ou un ajout de métadonnées (colonnes facultatives).
+-   toute colonne correspondant à un champ du standard SEDA et nécessitant une modification et/ou un ajout de métadonnées (colonnes facultatives) ;
+-   le cas échéant, toute colonne correspondant à une métadonnée externe du standard SEDA  et nécessitant une modification et/ou un ajout de métadonnées (colonnes facultatives).
 
 ***Points d’attention :***
 
@@ -2253,14 +2267,15 @@ Le fichier .csv est composé de x colonnes[^17] :
 -   le séparateur entre les colonnes est le point-virgule, le séparateur de texte les guillemets doubles et l’encodage est « UTF-8 » ;
 -   le fichier .csv ne référence que des métadonnées propres aux unités archivistiques (métadonnées descriptives et de gestion).
 -   concernant le nommage des colonnes :
-    -   pour les colonnes correspondant à des champs du standard SEDA, l’intitulé de la colonne doit correspondre à celui du champ dans le standard SEDA, précédé de « Management. » s’il s’agit d’une métadonnée de gestion (ex. « Management.AccessRule.Rule » pour une règle de communicabilité) ou de « Content » s’il s’agit d’une métadonnée descriptive (ex. « Content.DocumentType »). Toutefois, si le fichier d’import ne décrit que des métadonnées descriptives, la présence du préfixe « Content » est facultative ;
-    -   quand le schéma XML du standard SEDA propose une structure complexe de balises (par exemple pour décrire un auteur via l’objet XML &lt;Writer&gt; qui contient plusieurs balises XML comme FullName ou BirthName), il convient d’intituler la colonne de la manière suivante : Content.Writer.FullName ou Content.Writer.BirthName ;
+    -   pour les colonnes correspondant à des champs du standard SEDA, l’intitulé de la colonne doit correspondre à celui du champ dans le standard SEDA, précédé de « Management. » s’il s’agit d’une métadonnée de gestion (ex. « Management.AccessRule.Rule » pour une règle de communicabilité) ou de « Content. » s’il s’agit d’une métadonnée descriptive (ex. « Content.DocumentType ») ;
+    -   pour les colonnes correspondant à des métadonnées externes au standard SEDA, l'intitulé de la colonne doit correspondre à celui du champ, précédé de « Content. » ;
+    -   quand le schéma XML du standard SEDA propose une structure complexe de balises (par exemple pour décrire un auteur via l’objet XML Writer; qui contient plusieurs balises XML comme FullName ou BirthName), il convient d’intituler la colonne de la manière suivante : Content.Writer.FullName ou Content.Writer.BirthName ;
     -   quand un champ ou un objet XML est multivalué dans le standard SEDA (et qu’il est possible d’en décrire plusieurs dans le bordereau comme c’est le cas pour l’objet Writer par exemple), il convient de numéroter la colonne de la manière suivante : Content.Writer.0.FullName, Content.Writer.1.FullName ;
 -   concernant le contenu des colonnes :
     -   la colonne File :
-        -   indique la position de l’unité archivistique dans l’arborescence de la transaction, depuis l’unité archivistique racine jusqu’à l’unité archivistique décrite. Il s’agit là d’une concaténation des intitulés des différentes unités archivistiques.
-        -   ne doit pas comprendre d’espace avant ou après les « \\ » ;
-        -   doit correspondre à un chemin tel que décrit par l’explorateur de fichiers (avec des « \\ » et non des « / ») ;
+        -   indique la position de l’unité archivistique dans l’arborescence de la transaction, depuis l’unité archivistique racine jusqu’à l’unité archivistique décrite. Il s’agit là d’une **concaténation des intitulés des différentes unités archivistiques**.
+        -   ne doit pas comprendre d’espace avant ou après les « / » ;
+        -   doit correspondre à un chemin tel que décrit par l’explorateur de fichiers (avec des « / ») ;
 
     -   la colonne DescriptionLevel, si elle est présente, ne doit comprendre que les valeurs autorisées par le standard SEDA : Collection, Fonds, Series, SubSeries, RecordGrp, File, Item ;
     -   les colonnes correspondant à des champs Date dans le standard SEDA doivent être formatées conformément à la norme ISO 8601 (AAAA-MM-JJ) ;
@@ -2283,12 +2298,11 @@ Lors de cette action, l’opération peut aboutir aux résultats suivants :
 |---|---|
 | Succès       |  Action réalisée sans rencontrer de problèmes particuliers. |
 | Avertissement|  Le formatage du fichier .csv contient au moins une erreur (ex. date mal formatée, valeur attendue erronée, date de début postérieure à la date de fin, etc.)|
-| Échec        |  Le fichier .csv n’est pas au format .csv. <br>Le fichier .csv contient des erreurs dans la colonne File :<br>Action non réalisée pour cause de nom erroné ou de chemin introuvable dans la requête.<br>La transaction n’existe pas ou est erronée.<br>La transaction a un statut « READY », « SENDING », « SEND », « ACK\_OK », « ACK\_WARNING », « ACK\_KO », « KO », « ABORTED ».|
+| Échec        |  - Le fichier .csv n’est pas au format .csv. <br>- Le fichier .csv contient des erreurs dans la colonne File. <br>- Action non réalisée pour cause de nom erroné ou de chemin introuvable dans la requête.<br>- La transaction n’existe pas ou est erronée.<br>- La transaction a un statut « READY », « SENDING », « SEND », « ACK_OK », « ACK_WARNING », « ACK_KO », « KO », « ABORTED ».|
 
 Elle n’est pas journalisée dans le journal des opérations.
 
-***Point d’attention :***
--   Au terme de la V.8.1, le module de collecte peut :
+***Point d’attention :*** Au terme de la V.8.1, le module de collecte peut :
 
 	-  bloquer la mise à jour si le fichier .csv dernier comporte les erreurs suivantes :
 	   -   il ne contient pas au moins la colonne obligatoire File ;
@@ -2301,11 +2315,10 @@ Elle n’est pas journalisée dans le journal des opérations.
 	   L'API peut :
 	       - soit renvoyer une seule erreur, si cette erreur est bloquante,
 		   - soit renvoyer jusqu'à 20 erreurs, si ces erreurs sont cumulables.
-	   L'arborescence bureautique ne sera pas importée.
 	
 	-  ne pas bloquer la mise à jour si le fichier .csv dernier comporte les erreurs suivantes :
        -   il dispose d’un champ dont le contenu est mal formaté (ex. ReceivedDate écrite en chaîne de caractères) ;
-    Une erreur est alors renvoyée par l’API, le contenu du fichier CSV sera ignoré et seule l’arborescence bureautique sera téléchargée selon le comportement décrit dans la sous-section précédente.
+    Une erreur est alors renvoyée par l’API, le contenu du fichier .csv sera ignoré.
 
 -   Il ne permet pas de :
 
@@ -2314,7 +2327,22 @@ Elle n’est pas journalisée dans le journal des opérations.
 
 ###### Utilisation dans VitamUI
 
-TO DO
+L’APP « Collecte et préparation des versements » du front-office VitamUI fournie avec la solution logicielle Vitam permet de modifier tout ou partie des unités archivistiques d'une transaction au moyen de l'import d'un fichier .csv.
+
+Ce service est disponible depuis la page permettant de visualiser l’ensemble des archives d’un projet de versement, où il est possible de « Mettre à jour les métadonnées ».
+
+***Point d'attention***: Le bouton est :
+
+-   actif quand la transaction a un statut « Ouvert en édition » (« OPEN »),
+-   inactif quand la transaction a un statut « Validé » (« READY »), « Préparation et envoi du SIP » (« SENDING »), « Envoyé, en cours de traitement du SAE » (« SENT »), « Versé avec succès » (« ACK_OK »), « Versé en avertissement » (« ACK_WARNING »), « Echec du versement » (« ACK_KO »), « Erreur technique » (« KO »), « Abandonné » (« ABORTED »).
+
+Des droits utilisateurs sont par ailleurs définis :
+
+| Profil utilisateur | Validation d'une transaction |
+|---|---|
+| Administrateur     | oui |
+| Archiviste         | oui |
+| Service producteur | non |
 
 ##### Modification par import de fichier .jsonl
 
@@ -2325,7 +2353,8 @@ La solution logicielle permet de modifier des métadonnées descriptives et de g
 - modifier des métadonnées descriptives et/ou de gestion,
 - ajouter des métadonnées descriptives et/ou de gestion.
 
-***Points d'attention***
+***Points d'attention :***
+
 -   En prérequis à la mise à jour des unités archivistiques, il faut avoir au préalable créé :
 
     -   une transaction et le signaler dans l’API ;
@@ -2337,11 +2366,10 @@ La solution logicielle permet de modifier des métadonnées descriptives et de g
     -   ajouter une unité archivistique lors de cette action de mise à jour.
 
   *Exemple : requête en vue de modifier des métadonnées d’unités archivistiques associées à une transaction dont l’identifiant est «  aeeaaaaaachj3m7nabjocamcdqr2rqaaaaaq »*
-
 ```  
   @transaction-id = aeeaaaaaachj3m7nabjocamcdqr2rqaaaaaq
   
-  PUT {{url}}/collect-external/v1/transactions/{{**transaction-id**}}/units
+  PUT {{url}}/collect-external/v1/transactions/{{**transaction-id**}}/units/metadata/jsonl
   Accept: application/json
   Content-Type: application/octet-stream
   X-Tenant-Id: {{tenant}}
@@ -2356,46 +2384,37 @@ Le fichier .jsonl, obligatoirement intitulé « metadata.jsonl », est compos�
 
 -   File : chemin relatif à partir de l’emplacement où est positionnée l’unité archivistique faisant l’objet de la modification. Il s’agit d’une concaténation des intitulés des différentes unités archivistiques (champ obligatoire) ;
 -   Selector : liste de conditions permettant l'enregistrement des métadonnées dans une unité archivistique correspond à ces conditions (champ obligatoire) ;
--   ObjectFiles : chemin relatif des fichiers numériques dont certains peuvent être rattachés à des répertoires déclarés dans la colonne File (champ facultatif) ;
 -   UnitContent : bloc dans lequel sont insérées les métadonnées descriptives et de gestion d'une unité archivistique nécessitant d'être modifiée (champ obligatoire), dont :
     -   DescriptionLevel : niveau de description de l’unité archivistique (champ facultatif) ;
     -   Title : intitulé de l’unité archivistique (champ facultatif) ;
-    -   tout champ correspondant à un champ du standard SEDA (champs facultatifs).
-
-AAAAAAA
-
-
-
+    -   tout champ correspondant à un champ du standard SEDA   et nécessitant une modification et/ou un ajout de métadonnées (champs facultatifs) ;
+	-   le cas échéant, tout champ correspondant à un champ externe au standard SEDA   et nécessitant une modification et/ou un ajout de métadonnées (champs facultatifs).
 
 ***Points d’attention :***
 
--   le fichier .csv n’est pas obligatoirement intitulé « metadata.csv » ;
--   l’ordre des premières colonnes ne doit pas être modifié ;
--   une première ligne d’en-tête donnant le nom des colonnes doit être présente, chaque ligne décrivant ensuite une unité archivistique ;
--   le séparateur entre les colonnes est le point-virgule, le séparateur de texte les guillemets doubles et l’encodage est « UTF-8 » ;
--   le fichier .csv ne référence que des métadonnées propres aux unités archivistiques (métadonnées descriptives et de gestion).
--   concernant le nommage des colonnes :
-    -   pour les colonnes correspondant à des champs du standard SEDA, l’intitulé de la colonne doit correspondre à celui du champ dans le standard SEDA, précédé de « Management. » s’il s’agit d’une métadonnée de gestion (ex. « Management.AccessRule.Rule » pour une règle de communicabilité) ou de « Content » s’il s’agit d’une métadonnée descriptive (ex. « Content.DocumentType »). Toutefois, si le fichier d’import ne décrit que des métadonnées descriptives, la présence du préfixe « Content » est facultative ;
-    -   quand le schéma XML du standard SEDA propose une structure complexe de balises (par exemple pour décrire un auteur via l’objet XML &lt;Writer&gt; qui contient plusieurs balises XML comme FullName ou BirthName), il convient d’intituler la colonne de la manière suivante : Content.Writer.FullName ou Content.Writer.BirthName ;
-    -   quand un champ ou un objet XML est multivalué dans le standard SEDA (et qu’il est possible d’en décrire plusieurs dans le bordereau comme c’est le cas pour l’objet Writer par exemple), il convient de numéroter la colonne de la manière suivante : Content.Writer.0.FullName, Content.Writer.1.FullName ;
--   concernant le contenu des colonnes :
-    -   la colonne File :
-        -   indique la position de l’unité archivistique dans l’arborescence de la transaction, depuis l’unité archivistique racine jusqu’à l’unité archivistique décrite. Il s’agit là d’une concaténation des intitulés des différentes unités archivistiques.
-        -   ne doit pas comprendre d’espace avant ou après les « \\ » ;
-        -   doit correspondre à un chemin tel que décrit par l’explorateur de fichiers (avec des « \\ » et non des « / ») ;
+-   le fichier .jsonl n’est pas obligatoirement intitulé « metadata.jsonl » ;
+-   le fichier .jsonl doit toujours contenir un champ File *ou* un champ Selector. Celui-ci doit toujours être placée en première position ;
+-   les métadonnées pouvant être utilisées comme conditions dans le champ Selector doivent des éléments simples de type string, boolean, long ou double.
+-   le fichier .jsonl ne référence que des métadonnées propres aux unités archivistiques (métadonnées descriptives et de gestion). Il ne supporte pas les métadonnées techniques propres aux fichiers numériques ;
+-   le nommage des champs et leur structuration en JSON doivent se conformer au modèle de données de la solution logicielle Vitam.
 
-    -   la colonne DescriptionLevel, si elle est présente, ne doit comprendre que les valeurs autorisées par le standard SEDA : Collection, Fonds, Series, SubSeries, RecordGrp, File, Item ;
-    -   les colonnes correspondant à des champs Date dans le standard SEDA doivent être formatées conformément à la norme ISO 8601 (AAAA-MM-JJ) ;
-    -   les références à des règles de gestion doivent se conformer aux identifiants de règles présents dans le SAE ;
-    -   les dates de début (Content.StartDate) doivent être antérieures aux dates de fin (Content.EndDate).
+-   concernant le contenu des champs :
 
-  *Exemple : fichier .csv de mise à jour des métadonnées (ajout ou modification des dates de début et de fin pour les unités archivistiques intitulées « AU1 » et « AU2 »)*
-```csv  
-  File;Content.DescriptionLevel;Content.Title;Content.StartDate;Content.EndDate
-  "content/AU1";"Item";"AU1";"1970-06-03";"1980-06-03"
-  "content/AU2";"Item";"AU2";"1970-06-03";"1980-06-03"
-  "content/AU3";"Item";"AU3";"";""
-  "content/AU4";"Item";"AU4";"";""
+    -   le champ File :
+
+        -   ne doit pas comprendre d’espace avant ou après les « / » ;
+        -   doit correspondre à un chemin tel que décrit par l’explorateur de fichiers (avec des « / ») ;
+
+    -   le champ DescriptionLevel ne doit comprendre que les valeurs autorisées par le standard SEDA : Collection, Fonds, Series, SubSeries, RecordGrp, File, Item ;
+    -   les champs correspondant à des champs Date dans le standard SEDA doivent être formatés conformément à la norme ISO 8601 (AAAA-MM-JJ) ;
+    -   les références à des règles de gestion et à des profils d’unité archivistique doivent se conformer aux identifiants de règles présents dans le SAE
+
+-   Les dates de début (Content.StartDate) doivent être antérieures aux dates de fin (Content.EndDate).
+
+  *Exemple : fichier .jsonl de mise à jour des métadonnées*
+```  
+{"Selector": {"#uploadPath": "File","#tenant": 1},"UnitContent": { "DescriptionLevel": "Series", "Title": "File", "Description": "Modification de la description", "StartDate": "2023-01-01", "EndDate": "2023-01-31", "Tag": ["Paie"] } }
+{"Selector": {"DescriptionLevel":"Item","OriginatingSystemId":"BP_123456_20230131","#tenant": 8},"UnitContent":{ "DescriptionLevel": "Item", "Title": "BP_123456_20230131.pdf", "OriginatingSystemId": ["BP_123456_20230131"], "SentDate": "2023-01-31", "AcquiredDate": "2023-01-20", "Tag": [ "Salaire","Bulletin de paie", "tot"], "#management": { "AppraisalRule": { "Rules": [ { "Rule": "APP-00001", "StartDate": "2023-01-20" } ], "FinalAction": "Destroy" }, "AccessRule": { "Rules": [ { "Rule": "ACC-00016", "StartDate": "2023-01-20" } ] } } }}
 ```
 
 Cette action provoque la mise à jour des unités archivistiques dans la base de données MongoDB, dans la collection « Unit » (base *MetadataCollect[^18]*).
@@ -2404,179 +2423,33 @@ Lors de cette action, l’opération peut aboutir aux résultats suivants :
 | Statut       |  Motifs |
 |---|---|
 | Succès       |  Action réalisée sans rencontrer de problèmes particuliers. |
-| Avertissement|  Le formatage du fichier .csv contient au moins une erreur (ex. date mal formatée, valeur attendue erronée, date de début postérieure à la date de fin, etc.)|
-| Échec        |  Le fichier .csv n’est pas au format .csv. <br>Le fichier .csv contient des erreurs dans la colonne File :<br>Action non réalisée pour cause de nom erroné ou de chemin introuvable dans la requête.<br>La transaction n’existe pas ou est erronée.<br>La transaction a un statut « READY », « SENDING », « SEND », « ACK\_OK », « ACK\_WARNING », « ACK\_KO », « KO », « ABORTED ».|
+| Avertissement|  Le formatage du fichier .jsonl contient au moins une erreur (ex. date mal formatée, valeur attendue erronée, date de début postérieure à la date de fin, etc.)|
+| Échec        |  - Le fichier .jsonl n’est pas au format .jsonl.<br>- Le fichier .jsonl contient des erreurs dans la colonne File ou Selector.<br>- Action non réalisée pour cause de nom erroné ou de chemin introuvable dans la requête.<br>- La transaction n’existe pas ou est erronée.<br>La transaction a un statut « READY », « SENDING », « SEND », « ACK_OK », « ACK_WARNING », « ACK_KO », « KO », « ABORTED ».|
 
 Elle n’est pas journalisée dans le journal des opérations.
 
-***Point d’attention :***
--   Au terme de la V.8.1, le module de collecte peut :
+***Point d’attention :*** Au terme de la V.8.1, le module de collecte peut :
 
-	-  bloquer la mise à jour si le fichier .csv dernier comporte les erreurs suivantes :
-	   -   il ne contient pas au moins la colonne obligatoire File ;
-	   -   au moins un fichier référencé dans le fichier .csv n'est pas présent dans l'arborescence bureautique,
-	   -   il ne contient aucune information ;
-	   -   il ne contient pas de séparateurs de champs ;
-	   -   il contient des virgules, des espaces, des pipes comme séparateurs de champs ;
-	   -   le fichier contient des simples guillemets comme séparateurs de texte ;
-	   -   etc.
-	   L'API peut :
-	       - soit renvoyer une seule erreur, si cette erreur est bloquante,
-		   - soit renvoyer jusqu'à 20 erreurs, si ces erreurs sont cumulables.
-	   L'arborescence bureautique ne sera pas importée.
-	
-	-  ne pas bloquer la mise à jour si le fichier .csv dernier comporte les erreurs suivantes :
-       -   il dispose d’un champ dont le contenu est mal formaté (ex. ReceivedDate écrite en chaîne de caractères) ;
-    Une erreur est alors renvoyée par l’API, le contenu du fichier CSV sera ignoré et seule l’arborescence bureautique sera téléchargée selon le comportement décrit dans la sous-section précédente.
-
--   Il ne permet pas de :
-
-    - supprimer une métadonnée avec ce mode de mise à jour par envoi de fichier .csv ;
-	- ajouter un rattachement à une unité archivistique (UpdateOperation).
-
-
-TO DO
-
-Pour une transaction donnée peut être envoyé sous forme de zip en plus d’une arborescence bureautique[^13] un fichier .jsonl contenant des métadonnées détaillant unitairement les unités archivistiques.
-
-Le fichier .jsonl, obligatoirement intitulé « metadata.jsonl », est composé de :
-
--   File : chemin relatif à partir de l’emplacement où est enregistré le fichier .jsonl (champ obligatoire) ;
--   Selector : liste de conditions permettant l'enregistrement des métadonnées dans une unité archivistique correspond à ces conditions (champ obligatoire) ;
--   ObjectFiles : chemin relatif des fichiers numériques dont certains peuvent être rattachés à des répertoires déclarés dans la colonne File (champ facultatif) ;
--   UnitContent : bloc dans lequel sont insérées les métadonnées descriptives et de gestion d'une unité archivistique (champ obligatoire), dont :
-    -   DescriptionLevel : niveau de description de l’unité archivistique (champ facultatif) ;
-    -   Title : intitulé de l’unité archivistique (champ facultatif) ;
-    -   tout champ correspondant à un champ du standard SEDA (champs facultatifs).
-
- *Exemple : contenu d’un fichier « metadata.jsonl ».*
-
-```
-{ "File": "File", "UnitContent": { "DescriptionLevel": "Collection", "Title": "File", "Description": "Ceci est un versement de bulletins de paie", "StartDate": "2023-01-01", "EndDate": "2023-01-31", "Tag": [ "Paie", "Bulletin" ] } }
-{ "File": "File/BP_123456_20230131.pdf", "UnitContent": { "DescriptionLevel": "Item", "Title": "BP_123456_20230131.pdf", "OriginatingSystemId": [ "BP_123456_20230131" ], "Agent": [ { "FirstName": "DUPONT", "BirthName": "Charles", "Identifier": [ "123456" ] } ], "SentDate": "2023-01-31", "AcquiredDate": "2023-01-20", "Tag": [ "Salaire" ], "#management": { "AppraisalRule": { "Rules": [ { "Rule": "APP-00001", "StartDate": "2023-01-20" } ], "FinalAction": "Destroy" }, "AccessRule": { "Rules": [ { "Rule": "ACC-00016", "StartDate": "2023-01-20" } ] } } } }
-{ "File": "File/BP_123463_20230131.pdf", "UnitContent": { "DescriptionLevel": "Item", "Title": "BP_123463_20230131.pdf", "OriginatingSystemId": [ "BP_123463_20230131" ], "Agent": [ { "FirstName": "DUPOND", "BirthName": "Victor", "Identifier": [ "123463" ] } ], "SentDate": "2023-01-31", "AcquiredDate": "2023-01-20", "Tag": [ "Salaire" ], "#management": { "AppraisalRule": { "Rules": [ { "Rule": "APP-00002", "StartDate": "2023-01-20" } ], "FinalAction": "Destroy" }, "AccessRule": { "Rules": [ { "Rule": "ACC-00016", "StartDate": "2023-01-20" } ] } } } }
-{ "File": "File/BP_123464_20230131.pdf", "UnitContent": { "DescriptionLevel": "Item", "Title": "BP_123464_20230131.pdf", "OriginatingSystemId": [ "BP_123464_20230131" ], "Agent": [ { "FirstName": "CHARLES", "BirthName": "Ray", "Identifier": [ "123464" ] } ], "SentDate": "2023-01-31", "AcquiredDate": "2023-01-20", "Tag": [ "Salaire" ], "#management": { "AppraisalRule": { "Rules": [ { "Rule": "APP-00002", "StartDate": "2023-01-20" } ], "FinalAction": "Destroy" }, "AccessRule": { "Rules": [ { "Rule": "ACC-00016", "StartDate": "2023-01-20" } ] } } } } 
-```
-
- *Exemple : contenu d’un fichier « metadata.jsonl » décrivant un contexte de signature détachée.*
-
-```  
-{ "File" : "My Root Folder", "ObjectFiles": "SomeFile.xml", "UnitContent": { "Title": "My Root Folder (with attached SomeFile.xml)" } }
-{ "File" : "My Root Folder/MyFile1.txt", "ObjectFiles": null, "UnitContent": { "Title": "My Root Folder/MyFile1.txt" } }
-{ "File" : "My Root Folder/MyFile2.txt", "ObjectFiles": "My Root Folder/MyFile2.txt", "UnitContent": { "Title": "My Root Folder/MyFile2.txt" } }
-{ "File" : "My Root Folder/SubFolder", "ObjectFiles": "My Root Folder/SubFolder/MyFile3.txt", "UnitContent": { "Title": "My Root Folder/SubFolder (with attached MyFile3.txt)" } }
-{ "Selector" : { "#uploadPath" : "Yet Another Folder" }, "ObjectFiles": "My Root Folder/SubFolder/MyFile4.txt", "UnitContent": { "Title": "Yet Another Folder (with attached MyFile4.txt)" } }
-```
-
- *Exemple : contenu d’un fichier « metadata.jsonl » déclarant un rattachement.*
-
-```
-{ "File": "Discours hors parlement", "UnitContent": { "DescriptionLevel": "RecordGrp", "Title": "Discours hors parlement", "#management": { "UpdateOperation": { "ArchiveUnitIdentifierKey" : { "MetadataName" : "ArchivalAgencyArchiveUnitIdentifier", "MetadataValue" : "20130456/3"} }  } } }
-{ "File": "Discours hors parlement/Discours d'inauguration", "UnitContent": { "DescriptionLevel": "RecordGrp", "Title": "Discours d’inauguration" } }
-{ "File": "Discours hors parlement/Discours d'inauguration/Inauguration de Notre-Dame.odt", "UnitContent": { "DescriptionLevel": "Item", "Title": "Inauguration de Notre-Dame" } }
- 
-```
-
-***Points d’attention :***
-
--   le fichier .jsonl doit toujours contenir un champ File *ou* un champ Selector. Celui-ci doit toujours être placée en première position ;
--   les métadonnées pouvant être utilisées comme conditions dans le champ Selector doivent des éléments simples de type string, boolean, long ou double.
--   le fichier .jsonl ne référence que des métadonnées propres aux unités archivistiques (métadonnées descriptives et de gestion). Il ne supporte pas les métadonnées techniques propres aux fichiers numériques ;
--   seul un objet peut être associé à un enregistrement. Ce format d’import ne permet pas de facto de gérer l’import de groupe d’objets techniques disposant de plusieurs objets aux usages différents devant être référencés par la même unité archivistique.
--   le fichier .jsonl à importer doit se trouver dans le même répertoire que le répertoire correspondant à la racine de la structure arborescente de fichiers à importer.
--   chaque répertoire et objet numérique devant contenir des métadonnées particulières doit être référencé dans le fichier .jsonl ;
--   si le fichier .jsonl déclare un rattachement à une unité archivistique, il doit matérialiser cette unité archivistique par une ligne dédiée correspondant à un dossier dans l'arborescence bureautique. 
-    Dans cette ligne :
-    -   Ne devront être renseignées que les informations suivantes : 
-	    -  DescriptionLevel, 
-		-  Title,
-		-  UpdateOperation.ArchiveUnitIdentifierKey.MetadataName et Management.UpdateOperation.ArchiveUnitIdentifierKey.MetadataValue OU UpdateOperation.SystemId.
-    -   Un rattachement ne peut être déclaré que dans un répertoire racine.
-
--   le nommage des champs et leur structuration en JSON doivent se conformer au modèle de données de la solution logicielle Vitam.
-
--   concernant le contenu des champs :
-
-    -   la colonne File :
-
-        -   ne doit pas comprendre d’espace avant ou après les « \\ » ;
-        -   doit correspondre à un chemin tel que décrit par l’explorateur de fichiers (avec des « \\ » et non des « / ») ;
-
-    -   le champ DescriptionLevel ne doit comprendre que les valeurs autorisées par le standard SEDA : Collection, Fonds, Series, SubSeries, RecordGrp, File, Item ;
-    -   les champs correspondant à des champs Date dans le standard SEDA doivent être formatés conformément à la norme ISO 8601 (AAAA-MM-JJ) ;
-    -   les références à des règles de gestion et à des profils d’unité archivistique doivent se conformer aux identifiants de règles présents dans le SAE
-
--   Aucun fichier ne doit avoir un poids équivalent à 0 octet.
--   Les dates de début (Content.StartDate) doivent être antérieures aux dates de fin (Content.EndDate).
--   Au terme de la V.8.1, il est recommandé que les noms de répertoires et de fichiers ne contiennent ni caractère accentué, ni virgule, ni apostrophe, ni parenthèse, ni espace, ni élément de ponctuation, ou tout autre caractère spécial. Ne sont à privilégier que l’underscore et le tiret comme séparateurs.
-
-    Néanmoins, s’ils en contiennent et si l’arborescence bureautique émane d’un environnement Windows, il est recommandé d’utiliser l’outil Winzip pour la zipper, afin d’éviter des problèmes d’encodage.
-
-L’import du fichier .zip incluant un fichier .jsonl et une arborescence bureautique provoque :
-
--   la création des unités archivistiques dans la base de données MongoDB, dans la collection « Unit » (base *MetadataCollect[^15]*). Sont enregistrées automatiquement les valeurs portées dans le fichier .csv si l’enregistrement ne contient pas d’erreur.
-
-    À chaque enregistrement, est associé :
-	
-	-   l’identifiant de la transaction (_opi) ;
-	-   un identifiant de batch (_batchId) ;
-	-   la localisation initiale du dossier ou du fichier dans l'arborescence (_uploadPath),
-	-   l'identifiant du service producteur (_sp et _sps) ;
-
--   la création de métadonnées techniques dans la base de données MongoDB, dans la collection « ObjectGroup » (base *MetadataCollect[^16]*).
-
-    À chaque enregistrement, est associé :
-	-  l’identifiant de la transaction (_opi) ;
-    -   un identifiant de batch (_batchId) ;
-	-  l'identifiant du service producteur (_sp) ;
-
--   l’enregistrement des objets numériques sur les offres de stockage.
--   la mise à jour des métadonnées techniques de l’objet avec :
-
-    -   ajout de l’empreinte d’un fichier numérique,
-    -   ajout de l’identification de son format,
-    -   mise à jour de son poids exprimé en octets, calculés lors de l’envoi du fichier numérique ;
-	
--   le cas échéant :
-
-    - si le projet de versement déclarait un rattachement unique, la création d'une unité archivistique dans la base de données MongoDB, dans la collection « Unit » (base *MetadataCollect[^10]*). Sont enregistrés automatiquement :
-      -   un niveau de description (DescriptionLevel) dont la valeur est « Series »,
-      -   un intitulé (Title) dont la valeur est « STATIC_ATTACHEMENT »,
-      -   l'identifiant de l'unité archivistique de rattachement (champ SystemId inclus dans un bloc UpdateOperation);
-    - si le projet de versement déclarait un rattachement par clé / valeur, la création d'une unité archivistique dans la base de données MongoDB, dans la collection « Unit » (base *MetadataCollect[^10]*). Sont enregistrés automatiquement :
-      -   un niveau de description (DescriptionLevel) dont la valeur est « Series »,
-      -   un intitulé (Title) dont la valeur est « DYNAMIC_ATTACHEMENT »,
-      -   l'identifiant de l'unité archivistique de rattachement (champ SystemId inclus dans un bloc UpdateOperation).
-
-Lors de cette action, l’opération peut aboutir aux résultats suivants :
-
-| Statut | Motifs |
-| --- | --- |
-| Succès | Action réalisée sans rencontrer de problèmes particuliers. |
-| Échec  | Le fichier .zip n’a pas été téléchargé pour cause de nom erroné ou de chemin introuvable ; Le fichier .jsonl contient au moins une erreur ; La transaction n’existe pas ou est erronée ; La transaction est clôturée. |
-
-Cette action n’est pas journalisée dans le journal des opérations.
-
-***Point d’attention :*****
-
--   Au terme de la V.8.1, le module de collecte peut :
-
-	-  bloquer l'import de l’arborescence bureautique accompagnée d’un fichier .jsonl si ce dernier comporte les erreurs suivantes :
-	   -   il ne contient pas au moins le champ obligatoire File ;
+	-  bloquer la mise à jour si le fichier .jsonl dernier comporte les erreurs suivantes :
+       -   il ne contient pas au moins le champ obligatoire File ou Selector ;
 	   -   au moins un bloc UnitContent ne contient aucune information ;
 	   -   au moins un fichier référencé dans le fichier .jsonl n'est pas présent dans l'arborescence bureautique,
 	   -   il ne contient aucune information ;
 	   -   une date de fin de règle a été intégrée dans le fichier .jsonl ;
 	   -   il dispose d’un champ dont le contenu est mal formaté (ex. ReceivedDate écrite en chaîne de caractères) ;
-    
 	   -   etc.
 	   L'API peut :
 	       - soit renvoyer une seule erreur, si cette erreur est bloquante,
 		   - soit renvoyer jusqu'à 20 erreurs, si ces erreurs sont cumulables.
-	   L'arborescence bureautique ne sera pas importée.
+	
+	-  ne pas bloquer la mise à jour si le fichier .jsonl dernier comporte les erreurs suivantes :
+       -   il dispose d’un champ dont le contenu est mal formaté (ex. ReceivedDate écrite en chaîne de caractères) ;
+    Une erreur est alors renvoyée par l’API, le contenu du fichier .jsonl sera ignoré partiellement.
 
--   Aucun contrôle n’est effectué entre le nombre de répertoires et d’objets binaires présents dans l’arborescence bureautique et les éléments décrits dans le fichier .jsonl. Il est recommandé de veiller à ne pas ajouter de niveaux intermédiaires dans l’arborescence bureautique non référencés dans le fichier .jsonl, car ils seront automatiquement créés dans le module de collecte selon le comportement décrit dans la sous-section précédente.
+-   Il ne permet pas de :
 
+    - supprimer une métadonnée avec ce mode de mise à jour par envoi de fichier .jsonl ;
+	- ajouter un rattachement à une unité archivistique (UpdateOperation).
 
 ###### Utilisation dans VitamUI
 
@@ -2586,16 +2459,17 @@ Il n'est pas possible de mettre à jour des unités archivistiques au moyen d'un
 
 ##### Utilisation des API
 
-La solution logicielle Vitam permet de modifier l’arborescence des unités archivistiques d'une transaction. Il est possible de :
+La solution logicielle Vitam permet de modifier l'organisation de l’arborescence des unités archivistiques d'une transaction. Il est possible de :
 
 -  rattacher une unité archivistique à une unité archivistique, en respectant l’organisation hiérarchique de l’information,
 -  modifier un rattachement préexistant,
 -  ajouter un rattachement,
--  supprimer un lien hiérarchique entre une unité archivistique et une autre, ce qui signifie qu’on peut supprimer un sous-niveau à un niveau de description parent.
+-  supprimer un lien hiérarchique entre une unité archivistique et une autre, ce qui signifie qu’on peut supprimer un sous-niveau d'un niveau de description parent.
 
-***Point d’attention :*** 
--  En prérequis à cette action, il faut avoir au préalable créé une transaction et le signaler dans l’API, pour une suppression d'unités archivistiques.
--  A noter qu'au terme de la version 8.1, il n'est pas possible de modifier la(les) position(s) de rattachement de la transaction.
+***Point d’attention :***
+
+-  En prérequis à cette action, il faut avoir au préalable créé une transaction et le signaler dans l’API.
+-  A noter qu'au terme de la version 8.1, il n'est pas possible de modifier la(les) position(s) de rattachement de la transaction, qu'elle(s) soi(en)t statique ou dynamique(s).
 
 *Exemple : requête en vue de déplacer l'unité d'archives dont l’identifiant est «  aeaqaaaaaeecohy6ab4heamu7jl5epqaaaba »*
 
@@ -2630,15 +2504,14 @@ Lors de cette action, l’opération peut aboutir aux résultats suivants :
 | Statut | Motifs |
 |---|---|
 | Succès        | Action réalisée sans rencontrer de problèmes particuliers.|
-| Échec         | Action non réalisée :
-<br/>L'unité archivistique de destination semble inexistante ou inaccessible,
-<br/>L'unité archivistique à déplacer semble inexistante dans la transaction.|
+| Échec         | Action non réalisée :<br>- L'unité archivistique de destination semble inexistante ou inaccessible,<br>- L'unité archivistique à déplacer semble inexistante dans la transaction.|
 
 Elle est journalisée dans le journal des opérations (COLLECT_RECLASSIFICATION).
 
 ##### Utilisation dans VitamUI
 
 L’APP « Collecte et préparation des versements » du front-office VitamUI fournie avec la solution logicielle Vitam permet dans la page de consultation des archives d'un projet de versement de :
+
 -  modifier un rattachement préexistant,
 -  ajouter un rattachement,
 -  supprimer un lien hiérarchique entre une unité archivistique et une autre.
@@ -2657,9 +2530,12 @@ Des droits utilisateurs sont par ailleurs définis :
 
 La solution logicielle Vitam permet d'ajouter des unités archivistiques à une transaction donnée.
 
-***Point d’attention :*** En prérequis à cette action, il faut avoir au préalable créé une transaction et le signaler dans l’API. Le(s) document(s) ajouté(s) doivent être compressé(s) au format zip.
+***Point d’attention :*** 
 
-*Exemple : requête en vue d'ajouter une ou plusieurs unité(s) d'archives à une transaction dont l’identifiant est «  aeeaaaaaachj3m7nabjocamcdqr2rqaaaaaq »*
+-  En prérequis à cette action, il faut avoir au préalable créé une transaction et le signaler dans l’API. 
+-  Le(s) document(s) ajouté(s) doivent être compressé(s) au format .zip.
+
+*Exemple : requête en vue d'ajouter une ou plusieurs unité(s) archivistique(s) à une transaction dont l’identifiant est «  aeeaaaaaachj3m7nabjocamcdqr2rqaaaaaq »*
 
 ```  
   @transaction-id= *aeeaaaaaachj3m7nabjocamcdqr2rqaaaaaq*
@@ -2685,11 +2561,18 @@ Cette action provoque :
 
     -   un intitulé (Title), correspondant au nom d’un répertoire ou d’un objet binaire présent dans l’arborescence bureautique.
 
-    À chaque enregistrement, est associé l’identifiant de la transaction (_opi).
+    À chaque enregistrement, sont associés :
+	-   l’identifiant de la transaction (_opi) ;
+	-   un identifiant de batch (_batchId) ;
+	-   la localisation initiale du dossier ou du fichier dans l'arborescence (_uploadPath),
+	-   l'identifiant du service producteur (_sp et _sps) ;
 
 -   la création de métadonnées techniques dans la base de données MongoDB, dans la collection « ObjectGroup » (base *MetadataCollect[^12]*) ;
 
-    À chaque enregistrement, est associé l’identifiant de la transaction (_opi) ;
+    À chaque enregistrement, sont associés :
+	-   l’identifiant de la transaction (_opi) ;
+	-   un identifiant de batch (_batchId) ;
+	-   l'identifiant du service producteur (_sp) ;
 
 -   l’enregistrement des objets numériques sur les offres de stockage.
 -   la mise à jour des métadonnées techniques de l’objet avec, calculés lors de l’envoi du fichier numérique :
@@ -2703,20 +2586,19 @@ Lors de cette action, l’opération peut aboutir aux résultats suivants :
 | Statut | Motifs |
 | --- | --- |
 | Succès | Action réalisée sans rencontrer de problèmes particuliers. |
-| Échec |  Le fichier .zip n’a pas été téléchargé pour cause de nom erroné ou de chemin introuvable<br> La transaction n’existe pas ou est erronée.<br>La transaction a été clôturée.<br>Le GUID de la position cible est erroné |
+| Échec |  - Le fichier .zip n’a pas été téléchargé pour cause de nom erroné ou de chemin introuvable.<br>- La transaction n’existe pas ou est erronée.<br>- La transaction a été clôturée.<br>- L'identifiant technique de la position cible est erroné. |
 
 Elle n’est pas journalisée dans le journal des opérations.
 
-Point d’attention :
+***Point d’attention :***
 
 -   Aucun fichier ne doit avoir un poids équivalent à 0 octet.
 -   Au terme de la V.8.1, il est recommandé que les noms de répertoires et de fichiers ne contiennent ni caractère accentué, ni virgule, ni apostrophe, ni parenthèse, ni espace, ni élément de ponctuation, ou tout autre caractère spécial. Ne sont à privilégier que l’underscore et le tiret comme séparateurs.
-
     Néanmoins, s’ils en contiennent et si l’arborescence bureautique émane d’un environnement Windows, il est recommandé d’utiliser l’outil Winzip pour la zipper, afin d’éviter des problèmes d’encodage.
 
 ##### Utilisation dans VitamUI
 
-L’APP « Collecte et préparation des versements » du front-office VitamUI fournie avec la solution logicielle Vitam permet d'ajouter des unités archivistiques dans une transaction, à l'endroit de l'arborescence défini, au moyen d’un wizard ou boîte de dialogue contenant une fenêtre d'upload.
+L’APP « Collecte et préparation des versements » du front-office VitamUI fournie avec la solution logicielle Vitam permet d'ajouter des archives supplémentaires dans une transaction, en choisissant sa position cible dans l'arborescence, au moyen d’un wizard ou boîte de dialogue contenant une fenêtre d'upload.
 
 #### Suppression d'archives
 
@@ -2753,6 +2635,7 @@ La solution logicielle Vitam permet de supprimer une à plusieurs unités archi
 ```  
 
 Cette action provoque la suppression :
+
     -   des unités archivistiques de la collection « Unit » (base *MetadataCollect*) ;
     -   des groupes d’objets techniques de la collection « ObjectGroup » (base *MetadataCollect*).
     -   des objets des offres de stockage ;
@@ -2844,7 +2727,7 @@ L’élément (ou vocabulaire) est associé à un **type** particulier[^27]. On 
 -   « string » : texte ;
 -   « number » : nombre, entier ou décimal ;
 -   « integer » : nombre entier ;
--   « boolean » : booléen dont la valeur est true ou false ;
+-   « boolean » : booléen dont la valeur est « true » ou false ;
 -   « object » : objet ;
 -   « array » : liste ou tableau de valeurs textuelles.
 
@@ -2958,7 +2841,7 @@ Le bloc définissant les **règles de gestion** contient également des particul
 
  *Exemple : Le bloc AppraisalRule déclare deux règles différentes dans le sous-bloc Rules, « APP-00001 » et « APP-00002 », et définit un blocage sur la catégorie de règle avec le sous-bloc PreventInheritance.*
 ```  
-  "\#management": {
+  "#management": {
    "AppraisalRule": {
    "Rules": [ {
    "Rule": "APP-00001",
@@ -3049,91 +2932,82 @@ Dans le cas d’un flux automatisé, à l’exception de l’intitulé (« Name
 
 - ajouter des règles de transformation exprimées dans un format JSLT[^54].
 
-### Quels sont les services disponibles ?
-
-Le module de collecte met à disposition des services :
--  via les API
--  depuis l'APP « Collecte et préparation des versements » du front-office VitamUI fournie avec la solution logicielle Vitam.
-
-Voici un tableau récapitulatif des services disponibles, mettant en évidence les nouveautés des deux dernières versions publiées de la solution logicielle Vitam :
-
-|---|APP Collecte|Back module de collecte|
-|Configurer des versements|Crée N projets de versement :<br/>- Pour des versements manuels<br/>- Pour des versements de flux automatisés|Crée N projets de versement :<br/>- Pour des versements manuels<br/>- Pour des versements de flux automatisés|
-|(Pré-)Verser les archives|- Crée automatiquement 1 transaction associée (mode lot ou unitaire) pour 1 projet de versement manuel préalablement créé.<br/>- Ne crée pas de transaction associée à un projet de versement automatique.<br/>- **Ajouts a posteriori possibles d’archives (mode lot) - version 8.1**|- Crée N transactions associées avec ses archives (mode lot ou *unitaire*).<br/>- Ajouts a posteriori possibles d’archives (**mode lot - version 8.1** - ou unitaire)|
-|Consulter les (pré-)versement(s)|- Liste les projets de versement<br/>- Recherche dans les projets de versement<br/>- Affichage du détail d’un projet de versement<br/>- Liste les transactions associées à un projet<br/>- Liste les archives d’une transaction<br/>- Recherche simple / avancée / arborescence dans les archives d’une transaction<br/>- Affichage du détail d’une unité (métadonnées descriptives et de gestion, métadonnées techniques)<br/>- Téléchargement de l’objet numérique<br/>|- Liste les projets de versement<br/>- Recherche dans les projets de versement<br/>- Affichage du détail d’un projet de versement<br/>- Liste les transactions associées à un projet<br/>- *Affichage du détail d’une transaction*<br/>- Liste les archives d’une transaction<br/>- Recherche simple / avancée / arborescence dans les archives d’une transaction<br/>- Affichage du détail d’une unité (métadonnées descriptives et de gestion, métadonnées techniques)<br/>- Téléchargement de l’objet numérique|
-|Traiter les archives|- définition et mise à jour de métadonnées contextuelles,<br/>- identification de format,<br/>- calcul d’empreintes,<br/>- calcul du poids de l’objet numérique,<br/>- mise à jour de métadonnées descriptives et de gestion (par import de fichier .csv),<br/>- mise à jour unitaire de métadonnées descriptives,<br/>- **suppression d'archives - version 8.1**,<br/>- **réorganisation d'archives - version 8.1**,<br/>- gestion de statuts (ex. réouverture ou abandon d’un (pré-)versement)|- définition et mise à jour de métadonnées contextuelles,<br/>- identification de format,<br/>- calcul d’empreintes,<br/>- calcul du poids de l’objet numérique,<br/>- mise à jour de métadonnées descriptives et de gestion (par import de fichier .csv et *.jsonl*),<br/>- mise à jour unitaire en masse de métadonnées descriptives et de gestion,<br/>- **suppression d'archives - version 8.1**,<br/>- **réorganisation d'archives - version 8.1**,<br/>- gestion de statuts (ex. réouverture ou abandon d’un (pré-)versement),<br/>- *suppression unitaire d’un (pré-versement) et d’un projet de versement*|
-|Transférer les archives|- Générer un SIP<br/>- Suppression automatique|- Générer un SIP<br/>- Suppression automatique|
-|Gestion des droits|- **Trois groupes de profils : administrateur, archiviste, service producteur - version 8.0**,<br/>- **Possibilité de filtrage des accès aux projets par service producteur - version 8.0**.||
-
 ### Quels sont les rattachements possibles ?
 
 On peut déclarer des règles de rattachement de plusieurs manières dans le module de collecte. Ces règles peuvent être cumulables en fonction de leur utilisation.
 
 Dans un **projet de versement**, il est possible de déclarer :
--  une position unique de rattachement (champ UnitUp) ou "rattachement statique",
--  une à plusieurs position(s) de rattachement en fonction de la définition de conditions à respecter dans le versement (champ UnitUps) ou "rattachement dynamique".
+
+-  une position unique de rattachement (champ UnitUp) ou « rattachement statique »,
+-  une à plusieurs position(s) de rattachement en fonction de la définition de conditions à respecter dans le versement (champ UnitUps) ou « rattachement dynamique ».
 Ces deux paramètres sont cumulables.
 
 Les règles appliquées sont les suivantes :
--  si un projet définit ces deux paramètres et si une unité archivistique entrante répond à une condition par clé/valeur,
-   - elle sera rattachée à la position déclarée dans la condition de rattachement dynamique,
-   - la règle de rattachement statique ne sera pas pris en compte, car ce sont les règles de rattachement dynamique qui l'emportent ;
--  si un projet définit ces deux paramètres et si une unité archivistique entrante ne répond à aucune condition par clé/valeur,
-   - elle sera rattachée à la position de rattachement statique,
-   - elle ne sera rattachée à aucune position de rattachement dynamique.
--  si un projet définit plusieurs conditions de rattachement dynamique et si une unité archivistique entrante a des correspondances avec plusieurs conditions,
-   - elle sera rattachée à plusieurs positions de rattachement.
--  si un projet définit plusieurs conditions de rattachement dynamique mais pas de rattachement statique et si une unité archivistique entrante n'a aucune correspondance avec ces conditions,
-   - elle ne sera rattachée à aucune position de rattachement.
 
-***Point d'attention***: Les règles de rattachement statique et dynamique ne sont pas cumulables l'APP « Collecte et préparation des versements » du front-office VitamUI fournie avec la solution logicielle Vitam.
--  Pour un projet de versement manuel, on ne peut définir qu'un rattachement statique,
--  Pour un projet de versement automatique, on peut :
-   - soit définir un rattachement statique,
-   - soit définir un rattachement dynamique.
+-   si un projet définit ces deux paramètres et si une unité archivistique entrante répond à une condition par clé/valeur,
+   -   elle sera rattachée à la position déclarée dans la condition de rattachement dynamique,
+   -   la règle de rattachement statique ne sera pas pris en compte, car ce sont les règles de rattachement dynamique qui l'emportent ;
+-   si un projet définit ces deux paramètres et si une unité archivistique entrante ne répond à aucune condition par clé/valeur,
+   -   elle sera rattachée à la position de rattachement statique,
+   -   elle ne sera rattachée à aucune position de rattachement dynamique.
+-   si un projet définit plusieurs conditions de rattachement dynamique et si une unité archivistique entrante a des correspondances avec plusieurs conditions,
+   -   elle sera rattachée à plusieurs positions de rattachement.
+-   si un projet définit plusieurs conditions de rattachement dynamique mais pas de rattachement statique et si une unité archivistique entrante n'a aucune correspondance avec ces conditions,
+   -   elle ne sera rattachée à aucune position de rattachement.
+
+***Point d'attention***: Les règles de rattachement statique et dynamique ne sont pas cumulables dans l'APP « Collecte et préparation des versements » du front-office VitamUI fournie avec la solution logicielle Vitam.
+
+-   Pour un projet de versement manuel, on ne peut définir qu'un rattachement statique,
+-   Pour un projet de versement automatique, on peut :
+   -   soit définir un rattachement statique,
+   -   soit définir un rattachement dynamique.
    Mais on ne peut pas définir les deux paramètres dans un même projet de versement.
 
 Il est également possible de déclarer des rattachements lors de l'**import d'une arborescence bureautique** associée à un fichier .jsonl ou .csv.
 Il est alors nécessaire de :
--  ajouter un répertoire matérialisant l'unité archivistique dans laquelle on souhaite rattacher l'arborescence bureautique,
--  déclarer ce répertoire dans le fichier .jsonl ou .csv accompagnant l'arborescence bureautique.
-   Ne devront être renseignées que les informations suivantes : 
-	    -  File
-		- DescriptionLevel, 
-		-  Title,
-		-  UpdateOperation.ArchiveUnitIdentifierKey.MetadataName et Management.UpdateOperation.ArchiveUnitIdentifierKey.MetadataValue OU UpdateOperation.SystemId.
+
+-   ajouter un répertoire matérialisant l'unité archivistique dans laquelle on souhaite rattacher l'arborescence bureautique,
+-   déclarer ce répertoire dans le fichier .jsonl ou .csv accompagnant l'arborescence bureautique.
+    Ne devront être renseignées que les informations suivantes : 
+	    -   File,
+		-   DescriptionLevel, 
+		-   Title,
+		-   UpdateOperation.ArchiveUnitIdentifierKey.MetadataName et Management.UpdateOperation.ArchiveUnitIdentifierKey.MetadataValue OU UpdateOperation.SystemId.
 
 ***Point d'attention*** :
--  Un rattachement ne peut être déclaré que dans un répertoire racine.
--  UpdateOperation.ArchiveUnitIdentifierKey.MetadataName et UpdateOperation.SystemId ne sont pas cumulables. Pour une unité archivistique, on ne peut renseigner que l'un ou l'autre, mais pas les deux en même temps.
--  Si on a employé UpdateOperation.ArchiveUnitIdentifierKey.MetadataName, il faut nécessairement déclarer UpdateOperation.ArchiveUnitIdentifierKey.MetadataValue et inversement.
--  Si le projet de versement associé à la transaction déclare un rattachement statique et/ou un rattachement dynamique et
+
+-   Un rattachement ne peut être déclaré que dans un répertoire racine.
+-   UpdateOperation.ArchiveUnitIdentifierKey.MetadataName et UpdateOperation.SystemId ne sont pas cumulables. Pour une unité archivistique, on ne peut renseigner que l'un ou l'autre, mais pas les deux en même temps.
+-   Si on a employé UpdateOperation.ArchiveUnitIdentifierKey.MetadataName, il faut nécessairement déclarer UpdateOperation.ArchiveUnitIdentifierKey.MetadataValue et inversement.
+-   Si le projet de versement associé à la transaction déclare un rattachement statique et/ou un rattachement dynamique et
 et si le fichier .jsonl ou .csv associé à l'arborescence bureautique déclare un rattachement, alors les règles de rattachement déclarées dans le projet de versement ne seront pas appliquées.
 Dans cette arborescence, si une unité archivistique racine ne déclare pas de rattachement, alors le rattachement statique et/ou dynamique s'appliquera. 
--  Un rattachement ne peut être ajouté lors d'une mise à jour des métadonnées, notamment par envoi de fichier .jsonl ou .csv.
+-   Un rattachement ne peut être ajouté lors d'une mise à jour des métadonnées, notamment par envoi de fichier .jsonl ou .csv.
 
 Par ailleurs, un rattachement peut être :
--  ajouté suite à l'utilisation d'une **transformation paramétrée dans un projet de versement via des commandes JSLT**.
+
+-   ajouté suite à l'utilisation d'une **transformation paramétrée dans un projet de versement via des commandes JSLT**.
 Si le projet déclare en plus un rattachement statique et/ou dynamique, ce dernier ne sera pas appliqué.
 Le module de collecte exécute en priorité les transformations de rattachement exprimées en JSLT.
--  supprimé suite à l'utilisation d'une transformation paramétrée dans un projet de versement. 
-Si le projet déclare un rattachement statique et/ou dynamique, ce dernier pourra être appliqué, suivant les règles définies plus haut.
-Si les conditions de rattachement définies dans les ordres de transformation JSLT ne sont pas réunies et
-si le projet déclare un rattachement statique et/ou dynamique, ce dernier pourra être appliqué, suivant les règles définies plus haut.
+-   supprimé suite à l'utilisation d'une transformation paramétrée dans un projet de versement. 
+    -   Si le projet déclare un rattachement statique et/ou dynamique, ce dernier pourra être appliqué, suivant les règles définies plus haut.
+    -   Si les conditions de rattachement définies dans les ordres de transformation JSLT ne sont pas réunies et si le projet déclare un rattachement statique et/ou dynamique, ce dernier pourra être appliqué, suivant les règles définies plus haut.
 
-Enfin, il est possible d'**ajouter des répertoires dans une transaction**. Si ces répertoires sont accompagnés d'un fichier .jsonl ou .csv,
-celui-ci ne peut contenir des informations de rattachement. 
-S'il en contient, l'ajout des répertoires sera en échec.
+Enfin, il est possible d'**ajouter des répertoires dans une transaction**. 
+
+-   Si ces répertoires sont accompagnés d'un fichier .jsonl ou .csv, celui-ci ne peut contenir des informations de rattachement. 
+-   S'il en contient, l'ajout des répertoires sera en échec.
 
 ### Comment paramétrer des règles de transformation ?
 
 La solution logicielle Vitam permet d’agir sur les métadonnées des archives versées au moyen d’une configuration au format JSLT paramétrée dans un projet de versement (TransformationRules). 
 Dans cette configuration, il est possible de demander :
-- l’ajout de métadonnées descriptives ou de gestion de manière systématique, le cas échéant en fonction de critères à définir ;
-- la suppression de métadonnées,
-- la modification de métadonnées en fonction de critères à définir ;
-- la transformation de métadonnées en des métadonnées conformes au SEDA ;
-- la modification de valeurs renseignées dans les métadonnées afin de les nettoyer (ex. ajout de majuscule, suppression d’espaces, etc).
+
+-   l’ajout de métadonnées descriptives ou de gestion de manière systématique, le cas échéant en fonction de critères à définir ;
+-   la suppression de métadonnées,
+-   la modification de métadonnées en fonction de critères à définir ;
+-   la transformation de métadonnées en des métadonnées conformes au SEDA ;
+-   la modification de valeurs renseignées dans les métadonnées afin de les nettoyer (ex. ajout de majuscule, suppression d’espaces, etc.).
 
 Le but d’un fichier au format JSLT est de transformer du JSON[^55]. Son application est toujours évaluée par rapport à une entrée, appelée « le nœud de contexte ». Le résultat peut être un objet, un nombre, une chaîne de caractères, une valeur nulle (« null »), etc., exprimé au format JSON, format dans lequel sont transformées les métadonnées une fois importées dans le module de collecte[^56]. 
 
@@ -3168,7 +3042,7 @@ Prenons l'entrée suivante :
 
 #### Absence d'actions sur les données entrantes
 
-Si l’on souhaite uniquement ajouter des métadonnées, sans agir sur les données entrantes, il faudra déclarer les métadonnées à ajouter, suivies de l’expression « * : . ».
+Si l’on souhaite uniquement ajouter des métadonnées, sans agir sur les données entrantes, il faudra déclarer les métadonnées et les valeurs à ajouter, suivies de l’expression « * : . ».
 
 *Exemple : Ajout d’un Tag dont la valeur est « Fiche matricule » en plus des autres métadonnées entrantes.
 
@@ -3198,26 +3072,26 @@ Si l’on souhaite uniquement ajouter des métadonnées, sans agir sur les donn�
 }
 ``` 
 
-L’expression « * : . » est présente à deux endroits :
--  dans le bloc #management car il peut y avoir d’autres règles de gestion dans les données entrantes,
--  dans le nœud courant afin de récupérer la globalité des informations.
+***Point d'attention :*** L’expression « * : . » est présente à deux endroits :
+
+-   dans le bloc #management car il peut y avoir d’autres règles de gestion dans les données entrantes,
+-   dans le nœud courant afin de récupérer la globalité des informations.
 
 #### Actions sur les données entrantes
 
-Si l’on souhaite agir sur les données entrantes, il faudra **nommer** la métadonnée en la préfixant d’un point (ex. DocumentType). On parlera alors de « clé ».
+Si l’on souhaite agir sur les données entrantes, il faudra **nommer** la métadonnée en la préfixant d’un point (ex. .DocumentType). On parlera alors de « clé ».
 Voici quelques règles en fonction de la métadonnée concernée :
 
 |**Type d'élément**|**Nommage possible de la clé**|**Résultat obtenu en sortie**|**Commentaires**|
 |:-----:|:-----:|:-----:|:-----:|
-|Élément « feuille »|.DocumentType|"Fiche matricule"<br/>Soit la(les) valeur(s) de la métadonnée DocumentType||
-|Élément englobant|.Coverage|"Temporal" : ["XXème siècle","1ère guerre mondiale","1914-1918"],"Spatial" : ["France","Verdun"].<br/>Soit la(les) métadonnée(s) englobée(s) et leur(s) valeur(s)||
-|Élément englobé|.Coverage.Temporal|["XXème siècle","1ère guerre mondiale","1914-1918"]<br/>Soit la(les) valeur(s) de la métadonnée Temporal.||
-|Élément avec caractères spéciaux|."ID-ARK"|"mon-domaine/12345/eaferzebn13bac"<br/>Soit la(les) valeur(s) de la métadonnée ID-ARK|Si une des clés à utiliser contient des caractères spéciaux, il est nécessaire de mettre son nom entre guillemets, sans quoi la clé ne fonctionnera pas.|
-|Éléments factorisés|.Coverage | [.Temporal, .Spatial]|[ "XXème siècle", "1ère guerre mondiale", "1914-1918" ], [ "France" ]|L'expression à gauche du pipe devient le nœud de contexte pour l'expression à droite. Il permet en quelque sorte de factoriser le nœud parent commun.
-<br/>Cela équivaut à écrire "[.Coverage.Temporal, .Coverage.Spatial, .Coverage.Juridictional]".|
-|Elément variabilisé|let varDocumentType = .DocumentType<br/>Usage : $varDocumentType|"Fiche matricule"|Il est possible de définir des variables pour découper des expressions complexes ou éviter de recalculer plusieurs fois la même chose.|
+|Élément « feuille »|.DocumentType|"Fiche matricule"<br>Soit la(les) valeur(s) de la métadonnée DocumentType||
+|Élément englobant|.Coverage|"Temporal" : ["XXème siècle","1ère guerre mondiale","1914-1918"],"Spatial" : ["France","Verdun"].<br>Soit la(les) métadonnée(s) englobée(s) et leur(s) valeur(s)||
+|Élément englobé|.Coverage.Temporal|["XXème siècle","1ère guerre mondiale","1914-1918"]<br>Soit la(les) valeur(s) de la métadonnée Temporal.||
+|Élément avec caractères spéciaux|."ID-ARK"|"mon-domaine/12345/eaferzebn13bac"<br>Soit la(les) valeur(s) de la métadonnée ID-ARK|Si une des clés à utiliser contient des caractères spéciaux, il est nécessaire de mettre son nom entre guillemets, sans quoi la clé ne fonctionnera pas.|
+|Éléments factorisés|.Coverage | [.Temporal, .Spatial]|[ "XXème siècle", "1ère guerre mondiale", "1914-1918" ], [ "France" ]|L'expression à gauche du pipe devient le nœud de contexte pour l'expression à droite. Il permet en quelque sorte de factoriser le nœud parent commun.<br>Cela équivaut à écrire "[.Coverage.Temporal, .Coverage.Spatial, .Coverage.Juridictional]".|
+|Elément variabilisé|let varDocumentType = .DocumentType<br>Usage : $varDocumentType|"Fiche matricule"|Il est possible de définir des variables pour découper des expressions complexes ou éviter de recalculer plusieurs fois la même chose.|
 
-On pourra **insérer des expressions dans un nouvel objet** au moyen de l’appel à ces clés. En d’autres termes, on peut, par exemple, ajouter de métadonnées dans lequel on insérera les valeurs d’une clé passée en paramètre.
+On pourra **insérer des expressions dans un nouvel objet** au moyen de l’appel à ces clés. En d’autres termes, on peut, par exemple, ajouter une métadonnée dans laquelle on insérera les valeurs d’une clé passée en paramètre.
 
 **Point d’attention :** Si une expression produit null, {} ou [], la clé est omise.
 
@@ -3243,14 +3117,14 @@ Il est également possible de vouloir conserver l’ensemble des valeurs du fich
 
 Il est possible d'intervenir sur les données entrantes de manière à agir sur la sortie via :
 
--  l'**indexation en tableau** avec le paramètre [index]. 
-   Ainsi, .Coverage.Temporal[0] donnerait "XXème siècle" en utilisant l’exemple général d’entrée du début de ce document.
-   On peut également découper des tableaux. Par exemple, .Coverage.Temporal[1 : 3] donnera ["XXème siècle", "1914-1918"]. Le premier indice est donc inclusif et que le dernier est exclusif. Par ailleurs, le compte de l’index commence toujours à 0.
-   Les indices négatifs sont autorisés pour référencer les éléments en partant de la fin du tableau. Ainsi, [-1] renverrait le dernier élément du tableau. 
-   Cela fonctionne aussi avec le découpage : pour supprimer le premier et le dernier élément, il faut écrire [1 : -1].
-   Ce mode permet de sélectionner les données à extraire.
+-   l'**indexation en tableau** avec le paramètre [index]. 
+    Ainsi, .Coverage.Temporal[0] donnerait "XXème siècle" en utilisant l’exemple général d’entrée du début de ce document.
+    On peut également découper des tableaux. Par exemple, .Coverage.Temporal[1 : 3] donnera ["XXème siècle", "1914-1918"]. Le premier indice est donc inclusif et que le dernier est exclusif. Par ailleurs, le compte de l’index commence toujours à 0.
+    Les indices négatifs sont autorisés pour référencer les éléments en partant de la fin du tableau. Ainsi, [-1] renverrait le dernier élément du tableau. 
+    Cela fonctionne aussi avec le découpage : pour supprimer le premier et le dernier élément, il faut écrire [1 : -1].
+    Ce mode permet de sélectionner les données à extraire.
    
--  les **fonctions intégrées** proposées par JSLT qui permettent de transformer les données[^57].
+-   les **fonctions intégrées** proposées par JSLT qui permettent de transformer les données[^57].
 
    *Exemple : Passage en majuscules des valeurs de la métadonnée Title et remplacement de la valeur de la métadonnée DocumentType ("Registre matricule" devient "Fiche matricule").*
 
@@ -3261,27 +3135,28 @@ Il est possible d'intervenir sur les données entrantes de manière à agir sur 
    }
    ```
 
--  de **nouvelles fonctions**, qu'il faut déclarer en amont des expressions de transformation du fichier JSLT.
-   La syntaxe est la suivante :
+-   de **nouvelles fonctions**, qu'il faut déclarer en amont des expressions de transformation du fichier JSLT.
+    La syntaxe est la suivante :
         def Nomfonction(paramètre(s))
 	       <expression>
-   Il est possible d’utiliser des variables préalablement définies au sein de la définition d’une fonction. Les fonctions peuvent également s'appeler elles-mêmes et appeler d'autres fonctions déjà définies.
+    Il est possible d’utiliser des variables préalablement définies au sein de la définition d’une fonction. Les fonctions peuvent également s'appeler elles-mêmes et appeler d'autres fonctions déjà définies.
 
 **Point d'attention :** Si deux fonctions différentes utilisent le même nom, seule la dernière fonction définie sera prise en compte. 
 
-- des **opérateurs**.
+-   des **opérateurs**.
 
 |**Type**|**Opérateur**|
 |:-----:|:-----:|
-|Mathématiques|+ : addition.<br/>Il sert également à la concaténation de chaînes de caractères, tableaux et objets. |<br/>- : soustraction<br/>* : multiplication<br/>/ : division|
-|Comparaisons |> : supérieur à<br/>< : inférieur à<br/>≥ : supérieur ou égal à<br/>≤ : inférieur ou égal à<br/>!= : différent de<br/>== : égal à|
+|Mathématiques|+ : addition.<br>Il sert également à la concaténation de chaînes de caractères, tableaux et objets. |<br>- : soustraction<br>* : multiplication<br>/ : division|
+|Comparaisons |> : supérieur à<br>< : inférieur à<br>≥ : supérieur ou égal à<br>≤ : inférieur ou égal à<br>!= : différent de<br>== : égal à|
 |Boléens      |and, or, not(etc.) |
 
 Dans le fichier .jslt, on peut introduire :
--  des **expressions conditionnelles** telles que : if (<expr>) <expr> else <expr>.
-   L'expression if retourne toujours une valeur et ne fait rien d'autre. 
-   La partie else peut être omise, auquel cas l'expression if retournera null si la condition est fausse.
-   Les valeurs false, null, {} et [] sont évaluées comme false. 
+
+-   des **expressions conditionnelles** telles que : if (<expr>) <expr> else <expr>.
+    L'expression if retourne toujours une valeur et ne fait rien d'autre. 
+    La partie else peut être omise, auquel cas l'expression if retournera null si la condition est fausse.
+    Les valeurs false, null, {} et [] sont évaluées comme false. 
 
    *Exemple : Ajout d'un champ Tag récupérant la valeur du champ DocumenType si le champ DocumentType est présent et contient une valeur dans les données entrantes.*
 
@@ -3296,13 +3171,13 @@ Dans le fichier .jslt, on peut introduire :
 	 }
   
    *Résultat :*
-   -  Si le champ DocumentType est présent et contient une valeur dans les données entrantes :
+   -   Si le champ DocumentType est présent et contient une valeur dans les données entrantes :
 
    {
      "Tag" : [ "Registre matricule" ]
    }
 
-   - S'il n'y a aucun résultat, la transformation ajoutera le champ Tag et la valeur "Registre matricule" :
+   -   S'il n'y a aucun résultat, la transformation ajoutera le champ Tag et la valeur "Registre matricule" :
 
    {
      "Tag" : [ "Registre matricule" ]
@@ -3310,12 +3185,13 @@ Dans le fichier .jslt, on peut introduire :
    ```
 
    **Points d'attention :**
-   -  Ecrire if(.DocumentType!=null) est équivalent à utiliser if(.DocumentType).
-   -  Dans l'exemple ci-dessus, utiliser des conditions permet non seulement de transformer les métadonnées entrantes (DocumentType devient Tag), mais aussi d'uniformiser les saisies de valeurs quand on sait que certaines métadonnées ne sont pas systématiquement renseignées.
+   
+   -   Ecrire if(.DocumentType!=null) est équivalent à utiliser if(.DocumentType).
+   -   Dans l'exemple ci-dessus, utiliser des conditions permet non seulement de transformer les métadonnées entrantes (DocumentType devient Tag), mais aussi d'uniformiser les saisies de valeurs quand on sait que certaines métadonnées ne sont pas systématiquement renseignées.
 
--  des **boucles** telles que : [for (<expr>) <expr>].
-   L'expression for permet de parcourir un tableau et de transformer chaque élément en appliquant une expression.
-   L'expression entre parenthèses est comprise comme un tableau sur lequel on boucle. Pour chaque élément du tableau, la seconde expression est évaluée.
+-   des **boucles** telles que : [for (<expr>) <expr>].
+    L'expression for permet de parcourir un tableau et de transformer chaque élément en appliquant une expression.
+    L'expression entre parenthèses est comprise comme un tableau sur lequel on boucle. Pour chaque élément du tableau, la seconde expression est évaluée.
 
    *Exemple : Ajout d'un champ Tag récupérant les valeurs du champ Temporal que l'on souhaite transformer en majuscules.*
 
@@ -3323,9 +3199,50 @@ Dans le fichier .jslt, on peut introduire :
    {"Tag" : [for (.Coverage.Temporal) trim(uppercase(.))]}
    ```
 
-   Une boucle peut être aussi utilisée pour : 
-   -   transformer les valeurs d’un tableau de nombres à chaînes de caractères en utilisant la fonction string(.), 
-   -   transformer un tableau en objet.
+    Une boucle peut être aussi utilisée pour : 
+    -   transformer les valeurs d’un tableau de nombres à chaînes de caractères en utilisant la fonction string(.), 
+    -   transformer un tableau en objet.
+
+### Quels sont les profils utilisateurs possibles ?
+
+L’APP « Collecte et préparation des versements » du front-office VitamUI fournie avec la solution logicielle Vitam
+propose trois profils utilisateurs :
+-   administrateur,
+-   archiviste,
+-   service producteur.
+
+Chacun d'eux a la possibilité d'agir sur cette APP à des degrés différents :
+
+| Profil utilisateur | Administrateur | Archiviste | Service producteur |
+|---|---|---|---|
+|Créer une transaction| oui | oui |oui |
+|Valider une transaction| oui | oui |oui |
+|Verser une transaction| oui | oui | non |
+|Ajouter des archives| oui | oui | oui |
+|Réorganiser des arborescences| oui | oui | non |
+|Supprimer des archives| oui | oui | non |
+|Modifier unitairement des archives| oui | oui | oui |
+|Modifier des archives par import de fichier .csv| oui | oui | non |
+
+Par ailleurs, il est possible de restreintre d'accès aux projets et aux transactions via l'utilisation d'un contrat d'accès. 
+Ainsi, un utilisateur du front-office VitamUI devant accéder aux projets de versement d'un service en particulier, et à ses transactions, pourra ne voir que ceux-là si son profil utilisateur est associé à un contrat d'accès lui permettant d'accéder uniquement aux archives de ce service.
+
+### Quels sont les services disponibles ?
+
+Le module de collecte met à disposition des services :
+-  via les API
+-  depuis l'APP « Collecte et préparation des versements » du front-office VitamUI fournie avec la solution logicielle Vitam.
+
+Voici un tableau récapitulatif des services disponibles, mettant en évidence les nouveautés des deux dernières versions publiées de la solution logicielle Vitam :
+
+|---|APP Collecte|Back module de collecte|
+|---|---|---|
+|Configurer des versements|Crée N projets de versement :<br/>- Pour des versements manuels<br/>- Pour des versements de flux automatisés|Crée N projets de versement :<br/>- Pour des versements manuels<br/>- Pour des versements de flux automatisés|
+|(Pré-)Verser les archives|- Crée automatiquement 1 transaction associée (mode lot ou unitaire) pour 1 projet de versement manuel préalablement créé.<br/>- Ne crée pas de transaction associée à un projet de versement automatique.<br/>- **Ajouts a posteriori possibles d’archives (mode lot) - version 8.1**|- Crée N transactions associées avec ses archives (mode lot ou *unitaire*).<br/>- Ajouts a posteriori possibles d’archives (**mode lot - version 8.1** - ou unitaire)|
+|Consulter les (pré-)versement(s)|- Liste les projets de versement<br/>- Recherche dans les projets de versement<br/>- Affichage du détail d’un projet de versement<br/>- Liste les transactions associées à un projet<br/>- Liste les archives d’une transaction<br/>- Recherche simple / avancée / arborescence dans les archives d’une transaction<br/>- Affichage du détail d’une unité (métadonnées descriptives et de gestion, métadonnées techniques)<br/>- Téléchargement de l’objet numérique<br/>|- Liste les projets de versement<br/>- Recherche dans les projets de versement<br/>- Affichage du détail d’un projet de versement<br/>- Liste les transactions associées à un projet<br/>- *Affichage du détail d’une transaction*<br/>- Liste les archives d’une transaction<br/>- Recherche simple / avancée / arborescence dans les archives d’une transaction<br/>- Affichage du détail d’une unité (métadonnées descriptives et de gestion, métadonnées techniques)<br/>- Téléchargement de l’objet numérique|
+|Traiter les archives|- définition et mise à jour de métadonnées contextuelles,<br/>- identification de format,<br/>- calcul d’empreintes,<br/>- calcul du poids de l’objet numérique,<br/>- mise à jour de métadonnées descriptives et de gestion (par import de fichier .csv),<br/>- mise à jour unitaire de métadonnées descriptives,<br/>- **suppression d'archives - version 8.1**,<br/>- **réorganisation d'archives - version 8.1**,<br/>- gestion de statuts (ex. réouverture ou abandon d’un (pré-)versement)|- définition et mise à jour de métadonnées contextuelles,<br/>- identification de format,<br/>- calcul d’empreintes,<br/>- calcul du poids de l’objet numérique,<br/>- mise à jour de métadonnées descriptives et de gestion (par import de fichier .csv et *.jsonl*),<br/>- mise à jour unitaire en masse de métadonnées descriptives et de gestion,<br/>- **suppression d'archives - version 8.1**,<br/>- **réorganisation d'archives - version 8.1**,<br/>- gestion de statuts (ex. réouverture ou abandon d’un (pré-)versement),<br/>- *suppression unitaire d’un (pré-versement) et d’un projet de versement*|
+|Transférer les archives|- Générer un SIP<br/>- Suppression automatique|- Générer un SIP<br/>- Suppression automatique|
+|Gestion des droits|- **Trois groupes de profils : administrateur, archiviste, service producteur - version 8.0**,<br/>- **Possibilité de filtrage des accès aux projets par service producteur - version 8.0**.||
 
 
 
@@ -3348,13 +3265,15 @@ Annexe 1 : Exemples de données entrantes
 }
 ```
 
-### Unités archivistiques
+### Création unitaire d'archives
+
+#### Unités archivistiques
 
 ```
 {
     "DescriptionLevel": "RecordGrp",
     "Title": "Discours de Michel Mercier",
-    "\#management": {
+    "#management": {
       "AccessRule": {
             "Rules": [
                 {
@@ -3366,7 +3285,7 @@ Annexe 1 : Exemples de données entrantes
       }
 }
 ```
-### Objets
+#### Objets
 
 ```
 {
@@ -3376,12 +3295,70 @@ Annexe 1 : Exemples de données entrantes
 }
 ```
 
+### Création d'archives en lot avec fichier .jsonl
+
+ *Exemple 1 : contenu d’un fichier « metadata.jsonl ».*
+
+```
+{ "File": "File", "UnitContent": { "DescriptionLevel": "Collection", "Title": "File", "Description": "Ceci est un versement de bulletins de paie", "StartDate": "2023-01-01", "EndDate": "2023-01-31", "Tag": [ "Paie", "Bulletin" ] } }
+{ "File": "File/BP_123456_20230131.pdf", "UnitContent": { "DescriptionLevel": "Item", "Title": "BP_123456_20230131.pdf", "OriginatingSystemId": [ "BP_123456_20230131" ], "Agent": [ { "FirstName": "DUPONT", "BirthName": "Charles", "Identifier": [ "123456" ] } ], "SentDate": "2023-01-31", "AcquiredDate": "2023-01-20", "Tag": [ "Salaire" ], "#management": { "AppraisalRule": { "Rules": [ { "Rule": "APP-00001", "StartDate": "2023-01-20" } ], "FinalAction": "Destroy" }, "AccessRule": { "Rules": [ { "Rule": "ACC-00016", "StartDate": "2023-01-20" } ] } } } }
+{ "File": "File/BP_123463_20230131.pdf", "UnitContent": { "DescriptionLevel": "Item", "Title": "BP_123463_20230131.pdf", "OriginatingSystemId": [ "BP_123463_20230131" ], "Agent": [ { "FirstName": "DUPOND", "BirthName": "Victor", "Identifier": [ "123463" ] } ], "SentDate": "2023-01-31", "AcquiredDate": "2023-01-20", "Tag": [ "Salaire" ], "#management": { "AppraisalRule": { "Rules": [ { "Rule": "APP-00002", "StartDate": "2023-01-20" } ], "FinalAction": "Destroy" }, "AccessRule": { "Rules": [ { "Rule": "ACC-00016", "StartDate": "2023-01-20" } ] } } } }
+{ "File": "File/BP_123464_20230131.pdf", "UnitContent": { "DescriptionLevel": "Item", "Title": "BP_123464_20230131.pdf", "OriginatingSystemId": [ "BP_123464_20230131" ], "Agent": [ { "FirstName": "CHARLES", "BirthName": "Ray", "Identifier": [ "123464" ] } ], "SentDate": "2023-01-31", "AcquiredDate": "2023-01-20", "Tag": [ "Salaire" ], "#management": { "AppraisalRule": { "Rules": [ { "Rule": "APP-00002", "StartDate": "2023-01-20" } ], "FinalAction": "Destroy" }, "AccessRule": { "Rules": [ { "Rule": "ACC-00016", "StartDate": "2023-01-20" } ] } } } } 
+```
+
+ *Exemple 2 : contenu d’un fichier « metadata.jsonl » décrivant un contexte de signature détachée.*
+
+```  
+{ "File" : "My Root Folder", "ObjectFiles": "SomeFile.xml", "UnitContent": { "Title": "My Root Folder (with attached SomeFile.xml)" } }
+{ "File" : "My Root Folder/MyFile1.txt", "ObjectFiles": null, "UnitContent": { "Title": "My Root Folder/MyFile1.txt" } }
+{ "File" : "My Root Folder/MyFile2.txt", "ObjectFiles": "My Root Folder/MyFile2.txt", "UnitContent": { "Title": "My Root Folder/MyFile2.txt" } }
+{ "File" : "My Root Folder/SubFolder", "ObjectFiles": "My Root Folder/SubFolder/MyFile3.txt", "UnitContent": { "Title": "My Root Folder/SubFolder (with attached MyFile3.txt)" } }
+{ "Selector" : { "#uploadPath" : "Yet Another Folder" }, "ObjectFiles": "My Root Folder/SubFolder/MyFile4.txt", "UnitContent": { "Title": "Yet Another Folder (with attached MyFile4.txt)" } }
+```
+
+ *Exemple 3 : contenu d’un fichier « metadata.jsonl » déclarant un rattachement.*
+
+```
+{ "File": "Discours hors parlement", "UnitContent": { "DescriptionLevel": "RecordGrp", "Title": "Discours hors parlement", "#management": { "UpdateOperation": { "ArchiveUnitIdentifierKey" : { "MetadataName" : "ArchivalAgencyArchiveUnitIdentifier", "MetadataValue" : "20130456/3"} }  } } }
+{ "File": "Discours hors parlement/Discours d'inauguration", "UnitContent": { "DescriptionLevel": "RecordGrp", "Title": "Discours d’inauguration" } }
+{ "File": "Discours hors parlement/Discours d'inauguration/Inauguration de Notre-Dame.odt", "UnitContent": { "DescriptionLevel": "Item", "Title": "Inauguration de Notre-Dame" } }
+ 
+```
+
+### Création d'archives en lot avec fichier .csv
+
+ *Exemple 1 : contenu d’un fichier « metadata.csv ».*
+
+```csv  
+  "File";"Content.DescriptionLevel";"Content.Title";"Content.FilePlanPosition";"Content.ArchivalAgencyArchiveUnitIdentifier";"Content.Description";"Content.CustodialHistory.CustodialHistoryItem.0";"Content.CustodialHistory.CustodialHistoryItem.1";"Content.CustodialHistory.CustodialHistoryItem.2";"Content.DocumentType";"Content.Language";"Content.DescriptionLanguage";"Content.Version";"Content.Tag.0";"Content.Tag.1";"Content.Tag.2";"Content.Tag.3";"Content.Tag.4";"Content.Keyword.0.KeywordContent";"Content.Keyword.0.KeywordType";"Content.Keyword.1.KeywordContent";"Content.Keyword.1.KeywordType";"Content.Keyword.2.KeywordContent";"Content.Keyword.2.KeywordType";"Content.Keyword.3.KeywordContent";"Content.Keyword.3.KeywordType";"Content.Keyword.4.KeywordContent";"Content.Keyword.4.KeywordType";"Content.Coverage.Spatial.0";"Content.Coverage.Spatial.1";"Content.Coverage.Spatial.2";"Content.Coverage.Spatial.3";"Content.Coverage.Temporal";"Content.Coverage.Juridictional.0";"Content.Coverage.Juridictional.1";"Content.Coverage.Juridictional.2";"Content.Coverage.Juridictional.3";"Content.OriginatingAgency.Identifier";"Content.SubmissionAgency.Identifier";"Content.StartDate";"Content.EndDate";"Management.AccessRule.Rule";"Management.AccessRule.StartDate"
+  "AU1\27juillet1888\5FI6\_5FI6\_16";"RecordGrp";"Brantes. Combe de la Mure.";"instrument_recherche/5FI6/5FI6_16";"5 Fi 6/16";"Dim. 18x24 cm.";;;;;"fre";"fre";"Original";"Combe de la Mure (Brantes, Vaucluse, France)";"Brantes (Vaucluse, France)";;;;"Combe de la Mure (Brantes, Vaucluse, France)";"geogname";"Brantes (Vaucluse, France)";"geogname";;;;;;;"Combe de la Mure (Brantes, Vaucluse, France)";"Brantes (Vaucluse, France)";;;1888;"Combe de la Mure (Brantes, Vaucluse, France)";"Brantes (Vaucluse, France)";;;;;;"1888-12-30T00:00:00";"ACC-00001";"1888-12-30"
+  "AU1\27juillet1888";"RecordGrp";"Clichés du 27 juillet 1888";;;;;;;;"fre";"fre";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+```
+
+ *Exemple 2 : contenu d’un fichier « metadata.csv » décrivant un contexte de signature détachée.*
+
+```csv  
+  "File";"ObjectFiles";"Content.DescriptionLevel";"Content.Title";"Content.Description";"Content.DocumentType";"Content.Tag";"Content.EndDate";"Content.SigningInformation.SigningRole.0";"Content.SigningInformation.SigningRole.1";"Content.SigningInformation.SigningRole.2";"Content.SigningInformation.SignatureDescription.0.Signer.FullName";"Content.SigningInformation.SignatureDescription.0.Signer.SigningTime";"Content.SigningInformation.TimestampingInformation.TimeStamp";"Content.SigningInformation.AdditionalProof.0.AdditionalProofInformation.0";"Content.SigningInformation.AdditionalProof.0.AdditionalProofInformation.1";"Management.AppraisalRule.Rule";"Management.AppraisalRule.StartDate";"Management.AppraisalRule.FinalAction";"Management.AccessRule.Rule";"Management.AccessRule.StartDate"
+  "**Parapheur**";"Parapheur\20230615_note_Vu AB.pdf";"Item";"20230615_note_Vu AB.pdf";"Parapheur créé par Al Capone. Note";"Document signé";"Note";"2023-06-15";"SignedDocument";"Signature";"Timestamp";"Al Capone";"2023-06-15T11:18:12";"2023-06-15T11:18:12";"EvidenceRecords";"Report";"APP-00003";"2023-06-15";"Keep";"ACC-00020";"2023-06-15"
+  "Parapheur\aeaaaaaaaaecb7ovabhryamreeao2oyaaaaq-evidenceRecord.pdf";"**Parapheur\aeaaaaaaaaecb7ovabhryamreeao2oyaaaaq-evidenceRecord.pdf**";"Item";"aeaaaaaaaaecb7ovabhryamreeao2oyaaaaq-evidenceRecord.pdf";;"Fichier de preuve";;;"AdditionalProof";;;;;;;;;;;;
+  "Parapheur\report_aeaaaaaaaaecb7ovabhryamreeao2oyaaaaq.pdf";"**Parapheur\report_aeaaaaaaaaecb7ovabhryamreeao2oyaaaaq.pdf**";"Item";"report_aeaaaaaaaaecb7ovabhryamreeao2oyaaaaq.pdf";;"Rapport";;;"AdditionalProof";;;;;;;;;;;;```
+```
+
+ *Exemple 3 : contenu d’un fichier « metadata.csv » déclarant un rattachement.*
+
+```csv  
+  "File";"Content.DescriptionLevel";"Content.Title";**"Management.UpdateOperation.ArchiveUnitIdentifierKey.MetadataName**";"**Management.UpdateOperation.ArchiveUnitIdentifierKey.MetadataValue**"
+  "Discours hors parlement";"RecordGrp";"Discours hors parlement";"**ArchivalAgencyArchiveUnitIdentifier**";"**20130456/3**"
+  "Discours hors parlement\Discours d'inauguration";"RecordGrp";"Discours d’inauguration";;
+  "Discours hors parlement\Discours d'inauguration\Inauguration de Notre-Dame.odt";"Item";"Inauguration de Notre-Dame";;
+```
+
 Annexe 2 : Types JSON
 ---------------------
 
 Pour les éléments propres au SEDA, le tableau suivant précise les types de certains d’entre eux :
 
--   Métadonnées d’en-tête :
+-   *Métadonnées d’en-tête :*
 
 |                               | obligatoire | string | number | boolean | object | array|
 |---|---|---|---|---|---|---|
@@ -3395,7 +3372,7 @@ Pour les éléments propres au SEDA, le tableau suivant précise les types de ce
 |  ArchivalProfile              |             | x      |        |         |        | |
 |  AcquisitionInformation       |             | x      |        |         |        | |
 
--   Métadonnées descriptives et de gestion d’une unité archivistique :
+-   *Métadonnées descriptives et de gestion d’une unité archivistique :*
 
 |                                      | obligatoire | string | number | boolean | object | array|
 |---|---|---|---|---|---|---|
@@ -3569,14 +3546,14 @@ Annexe 3 : Liste des points d’API
 | objects           | Récupère un groupe d’objets techniques | transaction:object:read | GET       | /collect-external/v1/objects/{gotId}/|
 
 
-Annexe 4 : Exemples de Exemples de transformations JSLT
--------------------------------------------------------
+Annexe 4 : Exemples de transformations JSLT
+-------------------------------------------
 
 *Nota bene *: les cas présentés ci-dessous sont des exemples fictifs.
 
 ### Exemple 1
 
-On souhaite transformer les métadonnées du fichier CSV suivant :
+On souhaite transformer les métadonnées du fichier .csv suivant :
 
 ``` 
 File;Content.NomDocument;Content.Description;Content.Cote;Content.DateDerniereModif;Content.SortFinal
@@ -3604,8 +3581,8 @@ En sachant qu'on souhaite :
 -   créer une métadonnée ArchivalAgencyArchiveUnitIdentifier reprenant les valeurs de la métadonnée Cote,
 -   créer une métadonnée Title reprenant les valeurs de la métadonnée NomDocument,
 -   ajouter des règles de gestion :
-	- règle de communicabilité avec "ACC-00001" pour règle et les valeurs de la métadonnée DateDerniereModif pour date de début (StartDate),
-    - une DUA avec pour sort final les valeurs de la métadonnée SortFinal
+    -   règle de communicabilité avec "ACC-00001" pour règle et les valeurs de la métadonnée DateDerniereModif pour date de début (StartDate),
+    -   une DUA avec pour sort final les valeurs de la métadonnée SortFinal
 -   ne pas reprendre les contenus des colonnes NomDocument, Cote, DateDerniereModif, SortFinal,
 -   récupérere le contenu de la métadonnée Description,
 
@@ -3653,7 +3630,7 @@ Le résultat obtenu sera le suivant :
 
 ### Exemple 2
 
-On souhaite transformer les métadonnées du fichier CSV suivant :
+On souhaite transformer les métadonnées du fichier .csv suivant :
 
 ``` 
 File;Content.Title;Content.Description;Content.StartDate;Content.ArchivalAgencyArchiveUnitIdentifier;Content.Tag;Management.AppraisalRule.FinalAction
@@ -3748,7 +3725,7 @@ Le résultat obtenu sera le suivant :
 
 ### Exemple 3
 
-On souhaite transformer les métadonnées du fichier CSV suivant :
+On souhaite transformer les métadonnées du fichier .csv suivant :
 
 ``` 
 File;Content.Title;Content.Description;Content.ArchivalAgencyArchiveUnitIdentifier;Content.Addressee.0.FirstName;Content.Addressee.0.BirthName;Content.Addressee.0.BirthDate;Content.Addressee.1.FirstName;Content.Addressee.1.BirthName;Content.Addressee.1.BirthDate;Management.AppraisalRule.Rule;Management.AppraisalRule.StartDate;Management.AppraisalRule.FinalAction
@@ -3887,118 +3864,134 @@ Annexe 5 : Liste de fonctions JSLT
 ### Fonctions générales
 
 **contains(element, sequence) -> boolean	oui**
-Renvoie "true" si *element* est contenu dans *sequence*, "false" sinon.
-*sequence* peut être un tableau, une chaîne de caractères ou un objet.
-- Si *sequence* est un tableau, *element* doit être un élément de ce tableau.
-- Si *sequence* est une chaîne de caractères, *element* est converti en chaîne et doit être une sous-chaîne de sequence. Si element est null, le résultat est false.
-- Si *sequence* est un objet, *element* est converti en chaîne et doit être une clé de l’objet.
 
-**Exemples :**
+Renvoie « true » si *element* est contenu dans *sequence*, sinon renvoie « false ».
+*sequence* peut être un tableau, une chaîne de caractères ou un objet :
+-   Si *sequence* est un tableau, *element* doit être un élément de ce tableau.
+-   Si *sequence* est une chaîne de caractères, *element* est converti en chaîne et doit être une sous-chaîne de sequence. Si element est « null », le résultat est « false ».
+-   Si *sequence* est un objet, *element* est converti en chaîne et doit être une clé de l’objet.
+
+*Exemples :*
 ```
-    • contains(null, [1, 2, 3])      => false  
-    • contains(1, [1, 2, 3])         => true  
-    • contains(0, [1, 2, 3])         => false  
-    • contains("no", {"no" : false}) => true  
-    • contains(1, {"1" : false})     => true  
-    • contains("ab", "abc")          => true
+-   contains(null, [1, 2, 3])      => false  
+-   contains(1, [1, 2, 3])         => true  
+-   contains(0, [1, 2, 3])         => false  
+-   contains("no", {"no" : false}) => true  
+-   contains(1, {"1" : false})     => true  
+-   contains("ab", "abc")          => true
 ```
 
 **size(sequence) -> integer**
-Renvoie le nombre d'éléments dans *sequence*, qui peut être un tableau, un objet ou une chaîne.
-Si *sequence* est "null", la fonction renvoie "null".
 
-**Exemples :**
+Renvoie le nombre d'éléments dans *sequence*, qui peut être un tableau, un objet ou une chaîne de caractères.
+Si *sequence* est « null », la fonction renvoie « null ».
+
+*Exemples :*
 ```
-    • size([1, 2, 3]) => 3  
-    • size({"1" : 3}) => 1  
-    • size("abcdef")  => 6  
-    • size(null)      => null
+-   size([1, 2, 3]) => 3  
+-   size({"1" : 3}) => 1  
+-   size("abcdef")  => 6  
+-   size(null)      => null
 ```
 	
 **error(message)**
+
 Interrompt la transformation avec une erreur et affiche le message donné en paramètre.
-**Exemple :**
+
+*Exemple :*
 ```
 if (not(is-array(.things)))  
   error("'things' is not an array")
 ```
   
 **fallback(arg1, arg2, ...) -> value**
-Renvoie le premier argument qui a une valeur, c'est-à-dire le premier qui n'est ni "null", ni un tableau vide [], ni un objet vide {}.
 
-**Exemples :**
+Renvoie le premier argument qui a une valeur, c'est-à-dire le premier qui n'est ni « null », ni un tableau vide « [] », ni un objet vide « {} ».
+
+*Exemples :*
 ```
-    • fallback(.not_existing_key, .another_not_existing, 1)  => 1  
-    • fallback(null, [], {}, "value")                        => "value"
+-   fallback(.not_existing_key, .another_not_existing, 1)  => 1  
+-   fallback(null, [], {}, "value")                        => "value"
 ```
 	
 **min(arg1, arg2) -> value**
-Renvoie l’argument le plus petit selon la comparaison.
-Si un des arguments est "null", le résultat est "null".
 
-**Exemple :**
-```
-    • min(10, 1)    -> 1  
-    • min("a", "b") -> "a"  
-    • min(10, null) -> null
-```
-	
-**max(arg1, arg2) -> value**
-Renvoie l’argument le plus grand selon la comparaison.
-Si un des arguments est "null", le résultat est "null".
+Renvoie l’argument le plus petit selon la comparaison.
+Si un des arguments est « null », le résultat est « null ».
 
 *Exemple :*
 ```
-    • max(10, 1)    -> 10  
-    • max("a", "b") -> "b"  
-    • max(10, null) -> null  
+-   min(10, 1)    -> 1  
+-   min("a", "b") -> "a"  
+-   min(10, null) -> null
+```
+	
+**max(arg1, arg2) -> value**
+
+Renvoie l’argument le plus grand selon la comparaison.
+Si un des arguments est « null », le résultat est « null ».
+
+*Exemple :*
+```
+-   max(10, 1)    -> 10  
+-   max("a", "b") -> "b"  
+-   max(10, null) -> null  
 ```
 
 ### Fonctions string
 
 **is-string(object) -> boolean**
-Renvoie "true" si l’argument est une chaîne de caractères, sinon "false".
 
-**Exemples :**
+Renvoie « true » si l’argument est une chaîne de caractères, sinon renvoie « false ».
+
+*Exemples :*
 ```
-    • is-string(null)    => false  
-    • is-string("hello") => true  
-    • is-string(123)     => false  
-    • is-string([])      => false  
+-   is-string(null)    => false  
+-   is-string("hello") => true  
+-   is-string(123)     => false  
+-   is-string([])      => false  
 ```
 **string(object, fallback?) -> string**
-Convertit l’argument en chaîne de caractères si possible.
-    • Les nombres, booléens et objets sont convertis en chaînes.
-    • "null" renvoie "null".
-    • Tout autre type provoque une erreur, sauf si un fallback est spécifié.
+
+Convertit l’argument en chaîne de caractères si cela est possible.
+-   Les nombres, booléens et objets sont convertis en chaînes de caractères.
+-   « null » renvoie « null ».
+-   Tout autre type provoque une erreur, sauf si un *fallback* est spécifié.
 	
-**Exemples :**
+*Exemples :*
 ```
-    • string(123)     => "123"  
-    • string(true)    => "true"  
-    • string(null)    => null  
-    • string([1, 2])  => error  
-    • string([1, 2], "fallback") => "fallback"  *
+-   string(123)     => "123"  
+-   string(true)    => "true"  
+-   string(null)    => null  
+-   string([1, 2])  => error  
+-   string([1, 2], "fallback") => "fallback"  *
 ```
 
 **test(input, regexp) -> boolean**
-Cette fonction renvoie « true » si et seulement si l'entrée correspond à l'expression régulière (regexp). Elle renvoie « true » si l'expression correspond uniquement à une partie de la chaîne, sauf si les ancres ^ et $ sont utilisées. Si l'entrée est null, la fonction retourne false.
 
-**Exemples :**
+Cette fonction renvoie « true » si et seulement si l'entrée correspond à l'expression régulière (*regexp*). 
+Elle renvoie « true » si l'expression correspond uniquement à une partie de la chaîne, sauf si les ancres ^ et $ sont utilisées. 
+Si l'entrée est « null », la fonction retourne « false ».
+
+*Exemples :*
 ```
-    • test("123", "\d+") => Erreur (\d n'est pas un code d'échappement connu)
-    • test("123", "\d+") => true
-    • test("abc123", "\d+") => true (une correspondance partielle suffit)
-    • test("abc123", "^\d+$") => false
+-   test("123", "\d+") => Erreur (\d n'est pas un code d'échappement connu)
+-   test("123", "\d+") => true
+-   test("abc123", "\d+") => true (une correspondance partielle suffit)
+-   test("abc123", "^\d+$") => false
 ```
 
 **capture(input, regexp) -> object**
-Si l'entrée correspond à l'expression régulière (regexp), la fonction retourne un objet contenant une clé pour chaque groupe nommé dans l'expression. Si l'entrée est null, la fonction retourne null. Si l'expression ne correspond pas, un objet vide est retourné.
+
+Si l'entrée correspond à l'expression régulière (*regexp*), la fonction retourne un objet contenant une clé pour chaque groupe nommé dans l'expression. 
+Si l'entrée est « null », la fonction retourne « null ». 
+Si l'expression ne correspond pas, un objet vide est retourné.
+
 Par exemple, étant donné l'entrée suivante :
 ```
 {"schema" : "http://schemas.schibsted.io/thing/pulse-simple.json#1.json"}
 ```
-la fonction capture() peut être utilisée avec l'expression régulière suivante :
+la fonction *capture()* peut être utilisée avec l'expression régulière suivante :
 ```
 capture(.schema, "http://(?<host>[^/]+)/(?<rest>.+)")
 ```
@@ -4012,387 +4005,425 @@ Les deux groupes nommés (host et rest) correspondent à différentes parties de
 ```
 
 **split(string, separator) -> array**
+
 Cette fonction divise la chaîne en un tableau de sous-chaînes en utilisant *separator*.
 Si *separator* est une chaîne vide "", la chaîne est divisée caractère par caractère.
 
-**Exemples :**
+*Exemples :*
 ```
-    • split("a,b,c", ",")  => ["a", "b", "c"]  
-    • split("hello", "")   => ["h", "e", "l", "l", "o"]  
-    • split("one|two", "|") => ["one", "two"]
+-   split("a,b,c", ",")  => ["a", "b", "c"]  
+-   split("hello", "")   => ["h", "e", "l", "l", "o"]  
+-   split("one|two", "|") => ["one", "two"]
 ```
 	
 **join(array, separator) -> string**
-Cette fonction concatène les éléments du tableau en une seule chaîne, séparés par *separator*.
+
+Cette fonction concatène les éléments du tableau en une seule chaîne de caractères, séparés par *separator*.
 Si *array* est vide, une chaîne vide est renvoyée.
 
-Exemples :
+*Exemples :*
 ```
-    • join(["a", "b", "c"], ",")  => "a,b,c"  
-    • join(["one", "two"], "|")   => "one|two"  
-    • join([], ",")               => ""  
+-   join(["a", "b", "c"], ",")  => "a,b,c"  
+-   join(["one", "two"], "|")   => "one|two"  
+-   join([], ",")               => ""  
 ```
 
 **lowercase(string) -> string**
-Convertit la chaîne en minuscules.
-Si l’argument est null, il est retourné tel quel.
 
-**Exemples :**
+Convertit la chaîne de caractères en minuscules.
+Si l’argument est « null », il est retourné tel quel.
+
+*Exemples :*
 ```
-    • lowercase("HELLO") => "hello"  
-    • lowercase(null)    => null  
+-   lowercase("HELLO") => "hello"  
+-   lowercase(null)    => null  
 ```
-***Point d'attention***: les fonctions lowercase() et uppercase() ne comprennent que les caractères ASCII.
+***Point d'attention***: les fonctions *lowercase()* et *uppercase()* ne comprennent que les caractères ASCII.
 
 **uppercase(string) -> string**
+
 Convertit la chaîne en majuscules.
 Si l’argument est null, il est retourné tel quel.
 
-**Exemples :**
+*Exemples :*
 ```
-    • uppercase("hello") => "HELLO"  
-    • uppercase(null)    => null
+-   uppercase("hello") => "HELLO"  
+-   uppercase(null)    => null
 ```
 
-***Point d'attention***: les fonctions lowercase() et uppercase() ne comprennent que les caractères ASCII.
+***Point d'attention***: les fonctions *lowercase()* et *uppercase()* ne comprennent que les caractères ASCII.
 
 **sha256-hex(string) -> string**
-Cette fonction génère une chaîne contenant la représentation hexadécimale du hachage SHA256 de la chaîne d'entrée.
 
-**Exemples :**
+Cette fonction génère une chaîne de caractères contenant la représentation hexadécimale du hachage SHA256 de la chaîne d'entrée.
+
+*Exemples :*
  ```
-    • sha256-hex("foo") => "2c26b46b68ffc68ff99b453c1d30413413422d706483bfa0f98a5e886266e7ae"
-    • sha256-hex("42") => "73475cb40a568e8da8a045ced110137e159f890ac4da883b6b17dc651b3a8049"
-    • sha256-hex(42) => "73475cb40a568e8da8a045ced110137e159f890ac4da883b6b17dc651b3a8049"
-    • sha256-hex(null) => null
+-   sha256-hex("foo") => "2c26b46b68ffc68ff99b453c1d30413413422d706483bfa0f98a5e886266e7ae"
+-   sha256-hex("42") => "73475cb40a568e8da8a045ced110137e159f890ac4da883b6b17dc651b3a8049"
+-   sha256-hex(42) => "73475cb40a568e8da8a045ced110137e159f890ac4da883b6b17dc651b3a8049"
+-   sha256-hex(null) => null
 ```
 
 **starts-with(tested, prefix) -> boolean**
-Renvoie « true » si et seulement si la chaîne testée commence par le préfixe (prefix).
 
-**Exemples :**
+Renvoie « true » si et seulement si la chaîne testée commence par le préfixe (*prefix*).
+
+*Exemples :*
 ```
-    • starts-with("prohibition", "pro") => true
-    • starts-with("prohibition", "pre") => false
-    • starts-with(null, "pre") => false
+-   starts-with("prohibition", "pro") => true
+-   starts-with("prohibition", "pre") => false
+-   starts-with(null, "pre") => false
 ```
 
 **ends-with(tested, suffix) -> boolean**
-Renvoie « true » si et seulement si la chaîne testée se termine par le suffixe (suffix).
 
-**Exemples :**
+Renvoie « true » si et seulement si la chaîne testée se termine par le suffixe (*suffix*).
+
+*Exemples :*
 ```
-    • ends-with("prohibition", "pro") => false
-    • ends-with("prohibition", "ion") => true
-    • ends-with(null, "ion") => false
+-   ends-with("prohibition", "pro") => false
+-   ends-with("prohibition", "ion") => true
+-   ends-with(null, "ion") => false
 ```
 
 **from-json(string, fallback?) -> value**
-Cette fonction analyse la chaîne de caractère donnée (string) en tant que JSON et retourne le résultat. Ainsi, analyser "22" retournera 22. Si la chaîne est null, la fonction retournera null.
-Si l'argument facultatif fallback n'est pas spécifié, les erreurs d'analyse JSON provoqueront une erreur. Si cet argument est précisé, cette valeur sera retournée en cas d'échec de l'analyse JSON.
 
-**Exemples :**
+Cette fonction analyse la chaîne de caractères donnée (*string*) en tant que JSON et retourne le résultat. Ainsi, analyser "22" retournera 22. Si la chaîne est « null », la fonction retournera « null ».
+Si l'argument facultatif *fallback* n'est pas spécifié, les erreurs d'analyse JSON provoqueront une erreur. Si cet argument est précisé, cette valeur sera retournée en cas d'échec de l'analyse JSON.
+
+*Exemples :*
 ```
-    • from-json("[1,2]") => [1, 2]
-    • from-json("[1,2", "BAD") => "BAD"
-    • from-json("[1,2") => erreur
-    • from-json(null) => null
+-   from-json("[1,2]") => [1, 2]
+-   from-json("[1,2", "BAD") => "BAD"
+-   from-json("[1,2") => erreur
+-   from-json(null) => null
 ```
 
 **to-json(value) -> string**
-Cette fonction est l'inverse de *from-json*. Il prend donc une valeur JSON et la sérialise sous forme de chaîne.
 
-**Exemples :**
+Cette fonction est l'inverse de *from-json*. Il prend donc une valeur JSON et la sérialise sous forme de chaîne de caractères.
+
+*Exemples :*
 ```
-    • to-json([1,2]) => "[1, 2]"
-    • to-json(1) => "1"
-    • to-json("foo") => ""foo""
-    • to-json(null) => "null"
+-   to-json([1,2]) => "[1, 2]"
+-   to-json(1) => "1"
+-   to-json("foo") => ""foo""
+-   to-json(null) => "null"
 ```
 
 **replace(value, regexp, out) -> string**
-Cette fonction remplace chaque sous-chaîne de value correspondant à l'expression régulière regexp par out. Si value n'est pas une chaîne, elle est convertie en chaîne, sauf si elle est null. regexp et out doivent être des chaînes de caractères. 
+
+Cette fonction remplace chaque sous-chaîne de value correspondant à l'expression régulière *regexp* par *out*. Si *value* n'est pas une chaîne, elle est convertie en chaîne, sauf si elle est « null ». *regexp* et *out* doivent être des chaînes de caractères. 
 
 ***Point d'attention***: *regexp* ne peut être une chaîne vide.
 
-**Exemples :**
+*Exemples :*
 ```
-    • replace("abc def ghi", " ", "-") => "abc-def-ghi"
-    • replace("abc def ghi", "\s+", "-") => "abc-def-ghi"
-    • replace(null, "\s+", "-") => null
-    • replace(" whoah", "^\s+", "") => "whoah"
-    • replace("abc def ghi", "[a-z]", "x") => "xxx xxx xxx"
-    • replace("abc def ghi", "[a-z]+", "x") => "x x x"
+-   replace("abc def ghi", " ", "-") => "abc-def-ghi"
+-   replace("abc def ghi", "\s+", "-") => "abc-def-ghi"
+-   replace(null, "\s+", "-") => null
+-   replace(" whoah", "^\s+", "") => "whoah"
+-   replace("abc def ghi", "[a-z]", "x") => "xxx xxx xxx"
+-   replace("abc def ghi", "[a-z]+", "x") => "x x x"
 ```
 
 **trim(string) -> string**
-Cette fonction supprime les espaces au début et à la fin de la chaîne.
-Si l’argument est null, il est retourné tel quel. Les autres valeurs non textuelles sont converties en chaînes.
 
-**Exemples :**
+Cette fonction supprime les espaces au début et à la fin de la chaîne.
+Si l’argument est « null », il est retourné tel quel. Les autres valeurs non textuelles sont converties en chaînes de caractères.
+
+*Exemples :*
 ```
-    • trim("  hello  ") => "hello"
-    • trim(null)       => null
-    • trim("abc \t\r\n") => "abc"
+-   trim("  hello  ") => "hello"
+-   trim(null)       => null
+-   trim("abc \t\r\n") => "abc"
 ```
 	
 **uuid(long, long) -> string**
+
 Cette fonction génère une chaîne UUID formatée avec des tirets.
 
-**Exemples :**
+*Exemples :*
 ```
-    • uuid() => "b02c39c0-6f8f-4250-97cd-78500af36e27"
-    • uuid(123sh4567890, 1234567890) => "00000000-4996-102d-8000-0000499602d2"
-    • uuid(0, 0) => "00000000-0000-1000-8000-000000000000"
-    • uuid(null, null) => "00000000-0000-0000-0000-000000000000"
+-   uuid() => "b02c39c0-6f8f-4250-97cd-78500af36e27"
+-   uuid(123sh4567890, 1234567890) => "00000000-4996-102d-8000-0000499602d2"
+-   uuid(0, 0) => "00000000-0000-1000-8000-000000000000"
+-   uuid(null, null) => "00000000-0000-0000-0000-000000000000"
 ```
 
 ### Fonctions date
 
 **now() -> double**
+
 Cette fonction retourne le nombre de secondes écoulées depuis minuit, le 1er janvier 1970 UTC dans le fuseau horaire UTC. Les millisecondes sont renvoyées sous forme de décimales du nombre.
 
-**Exemples :**
+*Exemples :*
 ```
-    • now() -> 1.529677371698E9
-    • round(now()) -> 1529677391
+-   now() -> 1.529677371698E9
+-   round(now()) -> 1529677391
 ```
 
 **parse-time(time, format, fallback?) -> double**
-Analyse la date/heure en utilisant le format spécifié (au format date/heure de Java) et retourne le nombre de secondes écoulées depuis l'époque dans le fuseau horaire UTC. Si aucun fuseau horaire n'est spécifié dans la chaîne de date/heure, le fuseau horaire par défaut est UTC.
-Si le paramètre *fallback* n'est pas spécifié, la fonction génère une erreur si *time* est du mauvais type ou ne correspond pas au format. Si fallback est spécifié, cette valeur sera retournée à la place.
 
-**Exemples :**
+Analyse la date/heure en utilisant le format spécifié (au format date/heure de Java) et retourne le nombre de secondes écoulées depuis l'époque dans le fuseau horaire UTC. Si aucun fuseau horaire n'est spécifié dans la chaîne de date/heure, le fuseau horaire par défaut est UTC.
+-   Si le paramètre *fallback* n'est pas spécifié, la fonction génère une erreur si *time* est du mauvais type ou ne correspond pas au format. 
+-   Si *fallback* est spécifié, cette valeur sera retournée à la place.
+
+*Exemples :*
 ```
-    • parse-time("2018-05-30T11:46:37Z", "yyyy-MM-dd'T'HH:mm:ssX") => 1.527680797E9
-    • parse-time("2018-05-30T11:46:37", "yyyy-MM-dd'T'HH:mm:ssX") => error
-    • parse-time("2018-05-30T11:46:37", "yyyy-MM-dd'T'HH:mm:ssX", null) => null
-    • parse-time(null, "yyyy-MM-dd'T'HH:mm:ssX") => null
+-   parse-time("2018-05-30T11:46:37Z", "yyyy-MM-dd'T'HH:mm:ssX") => 1.527680797E9
+-   parse-time("2018-05-30T11:46:37", "yyyy-MM-dd'T'HH:mm:ssX") => error
+-   parse-time("2018-05-30T11:46:37", "yyyy-MM-dd'T'HH:mm:ssX", null) => null
+-   parse-time(null, "yyyy-MM-dd'T'HH:mm:ssX") => null
 ```
 
 **format-time(timestamp, format, timezone?) -> string**
-Cette fonction formate timestamp (le nombre de secondes écoulées depuis l'époque) en utilisant le format spécifié et retourne la chaîne formatée. Le fuseau horaire par défaut est UTC, mais il peut être remplacé en utilisant l'argument timezone.
 
-**Exemples :**
+Cette fonction formate *timestamp* (le nombre de secondes écoulées depuis l'époque) en utilisant le format spécifié et retourne la chaîne formatée. Le fuseau horaire par défaut est UTC, mais il peut être remplacé en utilisant l'argument *timezone*.
+
+*Exemples :*
 ```
-    • format-time(1529677391, "yyyy-MM-dd'T'HH:mm:ss") => "2018-06-22T14:23:11"
-    • format-time(0, "yyyy-MM-dd") => "1970-01-01"
-    • format-time(null, "yyyy-MM-dd") => null
+-   format-time(1529677391, "yyyy-MM-dd'T'HH:mm:ss") => "2018-06-22T14:23:11"
+-   format-time(0, "yyyy-MM-dd") => "1970-01-01"
+-   format-time(null, "yyyy-MM-dd") => null
 ```
 
 ### Fonctions booléen
 
 **boolean(value) -> boolean**
-Cette fonction convertit la valeur d'entrée en un booléen. Tout est considéré comme vrai, sauf null, [], {}, "", false et 0.
-**Exemples :**
+
+Cette fonction convertit la valeur d'entrée en un booléen. Tout est considéré comme « true », sauf « null », [], {}, "", « false » et 0.
+
+*Exemples :*
 ```
-    • boolean(null) => false
-    • boolean("") => false
-    • boolean(" ") => true
-    • boolean(0) => false
-    • boolean(1) => true
-    • boolean(true) => true
-    • boolean(false) => false
-    • boolean([]) => false
-    • boolean([1]) => true
+-   boolean(null) => false
+-   boolean("") => false
+-   boolean(" ") => true
+-   boolean(0) => false
+-   boolean(1) => true
+-   boolean(true) => true
+-   boolean(false) => false
+-   boolean([]) => false
+-   boolean([1]) => true
 ```
 
 **not(boolean) -> boolean**
-Cette fonction retourne la valeur booléenne opposée au paramètre. L'entrée est automatiquement convertie en booléen, donc not(null) retournera true.
 
-**Exemples :**
+Cette fonction retourne la valeur booléenne opposée au paramètre. L'entrée est automatiquement convertie en booléen, donc *not(null)* retournera « true ».
+
+*Exemples :*
 ```
-    • not(null) => true
-    • not("") => true
-    • not(" ") => false
-    • not(0) => true
-    • not(1) => false
-    • not(true) => false
-    • not(false) => true
-    • not([]) => true
-    • not([1]) => false
+-   not(null) => true
+-   not("") => true
+-   not(" ") => false
+-   not(0) => true
+-   not(1) => false
+-   not(true) => false
+-   not(false) => true
+-   not([]) => true
+-   not([1]) => false
 ```
 
 **is-boolean(value) -> boolean**
+
 Renvoie « true » si et seulement si la valeur est un booléen.
 
-**Exemples :**
+*Exemples :*
 ```
-    • is-boolean(null) => false
-    • is-boolean(true) => true
-    • is-boolean(false) => true
-    • is-boolean("") => false
-    • is-boolean(" ") => false
+-   is-boolean(null) => false
+-   is-boolean(true) => true
+-   is-boolean(false) => true
+-   is-boolean("") => false
+-   is-boolean(" ") => false
 ```
 
 ### Fonctions numériques
 
 **is-number(object) -> boolean**
-Renvoie true si l’argument object est un nombre, sinon false.
 
-**Exemples :**
+Renvoie « true » si l’argument *object* est un nombre, sinon renvoie « false ».
+
+*Exemples :*
 ```
-    • is-number(null) => false  
-    • is-number(1)    => true  
-    • is-number(1.0)  => true  
-    • is-number("1")  => false
+-   is-number(null) => false  
+-   is-number(1)    => true  
+-   is-number(1.0)  => true  
+-   is-number("1")  => false
 ```
 	
 **is-integer(object) -> boolean**
-Renvoie true si l’argument object  est un entier, sinon false.
 
-**Exemples :**
+Renvoie « true » si l’argument object  est un entier, sinon renvoie « false ».
+
+*Exemples :*
 ```
-    • is-integer(null) => false  
-    • is-integer(1)    => true  
-    • is-integer(1.0)  => false  
-    • is-integer("1")  => false
+-   is-integer(null) => false  
+-   is-integer(1)    => true  
+-   is-integer(1.0)  => false  
+-   is-integer("1")  => false
 ```
 	
 **is-decimal(object) -> boolean**
-Renvoie true si l’argument object est un nombre à virgule flottante, sinon false.
-Dans ce contexte, 1.0 est considéré comme un nombre à virgule flottante et 1 ne l'est pas.
 
-**Exemples :**
+Renvoie « true » si l’argument *object* est un nombre à virgule flottante, sinon renvoie « false ».
+Dans ce contexte, « 1.0 » est considéré comme un nombre à virgule flottante et « 1 » ne l'est pas.
+
+*Exemples :*
 ```
-    • is-decimal(null) => false  
-    • is-decimal(1)    => false  
-    • is-decimal(1.0)  => true  
-    • is-decimal("1.0")  => false
+-   is-decimal(null) => false  
+-   is-decimal(1)    => false  
+-   is-decimal(1.0)  => true  
+-   is-decimal("1.0")  => false
 ```
 
 **number(object, fallback?) -> integer|float**
-Convertit l’argument object en nombre si possible.
-    • Les entiers et les nombres décimaux sont retournés tels quels.
-    • Les chaînes sont converties en nombres.
-    • null renvoie null.
-    • Tout autre type provoque une erreur, sauf si un fallback est spécifié.
 
-**Exemples :**
+Convertit l’argument *object* en nombre si cela est possible.
+-   Les entiers et les nombres décimaux sont retournés tels quels.
+-   Les chaînes de caractères sont converties en nombres.
+-   « null » renvoie « null ».
+-   Tout autre type provoque une erreur, sauf si un *fallback* est spécifié.
+
+*Exemples :*
 ```
-    • number(23)      => 23  
-    • number("23")    => 23  
-    • number("023")   => 23  
-    • number(23.0)    => 23.0  
-    • number(".23")   =>  0.23  
-    • number("-.23")  => -0.23  
-    • number(null)    => null  
-    • number("ab")    => error  
-    • number("ab", 0) => 0
+-   number(23)      => 23  
+-   number("23")    => 23  
+-   number("023")   => 23  
+-   number(23.0)    => 23.0  
+-   number(".23")   =>  0.23  
+-   number("-.23")  => -0.23  
+-   number(null)    => null  
+-   number("ab")    => error  
+-   number("ab", 0) => 0
 ```
 	
 **round(float) -> integer**
-Arrondit l’argument à l'entier le plus proche.
-Les entiers et null sont retournés tels quels. Tout autre type provoque une erreur.
 
-**Exemples :**
+Arrondit l’argument à l'entier le plus proche.
+Les entiers et « null » sont retournés tels quels. Tout autre type provoque une erreur.
+
+*Exemples :*
 ```
-    • round(1)    => 1  
-    • round(1.0)  => 1  
-    • round(1.51) => 2  
-    • round(null) => null
+-   round(1)    => 1  
+-   round(1.0)  => 1  
+-   round(1.51) => 2  
+-   round(null) => null
 ```
 	
 **floor(float) -> integer**
+
 Arrondit l’argument à l'entier inférieur ou égal.
 
-**Exemples :**
+*Exemples :*
 ```
-    • floor(1)    => 1  
-    • floor(1.0)  => 1  
-    • floor(1.51) => 1  
-    • floor(null) => null
+-   floor(1)    => 1  
+-   floor(1.0)  => 1  
+-   floor(1.51) => 1  
+-   floor(null) => null
 ```
 
 **ceiling(float) -> integer**
+
 Arrondit l’argument à l'entier supérieur ou égal.
 
-**Exemples :**
+*Exemples :*
 ```
-    • ceiling(1)    => 1  
-    • ceiling(1.0)  => 1  
-    • ceiling(1.51) => 2  
-    • ceiling(null) => null
+-   ceiling(1)    => 1  
+-   ceiling(1.0)  => 1  
+-   ceiling(1.51) => 2  
+-   ceiling(null) => null
 ```
 
 **random() -> float**
+
 Renvoie un nombre aléatoire entre 0.0 et 1.0.
 
-**Exemple :**
+*Exemple :*
 ```
 random() => 0.24712712424
 ```
 
 **sum(array) -> number**
-Returns the sum of all the numbers in the array. The parameter must be an array, and all values in it must be numbers.
+
 Renvoie la somme des nombres d’un tableau. Le paramètre doit obligatoirement être un tableau constitué uniquement de nombres.
 
-**Exemples :**
+*Exemples :*
 ```
-    • sum([1,2,3])    => 6
-    • sum([1])        => 1 
-    • sum([1.0, 2.0]) => 3.0
-    • sum([])         => 0
-    • sum(null)       => null
+-   sum([1,2,3])    => 6
+-   sum([1])        => 1 
+-   sum([1.0, 2.0]) => 3.0
+-   sum([])         => 0
+-   sum(null)       => null
 ```
 
 **mod(a,d) -> integer**
-Renvoie a modulo d. Cette fonction est l’équivalent de l’opérateur % de la plupart des langages de programmation. Son comportement est néanmoins différent pour les nombres négatifs. Il renvoie un résultat compris entre 0 et abs(d).
-Mathématiquement, la fonction est défini de la façon suivante :
-a = d * floor(a / d) + mod(a, d)
 
-**Exemples :**
+Renvoie a modulo d. Cette fonction est l’équivalent de l’opérateur % de la plupart des langages de programmation. Son comportement est néanmoins différent pour les nombres négatifs. Il renvoie un résultat compris entre 0 et abs(d).
+Mathématiquement, la fonction est définie de la façon suivante :
 ```
-    • mod(10, 2)    => 0
-    • mod(10, 3)    => 1
-    • mod(10, 4)    => 2
-    • mod(-10, 3)   => 2
-    • mod(-10, -3)  => 2
-    • mod(10, -3)   => 1
-    • mod(null, 2)  => null
-    • mod(10, null) => null
-    • mod(10.5, 2)  => error
-    • mod(10, 2.1)  => error
-    • mod(10, "2")  => error
+a = d * floor(a / d) + mod(a, d)
+```
+
+*Exemples :*
+```
+-   mod(10, 2)    => 0
+-   mod(10, 3)    => 1
+-   mod(10, 4)    => 2
+-   mod(-10, 3)   => 2
+-   mod(-10, -3)  => 2
+-   mod(10, -3)   => 1
+-   mod(null, 2)  => null
+-   mod(10, null) => null
+-   mod(10.5, 2)  => error
+-   mod(10, 2.1)  => error
+-   mod(10, "2")  => error
 ```
 
 **hash-int(object) -> int**
-Renvoie une empreinte pour un object donné. L’empreinte est constituée uniquement de chiffres. Attention, dans des environnements différents, il est possible que pour un même objet l’empreinte retournée soit différente.
 
-**Exemples :**
+Renvoie une empreinte pour un *object* donné. L’empreinte est constituée uniquement de chiffres. 
+
+***Point d'attention***: Dans des environnements différents, il est possible que, pour un même objet, l’empreinte retournée soit différente.
+
+*Exemples :*
 ```
-    • hash-int("test") => 3556808
-    • hash-int("") => 310
-    • hash-int({}) => 8
-    • hash-int([]) => 1
-    • hash-int([1,2]) => 8928
-    • hash-int([2,1]) => 9858
-    • hash-int([1,2]) != hash-int([2,1]) => true
-    • hash-int(1) => 248
-    • hash-int(null) => 6
-    • hash-int({"a":1,"b":2}) => 10519540
-    • hash-int({"b":2,"a":1}) => 10519540
-    • hash-int({"a":1,"b":2}) == hash-int({"b":2,"a":1}) => true
+-   hash-int("test") => 3556808
+-   hash-int("") => 310
+-   hash-int({}) => 8
+-   hash-int([]) => 1
+-   hash-int([1,2]) => 8928
+-   hash-int([2,1]) => 9858
+-   hash-int([1,2]) != hash-int([2,1]) => true
+-   hash-int(1) => 248
+-   hash-int(null) => 6
+-   hash-int({"a":1,"b":2}) => 10519540
+-   hash-int({"b":2,"a":1}) => 10519540
+-   hash-int({"a":1,"b":2}) == hash-int({"b":2,"a":1}) => true
 ```
 
 ### Fonctions objet
 
 **is-object(value) -> boolean**
+
 Renvoie « true » si et seulement si la valeur est un objet.
 
-**Exemples :**
+*Exemples :*
 ```
-    • is-object(null) => false
-    • is-object({}) => true
-    • is-object([]) => false
-    • is-object("") => false
+-   is-object(null) => false
+-   is-object({}) => true
+-   is-object([]) => false
+-   is-object("") => false
 ```
 
 **get-key(object, key, fallback?) -> value**
-Fait la même chose que .key sur un objet, à la différence que la clé peut être dynamique. Autrement dit, elle peut provenir d'une variable, être recherchée dans des données d'entrée, etc.
-Si la clé n'existe pas, null est retourné si l'argument de secours (fallback) n'est pas fourni. Si fallback est spécifié, cette valeur sera retournée si la clé n'existe pas.
 
-**Exemple : Fonction retournant la valeur "Norway".**
+Fait la même chose que *.key* sur un objet, à la différence que la clé peut être dynamique. Autrement dit, elle peut provenir d'une variable, être recherchée dans des données d'entrée, etc.
+Si la clé n'existe pas :
+-   « null » est retourné si l'argument de secours (*fallback*) n'est pas fourni,
+-   si *fallback* est spécifié, cette valeur sera retournéee.
+
+*Exemple : Fonction retournant la valeur "Norway".*
 ```
 let lookup = {  
   "no" : "Norway",  
@@ -4402,7 +4433,7 @@ let lookup = {
 get-key($lookup, "no")
 ```
 
-**Exemple : Fonction utilisant une valeur de secours et retournant la valeur "<unknown>"**
+*Exemple : Fonction utilisant une valeur de secours et retournant la valeur "<unknown>"*
 ```
 let lookup = {  
   "no" : "Norway",  
@@ -4415,21 +4446,24 @@ get-key($lookup, "dk", "<unknown>")
 ### Fonctions tableau (array)
 
 **array(value) -> array**
+
 Cette fonction convertit la valeur d'entrée en un tableau. Les nombres, les booléens et les chaînes de caractères ne peuvent pas être convertis en tableau.
 Les objets sont convertis en tableaux sous la forme suivante :
+```
 [  
   {"key" : première clé, "value" : première valeur},  
   {"key" : deuxième clé, "value" : deuxième valeur},  
   {"key" : troisième clé, "value" : troisième valeur},  
   ...  
-]  
+]
+```
 
-**Exemples :**
+*Exemples :*
 ``` 
-    • array(null) => null
-    • array([1, 2]) => [1, 2]
-    • array("123") => error
-    • array({"a": 1, "b": 2}) =>  
+-   array(null) => null
+-   array([1, 2]) => [1, 2]
+-   array("123") => error
+-   array({"a": 1, "b": 2}) =>  
   	[  
     		{"key" : "a", "value" : 1},  
     		{"key" : "b", "value" : 2}  
@@ -4437,107 +4471,115 @@ Les objets sont convertis en tableaux sous la forme suivante :
 ``` 
 
 **is-array(value) -> boolean**
+
 Cette fonction renvoie « true » si et seulement si la valeur est un tableau.
 
-**Exemples :**
+*Exemples :*
 ``` 
-    • is-array(null) => false
-    • is-array([1, 2]) => true
-    • is-array("123") => false
+-   is-array(null) => false
+-   is-array([1, 2]) => true
+-   is-array("123") => false
 ``` 
 
 **flatten(array) -> array**
+
 Aplatit un tableau contenant d'autres tableaux de manière à ce que chaque valeur à l'intérieur d'un sous-tableau soit directement contenue dans le tableau de sortie. Tous les sous-tableaux à n'importe quel niveau d'imbrication sont aplatis, mais les objets et autres valeurs restent inchangés.
 
-**Exemples :**
+*Exemples :*
 ``` 
-    • flatten([[1,2], [3,4]]) => [1,2,3,4]
-    • flatten([1, 2, 3, 4]) => [1,2,3,4]
-    • flatten([1, [2, [3, [4, []]]]]) => [1,2,3,4]
-    • flatten(null) => null
+-   flatten([[1,2], [3,4]]) => [1,2,3,4]
+-   flatten([1, 2, 3, 4]) => [1,2,3,4]
+-   flatten([1, [2, [3, [4, []]]]]) => [1,2,3,4]
+-   flatten(null) => null
 ``` 
 
 **all(array) -> boolean**
+
 Cette fonction renvoie « true » si et seulement si tous les éléments du tableau sont évalués comme vrais.
 
-**Exemples :**
+*Exemples :*
 ``` 
-    • all([true, true, true]) => true
-    • all([true, true, false]) => false
-    • all(null) => null
-    • all([]) => true
-    • all("") => error
+-   all([true, true, true]) => true
+-   all([true, true, false]) => false
+-   all(null) => null
+-   all([]) => true
+-   all("") => error
 ``` 
 
 **any(array) -> boolean**
+
 Cette fonction renvoie « true » si et seulement si au moins un élément du tableau est évalué comme vrai.
 
-**Exemples :**
+*Exemples :*
 ``` 
-    • any([false, false, false]) => false
-    • any([false, false, true]) => true
-    • any(null) => null
-    • any([]) => false
-    • any("") => error
+-   any([false, false, false]) => false
+-   any([false, false, true]) => true
+-   any(null) => null
+-   any([]) => false
+-   any("") => error
 ``` 
 
 **zip(array1, array2) -> array**
-Fusionne les deux tableaux en un nouveau tableau constitué de tableaux à deux éléments. Le premier tableau à deux éléments contient le premier élément de array1 et le premier élément de array2, le second contient les deuxièmes éléments, et ainsi de suite. Une erreur est renovoyée si les deux tableaux ont des longueurs différentes.
 
-**Exemples :**
+Fusionne les deux tableaux en un nouveau tableau constitué de tableaux à deux éléments. Le premier tableau à deux éléments contient le premier élément de array1 et le premier élément de array2, le second contient les deuxièmes éléments, et ainsi de suite. Une erreur est renvoyée si les deux tableaux ont des longueurs différentes.
+
+*Exemples :*
 ``` 
-    • zip(["a", "b", "c"], [1, 2, 3]) => [["a", 1], ["b", 2], ["c", 3]]
-    • zip(["a", "b", "c"], null) => null
-    • zip(null, [1, 2, 3]) => null
-    • zip([], []) => []
-    • zip([1], []) => error
+-   zip(["a", "b", "c"], [1, 2, 3]) => [["a", 1], ["b", 2], ["c", 3]]
+-   zip(["a", "b", "c"], null) => null
+-   zip(null, [1, 2, 3]) => null
+-   zip([], []) => []
+-   zip([1], []) => error
 ``` 
 
 **zip-with-index(array) -> array**
+
 Cette fonction transforme un tableau en un nouveau tableau où chaque élément du tableau d'entrée est mappé à un objet sous la forme {"value" : <élément du tableau>, "index" : <index de l'élément>}.
 
-**Exemples :**
+*Exemples :*
 ``` 
-    • zip-with-index(["a", "b", "c"]) => [  
+-   zip-with-index(["a", "b", "c"]) => [  
           {"value" : "a", "index" : 0},  
           {"value" : "b", "index" : 1},  
           {"value" : "c", "index" : 2}  
       ]  
-    • zip-with-index([]) => []
-    • zip-with-index(null) => null
-    • zip-with-index("abc") => error
+-   zip-with-index([]) => []
+-   zip-with-index(null) => null
+-   zip-with-index("abc") => error
 ``` 
 
 **index-of(array, value) -> integer**
-Cette fonction retourne l'index de value dans array, ou -1 si la valeur ne peut pas être trouvée.
 
-**Exemples :**
+Cette fonction retourne l'index de *value* dans *array*, ou « -1 » si la valeur ne peut pas être trouvée.
+
+*Exemples :*
 ``` 
-    • index-of([], 1) => -1
-    • index-of([0, 1, 2], 1) => 1
-    • index-of([0, 1, 2, null], null) => 3
-    • index-of([0, 1, 2], null) => -1
-    • index-of(null, 1) => null
-    • index-of(1, 1) => error
+-   index-of([], 1) => -1
+-   index-of([0, 1, 2], 1) => 1
+-   index-of([0, 1, 2, null], null) => 3
+-   index-of([0, 1, 2], null) => -1
+-   index-of(null, 1) => null
+-   index-of(1, 1) => error
 ``` 
 
 ### Autres fonctions
 
 **parse-url(url) -> object**
-Cette fonction analyse l'URL et renvoie un objet avec les clés [scheme, userinfo, host, port, path, query, parameters, fragment].
 
-**Exemples :**
+Cette fonction analyse l'URL et renvoie un objet avec les clés [*scheme*, *userinfo*, *host*, *port*, *path*, *query*, *parameters*, *fragment*].
+
+*Exemples :*
 ```
-    • parse-url("http://example.com").scheme => "http"
-    • parse-url("http://example.com").host => "example.com"
-    • parse-url("http://example.com").path => null
-    • parse-url("http://example.com/").path = "/"
-    • parse-url("https://www.example.com/?aa=1&aa=2&bb=&cc").query =>  "aa=1&aa=2&bb=&cc"
-    • parse-url("https://www.example.com/?aa=1&aa=2&bb=&cc").parameters.aa =>  ["1", "2"]
-    • parse-url("https://www.example.com/?aa=1&aa=2&bb=&cc").parameters.bb =>  [null]
-    • parse-url("https://www.example.com/?aa=1&aa=2&bb=&cc").parameters.cc =>  [null]
-    • parse-url("ftp://username:password@host.com/").userinfo => "username:password"
-    • parse-url("https://example.com:8443").port => 8443
+-   parse-url("http://example.com").scheme => "http"
+-   parse-url("http://example.com").host => "example.com"
+-   parse-url("http://example.com").path => null
+-   parse-url("http://example.com/").path = "/"
+-   parse-url("https://www.example.com/?aa=1&aa=2&bb=&cc").query =>  "aa=1&aa=2&bb=&cc"
+-   parse-url("https://www.example.com/?aa=1&aa=2&bb=&cc").parameters.aa =>  ["1", "2"]
+-   parse-url("https://www.example.com/?aa=1&aa=2&bb=&cc").parameters.bb =>  [null]
+-   parse-url("https://www.example.com/?aa=1&aa=2&bb=&cc").parameters.cc =>  [null]
+-   parse-url("ftp://username:password@host.com/").userinfo => "username:password"
+-   parse-url("https://example.com:8443").port => 8443
 ``` 
 
 
@@ -4552,31 +4594,29 @@ Cette fonction analyse l'URL et renvoie un objet avec les clés [scheme, userinf
 
 [^3]:   Pour plus d’informations, consulter le document *Modèle de données*, « Collection Transaction ». Un exemple de contexte de collecte se trouve dans l’[annexe 1](#annexe-1-exemples-de-donnees-entrantes) du présent document.
 
-[^4]:   À noter que cette collection est renommée « Transaction » dans la version 6 RC de la solution logicielle Vitam.
-
 [^5]:   Si la transaction est clôturée (son statut est égal à « READY »), il n’est plus possible de lui adjoindre des unités archivistiques, ainsi que des métadonnées techniques et des objets.
 
 [^6]:   Pour plus d’informations sur l’enregistrement de l’unité archivistique dans la base de données, il est recommandé de consulter le document *Modèle de données*.
 
 [^7]:   Si la transaction est clôturée (son statut est égal à « READY »), il n’est plus possible de lui adjoindre des unités archivistiques, ainsi que des métadonnées techniques et des objets.
 
-[^8]:   Pour plus d’informations sur l’enregistrement de l’unité archivistique dans la base de données, il est recommandé de consulter le document *Modèle de données*.
+[^8]:   Pour plus d’informations sur l’enregistrement du groupe d'objets techniques dans la base de données, il est recommandé de consulter le document *Modèle de données*.
 
 [^9]:   Si la transaction est clôturée (son statut est égal à « READY »), il n’est plus possible de lui adjoindre des unités archivistiques, ainsi que des métadonnées techniques et des objets.
 
-[^10]:  Pour plus d’informations sur l’enregistrement de l’unité archivistique dans la base de données, il est recommandé de consulter le document *Modèle de données*.
+[^10]:  Pour plus d’informations sur l’enregistrement de l'unité archivistique dans la base de données, il est recommandé de consulter le document *Modèle de données*.
 
 [^11]:  Le fonctionnement est identique à celui de l’import d’arborescence bureautique dans ReSIP.
 
-[^12]:  Pour plus d’informations sur l’enregistrement de l’unité archivistique dans la base de données, il est recommandé de consulter le document *Modèle de données*.
+[^12]:  Pour plus d’informations sur l’enregistrement du groupe d'objets techniques dans la base de données, il est recommandé de consulter le document *Modèle de données*.
 
-[^13]:  Se référer à la sous-section 3.2.4.2 « Envoi d’une arborescence bureautique » du présent document.
+[^13]:  Se référer à la sous-section « Envoi d’une arborescence bureautique » du présent document.
 
 [^14]:  Son modèle est identique au modèle de fichier .csv importé dans ReSIP, hors colonnes ID et ParentID qui ne sont pas supportées par le module de collecte en l’état actuel des développements.
 
 [^15]:  Pour plus d’informations sur l’enregistrement de l’unité archivistique dans la base de données, il est recommandé de consulter le document *Modèle de données*.
 
-[^16]:  Pour plus d’informations sur l’enregistrement de l’unité archivistique dans la base de données, il est recommandé de consulter le document *Modèle de données*.
+[^16]:  Pour plus d’informations sur l’enregistrement du groupe d'objets techniques dans la base de données, il est recommandé de consulter le document *Modèle de données*.
 
 [^17]:  Son modèle est identique au modèle de fichier .csv importé dans ReSIP, hors colonnes ID et ParentID qui ne sont pas supportées par le module de collecte en l’état actuel des développements.
 
@@ -4590,11 +4630,11 @@ Cette fonction analyse l'URL et renvoie un objet avec les clés [scheme, userinf
 
 [^22]:  Le paramétrage de la purge automatique s’effectue depuis le fichier collect.conf. Pour modifier le délai par défaut, il faut modifier les valeurs des paramètres « purgeTransactionThreadFrequency » et « purgeTransactionDelayInMinutes » pour le(s) tenant(s) concerné(s).
 
-[^23]:  Ces appels API sont décrits dans le chapitre 3 du présent document, dans la sous-section 3.1.2 « Utilisation des API ».
+[^23]:  Ces appels API sont décrits dans la section « Versement » du présent document.
 
 [^24]:  La partie ci-dessous explicite la grammaire attendue par le format JSON dans le cadre d’un appel API. Des précisions sur le formalisme attendu est également disponible dans le document *Modèle de données*.
 
-[^25]:  Pour plus d’informations sur les vocabulaires, consulter le document* Ontologie*.
+[^25]:  Pour plus d’informations sur les vocabulaires, consulter le document Ontologie.
 
 [^26]:  Pour plus d’informations sur ces modélisations particulières, il est recommandé de consulter le document Modèle de données, chapitre 5.1, « Collection Unit ».
 
@@ -4659,3 +4699,5 @@ Cette fonction analyse l'URL et renvoie un objet avec les clés [scheme, userinf
 [^56]:  Pour en savoir plus sur le fonctionnement du format JSON, se référer à la sous-section « Comment formaliser les données dans les API du module de collecte ? » du présent document.
 
 [^57]:  Pour en savoir plus, une liste de fonctions est disponible sur ce site : https://github.com/schibsted/jslt/blob/master/functions.md.   
+
+[^58]:  Pour une vision d'ensemble des différents statuts d'une transaction, se référer à la sous-section « Comment sont gérés les statuts d'une transaction ? » du présent document.
