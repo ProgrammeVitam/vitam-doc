@@ -2151,14 +2151,15 @@ La solution logicielle Vitam permet de modifier des unités archivistiques par :
 
 La solution logicielle Vitam permet de mettre à jour unitairement plusieurs unités archivistiques. Pour chacune d'entre elles, elle permet plus précisément de :
 
-- modifier des métadonnées,
-- ajouter des métadonnées,
-- supprimer des métadonnées.
+- modifier des métadonnées descriptives,
+- ajouter des métadonnées descriptives,
+- supprimer des métadonnées descriptives.
 
 ***Points d'attention :***
 
 -   En prérequis à la mise à jour unitaire en masse des unités archivistiques, il faut avoir au préalable créé une transaction et le signaler dans l’API ;
--   Il n’est pas possible d'ajouter une unité archivistique lors de cette action de mise à jour.
+-   Il n’est pas possible d'ajouter une unité archivistique lors de cette action de mise à jour ;
+-   Il n’est pas possible de mettre à jour des règles de gestion lors de cette action de mise à jour.
 
   *Exemple : requête en vue de modifier un titre pour une unité archivistique dont l'identifiant d'agent est « 123456 », de supprimer une date d'envoi et d'ajouter une description pour une unité archivistique dont l'identifiant d'agent est « 123457 »*
 ```  
