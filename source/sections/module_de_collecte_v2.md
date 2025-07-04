@@ -2328,6 +2328,7 @@ Elle n’est pas journalisée dans le journal des opérations.
 
 ###### Utilisation dans VitamUI
 
+<<<<<<< HEAD
 L’APP « Collecte et préparation des versements » du front-office VitamUI fournie avec la solution logicielle Vitam permet de modifier tout ou partie des unités archivistiques d'une transaction au moyen de l'import d'un fichier .csv.
 
 Ce service est disponible depuis la page permettant de visualiser l’ensemble des archives d’un projet de versement, où il est possible de « Mettre à jour les métadonnées ».
@@ -2340,6 +2341,13 @@ Ce service est disponible depuis la page permettant de visualiser l’ensemble 
 Des droits utilisateurs sont par ailleurs définis :
 
 | Profil utilisateur | Validation d'une transaction |
+=======
+L’APP « Collecte et préparation des versements » du front-office VitamUI fournie avec la solution logicielle Vitam permet d'ajouter et de modifier les métadonnées descriptives et de gestion des archives d'un projet de versement par l'import d'un fichier.csv. Cette fonctionnalité est disponible depuis la page de recherche des archives via un boutons d'actions secondaires.
+
+Des droits utilisateurs sont par ailleurs définis :
+
+| Profil utilisateur | Modification des métadonnées des archives |
+>>>>>>> f0b8e66d624e8d9c3a510c7f3abeb6946c020316
 |---|---|
 | Administrateur     | oui |
 | Archiviste         | oui |
