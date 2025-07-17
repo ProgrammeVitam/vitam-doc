@@ -237,8 +237,12 @@ extensions = [
 
 # Multi-version configuration
 smv_tag_whitelist = r'^v\d+\.\d+.*$|latest'  # all tags of form v*.*.x and latest
-# Whitelist pattern for branches (set to '' to ignore all branches)
-smv_branch_whitelist = 'update|Update|master|^v.*'
+# Only include branches that match 'master_*'
+# This ensures that feature branches, experimental branches, or any others are excluded.
+smv_branch_whitelist = r'^master_\d+\.\d+\.x$'
+# Explicitly exclude all other branches not matched by the whitelist above.
+# This is a safeguard to ensure no unexpected branches are included.
+smv_branch_blacklist = r'^.*$'
 smv_released_pattern = r'v.*'
 smv_latest_version = 'v6.0'
 smv_remote_whitelist = r'^.*$'
