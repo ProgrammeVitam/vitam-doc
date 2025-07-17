@@ -12,6 +12,7 @@ Introduction
 |NF Z 44022 – MEDONA – Modélisation des données pour l’archivage|18/01/2014|
 |Standard d’échange de données pour l’archivage – SEDA – v. 2.1|06/2018|         
 |Standard d’échange de données pour l’archivage – SEDA – v. 2.2|02/2022|
+|Standard d’échange de données pour l’archivage – SEDA – v. 2.3|06/2024|
 |Référentiel général de sécurité (RGS) – v. 2.0|10/06/2015|
 |ISO 14 721:2012 – Systèmes de transfert des informations et données spatiales -- Système ouvert d’archivage d’information (SOAI) -- Modèle de référence|01/09/2012|
 
@@ -118,6 +119,58 @@ Il est possible d’exporter dans le manifeste les journaux du cycle de vie des 
 
 Si pour un usage donné le groupe d’objets techniques comprend plusieurs versions, c’est l’objet technique correspondant à la dernière version qui sera exporté.
 
+Le DIP minimal
+----
+La solution logicielle Vitam permet d’exporter un DIP dit minimal, composé du répertoire contenant les objets numériques demandés et d’un manifeste simplifié, constitué autour du DataObjectPackage.
+
+Ce bordereau minimal peut être enrichi par la suite par l’utilisateur applicatif qui l’a demandé pour constituer l’une des demandes d’autorisation prévues par le SEDA (AuthorizationOriginatingAgencyRequest, AuthorizationOriginatingAgencyRequestReply, AuthorizationControlAuthorityRequest et AuthorizationControlAuthorityRequestReply).
+
+### Les modalités de lancement de l’opération de mise à disposition du DIP minimal
+
+Via les API aux bornes de la solution logicielle Vitam, plusieurs critères de constitution du DIP sont utilisables : identifiant d’une opération d’entrée, unité archivistique précise, ensemble des unités archivistiques dépendant d’une unité archivistique précise, etc. Des filtres supplémentaires peuvent être demandés sur : 
+
+- les usages. Ce filtre sera contrôlé par rapport aux droits octroyés par le contrat accès ;
+- la version du SEDA. Ce filtre fonctionne de la manière suivante :
+  - S’il n’est pas utilisé, le DIP généré sera déclaré en SEDA 2.2 ;
+  - Un contrôle de compatibilité est effectué entre la version du SEDA demandée dans le DIP et celle des unités archivistiques devant intégrer ce dernier.
+
+Au lancement de l’opération, la solution logicielle Vitam génère un identifiant de l’opération. Le DIP constitué a pour nom cet identifiant d’opération.
+L’opération est journalisée. Suivant l’activation ou non de la fonctionnalité dans le contrat d’accès associé à la demande de génération du DIP, l’opération sera tracée dans les logs d’accès.
+
+Elle peut aboutir aux statuts suivants :
+
+Statut|Motifs|
+|:---|:---|
+|Succès|Opération réalisée sans rencontrer de problèmes particuliers.|
+|Avertissement|- Le lot d’archives sélectionné n’a pas d’objets binaires.<br>- Au moins une des unités archivistiques sélectionnées a déjà fait l’objet d’une opération de demande de transfert.<br>- Le poids du DIP est supérieur ou égal au seuil de tenant qui a été défini avec autorisation d’être dépassé.<br>- Le poids du DIP est supérieur ou égal au seuil de plate-forme qui a été défini sans qu’aucun seuil de tenant n’ait été défini.|
+|Échec|- Au moins un des champs obligatoires (ArchivalAgreement, ArchivalAgency, OriginatingAgencyIdentifier) n’a pas été renseigné.<br>- Le poids du DIP est supérieur au seuil de requête.<br>- Le poids du DIP est supérieur ou égal au seuil de tenant qui a été défini sans autorisation d’être dépassé et dépasse le seuil de plate-forme.<br>- La version du SEDA des unités archivistiques est incompatible avec celle demandée pour le DIP.|
+|Erreur technique|Erreur technique lors du déplacement des objets binaires de l'offre de stockage vers l'espace de travail interne.|
+
+**Point d’attention :**
+
+- Dans le cas d’un DIP correspondant à une opération d’entrée, le paquet comprendra toutes les unités importées dans le système via cette opération d’entrée dans leur état au moment de la demande d’export du DIP : certaines unités archivistiques pourront avoir été modifiées ou éliminées depuis l’opération d’entrée initiale.
+- Si pour un usage donné le groupe d’objets techniques comprend plusieurs versions, c’est l’objet technique correspondant à la dernière version qui sera exporté.
+- Il n'est pas possible d'exporter un DIP minimal depuis les interfaces de VitamUI.
+
+### Les modalités de récupération du DIP minimal
+
+Lorsque l’opération d’export du DIP est terminée, le DIP peut être récupéré :
+
+- par API, en utilisant le service fourni par le endpoint access-external/v1/dipexport, au moyen de l’identifiant de l’opération d’export ;
+- depuis VitamUI, à partir de l’APP Journal des opérations.
+
+Il est également possible de récupérer l’empreinte du DIP générée depuis le journal des opérations et disponible à la tâche de Création de l’archive et de son déplacement vers l’espace de stockage .
+
+### Le bordereau du DIP minimal
+
+À la racine du DIP se trouve le bordereau de mise à disposition qui décrit l’ensemble des métadonnées du paquet. Il est composé :
+
+- d’une déclaration des objets binaires (DataObjectPackage > BinaryDataObject) ou des objets physiques (DataObjectPackage > PhysicalDataObject), le cas échéant avec les journaux du cycle de vie des objets ;
+- d’une déclaration des unités archivistiques représentées par ces objets (DataObjectPackage > DescriptiveMetadata) :
+    - avec leurs métadonnées de gestion, avec, le cas échéant, les journaux du cycle de vie associés ;
+    - avec leurs métadonnées descriptives ;
+- de métadonnées communes à toute l’arborescence d’unités archivistiques : déclaration du service producteur (hérité de la balise OriginatingAgencyIdentifier présente dans le ManagementMetadata du SIP à l’origine de l’entrée pour les DIP mono-producteurs ; pour les DIP multi-producteurs, la valeur de ce champ est « Export VITAM » [^3]).
+
 Le DIP complet
 ----
 
@@ -125,27 +178,14 @@ La solution logicielle Vitam permet d’exporter un DIP dit complet [^2], compos
 
 ### Les modalités de lancement de l’opération de mise à disposition du DIP complet
 
-Depuis l’IHM Vitam UI accompagnant la solution logicielle Vitam, à partir l'APP Recherche et consultation des archives, il est possible de demander à générer un DIP complet 
-- de l’unité archivistique uniquement
-- de l’unité archivistique et de ses filles,-
-- d'une sélection d'unités archivistitiques,
-- d'une opération d’entrée (ingest) initiale.
+Depuis VitamUI, il est possible de demander à générer un DIP complet dans l’APP Recherche et consultation des archives, après avoir préalablement sélectionné un lot d’archives.
 
 ![](./medias/DIP/ihm.png)
 
-![](./medias/DIP/ihm2.png)
-
-Le DIP complet peut être filtré sur un type d’usage. Le ou les usages retenus doivent être cohérents avec les droits octroyés par le contrat d’accès associé à la demande de génération du DIP.
-
-![](./medias/DIP/ihm2bis.png)
-
-Via les API aux bornes de la solution logicielle Vitam, plusieurs critères de constitution du DIP complet sont utilisables : identifiant d’une opération d’entrée, unité archivistique précise, ensemble des unités archivistiques dépendant d’une unité archivistique précise, etc. Des filtres supplémentaires peuvent être demandés sur : 
-- les usages. Ce filtre sera contrôlé par rapport aux droits octroyés par le contrat accès ;
-- la version du SEDA. Ce filtre fonctionne de la manière suivante :
-    - S’il n’est pas utilisé, le DIP généré sera déclaré en SEDA 2.2 ;
-    - Un contrôle de compatibilité est effectué entre la version du SEDA demandée dans le DIP et celle des unités archivistiques devant intégrer ce dernier.
+Via les API aux bornes de la solution logicielle Vitam, plusieurs critères de constitution du DIP complet sont utilisables : identifiant d’une opération d’entrée, unité archivistique précise, ensemble des unités archivistiques dépendant d’une unité archivistique précise, etc. 
 
 La constitution du DIP complet nécessite de définir plusieurs paramètres qui seront utilisés pour renseigner le manifeste :
+
 - informations obligatoires :
     - identifiant du service d’archives (sous-bloc Identifier inclus dans le bloc ArchivalAgency),
     - identifiant de la demande (MessageRequestIdentifier),
@@ -157,10 +197,22 @@ La constitution du DIP complet nécessite de définir plusieurs paramètres qui 
 
 Les valeurs de ces paramètres ne sont pas contrôlées par rapport aux référentiels présents dans la solution logicielle Vitam. Ainsi, il est tout à fait possible, par exemple, d’indiquer un identifiant de service d’archives qui ne figure pas dans le référentiel des services agents.
 
+Des filtres supplémentaires peuvent être demandés sur : 
+
+- les usages. Ce filtre sera contrôlé par rapport aux droits octroyés par le contrat accès ;
+- la version du SEDA. Ce filtre fonctionne de la manière suivante :
+    - S’il n’est pas utilisé, le DIP généré sera déclaré en SEDA 2.2 ;
+    - Un contrôle de compatibilité est effectué entre la version du SEDA demandée dans le DIP et celle des unités archivistiques devant intégrer ce dernier.
+
 Au cours de cette constitution il est également possible de définir la forme que prennent les fichiers exportés : 
-- à plat, nommés par leur GUID (dans Vitam UI et par API)
+
+- à plat, nommés par leur GUID (dans VitamUI et par API)
 - dans des dossiers reconstituants l'arborescence d'origine de ces fichiers, nommés par leur Title (dans Vitam UI et par API)
 - dans des dossiers reconstituants l'arborescence d'origine de ces fichiers, nommés par leur GUID (par API uniquement)
+
+![](./medias/DIP/ihm2.png)
+
+![](./medias/DIP/ihm2bis.png)
 
 Au lancement de l’opération, la solution logicielle Vitam génère un identifiant de l’opération. Le DIP constitué a pour nom cet identifiant d’opération.
 
@@ -182,12 +234,11 @@ Elle peut aboutir aux statuts suivants :
 ### Les modalités de récupération du DIP complet
 
 Lorsque l’opération d’export du DIP complet est terminée, le DIP peut être récupéré :
-- depuis l’IHM standard, à partir du journal des opérations en cliquant sur la ligne de l’opération d’export du DIP pour accéder à l’écran de détail, puis en affichant le champ « rapport » (via le sélecteur « Informations supplémentaires »),
-
-![](./medias/DIP/ihm3.png)  
 
 - par API, en utilisant le service fourni par le endpoint access-external/v2/dipexport, au moyen de l’identifiant de l’opération d’export ;
 - depuis VitamUI, à partir de l’APP Journal des opérations.
+
+![](./medias/DIP/ihm3.png)
 
 Il est également possible de récupérer l’empreinte du DIP générée depuis le journal des opérations et disponible à la tâche de Création de l’archive et de son déplacement vers l’espace de stockage.
 
