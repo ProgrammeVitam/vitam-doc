@@ -261,17 +261,9 @@ Le DIP généré dans le cadre du transfert doit pouvoir être pris en charge su
 
 ### Les modalités de lancement de l’opération de mise à disposition du DIP de transfert
 
-Depuis l’IHM standard accompagnant la solution logicielle Vitam, à partir de la page de détail d’une unité archivistique, il est possible de demander à générer un DIP de transfert de l’unité archivistique uniquement ou de l’unité archivistique et de ses filles, ou bien un DIP de transfert correspondant à l’opération d’entrée (ingest) initiale[^4].
+Depuis VitamUI, il est également possible de demander à générer un DIP de transfert dans l’APP Recherche et consultation des archives, après avoir préalablement sélectionné un lot d’archives.
 
-- Le DIP de transfert peut être filtré sur un type d’usage. Le ou les usages retenus doivent être cohérents avec les droits octroyés par le contrat d’accès associé à la demande de génération du DIP.  
-![](./medias/DIP/ihm8.png)  
-Dans l’état actuel des développements, il n’est pas possible, depuis l’IHM standard, de demander à générer un DIP de transfert du panier ou d’une sélection présente dans le panier.
-- Depuis VitamUI, il est également possible de demander à générer un DIP de transfert dans l’APP Recherche et consultation des archives, après avoir préalablement sélectionné un lot d’archives.
-- Via les API aux bornes de la solution logicielle Vitam, plusieurs critères de constitution du DIP complet sont utilisables : identifiant d’une opération d’entrée, unité archivistique précise, ensemble des unités archivistiques dépendant d’une unité archivistique précise, etc. Des filtres supplémentaires peuvent être demandés sur : 
-    - les usages. Ce filtre sera contrôlé par rapport aux droits octroyés par le contrat accès ;
-    - la version du SEDA. Ce filtre fonctionne de la manière suivante :
-        - S’il n’est pas utilisé, le DIP généré sera déclaré en SEDA 2.2 ;
-        - Un contrôle de compatibilité est effectué entre la version du SEDA demandée dans le DIP et celle des unités archivistiques devant intégrer ce dernier.
+Via les API aux bornes de la solution logicielle Vitam, plusieurs critères de constitution du DIP complet sont utilisables : identifiant d’une opération d’entrée, unité archivistique précise, ensemble des unités archivistiques dépendant d’une unité archivistique précise, etc. 
 
 La constitution du DIP de transfert nécessite de définir plusieurs paramètres qui seront utilisés pour renseigner le manifeste :
 - informations obligatoires :
@@ -286,6 +278,12 @@ La constitution du DIP de transfert nécessite de définir plusieurs paramètres
     - identifiant du service de transfert (sous-bloc Identifier du bloc TransferringAgency). Si ce bloc obligatoire n’est pas renseigné, il sera automatiquement incrémenté par la valeur « Vitam ».
 
 Les valeurs de ces paramètres ne sont pas contrôlées par rapport aux référentiels présents dans la solution logicielle Vitam. Ainsi, il est tout à fait possible, par exemple, d’indiquer un identifiant de service d’archives qui ne figure pas dans le référentiel des services agents.
+
+Des filtres supplémentaires peuvent être demandés sur : 
+    - les usages. Ce filtre sera contrôlé par rapport aux droits octroyés par le contrat accès ;
+    - la version du SEDA. Ce filtre fonctionne de la manière suivante :
+        - S’il n’est pas utilisé, le DIP généré sera déclaré en SEDA 2.2 ;
+        - Un contrôle de compatibilité est effectué entre la version du SEDA demandée dans le DIP et celle des unités archivistiques devant intégrer ce dernier.
 
 Au lancement de l’opération, la solution logicielle Vitam génère un identifiant de l’opération. Le DIP de transfert constitué a pour nom cet identifiant d’opération.
 
@@ -307,9 +305,7 @@ Elle peut aboutir aux statuts suivants :
 ### Les modalités de récupération du DIP de transfert
 
 Lorsque l’opération d’export du DIP de transfert est terminée, le DIP peut être récupéré :
-- depuis l’IHM standard, à partir du journal des opérations en cliquant sur la ligne de l’opération d’export du DIP pour accéder à l’écran de détail, puis en affichant le champ « rapport » (via le sélecteur « Informations supplémentaires »),  
-![](./medias/DIP/ihm9.png)  
-![](./medias/DIP/ihm10.png)  
+
 - par API, en utilisant le service fourni par le endpoint access-external/v1/transfers, au moyen de l’identifiant de l’opération d’export.
 - depuis VitamUI, à partir de l’APP Journal des opérations.
 
