@@ -41,7 +41,7 @@ Ce document s’articule autour des axes suivants :
 -   modalités de dégel d’archives.
 
 Le présent document décrit les fonctionnalités qui sont offertes par la
-solution logicielle Vitam au terme de la Version 8.1 (printemps 2025).
+solution logicielle Vitam au terme de la Version 9.0 (automne 2025).
 Il a vocation à être amendé, complété et enrichi au fur et à mesure de
 la réalisation de la solution logicielle Vitam et des retours et
 commentaires formulés par les ministères porteurs et les partenaires du
@@ -102,7 +102,8 @@ Elle peut être définie de deux manières :
     gérées dans ce référentiel ;
 -   sans durée ni mesure, si on n’est pas en mesure de les qualifier.
 
-*Exemple:*
+*Exemple :*
+
 ``` La première règle de gel définit une durée et une mesure, contrairement à la deuxième règle de gel.```
   
 ### Formalisation du gel dans le Standard d’échanges de données pour l’archivage (SEDA)
@@ -1040,7 +1041,7 @@ reclassements d’archives) ou activé (par la valeur « true »), il est en
 effet possible de dégeler des archives héritant d’une règle de gel en
 les déplaçant dans une arborescence ne portant pas de règle de gel.
 
-### Comment geler des archives ?
+### Comment geler des archives ?
 
 Il est possible de geler des archives par l’ajout d’une règle de gel.
 Lors de cette opération d’ajout de métadonnées liées à une règle de gel,
