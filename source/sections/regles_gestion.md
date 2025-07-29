@@ -889,7 +889,7 @@ Les échéances associées aux règles modifiées sont alors recalculées ;
 - pour les unités archivistiques déclarant une ClassificationRule – durée de classification, en cas de modification du niveau de protection du secret de la défense nationale (ClassificationLevel), enregistrement de la précédente valeur du bloc ClassificationRule dans la description des archives (création d’un nouveau bloc « _history »). Cette fonction a pour objectif de permettre l’identification via une recherche des unités archivistiques déclassées ou déclassifiées. Ces informations seront exportées en cas de génération d’un Dissemination Information Package (DIP).
 Il est également possible de mettre à jour des règles de gestion au moyen des interfaces de VitamUI :
 - par un réimport complet du référentiel depuis l’APP « Règles de gestion » ;
-- par une action de mise à jour en masse des règles de gestion sur un lot d’archives depuis l’APP « Recherche et consultation des archives ». Au terme de la version 8.1, cette action peut s’effectuer sur les catégories de règle suivantes :
+- par une action de mise à jour en masse des règles de gestion sur un lot d’archives depuis l’APP « Recherche et consultation des archives ». Au terme de la version 9.1, cette action peut s’effectuer sur les catégories de règle suivantes :
     - durée d’utilité administrative,
     - durée d’utilité courante,
     - communicabilité,
@@ -1065,7 +1065,7 @@ La première solution présente l’avantage de limiter le nombre de règles à 
 |Cas d’une application métier|Une application métier devant transférer des archives ou y accéder n’a pas forcément vocation à accéder au référentiel des règles de gestion.>br>Il est recommandé de veiller à lui attribuer les droits nécessaires dans le profil de sécurité qui lui est associé.|Recommandé|
 |Cas d’un groupe « administrateurs » du système d’information archivistique|Il est recommandé d’attribuer des droits de consultation et de modification du référentiel à un groupe d’utilisateurs ayant vocation à agir sur le référentiel des règles de gestion, si ce référentiel a vocation à être ponctuellement mis à jour.<br>Par exemple, VitamUI permet d’autoriser l’accès à l’APP « Règles de gestion » avec des droits de consultation, de modification, d’import et d’export du référentiel.|Recommandé|
 |Cas d’un groupe « archivistes » du système d’information archivistique|Tous les utilisateurs du système d’information archivistique n’ont pas vocation à modifier le référentiel des règles de gestion.<br> 
-Le système d’information archivistique doit pouvoir leur interdire tout accès, toute modification ou leur donner un simple accès au référentiel.<br>Par exemple, VitamUI permet de :<br>- interdire l’accès à l’APP « Règles de gestion » ;<br>- autoriser l’accès à cette l’APP en simple consultation.|Recommandé|
+Le système d’information archivistique doit pouvoir leur interdire tout accès, toute modification ou leur donner un simple accès au référentiel.<br>Par exemple, VitamUI permet de :<br>- interdire l’accès à l’APP « Règles de gestion » ;<br>- autoriser l’accès à cette l’APP en simple consultation.<br>S'il est autorisé à accéder à l'APP, l'utilisateur peut :<br>- soit uniquement consulter le référentiel,<br>- soit agir sur le référentiel.|Recommandé|
 
 ### Comment utiliser les mécanismes de contrôle des métadonnées offerts par la solution logicielle Vitam pour les règles de gestion ?
 
