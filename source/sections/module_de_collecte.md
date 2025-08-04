@@ -2473,10 +2473,10 @@ La solution logicielle Vitam permet de modifier l'organisation de l’arborescen
 -  En prérequis à cette action, il faut avoir au préalable créé une transaction et le signaler dans l’API.
 -  A noter qu'au terme de la version 8.1, il n'est pas possible de modifier la(les) position(s) de rattachement de la transaction, qu'elle(s) soi(en)t statique ou dynamique(s).
 
-*Exemple : requête en vue de déplacer l'unité d'archives dont l’identifiant est «  aeaqaaaaaeecohy6ab4heamu7jl5epqaaaba »*
+*Exemple : requête en vue de déplacer l'unité archivistique dont l’identifiant est «  aeaqaaaaaeecohy6ab4heamu7jl5epqaaaba »*
 
 ```  
-@transaction-id= *aeeaaaaaachj3m7nabjocamcdqr2rqaaaaaq*
+@transaction-id= aeeaaaaaachj3m7nabjocamcdqr2rqaaaaaq
   
 POST {{url-collect}}/collect-external/v1/transactions/{{transaction-id}}/reclassification
 Accept: application/json
@@ -2499,14 +2499,64 @@ X-Tenant-Id: {{tenant}}
     ]
   }
 ]
+```
+
+*Exemple : requête en vue de supprimer le lien entre l'unité archivistique dont l’identifiant est « aeaqaaaaaeecohy6ab4heamu7jl5epqaaaba » et l'unité archivistique dont l’identifiant est « aeaqaaaaaeecohy6ab4heamu7jl5epqaaaaq »*
+
 ```  
+@transaction-id= aeeaaaaaachj3m7nabjocamcdqr2rqaaaaaq
+  
+POST {{url-collect}}/collect-external/v1/transactions/{{transaction-id}}/reclassification
+Accept: application/json
+Content-Type: application/json
+X-Tenant-Id: {{tenant}}
+
+[
+  {
+    "$roots": [],
+    "$query": [{ "$eq": { "#id": "aeaqaaaaaeecohy6ab4heamu7jl5epqaaaba" } }],
+    "$action": [
+      {
+        "$pull": {
+          "#unitups": [ "aeaqaaaaaeecohy6ab4heamu7jl5epqaaaaq" ]
+        }
+      }
+    ]
+  }
+]
+```
+
+*Exemple : requête en vue d'ajouter un lien entre l'unité archivistique dont l’identifiant est « aeaqaaaaaeecohy6ab4heamu7jl5epqaaaba » et l'unité archivistique dont l’identifiant est « aeaqaaaaaeecohy6ab4heamu7jl5epqaaaaq »*
+
+```  
+@transaction-id= aeeaaaaaachj3m7nabjocamcdqr2rqaaaaaq
+  
+POST {{url-collect}}/collect-external/v1/transactions/{{transaction-id}}/reclassification
+Accept: application/json
+Content-Type: application/json
+X-Tenant-Id: {{tenant}}
+
+[
+  {
+    "$roots": [],
+    "$query": [{ "$eq": { "#id": "aeaqaaaaaeecohy6ab4heamu7jl5epqaaaba" } }],
+    "$action": [
+      {
+        "$add": {
+          "#unitups": [ "aeaqaaaaaeecohy6ab4heamu7jl5epqaaaaq" ]
+        }
+      }
+    ]
+  }
+]
+```
 
 Lors de cette action, l’opération peut aboutir aux résultats suivants :
 
 | Statut | Motifs |
 |---|---|
 | Succès        | Action réalisée sans rencontrer de problèmes particuliers.|
-| Échec         | Action non réalisée :<br>- L'unité archivistique de destination semble inexistante ou inaccessible,<br>- L'unité archivistique à déplacer semble inexistante dans la transaction.|
+| Échec         | Action non réalisée :<br>- L'unité archivistique de destination semble inexistante ou inaccessible,<br>- L'unité archivistique à déplacer semble inexistante dans la transaction,<br>- L'unité archivistique à déplacer est le parent de l'unité archivistique sous laquelle on souhaite la positionner.|
 
 Elle est journalisée dans le journal des opérations (COLLECT_RECLASSIFICATION).
 
@@ -2518,6 +2568,10 @@ L’APP « Collecte et préparation des versements » du front-office VitamUI 
 -  ajouter un rattachement,
 -  supprimer un lien hiérarchique entre une unité archivistique et une autre.
 
+***Point d'attention***:
+
+-  Il n'est pas possible de réorganiser plus de 10 000 unités archivistiques à la fois.
+
 Des droits utilisateurs sont par ailleurs définis :
 
 | Profil utilisateur | Suppression d'archives |
@@ -2525,6 +2579,10 @@ Des droits utilisateurs sont par ailleurs définis :
 | Administrateur     | oui |
 | Archiviste         | oui |
 | Service producteur | non |
+
+***Point d'attention***:
+
+-  Les seuils définis dans les paramétrages externes pouvant être associés à un groupe de profils ne s'appliquent pas lors d'une réorganisation d'arborescence.
 
 #### Ajout d'archives
 
