@@ -2164,7 +2164,7 @@ La solution logicielle Vitam permet de mettre à jour unitairement plusieurs uni
 
   *Exemple : requête en vue de modifier un titre pour une unité archivistique dont l'identifiant d'agent est « 123456 », de supprimer une date d'envoi et d'ajouter une description pour une unité archivistique dont l'identifiant d'agent est « 123457 »*
 ```  
-@transaction-id= *aeeaaaaaachj3m7nabjocamcdqr2rqaaaaaq*
+@transaction-id= aeeaaaaaachj3m7nabjocamcdqr2rqaaaaaq
 
 POST {{url}}/collect-external/v1/transactions/{{transaction-id}}/units/bulk
 Accept: application/json
@@ -2205,7 +2205,7 @@ Lors de cette action, l’opération peut aboutir aux résultats suivants :
 | Statut       |  Motifs |
 |---|---|
 | Succès       |  Action réalisée sans rencontrer de problèmes particuliers. |
-| Échec        |  - Le seuil de requête est dépassé. <br>- Plusieurs unités archivistiques ont été trouvées. <br>- Aucune unité archivistique n'a été trouvée. <br>- Le format de la métadonnées à modifier n'est pas conforme au type d'indexation défini dans l'ontologie. |
+| Échec        |  - Le seuil de requête est dépassé. <br>- Aucune unité archivistique n'a été trouvée. <br>- Plusieurs unités archivistiques ont été trouvées. <br>- Le format de la métadonnées à modifier n'est pas conforme au type d'indexation défini dans l'ontologie. <br>- La métadonnée à modifier est un champ réservé (ex. #Management). <br>- La transaction n’existe pas ou est erronée.  |
 
 ***Points d'attention :***
 - L'échec ne concerne pas l'action en général, mais est spécifique à une unité archivistique en particulier.
@@ -2218,6 +2218,14 @@ Elle n’est pas journalisée dans le journal des opérations.
 
  Depuis l’APP « Collecte et préparation des versements », le service de « modification unitaire en masse » est utilisé pour une modification unitaire.
  Il n'est pas disponible pour effectuer une modification de masse depuis cette APP.
+ 
+ Des droits utilisateurs sont par ailleurs définis :
+
+| Profil utilisateur | Modification des métadonnées  descriptives |
+|---|---|
+| Administrateur     | oui |
+| Archiviste         | oui |
+| Service producteur | oui |
 
 ##### Modification par import de fichier .csv
 
