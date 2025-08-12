@@ -30,7 +30,7 @@ Il s’articule autour des axes suivants :
 - des recommandations aux utilisateurs de la solution logicielle Vitam sur la manière d’élaborer un profil d’archivage ;
 - quelques conseils complémentaires de mise en œuvre.
 
-Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 8.1 (printemps 2025). Il inclut en particulier la présentation des fonctionnalités offertes par l'outil PASTIS (Profil d’Archivage Simple pour le Traitement de l’Information en SEDA) intégré à l’IHM Vitam UI dans l’APP Profils documentaires et également disponible sous forme d'exécutable. Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
+Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 9.0 (automne 2025). Il inclut en particulier la présentation des fonctionnalités offertes par l'outil PASTIS (Profil d’Archivage Simple pour le Traitement de l’Information en SEDA) intégré à l’IHM Vitam UI dans l’APP Profils documentaires et également disponible sous forme d'exécutable. Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
 
 Présentation de la notion de profil d’archivage
 ----
@@ -184,7 +184,7 @@ Une notice descriptive peut comprendre les informations suivantes pour un profil
 |_tenant|tenant dans lequel le profil d’archivage s’applique, fourni par la solution logicielle Vitam (champ obligatoire).|
 |_v|version du profil d’archivage, fournie par la solution logicielle Vitam (champ obligatoire).|
 |Path|chemin d’accès au profil d’archivage associé à la notice détaillée (champ facultatif).|
-|SedaVersion|version du SEDA du profil d'archivage associé à la notice (champ obligatoire - valeur par défaut : « 2.3 »).<br>Les valeurs possibles dont : « 2.1 », « 2.2 » ou « 2.3 »|
+|SedaVersion|version du SEDA du profil d'archivage associé à la notice (champ obligatoire - valeur par défaut : « 2.3 »).<br>Les valeurs possibles sont : « 2.1 », « 2.2 » ou « 2.3 »|
 
 #### Import du profil d’archivage lui-même
 
@@ -214,11 +214,10 @@ Lors de cet import, l’opération peut aboutir aux statuts suivants :
 
 La modification des champs des notices décrivant les profils d’archivage est possible au moyen :
 - des API,
-- de l’IHM standard fournies avec la solution logicielle Vitam,
 - de l’APP « Profils documentaires » accessible depuis l’IHM VitamUI.
 
 Les champs modifiables sont :
-- depuis l’IHM standard :
+- depuis l’APP « Profils documentaires » :
     - le nom du profil d’archivage (Name) ;
     - la description du profil d’archivage (Description) ;
     - le statut « Actif » ou « Inactif », correspondant aux valeurs « ACTIVE » et « INACTIVE » dans le système (Status) ;
@@ -469,7 +468,7 @@ Il est nécessaire de bien évaluer les informations à retenir dans le profil d
 
 Il est conseillé de procéder par étape[^17] :
 - création d’un profil d’archivage à l’aide d’un des outils suivants :
-    - l’outil Profil d’Archivage Simple pour le Traitement de l’Information en SEDA (PASTIS), utilisable sous forme d’exécutable ou d’APP intégrée aux interfaces de VitamUI (APP Profils documentaires),
+    - l’outil Profil d’Archivage Simple pour le Traitement de l’Information en SEDA (PASTIS), utilisable sous forme d’exécutable ou d’APP intégrée aux interfaces de VitamUI (APP « Profils documentaires »),
     - un éditeur XML,
 - le cas échéant, en parallèle, documentation du profil d’archivage sous forme de tableur ou de document,
 - modifications manuelles sur le profil d’archivage extrait de PASTIS, à l’aide d’un éditeur XML,
@@ -481,8 +480,8 @@ Il est conseillé de procéder par étape[^17] :
 
 Pour rédiger un profil d’archivage, il est également possible d’utiliser l’outil PASTIS (Profil d’Archivage Simple pour le Traitement de l’Information en SEDA), qui permet de générer des profils d’archivage au format Relax NG. Cet outil est utilisable sous forme d’exécutable ou d’APP intégrée aux interfaces de VitamUI (APP Profils documentaires).
 
-Au terme de la version 8.0, il permet de générer des profils d'archivage en SEDA 2.1, 2.2 et 2.3.
-Au terme de la version 8.1, il intègre également la possibilité d'ajouter des extensions au SEDA au niveau du bloc « Content ».
+- Au terme de la version 8.0, il permet de générer des profils d'archivage en SEDA 2.1, 2.2 et 2.3.
+- Au terme de la version 8.1, il intègre également la possibilité d'ajouter des extensions au SEDA au niveau du bloc « Content ».
 
 **Étape 1** - l’outil requiert dans un premier temps de créer un profil d’archivage (PA) et de sélectionner la version du SEDA.
 
@@ -536,8 +535,8 @@ Une fois la rédaction du profil d’archivage réalisée, il est possible de :
 - finaliser le processus de création d’un profil d’archivage et d’insertion dans le référentiel des profils d’archivage de la solution logicielle Vitam.
 L’export s’avère nécessaire en vue de :
 - corriger une coquille au niveau du bloc CodeListVersions ;
-- obtenir un fichier RNG conforme au SEDA 2.2 ou 2.3 (pour les versions antérieures à la version 8.0) ;
-- intégrer un certain nombre d’éléments non supportés par l’APP Profils documentaires en fonction des versions du SEDA utilisées (notamment les extensions).
+- obtenir un fichier RNG conforme au SEDA 2.2 ou 2.3 (pour les versions de la solution logicielle Vitam antérieures à la version 8.0) ;
+- intégrer un certain nombre d’éléments non supportés par l’APP « Profils documentaires » en fonction des versions du SEDA utilisées, notamment les extensions (pour les versions de la solution logicielle Vitam antérieures à la version 8.1) ou les rattachements (non supportés par PASTIS).
 
 Pour apporter ces corrections au fichier exporté, il faut :
 - Ouvrir le fichier dans un éditeur de texte (ex : Notepad ++, Oxygen).
@@ -546,6 +545,7 @@ Pour apporter ces corrections au fichier exporté, il faut :
 **Corrections au niveau de l’en-tête**
 
 Au niveau de l’en-tête, déclarant les espaces de nom et autres références, il faut remplacer les références au SEDA 2.1 par des références au SEDA 2.2 ou au SEDA 2.3.
+
 *Exemple : modifications à apporter au niveau de l’en-tête.*
 
 *Ancienne version :*
@@ -572,24 +572,24 @@ OU
 **Mention du profil d’unité archivistique**
 
 Si l’on souhaite contrôler une unité archivistique au moyen d’un profil d’unité archivistique, il faut ajouter dans le profil d’archivage l’identifiant du profil d’unité archivistique ou, du moins, la mention de l’existence du profil d’unité archivistique[^19].
-Au terme de la version 8.0, l’APP Profils documentaires ne permet pas de déporter le contrôle des métadonnées vers le profil d’unité archivistique. En effet, il est nécessaire de déclarer dans le profil d’archivage, en plus du profil d’unité archivistique, l’ensemble des métadonnées qui feront également l’objet du contrôle dans le profil d’unité archivistique.
+Au terme de la version 9.0, l’APP Profils documentaires ne permet pas de déporter le contrôle des métadonnées vers le profil d’unité archivistique. En effet, il est nécessaire de déclarer dans le profil d’archivage, en plus du profil d’unité archivistique, l’ensemble des métadonnées qui feront également l’objet du contrôle dans le profil d’unité archivistique.
 
 Si on souhaite déporter le contrôle vers le profil d’unité archivistique, il faudra modifier les éléments suivant dans le fichier RNG :
 *Exemple : ajout de la mention du profil d’unité archivistique.*
 
 ```xml
 
-< !-- Élément précédent et englogant --> 
+<!-- Élément précédent et englogant --> 
                 <rng:element name="ArchiveUnit">
                     <rng:attribute name="id">
                             <rng:data type="ID"/>
                  </rng:attribute>
-< !-- Déclaration du profil d’unité archivistique -->
+<!-- Déclaration du profil d’unité archivistique -->
                     <rng:element name="ArchiveUnitProfile" seda:profid="id386134">
                         <rng:value>AUP-000001</rng:value>
                     </rng:element>
-< !-- Éléments suivants à corriger afin de déporter le contrôle sur le profil d’unité archivistique -->
-< !-- remplacer rng:value ou rng:data par rng:ref name="any_content -->
+<!-- Éléments suivants à corriger afin de déporter le contrôle sur le profil d’unité archivistique -->
+<!-- remplacer rng:value ou rng:data par rng:ref name="any_content -->
               <rng:optional>
                 <rng:element name="Management">
                   <rng:ref name="any_content"/>
@@ -839,6 +839,68 @@ Il est recommandé aux utilisateurs de :
                       </rng:group>
                     </rng:element>
 ```
+
+**Mention d’un bloc de rattachement**
+
+La solution logicielle Vitam supporte un bloc de rattachement au niveau du bloc Management. Il est possible de :
+- soit déclarer l'identifiant d'une unité archivistique sous laquelle doit se positionner une arborescence,
+- soit déclarer une métadonnée et une valeur permettant d'identifier l'unité archivistique sous laquelle doit se positionner une arborescence.
+
+*Exemple : positionnement du bloc UpdateOperation*
+```xml
+<!-- Élément précédent et englogant --> 
+            <rng:element name="Management">
+
+<!-- Déclaration du bloc de rattachement  -->
+				<!-- avec identifiant unique de rattachement et obligatoire -->
+                <rng:element name="UpdateOperation">
+                    <rng:element name="SystemId">
+                        <rng:data type="token"/>
+                    </rng:element>
+                </rng:element>
+				
+				<!-- avec identifiant unique de rattachement et optionnel -->
+                <rng:optional>
+                    <rng:element name="UpdateOperation">
+                        <rng:element name="SystemId">
+                            <rng:data type="token"/>
+                        </rng:element>
+                    </rng:element>
+                </rng:optional>
+				
+				<!-- avec rattachement par clé / valeur et obligatoire -->
+				
+                <rng:element name="UpdateOperation">
+                    <rng:element name="ArchiveUnitIdentifierKey">
+                        <rng:element name="MetadataName">
+                            <rng:data type="token"/>
+                        </rng:element>
+                        <rng:element name="MetadataValue">
+                            <rng:data type="token"/>
+                        </rng:element>
+                    </rng:element>
+                </rng:element>
+							
+				<!-- avec rattachement par clé / valeur et optionnel -->
+				
+				<rng:optional>
+				<rng:element name="UpdateOperation">
+                    <rng:element name="ArchiveUnitIdentifierKey">
+                        <rng:element name="MetadataName">
+                            <rng:data type="token"/>
+                        </rng:element>
+                        <rng:element name="MetadataValue">
+                            <rng:data type="token"/>
+                        </rng:element>
+                    </rng:element>
+                </rng:element>
+                </rng:optional>
+
+<!-- Clôture de l'élément précédent et englogant --> 					
+            </rng:element>
+```
+
+Point d’attention : il est recommandé de vérifier que l'identifiant technique ou les clés / valeurs mentionné(es) dans le profil d’archivage sont référencés dans une unité archivistique.
 
 #### Documentation d’un profil d’archivage
 
@@ -3517,10 +3579,8 @@ Messages d’erreur concernant le référentiel des profils d’archivage
 
 ||Message retourné par la solution logicielle Vitam|Explication|Résolution|
 |:-----:|:----|:----|:----|
-|5| "outDetail": "STP_IMPORT_PROFILE_JSON.KO",
-"outMessg": "Échec du processus d'import du profil d'archivage"<br>"evDetData":<br>{ "profileCheck" : "Profile file validate error : " }|Le fichier téléchargé n’est pas au format XSD ou RNG.|Télécharger un fichier XSD ou RNG.|
+|5| "outDetail": "STP_IMPORT_PROFILE_JSON.KO","outMessg": "Échec du processus d'import du profil d'archivage"<br>"evDetData":<br>{ "profileCheck" : "Profile file validate error : " }|Le fichier téléchargé n’est pas au format XSD ou RNG.|Télécharger un fichier XSD ou RNG.|
 |6|"outDetail": "STP_UPDATE_PROFILE_JSON.KO",<br>"outMessg": "Échec du processus de mise à jour du profil d'archivage"<br>"evDetData":<br>{ "profileCheck" : "Profile Format should be XSD or RNG : JPEG" }|Le format a été modifié par une valeur ne correspondant ni à « XSD » ni à « RNG ».|Modifier la valeur du statut par l’une de ces deux valeurs : « XSD » ou « RNG ».|
-
 |7|"outDetail": "STP_UPDATE_PROFILE_JSON.KO",<br>"outMessg": "Échec du processus de mise à jour du profil d'archivage"<br>"evDetData":<br>{  " profileCheck" : "The new SEDA version value '2.1' does not match the one in the schema definition file '2.2',The new SEDA version value '2.1' does not match the one in the profile '2.2'"}|Le fichier téléchargé ne déclare pas la même version du SEDA que celle déclarée dans la notice.|Modifier la version du SEDA dans la notice ou dans le fichier RNG ou XSD afin qu'ils déclarent la même version du SEDA.|
 |8|"outDetail": "STP_UPDATE_PROFILE_JSON.NOT_IN_ENUM.KO",<br>"outMessg": "Échec du processus de mise à jour  du profil d'archivage : une valeur ne correspond pas aux valeurs attendues",<br>"evDetData":<br>{ "Not in Enum" : "The profile status must be ACTIVE or INACTIVE but not Blabla" }|Le statut a été modifié par une valeur ne correspondant ni à « ACTIVE » ni à « INACTIVE ».|Modifier la valeur du statut par l’une de ces deux valeurs : « ACTIVE » ou « INACTIVE ».|
 
@@ -3544,20 +3604,21 @@ Messages d’erreur concernant le référentiel des profils d’archivage
 
 ### Annexe 5 : Contrôle de conformité à un profil d’archivage avec ReSIP
 
-ReSIP permet de contrôler le manifeste chargé sur l’interface par rapport à un profil d’archivage conforme au SEDA 2.1 ou 2.2 au format XSD ou RNG. La présente annexe a pour vocation à expliquer comment réaliser ce contrôle de conformité avec ReSIP et quels sont les écueils à éviter lorsque l’on manipule un profil d’archivage au format RNG.
+ReSIP permet de contrôler le manifeste chargé sur l’interface par rapport à un profil d’archivage conforme au SEDA 2.1, 2.2 ou 2.3 au format XSD ou RNG. La présente annexe a pour vocation à expliquer comment réaliser ce contrôle de conformité avec ReSIP et quels sont les écueils à éviter lorsque l’on manipule un profil d’archivage au format RNG.
 
 #### Procédure de contrôle
 
 Afin de vérifier la conformité d’une structure arborescente d’archives et de sa description par rapport à un profil d’archivage conforme au SEDA 2.1., il convient, dans la moulinette ReSIP, de cliquer sur l’action « Traiter » puis sur la sous-action « Vérifier la conformité à un profil SEDA 2.1 » (cf. copie d’écran ci-dessous) « Vérifier la conformité à un profil SEDA 2.2 ».  
 ![reSIP](./medias/PA/ReSIP1.png)  
 
-Le clic sur la sous-action « Vérifier la conformité à un profil SEDA 2.1 » ou « Vérifier la conformité à un profil SEDA 2.2 », ouvre l’explorateur Windows de l’utilisateur et permet à celui-ci de sélectionner un fichier correspondant à un profil d’archivage – au format XSD ou RNG – et de l’importer dans la moulinette ReSIP en cliquant sur le bouton d’action « Ouvrir » (cf. copie d’écran ci-dessous).
+Le clic sur la sous-action « Vérifier la conformité à un profil SEDA 2.1 » (ou « Vérifier la conformité à un profil SEDA 2.2 », ou ou « Vérifier la conformité à un profil SEDA 2.3 »), ouvre l’explorateur Windows de l’utilisateur et permet à celui-ci de sélectionner un fichier correspondant à un profil d’archivage – au format XSD ou RNG – et de l’importer dans la moulinette ReSIP en cliquant sur le bouton d’action « Ouvrir » (cf. copie d’écran ci-dessous).
 
 Attention : il n’est possible de sélectionner qu’un seul fichier.  
+
 ![reSIP](./medias/PA/ReSIP2.png)  
 
-Le clic sur le bouton d’action « Ouvrir » lance une fenêtre de dialogue « Vérification profil SEDA 2.1 » ou « Vérifier la conformité à un profil SEDA 2.2 », indiquant que l’opération de vérification est lancée. Cette opération peut être annulée en cliquant sur le bouton d’action « Annuler » de la fenêtre de dialogue. Une fois l’opération de vérification, la fenêtre de dialogue indique son résultat et les éventuelles non conformités identifiées[^24]. La fenêtre de dialogue peut être fermée en cliquant sur le bouton d’action « Fermer » (cf. copie d’écran ci-dessous).  
-Le clic sur le bouton d’action « Ouvrir » lance une fenêtre de dialogue « Vérification profil SEDA 2.1 » ou « Vérifier la conformité à un profil SEDA 2.2 », indiquant que l’opération de vérification est lancée. Cette opération peut être annulée en cliquant sur le bouton d’action « Annuler » de la fenêtre de dialogue. Une fois l’opération de vérification, la fenêtre de dialogue indique son résultat et les éventuelles non conformités identifiées. La fenêtre de dialogue peut être fermée en cliquant sur le bouton d’action « Fermer » (cf. copie d’écran ci-dessous).  
+Le clic sur le bouton d’action « Ouvrir » lance une fenêtre de dialogue « Vérification profil SEDA 2.1 », « Vérifier la conformité à un profil SEDA 2.2 » ou « Vérification profil SEDA 2.3 », indiquant que l’opération de vérification est lancée. Cette opération peut être annulée en cliquant sur le bouton d’action « Annuler » de la fenêtre de dialogue. Une fois l’opération de vérification, la fenêtre de dialogue indique son résultat et les éventuelles non conformités identifiées[^24]. La fenêtre de dialogue peut être fermée en cliquant sur le bouton d’action « Fermer » (cf. copie d’écran ci-dessous).  
+
 ![reSIP](./medias/PA/ReSIP3.png)
 
 **Attention :**
