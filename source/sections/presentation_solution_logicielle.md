@@ -49,9 +49,7 @@ Enfin toujours dans un esprit de facilité de réutilisation, la solution logici
 ###  … enrichie d’un front-office
 
 Lancée en 2019 par des membres du Club utilisateurs du Programme Vitam, l’initiative Vitam UI (User Interface) vise à doter la solution logicielle Vitam d’un front-office de référence.
-Construit de manière mutualisée par le CEA, le CINES, Xelians et les acteurs du projet VaS[^7], ce front-office propose un portail d’applications (appelées APP) dédiées à une fonctionnalité métier. Destiné à être enrichi à chaque version, le portail a pour objectif en V8.1 (printemps 2025) de permettre à :
--  des administrateurs de plateforme de gérer techniquement et fonctionnellement celle-ci ;
--  à des archivistes de procéder à des versements et de rechercher des archives en vue de les consulter.
+Construit de manière mutualisée par le CEA, le CINES, Xelians et les acteurs du projet VaS[^7], ce front-office propose un portail d’applications (appelées APP) dédiées à une fonctionnalité métier. Il est destiné à être enrichi à chaque version.
 
 ### Parties prenantes et méthodes Agile
 
@@ -78,6 +76,7 @@ Les développements ont commencé le 13 avril 2016. Les grands jalons du plannin
 -  La V6 a été publiée en avril 2023. Le SEDA 2.2 est dorévavant pris en charge. Des améliorations sur l’exploitation et la supervision facilitent la gestion des plateformes. Le front-office Vitam UI est enrichi de nombreuses fonctionnalités et en particulier des APP Profils documentaires et Collecte et préparation des versements. 
 - La V7.0 a été publiée en décembre 2023 et la V7.1 en juillet 2024.
 - La V8.0 a été publiée en décembre 2024 et la V8.1 au printemps 2025.
+- La V9.0 a été publiée à l'automne 2025.
       
 ###  Contenu des versions
 
@@ -96,6 +95,8 @@ La version 6 permet d’utiliser le module de collecte, tant pour la préparatio
 Les versions 7.0 et 7.1 supportent la version 2.3 du SEDA, offrent la prise en charge des archives signées électroniquement et la possibilité de gérer des identifiants pérennes (notamment les identifiants ARK).
 
 Les versions 8.0 et 8.1 proposent la conteneurisation (utilisable en production), des évolutions concernant le module de collecte (gestion plus fine des droits, ajout de fonctionnalités pour la préparation de versements par flux et le traitement des archives tel que le reclassement, etc.), ou encore la personnalisation des accusés de réception d'un transfert (ATR), l'ajout de facettes.
+
+La version 9.0 propose une visualisation arborescente d'archives versées à plat, ainsi que des évolutions du module de collecte (antivirus, import de SIP, connexion à des référentiels internes ou externes).
 
 Une définition plus fine des fonctions de la « StoryMap » portées par chaque version est le fruit du raffinement du « backlog » (liste des unités à développer) au cours du développement Agile, dans le respect de la vision globale donnée ci-dessus.
 
