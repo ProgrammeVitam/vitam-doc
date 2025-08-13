@@ -346,8 +346,7 @@ Chaque vocabulaire de type « objet » :
 -  doit définir :
     - un chemin (Path),
     - une cardinalité, dont la valeur doit être égale à « ONE », « ONE_REQUIRED », « MANY » ou « MANY_REQUIRED » (Cardinality),
-    - une déclaration d’objet (IsObject).
--  peut inclure :
+    - une déclaration d’objet (IsObject),
     - un intitulé (ShortName),
     - une description (Description).
 
@@ -362,12 +361,16 @@ X-Tenant-Id: {{tenant}}
   {
     "Path": "MyObject",
     "Cardinality": "ONE",
-    "IsObject": true
+    "IsObject": true,
+	"ShortName": "Mon objet",
+	"Description": "description de mon objet"
   },
  {
     "Path": "MyObject.MyText",
     "Cardinality": "MANY",
-    "IsObject": false
+    "IsObject": false,
+	"ShortName": "Mon texte",
+	"Description": "description de mon texte"
   }
 ]
 ```
@@ -414,6 +417,7 @@ Cette action provoque :
     Cardinality: 'MANY',
     Path: 'Liquidation.Facture,
     ShortName: 'Facture',
+	Description: 'métadonnée de type objet destinée à englober un ensemble de métadonnées ayant trait à une facturation',
     CreationDate: '2024-07-31T12:20:47.432',
     LastUpdate: '2024-07-31T12:20:47.432',
     IsObject: false,
@@ -475,7 +479,7 @@ Lors de cette opération, l’opération peut aboutir aux statuts suivants :
 |:---:|:---:|
 |Succès|Opération réalisée sans rencontrer de problèmes particuliers.|
 |Échec|Sans journalisation :<br>– la valeur de la cardinalité est incorrecte.|
-||Avec journalisation :<br>– ajout d’un vocabulaire déjà présent dans le schéma ;<br>- ajout d’un vocabulaire de type « feuille » qui n’existe pas dans l’ontologie ;<br>- ajout d’un vocabulaire de type « feuille », associé à un vocabulaire de type « objet » qui n’a pas été préalablement créé dans le schéma ;<br>– ajout d’un vocabulaire dont le type d’indexation est « GEO_POINT » ;<br>- ajout d’un vocabulaire sans avoir défini un chemin (« Path ») ou une cardinalité  (« Cardinality »).<br>– ajout d’un vocabulaire dont l’identifiant ne correspond pas aux règles imposées par la solution logicielle Vitam[^8].|
+||Avec journalisation :<br>– ajout d’un vocabulaire déjà présent dans le schéma ;<br>- ajout d’un vocabulaire de type « feuille » qui n’existe pas dans l’ontologie ;<br>- ajout d’un vocabulaire de type « feuille », associé à un vocabulaire de type « objet » qui n’a pas été préalablement créé dans le schéma ;<br>– ajout d’un vocabulaire dont le type d’indexation est « GEO_POINT » ;<br>- ajout d’un vocabulaire sans avoir défini un chemin (« Path »), une cardinalité (« Cardinality »), un intitulé (« ShortName ») ou une description (« Description »).<br>– ajout d’un vocabulaire dont l’identifiant ne correspond pas aux règles imposées par la solution logicielle Vitam[^8].|
 
 Il est possible d’ajouter des vocabulaires externes sous la forme d'un fichier CSV depuis l'APP VitamUI "Ontologie", et ce depuis le tenant d’administration ou un tenant en particulier.  
 Le fichier CSV à importer doit avoir les caractéristiques suivantes :
@@ -499,7 +503,7 @@ L'import du fichier CSV peut aboutir aux statut suivant :
 |:---:|:---:|
 |Succès|Opération réalisée sans rencontrer de problèmes particuliers.|
 |Échec|Sans journalisation :<br>– la valeur de la cardinalité est incorrecte,<br>– le format est incorrect,<br>– l'encodage n'est pas de l'UTF-8,<br>– le séparateur de texte est incorrect,<br>– un champ obligatoire ne contient pas de valeur.|
-||Avec journalisation :<br>– ajout d’un vocabulaire déjà présent dans le schéma ;<br>- ajout d’un vocabulaire de type « feuille » qui n’existe pas dans l’ontologie ;<br>- ajout d’un vocabulaire de type « feuille », associé à un vocabulaire de type « objet » qui n’a pas été préalablement créé dans le schéma ;<br>– ajout d’un vocabulaire dont le type d’indexation est « GEO_POINT » ;<br>- ajout d’un vocabulaire sans avoir défini un chemin (« Path ») ou une cardinalité  (« Cardinality »).<br>– ajout d’un vocabulaire dont l’identifiant ne correspond pas aux règles imposées par la solution logicielle Vitam[^8].|
+||Avec journalisation :<br>– ajout d’un vocabulaire déjà présent dans le schéma ;<br>- ajout d’un vocabulaire de type « feuille » qui n’existe pas dans l’ontologie ;<br>- ajout d’un vocabulaire de type « feuille », associé à un vocabulaire de type « objet » qui n’a pas été préalablement créé dans le schéma ;<br>– ajout d’un vocabulaire dont le type d’indexation est « GEO_POINT » ;<br>- ajout d’un vocabulaire sans avoir défini un chemin (« Path »), une cardinalité (« Cardinality »), un intitulé (« ShortName ») ou une description (« Description »).<br>– ajout d’un vocabulaire dont l’identifiant ne correspond pas aux règles imposées par la solution logicielle Vitam[^8].|
 
 #### Suppression d’un vocabulaire externe
 
@@ -578,7 +582,7 @@ Le schéma contenant la traduction des différents vocabulaires supportés par l
 -  d’utiliser et d’afficher la traduction des vocabulaires dans les IHM, rendue administrable dans ce référentiel, afin qu’un administrateur fonctionnel ait la possibilité de modifier les intitulés (ou traductions) de certains vocabulaires (par exemple, modifier « Description », traduction textuelle du bloc Description du SEDA, par « Présentation du contenu », terme issu de la norme ISAD/G, davantage usité par les archivistes) ;
 -  d’afficher la traduction des vocabulaires externes.
 
-À titre d’exemple, au terme de la version 8.0, l’APP VitamUI « Recherche et consultation des archives » fournie avec la solution logicielle Vitam dispose de vocabulaires affichés dynamiquement :
+À titre d’exemple, au terme de la version 9.0, l’APP VitamUI « Recherche et consultation des archives » fournie avec la solution logicielle Vitam dispose de vocabulaires affichés dynamiquement :
 -  depuis la recherche sur l’ensemble des métadonnées, internes comme externes,
 -  depuis le détail des métadonnées descriptives d’une unité archivistique.
 
@@ -664,7 +668,7 @@ La solution logicielle Vitam renvoie alors :
 Il est possible, en accès :
 -  d’utiliser ce filtre sur les profils d’unité archivistique comme un fichier de propriétés pour récupérer les traductions, mais aussi les restrictions et informations spécifiquement déclarées dans les profils d’unité archivistiques, plutôt que ce soit l’IHM qui porte ces informations ;
 -  d’utiliser et d’afficher la traduction des vocabulaires et les contraintes définies dans un profil d’unité archivistique dans les IHM.
-À titre d’exemple, au terme de la version 8.0, l’APP VitamUI « Recherche et consultation des archives » fournie avec la solution logicielle Vitam dispose d’un affichage dynamique filtré sur un profil d’unité archivistique depuis le détail des métadonnées descriptives d’une unité archivistique déclarant un profil d’unité archivistique en mode édition.
+À titre d’exemple, au terme de la version 9.0, l’APP VitamUI « Recherche et consultation des archives » fournie avec la solution logicielle Vitam dispose d’un affichage dynamique filtré sur un profil d’unité archivistique depuis le détail des métadonnées descriptives d’une unité archivistique déclarant un profil d’unité archivistique en mode édition.
 
 #### Affichage dynamique du type de recherche (version bêta)
 
@@ -674,12 +678,12 @@ Il est possible en accès d'utiliser cette information pour choisir le type de r
 -  soit la recherche exacte en utilisant le type de recherche déclaré et activé dans le schéma.
 
 **Point d’attention :** 
--  Ce service est disponible dans une **version bêta** dans la version 8.1 de la solution logicielle Vitam. De fait, son usage dans un environnement de production n'est pas recommandé.
+-  Ce service est disponible dans une **version bêta** dans la version 9.0 de la solution logicielle Vitam. De fait, son usage dans un environnement de production n'est pas recommandé.
 -  Il nécessite l'installation d'un deuxième analyseur permettant d'effectuer une recherche exacte sur le vocabulaire Title.
--  Au terme de la version 8.1, il n'est utilisable que pour le vocabulaire Title.
+-  Au terme de la version 9.0, il n'est utilisable que pour le vocabulaire Title.
 -  Il n'est présent qu'au moyen de l'activation du paramètre exactSearchOnTitle présent dans le fichier de configuration functional-administration.conf
 
-À titre d’exemple, au terme de la version 8.1, l’APP VitamUI « Recherche et consultation des archives » fournie avec la solution logicielle Vitam 
+À titre d’exemple, au terme de la version 9.0, l’APP VitamUI « Recherche et consultation des archives » fournie avec la solution logicielle Vitam 
 -  peut disposer de l'affichage dynamique des modes de recherche du vocabulaire Title, si le paramètre exactSearchOnTitle est activé,
 -  peut ne pas disposer de l'affichage dynamique des modes de recherche du vocabulaire Title, si le paramètre exactSearchOnTitle est désactivé.
 
@@ -759,7 +763,7 @@ Pour créer un nouveau vocabulaire, il est recommandé de suivre les étapes sui
 
 ### Quand et comment modifier un vocabulaire ?
 
-en version 8.0, la mise à jour d’un vocabulaire utilisé dans le schéma passe par sa suppression, puis son réimport en utilisant les API mises à disposition par la solution logicielle Vitam.
+en version 9.0, la mise à jour d’un vocabulaire utilisé dans le schéma passe par sa suppression, puis son réimport en utilisant les API mises à disposition par la solution logicielle Vitam.
 Il est ainsi possible de mettre à jour les informations suivantes :
 -  le chemin (Path),
 -  la cardinalité, dont la valeur doit être égale à « ONE », « ONE_REQUIRED », « MANY » ou « MANY_REQUIRED » (Cardinality),
@@ -796,7 +800,7 @@ La gestion du schéma relève d’opérations d’administration technico-foncti
 
 [en construction]
 
-### Comment utiliser le schéma   ?
+### Comment utiliser le schéma ?
 
 #### Administration du schéma
 
