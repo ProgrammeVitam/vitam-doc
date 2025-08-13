@@ -1,5 +1,5 @@
 Schéma
-=====
+======
 
 Introduction
 ------------
@@ -8,12 +8,12 @@ Introduction
 
 
 |**Document**|**Date de la version**|
-|:---------------:|:-----:|:-----:|
+|:---------------:|:-----:|
 |NF Z 44022 – MEDONA – Modélisation des données pour l’archivage|18/01/2014|
-|Standard d’échange de données pour l’archivage – SEDA – v. 2.1|06/2018||           
+|Standard d’échange de données pour l’archivage – SEDA – v. 2.1|06/2018|          
 |Standard d’échange de données pour l’archivage – SEDA – v. 2.2|02/2022|
 |Standard d’échange de données pour l’archivage – SEDA – v. 2.3|06/2024|
-|[Structuration des *Submission Information Packages* (SIP)](./SIP.md)||
+|[Structuration des *Submission Information Packages* (SIP)](./SIP.md)|
 |[Ontologie](./ontologie.md)||
 
 ### Présentation du document
@@ -25,7 +25,7 @@ Il s’articule autour des axes suivants :
 - une présentation des mécanismes mis en œuvre dans la solution logicielle Vitam pour prendre en compte cette notion ;
 - quelques conseils complémentaires de mise en œuvre.
 
-Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 8.1 (printemps 2025).
+Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 9.0 (automne 2025).
 Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
 
 
@@ -50,6 +50,7 @@ Ces vocabulaires peuvent être utilisés pour décrire :
 -  les chemins sont uniques dans la solution logicielle Vitam ;
 -  contrairement à l’ontologie, les vocabulaires utilisés par la solution logicielle Vitam de type « objet », c’est-à-dire ne contenant pas de valeurs informationnelles, sont référencés dans le schéma. Il peut s’agir de :
     - vocabulaires conformes au SEDA de type « objet », c'est-à-dire correspondant à un élément XML englobant un sous-élément XML (par exemple, Writer ou Management) ;
+
 *Exemple :* sont présents dans le schéma les vocabulaires « Keyword », « Keyword.Keyword Content », « Keyword.KeywordType ».
 
 ```xml
@@ -60,6 +61,7 @@ Ces vocabulaires peuvent être utilisés pour décrire :
 ```
 
     - vocabulaires générés par la solution logicielle Vitam, correspondant à un élément JSON de type « objet ».
+
 *Exemple :* sont présents dans le schéma les éléments JSON _mgt, _v.
 
 ```json
@@ -217,6 +219,7 @@ Chaque enregistrement est modélisé comme suit :
 |Type|**type d’indexation** du vocabulaire, correspondant à un type attendu par le moteur Elastic Search (champ obligatoire).<br>-  Dans le cas des vocabulaires de type « feuille », le type est hérité de l'ontologie. Les valeurs acceptées sont : DATE, TEXT, KEYWORD, BOOLEAN, LONG, DOUBLE, ENUM[^4].<br>-  Dans le cas des vocabulaires de type « objet », la valeur acceptée est : OBJECT.|
 |TypeDetail|**type détaillé d'indexation**, uniquement présent pour les vocabulaires de type « feuille » (champ obligatoire).<br>Les valeurs acceptées sont : STRING, ENUM, DATETIME, BOOLEAN, LONG, DOUBLE.|
 |StringSize|**taille** du vocabulaire, disponible uniquement pour les vocabulaires dont le type détaillé a pour valeur "STRING" (champ facultatif).<br>Les valeurs acceptées sont : SHORT, MEDIUM, LONG.|
+|CustomSearchTypes|**type de recherche** disponible pour un vocabulaire, disponible uniquement pour le vocabulaire Title si le paramètre exactSearchOnTitle est égal à true.  (champ facultatif - version bêta).<br>La valeur du champ est alors : Strict [^9].|
 
 #### Dans la base de données MongoDB
 
@@ -224,7 +227,8 @@ Les vocabulaires externes sont enregistrés dans la base de données MongoDB, da
 
 **Point d'attention :** Les vocabulaires internes ne sont pas enregistrés dans cette collection.
 
-*Exemple :* deux vocabulaires, l’un de type « objet » et l’autre de type « feuille »/
+*Exemple :* deux vocabulaires, l’un de type « objet » et l’autre de type « feuille ».
+
 ```json
 {
     _id: 'aeaaaaaaaaecx2k6abhpuamq4m36uqiaaaaq',
@@ -322,11 +326,11 @@ Ce schéma est multi-tenant. Il est administrable et journalisé depuis le tenan
 #### Ajout d’un vocabulaire externe
 
 Il est possible d’ajouter des vocabulaires externes sous la forme d’enregistrements JSON depuis le tenant d’administration ou un tenant en particulier.  
-L’ajout d’un vocabulaire externe est possible au moyen des API pour la collection « Unit ».
+L’ajout d’un vocabulaire externe est possible pour la collection « Unit » :
+-  au moyen des API,
+-  depuis l'APP VitamUI « Ontologie ».
 
-Point d’attention : Au terme de la version 8.0, il n’est pas possible d’ajouter :
--  un vocabulaire externe dans le schéma depuis les interfaces de VitamUI ;
--  un vocabulaire externe pour la collection « ObjectGroup ».
+**Point d’attention :** Au terme de la version 9.0, il n’est pas possible d’ajouter un vocabulaire externe pour la collection « ObjectGroup ».
 
 Chaque vocabulaire de type « feuille » :
 -  doit définir :
@@ -472,14 +476,38 @@ Lors de cette opération, l’opération peut aboutir aux statuts suivants :
 |Échec|Sans journalisation :<br>– la valeur de la cardinalité est incorrecte.|
 ||Avec journalisation :<br>– ajout d’un vocabulaire déjà présent dans le schéma ;<br>- ajout d’un vocabulaire de type « feuille » qui n’existe pas dans l’ontologie ;<br>- ajout d’un vocabulaire de type « feuille », associé à un vocabulaire de type « objet » qui n’a pas été préalablement créé dans le schéma ;<br>– ajout d’un vocabulaire dont le type d’indexation est « GEO_POINT » ;<br>- ajout d’un vocabulaire sans avoir défini un chemin (« Path ») ou une cardinalité  (« Cardinality »).<br>– ajout d’un vocabulaire dont l’identifiant ne correspond pas aux règles imposées par la solution logicielle Vitam[^8].|
 
+Il est possible d’ajouter des vocabulaires externes sous la forme d'un fichier CSV depuis l'APP VitamUI "Ontologie", et ce depuis le tenant d’administration ou un tenant en particulier.  
+Le fichier CSV à importer doit avoir les caractéristiques suivantes :
+-  encodage des caractères : UTF-8 ;
+-  séparateur de champ : point-virgule ;
+-  séparateur de texte : guillemets simples ou doubles, espace vide ;
+Le fichier CSV possède obligatoirement cinq colonnes respectant l’ordre suivant : Path, Cardinality, IsObject, ShortName et Description.
+
+Exemple : Enregistrement d'un fichier CSV.
+```csv
+
+Path;Cardinality;IsObject;ShortName;Description
+MyObject;ONE;false;Mon objet;MyObject - extension
+MyObject.MyText;MANY;true;Mon texte;MyObject.MyText - extension
+    
+```
+
+L'import du fichier CSV peut aboutir aux statut suivant :
+
+|Statut|Motifs|
+|:---:|:---:|
+|Succès|Opération réalisée sans rencontrer de problèmes particuliers.|
+|Échec|Sans journalisation :<br>– la valeur de la cardinalité est incorrecte,<br>– le format est incorrect,<br>– l'encodage n'est pas de l'UTF-8,<br>– le séparateur de texte est incorrect,<br>– un champ obligatoire ne contient pas de valeur.|
+||Avec journalisation :<br>– ajout d’un vocabulaire déjà présent dans le schéma ;<br>- ajout d’un vocabulaire de type « feuille » qui n’existe pas dans l’ontologie ;<br>- ajout d’un vocabulaire de type « feuille », associé à un vocabulaire de type « objet » qui n’a pas été préalablement créé dans le schéma ;<br>– ajout d’un vocabulaire dont le type d’indexation est « GEO_POINT » ;<br>- ajout d’un vocabulaire sans avoir défini un chemin (« Path ») ou une cardinalité  (« Cardinality »).<br>– ajout d’un vocabulaire dont l’identifiant ne correspond pas aux règles imposées par la solution logicielle Vitam[^8].|
+
 #### Suppression d’un vocabulaire externe
 
 Il est possible de supprimer des vocabulaires externes depuis le tenant d’administration ou un tenant en particulier.
-La suppression d’un vocabulaire externe est possible au moyen des API pour la collection « Unit ».
+La suppression d’un vocabulaire externe est possible pour la collection « Unit » :
+-  au moyen des API ;
+-  depuis l'APP VitamUI "Ontologie".
 
-Point d’attention : Au terme de la version 8.0, il n’est pas possible de :
--  supprimer un vocabulaire externe dans le schéma depuis les interfaces de VitamUI ;
--  supprimer un vocabulaire externe pour la collection « ObjectGroup ».
+**Point d’attention :** Au terme de la version 9.0, il n’est pas possible de supprimer un vocabulaire externe pour la collection « ObjectGroup ».
 
 *Exemple :* Suppression d’un vocabulaire externe « MyText ».
 ```json
@@ -512,6 +540,10 @@ La solution logicielle Vitam permet d’accéder à :
 -  la liste des vocabulaires internes et, le cas échéant, externes de la collection « Unit »,
 -  la liste des vocabulaires internes de la collection « ObjectGroup ».
 
+Cet accès est possible :
+
+-   au moyen des API
+
 *Exemple :* Requête en vue de rechercher les vocabulaires de la collection « Unit ».
 
 ```json
@@ -532,7 +564,11 @@ X-Tenant-Id: 2
 X-Access-Contract-Id: {{access-contract}}
 ```
 
-**Point d’attention :** En résultats, la solution logicielle renvoie systématiquement l’ensemble des vocabulaires du schéma. Au terme de la version 8.0, il n’est pas possible de récupérer une sélection de métadonnées.
+**Point d’attention :** En résultats, la solution logicielle renvoie systématiquement l’ensemble des vocabulaires du schéma. Au terme de la version 9.0, il n’est pas possible de récupérer une sélection de métadonnées.
+
+-   depuis l’APP VitamUI « Ontologie », accessible depuis tous les tenants.
+
+**Point d’attention :** L'APP VitamUI « Ontologie » ne renvoie que les vocabulaires de la collection « Unit ».
 
 #### Affichage dynamique des traductions
 
@@ -628,6 +664,31 @@ Il est possible, en accès :
 -  d’utiliser ce filtre sur les profils d’unité archivistique comme un fichier de propriétés pour récupérer les traductions, mais aussi les restrictions et informations spécifiquement déclarées dans les profils d’unité archivistiques, plutôt que ce soit l’IHM qui porte ces informations ;
 -  d’utiliser et d’afficher la traduction des vocabulaires et les contraintes définies dans un profil d’unité archivistique dans les IHM.
 À titre d’exemple, au terme de la version 8.0, l’APP VitamUI « Recherche et consultation des archives » fournie avec la solution logicielle Vitam dispose d’un affichage dynamique filtré sur un profil d’unité archivistique depuis le détail des métadonnées descriptives d’une unité archivistique déclarant un profil d’unité archivistique en mode édition.
+
+#### Affichage dynamique du type de recherche (version bêta)
+
+Le schéma peut indiquer le type de recherche disponible pour le vocabulaire Title. Cette information est disponible si le paramètre exactSearchOnTitle est égal à true [^9]. Sa valeur est alors égale à "Exact".
+Il est possible en accès d'utiliser cette information pour choisir le type de recherche souhaité pour le vocabulaire Title :
+-  soit la recherche approchante (recherche par défaut),
+-  soit la recherche exacte en utilisant le type de recherche déclaré et activé dans le schéma.
+
+**Point d’attention :** 
+-  Ce service est disponible dans une **version bêta** dans la version 8.1 de la solution logicielle Vitam. De fait, son usage dans un environnement de production n'est pas recommandé.
+-  Il nécessite l'installation d'un deuxième analyseur permettant d'effectuer une recherche exacte sur le vocabulaire Title.
+-  Au terme de la version 8.1, il n'est utilisable que pour le vocabulaire Title.
+-  Il n'est présent qu'au moyen de l'activation du paramètre exactSearchOnTitle présent dans le fichier de configuration functional-administration.conf
+
+À titre d’exemple, au terme de la version 8.1, l’APP VitamUI « Recherche et consultation des archives » fournie avec la solution logicielle Vitam 
+-  peut disposer de l'affichage dynamique des modes de recherche du vocabulaire Title, si le paramètre exactSearchOnTitle est activé,
+-  peut ne pas disposer de l'affichage dynamique des modes de recherche du vocabulaire Title, si le paramètre exactSearchOnTitle est désactivé.
+
+Exemple 1 : Recherche sur le champ Intitulé accessible depuis l’APP « Recherche et consultation des archives » - paramètre activé
+
+![](./medias/schema/APP_recherche_3.png)
+
+Exemple 2 : Recherche sur le champ Intitulé accessible depuis l’APP « Recherche et consultation des archives »  - paramètre désactivé
+
+![](./medias/schema/APP_recherche_4.png)
 
 Conseils de mise en œuvre
 ----
@@ -726,8 +787,8 @@ Point d’attention :
 
 #### Gestion des droits
 
-La gestion de l’ontologie relève d’opérations d’administration technico-fonctionnelle. Il est donc recommandé d’en limiter l’accès de la manière suivante :
--  des administrateurs fonctionnel et technique peuvent avoir accès à l’ontologie et la mettre à jour (Create, Read, Delete) ;
+La gestion du schéma relève d’opérations d’administration technico-fonctionnelle. Il est donc recommandé d’en limiter l’accès de la manière suivante :
+-  des administrateurs fonctionnel et technique peuvent avoir accès au schéma et le mettre à jour (Create, Read, Delete) ;
 -  un tiers n’a pas vocation à prendre connaissance de l’ensemble du schéma, mais peut avoir accès aux vocabulaires utilisés lors d’un transfert et avec des profils d’unité archivistique, à savoir les vocabulaires internes issus du SEDA et les vocabulaires externes créés pour des besoins de transfert particuliers (Read).
 
 #### Restitution sur une IHM
@@ -13213,3 +13274,5 @@ Nota bene : cette liste n’est pas forcément exhaustive.
 [^7]: Pour plus d’informations sur le processus d’import du référentiel, consulter le document [Modèle de workflow](./modele_de_workflow.md), « Workflow d’administration d’un référentiel des vocabulaires du schéma ».
 
 [^8]: Les règles propres au nommage d’un vocabulaire sont définies dans la [partie « Conseils de mise en œuvre » du présent document](#conseils-de-mise-en-œuvre).
+
+[^9]: Ce paramètre est configurable dans le fichier functional-administration.conf.
