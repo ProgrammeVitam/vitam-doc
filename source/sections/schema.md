@@ -49,6 +49,7 @@ Ces vocabulaires peuvent être utilisés pour décrire :
 **Points d'attention :**
 -  les chemins sont uniques dans la solution logicielle Vitam ;
 -  contrairement à l’ontologie, les vocabulaires utilisés par la solution logicielle Vitam de type « objet », c’est-à-dire ne contenant pas de valeurs informationnelles, sont référencés dans le schéma. Il peut s’agir de :
+
     - vocabulaires conformes au SEDA de type « objet », c'est-à-dire correspondant à un élément XML englobant un sous-élément XML (par exemple, Writer ou Management) ;
 
 *Exemple :* sont présents dans le schéma les vocabulaires « Keyword », « Keyword.Keyword Content », « Keyword.KeywordType ».
