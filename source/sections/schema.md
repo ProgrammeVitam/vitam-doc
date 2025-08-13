@@ -214,7 +214,7 @@ Chaque enregistrement est modélisé comme suit :
 |Description|**description** (champ facultatif).<br>Dans le cas des vocabulaires de type « feuille », la description peut être héritée de l'ontologie.|
 |Collection|**collection(s)** de la base de données MongoDB qui utilise(nt) le vocabulaire en question (champ obligatoire).<br>Les valeurs acceptées sont : Unit, ObjectGroup.<br>La valeur est fournie par la solution logicielle Vitam.|
 |Origin|**origine** du vocabulaire, précisant la provenance du vocabulaire (champ obligatoire). Sa valeur peut être égale à :<br>-  INTERNAL : pour les vocabulaires conformes au SEDA et les vocabulaires propres à la solution logicielle Vitam ;<br>-  EXTERNAL : pour les vocabulaires non gérés nativement par les deux précédents items et ajoutés pour répondre à un besoin particulier.<br>La valeur est fournie par la solution logicielle Vitam.|
-|Category|**catégorie** du vocabulaire (champ obligatoire).<br>Sa valeur peut être égale à :<br>-  DESCRIPTION : pour les vocabulaires conformes au SEDA et les vocabulaires propres à la solution logicielle Vitam équivalents à des métadonnées descriptives ;<br>-  MANAGEMENT : pour les vocabulaires conformes au SEDA et les vocabulaires propres à la solution logicielle Vitam équivalents à des métadonnées de gestion ;<br>-  OTHER : pour les vocabulaires non gérés nativement par les deux précédents items et ajoutés pour répondre à un besoin particulier et les vocabulaires propres à la solution logicielle Vitam et spécifiques à des usages internes.<br>La valeur est fournie par la solution logicielle Vitam.|
+|Category|**catégorie** du vocabulaire (champ obligatoire).<br>Sa valeur peut être égale à :<br>-  DESCRIPTION : pour les vocabulaires conformes au SEDA, les extensions (ou vocabulaires externes) et les vocabulaires propres à la solution logicielle Vitam équivalents à des métadonnées descriptives ;<br>-  MANAGEMENT : pour les vocabulaires conformes au SEDA et les vocabulaires propres à la solution logicielle Vitam équivalents à des métadonnées de gestion ;<br>-  OTHER : pour les vocabulaires non gérés nativement par les deux précédents items et ajoutés pour répondre à un besoin particulier et les vocabulaires propres à la solution logicielle Vitam et spécifiques à des usages internes.<br>La valeur est fournie par la solution logicielle Vitam.|
 |Cardinality|**cardinalité** du vocabulaire, correspondant à un type attendu par le moteur Elastic Search (champ obligatoire).<br>Les valeurs acceptées sont : ONE, ONE_REQUIRED, MANY ou MANY_REQUIRED.|
 |SedaVersions|**version du SEDA** dans laquelle le vocabulaire peut être utilisé (champ facultatif).<br>La valeur est fournie par la solution logicielle Vitam pour les seuls vocabulaires internes.|
 |Type|**type d’indexation** du vocabulaire, correspondant à un type attendu par le moteur Elastic Search (champ obligatoire).<br>-  Dans le cas des vocabulaires de type « feuille », le type est hérité de l'ontologie. Les valeurs acceptées sont : DATE, TEXT, KEYWORD, BOOLEAN, LONG, DOUBLE, ENUM[^4].<br>-  Dans le cas des vocabulaires de type « objet », la valeur acceptée est : OBJECT.|
@@ -337,9 +337,9 @@ Chaque vocabulaire de type « feuille » :
 -  doit définir :
     - un chemin (Path),
     - une cardinalité, dont la valeur doit être égale à « ONE », « ONE_REQUIRED », « MANY » ou « MANY_REQUIRED » (Cardinality),
--  peut inclure :
     - un intitulé (ShortName),
     - une description (Description),
+-  peut inclure :
     - une déclaration d’objet (IsObject).
 
 Chaque vocabulaire de type « objet » :
