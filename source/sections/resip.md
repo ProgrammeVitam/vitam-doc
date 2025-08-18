@@ -994,14 +994,9 @@ L’[import simple d’une arborescence de fichiers](#import-dune-arborescence-d
 moulinette ReSIP crée un contexte de travail reprenant les métadonnées
 par défaut disponibles dans l’arborescence de fichiers :
 
--   pour les fichiers, le format identifié avec l’outil DROID, le nom du
-    fichier, sa taille, son empreinte avec l’algorithme SHA-512 ;
--   pour les unités archivistiques correspondant aux fichiers, le nom du
-    fichier comme titre (champ Title du standard SEDA). Le niveau de description (champ DescriptionLevel du
-    standard SEDA) est incrémenté avec la valeur « Item » ;
--   pour les unités archivistiques correspondant à des répertoires,
-    l’intitulé de ceux-ci comme titre (champ Title du standard SEDA). Le niveau de description (champ DescriptionLevel du standard
-    SEDA) est incrémenté avec la valeur « RecordGrp ».
+-   pour les fichiers, le format identifié avec l’outil DROID, le nom du fichier, sa taille, son empreinte avec l’algorithme SHA-512 ;
+-   pour les unités archivistiques correspondant aux fichiers, le nom du fichier comme titre (champ Title du standard SEDA). Le niveau de description (champ DescriptionLevel du standard SEDA) est incrémenté avec la valeur « Item » ;
+-   pour les unités archivistiques correspondant à des répertoires, l’intitulé de ceux-ci comme titre (champ Title du standard SEDA). Le niveau de description (champ DescriptionLevel du standard SEDA) est incrémenté avec la valeur « RecordGrp ».
 
 ***Point d’attention :*** Le processus retenu pour l’identification dans RESIP est le suivant[^5] :
 -   S’il y a des formats conteneurs, on ne garde qu’eux dans une liste de choix, s’il n’y en a pas ou s’il y a une erreur on passe à la suite ;
