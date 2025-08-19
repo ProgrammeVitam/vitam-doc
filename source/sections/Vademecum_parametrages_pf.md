@@ -174,7 +174,58 @@ Il est possible d’ajouter des informations complémentaires dans les rapports 
 
 Vademecum lié : [Réaliser des éliminations avec la solution logicielle Vitam](./Vademecum_eliminations.md)
 
-Connexion SAE (facultatif)
+Personnalisation du parcours de création d'un projet de versement dans Vitam UI par la connexion aux référentiels de SAE (facultatif)
 ---
 
-xxx
+Tout d'abord, il est possible de choisir dans Vitam UI d'utiliser ou non la connexion du projet de versement à des référentiels afin d'obtenir une aide à la saisie au sein du parcours de création du projet de versement.
+Cette connexion peut se faire avec le tenant et le SAE locaux mais elle peut également être mise en place avec des tenants d'autres instances externes de Vitam. Cette connexion demande alors une configuration au préalable décrite ci-après : 
+
+Il est nécessaire de configurer les keystores et truststores des instances cibles dans le dossier environments/keystores_external_archiving_systems/ dans le dossier de déploiement de l'installation de Vitam-UI.
+
+    - /environments/keystores_external_archiving_systems/keystore_<external_system_id1>.p12
+    - /environments/keystores_external_archiving_systems/trustore_<external_system_id1>.jks
+    - ...
+
+Les mots de passe des keystores et truststores doivent être définis un fichier vault (exemple: vault_keystores_external_archiving_systems.yml) à éditer via l'outil ansible-vault :
+
+```
+external_archiving_systems:
+  keystore_password:
+    <external_system_id1>: keystore_external_system_1_changeit
+    <external_system_id2>: keystore_external_system_2_changeit
+  truststore_password:
+    <external_system_id1>: truststore_external_system_1_changeit
+    <external_system_id2>: truststore_external_system_2_changeit
+```
+
+Les URLs d'accès aux SAE tiers, et les autorisations d'accès par tenant sont à définir dans la configuration ansible :
+
+``` 
+external_archiving_systems:
+  client_configuration:
+  - archiving_system_id: <external_system_id1>
+    name: "EXTERNAL ENV NAME 1"
+    access_external:
+      host: <host_name>
+      port: <port>
+  - archiving_system_id: <external_system_id2>
+    name: "EXTERNAL ENV NAME 2"
+    access_external:
+        host: <host_name>
+        port: <port>
+  - ...
+``` 
+``` 
+  tenant_configuration:
+  - tenant: 2
+    external_archiving_system_references:
+      - archiving_system_id: local # Use "local" as archiving_system_id to reference the current Vitam instance with other tenants
+        tenantIds: [1, 2, 3]       # Target tenants
+      - archiving_system_id: <external_system_id1>
+        tenantIds: [0, 2]
+  - tenant: 3
+    external_archiving_system_references:
+      - archiving_system_id: <external_system_id2>
+        tenantIds: [10]
+  - ...
+``` 
