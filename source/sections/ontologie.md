@@ -19,23 +19,20 @@ Introduction
 
 ### Présentation du document
 
-Le document présente les fonctionnalités associées à la prise en compte
-de la notion d'ontologie dans la solution logicielle Vitam.
+Le document présente les fonctionnalités associées à la prise en compte de la notion d'ontologie dans la solution logicielle Vitam.
 
 Il s’articule autour des axes suivants :
 
 - une présentation de la notion d’ontologie ;
 
-- une présentation de la manière dont la solution logicielle Vitam la
-  formalise ;
+- une présentation de la manière dont la solution logicielle Vitam la formalise ;
 
-- une présentation des mécanismes mis en œuvre dans la solution
-  logicielle Vitam pour prendre en compte cette notion ;
+- une présentation des mécanismes mis en œuvre dans la solution logicielle Vitam pour prendre en compte cette notion ;
 
 - quelques conseils complémentaires de mise en œuvre.
 
 Le présent document décrit les fonctionnalités qui sont offertes par la
-solution logicielle Vitam au terme de la version 8.1 (printemps 2025).
+solution logicielle Vitam au terme de la version 9.0 (automne 2025).
 Il a vocation a être amendé, complété et enrichi au fur et à mesure de
 la réalisation de la solution logicielle Vitam et des retours et
 commentaires formulés par les ministères porteurs et les partenaires du
@@ -74,7 +71,7 @@ Ces vocabulaires peuvent être utilisés pour décrire :
 -   0 à n unité(s) archivistique(s),
 -   0 à n vocabulaire(s) de l'ontologie et du schéma.
 
-Points d'attention :
+**Points d'attention :**
 
 -   les vocabulaires sont uniques dans la solution logicielle Vitam ;
 -   les vocabulaires utilisés par la solution logicielle Vitam de type « objet », c’est-à-dire ne contenant pas de valeurs informationnelles, ne sont pas référencés dans l’ontologie[^50]. Il peut s’agir de :
@@ -291,7 +288,7 @@ Il s’agit d’une opération d’administration (« MASTERDATA »), tracée 
 
 La modification de l'ontologie est possible :
 
--   au moyen des API et de l’IHM standard fournie avec la solution logicielle Vitam et s'effectue par un réimport complet de l'ontologie, en mode « annule et remplace ». De fait, la solution logicielle Vitam permet de :
+-   au moyen des API et de l’IHM VitamUI fournie avec la solution logicielle Vitam et s'effectue par un réimport complet de l'ontologie, en mode « annule et remplace ». De fait, la solution logicielle Vitam permet de :
 
     -   ajouter un nouveau vocabulaire ;
     -   modifier les informations associées à un vocabulaire ;
@@ -338,7 +335,7 @@ Les différentes versions du référentiel font l’objet d’une sauvegarde sur
 
 Ces opérations de modification des types d’indexation doivent obligatoirement être accompagnées d’un acte technique d’exploitation, afin que la nouvelle indexation soit effective et prise en compte par le moteur de recherche Elastic Search[^15].
 
-### Contrôle de l'ontologie sur les profils d’unité archivistique
+#### Contrôle de l'ontologie sur les profils d’unité archivistique
 
 Lors de la création ou de la mise à jour de profils d’unité archivistique (ou documents type), la solution logicielle Vitam vérifie que les profils d’unité archivistique déclarent des vocabulaires existant dans l’ontologie.
 
@@ -351,13 +348,13 @@ Point d’attention :
 
 -   La solution logicielle Vitam n’effectue pas de contrôle sur la conformité des vocabulaires par rapport à leur type d’indexation dans l’ontologie, lors de la création de profils d’unité archivistique. Néanmoins, il est obligatoire que le type du vocabulaire défini dans le schéma de contrôle corresponde au type d’indexation du vocabulaire tel qu’il est défini dans l’ontologie[^16].
 
-### Contrôle du schéma sur l'ontologie
+#### Contrôle du schéma sur l'ontologie
 
 Lors de la suppression d'un vocabulaire externe dans l'ontologie, la solution logicielle Vitam vérifie que le vocabulaire n'est pas utilisé dans le schéma.
 
 L’import ou la mise à jour de l'ontologie peut échouer si le vocabulaire est utilisé dans le schéma.
 
-### Accès au référentiel
+#### Accès au référentiel
 
 La solution logicielle Vitam permet d'effectuer des recherches dans l'ontologie.
 Il est possible d'obtenir :
@@ -377,7 +374,7 @@ L'accès au référentiel est possible depuis :
 -  les API,
 -  l'APP VitamUI « Ontologie ».
 
-#### Processus d’entrée
+### Processus d’entrée
 
 Dans le cadre du processus d’entrée d’un ensemble d’archives, suite à la réception d’un message ArchiveTransfer du SEDA, parmi les tâches et traitements internes qu’elle effectue, la solution logicielle Vitam **vérifie :**
 
@@ -409,7 +406,7 @@ L’ontologie contenant la traduction des différents vocabulaires supportés pa
 -   d’utiliser ce référentiel comme un fichier de propriétés pour récupérer les traductions, plutôt que ce soit l’IHM qui porte ces informations. Ainsi, cela évitera de constater des absences de traduction des vocabulaires externes récemment créés ;
 -   d’utiliser et d’afficher la traduction des vocabulaires dans les IHM, rendue administrable dans ce référentiel, afin qu’un administrateur fonctionnel ait la possibilité de modifier les intitulés (ou traductions) de certains vocabulaires (par exemple, modifier « Description », traduction textuelle du bloc Description du SEDA, par « Présentation du contenu », terme issu de la norme ISAD/G, davantage usité par les archivistes).
 
-À titre d’exemple, l’IHM de la solution logicielle Vitam dispose de vocabulaires écrits en dur dans l’IHM. Dès qu’on transfère un bordereau contenant des vocabulaires externes, l’IHM ne les traduit pas. Il est alors nécessaire de demander un acte d’exploitation en vue de corriger ces éléments.
+À titre d’exemple, l’ancienne IHM de la solution logicielle Vitam dispose de vocabulaires écrits en dur dans l’IHM. Dès qu’on transfère un bordereau contenant des vocabulaires externes, l’IHM ne les traduit pas. Il est alors nécessaire de demander un acte d’exploitation en vue de corriger ces éléments.
 
 *Exemple illustration 2 :*  
 *« Prénom », « Nom de naissance », « Identifiant », « Date d’envoi », « Date de réception », qui correspondent à des vocabulaires internes, sont des intitulés gravés en dur. « Licence », également gravé en dur, correspond à un vocabulaire externe. Dans l’ontologie, on a introduit une traduction conforme à la norme ISAD/G : « 3.4.2. Conditions de reproduction ».*
@@ -448,7 +445,7 @@ La création d’une ontologie est un préalable à l’utilisation des vocabula
 
 La création d’un nouveau vocabulaire s’effectue :
 
--   au moyen des l’API et de l’IHM standard fournie avec la solution logicielle Vitam, par un réimport complet du référentiel, auquel a été ajouté un vocabulaire supplémentaire, d’origine externe.
+-   au moyen des l’API, par un réimport complet du référentiel, auquel a été ajouté un vocabulaire supplémentaire, d’origine externe.
 -   depuis l’APP VitamUI « Ontologie », par :
 
     -   la création unitaire d’un vocabulaire,
@@ -520,7 +517,7 @@ La création d’un nouveau vocabulaire n’est pas un acte anodin. Avant de pro
 
 Pour créer un nouveau vocabulaire, il est recommandé de suivre les étapes suivantes :
 
-| Qui ? | Quoi ? | Via l’IHM Vitam ? |
+| Qui ? | Quoi ? | Via l’IHM VitamUI ? |
 |---|---|---|
 | Administrateur fonctionnel                 | émet le souhait d’ajouter un nouveau vocabulaire, **externe**, dans l’ontologie | Non |
 | Administrateur fonctionnel                 | vérifie au préalable si ce nouveau vocabulaire n’existe pas ou si un vocabulaire préexistant ne correspond pas à son besoin. | Oui |
@@ -530,10 +527,10 @@ Pour créer un nouveau vocabulaire, il est recommandé de suivre les étapes sui
 
 ### Quand et comment modifier un type d’indexation ?
 
-La mise à jour du type d’indexation d’un vocabulaire s’effectue, depuis le tenant d’administration :
+La mise à jour du type d’indexation d’un vocabulaire s’effectue :
 
--   de l’IHM standard par un réimport complet du référentiel, après avoir modifié le type d’indexation d’un à plusieurs vocabulaires ;
--   de VitamUI, dans l’APP Ontologie, par :
+-  depuis les API, par un réimport complet du référentiel, duquel a été modifié un type d'indexation d'un à plusieurs vocabulaires ;
+-  depuis le tenant d’administration de VitamUI, dans l’APP « Ontologie », par :
 
     -   la mise à jour unitaire d’un vocabulaire,
     -   le réimport complet du référentiel, après avoir modifié le type d’indexation d’un à plusieurs vocabulaires.
@@ -603,7 +600,7 @@ De fait, en fonction de son type d’indexation, il est fortement recommandé de
 
 La suppression d’un vocabulaire s’effectue :
 
--   depuis l’IHM standard et les API, par un réimport complet du référentiel, duquel a été supprimé ce vocabulaire ;
+-   depuis les API, par un réimport complet du référentiel, duquel a été supprimé ce vocabulaire ;
 -   depuis l’APP VitamUI « Ontologie », par :
 
     -   la suppression unitaire d’un vocabulaire,
@@ -614,14 +611,13 @@ Cet acte n’est pas anodin. Avant de procéder à cette suppression, il est rec
 -   le vocabulaire devant être supprimé doit obligatoirement être un vocabulaire d’origine externe, à moins de correspondre à un vocabulaire supprimé à l’occasion d’une mise à jour du modèle de données géré par la solution logicielle Vitam ou la publication d’une nouvelle version du SEDA ;
 -   le vocabulaire ne doit pas être utilisé en base de données et contenir des valeurs enregistrées en base de données ;
 -   le vocabulaire ne doit pas être utilisé dans un profil d’unité archivistique ;
-
 -   le vocabulaire ne doit pas être utilisé dans le schéma.
 
 **Point d’attention :** la suppression d’un vocabulaire doit être accompagnée d’un acte d’exploitation technique visant à supprimer l’indexation du vocabulaire concerné dans le moteur de recherche Elastic Search, sans quoi le vocabulaire ne sera pas complètement supprimé de la solution logicielle Vitam[^26].
 
 Pour supprimer un vocabulaire, il est recommandé de suivre les étapes suivantes :
 
-| Qui ? | Quoi ? | Via l’IHM Vitam ? |
+| Qui ? | Quoi ? | Via l’IHM VitamUI ? |
 |---|---|---|
 | Administrateur fonctionnel                 | émet le souhait de supprimer un vocabulaire, **externe**, dans l’ontologie. | Non |
 | Administrateur fonctionnel                 | vérifie au préalable si ce vocabulaire n’est pas utilisé par une unité archivistique, un profil d’unité archivistique ou dans le schéma ;<br>-  si ce vocabulaire est utilisé par des unités archivistiques, procède à une mise à jour de ces unités archivistiques, afin de modifier l’utilisation ;<br>-  si ce vocabulaire est utilisé par un profil d’unité archivistique, ôter la référence au profil d’unité archivistique dans l’(les) unité(s) archivistique(s) concernée(s) ;<br>-  si ce vocabulaire est utilisé dans le schéma, ôter la référence dans le schéma. | Oui |
@@ -672,7 +668,7 @@ Cette procédure d’exploitation peut avoir lieu dans les cas suivants :
 
 Elle obéit aux mêmes règles strictes que celles relatives aux vocabulaires externes[^28].
 
-***Point d’attention :*** Suite à un import par acte d’exploitation ou par procédure de montée de version une phase préliminaire permet de vérifier d’éventuelles incohérences entre les vocabulaires internes et les vocabulaires externes. En cas de présence d’erreurs, il reviendra à l’exploitant de les analyser et de les corriger avant de procéder à la montée de version de l’ontologie[^29].
+**Point d’attention :** Suite à un import par acte d’exploitation ou par procédure de montée de version une phase préliminaire permet de vérifier d’éventuelles incohérences entre les vocabulaires internes et les vocabulaires externes. En cas de présence d’erreurs, il reviendra à l’exploitant de les analyser et de les corriger avant de procéder à la montée de version de l’ontologie[^29].
 
 ### Quel accès à l’ontologie ?
 
