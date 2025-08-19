@@ -2592,6 +2592,8 @@ Des droits utilisateurs sont par ailleurs définis :
 
 -  Les seuils définis dans les paramétrages externes pouvant être associés à un groupe de profils ne s'appliquent pas lors d'une réorganisation d'arborescence.
 
+Les opérations de suppression sont journalisées et leur résultat accessible depuis l’APP « Journal des opérations ».
+
 #### Ajout d'archives
 
 ##### Utilisation des API
@@ -2679,7 +2681,7 @@ La solution logicielle Vitam permet de supprimer une à plusieurs unités archi
 *Exemple : requête en vue de supprimer l'unité d'archives dont l’identifiant est «  aeeaaaaaachj3m7nabjocamcdqr2rqaaaaaq »*
 
 ```  
-  @transaction-id= *aeeaaaaaachj3m7nabjocamcdqr2rqaaaaaq*
+  @transaction-id= aeeaaaaaachj3m7nabjocamcdqr2rqaaaaaq
   
   POST {{url-collect}}/collect-external/v1/transactions/{{transaction-id}}/deletion/action
   Accept: application/json
@@ -2704,16 +2706,16 @@ La solution logicielle Vitam permet de supprimer une à plusieurs unités archi
 
 Cette action provoque la suppression :
 
-    -   des unités archivistiques de la collection « Unit » (base *MetadataCollect*) ;
-    -   des groupes d’objets techniques de la collection « ObjectGroup » (base *MetadataCollect*).
-    -   des objets des offres de stockage ;
+-   des unités archivistiques de la collection « Unit » (base *MetadataCollect*) ;
+-   des groupes d’objets techniques de la collection « ObjectGroup » (base *MetadataCollect*).
+-   des objets des offres de stockage ;
 
 Lors de cette action, l’opération peut aboutir aux résultats suivants :
 
 | Statut | Motifs |
 |---|---|
 | Succès        | Action réalisée sans rencontrer de problèmes particuliers.|
-| Avertissement | Au moins une des unités archivistiques ne peut pas être supprimée car elle(s) a(ont) des enfants (NON_DESTROYABLE_HAS_CHILD_UNITS).|
+| Avertissement | - Au moins une des unités archivistiques ne peut pas être supprimée car elle(s) a(ont) des enfants (NON_DESTROYABLE_HAS_CHILD_UNITS).<br>- Absence d'éléments à supprimer car les unités archivistiques à supprimer sont inconnues.|
 | Échec         | Le seuil de requête est dépassé.|
 
 Elle est journalisée dans le journal des opérations (COLLECT_DELETION).
@@ -2729,6 +2731,10 @@ Des droits utilisateurs sont par ailleurs définis :
 | Administrateur     | oui |
 | Archiviste         | oui |
 | Service producteur | non |
+
+***Point d'attention***:
+
+-  Les seuils définis dans les paramétrages externes pouvant être associés à un groupe de profils s'appliquent lors d'une suppression d'archives.
 
 Les opérations de suppression sont journalisées et leur résultat accessible depuis l'APP « Journal des opérations ».
 
