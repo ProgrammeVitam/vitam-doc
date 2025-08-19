@@ -2098,7 +2098,7 @@ Des droits utilisateurs sont par ailleurs définis :
 
 ##### Utilisation des API
 
-Pour une transaction donnée, une fois celle-ci clôturée, le module de collecte permet de générer un SIP et de le transférer au moyen d’une opération de type « INGEST »[^58].
+Pour une transaction donnée, une fois celle-ci clôturée, le module de collecte permet de générer un SIP en SEDA 2.3 et de le transférer au moyen d’une opération de type « INGEST »[^58].
 
 ***Point d’attention :***
 -  En prérequis à l’envoi du SIP, il faut avoir au préalable clôturé la transaction (son statut doit être égal à « READY ») et signaler cette dernière dans l’API.
