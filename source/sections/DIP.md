@@ -131,7 +131,7 @@ Via les API aux bornes de la solution logicielle Vitam, plusieurs critères de c
 
 - les usages. Ce filtre sera contrôlé par rapport aux droits octroyés par le contrat accès ;
 - la version du SEDA. Ce filtre fonctionne de la manière suivante :
-  - S’il n’est pas utilisé, le DIP généré sera déclaré en SEDA 2.2 ;
+  - S’il n’est pas utilisé, le DIP généré sera déclaré en SEDA 2.3 ;
   - Un contrôle de compatibilité est effectué entre la version du SEDA demandée dans le DIP et celle des unités archivistiques devant intégrer ce dernier.
 
 Au lancement de l’opération, la solution logicielle Vitam génère un identifiant de l’opération. Le DIP constitué a pour nom cet identifiant d’opération.
@@ -201,7 +201,7 @@ Des filtres supplémentaires peuvent être demandés sur :
 
 - les usages. Ce filtre sera contrôlé par rapport aux droits octroyés par le contrat accès ;
 - la version du SEDA. Ce filtre fonctionne de la manière suivante :
-    - S’il n’est pas utilisé, le DIP généré sera déclaré en SEDA 2.2 ;
+    - S’il n’est pas utilisé, le DIP généré sera déclaré en SEDA 2.3 ;
     - Un contrôle de compatibilité est effectué entre la version du SEDA demandée dans le DIP et celle des unités archivistiques devant intégrer ce dernier.
 
 Au cours de cette constitution il est également possible de définir la forme que prennent les fichiers exportés : 
@@ -282,7 +282,7 @@ Les valeurs de ces paramètres ne sont pas contrôlées par rapport aux référe
 Des filtres supplémentaires peuvent être demandés sur : 
     - les usages. Ce filtre sera contrôlé par rapport aux droits octroyés par le contrat accès ;
     - la version du SEDA. Ce filtre fonctionne de la manière suivante :
-        - S’il n’est pas utilisé, le DIP généré sera déclaré en SEDA 2.2 ;
+        - S’il n’est pas utilisé, le DIP généré sera déclaré en SEDA 2.3 ;
         - Un contrôle de compatibilité est effectué entre la version du SEDA demandée dans le DIP et celle des unités archivistiques devant intégrer ce dernier.
 
 Au lancement de l’opération, la solution logicielle Vitam génère un identifiant de l’opération. Le DIP de transfert constitué a pour nom cet identifiant d’opération.
