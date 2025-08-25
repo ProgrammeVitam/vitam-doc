@@ -1609,7 +1609,8 @@ Au terme de la version 8.1, ce filtre n'est disponible que depuis le front-offic
 L’utilisateur peut rechercher :
 
 -   une unité archivistique en particulier et accéder à son détail,
--   une unité archivistique pour une transaction donnée.
+-   une unité archivistique pour une transaction donnée,
+-   les règles de gestion portées par une à plusieurs unités archivistiques d'une transaction donnée.
 
 Il est possible de :
 
@@ -1626,7 +1627,7 @@ le seuil de résultats supporté par le moteur d’indexation Elastic Search est
   *Exemple : requête en vue d’obtenir l’unité archivistique dont l’identifiant est "aeeaaaaaaceezldyaamscambcvdf6zyaaaaq"*
 ```  
   @tenant = 1
-  @unit-id= ***aeeaaaaaaceezldyaamscambcvdf6zyaaaaq***
+  @unit-id= aeeaaaaaaceezldyaamscambcvdf6zyaaaaq
   GET {{url}}/collect-external/v1/units/{{unit-id}}
   
   accept: application/json
@@ -1641,7 +1642,7 @@ le seuil de résultats supporté par le moteur d’indexation Elastic Search est
   *Exemple : requête en vue d’obtenir les unités archivistiques de la transaction dont l’identifiant est "aeeaaaaaaceezldyaamscambcvdf6zyaaaaq"*
 ```  
   @tenant = 1
-  @transaction-id=* **aeeaaaaaaceezldyaamscambcvdf6zyaaaaq***
+  @transaction-id= aeeaaaaaaceezldyaamscambcvdf6zyaaaaq
   
   GET {{url}}/collect-external/v1/transactions/{{transaction-id}}/units
   accept: application/json
@@ -1664,7 +1665,7 @@ le seuil de résultats supporté par le moteur d’indexation Elastic Search est
   
 ```  
   @tenant = 1
-  @transaction-id=* **aeeaaaaaaceezldyaamscambcvdf6zyaaaaq***
+  @transaction-id = aeeaaaaaaceezldyaamscambcvdf6zyaaaaq
   
   GET {{url}}/collect-external/v1/transactions/{{transaction-id}}/units
   accept: application/json
@@ -1678,6 +1679,33 @@ le seuil de résultats supporté par le moteur d’indexation Elastic Search est
    "$filter": {},
    "$projection": {}
   }
+```  
+
+  *Exemple : requête en vue d’obtenir les règles de gestion portéees par les unités archivistiques de la transaction dont l’identifiant est "aeeaaaaaage2tmodad4nwamy4blfkkiaaaaq"*
+```  
+  @tenant = 1
+  @transaction-id = aeeaaaaaaceezldyaamscambcvdf6zyaaaaq
+  
+GET {{url-collect}}/collect-external/v1/transactions/{{transaction-id}/unitsWithInheritedRules
+Accept: application/json
+Content-Type: application/json
+X-Tenant-Id: {{tenant}}
+X-Access-Contract-Id: {{access-contract}}
+
+{
+  "$roots": [],
+  "$query": [
+    {
+      "$eq": {
+        "#opi": "aeeaaaaaage2tmodad4nwamy4blfkkiaaaaq"
+      }
+    }
+  ],
+  "$projection": {
+    "$fields": {
+      "#id": 1
+    }}
+}
 ```  
 
 ##### Utilisation dans VitamUI
