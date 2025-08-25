@@ -1523,6 +1523,102 @@ Cette action n’est pas journalisée dans le journal des opérations.
 Il n'est pas possible d'envoyer une arborescence bureautique avec un fichier .jsonl de métadonnées depuis l’APP « Collecte et préparation des versements » du front-office VitamUI fournie avec la solution logicielle Vitam.
 
 
+##### Envoi d’un paquet d'archives sous forme de SIP (service disponible dans une version **bétâ**)
+
+###### Utilisation des API
+
+Pour une transaction donnée peut être envoyé sous forme de SIP un paquet d'archives.
+
+*Exemple : requête d’envoi d’un SIP sip.zip pour la transaction préalablement créée dont l’identifiant est aeeaaaaaaghiyso4ablmyal74slqwtqaaaaq.*
+ 
+``` 
+  @transaction-id = aeeaaaaaaghiyso4ablmyal74slqwtqaaaaq
+  @tenant = 1
+  
+  POST {{url-collect}}/collect-external/v1/transactions/{{transaction-id}}/uploadSip
+  Accept: application/json
+  Content-Type: application/octet-stream
+  X-Tenant-Id: {{tenant}}
+
+  < /path_tozip/sip.zip
+```
+
+Cette action provoque :
+
+-   si elle est en succès :
+
+    -   la création des unités archivistiques dans la base de données MongoDB, dans la collection « Unit » (base *MetadataCollect[^10]*).
+
+        À chaque enregistrement, est associé :
+	
+		    -   l’identifiant de la transaction (_opi),
+            -   l'identifiant du service producteur, présent dans le SIP (_sp et _sps),
+			-   la version du SEDA du message ArchiveTransfer (_sedaVersion),
+			-   la version de la solution logicielle Vitam (_implementationVersion);
+	
+	    À chaque unité archivistique racine, peuvent être associées, si elles sont présentes, des règles de gestion présentes dans le bloc ManagementMetadata du message ArchiveTransfer. 
+
+    -   la création de métadonnées techniques dans la base de données MongoDB, dans la collection « ObjectGroup » (base *MetadataCollect[^12]*) ;
+
+        À chaque enregistrement, est associé :
+	
+		   -   l’identifiant de la transaction (_opi),
+           -   l'identifiant du service producteur (_sp et _sps);
+
+	-   le cas échéant, la mise à jour des métadonnées techniques de l’objet avec :
+
+           -   modification de l’empreinte d’un fichier numérique,
+           -   ajout ou modification de l’identification de son format,
+           -   mise à jour de son poids exprimé en octets ;
+
+    -   l’enregistrement des objets numériques sur les offres de stockage.
+	
+-   si elle est en erreur :
+
+    -   un changement de statut de la transaction, qui sera alors égal à « KO ».
+
+Lors de cette action, l’opération peut aboutir aux résultats suivants :
+
+| Statut | Motifs |
+| --- | --- |
+| Succès | Action réalisée sans rencontrer de problèmes particuliers. |
+| Avertissement | - Au moins un format de fichier a été réidentifié.<br> - Le SIP ne contient pas d'objets binaires.<br> - L'empreinte a été recalculée. |
+| Échec |  - Le SIP contient au moins une erreur ne permettant pas d'aboutir à l'enregistrement du SIP dans la transaction.<br> - La transaction n’existe pas ou est erronée.<br> - 
+La transaction a été clôturée. |
+
+Elle est journalisée dans le journal des opérations (COLLECT_INGEST).
+
+***Point d’attention :*** Au terme de la V.9.0 :
+
+-   Ce service est disponible dans une version **bétâ**.
+-   Les métadonnées d'en-tête du manifeste.xml ne sont pas enregistrées dans le module de collecte.
+-   Aucun contrôle de cohérence n'est fait entre les données référentielles présentes dans la transaction associée au SIP et celles déclarées dans le SIP.
+    Il faut veiller à ce que ces références coïncident, sans quoi certaines incohérences apparaîtront entre :
+	-  les données référentielles présentes dans le projet de versement et la transaction associée au SIP,
+	-  les données référentielles présentes au niveau des unités archivistiques et des groupes d'objets techniques (_sp et _sps), mais aussi de l'opération présente dans le journal des opérations, qui sont celles présentes dans le SIP.
+-   Les journaux du cycle de vie, pouvant être présents dans le manifeste.xml ne sont pas enregistrés.
+-   Les rattachements ne sont pas supportés. De fait, il est interdit de déclarer des blocs UpdateOperation dans le manifeste.xml.
+-   Il n'est pas recommandé d'importer un SIP sans objets binaires, car le module de collecte ne permet pas de verser dans la solution logicielle Vitam d'arborescences sans objets binaires.
+
+###### Utilisation dans VitamUI
+
+L’APP « Collecte et préparation des versements » du front-office VitamUI fournie avec la solution logicielle Vitam permet de verser un paquet d'archives sous forme de SIP, lors de la création d’un projet de versement manuel au moyen d’un wizard ou boîte de dialogue.
+
+Le détail du projet de versement, ainsi que les archives qui lui sont associées sont par ailleurs accessibles depuis l’APP.
+
+***Point d’attention :*** Au terme de la V.9.0 :
+
+-   Ce service est disponible dans une version **bétâ**.
+-   Les métadonnées d'en-tête du manifeste.xml ne sont pas enregistrées dans le module de collecte.
+-   Aucun contrôle de cohérence n'est fait entre les données référentielles présentes dans la transaction associée au SIP et celles déclarées dans le SIP.
+    Il faut veiller à ce que ces références coïncident, sans quoi certaines incohérences apparaîtront entre :
+	-  les données référentielles présentes dans le projet de versement et la transaction associée au SIP,
+	-  les données référentielles présentes au niveau des unités archivistiques et des groupes d'objets techniques (_sp et _sps), mais aussi de l'opération présente dans le journal des opérations, qui sont celles présentes dans le SIP.
+-   Les journaux du cycle de vie, pouvant être présents dans le manifeste.xml ne sont pas enregistrés.
+-   Les rattachements ne sont pas supportés. De fait, il est interdit de déclarer des blocs UpdateOperation dans le manifeste.xml.
+-   Il n'est pas recommandé d'importer un SIP sans objets binaires, car le module de collecte ne permet pas de verser dans la solution logicielle Vitam d'arborescences sans objets binaires.
+
+
 ### Accès
 
 #### Définitions
@@ -3400,7 +3496,7 @@ Voici un tableau récapitulatif des services disponibles, mettant en évidence l
 |---|APP Collecte|Back module de collecte|
 |---|---|---|
 |Configurer des versements|Crée N projets de versement :<br/>- Pour des versements manuels<br/>- Pour des versements de flux automatisés|Crée N projets de versement :<br/>- Pour des versements manuels<br/>- Pour des versements de flux automatisés|
-|(Pré-)Verser les archives|- Crée automatiquement 1 transaction associée (mode lot ou unitaire) pour 1 projet de versement manuel préalablement créé.<br/>- Ne crée pas de transaction associée à un projet de versement automatique.<br/>- **Ajouts a posteriori possibles d’archives (mode lot) - version 8.1**|- Crée N transactions associées avec ses archives (mode lot ou *unitaire*).<br/>- Ajouts a posteriori possibles d’archives (**mode lot - version 8.1** - ou unitaire)|
+|(Pré-)Verser les archives|- Crée automatiquement 1 transaction associée (mode lot, **dont SIP - version 9.0**) pour 1 projet de versement manuel préalablement créé.<br/>- Ne crée pas de transaction associée à un projet de versement automatique.<br/>- **Ajouts a posteriori possibles d’archives (mode lot) - version 8.1**|- Crée N transactions associées avec ses archives (mode lot, **dont SIP - version 9.0 -** ou *unitaire*).<br/>- Ajouts a posteriori possibles d’archives (**mode lot - version 8.1** - ou unitaire)|
 |Consulter les (pré-)versement(s)|- Liste les projets de versement<br/>- Recherche dans les projets de versement<br/>- Affichage du détail d’un projet de versement<br/>- Liste les transactions associées à un projet<br/>- Liste les archives d’une transaction<br/>- Recherche simple / avancée / arborescence dans les archives d’une transaction<br/>- Affichage du détail d’une unité (métadonnées descriptives et de gestion, métadonnées techniques)<br/>- Téléchargement de l’objet numérique<br/>|- Liste les projets de versement<br/>- Recherche dans les projets de versement<br/>- Affichage du détail d’un projet de versement<br/>- Liste les transactions associées à un projet<br/>- *Affichage du détail d’une transaction*<br/>- Liste les archives d’une transaction<br/>- Recherche simple / avancée / arborescence dans les archives d’une transaction<br/>- Affichage du détail d’une unité (métadonnées descriptives et de gestion, métadonnées techniques)<br/>- Téléchargement de l’objet numérique|
 |Traiter les archives|- définition et mise à jour de métadonnées contextuelles,<br/>- identification de format,<br/>- calcul d’empreintes,<br/>- calcul du poids de l’objet numérique,<br/>- mise à jour de métadonnées descriptives et de gestion (par import de fichier .csv),<br/>- mise à jour unitaire de métadonnées descriptives,<br/>- **suppression d'archives - version 8.1**,<br/>- **réorganisation d'archives - version 8.1**,<br/>- gestion de statuts (ex. réouverture ou abandon d’un (pré-)versement)|- définition et mise à jour de métadonnées contextuelles,<br/>- identification de format,<br/>- calcul d’empreintes,<br/>- calcul du poids de l’objet numérique,<br/>- mise à jour de métadonnées descriptives et de gestion (par import de fichier .csv et *.jsonl*),<br/>- mise à jour unitaire en masse de métadonnées descriptives et de gestion,<br/>- **suppression d'archives - version 8.1**,<br/>- **réorganisation d'archives - version 8.1**,<br/>- gestion de statuts (ex. réouverture ou abandon d’un (pré-)versement),<br/>- *suppression unitaire d’un (pré-versement) et d’un projet de versement*|
 |Transférer les archives|- Générer un SIP<br/>- Suppression automatique|- Générer un SIP<br/>- Suppression automatique|
@@ -3694,6 +3790,7 @@ Annexe 3 : Liste des points d’API
 |                   | Abandonner une transaction        | transaction:abort        | PUT           | /collect-external/v1/transactions/{transactionId}/abort/ |
 |                   | Rouvrir une transaction           | transaction:reopen       | PUT           | /collect-external/v1/transactions/{transactionId}/reopen/|
 |                   | Charge les binaires en lot        | transaction:zip:create   | POST          | /collect-external/v1/transactions/{transactionId}/upload/|
+|                   | Envoyer un SIP à une transaction  | transaction:sip:upload   | POST          | /collect-external/v1/transactions/{transactionId}/uploadSip/|
 |                   | Crée une unité archivistique      | transaction:unit:create  | POST          | /collect-external/v1/transactions/{transactionId}/units/|
 |                   | Récupère toutes les unités archivistiques | transaction:unit:read | GET      | /collect-external/v1/transactions/{transactionId}/units/|
 |                   | Supprime une transaction          | transaction:id:delete    | DELETE        | /collect-external/v1/transactions/{transactionId}/|
