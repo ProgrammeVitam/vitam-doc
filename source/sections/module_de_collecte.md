@@ -3476,6 +3476,8 @@ Chacun d'eux a la possibilité d'agir sur cette APP à des degrés différents :
 |Créer une transaction| oui | oui |oui |
 |Valider une transaction| oui | oui |oui |
 |Verser une transaction| oui | oui | non |
+|Rouvrir une transaction| oui | oui | non |
+|Abandonner une transaction| oui | non | non |
 |Ajouter des archives| oui | oui | oui |
 |Réorganiser des arborescences| oui | oui | non |
 |Supprimer des archives| oui | oui | non |
