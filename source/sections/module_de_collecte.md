@@ -83,7 +83,7 @@ Il permet de :
 |:-: |--- |
 | **Configurer des versements**     | Définir un projet de versement et paramétrer :<br>- acteurs et références génériques,<br>- un rattachement automatisé à une position dans l’arborescence, avec ou sans paramétrages de conditions de rattachement,<br>- une clôture automatique après validation du versement,<br>- le formatage des données entrantes.| 
 | **(Pré-)Verser les archives**     | Collecter depuis l’extérieur un ensemble d’archives, caractérisées par des métadonnées et des fichiers numériques, et constituer :<br>- des (pré-)versements (ou transactions) automatisés émanant d’un système d’information externe <br>- des (pré-)versements (ou transactions) manuels et unitaires : <br>a) constitués par exemple d’arborescences bureautiques ou de messageries,<br>b) réalisés depuis des interfaces, notamment celles de l’APP « Collecte et préparation des versements » du front-office VitamUI.|
-| **Consulter les (pré-)versement** | Consulter :<br>- la liste des projets de versement et des (pré-)versements (ou transactions) en attente,<br>- un projet de versement en particulier, c’est-à-dire sa description, les informations contextuelles et la position de rattachement dans le tenant de destination,<br>- le contenu d’un (pré-)versement (ou transaction), c’est-à-dire la liste des archives associées, une unité archivistique en particulier et, le cas échéant, l’objet numérique associé.|
+| **Consulter les (pré-)versement** | Consulter :<br>- la liste des projets de versement et des (pré-)versements (ou transactions) en attente,<br>- un projet de versement en particulier, c’est-à-dire sa description, les informations contextuelles et la position de rattachement dans le tenant de destination,<br>- le contenu d’un (pré-)versement (ou transaction), c’est-à-dire la liste des archives associées, une unité archivistique en particulier et, le cas échéant, l’objet numérique associé.<br>Exporter le (pré-)versement (ou transaction) sous la forme d'un SIP.|
 | **Traiter les archives**          | Procéder à des traitements archivistiques tels que :<br>- définition de métadonnées contextuelles,<br>- identification de format,<br>- calcul d’empreintes,<br>- calcul du poids de l’objet numérique,<br>- réorganisation d’arborescence,<br>- ajout de dossiers et d'objets numériques,<br>- mise à jour de métadonnées descriptives et de gestion,<br>- suppression d'arborescences et/ou d'objets numériques,<br>- tri, dédoublonnage *(services non implémentés),*<br>- gestion de statuts (ex. réouverture d’un (pré-)versement en erreur),<br>- suppression de projets et de (pré-)versements,<br>- etc.|
 | **Transférer les archives**       | - Générer un SIP conforme au Standard d’échanges de données pour l’archivage (SEDA) et le transférer dans le système d’archivage électronique pour conservation.<br>- Suppression  automatisée d’un (pré-)versement |
 
@@ -1879,6 +1879,7 @@ Au terme de la V8.1, il est possible de réaliser les actions suivantes :
 -   abandon d'une transaction et de son contenu,
 -   réouverture d'une transaction (ou versement),
 -   clôture et validation de la transaction (ou versement),
+-   téléchargement du SIP correspondant au contenu de la transaction,
 -   transfert de la transaction (ou versement) depuis le module de collecte vers le back-office de la solution logicielle Vitam sous la forme d’un SIP conforme au SEDA 2.2.,
 -   si le transfert est en succès ou en avertissement, suppression automatique des archives qui sont associées à la transaction.
 
@@ -2032,7 +2033,7 @@ Cette action provoque :
 
 ***Point d’attention :***
 
--   Une transaction peut être abandonnée uniquement lorsque son statut est égal à « OPEN », « READY », « ACK_KO », « KO ».
+-   Une transaction peut être abandonnée uniquement lorsque son statut est égal à « OPEN », « READY », « VALIDATED », « ACK_KO », « KO ».
 
     Si elle a un statut égal à « SENDING », « SENT », « ACK_OK », « ACK_WARNING », elle ne peut pas l’être[^58].
 
@@ -2094,7 +2095,7 @@ Dès lors, il est à nouveau possible de :
 -   modifier, réorganiser et supprimer des unités archivistiques.
 
 ***Point d’attention :***
--   Une transaction peut être rouverte uniquement lorsque son statut est égal à « READY », « ACK_KO », « KO ».
+-   Une transaction peut être rouverte uniquement lorsque son statut est égal à « READY », « VALIDATED », « ACK_KO », « KO ».
 -   Si elle a un statut égal à « OPEN », « SENDING », « SENT », « ACK_OK », « ACK_WARNING », « ABORTED », elle ne peut pas l’être.
 
 Lors de cette action, l’opération peut aboutir aux résultats suivants :
@@ -2147,7 +2148,7 @@ La solution logicielle permet de clôturer une transaction[^58], une fois l’en
 ```  
 
 Cette action provoque la modification de l’enregistrement dans la base de données MongoDB, dans la collection « Transaction » (base *Collect*) : 
--   la valeur du champ « Status » est désormais « READY » ;
+-   la valeur du champ « Status » est « READY », puis « VALIDATED » ;
 -   si le paramètre « AutomaticIngest » présent dans le projet de versement associé à la transaction a une valeur « true », la valeur du champ « Status » est désormais « SENDING » et/ou « SENT », car la transaction est directement clôturée et envoyée dans la solution logicielle Vitam.
 
  *Exemple : enregistrement de la transaction dans la collection « Transaction »*
@@ -2172,10 +2173,12 @@ Cette action provoque la modification de l’enregistrement dans la base de donn
   }
 ```  
 
-Dès lors, si la transaction a un statut « READY », il n’est plus possible de :
+Dès lors, si la transaction a un statut « READY » et/ou « VALIDATED », il n’est plus possible de :
 
 - associer à cette transaction des unités archivistiques, ainsi que des groupes d’objets techniques et des objets numériques ;
 - modifier, réorganiser et supprimer des unités archivistiques.
+
+En revanche, dès qu'elle a un statut « VALIDATED », il est possible de télécharger le SIP correspondant à son contenu.
 
 ***Point d’attention :***
 -   Une transaction peut être validée uniquement lorsque son statut est égal à « OPEN ».
@@ -2189,7 +2192,7 @@ Lors de cette action, l’opération peut aboutir aux résultats suivants :
 | Échec  | - La transaction associée n’existe pas ;<br>- La transaction associée a déjà été clôturée.|
 
 ***Point d’attention :***
-S’il s’avère nécessaire de modifier le contenu d'une transaction ayant un statut « READY », il est toujours possible à ce stade la rouvrir[^21].
+S’il s’avère nécessaire de modifier le contenu d'une transaction ayant un statut « READY » et/ou « VALIDATED », il est toujours possible à ce stade la rouvrir[^21].
 
 ##### Utilisation dans VitamUI
 
@@ -2208,7 +2211,7 @@ Ce service est disponible :
 ***Point d'attention :*** Le bouton est :
 
 -   actif quand la transaction a un statut « Ouvert en édition » (« OPEN »),
--   inactif quand la transaction a un statut « Préparation et envoi du SIP » (« SENDING »), « Envoyé, en cours de traitement du SAE » (« SENT »), « Versé avec succès » (« ACK_OK »), « Versé en avertissement » (« ACK_WARNING »), « Echec du versement » (« ACK_KO »), « Erreur technique » (« KO »), « Abandonné » (« ABORTED »).
+-   inactif quand la transaction a un statut « Validation en cours » (« READY »), « Validé » (« VALIDATED »), « Préparation et envoi du SIP » (« SENDING »), « Envoyé, en cours de traitement du SAE » (« SENT »), « Versé avec succès » (« ACK_OK »), « Versé en avertissement » (« ACK_WARNING »), « Echec du versement » (« ACK_KO »), « Erreur technique » (« KO »), « Abandonné » (« ABORTED »).
 
 Des droits utilisateurs sont par ailleurs définis :
 
@@ -2218,6 +2221,61 @@ Des droits utilisateurs sont par ailleurs définis :
 | Archiviste         | oui |
 | Service producteur | oui |
 
+### Téléchargement d'un SIP
+
+##### Utilisation des API
+
+La solution logicielle permet de télécharger le SIP correspondant à une transaction, une fois l’ensemble des archives liées à cette transaction envoyées dans cette dernière et ne nécessitant plus de traitements.
+
+-   Le SIP est mis à disposition dès que la transaction est clôturée et a un statut égal à « VALIDATED ».
+-   Si la transaction est réouverte après validation, alors le SIP, mis à disposition sur les offres, est purgé.
+
+***Points d’attention :***
+
+-   Il faut avoir au préalable créé une transaction et la signaler dans l’API.
+-   Le SIP est uniquement disponible lorsque la transaction a été clôturée et que son statut est égal à « VALIDATED », « SENDING », « SENT », « ACK_KO ».
+    Si la transaction a un statut égal à « OPEN », « ACK_OK », « ACK_WARNING », « ABORTED », « KO », le SIP n'est pas disponible.
+
+ *Exemple : requête de téléchargement*
+```  
+  @transaction-id = aeeaaaaaaghiyso4ablmyal74slqwtqaaaaq
+  @tenant = 1
+  
+  GET  {{url-collect}}/collect-external/v1/transactions/{{transaction-id}}/downloadSIP
+  Accept: application/octet-stream
+  X-Tenant-Id: {{tenant}}
+  
+  {}
+```  
+
+Lors de cette action, l’opération peut aboutir aux résultats suivants :
+
+| Statut | Motifs |
+|---|---|
+| Succès | Action réalisée sans rencontrer de problèmes particuliers. |
+| Échec  | - La transaction associée n’existe pas ;<br>- La transaction associée est ouverte ou a été réouverte ;<br>- La transaction associée a été envoyée avec succès ou avec un avertissement dans la solution logicielle Vitam ;<br>- La transaction est en erreur technique ;<br>- La transaction a été abandonnée.|
+
+##### Utilisation dans VitamUI
+
+L’APP « Collecte et préparation des versements » du front-office VitamUI fournie avec la solution logicielle Vitam utilise l'API de téléchargement d'un SIP.
+
+Ce service est disponible depuis la page permettant de visualiser l’ensemble des transactions (ou versements) associées à un projet de versement, où il est possible de :
+
+    -   « Télécharger » un SIP.
+
+***Point d'attention :*** Le bouton est :
+
+-   actif quand la transaction a un statut « Ouvert en édition » (« OPEN »),
+-   inactif quand la transaction a un statut « Validation en cours » (« READY »), « Validé » (« VALIDATED »), « Préparation et envoi du SIP » (« SENDING »), « Envoyé, en cours de traitement du SAE » (« SENT »), « Versé avec succès » (« ACK_OK »), « Versé en avertissement » (« ACK_WARNING »), « Echec du versement » (« ACK_KO »), « Erreur technique » (« KO »), « Abandonné » (« ABORTED »).
+
+Des droits utilisateurs sont par ailleurs définis :
+
+| Profil utilisateur | Validation d'une transaction |
+|---|---|
+| Administrateur     | oui |
+| Archiviste         | oui |
+| Service producteur | non |
+
 #### Envoi d'une transaction
 
 ##### Utilisation des API
@@ -2225,7 +2283,7 @@ Des droits utilisateurs sont par ailleurs définis :
 Pour une transaction donnée, une fois celle-ci clôturée, le module de collecte permet de générer un SIP en SEDA 2.3 et de le transférer au moyen d’une opération de type « INGEST »[^58].
 
 ***Point d’attention :***
--  En prérequis à l’envoi du SIP, il faut avoir au préalable clôturé la transaction (son statut doit être égal à « READY ») et signaler cette dernière dans l’API.
+-  En prérequis à l’envoi du SIP, il faut avoir au préalable clôturé la transaction (son statut doit être égal à « VALIDATED ») et signaler cette dernière dans l’API.
 -  Cette action peut être automatisée si le paramètre « AutomaticIngest » présent dans le projet de versement associé à la transaction a une valeur « true ». Dès lors, dès validation de la transaction, la transaction est directement clôturée et envoyée dans la solution logicielle Vitam.
 
  *Exemple : requête d’envoi du SIP vers la solution logicielle Vitam pour conservation*
@@ -2286,8 +2344,8 @@ Ce service est disponible :
 
 ***Point d'attention :*** Le bouton est :
 
--   actif quand la transaction a un statut « Validé » (« READY »),
--   inactif quand la transaction a un statut « Ouvert en édition » (« OPEN »), « Préparation et envoi du SIP » (« SENDING »), « Envoyé, en cours de traitement du SAE » (« SENT »), « Versé avec succès » (« ACK_OK »), « Versé en avertissement » (« ACK_WARNING »), « Echec du versement » (« ACK_KO »), « Erreur technique » (« KO »), « Abandonné » (« ABORTED »).
+-   actif quand la transaction a un statut « Validé » (« VALIDATED »),
+-   inactif quand la transaction a un statut « Ouvert en édition » (« OPEN »), « Validation en cours » (« READY »), « Préparation et envoi du SIP » (« SENDING »), « Envoyé, en cours de traitement du SAE » (« SENT »), « Versé avec succès » (« ACK_OK »), « Versé en avertissement » (« ACK_WARNING »), « Echec du versement » (« ACK_KO »), « Erreur technique » (« KO »), « Abandonné » (« ABORTED »).
 
 Cette action entraîne la purge des archives passé un certain délai, si le résultat est un versement en succès ou en avertissement.
 
@@ -2492,7 +2550,7 @@ Lors de cette action, l’opération peut aboutir aux résultats suivants :
 |---|---|
 | Succès       |  Action réalisée sans rencontrer de problèmes particuliers. |
 | Avertissement|  Le formatage du fichier .csv contient au moins une erreur (ex. date mal formatée, valeur attendue erronée, date de début postérieure à la date de fin, etc.)|
-| Échec        |  - Le fichier .csv n’est pas au format .csv. <br>- Le fichier .csv contient des erreurs dans la colonne File. <br>- Action non réalisée pour cause de nom erroné ou de chemin introuvable dans la requête.<br>- La transaction n’existe pas ou est erronée.<br>- La transaction a un statut « READY », « SENDING », « SEND », « ACK_OK », « ACK_WARNING », « ACK_KO », « KO », « ABORTED ».|
+| Échec        |  - Le fichier .csv n’est pas au format .csv. <br>- Le fichier .csv contient des erreurs dans la colonne File. <br>- Action non réalisée pour cause de nom erroné ou de chemin introuvable dans la requête.<br>- La transaction n’existe pas ou est erronée.<br>- La transaction a un statut « READY », « VALIDATED », « SENDING », « SEND », « ACK_OK », « ACK_WARNING », « ACK_KO », « KO », « ABORTED ».|
 
 Elle n’est pas journalisée dans le journal des opérations.
 
@@ -2528,7 +2586,7 @@ Ce service est disponible depuis la page permettant de visualiser l’ensemble 
 ***Point d'attention***: Le bouton est :
 
 -   actif quand la transaction a un statut « Ouvert en édition » (« OPEN »),
--   inactif quand la transaction a un statut « Validé » (« READY »), « Préparation et envoi du SIP » (« SENDING »), « Envoyé, en cours de traitement du SAE » (« SENT »), « Versé avec succès » (« ACK_OK »), « Versé en avertissement » (« ACK_WARNING »), « Echec du versement » (« ACK_KO »), « Erreur technique » (« KO »), « Abandonné » (« ABORTED »).
+-   inactif quand la transaction a un statut « Validation en cours » (« READY »), « Validé » (« VALIDATED »), « Préparation et envoi du SIP » (« SENDING »), « Envoyé, en cours de traitement du SAE » (« SENT »), « Versé avec succès » (« ACK_OK »), « Versé en avertissement » (« ACK_WARNING »), « Echec du versement » (« ACK_KO »), « Erreur technique » (« KO »), « Abandonné » (« ABORTED »).
 
 Des droits utilisateurs sont par ailleurs définis :
 
@@ -2618,7 +2676,7 @@ Lors de cette action, l’opération peut aboutir aux résultats suivants :
 |---|---|
 | Succès       |  Action réalisée sans rencontrer de problèmes particuliers. |
 | Avertissement|  Le formatage du fichier .jsonl contient au moins une erreur (ex. date mal formatée, valeur attendue erronée, date de début postérieure à la date de fin, etc.)|
-| Échec        |  - Le fichier .jsonl n’est pas au format .jsonl.<br>- Le fichier .jsonl contient des erreurs dans la colonne File ou Selector.<br>- Action non réalisée pour cause de nom erroné ou de chemin introuvable dans la requête.<br>- La transaction n’existe pas ou est erronée.<br>La transaction a un statut « READY », « SENDING », « SEND », « ACK_OK », « ACK_WARNING », « ACK_KO », « KO », « ABORTED ».|
+| Échec        |  - Le fichier .jsonl n’est pas au format .jsonl.<br>- Le fichier .jsonl contient des erreurs dans la colonne File ou Selector.<br>- Action non réalisée pour cause de nom erroné ou de chemin introuvable dans la requête.<br>- La transaction n’existe pas ou est erronée.<br>La transaction a un statut « READY », « VALIDATED », « SENDING », « SEND », « ACK_OK », « ACK_WARNING », « ACK_KO », « KO », « ABORTED ».|
 
 Elle n’est pas journalisée dans le journal des opérations.
 
@@ -3125,7 +3183,8 @@ Le module de collecte attribue un certain nombre de statuts à une transaction. 
 | Actions disponibles                   | Statut correspondant<br>dans le front-office | Statut correspondant<br>dans le back-office | Modification possible ? | Abandon possible ? | Purge automatique ? |
 |---|---|---|---|---|---|
 |Créer la transaction| Ouvert en édition            |OPEN           |          OUI       |          OUI ||
-|Clôturer / Valider  | Validé                       |READY          |                    |          OUI ||
+|Clôturer / Valider  | Validation en cours          |READY          |                    |          OUI ||
+|Clôturer / Valider  | Validé                       |VALIDATED      |                    |          OUI ||
 |Verser / Envoyer    | Préparation et envoi du SIP  |SENDING        |                    |              ||
 |Verser / Envoyer    |  Envoyé, en cours de traitement du SAE                                |SENT           |                    |              ||
 |Verser / Envoyer    |  Versé en succès                                                      |ACK_OK         |                    |              |OUI|
@@ -3478,6 +3537,7 @@ Chacun d'eux a la possibilité d'agir sur cette APP à des degrés différents :
 |Verser une transaction| oui | oui | non |
 |Rouvrir une transaction| oui | oui | non |
 |Abandonner une transaction| oui | non | non |
+|Télécharger un SIP| oui | oui | non |
 |Ajouter des archives| oui | oui | oui |
 |Réorganiser des arborescences| oui | oui | non |
 |Supprimer des archives| oui | oui | non |
@@ -3499,7 +3559,7 @@ Voici un tableau récapitulatif des services disponibles, mettant en évidence l
 |---|---|---|
 |Configurer des versements|Crée N projets de versement :<br/>- Pour des versements manuels<br/>- Pour des versements de flux automatisés|Crée N projets de versement :<br/>- Pour des versements manuels<br/>- Pour des versements de flux automatisés|
 |(Pré-)Verser les archives|- Crée automatiquement 1 transaction associée (mode lot, **dont SIP - version 9.0**) pour 1 projet de versement manuel préalablement créé.<br/>- Ne crée pas de transaction associée à un projet de versement automatique.<br/>- **Ajouts a posteriori possibles d’archives (mode lot) - version 8.1**|- Crée N transactions associées avec ses archives (mode lot, **dont SIP - version 9.0 -** ou *unitaire*).<br/>- Ajouts a posteriori possibles d’archives (**mode lot - version 8.1** - ou unitaire)|
-|Consulter les (pré-)versement(s)|- Liste les projets de versement<br/>- Recherche dans les projets de versement<br/>- Affichage du détail d’un projet de versement<br/>- Liste les transactions associées à un projet<br/>- Liste les archives d’une transaction<br/>- Recherche simple / avancée / arborescence dans les archives d’une transaction<br/>- Affichage du détail d’une unité (métadonnées descriptives et de gestion, métadonnées techniques)<br/>- Téléchargement de l’objet numérique<br/>|- Liste les projets de versement<br/>- Recherche dans les projets de versement<br/>- Affichage du détail d’un projet de versement<br/>- Liste les transactions associées à un projet<br/>- *Affichage du détail d’une transaction*<br/>- Liste les archives d’une transaction<br/>- Recherche simple / avancée / arborescence dans les archives d’une transaction<br/>- Affichage du détail d’une unité (métadonnées descriptives et de gestion, métadonnées techniques)<br/>- Téléchargement de l’objet numérique|
+|Consulter les (pré-)versement(s)|- Liste les projets de versement<br/>- Recherche dans les projets de versement<br/>- Affichage du détail d’un projet de versement<br/>- Liste les transactions associées à un projet<br/>- Liste les archives d’une transaction<br/>- Recherche simple / avancée / arborescence dans les archives d’une transaction<br/>- Affichage du détail d’une unité (métadonnées descriptives et de gestion, métadonnées techniques)<br/>- Téléchargement de l’objet numérique<br/>|- Liste les projets de versement<br/>- Recherche dans les projets de versement<br/>- Affichage du détail d’un projet de versement<br/>- Liste les transactions associées à un projet<br/>- *Affichage du détail d’une transaction*<br/>- Liste les archives d’une transaction<br/>- Recherche simple / avancée / arborescence dans les archives d’une transaction<br/>- Affichage du détail d’une unité (métadonnées descriptives et de gestion, métadonnées techniques)<br/>- Téléchargement de l’objet numérique.<br>**Exporter le (pré-)versement (ou transaction) sous la forme d'un SIP - version 9.0**.|
 |Traiter les archives|- définition et mise à jour de métadonnées contextuelles,<br/>- identification de format,<br/>- calcul d’empreintes,<br/>- calcul du poids de l’objet numérique,<br/>- mise à jour de métadonnées descriptives et de gestion (par import de fichier .csv),<br/>- mise à jour unitaire de métadonnées descriptives,<br/>- **suppression d'archives - version 8.1**,<br/>- **réorganisation d'archives - version 8.1**,<br/>- gestion de statuts (ex. réouverture ou abandon d’un (pré-)versement)|- définition et mise à jour de métadonnées contextuelles,<br/>- identification de format,<br/>- calcul d’empreintes,<br/>- calcul du poids de l’objet numérique,<br/>- mise à jour de métadonnées descriptives et de gestion (par import de fichier .csv et *.jsonl*),<br/>- mise à jour unitaire en masse de métadonnées descriptives et de gestion,<br/>- **suppression d'archives - version 8.1**,<br/>- **réorganisation d'archives - version 8.1**,<br/>- gestion de statuts (ex. réouverture ou abandon d’un (pré-)versement),<br/>- *suppression unitaire d’un (pré-versement) et d’un projet de versement*|
 |Transférer les archives|- Générer un SIP<br/>- Suppression automatique|- Générer un SIP<br/>- Suppression automatique|
 |Gestion des droits|- **Trois groupes de profils : administrateur, archiviste, service producteur - version 8.0**,<br/>- **Possibilité de filtrage des accès aux projets par service producteur - version 8.0**.||
@@ -3791,6 +3851,7 @@ Annexe 3 : Liste des points d’API
 |                   | Envoi de la transaction           | transaction:send         | POST          | /collect-external/v1/transactions/{transactionId}/send/ |
 |                   | Abandonner une transaction        | transaction:abort        | PUT           | /collect-external/v1/transactions/{transactionId}/abort/ |
 |                   | Rouvrir une transaction           | transaction:reopen       | PUT           | /collect-external/v1/transactions/{transactionId}/reopen/|
+|                   | Télécharge le SIP d'une transaction | transaction:sip:read     | GET           | /collect-external/v1/transactions/{transactionId}/downloadSIP/|
 |                   | Charge les binaires en lot        | transaction:zip:create   | POST          | /collect-external/v1/transactions/{transactionId}/upload/|
 |                   | Envoyer un SIP à une transaction  | transaction:sip:upload   | POST          | /collect-external/v1/transactions/{transactionId}/uploadSip/|
 |                   | Crée une unité archivistique      | transaction:unit:create  | POST          | /collect-external/v1/transactions/{transactionId}/units/|
