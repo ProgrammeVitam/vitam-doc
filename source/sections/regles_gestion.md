@@ -615,6 +615,7 @@ Mécanismes mis en œuvre dans la solution logicielle Vitam
 La solution logicielle Vitam offre à un service d’archives plusieurs fonctionnalités lui permettant de gérer les règles de gestion associées aux archives :
 - la configuration des règles de gestion au niveau de la plate-forme ;
 - l’administration d’un référentiel de règles de gestion ;
+- en collecte, la désignation d'un référentiel à utiliser ;
 - en entrée du système, le calcul des échéances associées aux unités archivistiques qui déclarent des règles de gestion et l’indexation des métadonnées de gestion associées à ces unités archivistiques ;
 - en gestion des archives existantes :
     - la modification des règles de gestion et l’indexation des règles de gestion et échéances héritées par les unités archivistiques ;
@@ -776,6 +777,68 @@ Par ailleurs, la solution logicielle permet de consulter le détail d'une règle
 L'accès au référentiel est possible depuis :
 -  les API,
 -  l'APP VitamUI « Règles de gestion ».
+
+### Collecte
+
+##### Configuration de la connexion aux référentiels pour VitamUI
+
+Il est possible de choisir dans VitamUI d'utiliser ou non la connexion du projet de versement à des référentiels afin d'obtenir une aide à la saisie au sein du parcours de création du projet de versement.
+Cette connexion peut se faire avec le tenant et le SAE locaux mais elle peut également être mise en place avec des tenants d'autres instances externes de la solution logicielle Vitam. 
+Ce service vaut notamment pour le référentiel des règles de gestion.
+
+Cette connexion demande alors une configuration au préalable décrite ci-après : 
+
+Il est nécessaire de configurer les keystores et truststores des instances cibles dans le dossier environments/keystores_external_archiving_systems/ dans le dossier de déploiement de l'installation de Vitam-UI.
+
+    - /environments/keystores_external_archiving_systems/keystore_<external_system_id1>.p12
+    - /environments/keystores_external_archiving_systems/trustore_<external_system_id1>.jks
+    - ...
+
+Les mots de passe des keystores et truststores doivent être définis un fichier vault (exemple: vault_keystores_external_archiving_systems.yml) à éditer via l'outil ansible-vault :
+
+```
+external_archiving_systems:
+  keystore_password:
+    <external_system_id1>: keystore_external_system_1_changeit
+    <external_system_id2>: keystore_external_system_2_changeit
+  truststore_password:
+    <external_system_id1>: truststore_external_system_1_changeit
+    <external_system_id2>: truststore_external_system_2_changeit
+```
+
+Les URLs d'accès aux SAE tiers, et les autorisations d'accès par tenant sont à définir dans la configuration ansible :
+
+``` 
+external_archiving_systems:
+  client_configuration:
+  - archiving_system_id: <external_system_id1>
+    name: "EXTERNAL ENV NAME 1"
+    access_external:
+      host: <host_name>
+      port: <port>
+  - archiving_system_id: <external_system_id2>
+    name: "EXTERNAL ENV NAME 2"
+    access_external:
+        host: <host_name>
+        port: <port>
+  - ...
+``` 
+``` 
+  tenant_configuration:
+  - tenant: 2
+    external_archiving_system_references:
+      - archiving_system_id: local # Use "local" as archiving_system_id to reference the current Vitam instance with other tenants
+        tenantIds: [1, 2, 3]       # Target tenants
+      - archiving_system_id: <external_system_id1>
+        tenantIds: [0, 2]
+  - tenant: 3
+    external_archiving_system_references:
+      - archiving_system_id: <external_system_id2>
+        tenantIds: [10]
+  - ...
+``` 
+
+**Point d’attention :** Cette configuration n'est disponible que dans l'application VitamUI. Au terme de la version 9.0, il n'est pas mis à disposition dans le back-office de la solution logicielle Vitam. Un applicatif autre que VitamUI devra nécessairement développer son propre service s'il souhaite mettre à disposition de ses utilisateurs ce type de service.
 
 ### Entrées
 
@@ -1036,7 +1099,7 @@ Si le paramétrage correspondant est activé, la solution logicielle ne retourne
 **Points d’attention :**
 - Si aucune indexation des règles n’a été réalisée, aucune réponse ne pourra être retournée.
 - Les unités archivistiques d’arbre, qui ne portent pas de règles de gestion, ne sont pas consultables si ce filtre est utilisé.
-- A partir de la version 4, ce filtre supporte également la catégorie de règle correspondant au gel.
+- Ce filtre supporte également la catégorie de règle correspondant au gel.
 
 Deux autres filtres ont également trait à un filtrage sur les règles de gestion :
 - le premier exclut les unités archivistiques de type "plan de classement" du filtre ne donnant accès aux archives dont la règle de gestion est échue,
