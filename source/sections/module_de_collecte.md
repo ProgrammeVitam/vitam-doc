@@ -1576,6 +1576,17 @@ Cette action provoque :
 -   si elle est en erreur :
 
     -   un changement de statut de la transaction, qui sera alors égal à « KO ».
+	-   si au moins une erreur concerne des contrôles relatifs aux unités archivistiques (STP_UNIT_CHECK_AND_PROCESS) ou aux groupes d'objets techniques (STP_OG_CHECK_AND_TRANSFORME) :
+	
+		-   un enregistrement de l'erreur dans les métadonnées de l'unité archivistique,
+		-   un enregistrement de l'erreur  dans les métadonnées du groupe d'objets techniques.
+
+***Point d’attention :*** Au terme de la V.9.0 :
+
+-   Ce service d'enregistrement des erreurs est disponible dans une version **bétâ**.
+-   les erreurs liées aux contrôles relatifs aux unités archivistiques (STP_UNIT_CHECK_AND_PROCESS) ou aux groupes d'objets techniques (STP_OG_CHECK_AND_TRANSFORME) sont cumulables.
+-   si le groupe d'objets techniques contient une erreur à l'étape STP_OG_CHECK_AND_TRANSFORME, celle-ci sera également enregistrée dans les métadonnées de l'unité archivistique référençant ce groupe d'objets techniques.
+-   le contrôle antivirus a été intégré à l'étape STP_OG_CHECK_AND_TRANSFORME, lors du contrôle OG_OBJECTS_ANTIVIRUS_CHECK.
 
 Lors de cette action, l’opération peut aboutir aux résultats suivants :
 
@@ -1586,7 +1597,7 @@ Lors de cette action, l’opération peut aboutir aux résultats suivants :
 | Échec |  - Le SIP contient au moins une erreur ne permettant pas d'aboutir à l'enregistrement du SIP dans la transaction.<br> - La transaction n’existe pas ou est erronée.<br> - 
 La transaction a été clôturée. |
 
-Elle est journalisée dans le journal des opérations (COLLECT_INGEST).
+Elle est journalisée dans le journal des opérations (COLLECT_INGEST). L'opération n'est pas associée à un rapport.
 
 ***Point d’attention :*** Au terme de la V.9.0 :
 
