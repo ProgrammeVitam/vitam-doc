@@ -28,7 +28,7 @@ Il s’articule autour des axes suivants :
 -   une présentation des mécanismes mis en œuvre dans la solution logicielle Vitam pour prendre en compte les opérations de collecte, en application du SEDA ;
 -   des conseils de mise en œuvre.
 
-Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 8.1 (printemps 2025). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
+Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 9.0 (automne 2025). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
 
 Présentation du module de collecte
 ----------------------------------
@@ -83,7 +83,7 @@ Il permet de :
 |:-: |--- |
 | **Configurer des versements**     | Définir un projet de versement et paramétrer :<br>- acteurs et références génériques,<br>- un rattachement automatisé à une position dans l’arborescence, avec ou sans paramétrages de conditions de rattachement,<br>- une clôture automatique après validation du versement,<br>- le formatage des données entrantes.| 
 | **(Pré-)Verser les archives**     | Collecter depuis l’extérieur un ensemble d’archives, caractérisées par des métadonnées et des fichiers numériques, et constituer :<br>- des (pré-)versements (ou transactions) automatisés émanant d’un système d’information externe <br>- des (pré-)versements (ou transactions) manuels et unitaires : <br>a) constitués par exemple d’arborescences bureautiques ou de messageries,<br>b) réalisés depuis des interfaces, notamment celles de l’APP « Collecte et préparation des versements » du front-office VitamUI.|
-| **Consulter les (pré-)versement** | Consulter :<br>- la liste des projets de versement et des (pré-)versements (ou transactions) en attente,<br>- un projet de versement en particulier, c’est-à-dire sa description, les informations contextuelles et la position de rattachement dans le tenant de destination,<br>- le contenu d’un (pré-)versement (ou transaction), c’est-à-dire la liste des archives associées, une unité archivistique en particulier et, le cas échéant, l’objet numérique associé.|
+| **Consulter les (pré-)versement** | Consulter :<br>- la liste des projets de versement et des (pré-)versements (ou transactions) en attente,<br>- un projet de versement en particulier, c’est-à-dire sa description, les informations contextuelles et la position de rattachement dans le tenant de destination,<br>- le contenu d’un (pré-)versement (ou transaction), c’est-à-dire la liste des archives associées, une unité archivistique en particulier et, le cas échéant, l’objet numérique associé.<br>Exporter le (pré-)versement (ou transaction) sous la forme d'un SIP.|
 | **Traiter les archives**          | Procéder à des traitements archivistiques tels que :<br>- définition de métadonnées contextuelles,<br>- identification de format,<br>- calcul d’empreintes,<br>- calcul du poids de l’objet numérique,<br>- réorganisation d’arborescence,<br>- ajout de dossiers et d'objets numériques,<br>- mise à jour de métadonnées descriptives et de gestion,<br>- suppression d'arborescences et/ou d'objets numériques,<br>- tri, dédoublonnage *(services non implémentés),*<br>- gestion de statuts (ex. réouverture d’un (pré-)versement en erreur),<br>- suppression de projets et de (pré-)versements,<br>- etc.|
 | **Transférer les archives**       | - Générer un SIP conforme au Standard d’échanges de données pour l’archivage (SEDA) et le transférer dans le système d’archivage électronique pour conservation.<br>- Suppression  automatisée d’un (pré-)versement |
 
@@ -188,6 +188,10 @@ Un projet de versement peut comporter les éléments suivants[^1] :
 |  LegalStatus                  | Statut légal des archives, destiné à alimenter le champ LegalStatus du message ArchiveTransfer (champ facultatif). <br> Si le champ est renseigné, les valeurs attendues sont : « Public Archive », « Private Archive », « Public and Private Archive ».|
 |  AutomaticIngest              | Paramètre permettant d'automatiser l'envoi de transaction(s) vers la solution logicielle Vitam (champ facultatif).|
 |  TransformationRules          | Paramètre permettant de lister des règles de transformation à opérer sur les données entrantes (champ facultatif).|
+|  ArchivingSystemId (champ facultatif).| Paramètre présent et obligatoire uniquement si ConnectedToExternalSystem prend la valeur true. Il permet de renseigner l'Id du SAE auquel le projet est connecté.|
+|  ArchivingSystemTenant (champ facultatif).| Paramètre présent et obligatoire uniquement si ConnectedToExternalSystem prend la valeur true. Il permet de renseigner le numéro du tenant du SAE auquel le projet est connecté.|
+|   ConnectedToExternalSystem (champ facultatif)| Paramètre permettant de renseigner l'information de connexion d'un projet de versement aux référentiels d'un SAE afin de disposer d'aide à la saisie dans Vitam UI.|
+
 
 ***Point d’attention :*** Au terme de la version 8.1 :
 
@@ -307,6 +311,62 @@ L’APP « Collecte et préparation des versements » permet également de :
 
 -   il n’est pas possible de modifier les paramétrages liés au rattachement automatique ou via conditions depuis les interfaces. De fait, il est recommandé de veiller à ne pas faire d’erreurs lors de la saisie des informations.
 -   Au terme de la version 8.1, le paramétrage permettant de définir des règles de transformation n’est pas accessible depuis les interfaces. De fait, il est recommandé de veiller à ne pas faire d’erreurs lors de la saisie des informations.
+
+##### Configuration de la connexion aux référentiels pour Vitam UI
+
+Il est possible de choisir dans Vitam UI d'utiliser ou non la connexion du projet de versement à des référentiels afin d'obtenir une aide à la saisie au sein du parcours de création du projet de versement.
+Cette connexion peut se faire avec le tenant et le SAE locaux mais elle peut également être mise en place avec des tenants d'autres instances externes de Vitam. Cette connexion demande alors une configuration au préalable décrite ci-après : 
+
+Il est nécessaire de configurer les keystores et truststores des instances cibles dans le dossier environments/keystores_external_archiving_systems/ dans le dossier de déploiement de l'installation de Vitam-UI.
+
+    - /environments/keystores_external_archiving_systems/keystore_<external_system_id1>.p12
+    - /environments/keystores_external_archiving_systems/trustore_<external_system_id1>.jks
+    - ...
+
+Les mots de passe des keystores et truststores doivent être définis un fichier vault (exemple: vault_keystores_external_archiving_systems.yml) à éditer via l'outil ansible-vault :
+
+```
+external_archiving_systems:
+  keystore_password:
+    <external_system_id1>: keystore_external_system_1_changeit
+    <external_system_id2>: keystore_external_system_2_changeit
+  truststore_password:
+    <external_system_id1>: truststore_external_system_1_changeit
+    <external_system_id2>: truststore_external_system_2_changeit
+```
+
+Les URLs d'accès aux SAE tiers, et les autorisations d'accès par tenant sont à définir dans la configuration ansible :
+
+``` 
+external_archiving_systems:
+
+  client_configuration:
+  - archiving_system_id: <external_system_id1>
+    name: "EXTERNAL ENV NAME 1"
+    access_external:
+      host: <host_name>
+      port: <port>
+  - archiving_system_id: <external_system_id2>
+    name: "EXTERNAL ENV NAME 2"
+    access_external:
+        host: <host_name>
+        port: <port>
+  - ...
+``` 
+``` 
+  tenant_configuration:
+  - tenant: 2
+    external_archiving_system_references:
+      - archiving_system_id: local # Use "local" as archiving_system_id to reference the current Vitam instance with other tenants
+        tenantIds: [1, 2, 3]       # Target tenants
+      - archiving_system_id: <external_system_id1>
+        tenantIds: [0, 2]
+  - tenant: 3
+    external_archiving_system_references:
+      - archiving_system_id: <external_system_id2>
+        tenantIds: [10]
+  - ...
+``` 
 
 #### Accès
 
@@ -1463,6 +1523,113 @@ Cette action n’est pas journalisée dans le journal des opérations.
 Il n'est pas possible d'envoyer une arborescence bureautique avec un fichier .jsonl de métadonnées depuis l’APP « Collecte et préparation des versements » du front-office VitamUI fournie avec la solution logicielle Vitam.
 
 
+##### Envoi d’un paquet d'archives sous forme de SIP (service disponible dans une version **bétâ**)
+
+###### Utilisation des API
+
+Pour une transaction donnée peut être envoyé sous forme de SIP un paquet d'archives.
+
+*Exemple : requête d’envoi d’un SIP sip.zip pour la transaction préalablement créée dont l’identifiant est aeeaaaaaaghiyso4ablmyal74slqwtqaaaaq.*
+ 
+``` 
+  @transaction-id = aeeaaaaaaghiyso4ablmyal74slqwtqaaaaq
+  @tenant = 1
+  
+  POST {{url-collect}}/collect-external/v1/transactions/{{transaction-id}}/uploadSip
+  Accept: application/json
+  Content-Type: application/octet-stream
+  X-Tenant-Id: {{tenant}}
+
+  < /path_tozip/sip.zip
+```
+
+Cette action provoque :
+
+-   si elle est en succès :
+
+    -   la création des unités archivistiques dans la base de données MongoDB, dans la collection « Unit » (base *MetadataCollect[^10]*).
+
+        À chaque enregistrement, est associé :
+	
+		    -   l’identifiant de la transaction (_opi),
+            -   l'identifiant du service producteur, présent dans le SIP (_sp et _sps),
+			-   la version du SEDA du message ArchiveTransfer (_sedaVersion),
+			-   la version de la solution logicielle Vitam (_implementationVersion);
+	
+	    À chaque unité archivistique racine, peuvent être associées, si elles sont présentes, des règles de gestion présentes dans le bloc ManagementMetadata du message ArchiveTransfer. 
+
+    -   la création de métadonnées techniques dans la base de données MongoDB, dans la collection « ObjectGroup » (base *MetadataCollect[^12]*) ;
+
+        À chaque enregistrement, est associé :
+	
+		   -   l’identifiant de la transaction (_opi),
+           -   l'identifiant du service producteur (_sp et _sps);
+
+	-   le cas échéant, la mise à jour des métadonnées techniques de l’objet avec :
+
+           -   modification de l’empreinte d’un fichier numérique,
+           -   ajout ou modification de l’identification de son format,
+           -   mise à jour de son poids exprimé en octets ;
+
+    -   l’enregistrement des objets numériques sur les offres de stockage.
+	
+-   si elle est en erreur :
+
+    -   un changement de statut de la transaction, qui sera alors égal à « KO ».
+	-   si au moins une erreur concerne des contrôles relatifs aux unités archivistiques (STP_UNIT_CHECK_AND_PROCESS) ou aux groupes d'objets techniques (STP_OG_CHECK_AND_TRANSFORME) :
+	
+		-   un enregistrement de l'erreur dans les métadonnées de l'unité archivistique,
+		-   un enregistrement de l'erreur  dans les métadonnées du groupe d'objets techniques.
+
+***Point d’attention :*** Au terme de la V.9.0 :
+
+-   Ce service d'enregistrement des erreurs est disponible dans une version **bétâ**.
+-   les erreurs liées aux contrôles relatifs aux unités archivistiques (STP_UNIT_CHECK_AND_PROCESS) ou aux groupes d'objets techniques (STP_OG_CHECK_AND_TRANSFORME) sont cumulables.
+-   si le groupe d'objets techniques contient une erreur à l'étape STP_OG_CHECK_AND_TRANSFORME, celle-ci sera également enregistrée dans les métadonnées de l'unité archivistique référençant ce groupe d'objets techniques.
+-   le contrôle antivirus a été intégré à l'étape STP_OG_CHECK_AND_TRANSFORME, lors du contrôle OG_OBJECTS_ANTIVIRUS_CHECK.
+
+Lors de cette action, l’opération peut aboutir aux résultats suivants :
+
+| Statut | Motifs |
+| --- | --- |
+| Succès | Action réalisée sans rencontrer de problèmes particuliers. |
+| Avertissement | - Au moins un format de fichier a été réidentifié.<br> - Le SIP ne contient pas d'objets binaires.<br> - L'empreinte a été recalculée. |
+| Échec |  - Le SIP contient au moins une erreur ne permettant pas d'aboutir à l'enregistrement du SIP dans la transaction.<br> - La transaction n’existe pas ou est erronée.<br> - 
+La transaction a été clôturée. |
+
+Elle est journalisée dans le journal des opérations (COLLECT_INGEST). L'opération n'est pas associée à un rapport.
+
+***Point d’attention :*** Au terme de la V.9.0 :
+
+-   Ce service est disponible dans une version **bétâ**.
+-   Les métadonnées d'en-tête du manifeste.xml ne sont pas enregistrées dans le module de collecte.
+-   Aucun contrôle de cohérence n'est fait entre les données référentielles présentes dans la transaction associée au SIP et celles déclarées dans le SIP.
+    Il faut veiller à ce que ces références coïncident, sans quoi certaines incohérences apparaîtront entre :
+	-  les données référentielles présentes dans le projet de versement et la transaction associée au SIP,
+	-  les données référentielles présentes au niveau des unités archivistiques et des groupes d'objets techniques (_sp et _sps), mais aussi de l'opération présente dans le journal des opérations, qui sont celles présentes dans le SIP.
+-   Les journaux du cycle de vie, pouvant être présents dans le manifeste.xml ne sont pas enregistrés.
+-   Les rattachements ne sont pas supportés. De fait, il est interdit de déclarer des blocs UpdateOperation dans le manifeste.xml.
+-   Il n'est pas recommandé d'importer un SIP sans objets binaires, car le module de collecte ne permet pas de verser dans la solution logicielle Vitam d'arborescences sans objets binaires.
+
+###### Utilisation dans VitamUI
+
+L’APP « Collecte et préparation des versements » du front-office VitamUI fournie avec la solution logicielle Vitam permet de verser un paquet d'archives sous forme de SIP, lors de la création d’un projet de versement manuel au moyen d’un wizard ou boîte de dialogue.
+
+Le détail du projet de versement, ainsi que les archives qui lui sont associées sont par ailleurs accessibles depuis l’APP.
+
+***Point d’attention :*** Au terme de la V.9.0 :
+
+-   Ce service est disponible dans une version **bétâ**.
+-   Les métadonnées d'en-tête du manifeste.xml ne sont pas enregistrées dans le module de collecte.
+-   Aucun contrôle de cohérence n'est fait entre les données référentielles présentes dans la transaction associée au SIP et celles déclarées dans le SIP.
+    Il faut veiller à ce que ces références coïncident, sans quoi certaines incohérences apparaîtront entre :
+	-  les données référentielles présentes dans le projet de versement et la transaction associée au SIP,
+	-  les données référentielles présentes au niveau des unités archivistiques et des groupes d'objets techniques (_sp et _sps), mais aussi de l'opération présente dans le journal des opérations, qui sont celles présentes dans le SIP.
+-   Les journaux du cycle de vie, pouvant être présents dans le manifeste.xml ne sont pas enregistrés.
+-   Les rattachements ne sont pas supportés. De fait, il est interdit de déclarer des blocs UpdateOperation dans le manifeste.xml.
+-   Il n'est pas recommandé d'importer un SIP sans objets binaires, car le module de collecte ne permet pas de verser dans la solution logicielle Vitam d'arborescences sans objets binaires.
+
+
 ### Accès
 
 #### Définitions
@@ -1549,7 +1716,8 @@ Au terme de la version 8.1, ce filtre n'est disponible que depuis le front-offic
 L’utilisateur peut rechercher :
 
 -   une unité archivistique en particulier et accéder à son détail,
--   une unité archivistique pour une transaction donnée.
+-   une unité archivistique pour une transaction donnée,
+-   les règles de gestion portées par une à plusieurs unités archivistiques d'une transaction donnée.
 
 Il est possible de :
 
@@ -1566,7 +1734,7 @@ le seuil de résultats supporté par le moteur d’indexation Elastic Search est
   *Exemple : requête en vue d’obtenir l’unité archivistique dont l’identifiant est "aeeaaaaaaceezldyaamscambcvdf6zyaaaaq"*
 ```  
   @tenant = 1
-  @unit-id= ***aeeaaaaaaceezldyaamscambcvdf6zyaaaaq***
+  @unit-id= aeeaaaaaaceezldyaamscambcvdf6zyaaaaq
   GET {{url}}/collect-external/v1/units/{{unit-id}}
   
   accept: application/json
@@ -1581,7 +1749,7 @@ le seuil de résultats supporté par le moteur d’indexation Elastic Search est
   *Exemple : requête en vue d’obtenir les unités archivistiques de la transaction dont l’identifiant est "aeeaaaaaaceezldyaamscambcvdf6zyaaaaq"*
 ```  
   @tenant = 1
-  @transaction-id=* **aeeaaaaaaceezldyaamscambcvdf6zyaaaaq***
+  @transaction-id= aeeaaaaaaceezldyaamscambcvdf6zyaaaaq
   
   GET {{url}}/collect-external/v1/transactions/{{transaction-id}}/units
   accept: application/json
@@ -1604,7 +1772,7 @@ le seuil de résultats supporté par le moteur d’indexation Elastic Search est
   
 ```  
   @tenant = 1
-  @transaction-id=* **aeeaaaaaaceezldyaamscambcvdf6zyaaaaq***
+  @transaction-id = aeeaaaaaaceezldyaamscambcvdf6zyaaaaq
   
   GET {{url}}/collect-external/v1/transactions/{{transaction-id}}/units
   accept: application/json
@@ -1618,6 +1786,33 @@ le seuil de résultats supporté par le moteur d’indexation Elastic Search est
    "$filter": {},
    "$projection": {}
   }
+```  
+
+  *Exemple : requête en vue d’obtenir les règles de gestion portéees par les unités archivistiques de la transaction dont l’identifiant est "aeeaaaaaage2tmodad4nwamy4blfkkiaaaaq"*
+```  
+  @tenant = 1
+  @transaction-id = aeeaaaaaaceezldyaamscambcvdf6zyaaaaq
+  
+GET {{url-collect}}/collect-external/v1/transactions/{{transaction-id}/unitsWithInheritedRules
+Accept: application/json
+Content-Type: application/json
+X-Tenant-Id: {{tenant}}
+X-Access-Contract-Id: {{access-contract}}
+
+{
+  "$roots": [],
+  "$query": [
+    {
+      "$eq": {
+        "#opi": "aeeaaaaaage2tmodad4nwamy4blfkkiaaaaq"
+      }
+    }
+  ],
+  "$projection": {
+    "$fields": {
+      "#id": 1
+    }}
+}
 ```  
 
 ##### Utilisation dans VitamUI
@@ -1695,6 +1890,7 @@ Au terme de la V8.1, il est possible de réaliser les actions suivantes :
 -   abandon d'une transaction et de son contenu,
 -   réouverture d'une transaction (ou versement),
 -   clôture et validation de la transaction (ou versement),
+-   téléchargement du SIP correspondant au contenu de la transaction,
 -   transfert de la transaction (ou versement) depuis le module de collecte vers le back-office de la solution logicielle Vitam sous la forme d’un SIP conforme au SEDA 2.2.,
 -   si le transfert est en succès ou en avertissement, suppression automatique des archives qui sont associées à la transaction.
 
@@ -1848,7 +2044,7 @@ Cette action provoque :
 
 ***Point d’attention :***
 
--   Une transaction peut être abandonnée uniquement lorsque son statut est égal à « OPEN », « READY », « ACK_KO », « KO ».
+-   Une transaction peut être abandonnée uniquement lorsque son statut est égal à « OPEN », « READY », « VALIDATED », « ACK_KO », « KO ».
 
     Si elle a un statut égal à « SENDING », « SENT », « ACK_OK », « ACK_WARNING », elle ne peut pas l’être[^58].
 
@@ -1910,7 +2106,7 @@ Dès lors, il est à nouveau possible de :
 -   modifier, réorganiser et supprimer des unités archivistiques.
 
 ***Point d’attention :***
--   Une transaction peut être rouverte uniquement lorsque son statut est égal à « READY », « ACK_KO », « KO ».
+-   Une transaction peut être rouverte uniquement lorsque son statut est égal à « READY », « VALIDATED », « ACK_KO », « KO ».
 -   Si elle a un statut égal à « OPEN », « SENDING », « SENT », « ACK_OK », « ACK_WARNING », « ABORTED », elle ne peut pas l’être.
 
 Lors de cette action, l’opération peut aboutir aux résultats suivants :
@@ -1963,7 +2159,7 @@ La solution logicielle permet de clôturer une transaction[^58], une fois l’en
 ```  
 
 Cette action provoque la modification de l’enregistrement dans la base de données MongoDB, dans la collection « Transaction » (base *Collect*) : 
--   la valeur du champ « Status » est désormais « READY » ;
+-   la valeur du champ « Status » est « READY », puis « VALIDATED » ;
 -   si le paramètre « AutomaticIngest » présent dans le projet de versement associé à la transaction a une valeur « true », la valeur du champ « Status » est désormais « SENDING » et/ou « SENT », car la transaction est directement clôturée et envoyée dans la solution logicielle Vitam.
 
  *Exemple : enregistrement de la transaction dans la collection « Transaction »*
@@ -1988,10 +2184,12 @@ Cette action provoque la modification de l’enregistrement dans la base de donn
   }
 ```  
 
-Dès lors, si la transaction a un statut « READY », il n’est plus possible de :
+Dès lors, si la transaction a un statut « READY » et/ou « VALIDATED », il n’est plus possible de :
 
 - associer à cette transaction des unités archivistiques, ainsi que des groupes d’objets techniques et des objets numériques ;
 - modifier, réorganiser et supprimer des unités archivistiques.
+
+En revanche, dès qu'elle a un statut « VALIDATED », il est possible de télécharger le SIP correspondant à son contenu.
 
 ***Point d’attention :***
 -   Une transaction peut être validée uniquement lorsque son statut est égal à « OPEN ».
@@ -2005,7 +2203,7 @@ Lors de cette action, l’opération peut aboutir aux résultats suivants :
 | Échec  | - La transaction associée n’existe pas ;<br>- La transaction associée a déjà été clôturée.|
 
 ***Point d’attention :***
-S’il s’avère nécessaire de modifier le contenu d'une transaction ayant un statut « READY », il est toujours possible à ce stade la rouvrir[^21].
+S’il s’avère nécessaire de modifier le contenu d'une transaction ayant un statut « READY » et/ou « VALIDATED », il est toujours possible à ce stade la rouvrir[^21].
 
 ##### Utilisation dans VitamUI
 
@@ -2024,7 +2222,7 @@ Ce service est disponible :
 ***Point d'attention :*** Le bouton est :
 
 -   actif quand la transaction a un statut « Ouvert en édition » (« OPEN »),
--   inactif quand la transaction a un statut « Préparation et envoi du SIP » (« SENDING »), « Envoyé, en cours de traitement du SAE » (« SENT »), « Versé avec succès » (« ACK_OK »), « Versé en avertissement » (« ACK_WARNING »), « Echec du versement » (« ACK_KO »), « Erreur technique » (« KO »), « Abandonné » (« ABORTED »).
+-   inactif quand la transaction a un statut « Validation en cours » (« READY »), « Validé » (« VALIDATED »), « Préparation et envoi du SIP » (« SENDING »), « Envoyé, en cours de traitement du SAE » (« SENT »), « Versé avec succès » (« ACK_OK »), « Versé en avertissement » (« ACK_WARNING »), « Echec du versement » (« ACK_KO »), « Erreur technique » (« KO »), « Abandonné » (« ABORTED »).
 
 Des droits utilisateurs sont par ailleurs définis :
 
@@ -2034,14 +2232,69 @@ Des droits utilisateurs sont par ailleurs définis :
 | Archiviste         | oui |
 | Service producteur | oui |
 
+### Téléchargement d'un SIP
+
+##### Utilisation des API
+
+La solution logicielle permet de télécharger le SIP correspondant à une transaction, une fois l’ensemble des archives liées à cette transaction envoyées dans cette dernière et ne nécessitant plus de traitements.
+
+-   Le SIP est mis à disposition dès que la transaction est clôturée et a un statut égal à « VALIDATED ».
+-   Si la transaction est réouverte après validation, alors le SIP, mis à disposition sur les offres, est purgé.
+
+***Points d’attention :***
+
+-   Il faut avoir au préalable créé une transaction et la signaler dans l’API.
+-   Le SIP est uniquement disponible lorsque la transaction a été clôturée et que son statut est égal à « VALIDATED », « SENDING », « SENT », « ACK_KO ».
+    Si la transaction a un statut égal à « OPEN », « ACK_OK », « ACK_WARNING », « ABORTED », « KO », le SIP n'est pas disponible.
+
+ *Exemple : requête de téléchargement*
+```  
+  @transaction-id = aeeaaaaaaghiyso4ablmyal74slqwtqaaaaq
+  @tenant = 1
+  
+  GET  {{url-collect}}/collect-external/v1/transactions/{{transaction-id}}/downloadSIP
+  Accept: application/octet-stream
+  X-Tenant-Id: {{tenant}}
+  
+  {}
+```  
+
+Lors de cette action, l’opération peut aboutir aux résultats suivants :
+
+| Statut | Motifs |
+|---|---|
+| Succès | Action réalisée sans rencontrer de problèmes particuliers. |
+| Échec  | - La transaction associée n’existe pas ;<br>- La transaction associée est ouverte ou a été réouverte ;<br>- La transaction associée a été envoyée avec succès ou avec un avertissement dans la solution logicielle Vitam ;<br>- La transaction est en erreur technique ;<br>- La transaction a été abandonnée.|
+
+##### Utilisation dans VitamUI
+
+L’APP « Collecte et préparation des versements » du front-office VitamUI fournie avec la solution logicielle Vitam utilise l'API de téléchargement d'un SIP.
+
+Ce service est disponible depuis la page permettant de visualiser l’ensemble des transactions (ou versements) associées à un projet de versement, où il est possible de :
+
+    -   « Télécharger » un SIP.
+
+***Point d'attention :*** Le bouton est :
+
+-   actif quand la transaction a un statut « Ouvert en édition » (« OPEN »),
+-   inactif quand la transaction a un statut « Validation en cours » (« READY »), « Validé » (« VALIDATED »), « Préparation et envoi du SIP » (« SENDING »), « Envoyé, en cours de traitement du SAE » (« SENT »), « Versé avec succès » (« ACK_OK »), « Versé en avertissement » (« ACK_WARNING »), « Echec du versement » (« ACK_KO »), « Erreur technique » (« KO »), « Abandonné » (« ABORTED »).
+
+Des droits utilisateurs sont par ailleurs définis :
+
+| Profil utilisateur | Validation d'une transaction |
+|---|---|
+| Administrateur     | oui |
+| Archiviste         | oui |
+| Service producteur | non |
+
 #### Envoi d'une transaction
 
 ##### Utilisation des API
 
-Pour une transaction donnée, une fois celle-ci clôturée, le module de collecte permet de générer un SIP et de le transférer au moyen d’une opération de type « INGEST »[^58].
+Pour une transaction donnée, une fois celle-ci clôturée, le module de collecte permet de générer un SIP en SEDA 2.3 et de le transférer au moyen d’une opération de type « INGEST »[^58].
 
 ***Point d’attention :***
--  En prérequis à l’envoi du SIP, il faut avoir au préalable clôturé la transaction (son statut doit être égal à « READY ») et signaler cette dernière dans l’API.
+-  En prérequis à l’envoi du SIP, il faut avoir au préalable clôturé la transaction (son statut doit être égal à « VALIDATED ») et signaler cette dernière dans l’API.
 -  Cette action peut être automatisée si le paramètre « AutomaticIngest » présent dans le projet de versement associé à la transaction a une valeur « true ». Dès lors, dès validation de la transaction, la transaction est directement clôturée et envoyée dans la solution logicielle Vitam.
 
  *Exemple : requête d’envoi du SIP vers la solution logicielle Vitam pour conservation*
@@ -2102,8 +2355,8 @@ Ce service est disponible :
 
 ***Point d'attention :*** Le bouton est :
 
--   actif quand la transaction a un statut « Validé » (« READY »),
--   inactif quand la transaction a un statut « Ouvert en édition » (« OPEN »), « Préparation et envoi du SIP » (« SENDING »), « Envoyé, en cours de traitement du SAE » (« SENT »), « Versé avec succès » (« ACK_OK »), « Versé en avertissement » (« ACK_WARNING »), « Echec du versement » (« ACK_KO »), « Erreur technique » (« KO »), « Abandonné » (« ABORTED »).
+-   actif quand la transaction a un statut « Validé » (« VALIDATED »),
+-   inactif quand la transaction a un statut « Ouvert en édition » (« OPEN »), « Validation en cours » (« READY »), « Préparation et envoi du SIP » (« SENDING »), « Envoyé, en cours de traitement du SAE » (« SENT »), « Versé avec succès » (« ACK_OK »), « Versé en avertissement » (« ACK_WARNING »), « Echec du versement » (« ACK_KO »), « Erreur technique » (« KO »), « Abandonné » (« ABORTED »).
 
 Cette action entraîne la purge des archives passé un certain délai, si le résultat est un versement en succès ou en avertissement.
 
@@ -2164,7 +2417,7 @@ La solution logicielle Vitam permet de mettre à jour unitairement plusieurs uni
 
   *Exemple : requête en vue de modifier un titre pour une unité archivistique dont l'identifiant d'agent est « 123456 », de supprimer une date d'envoi et d'ajouter une description pour une unité archivistique dont l'identifiant d'agent est « 123457 »*
 ```  
-@transaction-id= *aeeaaaaaachj3m7nabjocamcdqr2rqaaaaaq*
+@transaction-id= aeeaaaaaachj3m7nabjocamcdqr2rqaaaaaq
 
 POST {{url}}/collect-external/v1/transactions/{{transaction-id}}/units/bulk
 Accept: application/json
@@ -2205,7 +2458,7 @@ Lors de cette action, l’opération peut aboutir aux résultats suivants :
 | Statut       |  Motifs |
 |---|---|
 | Succès       |  Action réalisée sans rencontrer de problèmes particuliers. |
-| Échec        |  - Le seuil de requête est dépassé. <br>- Plusieurs unités archivistiques ont été trouvées. <br>- Aucune unité archivistique n'a été trouvée. <br>- Le format de la métadonnées à modifier n'est pas conforme au type d'indexation défini dans l'ontologie. |
+| Échec        |  - Le seuil de requête est dépassé. <br>- Aucune unité archivistique n'a été trouvée. <br>- Plusieurs unités archivistiques ont été trouvées. <br>- Le format de la métadonnées à modifier n'est pas conforme au type d'indexation défini dans l'ontologie. <br>- La métadonnée à modifier est un champ réservé (ex. #Management). <br>- La transaction n’existe pas ou est erronée.  |
 
 ***Points d'attention :***
 - L'échec ne concerne pas l'action en général, mais est spécifique à une unité archivistique en particulier.
@@ -2218,6 +2471,14 @@ Elle n’est pas journalisée dans le journal des opérations.
 
  Depuis l’APP « Collecte et préparation des versements », le service de « modification unitaire en masse » est utilisé pour une modification unitaire.
  Il n'est pas disponible pour effectuer une modification de masse depuis cette APP.
+ 
+ Des droits utilisateurs sont par ailleurs définis :
+
+| Profil utilisateur | Modification des métadonnées  descriptives |
+|---|---|
+| Administrateur     | oui |
+| Archiviste         | oui |
+| Service producteur | oui |
 
 ##### Modification par import de fichier .csv
 
@@ -2300,7 +2561,7 @@ Lors de cette action, l’opération peut aboutir aux résultats suivants :
 |---|---|
 | Succès       |  Action réalisée sans rencontrer de problèmes particuliers. |
 | Avertissement|  Le formatage du fichier .csv contient au moins une erreur (ex. date mal formatée, valeur attendue erronée, date de début postérieure à la date de fin, etc.)|
-| Échec        |  - Le fichier .csv n’est pas au format .csv. <br>- Le fichier .csv contient des erreurs dans la colonne File. <br>- Action non réalisée pour cause de nom erroné ou de chemin introuvable dans la requête.<br>- La transaction n’existe pas ou est erronée.<br>- La transaction a un statut « READY », « SENDING », « SEND », « ACK_OK », « ACK_WARNING », « ACK_KO », « KO », « ABORTED ».|
+| Échec        |  - Le fichier .csv n’est pas au format .csv. <br>- Le fichier .csv contient des erreurs dans la colonne File. <br>- Action non réalisée pour cause de nom erroné ou de chemin introuvable dans la requête.<br>- La transaction n’existe pas ou est erronée.<br>- La transaction a un statut « READY », « VALIDATED », « SENDING », « SEND », « ACK_OK », « ACK_WARNING », « ACK_KO », « KO », « ABORTED ».|
 
 Elle n’est pas journalisée dans le journal des opérations.
 
@@ -2336,7 +2597,7 @@ Ce service est disponible depuis la page permettant de visualiser l’ensemble 
 ***Point d'attention***: Le bouton est :
 
 -   actif quand la transaction a un statut « Ouvert en édition » (« OPEN »),
--   inactif quand la transaction a un statut « Validé » (« READY »), « Préparation et envoi du SIP » (« SENDING »), « Envoyé, en cours de traitement du SAE » (« SENT »), « Versé avec succès » (« ACK_OK »), « Versé en avertissement » (« ACK_WARNING »), « Echec du versement » (« ACK_KO »), « Erreur technique » (« KO »), « Abandonné » (« ABORTED »).
+-   inactif quand la transaction a un statut « Validation en cours » (« READY »), « Validé » (« VALIDATED »), « Préparation et envoi du SIP » (« SENDING »), « Envoyé, en cours de traitement du SAE » (« SENT »), « Versé avec succès » (« ACK_OK »), « Versé en avertissement » (« ACK_WARNING »), « Echec du versement » (« ACK_KO »), « Erreur technique » (« KO »), « Abandonné » (« ABORTED »).
 
 Des droits utilisateurs sont par ailleurs définis :
 
@@ -2426,7 +2687,7 @@ Lors de cette action, l’opération peut aboutir aux résultats suivants :
 |---|---|
 | Succès       |  Action réalisée sans rencontrer de problèmes particuliers. |
 | Avertissement|  Le formatage du fichier .jsonl contient au moins une erreur (ex. date mal formatée, valeur attendue erronée, date de début postérieure à la date de fin, etc.)|
-| Échec        |  - Le fichier .jsonl n’est pas au format .jsonl.<br>- Le fichier .jsonl contient des erreurs dans la colonne File ou Selector.<br>- Action non réalisée pour cause de nom erroné ou de chemin introuvable dans la requête.<br>- La transaction n’existe pas ou est erronée.<br>La transaction a un statut « READY », « SENDING », « SEND », « ACK_OK », « ACK_WARNING », « ACK_KO », « KO », « ABORTED ».|
+| Échec        |  - Le fichier .jsonl n’est pas au format .jsonl.<br>- Le fichier .jsonl contient des erreurs dans la colonne File ou Selector.<br>- Action non réalisée pour cause de nom erroné ou de chemin introuvable dans la requête.<br>- La transaction n’existe pas ou est erronée.<br>La transaction a un statut « READY », « VALIDATED », « SENDING », « SEND », « ACK_OK », « ACK_WARNING », « ACK_KO », « KO », « ABORTED ».|
 
 Elle n’est pas journalisée dans le journal des opérations.
 
@@ -2473,10 +2734,10 @@ La solution logicielle Vitam permet de modifier l'organisation de l’arborescen
 -  En prérequis à cette action, il faut avoir au préalable créé une transaction et le signaler dans l’API.
 -  A noter qu'au terme de la version 8.1, il n'est pas possible de modifier la(les) position(s) de rattachement de la transaction, qu'elle(s) soi(en)t statique ou dynamique(s).
 
-*Exemple : requête en vue de déplacer l'unité d'archives dont l’identifiant est «  aeaqaaaaaeecohy6ab4heamu7jl5epqaaaba »*
+*Exemple : requête en vue de déplacer l'unité archivistique dont l’identifiant est «  aeaqaaaaaeecohy6ab4heamu7jl5epqaaaba »*
 
 ```  
-@transaction-id= *aeeaaaaaachj3m7nabjocamcdqr2rqaaaaaq*
+@transaction-id= aeeaaaaaachj3m7nabjocamcdqr2rqaaaaaq
   
 POST {{url-collect}}/collect-external/v1/transactions/{{transaction-id}}/reclassification
 Accept: application/json
@@ -2499,14 +2760,64 @@ X-Tenant-Id: {{tenant}}
     ]
   }
 ]
+```
+
+*Exemple : requête en vue de supprimer le lien entre l'unité archivistique dont l’identifiant est « aeaqaaaaaeecohy6ab4heamu7jl5epqaaaba » et l'unité archivistique dont l’identifiant est « aeaqaaaaaeecohy6ab4heamu7jl5epqaaaaq »*
+
 ```  
+@transaction-id= aeeaaaaaachj3m7nabjocamcdqr2rqaaaaaq
+  
+POST {{url-collect}}/collect-external/v1/transactions/{{transaction-id}}/reclassification
+Accept: application/json
+Content-Type: application/json
+X-Tenant-Id: {{tenant}}
+
+[
+  {
+    "$roots": [],
+    "$query": [{ "$eq": { "#id": "aeaqaaaaaeecohy6ab4heamu7jl5epqaaaba" } }],
+    "$action": [
+      {
+        "$pull": {
+          "#unitups": [ "aeaqaaaaaeecohy6ab4heamu7jl5epqaaaaq" ]
+        }
+      }
+    ]
+  }
+]
+```
+
+*Exemple : requête en vue d'ajouter un lien entre l'unité archivistique dont l’identifiant est « aeaqaaaaaeecohy6ab4heamu7jl5epqaaaba » et l'unité archivistique dont l’identifiant est « aeaqaaaaaeecohy6ab4heamu7jl5epqaaaaq »*
+
+```  
+@transaction-id= aeeaaaaaachj3m7nabjocamcdqr2rqaaaaaq
+  
+POST {{url-collect}}/collect-external/v1/transactions/{{transaction-id}}/reclassification
+Accept: application/json
+Content-Type: application/json
+X-Tenant-Id: {{tenant}}
+
+[
+  {
+    "$roots": [],
+    "$query": [{ "$eq": { "#id": "aeaqaaaaaeecohy6ab4heamu7jl5epqaaaba" } }],
+    "$action": [
+      {
+        "$add": {
+          "#unitups": [ "aeaqaaaaaeecohy6ab4heamu7jl5epqaaaaq" ]
+        }
+      }
+    ]
+  }
+]
+```
 
 Lors de cette action, l’opération peut aboutir aux résultats suivants :
 
 | Statut | Motifs |
 |---|---|
 | Succès        | Action réalisée sans rencontrer de problèmes particuliers.|
-| Échec         | Action non réalisée :<br>- L'unité archivistique de destination semble inexistante ou inaccessible,<br>- L'unité archivistique à déplacer semble inexistante dans la transaction.|
+| Échec         | Action non réalisée :<br>- L'unité archivistique de destination semble inexistante ou inaccessible,<br>- L'unité archivistique à déplacer semble inexistante dans la transaction,<br>- L'unité archivistique à déplacer est le parent de l'unité archivistique sous laquelle on souhaite la positionner.|
 
 Elle est journalisée dans le journal des opérations (COLLECT_RECLASSIFICATION).
 
@@ -2518,6 +2829,10 @@ L’APP « Collecte et préparation des versements » du front-office VitamUI 
 -  ajouter un rattachement,
 -  supprimer un lien hiérarchique entre une unité archivistique et une autre.
 
+***Point d'attention***:
+
+-  Il n'est pas possible de réorganiser plus de 10 000 unités archivistiques à la fois.
+
 Des droits utilisateurs sont par ailleurs définis :
 
 | Profil utilisateur | Suppression d'archives |
@@ -2525,6 +2840,12 @@ Des droits utilisateurs sont par ailleurs définis :
 | Administrateur     | oui |
 | Archiviste         | oui |
 | Service producteur | non |
+
+***Point d'attention***:
+
+-  Les seuils définis dans les paramétrages externes pouvant être associés à un groupe de profils ne s'appliquent pas lors d'une réorganisation d'arborescence.
+
+Les opérations de suppression sont journalisées et leur résultat accessible depuis l’APP « Journal des opérations ».
 
 #### Ajout d'archives
 
@@ -2613,7 +2934,7 @@ La solution logicielle Vitam permet de supprimer une à plusieurs unités archi
 *Exemple : requête en vue de supprimer l'unité d'archives dont l’identifiant est «  aeeaaaaaachj3m7nabjocamcdqr2rqaaaaaq »*
 
 ```  
-  @transaction-id= *aeeaaaaaachj3m7nabjocamcdqr2rqaaaaaq*
+  @transaction-id= aeeaaaaaachj3m7nabjocamcdqr2rqaaaaaq
   
   POST {{url-collect}}/collect-external/v1/transactions/{{transaction-id}}/deletion/action
   Accept: application/json
@@ -2638,16 +2959,16 @@ La solution logicielle Vitam permet de supprimer une à plusieurs unités archi
 
 Cette action provoque la suppression :
 
-    -   des unités archivistiques de la collection « Unit » (base *MetadataCollect*) ;
-    -   des groupes d’objets techniques de la collection « ObjectGroup » (base *MetadataCollect*).
-    -   des objets des offres de stockage ;
+-   des unités archivistiques de la collection « Unit » (base *MetadataCollect*) ;
+-   des groupes d’objets techniques de la collection « ObjectGroup » (base *MetadataCollect*).
+-   des objets des offres de stockage ;
 
 Lors de cette action, l’opération peut aboutir aux résultats suivants :
 
 | Statut | Motifs |
 |---|---|
 | Succès        | Action réalisée sans rencontrer de problèmes particuliers.|
-| Avertissement | Au moins une des unités archivistiques ne peut pas être supprimée car elle(s) a(ont) des enfants (NON_DESTROYABLE_HAS_CHILD_UNITS).|
+| Avertissement | - Au moins une des unités archivistiques ne peut pas être supprimée car elle(s) a(ont) des enfants (NON_DESTROYABLE_HAS_CHILD_UNITS).<br>- Absence d'éléments à supprimer car les unités archivistiques à supprimer sont inconnues.|
 | Échec         | Le seuil de requête est dépassé.|
 
 Elle est journalisée dans le journal des opérations (COLLECT_DELETION).
@@ -2663,6 +2984,10 @@ Des droits utilisateurs sont par ailleurs définis :
 | Administrateur     | oui |
 | Archiviste         | oui |
 | Service producteur | non |
+
+***Point d'attention***:
+
+-  Les seuils définis dans les paramétrages externes pouvant être associés à un groupe de profils s'appliquent lors d'une suppression d'archives.
 
 Les opérations de suppression sont journalisées et leur résultat accessible depuis l'APP « Journal des opérations ».
 
@@ -2869,7 +3194,8 @@ Le module de collecte attribue un certain nombre de statuts à une transaction. 
 | Actions disponibles                   | Statut correspondant<br>dans le front-office | Statut correspondant<br>dans le back-office | Modification possible ? | Abandon possible ? | Purge automatique ? |
 |---|---|---|---|---|---|
 |Créer la transaction| Ouvert en édition            |OPEN           |          OUI       |          OUI ||
-|Clôturer / Valider  | Validé                       |READY          |                    |          OUI ||
+|Clôturer / Valider  | Validation en cours          |READY          |                    |          OUI ||
+|Clôturer / Valider  | Validé                       |VALIDATED      |                    |          OUI ||
 |Verser / Envoyer    | Préparation et envoi du SIP  |SENDING        |                    |              ||
 |Verser / Envoyer    |  Envoyé, en cours de traitement du SAE                                |SENT           |                    |              ||
 |Verser / Envoyer    |  Versé en succès                                                      |ACK_OK         |                    |              |OUI|
@@ -3220,6 +3546,9 @@ Chacun d'eux a la possibilité d'agir sur cette APP à des degrés différents :
 |Créer une transaction| oui | oui |oui |
 |Valider une transaction| oui | oui |oui |
 |Verser une transaction| oui | oui | non |
+|Rouvrir une transaction| oui | oui | non |
+|Abandonner une transaction| oui | non | non |
+|Télécharger un SIP| oui | oui | non |
 |Ajouter des archives| oui | oui | oui |
 |Réorganiser des arborescences| oui | oui | non |
 |Supprimer des archives| oui | oui | non |
@@ -3240,8 +3569,8 @@ Voici un tableau récapitulatif des services disponibles, mettant en évidence l
 |---|APP Collecte|Back module de collecte|
 |---|---|---|
 |Configurer des versements|Crée N projets de versement :<br/>- Pour des versements manuels<br/>- Pour des versements de flux automatisés|Crée N projets de versement :<br/>- Pour des versements manuels<br/>- Pour des versements de flux automatisés|
-|(Pré-)Verser les archives|- Crée automatiquement 1 transaction associée (mode lot ou unitaire) pour 1 projet de versement manuel préalablement créé.<br/>- Ne crée pas de transaction associée à un projet de versement automatique.<br/>- **Ajouts a posteriori possibles d’archives (mode lot) - version 8.1**|- Crée N transactions associées avec ses archives (mode lot ou *unitaire*).<br/>- Ajouts a posteriori possibles d’archives (**mode lot - version 8.1** - ou unitaire)|
-|Consulter les (pré-)versement(s)|- Liste les projets de versement<br/>- Recherche dans les projets de versement<br/>- Affichage du détail d’un projet de versement<br/>- Liste les transactions associées à un projet<br/>- Liste les archives d’une transaction<br/>- Recherche simple / avancée / arborescence dans les archives d’une transaction<br/>- Affichage du détail d’une unité (métadonnées descriptives et de gestion, métadonnées techniques)<br/>- Téléchargement de l’objet numérique<br/>|- Liste les projets de versement<br/>- Recherche dans les projets de versement<br/>- Affichage du détail d’un projet de versement<br/>- Liste les transactions associées à un projet<br/>- *Affichage du détail d’une transaction*<br/>- Liste les archives d’une transaction<br/>- Recherche simple / avancée / arborescence dans les archives d’une transaction<br/>- Affichage du détail d’une unité (métadonnées descriptives et de gestion, métadonnées techniques)<br/>- Téléchargement de l’objet numérique|
+|(Pré-)Verser les archives|- Crée automatiquement 1 transaction associée (mode lot, **dont SIP - version 9.0**) pour 1 projet de versement manuel préalablement créé.<br/>- Ne crée pas de transaction associée à un projet de versement automatique.<br/>- **Ajouts a posteriori possibles d’archives (mode lot) - version 8.1**|- Crée N transactions associées avec ses archives (mode lot, **dont SIP - version 9.0 -** ou *unitaire*).<br/>- Ajouts a posteriori possibles d’archives (**mode lot - version 8.1** - ou unitaire)|
+|Consulter les (pré-)versement(s)|- Liste les projets de versement<br/>- Recherche dans les projets de versement<br/>- Affichage du détail d’un projet de versement<br/>- Liste les transactions associées à un projet<br/>- Liste les archives d’une transaction<br/>- Recherche simple / avancée / arborescence dans les archives d’une transaction<br/>- Affichage du détail d’une unité (métadonnées descriptives et de gestion, métadonnées techniques)<br/>- Téléchargement de l’objet numérique<br/>|- Liste les projets de versement<br/>- Recherche dans les projets de versement<br/>- Affichage du détail d’un projet de versement<br/>- Liste les transactions associées à un projet<br/>- *Affichage du détail d’une transaction*<br/>- Liste les archives d’une transaction<br/>- Recherche simple / avancée / arborescence dans les archives d’une transaction<br/>- Affichage du détail d’une unité (métadonnées descriptives et de gestion, métadonnées techniques)<br/>- Téléchargement de l’objet numérique.<br>**Exporter le (pré-)versement (ou transaction) sous la forme d'un SIP - version 9.0**.|
 |Traiter les archives|- définition et mise à jour de métadonnées contextuelles,<br/>- identification de format,<br/>- calcul d’empreintes,<br/>- calcul du poids de l’objet numérique,<br/>- mise à jour de métadonnées descriptives et de gestion (par import de fichier .csv),<br/>- mise à jour unitaire de métadonnées descriptives,<br/>- **suppression d'archives - version 8.1**,<br/>- **réorganisation d'archives - version 8.1**,<br/>- gestion de statuts (ex. réouverture ou abandon d’un (pré-)versement)|- définition et mise à jour de métadonnées contextuelles,<br/>- identification de format,<br/>- calcul d’empreintes,<br/>- calcul du poids de l’objet numérique,<br/>- mise à jour de métadonnées descriptives et de gestion (par import de fichier .csv et *.jsonl*),<br/>- mise à jour unitaire en masse de métadonnées descriptives et de gestion,<br/>- **suppression d'archives - version 8.1**,<br/>- **réorganisation d'archives - version 8.1**,<br/>- gestion de statuts (ex. réouverture ou abandon d’un (pré-)versement),<br/>- *suppression unitaire d’un (pré-versement) et d’un projet de versement*|
 |Transférer les archives|- Générer un SIP<br/>- Suppression automatique|- Générer un SIP<br/>- Suppression automatique|
 |Gestion des droits|- **Trois groupes de profils : administrateur, archiviste, service producteur - version 8.0**,<br/>- **Possibilité de filtrage des accès aux projets par service producteur - version 8.0**.||
@@ -3533,7 +3862,9 @@ Annexe 3 : Liste des points d’API
 |                   | Envoi de la transaction           | transaction:send         | POST          | /collect-external/v1/transactions/{transactionId}/send/ |
 |                   | Abandonner une transaction        | transaction:abort        | PUT           | /collect-external/v1/transactions/{transactionId}/abort/ |
 |                   | Rouvrir une transaction           | transaction:reopen       | PUT           | /collect-external/v1/transactions/{transactionId}/reopen/|
+|                   | Télécharge le SIP d'une transaction | transaction:sip:read     | GET           | /collect-external/v1/transactions/{transactionId}/downloadSIP/|
 |                   | Charge les binaires en lot        | transaction:zip:create   | POST          | /collect-external/v1/transactions/{transactionId}/upload/|
+|                   | Envoyer un SIP à une transaction  | transaction:sip:upload   | POST          | /collect-external/v1/transactions/{transactionId}/uploadSip/|
 |                   | Crée une unité archivistique      | transaction:unit:create  | POST          | /collect-external/v1/transactions/{transactionId}/units/|
 |                   | Récupère toutes les unités archivistiques | transaction:unit:read | GET      | /collect-external/v1/transactions/{transactionId}/units/|
 |                   | Supprime une transaction          | transaction:id:delete    | DELETE        | /collect-external/v1/transactions/{transactionId}/|
