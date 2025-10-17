@@ -24,7 +24,7 @@ Il s’articule autour des axes suivants :
     - une stratégie de stockage unique ;
     - plus d’une stratégie de stockage, gérée au moyen des contrats de gestion.
 
-Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 8.1 (printemps 2025). 
+Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 9.0 (automne 2025). 
 Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
 
 Gestion des données sur Vitam
