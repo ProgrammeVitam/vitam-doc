@@ -29,7 +29,7 @@ Il s’articule autour des axes suivants :
 - des recommandations aux utilisateurs de la solution logicielle Vitam sur l’élaboration d’un profil d’unité archivistique ;
 - quelques conseils complémentaires de mise en œuvre.
 
-Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 8.1 (printemps 2025) : il comprend particulièrement la présentation des fonctionnalités offertes par le projet PASTIS (Profil d’Archivage Simple pour le Traitement de l’Information en SEDA) intégré à l’IHM Vitam UI par l’APP Profils documentaires et également accessible par un exécutable. Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
+Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 9.0 (automne 2025) : il comprend particulièrement la présentation des fonctionnalités offertes par le projet PASTIS (Profil d’Archivage Simple pour le Traitement de l’Information en SEDA) intégré à l’IHM Vitam UI par l’APP Profils documentaires et également accessible par un exécutable. Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
 
 Présentation de la notion de profil d’unité archivistique
 ----
@@ -215,6 +215,7 @@ L’import ou la mise à jour d’un profil d’unité archivistique peut échou
 La modification des champs des notices décrivant les profils d’unité archivistique est possible au moyen :
 -  des API,
 -  de l’APP « Profils documentaires » accessible depuis l’IHM VitamUI.
+
 Les champs modifiables sont :
 -  le nom du profil d’unité archivistique (Name) ;
 -  la description du profil d’unité archivistique (Description) ;
@@ -244,6 +245,7 @@ La solution logicielle Vitam permet de rendre active ou inactive une notice dét
 Cette action est possible depuis :
 -  les API,
 -  l’APP « Profils documentaires » accessible depuis l’IHM VitamUI.
+
 En fonction du statut, seront autorisés ou non :
 -  le transfert de SIP dont au moins une unité archivistique déclare un profil d’unité archivistique ;
 -  la modification d’une unité archivistique déclarant un profil d’unité archivistique.
