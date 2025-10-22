@@ -86,18 +86,16 @@
 <li class="toctree-l3"><a class="reference internal" href="#administration-de-l-ontologie">11.3.5. Administration de l’ontologie</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#import-de-lontologie">11.3.5.1. Import de l’ontologie</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#modification-de-l-ontologie">11.3.5.2. Modification de l’ontologie</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controle-de-l-ontologie-sur-les-profils-dunite-archivistique">11.3.5.3. Contrôle de l’ontologie sur les profils d’unité archivistique</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controle-du-schema-sur-l-ontologie">11.3.5.4. Contrôle du schéma sur l’ontologie</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#acces-au-referentiel">11.3.5.5. Accès au référentiel</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#controle-de-l-ontologie-sur-les-profils-dunite-archivistique">11.3.6. Contrôle de l’ontologie sur les profils d’unité archivistique</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#controle-du-schema-sur-l-ontologie">11.3.7. Contrôle du schéma sur l’ontologie</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#acces-au-referentiel">11.3.8. Accès au référentiel</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#processus-dentree">11.3.8.1. Processus d’entrée</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#acces">11.3.9. Accès</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#affichage-dynamique-des-traductions">11.3.9.1. Affichage dynamique des traductions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#optimisation-de-la-recherche">11.3.9.2. Optimisation de la recherche</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#controle-lors-de-la-mise-a-jour-des-unites-archivistiques">11.3.9.3. Contrôle lors de la mise à jour des unités archivistiques</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#processus-dentree">11.3.6. Processus d’entrée</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#acces">11.3.7. Accès</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#affichage-dynamique-des-traductions">11.3.7.1. Affichage dynamique des traductions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#optimisation-de-la-recherche">11.3.7.2. Optimisation de la recherche</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#controle-lors-de-la-mise-a-jour-des-unites-archivistiques">11.3.7.3. Contrôle lors de la mise à jour des unités archivistiques</a></li>
 </ul>
 </li>
 </ul>
@@ -263,19 +261,16 @@
 </section>
 <section id="presentation-du-document">
 <h3><span class="section-number">11.1.2. </span>Présentation du document<a class="headerlink" href="#presentation-du-document" title="Lien vers cette rubrique"></a></h3>
-<p>Le document présente les fonctionnalités associées à la prise en compte
-de la notion d’ontologie dans la solution logicielle Vitam.</p>
+<p>Le document présente les fonctionnalités associées à la prise en compte de la notion d’ontologie dans la solution logicielle Vitam.</p>
 <p>Il s’articule autour des axes suivants :</p>
 <ul class="simple">
 <li><p>une présentation de la notion d’ontologie ;</p></li>
-<li><p>une présentation de la manière dont la solution logicielle Vitam la
-formalise ;</p></li>
-<li><p>une présentation des mécanismes mis en œuvre dans la solution
-logicielle Vitam pour prendre en compte cette notion ;</p></li>
+<li><p>une présentation de la manière dont la solution logicielle Vitam la formalise ;</p></li>
+<li><p>une présentation des mécanismes mis en œuvre dans la solution logicielle Vitam pour prendre en compte cette notion ;</p></li>
 <li><p>quelques conseils complémentaires de mise en œuvre.</p></li>
 </ul>
 <p>Le présent document décrit les fonctionnalités qui sont offertes par la
-solution logicielle Vitam au terme de la version 8.1 (printemps 2025).
+solution logicielle Vitam au terme de la version 9.0 (automne 2025).
 Il a vocation a être amendé, complété et enrichi au fur et à mesure de
 la réalisation de la solution logicielle Vitam et des retours et
 commentaires formulés par les ministères porteurs et les partenaires du
@@ -313,7 +308,7 @@ programme.</p>
 <li><p>0 à n unité(s) archivistique(s),</p></li>
 <li><p>0 à n vocabulaire(s) de l’ontologie et du schéma.</p></li>
 </ul>
-<p>Points d’attention :</p>
+<p><strong>Points d’attention :</strong></p>
 <ul>
 <li><p>les vocabulaires sont uniques dans la solution logicielle Vitam ;</p></li>
 <li><p>les vocabulaires utilisés par la solution logicielle Vitam de type « objet », c’est-à-dire ne contenant pas de valeurs informationnelles, ne sont pas référencés dans l’ontologie<a class="footnote-reference brackets" href="#id53" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>50<span class="fn-bracket">]</span></a>. Il peut s’agir de :</p>
@@ -609,7 +604,7 @@ programme.</p>
 <h4><span class="section-number">11.3.5.2. </span>Modification de l’ontologie<a class="headerlink" href="#modification-de-l-ontologie" title="Lien vers cette rubrique"></a></h4>
 <p>La modification de l’ontologie est possible :</p>
 <ul class="simple">
-<li><p>au moyen des API et de l’IHM standard fournie avec la solution logicielle Vitam et s’effectue par un réimport complet de l’ontologie, en mode « annule et remplace ». De fait, la solution logicielle Vitam permet de :</p>
+<li><p>au moyen des API et de l’IHM VitamUI fournie avec la solution logicielle Vitam et s’effectue par un réimport complet de l’ontologie, en mode « annule et remplace ». De fait, la solution logicielle Vitam permet de :</p>
 <ul>
 <li><p>ajouter un nouveau vocabulaire ;</p></li>
 <li><p>modifier les informations associées à un vocabulaire ;</p></li>
@@ -668,9 +663,8 @@ programme.</p>
 <p>Les différentes versions du référentiel font l’objet d’une sauvegarde sur les offres de stockage utilisées par la solution logicielle Vitam.</p>
 <p>Ces opérations de modification des types d’indexation doivent obligatoirement être accompagnées d’un acte technique d’exploitation, afin que la nouvelle indexation soit effective et prise en compte par le moteur de recherche Elastic Search<a class="footnote-reference brackets" href="#id66" id="id16" role="doc-noteref"><span class="fn-bracket">[</span>15<span class="fn-bracket">]</span></a>.</p>
 </section>
-</section>
 <section id="controle-de-l-ontologie-sur-les-profils-dunite-archivistique">
-<h3><span class="section-number">11.3.6. </span>Contrôle de l’ontologie sur les profils d’unité archivistique<a class="headerlink" href="#controle-de-l-ontologie-sur-les-profils-dunite-archivistique" title="Lien vers cette rubrique"></a></h3>
+<h4><span class="section-number">11.3.5.3. </span>Contrôle de l’ontologie sur les profils d’unité archivistique<a class="headerlink" href="#controle-de-l-ontologie-sur-les-profils-dunite-archivistique" title="Lien vers cette rubrique"></a></h4>
 <p>Lors de la création ou de la mise à jour de profils d’unité archivistique (ou documents type), la solution logicielle Vitam vérifie que les profils d’unité archivistique déclarent des vocabulaires existant dans l’ontologie.</p>
 <p>L’import ou la mise à jour d’un profil d’unité archivistique peut échouer pour les motifs suivants :</p>
 <ul class="simple">
@@ -683,12 +677,12 @@ programme.</p>
 </ul>
 </section>
 <section id="controle-du-schema-sur-l-ontologie">
-<h3><span class="section-number">11.3.7. </span>Contrôle du schéma sur l’ontologie<a class="headerlink" href="#controle-du-schema-sur-l-ontologie" title="Lien vers cette rubrique"></a></h3>
+<h4><span class="section-number">11.3.5.4. </span>Contrôle du schéma sur l’ontologie<a class="headerlink" href="#controle-du-schema-sur-l-ontologie" title="Lien vers cette rubrique"></a></h4>
 <p>Lors de la suppression d’un vocabulaire externe dans l’ontologie, la solution logicielle Vitam vérifie que le vocabulaire n’est pas utilisé dans le schéma.</p>
 <p>L’import ou la mise à jour de l’ontologie peut échouer si le vocabulaire est utilisé dans le schéma.</p>
 </section>
 <section id="acces-au-referentiel">
-<h3><span class="section-number">11.3.8. </span>Accès au référentiel<a class="headerlink" href="#acces-au-referentiel" title="Lien vers cette rubrique"></a></h3>
+<h4><span class="section-number">11.3.5.5. </span>Accès au référentiel<a class="headerlink" href="#acces-au-referentiel" title="Lien vers cette rubrique"></a></h4>
 <p>La solution logicielle Vitam permet d’effectuer des recherches dans l’ontologie.
 Il est possible d’obtenir :</p>
 <ul class="simple">
@@ -708,8 +702,10 @@ Sont disponibles les facettes de type :</p></li>
 <li><p>les API,</p></li>
 <li><p>l’APP VitamUI « Ontologie ».</p></li>
 </ul>
+</section>
+</section>
 <section id="processus-dentree">
-<h4><span class="section-number">11.3.8.1. </span>Processus d’entrée<a class="headerlink" href="#processus-dentree" title="Lien vers cette rubrique"></a></h4>
+<h3><span class="section-number">11.3.6. </span>Processus d’entrée<a class="headerlink" href="#processus-dentree" title="Lien vers cette rubrique"></a></h3>
 <p>Dans le cadre du processus d’entrée d’un ensemble d’archives, suite à la réception d’un message ArchiveTransfer du SEDA, parmi les tâches et traitements internes qu’elle effectue, la solution logicielle Vitam <strong>vérifie :</strong></p>
 <ul>
 <li><p>pour les unités archivistiques, que :</p>
@@ -731,27 +727,26 @@ Sont disponibles les facettes de type :</p></li>
 </li>
 </ul>
 </section>
-</section>
 <section id="acces">
-<h3><span class="section-number">11.3.9. </span>Accès<a class="headerlink" href="#acces" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">11.3.7. </span>Accès<a class="headerlink" href="#acces" title="Lien vers cette rubrique"></a></h3>
 <section id="affichage-dynamique-des-traductions">
-<h4><span class="section-number">11.3.9.1. </span>Affichage dynamique des traductions<a class="headerlink" href="#affichage-dynamique-des-traductions" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">11.3.7.1. </span>Affichage dynamique des traductions<a class="headerlink" href="#affichage-dynamique-des-traductions" title="Lien vers cette rubrique"></a></h4>
 <p>L’ontologie contenant la traduction des différents vocabulaires supportés par la solution logicielle Vitam, il est possible, en accès :</p>
 <ul class="simple">
 <li><p>d’utiliser ce référentiel comme un fichier de propriétés pour récupérer les traductions, plutôt que ce soit l’IHM qui porte ces informations. Ainsi, cela évitera de constater des absences de traduction des vocabulaires externes récemment créés ;</p></li>
 <li><p>d’utiliser et d’afficher la traduction des vocabulaires dans les IHM, rendue administrable dans ce référentiel, afin qu’un administrateur fonctionnel ait la possibilité de modifier les intitulés (ou traductions) de certains vocabulaires (par exemple, modifier « Description », traduction textuelle du bloc Description du SEDA, par « Présentation du contenu », terme issu de la norme ISAD/G, davantage usité par les archivistes).</p></li>
 </ul>
-<p>À titre d’exemple, l’IHM de la solution logicielle Vitam dispose de vocabulaires écrits en dur dans l’IHM. Dès qu’on transfère un bordereau contenant des vocabulaires externes, l’IHM ne les traduit pas. Il est alors nécessaire de demander un acte d’exploitation en vue de corriger ces éléments.</p>
+<p>À titre d’exemple, l’ancienne IHM de la solution logicielle Vitam dispose de vocabulaires écrits en dur dans l’IHM. Dès qu’on transfère un bordereau contenant des vocabulaires externes, l’IHM ne les traduit pas. Il est alors nécessaire de demander un acte d’exploitation en vue de corriger ces éléments.</p>
 <p><em>Exemple illustration 2 :</em><br />
 <em>« Prénom », « Nom de naissance », « Identifiant », « Date d’envoi », « Date de réception », qui correspondent à des vocabulaires internes, sont des intitulés gravés en dur. « Licence », également gravé en dur, correspond à un vocabulaire externe. Dans l’ontologie, on a introduit une traduction conforme à la norme ISAD/G : « 3.4.2. Conditions de reproduction ».</em></p>
 <p><img alt="illustration 2" src="../_images/10000201000002AB00000168AC1949D42C34E522.png" /></p>
 </section>
 <section id="optimisation-de-la-recherche">
-<h4><span class="section-number">11.3.9.2. </span>Optimisation de la recherche<a class="headerlink" href="#optimisation-de-la-recherche" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">11.3.7.2. </span>Optimisation de la recherche<a class="headerlink" href="#optimisation-de-la-recherche" title="Lien vers cette rubrique"></a></h4>
 <p>L’ontologie définit les types d’indexation des différents vocabulaires, sur lesquels il faut s’appuyer afin de pouvoir optimiser les modalités de recherche.</p>
 </section>
 <section id="controle-lors-de-la-mise-a-jour-des-unites-archivistiques">
-<h4><span class="section-number">11.3.9.3. </span>Contrôle lors de la mise à jour des unités archivistiques<a class="headerlink" href="#controle-lors-de-la-mise-a-jour-des-unites-archivistiques" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">11.3.7.3. </span>Contrôle lors de la mise à jour des unités archivistiques<a class="headerlink" href="#controle-lors-de-la-mise-a-jour-des-unites-archivistiques" title="Lien vers cette rubrique"></a></h4>
 <p>La solution logicielle Vitam permet en outre de modifier :</p>
 <ul class="simple">
 <li><p>les métadonnées d’une <strong>unité archivistique déclarant un profil d’unité archivistique</strong>, à la condition que l’unité archivistique reste conforme à ce profil d’unité archivistique et, de fait, aux vocabulaires définis dans le profil d’unité archivistique. Cette conformité vaut aussi bien pour les vocabulaires utilisés que pour les valeurs utilisées<a class="footnote-reference brackets" href="#id68" id="id18" role="doc-noteref"><span class="fn-bracket">[</span>17<span class="fn-bracket">]</span></a>. Par exemple, un vocabulaire de type « entier » tel que « AgeDuCapitaine » ne peut être mis à jour pour inclure une valeur textuelle s’il est
@@ -779,7 +774,7 @@ indexé comme entier ;</p></li>
 <h3><span class="section-number">11.4.2. </span>Quand et comment créer un vocabulaire ?<a class="headerlink" href="#quand-et-comment-creer-un-vocabulaire" title="Lien vers cette rubrique"></a></h3>
 <p>La création d’un nouveau vocabulaire s’effectue :</p>
 <ul class="simple">
-<li><p>au moyen des l’API et de l’IHM standard fournie avec la solution logicielle Vitam, par un réimport complet du référentiel, auquel a été ajouté un vocabulaire supplémentaire, d’origine externe.</p></li>
+<li><p>au moyen des l’API, par un réimport complet du référentiel, auquel a été ajouté un vocabulaire supplémentaire, d’origine externe.</p></li>
 <li><p>depuis l’APP VitamUI « Ontologie », par :</p>
 <ul>
 <li><p>la création unitaire d’un vocabulaire,</p></li>
@@ -936,7 +931,7 @@ indexé comme entier ;</p></li>
 <thead>
 <tr class="row-odd"><th class="head"><p>Qui ?</p></th>
 <th class="head"><p>Quoi ?</p></th>
-<th class="head"><p>Via l’IHM Vitam ?</p></th>
+<th class="head"><p>Via l’IHM VitamUI ?</p></th>
 </tr>
 </thead>
 <tbody>
@@ -965,10 +960,10 @@ indexé comme entier ;</p></li>
 </section>
 <section id="quand-et-comment-modifier-un-type-dindexation">
 <h3><span class="section-number">11.4.3. </span>Quand et comment modifier un type d’indexation ?<a class="headerlink" href="#quand-et-comment-modifier-un-type-dindexation" title="Lien vers cette rubrique"></a></h3>
-<p>La mise à jour du type d’indexation d’un vocabulaire s’effectue, depuis le tenant d’administration :</p>
+<p>La mise à jour du type d’indexation d’un vocabulaire s’effectue :</p>
 <ul class="simple">
-<li><p>de l’IHM standard par un réimport complet du référentiel, après avoir modifié le type d’indexation d’un à plusieurs vocabulaires ;</p></li>
-<li><p>de VitamUI, dans l’APP Ontologie, par :</p>
+<li><p>depuis les API, par un réimport complet du référentiel, duquel a été modifié un type d’indexation d’un à plusieurs vocabulaires ;</p></li>
+<li><p>depuis le tenant d’administration de VitamUI, dans l’APP « Ontologie », par :</p>
 <ul>
 <li><p>la mise à jour unitaire d’un vocabulaire,</p></li>
 <li><p>le réimport complet du référentiel, après avoir modifié le type d’indexation d’un à plusieurs vocabulaires.</p></li>
@@ -1150,7 +1145,7 @@ indexé comme entier ;</p></li>
 <h3><span class="section-number">11.4.5. </span>Quand et comment supprimer un vocabulaire ?<a class="headerlink" href="#quand-et-comment-supprimer-un-vocabulaire" title="Lien vers cette rubrique"></a></h3>
 <p>La suppression d’un vocabulaire s’effectue :</p>
 <ul class="simple">
-<li><p>depuis l’IHM standard et les API, par un réimport complet du référentiel, duquel a été supprimé ce vocabulaire ;</p></li>
+<li><p>depuis les API, par un réimport complet du référentiel, duquel a été supprimé ce vocabulaire ;</p></li>
 <li><p>depuis l’APP VitamUI « Ontologie », par :</p>
 <ul>
 <li><p>la suppression unitaire d’un vocabulaire,</p></li>
@@ -1171,7 +1166,7 @@ indexé comme entier ;</p></li>
 <thead>
 <tr class="row-odd"><th class="head"><p>Qui ?</p></th>
 <th class="head"><p>Quoi ?</p></th>
-<th class="head"><p>Via l’IHM Vitam ?</p></th>
+<th class="head"><p>Via l’IHM VitamUI ?</p></th>
 </tr>
 </thead>
 <tbody>
@@ -1311,7 +1306,7 @@ deux vocabulaires internes et externes <a class="footnote-reference brackets" hr
 <li><p>lors d’une mise à jour du SEDA, qui décrit les unités archivistiques et les groupes d’objets techniques.</p></li>
 </ul>
 <p>Elle obéit aux mêmes règles strictes que celles relatives aux vocabulaires externes<a class="footnote-reference brackets" href="#id79" id="id29" role="doc-noteref"><span class="fn-bracket">[</span>28<span class="fn-bracket">]</span></a>.</p>
-<p><em><strong>Point d’attention :</strong></em> Suite à un import par acte d’exploitation ou par procédure de montée de version une phase préliminaire permet de vérifier d’éventuelles incohérences entre les vocabulaires internes et les vocabulaires externes. En cas de présence d’erreurs, il reviendra à l’exploitant de les analyser et de les corriger avant de procéder à la montée de version de l’ontologie<a class="footnote-reference brackets" href="#id80" id="id30" role="doc-noteref"><span class="fn-bracket">[</span>29<span class="fn-bracket">]</span></a>.</p>
+<p><strong>Point d’attention :</strong> Suite à un import par acte d’exploitation ou par procédure de montée de version une phase préliminaire permet de vérifier d’éventuelles incohérences entre les vocabulaires internes et les vocabulaires externes. En cas de présence d’erreurs, il reviendra à l’exploitant de les analyser et de les corriger avant de procéder à la montée de version de l’ontologie<a class="footnote-reference brackets" href="#id80" id="id30" role="doc-noteref"><span class="fn-bracket">[</span>29<span class="fn-bracket">]</span></a>.</p>
 </section>
 <section id="quel-acces-a-lontologie">
 <h3><span class="section-number">11.4.8. </span>Quel accès à l’ontologie ?<a class="headerlink" href="#quel-acces-a-lontologie" title="Lien vers cette rubrique"></a></h3>
@@ -6919,11 +6914,12 @@ deux vocabulaires internes et externes <a class="footnote-reference brackets" hr
   </span>
   <div class="rst-other-versions">
     <dl>
+      <dt>Tags</dt>
+      <dd><a href="../../7.1.0/sections/ontologie.html">7.1.0</a></dd>
+    </dl>
+    <dl>
       <dt>Branches</dt>
       <dd><a href="ontologie.html">master</a></dd>
-      <dd><a href="../../master_7.1.x/sections/ontologie.html">master_7.1.x</a></dd>
-      <dd><a href="../../master_8.1.x/sections/ontologie.html">master_8.1.x</a></dd>
-      <dd><a href="../../v8.1_Resip_mathilde/sections/ontologie.html">v8.1_Resip_mathilde</a></dd>
     </dl>
   </div>
 </div><script>

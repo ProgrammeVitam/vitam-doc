@@ -245,7 +245,7 @@ Ce document s’articule autour des axes suivants :</p>
 <li><p>calcul des règles et détermination du caractère éliminable des unités archivistiques,</p></li>
 <li><p>modalités d’une campagne d’évaluation du caractère éliminable des unités archivistiques (analyse),</p></li>
 <li><p>modalités d’une campagne de mise en œuvre de l’élimination (action).
-Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 8.1 (printemps 2025). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.</p></li>
+Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 9.0 (automne 2025). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.</p></li>
 </ul>
 </section>
 </section>
@@ -288,7 +288,7 @@ Enfin, une unité archivistique rattachée lors de l’entrée à une unité arc
 <h2><span class="section-number">15.4. </span>Configuration de la plate-forme<a class="headerlink" href="#configuration-de-la-plate-forme" title="Lien vers cette rubrique"></a></h2>
 <section id="personnalisation-des-rapports-d-elimination">
 <h3><span class="section-number">15.4.1. </span>Personnalisation des rapports d’élimination<a class="headerlink" href="#personnalisation-des-rapports-d-elimination" title="Lien vers cette rubrique"></a></h3>
-<p>Au terme de la version 7.0, la solution logicielle Vitam permet de personnaliser les rapports produits à la suite d’une opération d’élimination.</p>
+<p>Au terme de la version 9.0, la solution logicielle Vitam permet de personnaliser les rapports produits à la suite d’une opération d’élimination.</p>
 <p>Cette configuration, optionnelle, est établie lors du paramétrage initial de la plate-forme par les administrateurs – fonctionnel pour la définition du besoin et technique pour la saisie réelle des informations – de chaque implémentation de la solution logicielle Vitam et définit, pour chaque tenant les informations complémentaires à faire apparaître dans les rapports, si elles sont présentes dans la base de données.
 Il est possible d’ajouter dans le rapport, pour chaque unité archivistique, les éléments suivant :</p>
 <ul class="simple">
@@ -338,7 +338,7 @@ Il est possible d’ajouter dans le rapport, pour chaque unité archivistique, l
 </section>
 <section id="preservation-des-identifiants-perennes">
 <h3><span class="section-number">15.4.2. </span>Préservation des identifiants pérennes<a class="headerlink" href="#preservation-des-identifiants-perennes" title="Lien vers cette rubrique"></a></h3>
-<p>Au terme de la version 7.1, la solution logicielle Vitam permet de conserver ces identifiants pérennes dans la base de données MongoDB, malgré l’élimination des archives qu’ils référençaient.</p>
+<p>Au terme de la version 9.0, la solution logicielle Vitam permet de conserver ces identifiants pérennes dans la base de données MongoDB, malgré l’élimination des archives qu’ils référençaient.</p>
 <p>Cette configuration, optionnelle, est établie lors du paramétrage initial de la plate-forme par les administrateurs
 – fonctionnel pour la définition du besoin et technique pour la saisie réelle des informations
 – de chaque implémentation de la solution logicielle Vitam et définit, pour l’ensemble de la plate-forme, la fréquence d’enregistrement de ces informations dans le système.</p>
@@ -392,7 +392,7 @@ Les unités archivistiques de statut DESTROY et CONFLICT sont indexées en base 
 </section>
 <section id="consultation-des-resultats-de-lanalyse-delimination-sur-lihm-vitamui-de-la-solution-logicielle">
 <h4><span class="section-number">15.4.3.2. </span>Consultation des résultats de l’analyse d’élimination sur l’IHM VitamUI  de la solution logicielle<a class="headerlink" href="#consultation-des-resultats-de-lanalyse-delimination-sur-lihm-vitamui-de-la-solution-logicielle" title="Lien vers cette rubrique"></a></h4>
-<p>Au terme de la version 5, il n’est pas possible de consulter le résultat de l’opération d’analyse (indexation), unité archivistique par unité archivistique.<br />
+<p>Au terme de la version 9.0, il n’est pas possible de consulter le résultat de l’opération d’analyse (indexation), unité archivistique par unité archivistique.<br />
 L’APP « Recherche et consultation des archives » permet de retrouver l’ensemble des unités archivistiques analysées en entrant l’identifiant de l’opération d’analyse dans l’onglet de recherche spécifique aux recherches sur la DUA.<br />
 L’archiviste peut partir des listes filtrées des résultats de l’analyse des unités archivistiques éliminables, afin de :</p>
 <ul class="simple">
@@ -511,9 +511,8 @@ L’archiviste peut partir des listes filtrées des résultats de l’analyse de
 </section>
 <section id="lancement-dune-operation-delimination-action">
 <h3><span class="section-number">15.4.4. </span>Lancement d’une opération d’élimination (action)<a class="headerlink" href="#lancement-dune-operation-delimination-action" title="Lien vers cette rubrique"></a></h3>
-<p>La solution logicielle permet de lancer par :</p>
+<p>La solution logicielle permet de lancer par l’IHM VitamUI une opération d’élimination sur un lot d’archives depuis l’APP « Recherche et consultation des archives » en distinguant :</p>
 <ul class="simple">
-<li><p>l’IHM VitamUI une opération d’élimination sur un lot d’archives depuis l’APP « Recherche et consultation des archives » en distinguant :</p></li>
 <li><p>l’élimination des unités archivistiques de type « standard » et « plan de classement »,</p></li>
 <li><p>la suppression des unités archivistiques de type « arbre de positionnement ».
 Cette opération peut être lancée indépendamment d’une campagne d’évaluation des éliminables et porter sur des unités archivistiques n’ayant encore jamais été analysées par la solution logicielle.</p></li>
@@ -804,11 +803,12 @@ Ensuite, il est recommandé de procéder comme suit :</p></li>
   </span>
   <div class="rst-other-versions">
     <dl>
+      <dt>Tags</dt>
+      <dd><a href="../../7.1.0/sections/eliminations.html">7.1.0</a></dd>
+    </dl>
+    <dl>
       <dt>Branches</dt>
       <dd><a href="eliminations.html">master</a></dd>
-      <dd><a href="../../master_7.1.x/sections/eliminations.html">master_7.1.x</a></dd>
-      <dd><a href="../../master_8.1.x/sections/eliminations.html">master_8.1.x</a></dd>
-      <dd><a href="../../v8.1_Resip_mathilde/sections/eliminations.html">v8.1_Resip_mathilde</a></dd>
     </dl>
   </div>
 </div><script>

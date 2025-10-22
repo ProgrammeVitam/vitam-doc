@@ -105,6 +105,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#conseils-de-mise-en-oeuvre">16.4. Conseils de mise en œuvre</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#comment-integrer-des-regles-de-gel-dans-le-referentiel-des-regles-de-gestion">16.4.1. Comment intégrer des règles de gel dans le référentiel des règles de gestion ?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#quand-et-comment-bloquer-le-reclassement-d-archives-gelees">16.4.2. Quand et comment bloquer le reclassement d’archives gelées ?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#comment-geler-des-archives">16.4.3. Comment geler des archives ?</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#annexes">16.5. Annexes</a><ul>
@@ -250,7 +251,7 @@ d’unités archivistiques,</p></li>
 <li><p>modalités de dégel d’archives.</p></li>
 </ul>
 <p>Le présent document décrit les fonctionnalités qui sont offertes par la
-solution logicielle Vitam au terme de la Version 8.1 (printemps 2025).
+solution logicielle Vitam au terme de la Version 9.0 (automne 2025).
 Il a vocation à être amendé, complété et enrichi au fur et à mesure de
 la réalisation de la solution logicielle Vitam et des retours et
 commentaires formulés par les ministères porteurs et les partenaires du
@@ -309,8 +310,8 @@ règle propre au gel est de type « HoldRule ».</p>
 gérées dans ce référentiel ;</p></li>
 <li><p>sans durée ni mesure, si on n’est pas en mesure de les qualifier.</p></li>
 </ul>
-<p><em>Exemple:</em>
-<code class="docutils literal notranslate"> <span class="pre">La</span> <span class="pre">première</span> <span class="pre">règle</span> <span class="pre">de</span> <span class="pre">gel</span> <span class="pre">définit</span> <span class="pre">une</span> <span class="pre">durée</span> <span class="pre">et</span> <span class="pre">une</span> <span class="pre">mesure,</span> <span class="pre">contrairement</span> <span class="pre">à</span> <span class="pre">la</span> <span class="pre">deuxième</span> <span class="pre">règle</span> <span class="pre">de</span> <span class="pre">gel.</span></code></p>
+<p><em>Exemple :</em></p>
+<p><code class="docutils literal notranslate"> <span class="pre">La</span> <span class="pre">première</span> <span class="pre">règle</span> <span class="pre">de</span> <span class="pre">gel</span> <span class="pre">définit</span> <span class="pre">une</span> <span class="pre">durée</span> <span class="pre">et</span> <span class="pre">une</span> <span class="pre">mesure,</span> <span class="pre">contrairement</span> <span class="pre">à</span> <span class="pre">la</span> <span class="pre">deuxième</span> <span class="pre">règle</span> <span class="pre">de</span> <span class="pre">gel.</span></code></p>
 </section>
 <section id="formalisation-du-gel-dans-le-standard-dechanges-de-donnees-pour-larchivage-seda">
 <h3><span class="section-number">16.2.2. </span>Formalisation du gel dans le Standard d’échanges de données pour l’archivage (SEDA)<a class="headerlink" href="#formalisation-du-gel-dans-le-standard-dechanges-de-donnees-pour-larchivage-seda" title="Lien vers cette rubrique"></a></h3>
@@ -1228,7 +1229,9 @@ de l’activer, malgré son caractère facultatif.</p>
 reclassements d’archives) ou activé (par la valeur « true »), il est en
 effet possible de dégeler des archives héritant d’une règle de gel en
 les déplaçant dans une arborescence ne portant pas de règle de gel.</p>
-<p>### Comment geler des archives ?</p>
+</section>
+<section id="comment-geler-des-archives">
+<h3><span class="section-number">16.4.3. </span>Comment geler des archives ?<a class="headerlink" href="#comment-geler-des-archives" title="Lien vers cette rubrique"></a></h3>
 <p>Il est possible de geler des archives par l’ajout d’une règle de gel.
 Lors de cette opération d’ajout de métadonnées liées à une règle de gel,
 il est :</p>
@@ -1674,11 +1677,12 @@ une mesure) :</p>
   </span>
   <div class="rst-other-versions">
     <dl>
+      <dt>Tags</dt>
+      <dd><a href="../../7.1.0/sections/gel.html">7.1.0</a></dd>
+    </dl>
+    <dl>
       <dt>Branches</dt>
       <dd><a href="gel.html">master</a></dd>
-      <dd><a href="../../master_7.1.x/sections/gel.html">master_7.1.x</a></dd>
-      <dd><a href="../../master_8.1.x/sections/gel.html">master_8.1.x</a></dd>
-      <dd><a href="../../v8.1_Resip_mathilde/sections/gel.html">v8.1_Resip_mathilde</a></dd>
     </dl>
   </div>
 </div><script>

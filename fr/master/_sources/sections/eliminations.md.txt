@@ -23,7 +23,7 @@ Ce document s’articule autour des axes suivants :
 - calcul des règles et détermination du caractère éliminable des unités archivistiques,
 - modalités d’une campagne d’évaluation du caractère éliminable des unités archivistiques (analyse),
 - modalités d’une campagne de mise en œuvre de l’élimination (action).
-Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 8.1 (printemps 2025). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
+Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 9.0 (automne 2025). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
 
 Détermination du caractère éliminable d’une unité archivistique avec la solution logicielle Vitam
 ----
@@ -66,7 +66,7 @@ Réalisation d’une élimination avec la solution logicielle Vitam
 
 ### Personnalisation des rapports d'élimination
 
-Au terme de la version 7.0, la solution logicielle Vitam permet de personnaliser les rapports produits à la suite d'une opération d'élimination.
+Au terme de la version 9.0, la solution logicielle Vitam permet de personnaliser les rapports produits à la suite d'une opération d'élimination.
 
 Cette configuration, optionnelle, est établie lors du paramétrage initial de la plate-forme par les administrateurs – fonctionnel pour la définition du besoin et technique pour la saisie réelle des informations – de chaque implémentation de la solution logicielle Vitam et définit, pour chaque tenant les informations complémentaires à faire apparaître dans les rapports, si elles sont présentes dans la base de données.
 Il est possible d'ajouter dans le rapport, pour chaque unité archivistique, les éléments suivant :
@@ -107,7 +107,7 @@ Dans l’exemple ci-dessus :
 
 ### Préservation des identifiants pérennes
 
-Au terme de la version 7.1, la solution logicielle Vitam permet de conserver ces identifiants pérennes dans la base de données MongoDB, malgré l'élimination des archives qu'ils référençaient.
+Au terme de la version 9.0, la solution logicielle Vitam permet de conserver ces identifiants pérennes dans la base de données MongoDB, malgré l'élimination des archives qu'ils référençaient.
 
 Cette configuration, optionnelle, est établie lors du paramétrage initial de la plate-forme par les administrateurs 
 – fonctionnel pour la définition du besoin et technique pour la saisie réelle des informations 
@@ -159,7 +159,7 @@ Pour les cas de conflits également, certaines informations supplémentaires son
 
 #### Consultation des résultats de l’analyse d’élimination sur l’IHM VitamUI  de la solution logicielle
 
-Au terme de la version 5, il n’est pas possible de consulter le résultat de l’opération d’analyse (indexation), unité archivistique par unité archivistique.  
+Au terme de la version 9.0, il n’est pas possible de consulter le résultat de l’opération d’analyse (indexation), unité archivistique par unité archivistique.  
 L’APP « Recherche et consultation des archives » permet de retrouver l’ensemble des unités archivistiques analysées en entrant l’identifiant de l’opération d’analyse dans l’onglet de recherche spécifique aux recherches sur la DUA.    
 L’archiviste peut partir des listes filtrées des résultats de l’analyse des unités archivistiques éliminables, afin de :
 - les exporter sous forme de DIP ou de fichier CSV, pour permettre la génération, depuis son front office, des bordereaux de demande d’élimination destinés aux services producteurs ;
@@ -283,8 +283,7 @@ Pour une unité archivistique en conflit en raison de son caractère gelé (stat
 
 ### Lancement d’une opération d’élimination (action)
 
-La solution logicielle permet de lancer par :
-- l’IHM VitamUI une opération d’élimination sur un lot d’archives depuis l’APP « Recherche et consultation des archives » en distinguant :
+La solution logicielle permet de lancer par l’IHM VitamUI une opération d’élimination sur un lot d’archives depuis l’APP « Recherche et consultation des archives » en distinguant :
 - l'élimination des unités archivistiques de type "standard" et "plan de classement",
 - la suppression des unités archivistiques de type "arbre de positionnement". 
 Cette opération peut être lancée indépendamment d’une campagne d’évaluation des éliminables et porter sur des unités archivistiques n’ayant encore jamais été analysées par la solution logicielle.

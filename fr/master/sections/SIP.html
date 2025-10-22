@@ -602,12 +602,12 @@ Il est obligatoire de déclarer un groupe d’objets dans le bordereau d’entr�
 <td class="text-center"><p>Obligatoire</p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>Informations de signature (SigningInformation) (bloc Content)</p></td>
-<td class="text-left"><p>Au terme de la version 7.1, la solution logicielle Vitam a déprécié le bloc &lt; Signature &gt;, disponible dans la version 2.1 du SEDA. Il est fortement recommandé de ne pas utiliser ce bloc à ce stade des développements.<br>Dans la version 2.2 du SEDA, elle met à disposition un bloc &lt; SigningInformation &gt; qui peut être utilisé pour toutes informations relatives à des documents signés électroniquement. Si ce champ est utilisé, il est alors impossible d’utiliser les blocs Gps, OriginatingSystermIdReplyTo, TextContent, PersistentIdentifier.<br></p></td>
-<td class="text-center"><p></p></td>
+<td class="text-left"><p>Au terme de la version 7.1, la solution logicielle Vitam a déprécié le bloc &lt; Signature &gt;, disponible dans la version 2.1 du SEDA. Il est fortement recommandé de ne pas utiliser ce bloc à ce stade des développements.<br>Dans la version 2.2 du SEDA, elle met à disposition un bloc &lt; SigningInformation &gt; qui peut être utilisé pour toutes informations relatives à des documents signés électroniquement. Si ce champ est utilisé, il est alors impossible d’utiliser les blocs Gps, OriginatingSystermIdReplyTo, TextContent, PersistentIdentifier.<br>À noter que, dans ce bloc, l’usage du champ SignedDocumentReferenceId n’est pas recommandé à ce stade des développements.</p></td>
+<td class="text-center"><p>Obligatoire</p></td>
 </tr>
-<tr class="row-even"><td class="text-left"><p>À noter que, dans ce bloc, l’usage du champ SignedDocumentReferenceId n’est pas recommandé à ce stade des développements.</p></td>
-<td class="text-left"><p>Obligatoire</p></td>
-<td class="text-center"><p></p></td>
+<tr class="row-even"><td class="text-left"><p>Identifiant pérenne</p></td>
+<td class="text-left"><p>Au terme de la version 7.1, la solution logicielle Vitam met à disposition un bloc &lt; PersistentIdentifier &gt; qui peut être utilisé pour signaler un identifiant pérenne.</p></td>
+<td class="text-center"><p>Obligatoire</p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>Events (bloc Content)</p></td>
 <td class="text-left"><p>Il est obligatoire de formaliser la valeur du champ EventDetailData au format json.</p></td>
@@ -1763,11 +1763,12 @@ Il est obligatoire de déclarer un groupe d’objets dans le bordereau d’entr�
   </span>
   <div class="rst-other-versions">
     <dl>
+      <dt>Tags</dt>
+      <dd><a href="../../7.1.0/sections/SIP.html">7.1.0</a></dd>
+    </dl>
+    <dl>
       <dt>Branches</dt>
       <dd><a href="SIP.html">master</a></dd>
-      <dd><a href="../../master_7.1.x/sections/SIP.html">master_7.1.x</a></dd>
-      <dd><a href="../../master_8.1.x/sections/SIP.html">master_8.1.x</a></dd>
-      <dd><a href="../../v8.1_Resip_mathilde/sections/SIP.html">v8.1_Resip_mathilde</a></dd>
     </dl>
   </div>
 </div><script>

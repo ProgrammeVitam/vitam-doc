@@ -49,7 +49,7 @@ Il s’articule autour des axes suivants :
 - une présentation des mécanismes mis en œuvre dans la solution logicielle Vitam pour gérer et réaliser des opérations de préservation numérique ;
 - des recommandations aux utilisateurs de la solution logicielle Vitam sur la manière d’utiliser les fonctionnalités associées à ces outils de préservation numérique ;
 - des exemples de référentiels, de paramétrages, et de messages retournés par la solution logicielle Vitam à l’issue d’une opération en lien avec la préservation.
-Le présent document décrit les fonctionnalités qui sont offertes par la deuxième version de production de la solution logicielle Vitam au terme de la version 8.1 (printemps 2025). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
+Le présent document décrit les fonctionnalités qui sont offertes par la deuxième version de production de la solution logicielle Vitam au terme de la version 9.0 (automne 2025). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
 
 Administration de la préservation numérique
 ---
@@ -106,7 +106,7 @@ De ce registre, la solution logicielle Vitam ne retient pour son référentiel i
 - informations liées à la version et à la date de création du fichier de signatures, présents dans l’élément racine « FFSignatureFile » de ce dernier ;
 Élément racine du fichier de signatures en date du 17 septembre 2018, version 94 :
 
-```json
+```xml
 <FFSignatureFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
  xsi:schemaLocation="http://www.nationalarchives.gov.uk/pronom/SignatureFile DROID_SignatureFile.xsd"
  xmlns="http://www.nationalarchives.gov.uk/pronom/SignatureFile" DateCreated="2018-09-17T12:54:53"
@@ -116,7 +116,7 @@ De ce registre, la solution logicielle Vitam ne retient pour son référentiel i
 - caractéristiques des formats, présentes dans l’élément « FileFormat ».
 Caractéristiques du format dont le PUID est x-fmt/17 :
 
-```json
+```xml
 <FileFormat ID="44" MIMEType="application/vnd.ms-excel"
             Name="Microsoft Excel Template" PUID="x-fmt/17" Version="97-2003">
             <Extension>xlt</Extension>
@@ -229,9 +229,7 @@ Lors de ce ré-import ou de cette mise à jour, l’opération peut aboutir aux 
 |Statut|Motifs|
 |:----|:----|
 |Succès|opération réalisée sans rencontrer de problèmes particuliers.|
-|Avertissement|mise à jour d’un référentiel dont la version est identique à la version du référentiel préalablement importé.|
-|Avertissement|mise à jour d’un référentiel dont la version est antérieure à la version du référentiel préalablement importé.|
-|Avertissement|mise à jour d’un référentiel dont la date de création est antérieure à la date de création du référentiel préalablement importé.|
+|Avertissement|-  mise à jour d’un référentiel dont la version est identique à la version du référentiel préalablement importé.<br>-  mise à jour d’un référentiel dont la version est antérieure à la version du référentiel préalablement importé.<br>-  mise à jour d’un référentiel dont la date de création est antérieure à la date de création du référentiel préalablement importé.|
 |Échec[^9]|sans journalisation :<br>- ré-import d’un référentiel dont le format ne correspond pas au format XML ;<br>- mise à jour d’un référentiel dans lequel un format ne déclare pas de PUID ou dont le champ PUID ne contient pas de valeur ;<br>- mise à jour d’un référentiel dans lequel un format ne dispose pas d’intitulé ou dont le champ Name ne contient pas de valeur ;<br>- mise à jour d’un référentiel dans lequel deux formats déclarent le même PUID, alors que ce dernier doit être unique.|
 
 **Point d’attention :**
@@ -459,7 +457,7 @@ Lors de ce ré-import ou de cette mise à jour, l’opération peut aboutir aux 
 |Succès|opération réalisée sans rencontrer de problèmes particuliers.|
 |Avertissement|mise à jour d’un référentiel dont au moins un griffon est déclaré dans un scénario de préservation.|
 |Échec[^24]|sans journalisation :<br>- ré-import d’un référentiel sous la forme d’un fichier qui n’est pas au format JSON ;<br>- import d’un référentiel dont au moins un des champs contient une injection HTML.|
-|Échec|avec journalisation :<br>- mise à jour d’un référentiel dans lequel deux griffons portent le même identifiant métier ;<br>- mise à jour d’un référentiel dans lequel un griffon ne déclare pas d’identifiant, d’intitulé, de nom technique d’outil ou de version d’exécutable ;<br>- import d’un référentiel dans lequel un champ ne contient pas de valeur. Il peut s’agir des champs : Identifier, Name, ExecutableName, ExecutableVersion ;<br>- import d’un référentiel dans lequel une valeur ne correspond pas au type d’indexation du champ défini dans l’ontologie (ex : valeur textuelle dans un champ de type « DATE ») ;<br>- import d’un référentiel dans lequel on a supprimé un griffon déclaré dans un scénario de préservation.|
+| |avec journalisation :<br>- mise à jour d’un référentiel dans lequel deux griffons portent le même identifiant métier ;<br>- mise à jour d’un référentiel dans lequel un griffon ne déclare pas d’identifiant, d’intitulé, de nom technique d’outil ou de version d’exécutable ;<br>- import d’un référentiel dans lequel un champ ne contient pas de valeur. Il peut s’agir des champs : Identifier, Name, ExecutableName, ExecutableVersion ;<br>- import d’un référentiel dans lequel une valeur ne correspond pas au type d’indexation du champ défini dans l’ontologie (ex : valeur textuelle dans un champ de type « DATE ») ;<br>- import d’un référentiel dans lequel on a supprimé un griffon déclaré dans un scénario de préservation.|
 
 ##### Accès au référentiel
 
@@ -2118,18 +2116,29 @@ Ces audits consistent en des actions d’évaluation, de vérification de l’ex
 
 ###### Sélection de l’objet à auditer
 
-La solution logicielle Vitam permet de réaliser une opération d’audit :
-- soit sur un tenant donné,
-- soit sur un service producteur en particulier ;
-- soit à partir d’une requête destinée à sélectionner un lot d’archives.
+La solution logicielle Vitam permet de réaliser une opération d’audit :
 
-Dans les deux premiers cas, le nombre d’objets binaires ou fichiers numériques à auditer n’est pas limité.<br>
-Dans le dernier cas, la requête est limitée par défaut à 10 000 objets au niveau de la plate-forme, mais il est possible de modifier ce seuil pour obtenir un périmètre d’audit plus large par un acte relevant de l’administrateur technique.<br>
-Il est possible de réaliser deux audits :
-- soit un audit vérifiant uniquement que l’objet binaire (ou fichier numérique) existe bien,
-- soit un audit vérifiant en même temps et l’existence de l’objet binaire et son intégrité.
+- à la demande
+  - via les API :
+    - soit sur un tenant donné,
+    - soit sur un service producteur en particulier ;
+    - soit à partir d’une requête destinée à sélectionner un lot d’archives.
+	
+	Dans les deux premiers cas, le nombre d’objets binaires ou fichiers numériques à auditer n’est pas limité.<br>
+    Dans le dernier cas, la requête est limitée par défaut à 100 000 objets au niveau de la plate-forme, mais il est possible de :
+    -  modifier ce seuil pour obtenir un périmètre d’audit plus large par un acte relevant de l’administrateur technique.<br>
+    -  dépasser ce seuil de plate-forme au moyen de l'utilisation d'un seuil signalé lors de la sélection des objets à auditer (ou seuil de requête).
+    Il est possible de réaliser deux audits :
+    - soit un audit vérifiant uniquement que l’objet binaire (ou fichier numérique) existe bien,
+    - soit un audit vérifiant en même temps et l’existence de l’objet binaire et son intégrité.
 
-**Point d’attention :** en fonction du nombre d’objets binaires (ou fichiers numériques) conservés dans la solution logicielle Vitam, une opération d’audit peut prendre du temps et avoir un impact en termes de performance. Avant de lancer un audit, il est recommandé de bien prendre en considération le périmètre qui doit faire l’objet de cette opération.
+    **Point d’attention :** en fonction du nombre d’objets binaires (ou fichiers numériques) conservés dans la solution logicielle Vitam, une opération d’audit peut prendre du temps et avoir un impact en termes de performance. Avant de lancer un audit, il est recommandé de bien prendre en considération le périmètre qui doit faire l’objet de cette opération.
+
+  - via l'APP VitamUI « Audits ».
+  
+- sous forme de tâche planifiée[^83].
+  Cette planification peut être faite pour l'audit d'existence et/ou d'intégrité et sur un tenant donné.
+  Si elle est activée, elle se lance par défaut toutes les 4 heures.
 
 ###### Opération d’audit
 
@@ -2306,12 +2315,20 @@ Dans un audit de relevé de valeur probante, pour chaque objet (ou fichier numé
 
 ###### Sélection de l’objet à auditer
 
-La solution logicielle Vitam permet de réaliser une opération d’audit de relevé de valeur probante à partir d’un lot d’archives préalablement sélectionnées. Cette opération peut porter :
-- sur un usage d’objet particulier (original numérique, copie de diffusion, texte brut, vignette) ;
-- sur une version d’objet particulière ;
-- sur des documents liés à un contexte de signature détachée.
+La solution logicielle Vitam permet de réaliser une opération d’audit de relevé de valeur probante 
 
-**Point d’attention :** en fonction du nombre d’objets conservés dans la solution logicielle Vitam, une opération d’audit peut prendre du temps et avoir un impact en termes de performance. Avant de lancer un audit, il est recommandé de bien prendre en considération le périmètre qui doit faire l’objet de cette opération.
+- via les API, à partir d’un lot d’archives préalablement sélectionnées. Cette opération peut porter :
+  - sur un usage d’objet particulier (original numérique, copie de diffusion, texte brut, vignette) ;
+  - sur une version d’objet particulière ;
+  - sur des documents liés à un contexte de signature détachée.
+
+  La requête est limitée par défaut à 100 000 objets au niveau de la plate-forme, mais il est possible de :
+  -  modifier ce seuil pour obtenir un périmètre d’audit plus large par un acte relevant de l’administrateur technique.<br>
+  -  dépasser ce seuil de plate-forme au moyen de l'utilisation d'un seuil signalé lors de la sélection des objets à auditer (ou seuil de requête).
+
+  **Point d’attention :** en fonction du nombre d’objets conservés dans la solution logicielle Vitam, une opération d’audit peut prendre du temps et avoir un impact en termes de performance. Avant de lancer un audit, il est recommandé de bien prendre en considération le périmètre qui doit faire l’objet de cette opération.
+
+  - via l'APP VitamUI « Relevés de valeur probante ».
 
 ###### Opération d’audit
 
@@ -2463,9 +2480,17 @@ Cet audit consiste en des actions d’évaluation, de vérification de l’exist
 
 ###### Sélection de l’objet à auditer
 
-La solution logicielle Vitam permet de réaliser une opération d’audit de cohérence à partir d’un lot d’archives.
+La solution logicielle Vitam permet de réaliser une opération d’audit de cohérence 
 
-**Point d’attention :** en fonction du nombre d’objets conservés dans la solution logicielle Vitam, une opération d’audit peut prendre du temps et avoir un impact en termes de performance. Avant de lancer un audit, il est recommandé de bien prendre en considération le périmètre qui doit faire l’objet de cette opération.
+-  via les API, à partir d’un lot d’archives.
+
+   La requête est limitée par défaut à 100 000 objets au niveau de la plate-forme, mais il est possible de :
+   -  modifier ce seuil pour obtenir un périmètre d’audit plus large par un acte relevant de l’administrateur technique.<br>
+   -  dépasser ce seuil de plate-forme au moyen de l'utilisation d'un seuil signalé lors de la sélection des objets à auditer (ou seuil de requête).
+
+  **Point d’attention :** en fonction du nombre d’objets conservés dans la solution logicielle Vitam, une opération d’audit peut prendre du temps et avoir un impact en termes de performance. Avant de lancer un audit, il est recommandé de bien prendre en considération le périmètre qui doit faire l’objet de cette opération.
+
+  - via l'APP VitamUI « Audits ».
 
 ###### Opération d’audit
 
@@ -2613,6 +2638,9 @@ Cet audit consiste en des actions d’évaluation, de vérification de l’exist
 ###### Sélection de l’objet à auditer
 
 La solution logicielle Vitam permet de réaliser une opération d’audit correctif à partir d’une opération d’audit de cohérence sur un tenant donné. De fait, il faut préalablement avoir réalisé un audit de cohérence avant de lancer un audit correctif.
+Cette opération peut être lancée
+- depuis les API,
+- depuis l'APP VitamUI « Audits ».
 
 **Point d’attention :** 
 - l’audit correctif rejoue l’audit de cohérence qui lui sert de base de lancement. De fait, il est recommandé de lancer un audit de cohérence, avant de réaliser un audit correctif, et d’effectuer ce dernier seulement si le précédent audit de cohérence a relevé des anomalies ;
@@ -3890,3 +3918,5 @@ Le tableau ci-dessus liste les griffons mis à disposition dans la solution logi
 [^81]: Une liste des paramètres pris en charge se trouvent à la page suivante : <https://github.com/tesseract-ocr/tesseract/blob/master/doc/tesseract.1.asc> (Lien consulté le : 17 avril 2019).
 
 [^82]: Une liste des paramètres pris en charge se trouvent à la page suivante : <https://github.com/tesseract-ocr/tesseract/blob/master/doc/tesseract.1.asc> (Lien consulté le : 17 avril 2019).
+
+[^83]: Pour plus d'informations, consulter le document VITAM. Documentation d'exploitation, chapitre 8.2.16 « Scheduler ».

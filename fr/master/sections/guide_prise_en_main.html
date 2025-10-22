@@ -245,14 +245,14 @@
 <h3><span class="section-number">4.1.2. </span>Présentation du document<a class="headerlink" href="#presentation-du-document" title="Lien vers cette rubrique"></a></h3>
 <p>Le présent document décrit comment effectuer une première entrée dans la solution logicielle Vitam adossée au front-office Vitam UI. Il explicite les étapes obligatoires de paramétrage et de préparation des lots d’archives pour un utilisateur archiviste. Le pré-requis est que les actes d’installation et d’administration technique aient été réalisés pour configurer la plateforme et les coffres (tenants), comme par exemple sur les environnements partenaires de Vitam.</p>
 <p>Un lexique en annexe explicite et détaille les principaux objets métiers signalés dans le texte par un astérisque*. Pour chaque terme, il donne une description, un statut obligatoire ou facultatif pour l’opération d’entrée et renvoie vers un document permettant d’approfondir cette notion (« manuel utilisateur » par exemple).</p>
-<p><em>Nota bene :</em> Les captures d’écran du présent document sont issues de l’IHM Vitam UI. L’IHM appelée IHM Démo utilisable pour les versions antérieures à la v4 n’est plus maintenue.</p>
+<p><em>Nota bene :</em> Les captures d’écran du présent document sont issues de l’IHM Vitam UI. L’IHM appelée IHM Démo utilisable pour les versions antérieures à la version 4 n’est plus maintenue.</p>
 </section>
 <section id="avertissements">
 <h3><span class="section-number">4.1.3. </span>Avertissements<a class="headerlink" href="#avertissements" title="Lien vers cette rubrique"></a></h3>
 <section id="jeux-de-tests-disponibles">
 <h4><span class="section-number">4.1.3.1. </span>Jeux de tests disponibles<a class="headerlink" href="#jeux-de-tests-disponibles" title="Lien vers cette rubrique"></a></h4>
-<p>Un dossier de jeux test spécifique « Jeu_de_tests_Guide_de_prise_en_main_V8-1.zip » a été établi pour accompagner la documentation « Guide de prise en main », il comporte tous les éléments cités dans le document (contrats d’entrée et d’accès, référentiels des services agents et des règles de gestion). Il est publié <a class="reference internal" href="#www.programmevitam.fr"><span class="xref myst">sur le site</span></a>.</p>
-<p>Il est également possible d’effectuer des tests fonctionnels se rapportant au « Cahier de tests métier » à partir des jeux de données mis à disposition dans le dossier « Jeux_de_tests_fonctionnels_V8-1.zip ». Le dossier zippé comporte les jeux de tests : paquets d’information à archiver (SIP) et objets de référence : contrats d’entrée et d’accès, référentiels des services agents et des règles de gestion, arbres de positionnement, plans de classement, etc. Ce ZIP est publié <a class="reference internal" href="#www.programmevitam.fr"><span class="xref myst">sur le site</span></a>.</p>
+<p>Un dossier de jeux test spécifique « Jeu_de_tests_Guide_de_prise_en_main_V9-0.zip » a été établi pour accompagner la documentation « Guide de prise en main », il comporte tous les éléments cités dans le document (contrats d’entrée et d’accès, référentiels des services agents et des règles de gestion). Il est publié <a class="reference internal" href="#www.programmevitam.fr"><span class="xref myst">sur le site</span></a>.</p>
+<p>Il est également possible d’effectuer des tests fonctionnels se rapportant au « Cahier de tests métier » à partir des jeux de données mis à disposition dans le dossier « Jeux_de_tests_fonctionnels_V9-0.zip ». Le dossier zippé comporte les jeux de tests : paquets d’information à archiver (SIP) et objets de référence : contrats d’entrée et d’accès, référentiels des services agents et des règles de gestion, arbres de positionnement, plans de classement, etc. Ce ZIP est publié <a class="reference internal" href="#www.programmevitam.fr"><span class="xref myst">sur le site</span></a>.</p>
 <p>Enfin, il existe également des tests système automatisés accessibles via le projet Git « Vitam-itests »<a class="footnote-reference brackets" href="#id3" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>. Cet espace comporte des tests de non-régression, des exemples de paquets d’information à archiver (SIP) et d’objets de référence : contrats d’entrée et d’accès, référentiels des services agents et des règles de gestion. Ces tests peuvent être lancés depuis l’IHM de recette et sont décrits dans la documentation « IHM Recette ».</p>
 </section>
 <section id="utilisation-des-jeux-de-tests">
@@ -322,7 +322,7 @@ Pour cela il réalise :</p>
 <p>L’utilisateur doit importer un référentiel des règles de gestion via l’APP Règles de gestion. Le référentiel des règles de gestion est propre à chaque coffre de la plate-forme.</p>
 <p><img alt="" src="../_images/RG.png" /></p>
 <ul class="simple">
-<li><p>Pour les tests effectués à partir du jeu de tests « Jeu_de_tests_Guide_de_prise_en_main_V8-1.zip », il faut utiliser le fichier nommé « jeu_donnees_OK_regles_CSV.csv » en cliquant sur le bouton « Autres actions » et en sélectionnant l’action « Importer ».</p></li>
+<li><p>Pour les tests effectués à partir du jeu de tests « Jeu_de_tests_Guide_de_prise_en_main_V9-0.zip », il faut utiliser le fichier nommé « jeu_donnees_OK_regles_CSV.csv » en cliquant sur le bouton « Autres actions » et en sélectionnant l’action « Importer ».</p></li>
 <li><p>L’utilisateur peut également constituer son propre référentiel des règles de gestion au format .csv sur le même modèle.</p></li>
 <li><p>Il peut également créer unitairement une règle de gestion en cliquant sur le bouton « Créer une règle de gestion » et en renseignant les champs obligatoires.</p></li>
 </ul>
@@ -332,7 +332,7 @@ Pour cela il réalise :</p>
 <p>La deuxième étape consiste à importer un référentiel des services agents au format .csv dans la solution logicielle Vitam via l’APP Services agents. Ce référentiel a pour vocation d’être utilisé par la solution logicielle Vitam pour effectuer localement les contrôles des services (producteurs ou versants) déclarés par les administrateurs et les utilisateurs en entrée et en accès. Le référentiel des services agents est propre à chaque coffre de la plate-forme.</p>
 <p><img alt="" src="../_images/SA.png" /></p>
 <ul class="simple">
-<li><p>Pour les tests effectués à partir du jeu de données « Jeu_de_tests_Guide_de_prise_en_main_V8-1.zip », il faut utiliser le fichier nommé « agencies_init.csv » en cliquant sur le bouton « Autres actions » et en sélectionnant l’action « Importer ».</p></li>
+<li><p>Pour les tests effectués à partir du jeu de données « Jeu_de_tests_Guide_de_prise_en_main_V9-0.zip », il faut utiliser le fichier nommé « agencies_init.csv » en cliquant sur le bouton « Autres actions » et en sélectionnant l’action « Importer ».</p></li>
 <li><p>L’utilisateur peut également constituer son propre référentiel des services agents au format .csv sur le même modèle.</p></li>
 <li><p>Il peut également créer unitairement un service agent en cliquant sur le bouton « Créer un service agent » et en renseignant les champs obligatoires.</p></li>
 </ul>
@@ -342,7 +342,7 @@ Pour cela il réalise :</p>
 <p>Dans un troisième temps, il est nécessaire d’importer un référentiel d’arbre de positionnement et/ou de plan de classement au format .zip  via l’APP VitamUI « Arbres et plans ». L’arbre de positionnement et/ou le plan de classement importés sont propres à chaque coffre.</p>
 <p><img alt="" src="../_images/arbre_plan.png" /></p>
 <ul class="simple">
-<li><p>Pour les tests effectués à partir du jeu de données « Jeu_de_tests_Guide_de_prise_en_main_V8-1.zip », il faut importer successivement le fichier nommé « Import_arbre.zip » et le fichier intitulé « Import_plan.zip » en cliquant respectivement sur les boutons « Nouvel arbre de positionnement » et « Nouveau plan de classement » puis en téléchargeant les jeux de tests fournis.</p></li>
+<li><p>Pour les tests effectués à partir du jeu de données « Jeu_de_tests_Guide_de_prise_en_main_V9-0.zip », il faut importer successivement le fichier nommé « Import_arbre.zip » et le fichier intitulé « Import_plan.zip » en cliquant respectivement sur les boutons « Nouvel arbre de positionnement » et « Nouveau plan de classement » puis en téléchargeant les jeux de tests fournis.</p></li>
 <li><p>L’utilisateur peut également constituer son propre arbre de positionnement et/ou son propre plan de classement au format .xml.</p></li>
 </ul>
 </section>
@@ -357,7 +357,7 @@ Pour cela il réalise :</p>
 <li><p>Soit l’utilisateur attribue l’identifiant du contrat avant import,</p></li>
 <li><p>Soit la solution logicielle Vitam le générera automatiquement lors de l’import, sous la forme IC-0000x.</p></li>
 </ul>
-<p>Certains SIP fournis dans les jeux de tests (Jeux_de_tests_fonctionnels_V8-1.zip) spécifient des contrats d’entrée qui leur sont propres dans la balise <em>ArchivalAgreement</em>. Pour pouvoir effectuer une entrée avec ces SIP, il faut :</p>
+<p>Certains SIP fournis dans les jeux de tests (Jeux_de_tests_fonctionnels_V9-0.zip) spécifient des contrats d’entrée qui leur sont propres dans la balise <em>ArchivalAgreement</em>. Pour pouvoir effectuer une entrée avec ces SIP, il faut :</p>
 <ul class="simple">
 <li><p>soit créer le contrat d’entrée correspondant, désigné dans la balise ArchivalAgreement du bordereau de transfert,</p></li>
 <li><p>soit modifier le bordereau de transfert, en remplaçant la valeur de la balise ArchivalAgreement par « IC-000001 » par exemple ou l’identifiant d’un contrat d’entrée déjà importé dans la solution logicielle Vitam.</p></li>
@@ -383,7 +383,7 @@ Pour cela il réalise :</p>
 <p>L’utilisateur peut ensuite importer le SIP dans la solution logicielle Vitam, via l’APP « Dépôt et suivi des versements ».</p>
 <ul class="simple">
 <li><p>En cliquant sur le bouton « Dépôt d’un versement » ;</p></li>
-<li><p>Puis en sélectionnant le SIP à verser. Pour les tests effectués à partir du jeu de données « Jeu_de_tests_Guide_de_prise_en_main_V8-1.zip », il faut utiliser le fichier nommé « SIP-Kit_de_prise_en_main.zip ».</p></li>
+<li><p>Puis en sélectionnant le SIP à verser. Pour les tests effectués à partir du jeu de données « Jeu_de_tests_Guide_de_prise_en_main_V9-0.zip », il faut utiliser le fichier nommé « SIP-Kit_de_prise_en_main.zip ».</p></li>
 </ul>
 <p><img alt="" src="../_images/depot.png" /></p>
 <ul class="simple">
@@ -513,11 +513,12 @@ Pour cela il réalise :</p>
   </span>
   <div class="rst-other-versions">
     <dl>
+      <dt>Tags</dt>
+      <dd><a href="../../7.1.0/sections/guide_prise_en_main.html">7.1.0</a></dd>
+    </dl>
+    <dl>
       <dt>Branches</dt>
       <dd><a href="guide_prise_en_main.html">master</a></dd>
-      <dd><a href="../../master_7.1.x/sections/guide_prise_en_main.html">master_7.1.x</a></dd>
-      <dd><a href="../../master_8.1.x/sections/guide_prise_en_main.html">master_8.1.x</a></dd>
-      <dd><a href="../../v8.1_Resip_mathilde/sections/guide_prise_en_main.html">v8.1_Resip_mathilde</a></dd>
     </dl>
   </div>
 </div><script>

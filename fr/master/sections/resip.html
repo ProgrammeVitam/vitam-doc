@@ -232,7 +232,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#verification-de-la-conformite-de-la-structure-arborescente-darchives-par-rapport-au-seda-2-1-et-2-2">1.5.10. Vérification de la conformité de la structure arborescente d’archives par rapport au SEDA 2.1. et 2.2.</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#verification-de-la-conformite-de-la-structure-arborescente-darchives-par-rapport-au-seda-2-1-2-2-et-2-3">1.5.10. Vérification de la conformité de la structure arborescente d’archives par rapport au SEDA 2.1., 2.2. et 2.3.</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#verification-par-rapport-au-schema-par-defaut">1.5.10.1. Vérification par rapport au schéma par défaut</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#verification-par-rapport-a-un-profil-darchivage-specifique">1.5.10.2. Vérification par rapport à un profil d’archivage spécifique</a></li>
 </ul>
@@ -394,7 +394,7 @@
 </tr>
 <tr class="row-odd"><td class="text-center"><p>Standard d’échange de données pour l’archivage – SEDA – v. 2.3</p></td>
 <td class="text-center"><p>06/2024</p></td>
-<td class="text-center"><p>Cette nouvelle version du SEDA n’est actuellement pas nativement intégrée à ReSIP.</p></td>
+<td class="text-center"><p></p></td>
 </tr>
 <tr class="row-even"><td class="text-center"><p>Vitam – ReSIP : foire aux questions</p></td>
 <td class="text-center"><p></p></td>
@@ -986,7 +986,8 @@ dite « XML-expert » est utilisée.</p></li>
 <p>La moulinette ReSIP peut être utilisée avec :</p>
 <ul>
 <li><p>soit la version 2.1. du SEDA ;</p></li>
-<li><p>soit la version 2.2. du SEDA.
+<li><p>soit la version 2.2. du SEDA ;</p></li>
+<li><p>soit la version 2.3. du SEDA.
 Pour modifier la version du SEDA sur laquelle travailler, il convient, dans le menu de la moulinette ReSIP, de cliquer sur l’action « Fichier » puis sur la sous-action « Préférences »
 Le paramétrage de l’import est disponible dans l’onglet « Traitement/Interface » (cf. copie d’écran ci-dessous). Il suffit de cliquer sur la version du SEDA souhaitée.</p>
 <p><img alt="" src="../_images/D081.png" /></p>
@@ -1388,14 +1389,9 @@ de leur traitement avec la moulinette ReSIP</strong>.</p>
 moulinette ReSIP crée un contexte de travail reprenant les métadonnées
 par défaut disponibles dans l’arborescence de fichiers :</p>
 <ul class="simple">
-<li><p>pour les fichiers, le format identifié avec l’outil DROID, le nom du
-fichier, sa taille, son empreinte avec l’algorithme SHA-512 ;</p></li>
-<li><p>pour les unités archivistiques correspondant aux fichiers, le nom du
-fichier comme titre (champ Title du standard SEDA). Le niveau de description (champ DescriptionLevel du
-standard SEDA) est incrémenté avec la valeur « Item » ;</p></li>
-<li><p>pour les unités archivistiques correspondant à des répertoires,
-l’intitulé de ceux-ci comme titre (champ Title du standard SEDA). Le niveau de description (champ DescriptionLevel du standard
-SEDA) est incrémenté avec la valeur « RecordGrp ».</p></li>
+<li><p>pour les fichiers, le format identifié avec l’outil DROID, le nom du fichier, sa taille, son empreinte avec l’algorithme SHA-512 ;</p></li>
+<li><p>pour les unités archivistiques correspondant aux fichiers, le nom du fichier comme titre (champ Title du standard SEDA). Le niveau de description (champ DescriptionLevel du standard SEDA) est incrémenté avec la valeur « Item » ;</p></li>
+<li><p>pour les unités archivistiques correspondant à des répertoires, l’intitulé de ceux-ci comme titre (champ Title du standard SEDA). Le niveau de description (champ DescriptionLevel du standard SEDA) est incrémenté avec la valeur « RecordGrp ».</p></li>
 </ul>
 <p><em><strong>Point d’attention :</strong></em> Le processus retenu pour l’identification dans RESIP est le suivant<a class="footnote-reference brackets" href="#id28" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a> :</p>
 <ul class="simple">
@@ -2286,7 +2282,7 @@ moulinette ReSIP, il est possible d’effectuer les traitements suivants :</p>
 <li><p><a class="reference internal" href="#traiter-les-unites-archivistiques"><span class="xref myst">traitement des métadonnées des unités archivistiques</span></a>
  ;</p></li>
 <li><p><a class="reference internal" href="#traiter-les-objets-et-leurs-metadonnees"><span class="xref myst">traitement des objets, tant physiques que binaires, et de leurs métadonnées</span></a> ;</p></li>
-<li><p><a class="reference internal" href="#verification-de-la-conformite-de-la-structure-arborescente-darchives-par-rapport-au-seda-2-1-et-2-2"><span class="xref myst">vérification de la conformité de la structure arborescente d’archives par rapport au SEDA 2.1. et 2.2.</span></a> ;</p></li>
+<li><p><a class="reference internal" href="#verification-de-la-conformite-de-la-structure-arborescente-darchives-par-rapport-au-seda-2-1-,-2-2-et-2-3"><span class="xref myst">vérification de la conformité de la structure arborescente d’archives par rapport au SEDA 2.1., 2.2. et 2.3.</span></a> ;</p></li>
 <li><p><a class="reference internal" href="#sauvegarder-le-contexte-de-travail-en-cours-de-traitement"><span class="xref myst">sauvegarde du contexte de travail en cours de traitement</span></a> ;</p></li>
 <li><p><a class="reference internal" href="#nettoyer-lespace-de-travail"><span class="xref myst">nettoyage de l’espace de travail</span></a>.</p></li>
 </ul>
@@ -2872,7 +2868,7 @@ d’écran ci-dessous) ;</p>
 <li><p>éventuellement, indenter la structure XML saisie pour faciliter sa
 relecture en cliquant sur le bouton d’action « Indenter » ;</p></li>
 <li><p>ordonner la structure XML saisie pour réordonner les balises saisies
-dans l’ordre prévu par le SEDA 2.1. en cliquant sur le bouton
+dans l’ordre prévu par le SEDA 2.1., 2.2. ou 2.3. en cliquant sur le bouton
 « Ordonner » ;</p></li>
 <li><p>cliquer sur le bouton d’action « Sauver » pour sauvegarder les
 métadonnées saisies. Deux actions sont alors possibles :</p>
@@ -2894,7 +2890,7 @@ telles que modifiées (cf. copie d’écran ci-dessous).</p>
 </li>
 </ul>
 <p><strong>Attention</strong> : aucun contrôle de conformité au schéma
-XML défini par le SEDA 2.1. n’est réalisé.</p>
+XML défini par le SEDA 2.1., 2.2. ou 2.3. n’est réalisé.</p>
 </section>
 <section id="ajout-guide-dune-metadonnee-clairement-identifiee">
 <h5><span class="section-number">1.5.8.1.2. </span>Ajout guidé d’une métadonnée clairement identifiée<a class="headerlink" href="#ajout-guide-dune-metadonnee-clairement-identifiee" title="Lien vers cette rubrique"></a></h5>
@@ -2917,7 +2913,7 @@ ci-dessous) :</p>
 <p><strong>Attention</strong> :</p>
 <ul class="simple">
 <li><p>les champs rendus obligatoires par le schéma XML défini par
-le SEDA 2.1. ne doivent pas être supprimés ;</p></li>
+le SEDA 2.1., 2.2. ou 2.3. ne doivent pas être supprimés ;</p></li>
 <li><p>les champs multivalués sont signalés par un « * » dans le
 menu déroulant ;</p></li>
 </ul>
@@ -2936,7 +2932,7 @@ d’action « Nettoyer » (cf. copie d’écran ci-dessous).</p>
 <p>La modification de métadonnées se poursuit ensuite selon le processus
 décrit dans la <a class="reference internal" href="#dans-linterface-xml-expert"><span class="xref myst">section</span></a>.</p>
 <p><strong>Attention</strong> : aucun contrôle de conformité par rapport à la structure
-et à la sémantique du schéma XML défini par le SEDA 2.1. n’est réalisé.</p>
+et à la sémantique du schéma XML défini par le SEDA 2.1., 2.2. ou 2.3. n’est réalisé.</p>
 </section>
 </section>
 <section id="dans-linterface-structuree">
@@ -3223,7 +3219,7 @@ sélectionné, de cliquer sur le bouton d’action « Editer le DataObject »
 <p>La modification de métadonnées se poursuit ensuite selon le processus
 décrit dans la <a class="reference internal" href="#modification-de-metadonnees-textuelles"><span class="xref myst">section</span></a>.</p>
 <p><strong>Attention</strong> : aucun contrôle de conformité par rapport à la structure
-et à la sémantique du schéma XML défini par le SEDA 2.1. n’est réalisé.</p>
+et à la sémantique du schéma XML défini par le SEDA 2.1., 2.2. ou 2.3. n’est réalisé.</p>
 </section>
 <section id="ajout-dun-objet">
 <h5><span class="section-number">1.5.9.1.3. </span>Ajout d’un objet<a class="headerlink" href="#ajout-dun-objet" title="Lien vers cette rubrique"></a></h5>
@@ -3358,15 +3354,15 @@ fonction correspondante (cf. <a class="reference internal" href="#modification-d
 </section>
 </section>
 </section>
-<section id="verification-de-la-conformite-de-la-structure-arborescente-darchives-par-rapport-au-seda-2-1-et-2-2">
-<h3><span class="section-number">1.5.10. </span>Vérification de la conformité de la structure arborescente d’archives par rapport au SEDA 2.1. et 2.2.<a class="headerlink" href="#verification-de-la-conformite-de-la-structure-arborescente-darchives-par-rapport-au-seda-2-1-et-2-2" title="Lien vers cette rubrique"></a></h3>
+<section id="verification-de-la-conformite-de-la-structure-arborescente-darchives-par-rapport-au-seda-2-1-2-2-et-2-3">
+<h3><span class="section-number">1.5.10. </span>Vérification de la conformité de la structure arborescente d’archives par rapport au SEDA 2.1., 2.2. et 2.3.<a class="headerlink" href="#verification-de-la-conformite-de-la-structure-arborescente-darchives-par-rapport-au-seda-2-1-2-2-et-2-3" title="Lien vers cette rubrique"></a></h3>
 <section id="verification-par-rapport-au-schema-par-defaut">
 <h4><span class="section-number">1.5.10.1. </span>Vérification par rapport au schéma par défaut<a class="headerlink" href="#verification-par-rapport-au-schema-par-defaut" title="Lien vers cette rubrique"></a></h4>
 <p>Afin de vérifier la conformité d’une structure arborescente d’archives
 et de sa description par rapport au schéma par défaut proposé par le
-SEDA 2.1., il convient, dans la moulinette ReSIP, de cliquer sur
+SEDA, il convient, dans la moulinette ReSIP, de cliquer sur
 l’action « Traiter » puis sur la sous-action « Vérifier la conformité
-SEDA 2.1 » (cf. copie d’écran ci-dessous) ou « Vérifier la conformité SEDA 2.2 » selon que ReSIP a été paramétré pour gérer du SEDA 2.1. ou du SEDA 2.2..</p>
+SEDA 2.1 » (cf. copie d’écran ci-dessous) ou « Vérifier la conformité SEDA 2.2 » ou « Vérifier la conformité SEDA 2.3 » selon que ReSIP a été paramétré pour gérer du SEDA 2.1., du SEDA 2.2. ou du SEDA 2.3..</p>
 <p><img alt="" src="../_images/1000020100000362000001D098B26E4881427AE1.png" /></p>
 <p>Le clic sur le bouton d’action « Vérifier la conformité
 au SEDA 2.X » lance une fenêtre de dialogue « Vérification SEDA 2.X. »
@@ -3389,7 +3385,7 @@ d’action « Fermer » (cf. copie d’écran ci-dessous).</p>
 <h4><span class="section-number">1.5.10.2. </span>Vérification par rapport à un profil d’archivage spécifique<a class="headerlink" href="#verification-par-rapport-a-un-profil-darchivage-specifique" title="Lien vers cette rubrique"></a></h4>
 <p>Afin de vérifier la conformité d’une structure arborescente d’archives
 et de sa description par rapport à un profil d’archivage conforme au
-SEDA 2.1. ou au SEDA 2.2., selon que ReSIP a été paramétré pour gérer du SEDA 2.1. ou du SEDA 2.2., il convient, dans la moulinette ReSIP, de cliquer sur
+SEDA 2.1., au SEDA 2.2. ou au SEDA 2.3, selon que ReSIP a été paramétré pour gérer du SEDA 2.1., du SEDA 2.2. ou du SEDA 2.3., il convient, dans la moulinette ReSIP, de cliquer sur
 l’action « Traiter » puis sur la sous-action « Vérifier la conformité à
 un profil SEDA 2.X » (cf. copie d’écran ci-dessous).</p>
 <p><img alt="" src="../_images/1000020100000364000001D529A65631AEB58E3A.png" /></p>
@@ -3590,8 +3586,8 @@ d’action « Fermer » (cf. copie d’écran ci-dessous).</p>
 <p>Il est possible d’exporter, depuis la moulinette ReSIP, une structure
 arborescente d’archives sous plusieurs formes différentes :</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#export-de-la-structure-arborescente-darchives-sous-la-forme-dun-sip"><span class="xref myst">un SIP conforme au SEDA 2.1. ou au SEDA 2.2. et aux spécifications particulières de la solution logicielle Vitam</span></a> ;</p></li>
-<li><p><a class="reference internal" href="#export-de-la-structure-arborescente-darchives-sous-la-forme-dun-manifeste-xml"><span class="xref myst">un manifeste conforme au SEDA 2.1. ou au SEDA 2.2. et aux spécifications particulières de la solution logicielle Vitam</span></a> ;</p></li>
+<li><p><a class="reference internal" href="#export-de-la-structure-arborescente-darchives-sous-la-forme-dun-sip"><span class="xref myst">un SIP conforme au SEDA 2.1., au SEDA 2.2. ou au SEDA 2.3. et aux spécifications particulières de la solution logicielle Vitam</span></a> ;</p></li>
+<li><p><a class="reference internal" href="#export-de-la-structure-arborescente-darchives-sous-la-forme-dun-manifeste-xml"><span class="xref myst">un manifeste conforme au SEDA 2.1., au SEDA 2.2. ou au SEDA 2.3. et aux spécifications particulières de la solution logicielle Vitam</span></a> ;</p></li>
 <li><p><a class="reference internal" href="#export-sous-forme-darborescence-de-fichiers"><span class="xref myst">une structure arborescente de fichiers</span></a> ;</p></li>
 <li><p><a class="reference internal" href="#export-sous-forme-darborescence-de-fichiers-accompagnee-dun-fichier-csv-decrivant-une-structure-arborescente-darchives-et-ou-de-fichiers"><span class="xref myst">une structure arborescente de fichiers accompagnée d’un fichier de métadonnées au format .csv, zippée ou non</span></a> ;</p></li>
 <li><p><a class="reference internal" href="#export-sous-forme-dun-fichier-csv-decrivant-une-structure-arborescente-darchives-et-ou-de-fichiers"><span class="xref myst">un fichier de métadonnées au format .csv</span></a>.</p></li>
@@ -3629,16 +3625,16 @@ défaut ouverts par un clic sur la sous-action « Préférences » :</p>
 <li><p>dans l’onglet « Métadonnées globales » (cf. copie d’écran
 ci-dessous) :</p>
 <ul>
-<li><p>l’identifiant du SIP (champ MessageIdentifier du SEDA 2.1. et 2.2.) ;</p></li>
-<li><p>la date de transfert du SIP (champ Date du SEDA 2.1. et 2.2.) ;</p></li>
-<li><p>la description du SIP (champ Comment du SEDA 2.1. et 2.2.) ;</p></li>
+<li><p>l’identifiant du SIP (champ MessageIdentifier du SEDA 2.1., 2.2. et 2.3.) ;</p></li>
+<li><p>la date de transfert du SIP (champ Date du SEDA 2.1., 2.2. et 2.3.) ;</p></li>
+<li><p>la description du SIP (champ Comment du SEDA 2.1., 2.2. et 2.3.) ;</p></li>
 <li><p>l’identifiant du contrat d’entrée utilisé pour transférer le SIP
 dans la solution logicielle Vitam (champ ArchivalAgreement du
-SEDA 2.1.) ;</p></li>
+SEDA 2.1., 2.2. et 2.3.) ;</p></li>
 <li><p>l’identifiant du service d’archives (champ
-ArchivalAgency.Identifier du SEDA 2.1. et 2.2.) ;</p></li>
+ArchivalAgency.Identifier du SEDA 2.1., 2.2. et 2.3.) ;</p></li>
 <li><p>l’identifiant du service de transfert (champ
-TransferringAgency.Identifier du SEDA 2.1. et 2.2.) ;</p>
+TransferringAgency.Identifier du SEDA 2.1., 2.2. et 2.3.) ;</p>
 <p><img alt="" src="../_images/1000020100000555000002D866FA85CD62A0F93B.png" /></p>
 </li>
 </ul>
@@ -3647,16 +3643,16 @@ TransferringAgency.Identifier du SEDA 2.1. et 2.2.) ;</p>
 (cf. copie d’écran ci-dessous) :</p>
 <ul>
 <li><p>la liste des référentiels et listes d’autorité utilisés dans le
-SIP, sous une forme XML (bloc CodeListVersions » du SEDA 2.1. et 2.2.) ;</p></li>
+SIP, sous une forme XML (bloc CodeListVersions » du SEDA 2.1., 2.2. et 2.3.) ;</p></li>
 <li><p>les métadonnées de gestion applicables à l’ensemble du SIP, sous
-une forme XML (bloc ManagementMetadata du SEDA 2.1. et 2.2.) ;</p></li>
+une forme XML (bloc ManagementMetadata du SEDA 2.1., 2.2. et 2.3.) ;</p></li>
 <li><p>l’identifiant de la réponse transmise suite à une demande
-d’entrée (champ TransferRequestReplyIdentifier du SEDA 2.1. et 2.2.) ;</p></li>
+d’entrée (champ TransferRequestReplyIdentifier du SEDA 2.1., 2.2. et 2.3) ;</p></li>
 <li><p>la description détaillée du service d’archives (champ
-ArchivalAgency.OrganizationDescriptiveMetadata du SEDA 2.1. et 2.2.) ;</p></li>
+ArchivalAgency.OrganizationDescriptiveMetadata du SEDA 2.1., 2.2. et 2.3) si les informations sont entre les balises <OrganizationDescriptiveMetadata> </OrganizationDescriptiveMetadata> puis alimenté par une sous-balise extension du SEDA;</p></li>
 <li><p>la description détaillée du service de transfert (champ
 TransferringAgency.OrganizationDescriptiveMetadata du SEDA
-2.1. et 2.2.).</p>
+2.1., 2.2. et 2.3.) si les informations sont entre les balises <OrganizationDescriptiveMetadata> </OrganizationDescriptiveMetadata> puis alimenté par une sous-balise extension du SEDA.</p>
 <p><img alt="" src="../_images/1000020100000555000002D8C00D11C099678E99.png" /></p>
 </li>
 </ul>
@@ -3668,7 +3664,7 @@ de traitement.</p>
 <p><strong>Attention</strong> :</p>
 <ul class="simple">
 <li><p>aucun contrôle de conformité par rapport à la structure et à la
-sémantique du schéma XML défini par le SEDA 2.1. et 2.2. n’est réalisé ;</p></li>
+sémantique du schéma XML défini par le SEDA 2.1., 2.2. et 2.3. n’est réalisé ;</p></li>
 <li><p>en cas d’import d’un SIP ou d’un DIP disposant de paramètres
 différents de ceux définis par défaut, ce sont les paramètres
 spécifiques à ce SIP ou à ce DIP qui s’affichent dans les différents
@@ -3686,10 +3682,10 @@ d’archives dans le fichier XML correspondant au manifeste. Les
 unités archivistiques peuvent être exportées soit de manière
 imbriquée (les unités archivistiques sont exportées de manière
 « arborescente » et sont imbriquées les unes dans les autres, en
-utilisant le champ ArchiveUnit du SEDA 2.1. et 2.2.), soit « à plat »
+utilisant le champ ArchiveUnit du SEDA 2.1., 2.2. et 2.3.), soit « à plat »
 (toutes les unités archivistiques sont exportées au même niveau et
 la structure arborescente est restituée par l’utilisation du champ
-ArchiveUnitRefId du SEDA 2.1. et 2.2.) ;</p></li>
+ArchiveUnitRefId du SEDA 2.1., 2.2. et 2.3.) ;</p></li>
 <li><p>la manière dont va être présenté le fichier XML correspondant au
 manifeste, avec ou sans indentation des éléments ;</p></li>
 <li><p>la renumérotation ou non des éléments composant le fichier XML
@@ -3726,7 +3722,7 @@ la structure arborescente d’archives en cours de traitement et du CSV.</p>
 <h3><span class="section-number">1.6.2. </span>Export de la structure arborescente d’archives sous la forme d’un SIP<a class="headerlink" href="#export-de-la-structure-arborescente-darchives-sous-la-forme-dun-sip" title="Lien vers cette rubrique"></a></h3>
 <p>La moulinette ReSIP permet d’exporter une structure arborescente
 d’archives en cours de traitement sous la forme d’un SIP conforme au
-SEDA 2.1. et aux spécifications particulières de la solution logicielle
+SEDA 2.1., 2.2. ou 2.3. et aux spécifications particulières de la solution logicielle
 Vitam.</p>
 <p>Pour ce faire, il convient de cliquer, dans le menu de la moulinette
 ReSIP, sur l’action « Export » puis sur la sous-action « Exporter le SIP
@@ -3763,7 +3759,7 @@ logicielle Vitam.</p>
 <h3><span class="section-number">1.6.3. </span>Export de la structure arborescente d’archives sous la forme d’un manifeste XML<a class="headerlink" href="#export-de-la-structure-arborescente-darchives-sous-la-forme-dun-manifeste-xml" title="Lien vers cette rubrique"></a></h3>
 <p>La moulinette ReSIP permet d’exporter une structure arborescente
 d’archives en cours de traitement sous la forme d’un manifeste de SIP
-conforme au SEDA 2.1. et aux spécifications particulières de la solution
+conforme au SEDA 2.1., 2.2. ou 2.3. et aux spécifications particulières de la solution
 logicielle Vitam.</p>
 <p>Pour ce faire, il convient de cliquer, dans le menu de la moulinette
 ReSIP, sur l’action « Export » puis sur la sous-action « Exporter le
@@ -4368,10 +4364,10 @@ un clic sur la sous-action « Préférences », depuis l’onglet « Export 
 <li><p>les unités archivistiques doivent être exportées de manière
 <strong>imbriquée</strong> (les unités archivistiques sont exportées de manière
 « arborescente » et sont imbriquées les unes dans les autres, en
-utilisant le champ ArchiveUnit du SEDA 2.1.), et non pas « à plat »
+utilisant le champ ArchiveUnit du SEDA 2.1., 2.2. et 2.3.), et non pas « à plat »
 (toutes les unités archivistiques sont exportées au même niveau et
 la structure arborescente est restituée par l’utilisation du champ
-ArchiveUnitRefId du SEDA 2.1.) ;</p></li>
+ArchiveUnitRefId du SEDA 2.1., 2.2. et 2.3.) ;</p></li>
 <li><p>dans le SIP, les unités archivistiques doivent se présenter sous
 forme <strong>linéaire</strong> et non pas indentée.
 <img alt="" src="../_images/100002010000031A00000463C611A444D22154BC.png" /></p></li>
@@ -4460,7 +4456,7 @@ Il est recommandé d’ouvrir le manifeste pour vérifier comment sont déclaré
 <p><strong>Explication:</strong>
 L’élément ReplyCodeListVersion n’est pas autorisé par le profil d’archivage, alors qu’il est présent dans le manifeste généré par ReSIP.</p>
 <p><strong>Résolution:</strong>
-Il faut vérifier si ReplyCodeListVersion n’est pas un champ obligatoire du SEDA (option « Vérifier la conformité SEDA 2.1 »).
+Il faut vérifier si ReplyCodeListVersion n’est pas un champ obligatoire du SEDA (option « Vérifier la conformité SEDA 2.1 » ou « Vérifier la conformité SEDA 2.2 » ou « Vérifier la conformité SEDA 2.3 »).
 S’il n’est pas obligatoire, ce qui est le cas pour cet élément-là, retirer le champ de la liste des champs contextuels générés par ReSIP, en cliquant sur Contexte &gt; Editer les informations d’export &gt; Métadonnées globales étendues.</p>
 </section>
 <section id="erreur-5">
@@ -5605,11 +5601,12 @@ verser » de ce document.</p>
   </span>
   <div class="rst-other-versions">
     <dl>
+      <dt>Tags</dt>
+      <dd><a href="../../7.1.0/sections/resip.html">7.1.0</a></dd>
+    </dl>
+    <dl>
       <dt>Branches</dt>
       <dd><a href="resip.html">master</a></dd>
-      <dd><a href="../../master_7.1.x/sections/resip.html">master_7.1.x</a></dd>
-      <dd><a href="../../master_8.1.x/sections/resip.html">master_8.1.x</a></dd>
-      <dd><a href="../../v8.1_Resip_mathilde/sections/resip.html">v8.1_Resip_mathilde</a></dd>
     </dl>
   </div>
 </div><script>

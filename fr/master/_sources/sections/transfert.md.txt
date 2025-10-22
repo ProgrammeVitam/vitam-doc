@@ -21,7 +21,7 @@ Ce document s’articule autour des axes suivants :
 - détermination du caractère transférable des unités archivistiques,
 - modalités d’une demande de transfert,
 - modalités de mise en œuvre d’un transfert.
-Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 8.1 (printemps 2025). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
+Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 9.0 (automne 2025). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
 
 Définitions
 ----
@@ -98,7 +98,7 @@ La solution logicielle permet de préparer un lot d’archives à transférer.
 - Des filtres supplémentaires peuvent être demandés sur :
     - les usages. Ce filtre sera contrôlé par rapport aux droits octroyés par le contrat accès, pour ne transférer par exemple que les originaux numériques (BinaryMaster) sans les versions de diffusion ou les vignettes ;
     - la version du SEDA. Ce filtre fonctionne de la manière suivante :
-        - S’il n’est pas utilisé, le DIP de transfert généré sera déclaré en SEDA 2.2 ;
+        - S’il n’est pas utilisé, le DIP de transfert généré sera déclaré en SEDA 2.3 ;
         - Un contrôle de compatibilité est effectué entre la version du SEDA demandée dans le DIP et celle des unités archivistiques devant intégrer ce dernier.
     - Les journaux de cycle de vie peuvent être intégrés dans le lot d’archives à transférer. Il est conseillé d’activer cette option lorsque les unités archivistiques et les groupes d’objets techniques transférés doivent pouvoir faire l’objet d’une traçabilité forte.
 

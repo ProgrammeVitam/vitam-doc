@@ -31,7 +31,7 @@ Ce document s’articule autour des axes suivants :
 
 Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
 
-**Attention :** la consultation du présent document, en cours de construction au terme de la version 8.0 (octobre 2024) doit s’accompagner de la consultation du manuel ReSIP, qui décrit l’ensemble des fonctionnalités de la moulinette ReSIP.
+**Attention :** la consultation du présent document, en cours de construction au terme de la version 9.0 (automne 2025) doit s’accompagner de la consultation du manuel ReSIP, qui décrit l’ensemble des fonctionnalités de la moulinette ReSIP.
 
 Présentation, installation, lancement et paramétrage de la moulinette ReSIP
 ----

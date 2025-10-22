@@ -307,7 +307,7 @@
 <li><p>des recommandations aux utilisateurs de la solution logicielle Vitam sur la manière d’élaborer un profil d’archivage ;</p></li>
 <li><p>quelques conseils complémentaires de mise en œuvre.</p></li>
 </ul>
-<p>Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 8.1 (printemps 2025). Il inclut en particulier la présentation des fonctionnalités offertes par l’outil PASTIS (Profil d’Archivage Simple pour le Traitement de l’Information en SEDA) intégré à l’IHM Vitam UI dans l’APP Profils documentaires et également disponible sous forme d’exécutable. Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.</p>
+<p>Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 9.0 (automne 2025). Il inclut en particulier la présentation des fonctionnalités offertes par l’outil PASTIS (Profil d’Archivage Simple pour le Traitement de l’Information en SEDA) intégré à l’IHM Vitam UI dans l’APP Profils documentaires et également disponible sous forme d’exécutable. Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.</p>
 </section>
 </section>
 <section id="presentation-de-la-notion-de-profil-darchivage">
@@ -503,7 +503,7 @@ Exemple : notice descriptive de profil d’archivage contenant uniquement les i
 <td class="text-left"><p>chemin d’accès au profil d’archivage associé à la notice détaillée (champ facultatif).</p></td>
 </tr>
 <tr class="row-odd"><td class="text-left"><p>SedaVersion</p></td>
-<td class="text-left"><p>version du SEDA du profil d’archivage associé à la notice (champ obligatoire - valeur par défaut : « 2.3 »).<br>Les valeurs possibles dont : « 2.1 », « 2.2 » ou « 2.3 »</p></td>
+<td class="text-left"><p>version du SEDA du profil d’archivage associé à la notice (champ obligatoire - valeur par défaut : « 2.3 »).<br>Les valeurs possibles sont : « 2.1 », « 2.2 » ou « 2.3 »</p></td>
 </tr>
 </tbody>
 </table>
@@ -544,12 +544,11 @@ Lors de cet import, l’opération peut aboutir aux statuts suivants :</p>
 <p>La modification des champs des notices décrivant les profils d’archivage est possible au moyen :</p>
 <ul class="simple">
 <li><p>des API,</p></li>
-<li><p>de l’IHM standard fournies avec la solution logicielle Vitam,</p></li>
 <li><p>de l’APP « Profils documentaires » accessible depuis l’IHM VitamUI.</p></li>
 </ul>
 <p>Les champs modifiables sont :</p>
 <ul class="simple">
-<li><p>depuis l’IHM standard :</p>
+<li><p>depuis l’APP « Profils documentaires » :</p>
 <ul>
 <li><p>le nom du profil d’archivage (Name) ;</p></li>
 <li><p>la description du profil d’archivage (Description) ;</p></li>
@@ -938,7 +937,7 @@ Le résultat de ce travail peut prendre la forme du tableau suivant :</p></li>
 <ul class="simple">
 <li><p>création d’un profil d’archivage à l’aide d’un des outils suivants :</p>
 <ul>
-<li><p>l’outil Profil d’Archivage Simple pour le Traitement de l’Information en SEDA (PASTIS), utilisable sous forme d’exécutable ou d’APP intégrée aux interfaces de VitamUI (APP Profils documentaires),</p></li>
+<li><p>l’outil Profil d’Archivage Simple pour le Traitement de l’Information en SEDA (PASTIS), utilisable sous forme d’exécutable ou d’APP intégrée aux interfaces de VitamUI (APP « Profils documentaires »),</p></li>
 <li><p>un éditeur XML,</p></li>
 </ul>
 </li>
@@ -951,8 +950,10 @@ Le résultat de ce travail peut prendre la forme du tableau suivant :</p></li>
 <section id="etapes-de-redaction">
 <h5><span class="section-number">9.5.2.1.1. </span>Étapes de rédaction<a class="headerlink" href="#etapes-de-redaction" title="Lien vers cette rubrique"></a></h5>
 <p>Pour rédiger un profil d’archivage, il est également possible d’utiliser l’outil PASTIS (Profil d’Archivage Simple pour le Traitement de l’Information en SEDA), qui permet de générer des profils d’archivage au format Relax NG. Cet outil est utilisable sous forme d’exécutable ou d’APP intégrée aux interfaces de VitamUI (APP Profils documentaires).</p>
-<p>Au terme de la version 8.0, il permet de générer des profils d’archivage en SEDA 2.1, 2.2 et 2.3.
-Au terme de la version 8.1, il intègre également la possibilité d’ajouter des extensions au SEDA au niveau du bloc « Content ».</p>
+<ul class="simple">
+<li><p>Au terme de la version 8.0, il permet de générer des profils d’archivage en SEDA 2.1, 2.2 et 2.3.</p></li>
+<li><p>Au terme de la version 8.1, il intègre également la possibilité d’ajouter des extensions au SEDA au niveau du bloc « Content ».</p></li>
+</ul>
 <p><strong>Étape 1</strong> - l’outil requiert dans un premier temps de créer un profil d’archivage (PA) et de sélectionner la version du SEDA.</p>
 <p><strong>Étape 2</strong> - lors de la rédaction du profil d’archivage :</p>
 <ul class="simple">
@@ -1046,8 +1047,8 @@ Afin de pouvoir les obtenir dans l’outil, il est nécessaire de déclarer ces 
 <li><p>finaliser le processus de création d’un profil d’archivage et d’insertion dans le référentiel des profils d’archivage de la solution logicielle Vitam.
 L’export s’avère nécessaire en vue de :</p></li>
 <li><p>corriger une coquille au niveau du bloc CodeListVersions ;</p></li>
-<li><p>obtenir un fichier RNG conforme au SEDA 2.2 ou 2.3 (pour les versions antérieures à la version 8.0) ;</p></li>
-<li><p>intégrer un certain nombre d’éléments non supportés par l’APP Profils documentaires en fonction des versions du SEDA utilisées (notamment les extensions).</p></li>
+<li><p>obtenir un fichier RNG conforme au SEDA 2.2 ou 2.3 (pour les versions de la solution logicielle Vitam antérieures à la version 8.0) ;</p></li>
+<li><p>intégrer un certain nombre d’éléments non supportés par l’APP « Profils documentaires » en fonction des versions du SEDA utilisées, notamment les extensions (pour les versions de la solution logicielle Vitam antérieures à la version 8.1) ou les rattachements (non supportés par PASTIS).</p></li>
 </ul>
 <p>Pour apporter ces corrections au fichier exporté, il faut :</p>
 <ul class="simple">
@@ -1055,8 +1056,8 @@ L’export s’avère nécessaire en vue de :</p></li>
 <li><p>Corriger les éléments suivants :</p></li>
 </ul>
 <p><strong>Corrections au niveau de l’en-tête</strong></p>
-<p>Au niveau de l’en-tête, déclarant les espaces de nom et autres références, il faut remplacer les références au SEDA 2.1 par des références au SEDA 2.2 ou au SEDA 2.3.
-<em>Exemple : modifications à apporter au niveau de l’en-tête.</em></p>
+<p>Au niveau de l’en-tête, déclarant les espaces de nom et autres références, il faut remplacer les références au SEDA 2.1 par des références au SEDA 2.2 ou au SEDA 2.3.</p>
+<p><em>Exemple : modifications à apporter au niveau de l’en-tête.</em></p>
 <p><em>Ancienne version :</em></p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;rng:grammar</span><span class="w"> </span><span class="na">datatypeLibrary=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-datatypes&quot;</span><span class="w"> </span><span class="na">ns=</span><span class="s">&quot;fr:gouv:culture:archivesdefrance:seda:v2.1&quot;</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;fr:gouv:culture:archivesdefrance:seda:v2.1&quot;</span><span class="w"> </span><span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="w"> </span><span class="na">xmlns:a=</span><span class="s">&quot;http://relaxng.org/ns/compatibility/annotations/1.0&quot;</span><span class="w"> </span><span class="na">xmlns:seda=</span><span class="s">&quot;fr:gouv:culture:archivesdefrance:seda:v2.1&quot;</span><span class="w"> </span><span class="na">xmlns:rng=</span><span class="s">&quot;http://relaxng.org/ns/structure/1.0&quot;</span><span class="w"> </span><span class="na">xmlns:xs=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="w"> </span><span class="na">xmlns:xlink=</span><span class="s">&quot;http://www.w3.org/1999/xlink&quot;</span><span class="nt">&gt;</span>
 [...]
@@ -1074,20 +1075,20 @@ L’export s’avère nécessaire en vue de :</p></li>
 </div>
 <p><strong>Mention du profil d’unité archivistique</strong></p>
 <p>Si l’on souhaite contrôler une unité archivistique au moyen d’un profil d’unité archivistique, il faut ajouter dans le profil d’archivage l’identifiant du profil d’unité archivistique ou, du moins, la mention de l’existence du profil d’unité archivistique<a class="footnote-reference brackets" href="#id45" id="id20" role="doc-noteref"><span class="fn-bracket">[</span>19<span class="fn-bracket">]</span></a>.
-Au terme de la version 8.0, l’APP Profils documentaires ne permet pas de déporter le contrôle des métadonnées vers le profil d’unité archivistique. En effet, il est nécessaire de déclarer dans le profil d’archivage, en plus du profil d’unité archivistique, l’ensemble des métadonnées qui feront également l’objet du contrôle dans le profil d’unité archivistique.</p>
+Au terme de la version 9.0, l’APP Profils documentaires ne permet pas de déporter le contrôle des métadonnées vers le profil d’unité archivistique. En effet, il est nécessaire de déclarer dans le profil d’archivage, en plus du profil d’unité archivistique, l’ensemble des métadonnées qui feront également l’objet du contrôle dans le profil d’unité archivistique.</p>
 <p>Si on souhaite déporter le contrôle vers le profil d’unité archivistique, il faudra modifier les éléments suivant dans le fichier RNG :
 <em>Exemple : ajout de la mention du profil d’unité archivistique.</em></p>
-<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="err">&lt;</span><span class="w"> </span>!--<span class="w"> </span>Élément<span class="w"> </span>précédent<span class="w"> </span>et<span class="w"> </span>englogant<span class="w"> </span>--&gt;<span class="w"> </span>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cm">&lt;!-- Élément précédent et englogant --&gt;</span><span class="w"> </span>
 <span class="w">                </span><span class="nt">&lt;rng:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;ArchiveUnit&quot;</span><span class="nt">&gt;</span>
 <span class="w">                    </span><span class="nt">&lt;rng:attribute</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;id&quot;</span><span class="nt">&gt;</span>
 <span class="w">                            </span><span class="nt">&lt;rng:data</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;ID&quot;</span><span class="nt">/&gt;</span>
 <span class="w">                 </span><span class="nt">&lt;/rng:attribute&gt;</span>
-<span class="err">&lt;</span><span class="w"> </span>!--<span class="w"> </span>Déclaration<span class="w"> </span>du<span class="w"> </span>profil<span class="w"> </span>d’unité<span class="w"> </span>archivistique<span class="w"> </span>--&gt;
+<span class="cm">&lt;!-- Déclaration du profil d’unité archivistique --&gt;</span>
 <span class="w">                    </span><span class="nt">&lt;rng:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;ArchiveUnitProfile&quot;</span><span class="w"> </span><span class="na">seda:profid=</span><span class="s">&quot;id386134&quot;</span><span class="nt">&gt;</span>
 <span class="w">                        </span><span class="nt">&lt;rng:value&gt;</span>AUP-000001<span class="nt">&lt;/rng:value&gt;</span>
 <span class="w">                    </span><span class="nt">&lt;/rng:element&gt;</span>
-<span class="err">&lt;</span><span class="w"> </span>!--<span class="w"> </span>Éléments<span class="w"> </span>suivants<span class="w"> </span>à<span class="w"> </span>corriger<span class="w"> </span>afin<span class="w"> </span>de<span class="w"> </span>déporter<span class="w"> </span>le<span class="w"> </span>contrôle<span class="w"> </span>sur<span class="w"> </span>le<span class="w"> </span>profil<span class="w"> </span>d’unité<span class="w"> </span>archivistique<span class="w"> </span>--&gt;
-<span class="err">&lt;</span><span class="w"> </span>!--<span class="w"> </span>remplacer<span class="w"> </span>rng:value<span class="w"> </span>ou<span class="w"> </span>rng:data<span class="w"> </span>par<span class="w"> </span>rng:ref<span class="w"> </span>name=&quot;any_content<span class="w"> </span>--&gt;
+<span class="cm">&lt;!-- Éléments suivants à corriger afin de déporter le contrôle sur le profil d’unité archivistique --&gt;</span>
+<span class="cm">&lt;!-- remplacer rng:value ou rng:data par rng:ref name=&quot;any_content --&gt;</span>
 <span class="w">              </span><span class="nt">&lt;rng:optional&gt;</span>
 <span class="w">                </span><span class="nt">&lt;rng:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;Management&quot;</span><span class="nt">&gt;</span>
 <span class="w">                  </span><span class="nt">&lt;rng:ref</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;any_content&quot;</span><span class="nt">/&gt;</span>
@@ -1321,6 +1322,66 @@ Au terme de la version 8.0, l’APP Profils documentaires ne permet pas de dépo
 <span class="w">                    </span><span class="nt">&lt;/rng:element&gt;</span>
 </pre></div>
 </div>
+<p><strong>Mention d’un bloc de rattachement</strong></p>
+<p>La solution logicielle Vitam supporte un bloc de rattachement au niveau du bloc Management. Il est possible de :</p>
+<ul class="simple">
+<li><p>soit déclarer l’identifiant d’une unité archivistique sous laquelle doit se positionner une arborescence,</p></li>
+<li><p>soit déclarer une métadonnée et une valeur permettant d’identifier l’unité archivistique sous laquelle doit se positionner une arborescence.</p></li>
+</ul>
+<p><em>Exemple : positionnement du bloc UpdateOperation</em></p>
+<div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cm">&lt;!-- Élément précédent et englogant --&gt;</span><span class="w"> </span>
+<span class="w">            </span><span class="nt">&lt;rng:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;Management&quot;</span><span class="nt">&gt;</span>
+
+<span class="cm">&lt;!-- Déclaration du bloc de rattachement  --&gt;</span>
+<span class="w">				</span><span class="cm">&lt;!-- avec identifiant unique de rattachement et obligatoire --&gt;</span>
+<span class="w">                </span><span class="nt">&lt;rng:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;UpdateOperation&quot;</span><span class="nt">&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;rng:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;SystemId&quot;</span><span class="nt">&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;rng:data</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;token&quot;</span><span class="nt">/&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;/rng:element&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/rng:element&gt;</span>
+<span class="w">				</span>
+<span class="w">				</span><span class="cm">&lt;!-- avec identifiant unique de rattachement et optionnel --&gt;</span>
+<span class="w">                </span><span class="nt">&lt;rng:optional&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;rng:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;UpdateOperation&quot;</span><span class="nt">&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;rng:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;SystemId&quot;</span><span class="nt">&gt;</span>
+<span class="w">                            </span><span class="nt">&lt;rng:data</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;token&quot;</span><span class="nt">/&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;/rng:element&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;/rng:element&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/rng:optional&gt;</span>
+<span class="w">				</span>
+<span class="w">				</span><span class="cm">&lt;!-- avec rattachement par clé / valeur et obligatoire --&gt;</span>
+<span class="w">				</span>
+<span class="w">                </span><span class="nt">&lt;rng:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;UpdateOperation&quot;</span><span class="nt">&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;rng:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;ArchiveUnitIdentifierKey&quot;</span><span class="nt">&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;rng:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;MetadataName&quot;</span><span class="nt">&gt;</span>
+<span class="w">                            </span><span class="nt">&lt;rng:data</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;token&quot;</span><span class="nt">/&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;/rng:element&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;rng:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;MetadataValue&quot;</span><span class="nt">&gt;</span>
+<span class="w">                            </span><span class="nt">&lt;rng:data</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;token&quot;</span><span class="nt">/&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;/rng:element&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;/rng:element&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/rng:element&gt;</span>
+<span class="w">							</span>
+<span class="w">				</span><span class="cm">&lt;!-- avec rattachement par clé / valeur et optionnel --&gt;</span>
+<span class="w">				</span>
+<span class="w">				</span><span class="nt">&lt;rng:optional&gt;</span>
+<span class="w">				</span><span class="nt">&lt;rng:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;UpdateOperation&quot;</span><span class="nt">&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;rng:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;ArchiveUnitIdentifierKey&quot;</span><span class="nt">&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;rng:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;MetadataName&quot;</span><span class="nt">&gt;</span>
+<span class="w">                            </span><span class="nt">&lt;rng:data</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;token&quot;</span><span class="nt">/&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;/rng:element&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;rng:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;MetadataValue&quot;</span><span class="nt">&gt;</span>
+<span class="w">                            </span><span class="nt">&lt;rng:data</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;token&quot;</span><span class="nt">/&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;/rng:element&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;/rng:element&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/rng:element&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/rng:optional&gt;</span>
+
+<span class="cm">&lt;!-- Clôture de l&#39;élément précédent et englogant --&gt;</span><span class="w"> 					</span>
+<span class="w">            </span><span class="nt">&lt;/rng:element&gt;</span>
+</pre></div>
+</div>
+<p>Point d’attention : il est recommandé de vérifier que l’identifiant technique ou les clés / valeurs mentionné(es) dans le profil d’archivage sont référencés dans une unité archivistique.</p>
 </section>
 </section>
 <section id="documentation-dun-profil-darchivage">
@@ -4257,24 +4318,27 @@ Messages d’erreur concernant le référentiel des profils d’archivage</p>
 </thead>
 <tbody>
 <tr class="row-even"><td class="text-center"><p>5</p></td>
-<td class="text-left"><p>« outDetail »: « STP_IMPORT_PROFILE_JSON.KO »,</p></td>
-<td class="text-left"><p></p></td>
-<td class="text-left"><p></p></td>
-</tr>
-<tr class="row-odd"><td class="text-center"><p>« outMessg »: « Échec du processus d’import du profil d’archivage »<br> »evDetData »:<br>{ « profileCheck » : « Profile file validate error : «  }</p></td>
+<td class="text-left"><p>« outDetail »: « STP_IMPORT_PROFILE_JSON.KO », »outMessg »: « Échec du processus d’import du profil d’archivage »<br> »evDetData »:<br>{ « profileCheck » : « Profile file validate error : «  }</p></td>
 <td class="text-left"><p>Le fichier téléchargé n’est pas au format XSD ou RNG.</p></td>
 <td class="text-left"><p>Télécharger un fichier XSD ou RNG.</p></td>
-<td class="text-left"><p></p></td>
 </tr>
-<tr class="row-even"><td class="text-center"><p>6</p></td>
+<tr class="row-odd"><td class="text-center"><p>6</p></td>
 <td class="text-left"><p>« outDetail »: « STP_UPDATE_PROFILE_JSON.KO »,<br> »outMessg »: « Échec du processus de mise à jour du profil d’archivage »<br> »evDetData »:<br>{ « profileCheck » : « Profile Format should be XSD or RNG : JPEG » }</p></td>
 <td class="text-left"><p>Le format a été modifié par une valeur ne correspondant ni à « XSD » ni à « RNG ».</p></td>
 <td class="text-left"><p>Modifier la valeur du statut par l’une de ces deux valeurs : « XSD » ou « RNG ».</p></td>
 </tr>
+<tr class="row-even"><td class="text-center"><p>7</p></td>
+<td class="text-left"><p>« outDetail »: « STP_UPDATE_PROFILE_JSON.KO »,<br> »outMessg »: « Échec du processus de mise à jour du profil d’archivage »<br> »evDetData »:<br>{  «  profileCheck » : « The new SEDA version value “2.1” does not match the one in the schema definition file “2.2”,The new SEDA version value “2.1” does not match the one in the profile “2.2” »}</p></td>
+<td class="text-left"><p>Le fichier téléchargé ne déclare pas la même version du SEDA que celle déclarée dans la notice.</p></td>
+<td class="text-left"><p>Modifier la version du SEDA dans la notice ou dans le fichier RNG ou XSD afin qu’ils déclarent la même version du SEDA.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>8</p></td>
+<td class="text-left"><p>« outDetail »: « STP_UPDATE_PROFILE_JSON.NOT_IN_ENUM.KO »,<br> »outMessg »: « Échec du processus de mise à jour  du profil d’archivage : une valeur ne correspond pas aux valeurs attendues »,<br> »evDetData »:<br>{ « Not in Enum » : « The profile status must be ACTIVE or INACTIVE but not Blabla » }</p></td>
+<td class="text-left"><p>Le statut a été modifié par une valeur ne correspondant ni à « ACTIVE » ni à « INACTIVE ».</p></td>
+<td class="text-left"><p>Modifier la valeur du statut par l’une de ces deux valeurs : « ACTIVE » ou « INACTIVE ».</p></td>
+</tr>
 </tbody>
 </table>
-<p>|7| »outDetail »: « STP_UPDATE_PROFILE_JSON.KO »,<br> »outMessg »: « Échec du processus de mise à jour du profil d’archivage »<br> »evDetData »:<br>{  «  profileCheck » : « The new SEDA version value “2.1” does not match the one in the schema definition file “2.2”,The new SEDA version value “2.1” does not match the one in the profile “2.2” »}|Le fichier téléchargé ne déclare pas la même version du SEDA que celle déclarée dans la notice.|Modifier la version du SEDA dans la notice ou dans le fichier RNG ou XSD afin qu’ils déclarent la même version du SEDA.|
-|8| »outDetail »: « STP_UPDATE_PROFILE_JSON.NOT_IN_ENUM.KO »,<br> »outMessg »: « Échec du processus de mise à jour  du profil d’archivage : une valeur ne correspond pas aux valeurs attendues »,<br> »evDetData »:<br>{ « Not in Enum » : « The profile status must be ACTIVE or INACTIVE but not Blabla » }|Le statut a été modifié par une valeur ne correspondant ni à « ACTIVE » ni à « INACTIVE ».|Modifier la valeur du statut par l’une de ces deux valeurs : « ACTIVE » ou « INACTIVE ».|</p>
 </section>
 <section id="messages-derreur-concernant-le-versement-dun-bordereau-de-transfert">
 <h4><span class="section-number">9.7.4.2. </span>Messages d’erreur concernant le versement d’un bordereau de transfert<a class="headerlink" href="#messages-derreur-concernant-le-versement-dun-bordereau-de-transfert" title="Lien vers cette rubrique"></a></h4>
@@ -4328,17 +4392,16 @@ Messages d’erreur concernant le référentiel des profils d’archivage</p>
 </section>
 <section id="annexe-5-controle-de-conformite-a-un-profil-darchivage-avec-resip">
 <h3><span class="section-number">9.7.5. </span>Annexe 5 : Contrôle de conformité à un profil d’archivage avec ReSIP<a class="headerlink" href="#annexe-5-controle-de-conformite-a-un-profil-darchivage-avec-resip" title="Lien vers cette rubrique"></a></h3>
-<p>ReSIP permet de contrôler le manifeste chargé sur l’interface par rapport à un profil d’archivage conforme au SEDA 2.1 ou 2.2 au format XSD ou RNG. La présente annexe a pour vocation à expliquer comment réaliser ce contrôle de conformité avec ReSIP et quels sont les écueils à éviter lorsque l’on manipule un profil d’archivage au format RNG.</p>
+<p>ReSIP permet de contrôler le manifeste chargé sur l’interface par rapport à un profil d’archivage conforme au SEDA 2.1, 2.2 ou 2.3 au format XSD ou RNG. La présente annexe a pour vocation à expliquer comment réaliser ce contrôle de conformité avec ReSIP et quels sont les écueils à éviter lorsque l’on manipule un profil d’archivage au format RNG.</p>
 <section id="procedure-de-controle">
 <h4><span class="section-number">9.7.5.1. </span>Procédure de contrôle<a class="headerlink" href="#procedure-de-controle" title="Lien vers cette rubrique"></a></h4>
 <p>Afin de vérifier la conformité d’une structure arborescente d’archives et de sa description par rapport à un profil d’archivage conforme au SEDA 2.1., il convient, dans la moulinette ReSIP, de cliquer sur l’action « Traiter » puis sur la sous-action « Vérifier la conformité à un profil SEDA 2.1 » (cf. copie d’écran ci-dessous) « Vérifier la conformité à un profil SEDA 2.2 ».<br />
 <img alt="reSIP" src="../_images/ReSIP1.png" /></p>
-<p>Le clic sur la sous-action « Vérifier la conformité à un profil SEDA 2.1 » ou « Vérifier la conformité à un profil SEDA 2.2 », ouvre l’explorateur Windows de l’utilisateur et permet à celui-ci de sélectionner un fichier correspondant à un profil d’archivage – au format XSD ou RNG – et de l’importer dans la moulinette ReSIP en cliquant sur le bouton d’action « Ouvrir » (cf. copie d’écran ci-dessous).</p>
-<p>Attention : il n’est possible de sélectionner qu’un seul fichier.<br />
-<img alt="reSIP" src="../_images/ReSIP2.png" /></p>
-<p>Le clic sur le bouton d’action « Ouvrir » lance une fenêtre de dialogue « Vérification profil SEDA 2.1 » ou « Vérifier la conformité à un profil SEDA 2.2 », indiquant que l’opération de vérification est lancée. Cette opération peut être annulée en cliquant sur le bouton d’action « Annuler » de la fenêtre de dialogue. Une fois l’opération de vérification, la fenêtre de dialogue indique son résultat et les éventuelles non conformités identifiées<a class="footnote-reference brackets" href="#id50" id="id25" role="doc-noteref"><span class="fn-bracket">[</span>24<span class="fn-bracket">]</span></a>. La fenêtre de dialogue peut être fermée en cliquant sur le bouton d’action « Fermer » (cf. copie d’écran ci-dessous).<br />
-Le clic sur le bouton d’action « Ouvrir » lance une fenêtre de dialogue « Vérification profil SEDA 2.1 » ou « Vérifier la conformité à un profil SEDA 2.2 », indiquant que l’opération de vérification est lancée. Cette opération peut être annulée en cliquant sur le bouton d’action « Annuler » de la fenêtre de dialogue. Une fois l’opération de vérification, la fenêtre de dialogue indique son résultat et les éventuelles non conformités identifiées. La fenêtre de dialogue peut être fermée en cliquant sur le bouton d’action « Fermer » (cf. copie d’écran ci-dessous).<br />
-<img alt="reSIP" src="../_images/ReSIP3.png" /></p>
+<p>Le clic sur la sous-action « Vérifier la conformité à un profil SEDA 2.1 » (ou « Vérifier la conformité à un profil SEDA 2.2 », ou ou « Vérifier la conformité à un profil SEDA 2.3 »), ouvre l’explorateur Windows de l’utilisateur et permet à celui-ci de sélectionner un fichier correspondant à un profil d’archivage – au format XSD ou RNG – et de l’importer dans la moulinette ReSIP en cliquant sur le bouton d’action « Ouvrir » (cf. copie d’écran ci-dessous).</p>
+<p>Attention : il n’est possible de sélectionner qu’un seul fichier.</p>
+<p><img alt="reSIP" src="../_images/ReSIP2.png" /></p>
+<p>Le clic sur le bouton d’action « Ouvrir » lance une fenêtre de dialogue « Vérification profil SEDA 2.1 », « Vérifier la conformité à un profil SEDA 2.2 » ou « Vérification profil SEDA 2.3 », indiquant que l’opération de vérification est lancée. Cette opération peut être annulée en cliquant sur le bouton d’action « Annuler » de la fenêtre de dialogue. Une fois l’opération de vérification, la fenêtre de dialogue indique son résultat et les éventuelles non conformités identifiées<a class="footnote-reference brackets" href="#id50" id="id25" role="doc-noteref"><span class="fn-bracket">[</span>24<span class="fn-bracket">]</span></a>. La fenêtre de dialogue peut être fermée en cliquant sur le bouton d’action « Fermer » (cf. copie d’écran ci-dessous).</p>
+<p><img alt="reSIP" src="../_images/ReSIP3.png" /></p>
 <p><strong>Attention :</strong></p>
 <ul class="simple">
 <li><p>La moulinette ReSIP génère systématiquement des groupes d’objets. Le profil d’archivage doit prendre en compte cette structuration.</p></li>
@@ -5686,11 +5749,12 @@ S’il n’est pas obligatoire, ce qui est le cas pour cet élément-là, retire
   </span>
   <div class="rst-other-versions">
     <dl>
+      <dt>Tags</dt>
+      <dd><a href="../../7.1.0/sections/profil_archivage.html">7.1.0</a></dd>
+    </dl>
+    <dl>
       <dt>Branches</dt>
       <dd><a href="profil_archivage.html">master</a></dd>
-      <dd><a href="../../master_7.1.x/sections/profil_archivage.html">master_7.1.x</a></dd>
-      <dd><a href="../../master_8.1.x/sections/profil_archivage.html">master_8.1.x</a></dd>
-      <dd><a href="../../v8.1_Resip_mathilde/sections/profil_archivage.html">v8.1_Resip_mathilde</a></dd>
     </dl>
   </div>
 </div><script>

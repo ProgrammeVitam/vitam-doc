@@ -596,7 +596,8 @@ Il est propre à chaque tenant partageant une même implémentation de la soluti
 
 Ce référentiel comprend :
 -  des champs d’identification : identification système et identification métier, qui peut correspondre à l’identification d’un référentiel externe dont la version de la solution logicielle Vitam est esclave ;
--  des champs textuels de description du service. 
+-  des champs textuels de description minimale du service ;
+-  le cas échéant, l'historique des services producteurs, conformément à la norme ISAAR (CPF). Au terme de la version 8.1, la hiérarchie n'est pas gérée. 
 
 L’identifiant métier permet de faire le lien entre le référentiel, la description des unités archivistiques, le registre des fonds, les contrats d’accès et éventuellement les profils d’archivage.
 
