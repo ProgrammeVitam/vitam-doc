@@ -22,6 +22,12 @@ La phase projet du Programme Vitam s’est achevée début 2020 avec la publicat
 
 Le rythme d’une publication par an est maintenu avec la publication depuis début 2021, et maintenant à chaque printemps, de la V4 de la solution logicielle Vitam, enrichie par un front-office développé par des utilisateurs (CEA, Cines, Xelians et l'équipe-projet VaS] et nommé Vitam UI. Ce rythme est même renforcé avec la publication d'une version intermédiaire, elle aussi dotée d'un dossier d'homologation, à l'automne.
 
+Le programme est également un opérateur de services depuis l'automne 2021 avec la mise à disposition de "Vitam accessible en service" et l'exploitation d'Axone, système d'archivage électronique du ministère de la Justice.
+Il est par ailleurs l'éditeur d'outils de facilitation des traitements archivistiques avec [ReSIP](https://www.programmevitam.fr/pages/ressources/resip/), [Pastis](https://www.programmevitam.fr/pages/ressources/pastis/) et Archifiltre.
+
+![](./medias/Vitam_synthese_202511.png)
+
+
 Licence
 -------
 
