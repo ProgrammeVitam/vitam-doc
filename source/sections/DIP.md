@@ -20,7 +20,7 @@ Introduction
 
 Le présent document constitue une présentation des fonctionnalités associées au Dissemination Information Package dans la solution logicielle Vitam.  
 
-Il décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 8.1 (printemps 2025). Il a vocation à être amendé, complété et enrichi au fur et à mesure des développements de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
+Il décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 9.0 (automne 2025). Il a vocation à être amendé, complété et enrichi au fur et à mesure des développements de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
 
 Présentation du DIP
 ----
