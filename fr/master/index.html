@@ -2237,6 +2237,62 @@
 <li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#structure-de-workflow-de-modification-darborescence">13.4.1.7. Structure de workflow de modification d’arborescence</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="sections/modele_de_workflow.html#workflow-d-upload-d-un-sip-via-collect-collect-ingest">13.4.2. Workflow d’upload d’un sip via collect (Collect_ingest)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#processus-de-controle-du-sip-stp-ingest-control-sip">13.4.2.1. Processus de contrôle du SIP (STP_INGEST_CONTROL_SIP)</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#verification-globale-du-check-seda-checksedaactionhandler-java">13.4.2.1.1. Vérification globale du CHECK_SEDA (CheckSedaActionHandler.java)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#verification-de-len-tete-du-bordereau-de-transfert-check-header-checkheaderactionhandler-java">13.4.2.1.2. Vérification de l’en-tête du bordereau de transfert CHECK_HEADER (CheckHeaderActionHandler.java)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#verification-de-la-presence-et-controle-des-services-agents-check-header-check-agent">13.4.2.1.3. Vérification de la présence et contrôle des services agents CHECK_HEADER.CHECK_AGENT</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#verification-de-la-presence-et-controle-du-contrat-dentree-check-header-check-contract-ingest">13.4.2.1.4. Vérification de la présence et contrôle du contrat d’entrée CHECK_HEADER.CHECK_CONTRACT_INGEST</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#verification-de-la-relation-entre-le-contrat-dentree-et-le-profil-darchivage-check-header-check-ic-ap-relation">13.4.2.1.5. Vérification de la relation entre le contrat d’entrée et le profil d’archivage CHECK_HEADER.CHECK_IC_AP_RELATION</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#verification-de-la-conformite-du-bordereau-de-transfert-par-le-profil-darchivage-check-header-check-archiveprofile">13.4.2.1.6. Vérification de la conformité du bordereau de transfert par le profil d’archivage CHECK_HEADER.CHECK_ARCHIVEPROFILE</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#preparation-des-informations-de-stockage-prepare-storage-info-preparestorageinfoactionhandler-java">13.4.2.1.7. Préparation des informations de stockage PREPARE_STORAGE_INFO (PrepareStorageInfoActionHandler.java)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#verification-des-objets-et-groupes-dobjets-check-dataobjectpackage">13.4.2.1.8. Vérification des objets et groupes d’objets CHECK_DATAOBJECTPACKAGE</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#verification-des-usages-des-groupes-dobjets-check-dataobjectpackage-check-manifest-dataobject-version-checkversionactionhandler-java">13.4.2.1.9. Vérification des usages des groupes d’objets CHECK_DATAOBJECTPACKAGE.CHECK_MANIFEST_DATAOBJECT_VERSION (CheckVersionActionHandler.java)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#verification-du-nombre-dobjets-check-dataobjectpackage-check-manifest-objectnumber-checkobjectsnumberactionhandler-java">13.4.2.1.10. Vérification du nombre d’objets CHECK_DATAOBJECTPACKAGE.CHECK_MANIFEST_OBJECTNUMBER (CheckObjectsNumberActionHandler.java)</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#verification-de-la-coherence-du-bordereau-de-transfert-check-dataobjectpackage-check-manifest-extractsedaactionhandler-java">13.4.2.2. Vérification de la cohérence du bordereau de transfert CHECK_DATAOBJECTPACKAGE.CHECK_MANIFEST (ExtractSedaActionHandler.java)</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#verification-de-la-coherence-entre-objets-groupes-dobjets-et-unites-archivistiques-check-dataobjectpackage-check-consistency-checkobjectunitconsistencyactionhandler-java">13.4.2.2.1. Vérification de la cohérence entre objets, groupes d’objets et unités archivistiques CHECK_DATAOBJECTPACKAGE.CHECK_CONSISTENCY (CheckObjectUnitConsistencyActionHandler.java)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#verification-du-rattachement-a-un-groupe-dobjets-ou-une-unite-archivistique-entres-sans-erreur-check-attachement-checkattachementactionhandler-java">13.4.2.2.2. Vérification du rattachement à un groupe d’objets ou une unité archivistique entrés sans erreur CHECK_ATTACHEMENT (CheckAttachementActionHandler.java)</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#processus-de-controle-et-traitement-des-objets-stp-og-check-and-transforme">13.4.2.3. Processus de contrôle et traitement des objets (STP_OG_CHECK_AND_TRANSFORME)</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#verification-de-lintegrite-des-objets-check-digest-checkconformityactionplugin-java">13.4.2.3.1. Vérification de l’intégrité des objets CHECK_DIGEST (CheckConformityActionPlugin.java)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#verification-antivirus-des-objets-og-objects-antivirus-check-checkantivirusactionplugin-java">13.4.2.3.2. Vérification antivirus des objets OG_OBJECTS_ANTIVIRUS_CHECK (CheckAntivirusActionPlugin.java)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#calcul-de-la-taille-des-fichiers-check-object-siz-checkobjectsizeactionplugin-java">13.4.2.3.3. Calcul de la taille des fichiers CHECK_OBJECT_SIZ(CheckObjectSizeActionPlugin.java)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#identification-des-formats-og-objects-format-check-formatidentificationactionplugin-java">13.4.2.3.4. Identification des formats OG_OBJECTS_FORMAT_CHECK (FormatIdentificationActionPlugin.java)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#verification-globale-des-groupes-dobjets-techniques">13.4.2.3.5. Vérification globale des groupes d’objets techniques</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id7">13.4.2.3.6. Vérification globale du CHECK_SEDA (CheckSedaActionHandler.java)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id8">13.4.2.3.7. Vérification de l’en-tête du bordereau de transfert CHECK_HEADER (CheckHeaderActionHandler.java)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id9">13.4.2.3.8. Vérification de la présence et contrôle des services agents CHECK_HEADER.CHECK_AGENT</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id10">13.4.2.3.9. Vérification de la présence et contrôle du contrat d’entrée CHECK_HEADER.CHECK_CONTRACT_INGEST</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id11">13.4.2.3.10. Vérification de la relation entre le contrat d’entrée et le profil d’archivage CHECK_HEADER.CHECK_IC_AP_RELATION</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id12">13.4.2.3.11. Vérification de la conformité du bordereau de transfert par le profil d’archivage CHECK_HEADER.CHECK_ARCHIVEPROFILE</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id13">13.4.2.3.12. Préparation des informations de stockage PREPARE_STORAGE_INFO (PrepareStorageInfoActionHandler.java)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id14">13.4.2.3.13. Vérification des objets et groupes d’objets CHECK_DATAOBJECTPACKAGE</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id15">13.4.2.3.14. Vérification des usages des groupes d’objets CHECK_DATAOBJECTPACKAGE.CHECK_MANIFEST_DATAOBJECT_VERSION (CheckVersionActionHandler.java)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id16">13.4.2.3.15. Vérification du nombre d’objets CHECK_DATAOBJECTPACKAGE.CHECK_MANIFEST_OBJECTNUMBER (CheckObjectsNumberActionHandler.java)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id17">13.4.2.3.16. Vérification de la cohérence du bordereau de transfert CHECK_DATAOBJECTPACKAGE.CHECK_MANIFEST (ExtractSedaActionHandler.java)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id18">13.4.2.3.17. Vérification de la cohérence entre objets, groupes d’objets et unités archivistiques CHECK_DATAOBJECTPACKAGE.CHECK_CONSISTENCY (CheckObjectUnitConsistencyActionHandler.java)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id19">13.4.2.3.18. Vérification du rattachement à un groupe d’objets ou une unité archivistique entrés sans erreur CHECK_ATTACHEMENT (CheckAttachementActionHandler.java)</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#processus-de-controle-et-traitement-des-unites-archivistiques-stp-unit-check-and-process">13.4.2.4. Processus de contrôle et traitement des unités archivistiques (STP_UNIT_CHECK_AND_PROCESS)</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#verification-globale-de-lunite-archivistique-check-unit-schema-checkarchiveunitschemaactionplugin-java">13.4.2.4.1. Vérification globale de l’unité archivistique CHECK_UNIT_SCHEMA (CheckArchiveUnitSchemaActionPlugin.java)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#verification-du-profil-dunite-archivistique-check-archive-unit-profile-checkarchiveunitprofileactionplugin-java">13.4.2.4.2. Vérification du profil d’unité archivistique CHECK_ARCHIVE_UNIT_PROFILE (CheckArchiveUnitProfileActionPlugin.java)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#verification-du-niveau-de-classification-check-classification-level-checkclassificationlevelactionplugin-java">13.4.2.4.3. Vérification du niveau de classification CHECK_CLASSIFICATION_LEVEL (CheckClassificationLevelActionPlugin.java)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#application-des-regles-de-gestion-et-calcul-des-dates-decheances-units-rules-compute-unitsrulescomputeplugin-java">13.4.2.4.4. Application des règles de gestion et calcul des dates d’échéances UNITS_RULES_COMPUTE (UnitsRulesComputePlugin.java)</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#processus-decriture-et-indexation-des-objets-et-groupes-dobjets-stp-obj-storing">13.4.2.5. Processus d’écriture et indexation des objets et groupes d’objets (STP_OBJ_STORING)</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#deplacement-des-objets-sur-workspace-collect-obj-storage-collect-storeobjectgroupcollectactionplugin-java">13.4.2.5.1. Déplacement des objets sur workspace collect OBJ_STORAGE_COLLECT (StoreObjectGroupCollectActionPlugin.java)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#indexation-des-metadonnees-des-groupes-dobjets-et-objets-og-metadata-indexation-indexobjectgroupactionplugin-java">13.4.2.5.2. Indexation des métadonnées des groupes d’objets et objets OG_METADATA_INDEXATION (IndexObjectGroupActionPlugin.java)</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#processus-dindexation-des-unites-archivistiques-stp-unit-metadata">13.4.2.6. Processus d’indexation des unités archivistiques (STP_UNIT_METADATA)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#structure-de-workflow-d-upload-d-un-sip-via-collect">13.4.2.7. Structure de workflow d’upload d’un sip via collect</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="sections/modele_de_workflow.html#ingest">13.5. Ingest</a><ul>
@@ -2248,34 +2304,34 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="sections/modele_de_workflow.html#processus-de-reception-du-sip-dans-vitam-stp-upload-sip-ingestinternalresource-java">13.5.2. Processus de réception du SIP dans Vitam STP_UPLOAD_SIP (IngestInternalResource.java)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="sections/modele_de_workflow.html#processus-de-controle-du-sip-stp-ingest-control-sip">13.5.3. Processus de contrôle du SIP (STP_INGEST_CONTROL_SIP)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#verification-globale-du-check-seda-checksedaactionhandler-java">13.5.3.1. Vérification globale du CHECK_SEDA (CheckSedaActionHandler.java)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#verification-de-len-tete-du-bordereau-de-transfert-check-header-checkheaderactionhandler-java">13.5.3.2. Vérification de l’en-tête du bordereau de transfert CHECK_HEADER (CheckHeaderActionHandler.java)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#verification-de-la-presence-et-controle-des-services-agents-check-header-check-agent">13.5.3.3. Vérification de la présence et contrôle des services agents CHECK_HEADER.CHECK_AGENT</a></li>
-<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#verification-de-la-presence-et-controle-du-contrat-dentree-check-header-check-contract-ingest">13.5.3.4. Vérification de la présence et contrôle du contrat d’entrée CHECK_HEADER.CHECK_CONTRACT_INGEST</a></li>
-<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#verification-de-la-relation-entre-le-contrat-dentree-et-le-profil-darchivage-check-header-check-ic-ap-relation">13.5.3.5. Vérification de la relation entre le contrat d’entrée et le profil d’archivage CHECK_HEADER.CHECK_IC_AP_RELATION</a></li>
-<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#verification-de-la-conformite-du-bordereau-de-transfert-par-le-profil-darchivage-check-header-check-archiveprofile">13.5.3.6. Vérification de la conformité du bordereau de transfert par le profil d’archivage CHECK_HEADER.CHECK_ARCHIVEPROFILE</a></li>
-<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#preparation-des-informations-de-stockage-prepare-storage-info-preparestorageinfoactionhandler-java">13.5.3.7. Préparation des informations de stockage PREPARE_STORAGE_INFO (PrepareStorageInfoActionHandler.java)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#verification-des-objets-et-groupes-dobjets-check-dataobjectpackage">13.5.3.8. Vérification des objets et groupes d’objets CHECK_DATAOBJECTPACKAGE</a></li>
-<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#verification-des-usages-des-groupes-dobjets-check-dataobjectpackage-check-manifest-dataobject-version-checkversionactionhandler-java">13.5.3.9. Vérification des usages des groupes d’objets CHECK_DATAOBJECTPACKAGE.CHECK_MANIFEST_DATAOBJECT_VERSION (CheckVersionActionHandler.java)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#verification-du-nombre-dobjets-check-dataobjectpackage-check-manifest-objectnumber-checkobjectsnumberactionhandler-java">13.5.3.10. Vérification du nombre d’objets CHECK_DATAOBJECTPACKAGE.CHECK_MANIFEST_OBJECTNUMBER (CheckObjectsNumberActionHandler.java)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#verification-de-la-coherence-du-bordereau-de-transfert-check-dataobjectpackage-check-manifest-extractsedaactionhandler-java">13.5.3.11. Vérification de la cohérence du bordereau de transfert CHECK_DATAOBJECTPACKAGE.CHECK_MANIFEST (ExtractSedaActionHandler.java)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#verification-de-la-coherence-entre-objets-groupes-dobjets-et-unites-archivistiques-check-dataobjectpackage-check-consistency-checkobjectunitconsistencyactionhandler-java">13.5.3.12. Vérification de la cohérence entre objets, groupes d’objets et unités archivistiques CHECK_DATAOBJECTPACKAGE.CHECK_CONSISTENCY (CheckObjectUnitConsistencyActionHandler.java)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#verification-du-rattachement-a-un-groupe-dobjets-ou-une-unite-archivistique-entres-sans-erreur-check-attachement-checkattachementactionhandler-java">13.5.3.13. Vérification du rattachement à un groupe d’objets ou une unité archivistique entrés sans erreur CHECK_ATTACHEMENT (CheckAttachementActionHandler.java)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sections/modele_de_workflow.html#id20">13.5.3. Processus de contrôle du SIP (STP_INGEST_CONTROL_SIP)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id21">13.5.3.1. Vérification globale du CHECK_SEDA (CheckSedaActionHandler.java)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id22">13.5.3.2. Vérification de l’en-tête du bordereau de transfert CHECK_HEADER (CheckHeaderActionHandler.java)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id23">13.5.3.3. Vérification de la présence et contrôle des services agents CHECK_HEADER.CHECK_AGENT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id24">13.5.3.4. Vérification de la présence et contrôle du contrat d’entrée CHECK_HEADER.CHECK_CONTRACT_INGEST</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id25">13.5.3.5. Vérification de la relation entre le contrat d’entrée et le profil d’archivage CHECK_HEADER.CHECK_IC_AP_RELATION</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id26">13.5.3.6. Vérification de la conformité du bordereau de transfert par le profil d’archivage CHECK_HEADER.CHECK_ARCHIVEPROFILE</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id27">13.5.3.7. Préparation des informations de stockage PREPARE_STORAGE_INFO (PrepareStorageInfoActionHandler.java)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id28">13.5.3.8. Vérification des objets et groupes d’objets CHECK_DATAOBJECTPACKAGE</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id29">13.5.3.9. Vérification des usages des groupes d’objets CHECK_DATAOBJECTPACKAGE.CHECK_MANIFEST_DATAOBJECT_VERSION (CheckVersionActionHandler.java)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id30">13.5.3.10. Vérification du nombre d’objets CHECK_DATAOBJECTPACKAGE.CHECK_MANIFEST_OBJECTNUMBER (CheckObjectsNumberActionHandler.java)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id31">13.5.3.11. Vérification de la cohérence du bordereau de transfert CHECK_DATAOBJECTPACKAGE.CHECK_MANIFEST (ExtractSedaActionHandler.java)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id32">13.5.3.12. Vérification de la cohérence entre objets, groupes d’objets et unités archivistiques CHECK_DATAOBJECTPACKAGE.CHECK_CONSISTENCY (CheckObjectUnitConsistencyActionHandler.java)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id33">13.5.3.13. Vérification du rattachement à un groupe d’objets ou une unité archivistique entrés sans erreur CHECK_ATTACHEMENT (CheckAttachementActionHandler.java)</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="sections/modele_de_workflow.html#processus-de-controle-et-traitement-des-objets-stp-og-check-and-transforme">13.5.4. Processus de contrôle et traitement des objets (STP_OG_CHECK_AND_TRANSFORME)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#verification-de-lintegrite-des-objets-check-digest-checkconformityactionplugin-java">13.5.4.1. Vérification de l’intégrité des objets CHECK_DIGEST (CheckConformityActionPlugin.java)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#calcul-de-la-taille-des-fichiers-check-object-siz-checkobjectsizeactionplugin-java">13.5.4.2. Calcul de la taille des fichiers CHECK_OBJECT_SIZ(CheckObjectSizeActionPlugin.java)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#identification-des-formats-og-objects-format-check-formatidentificationactionplugin-java">13.5.4.3. Identification des formats OG_OBJECTS_FORMAT_CHECK (FormatIdentificationActionPlugin.java)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#verification-globale-des-groupes-dobjets-techniques">13.5.4.4. Vérification globale des groupes d’objets techniques</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sections/modele_de_workflow.html#id34">13.5.4. Processus de contrôle et traitement des objets (STP_OG_CHECK_AND_TRANSFORME)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id35">13.5.4.1. Vérification de l’intégrité des objets CHECK_DIGEST (CheckConformityActionPlugin.java)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id36">13.5.4.2. Calcul de la taille des fichiers CHECK_OBJECT_SIZ(CheckObjectSizeActionPlugin.java)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id37">13.5.4.3. Identification des formats OG_OBJECTS_FORMAT_CHECK (FormatIdentificationActionPlugin.java)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id38">13.5.4.4. Vérification globale des groupes d’objets techniques</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="sections/modele_de_workflow.html#processus-de-controle-et-traitement-des-unites-archivistiques-stp-unit-check-and-process">13.5.5. Processus de contrôle et traitement des unités archivistiques (STP_UNIT_CHECK_AND_PROCESS)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#verification-globale-de-lunite-archivistique-check-unit-schema-checkarchiveunitschemaactionplugin-java">13.5.5.1. Vérification globale de l’unité archivistique CHECK_UNIT_SCHEMA (CheckArchiveUnitSchemaActionPlugin.java)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#verification-du-profil-dunite-archivistique-check-archive-unit-profile-checkarchiveunitprofileactionplugin-java">13.5.5.2. Vérification du profil d’unité archivistique CHECK_ARCHIVE_UNIT_PROFILE (CheckArchiveUnitProfileActionPlugin.java)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#verification-du-niveau-de-classification-check-classification-level-checkclassificationlevelactionplugin-java">13.5.5.3. Vérification du niveau de classification CHECK_CLASSIFICATION_LEVEL (CheckClassificationLevelActionPlugin.java)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#application-des-regles-de-gestion-et-calcul-des-dates-decheances-units-rules-compute-unitsrulescomputeplugin-java">13.5.5.4. Application des règles de gestion et calcul des dates d’échéances UNITS_RULES_COMPUTE (UnitsRulesComputePlugin.java)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sections/modele_de_workflow.html#id39">13.5.5. Processus de contrôle et traitement des unités archivistiques (STP_UNIT_CHECK_AND_PROCESS)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id40">13.5.5.1. Vérification globale de l’unité archivistique CHECK_UNIT_SCHEMA (CheckArchiveUnitSchemaActionPlugin.java)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id41">13.5.5.2. Vérification du profil d’unité archivistique CHECK_ARCHIVE_UNIT_PROFILE (CheckArchiveUnitProfileActionPlugin.java)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id42">13.5.5.3. Vérification du niveau de classification CHECK_CLASSIFICATION_LEVEL (CheckClassificationLevelActionPlugin.java)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id43">13.5.5.4. Application des règles de gestion et calcul des dates d’échéances UNITS_RULES_COMPUTE (UnitsRulesComputePlugin.java)</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="sections/modele_de_workflow.html#processus-de-verification-prealable-a-la-prise-en-charge-stp-storage-availability-check">13.5.6. Processus de vérification préalable à la prise en charge (STP_STORAGE_AVAILABILITY_CHECK)</a><ul>
@@ -2283,12 +2339,12 @@
 <li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#verification-de-la-disponibilite-de-loffre-de-stockage-storage-availability-check-storage-availability-check-checkstorageavailabilityactionhandler-java">13.5.6.2. Vérification de la disponibilité de l’offre de stockage STORAGE_AVAILABILITY_CHECK.STORAGE_AVAILABILITY_CHECK (CheckStorageAvailabilityActionHandler.java)</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="sections/modele_de_workflow.html#processus-decriture-et-indexation-des-objets-et-groupes-dobjets-stp-obj-storing">13.5.7. Processus d’écriture et indexation des objets et groupes d’objets (STP_OBJ_STORING)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="sections/modele_de_workflow.html#id44">13.5.7. Processus d’écriture et indexation des objets et groupes d’objets (STP_OBJ_STORING)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#ecriture-des-objets-sur-loffre-de-stockage-obj-storage-storeobjectactionhandler-java">13.5.7.1. Écriture des objets sur l’offre de stockage OBJ_STORAGE (StoreObjectActionHandler.java)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#indexation-des-metadonnees-des-groupes-dobjets-et-objets-og-metadata-indexation-indexobjectgroupactionplugin-java">13.5.7.2. Indexation des métadonnées des groupes d’objets et objets OG_METADATA_INDEXATION (IndexObjectGroupActionPlugin.java)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id45">13.5.7.2. Indexation des métadonnées des groupes d’objets et objets OG_METADATA_INDEXATION (IndexObjectGroupActionPlugin.java)</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="sections/modele_de_workflow.html#processus-dindexation-des-unites-archivistiques-stp-unit-metadata">13.5.8. Processus d’indexation des unités archivistiques (STP_UNIT_METADATA)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sections/modele_de_workflow.html#id46">13.5.8. Processus d’indexation des unités archivistiques (STP_UNIT_METADATA)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="sections/modele_de_workflow.html#processus-denregistrement-et-ecriture-des-metadonnees-des-objets-et-groupes-dobjets-stp-og-storing">13.5.9. Processus d’enregistrement et écriture des métadonnées des objets et groupes d’objets (STP_OG_STORING)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#enregistrement-des-journaux-du-cycle-de-vie-des-groupes-dobjets-commit-life-cycle-object-group-commitlifecycleobjectgroupactionhandler-java">13.5.9.1. Enregistrement des journaux du cycle de vie des groupes d’objets COMMIT_LIFE_CYCLE_OBJECT_GROUP (CommitLifeCycleObjectGroupActionHandler.java)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#ecriture-des-metadonnees-du-groupe-dobjets-et-objets-sur-loffre-de-stockage-og-metadata-storage-storemetadataobjectgroupactionplugin">13.5.9.2. Écriture des métadonnées du groupe d’objets et objets sur l’offre de stockage OG_METADATA_STORAGE (StoreMetaDataObjectGroupActionPlugin)</a></li>
@@ -2326,17 +2382,17 @@
 <li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#verification-de-lassociation-a-un-profil-dunite-archivistique-unit-metadata-update-check-dt">13.6.1.2.2. Vérification de l’association à un profil d’unité archivistique UNIT_METADATA_UPDATE_CHECK_DT</a></li>
 <li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#indexation-des-metadonnees-unit-metadata-update-archiveunitupdateutils-java">13.6.1.2.3. Indexation des métadonnées UNIT_METADATA_UPDATE (ArchiveUnitUpdateUtils.java)</a></li>
 <li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#enregistrement-du-journal-du-cycle-de-vie-des-unites-archivistiques-commit-life-cycle-unit">13.6.1.2.4. Enregistrement du journal du cycle de vie des unités archivistiques COMMIT_LIFE_CYCLE_UNIT</a></li>
-<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id7">13.6.1.2.5. Écriture des métadonnées de l’unité archivistique sur l’offre de stockage UNIT_METADATA_STORAGE (AccessInternalModuleImpl.java)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id47">13.6.1.2.5. Écriture des métadonnées de l’unité archivistique sur l’offre de stockage UNIT_METADATA_STORAGE (AccessInternalModuleImpl.java)</a></li>
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#structure-de-workflow-de-mise-a-jour-des-metadonnees-descriptives">13.6.1.3. Structure de workflow de mise à jour des métadonnées descriptives</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#mise-a-jour-unitaire-des-regles-de-gestion-dune-unite-archivistique-stp-update-unit-accessinternalmoduleimpl-java">13.6.1.4. Mise à jour unitaire des règles de gestion d’une unité archivistique STP_UPDATE_UNIT (AccessInternalModuleImpl.java)</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#verification-des-droits-de-mise-a-jour-des-metadonnees-descriptives-et-de-gestion-des-unites-archivistiques-unit-metadata-update-check-permission">13.6.1.4.1. Vérification des droits de mise à jour des métadonnées descriptives et de gestion des unités archivistiques UNIT_METADATA_UPDATE_CHECK_PERMISSION</a></li>
 <li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#verification-des-regles-de-gestion-unit-metadata-update-check-rules-accessinternalmoduleimpl-java">13.6.1.4.2. Vérification des règles de gestion UNIT_METADATA_UPDATE_CHECK_RULES (AccessInternalModuleImpl.java)</a></li>
-<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id8">13.6.1.4.3. Vérification de l’association à un profil d’unité archivistique UNIT_METADATA_UPDATE_CHECK_DT</a></li>
-<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id9">13.6.1.4.4. Indexation des métadonnées UNIT_METADATA_UPDATE (ArchiveUnitUpdateUtils.java)</a></li>
-<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id10">13.6.1.4.5. Enregistrement du journal du cycle de vie des unités archivistiques COMMIT_LIFE_CYCLE_UNIT</a></li>
-<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id11">13.6.1.4.6. Écriture des métadonnées de l’unité archivistique sur l’offre de stockage UNIT_METADATA_STORAGE (AccessInternalModuleImpl.java)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id48">13.6.1.4.3. Vérification de l’association à un profil d’unité archivistique UNIT_METADATA_UPDATE_CHECK_DT</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id49">13.6.1.4.4. Indexation des métadonnées UNIT_METADATA_UPDATE (ArchiveUnitUpdateUtils.java)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id50">13.6.1.4.5. Enregistrement du journal du cycle de vie des unités archivistiques COMMIT_LIFE_CYCLE_UNIT</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id51">13.6.1.4.6. Écriture des métadonnées de l’unité archivistique sur l’offre de stockage UNIT_METADATA_STORAGE (AccessInternalModuleImpl.java)</a></li>
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#structure-de-workflow-de-mise-a-jour-des-metadonnees-de-gestion-des-unites-archivistiques">13.6.1.5. Structure de workflow de mise à jour des métadonnées de gestion des unités archivistiques</a></li>
@@ -2356,7 +2412,7 @@
 </li>
 <li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#mise-a-jour-des-unites-archivistiques-stp-unit-update-distribution-sur-list-guid-unitswithoutlevel">13.6.2.4. Mise à jour des unités archivistiques STP_UNIT_UPDATE (Distribution sur LIST GUID/UnitsWithoutLevel)</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#mise-a-jour-des-regles-de-gestion-dune-unite-archivistique-update-unit-rules">13.6.2.4.1. Mise à jour des règles de gestion d’une unité archivistique - UPDATE_UNIT_RULES</a></li>
-<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id12">13.6.2.4.2. Écriture des métadonnées de l’unité archivistique sur l’offre de stockage UNIT_METADATA_STORAGE (AccessInternalModuleImpl.java)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id52">13.6.2.4.2. Écriture des métadonnées de l’unité archivistique sur l’offre de stockage UNIT_METADATA_STORAGE (AccessInternalModuleImpl.java)</a></li>
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#mise-a-jour-des-processus-dentree-en-cours-stp-update-running-ingests-updatedrules-json">13.6.2.5. Mise à jour des processus d’entrée en cours – STP_UPDATE_RUNNING_INGESTS (updatedRules.json)</a><ul>
@@ -2389,16 +2445,16 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="sections/modele_de_workflow.html#workflow-de-mise-a-jour-de-masse-des-metadonnees-de-gestion-des-unites-archivistiques">13.7.2. Workflow de mise à jour de masse des métadonnées de gestion des unités archivistiques</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#processus-de-mise-a-jour-en-masse-des-metadonnees-de-gestion-des-unites-archivistiques-mass-update-unit-rule">13.7.2.1. Processus de mise à jour en masse des métadonnées de gestion des unités archivistiques (MASS_UPDATE_UNIT_RULE)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id13">13.7.2.2. Processus de préparation de la liste des unités archivistiques à mettre à jour et des autorisations de modification STP_CHECK_AND_COMPUTE</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id53">13.7.2.2. Processus de préparation de la liste des unités archivistiques à mettre à jour et des autorisations de modification STP_CHECK_AND_COMPUTE</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#verification-des-droits-de-mise-a-jour-des-metadonnees-descriptives-des-unites-archivistiques-mass-update-rules-check">13.7.2.2.1. Vérification des droits de mise à jour des métadonnées descriptives des unités archivistiques MASS_UPDATE_RULES_CHECK</a></li>
 <li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#verification-de-coherence-des-actions-lors-de-la-mise-a-jour-des-metadonnees-descriptives-et-de-gestion-des-unites-archivistiques-unit-metadata-check-consistency">13.7.2.2.2. Vérification de cohérence des actions lors de la mise à jour des métadonnées descriptives et de gestion des unités archivistiques UNIT_METADATA_CHECK_CONSISTENCY</a></li>
-<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id14">13.7.2.2.3. Vérification des seuils de limitation de traitement des unités archivistiques CHECK_DISTRIBUTION_THRESHOLD</a></li>
-<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id15">13.7.2.2.4. Préparation de la liste des unités archivistiques à mettre à jour PREPARE_UPDATE_UNIT_LIST</a></li>
-<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id16">13.7.2.2.5. Établissement de la liste des unités archivistiques à mettre à jour – COMPUTE_INHERITED_RULES_PROGENY_IDENTIFIER</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id54">13.7.2.2.3. Vérification des seuils de limitation de traitement des unités archivistiques CHECK_DISTRIBUTION_THRESHOLD</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id55">13.7.2.2.4. Préparation de la liste des unités archivistiques à mettre à jour PREPARE_UPDATE_UNIT_LIST</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id56">13.7.2.2.5. Établissement de la liste des unités archivistiques à mettre à jour – COMPUTE_INHERITED_RULES_PROGENY_IDENTIFIER</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id17">13.7.2.3. Invalidation des unités archivistiques dont les règles de gestion sont à invalider STP_INVALIDATE (Distribution sur LIST GUID/unitsToInvalidate.jsonl)</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id18">13.7.2.3.1. Invalidation des  règles de gestion applicables dans les unités archivistiques à invalider COMPUTE_INHERITED_RULES_INVALIDATOR</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id57">13.7.2.3. Invalidation des unités archivistiques dont les règles de gestion sont à invalider STP_INVALIDATE (Distribution sur LIST GUID/unitsToInvalidate.jsonl)</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id58">13.7.2.3.1. Invalidation des  règles de gestion applicables dans les unités archivistiques à invalider COMPUTE_INHERITED_RULES_INVALIDATOR</a></li>
 <li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#preparation-de-la-liste-des-unites-archivistiques-a-mettre-a-jour-mass-update-unit-rules">13.7.2.3.2. Préparation de la liste des unités archivistiques à mettre à jour MASS_UPDATE_UNIT_RULES</a></li>
 </ul>
 </li>
@@ -2408,15 +2464,15 @@
 </li>
 <li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#structure-de-workflow-de-mise-a-jour-en-masse-des-metadonnees-de-gestion-des-unites-archivistiques">13.7.2.5. Structure de workflow de mise à jour en masse des métadonnées de gestion des unités archivistiques</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#rapport-de-modification-en-masse-des-metadonnees-de-gestion-des-unites-archivistiques">13.7.2.6. Rapport de modification en masse des métadonnées de gestion des unités archivistiques</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id19">13.7.2.6.1. Exemple de JSONL : rapport de modification en masse des métadonnées descriptives des unités archivistiques</a></li>
-<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id20">13.7.2.6.2. Détails du rapport</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id59">13.7.2.6.1. Exemple de JSONL : rapport de modification en masse des métadonnées descriptives des unités archivistiques</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id60">13.7.2.6.2. Détails du rapport</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="sections/modele_de_workflow.html#workflow-de-calcul-des-regles-de-gestion-herites-des-unites-archivistiques-pour-faciliter-les-requetes">13.7.3. Workflow de calcul des règles de gestion hérités des unités archivistiques pour faciliter les requêtes</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#processus-de-preparation-des-regles-de-gestion-applicables-dunites-archivistiques-a-mettre-a-jour-stp-compute-inherited-rules-preparation">13.7.3.1. Processus de préparation des règles de gestion applicables d’unités archivistiques à mettre à jour STP_COMPUTE_INHERITED_RULES_PREPARATION</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id21">13.7.3.1.1. Vérification des seuils de limitation de traitement des unités archivistiques CHECK_DISTRIBUTION_THRESHOLD</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id61">13.7.3.1.1. Vérification des seuils de limitation de traitement des unités archivistiques CHECK_DISTRIBUTION_THRESHOLD</a></li>
 <li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#preparation-du-calcul-des-regles-de-gestion-applicables-des-unites-archivistiques-compute-inherited-rules-preparation">13.7.3.1.2. Préparation du calcul des règles de gestion applicables des unités archivistiques COMPUTE_INHERITED_RULES_PREPARATION</a></li>
 </ul>
 </li>
@@ -2432,9 +2488,9 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="sections/modele_de_workflow.html#workflow-de-suppression-des-regles-de-gestion-herites-et-calcules-des-unites-archivistiques">13.7.4. Workflow de suppression des règles de gestion hérités et calculés des unités archivistiques</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id22">13.7.4.1. Processus de préparation des règles de gestion applicables d’unités archivistiques à mettre à jour STP_COMPUTE_INHERITED_RULES_PREPARATION</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id23">13.7.4.1.1. Vérification des seuils de limitation de traitement des unités archivistiques CHECK_DISTRIBUTION_THRESHOLD</a></li>
-<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id24">13.7.4.1.2. Préparation du calcul des règles de gestion applicables des unités archivistiques COMPUTE_INHERITED_RULES_PREPARATION</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id62">13.7.4.1. Processus de préparation des règles de gestion applicables d’unités archivistiques à mettre à jour STP_COMPUTE_INHERITED_RULES_PREPARATION</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id63">13.7.4.1.1. Vérification des seuils de limitation de traitement des unités archivistiques CHECK_DISTRIBUTION_THRESHOLD</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id64">13.7.4.1.2. Préparation du calcul des règles de gestion applicables des unités archivistiques COMPUTE_INHERITED_RULES_PREPARATION</a></li>
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#processus-de-suppression-des-regles-de-gestion-applicables-stp-compute-inherited-rules-delete">13.7.4.2. Processus de suppression  des règles de gestion applicables. STP_COMPUTE_INHERITED_RULES_DELETE</a><ul>
@@ -2449,7 +2505,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="sections/modele_de_workflow.html#mise-a-jour-unitaire-de-masse-bulk-update">13.8. Mise à jour unitaire de masse (Bulk update)</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="sections/modele_de_workflow.html#processus-de-mise-a-jour-unitaire-en-masse-des-metadonnees-descriptives-des-unites-archivistiques-bulk-atomic-update-unit-desc">13.8.1. Processus de mise à jour unitaire en masse des métadonnées descriptives des unités archivistiques (BULK_ATOMIC_UPDATE_UNIT_DESC)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="sections/modele_de_workflow.html#id25">13.8.2. Processus de préparation de la liste des unités archivistiques à mettre à jour et des autorisations de modification STP_CHECK_AND_COMPUTE</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="sections/modele_de_workflow.html#id65">13.8.2. Processus de préparation de la liste des unités archivistiques à mettre à jour et des autorisations de modification STP_CHECK_AND_COMPUTE</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#verification-des-seuils-de-limitation-des-requetes-de-traitement-des-unites-archivistiques-check-queries-treshold">13.8.2.1. Vérification des seuils de limitation des requêtes de traitement des unités archivistiques CHECK_QUERIES_TRESHOLD</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#preparation-de-la-liste-des-unites-archivistiques-a-mettre-a-jour-unitairement-prepare-bulk-atomic-update-unit-list">13.8.2.2. Préparation de la liste des unités archivistiques à mettre à jour unitairement PREPARE_BULK_ATOMIC_UPDATE_UNIT_LIST</a></li>
 </ul>
@@ -2466,7 +2522,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="sections/modele_de_workflow.html#export-dun-dip">13.9. Export d’un DIP</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="sections/modele_de_workflow.html#processus-de-creation-du-bordereau-de-mise-a-disposition-stp-create-manifest">13.9.1. Processus de création du bordereau de mise à disposition (STP_CREATE_MANIFEST)</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id26">13.9.1.1. Vérification des seuils de limitation de traitement des unités archivistiques CHECK_DISTRIBUTION_THRESHOLD</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id66">13.9.1.1. Vérification des seuils de limitation de traitement des unités archivistiques CHECK_DISTRIBUTION_THRESHOLD</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#creation-du-bordereau-create-manifest-createmanifest-java">13.9.1.2. Création du bordereau CREATE_MANIFEST (CreateManifest.java)</a></li>
 </ul>
 </li>
@@ -2488,7 +2544,7 @@
 </li>
 <li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#processus-dindexation-de-lelimination-des-unites-archivistiques-stp-elimination-analysis-unit-indexation">13.10.1.2. Processus d’indexation de l’élimination des unités archivistiques (STP_ELIMINATION_ANALYSIS_UNIT_INDEXATION)</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#indexation-de-lanalyse-delimination-des-unites-archivistiques-elimination-analysis-unit-indexation">13.10.1.2.1. Indexation de l’analyse d’élimination des unités archivistiques ELIMINATION_ANALYSIS_UNIT_INDEXATION</a></li>
-<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id27">13.10.1.2.2. Établissement de la liste des objets OBJECTS_LIST_EMPTY</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id67">13.10.1.2.2. Établissement de la liste des objets OBJECTS_LIST_EMPTY</a></li>
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#processus-de-finalisation-de-lanalyse-de-lelimination-des-unites-archivistiques-stp-elimination-analysis-finalization">13.10.1.3. Processus de finalisation de l’analyse de l’élimination des unités archivistiques (STP_ELIMINATION_ANALYSIS_FINALIZATION)</a><ul>
@@ -2500,14 +2556,14 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="sections/modele_de_workflow.html#workflow-delimination-definitive-des-unites-archivistiques">13.10.2. Workflow d’élimination définitive des unités archivistiques</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#processus-de-preparation-de-lelimination-definitive-des-unites-archivistiques-stp-elimination-action-preparation">13.10.2.1. Processus de préparation de l’élimination définitive des unités archivistiques (STP_ELIMINATION_ACTION_PREPARATION)</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id28">13.10.2.1.1. Vérification des processus concurrents (CHECK_CONCURRENT_WORKFLOW_LOCK)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id68">13.10.2.1.1. Vérification des processus concurrents (CHECK_CONCURRENT_WORKFLOW_LOCK)</a></li>
 <li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#verification-des-seuils-de-lelimination-definitive-des-unites-archivistiques-elimination-action-check-distribution-threshold">13.10.2.1.2. Vérification des seuils de l’élimination définitive des unités archivistiques ELIMINATION_ACTION_CHECK_DISTRIBUTION_THRESHOLD</a></li>
 <li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#preparation-de-lelimination-definitive-des-unites-archivistiques-elimination-action-unit-preparation">13.10.2.1.3. Préparation de l’élimination définitive des unités archivistiques ELIMINATION_ACTION_UNIT_PREPARATION</a></li>
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#processus-delimination-definitive-des-unites-archivistiques-eliminables-stp-elimination-action-delete-unit">13.10.2.2. Processus d’élimination définitive des unités archivistiques éliminables (STP_ELIMINATION_ACTION_DELETE_UNIT)</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#elimination-definitive-des-unites-archivistiques-eliminables-elimination-action-delete-unit">13.10.2.2.1. Élimination définitive des unités archivistiques éliminables ELIMINATION_ACTION_DELETE_UNIT</a></li>
-<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id29">13.10.2.2.2. Établissement de la liste des objets OBJECTS_LIST_EMPTY</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id69">13.10.2.2.2. Établissement de la liste des objets OBJECTS_LIST_EMPTY</a></li>
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#processus-de-preparation-de-lelimination-definitive-des-groupes-dobjets-techniques-dont-toutes-les-unites-archivistiques-parentes-ont-ete-eliminees-stp-elimination-action-object-group-preparation">13.10.2.3. Processus de préparation de l’élimination définitive des groupes d’objets techniques dont toutes les unités archivistiques parentes ont été éliminées (STP_ELIMINATION_ACTION_OBJECT_GROUP_PREPARATION)</a><ul>
@@ -2516,14 +2572,14 @@
 </li>
 <li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#processus-delimination-definitive-des-groupes-dobjets-techniques-dont-toutes-les-unites-archivistiques-parentes-sont-eliminees-stp-elimination-action-delete-object-group">13.10.2.4. Processus d’élimination définitive des groupes d’objets techniques dont toutes les unités archivistiques parentes sont éliminées (STP_ELIMINATION_ACTION_DELETE_OBJECT_GROUP)</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#elimination-definitive-des-groupes-dobjets-techniques-dont-toutes-les-unites-archivistiques-parentes-ont-ete-eliminees-elimination-action-delete-object-group">13.10.2.4.1. Élimination définitive des groupes d’objets techniques dont toutes les unités archivistiques parentes ont été éliminées ELIMINATION_ACTION_DELETE_OBJECT_GROUP</a></li>
-<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id30">13.10.2.4.2. Établissement de la liste des objets OBJECTS_LIST_EMPTY</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id70">13.10.2.4.2. Établissement de la liste des objets OBJECTS_LIST_EMPTY</a></li>
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#processus-de-detachement-des-groupes-dobjets-techniques-dont-certaines-unites-archivistiques-parentes-sont-eliminees-stp-elimination-action-detach-object-group">13.10.2.5. Processus de détachement des groupes d’objets techniques dont certaines unités archivistiques parentes sont éliminées (STP_ELIMINATION_ACTION_DETACH_OBJECT_GROUP)</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#detachement-des-groupes-dobjets-techniques-dont-certaines-unites-archivistiques-parentes-ont-ete-eliminees-elimination-action-detach-object-group">13.10.2.5.1. Détachement des groupes d’objets techniques dont certaines unités archivistiques parentes ont été éliminées ELIMINATION_ACTION_DETACH_OBJECT_GROUP</a></li>
 <li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#ecriture-des-metadonnees-des-groupes-dobjets-techniques-sur-les-offres-de-stockage-og-metadata-storage">13.10.2.5.2. Écriture des métadonnées des groupes d’objets techniques sur les offres de stockage (OG_METADATA_STORAGE)</a></li>
 <li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#recalcul-des-graphes-des-groupes-dobjets-techniques-object-group-graph-compute">13.10.2.5.3. Recalcul des graphes des groupes d’objets techniques (OBJECT_GROUP_GRAPH_COMPUTE)</a></li>
-<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id31">13.10.2.5.4. Établissement de la liste des objets OBJECTS_LIST_EMPTY</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id71">13.10.2.5.4. Établissement de la liste des objets OBJECTS_LIST_EMPTY</a></li>
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#processus-de-mise-a-jour-du-registre-des-fonds-suite-a-lelimination-definitive-des-unites-archivistiques-stp-elimination-action-accession-register-preparation">13.10.2.6. Processus de mise à jour du registre des fonds suite à l’élimination définitive des unités archivistiques (STP_ELIMINATION_ACTION_ACCESSION_REGISTER_PREPARATION)</a><ul>
@@ -2532,7 +2588,7 @@
 </li>
 <li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#processus-de-mise-a-jour-du-registre-des-fonds-suite-a-lelimination-definitive-des-unites-archivistiques-stp-elimination-action-accession-register-update">13.10.2.7. Processus de mise à jour du registre des fonds suite à l’élimination définitive des unités archivistiques (STP_ELIMINATION_ACTION_ACCESSION_REGISTER_UPDATE)</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#mise-a-jour-du-registre-des-fonds-suite-a-lelimination-definitive-des-unites-archivistiques-elimination-action-accession-register-update">13.10.2.7.1. Mise à jour du registre des fonds suite à l’élimination définitive des unités archivistiques ELIMINATION_ACTION_ACCESSION_REGISTER_UPDATE</a></li>
-<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id32">13.10.2.7.2. Établissement de la liste des objets OBJECTS_LIST_EMPTY</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id72">13.10.2.7.2. Établissement de la liste des objets OBJECTS_LIST_EMPTY</a></li>
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#processus-de-generation-du-rapport-delimination-definitive-des-unites-archivistiques-stp-elimination-action-report-generation">13.10.2.8. Processus de génération du rapport d’élimination définitive des unités archivistiques (STP_ELIMINATION_ACTION_REPORT_GENERATION)</a><ul>
@@ -2546,7 +2602,7 @@
 <li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#structure-du-workflow-danalyse-des-eliminables-et-action-delimination">13.10.2.10. Structure du workflow d’analyse des éliminables et action d’élimination</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#rapport-delimination">13.10.2.11. Rapport d’élimination</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#exemple-de-json-rapport-delimination">13.10.2.11.1. Exemple de JSON : rapport d’élimination</a></li>
-<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id33">13.10.2.11.2. Détails du rapport</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id73">13.10.2.11.2. Détails du rapport</a></li>
 </ul>
 </li>
 </ul>
@@ -2554,48 +2610,48 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="sections/modele_de_workflow.html#modification-darborescence-reclassification">13.11. Modification d’arborescence (Reclassification)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="sections/modele_de_workflow.html#id34">13.11.1. Étape de préparation de la modification d’arborescence des unités archivistiques STP_RECLASSIFICATION_PREPARATION</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id35">13.11.1.1. Vérification des processus concurrents CHECK_CONCURRENT_WORKFLOW_LOCK</a></li>
-<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id36">13.11.1.2. Chargement des unités archivistiques : RECLASSIFICATION_PREPARATION_LOAD_REQUEST</a></li>
-<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id37">13.11.1.3. Vérification de la cohérence du graphe : RECLASSIFICATION_PREPARATION_CHECK_GRAPH</a></li>
-<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id38">13.11.1.4. Préparation de la mise à jour du graphe : RECLASSIFICATION_PREPARATION_UPDATE_DISTRIBUTION</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sections/modele_de_workflow.html#id74">13.11.1. Étape de préparation de la modification d’arborescence des unités archivistiques STP_RECLASSIFICATION_PREPARATION</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id75">13.11.1.1. Vérification des processus concurrents CHECK_CONCURRENT_WORKFLOW_LOCK</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id76">13.11.1.2. Chargement des unités archivistiques : RECLASSIFICATION_PREPARATION_LOAD_REQUEST</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id77">13.11.1.3. Vérification de la cohérence du graphe : RECLASSIFICATION_PREPARATION_CHECK_GRAPH</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id78">13.11.1.4. Préparation de la mise à jour du graphe : RECLASSIFICATION_PREPARATION_UPDATE_DISTRIBUTION</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="sections/modele_de_workflow.html#id39">13.11.2. Étape de détachement des unités archivistiques (STP_UNIT_DETACHMENT)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="sections/modele_de_workflow.html#id79">13.11.2. Étape de détachement des unités archivistiques (STP_UNIT_DETACHMENT)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#detachement-des-unites-archivistiques-unit-detachment">13.11.2.1. Détachement des unités archivistiques UNIT_DETACHMENT</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#enregistrement-des-metadonnees-des-unites-archivistiques-sur-loffre-de-stockage-unit-metadata-storage">13.11.2.2. Enregistrement des métadonnées des unités archivistiques sur l’offre de stockage UNIT_METADATA_STORAGE</a></li>
-<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id40">13.11.2.3. Établissement de la liste des objets OBJECTS_LIST_EMPTY</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id80">13.11.2.3. Établissement de la liste des objets OBJECTS_LIST_EMPTY</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="sections/modele_de_workflow.html#id41">13.11.3. Processus de rattachement des unités archivistiques STP_UNIT_ATTACHMENT</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id42">13.11.3.1. Processus de rattachement des unités archivistiques : UNIT_ATTACHMENT</a></li>
-<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id43">13.11.3.2. Enregistrement des métadonnées des unités archivistiques sur l’offre de stockage UNIT_METADATA_STORAGE</a></li>
-<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id44">13.11.3.3. Établissement de la liste des objets OBJECTS_LIST_EMPTY</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sections/modele_de_workflow.html#id81">13.11.3. Processus de rattachement des unités archivistiques STP_UNIT_ATTACHMENT</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id82">13.11.3.1. Processus de rattachement des unités archivistiques : UNIT_ATTACHMENT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id83">13.11.3.2. Enregistrement des métadonnées des unités archivistiques sur l’offre de stockage UNIT_METADATA_STORAGE</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id84">13.11.3.3. Établissement de la liste des objets OBJECTS_LIST_EMPTY</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="sections/modele_de_workflow.html#id45">13.11.4. Mise à jour des graphes des unités archivistiques STP_UNIT_GRAPH_COMPUTE</a></li>
-<li class="toctree-l3"><a class="reference internal" href="sections/modele_de_workflow.html#id46">13.11.5. Mise à jour des graphes des groupes d’objets STP_OBJECT_GROUP_GRAPH_COMPUTE</a></li>
-<li class="toctree-l3"><a class="reference internal" href="sections/modele_de_workflow.html#id47">13.11.6. Finalisation de la modification d’arborescence des unités archivistiques (STP_RECLASSIFICATION_FINALIZATION)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="sections/modele_de_workflow.html#id48">13.11.7. Structure de workflow de modification d’arborescence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sections/modele_de_workflow.html#id85">13.11.4. Mise à jour des graphes des unités archivistiques STP_UNIT_GRAPH_COMPUTE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sections/modele_de_workflow.html#id86">13.11.5. Mise à jour des graphes des groupes d’objets STP_OBJECT_GROUP_GRAPH_COMPUTE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sections/modele_de_workflow.html#id87">13.11.6. Finalisation de la modification d’arborescence des unités archivistiques (STP_RECLASSIFICATION_FINALIZATION)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sections/modele_de_workflow.html#id88">13.11.7. Structure de workflow de modification d’arborescence</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="sections/modele_de_workflow.html#transfert">13.12. Transfert</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="sections/modele_de_workflow.html#workflow-de-preparation-du-transfert-des-unites-archivistiques-et-des-groupes-dobjets">13.12.1. Workflow de préparation du transfert des unités archivistiques et des groupes d’objets</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id49">13.12.1.1. Processus de création du bordereau de mise à disposition (STP_CREATE_MANIFEST)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id89">13.12.1.1. Processus de création du bordereau de mise à disposition (STP_CREATE_MANIFEST)</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#verification-du-seuil-de-limitation-de-traitement-des-unites-archivistiques-check-distribution-threshold">13.12.1.1.1. Vérification du seuil de limitation de traitement des unités archivistiques CHECK_DISTRIBUTION_THRESHOLD</a></li>
-<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id50">13.12.1.1.2. Création du bordereau CREATE_MANIFEST (CreateManifest.java)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id90">13.12.1.1.2. Création du bordereau CREATE_MANIFEST (CreateManifest.java)</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id51">13.12.1.2. Processus de déplacement des objets binaires vers l’espace de travail interne (STP_PUT_BINARY_ON_WORKSPACE)</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id52">13.12.1.2.1. Vérification de la disponibilité des ressources EXPORT_CHECK_RESOURCE_AVAILABILITY (ExportCheckResourceAvailability.java)</a></li>
-<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id53">13.12.1.2.2. Déplacement des objets binaires vers le workspace PUT_BINARY_ON_WORKSPACE (PutBinaryOnWorkspace.java)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id91">13.12.1.2. Processus de déplacement des objets binaires vers l’espace de travail interne (STP_PUT_BINARY_ON_WORKSPACE)</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id92">13.12.1.2.1. Vérification de la disponibilité des ressources EXPORT_CHECK_RESOURCE_AVAILABILITY (ExportCheckResourceAvailability.java)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id93">13.12.1.2.2. Déplacement des objets binaires vers le workspace PUT_BINARY_ON_WORKSPACE (PutBinaryOnWorkspace.java)</a></li>
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#processus-de-creation-du-sip-de-transfert-et-de-son-deplacement-vers-loffre-de-stockage-stp-store-manifest">13.12.1.3. Processus de création du SIP de transfert et de son déplacement vers l’offre de stockage (STP_STORE_MANIFEST)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#structure-du-workflow-de-preparation-du-transfert-des-unites-archivistiques-et-des-groupes-dobjets">13.12.1.4. Structure du Workflow de préparation du transfert des unités archivistiques et des groupes d’objets</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#rapport-de-preparation-du-transfert">13.12.1.5. Rapport de préparation du transfert</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#exemple-de-fichier-jsonl-rapport-de-preparation-du-transfert">13.12.1.5.1. Exemple de fichier JSONL : rapport de préparation du transfert</a></li>
-<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id54">13.12.1.5.2. Détail du rapport</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id94">13.12.1.5.2. Détail du rapport</a></li>
 </ul>
 </li>
 </ul>
@@ -2620,7 +2676,7 @@
 <li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#structure-du-workflow-dacquittement-du-transfert-des-unites-archivistiques-et-des-groupes-dobjets">13.12.2.10. Structure du Workflow d’acquittement du transfert des unités archivistiques et des groupes d’objets</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#rapport-dacquittement-du-transfert">13.12.2.11. Rapport d’acquittement du transfert</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#exemple-de-fichier-jsonl-rapport-dacquittement-du-transfert">13.12.2.11.1. Exemple de fichier JSONL : rapport d’acquittement du transfert</a></li>
-<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id55">13.12.2.11.2. Détail du rapport</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id95">13.12.2.11.2. Détail du rapport</a></li>
 </ul>
 </li>
 </ul>
@@ -2634,7 +2690,7 @@
 <li class="toctree-l3"><a class="reference internal" href="sections/modele_de_workflow.html#structure-du-workflow-de-mise-a-jour-unitaire-des-metadonnees-descriptives">13.13.4. Structure du Workflow de mise à jour unitaire des métadonnées descriptives</a></li>
 <li class="toctree-l3"><a class="reference internal" href="sections/modele_de_workflow.html#rapport-de-restauration-de-metadonnees-essentielles-des-unites-archivistiques">13.13.5. Rapport de restauration de métadonnées essentielles des unités archivistiques</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#exemple-de-fichier-jsonl-rapport-de-restauration-de-metadonnees-essentielles">13.13.5.1. Exemple de fichier JSONL : rapport de restauration de métadonnées essentielles</a></li>
-<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id56">13.13.5.2. Détail du rapport</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id96">13.13.5.2. Détail du rapport</a></li>
 </ul>
 </li>
 </ul>
@@ -2652,7 +2708,7 @@
 <li class="toctree-l3"><a class="reference internal" href="sections/modele_de_workflow.html#workflow-de-securisation-des-journaux-du-cycle-de-vie-des-groupes-dobjets">13.14.2. Workflow de sécurisation des journaux du cycle de vie des groupes d’objets</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#securisation-des-journaux-du-cycle-de-vie-des-groupes-dobjets-logbook-objectgroup-lfc-traceability">13.14.2.1. Sécurisation des journaux  du cycle de vie des groupes d’objets (LOGBOOK_OBJECTGROUP_LFC_TRACEABILITY)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#processus-de-la-securisation-des-journaux-du-cycle-de-vie-des-groupes-dobjets-stp-og-lfc-traceability">13.14.2.2. Processus de la sécurisation des journaux du cycle de vie des groupes d’objets STP_OG_LFC_TRACEABILITY</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id57">13.14.2.2.1. Vérification des processus concurrents CHECK_CONCURRENT_WORKFLOW_LOCK</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id97">13.14.2.2.1. Vérification des processus concurrents CHECK_CONCURRENT_WORKFLOW_LOCK</a></li>
 <li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#preparation-de-la-liste-des-journaux-du-cycle-de-vie-et-des-metadonnees-des-groupes-dobjets-prepare-og-lfc-traceability">13.14.2.2.2. Préparation de la liste des journaux du cycle de vie et des métadonnées des groupes d’objets PREPARE_OG_LFC_TRACEABILITY</a></li>
 <li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#securisation-des-journaux-du-cycle-de-vie-des-groupes-dobjets-build-og-lfc-traceability">13.14.2.2.3. Sécurisation des journaux du cycle de vie des groupes d’objets BUILD_OG_LFC_TRACEABILITY</a></li>
 <li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#finalisation-de-la-securisation-des-journaux-du-cycle-de-vie-des-groupes-dobjets-finalize-og-lfc-traceability">13.14.2.2.4. Finalisation de la sécurisation des journaux du cycle de vie des groupes d’objets FINALIZE_OG_LFC_TRACEABILITY</a></li>
@@ -2664,7 +2720,7 @@
 <li class="toctree-l3"><a class="reference internal" href="sections/modele_de_workflow.html#workflow-de-securisation-des-journaux-du-cycle-de-vie-des-unites-archivistiques">13.14.3. Workflow de sécurisation des journaux du cycle de vie des unités archivistiques</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#securisation-des-journaux-du-cycle-de-vie-des-unites-archivistiques-logbook-unit-lfc-traceability">13.14.3.1. Sécurisation des journaux du cycle de vie des unités archivistiques (LOGBOOK_UNIT_LFC_TRACEABILITY)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#processus-de-la-securisation-des-journaux-du-cycle-de-vie-des-unites-archivistiques-stp-unit-lfc-traceability">13.14.3.2. Processus de la sécurisation des journaux du cycle de vie des unités archivistiques STP_UNIT_LFC_TRACEABILITY</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id58">13.14.3.2.1. Vérification des processus concurrents CHECK_CONCURRENT_WORKFLOW_LOCK</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id98">13.14.3.2.1. Vérification des processus concurrents CHECK_CONCURRENT_WORKFLOW_LOCK</a></li>
 <li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#preparation-de-la-liste-des-journaux-du-cycle-de-vie-et-des-metadonnees-des-unites-archivistiques-prepare-unit-lfc-traceability">13.14.3.2.2. Préparation de la liste des journaux du cycle de vie et des métadonnées des unités archivistiques PREPARE_UNIT_LFC_TRACEABILITY</a></li>
 <li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#securisation-des-journaux-du-cycle-de-vie-des-groupes-dobjets-build-unit-lfc-traceability">13.14.3.2.3. Sécurisation des journaux du cycle de vie des groupes d’objets BUILD_UNIT_LFC_TRACEABILITY</a></li>
 <li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#finalisation-de-la-securisation-des-journaux-du-cycle-de-vie-des-groupes-dobjets-finalize-unit-lfc-traceability">13.14.3.2.4. Finalisation de la sécurisation des journaux du cycle de vie des groupes d’objets FINALIZE_UNIT_LFC_TRACEABILITY</a></li>
@@ -2725,8 +2781,8 @@
 <li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#verification-de-l-integrite-du-fichier-de-securisation-checks-secure-traceability-data-hashes-checkssecuretraceabilitydatahashesplugin-java">13.15.2.3.2. Vérification de l’intégrité du fichier de sécurisation CHECKS_SECURE_TRACEABILITY_DATA_HASHES (ChecksSecureTraceabilityDataHashesPlugin.java)</a></li>
 <li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#recuperation-du-fichier-de-securisation-extract-secure-traceability-data-file-extractsecuretraceabilitydatafileplugin-java">13.15.2.3.3. Récupération du fichier de sécurisation EXTRACT_SECURE_TRACEABILITY_DATA_FILE (ExtractSecureTraceabilityDataFilePlugin.java)</a></li>
 <li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#verification-de-l-arbre-de-merkle-check-merkle-tree">13.15.2.3.4. Vérification de l’arbre de MERKLE (CHECK_MERKLE_TREE)</a></li>
-<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id59">13.15.2.3.5. Comparaison de l’arbre de Merkle avec le hash enregistré (CHECK_MERKLE_TREE.COMPARE_MERKLE_HASH_WITH_SAVED_HASH)</a></li>
-<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id60">13.15.2.3.6. Comparaison de l’arbre de Merkle avec le hash indexé (CHECK_MERKLE_TREE.COMPARE_MERKLE_HASH_WITH_INDEXED_HASH)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id99">13.15.2.3.5. Comparaison de l’arbre de Merkle avec le hash enregistré (CHECK_MERKLE_TREE.COMPARE_MERKLE_HASH_WITH_SAVED_HASH)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id100">13.15.2.3.6. Comparaison de l’arbre de Merkle avec le hash indexé (CHECK_MERKLE_TREE.COMPARE_MERKLE_HASH_WITH_INDEXED_HASH)</a></li>
 <li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#verification-des-journaux-des-ecritures-journal-des-offres-de-stockage-checks-secure-traceability-data-storagelog">13.15.2.3.7. Vérification des journaux des écritures (journal des offres de stockage) (CHECKS_SECURE_TRACEABILITY_DATA_STORAGELOG)</a></li>
 </ul>
 </li>
@@ -2742,7 +2798,7 @@
 <li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#processus-daudit-dexistence-des-fichiers-vision-metier">13.15.3.1. Processus d’audit d’existence des fichiers (vision métier)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#processus-daudit-dintegrite-des-fichiers-vision-metier">13.15.3.2. Processus d’audit d’intégrité des fichiers (vision métier)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#processus-de-preparation-de-laudit-stp-prepare-audit">13.15.3.3. Processus de préparation de l’audit (STP_PREPARE_AUDIT)</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id61">13.15.3.3.1. Vérification des seuils de limitation de traitement des unités archivistiques CHECK_DISTRIBUTION_THRESHOLD</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id101">13.15.3.3.1. Vérification des seuils de limitation de traitement des unités archivistiques CHECK_DISTRIBUTION_THRESHOLD</a></li>
 <li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#recuperation-de-la-configuration-des-strategie-de-stockage-de-la-plateforme-prepare-storage-strategies-preparestoragestrategiesplugin-java">13.15.3.3.2. Récupération de la configuration des stratégie de stockage de la plateforme PREPARE_STORAGE_STRATEGIES (PrepareStorageStrategiesPlugin.java)</a></li>
 <li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#creation-de-la-liste-des-groupes-dobjets-list-objectgroup-id-prepareauditactionhandler-java">13.15.3.3.3. Création de la liste des groupes d’objets LIST_OBJECTGROUP_ID (PrepareAuditActionHandler.java)</a></li>
 </ul>
@@ -2756,7 +2812,7 @@
 <li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#structure-du-workflow-de-laudit-de-lexistence-et-de-lintegrite-des-fichiers">13.15.3.6. Structure du workflow de l’audit de l’existence et de l’intégrité des fichiers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#rapport-daudit">13.15.3.7. Rapport d’audit</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#exemple-de-json-rapport-daudit-dintegrite-et-dexistence-ko">13.15.3.7.1. Exemple de JSON : rapport d’audit d’intégrité et d’existence KO</a></li>
-<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id62">13.15.3.7.2. Détail du rapport</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id102">13.15.3.7.2. Détail du rapport</a></li>
 </ul>
 </li>
 </ul>
@@ -2764,8 +2820,8 @@
 <li class="toctree-l3"><a class="reference internal" href="sections/modele_de_workflow.html#workflow-daudit-de-coherence-des-fichiers">13.15.4. Workflow d’audit de cohérence des fichiers</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#processus-daudit-de-coherence-des-fichiers-vision-metier">13.15.4.1. Processus d’audit de cohérence des fichiers (vision métier)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#processus-de-preparation-daudit-stp-evidence-audit-prepare">13.15.4.2. Processus de préparation d’audit (STP_EVIDENCE_AUDIT_PREPARE)</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id63">13.15.4.2.1. Vérification des seuils de limitation de traitement des unités archivistiques CHECK_DISTRIBUTION_THRESHOLD</a></li>
-<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id64">13.15.4.2.2. Récupération de la configuration des stratégie de stockage de la plateforme PREPARE_STORAGE_STRATEGIES (PrepareStorageStrategiesPlugin.java)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id103">13.15.4.2.1. Vérification des seuils de limitation de traitement des unités archivistiques CHECK_DISTRIBUTION_THRESHOLD</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id104">13.15.4.2.2. Récupération de la configuration des stratégie de stockage de la plateforme PREPARE_STORAGE_STRATEGIES (PrepareStorageStrategiesPlugin.java)</a></li>
 <li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#creation-de-la-liste-a-auditer-evidence-audit-list-object-evidenceauditprepare-java">13.15.4.2.3. Création de la liste à auditer EVIDENCE_AUDIT_LIST_OBJECT (EvidenceAuditPrepare.java)</a></li>
 </ul>
 </li>
@@ -2792,33 +2848,33 @@
 <li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#structure-du-workflow-daudit-de-coherence-des-fichiers">13.15.4.8. Structure du workflow d’audit de cohérence des fichiers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#rapport-daudit-de-coherence">13.15.4.9. Rapport d’audit de cohérence</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#exemple-de-json-rapport-daudit-de-coherence-dun-objet-technique-ko">13.15.4.9.1. Exemple de JSON : rapport d’audit de cohérence d’un objet technique KO</a></li>
-<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id65">13.15.4.9.2. Détail du rapport</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id105">13.15.4.9.2. Détail du rapport</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="sections/modele_de_workflow.html#workflow-de-laudit-correctif">13.15.5. Workflow de l’audit correctif</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#processus-daudit-correctif-des-fichiers-vision-metier">13.15.5.1. Processus d’audit correctif des fichiers (vision métier)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id66">13.15.5.2. Processus de préparation d’audit (STP_EVIDENCE_AUDIT_PREPARE)</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id67">13.15.5.2.1. Vérification des seuils de limitation de traitement des unités archivistiques CHECK_DISTRIBUTION_THRESHOLD</a></li>
-<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id68">13.15.5.2.2. Récupération de la configuration des stratégie de stockage de la plateforme PREPARE_STORAGE_STRATEGIES (PrepareStorageStrategiesPlugin.java)</a></li>
-<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id69">13.15.5.2.3. Création de la liste à auditer EVIDENCE_AUDIT_LIST_OBJECT (EvidenceAuditPrepare.java)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id106">13.15.5.2. Processus de préparation d’audit (STP_EVIDENCE_AUDIT_PREPARE)</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id107">13.15.5.2.1. Vérification des seuils de limitation de traitement des unités archivistiques CHECK_DISTRIBUTION_THRESHOLD</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id108">13.15.5.2.2. Récupération de la configuration des stratégie de stockage de la plateforme PREPARE_STORAGE_STRATEGIES (PrepareStorageStrategiesPlugin.java)</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id109">13.15.5.2.3. Création de la liste à auditer EVIDENCE_AUDIT_LIST_OBJECT (EvidenceAuditPrepare.java)</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id70">13.15.5.3. Processus de récupération des données de la base (STP_EVIDENCE_AUDIT_CHECK_DATABASE)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id110">13.15.5.3. Processus de récupération des données de la base (STP_EVIDENCE_AUDIT_CHECK_DATABASE)</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#recuperation-des-donnees-dans-la-base-de-donnee-evidence-audit-check-database-evidenceauditdatabasecheck-java">13.15.5.3.1. Récupération des données dans la base de donnée EVIDENCE_AUDIT_CHECK_DATABASE (EvidenceAuditDatabaseCheck.java)</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id71">13.15.5.4. Processus de préparation des signatures à partir des fichiers sécurisés (STP_EVIDENCE_AUDIT_LIST_SECURED_FILES_TO_DOWNLOAD)</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id72">13.15.5.4.1. Préparation de la liste des signatures dans les fichiers sécurisés EVIDENCE_AUDIT_LIST_SECURED_FILES_TO_DOWNLOAD (EvidenceAuditListSecuredFiles.java)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id111">13.15.5.4. Processus de préparation des signatures à partir des fichiers sécurisés (STP_EVIDENCE_AUDIT_LIST_SECURED_FILES_TO_DOWNLOAD)</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id112">13.15.5.4.1. Préparation de la liste des signatures dans les fichiers sécurisés EVIDENCE_AUDIT_LIST_SECURED_FILES_TO_DOWNLOAD (EvidenceAuditListSecuredFiles.java)</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id73">13.15.5.5. Processus d’extraction des signatures à partir des fichiers sécurisés (STP_EVIDENCE_AUDIT_EXTRACT_ZIP_FILE)</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id74">13.15.5.5.1. Extraction des signatures à partir des fichiers sécurisés EVIDENCE_AUDIT_EXTRACT_ZIP_FILE (EvidenceAuditExtractFromZip.java)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id113">13.15.5.5. Processus d’extraction des signatures à partir des fichiers sécurisés (STP_EVIDENCE_AUDIT_EXTRACT_ZIP_FILE)</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id114">13.15.5.5.1. Extraction des signatures à partir des fichiers sécurisés EVIDENCE_AUDIT_EXTRACT_ZIP_FILE (EvidenceAuditExtractFromZip.java)</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id75">13.15.5.6. Processus de préparation des rapports pour chaque objet, groupe d’objets ou unité audité (STP_EVIDENCE_AUDIT_PREPARE_GENERATE_REPORTS)</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id76">13.15.5.6.1. Création du rapport pour chaque unité archivistique ou objet ou groupe d’objets EVIDENCE_AUDIT_PREPARE_GENERATE_REPORTS (EvidenceAuditGenerateReports.java)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id115">13.15.5.6. Processus de préparation des rapports pour chaque objet, groupe d’objets ou unité audité (STP_EVIDENCE_AUDIT_PREPARE_GENERATE_REPORTS)</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id116">13.15.5.6.1. Création du rapport pour chaque unité archivistique ou objet ou groupe d’objets EVIDENCE_AUDIT_PREPARE_GENERATE_REPORTS (EvidenceAuditGenerateReports.java)</a></li>
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#processus-de-correction-des-signatures-pour-chaque-objet-groupe-dobjets-ou-unite-auditee-defaillante-stp-corrective-audit">13.15.5.7. Processus de correction des signatures pour chaque objet, groupe d’objets ou unité auditée défaillante (STP_CORRECTIVE_AUDIT)</a><ul>
@@ -2839,7 +2895,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="sections/modele_de_workflow.html#workflow-de-releve-de-valeur-probante">13.15.6. Workflow de relevé de valeur probante</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#processus-de-preparation-du-releve-de-valeur-probante-stp-probative-value-prepare">13.15.6.1. Processus de préparation du relevé de valeur probante (STP_PROBATIVE_VALUE_PREPARE)</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id77">13.15.6.1.1. Vérification des seuils de limitation de traitement des unités archivistiques CHECK_DISTRIBUTION_THRESHOLD</a></li>
+<li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#id117">13.15.6.1.1. Vérification des seuils de limitation de traitement des unités archivistiques CHECK_DISTRIBUTION_THRESHOLD</a></li>
 <li class="toctree-l5"><a class="reference internal" href="sections/modele_de_workflow.html#creation-du-fichier-de-distribution-permettant-de-realiser-le-releve-de-valeur-probante-probative-value-create-distribution-file">13.15.6.1.2. Création du fichier de distribution permettant de réaliser le relevé de valeur probante (PROBATIVE_VALUE__CREATE_DISTRIBUTION_FILE)</a></li>
 </ul>
 </li>
@@ -2856,7 +2912,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="sections/modele_de_workflow.html#rapport-du-releve-de-valeur-probante">13.15.7. Rapport du relevé de valeur probante</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#exemple-de-json-rapport-de-valeur-probante">13.15.7.1. Exemple de JSON : rapport de valeur probante</a></li>
-<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id78">13.15.7.2. Détails du rapport</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id118">13.15.7.2. Détails du rapport</a></li>
 </ul>
 </li>
 </ul>
@@ -2882,12 +2938,12 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="sections/modele_de_workflow.html#processus-de-preparation-de-linsertion-de-metadonnees-descriptives-stp-preservation-preparation-insertion-au-metadata-preservationpreparationinsertionaumetadata-java">13.16.3. Processus de préparation de l’insertion de métadonnées descriptives (STP_PRESERVATION_PREPARATION_INSERTION_AU_METADATA)(PreservationPreparationInsertionAuMetadata.java)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="sections/modele_de_workflow.html#processus-dinsertion-de-metadonnees-descriptives-dans-les-unites-archivistiques-stp-preservation-insertion-au-metadata">13.16.4. Processus d’insertion de métadonnées descriptives dans les unités archivistiques (STP_PRESERVATION_INSERTION_AU_METADATA)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="sections/modele_de_workflow.html#id79">13.16.5. Processus d’alimentation du registre des fonds (STP_ACCESSION_REGISTRATION)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="sections/modele_de_workflow.html#id119">13.16.5. Processus d’alimentation du registre des fonds (STP_ACCESSION_REGISTRATION)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="sections/modele_de_workflow.html#processus-de-creation-du-rapport-de-preservation-stp-preservation-finalization">13.16.6. Processus de création du rapport de préservation (STP_PRESERVATION_FINALIZATION)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="sections/modele_de_workflow.html#structure-du-workflow-de-preservation">13.16.7. Structure du workflow de préservation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="sections/modele_de_workflow.html#rapport-de-preservation">13.16.8. Rapport de préservation</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#exemple-de-fichier-jsonl-rapport-de-preservation-ok">13.16.8.1. Exemple de fichier JSONL : rapport de préservation OK</a></li>
-<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id80">13.16.8.2. Détail du rapport</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id120">13.16.8.2. Détail du rapport</a></li>
 </ul>
 </li>
 </ul>
@@ -2909,7 +2965,7 @@
 <li class="toctree-l3"><a class="reference internal" href="sections/modele_de_workflow.html#structure-du-workflow-de-suppression-des-versions-des-gots">13.17.5. Structure du Workflow  de suppression des versions des GOTS</a></li>
 <li class="toctree-l3"><a class="reference internal" href="sections/modele_de_workflow.html#rapport-de-suppression-des-versions-des-groupes-dobjets">13.17.6. Rapport de suppression des versions des groupes d’objets</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#exemple-de-json-rapport-de-suppression-des-versions-des-got">13.17.6.1. Exemple de JSON : rapport de suppression des versions des got</a></li>
-<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id81">13.17.6.2. Détail du rapport</a></li>
+<li class="toctree-l4"><a class="reference internal" href="sections/modele_de_workflow.html#id121">13.17.6.2. Détail du rapport</a></li>
 </ul>
 </li>
 </ul>
