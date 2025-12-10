@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>28. Le suivi des accès dans la solution logicielle Vitam &mdash; Vitam documentation fonctionnelle</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=eea1f72d" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f4732e6d"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/translations.js?v=bf059b8c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="29. Les tenants dans la solution logicielle Vitam" href="Vademecum_tenant.html" />
+    <link rel="prev" title="27. La structuration des informations dans la solution logicielle Vitam" href="Vademecum_structuration_information.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: white" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/Vitam_Logo-CMJN.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">première approche</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="guide_lecture.html">1. Documentation Vitam - guide de lecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="presentation_programme.html">2. Présentation du programme Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="presentation_solution_logicielle.html">3. Présentation de la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_prise_en_main.html">4. Guide de prise en main de la solution logicielle Vitam – Vitam UI<br>
+<em>Réaliser une première entrée</em></a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">documentation métier</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="organisation_information.html">1. Organisation de l’information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gestion_archives_arbo.html">2. Gestion des archives et des arborescences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_donnees.html">3. Modèle de données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SIP.html">4. Structuration des <em>Submission Information Packages</em> (SIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DIP.html">5. Structuration des <em>Dissemination Information Packages</em> (DIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gestion_habilitations.html">6. Gestion des habilitations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regles_gestion.html">7. Règles de gestion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services_prod.html">8. Services producteurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_archivage.html">9. Profils d’archivage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_unite_archivistique.html">10. Profils d’unité archivistique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ontologie.html">11. Ontologie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="schema.html">12. Schéma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_workflow.html">13. Description des workflows et des opérations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_de_collecte.html">14. Module de collecte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eliminations.html">15. Les éliminations avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gel.html">16. Le gel d’archives avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preservation.html">17. Gestion de la préservation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stockage.html">18. Gestion de multiples stratégies de stockage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transfert.html">19. Le transfert avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="valeur_probante.html">20. Conservation de la valeur probante</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">documentation Vitam UI</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Autoprovisionning.html">1. Vitam UI : présentation de la fonctionnalité d’auto-provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Arbres_Plans.html">2. APP Arbres et plans</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">outils connexes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="resip.html">1. RESIP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resip_faq.html">2. RESIP : foire aux questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pastis_standalone.html">3. PASTIS STANDALONE</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Chantier préservation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="chantier_preservation_validation_format.html">1. Validation du format des fichiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_identification_format.html">2. Identification des formats de fichiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_extraction_MD.html">3. Extraction des métadonnées techniques</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Vademecum</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_sommaire.html">1. Vademecum: sommaire thématique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_glossaire.html">2. Notions utilisées dans la solution logicielle Vitam et lien vers la fiche qui les définit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_arbre.html">3. L’arbre de positionnement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_audit.html">4. Les audits dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_classification.html">5. La gestion des archives classifiées avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_acces.html">6. Le contrat d’accès dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_entree.html">7. Le contrat d’entrée dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_gestion.html">8. Le contrat de gestion dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_echeances.html">9. Le calcul des héritages des règles de gestion et l’indexation des échéances dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_eliminations.html">10. Réaliser des éliminations d’archives avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_habilitations.html">11. La gestion des droits et permissions des utilisateurs applicatifs dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_identifiants.html">12. L’attribution des identifiants dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_journalisation.html">13. La journalisation et la conservation de la valeur probante dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_ontologie.html">14. L’ontologie dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_pa.html">15. Les profils d’archivage dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_parametrages_pf.html">16. Le paramétrage fonctionnel d’une plate-forme utilisant la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_plan.html">17. Le plan de classement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_preservation.html">18. La préservation dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_pua.html">19. Les profils d’unité archivistique dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_rattachement.html">20. Faire un rattachement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_formats.html">21. Le référentiel des formats dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_griffons.html">22. Le référentiel des griffons dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_preservation.html">23. Le référentiel des scénarios de préservation dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_rg.html">24. Le référentiel des règles de gestion dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_sa.html">25. Le référentiel des services agents dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_registre_fonds.html">26. Le registre des fonds dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_structuration_information.html">27. La structuration des informations dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">28. Le suivi des accès dans la solution logicielle Vitam</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#presentation-des-logs-dacces">28.1. Présentation des logs d’accès</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#structure-des-logs">28.1.1. Structure des logs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nombre-de-logs-generes">28.1.2. Nombre de logs générés</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#activation-de-la-generation-des-logs-dacces">28.2. Activation de la génération des logs d’accès</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#consultation-des-logs-dacces">28.3. Consultation des logs d’accès</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_tenant.html">29. Les tenants dans la solution logicielle Vitam</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: white" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Documentation utilisateur Vitam</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">28. </span>Le suivi des accès dans la solution logicielle Vitam</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/sections/Vademecum_suivi_acces.md.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+
+           <div itemprop="articleBody">
+             
+  <section id="le-suivi-des-acces-dans-la-solution-logicielle-vitam">
+<h1><span class="section-number">28. </span>Le suivi des accès dans la solution logicielle Vitam<a class="headerlink" href="#le-suivi-des-acces-dans-la-solution-logicielle-vitam" title="Lien vers cette rubrique"></a></h1>
+<p>Pour répondre aux besoins d’enquête en cas de divulgation d’informations, la solution logicielle Vitam permet de tracer dans un log d’accès, si le contrat d’accès le spécifie :</p>
+<ul class="simple">
+<li><p>l’accès aux objets techniques, qu’il s’agisse de visualisation ou de téléchargement ;</p></li>
+<li><p>l’export de DIP, dès lors que ceux-ci contiennent des objets.
+Les accès aux métadonnées des archives (unités archivistiques comme groupes d’objets techniques) ne sont pas concernés.</p></li>
+</ul>
+<section id="presentation-des-logs-dacces">
+<h2><span class="section-number">28.1. </span>Présentation des logs d’accès<a class="headerlink" href="#presentation-des-logs-dacces" title="Lien vers cette rubrique"></a></h2>
+<section id="structure-des-logs">
+<h3><span class="section-number">28.1.1. </span>Structure des logs<a class="headerlink" href="#structure-des-logs" title="Lien vers cette rubrique"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Information</p></th>
+<th class="head text-left"><p>Nom du champ correspondant</p></th>
+<th class="head text-left"><p>Exemple de valeur</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>Date et heure de l’opération d’accès au format AAAA-MM-JJTHH:MM:SS:[3 digits de millisecondes]</p></td>
+<td class="text-left"><p>eventDateTime</p></td>
+<td class="text-left"><p>2019-01-11T12:50:53.344</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Identifiant de l’opération d’accès pour la solution logicielle Vitam</p></td>
+<td class="text-left"><p>xRequestId</p></td>
+<td class="text-left"><p>aeeaaaaaachfmo4dabyw6aliht3q74aaaaaq</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Identifiant de l’opération d’accès pour l’application demandeuse</p></td>
+<td class="text-left"><p>ApplicationId</p></td>
+<td class="text-left"><p>MyApplicationId-ChangeIt</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Identifiant de l’objet auquel l’application demandeuse a accédé</p></td>
+<td class="text-left"><p>objectIdentifier</p></td>
+<td class="text-left"><p>aeaaaaaaaahk2vrsabz26alhywthyoaaaaba</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Taille en octets de l’objet auquel l’application demandeuse a accédé</p></td>
+<td class="text-left"><p>Size</p></td>
+<td class="text-left"><p>11</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Usage de l’objet auquel l’application demandeuse a accédé</p></td>
+<td class="text-left"><p>qualifier</p></td>
+<td class="text-left"><p>BinaryMaster</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Version de l’usage de l’objet auquel l’application demandeuse a accédé</p></td>
+<td class="text-left"><p>Version</p></td>
+<td class="text-left"><p>1</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Identifiant du contexte utilisé pour l’accès</p></td>
+<td class="text-left"><p>ContextId</p></td>
+<td class="text-left"><p>CT-000001</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Identifiant du contrat d’accès utilisé pour l’accès</p></td>
+<td class="text-left"><p>ContractId</p></td>
+<td class="text-left"><p>ContratTNR</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Identifiant de l’unité archivistique dont dépend le groupe d’objets contenant l’objet auquel l’application demandeuse a accédé</p></td>
+<td class="text-left"><p>archivesId</p></td>
+<td class="text-left"><p>aeaqaaaaaahk2vrsabz26alhywthzbaaaaea</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="nombre-de-logs-generes">
+<h3><span class="section-number">28.1.2. </span>Nombre de logs générés<a class="headerlink" href="#nombre-de-logs-generes" title="Lien vers cette rubrique"></a></h3>
+<p>Le nombre de logs généré va dépendre du nombre d’objets concernés par l’opération :</p>
+<ul class="simple">
+<li><p>accès à 1 objet : 1 log ;</p></li>
+<li><p>export d’un DIP de sept unités archivistiques dont quatre seulement avaient un GOT contenant un objet : 4 logs ;</p></li>
+<li><p>export d’une unité archivistique ayant un GOT comprenant trois objets : 3 logs ;</p></li>
+<li><p>export d’une unité archivistique ayant un GOT comprenant trois objets, mais avec un contrat d’accès n’autorisant que l’accès à une seule catégorie d’usage : 1 log.</p></li>
+</ul>
+</section>
+</section>
+<section id="activation-de-la-generation-des-logs-dacces">
+<h2><span class="section-number">28.2. </span>Activation de la génération des logs d’accès<a class="headerlink" href="#activation-de-la-generation-des-logs-dacces" title="Lien vers cette rubrique"></a></h2>
+<p>Le contrat d’accès permet de préciser si des logs d’accès doivent être générés. Par défaut, cette option n’est pas activée.</p>
+<p>Il est utile de générer des logs d’accès lorsque l’on craint un risque de compromission sur des informations non librement communicables et que l’on veut pouvoir connaître l’application qui a eu accès à ces fichiers.</p>
+</section>
+<section id="consultation-des-logs-dacces">
+<h2><span class="section-number">28.3. </span>Consultation des logs d’accès<a class="headerlink" href="#consultation-des-logs-dacces" title="Lien vers cette rubrique"></a></h2>
+<p>Les logs de l’heure en cours peuvent être consultés sur les machines hébergeant le composant <strong>storage</strong> sous l’arborescence « /vitam/log/storage/access-log/ ». Chaque fichier de log est nommé « <tenant><em><date></em>&lt;id opération&gt;.log ».</p>
+<p>Toutes les heures, les logs sont archivés et sont alors accessibles dans des <code class="docutils literal notranslate"><span class="pre">containers</span></code> nommés <code class="docutils literal notranslate"><span class="pre">&lt;environnement&gt;_&lt;tenant&gt;_storageaccesslog</span></code>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="Vademecum_structuration_information.html" class="btn btn-neutral float-left" title="27. La structuration des informations dans la solution logicielle Vitam" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="Vademecum_tenant.html" class="btn btn-neutral float-right" title="29. Les tenants dans la solution logicielle Vitam" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2022, Programme Vitam.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: master_9.0.x
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Tags</dt>
+      <dd><a href="../../7.1.0/sections/Vademecum_suivi_acces.html">7.1.0</a></dd>
+    </dl>
+    <dl>
+      <dt>Branches</dt>
+      <dd><a href="../../master/sections/Vademecum_suivi_acces.html">master</a></dd>
+      <dd><a href="../../master_7.1.x/sections/Vademecum_suivi_acces.html">master_7.1.x</a></dd>
+      <dd><a href="../../master_8.1.x/sections/Vademecum_suivi_acces.html">master_8.1.x</a></dd>
+      <dd><a href="Vademecum_suivi_acces.html">master_9.0.x</a></dd>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

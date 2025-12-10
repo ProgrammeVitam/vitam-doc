@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>18. Gestion de multiples stratégies de stockage &mdash; Vitam documentation fonctionnelle</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=eea1f72d" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f4732e6d"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/translations.js?v=bf059b8c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="19. Le transfert avec la solution logicielle Vitam" href="transfert.html" />
+    <link rel="prev" title="17. Gestion de la préservation" href="preservation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: white" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/Vitam_Logo-CMJN.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">première approche</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="guide_lecture.html">1. Documentation Vitam - guide de lecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="presentation_programme.html">2. Présentation du programme Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="presentation_solution_logicielle.html">3. Présentation de la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_prise_en_main.html">4. Guide de prise en main de la solution logicielle Vitam – Vitam UI<br>
+<em>Réaliser une première entrée</em></a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">documentation métier</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="organisation_information.html">1. Organisation de l’information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gestion_archives_arbo.html">2. Gestion des archives et des arborescences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_donnees.html">3. Modèle de données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SIP.html">4. Structuration des <em>Submission Information Packages</em> (SIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DIP.html">5. Structuration des <em>Dissemination Information Packages</em> (DIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gestion_habilitations.html">6. Gestion des habilitations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regles_gestion.html">7. Règles de gestion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services_prod.html">8. Services producteurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_archivage.html">9. Profils d’archivage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_unite_archivistique.html">10. Profils d’unité archivistique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ontologie.html">11. Ontologie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="schema.html">12. Schéma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_workflow.html">13. Description des workflows et des opérations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_de_collecte.html">14. Module de collecte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eliminations.html">15. Les éliminations avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gel.html">16. Le gel d’archives avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preservation.html">17. Gestion de la préservation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">18. Gestion de multiples stratégies de stockage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">18.1. Introduction</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#documents-de-reference">18.1.1. Documents de référence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#presentation-du-document">18.1.2. Présentation du document</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#gestion-des-donnees-sur-vitam">18.2. Gestion des données sur Vitam</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#mecanismes-mis-en-place-pour-le-stockage">18.2.1. Mécanismes mis en place pour le stockage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#les-donnees-stockees">18.2.2. Les données stockées</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#utilisation-des-donnees-stockees">18.2.3. Utilisation des données stockées</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#reconstruction">18.2.3.1. Reconstruction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#resynchronisation-dune-offre">18.2.3.2. Resynchronisation d’une offre</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#metadonnees-des-unites-archivistiques-et-des-groupes-dobjets-techniques">18.2.4. Métadonnées des unités archivistiques et des groupes d’objets techniques</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#mecanismes-pour-lutilisation-de-vitam-avec-une-seule-strategie-de-stockage">18.3. Mécanismes pour l’utilisation de Vitam avec une seule stratégie de stockage</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#deploiement-de-la-strategie-par-defaut">18.3.1. Déploiement de la stratégie par défaut</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scenario-strategie-de-plate-forme-en-dual-site">18.3.2. Scénario : stratégie de plate-forme en dual-site</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#mecanismes-pour-lutilisation-de-vitam-avec-plusieurs-strategies">18.4. Mécanismes pour l’utilisation de Vitam avec plusieurs stratégies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#deploiement-des-strategies">18.4.1. Déploiement des stratégies</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#le-referentiel-des-contrats-de-gestion">18.4.2. Le référentiel des contrats de gestion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lutilisation-du-contrat-de-gestion">18.4.3. L’utilisation du contrat de gestion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scenario-qualite-de-service">18.4.4. Scénario : qualité de service</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scenario-offres-objets">18.4.5. Scénario : offres objets</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="transfert.html">19. Le transfert avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="valeur_probante.html">20. Conservation de la valeur probante</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">documentation Vitam UI</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Autoprovisionning.html">1. Vitam UI : présentation de la fonctionnalité d’auto-provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Arbres_Plans.html">2. APP Arbres et plans</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">outils connexes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="resip.html">1. RESIP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resip_faq.html">2. RESIP : foire aux questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pastis_standalone.html">3. PASTIS STANDALONE</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Chantier préservation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="chantier_preservation_validation_format.html">1. Validation du format des fichiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_identification_format.html">2. Identification des formats de fichiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_extraction_MD.html">3. Extraction des métadonnées techniques</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Vademecum</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_sommaire.html">1. Vademecum: sommaire thématique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_glossaire.html">2. Notions utilisées dans la solution logicielle Vitam et lien vers la fiche qui les définit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_arbre.html">3. L’arbre de positionnement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_audit.html">4. Les audits dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_classification.html">5. La gestion des archives classifiées avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_acces.html">6. Le contrat d’accès dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_entree.html">7. Le contrat d’entrée dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_gestion.html">8. Le contrat de gestion dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_echeances.html">9. Le calcul des héritages des règles de gestion et l’indexation des échéances dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_eliminations.html">10. Réaliser des éliminations d’archives avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_habilitations.html">11. La gestion des droits et permissions des utilisateurs applicatifs dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_identifiants.html">12. L’attribution des identifiants dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_journalisation.html">13. La journalisation et la conservation de la valeur probante dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_ontologie.html">14. L’ontologie dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_pa.html">15. Les profils d’archivage dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_parametrages_pf.html">16. Le paramétrage fonctionnel d’une plate-forme utilisant la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_plan.html">17. Le plan de classement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_preservation.html">18. La préservation dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_pua.html">19. Les profils d’unité archivistique dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_rattachement.html">20. Faire un rattachement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_formats.html">21. Le référentiel des formats dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_griffons.html">22. Le référentiel des griffons dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_preservation.html">23. Le référentiel des scénarios de préservation dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_rg.html">24. Le référentiel des règles de gestion dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_sa.html">25. Le référentiel des services agents dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_registre_fonds.html">26. Le registre des fonds dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_structuration_information.html">27. La structuration des informations dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_suivi_acces.html">28. Le suivi des accès dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_tenant.html">29. Les tenants dans la solution logicielle Vitam</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: white" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Documentation utilisateur Vitam</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">18. </span>Gestion de multiples stratégies de stockage</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/sections/stockage.md.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+
+           <div itemprop="articleBody">
+             
+  <section id="gestion-de-multiples-strategies-de-stockage">
+<h1><span class="section-number">18. </span>Gestion de multiples stratégies de stockage<a class="headerlink" href="#gestion-de-multiples-strategies-de-stockage" title="Lien vers cette rubrique"></a></h1>
+<section id="introduction">
+<h2><span class="section-number">18.1. </span>Introduction<a class="headerlink" href="#introduction" title="Lien vers cette rubrique"></a></h2>
+<section id="documents-de-reference">
+<h3><span class="section-number">18.1.1. </span>Documents de référence<a class="headerlink" href="#documents-de-reference" title="Lien vers cette rubrique"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p><strong>Document</strong></p></th>
+<th class="head text-center"><p><strong>Date de la version</strong></p></th>
+<th class="head text-center"><p><strong>Remarques</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/html/installation">Vitam – Documentation d’installation</a></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/html/exploitation">Vitam – Documentation d’exploitation</a></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><a class="reference internal" href="gestion_habilitations.html"><span class="std std-doc">Vitam – Gestion des habilitations</span></a></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="presentation-du-document">
+<h3><span class="section-number">18.1.2. </span>Présentation du document<a class="headerlink" href="#presentation-du-document" title="Lien vers cette rubrique"></a></h3>
+<p>Le document présente les fonctionnalités associées à la gestion et à la réalisation d’opérations de préservation numérique dans la solution logicielle Vitam.
+Il s’articule autour des axes suivants :</p>
+<ul class="simple">
+<li><p>une présentation de la gestion et de la conservation des données au sein de la solution logicielle Vitam ;</p></li>
+<li><p>une présentation des mécanismes mis en œuvre dans la solution logicielle Vitam pour utiliser :</p>
+<ul>
+<li><p>une stratégie de stockage unique ;</p></li>
+<li><p>plus d’une stratégie de stockage, gérée au moyen des contrats de gestion.</p></li>
+</ul>
+</li>
+</ul>
+<p>Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 9.0 (automne 2025).
+Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.</p>
+</section>
+</section>
+<section id="gestion-des-donnees-sur-vitam">
+<h2><span class="section-number">18.2. </span>Gestion des données sur Vitam<a class="headerlink" href="#gestion-des-donnees-sur-vitam" title="Lien vers cette rubrique"></a></h2>
+<p>Le moteur de stockage de la solution logicielle Vitam est en charge du stockage des archives (métadonnées et objets binaires) mais également des données nécessaires au bon fonctionnement d’une plate-forme Vitam dans le cadre du respect des normes définies par la solution logicielle Vitam.</p>
+<section id="mecanismes-mis-en-place-pour-le-stockage">
+<h3><span class="section-number">18.2.1. </span>Mécanismes mis en place pour le stockage<a class="headerlink" href="#mecanismes-mis-en-place-pour-le-stockage" title="Lien vers cette rubrique"></a></h3>
+<p>Le stockage se base sur plusieurs notions :</p>
+<ul class="simple">
+<li><p>moteur de stockage : module en charge de la gestion des offres de stockage à l’aide des éléments suivants :</p>
+<ul>
+<li><p>stratégie de stockage : configuration définissant le nombre de copies et les offres de stockage sur lesquelles ces copies seront faites,</p></li>
+<li><p>configuration de l’offre de stockage : configuration définissant les caractéristiques de l’offre (référente ou non, asynchrone ou non) et les informations de connexion,</p></li>
+<li><p>driver : interface de connexion aux offres et son implémentation pour l’offre fournie par Vitam ;</p></li>
+</ul>
+</li>
+<li><p>offre de stockage : module (fourni par Vitam ou externe) en charge de la gestion de toutes données enregistrées (archives et données nécessaires au fonctionnement de la plate-forme Vitam)</p></li>
+</ul>
+<p>La solution logicielle Vitam est déployée par défaut avec une seule stratégie de stockage et au moins deux offres de stockage pour un support de toutes les fonctions de PCA/PRA. C’est le mode de déploiement conseillé.</p>
+<p>Il est également possible de déployer la solution logicielle Vitam avec plusieurs stratégies de stockage sous certaines conditions à partir de la release 12 (novembre 2019). La fonctionnalité est modifiée de manière importante pour la release 13 (mars 2020).</p>
+<p>Le support du stockage sur bandes magnétiques (offres froides) a été étendu pour la release v5 (mars 2022).</p>
+</section>
+<section id="les-donnees-stockees">
+<h3><span class="section-number">18.2.2. </span>Les données stockées<a class="headerlink" href="#les-donnees-stockees" title="Lien vers cette rubrique"></a></h3>
+<p>L’objectif de la solution logicielle Vitam est le stockage et la conservation des archives. Dans l’atteinte de cet objectif, d’autres données vont être également stockées pour répondre aux besoins de robustesse de la solution logicielle Vitam.</p>
+<p>Les données stockées dans les offres par Vitam sont donc diverses et se séparent en plusieurs types :</p>
+<ul class="simple">
+<li><p>les objets binaires,</p></li>
+<li><p>les métadonnées des unités archivistiques et des groupes d’objets techniques (associées à leur journal de cycle de vie),</p></li>
+<li><p>les bordereaux de transfert,</p></li>
+<li><p>les journaux d’opérations,</p></li>
+<li><p>les sauvegardes des données relatives aux référentiels,</p></li>
+<li><p>les rapports d’opérations diverses,</p></li>
+<li><p>les journaux d’écriture et d’accès,</p></li>
+<li><p>les journaux sécurisés.</p></li>
+</ul>
+</section>
+<section id="utilisation-des-donnees-stockees">
+<h3><span class="section-number">18.2.3. </span>Utilisation des données stockées<a class="headerlink" href="#utilisation-des-donnees-stockees" title="Lien vers cette rubrique"></a></h3>
+<p>Les données stockées sur les offres sont à la source de certaines procédures de résilience et de robustesse de la solution logicielle Vitam.</p>
+<p>Ces procédures sont les suivantes :</p>
+<ul class="simple">
+<li><p>reconstruction au fil de l’eau en multi-site ou totale en cas de perte de site,</p></li>
+<li><p>resynchronisation d’une offre de stockage suite à la désynchronisation d’une offre causée par un incident.
+(cf DAT §4.2)
+Ces procédures induisent des limites qui doivent être respectées dans le cas d’un déploiement avec plusieurs stratégies.</p></li>
+</ul>
+<section id="reconstruction">
+<h4><span class="section-number">18.2.3.1. </span>Reconstruction<a class="headerlink" href="#reconstruction" title="Lien vers cette rubrique"></a></h4>
+<p>La procédure de reconstruction utilise la notion d’offre dite « référente ». Il s’agit d’un groupe d’offres qui doivent contenir TOUTES les données nécessaires à la reconstruction d’un site Vitam à partir des données des offres.</p>
+<p>Les données nécessaires à la reconstruction des bases de données sont :</p>
+<ul class="simple">
+<li><p>les métadonnées des unités archivistiques et groupes d’objets techniques ainsi que leur journal de cycle de vie,</p></li>
+<li><p>les données relatives aux référentiels,</p></li>
+<li><p>les journaux d’opérations.</p></li>
+</ul>
+<p>Il est donc obligatoire d’avoir un groupe d’offres de stockage dites « référente » par site, servant de source pour ces données, en vue de garantir la reconstruction. De plus pour des raisons de performance de la reconstruction les données contenues dans ces offres doivent être disjointes entre les offres.</p>
+<p>Une offre dite « référente » peut être offre synchrone (offre « chaude »), ou bien, une offre asynchrone (offre « froide »).</p>
+</section>
+<section id="resynchronisation-dune-offre">
+<h4><span class="section-number">18.2.3.2. </span>Resynchronisation d’une offre<a class="headerlink" href="#resynchronisation-dune-offre" title="Lien vers cette rubrique"></a></h4>
+<p>La procédure de resynchronisation d’une offre permet de remettre en cohérence le contenu d’une offre à partir d’une autre offre. Pour que ce mécanisme marche il est nécessaire que les offres source et cible de la resynchronisation soient configurées pour être des copies : elles doivent être configurées pour contenir les mêmes données.</p>
+<p>Il est donc obligatoire de garder une plate-forme Vitam proposant des stratégies permettant d’avoir pour chaque offre une copie effective pour garantir la resynchronisation.</p>
+</section>
+</section>
+<section id="metadonnees-des-unites-archivistiques-et-des-groupes-dobjets-techniques">
+<h3><span class="section-number">18.2.4. </span>Métadonnées des unités archivistiques et des groupes d’objets techniques<a class="headerlink" href="#metadonnees-des-unites-archivistiques-et-des-groupes-dobjets-techniques" title="Lien vers cette rubrique"></a></h3>
+<p>Les métadonnées des unités archivistiques et les métadonnées des groupes d’objets techniques contiennent une référence à la manière dont elles sont stockées. De plus les métadonnées des groupes d’objets techniques contiennent également une référence pour chaque objet technique qu’ils définissent.</p>
+<p>Les stratégies définies dans les métadonnées sont immuables : un processus d’exploitation ne pourra pas changer l’identifiant de ces stratégies, définies dans le champ « storage.strategyId ». Les autres données présentes dans l’objet JSON « _storage » sont obsolètes et ne seront plus renseignées. Les audits mis à disposition par la solution logicielle Vitam utilisent la définition de la stratégie déployée sur la plate-forme.</p>
+<p>Exemple de métadonnées d’unité archivistique</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aeaqaaaaaahnh5o2abfoyalnzvkwfzyaaaaq&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;_og&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aebaaaaaaahnh5o2abfoyalnzvkwfdqaaaba&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;_mgt&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">    </span><span class="nt">&quot;DescriptionLevel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Item&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Fichier.txt&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Description fichier&quot;</span><span class="p">,</span>
+<span class="w">     </span><span class="err">…</span>
+<span class="w">    </span><span class="nt">&quot;_storage&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;strategyId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;default&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="err">…</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Exemple de métadonnées d’un groupe d’objets techniques</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aebaaaaaaahnh5o2abfoyalnzvkwfdqaaaba&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="err">…</span>
+<span class="w">    </span><span class="nt">&quot;FileInfo&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;Filename&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Fichier.txt&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;LastModified&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2017-04-04T08:07:27.825+02:00&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;_qualifiers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;qualifier&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BinaryMaster&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;_nbc&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;versions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aeaaaaaaaahnh5o2abfoyalnzvkwfdqaaaaq&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;DataObjectGroupId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aebaaaaaaahnh5o2abfoyalnzvkwfdqaaaba&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;DataObjectVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BinaryMaster_1&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;FormatIdentification&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;FormatLitteral&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Plain Text File&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;MimeType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;text/plain&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;FormatId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;x-fmt/111&quot;</span>
+<span class="w">                    </span><span class="p">},</span>
+<span class="w">                    </span><span class="nt">&quot;FileInfo&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;Filename&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Fichier .txt&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;LastModified&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2017-04-04T08:07:27.825+02:00&quot;</span>
+<span class="w">                    </span><span class="p">},</span>
+<span class="w">                    </span><span class="nt">&quot;_opi&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aeeaaaaaachemhquaa5s4alnzvkvi6qaaaaq&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;Size&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;Uri&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Content/ID35.txt&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;MessageDigest&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;664ac614a819df2a97d2a5df57dcad91d6ec38b0fffc793e80c56b4553a14ac7a5f0bce3bb71af419b0bb8f151ad3d512867454eeb818e01818a31989c13319b&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;Algorithm&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SHA-512&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;_storage&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;strategyId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;default&quot;</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">]</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="err">...</span>
+<span class="w">    </span><span class="nt">&quot;_storage&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;strategyId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;default&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="mecanismes-pour-lutilisation-de-vitam-avec-une-seule-strategie-de-stockage">
+<h2><span class="section-number">18.3. </span>Mécanismes pour l’utilisation de Vitam avec une seule stratégie de stockage<a class="headerlink" href="#mecanismes-pour-lutilisation-de-vitam-avec-une-seule-strategie-de-stockage" title="Lien vers cette rubrique"></a></h2>
+<p>La solution logicielle Vitam a été mise en place dès la version Bêta avec une unique stratégie dite de « plate-forme », utilisée pour stocker toutes les données.</p>
+<section id="deploiement-de-la-strategie-par-defaut">
+<h3><span class="section-number">18.3.1. </span>Déploiement de la stratégie par défaut<a class="headerlink" href="#deploiement-de-la-strategie-par-defaut" title="Lien vers cette rubrique"></a></h3>
+<p>La solution logicielle Vitam déployée avec une seule stratégie configure la stratégie dite « de plate-forme » ou encore « default ». Celle-ci définit plusieurs offres sur lesquelles seront stockées des données. Dans un déploiement avec une seule stratégie, les offres contiennent donc les même données et sont donc des copies les unes des autres.</p>
+<p>La définition de cette stratégie est un acte d’exploitation de la plate-forme Vitam :</p>
+<ul class="simple">
+<li><p>elle est configurée dans l’inventaire ;</p></li>
+<li><p>elle contient le listing des identifiants des offres de stockages utilisées ;</p></li>
+<li><p>elle définit l’offre dite « référente ».</p></li>
+</ul>
+<p>La stratégie « default » doit définir une offre dite « référente » et contenir les offres dites « référentes » des autres sites.</p>
+<p>Toute modification de cette stratégie est un acte d’exploitation dont il convient de suivre les processus et limites décrites dans le DEX.</p>
+</section>
+<section id="scenario-strategie-de-plate-forme-en-dual-site">
+<h3><span class="section-number">18.3.2. </span>Scénario : stratégie de plate-forme en dual-site<a class="headerlink" href="#scenario-strategie-de-plate-forme-en-dual-site" title="Lien vers cette rubrique"></a></h3>
+<p>Il s’agit du mode par défaut de la solution logicielle Vitam. Dans ce cas nous avons uniquement la stratégie dite « default », déclarant deux offres de stockage avec deux sites.</p>
+<p><em>Configuration des stratégies déployée sur le site primaire</em>
+<img alt="Configuration des stratégies déployée sur le site primaire" src="../_images/site_primaire.png" /></p>
+<p><em>Configuration des stratégies déployée sur le site secondaire</em>
+<img alt="Configuration des stratégies déployée sur le site secondaire" src="../_images/site_secondaire.png" /></p>
+<p>Le système respecte bien les caractéristiques nécessaires au bon fonctionnement des procédures de la plate-forme Vitam :</p>
+<ul class="simple">
+<li><p>les offres de stockage « offer1 » et « offer2 » contiennent les mêmes données,</p></li>
+<li><p>les offres référentes de chaque site permettent bien la reconstruction de celui-ci.</p></li>
+</ul>
+<p><img alt="système_offres" src="../_images/schema.png" /></p>
+</section>
+</section>
+<section id="mecanismes-pour-lutilisation-de-vitam-avec-plusieurs-strategies">
+<h2><span class="section-number">18.4. </span>Mécanismes pour l’utilisation de Vitam avec plusieurs stratégies<a class="headerlink" href="#mecanismes-pour-lutilisation-de-vitam-avec-plusieurs-strategies" title="Lien vers cette rubrique"></a></h2>
+<p>La solution logicielle Vitam permet, à partir de la release 12, l’utilisation de plusieurs stratégies pour répondre à des besoins spécifiques tels que :</p>
+<ul class="simple">
+<li><p>stocker des objets binaires uniquement en offres dites « objets »,</p></li>
+<li><p>proposer des qualités de service différentes en cas de plate-forme mutualisée.</p></li>
+</ul>
+<p>L’utilisation du mode multi-stratégies de la solution logicielle Vitam se base sur :</p>
+<ul class="simple">
+<li><p>le déploiement de stratégies additionnelles sur la plate-forme Vitam,</p></li>
+<li><p>un référentiel de contrats de gestion déclarant les nouvelles stratégies à utiliser,</p></li>
+<li><p>la déclaration d’un contrat de gestion dans un contrat d’entrée.</p></li>
+</ul>
+<p>Il s’agit d’une extension du mode standard de Vitam avec une stratégie unique « default » : celle-ci reste obligatoire et unique sur la plate-forme.</p>
+<section id="deploiement-des-strategies">
+<h3><span class="section-number">18.4.1. </span>Déploiement des stratégies<a class="headerlink" href="#deploiement-des-strategies" title="Lien vers cette rubrique"></a></h3>
+<p>En mode multi-stratégies, un acte d’exploitation permet d’ajouter des stratégies supplémentaires à une plate-forme Vitam. Les offres de ces stratégies prennent aussi en compte la notion d’offre dite « référente » et leur identifiant doit être différent de « default ».</p>
+<p>L’identifiant d’une stratégie étant présent dans les métadonnées des unités archivistiques, les métadonnées des groupes d’objets techniques (un identifiant pour le groupe d’objets techniques et pour chaque objet technique défini), il est nécessaire de pouvoir trouver ces stratégies sur les deux sites, et ce même si leurs offres déclarées ne sont pas les mêmes.</p>
+<p>Dans le cas du mode multi-stratégies la reconstruction au fil de l’eau des métadonnées se fera à partir de toutes les offres référentes définies par les stratégies déployées sur la plate-forme. Pour rester performant sur cette reconstruction il est faut être vigilant sur la configuration de plate-forme pour éviter de reconstruire plusieurs fois les mêmes métadonnées. De ce fait il est nécessaire de s’assurer de respecter les règles suivantes :</p>
+<ul class="simple">
+<li><p>une offre « référente » ne doit pas être déclarée dans deux stratégies différentes utilisées pour stocker des métadonnées<br />
+<img alt="" src="../_images/offre3.png" /><br />
+<em>Exemples de configuration de stratégies de plate-forme invalide : Offre 3 « référente » déclarée dans deux stratégies différentes</em></p></li>
+<li><p>une offre « référente » ne doit pas contenir des métadonnées présentes dans une autre offre « référente »<br />
+<img alt="" src="../_images/offre4.png" /><br />
+<em>Exemples de configuration de stratégies de plate-forme invalide : Offre 4 « référente » contient les données de Offre 3 « référente »</em></p></li>
+</ul>
+</section>
+<section id="le-referentiel-des-contrats-de-gestion">
+<h3><span class="section-number">18.4.2. </span>Le référentiel des contrats de gestion<a class="headerlink" href="#le-referentiel-des-contrats-de-gestion" title="Lien vers cette rubrique"></a></h3>
+<p>Le contrat de gestion est un référentiel permettant la définition de stratégies autres que « default » pour :</p>
+<ul class="simple">
+<li><p>les métadonnées décrivant des « unités archivistiques », constituant une archive numérique, et leur journal de cycle de vie,</p></li>
+<li><p>les métadonnées décrivant des « groupes d’objets techniques », constituant une archive numérique, et leur journal de cycle de vie,</p></li>
+<li><p>les objets binaires (ou fichiers numériques).</p></li>
+</ul>
+<p>Un contrôle a été ajouté pour assurer la cohérence des données de la plate-forme Vitam : les stratégies utilisées pour le stockage des métadonnées doivent déclarer une offre dite « référente ».</p>
+<p>Il n’y a pas de contrôle précis pour les stratégies utilisées pour le stockage des objets binaires.</p>
+<p><img alt="" src="../_images/stockage_md.png" /><br />
+<em>Exemple de déclarations pour une stratégie de stockage des métadonnées (strategyMD)</em></p>
+<p><img alt="" src="../_images/stockage_bdo.png" /><br />
+<em>Exemple de déclarations pour une stratégie de stockage des objets numériques (strategyBDO)</em></p>
+<p>Il est recommandé, dans un contrat de gestion, de déclarer les mêmes stratégies pour les métadonnées des unités archivistiques et des métadonnées groupes d’objets techniques. À ce jour, aucun contrôle ne rend obligatoire cette règle. Néanmoins déclarer deux stratégies distinctes rompt la cohérence des données, il est donc fortement déconseillé de le faire.</p>
+<p>Il est également recommandé de toujours stocker les métadonnées des unités archivistiques et des groupes d’objets techniques avec les objets binaires (fichiers numériques) pour garder une complétude des données liées aux archives sur une offre. À ce jour aucun contrôle ne rend obligatoire cette règle.</p>
+<p><em>Exemple de contrat de gestion</em></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aefqaaaaaahlsgflabckyalnvfix7laaaaaq&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Contrat de gestion 1&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Identifier&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MC-0000001&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Contrat de gestion valide déclarant pas de surcharge pour le stockage avec la stratégie par défaut&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ACTIVE&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;CreationDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2016-01-01T00:00:00.000&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;LastUpdate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2016-01-01T03:02:33.643&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ActivationDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2016-01-01T03:02:33.643&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;DeactivationDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2016-01-01T00:00:00.000&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Storage&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;UnitStrategy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;strategyMD&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ObjectGroupStrategy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;strategyMD&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ObjectStrategy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;strategyBDO&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;_tenant&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;_v&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Avec les stratégies possibles suivantes :</p>
+<p><em>Exemple de stratégies</em></p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;default&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;offers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;offer1&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;referent&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;offer2&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="p">},</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;strategyMD&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;offers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;offer3&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;referent&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;offer4&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="p">},</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;strategyBDO&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;offers&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;offer3&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;offer4&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="lutilisation-du-contrat-de-gestion">
+<h3><span class="section-number">18.4.3. </span>L’utilisation du contrat de gestion<a class="headerlink" href="#lutilisation-du-contrat-de-gestion" title="Lien vers cette rubrique"></a></h3>
+<p>Un contrat de gestion peut être défini dans un contrat d’entrée pour être utilisé lors de l’exécution d’un processus de transfert d’un SIP dans la solution logicielle Vitam.</p>
+<p>Si les stratégies spécifiques définies dans le contrat de gestion sont valides, alors ces stratégies spécifiques seront utilisées lors de l’exécution d’un processus de transfert (opération d’INGEST), et plus exactement lors du stockage des métadonnées (des unités archivistiques et des groupes d’objets techniques, avec leur journal de cycle de vie) et des objets binaires.</p>
+<p>Les stratégies, ainsi que le contrat de gestion, seront également indiquées dans les métadonnées associées au stockage. Elles seront ensuite utilisées pour l’accès aux fichiers stockés lors des différentes opérations réalisables dans la solution logicielle Vitam (accès aux archives, élimination, préservation, etc.) et nécessitant l’accès aux métadonnées ou aux objets binaires.</p>
+</section>
+<section id="scenario-qualite-de-service">
+<h3><span class="section-number">18.4.4. </span>Scénario : qualité de service<a class="headerlink" href="#scenario-qualite-de-service" title="Lien vers cette rubrique"></a></h3>
+<p>Le but d’un déploiement orienté « Qualité de service » de la solution logicielle Vitam est de fournir la possibilité de proposer un nombre de copies stockées différemment en fonction des applications utilisatrices de la plate-forme Vitam.</p>
+<p><img alt="Configuration des stratégies déployées sur le site primaire" src="../_images/site_primaire_2.png" /></p>
+<p><img alt="Configuration des stratégies déployées sur le site secondaire" src="../_images/site_secondaire_2.png" /></p>
+<p>Dans le cas présenté ci-dessous, deux nouvelles offres et une stratégie contenant 3 offres permettant de monter le nombre de copies à 3 sont ajoutées.
+La stratégie est ensuite déclarée dans un contrat de gestion avec la surcharge aussi des métadonnées et des archives numériques.</p>
+<p>Contrat de gestion :</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aefqaaaaaahlsgflabckyalnvfix7laaaaaq&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Contrat de gestion Qualité de Service&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Identifier&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MC-0000001&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Contrat de gestion pour le Use Case : Qualité de Service&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ACTIVE&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;CreationDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2016-01-01T00:00:00.000&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;LastUpdate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2016-01-01T03:02:33.643&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ActivationDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2016-01-01T03:02:33.643&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;DeactivationDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2016-01-01T00:00:00.000&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Storage&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;UnitStrategy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;strategyAll&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ObjectGroupStrategy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;strategyAll&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ObjectStrategy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;strategyAll&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;_tenant&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;_v&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Le contrat de gestion est ensuite lié à un contrat d’entrée qui sera utilisé pour les transferts de SIP.</p>
+<p>Contrat d’entrée :</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aefqaaaaaahlsgflabckyalnvfbojxyaaaaq&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Contrat d’entrée Qualité de Service&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Identifier&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IC-0000001&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Contrat Vitam pour les entrées en Qualité de Service&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ACTIVE&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;CreationDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2016-01-01T00:00:00.000&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;LastUpdate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2016-01-01T03:02:33.643&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ActivationDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2016-01-01T03:02:33.643&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;DeactivationDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2016-01-01T00:00:00.000&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;CheckParentLink&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AUTHORIZED&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;MasterMandatory&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;EveryDataObjectVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;FormatUnidentifiedAuthorized&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ManagementContractId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MC-0000001&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ComputeInheritedRulesAtIngest&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;EveryFormatType&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;_tenant&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;_v&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Le système respecte bien les caractéristiques nécessaires au bon fonctionnement des procédures de la plate-forme Vitam tout en permettant de proposer un nombre de copies d’archives supérieur à certains utilisateurs :</p>
+<ul class="simple">
+<li><p>les offres de stockage « offer1 » et « offer2 » contiennent les même données,</p></li>
+<li><p>les offres de stockage « offer3 », « offer4 » et « offer5 » contiennent les même données,</p></li>
+<li><p>les offres référentes de chaque site permettent bien la reconstruction de celui-ci,</p></li>
+<li><p>les offres référentes de chaque site ne contiennent aucune métadonnée communes,</p></li>
+<li><p>les stratégies permettent la lecture sur le site secondaire si celui-ci doit être activé,</p></li>
+<li><p>les utilisateurs utilisant le contrat d’entrée déclarant le contrat de gestion auront 3 copies de leurs archives dans le système.</p></li>
+</ul>
+<p><img alt="" src="../_images/schema_2.png" /></p>
+</section>
+<section id="scenario-offres-objets">
+<h3><span class="section-number">18.4.5. </span>Scénario : offres objets<a class="headerlink" href="#scenario-offres-objets" title="Lien vers cette rubrique"></a></h3>
+<p>Le but d’un déploiement orienté « Offres objets » de la solution logicielle Vitam est de fournir la possibilité de stocker les objets numériques uniquement sur des offres séparées dites « objets » pour certaines ou toutes les applications utilisatrices de la plate-forme Vitam.</p>
+<p>Ce type de déploiement offre également la possibilité de stocker les objets binaires uniquement sur des offres dites « froides » (sur bande par exemple), mais il est fortement conseillé d’y stocker également les métadonnées associées aux objets.</p>
+<p>Dans le cas présenté ci-dessous, deux nouvelles offres dites « objets » (offre 3 et offre 4) et une stratégie supplémentaire permettant de stocker les objets binaires et leurs métadonnées associées est ajoutée. Il n’y a pas d’offre dite « froide » représenté dans ce cas d’exemple.</p>
+<p><img alt="Configuration des stratégies déployées sur le site primaire" src="../_images/site_primaire_3.png" /></p>
+<p><img alt="Configuration des stratégies déployées sur le site secondaire" src="../_images/site_secondaire_3.png" /></p>
+<p>La stratégie est ensuite déclarée dans un contrat de gestion avec la surcharge aussi des métadonnées et des archives numériques.</p>
+<p>Contrat de gestion :</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aefqaaaaaahlsgflabckyalnvfix7laaaaaq&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Contrat de gestion Offres Froides&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Identifier&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MC-0000001&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Contrat de gestion pour le Use Case : Offres Froides&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ACTIVE&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;CreationDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2016-01-01T00:00:00.000&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;LastUpdate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2016-01-01T03:02:33.643&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ActivationDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2016-01-01T03:02:33.643&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;DeactivationDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2016-01-01T00:00:00.000&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Storage&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;UnitStrategy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;strategyALL&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ObjectGroupStrategy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;strategyALL&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ObjectStrategy&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;strategyALL&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;_tenant&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;_v&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Le contrat de gestion est ensuite lié à un contrat d’entrée qui sera utilisé pour les transferts de SIP dans la solution logicielle Vitam.</p>
+<p>Contrat d’entrée :</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;aefqaaaaaahlsgflabckyalnvfbojxyaaaaq&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Contrat d’entrée Offres Froides&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Identifier&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IC-0000001&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Contrat Vitam pour les entrées en Offres Froides&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ACTIVE&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;CreationDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2016-01-01T00:00:00.000&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;LastUpdate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2016-01-01T03:02:33.643&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ActivationDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2016-01-01T03:02:33.643&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;DeactivationDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2016-01-01T00:00:00.000&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;CheckParentLink&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;AUTHORIZED&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;MasterMandatory&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;EveryDataObjectVersion&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;FormatUnidentifiedAuthorized&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ManagementContractId&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MC-0000001&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ComputeInheritedRulesAtIngest&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;EveryFormatType&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;_tenant&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;_v&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Le système respecte bien les caractéristiques nécessaires au bon fonctionnement des procédures de la plate-forme Vitam tout en permettant de proposer un nombre de copies d’archives supérieur à certains utilisateurs :</p>
+<ul class="simple">
+<li><p>les offres de stockage « offer1 » et « offer2 » contiennent les même données,</p></li>
+<li><p>les offres de stockage « offer3 » et « offer4 » contiennent les même données,</p></li>
+<li><p>les stratégies permettent la lecture sur le site secondaire si celui-ci doit être activé,</p></li>
+<li><p>les offres référentes de chaque site permettent bien la reconstruction de celui-ci,</p></li>
+<li><p>les offres référentes de chaque site ne contiennent aucune métadonnée communes,</p></li>
+<li><p>les utilisateurs utilisant le contrat d’entrée déclarant le contrat de gestion auront leurs archives numériques uniquement sur des offres dites « froides » dans le système</p></li>
+</ul>
+<p><img alt="" src="../_images/schema_3.png" /></p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="preservation.html" class="btn btn-neutral float-left" title="17. Gestion de la préservation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="transfert.html" class="btn btn-neutral float-right" title="19. Le transfert avec la solution logicielle Vitam" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2022, Programme Vitam.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: master_9.0.x
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Tags</dt>
+      <dd><a href="../../7.1.0/sections/stockage.html">7.1.0</a></dd>
+    </dl>
+    <dl>
+      <dt>Branches</dt>
+      <dd><a href="../../master/sections/stockage.html">master</a></dd>
+      <dd><a href="../../master_7.1.x/sections/stockage.html">master_7.1.x</a></dd>
+      <dd><a href="../../master_8.1.x/sections/stockage.html">master_8.1.x</a></dd>
+      <dd><a href="stockage.html">master_9.0.x</a></dd>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>

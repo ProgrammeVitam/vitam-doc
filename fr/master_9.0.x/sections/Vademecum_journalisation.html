@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>13. La journalisation et la conservation de la valeur probante dans la solution logicielle Vitam &mdash; Vitam documentation fonctionnelle</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=eea1f72d" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f4732e6d"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/translations.js?v=bf059b8c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="14. L’ontologie dans la solution logicielle Vitam" href="Vademecum_ontologie.html" />
+    <link rel="prev" title="12. L’attribution des identifiants dans la solution logicielle Vitam" href="Vademecum_identifiants.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: white" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/Vitam_Logo-CMJN.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">première approche</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="guide_lecture.html">1. Documentation Vitam - guide de lecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="presentation_programme.html">2. Présentation du programme Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="presentation_solution_logicielle.html">3. Présentation de la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_prise_en_main.html">4. Guide de prise en main de la solution logicielle Vitam – Vitam UI<br>
+<em>Réaliser une première entrée</em></a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">documentation métier</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="organisation_information.html">1. Organisation de l’information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gestion_archives_arbo.html">2. Gestion des archives et des arborescences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_donnees.html">3. Modèle de données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SIP.html">4. Structuration des <em>Submission Information Packages</em> (SIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DIP.html">5. Structuration des <em>Dissemination Information Packages</em> (DIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gestion_habilitations.html">6. Gestion des habilitations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regles_gestion.html">7. Règles de gestion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services_prod.html">8. Services producteurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_archivage.html">9. Profils d’archivage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_unite_archivistique.html">10. Profils d’unité archivistique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ontologie.html">11. Ontologie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="schema.html">12. Schéma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_workflow.html">13. Description des workflows et des opérations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_de_collecte.html">14. Module de collecte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eliminations.html">15. Les éliminations avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gel.html">16. Le gel d’archives avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preservation.html">17. Gestion de la préservation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stockage.html">18. Gestion de multiples stratégies de stockage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transfert.html">19. Le transfert avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="valeur_probante.html">20. Conservation de la valeur probante</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">documentation Vitam UI</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Autoprovisionning.html">1. Vitam UI : présentation de la fonctionnalité d’auto-provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Arbres_Plans.html">2. APP Arbres et plans</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">outils connexes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="resip.html">1. RESIP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resip_faq.html">2. RESIP : foire aux questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pastis_standalone.html">3. PASTIS STANDALONE</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Chantier préservation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="chantier_preservation_validation_format.html">1. Validation du format des fichiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_identification_format.html">2. Identification des formats de fichiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_extraction_MD.html">3. Extraction des métadonnées techniques</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Vademecum</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_sommaire.html">1. Vademecum: sommaire thématique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_glossaire.html">2. Notions utilisées dans la solution logicielle Vitam et lien vers la fiche qui les définit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_arbre.html">3. L’arbre de positionnement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_audit.html">4. Les audits dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_classification.html">5. La gestion des archives classifiées avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_acces.html">6. Le contrat d’accès dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_entree.html">7. Le contrat d’entrée dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_gestion.html">8. Le contrat de gestion dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_echeances.html">9. Le calcul des héritages des règles de gestion et l’indexation des échéances dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_eliminations.html">10. Réaliser des éliminations d’archives avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_habilitations.html">11. La gestion des droits et permissions des utilisateurs applicatifs dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_identifiants.html">12. L’attribution des identifiants dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">13. La journalisation et la conservation de la valeur probante dans la solution logicielle Vitam</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#les-journaux">13.1. Les journaux</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#perimetre-des-journaux">13.1.1. Périmètre des journaux</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#journal-des-operations">13.1.2. Journal des opérations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#journaux-du-cycle-de-vie">13.1.3. Journaux du cycle de vie</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#journal-des-ecritures">13.1.4. Journal des écritures</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#securisation-des-journaux">13.1.5. Sécurisation des journaux</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#la-preuve-systemique">13.2. La preuve systémique</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#le-releve-de-valeur-probante">13.3. Le relevé de valeur probante</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_ontologie.html">14. L’ontologie dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_pa.html">15. Les profils d’archivage dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_parametrages_pf.html">16. Le paramétrage fonctionnel d’une plate-forme utilisant la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_plan.html">17. Le plan de classement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_preservation.html">18. La préservation dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_pua.html">19. Les profils d’unité archivistique dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_rattachement.html">20. Faire un rattachement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_formats.html">21. Le référentiel des formats dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_griffons.html">22. Le référentiel des griffons dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_preservation.html">23. Le référentiel des scénarios de préservation dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_rg.html">24. Le référentiel des règles de gestion dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_sa.html">25. Le référentiel des services agents dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_registre_fonds.html">26. Le registre des fonds dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_structuration_information.html">27. La structuration des informations dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_suivi_acces.html">28. Le suivi des accès dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_tenant.html">29. Les tenants dans la solution logicielle Vitam</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: white" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Documentation utilisateur Vitam</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">13. </span>La journalisation et la conservation de la valeur probante dans la solution logicielle Vitam</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/sections/Vademecum_journalisation.md.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+
+           <div itemprop="articleBody">
+             
+  <section id="la-journalisation-et-la-conservation-de-la-valeur-probante-dans-la-solution-logicielle-vitam">
+<h1><span class="section-number">13. </span>La journalisation et la conservation de la valeur probante dans la solution logicielle Vitam<a class="headerlink" href="#la-journalisation-et-la-conservation-de-la-valeur-probante-dans-la-solution-logicielle-vitam" title="Lien vers cette rubrique"></a></h1>
+<p>La conservation de la valeur probante est un sujet central d’un système d’archivage électronique. L’objectif est de rendre prouvable toute opération effectuée sur toute unité archivistique ou objet technique.
+Dans la solution logicielle Vitam, la conservation de la valeur probante repose sur un faisceau d’éléments redondants dont la modification simultanée et cohérente est considérée comme impossible. Les journaux en constituent un élément central.</p>
+<section id="les-journaux">
+<h2><span class="section-number">13.1. </span>Les journaux<a class="headerlink" href="#les-journaux" title="Lien vers cette rubrique"></a></h2>
+<section id="perimetre-des-journaux">
+<h3><span class="section-number">13.1.1. </span>Périmètre des journaux<a class="headerlink" href="#perimetre-des-journaux" title="Lien vers cette rubrique"></a></h3>
+<p>Les journaux sont constitués par tenant.</p>
+</section>
+<section id="journal-des-operations">
+<h3><span class="section-number">13.1.2. </span>Journal des opérations<a class="headerlink" href="#journal-des-operations" title="Lien vers cette rubrique"></a></h3>
+<p>Le journal des opérations a pour objectif d’enregistrer toutes les opérations effectuées par la solution logicielle Vitam ayant un impact significatif dans le système, et en particulier sur les unités archivistiques, groupes d’objets techniques et objets techniques pris en charge.</p>
+<p>Exemple d’opérations faisant l’objet d’une journalisation : import et mise à jour d’un référentiel, réalisation d’une opération d’entrée, réalisation d’une élimination, modification d’arborescence, mise à jour d’unités archivistiques, réalisation d’une opération de préservation, réalisation d’un export de DIP, réalisation d’un transfert, réalisation d’une opération d’audit, réalisation d’une opération de sécurisation, réalisation d’une opération de vérification des journaux sécurisés.</p>
+</section>
+<section id="journaux-du-cycle-de-vie">
+<h3><span class="section-number">13.1.3. </span>Journaux du cycle de vie<a class="headerlink" href="#journaux-du-cycle-de-vie" title="Lien vers cette rubrique"></a></h3>
+<p>Les journaux du cycle de vie ont pour objectif d’enregistrer toutes les actions significatives effectuées par la solution logicielle Vitam sur chacune des unités archivistiques et sur chacun des groupes d’objets techniques et des objets techniques qui les composent.</p>
+<p>Une action significative est une action qui modifie l’unité archivistique, le groupe d’objets techniques ou l’objet technique ou qui apporte une information significative sur son cycle de vie : par exemple, la modification d’une règle de gestion, le rattachement à une unité archivistique, l’ajout d’un objet technique à un groupe d’objets, la réidentification du format d’un objet.</p>
+<p>Lors de la prise en charge des unités archivistiques et des groupes d’objets techniques, la solution logicielle crée un journal de cycle de vie pour chaque unité archivistique et un journal de cycle de vie pour chaque groupe d’objets techniques.</p>
+</section>
+<section id="journal-des-ecritures">
+<h3><span class="section-number">13.1.4. </span>Journal des écritures<a class="headerlink" href="#journal-des-ecritures" title="Lien vers cette rubrique"></a></h3>
+<p>Le journal des écritures a pour objectif de tracer les opérations d’écriture effectuées par la solution logicielle sur les offres de stockage. Il garantit de fait l’horodatage et l’intégrité de tout élément dans le système.</p>
+<p>Ce journal apporte une sécurité supplémentaire par rapport aux autres journaux métier. Il peut servir d’ultime recours pour s’assurer de la présence d’un fichier dans le système à un moment donné.</p>
+</section>
+<section id="securisation-des-journaux">
+<h3><span class="section-number">13.1.5. </span>Sécurisation des journaux<a class="headerlink" href="#securisation-des-journaux" title="Lien vers cette rubrique"></a></h3>
+<p>La sécurisation des journaux consiste à apporter de la sécurité cryptographique sur l’objet journal en tant que tel. Cette sécurisation est effectuée à intervalles réguliers tenant par tenant par la solution logicielle Vitam et génère un fichier de sécurisation sauvegardé sur l’offre de stockage.</p>
+<p>Un mécanisme de chaînage permet de vérifier l’intégrité technique des journaux en remontant le fil des journaux produits.</p>
+</section>
+</section>
+<section id="la-preuve-systemique">
+<h2><span class="section-number">13.2. </span>La preuve systémique<a class="headerlink" href="#la-preuve-systemique" title="Lien vers cette rubrique"></a></h2>
+<p>La sécurisation de ces trois journaux et le croisement de leurs informations permettent d’assurer la traçabilité de tout événement et d’en apporter la preuve, parfois par plusieurs voies.</p>
+<p>Par exemple, il est ainsi possible de prouver la prise en charge d’un objet technique dans le système par :</p>
+<ul class="simple">
+<li><p>le journal du cycle de vie du groupe d’objets techniques qui fournit la date de création du journal, l’identifiant de l’opération qui a occasionné la prise en charge de l’objet dans la solution logicielle Vitam, ainsi que l’empreinte de l’objet,</p></li>
+<li><p>le journal des opérations qui contient l’identifiant de l’opération qui a occasionné la prise en charge de l’objet dans la solution logicielle Vitam, la date de cette opération et l’identité du service responsable de l’entrée s’il s’agit d’une opération d’entrée et non de préservation,</p></li>
+<li><p>le journal des écritures qui assure l’écriture de cet objet (via son empreinte) sur les offres de stockage.</p></li>
+</ul>
+</section>
+<section id="le-releve-de-valeur-probante">
+<h2><span class="section-number">13.3. </span>Le relevé de valeur probante<a class="headerlink" href="#le-releve-de-valeur-probante" title="Lien vers cette rubrique"></a></h2>
+<p>Le relevé de valeur probante a pour objectif d’apporter la preuve de la bonne existence d’un fichier dans le système à la date supposée de sa prise en charge dans celui-ci, que cette prise en charge résulte d’une opération d’entrée ou d’une opération de préservation.</p>
+<p>Il réunit les éléments permettant de fournir à un auditeur externe une présomption de confiance sur la valeur probante de ce qui lui est communiqué, par exemple dans le cadre d’une commission rogatoire.</p>
+<p>Une première série de vérifications atteste que la sécurisation du journal de l’opération de création de l’objet est bien faite et chaînée.</p>
+<p>Une deuxième série de vérifications atteste que la sécurisation du journal du cycle de vie de l’objet au moment supposé de la création de l’objet est bien faite et chaînée.</p>
+<p>Une troisième vérification atteste que l’objet actuellement en base et bien l’objet du journal du cycle de vie au moment supposé de la création supposée, donc que l’objet en base existait bien au moment supposé de la création.</p>
+<p>Une quatrième vérification atteste que le journal du cycle de vie de l’objet au moment de sa création peut être lu dans le journal du cycle de vie actuellement en base.
+Ainsi, au-delà de la garantie de la date de création de l’objet dans le système, c’est tout le journal du cycle de vie du groupe d’objets au moment de la création de l’objet dans le système qui peut être attesté.</p>
+<p>Le rapport fourni par la solution logicielle Vitam est un fichier technique qui présente une structure très riche et détaillée qui n’est pas faite pour être lue directement, mais pour apporter tous les éléments utiles à la construction d’un document lisible selon la forme souhaitée par le demandeur, au niveau du front-office.</p>
+<p>Pour en savoir plus, consulter le <a class="reference internal" href="valeur_probante.html"><span class="std std-doc">document VITAM. Conservation de la valeur probante</span></a>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="Vademecum_identifiants.html" class="btn btn-neutral float-left" title="12. L’attribution des identifiants dans la solution logicielle Vitam" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="Vademecum_ontologie.html" class="btn btn-neutral float-right" title="14. L’ontologie dans la solution logicielle Vitam" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2022, Programme Vitam.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: master_9.0.x
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Tags</dt>
+      <dd><a href="../../7.1.0/sections/Vademecum_journalisation.html">7.1.0</a></dd>
+    </dl>
+    <dl>
+      <dt>Branches</dt>
+      <dd><a href="../../master/sections/Vademecum_journalisation.html">master</a></dd>
+      <dd><a href="../../master_7.1.x/sections/Vademecum_journalisation.html">master_7.1.x</a></dd>
+      <dd><a href="../../master_8.1.x/sections/Vademecum_journalisation.html">master_8.1.x</a></dd>
+      <dd><a href="Vademecum_journalisation.html">master_9.0.x</a></dd>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>
