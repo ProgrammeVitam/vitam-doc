@@ -32,7 +32,7 @@ Il s’articule autour des axes suivants :
 - quelques conseils complémentaires de mise en œuvre.
 
 Le présent document décrit les fonctionnalités qui sont offertes par la
-solution logicielle Vitam au terme de la version 9.0 (automne 2025).
+solution logicielle Vitam au terme de la version 9.1 (printemps 2026).
 Il a vocation a être amendé, complété et enrichi au fur et à mesure de
 la réalisation de la solution logicielle Vitam et des retours et
 commentaires formulés par les ministères porteurs et les partenaires du
@@ -46,6 +46,8 @@ Présentation de la notion d’ontologie
 L’ontologie référence l’**ensemble des vocabulaires** ou métadonnées acceptés dans la solution logicielle Vitam. Pour chacun de ces vocabulaires, elle définit un intitulé et un type d’indexation particulier (par exemple : texte, décimal, entier), ainsi que la(les) collection(s) de la solution logicielle Vitam qui l'(les) utilise(nt)[^1].
 
 ![Illustration 1: Les éléments dans l’ontologie](medias/ontologie/Pictures/10000000000004630000031AB5C0593816E680A7.jpg "fig:")
+
+L’ontologie se compose :
 
 -   des vocabulaires définis dans le Standard d’échanges de données pour l’archivage (SEDA), inclus par défaut. Ces vocabulaires correspondent aux éléments XML présents dans les messages du SEDA (ArchiveTransfer en particulier) ;
 -   des vocabulaires propres à la solution logicielle Vitam, inclus par défaut[^2] ;
@@ -78,7 +80,7 @@ Ces vocabulaires peuvent être utilisés pour décrire :
 
     -   vocabulaires conformes au SEDA de type « objet », c'est-à-dire correspondant à un élément XML englobant un sous-élément XML (par exemple, Writer ou Management) ;
 
-        *Exemple :* ne sont pas présents dans l’ontologie les éléments XML <ManagementMetadata>, <StorageRule> et <AccessRule>. Les autres, qui contiennent des valeurs informationnelles, le sont.
+        *Exemple : ne sont pas présents dans l’ontologie les éléments XML ManagementMetadata, StorageRule et AccessRule. Les autres, qui contiennent des valeurs informationnelles, le sont.*
 
 	```xml
 	<ManagementMetadata>
@@ -122,8 +124,9 @@ Ces vocabulaires peuvent être utilisés pour décrire :
     }	
 ```
 
-En d’autres termes, l’ontologie **référence seulement les vocabulaires pouvant contenir des valeurs** (ou métadonnées) quand ils sont utilisés.
+	En d’autres termes, l’ontologie **référence seulement les vocabulaires pouvant contenir des valeurs** (ou métadonnées) quand ils sont utilisés.
 
+   -   A noter que les vocabulaires utilisés pour décrire un projet de versement ou une transaction ne sont pas référencés dans l'ontologie.
 
 ### Pourquoi une ontologie ?
 
@@ -270,7 +273,7 @@ La solution logicielle Vitam offre à un service d’archives ou à un service e
 
 La solution logicielle Vitam intègre une ontologie, administrable par un utilisateur doté des droits adéquats (**administrateur fonctionnel et administrateur technique**) et gérée dans une collection particulière[^7].
 
-Ce référentiel interne à la solution logicielle Vitam a pour vocation d’être une copie locale d’un référentiel administré dans le front office des plates-formes d’archivage implémentant cette dernière.
+Ce référentiel interne à la solution logicielle Vitam a pour vocation d’être une copie locale d’un référentiel administré dans le front-office des plates-formes d’archivage implémentant cette dernière.
 
 L'ontologie est multi-tenant. Elle est administrable et journalisée depuis le **tenant d’administration**.
 
@@ -288,7 +291,8 @@ Il s’agit d’une opération d’administration (« MASTERDATA »), tracée 
 
 La modification de l'ontologie est possible :
 
--   au moyen des API et de l’IHM VitamUI fournie avec la solution logicielle Vitam et s'effectue par un réimport complet de l'ontologie, en mode « annule et remplace ». De fait, la solution logicielle Vitam permet de :
+-   au moyen des API. Elle s'effectue par un réimport complet de l'ontologie, en mode « annule et remplace ». 
+	De fait, la solution logicielle Vitam permet de :
 
     -   ajouter un nouveau vocabulaire ;
     -   modifier les informations associées à un vocabulaire ;
@@ -344,7 +348,7 @@ L’import ou la mise à jour d’un profil d’unité archivistique peut échou
 -   le schéma de contrôle contient un vocabulaire inconnu de l’ontologie,
 -   le schéma de contrôle contient un vocabulaire de type « objet » que l’on a oublié de qualifier comme tel.
 
-Point d’attention :
+**Point d’attention :**
 
 -   La solution logicielle Vitam n’effectue pas de contrôle sur la conformité des vocabulaires par rapport à leur type d’indexation dans l’ontologie, lors de la création de profils d’unité archivistique. Néanmoins, il est obligatoire que le type du vocabulaire défini dans le schéma de contrôle corresponde au type d’indexation du vocabulaire tel qu’il est défini dans l’ontologie[^16].
 
@@ -360,13 +364,13 @@ La solution logicielle Vitam permet d'effectuer des recherches dans l'ontologie.
 Il est possible d'obtenir :
 -  une liste de résultats,
 -  un résultat par facettes (nombre d’occurrences pour une métadonnée donnée).
-Sont disponibles les facettes de type :
--  "terms" : pour obtenir des catégories basées sur les valeurs distinctes d'un champ spécifique et le nombre associé,
--  "filters" : pour obtenir des résultats d'agrégations par filtres sur les résultats,
--  "range" : pour obtenir des agrégations par plages de dates,
--  "sum" : pour obtenir des totaux sur des champs,
--  "count" : pour obtenir le nombre de valeurs présentes sur des champs,
--  "cardinality" : pour obtenir le nombre exact de valeurs présentes sur des champs (usage non recommandé).
+   Sont disponibles les facettes de type :
+   -  "terms" : pour obtenir des catégories basées sur les valeurs distinctes d'un champ spécifique et le nombre associé,
+   -  "filters" : pour obtenir des résultats d'agrégations par filtres sur les résultats,
+   -  "range" : pour obtenir des agrégations par plages de dates,
+   -  "sum" : pour obtenir des totaux sur des champs,
+   -  "count" : pour obtenir le nombre de valeurs présentes sur des champs,
+   -  "cardinality" : pour obtenir le nombre exact de valeurs présentes sur des champs (usage non recommandé).
 
 Par ailleurs, la solution logicielle permet de consulter le détail d'un vocabulaire en particulier.
 
@@ -408,7 +412,7 @@ L’ontologie contenant la traduction des différents vocabulaires supportés pa
 
 À titre d’exemple, l’ancienne IHM de la solution logicielle Vitam dispose de vocabulaires écrits en dur dans l’IHM. Dès qu’on transfère un bordereau contenant des vocabulaires externes, l’IHM ne les traduit pas. Il est alors nécessaire de demander un acte d’exploitation en vue de corriger ces éléments.
 
-*Exemple illustration 2 :*  
+*Exemple :*  
 *« Prénom », « Nom de naissance », « Identifiant », « Date d’envoi », « Date de réception », qui correspondent à des vocabulaires internes, sont des intitulés gravés en dur. « Licence », également gravé en dur, correspond à un vocabulaire externe. Dans l’ontologie, on a introduit une traduction conforme à la norme ISAD/G : « 3.4.2. Conditions de reproduction ».*
 
 ![illustration 2](medias/ontologie/Pictures/10000201000002AB00000168AC1949D42C34E522.png "fig:")
@@ -428,7 +432,7 @@ La solution logicielle Vitam permet en outre de modifier :
     -   Si le vocabulaire est enregistré dans l’ontologie, la solution logicielle Vitam vérifie que la mise à jour est conforme au type d’indexation du vocabulaire dans l’ontologie ;
     -   Si le vocabulaire n’est pas référencé dans l’ontologie, il sera mis à jour et interprété comme une chaîne de caractères textuels répétable.
 
-**Point d’attention :** Au terme de la version 6, lors d’extractions de métadonnées techniques, la solution logicielle Vitam ne fait pas de contrôle de conformité entre les métadonnées techniques de la collection ObjectGroup référencées dans l’ontologie et les métadonnées extraites.
+**Point d’attention :** Au terme de la version 9.1, lors d’extractions de métadonnées techniques, la solution logicielle Vitam ne fait pas de contrôle de conformité entre les métadonnées techniques de la collection ObjectGroup référencées dans l’ontologie et les métadonnées extraites.
 
 Conseils de mise en œuvre
 -------------------------
@@ -521,8 +525,8 @@ Pour créer un nouveau vocabulaire, il est recommandé de suivre les étapes sui
 |---|---|---|
 | Administrateur fonctionnel                 | émet le souhait d’ajouter un nouveau vocabulaire, **externe**, dans l’ontologie | Non |
 | Administrateur fonctionnel                 | vérifie au préalable si ce nouveau vocabulaire n’existe pas ou si un vocabulaire préexistant ne correspond pas à son besoin. | Oui |
-| Administrateur fonctionnel et/ou technique | ajoute le nouveau vocabulaire dans l’ontologie. | Non |
-| Administrateur fonctionnel et/ou technique | met à jour l’ontologie sur le tenant d’administration. | Oui |
+| Administrateur fonctionnel et/ou technique | ajoute le nouveau vocabulaire dans l’ontologie sur un tenant autre que le tenant d'administration. | Non |
+| Administrateur fonctionnel et/ou technique | met à jour l’ontologie ou ajouter le nouveau vocabulaire dans l'ontologie sur le tenant d’administration. | Oui |
 | Administrateur technique                   | Indexe le nouveau vocabulaire dans le moteur de recherche Elastic Search. | Non |
 
 ### Quand et comment modifier un type d’indexation ?
@@ -622,8 +626,8 @@ Pour supprimer un vocabulaire, il est recommandé de suivre les étapes suivante
 | Administrateur fonctionnel                 | émet le souhait de supprimer un vocabulaire, **externe**, dans l’ontologie. | Non |
 | Administrateur fonctionnel                 | vérifie au préalable si ce vocabulaire n’est pas utilisé par une unité archivistique, un profil d’unité archivistique ou dans le schéma ;<br>-  si ce vocabulaire est utilisé par des unités archivistiques, procède à une mise à jour de ces unités archivistiques, afin de modifier l’utilisation ;<br>-  si ce vocabulaire est utilisé par un profil d’unité archivistique, ôter la référence au profil d’unité archivistique dans l’(les) unité(s) archivistique(s) concernée(s) ;<br>-  si ce vocabulaire est utilisé dans le schéma, ôter la référence dans le schéma. | Oui |
 | Administrateur fonctionnel et/ou technique | – vérifient qu’aucun traitement en cours (en entrée comme en accès) n’utilise le vocabulaire à supprimer;<br>– le cas échéant, arrêtent pour un temps donné les traitements en cours (en entrée comme en accès) dans la solution logicielle Vitam. | Oui / Non |  
-| Administrateur fonctionnel et/ou technique | supprime le vocabulaire dans l’ontologie. | Non |
-| Administrateur fonctionnel et/ou technique | met à jour l’ontologie sur le tenant d’administration. | Oui |
+| Administrateur fonctionnel et/ou technique | supprime le vocabulaire dans l’ontologie sur un tenant autre que le tenant d'administration. | Non |
+| Administrateur fonctionnel et/ou technique | supprime le vocabulaire dans l’ontologie ou met à jour l’ontologie sur le tenant d’administration. | Oui |
 | Administrateur technique                   | supprime l’indexation du vocabulaire dans le moteur de recherche Elastic Search. | Non |
 | Administrateur fonctionnel et/ou technique | rétablissent les traitements en cours (en entrée comme en accès). | Oui / Non |
 
