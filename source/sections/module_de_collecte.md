@@ -1527,7 +1527,7 @@ Il n'est pas possible d'envoyer une arborescence bureautique avec un fichier .js
 
 ###### Utilisation des API
 
-Pour une transaction donnée peut être envoyé sous forme de SIP un paquet d'archives.
+Pour une transaction donnée peut être envoyé sous forme de SIP un à plusieurs paquet(s) d'archives.
 
 *Exemple : requête d’envoi d’un SIP sip.zip pour la transaction préalablement créée dont l’identifiant est aeeaaaaaaghiyso4ablmyal74slqwtqaaaaq.*
  
@@ -1552,6 +1552,7 @@ Cette action provoque :
         À chaque enregistrement, est associé :
 	
 		    -   l’identifiant de la transaction (_opi),
+			-   l’identifiant de l'upload ou batch (_batchId),
             -   l'identifiant du service producteur, présent dans le SIP (_sp et _sps),
 			-   la version du SEDA du message ArchiveTransfer (_sedaVersion),
 			-   la version de la solution logicielle Vitam (_implementationVersion);
@@ -1563,6 +1564,7 @@ Cette action provoque :
         À chaque enregistrement, est associé :
 	
 		   -   l’identifiant de la transaction (_opi),
+		   -   l’identifiant de l'upload ou batch (_batchId),
            -   l'identifiant du service producteur (_sp et _sps);
 
 	-   le cas échéant, la mise à jour des métadonnées techniques de l’objet avec :
@@ -1575,13 +1577,22 @@ Cette action provoque :
 	
 -   si elle est en erreur :
 
-    -   un changement de statut de la transaction, qui sera alors égal à « KO ».
-	-   si au moins une erreur concerne des contrôles relatifs aux unités archivistiques (STP_UNIT_CHECK_AND_PROCESS) ou aux groupes d'objets techniques (STP_OG_CHECK_AND_TRANSFORME) :
+    -   l'enregistrement de l'upload en erreur dans la transaction (Batches), incluant :
 	
-		-   un enregistrement de l'erreur dans les métadonnées de l'unité archivistique,
-		-   un enregistrement de l'erreur  dans les métadonnées du groupe d'objets techniques.
+		- son identifiant (_batchId),
+		- le résultat qui sera alors égal à « KO » (_batchStatus),
+		- le traitement concerné (evTypeProc).
 
-***Point d’attention :*** Au terme de la V.9.0 :
+	-   si au moins une erreur concerne des contrôles relatifs aux unités archivistiques (STP_UNIT_CHECK_AND_PROCESS) :
+	
+		-   un enregistrement de l'erreur dans les métadonnées de l'unité archivistique (_errors).
+	
+	-   si au moins une erreur concerne des contrôles relatifs  aux groupes d'objets techniques (STP_OG_CHECK_AND_TRANSFORME) :
+	
+		-   un enregistrement de l'erreur dans les métadonnées de l'unité archivistique (_ogInfo),
+		-   un enregistrement de l'erreur  dans les métadonnées du groupe d'objets techniques (_errors).
+
+***Point d’attention :*** Au terme de la V.9.1 :
 
 -   Ce service d'enregistrement des erreurs est disponible dans une version **bétâ**.
 -   les erreurs liées aux contrôles relatifs aux unités archivistiques (STP_UNIT_CHECK_AND_PROCESS) ou aux groupes d'objets techniques (STP_OG_CHECK_AND_TRANSFORME) sont cumulables.
@@ -1599,7 +1610,7 @@ La transaction a été clôturée. |
 
 Elle est journalisée dans le journal des opérations (COLLECT_INGEST). L'opération n'est pas associée à un rapport.
 
-***Point d’attention :*** Au terme de la V.9.0 :
+***Point d’attention :*** Au terme de la V.9.1 :
 
 -   Ce service est disponible dans une version **bétâ**.
 -   Les métadonnées d'en-tête du manifeste.xml ne sont pas enregistrées dans le module de collecte.
