@@ -4389,6 +4389,20 @@ Extrait d’une unité archivistique ayant un bloc « _mgt » possédant des r
 
         -   Cardinalité : 1-1
 		
+	-   « evIdProc » (event Identifier Process): identifiant du processus.
+
+		-   Il s’agit d’une chaîne de 36 caractères.
+
+		-   Cardinalité : 1-1
+			
+	-   « evDateTime » (event DateTime): date de lancement de l’opération.
+
+		-   Il s’agit d’une date au format ISO8601 AAAA-MM-JJ+"T"+hh:mm:ss:[3 digits de millisecondes]
+
+				Exemple : "2016-08-17T08:26:04.227"
+
+		-   Cardinalité : 1-1
+		
     -   « outDetail » (outcome Detail): code correspondant au résultat de l’événement.
 
         -   Il s’agit d’une chaîne de caractères.
@@ -4452,6 +4466,20 @@ Extrait d’une unité archivistique ayant un bloc « _mgt » possédant des r
 				-   Nom du processus correspondant à « COLLECT_SIP_INGEST ».
 
 				-   Cardinalité : 1-1
+				
+			-   « evIdProc » (event Identifier Process): identifiant du processus.
+
+				-   Il s’agit d’une chaîne de 36 caractères.
+
+				-   Cardinalité : 1-1
+			
+			-   « evDateTime » (event DateTime): date de lancement de l’opération.
+
+				-   Il s’agit d’une date au format ISO8601 AAAA-MM-JJ+"T"+hh:mm:ss:[3 digits de millisecondes]
+
+					Exemple : "2016-08-17T08:26:04.227"
+
+				-   Cardinalité : 1-1
 		
 			-   « outDetail » (outcome Detail): code correspondant au résultat de l’événement.
 
@@ -4491,6 +4519,8 @@ Extrait d’une unité archivistique ayant un bloc « _mgt » possédant des r
             evId: 'aeaaaaaaaaecazcraefhmam2ywdoabaaaaaq',
             evTypeProc: 'COLLECT_SIP_INGEST',
             outDetail: 'LFC.CHECK_UNIT_SCHEMA.INVALID_UNIT.KO',
+			evDateTime: '2026-01-15T15:49:17.311',
+            evIdProc: 'aeeaaaaaagectqheafbo6am3yjmmn2yaaaaq'
             outMessg: 'Échec de la vérification de la conformité des valeurs dans les champs',
             evDetData: '{"evDetTechData":"Invalid unit format : Document schema validation failed : \\n{\\"validateJson\\":[{\\"level\\":\\"error\\",\\"schema\\":{\\"loadingURI\\":\\"#\\",\\"pointer\\":\\"/definitions/date\\"},\\"instance\\":{\\"pointer\\":\\"/_mgt/StorageRule/Rules/0/StartDate\\"},\\"domain\\":\\"validation\\",\\"keyword\\":\\"pattern\\",\\"message\\":\\"ECMA 262 regex \\\\\\"^([0-8][0-9]{3}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01]))$\\\\\\" does not match input string \\\\\\"9000-10-10\\\\\\"\\",\\"regex\\":\\"^([0-8][0-9]{3}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01]))$\\",\\"string\\":\\"9000-10-10\\"}]}"}'
         }
@@ -4502,6 +4532,8 @@ Extrait d’une unité archivistique ayant un bloc « _mgt » possédant des r
                 obId: 'aebqaaaaagecazcraefhmam2ywdn36qaaaba',
                 evTypeProc: 'COLLECT_SIP_INGEST',
                 outDetail: 'LFC.CHECK_DIGEST.CALC_CHECK.INVALID.KO',
+				evDateTime: '2026-01-15T15:49:17.311',
+				evIdProc: 'aeeaaaaaagectqheafbo6am3yjmmn2yaaaaq'
                 outMessg: 'Échec de la vérification de l\'empreinte du fichier',
                 evDetData: '{"MessageDigest":"badbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbad00","Algorithm":"SHA-512","ComputedMessageDigest":"5581f85b25f0d80fa84c69e7ca24d98344f5fbaec45b7707dccf139a8c065961391d6e762516ee1db3137c4d82eca7fbc67c348c37ea0d615bb88161cf3b3008"}'
             },
@@ -4509,6 +4541,8 @@ Extrait d’une unité archivistique ayant un bloc « _mgt » possédant des r
                 evId: 'aeaaaaaaaaecazcraefhmam2ywdn6kyaaaaq',
                 obId: 'aebqaaaaagecazcraefhmam2ywdn36qaaaba',
                 evTypeProc: 'COLLECT_SIP_INGEST',
+				evDateTime: '2026-01-15T15:49:17.311',
+				evIdProc: 'aeeaaaaaagectqheafbo6am3yjmmn2yaaaaq'
                 outDetail: 'LFC.OG_OBJECTS_ANTIVIRUS_CHECK.ANTIVIRUS.KO',
                 outMessg: 'L\'objet contient un virus'
             }
@@ -4763,6 +4797,20 @@ l’objet-données numérique de référence.
 			-   Nom du processus correspondant à « COLLECT_SIP_INGEST ».
 
 			-   Cardinalité : 1-1
+			
+		-   « evIdProc » (event Identifier Process): identifiant du processus.
+
+			-   Il s’agit d’une chaîne de 36 caractères.
+
+			-   Cardinalité : 1-1
+			
+		-   « evDateTime » (event DateTime): date de lancement de l’opération.
+
+			-   Il s’agit d’une date au format ISO8601 AAAA-MM-JJ+"T"+hh:mm:ss:[3 digits de millisecondes]
+
+				Exemple : "2016-08-17T08:26:04.227"
+
+			-   Cardinalité : 1-1
 		
 		-   « outDetail » (outcome Detail): code correspondant au résultat de l’événement.
 
@@ -4802,6 +4850,8 @@ l’objet-données numérique de référence.
                 evId: 'aeaaaaaaaaecazcraefhmam2ywdn5nqaaaaq',
                 obId: 'aebqaaaaagecazcraefhmam2ywdn36qaaaba',
                 evTypeProc: 'COLLECT_SIP_INGEST',
+				evDateTime: '2026-01-15T15:49:17.311',
+				evIdProc: 'aeeaaaaaagectqheafbo6am3yjmmn2yaaaaq'
                 outDetail: 'LFC.CHECK_DIGEST.CALC_CHECK.INVALID.KO',
                 outMessg: 'Échec de la vérification de l\'empreinte du fichier',
                 evDetData: '{"MessageDigest":"badbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbad00","Algorithm":"SHA-512","ComputedMessageDigest":"5581f85b25f0d80fa84c69e7ca24d98344f5fbaec45b7707dccf139a8c065961391d6e762516ee1db3137c4d82eca7fbc67c348c37ea0d615bb88161cf3b3008"}'
@@ -4810,6 +4860,8 @@ l’objet-données numérique de référence.
                 evId: 'aeaaaaaaaaecazcraefhmam2ywdn6kyaaaaq',
                 obId: 'aebqaaaaagecazcraefhmam2ywdn36qaaaba',
                 evTypeProc: 'COLLECT_SIP_INGEST',
+				evDateTime: '2026-01-15T15:49:17.311',
+				evIdProc: 'aeeaaaaaagectqheafbo6am3yjmmn2yaaaaq'
                 outDetail: 'LFC.OG_OBJECTS_ANTIVIRUS_CHECK.ANTIVIRUS.KO',
                 outMessg: 'L\'objet contient un virus'
             }
