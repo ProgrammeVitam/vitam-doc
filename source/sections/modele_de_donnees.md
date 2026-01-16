@@ -5240,11 +5240,32 @@ Cette transposition se fait comme suit :
 
 -   Cardinalité : 0-1
 
-**« Batches » :** Des numéros de lots pour permettre le suivi et le contrôle, ce champ est inscrit sur les AU lors de l'écriture afin de permettre leur purge lors d'un KO de l'API upload, ça permet d'assurer que les éléments associés soient purgée afin de pouvoir éviter la mise à l'état KO de l'ensemble de la "transaction" utilisée et ainsi poursuivre son traitement.
+**« Batches » :** numéros de lots pour permettre le suivi et le contrôle des uploads.
 
--   Il s’agit d’une liste avec le batch id (_batchId) et un statut (_batchStatus).
+-   Champ peuplé par la solution logicielle Vitam.
 
 -   Cardinalité : 0-1
+
+-   Il s’agit d’un objet JSON pouvant inclure une à plusieurs références. 
+	Chacune d'elles comprend les champs suivants :
+	
+	- _batchId : identifiant de l'upload ayant rencontré un problème.
+
+		-   Il s’agit d’une chaîne de caractères.
+		-   Cardinalité : 1-1
+		
+	- _batchStatus : statut de l'upload ayant rencontré un problème.
+	
+		-   Il s’agit d’une chaîne de caractères.
+		-   Les valeurs peuvent être : « KO », « PURGED ».
+		-   Cardinalité : 1-1
+		
+	- evTypeProc : type de processus.
+
+		- 	Il s’agit d’une chaîne de caractères.
+		-   Les valeurs peuvent être : « COLLECT_SIP_INGEST ».
+		-   Cardinalité : 1-1
+	
 
 Base MasterData
 ---------------
