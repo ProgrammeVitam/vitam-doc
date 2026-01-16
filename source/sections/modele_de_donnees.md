@@ -4221,7 +4221,7 @@ Extrait d’une unité archivistique ayant un bloc « _mgt » possédant des r
 
 -   Cardinalité : 1-1
 
-**« \_opi »** : identifiant de l’opération à l’origine de la création de cette unité archivistique.
+**« _opi »** : identifiant de l’opération à l’origine de la création de cette unité archivistique.
 
 -   Il s’agit d’une chaîne de 36 caractères correspondant au champ _id de la transaction.
 
@@ -4364,6 +4364,158 @@ Extrait d’une unité archivistique ayant un bloc « _mgt » possédant des r
 -   Champ peuplé par la solution logicielle Vitam.
 
 -   Cardinalité : 0-1
+
+**« _errors » :** contient les erreurs recensées pour une unité archivistique créée depuis un SIP.
+
+-   Cardinalité : 0-1
+
+-   Il contient :
+
+    -   « evId » (event Identifier): identifiant de l’événement.
+
+        -   Il s’agit d’une chaîne de 36 caractères.
+
+        -   Champ obligatoire peuplé par la solution logicielle Vitam.
+
+        -   Cardinalité : 1-1
+
+    -   « evTypeProc » (event Type Process): type de processus.
+
+        -   Il s’agit d’une chaîne de caractères.
+
+        -   Champ obligatoire peuplé par la solution logicielle Vitam.
+		
+		-   Nom du processus correspondant à « COLLECT_SIP_INGEST ».
+
+        -   Cardinalité : 1-1
+		
+    -   « outDetail » (outcome Detail): code correspondant au résultat de l’événement.
+
+        -   Il s’agit d’une chaîne de caractères.
+
+        -   Champ obligatoire peuplé par la solution logicielle Vitam.
+		
+		-   Il contient le code correspondant au résultat de l’événement, incluant le statut. Seul le code est stocké dans ce champ, la traduction se fait via le fichier properties (vitam-logbook-message-fr.properties).
+
+        -   Cardinalité : 1-1
+		
+    -   « outMessg » (outcome Detail Message): détail du résultat de l’événement.
+
+        -   Il s’agit d’une chaîne de caractères.
+
+        -   Champ obligatoire peuplé par la solution logicielle Vitam.
+		
+		-   C’est un message intelligible destiné à être lu par un être humain en tant que détail de l’événement.
+
+		-	Traduction du code présent dans outDetail issue du fichier vitam-logbook-message-fr.properties.
+		
+		-   Il contient le code correspondant au résultat de l’événement, incluant le statut. Seul le code est stocké dans ce champ, la traduction se fait via le fichier properties (vitam-logbook-message-fr.properties).
+
+        -   Cardinalité : 1-1
+	
+	-   « evDetData » (event Detail Data): détails des données de l’événement.
+
+        -   Il s’agit d’un objet JSON pouvant contenir des informations.
+
+        -   Donne plus de détails sur l’événement ou son résultat.
+		
+        -   Cardinalité : 0-1
+				
+**« _ogInfo » :** contient les erreurs recensées pour un groupe d'objets techniques associé à une unité archivistique et créé depuis un SIP.		
+
+	- **« _errors » :** contient les erreurs recensées pour un groupe d'objets techniques ou un objet technique.
+
+		-   Cardinalité : 1-1
+
+		-   Il contient :
+
+			-   « evId » (event Identifier): identifiant de l’événement.
+
+				-   Il s’agit d’une chaîne de 36 caractères.
+
+				-   Champ obligatoire peuplé par la solution logicielle Vitam.
+
+				-   Cardinalité : 1-1
+				
+			-   « obId » (object Identifier): identifiant de l’objet auquel s’applique l’opération.
+
+				-	Si l’événement touche tout le groupe d’objets, alors le champ sera absent. S’il touche un objet du groupe d’objets, alors il sera présent et indiquera l'identifiant de l’objet en question.
+
+				-	Cardinalité : 0-1
+
+			-   « evTypeProc » (event Type Process): type de processus.
+
+				-   Il s’agit d’une chaîne de caractères.
+
+				-   Champ obligatoire peuplé par la solution logicielle Vitam.
+		
+				-   Nom du processus correspondant à « COLLECT_SIP_INGEST ».
+
+				-   Cardinalité : 1-1
+		
+			-   « outDetail » (outcome Detail): code correspondant au résultat de l’événement.
+
+				-   Il s’agit d’une chaîne de caractères.
+
+				-   Champ obligatoire peuplé par la solution logicielle Vitam.
+		
+				-   Il contient le code correspondant au résultat de l’événement, incluant le statut. Seul le code est stocké dans ce champ, la traduction se fait via le fichier properties (vitam-logbook-message-fr.properties).
+
+				-   Cardinalité : 1-1
+		
+			-   « outMessg » (outcome Detail Message): détail du résultat de l’événement.
+
+				-   Il s’agit d’une chaîne de caractères.
+
+				-   Champ obligatoire peuplé par la solution logicielle Vitam.
+		
+				-   C’est un message intelligible destiné à être lu par un être humain en tant que détail de l’événement.
+
+				-	Traduction du code présent dans outDetail issue du fichier vitam-logbook-message-fr.properties.
+		
+				-   Il contient le code correspondant au résultat de l’événement, incluant le statut. Seul le code est stocké dans ce champ, la traduction se fait via le fichier properties (vitam-logbook-message-fr.properties).
+
+				-   Cardinalité : 1-1
+	
+			-   « evDetData » (event Detail Data): détails des données de l’événement.
+
+				-   Il s’agit d’un objet JSON pouvant contenir des informations.
+
+				-   Donne plus de détails sur l’événement ou son résultat.
+		
+				-   Cardinalité : 0-1
+
+```json
+ _errors: [
+        {
+            evId: 'aeaaaaaaaaecazcraefhmam2ywdoabaaaaaq',
+            evTypeProc: 'COLLECT_SIP_INGEST',
+            outDetail: 'LFC.CHECK_UNIT_SCHEMA.INVALID_UNIT.KO',
+            outMessg: 'Échec de la vérification de la conformité des valeurs dans les champs',
+            evDetData: '{"evDetTechData":"Invalid unit format : Document schema validation failed : \\n{\\"validateJson\\":[{\\"level\\":\\"error\\",\\"schema\\":{\\"loadingURI\\":\\"#\\",\\"pointer\\":\\"/definitions/date\\"},\\"instance\\":{\\"pointer\\":\\"/_mgt/StorageRule/Rules/0/StartDate\\"},\\"domain\\":\\"validation\\",\\"keyword\\":\\"pattern\\",\\"message\\":\\"ECMA 262 regex \\\\\\"^([0-8][0-9]{3}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01]))$\\\\\\" does not match input string \\\\\\"9000-10-10\\\\\\"\\",\\"regex\\":\\"^([0-8][0-9]{3}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01]))$\\",\\"string\\":\\"9000-10-10\\"}]}"}'
+        }
+		],
+ _ogInfo: {
+        _errors: [
+            {
+                evId: 'aeaaaaaaaaecazcraefhmam2ywdn5nqaaaaq',
+                obId: 'aebqaaaaagecazcraefhmam2ywdn36qaaaba',
+                evTypeProc: 'COLLECT_SIP_INGEST',
+                outDetail: 'LFC.CHECK_DIGEST.CALC_CHECK.INVALID.KO',
+                outMessg: 'Échec de la vérification de l\'empreinte du fichier',
+                evDetData: '{"MessageDigest":"badbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbad00","Algorithm":"SHA-512","ComputedMessageDigest":"5581f85b25f0d80fa84c69e7ca24d98344f5fbaec45b7707dccf139a8c065961391d6e762516ee1db3137c4d82eca7fbc67c348c37ea0d615bb88161cf3b3008"}'
+            },
+            {
+                evId: 'aeaaaaaaaaecazcraefhmam2ywdn6kyaaaaq',
+                obId: 'aebqaaaaagecazcraefhmam2ywdn36qaaaba',
+                evTypeProc: 'COLLECT_SIP_INGEST',
+                outDetail: 'LFC.OG_OBJECTS_ANTIVIRUS_CHECK.ANTIVIRUS.KO',
+                outMessg: 'L\'objet contient un virus'
+            }
+        ]
+    }
+``` 
+
 
 ### Collection ObjectGroup
 
@@ -4581,6 +4733,88 @@ l’objet-données numérique de référence.
 -   Champ peuplé par la solution logicielle Vitam.
 
 -   Cardinalité : 0-1
+
+**« _errors » :** contient les erreurs recensées pour un groupe d'objets techniques ou un objet technique créé depuis un SIP.
+
+	-   Cardinalité : 1-1
+
+	-   Il contient :
+
+		-   « evId » (event Identifier): identifiant de l’événement.
+
+			-   Il s’agit d’une chaîne de 36 caractères.
+
+			-   Champ obligatoire peuplé par la solution logicielle Vitam.
+
+			-   Cardinalité : 1-1
+				
+		-   « obId » (object Identifier): identifiant de l’objet auquel s’applique l’opération.
+
+			-	Si l’événement touche tout le groupe d’objets, alors le champ sera absent. S’il touche un objet du groupe d’objets, alors il sera présent et indiquera l'identifiant de l’objet en question.
+
+			-	Cardinalité : 0-1
+
+		-   « evTypeProc » (event Type Process): type de processus.
+
+			-   Il s’agit d’une chaîne de caractères.
+
+			-   Champ obligatoire peuplé par la solution logicielle Vitam.
+		
+			-   Nom du processus correspondant à « COLLECT_SIP_INGEST ».
+
+			-   Cardinalité : 1-1
+		
+		-   « outDetail » (outcome Detail): code correspondant au résultat de l’événement.
+
+			-   Il s’agit d’une chaîne de caractères.
+
+			-   Champ obligatoire peuplé par la solution logicielle Vitam.
+		
+			-   Il contient le code correspondant au résultat de l’événement, incluant le statut. Seul le code est stocké dans ce champ, la traduction se fait via le fichier properties (vitam-logbook-message-fr.properties).
+
+			-   Cardinalité : 1-1
+		
+		-   « outMessg » (outcome Detail Message): détail du résultat de l’événement.
+
+			-   Il s’agit d’une chaîne de caractères.
+
+			-   Champ obligatoire peuplé par la solution logicielle Vitam.
+		
+			-   C’est un message intelligible destiné à être lu par un être humain en tant que détail de l’événement.
+
+			-	Traduction du code présent dans outDetail issue du fichier vitam-logbook-message-fr.properties.
+		
+			-   Il contient le code correspondant au résultat de l’événement, incluant le statut. Seul le code est stocké dans ce champ, la traduction se fait via le fichier properties (vitam-logbook-message-fr.properties).
+
+			-   Cardinalité : 1-1
+	
+		-   « evDetData » (event Detail Data): détails des données de l’événement.
+
+			-   Il s’agit d’un objet JSON pouvant contenir des informations.
+
+			-   Donne plus de détails sur l’événement ou son résultat.
+		
+			-   Cardinalité : 0-1
+
+```json
+ _errors: [
+			{
+                evId: 'aeaaaaaaaaecazcraefhmam2ywdn5nqaaaaq',
+                obId: 'aebqaaaaagecazcraefhmam2ywdn36qaaaba',
+                evTypeProc: 'COLLECT_SIP_INGEST',
+                outDetail: 'LFC.CHECK_DIGEST.CALC_CHECK.INVALID.KO',
+                outMessg: 'Échec de la vérification de l\'empreinte du fichier',
+                evDetData: '{"MessageDigest":"badbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbad00","Algorithm":"SHA-512","ComputedMessageDigest":"5581f85b25f0d80fa84c69e7ca24d98344f5fbaec45b7707dccf139a8c065961391d6e762516ee1db3137c4d82eca7fbc67c348c37ea0d615bb88161cf3b3008"}'
+            },
+            {
+                evId: 'aeaaaaaaaaecazcraefhmam2ywdn6kyaaaaq',
+                obId: 'aebqaaaaagecazcraefhmam2ywdn36qaaaba',
+                evTypeProc: 'COLLECT_SIP_INGEST',
+                outDetail: 'LFC.OG_OBJECTS_ANTIVIRUS_CHECK.ANTIVIRUS.KO',
+                outMessg: 'L\'objet contient un virus'
+            }
+		]
+``` 
 
 Base collect
 ------------
@@ -11793,6 +12027,8 @@ L’ensemble des étapes, tâches et traitements sont détaillées dans la docum
 | Storage Angencies type process                   | STORAGE_RULE              | Enregistrement du référentiel des services agents |
 | Traceability type process                        | TRACEABILITY              | Sécurisation                                      |
 | Update process                                   | UPDATE                    | Mise à jour                                       | 
+| Ingest collect process                           | COLLECT_SIP_INGEST        | Import de SIP dans collecte                       | 
+
 
 ### Annexe 4 : Catégories de règles possibles
 
