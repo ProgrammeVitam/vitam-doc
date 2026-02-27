@@ -30,7 +30,7 @@ Il s’articule autour des axes suivants :
 - des recommandations aux utilisateurs de la solution logicielle Vitam sur la manière d’élaborer un profil d’archivage ;
 - quelques conseils complémentaires de mise en œuvre.
 
-Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 9.0 (automne 2025). Il inclut en particulier la présentation des fonctionnalités offertes par l'outil PASTIS (Profil d’Archivage Simple pour le Traitement de l’Information en SEDA) intégré à l’IHM Vitam UI dans l’APP Profils documentaires et également disponible sous forme d'exécutable. Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
+Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 9.1 (printemps 2026). Il inclut en particulier la présentation des fonctionnalités offertes par l'outil PASTIS (Profil d’Archivage Simple pour le Traitement de l’Information en SEDA) intégré à l’IHM Vitam UI dans l’APP Profils documentaires et également disponible sous forme d'exécutable. Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
 
 Présentation de la notion de profil d’archivage
 ----
@@ -129,8 +129,9 @@ Il est possible de réaliser les opérations présentées ci-dessous.
 
 Il est possible d’importer 1 à n notice(s) descriptive(s) de profil(s) d’archivage sous la forme d’un fichier JSON depuis les API ou l’IHM standard fournies avec la solution logicielle Vitam.
 
-L’APP « Profils documentaires » accessible depuis l’IHM VitamUI permet quant à elle de créer une notice depuis ses interfaces.
-Exemple : notice descriptive de profil d’archivage contenant uniquement les informations obligatoires pour être importée avec succès.
+L’APP « Profils documentaires » accessible depuis l’IHM VitamUI permet quant à elle de créer directement une notice depuis ses interfaces.
+
+*Exemple : notice descriptive de profil d’archivage contenant uniquement les informations obligatoires pour être importée avec succès.*
 
 ```json
 [
@@ -335,7 +336,7 @@ Lors de l’étape de vérification de la conformité entre le profil d’archiv
     - la notice descriptive du profil d’archivage est inactive,
           alors le transfert du SIP échouera à la tâche de vérification entre le contrat d’entrée et le profil d’archivage et ne passera pas à la tâche suivante[^14].
 
-Exemple : message d’erreur sur la tâche de contrôle de conformité entre un contrat d’entrée et un profil d’archivage.
+*Exemple : message d’erreur sur la tâche de contrôle de conformité entre un contrat d’entrée et un profil d’archivage.*
 
 ```xml
 <Operation>
@@ -379,7 +380,7 @@ Lors de l’étape de vérification de la conformité du bordereau de transfert 
 - si le bordereau de transfert est conforme à son profil d’archivage, c’est-à-dire s’il correspond au modèle de données défini dans le profil d’archivage, la tâche de vérification de la conformité au profil d’archivage aura un statut « OK » et la solution logicielle Vitam passera au traitement suivant, à savoir la vérification de la conformité du SIP au SEDA ;
 - si le bordereau de transfert n’est pas conforme à son profil d’archivage ou si la notice de profil d’archivage ne contient pas de profil d’archivage au format RNG ou XSD, son transfert dans la solution logicielle Vitam n’aboutira pas. Un message de réponse (ArchiveTransferReply ou ATR) indique que le transfert a échoué à la tâche de vérification de la conformité au profil d’archivage et précise la première erreur rencontrée dans le détail de l’événement (EventDetailData)[^15].
 
-Exemple : message d’erreur sur la tâche de contrôle de conformité entre un bordereau de transfert et un profil d’archivage.
+*Exemple : message d’erreur sur la tâche de contrôle de conformité entre un bordereau de transfert et un profil d’archivage.*
 
 ```xml
 <Operation>
@@ -480,8 +481,8 @@ Il est conseillé de procéder par étape[^17] :
 
 Pour rédiger un profil d’archivage, il est également possible d’utiliser l’outil PASTIS (Profil d’Archivage Simple pour le Traitement de l’Information en SEDA), qui permet de générer des profils d’archivage au format Relax NG. Cet outil est utilisable sous forme d’exécutable ou d’APP intégrée aux interfaces de VitamUI (APP Profils documentaires).
 
-- Au terme de la version 8.0, il permet de générer des profils d'archivage en SEDA 2.1, 2.2 et 2.3.
-- Au terme de la version 8.1, il intègre également la possibilité d'ajouter des extensions au SEDA au niveau du bloc « Content ».
+- Au terme de la version 8.0 et dans les versions suivantes, il permet de générer des profils d'archivage en SEDA 2.1, 2.2 et 2.3.
+- Au terme de la version 8.1 et dans les versions suivantes, il intègre également la possibilité d'ajouter des extensions au SEDA au niveau du bloc « Content ».
 
 **Étape 1** - l’outil requiert dans un premier temps de créer un profil d’archivage (PA) et de sélectionner la version du SEDA.
 
@@ -536,7 +537,7 @@ Une fois la rédaction du profil d’archivage réalisée, il est possible de :
 L’export s’avère nécessaire en vue de :
 - corriger une coquille au niveau du bloc CodeListVersions ;
 - obtenir un fichier RNG conforme au SEDA 2.2 ou 2.3 (pour les versions de la solution logicielle Vitam antérieures à la version 8.0) ;
-- intégrer un certain nombre d’éléments non supportés par l’APP « Profils documentaires » en fonction des versions du SEDA utilisées, notamment les extensions (pour les versions de la solution logicielle Vitam antérieures à la version 8.1) ou les rattachements (non supportés par PASTIS).
+- intégrer un certain nombre d’éléments non supportés par l’APP « Profils documentaires » en fonction des versions du SEDA utilisées, notamment les extensions (pour les versions de la solution logicielle Vitam antérieures à la version 8.1) ou les rattachements (non supportés par PASTIS pour les versions antérieures à la version 9.1).
 
 Pour apporter ces corrections au fichier exporté, il faut :
 - Ouvrir le fichier dans un éditeur de texte (ex : Notepad ++, Oxygen).
@@ -572,7 +573,7 @@ OU
 **Mention du profil d’unité archivistique**
 
 Si l’on souhaite contrôler une unité archivistique au moyen d’un profil d’unité archivistique, il faut ajouter dans le profil d’archivage l’identifiant du profil d’unité archivistique ou, du moins, la mention de l’existence du profil d’unité archivistique[^19].
-Au terme de la version 9.0, l’APP Profils documentaires ne permet pas de déporter le contrôle des métadonnées vers le profil d’unité archivistique. En effet, il est nécessaire de déclarer dans le profil d’archivage, en plus du profil d’unité archivistique, l’ensemble des métadonnées qui feront également l’objet du contrôle dans le profil d’unité archivistique.
+Au terme de la version 9.1, l’APP Profils documentaires ne permet pas de déporter le contrôle des métadonnées vers le profil d’unité archivistique. En effet, il est nécessaire de déclarer dans le profil d’archivage, en plus du profil d’unité archivistique, l’ensemble des métadonnées qui feront également l’objet du contrôle dans le profil d’unité archivistique.
 
 Si on souhaite déporter le contrôle vers le profil d’unité archivistique, il faudra modifier les éléments suivant dans le fichier RNG :
 *Exemple : ajout de la mention du profil d’unité archivistique.*
@@ -900,7 +901,7 @@ La solution logicielle Vitam supporte un bloc de rattachement au niveau du bloc 
             </rng:element>
 ```
 
-Point d’attention : il est recommandé de vérifier que l'identifiant technique ou les clés / valeurs mentionné(es) dans le profil d’archivage sont référencés dans une unité archivistique.
+**Point d’attention :** il est recommandé de vérifier que l'identifiant technique ou les clés / valeurs mentionné(es) dans le profil d’archivage sont référencés dans une unité archivistique.
 
 #### Documentation d’un profil d’archivage
 
