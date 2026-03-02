@@ -2530,13 +2530,15 @@ Pour une transaction donnée, peut être envoyé un fichier .csv contenant des m
 Le fichier .csv est composé de x colonnes[^17] :
 
 -   File : chemin relatif à partir de l’emplacement où est positionnée l’unité archivistique faisant l’objet de la modification. Il s’agit d’une concaténation des intitulés des différentes unités archivistiques (colonne obligatoire) ;
+-   _id : identifiant technique de l'unité archivistique à modifier (colonne obligatoire) ;
 -   toute colonne correspondant à un champ du standard SEDA et nécessitant une modification et/ou un ajout de métadonnées (colonnes facultatives) ;
 -   le cas échéant, toute colonne correspondant à une métadonnée externe du standard SEDA  et nécessitant une modification et/ou un ajout de métadonnées (colonnes facultatives).
 
 ***Points d’attention :***
 
 -   le fichier .csv n’est pas obligatoirement intitulé « metadata.csv » ;
--   l’ordre des premières colonnes ne doit pas être modifié ;
+-   l’ordre des premières colonnes ne doit pas être modifié . 
+    A noter que la première colonne est soit File, soit _id. On ne peut avoir une colonne File et une colonne _id dans le même fichier ;
 -   une première ligne d’en-tête donnant le nom des colonnes doit être présente, chaque ligne décrivant ensuite une unité archivistique ;
 -   le séparateur entre les colonnes est le point-virgule, le séparateur de texte les guillemets doubles et l’encodage est « UTF-8 » ;
 -   le fichier .csv ne référence que des métadonnées propres aux unités archivistiques (métadonnées descriptives et de gestion).
@@ -2565,6 +2567,13 @@ Le fichier .csv est composé de x colonnes[^17] :
   "content/AU4";"Item";"AU4";"";""
 ```
 
+  *Exemple : fichier .csv de mise à jour des métadonnées (ajout ou modification d'un Tag pour les unités archivistiques dont l'identifiant technique est « aeaqaaaaaeecjgm7adzzoam4v3alvniaaaaq » et « aeaqaaaaaeecjgm7adzzoam4v3alblobaaaaq »)*
+```csv  
+  _id;Content.DescriptionLevel;Content.Title;Content.Tag
+  "aeaqaaaaaeecjgm7adzzoam4v3alvniaaaaq";"Item";"AU1";"MonTag"
+  "aeaqaaaaaeecjgm7adzzoam4v3alblobaaaaq";"Item";"AU2";"MonTag"
+```
+
 Cette action provoque la mise à jour des unités archivistiques dans la base de données MongoDB, dans la collection « Unit » (base *MetadataCollect[^18]*).
 Lors de cette action, l’opération peut aboutir aux résultats suivants :
 
@@ -2572,7 +2581,7 @@ Lors de cette action, l’opération peut aboutir aux résultats suivants :
 |---|---|
 | Succès       |  Action réalisée sans rencontrer de problèmes particuliers. |
 | Avertissement|  Le formatage du fichier .csv contient au moins une erreur (ex. date mal formatée, valeur attendue erronée, date de début postérieure à la date de fin, etc.)|
-| Échec        |  - Le fichier .csv n’est pas au format .csv. <br>- Le fichier .csv contient des erreurs dans la colonne File. <br>- Action non réalisée pour cause de nom erroné ou de chemin introuvable dans la requête.<br>- La transaction n’existe pas ou est erronée.<br>- La transaction a un statut « READY », « VALIDATED », « SENDING », « SEND », « ACK_OK », « ACK_WARNING », « ACK_KO », « KO », « ABORTED ».|
+| Échec        |  - Le fichier .csv n’est pas au format .csv. <br>- Le fichier .csv contient des erreurs dans la colonne File ou la colonne _id. <br>- Action non réalisée pour cause de nom erroné ou de chemin introuvable dans la requête.<br>- La transaction n’existe pas ou est erronée.<br>- La transaction a un statut « READY », « VALIDATED », « SENDING », « SEND », « ACK_OK », « ACK_WARNING », « ACK_KO », « KO », « ABORTED ».<br>- Le fichier .csv contient une colonne File et une colonne _id.|
 
 Elle n’est pas journalisée dans le journal des opérations.
 
