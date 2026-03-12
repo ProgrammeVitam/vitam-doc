@@ -46,7 +46,7 @@ L’*identification de formats* permet d’identifier ou de ré-identifier a pos
 ### Mécanismes mis en œuvre en fonction de l’action de préservation lancée
 
 ||Création d’un objet|Mise à jour du groupe d’objets techniques|Mise à jour de l’unité archivistique|Mise à jour du registre des fonds|Rapport|
-|:----|:----|:----|:----|:----|
+|:----|:----|:----|:----|:----|:----|
 |Génération de binaire|oui|oui||oui|oui|
 |Identification|||||oui|
 |Réidentification||oui|||oui|
