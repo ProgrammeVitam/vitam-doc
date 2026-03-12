@@ -8690,6 +8690,13 @@ liste de formats.
 
 -   Cardinalité : 0-1
 
+**« TransformationRules: » :** paramètre permettant de lister des règles de transformation à opérer sur les données entrantes.
+
+-   Il s’agit d’un objet.
+
+-   Cardinalité : 0-1
+
+
 **« _tenant » :** information sur le tenant.
 
 -   Il s’agit de l’identifiant du tenant utilisant le scénario de préservation.
