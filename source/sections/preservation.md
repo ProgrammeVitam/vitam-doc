@@ -689,7 +689,7 @@ Un scénario de préservation donné doit nécessairement comporter les informat
   - « EXTRACT » : le scénario de préservation couvre la fonctionnalité d’extraction de métadonnées techniques contenues dans les objets binaires en vue de les enregistrer dans les métadonnées des groupes d’objets techniques ;
   - « EXTRACT_AU » : le scénario de préservation couvre la fonctionnalité d’extraction de métadonnées descriptives contenues dans les objets binaires en vue de les enregistrer dans les métadonnées des unités archivistiques.
 
-Une description (Description), ainsi que l’(les) action(s) couverte(s) par le scénario de préservation, pour un griffon donné et une liste de format(s) donnée (bloc GriffonByFormat), voire une action et un griffon à exécuter par défaut (bloc DefaultGriffin), facultatifs, peuvent venir compléter ces informations.
+Une description (Description), des règles de transformation (TransformationRules) ainsi que l’(les) action(s) couverte(s) par le scénario de préservation, pour un griffon donné et une liste de format(s) donnée (bloc GriffonByFormat), voire une action et un griffon à exécuter par défaut (bloc DefaultGriffin), facultatifs, peuvent venir compléter ces informations.
 
 **Point d’attention :**  
 L’identifiant d’un scénario ne doit comprendre ni caractère accentué, ni virgule, ni apostrophe, ni parenthèse, ni espace, ni slash, ni élément de ponctuation, ou tout autre caractère spécial. Ne sont autorisés que l’underscore et le tiret comme séparateurs.
@@ -710,6 +710,7 @@ Chaque enregistrement est modélisé comme suit[^31] :
   - « IDENTIFY » : le scénario de préservation permet de réidentifier un ou plusieurs format(s) de fichier ;
   - « EXTRACT » : le scénario de préservation couvre la fonctionnalité d’extraction de métadonnées techniques contenues dans les objets binaires en vue de les enregistrer dans les métadonnées des groupes d’objets techniques ;
   - « EXTRACT_AU » : le scénario de préservation couvre la fonctionnalité d’extraction de métadonnées descriptives contenues dans les objets binaires en vue de les enregistrer dans les métadonnées des unités archivistiques ;
+- des règles de transformation (TransformationRules – facultatif) ;
 - tenant dans lequel l’enregistrement a été créé, fourni par le système (_tenant – obligatoire) ;
 - version du scénario de préservation, fournie par le système (_v – obligatoire).
   - Si l’enregistrement est égal à « 0 », il s’agit de l’enregistrement d’origine.
@@ -742,7 +743,9 @@ Chacun de ces blocs comprend les éléments suivants :
 
 Le bloc GriffinByFormat contient en plus un élément listant le(s) format(s) concerné(s) par le scénario de préservation (FormatList – obligatoire).
 
-**Point d’attention :** si le scénario de préservation a vocation à réaliser des extractions de métadonnées externes, il est recommandé d’ajouter dans l’ontologie les métadonnées destinées à être extraites et de les indexer dans le moteur de recherche Elastic Search.
+**Point d’attention :** 
+- si le scénario de préservation a vocation à réaliser des extractions de métadonnées externes, il est recommandé d’ajouter dans l’ontologie les métadonnées destinées à être extraites et de les indexer dans le moteur de recherche Elastic Search.
+- les règles de transformation peuvent être utilisées avec les actions « EXTRACT » et « EXTRACT_AU ».
 
 #### Mécanismes mis en œuvre dans la solution logicielle Vitam
 
@@ -854,6 +857,7 @@ Elle obéit à des règles strictes :
   - peut être couverte par un griffon différent ;
   - peut être différente les unes des autres ;
   - doit porter sur des formats différents. Cela signifie que chaque liste de formats associée à un griffon donné ne doit pas contenir de formats identiques. Si c’est le cas, le format répété ne sera traité qu’une seule fois dans le cadre d’une opération de préservation exécutant le scénario de préservation.
+- Il peut inclure des règles de transformation, actives quand le scénario de préservation comporte une action « EXTRACT » ou « EXTRACT_AU ».
 
 Pour une action couverte par un griffon donné, il est obligatoire de paramétrer les éléments suivants :
 - identifiant du griffon à exécuter (GriffinIdentifier). Le griffon doit avoir été préalablement installé dans la solution logicielle Vitam et référencé dans le référentiel des griffons, sans quoi le scénario de préservation ne fonctionnera pas ;
