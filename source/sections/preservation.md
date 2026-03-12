@@ -1160,7 +1160,9 @@ Dans le cadre du processus de préservation d’un ensemble d’archives, suite 
        - indexation des métadonnées de préservation et mise à jour du journal du cycle de vie des unités archivistiques concernées ;
        - sauvegarde des métadonnées et des journaux de cycle de vie sur les offres de stockage ;
 - création d’un rapport, faisant état de l’opération de préservation ayant été exécutée.
+
 À l’issue du traitement, l’opération peut aboutir aux statuts suivants :
+
 |Statut|Motifs[^45]|
 |Succès|opération réalisée sans rencontrer de problèmes particuliers.|
 |Avertissement|- opération réalisée, sans qu’aucun traitement ne soit effectué pour cause de :<br>- lot d’archives sélectionné n’ayant pas d’objets binaires à traiter ;<br>- scénario de préservation ne traitant pas les formats présents dans les objets binaires à traiter.<br>- opération réalisée, avec un traitement partiel effectué, dans le cas où une partie des objets binaires traités sont en erreur.|
@@ -2806,6 +2808,103 @@ Annexes
         ]
       }
     ]
+  },
+    {
+    "Identifier": "PSC-000003",
+    "Name": "Extraction de métadonnées techniques avec ImageMagick avec transformation jslt + FMT353",
+    "Description": "Ce scénario, appelant le griffon ImageMagick, permet d'extraire l'ensemble des métadonnées techniques de fichiers image et de les enregistrer dans les métadonnées des groupes d'objets techniques. Les métadonnées sont enregistrées dans OtherMetadata, chacune sous forme de tableau et indexée, ainsi que dans RAW_METADATA qui est indexé.",
+    "ActionList": [
+      "EXTRACT"
+    ],
+    "TransformationRules": "{ \"ExtractedMetadata\": ({ \"OtherMetadata\": ({ \"resolution\": [ for (.ExtractedMetadata.OtherMetadata.resolution) { \"largeur\": .x, \"hauteur\": .y }]} + .ExtractedMetadata.OtherMetadata)} + .ExtractedMetadata)} + .",
+    "GriffinByFormat": [
+      {
+        "FormatList": [
+          "fmt/43",
+          "fmt/42",
+          "fmt/353",
+          "fmt/44",
+          "fmt/645",
+          "fmt/41",
+          "x-fmt/392",
+          "fmt/4",
+          "fmt/12",
+          "fmt/341",
+          "fmt/116",
+          "fmt/124",
+          "x-fmt/92"
+        ],
+        "GriffinIdentifier": "GRI-000001",
+        "Timeout": 200,
+        "MaxSize": 10000000,
+        "Debug": true,
+        "ActionDetail": [
+          {
+            "Type": "EXTRACT",
+            "Values": {
+              "FilteredExtractedObjectGroupData": [
+                "ALL_METADATA",
+                "RAW_METADATA"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+    {
+    "Identifier": "PSC-000005",
+    "Name": "Extraction de métadonnées techniques avec ImageMagick avec transformation jslt + DEFAULTGRIFFIN",
+    "Description": "Extraction de métadonnées techniques avec ImageMagick avec transformation jslt + DEFAULTGRIFFIN",
+    "CreationDate": "2018-11-16T15:55:30.721",
+    "LastUpdate": "2018-11-20T15:34:21.542",
+    "ActionList": [
+      "EXTRACT"
+    ],
+    "TransformationRules": "{ \"ExtractedMetadata\": ({ \"OtherMetadata\": ({ \"resolution\": [ for (.ExtractedMetadata.OtherMetadata.resolution) { \"largeur\": .x, \"hauteur\": .y }]} + .ExtractedMetadata.OtherMetadata)} + .ExtractedMetadata)} + .",
+    "DefaultGriffin": {
+      "GriffinIdentifier": "GRI-000001",
+      "Timeout": 20000000,
+      "MaxSize": 10000000,
+      "Debug": true,
+      "ActionDetail": [
+        {
+            "Type": "EXTRACT",
+            "Values": {
+              "FilteredExtractedObjectGroupData": [
+                "ALL_METADATA",
+                "RAW_METADATA"
+              ]
+            }
+          }
+      ]
+    }
+  },
+  {
+    "Identifier": "PSC-000006",
+    "Name": "Extraction de métadonnées descriptives avec Tesseract avec transformation jslt + FMT353",
+    "Description": "Extraction de métadonnées descriptives avec Tesseract avec transformation jslt + FMT353",
+    "ActionList": [
+      "EXTRACT_AU"
+    ],
+	"TransformationRules": "{ \"ExtractedMetadataAU\": { \"TextContent\": lowercase(.ExtractedMetadataAU.TextContent)}} + .",
+    "GriffinByFormat": [
+      {
+        "FormatList": ["fmt/353"],
+        "GriffinIdentifier": "GRI-000005",
+        "Timeout": 2000,
+        "MaxSize": 10000000,
+        "Debug":true,
+        "ActionDetail": [
+          {
+          "Type": "EXTRACT_AU",
+          "Values": {
+            "Extension": "txt"
+          }
+        }
+        ]
+      }
+    ]   
   }
 ```
 
