@@ -5234,12 +5234,6 @@ Cette transposition se fait comme suit :
 
 -   Cardinalité : 1-1
 
-**« AutomaticIngest » :** paramètre permettant d'automatiser l'envoi de transaction(s) vers la solution logicielle Vitam.
-
--   Il s’agit d’un booléen.
-
--   Cardinalité : 0-1
-
 **« Batches » :** numéros de lots pour permettre le suivi et le contrôle des uploads.
 
 -   Champ peuplé par la solution logicielle Vitam.
