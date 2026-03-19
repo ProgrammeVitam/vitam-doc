@@ -1852,6 +1852,11 @@ Ces deux accès mènent à une page permettant de :
 -   rechercher dans cette liste selon de nombreux critères de recherche,
 -   consulter les métadonnées d'une unité archivistique en particulier.
 
+***Point d’attention :*** A noter qu'à partir de la version 9.1 de la solution logicielle Vitam, il est possible de :
+
+-   rechercher les archives importées depuis un SIP et contenant des erreurs,
+-   consulter le détail de ces erreurs depuis le panneau latéral des archives concernées.
+
 #### Accès aux groupes d'objets techniques
 
 ##### Utilisation des API
@@ -1897,6 +1902,10 @@ L’APP « Collecte et préparation des versements » du front-office Vitam UI
 
 Ce service est disponible depuis la page permettant de visualiser l’ensemble des unités archivistiques d'une transaction au sein de l'onglet « Objet » du panneau latéral d'une unité archivistique. Il est également possible d'y télécharger les différents objets techniques. 
 
+***Point d’attention :*** A noter qu'à partir de la version 9.1 de la solution logicielle Vitam, il est possible de :
+
+-   rechercher les archives importées depuis un SIP et contenant des erreurs,
+-   consulter le détail de ces erreurs depuis le panneau latéral des archives concernées.
 
 ### Gestion des transactions
 
