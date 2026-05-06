@@ -285,6 +285,8 @@ Ces opérations sont :
 
 -   Réorganisation d’arborescence
 
+-   Réattribution de service producteur
+
 -   Journalisation externe (enregistrement d’opérations extérieures dans la solution logicielle Vitam)
 
 Les valeurs correspondant à ces opérations dans les journaux sont détaillées dans [l’annexe 3](#annexe-3-valeurs-possibles-pour-le-champ-evtypeproc-type-de-processus).
@@ -2221,6 +2223,59 @@ Le mapping est le suivant :
 
 -   &lt;Management&gt; devient « _mgt »
 
+**« _reassignments »** : données historiques des opérations de réattribution de service producteur.
+
+-   Champ peuplé par la solution logicielle Vitam au moment d’une réattribution de service producteur.
+
+-   Il s'agit d'un objet pouvant contenir un tableau d'objets.
+
+-   Cardinalité : 0-1
+
+-   Ce champ contient les clés suivantes :
+
+    -   **« OperationId »** : identifiant de l'opération de réattribution.
+
+        -   Champ peuplé par la solution logicielle Vitam.
+
+        -   Il s’agit d’une chaîne de caractères.
+
+        -   Cardinalité : 1-1
+
+    -   **« SourceOriginatingAgency »** : identifiant du service producteur initial ayant été modifié.
+
+        -   Champ peuplé par la solution logicielle Vitam.
+
+        -   Il s’agit d’une chaîne de caractères.
+
+        -   Cardinalité : 1-1
+
+    -   **« TargetOriginatingAgency »** : identifiant du nouveau service producteur attribué à la suite de l'opération de réattribution.
+
+        -   Champ peuplé par la solution logicielle Vitam.
+
+        -   Il s’agit d’une chaîne de caractères.
+
+        -   Cardinalité : 1-1
+		
+    -   **« ReassignmentDate »** : date du changement du service producteur.
+
+        -   Champ peuplé par la solution logicielle Vitam.
+
+        -   Il s’agit d’une date au format ISO 8601 YYY-MM-DD + “T” + hh:mm:ss.millisecondes « + » timezone hh:mm.
+
+            Exemple : ```2016-08-19T16:36:07.942+02:00```
+
+```json
+ _reassignments: [
+        {
+            OperationId: 'aeeaaaaabwech74iaeb24am57s576daaaaaq',
+            SourceOriginatingAgency: 'MICHEL_MERCIER',
+            TargetOriginatingAgency: 'ASP',
+            ReassignmentDate: '2026-05-06T10:01:13.284'
+        }
+    ]
+``` 
+
 **« _storage » :** contient les champs qui permettent d’identifier les offres de stockage.
 
 -   Il s’agit d’un objet constitué du champ :
@@ -3578,6 +3633,60 @@ représentées par ce groupe d’objets.
 -   Champ peuplé par la solution logicielle Vitam.
 
 -   Cardinalité : 1-1
+
+**« _reassignments »** : données historiques des opérations de réattribution de service producteur.
+
+-   Champ peuplé par la solution logicielle Vitam au moment d’une réattribution de service producteur.
+
+-   Il s'agit d'un objet pouvant contenir un tableau d'objets.
+
+-   Cardinalité : 0-1
+
+-   Ce champ contient les clés suivantes :
+
+    -   **« OperationId »** : identifiant de l'opération de réattribution.
+
+        -   Champ peuplé par la solution logicielle Vitam.
+
+        -   Il s’agit d’une chaîne de caractères.
+
+        -   Cardinalité : 1-1
+
+    -   **« SourceOriginatingAgency »** : identifiant du service producteur initial ayant été modifié.
+
+        -   Champ peuplé par la solution logicielle Vitam.
+
+        -   Il s’agit d’une chaîne de caractères.
+
+        -   Cardinalité : 1-1
+
+    -   **« TargetOriginatingAgency »** : identifiant du nouveau service producteur attribué à la suite de l'opération de réattribution.
+
+        -   Champ peuplé par la solution logicielle Vitam.
+
+        -   Il s’agit d’une chaîne de caractères.
+
+        -   Cardinalité : 1-1
+		
+    -   **« ReassignmentDate »** : date du changement du service producteur.
+
+        -   Champ peuplé par la solution logicielle Vitam.
+
+        -   Il s’agit d’une date au format ISO 8601 YYY-MM-DD + “T” + hh:mm:ss.millisecondes « + » timezone hh:mm.
+
+            Exemple : ```2016-08-19T16:36:07.942+02:00```
+
+```json
+ _reassignments: [
+        {
+            OperationId: 'aeeaaaaabwech74iaeb24am57s576daaaaaq',
+            SourceOriginatingAgency: 'MICHEL_MERCIER',
+            TargetOriginatingAgency: 'ASP',
+            ReassignmentDate: '2026-05-06T10:01:13.284'
+        }
+    ]
+``` 
+
 
 ### Collection Offset
 
@@ -5922,14 +6031,13 @@ fonds par état pour l’opération journalisée :
 
 -   Cardinalité 1-1
 
-**« Events » :** les détails des registres des fonds ayant modifié un
-lot d’ingest existant ou un lot préservé.
+**« Events » :** les détails des registres des fonds ayant modifié un lot d’ingest existant ou un lot préservé.
 
 -   Le premier événement contient les remained de l’opération d’ingest ou de préservation.
 
 -   Les événements suivants concernent les opérations ayant modifié :
 
-    -   un lot d’ingest existant (Elimination, Transfer…)
+    -   un lot d’ingest existant (Elimination, Transfer, Reassignment, Delete\_Got\_Versions…)
 
     -   un lot préservé (Delete\_Got\_Versions)
 
@@ -5953,7 +6061,7 @@ lot d’ingest existant ou un lot préservé.
 
 -   Cardinalité : 1-1
 
-**« Events.OpType » :** Le type de l’opération (INGEST, ELIMINATION,TRANSFER_REPLY, PRESERVATION, DELETE_GOT_VERSIONS)
+**« Events.OpType » :** Le type de l’opération (INGEST, ELIMINATION,TRANSFER_REPLY, PRESERVATION, DELETE_GOT_VERSIONS, ORIGINATING_AGENCY_REASSIGNMENT)
 
 -   Il s’agit d’une chaîne de caractères.
 
@@ -5966,6 +6074,10 @@ lot d’ingest existant ou un lot préservé.
         -   ELIMINATION dans le cas d’une opération d’élimination,
 
         -   TRANSFER_REPLY dans le cas d’une opération de transfert,
+		
+		-   DELETE_GOT_VERSIONS dans le cas d’une opération de suppression de versions d’objets,
+		
+		-   ORIGINATING_AGENCY_REASSIGNMENT dans le cas d'une réattribution de service producteur ;
 
     -   pour un enregistrement de type « PRESERVATION » :
 
@@ -6004,6 +6116,22 @@ lot d’ingest existant ou un lot préservé.
 **« Events.CreationDate » :** La date de l’évenement.
 
 -   La date est au format ISO 8601
+
+-   Cardinalité : 1-1
+
+**« Events.SourceOriginatingAgency » :** Service producteur ayant fait l'objet d'une modification.
+
+-   Il s'agit d'une chaîne de caractères.
+
+-   uniquement dans le cas d’une réattribution de service producteur.
+
+-   Cardinalité : 1-1
+
+**« Events.TargetOriginatingAgency » :** Service producteur ayant été attribué à la suite d'une réattribution de servicce producteur.
+
+-   Il s'agit d'une chaîne de caractères.
+
+-   uniquement dans le cas d’une réattribution de service producteur.
 
 -   Cardinalité : 1-1
 
@@ -12100,7 +12228,8 @@ L’ensemble des étapes, tâches et traitements sont détaillées dans la docum
 | Storage Logbook type process                     | STORAGE_LOGBOOK           | Enregistrement des journaux                       |
 | Storage Angencies type process                   | STORAGE_RULE              | Enregistrement du référentiel des services agents |
 | Traceability type process                        | TRACEABILITY              | Sécurisation                                      |
-| Update process                                   | UPDATE                    | Mise à jour                                       | 
+| Update process                                   | UPDATE                    | Mise à jour                                       |
+| Originating Agency Reassignment process          | ORIGINATING_AGENCY_REASSIGNMENT | Réattribution de service producteur         |  
 | Ingest collect process                           | COLLECT_SIP_INGEST        | Import de SIP dans collecte                       | 
 
 
