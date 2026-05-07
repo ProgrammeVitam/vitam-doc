@@ -22,7 +22,7 @@ Il s’articule autour des axes suivants :
 - une présentation des mécanismes mis en œuvre dans la solution logicielle Vitam pour prendre en compte cette notion, en application du SEDA ;
 - des recommandations aux ministères porteurs, partenaires et utilisateurs de la solution logicielle Vitam sur la manière d’utiliser les fonctionnalités associées aux services producteurs. 
 
-Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 9.0 (automne 2025). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
+Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 9.1 (printemps 2026). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
 
 Présentation de la notion de service producteur
 ---
@@ -88,7 +88,9 @@ Mécanismes mis en œuvre dans la solution logicielle Vitam
 La solution logicielle Vitam offre à un service d’archives plusieurs fonctionnalités lui permettant de prendre en compte la notion de service producteur :
 - en administration, l’existence d’un référentiel des services agents ;
 - en entrée, le contrôle du service producteur et du service versant par rapport au référentiel des services agents, l’enregistrement de la prise en charge d’un transfert pour un service producteur donné et l’enrichissement du registre des fonds des services producteurs ;
-- en gestion des archives, la formalisation d’un état des archives produites par un même producteur et conservées par une plate-forme utilisant la solution logicielle Vitam sous la forme d’un registre des fonds ;
+- en gestion des archives :
+  - la formalisation d’un état des archives produites par un même producteur et conservées par une plate-forme utilisant la solution logicielle Vitam sous la forme d’un registre des fonds ;
+  - la possibilité de modifier le service producteur des archives versées,
 - en accès, le contrôle des droits sur les archives via un filtre par service producteur.
 
 ### Import d’un référentiel des services agents
@@ -237,6 +239,9 @@ Celui-ci est composé comme suit :
     - la date de création de l’état ;
     - le nombre d’unités archivistiques, de groupes d’objets et d’objets rattachés à ce service producteur au moment de la constitution de l’état ;
     - la volumétrie des objets associés rattachés à ce service producteur au moment de la constitution de l’état ;
+	- s'il y a eu réattribution de service producteur :
+        - identifiant du service producteur précédent ayant fait l'objet d'une modification,
+        - identifiant du nouveau service producteur attribué à l'entrée ;	
 - chaque traitement lié à la préservation effectuée dans la solution logicielle Vitam fait l’objet d’un enregistrement distinct dans le registre des fonds. Sont indiqués dans cet enregistrement :
     - la date de la première opération, la date de la dernière opération, la date de dernière modification de l’enregistrement ;
     - l’identifiant du service producteur (correspondant au champ OriginatingAgencyIdentifier du bordereau de transfert),
@@ -272,7 +277,49 @@ Elle autorise également :
 - la consultation du détail de chaque entrée effectuée dans la solution logicielle Vitam par un service producteur, avec  le détail de chaque opération, quelle que soit sa nature (élimination, transfert), ayant eu un impact sur l’entrée, avec la volumétrie associée.
 
 **Nota bene :**  
- Au terme de la version 8.1, l’APP VitamUI « Registre des fonds » fait appel uniquement aux traitements ayant trait aux opérations d’entrée et ne prend pas en compte les traitements relatifs aux opérations de préservation et de suppression de versions d’objets.
+ Au terme de la version 9.1, l’APP VitamUI « Registre des fonds » fait appel uniquement aux traitements ayant trait aux opérations d’entrée et ne prend pas en compte les traitements relatifs aux opérations de préservation et de suppression de versions d’objets.
+
+### Réattribution de service agent
+
+La solution logicielle Vitam permet de modifier un service producteur sur un lot d'archives issues d'un SIP ou d'un plan de classement.
+Au terme de la version 9.1, cette modification doit être réalisée :
+-  sur l'ensemble des archives d'un versement,
+-  avec les paramètres suivants :
+   -  service producteur d'origine du lot d'archives sélectionné,
+   -  service producteur cible,
+   -  propagation sur les groupes d'objets techniques.   
+
+**Point d’attention :** L'opération sera en échec si :
+-  si au moins une archives d'un versement n'est pas inclue dans le lot,
+-  si au moins une archives inclue dans le lot est de type « arbre de positionnement »,
+-  si le lot d'archives sélectionnées inclut plus d'un service producteur,
+-  si au moins un groupe d'objets techniques du lot a fait l'objet d'une opération de préservation,
+-  si le lot d'archives sélectionnées exclut des groupes d'objets techniques alors que le versement initial incluait lesdits groupes d'objets techniques,
+-  si le contrat d'accès est inconnu ou n'autorise pas les modifications de métadonnées de gestion (pas de journalisation).
+
+Elle entraîne une mise à jour du service producteur dans :
+-  les unités archivistiques concernées (champs _sp et _sps),
+-  le cas échéant, les groupes d'objets associés à ces unités archivistiques (champs _sp et _sps),
+-  dans le détail du registre des fonds de l'entrée concernée (champ OriginatingAgency).
+
+Elle impacte aussi les sommaires des fonds des deux services producteurs concernés, à savoir le service initial et le nouveau service attribué.
+
+L'opération est tracée dans :
+-  le journal des opérations (ORIGINATING_AGENCY_REASSIGNMENT),
+-  le journal du cycle de vie de l’unité archivistique et/ou du groupe d'objets techniques ayant été modifié,
+-  les unités archivistiques et, le cas échéant, les groupes d'objets techniques au moyen du bloc « _reassignements ».
+
+**Point d’attention :** 
+-  Les arbres de positionnement n’utilisant pas de service producteur, ce service vaut uniquement pour les unités archivistiques de type « plan de classement » et « standard », qui référencent un service producteur.
+-  Au terme de la version 9.1 de la solution logicielle Vitam :
+   -  la réattribution du service producteur n'est pas faisable sur des archives ayant fait l'objet d'opération de préservation.
+   -  il est **fortement recommandé** de n'utiliser ce service que pour des archives :
+      -  dont le service producteur n'a pas été "justement" qualifié au moment de leur versement (ex. leur service producteur est qualifié de "inconnu"),
+	  -  qui ont fait l'objet de multiples rattachements (ex. objets rattachés à plusieurs unités archivistiques versées sous couvert de différents services producteurs).
+-  La réattribution de service producteur entraîne une désindexation des règles de gestion héritées, ainsi qu'une mise à jour des services agents dits « symboliques » (_sps), ce qui peut avoir un impact en termes d’accès.Il est recommandé de :
+     -  relancer un calcul des règles de gestion héritées sur les archives qui ont fait l'objet d'une réattribution de service producteur,
+	 -  vérifier que les unités archivistiques modifiées restent accessibles et que les filtres du contrat d’accès dont elles dépendent restent cohérents avec le résultat souhaité. Il est conseillé de contrôler en particulier le filtre sur les services agents.
+
 
 ### Accès
 
