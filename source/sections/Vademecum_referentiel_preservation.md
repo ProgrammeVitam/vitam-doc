@@ -15,11 +15,12 @@ Le référentiel des scénarios de préservation est propre au tenant sur lequel
 
 
 ### Actions couvertes par un scénario de préservation
-Quatre actions élémentaires de préservation peuvent être effectuées par un scénario de préservation :
+Cinq actions élémentaires de préservation peuvent être effectuées par un scénario de préservation :
 - GENERATE : génération d’un nouvel objet, par exemple, conversion d’un format,
 - ANALYSE : analyse d’un ou plusieurs formats, par exemple, validation d’un format,
 - IDENTIFY : ré-identification d’un ou plusieurs formats,
-- EXTRACT : extraction de métadonnées contenues dans les objets binaires.
+- EXTRACT : extraction de métadonnées contenues dans les objets binaires pour enregistrement en tant que métadonnées techniques,
+- EXTRACT_AU : extraction de métadonnées contenues dans les objets binaires pour enregistrement en tant que métadonnées descriptives.
 Un scénario de préservation peut effectuer une ou plusieurs de ces actions élémentaires.
 
 
@@ -44,7 +45,8 @@ Les formats déclarés dans le scénario de préservation doivent impérativemen
 - Récupération des logs générés par les griffons : cette option est intéressante en phase de test du scénario de préservation pour comprendre les éventuelles anomalies rencontrées.
 
 #### Commande à exécuter
-- Type d’action à exécuter : une des quatre actions élémentaires de préservation.
+- Type d’action à exécuter : une des cinq actions élémentaires de préservation.
+- Règles de transformation.
 - Valeurs précisant les commandes passées par le scénario de préservation :
     - arguments, correspondant à une commande passée au griffon selon son langage et sa grammaire propre,
     - extension de sortie, permettant de préciser, dans le cadre d’une opération de génération d’objet binaire, l’extension du format généré attendue
@@ -106,6 +108,7 @@ Un scénario de préservation comporte obligatoirement les informations suivante
 - identifiant signifiant du scénario de préservation, généré par l’application à l’origine de sa création (Identifier) et devant être unique dans le système ;
 - nom du scénario de préservation (Name) ;
 - action(s) couverte(s) par le scénario de préservation (ActionList). Ce champ peut contenir 1 à 4 valeurs : « GENERATE », « ANALYSE », « IDENTIFY » ou « EXTRACT » ;
+- des règles de transformation (TransformationRules);
 - un bloc GriffinByFormat (Action(s) couverte(s)) précise l’(les) action(s) couverte(s) par le scénario de préservation, pour un griffon donné et une liste de formats donnée.<br>
 Une description (Description), ainsi qu’une action et un griffon à exécuter par défaut (bloc DefaultGriffin), facultatifs, peuvent venir compléter ces informations.
 
