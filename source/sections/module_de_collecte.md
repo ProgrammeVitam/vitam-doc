@@ -28,7 +28,7 @@ Il s’articule autour des axes suivants :
 -   une présentation des mécanismes mis en œuvre dans la solution logicielle Vitam pour prendre en compte les opérations de collecte, en application du SEDA ;
 -   des conseils de mise en œuvre.
 
-Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 9.0 (automne 2025). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
+Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 9.1 (printemps 2026). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
 
 Présentation du module de collecte
 ----------------------------------
@@ -1126,7 +1126,9 @@ L’envoi et l’enregistrement des données dans le module de collecte peut s�
 
 Pour une transaction donnée, est envoyée une arborescence bureautique sous forme de fichier .zip.
 
-***Point d’attention :*** En prérequis à l’envoi d’une arborescence bureautique, il faut avoir au préalable créé une transaction et le signaler dans l’API.
+***Point d’attention :*** 
+-   En prérequis à l’envoi d’une arborescence bureautique, il faut avoir au préalable créé une transaction et le signaler dans l’API.
+-   On peut envoyer plusieurs arborescences zippées dans une transaction donnée au moyen de plusieurs appels API.
 
  *Exemple : requête d’envoi d’une arborescence bureautique stream.zip pour la transaction préalablement créée dont l’identifiant est aeeaaaaaaghiyso4ablmyal74slqwtqaaaaq.*
  
@@ -1145,44 +1147,56 @@ Pour une transaction donnée, est envoyée une arborescence bureautique sous for
 
 Cette action provoque :
 
--   la création des unités archivistiques dans la base de données MongoDB, dans la collection « Unit » (base *MetadataCollect[^10]*). Sont enregistrés automatiquement[^11] :
+	-   si elle est en succès :
 
-    -   un niveau de description (DescriptionLevel) dont la valeur est :
+	-   la création des unités archivistiques dans la base de données MongoDB, dans la collection « Unit » (base *MetadataCollect[^10]*). Sont enregistrés automatiquement[^11] :
 
-        -   « RecordGrp » pour une unité archivistique référençant un répertoire,
-        -   « Item » pour une unité archivistique référençant un objet numérique ;
+		-   un niveau de description (DescriptionLevel) dont la valeur est :
 
-    -   un intitulé (Title), correspondant au nom d’un répertoire ou d’un objet binaire présent dans l’arborescence bureautique.
+			-   « RecordGrp » pour une unité archivistique référençant un répertoire,
+			-   « Item » pour une unité archivistique référençant un objet numérique ;
 
-    À chaque enregistrement, est associé :
+		-   un intitulé (Title), correspondant au nom d’un répertoire ou d’un objet binaire présent dans l’arborescence bureautique.
+
+		À chaque enregistrement, est associé :
 	
-		-   l’identifiant de la transaction (_opi),
-        -   l'identifiant du service producteur (_sp et _sps);
+			-   l’identifiant de la transaction (_opi),
+			-   l'identifiant du service producteur (_sp et _sps);
 
--   la création de métadonnées techniques dans la base de données MongoDB, dans la collection « ObjectGroup » (base *MetadataCollect[^12]*) ;
+	-   la création de métadonnées techniques dans la base de données MongoDB, dans la collection « ObjectGroup » (base *MetadataCollect[^12]*) ;
 
-    À chaque enregistrement, est associé :
+		À chaque enregistrement, est associé :
 	
-		-   l’identifiant de la transaction (_opi),
-        -   l'identifiant du service producteur (_sp);
+			-   l’identifiant de la transaction (_opi),
+			-   l'identifiant du service producteur (_sp);
 
--   l’enregistrement des objets numériques sur les offres de stockage.
--   la mise à jour des métadonnées techniques de l’objet avec, calculés lors de l’envoi du fichier numérique :
+	-   l’enregistrement des objets numériques sur les offres de stockage.
+	-   la mise à jour des métadonnées techniques de l’objet avec, calculés lors de l’envoi du fichier numérique :
 
-    -   ajout de l’empreinte d’un fichier numérique,
-    -   ajout de l’identification de son format,
-    -   mise à jour de son poids exprimé en octets.
+		-   ajout de l’empreinte d’un fichier numérique,
+		-   ajout de l’identification de son format,
+		-   mise à jour de son poids exprimé en octets.
 
--   le cas échéant :
+	-   le cas échéant :
 
-    - si le projet de versement déclarait un rattachement unique, la création d'une unité archivistique dans la base de données MongoDB, dans la collection « Unit » (base *MetadataCollect[^10]*). Sont enregistrés automatiquement :
-      -   un niveau de description (DescriptionLevel) dont la valeur est « Series »,
-      -   un intitulé (Title) dont la valeur est « STATIC_ATTACHEMENT »,
-      -   l'identifiant de l'unité archivistique de rattachement (champ SystemId inclus dans un bloc UpdateOperation);
-    - si le projet de versement déclarait un rattachement par clé / valeur, la création d'une unité archivistique dans la base de données MongoDB, dans la collection « Unit » (base *MetadataCollect[^10]*). Sont enregistrés automatiquement :
-      -   un niveau de description (DescriptionLevel) dont la valeur est « Series »,
-      -   un intitulé (Title) dont la valeur est « DYNAMIC_ATTACHEMENT »,
-      -   l'identifiant de l'unité archivistique de rattachement (champ SystemId inclus dans un bloc UpdateOperation).
+		- si le projet de versement déclarait un rattachement unique, la création d'une unité archivistique dans la base de données MongoDB, dans la collection « Unit » (base *MetadataCollect[^10]*). Sont enregistrés automatiquement :
+			-   un niveau de description (DescriptionLevel) dont la valeur est « Series »,
+			-   un intitulé (Title) dont la valeur est « STATIC_ATTACHEMENT »,
+			-   l'identifiant de l'unité archivistique de rattachement (champ SystemId inclus dans un bloc UpdateOperation);
+		- si le projet de versement déclarait un rattachement par clé / valeur, la création d'une unité archivistique dans la base de données MongoDB, dans la collection « Unit » (base *MetadataCollect[^10]*). Sont enregistrés automatiquement :
+			-   un niveau de description (DescriptionLevel) dont la valeur est « Series »,
+			-   un intitulé (Title) dont la valeur est « DYNAMIC_ATTACHEMENT »,
+		-   l'identifiant de l'unité archivistique de rattachement (champ SystemId inclus dans un bloc UpdateOperation).
+
+-   si elle est en erreur :
+
+	-   aucun enregistrement n'est effectué dans les collections « Unit » (base *MetadataCollect[^10]*) et « ObjectGroup » (base *MetadataCollect[^12]*) ;
+
+    -   l'enregistrement de l'upload en erreur dans la transaction (Batches), incluant :
+	
+		- son identifiant (_batchId),
+		- le résultat qui sera alors égal à « PURGED » (_batchStatus),
+		- le traitement concerné (evTypeProc).
 
 Lors de cette action, l’opération peut aboutir aux résultats suivants :
 
@@ -1211,6 +1225,10 @@ Le détail du projet de versement, ainsi que les archives qui lui sont associée
 ###### Utilisation des API
 
 Pour une transaction donnée peut être envoyé sous forme de zip en plus d’une arborescence bureautique[^13] un fichier .csv contenant des métadonnées détaillant unitairement les unités archivistiques.
+
+***Point d’attention :*** 
+-   En prérequis à l’envoi d’une arborescence bureautique, il faut avoir au préalable créé une transaction et le signaler dans l’API.
+-   On peut envoyer plusieurs arborescences zippées dans une transaction donnée au moyen de plusieurs appels API.
 
 Le fichier .csv, obligatoirement intitulé « metadata.csv », est composé de x colonnes[^14] :
 
@@ -1290,42 +1308,54 @@ Le fichier .csv, obligatoirement intitulé « metadata.csv », est composé de
 
 L’import du fichier .zip incluant un fichier .csv et une arborescence bureautique provoque :
 
--   la création des unités archivistiques dans la base de données MongoDB, dans la collection « Unit » (base *MetadataCollect[^15]*). Sont enregistrées automatiquement les valeurs portées dans le fichier .csv si l’enregistrement ne contient pas d’erreur.
+-   si elle est ensuccès :
 
-    À chaque enregistrement, est associé :
+	-   la création des unités archivistiques dans la base de données MongoDB, dans la collection « Unit » (base *MetadataCollect[^15]*). Sont enregistrées automatiquement les valeurs portées dans le fichier .csv si l’enregistrement ne contient pas d’erreur.
+
+		À chaque enregistrement, est associé :
 	
-	-   s'il n'a pas été défini dans le fichier .csv, un niveau de description (DescriptionLevel) dont la valeur est :
-	    -   « RecordGrp » pour une unité archivistique référençant un répertoire,
-		-   « Item » pour une unité archivistique référençant un objet numérique ;
-	-   l’identifiant de la transaction (_opi) ;
-	-   un identifiant de batch (_batchId) ;
-	-   la localisation initiale du dossier ou du fichier dans l'arborescence (_uploadPath),
-	-   l'identifiant du service producteur (_sp et _sps) ;
+		-   s'il n'a pas été défini dans le fichier .csv, un niveau de description (DescriptionLevel) dont la valeur est :
+			-   « RecordGrp » pour une unité archivistique référençant un répertoire,
+			-   « Item » pour une unité archivistique référençant un objet numérique ;
+		-   l’identifiant de la transaction (_opi) ;
+		-   un identifiant de batch (_batchId) ;
+		-   la localisation initiale du dossier ou du fichier dans l'arborescence (_uploadPath),
+		-   l'identifiant du service producteur (_sp et _sps) ;
 
--   la création de métadonnées techniques dans la base de données MongoDB, dans la collection « ObjectGroup » (base *MetadataCollect[^16]*).
+	-   la création de métadonnées techniques dans la base de données MongoDB, dans la collection « ObjectGroup » (base *MetadataCollect[^16]*).
 
-    À chaque enregistrement, est associé :
-	-  l’identifiant de la transaction (_opi) ;
-    -   un identifiant de batch (_batchId) ;
-	-  l'identifiant du service producteur (_sp) ;
+		À chaque enregistrement, est associé :
+		-  l’identifiant de la transaction (_opi) ;
+		-   un identifiant de batch (_batchId) ;
+		-  l'identifiant du service producteur (_sp) ;
 
--   l’enregistrement des objets numériques sur les offres de stockage.
--   la mise à jour des métadonnées techniques de l’objet avec :
+	-   l’enregistrement des objets numériques sur les offres de stockage.
+	-   la mise à jour des métadonnées techniques de l’objet avec :
 
-    -   ajout de l’empreinte d’un fichier numérique,
-    -   ajout de l’identification de son format,
-    -   mise à jour de son poids exprimé en octets, calculés lors de l’envoi du fichier numérique ;
+		-   ajout de l’empreinte d’un fichier numérique,
+		-   ajout de l’identification de son format,
+		-   mise à jour de son poids exprimé en octets, calculés lors de l’envoi du fichier numérique ;
 	
--   le cas échéant :
+	-   le cas échéant :
 
-    - si le projet de versement déclarait un rattachement unique, la création d'une unité archivistique dans la base de données MongoDB, dans la collection « Unit » (base *MetadataCollect[^10]*). Sont enregistrés automatiquement :
-      -   un niveau de description (DescriptionLevel) dont la valeur est « Series »,
-      -   un intitulé (Title) dont la valeur est « STATIC_ATTACHEMENT »,
-      -   l'identifiant de l'unité archivistique de rattachement (champ SystemId inclus dans un bloc UpdateOperation);
-    - si le projet de versement déclarait un rattachement par clé / valeur, la création d'une unité archivistique dans la base de données MongoDB, dans la collection « Unit » (base *MetadataCollect[^10]*). Sont enregistrés automatiquement :
-      -   un niveau de description (DescriptionLevel) dont la valeur est « Series »,
-      -   un intitulé (Title) dont la valeur est « DYNAMIC_ATTACHEMENT »,
-      -   l'identifiant de l'unité archivistique de rattachement (champ SystemId inclus dans un bloc UpdateOperation).
+		- si le projet de versement déclarait un rattachement unique, la création d'une unité archivistique dans la base de données MongoDB, dans la collection « Unit » (base *MetadataCollect[^10]*). Sont enregistrés automatiquement :
+			-   un niveau de description (DescriptionLevel) dont la valeur est « Series »,
+			-   un intitulé (Title) dont la valeur est « STATIC_ATTACHEMENT »,
+			-   l'identifiant de l'unité archivistique de rattachement (champ SystemId inclus dans un bloc UpdateOperation);
+		- si le projet de versement déclarait un rattachement par clé / valeur, la création d'une unité archivistique dans la base de données MongoDB, dans la collection « Unit » (base *MetadataCollect[^10]*). Sont enregistrés automatiquement :
+			-   un niveau de description (DescriptionLevel) dont la valeur est « Series »,
+			-   un intitulé (Title) dont la valeur est « DYNAMIC_ATTACHEMENT »,
+			-   l'identifiant de l'unité archivistique de rattachement (champ SystemId inclus dans un bloc UpdateOperation).
+
+-   si elle est en erreur :
+
+	-   aucun enregistrement n'est effectué dans les collections « Unit » (base *MetadataCollect[^10]*) et « ObjectGroup » (base *MetadataCollect[^12]*) ;
+
+    -   l'enregistrement de l'upload en erreur dans la transaction (Batches), incluant :
+	
+		- son identifiant (_batchId),
+		- le résultat qui sera alors égal à « PURGED » (_batchStatus),
+		- le traitement concerné (evTypeProc).
 
 Lors de cette action, l’opération peut aboutir aux résultats suivants :
 
@@ -1376,6 +1406,10 @@ Le détail du projet de versement, ainsi que les archives qui lui sont associée
 ###### Utilisation des API
 
 Pour une transaction donnée peut être envoyé sous forme de zip en plus d’une arborescence bureautique[^13] un fichier .jsonl contenant des métadonnées détaillant unitairement les unités archivistiques.
+
+***Point d’attention :*** 
+-   En prérequis à l’envoi d’une arborescence bureautique, il faut avoir au préalable créé une transaction et le signaler dans l’API.
+-   On peut envoyer plusieurs arborescences zippées dans une transaction donnée au moyen de plusieurs appels API.
 
 Le fichier .jsonl, obligatoirement intitulé « metadata.jsonl », est composé des informations suivantes :
 
@@ -1453,42 +1487,52 @@ Le fichier .jsonl, obligatoirement intitulé « metadata.jsonl », est compos�
 
 L’import du fichier .zip incluant un fichier .jsonl et une arborescence bureautique provoque :
 
--   la création des unités archivistiques dans la base de données MongoDB, dans la collection « Unit » (base *MetadataCollect[^15]*). Sont enregistrées automatiquement les valeurs portées dans le fichier .jsonl si l’enregistrement ne contient pas d’erreur.
+-   s'il est en succès :
 
-    À chaque enregistrement, est associé :
+	-   la création des unités archivistiques dans la base de données MongoDB, dans la collection « Unit » (base *MetadataCollect[^15]*). Sont enregistrées automatiquement les valeurs portées dans le fichier .jsonl si l’enregistrement ne contient pas d’erreur.
+
+		À chaque enregistrement, est associé :
 	
-	-   s'il n'a pas été défini dans le fichier .csv, un niveau de description (DescriptionLevel) dont la valeur est :
-	    -   « RecordGrp » pour une unité archivistique référençant un répertoire,
-		-   « Item » pour une unité archivistique référençant un objet numérique ;
-	-   l’identifiant de la transaction (_opi) ;
-	-   un identifiant de batch (_batchId) ;
-	-   la localisation initiale du dossier ou du fichier dans l'arborescence (_uploadPath),
-	-   l'identifiant du service producteur (_sp et _sps) ;
+		-   s'il n'a pas été défini dans le fichier .csv, un niveau de description (DescriptionLevel) dont la valeur est :
+			-   « RecordGrp » pour une unité archivistique référençant un répertoire,
+			-   « Item » pour une unité archivistique référençant un objet numérique ;
+		-   l’identifiant de la transaction (_opi) ;
+		-   un identifiant de batch (_batchId) ;
+		-   la localisation initiale du dossier ou du fichier dans l'arborescence (_uploadPath),
+		-   l'identifiant du service producteur (_sp et _sps) ;
 
--   la création de métadonnées techniques dans la base de données MongoDB, dans la collection « ObjectGroup » (base *MetadataCollect[^16]*).
+	-   la création de métadonnées techniques dans la base de données MongoDB, dans la collection « ObjectGroup » (base *MetadataCollect[^16]*).
 
-    À chaque enregistrement, est associé :
-	-  l’identifiant de la transaction (_opi) ;
-    -   un identifiant de batch (_batchId) ;
-	-  l'identifiant du service producteur (_sp) ;
+		À chaque enregistrement, est associé :
+		-  l’identifiant de la transaction (_opi) ;
+		-   un identifiant de batch (_batchId) ;
+		-  l'identifiant du service producteur (_sp) ;
 
--   l’enregistrement des objets numériques sur les offres de stockage.
--   la mise à jour des métadonnées techniques de l’objet avec :
+	-   l’enregistrement des objets numériques sur les offres de stockage.
+	-   la mise à jour des métadonnées techniques de l’objet avec :
 
-    -   ajout de l’empreinte d’un fichier numérique,
-    -   ajout de l’identification de son format,
-    -   mise à jour de son poids exprimé en octets, calculés lors de l’envoi du fichier numérique ;
+		-   ajout de l’empreinte d’un fichier numérique,
+		-   ajout de l’identification de son format,
+		-   mise à jour de son poids exprimé en octets, calculés lors de l’envoi du fichier numérique ;
 	
--   le cas échéant :
+	-   le cas échéant :
 
-    - si le projet de versement déclarait un rattachement unique, la création d'une unité archivistique dans la base de données MongoDB, dans la collection « Unit » (base *MetadataCollect[^10]*). Sont enregistrés automatiquement :
-      -   un niveau de description (DescriptionLevel) dont la valeur est « Series »,
-      -   un intitulé (Title) dont la valeur est « STATIC_ATTACHEMENT »,
-      -   l'identifiant de l'unité archivistique de rattachement (champ SystemId inclus dans un bloc UpdateOperation);
-    - si le projet de versement déclarait un rattachement par clé / valeur, la création d'une unité archivistique dans la base de données MongoDB, dans la collection « Unit » (base *MetadataCollect[^10]*). Sont enregistrés automatiquement :
-      -   un niveau de description (DescriptionLevel) dont la valeur est « Series »,
-      -   un intitulé (Title) dont la valeur est « DYNAMIC_ATTACHEMENT »,
-      -   l'identifiant de l'unité archivistique de rattachement (champ SystemId inclus dans un bloc UpdateOperation).
+		- si le projet de versement déclarait un rattachement unique, la création d'une unité archivistique dans la base de données MongoDB, dans la collection « Unit » (base *MetadataCollect[^10]*). Sont enregistrés automatiquement :
+			-   un niveau de description (DescriptionLevel) dont la valeur est « Series »,
+			-   un intitulé (Title) dont la valeur est « STATIC_ATTACHEMENT »,
+			-   l'identifiant de l'unité archivistique de rattachement (champ SystemId inclus dans un bloc UpdateOperation);
+		- si le projet de versement déclarait un rattachement par clé / valeur, la création d'une unité archivistique dans la base de données MongoDB, dans la collection « Unit » (base *MetadataCollect[^10]*). Sont enregistrés automatiquement :
+			-   un niveau de description (DescriptionLevel) dont la valeur est « Series »,
+			-   un intitulé (Title) dont la valeur est « DYNAMIC_ATTACHEMENT »,
+			-   l'identifiant de l'unité archivistique de rattachement (champ SystemId inclus dans un bloc UpdateOperation).
+
+-   s'il est en erreur :
+
+    -   l'enregistrement de l'upload en erreur dans la transaction (Batches), incluant :
+	
+		- son identifiant (_batchId),
+		- le résultat qui sera alors égal à « PURGED » (_batchStatus),
+		- le traitement concerné (evTypeProc).
 
 Lors de cette action, l’opération peut aboutir aux résultats suivants :
 
@@ -1527,7 +1571,11 @@ Il n'est pas possible d'envoyer une arborescence bureautique avec un fichier .js
 
 ###### Utilisation des API
 
-Pour une transaction donnée peut être envoyé sous forme de SIP un paquet d'archives.
+Pour une transaction donnée peut être envoyé sous forme de SIP un à plusieurs paquet(s) d'archives.
+
+***Point d’attention :*** 
+-   En prérequis à l’envoi d’une arborescence bureautique, il faut avoir au préalable créé une transaction et le signaler dans l’API.
+-   On peut envoyer plusieurs SIP dans une transaction donnée au moyen de plusieurs appels API.
 
 *Exemple : requête d’envoi d’un SIP sip.zip pour la transaction préalablement créée dont l’identifiant est aeeaaaaaaghiyso4ablmyal74slqwtqaaaaq.*
  
@@ -1552,6 +1600,7 @@ Cette action provoque :
         À chaque enregistrement, est associé :
 	
 		    -   l’identifiant de la transaction (_opi),
+			-   l’identifiant de l'upload ou batch (_batchId),
             -   l'identifiant du service producteur, présent dans le SIP (_sp et _sps),
 			-   la version du SEDA du message ArchiveTransfer (_sedaVersion),
 			-   la version de la solution logicielle Vitam (_implementationVersion);
@@ -1563,6 +1612,7 @@ Cette action provoque :
         À chaque enregistrement, est associé :
 	
 		   -   l’identifiant de la transaction (_opi),
+		   -   l’identifiant de l'upload ou batch (_batchId),
            -   l'identifiant du service producteur (_sp et _sps);
 
 	-   le cas échéant, la mise à jour des métadonnées techniques de l’objet avec :
@@ -1575,13 +1625,22 @@ Cette action provoque :
 	
 -   si elle est en erreur :
 
-    -   un changement de statut de la transaction, qui sera alors égal à « KO ».
-	-   si au moins une erreur concerne des contrôles relatifs aux unités archivistiques (STP_UNIT_CHECK_AND_PROCESS) ou aux groupes d'objets techniques (STP_OG_CHECK_AND_TRANSFORME) :
+    -   l'enregistrement de l'upload en erreur dans la transaction (Batches), incluant :
 	
-		-   un enregistrement de l'erreur dans les métadonnées de l'unité archivistique,
-		-   un enregistrement de l'erreur  dans les métadonnées du groupe d'objets techniques.
+		- son identifiant (_batchId),
+		- le résultat qui sera alors égal à « KO » (_batchStatus),
+		- le traitement concerné (evTypeProc).
 
-***Point d’attention :*** Au terme de la V.9.0 :
+	-   si au moins une erreur concerne des contrôles relatifs aux unités archivistiques (STP_UNIT_CHECK_AND_PROCESS) :
+	
+		-   un enregistrement de l'erreur dans les métadonnées de l'unité archivistique (_errors).
+	
+	-   si au moins une erreur concerne des contrôles relatifs  aux groupes d'objets techniques (STP_OG_CHECK_AND_TRANSFORME) :
+	
+		-   un enregistrement de l'erreur dans les métadonnées de l'unité archivistique (_ogInfo),
+		-   un enregistrement de l'erreur  dans les métadonnées du groupe d'objets techniques (_errors).
+
+***Point d’attention :*** Au terme de la V.9.1 :
 
 -   Ce service d'enregistrement des erreurs est disponible dans une version **bétâ**.
 -   les erreurs liées aux contrôles relatifs aux unités archivistiques (STP_UNIT_CHECK_AND_PROCESS) ou aux groupes d'objets techniques (STP_OG_CHECK_AND_TRANSFORME) sont cumulables.
@@ -1599,7 +1658,7 @@ La transaction a été clôturée. |
 
 Elle est journalisée dans le journal des opérations (COLLECT_INGEST). L'opération n'est pas associée à un rapport.
 
-***Point d’attention :*** Au terme de la V.9.0 :
+***Point d’attention :*** Au terme de la V.9.1 :
 
 -   Ce service est disponible dans une version **bétâ**.
 -   Les métadonnées d'en-tête du manifeste.xml ne sont pas enregistrées dans le module de collecte.
@@ -1831,6 +1890,11 @@ Ces deux accès mènent à une page permettant de :
 -   rechercher dans cette liste selon de nombreux critères de recherche,
 -   consulter les métadonnées d'une unité archivistique en particulier.
 
+***Point d’attention :*** A noter qu'à partir de la version 9.1 de la solution logicielle Vitam, il est possible de :
+
+-   rechercher les archives importées depuis un SIP et contenant des erreurs,
+-   consulter le détail de ces erreurs depuis le panneau latéral des archives concernées.
+
 #### Accès aux groupes d'objets techniques
 
 ##### Utilisation des API
@@ -1876,6 +1940,10 @@ L’APP « Collecte et préparation des versements » du front-office Vitam UI
 
 Ce service est disponible depuis la page permettant de visualiser l’ensemble des unités archivistiques d'une transaction au sein de l'onglet « Objet » du panneau latéral d'une unité archivistique. Il est également possible d'y télécharger les différents objets techniques. 
 
+***Point d’attention :*** A noter qu'à partir de la version 9.1 de la solution logicielle Vitam, il est possible de :
+
+-   rechercher les archives importées depuis un SIP et contenant des erreurs,
+-   consulter le détail de ces erreurs depuis le panneau latéral des archives concernées.
 
 ### Gestion des transactions
 
@@ -2519,13 +2587,15 @@ Pour une transaction donnée, peut être envoyé un fichier .csv contenant des m
 Le fichier .csv est composé de x colonnes[^17] :
 
 -   File : chemin relatif à partir de l’emplacement où est positionnée l’unité archivistique faisant l’objet de la modification. Il s’agit d’une concaténation des intitulés des différentes unités archivistiques (colonne obligatoire) ;
+-   _id : identifiant technique de l'unité archivistique à modifier (colonne obligatoire) ;
 -   toute colonne correspondant à un champ du standard SEDA et nécessitant une modification et/ou un ajout de métadonnées (colonnes facultatives) ;
 -   le cas échéant, toute colonne correspondant à une métadonnée externe du standard SEDA  et nécessitant une modification et/ou un ajout de métadonnées (colonnes facultatives).
 
 ***Points d’attention :***
 
 -   le fichier .csv n’est pas obligatoirement intitulé « metadata.csv » ;
--   l’ordre des premières colonnes ne doit pas être modifié ;
+-   l’ordre des premières colonnes ne doit pas être modifié . 
+    A noter que la première colonne est soit File, soit _id. On ne peut avoir une colonne File et une colonne _id dans le même fichier ;
 -   une première ligne d’en-tête donnant le nom des colonnes doit être présente, chaque ligne décrivant ensuite une unité archivistique ;
 -   le séparateur entre les colonnes est le point-virgule, le séparateur de texte les guillemets doubles et l’encodage est « UTF-8 » ;
 -   le fichier .csv ne référence que des métadonnées propres aux unités archivistiques (métadonnées descriptives et de gestion).
@@ -2554,6 +2624,13 @@ Le fichier .csv est composé de x colonnes[^17] :
   "content/AU4";"Item";"AU4";"";""
 ```
 
+  *Exemple : fichier .csv de mise à jour des métadonnées (ajout ou modification d'un Tag pour les unités archivistiques dont l'identifiant technique est « aeaqaaaaaeecjgm7adzzoam4v3alvniaaaaq » et « aeaqaaaaaeecjgm7adzzoam4v3alblobaaaaq »)*
+```csv  
+  _id;Content.DescriptionLevel;Content.Title;Content.Tag
+  "aeaqaaaaaeecjgm7adzzoam4v3alvniaaaaq";"Item";"AU1";"MonTag"
+  "aeaqaaaaaeecjgm7adzzoam4v3alblobaaaaq";"Item";"AU2";"MonTag"
+```
+
 Cette action provoque la mise à jour des unités archivistiques dans la base de données MongoDB, dans la collection « Unit » (base *MetadataCollect[^18]*).
 Lors de cette action, l’opération peut aboutir aux résultats suivants :
 
@@ -2561,7 +2638,7 @@ Lors de cette action, l’opération peut aboutir aux résultats suivants :
 |---|---|
 | Succès       |  Action réalisée sans rencontrer de problèmes particuliers. |
 | Avertissement|  Le formatage du fichier .csv contient au moins une erreur (ex. date mal formatée, valeur attendue erronée, date de début postérieure à la date de fin, etc.)|
-| Échec        |  - Le fichier .csv n’est pas au format .csv. <br>- Le fichier .csv contient des erreurs dans la colonne File. <br>- Action non réalisée pour cause de nom erroné ou de chemin introuvable dans la requête.<br>- La transaction n’existe pas ou est erronée.<br>- La transaction a un statut « READY », « VALIDATED », « SENDING », « SEND », « ACK_OK », « ACK_WARNING », « ACK_KO », « KO », « ABORTED ».|
+| Échec        |  - Le fichier .csv n’est pas au format .csv. <br>- Le fichier .csv contient des erreurs dans la colonne File ou la colonne _id. <br>- Action non réalisée pour cause de nom erroné ou de chemin introuvable dans la requête.<br>- La transaction n’existe pas ou est erronée.<br>- La transaction a un statut « READY », « VALIDATED », « SENDING », « SEND », « ACK_OK », « ACK_WARNING », « ACK_KO », « KO », « ABORTED ».<br>- Le fichier .csv contient une colonne File et une colonne _id.|
 
 Elle n’est pas journalisée dans le journal des opérations.
 
@@ -2875,34 +2952,46 @@ X-Access-Contract-Id: {{access-contract}}
 
 Cette action provoque :
 
--   la création des unités archivistiques dans la base de données MongoDB, dans la collection « Unit » (base *MetadataCollect[^10]*). Sont enregistrés automatiquement[^11] :
+-   si elle est en succès :
 
-    -   un niveau de description (DescriptionLevel) dont la valeur est :
+	-   la création des unités archivistiques dans la base de données MongoDB, dans la collection « Unit » (base *MetadataCollect[^10]*). Sont enregistrés automatiquement[^11] :
 
-        -   « RecordGrp » pour une unité archivistique référençant un répertoire,
-        -   « Item » pour une unité archivistique référençant un objet numérique ;
+	    -   un niveau de description (DescriptionLevel) dont la valeur est :
 
-    -   un intitulé (Title), correspondant au nom d’un répertoire ou d’un objet binaire présent dans l’arborescence bureautique.
+	        -   « RecordGrp » pour une unité archivistique référençant un répertoire,
+	        -   « Item » pour une unité archivistique référençant un objet numérique ;
 
-    À chaque enregistrement, sont associés :
-	-   l’identifiant de la transaction (_opi) ;
-	-   un identifiant de batch (_batchId) ;
-	-   la localisation initiale du dossier ou du fichier dans l'arborescence (_uploadPath),
-	-   l'identifiant du service producteur (_sp et _sps) ;
+	    -   un intitulé (Title), correspondant au nom d’un répertoire ou d’un objet binaire présent dans l’arborescence bureautique.
 
--   la création de métadonnées techniques dans la base de données MongoDB, dans la collection « ObjectGroup » (base *MetadataCollect[^12]*) ;
+	    À chaque enregistrement, sont associés :
+				-   l’identifiant de la transaction (_opi) ;
+				-   un identifiant de batch (_batchId) ;
+				-   la localisation initiale du dossier ou du fichier dans l'arborescence (_uploadPath),
+				-   l'identifiant du service producteur (_sp et _sps) ;
 
-    À chaque enregistrement, sont associés :
-	-   l’identifiant de la transaction (_opi) ;
-	-   un identifiant de batch (_batchId) ;
-	-   l'identifiant du service producteur (_sp) ;
+	-   la création de métadonnées techniques dans la base de données MongoDB, dans la collection « ObjectGroup » (base *MetadataCollect[^12]*) ;
 
--   l’enregistrement des objets numériques sur les offres de stockage.
--   la mise à jour des métadonnées techniques de l’objet avec, calculés lors de l’envoi du fichier numérique :
+	    À chaque enregistrement, sont associés :
+					-   l’identifiant de la transaction (_opi) ;
+					-   un identifiant de batch (_batchId) ;
+					-   l'identifiant du service producteur (_sp) ;
 
-    -   ajout de l’empreinte d’un fichier numérique,
-    -   ajout de l’identification de son format,
-    -   mise à jour de son poids exprimé en octets.
+	-   l’enregistrement des objets numériques sur les offres de stockage.
+	-   la mise à jour des métadonnées techniques de l’objet avec, calculés lors de l’envoi du fichier numérique :
+
+	    -   ajout de l’empreinte d’un fichier numérique,
+	    -   ajout de l’identification de son format,
+	    -   mise à jour de son poids exprimé en octets.
+
+-   si elle est en erreur :
+
+	-   aucun enregistrement n'est effectué dans les collections « Unit » (base *MetadataCollect[^10]*) et « ObjectGroup » (base *MetadataCollect[^12]*) ;
+
+    -   l'enregistrement de l'upload en erreur dans la transaction (Batches), incluant :
+	
+		- son identifiant (_batchId),
+		- le résultat qui sera alors égal à « PURGED » (_batchStatus),
+		- le traitement concerné (evTypeProc).
 
 Lors de cette action, l’opération peut aboutir aux résultats suivants :
 
