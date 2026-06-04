@@ -71,7 +71,7 @@ Selon cette formalisation :
     -   la description intellectuelle de ces archives, décrites dans un bloc intitulé Content pour chaque ArchiveUnit ;
     -   la description des règles de gestion applicables à ces archives, décrites soit dans le bloc ManagementMetadata si elles s’appliquent à toutes les archives, soit dans le bloc Management de chaque ArchiveUnit si chacune doit être gérée selon des règles propres.
 
-**La documentation accompagnant le standard SEDA 2.1. est accessible sur le site internet du Service interministériel des Archives de France et est consultable à l’adresse suivante : https://francearchives.fr/seda/** [^2].
+**La documentation accompagnant le standard SEDA 2.X est accessible sur le site internet du Service interministériel des Archives de France et est consultable à l’adresse suivante : https://francearchives.fr/seda/** [^2].
 
 ### Installation de la moulinette ReSIP
 
@@ -159,7 +159,7 @@ Pour mettre à jour des fichiers, il suffit de :
 
 ![](medias/resip/Pictures/100000000000029D000000D32F9D3732CA9940C1.png)
 
-Au terme de la version 6.RC (octobre 2022), la version 2.7 de ReSIP supporte la version 97 des fichiers de signature.
+Au terme de la version 9.1 (printemps 2026), la version 2.9 de ReSIP supporte la version 120 des fichiers de signature.
 
 Présentation de l’interface graphique de la moulinette ReSIP
 ------------------------------------------------------------
@@ -588,7 +588,6 @@ Le paramétrage de l’import est disponible dans l’onglet « Traitement/Inte
 
 ***Point d’attention :*** 
 -   Il est recommandé d’effectuer ce paramétrage avant d’importer quoique ce soit dans la moulinette ReSIP.
--   ReSIP n'intègre pas actuellement la version 2.3. du SEDA. Néanmoins, il est possible d'intégrer à une session de travail les métadonnées ajoutées dans cette version en les gérant comme des métadonnées externes.
 
 #### Activer le mode « debug »
 
@@ -1503,17 +1502,13 @@ puis sur la sous-action « Préférences » (cf. copie d’écran ci-dessous).
 
 ![](medias/resip/Pictures/100002010000033E000001BABB2A3FE9F42480D2.png)
 
-Le clic sur la sous-action « Préférences » ouvre une
+Le clic sur la sous-action « Préférences » ouvre une fenêtre de dialogue composée de cinq onglets. Le paramétrage de l’import est disponible dans l’onglet « Import » (cf. copie d’écran ci-dessous).
 
-fenêtre de dialogue composée de cinq onglets. Le paramétrage de l’import
-est disponible dans l’onglet « Import » (cf. copie d’écran ci-dessous).
 ![](medias/resip/Pictures/ID10.png)
 
 Il permet de :
 
--   sélectionner via un menu déroulant l’encodage utilisé dans le
-    fichier .csv. Par défaut, l’encodage proposé est
-    « windows-1252 » ;
+-   sélectionner via un menu déroulant l’encodage utilisé dans le fichier .csv. Par défaut, l’encodage proposé est « windows-1252 » ;
 -   préciser le séparateur utilisé dans le fichier .csv. Par défaut, le séparateur est un point-virgule.
 
 #### Présentation du fichier d’import
@@ -1754,6 +1749,9 @@ Il permet de :
 -   activer ou désactiver, via des cases à cocher, les fonctionnalités
     d’extraction sous forme d’une métadonnée du contenu textuel des
     messages électroniques et de leurs pièces jointes.
+-   activer l'appel à des outils externes installés sur l'ordinateur de l'utilisateur. Par défaut, ce paramètre est désactivé.
+
+***Attention :*** Après activation de l'appel à des outils externes, il faudra redémarrer ReSIP.
 
 #### Présentation du processus d’import
 
@@ -1802,6 +1800,7 @@ dialogue affichant les paramètres d’import comme décrit dans la [section](#i
 -   modalités d’extraction des propriétés des messages et de leurs
     pièces jointes, sous forme de case à cocher. Seules les options
     retenues seront mises en œuvre lors de l’extraction.
+-   utilisation d'un outil externe d'extraction. Par défaut, le paramètre est désactivé.
 
 ![](medias/resip/Pictures/1000020100000555000002D813CFF81B3D77B51E.png)
 
@@ -2102,7 +2101,7 @@ Une fois l’opération terminée, s’affichent :
     -   un numéro d’ordre du doublon ;
     -   le nombre d’unités archivistiques concernées ;
     -   le nombre de groupes d’objets concernés ;
-    -   le nom de la 1^ère^ occurrence identifiée du fichier concerné ;
+    -   le nom de la 1ère occurrence identifiée du fichier concerné ;
     -   la taille du fichier concerné ;
     -   le format du fichier concerné (identifiant PRONOM) ;
     -   le type Mime du fichier concerné ;
@@ -2127,7 +2126,7 @@ Une fois l’opération terminée, s’affichent :
     d’écran ci-dessous). Au-dessus de la liste, à droite de la fenêtre
     de dialogue, est indiquée, parmi le nombre de résultats, la position
     de l’unité archivistique et du groupe d’objets techniques concernés
-    dans l’arborescence (ex. 1/4 indique qu’il est la 1^ere^ occurrence
+    dans l’arborescence (ex. 1/4 indique qu’il est la 1ère occurrence
     sur les 4 existantes) ;
     ![](medias/resip/Pictures/1000020100000555000002D95F1F7D4DA8F877B6.png)
 
@@ -2189,7 +2188,7 @@ convient, dans le menu de la moulinette ReSIP, de :
     de la fenêtre de dialogue, est indiquée, parmi le nombre de
     résultats, la position de l’unité archivistique ou du groupe
     d’objets techniques concernés dans l’arborescence (ex. 2/2 indique
-    qu’il est la 2^e^ occurrence sur les 2 existantes) ;
+    qu’il est la 2ème occurrence sur les 2 existantes) ;
     ![](medias/resip/Pictures/1000020100000555000002DADE6FAB6B815B9DB6.png)
 
 -   lancer l’action de nettoyage qui peut être
@@ -5118,8 +5117,7 @@ Dans le manifeste, il faut corriger la valeur de l’élément Comment par la va
     pour effectuer cette opération.
 
 [^8]:  Pour plus de précisions sur les contrôles de conformité,
-    consulter l’annexe « Contrôle de conformité à un profil
-    d’archivage » du présent document.
+    consulter l’[annexe « Contrôle de conformité à un profil d’archivage » du présent document.
 
 [^9]:  Le service et sa documentation sont disponibles à l’adresse
     suivante : <https://www.francearchives.fr/sherpa/> (Lien consulté le
