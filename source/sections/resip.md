@@ -5117,8 +5117,7 @@ Dans le manifeste, il faut corriger la valeur de l’élément Comment par la va
     pour effectuer cette opération.
 
 [^8]:  Pour plus de précisions sur les contrôles de conformité,
-    consulter l’annexe « Contrôle de conformité à un profil
-    d’archivage » du présent document.
+    consulter l’[annexe « Contrôle de conformité à un profil d’archivage » du présent document.
 
 [^9]:  Le service et sa documentation sont disponibles à l’adresse
     suivante : <https://www.francearchives.fr/sherpa/> (Lien consulté le
