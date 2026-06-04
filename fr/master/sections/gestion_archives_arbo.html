@@ -105,7 +105,8 @@
 <li class="toctree-l4"><a class="reference internal" href="#modification-des-archives">2.3.3.1. Modification des archives</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="#modification-des-metadonnees">2.3.3.1.1. Modification des métadonnées</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#calcul-des-echeances">2.3.3.1.2. Calcul des échéances</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#reorganisation-darborescence">2.3.3.1.3. Réorganisation d’arborescence</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#reattribution-d-un-service-producteur">2.3.3.1.3. Réattribution d’un service producteur</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#reorganisation-darborescence">2.3.3.1.4. Réorganisation d’arborescence</a></li>
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="#elimination">2.3.3.2. Élimination</a><ul>
@@ -306,7 +307,7 @@
 <li><p>une présentation des mécanismes mis en œuvre dans la solution logicielle Vitam pour gérer ces arborescences ;</p></li>
 <li><p>des recommandations aux utilisateurs de la solution logicielle Vitam sur la manière d’utiliser les fonctionnalités associées aux arbres et plans.</p></li>
 </ul>
-<p>Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la Version 9.0 (automne 2025). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.</p>
+<p>Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la Version 9.1 (printemps 2026). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.</p>
 </section>
 </section>
 <section id="presentation">
@@ -574,9 +575,15 @@ Le SIP peut être exprimé en SEDA 2.1, 2.2 ou 2.3.</p>
 <li><p>les objets associés ;</p></li>
 </ul>
 </li>
-<li><p>associer au projet de versement une arborescence bureautique zippée, optionnellement accompagnée d’un fichier .csv contenant des métadonnées descriptives et de gestion.</p></li>
+<li><p>associer au projet de versement :</p>
+<ul>
+<li><p>une arborescence bureautique zippée, optionnellement accompagnée d’un fichier .csv ou .jsonl contenant des métadonnées descriptives et de gestion.
+L’opération n’est pas journalisée dans le journal des opérations.</p></li>
+<li><p>un paquet d’archives, représenté dans le DataObjectPackage d’un manifeste.xml et envoyé sous la forme d’un SIP.
+L’opération est journalisée dans le journal des opérations.</p></li>
 </ul>
-<p>L’opération n’est pas journalisée dans le journal des opérations.</p>
+</li>
+</ul>
 <p>Après réception, le module formate ces différentes informations sous la forme de SIP conformes au standard SEDA, puis les envoie vers le back-office de la solution logicielle Vitam (opération d’INGEST).</p>
 </section>
 <section id="processus-dimport">
@@ -781,8 +788,42 @@ Par défaut, l’utilisateur peut accéder à un groupe d’objets techniques à
 <p>Cette indexation en base peut enfin être supprimée au moyen d’une opération de type « COMPUTE_INHERITED_RULES_DELETE », tracée dans le journal des opérations de la solution logicielle Vitam<a class="footnote-reference brackets" href="#id68" id="id28" role="doc-noteref"><span class="fn-bracket">[</span>28<span class="fn-bracket">]</span></a>.</p>
 <p><strong>Point d’attention :</strong> les arbres de positionnement n’utilisant pas de règles de gestion, ce service vaut uniquement pour les unités archivistiques de type « plan de classement » et « standard », qui acceptent des règles de gestion.</p>
 </section>
+<section id="reattribution-d-un-service-producteur">
+<h5><span class="section-number">2.3.3.1.3. </span>Réattribution d’un service producteur<a class="headerlink" href="#reattribution-d-un-service-producteur" title="Lien vers cette rubrique"></a></h5>
+<p>La solution logicielle Vitam permet de modifier un service producteur sur un lot d’archives issue d’un SIP ou d’un plan de classement.
+Au terme de la version 9.1, cette modification doit être réalisée sur l’ensemble des archives d’un versement. Si au moins une archives d’un versement n’est pas inclue dans le lot, l’opération sera en échec.</p>
+<p>Elle entraîne une mise à jour du service producteur dans :</p>
+<ul class="simple">
+<li><p>les unités archivistiques concernées,</p></li>
+<li><p>le cas échéant, les groupes d’objets associés à ces unités archivistiques,</p></li>
+<li><p>dans le détail du registre des fonds de l’entrée concernée.</p></li>
+</ul>
+<p>L’opération est tracée dans le journal des opérations (ORIGINATING_AGENCY_REASSIGNMENT).</p>
+<p>Elle est également journalisée dans le journal du cycle de vie de l’unité archivistique et/ou du groupe d’objets techniques ayant été modifié.</p>
+<p><strong>Point d’attention :</strong></p>
+<ul class="simple">
+<li><p>Les arbres de positionnement n’utilisant pas de service producteur, ce service vaut uniquement pour les unités archivistiques de type « plan de classement » et « standard », qui référencent un service producteur.</p></li>
+<li><p>Au terme de la version 9.1 de la solution logicielle Vitam :</p>
+<ul>
+<li><p>la réattribution du service producteur n’est pas faisable sur des archives ayant fait l’objet d’opération de préservation.</p></li>
+<li><p>il est <strong>fortement recommandé</strong> de n’utiliser ce service que pour des archives :</p>
+<ul>
+<li><p>dont le service producteur n’a pas été « justement » qualifié au moment de leur versement (ex. leur service producteur est qualifié de « inconnu »),</p></li>
+<li><p>qui ont fait l’objet de multiples rattachements (ex. objets rattachés à plusieurs unités archivistiques versées sous couvert de différents services producteurs).</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>La réattribution de service producteur entraîne une désindexation des règles de gestion héritées, ainsi qu’une mise à jour des services agents dits « symboliques » (_sps), ce qui peut avoir un impact en termes d’accès.Il est recommandé de :</p>
+<ul>
+<li><p>relancer un calcul des règles de gestion héritées sur les archives qui ont fait l’objet d’une réattribution de service producteur,</p></li>
+<li><p>vérifier que les unités archivistiques modifiées restent accessibles et que les filtres du contrat d’accès dont elles dépendent restent cohérents avec le résultat souhaité. Il est conseillé de contrôler en particulier le filtre sur les services agents.</p></li>
+</ul>
+</li>
+</ul>
+</section>
 <section id="reorganisation-darborescence">
-<h5><span class="section-number">2.3.3.1.3. </span>Réorganisation d’arborescence<a class="headerlink" href="#reorganisation-darborescence" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">2.3.3.1.4. </span>Réorganisation d’arborescence<a class="headerlink" href="#reorganisation-darborescence" title="Lien vers cette rubrique"></a></h5>
 <p>La solution logicielle Vitam permet également de modifier l’arborescence d’unités archivistiques issues d’un SIP, d’un plan de classement ou d’un arbre de positionnement, déjà entrées dans le système<a class="footnote-reference brackets" href="#id69" id="id29" role="doc-noteref"><span class="fn-bracket">[</span>29<span class="fn-bracket">]</span></a>. Il est possible de :</p>
 <ul class="simple">
 <li><p>rattacher une unité archivistique à une unité archivistique, en respectant l’organisation hiérarchique de l’information, à savoir :</p>

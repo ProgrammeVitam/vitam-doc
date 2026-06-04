@@ -532,7 +532,7 @@ Il s’articule autour des axes suivants :</p>
 <li><p>une présentation des mécanismes mis en œuvre dans la solution logicielle Vitam pour gérer et réaliser des opérations de préservation numérique ;</p></li>
 <li><p>des recommandations aux utilisateurs de la solution logicielle Vitam sur la manière d’utiliser les fonctionnalités associées à ces outils de préservation numérique ;</p></li>
 <li><p>des exemples de référentiels, de paramétrages, et de messages retournés par la solution logicielle Vitam à l’issue d’une opération en lien avec la préservation.
-Le présent document décrit les fonctionnalités qui sont offertes par la deuxième version de production de la solution logicielle Vitam au terme de la version 9.0 (automne 2025). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.</p></li>
+Le présent document décrit les fonctionnalités qui sont offertes par la deuxième version de production de la solution logicielle Vitam au terme de la version 9.1 (printemps 2026). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.</p></li>
 </ul>
 </section>
 </section>
@@ -1569,7 +1569,7 @@ Les raisons pouvant amener à supprimer un griffon sont les suivantes :</p>
 </ul>
 </li>
 </ul>
-<p>Une description (Description), ainsi que l’(les) action(s) couverte(s) par le scénario de préservation, pour un griffon donné et une liste de format(s) donnée (bloc GriffonByFormat), voire une action et un griffon à exécuter par défaut (bloc DefaultGriffin), facultatifs, peuvent venir compléter ces informations.</p>
+<p>Une description (Description), des règles de transformation (TransformationRules) ainsi que l’(les) action(s) couverte(s) par le scénario de préservation, pour un griffon donné et une liste de format(s) donnée (bloc GriffonByFormat), voire une action et un griffon à exécuter par défaut (bloc DefaultGriffin), facultatifs, peuvent venir compléter ces informations.</p>
 <p><strong>Point d’attention :</strong><br />
 L’identifiant d’un scénario ne doit comprendre ni caractère accentué, ni virgule, ni apostrophe, ni parenthèse, ni espace, ni slash, ni élément de ponctuation, ou tout autre caractère spécial. Ne sont autorisés que l’underscore et le tiret comme séparateurs.</p>
 </section>
@@ -1593,6 +1593,7 @@ Chaque enregistrement est modélisé comme suit<a class="footnote-reference brac
 <li><p>« EXTRACT_AU » : le scénario de préservation couvre la fonctionnalité d’extraction de métadonnées descriptives contenues dans les objets binaires en vue de les enregistrer dans les métadonnées des unités archivistiques ;</p></li>
 </ul>
 </li>
+<li><p>des règles de transformation (TransformationRules – facultatif) ;</p></li>
 <li><p>tenant dans lequel l’enregistrement a été créé, fourni par le système (_tenant – obligatoire) ;</p></li>
 <li><p>version du scénario de préservation, fournie par le système (_v – obligatoire).</p>
 <ul>
@@ -1646,7 +1647,11 @@ Chacun de ces blocs comprend les éléments suivants :</p></li>
 </li>
 </ul>
 <p>Le bloc GriffinByFormat contient en plus un élément listant le(s) format(s) concerné(s) par le scénario de préservation (FormatList – obligatoire).</p>
-<p><strong>Point d’attention :</strong> si le scénario de préservation a vocation à réaliser des extractions de métadonnées externes, il est recommandé d’ajouter dans l’ontologie les métadonnées destinées à être extraites et de les indexer dans le moteur de recherche Elastic Search.</p>
+<p><strong>Point d’attention :</strong></p>
+<ul class="simple">
+<li><p>si le scénario de préservation a vocation à réaliser des extractions de métadonnées externes, il est recommandé d’ajouter dans l’ontologie les métadonnées destinées à être extraites et de les indexer dans le moteur de recherche Elastic Search.</p></li>
+<li><p>les règles de transformation peuvent être utilisées avec les actions « EXTRACT » et « EXTRACT_AU ».</p></li>
+</ul>
 </section>
 </section>
 <section id="id46">
@@ -1822,6 +1827,7 @@ Elle obéit à des règles strictes :</p>
 <li><p>doit porter sur des formats différents. Cela signifie que chaque liste de formats associée à un griffon donné ne doit pas contenir de formats identiques. Si c’est le cas, le format répété ne sera traité qu’une seule fois dans le cadre d’une opération de préservation exécutant le scénario de préservation.</p></li>
 </ul>
 </li>
+<li><p>Il peut inclure des règles de transformation, actives quand le scénario de préservation comporte une action « EXTRACT » ou « EXTRACT_AU ».</p></li>
 </ul>
 <p>Pour une action couverte par un griffon donné, il est obligatoire de paramétrer les éléments suivants :</p>
 <ul class="simple">
@@ -2281,14 +2287,14 @@ Ces nouvelles métadonnées sont enregistrées et indexées en tant que métadon
 </li>
 </ul>
 </li>
-<li><p>création d’un rapport, faisant état de l’opération de préservation ayant été exécutée.
-À l’issue du traitement, l’opération peut aboutir aux statuts suivants :
-|Statut|Motifs<a class="footnote-reference brackets" href="#id183" id="id66" role="doc-noteref"><span class="fn-bracket">[</span>45<span class="fn-bracket">]</span></a>|
+<li><p>création d’un rapport, faisant état de l’opération de préservation ayant été exécutée.</p></li>
+</ul>
+<p>À l’issue du traitement, l’opération peut aboutir aux statuts suivants :</p>
+<p>|Statut|Motifs<a class="footnote-reference brackets" href="#id183" id="id66" role="doc-noteref"><span class="fn-bracket">[</span>45<span class="fn-bracket">]</span></a>|
 |Succès|opération réalisée sans rencontrer de problèmes particuliers.|
 |Avertissement|- opération réalisée, sans qu’aucun traitement ne soit effectué pour cause de :<br>- lot d’archives sélectionné n’ayant pas d’objets binaires à traiter ;<br>- scénario de préservation ne traitant pas les formats présents dans les objets binaires à traiter.<br>- opération réalisée, avec un traitement partiel effectué, dans le cas où une partie des objets binaires traités sont en erreur.|
 |Échec|- taille maximale dépassée pour au moins un objet binaire ;<br>- temps maximal de traitement dépassé pour au moins un objet binaire ;<br>- Action présente dans le scénario de préservation non gérée par le griffon utilisé.|
-|Erreur technique<a class="footnote-reference brackets" href="#id184" id="id67" role="doc-noteref"><span class="fn-bracket">[</span>46<span class="fn-bracket">]</span></a>|indisponibilité du griffon dans la solution logicielle Vitam.|</p></li>
-</ul>
+|Erreur technique<a class="footnote-reference brackets" href="#id184" id="id67" role="doc-noteref"><span class="fn-bracket">[</span>46<span class="fn-bracket">]</span></a>|indisponibilité du griffon dans la solution logicielle Vitam.|</p>
 <p><strong>Point d’attention :</strong> le processus de préservation est identique et unique, quelle que soit l’action de préservation effectuée (analyse, génération de binaire, réidentification de format, extraction de métadonnées). De fait, certaines tâches sont automatiquement effectuées, mais non exécutées, en fonction des actions de préservation déclarées par le scénario de préservation. Par exemple :</p>
 <ul class="simple">
 <li><p>pour une opération d’analyse de formats, le processus affiche systématiquement une étape d’alimentation du registre des fonds, même si cette dernière n’est pas exécutée ;</p></li>
@@ -4547,6 +4553,103 @@ L’audit correctif s’effectue depuis l’IHM recette mise à disposition.<br>
 <span class="w">        </span><span class="p">]</span>
 <span class="w">      </span><span class="p">}</span>
 <span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;Identifier&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PSC-000003&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Extraction de métadonnées techniques avec ImageMagick avec transformation jslt + FMT353&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Ce scénario, appelant le griffon ImageMagick, permet d&#39;extraire l&#39;ensemble des métadonnées techniques de fichiers image et de les enregistrer dans les métadonnées des groupes d&#39;objets techniques. Les métadonnées sont enregistrées dans OtherMetadata, chacune sous forme de tableau et indexée, ainsi que dans RAW_METADATA qui est indexé.&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ActionList&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="s2">&quot;EXTRACT&quot;</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;TransformationRules&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{ \&quot;ExtractedMetadata\&quot;: ({ \&quot;OtherMetadata\&quot;: ({ \&quot;resolution\&quot;: [ for (.ExtractedMetadata.OtherMetadata.resolution) { \&quot;largeur\&quot;: .x, \&quot;hauteur\&quot;: .y }]} + .ExtractedMetadata.OtherMetadata)} + .ExtractedMetadata)} + .&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;GriffinByFormat&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;FormatList&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">          </span><span class="s2">&quot;fmt/43&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="s2">&quot;fmt/42&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="s2">&quot;fmt/353&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="s2">&quot;fmt/44&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="s2">&quot;fmt/645&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="s2">&quot;fmt/41&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="s2">&quot;x-fmt/392&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="s2">&quot;fmt/4&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="s2">&quot;fmt/12&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="s2">&quot;fmt/341&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="s2">&quot;fmt/116&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="s2">&quot;fmt/124&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="s2">&quot;x-fmt/92&quot;</span>
+<span class="w">        </span><span class="p">],</span>
+<span class="w">        </span><span class="nt">&quot;GriffinIdentifier&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GRI-000001&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Timeout&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;MaxSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10000000</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Debug&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ActionDetail&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EXTRACT&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;Values&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="nt">&quot;FilteredExtractedObjectGroupData&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="s2">&quot;ALL_METADATA&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="s2">&quot;RAW_METADATA&quot;</span>
+<span class="w">              </span><span class="p">]</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;Identifier&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PSC-000005&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Extraction de métadonnées techniques avec ImageMagick avec transformation jslt + DEFAULTGRIFFIN&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Extraction de métadonnées techniques avec ImageMagick avec transformation jslt + DEFAULTGRIFFIN&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;CreationDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2018-11-16T15:55:30.721&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;LastUpdate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2018-11-20T15:34:21.542&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ActionList&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="s2">&quot;EXTRACT&quot;</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;TransformationRules&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{ \&quot;ExtractedMetadata\&quot;: ({ \&quot;OtherMetadata\&quot;: ({ \&quot;resolution\&quot;: [ for (.ExtractedMetadata.OtherMetadata.resolution) { \&quot;largeur\&quot;: .x, \&quot;hauteur\&quot;: .y }]} + .ExtractedMetadata.OtherMetadata)} + .ExtractedMetadata)} + .&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;DefaultGriffin&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;GriffinIdentifier&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GRI-000001&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;Timeout&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">20000000</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;MaxSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10000000</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;Debug&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;ActionDetail&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EXTRACT&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;Values&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">              </span><span class="nt">&quot;FilteredExtractedObjectGroupData&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="s2">&quot;ALL_METADATA&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="s2">&quot;RAW_METADATA&quot;</span>
+<span class="w">              </span><span class="p">]</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">      </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;Identifier&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;PSC-000006&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Extraction de métadonnées descriptives avec Tesseract avec transformation jslt + FMT353&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Extraction de métadonnées descriptives avec Tesseract avec transformation jslt + FMT353&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ActionList&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="s2">&quot;EXTRACT_AU&quot;</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">	</span><span class="nt">&quot;TransformationRules&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{ \&quot;ExtractedMetadataAU\&quot;: { \&quot;TextContent\&quot;: lowercase(.ExtractedMetadataAU.TextContent)}} + .&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;GriffinByFormat&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;FormatList&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;fmt/353&quot;</span><span class="p">],</span>
+<span class="w">        </span><span class="nt">&quot;GriffinIdentifier&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;GRI-000005&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Timeout&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2000</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;MaxSize&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10000000</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;Debug&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;ActionDetail&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">          </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;Type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EXTRACT_AU&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;Values&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;Extension&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;txt&quot;</span>
+<span class="w">          </span><span class="p">}</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span><span class="w">   </span>
 <span class="w">  </span><span class="p">}</span>
 </pre></div>
 </div>

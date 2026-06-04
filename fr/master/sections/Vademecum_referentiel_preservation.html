@@ -197,12 +197,13 @@ Le référentiel des scénarios de préservation a pour finalités de :</p>
 </section>
 <section id="actions-couvertes-par-un-scenario-de-preservation">
 <h3><span class="section-number">23.1.2. </span>Actions couvertes par un scénario de préservation<a class="headerlink" href="#actions-couvertes-par-un-scenario-de-preservation" title="Lien vers cette rubrique"></a></h3>
-<p>Quatre actions élémentaires de préservation peuvent être effectuées par un scénario de préservation :</p>
+<p>Cinq actions élémentaires de préservation peuvent être effectuées par un scénario de préservation :</p>
 <ul class="simple">
 <li><p>GENERATE : génération d’un nouvel objet, par exemple, conversion d’un format,</p></li>
 <li><p>ANALYSE : analyse d’un ou plusieurs formats, par exemple, validation d’un format,</p></li>
 <li><p>IDENTIFY : ré-identification d’un ou plusieurs formats,</p></li>
-<li><p>EXTRACT : extraction de métadonnées contenues dans les objets binaires.
+<li><p>EXTRACT : extraction de métadonnées contenues dans les objets binaires pour enregistrement en tant que métadonnées techniques,</p></li>
+<li><p>EXTRACT_AU : extraction de métadonnées contenues dans les objets binaires pour enregistrement en tant que métadonnées descriptives.
 Un scénario de préservation peut effectuer une ou plusieurs de ces actions élémentaires.</p></li>
 </ul>
 </section>
@@ -232,7 +233,8 @@ Exemple :</p>
 <section id="commande-a-executer">
 <h4><span class="section-number">23.1.3.3. </span>Commande à exécuter<a class="headerlink" href="#commande-a-executer" title="Lien vers cette rubrique"></a></h4>
 <ul class="simple">
-<li><p>Type d’action à exécuter : une des quatre actions élémentaires de préservation.</p></li>
+<li><p>Type d’action à exécuter : une des cinq actions élémentaires de préservation.</p></li>
+<li><p>Règles de transformation.</p></li>
 <li><p>Valeurs précisant les commandes passées par le scénario de préservation :</p>
 <ul>
 <li><p>arguments, correspondant à une commande passée au griffon selon son langage et sa grammaire propre,</p></li>
@@ -319,6 +321,7 @@ Un scénario de préservation comporte obligatoirement les informations suivante
 <li><p>identifiant signifiant du scénario de préservation, généré par l’application à l’origine de sa création (Identifier) et devant être unique dans le système ;</p></li>
 <li><p>nom du scénario de préservation (Name) ;</p></li>
 <li><p>action(s) couverte(s) par le scénario de préservation (ActionList). Ce champ peut contenir 1 à 4 valeurs : « GENERATE », « ANALYSE », « IDENTIFY » ou « EXTRACT » ;</p></li>
+<li><p>des règles de transformation (TransformationRules);</p></li>
 <li><p>un bloc GriffinByFormat (Action(s) couverte(s)) précise l’(les) action(s) couverte(s) par le scénario de préservation, pour un griffon donné et une liste de formats donnée.<br>
 Une description (Description), ainsi qu’une action et un griffon à exécuter par défaut (bloc DefaultGriffin), facultatifs, peuvent venir compléter ces informations.</p></li>
 </ul>

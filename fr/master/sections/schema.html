@@ -81,12 +81,13 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#formalisation-des-vocabulaires-du-schema">12.3. Formalisation des vocabulaires du schéma</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#dans-un-fichier-json">12.3.1. Dans un fichier JSON</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#dans-la-solution-logicielle-vitam">12.3.2. Dans la solution logicielle Vitam</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#dans-le-schema-interne">12.3.2.1. Dans le schéma interne</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#dans-la-base-de-donnees-mongodb">12.3.2.2. Dans la base de données MongoDB</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dans-un-fichier-csv">12.3.2. Dans un fichier CSV</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dans-la-solution-logicielle-vitam">12.3.3. Dans la solution logicielle Vitam</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#dans-le-schema-interne">12.3.3.1. Dans le schéma interne</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dans-la-base-de-donnees-mongodb">12.3.3.2. Dans la base de données MongoDB</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#dans-le-standard-dechange-de-donnees-pour-larchivage-seda">12.3.3. Dans le Standard d’échange de données pour l’archivage (SEDA)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dans-le-standard-dechange-de-donnees-pour-larchivage-seda">12.3.4. Dans le Standard d’échange de données pour l’archivage (SEDA)</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#mecanismes-mis-en-oeuvre-dans-la-solution-logicielle-vitam">12.4. Mécanismes mis en œuvre dans la solution logicielle Vitam</a><ul>
@@ -258,7 +259,7 @@ Il s’articule autour des axes suivants :</p>
 <li><p>une présentation des mécanismes mis en œuvre dans la solution logicielle Vitam pour prendre en compte cette notion ;</p></li>
 <li><p>quelques conseils complémentaires de mise en œuvre.</p></li>
 </ul>
-<p>Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 9.0 (automne 2025).
+<p>Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 9.1 (printemps 2026).
 Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.</p>
 </section>
 </section>
@@ -288,7 +289,7 @@ Il a vocation à être amendé, complété et enrichi au fur et à mesure de la 
 </ul>
 </li>
 </ul>
-<p><em>Exemple :</em> sont présents dans le schéma les vocabulaires « Keyword », « Keyword.Keyword Content », « Keyword.KeywordType ».</p>
+<p><em>Exemple : sont présents dans le schéma les vocabulaires « Keyword », « Keyword.Keyword Content », « Keyword.KeywordType ».</em></p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;Keyword&gt;</span>
 <span class="w">    </span><span class="nt">&lt;KeywordContent&gt;</span>Paris<span class="nt">&lt;/Content&gt;</span>
 <span class="w">    </span><span class="nt">&lt;KeywordType&gt;</span>geogname<span class="nt">&lt;/Type&gt;</span>
@@ -298,7 +299,7 @@ Il a vocation à être amendé, complété et enrichi au fur et à mesure de la 
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- vocabulaires générés par la solution logicielle Vitam, correspondant à un élément JSON de type « objet ».
 </pre></div>
 </div>
-<p><em>Exemple :</em> sont présents dans le schéma les éléments JSON _mgt, _v.</p>
+<p><em>Exemple : sont présents dans le schéma les éléments JSON _mgt, _v.</em></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;_mgt&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nt">&quot;AccessRule&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">            </span><span class="nt">&quot;Rules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
@@ -346,8 +347,8 @@ Il a vocation à être amendé, complété et enrichi au fur et à mesure de la 
 <h2><span class="section-number">12.3. </span>Formalisation des vocabulaires du schéma<a class="headerlink" href="#formalisation-des-vocabulaires-du-schema" title="Lien vers cette rubrique"></a></h2>
 <section id="dans-un-fichier-json">
 <h3><span class="section-number">12.3.1. </span>Dans un fichier JSON<a class="headerlink" href="#dans-un-fichier-json" title="Lien vers cette rubrique"></a></h3>
-<p>Un à plusieurs vocabulaire(s) externe(s) peu(ven)t être importé(s) sous la forme d’un fichier JSON.
-<em>Exemple :</em> trois vocabulaires externes, « Invoice », « Provider » et « BirthDate », contenant les informations nécessaires pour être importés avec succès.</p>
+<p>Un à plusieurs vocabulaire(s) externe(s) peu(ven)t être importé(s) sous la forme d’un fichier JSON <strong>depuis les API</strong>.</p>
+<p><em>Exemple :</em> trois vocabulaires externes, « Invoice », « Provider » et « BirthDate », contenant les informations nécessaires pour être importés avec succès.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;IsObject&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
@@ -400,17 +401,66 @@ Chaque vocabulaire de type « objet » :</p></li>
 </li>
 </ul>
 </section>
+<section id="dans-un-fichier-csv">
+<h3><span class="section-number">12.3.2. </span>Dans un fichier CSV<a class="headerlink" href="#dans-un-fichier-csv" title="Lien vers cette rubrique"></a></h3>
+<p>Un à plusieurs vocabulaire(s) externe(s) peu(ven)t être importé(s) sous la forme d’un fichier CSV <strong>depuis l’APP Ontologie</strong> de l’interface VitamUI.</p>
+<p><em>Exemple :</em> trois vocabulaires externes, « Invoice », « Provider » et « BirthDate », contenant les informations nécessaires pour être importés avec succès.</p>
+<div class="highlight-csv notranslate"><div class="highlight"><pre><span></span>Path;Cardinality;IsObject;ShortName;Description
+Invoice;MANY;true;Facture;Facture - extension
+Invoice.Provider;MANY;false;Provider;
+Invoice.Provider;ONE;false;Date de naissance;
+</pre></div>
+</div>
+<p>Un vocabulaire de type « feuille » donné</p>
+<ul class="simple">
+<li><p>doit nécessairement être décrit avec les informations suivantes :</p>
+<ul>
+<li><p>un chemin (Path),</p></li>
+<li><p>une cardinalité, dont la valeur doit être égale à « ONE », « ONE_REQUIRED », « MANY » ou « MANY_REQUIRED » (Cardinality),</p></li>
+</ul>
+</li>
+<li><p>doit inclure :</p>
+<ul>
+<li><p>un intitulé (ShortName),</p></li>
+<li><p>une description (Description),</p></li>
+<li><p>une déclaration d’objet (IsObject).
+Chaque vocabulaire de type « objet » :</p></li>
+</ul>
+</li>
+<li><p>nécessairement être décrit avec les informations suivantes :</p>
+<ul>
+<li><p>un chemin (Path),</p></li>
+<li><p>une cardinalité, dont la valeur doit être égale à « ONE », « ONE_REQUIRED », « MANY » ou « MANY_REQUIRED » (Cardinality),</p></li>
+<li><p>une déclaration d’objet (IsObject).</p></li>
+</ul>
+</li>
+<li><p>doit inclure :</p>
+<ul>
+<li><p>un intitulé (ShortName),</p></li>
+<li><p>une description (Description).</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Points d’attention :</strong>
+Le fichier CSV à importer doit avoir les caractéristiques suivantes :</p>
+<ul class="simple">
+<li><p>Encodage des caractères en UTF-8,</p></li>
+<li><p>Séparateur de champ par un point-virgule,</p></li>
+<li><p>Séparateur de texte par des guillemets doubles,</p></li>
+<li><p>Aucune valeur vide pour les colonnes Path, Cardinality, IsObject, ShortName et Description.</p></li>
+</ul>
+</section>
 <section id="dans-la-solution-logicielle-vitam">
-<h3><span class="section-number">12.3.2. </span>Dans la solution logicielle Vitam<a class="headerlink" href="#dans-la-solution-logicielle-vitam" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">12.3.3. </span>Dans la solution logicielle Vitam<a class="headerlink" href="#dans-la-solution-logicielle-vitam" title="Lien vers cette rubrique"></a></h3>
 <p>Les vocabulaires du schéma sont enregistrés sous deux formes :</p>
 <ul class="simple">
 <li><p>dans un fichier interne, dit « schéma interne » regroupant l’ensemble des vocabulaires internes comme externes,</p></li>
 <li><p>pour les seuls vocabulaires externes, dans la base de données MongoDB, dans la collection « Schéma », sous la forme d’enregistrements au format JSON.</p></li>
 </ul>
 <section id="dans-le-schema-interne">
-<h4><span class="section-number">12.3.2.1. </span>Dans le schéma interne<a class="headerlink" href="#dans-le-schema-interne" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">12.3.3.1. </span>Dans le schéma interne<a class="headerlink" href="#dans-le-schema-interne" title="Lien vers cette rubrique"></a></h4>
 <p>Les vocabulaires internes et, le cas échéant, les vocabulaires externes, sont enregistrés dans un fichier interne, sous la forme d’enregistrements au format JSON.</p>
-<p><em>Exemple :</em> deux vocabulaires, le premier de type « objet » et le second de type « feuille ».</p>
+<p><em>Exemple : deux vocabulaires, le premier de type « objet » et le second de type « feuille ».</em></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
 <span class="p">{</span>
 <span class="w">      </span><span class="nt">&quot;FieldName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Addressee&quot;</span><span class="p">,</span>
@@ -510,7 +560,7 @@ Chaque vocabulaire de type « objet » :</p></li>
 </table>
 </section>
 <section id="dans-la-base-de-donnees-mongodb">
-<h4><span class="section-number">12.3.2.2. </span>Dans la base de données MongoDB<a class="headerlink" href="#dans-la-base-de-donnees-mongodb" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">12.3.3.2. </span>Dans la base de données MongoDB<a class="headerlink" href="#dans-la-base-de-donnees-mongodb" title="Lien vers cette rubrique"></a></h4>
 <p>Les vocabulaires externes sont enregistrés dans la base de données MongoDB, dans la collection « Schema », sous la forme d’enregistrements au format JSON.</p>
 <p><strong>Point d’attention :</strong> Les vocabulaires internes ne sont pas enregistrés dans cette collection.</p>
 <p><em>Exemple :</em> deux vocabulaires, l’un de type « objet » et l’autre de type « feuille ».</p>
@@ -589,7 +639,7 @@ Chaque vocabulaire de type « objet » :</p></li>
 </section>
 </section>
 <section id="dans-le-standard-dechange-de-donnees-pour-larchivage-seda">
-<h3><span class="section-number">12.3.3. </span>Dans le Standard d’échange de données pour l’archivage (SEDA)<a class="headerlink" href="#dans-le-standard-dechange-de-donnees-pour-larchivage-seda" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">12.3.4. </span>Dans le Standard d’échange de données pour l’archivage (SEDA)<a class="headerlink" href="#dans-le-standard-dechange-de-donnees-pour-larchivage-seda" title="Lien vers cette rubrique"></a></h3>
 <p>Le schéma reprend des éléments définis dans la norme NF Z 44‑022 et dans sa déclinaison pour les acteurs du service public, le Standard d’échanges de données pour l’archivage (SEDA).<br />
 Un bordereau de transfert utilise de fait les vocabulaires définis dans l’ontologie de la solution logicielle Vitam.</p>
 <p>La norme NF Z 44‑022 offre la possibilité d’ajouter des éléments supplémentaires, appelés « extensions » :</p>
@@ -683,13 +733,13 @@ Ce schéma est multi-tenant. Il est administrable et journalisé depuis le tenan
 </section>
 <section id="ajout-dun-vocabulaire-externe">
 <h4><span class="section-number">12.4.1.2. </span>Ajout d’un vocabulaire externe<a class="headerlink" href="#ajout-dun-vocabulaire-externe" title="Lien vers cette rubrique"></a></h4>
-<p>Il est possible d’ajouter des vocabulaires externes sous la forme d’enregistrements JSON depuis le tenant d’administration ou un tenant en particulier.<br />
+<p>Il est possible d’ajouter des vocabulaires externes depuis le tenant d’administration ou un tenant en particulier.<br />
 L’ajout d’un vocabulaire externe est possible pour la collection « Unit » :</p>
 <ul class="simple">
-<li><p>au moyen des API,</p></li>
-<li><p>depuis l’APP VitamUI « Ontologie ».</p></li>
+<li><p>au moyen des API,  sous la forme d’enregistrements JSON,</p></li>
+<li><p>depuis l’APP VitamUI « Ontologie » sous la forme d’enregistrements CSV.</p></li>
 </ul>
-<p><strong>Point d’attention :</strong> Au terme de la version 9.0, il n’est pas possible d’ajouter un vocabulaire externe pour la collection « ObjectGroup ».</p>
+<p><strong>Point d’attention :</strong> Au terme de la version 9.1, il n’est pas possible d’ajouter un vocabulaire externe pour la collection « ObjectGroup ».</p>
 <p>Chaque vocabulaire de type « feuille » :</p>
 <ul class="simple">
 <li><p>doit définir :</p>
@@ -718,7 +768,7 @@ L’ajout d’un vocabulaire externe est possible pour la collection « Unit �
 </ul>
 </li>
 </ul>
-<p><em>Exemple :</em> Création d’un objet et d’un vocabulaire de type « feuille ».</p>
+<p><em>Exemple : Création d’un objet et d’un vocabulaire de type « feuille » depuis les API.</em></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="err">POST</span><span class="w"> </span><span class="p">{{</span><span class="err">url</span><span class="p">}}</span><span class="err">/admi</span><span class="kc">n</span><span class="mf">-e</span><span class="err">x</span><span class="kc">ternal</span><span class="err">/v</span><span class="mi">1</span><span class="err">/schema/u</span><span class="kc">n</span><span class="err">i</span><span class="kc">t</span>
 <span class="err">Accep</span><span class="kc">t</span><span class="p">:</span><span class="w"> </span><span class="err">applica</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="err">/jso</span><span class="kc">n</span>
 <span class="err">Co</span><span class="kc">ntent</span><span class="mi">-</span><span class="err">Type</span><span class="p">:</span><span class="w"> </span><span class="err">applica</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="err">/jso</span><span class="kc">n</span>
@@ -797,7 +847,7 @@ L’ajout d’un vocabulaire externe est possible pour la collection « Unit �
 </ul>
 </li>
 </ul>
-<p><em>Exemple :</em> Enregistrement d’un vocabulaire de type « feuille » dans la collection « Unit » (base « Masterdata »).</p>
+<p><em>Exemple : Enregistrement d’un vocabulaire de type « feuille » dans la collection « Unit » (base « Masterdata »).</em></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">    </span><span class="err">_id</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;aeaaaaaaaag</span><span class="kc">tf</span><span class="err">hyvadjsqamrbc</span><span class="mi">6</span><span class="kc">f</span><span class="err">vsiaaaaq&#39;</span><span class="p">,</span>
 <span class="w">    </span><span class="err">Origi</span><span class="kc">n</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;EXTERNAL&#39;</span><span class="p">,</span>
@@ -862,7 +912,7 @@ L’ajout d’un vocabulaire externe est possible pour la collection « Unit �
 </ul>
 </li>
 </ul>
-<p><em>Exemple :</em> Enregistrement d’un vocabulaire de type « feuille » dans le schéma interne.</p>
+<p><em>Exemple : Enregistrement d’un vocabulaire de type « feuille » dans le schéma interne.</em></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">      </span><span class="nt">&quot;FieldName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MyText&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;tenant&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
@@ -904,10 +954,10 @@ Le fichier CSV à importer doit avoir les caractéristiques suivantes :</p>
 <ul class="simple">
 <li><p>encodage des caractères : UTF-8 ;</p></li>
 <li><p>séparateur de champ : point-virgule ;</p></li>
-<li><p>séparateur de texte : guillemets simples ou doubles, espace vide ;
-Le fichier CSV possède obligatoirement cinq colonnes respectant l’ordre suivant : Path, Cardinality, IsObject, ShortName et Description.</p></li>
+<li><p>séparateur de texte : guillemets simples ou doubles, espace vide.</p></li>
 </ul>
-<p>Exemple : Enregistrement d’un fichier CSV.</p>
+<p>Le fichier CSV possède obligatoirement cinq colonnes respectant l’ordre suivant : Path, Cardinality, IsObject, ShortName et Description.</p>
+<p><em>Exemple : Enregistrement d’un fichier CSV.</em></p>
 <div class="highlight-csv notranslate"><div class="highlight"><pre><span></span>
 Path;Cardinality;IsObject;ShortName;Description
 MyObject;ONE;false;Mon objet;MyObject - extension
@@ -943,8 +993,8 @@ La suppression d’un vocabulaire externe est possible pour la collection « Un
 <li><p>au moyen des API ;</p></li>
 <li><p>depuis l’APP VitamUI « Ontologie ».</p></li>
 </ul>
-<p><strong>Point d’attention :</strong> Au terme de la version 9.0, il n’est pas possible de supprimer un vocabulaire externe pour la collection « ObjectGroup ».</p>
-<p><em>Exemple :</em> Suppression d’un vocabulaire externe « MyText ».</p>
+<p><strong>Point d’attention :</strong> Au terme de la version 9.1, il n’est pas possible de supprimer un vocabulaire externe pour la collection « ObjectGroup ».</p>
+<p><em>Exemple : Suppression d’un vocabulaire externe « MyText ».</em></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="err">DELETE</span><span class="w"> </span><span class="p">{{</span><span class="err">url</span><span class="p">}}</span><span class="err">/admi</span><span class="kc">n</span><span class="mf">-e</span><span class="err">x</span><span class="kc">ternal</span><span class="err">/v</span><span class="mi">1</span><span class="err">/schema/u</span><span class="kc">n</span><span class="err">i</span><span class="kc">t</span>
 <span class="err">Accep</span><span class="kc">t</span><span class="p">:</span><span class="w"> </span><span class="err">applica</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="err">/jso</span><span class="kc">n</span>
 <span class="err">Co</span><span class="kc">ntent</span><span class="mi">-</span><span class="err">Type</span><span class="p">:</span><span class="w"> </span><span class="err">applica</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="err">/jso</span><span class="kc">n</span>
@@ -997,7 +1047,7 @@ La suppression d’un vocabulaire externe est possible pour la collection « Un
 <span class="err">X</span><span class="mi">-</span><span class="err">Access</span><span class="mi">-</span><span class="err">Co</span><span class="kc">ntra</span><span class="err">c</span><span class="kc">t</span><span class="mi">-</span><span class="err">Id</span><span class="p">:</span><span class="w"> </span><span class="p">{{</span><span class="err">access</span><span class="mi">-</span><span class="err">co</span><span class="kc">ntra</span><span class="err">c</span><span class="kc">t</span><span class="p">}}</span>
 </pre></div>
 </div>
-<p><strong>Point d’attention :</strong> En résultats, la solution logicielle renvoie systématiquement l’ensemble des vocabulaires du schéma. Au terme de la version 9.0, il n’est pas possible de récupérer une sélection de métadonnées.</p>
+<p><strong>Point d’attention :</strong> En résultats, la solution logicielle renvoie systématiquement l’ensemble des vocabulaires du schéma. Au terme de la version 9.1, il n’est pas possible de récupérer une sélection de métadonnées.</p>
 <ul class="simple">
 <li><p>depuis l’APP VitamUI « Ontologie », accessible depuis tous les tenants.</p></li>
 </ul>
@@ -1011,20 +1061,20 @@ La suppression d’un vocabulaire externe est possible pour la collection « Un
 <li><p>d’utiliser et d’afficher la traduction des vocabulaires dans les IHM, rendue administrable dans ce référentiel, afin qu’un administrateur fonctionnel ait la possibilité de modifier les intitulés (ou traductions) de certains vocabulaires (par exemple, modifier « Description », traduction textuelle du bloc Description du SEDA, par « Présentation du contenu », terme issu de la norme ISAD/G, davantage usité par les archivistes) ;</p></li>
 <li><p>d’afficher la traduction des vocabulaires externes.</p></li>
 </ul>
-<p>À titre d’exemple, au terme de la version 9.0, l’APP VitamUI « Recherche et consultation des archives » fournie avec la solution logicielle Vitam dispose de vocabulaires affichés dynamiquement :</p>
+<p>À titre d’exemple, au terme de la version 9.1, l’APP VitamUI « Recherche et consultation des archives » fournie avec la solution logicielle Vitam dispose de vocabulaires affichés dynamiquement :</p>
 <ul class="simple">
 <li><p>depuis la recherche sur l’ensemble des métadonnées, internes comme externes,</p></li>
 <li><p>depuis le détail des métadonnées descriptives d’une unité archivistique.</p></li>
 </ul>
-<p><em>Exemple 1 :</em> Recherche dite « Autres critères » accessible depuis l’APP « Recherche et consultation des archives »</p>
+<p><em>Exemple 1 : Recherche dite « Autres critères » accessible depuis l’APP « Recherche et consultation des archives »</em></p>
 <p><img alt="" src="../_images/APP_recherche_1.png" /></p>
-<p><em>Exemple 2 :</em> Edition dynamique de métadonnées descriptives pour modification d’une unité archivistique</p>
+<p><em>Exemple 2 : Edition dynamique de métadonnées descriptives pour modification d’une unité archivistique</em></p>
 <p><img alt="" src="../_images/APP_recherche_2.png" /></p>
 </section>
 <section id="personnalisation-des-masques-de-saisie">
 <h4><span class="section-number">12.4.2.3. </span>Personnalisation des masques de saisie<a class="headerlink" href="#personnalisation-des-masques-de-saisie" title="Lien vers cette rubrique"></a></h4>
 <p>La solution logicielle Vitam permet d’accéder à la liste des métadonnées requises par un profil d’unité archivistique, qu’il s’agisse de vocabulaires internes ou, le cas échéant, de vocabulaires externes de la collection « Unit ».</p>
-<p><em>Exemple :</em> Requête en vue de rechercher les vocabulaires utilisés par le profil d’unité archivistique dont l’identifiant est  « AUP-00001 » :</p>
+<p><em>Exemple : Requête en vue de rechercher les vocabulaires utilisés par le profil d’unité archivistique dont l’identifiant est  « AUP-00001 » :</em></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="err">GET</span><span class="w"> </span><span class="p">{{</span><span class="err">url</span><span class="p">}}</span><span class="err">/admi</span><span class="kc">n</span><span class="mf">-e</span><span class="err">x</span><span class="kc">ternal</span><span class="err">/v</span><span class="mi">1</span><span class="err">/archiveu</span><span class="kc">n</span><span class="err">i</span><span class="kc">t</span><span class="err">pro</span><span class="kc">f</span><span class="err">iles/AUP</span><span class="mi">-00001</span><span class="err">/schema</span>
 <span class="err">Accep</span><span class="kc">t</span><span class="p">:</span><span class="w"> </span><span class="err">applica</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="err">/jso</span><span class="kc">n</span>
 <span class="err">Co</span><span class="kc">ntent</span><span class="mi">-</span><span class="err">Type</span><span class="p">:</span><span class="w"> </span><span class="err">applica</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="err">/jso</span><span class="kc">n</span>
@@ -1141,7 +1191,11 @@ Un administrateur fonctionnel n’a pas besoin de créer de schéma interne. Il 
 </section>
 <section id="quand-et-comment-creer-un-vocabulaire-dans-le-schema">
 <h3><span class="section-number">12.5.2. </span>Quand et comment créer un vocabulaire dans le schéma ?<a class="headerlink" href="#quand-et-comment-creer-un-vocabulaire-dans-le-schema" title="Lien vers cette rubrique"></a></h3>
-<p>La création unitaire d’un nouveau vocabulaire dans le schéma s’effectue au moyen des API.</p>
+<p>La création unitaire d’un nouveau vocabulaire dans le schéma s’effectue :</p>
+<ul class="simple">
+<li><p>au moyen des API, sous la forme d’un enregistrement JSON),</p></li>
+<li><p>via l’APP Ontologie, sous la forme d’un fichier CSV).</p></li>
+</ul>
 <p>Cette opération s’effectue :</p>
 <ul class="simple">
 <li><p>sur le tenant d’administration si l’on souhaite que le vocabulaire soit disponible sur tous les tenants,</p></li>
@@ -1231,7 +1285,7 @@ Par exemple, on souhaite utiliser un vocabulaire permettant de gérer un titre d
 </tr>
 <tr class="row-odd"><td class="text-center"><p>Administrateur fonctionnel et/ou technique</p></td>
 <td class="text-center"><p>met à jour le schéma sur le tenant d’administration ou sur un tenant spécifique</p></td>
-<td class="text-center"><p>Non</p></td>
+<td class="text-center"><p>Oui</p></td>
 </tr>
 <tr class="row-even"><td class="text-center"><p>Administrateur technique</p></td>
 <td class="text-center"><p>indexe le nouveau vocabulaire dans le moteur de recherche Elastic Search.</p></td>
@@ -1242,8 +1296,12 @@ Par exemple, on souhaite utiliser un vocabulaire permettant de gérer un titre d
 </section>
 <section id="quand-et-comment-modifier-un-vocabulaire">
 <h3><span class="section-number">12.5.3. </span>Quand et comment modifier un vocabulaire ?<a class="headerlink" href="#quand-et-comment-modifier-un-vocabulaire" title="Lien vers cette rubrique"></a></h3>
-<p>en version 9.0, la mise à jour d’un vocabulaire utilisé dans le schéma passe par sa suppression, puis son réimport en utilisant les API mises à disposition par la solution logicielle Vitam.
-Il est ainsi possible de mettre à jour les informations suivantes :</p>
+<p>en version 9.1, la mise à jour d’un vocabulaire utilisé dans le schéma passe par sa suppression, puis son réimport en utilisant :</p>
+<ul class="simple">
+<li><p>les API mises à disposition par la solution logicielle Vitam,</p></li>
+<li><p>l’APP Ontologie.</p></li>
+</ul>
+<p>Il est ainsi possible de mettre à jour les informations suivantes :</p>
 <ul class="simple">
 <li><p>le chemin (Path),</p></li>
 <li><p>la cardinalité, dont la valeur doit être égale à « ONE », « ONE_REQUIRED », « MANY » ou « MANY_REQUIRED » (Cardinality),</p></li>
@@ -1258,20 +1316,27 @@ Il est ainsi possible de mettre à jour les informations suivantes :</p>
 <ul class="simple">
 <li><p>La modification n’est pas un acte anodin. Elle peut entraîner des incohérences si elle n’est pas mûrement réfléchie, ainsi qu’un possible changement des interfaces pour l’utilisateur ;</p></li>
 <li><p>le vocabulaire devant être modifié doit obligatoirement être un vocabulaire d’origine externe, à moins de correspondre à un vocabulaire supprimé à l’occasion d’une mise à jour du modèle de données géré par la solution logicielle Vitam ou la publication d’une nouvelle version du SEDA ;</p></li>
-<li><p>Il n’est pas possible de modifier le schéma depuis les interfaces de VitamUI ;</p></li>
+<li><p>Il n’est pas possible de modifier directement le schéma depuis les interfaces de VitamUI. Toute modification passe par une suppression du vocabulaire, puis son réimport.</p></li>
 <li><p>Il n’est pas possible de modifier le type d’indexation, le type détaillé d’indexation ou la taille du vocabulaire depuis le schéma. Il faut le faire en mettant à jour l’ontologie.</p></li>
 </ul>
 </section>
 <section id="quand-et-comment-supprimer-un-vocabulaire">
 <h3><span class="section-number">12.5.4. </span>Quand et comment supprimer un vocabulaire ?<a class="headerlink" href="#quand-et-comment-supprimer-un-vocabulaire" title="Lien vers cette rubrique"></a></h3>
-<p>La suppression d’un vocabulaire s’effectue uniquement depuis les API.</p>
-<p>Cet acte n’est pas anodin. Avant de procéder à cette suppression, il est recommandé de vérifier les éléments suivants :</p>
+<p>La suppression d’un vocabulaire s’effectue depuis :</p>
 <ul class="simple">
+<li><p>les API,</p></li>
+<li><p>l’APP Ontologie.</p></li>
+</ul>
+<p>Cet acte n’est pas anodin.</p>
+<p><strong>Point d’attention :</strong></p>
+<ul class="simple">
+<li><p>La suppression n’est pas un acte anodin. Elle peut entraîner des incohérences si elle n’est pas mûrement réfléchie, ainsi qu’un possible changement des interfaces pour l’utilisateur ;
+Avant de procéder à cette suppression, il est recommandé de vérifier les éléments suivants :</p>
+<ul>
 <li><p>le vocabulaire devant être supprimé doit obligatoirement être un vocabulaire d’origine externe, à moins de correspondre à un vocabulaire supprimé à l’occasion d’une mise à jour du modèle de données géré par la solution logicielle Vitam ou la publication d’une nouvelle version du SEDA ;</p></li>
-<li><p>le vocabulaire ne doit pas être utilisé par un autre vocabulaire dans le schéma s’il s’agit d’un élément de type « objet ».
-Point d’attention :</p></li>
-<li><p>La suppression n’est pas un acte anodin. Elle peut entraîner des incohérences si elle n’est pas mûrement réfléchie, ainsi qu’un possible changement des interfaces pour l’utilisateur ;</p></li>
-<li><p>Il n’est pas possible de supprimer un vocabulaire du schéma depuis les interfaces de VitamUI.</p></li>
+<li><p>le vocabulaire ne doit pas être utilisé par un autre vocabulaire dans le schéma s’il s’agit d’un élément de type « objet ».</p></li>
+</ul>
+</li>
 </ul>
 </section>
 <section id="quel-acces-au-schema">

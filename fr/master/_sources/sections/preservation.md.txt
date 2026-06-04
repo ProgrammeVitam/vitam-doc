@@ -49,7 +49,7 @@ Il s’articule autour des axes suivants :
 - une présentation des mécanismes mis en œuvre dans la solution logicielle Vitam pour gérer et réaliser des opérations de préservation numérique ;
 - des recommandations aux utilisateurs de la solution logicielle Vitam sur la manière d’utiliser les fonctionnalités associées à ces outils de préservation numérique ;
 - des exemples de référentiels, de paramétrages, et de messages retournés par la solution logicielle Vitam à l’issue d’une opération en lien avec la préservation.
-Le présent document décrit les fonctionnalités qui sont offertes par la deuxième version de production de la solution logicielle Vitam au terme de la version 9.0 (automne 2025). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
+Le présent document décrit les fonctionnalités qui sont offertes par la deuxième version de production de la solution logicielle Vitam au terme de la version 9.1 (printemps 2026). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
 
 Administration de la préservation numérique
 ---
@@ -689,7 +689,7 @@ Un scénario de préservation donné doit nécessairement comporter les informat
   - « EXTRACT » : le scénario de préservation couvre la fonctionnalité d’extraction de métadonnées techniques contenues dans les objets binaires en vue de les enregistrer dans les métadonnées des groupes d’objets techniques ;
   - « EXTRACT_AU » : le scénario de préservation couvre la fonctionnalité d’extraction de métadonnées descriptives contenues dans les objets binaires en vue de les enregistrer dans les métadonnées des unités archivistiques.
 
-Une description (Description), ainsi que l’(les) action(s) couverte(s) par le scénario de préservation, pour un griffon donné et une liste de format(s) donnée (bloc GriffonByFormat), voire une action et un griffon à exécuter par défaut (bloc DefaultGriffin), facultatifs, peuvent venir compléter ces informations.
+Une description (Description), des règles de transformation (TransformationRules) ainsi que l’(les) action(s) couverte(s) par le scénario de préservation, pour un griffon donné et une liste de format(s) donnée (bloc GriffonByFormat), voire une action et un griffon à exécuter par défaut (bloc DefaultGriffin), facultatifs, peuvent venir compléter ces informations.
 
 **Point d’attention :**  
 L’identifiant d’un scénario ne doit comprendre ni caractère accentué, ni virgule, ni apostrophe, ni parenthèse, ni espace, ni slash, ni élément de ponctuation, ou tout autre caractère spécial. Ne sont autorisés que l’underscore et le tiret comme séparateurs.
@@ -710,6 +710,7 @@ Chaque enregistrement est modélisé comme suit[^31] :
   - « IDENTIFY » : le scénario de préservation permet de réidentifier un ou plusieurs format(s) de fichier ;
   - « EXTRACT » : le scénario de préservation couvre la fonctionnalité d’extraction de métadonnées techniques contenues dans les objets binaires en vue de les enregistrer dans les métadonnées des groupes d’objets techniques ;
   - « EXTRACT_AU » : le scénario de préservation couvre la fonctionnalité d’extraction de métadonnées descriptives contenues dans les objets binaires en vue de les enregistrer dans les métadonnées des unités archivistiques ;
+- des règles de transformation (TransformationRules – facultatif) ;
 - tenant dans lequel l’enregistrement a été créé, fourni par le système (_tenant – obligatoire) ;
 - version du scénario de préservation, fournie par le système (_v – obligatoire).
   - Si l’enregistrement est égal à « 0 », il s’agit de l’enregistrement d’origine.
@@ -742,7 +743,9 @@ Chacun de ces blocs comprend les éléments suivants :
 
 Le bloc GriffinByFormat contient en plus un élément listant le(s) format(s) concerné(s) par le scénario de préservation (FormatList – obligatoire).
 
-**Point d’attention :** si le scénario de préservation a vocation à réaliser des extractions de métadonnées externes, il est recommandé d’ajouter dans l’ontologie les métadonnées destinées à être extraites et de les indexer dans le moteur de recherche Elastic Search.
+**Point d’attention :** 
+- si le scénario de préservation a vocation à réaliser des extractions de métadonnées externes, il est recommandé d’ajouter dans l’ontologie les métadonnées destinées à être extraites et de les indexer dans le moteur de recherche Elastic Search.
+- les règles de transformation peuvent être utilisées avec les actions « EXTRACT » et « EXTRACT_AU ».
 
 #### Mécanismes mis en œuvre dans la solution logicielle Vitam
 
@@ -854,6 +857,7 @@ Elle obéit à des règles strictes :
   - peut être couverte par un griffon différent ;
   - peut être différente les unes des autres ;
   - doit porter sur des formats différents. Cela signifie que chaque liste de formats associée à un griffon donné ne doit pas contenir de formats identiques. Si c’est le cas, le format répété ne sera traité qu’une seule fois dans le cadre d’une opération de préservation exécutant le scénario de préservation.
+- Il peut inclure des règles de transformation, actives quand le scénario de préservation comporte une action « EXTRACT » ou « EXTRACT_AU ».
 
 Pour une action couverte par un griffon donné, il est obligatoire de paramétrer les éléments suivants :
 - identifiant du griffon à exécuter (GriffinIdentifier). Le griffon doit avoir été préalablement installé dans la solution logicielle Vitam et référencé dans le référentiel des griffons, sans quoi le scénario de préservation ne fonctionnera pas ;
@@ -1156,7 +1160,9 @@ Dans le cadre du processus de préservation d’un ensemble d’archives, suite 
        - indexation des métadonnées de préservation et mise à jour du journal du cycle de vie des unités archivistiques concernées ;
        - sauvegarde des métadonnées et des journaux de cycle de vie sur les offres de stockage ;
 - création d’un rapport, faisant état de l’opération de préservation ayant été exécutée.
+
 À l’issue du traitement, l’opération peut aboutir aux statuts suivants :
+
 |Statut|Motifs[^45]|
 |Succès|opération réalisée sans rencontrer de problèmes particuliers.|
 |Avertissement|- opération réalisée, sans qu’aucun traitement ne soit effectué pour cause de :<br>- lot d’archives sélectionné n’ayant pas d’objets binaires à traiter ;<br>- scénario de préservation ne traitant pas les formats présents dans les objets binaires à traiter.<br>- opération réalisée, avec un traitement partiel effectué, dans le cas où une partie des objets binaires traités sont en erreur.|
@@ -2802,6 +2808,103 @@ Annexes
         ]
       }
     ]
+  },
+    {
+    "Identifier": "PSC-000003",
+    "Name": "Extraction de métadonnées techniques avec ImageMagick avec transformation jslt + FMT353",
+    "Description": "Ce scénario, appelant le griffon ImageMagick, permet d'extraire l'ensemble des métadonnées techniques de fichiers image et de les enregistrer dans les métadonnées des groupes d'objets techniques. Les métadonnées sont enregistrées dans OtherMetadata, chacune sous forme de tableau et indexée, ainsi que dans RAW_METADATA qui est indexé.",
+    "ActionList": [
+      "EXTRACT"
+    ],
+    "TransformationRules": "{ \"ExtractedMetadata\": ({ \"OtherMetadata\": ({ \"resolution\": [ for (.ExtractedMetadata.OtherMetadata.resolution) { \"largeur\": .x, \"hauteur\": .y }]} + .ExtractedMetadata.OtherMetadata)} + .ExtractedMetadata)} + .",
+    "GriffinByFormat": [
+      {
+        "FormatList": [
+          "fmt/43",
+          "fmt/42",
+          "fmt/353",
+          "fmt/44",
+          "fmt/645",
+          "fmt/41",
+          "x-fmt/392",
+          "fmt/4",
+          "fmt/12",
+          "fmt/341",
+          "fmt/116",
+          "fmt/124",
+          "x-fmt/92"
+        ],
+        "GriffinIdentifier": "GRI-000001",
+        "Timeout": 200,
+        "MaxSize": 10000000,
+        "Debug": true,
+        "ActionDetail": [
+          {
+            "Type": "EXTRACT",
+            "Values": {
+              "FilteredExtractedObjectGroupData": [
+                "ALL_METADATA",
+                "RAW_METADATA"
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+    {
+    "Identifier": "PSC-000005",
+    "Name": "Extraction de métadonnées techniques avec ImageMagick avec transformation jslt + DEFAULTGRIFFIN",
+    "Description": "Extraction de métadonnées techniques avec ImageMagick avec transformation jslt + DEFAULTGRIFFIN",
+    "CreationDate": "2018-11-16T15:55:30.721",
+    "LastUpdate": "2018-11-20T15:34:21.542",
+    "ActionList": [
+      "EXTRACT"
+    ],
+    "TransformationRules": "{ \"ExtractedMetadata\": ({ \"OtherMetadata\": ({ \"resolution\": [ for (.ExtractedMetadata.OtherMetadata.resolution) { \"largeur\": .x, \"hauteur\": .y }]} + .ExtractedMetadata.OtherMetadata)} + .ExtractedMetadata)} + .",
+    "DefaultGriffin": {
+      "GriffinIdentifier": "GRI-000001",
+      "Timeout": 20000000,
+      "MaxSize": 10000000,
+      "Debug": true,
+      "ActionDetail": [
+        {
+            "Type": "EXTRACT",
+            "Values": {
+              "FilteredExtractedObjectGroupData": [
+                "ALL_METADATA",
+                "RAW_METADATA"
+              ]
+            }
+          }
+      ]
+    }
+  },
+  {
+    "Identifier": "PSC-000006",
+    "Name": "Extraction de métadonnées descriptives avec Tesseract avec transformation jslt + FMT353",
+    "Description": "Extraction de métadonnées descriptives avec Tesseract avec transformation jslt + FMT353",
+    "ActionList": [
+      "EXTRACT_AU"
+    ],
+	"TransformationRules": "{ \"ExtractedMetadataAU\": { \"TextContent\": lowercase(.ExtractedMetadataAU.TextContent)}} + .",
+    "GriffinByFormat": [
+      {
+        "FormatList": ["fmt/353"],
+        "GriffinIdentifier": "GRI-000005",
+        "Timeout": 2000,
+        "MaxSize": 10000000,
+        "Debug":true,
+        "ActionDetail": [
+          {
+          "Type": "EXTRACT_AU",
+          "Values": {
+            "Extension": "txt"
+          }
+        }
+        ]
+      }
+    ]   
   }
 ```
 

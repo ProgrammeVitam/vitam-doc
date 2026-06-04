@@ -33,9 +33,9 @@ Un lexique en annexe explicite et détaille les principaux objets métiers signa
 
 #### Jeux de tests disponibles
 
-Un dossier de jeux test spécifique « Jeu_de_tests_Guide_de_prise_en_main_V9-0.zip » a été établi pour accompagner la documentation « Guide de prise en main », il comporte tous les éléments cités dans le document (contrats d’entrée et d’accès, référentiels des services agents et des règles de gestion). Il est publié [sur le site](www.programmevitam.fr).
+Un dossier de jeux test spécifique « Jeu_de_tests_Guide_de_prise_en_main_V9-1.zip » a été établi pour accompagner la documentation « Guide de prise en main », il comporte tous les éléments cités dans le document (contrats d’entrée et d’accès, référentiels des services agents et des règles de gestion). Il est publié [sur le site](www.programmevitam.fr).
 
-Il est également possible d’effectuer des tests fonctionnels se rapportant au « Cahier de tests métier » à partir des jeux de données mis à disposition dans le dossier « Jeux_de_tests_fonctionnels_V9-0.zip ». Le dossier zippé comporte les jeux de tests : paquets d’information à archiver (SIP) et objets de référence : contrats d’entrée et d’accès, référentiels des services agents et des règles de gestion, arbres de positionnement, plans de classement, etc. Ce ZIP est publié [sur le site](www.programmevitam.fr).
+Il est également possible d’effectuer des tests fonctionnels se rapportant au « Cahier de tests métier » à partir des jeux de données mis à disposition dans le dossier « Jeux_de_tests_fonctionnels_V9-1.zip ». Le dossier zippé comporte les jeux de tests : paquets d’information à archiver (SIP) et objets de référence : contrats d’entrée et d’accès, référentiels des services agents et des règles de gestion, arbres de positionnement, plans de classement, etc. Ce ZIP est publié [sur le site](www.programmevitam.fr).
 
 Enfin, il existe également des tests système automatisés accessibles via le projet Git « Vitam-itests »[^1]. Cet espace comporte des tests de non-régression, des exemples de paquets d’information à archiver (SIP) et d’objets de référence : contrats d’entrée et d’accès, référentiels des services agents et des règles de gestion. Ces tests peuvent être lancés depuis l’IHM de recette et sont décrits dans la documentation « IHM Recette ».
 
@@ -65,7 +65,7 @@ Utilisation des interfaces
 
 ![](./medias/guide_prise_en_main/portail1.png)
 
-La solution front-office Vitam UI propose une interface modulaire composée de différentes APP  dont chacune porte une des fonctionnalités métiers proposées par le système. Afin de faciliter la navigation des utilisateurs, une catégorisation métier a été proposée à partir de la page d’accueil du portail.  
+La solution front-office Vitam UI propose une interface modulaire composée de différentes APP dont chacune porte une des fonctionnalités métiers proposées par le système. Afin de faciliter la navigation des utilisateurs, une catégorisation métier a été proposée à partir de la page d’accueil du portail.  
 Chaque APP dispose d’un documentation d’utilisation disponible sur le site du Programme Vitam.  
 
 ### Launcher de navigation entre les APPs
@@ -116,7 +116,7 @@ L’utilisateur doit importer un référentiel des règles de gestion via l’AP
 
 ![](./medias/guide_prise_en_main/RG.png)
 
-- Pour les tests effectués à partir du jeu de tests « Jeu_de_tests_Guide_de_prise_en_main_V9-0.zip », il faut utiliser le fichier nommé « jeu_donnees_OK_regles_CSV.csv » en cliquant sur le bouton « Autres actions » et en sélectionnant l’action « Importer ».
+- Pour les tests effectués à partir du jeu de tests « Jeu_de_tests_Guide_de_prise_en_main_V9-1.zip », il faut utiliser le fichier nommé « jeu_donnees_OK_regles_CSV.csv » en cliquant sur le bouton « Autres actions » et en sélectionnant l’action « Importer ».
 - L’utilisateur peut également constituer son propre référentiel des règles de gestion au format .csv sur le même modèle. 
 - Il peut également créer unitairement une règle de gestion en cliquant sur le bouton « Créer une règle de gestion » et en renseignant les champs obligatoires.
 
@@ -126,7 +126,7 @@ La deuxième étape consiste à importer un référentiel des services agents au
 
 ![](./medias/guide_prise_en_main/SA.png)
 
-- Pour les tests effectués à partir du jeu de données « Jeu_de_tests_Guide_de_prise_en_main_V9-0.zip », il faut utiliser le fichier nommé « agencies_init.csv » en cliquant sur le bouton « Autres actions » et en sélectionnant l’action « Importer ».
+- Pour les tests effectués à partir du jeu de données « Jeu_de_tests_Guide_de_prise_en_main_V9-1.zip », il faut utiliser le fichier nommé « agencies_init.csv » en cliquant sur le bouton « Autres actions » et en sélectionnant l’action « Importer ».
 - L’utilisateur peut également constituer son propre référentiel des services agents au format .csv sur le même modèle. 
 - Il peut également créer unitairement un service agent en cliquant sur le bouton « Créer un service agent » et en renseignant les champs obligatoires.
  
@@ -153,7 +153,7 @@ Selon le paramétrage initial de la plateforme et l’utilisation ou non d’un 
 - Soit l’utilisateur attribue l’identifiant du contrat avant import,
 - Soit la solution logicielle Vitam le générera automatiquement lors de l’import, sous la forme IC-0000x.
 
-Certains SIP fournis dans les jeux de tests (Jeux_de_tests_fonctionnels_V9-0.zip) spécifient des contrats d’entrée qui leur sont propres dans la balise *ArchivalAgreement*. Pour pouvoir effectuer une entrée avec ces SIP, il faut :
+Certains SIP fournis dans les jeux de tests (Jeux_de_tests_fonctionnels_V9-1.zip) spécifient des contrats d’entrée qui leur sont propres dans la balise *ArchivalAgreement*. Pour pouvoir effectuer une entrée avec ces SIP, il faut :
 - soit créer le contrat d’entrée correspondant, désigné dans la balise ArchivalAgreement du bordereau de transfert,
 -  soit modifier le bordereau de transfert, en remplaçant la valeur de la balise ArchivalAgreement par « IC-000001 » par exemple ou l’identifiant d’un contrat d’entrée déjà importé dans la solution logicielle Vitam.
 
@@ -179,7 +179,7 @@ ReSIP permet également d’importer des SIP déjà créés pour les modifier. I
 
 L’utilisateur peut ensuite importer le SIP dans la solution logicielle Vitam, via l’APP « Dépôt et suivi des versements ».
 - En cliquant sur le bouton « Dépôt d’un versement » ;
-- Puis en sélectionnant le SIP à verser. Pour les tests effectués à partir du jeu de données « Jeu_de_tests_Guide_de_prise_en_main_V9-0.zip », il faut utiliser le fichier nommé « SIP-Kit_de_prise_en_main.zip ».
+- Puis en sélectionnant le SIP à verser. Pour les tests effectués à partir du jeu de données « Jeu_de_tests_Guide_de_prise_en_main_V9-1.zip », il faut utiliser le fichier nommé « SIP-Kit_de_prise_en_main.zip ».
 
 ![](./medias/guide_prise_en_main/depot.png)
 

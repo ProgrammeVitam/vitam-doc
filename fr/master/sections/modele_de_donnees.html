@@ -844,6 +844,7 @@ de certification.</p>
 <li><p>Vérification</p></li>
 <li><p>Sauvegarde des écritures</p></li>
 <li><p>Réorganisation d’arborescence</p></li>
+<li><p>Réattribution de service producteur</p></li>
 <li><p>Journalisation externe (enregistrement d’opérations extérieures dans la solution logicielle Vitam)</p></li>
 </ul>
 <p>Les valeurs correspondant à ces opérations dans les journaux sont détaillées dans <a class="reference internal" href="#annexe-3-valeurs-possibles-pour-le-champ-evtypeproc-type-de-processus"><span class="xref myst">l’annexe 3</span></a>.</p>
@@ -2513,6 +2514,55 @@ d’une unité archivistique :</p>
 <li><p>&lt;Version&gt; devient « _v »</p></li>
 <li><p>&lt;Management&gt; devient « _mgt »</p></li>
 </ul>
+<p><strong>« _reassignments »</strong> : données historiques des opérations de réattribution de service producteur.</p>
+<ul>
+<li><p>Champ peuplé par la solution logicielle Vitam au moment d’une réattribution de service producteur.</p></li>
+<li><p>Il s’agit d’un objet pouvant contenir un tableau d’objets.</p></li>
+<li><p>Cardinalité : 0-1</p></li>
+<li><p>Ce champ contient les clés suivantes :</p>
+<ul>
+<li><p><strong>« OperationId »</strong> : identifiant de l’opération de réattribution.</p>
+<ul class="simple">
+<li><p>Champ peuplé par la solution logicielle Vitam.</p></li>
+<li><p>Il s’agit d’une chaîne de caractères.</p></li>
+<li><p>Cardinalité : 1-1</p></li>
+</ul>
+</li>
+<li><p><strong>« SourceOriginatingAgency »</strong> : identifiant du service producteur initial ayant été modifié.</p>
+<ul class="simple">
+<li><p>Champ peuplé par la solution logicielle Vitam.</p></li>
+<li><p>Il s’agit d’une chaîne de caractères.</p></li>
+<li><p>Cardinalité : 1-1</p></li>
+</ul>
+</li>
+<li><p><strong>« TargetOriginatingAgency »</strong> : identifiant du nouveau service producteur attribué à la suite de l’opération de réattribution.</p>
+<ul class="simple">
+<li><p>Champ peuplé par la solution logicielle Vitam.</p></li>
+<li><p>Il s’agit d’une chaîne de caractères.</p></li>
+<li><p>Cardinalité : 1-1</p></li>
+</ul>
+</li>
+<li><p><strong>« ReassignmentDate »</strong> : date du changement du service producteur.</p>
+<ul>
+<li><p>Champ peuplé par la solution logicielle Vitam.</p></li>
+<li><p>Il s’agit d’une date au format ISO 8601 YYY-MM-DD + “T” + hh:mm:ss.millisecondes « + » timezone hh:mm.</p>
+<p>Exemple : <code class="docutils literal notranslate"><span class="pre">2016-08-19T16:36:07.942+02:00</span></code></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="err">_reassig</span><span class="kc">n</span><span class="err">me</span><span class="kc">nts</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="err">Opera</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="err">Id</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;aeeaaaaabwech</span><span class="mi">74</span><span class="err">iaeb</span><span class="mi">24</span><span class="err">am</span><span class="mi">57</span><span class="err">s</span><span class="mi">576</span><span class="err">daaaaaq&#39;</span><span class="p">,</span>
+<span class="w">            </span><span class="err">SourceOrigi</span><span class="kc">nat</span><span class="err">i</span><span class="kc">n</span><span class="err">gAge</span><span class="kc">n</span><span class="err">cy</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;MICHEL_MERCIER&#39;</span><span class="p">,</span>
+<span class="w">            </span><span class="err">Targe</span><span class="kc">t</span><span class="err">Origi</span><span class="kc">nat</span><span class="err">i</span><span class="kc">n</span><span class="err">gAge</span><span class="kc">n</span><span class="err">cy</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;ASP&#39;</span><span class="p">,</span>
+<span class="w">            </span><span class="err">Reassig</span><span class="kc">n</span><span class="err">me</span><span class="kc">nt</span><span class="err">Da</span><span class="kc">te</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="mi">2026-05-06</span><span class="err">T</span><span class="mi">10</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="mf">13.284</span><span class="err">&#39;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+</pre></div>
+</div>
 <p><strong>« _storage » :</strong> contient les champs qui permettent d’identifier les offres de stockage.</p>
 <ul class="simple">
 <li><p>Il s’agit d’un objet constitué du champ :</p>
@@ -3774,6 +3824,55 @@ représentées par ce groupe d’objets.</p>
 <li><p>Champ peuplé par la solution logicielle Vitam.</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 </ul>
+<p><strong>« _reassignments »</strong> : données historiques des opérations de réattribution de service producteur.</p>
+<ul>
+<li><p>Champ peuplé par la solution logicielle Vitam au moment d’une réattribution de service producteur.</p></li>
+<li><p>Il s’agit d’un objet pouvant contenir un tableau d’objets.</p></li>
+<li><p>Cardinalité : 0-1</p></li>
+<li><p>Ce champ contient les clés suivantes :</p>
+<ul>
+<li><p><strong>« OperationId »</strong> : identifiant de l’opération de réattribution.</p>
+<ul class="simple">
+<li><p>Champ peuplé par la solution logicielle Vitam.</p></li>
+<li><p>Il s’agit d’une chaîne de caractères.</p></li>
+<li><p>Cardinalité : 1-1</p></li>
+</ul>
+</li>
+<li><p><strong>« SourceOriginatingAgency »</strong> : identifiant du service producteur initial ayant été modifié.</p>
+<ul class="simple">
+<li><p>Champ peuplé par la solution logicielle Vitam.</p></li>
+<li><p>Il s’agit d’une chaîne de caractères.</p></li>
+<li><p>Cardinalité : 1-1</p></li>
+</ul>
+</li>
+<li><p><strong>« TargetOriginatingAgency »</strong> : identifiant du nouveau service producteur attribué à la suite de l’opération de réattribution.</p>
+<ul class="simple">
+<li><p>Champ peuplé par la solution logicielle Vitam.</p></li>
+<li><p>Il s’agit d’une chaîne de caractères.</p></li>
+<li><p>Cardinalité : 1-1</p></li>
+</ul>
+</li>
+<li><p><strong>« ReassignmentDate »</strong> : date du changement du service producteur.</p>
+<ul>
+<li><p>Champ peuplé par la solution logicielle Vitam.</p></li>
+<li><p>Il s’agit d’une date au format ISO 8601 YYY-MM-DD + “T” + hh:mm:ss.millisecondes « + » timezone hh:mm.</p>
+<p>Exemple : <code class="docutils literal notranslate"><span class="pre">2016-08-19T16:36:07.942+02:00</span></code></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="err">_reassig</span><span class="kc">n</span><span class="err">me</span><span class="kc">nts</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="err">Opera</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="err">Id</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;aeeaaaaabwech</span><span class="mi">74</span><span class="err">iaeb</span><span class="mi">24</span><span class="err">am</span><span class="mi">57</span><span class="err">s</span><span class="mi">576</span><span class="err">daaaaaq&#39;</span><span class="p">,</span>
+<span class="w">            </span><span class="err">SourceOrigi</span><span class="kc">nat</span><span class="err">i</span><span class="kc">n</span><span class="err">gAge</span><span class="kc">n</span><span class="err">cy</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;MICHEL_MERCIER&#39;</span><span class="p">,</span>
+<span class="w">            </span><span class="err">Targe</span><span class="kc">t</span><span class="err">Origi</span><span class="kc">nat</span><span class="err">i</span><span class="kc">n</span><span class="err">gAge</span><span class="kc">n</span><span class="err">cy</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;ASP&#39;</span><span class="p">,</span>
+<span class="w">            </span><span class="err">Reassig</span><span class="kc">n</span><span class="err">me</span><span class="kc">nt</span><span class="err">Da</span><span class="kc">te</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="mi">2026-05-06</span><span class="err">T</span><span class="mi">10</span><span class="p">:</span><span class="mi">01</span><span class="p">:</span><span class="mf">13.284</span><span class="err">&#39;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+</pre></div>
+</div>
 </section>
 </section>
 <section id="id7">
@@ -4475,6 +4574,184 @@ cette unité archivistique.</p>
 <li><p>Champ peuplé par la solution logicielle Vitam.</p></li>
 <li><p>Cardinalité : 0-1</p></li>
 </ul>
+<p><strong>« _errors » :</strong> contient les erreurs recensées pour une unité archivistique créée depuis un SIP.</p>
+<ul>
+<li><p>Cardinalité : 0-1</p></li>
+<li><p>Il contient :</p>
+<ul>
+<li><p>« evId » (event Identifier): identifiant de l’événement.</p>
+<ul class="simple">
+<li><p>Il s’agit d’une chaîne de 36 caractères.</p></li>
+<li><p>Champ obligatoire peuplé par la solution logicielle Vitam.</p></li>
+<li><p>Cardinalité : 1-1</p></li>
+</ul>
+</li>
+<li><p>« evTypeProc » (event Type Process): type de processus.</p>
+<ul class="simple">
+<li><p>Il s’agit d’une chaîne de caractères.</p></li>
+<li><p>Champ obligatoire peuplé par la solution logicielle Vitam.</p></li>
+<li><p>Nom du processus correspondant à « COLLECT_SIP_INGEST ».</p></li>
+<li><p>Cardinalité : 1-1</p></li>
+</ul>
+</li>
+<li><p>« evIdProc » (event Identifier Process): identifiant du processus.</p>
+<ul class="simple">
+<li><p>Il s’agit d’une chaîne de 36 caractères.</p></li>
+<li><p>Cardinalité : 1-1</p></li>
+</ul>
+</li>
+<li><p>« evDateTime » (event DateTime): date de lancement de l’opération.</p>
+<ul>
+<li><p>Il s’agit d’une date au format ISO8601 AAAA-MM-JJ+ »T »+hh:mm:ss:[3 digits de millisecondes]</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Exemple : &quot;2016-08-17T08:26:04.227&quot;
+</pre></div>
+</div>
+</li>
+<li><p>Cardinalité : 1-1</p></li>
+</ul>
+</li>
+<li><p>« outDetail » (outcome Detail): code correspondant au résultat de l’événement.</p>
+<ul class="simple">
+<li><p>Il s’agit d’une chaîne de caractères.</p></li>
+<li><p>Champ obligatoire peuplé par la solution logicielle Vitam.</p></li>
+<li><p>Il contient le code correspondant au résultat de l’événement, incluant le statut. Seul le code est stocké dans ce champ, la traduction se fait via le fichier properties (vitam-logbook-message-fr.properties).</p></li>
+<li><p>Cardinalité : 1-1</p></li>
+</ul>
+</li>
+<li><p>« outMessg » (outcome Detail Message): détail du résultat de l’événement.</p>
+<ul class="simple">
+<li><p>Il s’agit d’une chaîne de caractères.</p></li>
+<li><p>Champ obligatoire peuplé par la solution logicielle Vitam.</p></li>
+<li><p>C’est un message intelligible destiné à être lu par un être humain en tant que détail de l’événement.</p></li>
+<li><p>Traduction du code présent dans outDetail issue du fichier vitam-logbook-message-fr.properties.</p></li>
+<li><p>Il contient le code correspondant au résultat de l’événement, incluant le statut. Seul le code est stocké dans ce champ, la traduction se fait via le fichier properties (vitam-logbook-message-fr.properties).</p></li>
+<li><p>Cardinalité : 1-1</p></li>
+</ul>
+</li>
+<li><p>« evDetData » (event Detail Data): détails des données de l’événement.</p>
+<ul class="simple">
+<li><p>Il s’agit d’un objet JSON pouvant contenir des informations.</p></li>
+<li><p>Donne plus de détails sur l’événement ou son résultat.</p></li>
+<li><p>Cardinalité : 0-1</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>« _ogInfo » :</strong> contient les erreurs recensées pour un groupe d’objets techniques associé à une unité archivistique et créé depuis un SIP.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- **« _errors » :** contient les erreurs recensées pour un groupe d&#39;objets techniques ou un objet technique.
+
+	-   Cardinalité : 1-1
+
+	-   Il contient :
+
+		-   « evId » (event Identifier): identifiant de l’événement.
+
+			-   Il s’agit d’une chaîne de 36 caractères.
+
+			-   Champ obligatoire peuplé par la solution logicielle Vitam.
+
+			-   Cardinalité : 1-1
+			
+		-   « obId » (object Identifier): identifiant de l’objet auquel s’applique l’opération.
+
+			-	Si l’événement touche tout le groupe d’objets, alors le champ sera absent. S’il touche un objet du groupe d’objets, alors il sera présent et indiquera l&#39;identifiant de l’objet en question.
+
+			-	Cardinalité : 0-1
+
+		-   « evTypeProc » (event Type Process): type de processus.
+
+			-   Il s’agit d’une chaîne de caractères.
+
+			-   Champ obligatoire peuplé par la solution logicielle Vitam.
+	
+			-   Nom du processus correspondant à « COLLECT_SIP_INGEST ».
+
+			-   Cardinalité : 1-1
+			
+		-   « evIdProc » (event Identifier Process): identifiant du processus.
+
+			-   Il s’agit d’une chaîne de 36 caractères.
+
+			-   Cardinalité : 1-1
+		
+		-   « evDateTime » (event DateTime): date de lancement de l’opération.
+
+			-   Il s’agit d’une date au format ISO8601 AAAA-MM-JJ+&quot;T&quot;+hh:mm:ss:[3 digits de millisecondes]
+
+				Exemple : &quot;2016-08-17T08:26:04.227&quot;
+
+			-   Cardinalité : 1-1
+	
+		-   « outDetail » (outcome Detail): code correspondant au résultat de l’événement.
+
+			-   Il s’agit d’une chaîne de caractères.
+
+			-   Champ obligatoire peuplé par la solution logicielle Vitam.
+	
+			-   Il contient le code correspondant au résultat de l’événement, incluant le statut. Seul le code est stocké dans ce champ, la traduction se fait via le fichier properties (vitam-logbook-message-fr.properties).
+
+			-   Cardinalité : 1-1
+	
+		-   « outMessg » (outcome Detail Message): détail du résultat de l’événement.
+
+			-   Il s’agit d’une chaîne de caractères.
+
+			-   Champ obligatoire peuplé par la solution logicielle Vitam.
+	
+			-   C’est un message intelligible destiné à être lu par un être humain en tant que détail de l’événement.
+
+			-	Traduction du code présent dans outDetail issue du fichier vitam-logbook-message-fr.properties.
+	
+			-   Il contient le code correspondant au résultat de l’événement, incluant le statut. Seul le code est stocké dans ce champ, la traduction se fait via le fichier properties (vitam-logbook-message-fr.properties).
+
+			-   Cardinalité : 1-1
+
+		-   « evDetData » (event Detail Data): détails des données de l’événement.
+
+			-   Il s’agit d’un objet JSON pouvant contenir des informations.
+
+			-   Donne plus de détails sur l’événement ou son résultat.
+	
+			-   Cardinalité : 0-1
+</pre></div>
+</div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="err">_errors</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="err">evId</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;aeaaaaaaaaecazcrae</span><span class="kc">f</span><span class="err">hmam</span><span class="mi">2</span><span class="err">ywdoabaaaaaq&#39;</span><span class="p">,</span>
+<span class="w">            </span><span class="err">evTypeProc</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;COLLECT_SIP_INGEST&#39;</span><span class="p">,</span>
+<span class="w">            </span><span class="err">ou</span><span class="kc">t</span><span class="err">De</span><span class="kc">ta</span><span class="err">il</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;LFC.CHECK_UNIT_SCHEMA.INVALID_UNIT.KO&#39;</span><span class="p">,</span>
+<span class="w">			</span><span class="err">evDa</span><span class="kc">te</span><span class="err">Time</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="mi">2026-01-15</span><span class="err">T</span><span class="mi">15</span><span class="p">:</span><span class="mi">49</span><span class="p">:</span><span class="mf">17.311</span><span class="err">&#39;</span><span class="p">,</span>
+<span class="w">            </span><span class="err">evIdProc</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;aeeaaaaaagec</span><span class="kc">t</span><span class="err">qhea</span><span class="kc">f</span><span class="err">bo</span><span class="mi">6</span><span class="err">am</span><span class="mi">3</span><span class="err">yjmm</span><span class="kc">n</span><span class="mi">2</span><span class="err">yaaaaq&#39;</span>
+<span class="w">            </span><span class="err">ou</span><span class="kc">t</span><span class="err">Messg</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;Échec</span><span class="w"> </span><span class="err">de</span><span class="w"> </span><span class="err">la</span><span class="w"> </span><span class="err">véri</span><span class="kc">f</span><span class="err">ica</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="w"> </span><span class="err">de</span><span class="w"> </span><span class="err">la</span><span class="w"> </span><span class="err">co</span><span class="kc">nf</span><span class="err">ormi</span><span class="kc">t</span><span class="err">é</span><span class="w"> </span><span class="err">des</span><span class="w"> </span><span class="err">valeurs</span><span class="w"> </span><span class="err">da</span><span class="kc">ns</span><span class="w"> </span><span class="err">les</span><span class="w"> </span><span class="err">champs&#39;</span><span class="p">,</span>
+<span class="w">            </span><span class="err">evDe</span><span class="kc">t</span><span class="err">Da</span><span class="kc">ta</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="p">{</span><span class="nt">&quot;evDetTechData&quot;</span><span class="p">:</span><span class="s2">&quot;Invalid unit format : Document schema validation failed : \\n{\\&quot;</span><span class="err">valida</span><span class="kc">te</span><span class="err">Jso</span><span class="kc">n</span><span class="err">\\</span><span class="s2">&quot;:[{\\&quot;</span><span class="err">level\\</span><span class="s2">&quot;:\\&quot;</span><span class="err">error\\</span><span class="s2">&quot;,\\&quot;</span><span class="err">schema\\</span><span class="s2">&quot;:{\\&quot;</span><span class="err">loadi</span><span class="kc">n</span><span class="err">gURI\\</span><span class="s2">&quot;:\\&quot;</span><span class="err">#\\</span><span class="s2">&quot;,\\&quot;</span><span class="err">poi</span><span class="kc">nter</span><span class="err">\\</span><span class="s2">&quot;:\\&quot;</span><span class="err">/de</span><span class="kc">f</span><span class="err">i</span><span class="kc">n</span><span class="err">i</span><span class="kc">t</span><span class="err">io</span><span class="kc">ns</span><span class="err">/da</span><span class="kc">te</span><span class="err">\\</span><span class="s2">&quot;},\\&quot;</span><span class="err">i</span><span class="kc">nstan</span><span class="err">ce\\</span><span class="s2">&quot;:{\\&quot;</span><span class="err">poi</span><span class="kc">nter</span><span class="err">\\</span><span class="s2">&quot;:\\&quot;</span><span class="err">/_mg</span><span class="kc">t</span><span class="err">/S</span><span class="kc">t</span><span class="err">orageRule/Rules/</span><span class="mi">0</span><span class="err">/S</span><span class="kc">tart</span><span class="err">Da</span><span class="kc">te</span><span class="err">\\</span><span class="s2">&quot;},\\&quot;</span><span class="err">domai</span><span class="kc">n</span><span class="err">\\</span><span class="s2">&quot;:\\&quot;</span><span class="err">valida</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="err">\\</span><span class="s2">&quot;,\\&quot;</span><span class="err">keyword\\</span><span class="s2">&quot;:\\&quot;</span><span class="err">pa</span><span class="kc">ttern</span><span class="err">\\</span><span class="s2">&quot;,\\&quot;</span><span class="err">message\\</span><span class="s2">&quot;:\\&quot;</span><span class="err">ECMA</span><span class="w"> </span><span class="mi">262</span><span class="w"> </span><span class="err">regex</span><span class="w"> </span><span class="err">\\\\\\</span><span class="s2">&quot;^([0-8][0-9]{3}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01]))$\\\\\\&quot;</span><span class="w"> </span><span class="err">does</span><span class="w"> </span><span class="kc">n</span><span class="err">o</span><span class="kc">t</span><span class="w"> </span><span class="err">ma</span><span class="kc">t</span><span class="err">ch</span><span class="w"> </span><span class="err">i</span><span class="kc">n</span><span class="err">pu</span><span class="kc">t</span><span class="w"> </span><span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g</span><span class="w"> </span><span class="err">\\\\\\</span><span class="s2">&quot;9000-10-10\\\\\\&quot;</span><span class="err">\\</span><span class="s2">&quot;,\\&quot;</span><span class="err">regex\\</span><span class="s2">&quot;:\\&quot;</span><span class="err">^(</span><span class="p">[</span><span class="mi">0-8</span><span class="p">][</span><span class="mi">0-9</span><span class="p">]{</span><span class="mi">3</span><span class="p">}</span><span class="mi">-</span><span class="err">(</span><span class="mi">0</span><span class="p">[</span><span class="mi">1-9</span><span class="p">]</span><span class="err">|</span><span class="mi">1</span><span class="p">[</span><span class="mi">0-2</span><span class="p">]</span><span class="err">)</span><span class="mi">-</span><span class="err">(</span><span class="mi">0</span><span class="p">[</span><span class="mi">1-9</span><span class="p">]</span><span class="err">|</span><span class="p">[</span><span class="mi">12</span><span class="p">][</span><span class="mi">0-9</span><span class="p">]</span><span class="err">|</span><span class="mi">3</span><span class="p">[</span><span class="mi">01</span><span class="p">]</span><span class="err">))$\\</span><span class="s2">&quot;,\\&quot;</span><span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g\\</span><span class="s2">&quot;:\\&quot;</span><span class="mi">9000-10-10</span><span class="err">\\</span><span class="s2">&quot;}]}&quot;</span><span class="p">}</span><span class="err">&#39;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">		</span><span class="p">],</span>
+<span class="w"> </span><span class="err">_ogI</span><span class="kc">nf</span><span class="err">o</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="err">_errors</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="err">evId</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;aeaaaaaaaaecazcrae</span><span class="kc">f</span><span class="err">hmam</span><span class="mi">2</span><span class="err">ywd</span><span class="kc">n</span><span class="mi">5</span><span class="kc">n</span><span class="err">qaaaaq&#39;</span><span class="p">,</span>
+<span class="w">                </span><span class="err">obId</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;aebqaaaaagecazcrae</span><span class="kc">f</span><span class="err">hmam</span><span class="mi">2</span><span class="err">ywd</span><span class="kc">n</span><span class="mi">36</span><span class="err">qaaaba&#39;</span><span class="p">,</span>
+<span class="w">                </span><span class="err">evTypeProc</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;COLLECT_SIP_INGEST&#39;</span><span class="p">,</span>
+<span class="w">                </span><span class="err">ou</span><span class="kc">t</span><span class="err">De</span><span class="kc">ta</span><span class="err">il</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;LFC.CHECK_DIGEST.CALC_CHECK.INVALID.KO&#39;</span><span class="p">,</span>
+<span class="w">				</span><span class="err">evDa</span><span class="kc">te</span><span class="err">Time</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="mi">2026-01-15</span><span class="err">T</span><span class="mi">15</span><span class="p">:</span><span class="mi">49</span><span class="p">:</span><span class="mf">17.311</span><span class="err">&#39;</span><span class="p">,</span>
+<span class="w">				</span><span class="err">evIdProc</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;aeeaaaaaagec</span><span class="kc">t</span><span class="err">qhea</span><span class="kc">f</span><span class="err">bo</span><span class="mi">6</span><span class="err">am</span><span class="mi">3</span><span class="err">yjmm</span><span class="kc">n</span><span class="mi">2</span><span class="err">yaaaaq&#39;</span>
+<span class="w">                </span><span class="err">ou</span><span class="kc">t</span><span class="err">Messg</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;Échec</span><span class="w"> </span><span class="err">de</span><span class="w"> </span><span class="err">la</span><span class="w"> </span><span class="err">véri</span><span class="kc">f</span><span class="err">ica</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="w"> </span><span class="err">de</span><span class="w"> </span><span class="err">l\&#39;emprei</span><span class="kc">nte</span><span class="w"> </span><span class="err">du</span><span class="w"> </span><span class="kc">f</span><span class="err">ichier&#39;</span><span class="p">,</span>
+<span class="w">                </span><span class="err">evDe</span><span class="kc">t</span><span class="err">Da</span><span class="kc">ta</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="p">{</span><span class="nt">&quot;MessageDigest&quot;</span><span class="p">:</span><span class="s2">&quot;badbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbad00&quot;</span><span class="p">,</span><span class="nt">&quot;Algorithm&quot;</span><span class="p">:</span><span class="s2">&quot;SHA-512&quot;</span><span class="p">,</span><span class="nt">&quot;ComputedMessageDigest&quot;</span><span class="p">:</span><span class="s2">&quot;5581f85b25f0d80fa84c69e7ca24d98344f5fbaec45b7707dccf139a8c065961391d6e762516ee1db3137c4d82eca7fbc67c348c37ea0d615bb88161cf3b3008&quot;</span><span class="p">}</span><span class="err">&#39;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="err">evId</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;aeaaaaaaaaecazcrae</span><span class="kc">f</span><span class="err">hmam</span><span class="mi">2</span><span class="err">ywd</span><span class="kc">n</span><span class="mi">6</span><span class="err">kyaaaaq&#39;</span><span class="p">,</span>
+<span class="w">                </span><span class="err">obId</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;aebqaaaaagecazcrae</span><span class="kc">f</span><span class="err">hmam</span><span class="mi">2</span><span class="err">ywd</span><span class="kc">n</span><span class="mi">36</span><span class="err">qaaaba&#39;</span><span class="p">,</span>
+<span class="w">                </span><span class="err">evTypeProc</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;COLLECT_SIP_INGEST&#39;</span><span class="p">,</span>
+<span class="w">				</span><span class="err">evDa</span><span class="kc">te</span><span class="err">Time</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="mi">2026-01-15</span><span class="err">T</span><span class="mi">15</span><span class="p">:</span><span class="mi">49</span><span class="p">:</span><span class="mf">17.311</span><span class="err">&#39;</span><span class="p">,</span>
+<span class="w">				</span><span class="err">evIdProc</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;aeeaaaaaagec</span><span class="kc">t</span><span class="err">qhea</span><span class="kc">f</span><span class="err">bo</span><span class="mi">6</span><span class="err">am</span><span class="mi">3</span><span class="err">yjmm</span><span class="kc">n</span><span class="mi">2</span><span class="err">yaaaaq&#39;</span>
+<span class="w">                </span><span class="err">ou</span><span class="kc">t</span><span class="err">De</span><span class="kc">ta</span><span class="err">il</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;LFC.OG_OBJECTS_ANTIVIRUS_CHECK.ANTIVIRUS.KO&#39;</span><span class="p">,</span>
+<span class="w">                </span><span class="err">ou</span><span class="kc">t</span><span class="err">Messg</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;L\&#39;obje</span><span class="kc">t</span><span class="w"> </span><span class="err">co</span><span class="kc">nt</span><span class="err">ie</span><span class="kc">nt</span><span class="w"> </span><span class="err">u</span><span class="kc">n</span><span class="w"> </span><span class="err">virus&#39;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+</pre></div>
+</div>
 </section>
 </section>
 <section id="id19">
@@ -4680,6 +4957,105 @@ l’objet-données numérique de référence.</p>
 <li><p>Champ peuplé par la solution logicielle Vitam.</p></li>
 <li><p>Cardinalité : 0-1</p></li>
 </ul>
+<p><strong>« _errors » :</strong> contient les erreurs recensées pour un groupe d’objets techniques ou un objet technique créé depuis un SIP.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>-   Cardinalité : 1-1
+
+-   Il contient :
+
+	-   « evId » (event Identifier): identifiant de l’événement.
+
+		-   Il s’agit d’une chaîne de 36 caractères.
+
+		-   Champ obligatoire peuplé par la solution logicielle Vitam.
+
+		-   Cardinalité : 1-1
+			
+	-   « obId » (object Identifier): identifiant de l’objet auquel s’applique l’opération.
+
+		-	Si l’événement touche tout le groupe d’objets, alors le champ sera absent. S’il touche un objet du groupe d’objets, alors il sera présent et indiquera l&#39;identifiant de l’objet en question.
+
+		-	Cardinalité : 0-1
+
+	-   « evTypeProc » (event Type Process): type de processus.
+
+		-   Il s’agit d’une chaîne de caractères.
+
+		-   Champ obligatoire peuplé par la solution logicielle Vitam.
+	
+		-   Nom du processus correspondant à « COLLECT_SIP_INGEST ».
+
+		-   Cardinalité : 1-1
+		
+	-   « evIdProc » (event Identifier Process): identifiant du processus.
+
+		-   Il s’agit d’une chaîne de 36 caractères.
+
+		-   Cardinalité : 1-1
+		
+	-   « evDateTime » (event DateTime): date de lancement de l’opération.
+
+		-   Il s’agit d’une date au format ISO8601 AAAA-MM-JJ+&quot;T&quot;+hh:mm:ss:[3 digits de millisecondes]
+
+			Exemple : &quot;2016-08-17T08:26:04.227&quot;
+
+		-   Cardinalité : 1-1
+	
+	-   « outDetail » (outcome Detail): code correspondant au résultat de l’événement.
+
+		-   Il s’agit d’une chaîne de caractères.
+
+		-   Champ obligatoire peuplé par la solution logicielle Vitam.
+	
+		-   Il contient le code correspondant au résultat de l’événement, incluant le statut. Seul le code est stocké dans ce champ, la traduction se fait via le fichier properties (vitam-logbook-message-fr.properties).
+
+		-   Cardinalité : 1-1
+	
+	-   « outMessg » (outcome Detail Message): détail du résultat de l’événement.
+
+		-   Il s’agit d’une chaîne de caractères.
+
+		-   Champ obligatoire peuplé par la solution logicielle Vitam.
+	
+		-   C’est un message intelligible destiné à être lu par un être humain en tant que détail de l’événement.
+
+		-	Traduction du code présent dans outDetail issue du fichier vitam-logbook-message-fr.properties.
+	
+		-   Il contient le code correspondant au résultat de l’événement, incluant le statut. Seul le code est stocké dans ce champ, la traduction se fait via le fichier properties (vitam-logbook-message-fr.properties).
+
+		-   Cardinalité : 1-1
+
+	-   « evDetData » (event Detail Data): détails des données de l’événement.
+
+		-   Il s’agit d’un objet JSON pouvant contenir des informations.
+
+		-   Donne plus de détails sur l’événement ou son résultat.
+	
+		-   Cardinalité : 0-1
+</pre></div>
+</div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="err">_errors</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">			</span><span class="p">{</span>
+<span class="w">                </span><span class="err">evId</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;aeaaaaaaaaecazcrae</span><span class="kc">f</span><span class="err">hmam</span><span class="mi">2</span><span class="err">ywd</span><span class="kc">n</span><span class="mi">5</span><span class="kc">n</span><span class="err">qaaaaq&#39;</span><span class="p">,</span>
+<span class="w">                </span><span class="err">obId</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;aebqaaaaagecazcrae</span><span class="kc">f</span><span class="err">hmam</span><span class="mi">2</span><span class="err">ywd</span><span class="kc">n</span><span class="mi">36</span><span class="err">qaaaba&#39;</span><span class="p">,</span>
+<span class="w">                </span><span class="err">evTypeProc</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;COLLECT_SIP_INGEST&#39;</span><span class="p">,</span>
+<span class="w">				</span><span class="err">evDa</span><span class="kc">te</span><span class="err">Time</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="mi">2026-01-15</span><span class="err">T</span><span class="mi">15</span><span class="p">:</span><span class="mi">49</span><span class="p">:</span><span class="mf">17.311</span><span class="err">&#39;</span><span class="p">,</span>
+<span class="w">				</span><span class="err">evIdProc</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;aeeaaaaaagec</span><span class="kc">t</span><span class="err">qhea</span><span class="kc">f</span><span class="err">bo</span><span class="mi">6</span><span class="err">am</span><span class="mi">3</span><span class="err">yjmm</span><span class="kc">n</span><span class="mi">2</span><span class="err">yaaaaq&#39;</span>
+<span class="w">                </span><span class="err">ou</span><span class="kc">t</span><span class="err">De</span><span class="kc">ta</span><span class="err">il</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;LFC.CHECK_DIGEST.CALC_CHECK.INVALID.KO&#39;</span><span class="p">,</span>
+<span class="w">                </span><span class="err">ou</span><span class="kc">t</span><span class="err">Messg</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;Échec</span><span class="w"> </span><span class="err">de</span><span class="w"> </span><span class="err">la</span><span class="w"> </span><span class="err">véri</span><span class="kc">f</span><span class="err">ica</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="w"> </span><span class="err">de</span><span class="w"> </span><span class="err">l\&#39;emprei</span><span class="kc">nte</span><span class="w"> </span><span class="err">du</span><span class="w"> </span><span class="kc">f</span><span class="err">ichier&#39;</span><span class="p">,</span>
+<span class="w">                </span><span class="err">evDe</span><span class="kc">t</span><span class="err">Da</span><span class="kc">ta</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="p">{</span><span class="nt">&quot;MessageDigest&quot;</span><span class="p">:</span><span class="s2">&quot;badbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbad00&quot;</span><span class="p">,</span><span class="nt">&quot;Algorithm&quot;</span><span class="p">:</span><span class="s2">&quot;SHA-512&quot;</span><span class="p">,</span><span class="nt">&quot;ComputedMessageDigest&quot;</span><span class="p">:</span><span class="s2">&quot;5581f85b25f0d80fa84c69e7ca24d98344f5fbaec45b7707dccf139a8c065961391d6e762516ee1db3137c4d82eca7fbc67c348c37ea0d615bb88161cf3b3008&quot;</span><span class="p">}</span><span class="err">&#39;</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="err">evId</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;aeaaaaaaaaecazcrae</span><span class="kc">f</span><span class="err">hmam</span><span class="mi">2</span><span class="err">ywd</span><span class="kc">n</span><span class="mi">6</span><span class="err">kyaaaaq&#39;</span><span class="p">,</span>
+<span class="w">                </span><span class="err">obId</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;aebqaaaaagecazcrae</span><span class="kc">f</span><span class="err">hmam</span><span class="mi">2</span><span class="err">ywd</span><span class="kc">n</span><span class="mi">36</span><span class="err">qaaaba&#39;</span><span class="p">,</span>
+<span class="w">                </span><span class="err">evTypeProc</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;COLLECT_SIP_INGEST&#39;</span><span class="p">,</span>
+<span class="w">				</span><span class="err">evDa</span><span class="kc">te</span><span class="err">Time</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="mi">2026-01-15</span><span class="err">T</span><span class="mi">15</span><span class="p">:</span><span class="mi">49</span><span class="p">:</span><span class="mf">17.311</span><span class="err">&#39;</span><span class="p">,</span>
+<span class="w">				</span><span class="err">evIdProc</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;aeeaaaaaagec</span><span class="kc">t</span><span class="err">qhea</span><span class="kc">f</span><span class="err">bo</span><span class="mi">6</span><span class="err">am</span><span class="mi">3</span><span class="err">yjmm</span><span class="kc">n</span><span class="mi">2</span><span class="err">yaaaaq&#39;</span>
+<span class="w">                </span><span class="err">ou</span><span class="kc">t</span><span class="err">De</span><span class="kc">ta</span><span class="err">il</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;LFC.OG_OBJECTS_ANTIVIRUS_CHECK.ANTIVIRUS.KO&#39;</span><span class="p">,</span>
+<span class="w">                </span><span class="err">ou</span><span class="kc">t</span><span class="err">Messg</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;L\&#39;obje</span><span class="kc">t</span><span class="w"> </span><span class="err">co</span><span class="kc">nt</span><span class="err">ie</span><span class="kc">nt</span><span class="w"> </span><span class="err">u</span><span class="kc">n</span><span class="w"> </span><span class="err">virus&#39;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">		</span><span class="p">]</span>
+</pre></div>
+</div>
 </section>
 </section>
 </section>
@@ -5008,15 +5384,35 @@ https://redirect.francearchives.fr/seda/api_v2-1/seda-2.1-main.html et https://g
 <li><p>Champ peuplé par la solution logicielle Vitam.</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 </ul>
-<p><strong>« AutomaticIngest » :</strong> paramètre permettant d’automatiser l’envoi de transaction(s) vers la solution logicielle Vitam.</p>
+<p><strong>« Batches » :</strong> numéros de lots pour permettre le suivi et le contrôle des uploads.</p>
 <ul class="simple">
-<li><p>Il s’agit d’un booléen.</p></li>
+<li><p>Champ peuplé par la solution logicielle Vitam.</p></li>
 <li><p>Cardinalité : 0-1</p></li>
+<li><p>Il s’agit d’un objet JSON pouvant inclure une à plusieurs références.
+Chacune d’elles comprend les champs suivants :</p>
+<ul>
+<li><p>_batchId : identifiant de l’upload ayant rencontré un problème.</p>
+<ul>
+<li><p>Il s’agit d’une chaîne de caractères.</p></li>
+<li><p>Cardinalité : 1-1</p></li>
 </ul>
-<p><strong>« Batches » :</strong> Des numéros de lots pour permettre le suivi et le contrôle, ce champ est inscrit sur les AU lors de l’écriture afin de permettre leur purge lors d’un KO de l’API upload, ça permet d’assurer que les éléments associés soient purgée afin de pouvoir éviter la mise à l’état KO de l’ensemble de la « transaction » utilisée et ainsi poursuivre son traitement.</p>
-<ul class="simple">
-<li><p>Il s’agit d’une liste avec le batch id (_batchId) et un statut (_batchStatus).</p></li>
-<li><p>Cardinalité : 0-1</p></li>
+</li>
+<li><p>_batchStatus : statut de l’upload ayant rencontré un problème.</p>
+<ul>
+<li><p>Il s’agit d’une chaîne de caractères.</p></li>
+<li><p>Les valeurs peuvent être : « KO », « PURGED ».</p></li>
+<li><p>Cardinalité : 1-1</p></li>
+</ul>
+</li>
+<li><p>evTypeProc : type de processus.</p>
+<ul>
+<li><p>Il s’agit d’une chaîne de caractères.</p></li>
+<li><p>Les valeurs peuvent être : « COLLECT_SIP_INGEST ».</p></li>
+<li><p>Cardinalité : 1-1</p></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </section>
 </section>
@@ -5543,13 +5939,12 @@ fonds par état pour l’opération journalisée :</p>
 <li><p>Il s’agit d’une chaîne de caractères.</p></li>
 <li><p>Cardinalité 1-1</p></li>
 </ul>
-<p><strong>« Events » :</strong> les détails des registres des fonds ayant modifié un
-lot d’ingest existant ou un lot préservé.</p>
+<p><strong>« Events » :</strong> les détails des registres des fonds ayant modifié un lot d’ingest existant ou un lot préservé.</p>
 <ul class="simple">
 <li><p>Le premier événement contient les remained de l’opération d’ingest ou de préservation.</p></li>
 <li><p>Les événements suivants concernent les opérations ayant modifié :</p>
 <ul>
-<li><p>un lot d’ingest existant (Elimination, Transfer…)</p></li>
+<li><p>un lot d’ingest existant (Elimination, Transfer, Reassignment, Delete_Got_Versions…)</p></li>
 <li><p>un lot préservé (Delete_Got_Versions)</p></li>
 </ul>
 </li>
@@ -5569,7 +5964,7 @@ lot d’ingest existant ou un lot préservé.</p>
 </li>
 <li><p>Cardinalité : 1-1</p></li>
 </ul>
-<p><strong>« Events.OpType » :</strong> Le type de l’opération (INGEST, ELIMINATION,TRANSFER_REPLY, PRESERVATION, DELETE_GOT_VERSIONS)</p>
+<p><strong>« Events.OpType » :</strong> Le type de l’opération (INGEST, ELIMINATION,TRANSFER_REPLY, PRESERVATION, DELETE_GOT_VERSIONS, ORIGINATING_AGENCY_REASSIGNMENT)</p>
 <ul class="simple">
 <li><p>Il s’agit d’une chaîne de caractères.</p></li>
 <li><p>OpType peut être égal à :</p>
@@ -5579,6 +5974,8 @@ lot d’ingest existant ou un lot préservé.</p>
 <li><p>INGEST dans le cas d’un ingest,</p></li>
 <li><p>ELIMINATION dans le cas d’une opération d’élimination,</p></li>
 <li><p>TRANSFER_REPLY dans le cas d’une opération de transfert,</p></li>
+<li><p>DELETE_GOT_VERSIONS dans le cas d’une opération de suppression de versions d’objets,</p></li>
+<li><p>ORIGINATING_AGENCY_REASSIGNMENT dans le cas d’une réattribution de service producteur ;</p></li>
 </ul>
 </li>
 <li><p>pour un enregistrement de type « PRESERVATION » :</p>
@@ -5615,6 +6012,18 @@ lot d’ingest existant ou un lot préservé.</p>
 <p><strong>« Events.CreationDate » :</strong> La date de l’évenement.</p>
 <ul class="simple">
 <li><p>La date est au format ISO 8601</p></li>
+<li><p>Cardinalité : 1-1</p></li>
+</ul>
+<p><strong>« Events.SourceOriginatingAgency » :</strong> Service producteur ayant fait l’objet d’une modification.</p>
+<ul class="simple">
+<li><p>Il s’agit d’une chaîne de caractères.</p></li>
+<li><p>uniquement dans le cas d’une réattribution de service producteur.</p></li>
+<li><p>Cardinalité : 1-1</p></li>
+</ul>
+<p><strong>« Events.TargetOriginatingAgency » :</strong> Service producteur ayant été attribué à la suite d’une réattribution de servicce producteur.</p>
+<ul class="simple">
+<li><p>Il s’agit d’une chaîne de caractères.</p></li>
+<li><p>uniquement dans le cas d’une réattribution de service producteur.</p></li>
 <li><p>Cardinalité : 1-1</p></li>
 </ul>
 <p><strong>« OperationIds » :</strong> opérations d’entrée concernées</p>
@@ -8003,6 +8412,11 @@ liste de formats.</p>
 <ul class="simple">
 <li><p>Il s’agit d’un tableau d’objets reprenant la structure de ceux de GriffinByFormat.</p></li>
 <li><p>S’il n’y a pas d’action par défaut à effectuer, ce champ peut être “null”.</p></li>
+<li><p>Cardinalité : 0-1</p></li>
+</ul>
+<p><strong>« TransformationRules: » :</strong> paramètre permettant de lister des règles de transformation à opérer sur les données entrantes.</p>
+<ul class="simple">
+<li><p>Il s’agit d’un objet.</p></li>
 <li><p>Cardinalité : 0-1</p></li>
 </ul>
 <p><strong>« _tenant » :</strong> information sur le tenant.</p>
@@ -11371,6 +11785,14 @@ d’objets.</p>
 <tr class="row-even"><td class="text-left"><p>Update process</p></td>
 <td class="text-left"><p>UPDATE</p></td>
 <td class="text-left"><p>Mise à jour</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>Originating Agency Reassignment process</p></td>
+<td class="text-left"><p>ORIGINATING_AGENCY_REASSIGNMENT</p></td>
+<td class="text-left"><p>Réattribution de service producteur</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>Ingest collect process</p></td>
+<td class="text-left"><p>COLLECT_SIP_INGEST</p></td>
+<td class="text-left"><p>Import de SIP dans collecte</p></td>
 </tr>
 </tbody>
 </table>

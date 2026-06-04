@@ -285,6 +285,8 @@ Ces opérations sont :
 
 -   Réorganisation d’arborescence
 
+-   Réattribution de service producteur
+
 -   Journalisation externe (enregistrement d’opérations extérieures dans la solution logicielle Vitam)
 
 Les valeurs correspondant à ces opérations dans les journaux sont détaillées dans [l’annexe 3](#annexe-3-valeurs-possibles-pour-le-champ-evtypeproc-type-de-processus).
@@ -2221,6 +2223,59 @@ Le mapping est le suivant :
 
 -   &lt;Management&gt; devient « _mgt »
 
+**« _reassignments »** : données historiques des opérations de réattribution de service producteur.
+
+-   Champ peuplé par la solution logicielle Vitam au moment d’une réattribution de service producteur.
+
+-   Il s'agit d'un objet pouvant contenir un tableau d'objets.
+
+-   Cardinalité : 0-1
+
+-   Ce champ contient les clés suivantes :
+
+    -   **« OperationId »** : identifiant de l'opération de réattribution.
+
+        -   Champ peuplé par la solution logicielle Vitam.
+
+        -   Il s’agit d’une chaîne de caractères.
+
+        -   Cardinalité : 1-1
+
+    -   **« SourceOriginatingAgency »** : identifiant du service producteur initial ayant été modifié.
+
+        -   Champ peuplé par la solution logicielle Vitam.
+
+        -   Il s’agit d’une chaîne de caractères.
+
+        -   Cardinalité : 1-1
+
+    -   **« TargetOriginatingAgency »** : identifiant du nouveau service producteur attribué à la suite de l'opération de réattribution.
+
+        -   Champ peuplé par la solution logicielle Vitam.
+
+        -   Il s’agit d’une chaîne de caractères.
+
+        -   Cardinalité : 1-1
+		
+    -   **« ReassignmentDate »** : date du changement du service producteur.
+
+        -   Champ peuplé par la solution logicielle Vitam.
+
+        -   Il s’agit d’une date au format ISO 8601 YYY-MM-DD + “T” + hh:mm:ss.millisecondes « + » timezone hh:mm.
+
+            Exemple : ```2016-08-19T16:36:07.942+02:00```
+
+```json
+ _reassignments: [
+        {
+            OperationId: 'aeeaaaaabwech74iaeb24am57s576daaaaaq',
+            SourceOriginatingAgency: 'MICHEL_MERCIER',
+            TargetOriginatingAgency: 'ASP',
+            ReassignmentDate: '2026-05-06T10:01:13.284'
+        }
+    ]
+``` 
+
 **« _storage » :** contient les champs qui permettent d’identifier les offres de stockage.
 
 -   Il s’agit d’un objet constitué du champ :
@@ -3579,6 +3634,60 @@ représentées par ce groupe d’objets.
 
 -   Cardinalité : 1-1
 
+**« _reassignments »** : données historiques des opérations de réattribution de service producteur.
+
+-   Champ peuplé par la solution logicielle Vitam au moment d’une réattribution de service producteur.
+
+-   Il s'agit d'un objet pouvant contenir un tableau d'objets.
+
+-   Cardinalité : 0-1
+
+-   Ce champ contient les clés suivantes :
+
+    -   **« OperationId »** : identifiant de l'opération de réattribution.
+
+        -   Champ peuplé par la solution logicielle Vitam.
+
+        -   Il s’agit d’une chaîne de caractères.
+
+        -   Cardinalité : 1-1
+
+    -   **« SourceOriginatingAgency »** : identifiant du service producteur initial ayant été modifié.
+
+        -   Champ peuplé par la solution logicielle Vitam.
+
+        -   Il s’agit d’une chaîne de caractères.
+
+        -   Cardinalité : 1-1
+
+    -   **« TargetOriginatingAgency »** : identifiant du nouveau service producteur attribué à la suite de l'opération de réattribution.
+
+        -   Champ peuplé par la solution logicielle Vitam.
+
+        -   Il s’agit d’une chaîne de caractères.
+
+        -   Cardinalité : 1-1
+		
+    -   **« ReassignmentDate »** : date du changement du service producteur.
+
+        -   Champ peuplé par la solution logicielle Vitam.
+
+        -   Il s’agit d’une date au format ISO 8601 YYY-MM-DD + “T” + hh:mm:ss.millisecondes « + » timezone hh:mm.
+
+            Exemple : ```2016-08-19T16:36:07.942+02:00```
+
+```json
+ _reassignments: [
+        {
+            OperationId: 'aeeaaaaabwech74iaeb24am57s576daaaaaq',
+            SourceOriginatingAgency: 'MICHEL_MERCIER',
+            TargetOriginatingAgency: 'ASP',
+            ReassignmentDate: '2026-05-06T10:01:13.284'
+        }
+    ]
+``` 
+
+
 ### Collection Offset
 
 ####  Utilisation de la collection
@@ -4221,7 +4330,7 @@ Extrait d’une unité archivistique ayant un bloc « _mgt » possédant des r
 
 -   Cardinalité : 1-1
 
-**« \_opi »** : identifiant de l’opération à l’origine de la création de cette unité archivistique.
+**« _opi »** : identifiant de l’opération à l’origine de la création de cette unité archivistique.
 
 -   Il s’agit d’une chaîne de 36 caractères correspondant au champ _id de la transaction.
 
@@ -4364,6 +4473,192 @@ Extrait d’une unité archivistique ayant un bloc « _mgt » possédant des r
 -   Champ peuplé par la solution logicielle Vitam.
 
 -   Cardinalité : 0-1
+
+**« _errors » :** contient les erreurs recensées pour une unité archivistique créée depuis un SIP.
+
+-   Cardinalité : 0-1
+
+-   Il contient :
+
+    -   « evId » (event Identifier): identifiant de l’événement.
+
+        -   Il s’agit d’une chaîne de 36 caractères.
+
+        -   Champ obligatoire peuplé par la solution logicielle Vitam.
+
+        -   Cardinalité : 1-1
+
+    -   « evTypeProc » (event Type Process): type de processus.
+
+        -   Il s’agit d’une chaîne de caractères.
+
+        -   Champ obligatoire peuplé par la solution logicielle Vitam.
+		
+		-   Nom du processus correspondant à « COLLECT_SIP_INGEST ».
+
+        -   Cardinalité : 1-1
+		
+	-   « evIdProc » (event Identifier Process): identifiant du processus.
+
+		-   Il s’agit d’une chaîne de 36 caractères.
+
+		-   Cardinalité : 1-1
+			
+	-   « evDateTime » (event DateTime): date de lancement de l’opération.
+
+		-   Il s’agit d’une date au format ISO8601 AAAA-MM-JJ+"T"+hh:mm:ss:[3 digits de millisecondes]
+
+				Exemple : "2016-08-17T08:26:04.227"
+
+		-   Cardinalité : 1-1
+		
+    -   « outDetail » (outcome Detail): code correspondant au résultat de l’événement.
+
+        -   Il s’agit d’une chaîne de caractères.
+
+        -   Champ obligatoire peuplé par la solution logicielle Vitam.
+		
+		-   Il contient le code correspondant au résultat de l’événement, incluant le statut. Seul le code est stocké dans ce champ, la traduction se fait via le fichier properties (vitam-logbook-message-fr.properties).
+
+        -   Cardinalité : 1-1
+		
+    -   « outMessg » (outcome Detail Message): détail du résultat de l’événement.
+
+        -   Il s’agit d’une chaîne de caractères.
+
+        -   Champ obligatoire peuplé par la solution logicielle Vitam.
+		
+		-   C’est un message intelligible destiné à être lu par un être humain en tant que détail de l’événement.
+
+		-	Traduction du code présent dans outDetail issue du fichier vitam-logbook-message-fr.properties.
+		
+		-   Il contient le code correspondant au résultat de l’événement, incluant le statut. Seul le code est stocké dans ce champ, la traduction se fait via le fichier properties (vitam-logbook-message-fr.properties).
+
+        -   Cardinalité : 1-1
+	
+	-   « evDetData » (event Detail Data): détails des données de l’événement.
+
+        -   Il s’agit d’un objet JSON pouvant contenir des informations.
+
+        -   Donne plus de détails sur l’événement ou son résultat.
+		
+        -   Cardinalité : 0-1
+				
+**« _ogInfo » :** contient les erreurs recensées pour un groupe d'objets techniques associé à une unité archivistique et créé depuis un SIP.		
+
+	- **« _errors » :** contient les erreurs recensées pour un groupe d'objets techniques ou un objet technique.
+
+		-   Cardinalité : 1-1
+
+		-   Il contient :
+
+			-   « evId » (event Identifier): identifiant de l’événement.
+
+				-   Il s’agit d’une chaîne de 36 caractères.
+
+				-   Champ obligatoire peuplé par la solution logicielle Vitam.
+
+				-   Cardinalité : 1-1
+				
+			-   « obId » (object Identifier): identifiant de l’objet auquel s’applique l’opération.
+
+				-	Si l’événement touche tout le groupe d’objets, alors le champ sera absent. S’il touche un objet du groupe d’objets, alors il sera présent et indiquera l'identifiant de l’objet en question.
+
+				-	Cardinalité : 0-1
+
+			-   « evTypeProc » (event Type Process): type de processus.
+
+				-   Il s’agit d’une chaîne de caractères.
+
+				-   Champ obligatoire peuplé par la solution logicielle Vitam.
+		
+				-   Nom du processus correspondant à « COLLECT_SIP_INGEST ».
+
+				-   Cardinalité : 1-1
+				
+			-   « evIdProc » (event Identifier Process): identifiant du processus.
+
+				-   Il s’agit d’une chaîne de 36 caractères.
+
+				-   Cardinalité : 1-1
+			
+			-   « evDateTime » (event DateTime): date de lancement de l’opération.
+
+				-   Il s’agit d’une date au format ISO8601 AAAA-MM-JJ+"T"+hh:mm:ss:[3 digits de millisecondes]
+
+					Exemple : "2016-08-17T08:26:04.227"
+
+				-   Cardinalité : 1-1
+		
+			-   « outDetail » (outcome Detail): code correspondant au résultat de l’événement.
+
+				-   Il s’agit d’une chaîne de caractères.
+
+				-   Champ obligatoire peuplé par la solution logicielle Vitam.
+		
+				-   Il contient le code correspondant au résultat de l’événement, incluant le statut. Seul le code est stocké dans ce champ, la traduction se fait via le fichier properties (vitam-logbook-message-fr.properties).
+
+				-   Cardinalité : 1-1
+		
+			-   « outMessg » (outcome Detail Message): détail du résultat de l’événement.
+
+				-   Il s’agit d’une chaîne de caractères.
+
+				-   Champ obligatoire peuplé par la solution logicielle Vitam.
+		
+				-   C’est un message intelligible destiné à être lu par un être humain en tant que détail de l’événement.
+
+				-	Traduction du code présent dans outDetail issue du fichier vitam-logbook-message-fr.properties.
+		
+				-   Il contient le code correspondant au résultat de l’événement, incluant le statut. Seul le code est stocké dans ce champ, la traduction se fait via le fichier properties (vitam-logbook-message-fr.properties).
+
+				-   Cardinalité : 1-1
+	
+			-   « evDetData » (event Detail Data): détails des données de l’événement.
+
+				-   Il s’agit d’un objet JSON pouvant contenir des informations.
+
+				-   Donne plus de détails sur l’événement ou son résultat.
+		
+				-   Cardinalité : 0-1
+
+```json
+ _errors: [
+        {
+            evId: 'aeaaaaaaaaecazcraefhmam2ywdoabaaaaaq',
+            evTypeProc: 'COLLECT_SIP_INGEST',
+            outDetail: 'LFC.CHECK_UNIT_SCHEMA.INVALID_UNIT.KO',
+			evDateTime: '2026-01-15T15:49:17.311',
+            evIdProc: 'aeeaaaaaagectqheafbo6am3yjmmn2yaaaaq'
+            outMessg: 'Échec de la vérification de la conformité des valeurs dans les champs',
+            evDetData: '{"evDetTechData":"Invalid unit format : Document schema validation failed : \\n{\\"validateJson\\":[{\\"level\\":\\"error\\",\\"schema\\":{\\"loadingURI\\":\\"#\\",\\"pointer\\":\\"/definitions/date\\"},\\"instance\\":{\\"pointer\\":\\"/_mgt/StorageRule/Rules/0/StartDate\\"},\\"domain\\":\\"validation\\",\\"keyword\\":\\"pattern\\",\\"message\\":\\"ECMA 262 regex \\\\\\"^([0-8][0-9]{3}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01]))$\\\\\\" does not match input string \\\\\\"9000-10-10\\\\\\"\\",\\"regex\\":\\"^([0-8][0-9]{3}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01]))$\\",\\"string\\":\\"9000-10-10\\"}]}"}'
+        }
+		],
+ _ogInfo: {
+        _errors: [
+            {
+                evId: 'aeaaaaaaaaecazcraefhmam2ywdn5nqaaaaq',
+                obId: 'aebqaaaaagecazcraefhmam2ywdn36qaaaba',
+                evTypeProc: 'COLLECT_SIP_INGEST',
+                outDetail: 'LFC.CHECK_DIGEST.CALC_CHECK.INVALID.KO',
+				evDateTime: '2026-01-15T15:49:17.311',
+				evIdProc: 'aeeaaaaaagectqheafbo6am3yjmmn2yaaaaq'
+                outMessg: 'Échec de la vérification de l\'empreinte du fichier',
+                evDetData: '{"MessageDigest":"badbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbad00","Algorithm":"SHA-512","ComputedMessageDigest":"5581f85b25f0d80fa84c69e7ca24d98344f5fbaec45b7707dccf139a8c065961391d6e762516ee1db3137c4d82eca7fbc67c348c37ea0d615bb88161cf3b3008"}'
+            },
+            {
+                evId: 'aeaaaaaaaaecazcraefhmam2ywdn6kyaaaaq',
+                obId: 'aebqaaaaagecazcraefhmam2ywdn36qaaaba',
+                evTypeProc: 'COLLECT_SIP_INGEST',
+				evDateTime: '2026-01-15T15:49:17.311',
+				evIdProc: 'aeeaaaaaagectqheafbo6am3yjmmn2yaaaaq'
+                outDetail: 'LFC.OG_OBJECTS_ANTIVIRUS_CHECK.ANTIVIRUS.KO',
+                outMessg: 'L\'objet contient un virus'
+            }
+        ]
+    }
+``` 
+
 
 ### Collection ObjectGroup
 
@@ -4581,6 +4876,106 @@ l’objet-données numérique de référence.
 -   Champ peuplé par la solution logicielle Vitam.
 
 -   Cardinalité : 0-1
+
+**« _errors » :** contient les erreurs recensées pour un groupe d'objets techniques ou un objet technique créé depuis un SIP.
+
+	-   Cardinalité : 1-1
+
+	-   Il contient :
+
+		-   « evId » (event Identifier): identifiant de l’événement.
+
+			-   Il s’agit d’une chaîne de 36 caractères.
+
+			-   Champ obligatoire peuplé par la solution logicielle Vitam.
+
+			-   Cardinalité : 1-1
+				
+		-   « obId » (object Identifier): identifiant de l’objet auquel s’applique l’opération.
+
+			-	Si l’événement touche tout le groupe d’objets, alors le champ sera absent. S’il touche un objet du groupe d’objets, alors il sera présent et indiquera l'identifiant de l’objet en question.
+
+			-	Cardinalité : 0-1
+
+		-   « evTypeProc » (event Type Process): type de processus.
+
+			-   Il s’agit d’une chaîne de caractères.
+
+			-   Champ obligatoire peuplé par la solution logicielle Vitam.
+		
+			-   Nom du processus correspondant à « COLLECT_SIP_INGEST ».
+
+			-   Cardinalité : 1-1
+			
+		-   « evIdProc » (event Identifier Process): identifiant du processus.
+
+			-   Il s’agit d’une chaîne de 36 caractères.
+
+			-   Cardinalité : 1-1
+			
+		-   « evDateTime » (event DateTime): date de lancement de l’opération.
+
+			-   Il s’agit d’une date au format ISO8601 AAAA-MM-JJ+"T"+hh:mm:ss:[3 digits de millisecondes]
+
+				Exemple : "2016-08-17T08:26:04.227"
+
+			-   Cardinalité : 1-1
+		
+		-   « outDetail » (outcome Detail): code correspondant au résultat de l’événement.
+
+			-   Il s’agit d’une chaîne de caractères.
+
+			-   Champ obligatoire peuplé par la solution logicielle Vitam.
+		
+			-   Il contient le code correspondant au résultat de l’événement, incluant le statut. Seul le code est stocké dans ce champ, la traduction se fait via le fichier properties (vitam-logbook-message-fr.properties).
+
+			-   Cardinalité : 1-1
+		
+		-   « outMessg » (outcome Detail Message): détail du résultat de l’événement.
+
+			-   Il s’agit d’une chaîne de caractères.
+
+			-   Champ obligatoire peuplé par la solution logicielle Vitam.
+		
+			-   C’est un message intelligible destiné à être lu par un être humain en tant que détail de l’événement.
+
+			-	Traduction du code présent dans outDetail issue du fichier vitam-logbook-message-fr.properties.
+		
+			-   Il contient le code correspondant au résultat de l’événement, incluant le statut. Seul le code est stocké dans ce champ, la traduction se fait via le fichier properties (vitam-logbook-message-fr.properties).
+
+			-   Cardinalité : 1-1
+	
+		-   « evDetData » (event Detail Data): détails des données de l’événement.
+
+			-   Il s’agit d’un objet JSON pouvant contenir des informations.
+
+			-   Donne plus de détails sur l’événement ou son résultat.
+		
+			-   Cardinalité : 0-1
+
+```json
+ _errors: [
+			{
+                evId: 'aeaaaaaaaaecazcraefhmam2ywdn5nqaaaaq',
+                obId: 'aebqaaaaagecazcraefhmam2ywdn36qaaaba',
+                evTypeProc: 'COLLECT_SIP_INGEST',
+				evDateTime: '2026-01-15T15:49:17.311',
+				evIdProc: 'aeeaaaaaagectqheafbo6am3yjmmn2yaaaaq'
+                outDetail: 'LFC.CHECK_DIGEST.CALC_CHECK.INVALID.KO',
+                outMessg: 'Échec de la vérification de l\'empreinte du fichier',
+                evDetData: '{"MessageDigest":"badbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbad00","Algorithm":"SHA-512","ComputedMessageDigest":"5581f85b25f0d80fa84c69e7ca24d98344f5fbaec45b7707dccf139a8c065961391d6e762516ee1db3137c4d82eca7fbc67c348c37ea0d615bb88161cf3b3008"}'
+            },
+            {
+                evId: 'aeaaaaaaaaecazcraefhmam2ywdn6kyaaaaq',
+                obId: 'aebqaaaaagecazcraefhmam2ywdn36qaaaba',
+                evTypeProc: 'COLLECT_SIP_INGEST',
+				evDateTime: '2026-01-15T15:49:17.311',
+				evIdProc: 'aeeaaaaaagectqheafbo6am3yjmmn2yaaaaq'
+                outDetail: 'LFC.OG_OBJECTS_ANTIVIRUS_CHECK.ANTIVIRUS.KO',
+                outMessg: 'L\'objet contient un virus'
+            }
+		]
+``` 
 
 Base collect
 ------------
@@ -4948,17 +5343,32 @@ Cette transposition se fait comme suit :
 
 -   Cardinalité : 1-1
 
-**« AutomaticIngest » :** paramètre permettant d'automatiser l'envoi de transaction(s) vers la solution logicielle Vitam.
+**« Batches » :** numéros de lots pour permettre le suivi et le contrôle des uploads.
 
--   Il s’agit d’un booléen.
-
--   Cardinalité : 0-1
-
-**« Batches » :** Des numéros de lots pour permettre le suivi et le contrôle, ce champ est inscrit sur les AU lors de l'écriture afin de permettre leur purge lors d'un KO de l'API upload, ça permet d'assurer que les éléments associés soient purgée afin de pouvoir éviter la mise à l'état KO de l'ensemble de la "transaction" utilisée et ainsi poursuivre son traitement.
-
--   Il s’agit d’une liste avec le batch id (_batchId) et un statut (_batchStatus).
+-   Champ peuplé par la solution logicielle Vitam.
 
 -   Cardinalité : 0-1
+
+-   Il s’agit d’un objet JSON pouvant inclure une à plusieurs références. 
+	Chacune d'elles comprend les champs suivants :
+	
+	- _batchId : identifiant de l'upload ayant rencontré un problème.
+
+		-   Il s’agit d’une chaîne de caractères.
+		-   Cardinalité : 1-1
+		
+	- _batchStatus : statut de l'upload ayant rencontré un problème.
+	
+		-   Il s’agit d’une chaîne de caractères.
+		-   Les valeurs peuvent être : « KO », « PURGED ».
+		-   Cardinalité : 1-1
+		
+	- evTypeProc : type de processus.
+
+		- 	Il s’agit d’une chaîne de caractères.
+		-   Les valeurs peuvent être : « COLLECT_SIP_INGEST ».
+		-   Cardinalité : 1-1
+	
 
 Base MasterData
 ---------------
@@ -5621,14 +6031,13 @@ fonds par état pour l’opération journalisée :
 
 -   Cardinalité 1-1
 
-**« Events » :** les détails des registres des fonds ayant modifié un
-lot d’ingest existant ou un lot préservé.
+**« Events » :** les détails des registres des fonds ayant modifié un lot d’ingest existant ou un lot préservé.
 
 -   Le premier événement contient les remained de l’opération d’ingest ou de préservation.
 
 -   Les événements suivants concernent les opérations ayant modifié :
 
-    -   un lot d’ingest existant (Elimination, Transfer…)
+    -   un lot d’ingest existant (Elimination, Transfer, Reassignment, Delete\_Got\_Versions…)
 
     -   un lot préservé (Delete\_Got\_Versions)
 
@@ -5652,7 +6061,7 @@ lot d’ingest existant ou un lot préservé.
 
 -   Cardinalité : 1-1
 
-**« Events.OpType » :** Le type de l’opération (INGEST, ELIMINATION,TRANSFER_REPLY, PRESERVATION, DELETE_GOT_VERSIONS)
+**« Events.OpType » :** Le type de l’opération (INGEST, ELIMINATION,TRANSFER_REPLY, PRESERVATION, DELETE_GOT_VERSIONS, ORIGINATING_AGENCY_REASSIGNMENT)
 
 -   Il s’agit d’une chaîne de caractères.
 
@@ -5665,6 +6074,10 @@ lot d’ingest existant ou un lot préservé.
         -   ELIMINATION dans le cas d’une opération d’élimination,
 
         -   TRANSFER_REPLY dans le cas d’une opération de transfert,
+		
+		-   DELETE_GOT_VERSIONS dans le cas d’une opération de suppression de versions d’objets,
+		
+		-   ORIGINATING_AGENCY_REASSIGNMENT dans le cas d'une réattribution de service producteur ;
 
     -   pour un enregistrement de type « PRESERVATION » :
 
@@ -5703,6 +6116,22 @@ lot d’ingest existant ou un lot préservé.
 **« Events.CreationDate » :** La date de l’évenement.
 
 -   La date est au format ISO 8601
+
+-   Cardinalité : 1-1
+
+**« Events.SourceOriginatingAgency » :** Service producteur ayant fait l'objet d'une modification.
+
+-   Il s'agit d'une chaîne de caractères.
+
+-   uniquement dans le cas d’une réattribution de service producteur.
+
+-   Cardinalité : 1-1
+
+**« Events.TargetOriginatingAgency » :** Service producteur ayant été attribué à la suite d'une réattribution de servicce producteur.
+
+-   Il s'agit d'une chaîne de caractères.
+
+-   uniquement dans le cas d’une réattribution de service producteur.
 
 -   Cardinalité : 1-1
 
@@ -8382,6 +8811,13 @@ liste de formats.
 -   S’il n’y a pas d’action par défaut à effectuer, ce champ peut être “null”.
 
 -   Cardinalité : 0-1
+
+**« TransformationRules: » :** paramètre permettant de lister des règles de transformation à opérer sur les données entrantes.
+
+-   Il s’agit d’un objet.
+
+-   Cardinalité : 0-1
+
 
 **« _tenant » :** information sur le tenant.
 
@@ -11792,7 +12228,10 @@ L’ensemble des étapes, tâches et traitements sont détaillées dans la docum
 | Storage Logbook type process                     | STORAGE_LOGBOOK           | Enregistrement des journaux                       |
 | Storage Angencies type process                   | STORAGE_RULE              | Enregistrement du référentiel des services agents |
 | Traceability type process                        | TRACEABILITY              | Sécurisation                                      |
-| Update process                                   | UPDATE                    | Mise à jour                                       | 
+| Update process                                   | UPDATE                    | Mise à jour                                       |
+| Originating Agency Reassignment process          | ORIGINATING_AGENCY_REASSIGNMENT | Réattribution de service producteur         |  
+| Ingest collect process                           | COLLECT_SIP_INGEST        | Import de SIP dans collecte                       | 
+
 
 ### Annexe 4 : Catégories de règles possibles
 

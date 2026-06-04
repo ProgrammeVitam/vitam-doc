@@ -270,7 +270,7 @@
 <li><p>quelques conseils complémentaires de mise en œuvre.</p></li>
 </ul>
 <p>Le présent document décrit les fonctionnalités qui sont offertes par la
-solution logicielle Vitam au terme de la version 9.0 (automne 2025).
+solution logicielle Vitam au terme de la version 9.1 (printemps 2026).
 Il a vocation a être amendé, complété et enrichi au fur et à mesure de
 la réalisation de la solution logicielle Vitam et des retours et
 commentaires formulés par les ministères porteurs et les partenaires du
@@ -283,6 +283,7 @@ programme.</p>
 <h3><span class="section-number">11.2.1. </span>Qu’est-ce qu’une ontologie ?<a class="headerlink" href="#quest-ce-quune-ontologie" title="Lien vers cette rubrique"></a></h3>
 <p>L’ontologie référence l’<strong>ensemble des vocabulaires</strong> ou métadonnées acceptés dans la solution logicielle Vitam. Pour chacun de ces vocabulaires, elle définit un intitulé et un type d’indexation particulier (par exemple : texte, décimal, entier), ainsi que la(les) collection(s) de la solution logicielle Vitam qui l”(les) utilise(nt)<a class="footnote-reference brackets" href="#id51" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
 <p><img alt="Illustration 1: Les éléments dans l’ontologie" src="../_images/10000000000004630000031AB5C0593816E680A7.jpg" /></p>
+<p>L’ontologie se compose :</p>
 <ul class="simple">
 <li><p>des vocabulaires définis dans le Standard d’échanges de données pour l’archivage (SEDA), inclus par défaut. Ces vocabulaires correspondent aux éléments XML présents dans les messages du SEDA (ArchiveTransfer en particulier) ;</p></li>
 <li><p>des vocabulaires propres à la solution logicielle Vitam, inclus par défaut<a class="footnote-reference brackets" href="#id52" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> ;</p></li>
@@ -314,7 +315,7 @@ programme.</p>
 <li><p>les vocabulaires utilisés par la solution logicielle Vitam de type « objet », c’est-à-dire ne contenant pas de valeurs informationnelles, ne sont pas référencés dans l’ontologie<a class="footnote-reference brackets" href="#id53" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>50<span class="fn-bracket">]</span></a>. Il peut s’agir de :</p>
 <ul>
 <li><p>vocabulaires conformes au SEDA de type « objet », c’est-à-dire correspondant à un élément XML englobant un sous-élément XML (par exemple, Writer ou Management) ;</p>
-<p><em>Exemple :</em> ne sont pas présents dans l’ontologie les éléments XML <ManagementMetadata>, <StorageRule> et <AccessRule>. Les autres, qui contiennent des valeurs informationnelles, le sont.</p>
+<p><em>Exemple : ne sont pas présents dans l’ontologie les éléments XML ManagementMetadata, StorageRule et AccessRule. Les autres, qui contiennent des valeurs informationnelles, le sont.</em></p>
 </li>
 </ul>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;ManagementMetadata&gt;</span>
@@ -360,7 +361,12 @@ programme.</p>
 <span class="err">    }	</span>
 </pre></div>
 </div>
-<p>En d’autres termes, l’ontologie <strong>référence seulement les vocabulaires pouvant contenir des valeurs</strong> (ou métadonnées) quand ils sont utilisés.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>En d’autres termes, l’ontologie **référence seulement les vocabulaires pouvant contenir des valeurs** (ou métadonnées) quand ils sont utilisés.
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>A noter que les vocabulaires utilisés pour décrire un projet de versement ou une transaction ne sont pas référencés dans l’ontologie.</p></li>
+</ul>
 </section>
 <section id="pourquoi-une-ontologie">
 <h3><span class="section-number">11.2.2. </span>Pourquoi une ontologie ?<a class="headerlink" href="#pourquoi-une-ontologie" title="Lien vers cette rubrique"></a></h3>
@@ -591,7 +597,7 @@ programme.</p>
 <section id="administration-de-l-ontologie">
 <h3><span class="section-number">11.3.5. </span>Administration de l’ontologie<a class="headerlink" href="#administration-de-l-ontologie" title="Lien vers cette rubrique"></a></h3>
 <p>La solution logicielle Vitam intègre une ontologie, administrable par un utilisateur doté des droits adéquats (<strong>administrateur fonctionnel et administrateur technique</strong>) et gérée dans une collection particulière<a class="footnote-reference brackets" href="#id58" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></a>.</p>
-<p>Ce référentiel interne à la solution logicielle Vitam a pour vocation d’être une copie locale d’un référentiel administré dans le front office des plates-formes d’archivage implémentant cette dernière.</p>
+<p>Ce référentiel interne à la solution logicielle Vitam a pour vocation d’être une copie locale d’un référentiel administré dans le front-office des plates-formes d’archivage implémentant cette dernière.</p>
 <p>L’ontologie est multi-tenant. Elle est administrable et journalisée depuis le <strong>tenant d’administration</strong>.</p>
 <p>Il est possible de réaliser les opérations présentées ci-dessous.</p>
 <section id="import-de-lontologie">
@@ -604,7 +610,8 @@ programme.</p>
 <h4><span class="section-number">11.3.5.2. </span>Modification de l’ontologie<a class="headerlink" href="#modification-de-l-ontologie" title="Lien vers cette rubrique"></a></h4>
 <p>La modification de l’ontologie est possible :</p>
 <ul class="simple">
-<li><p>au moyen des API et de l’IHM VitamUI fournie avec la solution logicielle Vitam et s’effectue par un réimport complet de l’ontologie, en mode « annule et remplace ». De fait, la solution logicielle Vitam permet de :</p>
+<li><p>au moyen des API. Elle s’effectue par un réimport complet de l’ontologie, en mode « annule et remplace ».
+De fait, la solution logicielle Vitam permet de :</p>
 <ul>
 <li><p>ajouter un nouveau vocabulaire ;</p></li>
 <li><p>modifier les informations associées à un vocabulaire ;</p></li>
@@ -671,7 +678,7 @@ programme.</p>
 <li><p>le schéma de contrôle contient un vocabulaire inconnu de l’ontologie,</p></li>
 <li><p>le schéma de contrôle contient un vocabulaire de type « objet » que l’on a oublié de qualifier comme tel.</p></li>
 </ul>
-<p>Point d’attention :</p>
+<p><strong>Point d’attention :</strong></p>
 <ul class="simple">
 <li><p>La solution logicielle Vitam n’effectue pas de contrôle sur la conformité des vocabulaires par rapport à leur type d’indexation dans l’ontologie, lors de la création de profils d’unité archivistique. Néanmoins, il est obligatoire que le type du vocabulaire défini dans le schéma de contrôle corresponde au type d’indexation du vocabulaire tel qu’il est défini dans l’ontologie<a class="footnote-reference brackets" href="#id67" id="id17" role="doc-noteref"><span class="fn-bracket">[</span>16<span class="fn-bracket">]</span></a>.</p></li>
 </ul>
@@ -688,13 +695,16 @@ Il est possible d’obtenir :</p>
 <ul class="simple">
 <li><p>une liste de résultats,</p></li>
 <li><p>un résultat par facettes (nombre d’occurrences pour une métadonnée donnée).
-Sont disponibles les facettes de type :</p></li>
+Sont disponibles les facettes de type :</p>
+<ul>
 <li><p>« terms » : pour obtenir des catégories basées sur les valeurs distinctes d’un champ spécifique et le nombre associé,</p></li>
 <li><p>« filters » : pour obtenir des résultats d’agrégations par filtres sur les résultats,</p></li>
 <li><p>« range » : pour obtenir des agrégations par plages de dates,</p></li>
 <li><p>« sum » : pour obtenir des totaux sur des champs,</p></li>
 <li><p>« count » : pour obtenir le nombre de valeurs présentes sur des champs,</p></li>
 <li><p>« cardinality » : pour obtenir le nombre exact de valeurs présentes sur des champs (usage non recommandé).</p></li>
+</ul>
+</li>
 </ul>
 <p>Par ailleurs, la solution logicielle permet de consulter le détail d’un vocabulaire en particulier.</p>
 <p>L’accès au référentiel est possible depuis :</p>
@@ -737,7 +747,7 @@ Sont disponibles les facettes de type :</p></li>
 <li><p>d’utiliser et d’afficher la traduction des vocabulaires dans les IHM, rendue administrable dans ce référentiel, afin qu’un administrateur fonctionnel ait la possibilité de modifier les intitulés (ou traductions) de certains vocabulaires (par exemple, modifier « Description », traduction textuelle du bloc Description du SEDA, par « Présentation du contenu », terme issu de la norme ISAD/G, davantage usité par les archivistes).</p></li>
 </ul>
 <p>À titre d’exemple, l’ancienne IHM de la solution logicielle Vitam dispose de vocabulaires écrits en dur dans l’IHM. Dès qu’on transfère un bordereau contenant des vocabulaires externes, l’IHM ne les traduit pas. Il est alors nécessaire de demander un acte d’exploitation en vue de corriger ces éléments.</p>
-<p><em>Exemple illustration 2 :</em><br />
+<p><em>Exemple :</em><br />
 <em>« Prénom », « Nom de naissance », « Identifiant », « Date d’envoi », « Date de réception », qui correspondent à des vocabulaires internes, sont des intitulés gravés en dur. « Licence », également gravé en dur, correspond à un vocabulaire externe. Dans l’ontologie, on a introduit une traduction conforme à la norme ISAD/G : « 3.4.2. Conditions de reproduction ».</em></p>
 <p><img alt="illustration 2" src="../_images/10000201000002AB00000168AC1949D42C34E522.png" /></p>
 </section>
@@ -758,7 +768,7 @@ indexé comme entier ;</p></li>
 </ul>
 </li>
 </ul>
-<p><strong>Point d’attention :</strong> Au terme de la version 6, lors d’extractions de métadonnées techniques, la solution logicielle Vitam ne fait pas de contrôle de conformité entre les métadonnées techniques de la collection ObjectGroup référencées dans l’ontologie et les métadonnées extraites.</p>
+<p><strong>Point d’attention :</strong> Au terme de la version 9.1, lors d’extractions de métadonnées techniques, la solution logicielle Vitam ne fait pas de contrôle de conformité entre les métadonnées techniques de la collection ObjectGroup référencées dans l’ontologie et les métadonnées extraites.</p>
 </section>
 </section>
 </section>
@@ -944,11 +954,11 @@ indexé comme entier ;</p></li>
 <td><p>Oui</p></td>
 </tr>
 <tr class="row-even"><td><p>Administrateur fonctionnel et/ou technique</p></td>
-<td><p>ajoute le nouveau vocabulaire dans l’ontologie.</p></td>
+<td><p>ajoute le nouveau vocabulaire dans l’ontologie sur un tenant autre que le tenant d’administration.</p></td>
 <td><p>Non</p></td>
 </tr>
 <tr class="row-odd"><td><p>Administrateur fonctionnel et/ou technique</p></td>
-<td><p>met à jour l’ontologie sur le tenant d’administration.</p></td>
+<td><p>met à jour l’ontologie ou ajouter le nouveau vocabulaire dans l’ontologie sur le tenant d’administration.</p></td>
 <td><p>Oui</p></td>
 </tr>
 <tr class="row-even"><td><p>Administrateur technique</p></td>
@@ -1183,11 +1193,11 @@ indexé comme entier ;</p></li>
 <td><p>Oui / Non</p></td>
 </tr>
 <tr class="row-odd"><td><p>Administrateur fonctionnel et/ou technique</p></td>
-<td><p>supprime le vocabulaire dans l’ontologie.</p></td>
+<td><p>supprime le vocabulaire dans l’ontologie sur un tenant autre que le tenant d’administration.</p></td>
 <td><p>Non</p></td>
 </tr>
 <tr class="row-even"><td><p>Administrateur fonctionnel et/ou technique</p></td>
-<td><p>met à jour l’ontologie sur le tenant d’administration.</p></td>
+<td><p>supprime le vocabulaire dans l’ontologie ou met à jour l’ontologie sur le tenant d’administration.</p></td>
 <td><p>Oui</p></td>
 </tr>
 <tr class="row-odd"><td><p>Administrateur technique</p></td>

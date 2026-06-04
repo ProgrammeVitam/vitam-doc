@@ -460,7 +460,7 @@ objectifs :</p>
 </ul>
 </li>
 </ul>
-<p><strong>La documentation accompagnant le standard SEDA 2.1. est accessible sur le site internet du Service interministériel des Archives de France et est consultable à l’adresse suivante : https://francearchives.fr/seda/</strong> <a class="footnote-reference brackets" href="#id25" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>.</p>
+<p><strong>La documentation accompagnant le standard SEDA 2.X est accessible sur le site internet du Service interministériel des Archives de France et est consultable à l’adresse suivante : https://francearchives.fr/seda/</strong> <a class="footnote-reference brackets" href="#id25" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>.</p>
 </section>
 <section id="installation-de-la-moulinette-resip">
 <h3><span class="section-number">1.2.2. </span>Installation de la moulinette ReSIP<a class="headerlink" href="#installation-de-la-moulinette-resip" title="Lien vers cette rubrique"></a></h3>
@@ -571,7 +571,7 @@ Cette interface permet d’effectuer l’ensemble des opérations possibles (imp
 <li><p>substituer, dans le répertoire config du répertoire ReSIP, les fichiers existants par les fichiers plus récents précédemment téléchargés (cf. copie d’écran ci-dessous).</p></li>
 </ul>
 <p><img alt="" src="../_images/100000000000029D000000D32F9D3732CA9940C1.png" /></p>
-<p>Au terme de la version 6.RC (octobre 2022), la version 2.7 de ReSIP supporte la version 97 des fichiers de signature.</p>
+<p>Au terme de la version 9.1 (printemps 2026), la version 2.9 de ReSIP supporte la version 120 des fichiers de signature.</p>
 </section>
 </section>
 <section id="presentation-de-linterface-graphique-de-la-moulinette-resip">
@@ -996,7 +996,6 @@ Le paramétrage de l’import est disponible dans l’onglet « Traitement/Inte
 <p><em><strong>Point d’attention :</strong></em></p>
 <ul class="simple">
 <li><p>Il est recommandé d’effectuer ce paramétrage avant d’importer quoique ce soit dans la moulinette ReSIP.</p></li>
-<li><p>ReSIP n’intègre pas actuellement la version 2.3. du SEDA. Néanmoins, il est possible d’intégrer à une session de travail les métadonnées ajoutées dans cette version en les gérant comme des métadonnées externes.</p></li>
 </ul>
 </section>
 <section id="activer-le-mode-debug">
@@ -1870,15 +1869,11 @@ d’archives accompagnée d’un fichier .csv, il convient,
 dans le menu de la moulinette ReSIP, de cliquer sur l’action « Fichier »
 puis sur la sous-action « Préférences » (cf. copie d’écran ci-dessous).</p>
 <p><img alt="" src="../_images/100002010000033E000001BABB2A3FE9F42480D2.png" /></p>
-<p>Le clic sur la sous-action « Préférences » ouvre une</p>
-<p>fenêtre de dialogue composée de cinq onglets. Le paramétrage de l’import
-est disponible dans l’onglet « Import » (cf. copie d’écran ci-dessous).
-<img alt="" src="../_images/ID10.png" /></p>
+<p>Le clic sur la sous-action « Préférences » ouvre une fenêtre de dialogue composée de cinq onglets. Le paramétrage de l’import est disponible dans l’onglet « Import » (cf. copie d’écran ci-dessous).</p>
+<p><img alt="" src="../_images/ID10.png" /></p>
 <p>Il permet de :</p>
 <ul class="simple">
-<li><p>sélectionner via un menu déroulant l’encodage utilisé dans le
-fichier .csv. Par défaut, l’encodage proposé est
-« windows-1252 » ;</p></li>
+<li><p>sélectionner via un menu déroulant l’encodage utilisé dans le fichier .csv. Par défaut, l’encodage proposé est « windows-1252 » ;</p></li>
 <li><p>préciser le séparateur utilisé dans le fichier .csv. Par défaut, le séparateur est un point-virgule.</p></li>
 </ul>
 </section>
@@ -2114,7 +2109,9 @@ TextContent ;</p></li>
 <li><p>activer ou désactiver, via des cases à cocher, les fonctionnalités
 d’extraction sous forme d’une métadonnée du contenu textuel des
 messages électroniques et de leurs pièces jointes.</p></li>
+<li><p>activer l’appel à des outils externes installés sur l’ordinateur de l’utilisateur. Par défaut, ce paramètre est désactivé.</p></li>
 </ul>
+<p><em><strong>Attention :</strong></em> Après activation de l’appel à des outils externes, il faudra redémarrer ReSIP.</p>
 </section>
 <section id="id15">
 <h4><span class="section-number">1.4.7.2. </span>Présentation du processus d’import<a class="headerlink" href="#id15" title="Lien vers cette rubrique"></a></h4>
@@ -2159,6 +2156,7 @@ seront mises en œuvre lors de l’extraction ;</p></li>
 <li><p>modalités d’extraction des propriétés des messages et de leurs
 pièces jointes, sous forme de case à cocher. Seules les options
 retenues seront mises en œuvre lors de l’extraction.</p></li>
+<li><p>utilisation d’un outil externe d’extraction. Par défaut, le paramètre est désactivé.</p></li>
 </ul>
 <p><img alt="" src="../_images/1000020100000555000002D813CFF81B3D77B51E.png" /></p>
 <p>Le clic sur le bouton d’action « OK » de la fenêtre de
@@ -2453,7 +2451,7 @@ structure arborescente d’archives (cf. copie d’écran ci-dessous).
 <li><p>un numéro d’ordre du doublon ;</p></li>
 <li><p>le nombre d’unités archivistiques concernées ;</p></li>
 <li><p>le nombre de groupes d’objets concernés ;</p></li>
-<li><p>le nom de la 1^ère^ occurrence identifiée du fichier concerné ;</p></li>
+<li><p>le nom de la 1ère occurrence identifiée du fichier concerné ;</p></li>
 <li><p>la taille du fichier concerné ;</p></li>
 <li><p>le format du fichier concerné (identifiant PRONOM) ;</p></li>
 <li><p>le type Mime du fichier concerné ;</p></li>
@@ -2477,7 +2475,7 @@ moyen des flèches présentes dans la fenêtre de dialogue (cf. copie
 d’écran ci-dessous). Au-dessus de la liste, à droite de la fenêtre
 de dialogue, est indiquée, parmi le nombre de résultats, la position
 de l’unité archivistique et du groupe d’objets techniques concernés
-dans l’arborescence (ex. 1/4 indique qu’il est la 1^ere^ occurrence
+dans l’arborescence (ex. 1/4 indique qu’il est la 1ère occurrence
 sur les 4 existantes) ;
 <img alt="" src="../_images/1000020100000555000002D95F1F7D4DA8F877B6.png" /></p></li>
 <li><p>lancer l’action de dédoublonnage qui peut être effectuée :</p>
@@ -2539,7 +2537,7 @@ dans la fenêtre de dialogue (cf. copie d’écran ci-dessous). À droite
 de la fenêtre de dialogue, est indiquée, parmi le nombre de
 résultats, la position de l’unité archivistique ou du groupe
 d’objets techniques concernés dans l’arborescence (ex. 2/2 indique
-qu’il est la 2^e^ occurrence sur les 2 existantes) ;
+qu’il est la 2ème occurrence sur les 2 existantes) ;
 <img alt="" src="../_images/1000020100000555000002DADE6FAB6B815B9DB6.png" /></p></li>
 <li><p>lancer l’action de nettoyage qui peut être
 effectuée :</p>
@@ -5547,8 +5545,7 @@ pour effectuer cette opération.</p>
 <aside class="footnote brackets" id="id31" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id20">8</a><span class="fn-bracket">]</span></span>
 <p>Pour plus de précisions sur les contrôles de conformité,
-consulter l’annexe « Contrôle de conformité à un profil
-d’archivage » du présent document.</p>
+consulter l’[annexe « Contrôle de conformité à un profil d’archivage » du présent document.</p>
 </aside>
 <aside class="footnote brackets" id="id32" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id22">9</a><span class="fn-bracket">]</span></span>
