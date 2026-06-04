@@ -25,7 +25,7 @@ Il s’articule autour des axes suivants :
 - une présentation des mécanismes mis en œuvre dans la solution logicielle Vitam pour prendre en compte cette notion ;
 - quelques conseils complémentaires de mise en œuvre.
 
-Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 9.0 (automne 2025).
+Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 9.1 (printemps 2026).
 Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
 
 
@@ -52,18 +52,19 @@ Ces vocabulaires peuvent être utilisés pour décrire :
 
     - vocabulaires conformes au SEDA de type « objet », c'est-à-dire correspondant à un élément XML englobant un sous-élément XML (par exemple, Writer ou Management) ;
 
-*Exemple :* sont présents dans le schéma les vocabulaires « Keyword », « Keyword.Keyword Content », « Keyword.KeywordType ».
+*Exemple : sont présents dans le schéma les vocabulaires « Keyword », « Keyword.Keyword Content », « Keyword.KeywordType ».*
 
 ```xml
 <Keyword>
     <KeywordContent>Paris</Content>
     <KeywordType>geogname</Type>
 </Keyword>
+
 ```
 
     - vocabulaires générés par la solution logicielle Vitam, correspondant à un élément JSON de type « objet ».
 
-*Exemple :* sont présents dans le schéma les éléments JSON _mgt, _v.
+*Exemple : sont présents dans le schéma les éléments JSON _mgt, _v.* 
 
 ```json
 "_mgt": {
@@ -108,7 +109,8 @@ Formalisation des vocabulaires du schéma
 
 ### Dans un fichier JSON
 
-Un à plusieurs vocabulaire(s) externe(s) peu(ven)t être importé(s) sous la forme d’un fichier JSON.
+Un à plusieurs vocabulaire(s) externe(s) peu(ven)t être importé(s) sous la forme d’un fichier JSON **depuis les API**.
+
 *Exemple :* trois vocabulaires externes, « Invoice », « Provider » et « BirthDate », contenant les informations nécessaires pour être importés avec succès.
 ```json
 [
@@ -149,6 +151,42 @@ Chaque vocabulaire de type « objet » :
     - un intitulé (ShortName),
     - une description (Description).
 
+### Dans un fichier CSV
+
+Un à plusieurs vocabulaire(s) externe(s) peu(ven)t être importé(s) sous la forme d’un fichier CSV **depuis l'APP Ontologie** de l'interface VitamUI.
+
+*Exemple :* trois vocabulaires externes, « Invoice », « Provider » et « BirthDate », contenant les informations nécessaires pour être importés avec succès.
+```csv
+Path;Cardinality;IsObject;ShortName;Description
+Invoice;MANY;true;Facture;Facture - extension
+Invoice.Provider;MANY;false;Provider;
+Invoice.Provider;ONE;false;Date de naissance;
+```
+
+Un vocabulaire de type « feuille » donné
+-  doit nécessairement être décrit avec les informations suivantes :
+    - un chemin (Path),
+    - une cardinalité, dont la valeur doit être égale à « ONE », « ONE_REQUIRED », « MANY » ou « MANY_REQUIRED » (Cardinality),
+-  doit inclure :
+    - un intitulé (ShortName),
+    - une description (Description),
+    - une déclaration d’objet (IsObject).
+Chaque vocabulaire de type « objet » :
+-  nécessairement être décrit avec les informations suivantes :
+    - un chemin (Path),
+    - une cardinalité, dont la valeur doit être égale à « ONE », « ONE_REQUIRED », « MANY » ou « MANY_REQUIRED » (Cardinality),
+    - une déclaration d’objet (IsObject).
+-  doit inclure :
+    - un intitulé (ShortName),
+    - une description (Description).
+
+**Points d'attention :**
+Le fichier CSV à importer doit avoir les caractéristiques suivantes :
+-  Encodage des caractères en UTF-8,
+-  Séparateur de champ par un point-virgule,
+-  Séparateur de texte par des guillemets doubles,
+-  Aucune valeur vide pour les colonnes Path, Cardinality, IsObject, ShortName et Description.
+
 ### Dans la solution logicielle Vitam
 
 Les vocabulaires du schéma sont enregistrés sous deux formes :
@@ -159,7 +197,7 @@ Les vocabulaires du schéma sont enregistrés sous deux formes :
 
 Les vocabulaires internes et, le cas échéant, les vocabulaires externes, sont enregistrés dans un fichier interne, sous la forme d’enregistrements au format JSON.
 
-*Exemple :* deux vocabulaires, le premier de type « objet » et le second de type « feuille ».
+*Exemple : deux vocabulaires, le premier de type « objet » et le second de type « feuille ».* 
 ```json
 [
 {
@@ -326,12 +364,12 @@ Ce schéma est multi-tenant. Il est administrable et journalisé depuis le tenan
 
 #### Ajout d’un vocabulaire externe
 
-Il est possible d’ajouter des vocabulaires externes sous la forme d’enregistrements JSON depuis le tenant d’administration ou un tenant en particulier.  
+Il est possible d’ajouter des vocabulaires externes depuis le tenant d’administration ou un tenant en particulier.  
 L’ajout d’un vocabulaire externe est possible pour la collection « Unit » :
--  au moyen des API,
--  depuis l'APP VitamUI « Ontologie ».
+-  au moyen des API,  sous la forme d’enregistrements JSON,
+-  depuis l'APP VitamUI « Ontologie » sous la forme d’enregistrements CSV.
 
-**Point d’attention :** Au terme de la version 9.0, il n’est pas possible d’ajouter un vocabulaire externe pour la collection « ObjectGroup ».
+**Point d’attention :** Au terme de la version 9.1, il n’est pas possible d’ajouter un vocabulaire externe pour la collection « ObjectGroup ».
 
 Chaque vocabulaire de type « feuille » :
 -  doit définir :
@@ -350,7 +388,7 @@ Chaque vocabulaire de type « objet » :
     - un intitulé (ShortName),
     - une description (Description).
 
-*Exemple :* Création d’un objet et d’un vocabulaire de type « feuille ».
+*Exemple : Création d’un objet et d’un vocabulaire de type « feuille » depuis les API.* 
 ```json
 POST {{url}}/admin-external/v1/schema/unit
 Accept: application/json
@@ -408,7 +446,7 @@ Cette action provoque :
         - la version de l’enregistrement (« _v »),
         - le tenant dans lequel a été créé le vocabulaire (« _tenant ») ;
 
-*Exemple :* Enregistrement d’un vocabulaire de type « feuille » dans la collection « Unit » (base « Masterdata »).
+*Exemple : Enregistrement d’un vocabulaire de type « feuille » dans la collection « Unit » (base « Masterdata »).* 
 ```json
 {
     _id: 'aeaaaaaaaagtfhyvadjsqamrbc6fvsiaaaaq',
@@ -454,7 +492,7 @@ Cette action provoque :
         - une collection dont la valeur est égale à « Unit » ou « ObjectGroup »,
         - le tenant dans lequel a été créé le vocabulaire (« _tenant ») .
 
-*Exemple :* Enregistrement d’un vocabulaire de type « feuille » dans le schéma interne.
+*Exemple : Enregistrement d’un vocabulaire de type « feuille » dans le schéma interne.* 
 ```json
 {
       "FieldName": "MyText",
@@ -485,10 +523,11 @@ Il est possible d’ajouter des vocabulaires externes sous la forme d'un fichier
 Le fichier CSV à importer doit avoir les caractéristiques suivantes :
 -  encodage des caractères : UTF-8 ;
 -  séparateur de champ : point-virgule ;
--  séparateur de texte : guillemets simples ou doubles, espace vide ;
+-  séparateur de texte : guillemets simples ou doubles, espace vide.
+
 Le fichier CSV possède obligatoirement cinq colonnes respectant l’ordre suivant : Path, Cardinality, IsObject, ShortName et Description.
 
-Exemple : Enregistrement d'un fichier CSV.
+*Exemple : Enregistrement d'un fichier CSV.*
 ```csv
 
 Path;Cardinality;IsObject;ShortName;Description
@@ -512,9 +551,9 @@ La suppression d’un vocabulaire externe est possible pour la collection « Un
 -  au moyen des API ;
 -  depuis l'APP VitamUI "Ontologie".
 
-**Point d’attention :** Au terme de la version 9.0, il n’est pas possible de supprimer un vocabulaire externe pour la collection « ObjectGroup ».
+**Point d’attention :** Au terme de la version 9.1, il n’est pas possible de supprimer un vocabulaire externe pour la collection « ObjectGroup ».
 
-*Exemple :* Suppression d’un vocabulaire externe « MyText ».
+*Exemple : Suppression d’un vocabulaire externe « MyText ».* 
 ```json
 DELETE {{url}}/admin-external/v1/schema/unit
 Accept: application/json
@@ -569,7 +608,7 @@ X-Tenant-Id: 2
 X-Access-Contract-Id: {{access-contract}}
 ```
 
-**Point d’attention :** En résultats, la solution logicielle renvoie systématiquement l’ensemble des vocabulaires du schéma. Au terme de la version 9.0, il n’est pas possible de récupérer une sélection de métadonnées.
+**Point d’attention :** En résultats, la solution logicielle renvoie systématiquement l’ensemble des vocabulaires du schéma. Au terme de la version 9.1, il n’est pas possible de récupérer une sélection de métadonnées.
 
 -   depuis l’APP VitamUI « Ontologie », accessible depuis tous les tenants.
 
@@ -582,16 +621,15 @@ Le schéma contenant la traduction des différents vocabulaires supportés par l
 -  d’utiliser et d’afficher la traduction des vocabulaires dans les IHM, rendue administrable dans ce référentiel, afin qu’un administrateur fonctionnel ait la possibilité de modifier les intitulés (ou traductions) de certains vocabulaires (par exemple, modifier « Description », traduction textuelle du bloc Description du SEDA, par « Présentation du contenu », terme issu de la norme ISAD/G, davantage usité par les archivistes) ;
 -  d’afficher la traduction des vocabulaires externes.
 
-À titre d’exemple, au terme de la version 9.0, l’APP VitamUI « Recherche et consultation des archives » fournie avec la solution logicielle Vitam dispose de vocabulaires affichés dynamiquement :
+À titre d’exemple, au terme de la version 9.1, l’APP VitamUI « Recherche et consultation des archives » fournie avec la solution logicielle Vitam dispose de vocabulaires affichés dynamiquement :
 -  depuis la recherche sur l’ensemble des métadonnées, internes comme externes,
 -  depuis le détail des métadonnées descriptives d’une unité archivistique.
 
-
-*Exemple 1 :* Recherche dite « Autres critères » accessible depuis l’APP « Recherche et consultation des archives »
+*Exemple 1 : Recherche dite « Autres critères » accessible depuis l’APP « Recherche et consultation des archives »* 
 
 ![](./medias/schema/APP_recherche_1.png)
 
-*Exemple 2 :* Edition dynamique de métadonnées descriptives pour modification d’une unité archivistique
+*Exemple 2 : Edition dynamique de métadonnées descriptives pour modification d’une unité archivistique* 
 
 ![](./medias/schema/APP_recherche_2.png)
 
@@ -599,7 +637,7 @@ Le schéma contenant la traduction des différents vocabulaires supportés par l
 
 La solution logicielle Vitam permet d’accéder à la liste des métadonnées requises par un profil d’unité archivistique, qu’il s’agisse de vocabulaires internes ou, le cas échéant, de vocabulaires externes de la collection « Unit ».
 
-*Exemple :* Requête en vue de rechercher les vocabulaires utilisés par le profil d’unité archivistique dont l’identifiant est  « AUP-00001 » :
+*Exemple : Requête en vue de rechercher les vocabulaires utilisés par le profil d’unité archivistique dont l’identifiant est  « AUP-00001 » :* 
 ```json
 GET {{url}}/admin-external/v1/archiveunitprofiles/AUP-00001/schema
 Accept: application/json
@@ -707,7 +745,9 @@ Un administrateur fonctionnel n’a pas besoin de créer de schéma interne. Il 
 
 ### Quand et comment créer un vocabulaire dans le schéma ?
 
-La création unitaire d’un nouveau vocabulaire dans le schéma s’effectue au moyen des API.
+La création unitaire d’un nouveau vocabulaire dans le schéma s’effectue :
+-   au moyen des API, sous la forme d'un enregistrement JSON),
+-   via l'APP Ontologie, sous la forme d'un fichier CSV).
 
 Cette opération s’effectue :
 -  sur le tenant d’administration si l’on souhaite que le vocabulaire soit disponible sur tous les tenants,
@@ -758,12 +798,15 @@ Pour créer un nouveau vocabulaire, il est recommandé de suivre les étapes sui
 |Administrateur fonctionnel|émet le souhait d’ajouter un nouveau vocabulaire, externe, dans l’ontologie et dans le schéma|Non|
 |Administrateur fonctionnel|vérifie au préalable si ce nouveau vocabulaire n’existe pas ou si un vocabulaire préexistant ne correspond pas à son besoin.|Oui|
 |Administrateur fonctionnel et/ou technique|met à jour l’ontologie sur le tenant d’administration.|Oui|
-|Administrateur fonctionnel et/ou technique|met à jour le schéma sur le tenant d’administration ou sur un tenant spécifique|Non|
+|Administrateur fonctionnel et/ou technique|met à jour le schéma sur le tenant d’administration ou sur un tenant spécifique|Oui|
 |Administrateur technique|indexe le nouveau vocabulaire dans le moteur de recherche Elastic Search.|Non|
 
 ### Quand et comment modifier un vocabulaire ?
 
-en version 9.0, la mise à jour d’un vocabulaire utilisé dans le schéma passe par sa suppression, puis son réimport en utilisant les API mises à disposition par la solution logicielle Vitam.
+en version 9.1, la mise à jour d’un vocabulaire utilisé dans le schéma passe par sa suppression, puis son réimport en utilisant :
+-  les API mises à disposition par la solution logicielle Vitam,
+-  l'APP Ontologie.
+
 Il est ainsi possible de mettre à jour les informations suivantes :
 -  le chemin (Path),
 -  la cardinalité, dont la valeur doit être égale à « ONE », « ONE_REQUIRED », « MANY » ou « MANY_REQUIRED » (Cardinality),
@@ -774,19 +817,22 @@ Il est ainsi possible de mettre à jour les informations suivantes :
 **Point d’attention :** 
 -  La modification n’est pas un acte anodin. Elle peut entraîner des incohérences si elle n’est pas mûrement réfléchie, ainsi qu’un possible changement des interfaces pour l’utilisateur ;
 -  le vocabulaire devant être modifié doit obligatoirement être un vocabulaire d’origine externe, à moins de correspondre à un vocabulaire supprimé à l’occasion d’une mise à jour du modèle de données géré par la solution logicielle Vitam ou la publication d’une nouvelle version du SEDA ;
--  Il n’est pas possible de modifier le schéma depuis les interfaces de VitamUI ;
+-  Il n’est pas possible de modifier directement le schéma depuis les interfaces de VitamUI. Toute modification passe par une suppression du vocabulaire, puis son réimport.
 -  Il n’est pas possible de modifier le type d’indexation, le type détaillé d’indexation ou la taille du vocabulaire depuis le schéma. Il faut le faire en mettant à jour l’ontologie.
 
 ### Quand et comment supprimer un vocabulaire ?
 
-La suppression d’un vocabulaire s’effectue uniquement depuis les API.
+La suppression d’un vocabulaire s’effectue depuis :
+-  les API,
+-  l'APP Ontologie.
 
-Cet acte n’est pas anodin. Avant de procéder à cette suppression, il est recommandé de vérifier les éléments suivants :
--  le vocabulaire devant être supprimé doit obligatoirement être un vocabulaire d’origine externe, à moins de correspondre à un vocabulaire supprimé à l’occasion d’une mise à jour du modèle de données géré par la solution logicielle Vitam ou la publication d’une nouvelle version du SEDA ;
--  le vocabulaire ne doit pas être utilisé par un autre vocabulaire dans le schéma s’il s’agit d’un élément de type « objet ».
-Point d’attention : 
+Cet acte n’est pas anodin. 
+
+**Point d’attention :**
 -  La suppression n’est pas un acte anodin. Elle peut entraîner des incohérences si elle n’est pas mûrement réfléchie, ainsi qu’un possible changement des interfaces pour l’utilisateur ;
--  Il n’est pas possible de supprimer un vocabulaire du schéma depuis les interfaces de VitamUI.
+   Avant de procéder à cette suppression, il est recommandé de vérifier les éléments suivants :
+   -  le vocabulaire devant être supprimé doit obligatoirement être un vocabulaire d’origine externe, à moins de correspondre à un vocabulaire supprimé à l’occasion d’une mise à jour du modèle de données géré par la solution logicielle Vitam ou la publication d’une nouvelle version du SEDA ;
+   -  le vocabulaire ne doit pas être utilisé par un autre vocabulaire dans le schéma s’il s’agit d’un élément de type « objet ».
 
 ### Quel accès au schéma  ?
 
