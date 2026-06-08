@@ -23,7 +23,7 @@ Ce document s’articule autour des axes suivants :
 - calcul des règles et détermination du caractère éliminable des unités archivistiques,
 - modalités d’une campagne d’évaluation du caractère éliminable des unités archivistiques (analyse),
 - modalités d’une campagne de mise en œuvre de l’élimination (action).
-Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 9.0 (automne 2025). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
+Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 9.1 (printemps 2026). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
 
 Détermination du caractère éliminable d’une unité archivistique avec la solution logicielle Vitam
 ----

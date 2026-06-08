@@ -16,7 +16,7 @@ Et vise son adoption par le plus grand nombre d’acteurs[^3] »</p>*
 
 ### Une solution back-office…
 
-L’obligation de mettre en œuvre une solution d’archivage numérique dans les contextes très différents des trois ministères porteurs, tant en termes de pratiques archivistiques qu’en termes de production informatique, a orienté notre choix vers la réalisation d’un back-office. L’objectif est de prendre en compte dans la solution logicielle Vitam, le maximum de fonctions mutualisables et technologiquement complexes, d’autant plus quand elles s’appliquent à de très grands nombres d’objets, et de laisser chaque entité porter ses propres spécificités de processus. Cette vision permet ainsi la réutilisation la plus large, tout en assurant la réalisation d’un outil générique intégrable selon les besoins d’acteurs variés dans leur système d’information.
+L’obligation de mettre en œuvre une solution d’archivage numérique dans les contextes très différents des trois ministères porteurs, tant en termes de pratiques archivistiques qu’en termes de production informatique, a orienté notre choix vers la réalisation initiale d’un back-office. L’objectif est de prendre en compte dans la solution logicielle Vitam, le maximum de fonctions mutualisables et technologiquement complexes, d’autant plus quand elles s’appliquent à de très grands nombres d’objets, et de laisser chaque entité porter ses propres spécificités de processus. Cette vision permet ainsi la réutilisation la plus large, tout en assurant la réalisation d’un outil générique intégrable selon les besoins d’acteurs variés dans leur système d’information.
 
 Positionnée comme une brique d’infrastructure, la solution logicielle Vitam prend en charge toutes les opérations nécessaires pour garantir le maintien de leur valeur probante et pour assurer la pérennisation des documents numériques versés.
 
@@ -38,13 +38,13 @@ Elle offre des interfaces applicatives (API) permettant principalement :
 -  l’accès aux documents,
 -  la mise à jour des référentiels internes.
 
-La solution logicielle contient également des interfaces de démonstration permettant aux entités ne disposant pas de front-office de réaliser des opérations de base (import des référentiels, entrées de SIP, recherche et accès aux documents, gestion des archives). Depuis la version 4 de la solution logicielle, les interfaces de démonstration sont complétées par l’initiative Vitam UI grâce à laquelle des utilisateurs de la solution logicielle Vitam ont mutualisé leurs réflexions et développements pour proposer à la communauté des interfaces pensées par et pour les archivistes, designés et ergonomiques.
+La solution logicielle propose depuis la version 4 de la solution logicielle, des interfaces appelées 'Vitam UI', ce projet est l'aboutissement d'une mutualisation des réflexions et développements d'utilisateurs de la solution logicielle Vitam pour proposer à la communauté des interfaces pensées par et pour les archivistes, designés et ergonomiques.
 
 Enfin toujours dans un esprit de facilité de réutilisation, la solution logicielle Vitam est aussi neutre technologiquement que possible. La solution logicielle Vitam :
 -  n’impose pas d’infrastructures particulières, comme des baies de stockages adaptées ou des matériels spécifiques ;
 -  s’installe sur un environnement serveur x86 physique, virtualisé ou en Cloud, au choix de ceux qui l’implémentent, avec plus ou moins d’automatisation selon le degré de virtualisation ;
 -  est développée pour s’exécuter sur un environnement Linux et distribuée pour un déploiement CentOS ;
--  amène une solution de stockage déployable sur toute infrastructure serveurs en lien avec une capacité de stockage disque ou, quand ils existent, peut utiliser des moyens existants de stockage Objet (Swift) ou de stockage à froid (cf partie 4 – vision technique).
+-  amène une solution de stockage déployable sur toute infrastructure serveurs en lien avec une capacité de stockage disque ou, quand ils existent, peut utiliser des moyens existants de stockage Objet (Swift) ou de stockage à froid (cf [partie – vision technique](#vision-technique).
 
 ###  … enrichie d’un front-office
 
@@ -76,7 +76,7 @@ Les développements ont commencé le 13 avril 2016. Les grands jalons du plannin
 -  La V6 a été publiée en avril 2023. Le SEDA 2.2 est dorévavant pris en charge. Des améliorations sur l’exploitation et la supervision facilitent la gestion des plateformes. Le front-office Vitam UI est enrichi de nombreuses fonctionnalités et en particulier des APP Profils documentaires et Collecte et préparation des versements. 
 - La V7.0 a été publiée en décembre 2023 et la V7.1 en juillet 2024.
 - La V8.0 a été publiée en décembre 2024 et la V8.1 au printemps 2025.
-- La V9.0 a été publiée à l'automne 2025.
+- La V9.0 a été publiée à l'automne 2025 et la v9.1 au printemps 2026.
       
 ###  Contenu des versions
 
@@ -96,7 +96,7 @@ Les versions 7.0 et 7.1 supportent la version 2.3 du SEDA, offrent la prise en c
 
 Les versions 8.0 et 8.1 proposent la conteneurisation (utilisable en production), des évolutions concernant le module de collecte (gestion plus fine des droits, ajout de fonctionnalités pour la préparation de versements par flux et le traitement des archives tel que le reclassement, etc.), ou encore la personnalisation des accusés de réception d'un transfert (ATR), l'ajout de facettes.
 
-La version 9.0 propose une visualisation arborescente d'archives versées à plat, ainsi que des évolutions du module de collecte (antivirus, import de SIP, connexion à des référentiels internes ou externes).
+Les versions 9.0 et 9.1 proposent une visualisation arborescente d'archives versées à plat, ainsi que des évolutions du module de collecte (antivirus, import de SIP, connexion à des référentiels internes ou externes). Un travail important a également été mené sur l'amélioration des remontées d'erreurs tout comme sur la modification de services producteurs, actuellement par un processus de réattribution d'une unique entrée.
 
 Une définition plus fine des fonctions de la « StoryMap » portées par chaque version est le fruit du raffinement du « backlog » (liste des unités à développer) au cours du développement Agile, dans le respect de la vision globale donnée ci-dessus.
 
@@ -152,8 +152,14 @@ Cette homologation de référence de la V1 de production de la solution logiciel
 
 Ainsi, une réunion s’est tenue sur ce sujet de l’isolation des griffons le 7 juin 2019 afin de déterminer comment réaliser un compromis entre les moyens matériels, les besoins de développement, la complexité d’exploitation et les contraintes de sécurité. Il a été décidé tout d’abord de mettre en place le service d’exploitation Linux sur tous les griffons et, ensuite, de réaliser une expérimentation sur une isolation totale du griffon dans une autre machine virtuelle. Cette dernière solution a l’inconvénient d’augmenter les besoins en ressources mais présente l’avantage de permettre l’exécution des griffons sur des systèmes différents (Windows, Mac OS).
 
-Suite à une réunion en mars 2020, la version 3 a également été homologuée le 2 juin 2020 par une note du DINnum pour une durée de 2 ans, soit jusqu’au 30 mars 2022. Une attention particulière est portée sur l’importance des montées de version régulières à opérer par les utilisateurs.
-L’homologation de la version 4 a été prononcée en mai 2021, puis celle de la 5.RC en décembre 2021. L’homologation de la version 5 a été prononcée en octobre 2022.
+V1 le 12/04/2018				      V2 le 14/02/2019
+V3 le 27/03/2020				      V4 le 12/05/2021
+V5.RC le 09/12/2021				V5 le 06/10/2022
+V6.RC le 19/04/2023				V6 le 22/06/2023
+V7.0 le 07/03/2024				V7.1 le 18/06/2024 
+V8.0 le 18/12/2024				V8.1 le 22/05/2025
+V9.0 le 04/12/2025				V9.1 le 20/05/2026
+
 
 ### Maintenance
 
@@ -161,7 +167,7 @@ Pendant la phase projet, une maintenance est d’ores et déjà assurée sur cer
 
 Le cycle de développement est le suivant :
 -  Les développements sont séquencés en itérations pouvant aller de 2 à 4 semaines, mais durant en général 3 semaines. Chaque itération donne lieu à une version mineure en interne.
--  Chaque année, une version majeure est construite pour publication au printemps et une version mineure, dite « release candidate » est publiée et homologuée elle aussi à l’automne.
+-  Chaque année, une version majeure est construite pour publication au printemps et une version intermédiaire est publiée et homologuée elle aussi à l’automne.
 
 ## Vision fonctionnelle
 
@@ -205,7 +211,7 @@ Les domaines couverts par la « StoryMap » sont donc :
 Le contenu détaillé est consultable en annexe 1. Cette vision détaillée en date de juillet 2016 a évolué dans le cadre des arbitrages (MoSCoW[^11]) et au cours des développements (actualisation effectuée début 2017 et début 2018).
 
 Un nouveau travail de construction d’une storymap pour la phase produit à partir de 2020 a été entamé en 2 temps : tout d’abord, des développements fonctionnels et techniques pour les releases 15 et 16 ont été proposés et arbitrés par les ministères porteurs et le représentant du club utilisateurs, avant une phase plus classique de construction pour les prochaines années.
-Cette deuxième phase a abouti début 2021 en l’identification d’une quinzaine d’axes de travail. Le contenu détaillé est consultable en annexe 2.
+Cette deuxième phase a abouti début 2021 en l’identification d’une quinzaine d’axes de travail. Le contenu détaillé est consultable en [annexe 2](#annexe-2-contenu-de-la-storymap-de-la-phase-produit-fevrier-2021).
 
 ![Vitam selon l'OAIS](./medias/presentation_solution_logicielle/202206_archi.jpg)
 
@@ -217,11 +223,11 @@ Même si en tant que back-office, la solution logicielle Vitam n’avait, a prio
 
 Qui plus est, hors d’un contexte ayant permis de mettre en place un frontal archivistique[^12], qui aura une visibilité complète sur les archives contenues dans le back-office et leur gestion, ou avant que celui-ci n’ait pu être finalisé, il peut être utile d’avoir accès à toutes les fonctionnalités du back-office. Il a donc été décidé de développer une interface dite « de démonstration ». Celle-ci complétait une IHM d’administration fonctionnelle et technique, devant être pérenne et ergonomique, dont le développement et l’implémentation restaient à la charge des utilisateurs.
       
-L’IHM, fournie par l’équipe programme Vitam, dite « de démonstration », permet aux utilisateurs :
+L’IHM, fournie par l’équipe programme Vitam, dite « de démonstration », permettait aux utilisateurs :
 - à défaut d’un frontal archivistique connecté à leur back-office Vitam, de réaliser, a minima, les activités utilisateurs associées aux domaines fonctionnels « entrées », « accès » et « gestion des archives existantes ». Cette interface est dotée d’une ergonomie limitée et ne permettra pas de mettre en place des workflows ou une gestion des droits fine en fonction de différents profils. Elle ne pourra être utilisée que par un faible nombre d’utilisateurs, et ne sera pérenne que dans les implémentations non dotées de frontaux archivistiques ;
 - d’expérimenter des modalités de réalisation innovantes des activités utilisateurs dans des environnements de recette et de démonstration.
 
-Enfin, dans le processus de développement, une IHM adaptée aux tâches de recette utilisée par les équipes de développement s’est avérée nécessaire. Faiblement ergonomique, elle permet aux testeurs de vérifier que les tâches réalisées par la solution logicielle Vitam s’exécutent bien, par exemple, au travers de l’analyse des logs ou de la vérification de paramétrages.
+Enfin, dans le processus de développement, une IHM adaptée aux tâches de recette utilisée par les équipes de développement s’est avérée nécessaire. Faiblement ergonomique, elle permettait aux testeurs de vérifier que les tâches réalisées par la solution logicielle Vitam s’exécutaient bien, par exemple, au travers de l’analyse des logs ou de la vérification de paramétrages.
 
 ####  L’initiative Vitam UI
 
