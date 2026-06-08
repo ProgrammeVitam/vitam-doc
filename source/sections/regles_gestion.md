@@ -1228,8 +1228,8 @@ La présente annexe a vocation à :
 #### Caractéristiques d’un fichier CSV
 
 Un fichier CSV représente des données tabulaires sous forme de valeurs séparées par :
-    • un séparateur de champ : virgule,
-    • un séparateur de texte : guillemets simples ou doubles, espace vide.
+- un séparateur de champ : virgule,
+- un séparateur de texte : guillemets simples ou doubles, espace vide.<br>
 Il existe d’autres séparateurs de champ (point virgule, deux points, tabulation, espace, etc.), mais la solution logicielle Vitam ne les supporte pas. Il est interdit de les utiliser.
 
 Exemple de fichier CSV :

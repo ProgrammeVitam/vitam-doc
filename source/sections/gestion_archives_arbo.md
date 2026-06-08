@@ -13,7 +13,7 @@ Introduction
 |Standard d’échange de données pour l’archivage – SEDA – v. 2.2|02/2022|
 |Standard d’échange de données pour l’archivage – SEDA – v. 2.3|06/2024|
 |[Vitam – Structuration des Submission Information Package (SIP)](./SIP.md)||
-|[Vitam – Structuration des Dissemination Information Package (DIP)](./DIP.md||
+|[Vitam – Structuration des Dissemination Information Package (DIP)](./DIP.md)||
 |[Vitam – Guide d’utilisation de ReSIP](./resip.md)||
 |[Vitam – Module de collecte](./module_de_collecte.md)||
 |[Vitam – Les éliminations dans la solution logicielle Vitam](./eliminations.md)||
@@ -89,7 +89,7 @@ Des unités archivistiques issues d’un même SIP peuvent être rattachées à 
 Les arbres de positionnement et les plans de classement sont importés dans la solution logicielle VITAM sous la forme de SIP contenant un bordereau de transfert (message ArchiveTransfer), mais sans aucun objet associé, contrairement aux unités archivistiques standards[^2].
 Le SIP peut être exprimé en SEDA 2.1, 2.2 ou 2.3.
 
-Chaque niveau d’arborescence est signalé et décrit dans une unité archivistique (ou <ArchiveUnit>). Pour chacun, il est possible de renseigner les éléments suivants :
+Chaque niveau d’arborescence est signalé et décrit dans une unité archivistique (ou < ArchiveUnit >). Pour chacun, il est possible de renseigner les éléments suivants :
 -  dans le sous-bloc Management : 
     - Lien vers un niveau d’un plan de classement ou d’un arbre de positionnement, matérialisé :
         - soit par l’identifiant de l’unité archivistique de niveau supérieur (UpdateOperation / SystemeId),
@@ -117,7 +117,7 @@ En revanche, un plan de classement et un SIP peuvent déclarer dans le bloc Mana
     - gel (HoldRule) ;
 -  un élément NeedAuthorization qui permet d’indiquer si la mise en œuvre des actions prévues à l’échéance de toutes les règles nécessitera une autorisation de la part des acteurs impliqués dans la procédure (Service d’archives, Service producteur, Service de contrôle au sens du SEDA).
 
-Un plan de classement doit nécessairement déclarer un service producteur dans le champ OriginatingAgencyIdentifier du bloc <ManagementMetadata> du message ArchiveTransfer.
+Un plan de classement doit nécessairement déclarer un service producteur dans le champ OriginatingAgencyIdentifier du bloc < ManagementMetadata > du message ArchiveTransfer.
 
 Un arbre de positionnement ne déclare pas de service producteur.
 
@@ -129,7 +129,7 @@ Si on n’exporte que des unités archivistiques de type « arbre de positionne
 
 L’export peut être exprimé en SEDA 2.1, 2.2 ou 2.3.
 
-Chaque niveau d’arborescence est signalé et décrit dans une unité archivistique (ou <ArchiveUnit>). Pour chacun, il est possible de renseigner les éléments suivants :
+Chaque niveau d’arborescence est signalé et décrit dans une unité archivistique (ou < ArchiveUnit >). Pour chacun, il est possible de renseigner les éléments suivants :
 -  dans le sous-bloc Management : 
     - un élément de journalisation (LogBook) qui permet d’enregistrer les événements associés au cycle de vie des archives après leur création et avant le transfert vers le service d’archivage électronique cible ;
 -  dans le sous-bloc Content :
@@ -153,7 +153,7 @@ En revanche, un plan de classement et un SIP peuvent déclarer dans le sous-bloc
     - gel (HoldRule) ;
 -  un élément NeedAuthorization qui permet d’indiquer si la mise en œuvre des actions prévues à l’échéance de toutes les règles nécessitera une autorisation de la part des acteurs impliqués dans la procédure (Service d’archives, Service producteur, Service de contrôle au sens du SEDA).
 
-L’export ne distinguant pas les notions d’arbre de positionnement, de plan de classement et d’unité archivistique standard, la solution logicielle Vitam générera automatiquement un service producteur dans le champ OriginatingAgencyIdentifier du bloc <ManagementMetadata> du message ArchiveDeliveryRequestReply :
+L’export ne distinguant pas les notions d’arbre de positionnement, de plan de classement et d’unité archivistique standard, la solution logicielle Vitam générera automatiquement un service producteur dans le champ OriginatingAgencyIdentifier du bloc < ManagementMetadata > du message ArchiveDeliveryRequestReply :
 -  pour l’export des seuls arbres de positionnement ou d’arborescences de plusieurs types multi-producteurs, la valeur de ce champ est « Export VITAM »[^5],
 -  pour l’export des plans de classement ou d’arborescences de plusieurs types mono-producteurs, la valeur de ce champ sera héritée du service présent dans le champ OriginatingAgencyIdentifier présent dans le SIP à l’origine de l’entrée.
 
@@ -165,7 +165,7 @@ Si on n’exporte que des unités archivistiques de type « arbre de positionne
 
 L’export peut être exprimé en SEDA 2.1, 2.2 ou 2.3.
 
-Chaque niveau d’arborescence est signalé et décrit dans une unité archivistique (ou <ArchiveUnit>). Pour chacun, il est possible de renseigner les éléments suivants :
+Chaque niveau d’arborescence est signalé et décrit dans une unité archivistique (ou < ArchiveUnit >). Pour chacun, il est possible de renseigner les éléments suivants :
 -  dans le sous-bloc Management : 
     - un élément de journalisation (LogBook) qui permet d’enregistrer les événements associés au cycle de vie des archives après leur création et avant le transfert vers le service d’archivage électronique cible ;
 -  dans le sous-bloc Content :

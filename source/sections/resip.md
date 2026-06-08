@@ -12,7 +12,7 @@ Résumé
 |Standard d’échange de données pour l’archivage – SEDA – v. 2.1 | 06/2018|
 |Standard d’échange de données pour l’archivage – SEDA – v. 2.2 | 02/2022|
 |Standard d’échange de données pour l’archivage – SEDA – v. 2.3 | 06/2024|
-|Vitam – ReSIP : foire aux questions                            | |       
+|[Vitam – ReSIP : foire aux questions](./resip_faq.md)| |       
 
 
 ### Présentation du document
@@ -2045,9 +2045,7 @@ de :
     En savoir plus » (cf. copie d’écran ci-dessous).
     ![](medias/resip/Pictures/1000020100000555000002D9EE09EBF57F084D88.png)
 
-**Attention** : pour rechercher un groupe d’objets par
-son identifiant XML, il convient d’utiliser la recherche d’unité
-archivistique (voir section 5.2.1.).
+**Attention** : pour rechercher un groupe d’objets par son identifiant XML, il convient d’utiliser la recherche d’unité archivistique (voir [section Recherche d'unités archivistes](#recherche-dunites-archivistiques)).
 
 ### Détection et traitement de doublons
 

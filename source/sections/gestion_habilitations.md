@@ -28,7 +28,7 @@ Il s’articule autour des axes suivants :
 - une présentation des mécanismes mis en œuvre dans la solution logicielle Vitam pour gérer ces habilitations ;
 - des recommandations aux ministères porteurs, partenaires et utilisateurs de la solution logicielle Vitam sur la manière d’utiliser les fonctionnalités associées à ces habilitations.
 
-Le présent document décrit les fonctionnalités offertes au terme de la version 9.0 (automne 2025). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
+Le présent document décrit les fonctionnalités offertes au terme de la version 9.1 (printemps 2026). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
 
 Administration des habilitations
 ---
@@ -517,11 +517,13 @@ Le nom de l’habilitation concernée doit être écrit de la manière suivante�
 -  « INGEST_CONTRACT » pour les contrats d’entrée ;
 -  « ACCESS_CONTRACT » pour les contrats d’accès ;
 -  « SECURITY_PROFILE » pour les profils de sécurité (utile seulement sur le tenant d’administration) ;
--  « CONTEXT » pour les contextes applicatifs (utile seulement sur le tenant d’administration).
+-  « CONTEXT » pour les contextes applicatifs (utile seulement sur le tenant d’administration).  
 
+<br>
 La gestion des identifiants peut varier d’un tenant à l’autre, comme c’est le cas dans le tableau où :
--  le tenant 1, d’administration, est esclave pour les contrats d’entrée et d’accès, les profils d’archivage, les profils de sécurité et les contextes ;
--  le tenant 0 ne l’est que pour les contrats d’entrée et d’accès.
+
+- le tenant 1, d’administration, est esclave pour les contrats d’entrée et d’accès, les profils d’archivage, les profils de sécurité et les contextes ;
+- le tenant 0 ne l’est que pour les contrats d’entrée et d’accès.
 
 Cette opération relève d’un acte d’exploitation technique. Elle implique le redémarrage du/des composant(s), selon qu’il soit mono-instance ou multi-instances.
 
@@ -1322,11 +1324,11 @@ Concernant les différentes options contenues dans un contrat d’accès, il est
 Cette action provoque la création d’une nouvelle version du contrat d’accès modifié. Les différentes versions du référentiel font l’objet d’une sauvegarde sur les offres de stockage utilisées par la solution logicielle Vitam.
 Il s’agit d’une opération d’administration (« MASTERDATA »), tracée dans le journal des opérations du tenant sur lequel a eu lieu l’opération[^80].
 
-Lors de cette mise à jour, l’opération peut aboutir aux statuts suivants :
+Lors de cette mise à jour, l’opération peut aboutir aux statuts suivants :<br>
 
 |Statut|Motifs|
 |:---|:---|
-|Succès|Opération réalisée sans rencontrer de problèmes particuliers.|
+|Succès|Opération réalisée sans rencontrer de problèmes particuliers|
 |Échec[^81]|Avec journalisation : (section à venir)|
 
 ##### Activation / Désactivation
