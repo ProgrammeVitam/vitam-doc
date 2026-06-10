@@ -126,4 +126,4 @@ En cas d’ajout d’une stratégie de stockage, la mise à jour sera en échec 
 
 Si le contrat de gestion à modifier est utilisé dans au moins un contrat d’entrée, il est recommandé de désactiver le ou les contrats d’entrée déclarant le contrat de gestion, le temps de procéder à la modification du contrat de gestion.
 
-Pour aller plus loin, consulter le [document VITAM. Gestion des habilitations](./gestion_habilitations.md).
+Pour aller plus loin, consulter le [document VITAM. Gestion des habilitations](./gestion_habilitations.md) ainsi que le [document Vitam. Gestion de multiples stratégies de stockage](./stockage.md).
