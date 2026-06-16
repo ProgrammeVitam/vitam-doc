@@ -1598,12 +1598,12 @@ Cette action provoque :
     -   la création des unités archivistiques dans la base de données MongoDB, dans la collection « Unit » (base *MetadataCollect[^10]*).
 
         À chaque enregistrement, est associé :
-	
-		    -   l’identifiant de la transaction (_opi),
-			-   l’identifiant de l'upload ou batch (_batchId),
-            -   l'identifiant du service producteur, présent dans le SIP (_sp et _sps),
-			-   la version du SEDA du message ArchiveTransfer (_sedaVersion),
-			-   la version de la solution logicielle Vitam (_implementationVersion);
+		
+		   -   l’identifiant de la transaction (_opi),		   
+		   -   l’identifiant de l'upload ou batch (_batchId),
+           -   l'identifiant du service producteur, présent dans le SIP (_sp et _sps),
+		   -   la version du SEDA du message ArchiveTransfer (_sedaVersion),
+		   -   la version de la solution logicielle Vitam (_implementationVersion);
 	
 	    À chaque unité archivistique racine, peuvent être associées, si elles sont présentes, des règles de gestion présentes dans le bloc ManagementMetadata du message ArchiveTransfer. 
 
@@ -1639,6 +1639,65 @@ Cette action provoque :
 	
 		-   un enregistrement de l'erreur dans les métadonnées de l'unité archivistique (_ogInfo),
 		-   un enregistrement de l'erreur  dans les métadonnées du groupe d'objets techniques (_errors).
+		
+		Chacun de ces enregistrements inclut les métadonnées suivantes :
+		
+			-   l'identifiant de l’événement (evId),
+			-   le type de processus (evTypeProc) correspondant à la valeur « COLLECT_SIP_INGEST » dans le cas présent,
+			-   le code correspondant au résultat de l’événement (outDetail),
+			-   le détail du résultat de l’événement (outMessg),
+			-   les détails des données de l’événement (evDetData),
+			-   la date de lancement de l’opération (evDateTime),
+			-   l'identifiant du processus (edIdProc), correspondant à la valeur de l'identifiant de l'upload (_batchId),
+			-   si l'erreur concerne un objet en particulier, l'identifiant technique de l'objet concerné (obId).
+
+  *Exemple : Erreurs référencées dans une unité archivistique
+```json
+    _ogInfo: {
+        _errors: [
+            {
+                evId: 'aeaaaaaaaaece2j6abrdmam62cktl4aaaaaq',
+                obId: 'aebqaaaaagec45hnabresam62cktjzqaaada',
+                evTypeProc: 'COLLECT_SIP_INGEST',
+                outDetail: 'LFC.CHECK_DIGEST.CALC_CHECK.INVALID.KO',
+                outMessg: 'Échec de la vérification de l\'empreinte du fichier',
+                evDetData: '{"MessageDigest":"badbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbad00","Algorithm":"SHA-512","ComputedMessageDigest":"9ac2e3685b69fb06a8f43bdc4429e0311a96648c3432ecd506c0a055031e069f6bd1e4bd24677cba0b3df8a6cd76eb3e5ce23e84ed4eb659c1f3495636367471"}',
+                evDateTime: '2026-06-16T13:18:20.144',
+                evIdProc: 'aeeaaaaaagecgv5tab7o6am62cktgqiaaaaq'
+            },
+            {
+                evId: 'aeaaaaaaaaece2j6abrdmam62cktl4iaaaaq',
+                obId: 'aebqaaaaagec45hnabresam62cktj2aaaaba',
+                evTypeProc: 'COLLECT_SIP_INGEST',
+                outDetail: 'LFC.CHECK_DIGEST.CALC_CHECK.INVALID.KO',
+                outMessg: 'Échec de la vérification de l\'empreinte du fichier',
+                evDetData: '{"MessageDigest":"badbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbad00","Algorithm":"SHA-512","ComputedMessageDigest":"9ac2e3685b69fb06a8f43bdc4429e0311a96648c3432ecd506c0a055031e069f6bd1e4bd24677cba0b3df8a6cd76eb3e5ce23e84ed4eb659c1f3495636367471"}',
+                evDateTime: '2026-06-16T13:18:20.145',
+                evIdProc: 'aeeaaaaaagecgv5tab7o6am62cktgqiaaaaq'
+            },
+            {
+                evId: 'aeaaaaaaaaece2j6abrdmam62cktoaiaaaaq',
+                evTypeProc: 'COLLECT_SIP_INGEST',
+                outDetail: 'LFC.CHECK_OBJECT_GROUP_SCHEMA.KO',
+                outMessg: 'Échec lors de la vérification globale du groupe d\'objet',
+                evDetData: '{"evDetTechData":"metadata contains fields declared in ontology with a wrong format : Error \'Invalid date format: bad_date\' on field \'LastModified\'."}',
+                evDateTime: '2026-06-16T13:18:20.417',
+                evIdProc: 'aeeaaaaaagecgv5tab7o6am62cktgqiaaaaq'
+            }
+        ]
+    },
+    _errors: [
+        {
+            evId: 'aeaaaaaaaaece2j6abrdmam62cktq5qaaaaq',
+            evTypeProc: 'COLLECT_SIP_INGEST',
+            outDetail: 'LFC.UNITS_RULES_COMPUTE.CONSISTENCY.KO',
+            outMessg: 'Échec de la vérification de la cohérence de la règle de gestion par rapport à sa catégorie : Une règle déclarée est incohérente par rapport à sa catégorie',
+            evDetData: '{"evDetTechData":"The rule \'APP-00001\' is referenced in the wrong rule category. Declared AccessRule, actual AppraisalRule"}',
+            evDateTime: '2026-06-16T13:18:20.790',
+            evIdProc: 'aeeaaaaaagecgv5tab7o6am62cktgqiaaaaq'
+        }
+    ]
+``` 
 
 ***Point d’attention :*** Au terme de la V.9.1 :
 
@@ -1653,8 +1712,7 @@ Lors de cette action, l’opération peut aboutir aux résultats suivants :
 | --- | --- |
 | Succès | Action réalisée sans rencontrer de problèmes particuliers. |
 | Avertissement | - Au moins un format de fichier a été réidentifié.<br> - Le SIP ne contient pas d'objets binaires.<br> - L'empreinte a été recalculée. |
-| Échec |  - Le SIP contient au moins une erreur ne permettant pas d'aboutir à l'enregistrement du SIP dans la transaction.<br> - La transaction n’existe pas ou est erronée.<br> - 
-La transaction a été clôturée. |
+| Échec |  - Le SIP contient au moins une erreur ne permettant pas d'aboutir à l'enregistrement du SIP dans la transaction.<br> - La transaction n’existe pas ou est erronée.<br> - La transaction a été clôturée. |
 
 Elle est journalisée dans le journal des opérations (COLLECT_INGEST). L'opération n'est pas associée à un rapport.
 
