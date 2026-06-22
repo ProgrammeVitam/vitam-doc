@@ -349,17 +349,69 @@ Pour en savoir plus sur la formalisation des habilitations, consulter le <a clas
 <h3><span class="section-number">11.3.3. </span>Activation et désactivation des éléments des habilitations<a class="headerlink" href="#activation-et-desactivation-des-elements-des-habilitations" title="Lien vers cette rubrique"></a></h3>
 <p>La solution logicielle Vitam permet de rendre actif ou de désactiver un contexte applicatif, un contrat d’entrée ou un contrat d’accès.
 En fonction du statut du contexte applicatif et de celui du contrat d’entrée associé, un transfert de SIP sera autorisé ou non :</p>
-<p>||Contexte applicatif|Contrat d’entrée|Résultat|
-|CAS 1|ACTIF|ACTIF|Transfert de SIP dans le système autorisé.|
-|CAS 2|ACTIF|INACTIF|Transfert de SIP dans le système non autorisé.|
-|CAS 3|INACTIF|ACTIF|Transfert de SIP dans le système non autorisé.|
-|CAS 4|INACTIF|INACTIF|Transfert de SIP dans le système non autorisé.|</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p></p></th>
+<th class="head text-left"><p>Contexte applicatif</p></th>
+<th class="head text-left"><p>Contrat d’entrée</p></th>
+<th class="head text-left"><p>Résultat</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>CAS 1</p></td>
+<td class="text-left"><p>ACTIF</p></td>
+<td class="text-left"><p>ACTIF</p></td>
+<td class="text-left"><p>Transfert de SIP dans le système autorisé.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>CAS 2</p></td>
+<td class="text-left"><p>ACTIF</p></td>
+<td class="text-left"><p>INACTIF</p></td>
+<td class="text-left"><p>Transfert de SIP dans le système non autorisé.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>CAS 3</p></td>
+<td class="text-left"><p>INACTIF</p></td>
+<td class="text-left"><p>ACTIF</p></td>
+<td class="text-left"><p>Transfert de SIP dans le système non autorisé.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>CAS 4</p></td>
+<td class="text-left"><p>INACTIF</p></td>
+<td class="text-left"><p>INACTIF</p></td>
+<td class="text-left"><p>Transfert de SIP dans le système non autorisé.</p></td>
+</tr>
+</tbody>
+</table>
 <p>En fonction du statut du contexte applicatif et de celui du contrat d’accès associé, un accès au système sera autorisé ou non :</p>
-<p>||Contexte applicatif|Contrat d’accès|Résultat|
-|CAS 1|ACTIF|ACTIF|Accès au système autorisé.|
-|CAS 2|ACTIF|INACTIF|Accès au système non autorisé.|
-|CAS 3|INACTIF|ACTIF|Accès au système non autorisé.|
-|CAS 4|INACTIF|INACTIF|Accès au système non autorisé.|</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p></p></th>
+<th class="head text-left"><p>Contexte applicatif</p></th>
+<th class="head text-left"><p>Contrat d’accès</p></th>
+<th class="head text-left"><p>Résultat</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>CAS 1</p></td>
+<td class="text-left"><p>ACTIF</p></td>
+<td class="text-left"><p>ACTIF</p></td>
+<td class="text-left"><p>Accès au système autorisé.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>CAS 2</p></td>
+<td class="text-left"><p>ACTIF</p></td>
+<td class="text-left"><p>INACTIF</p></td>
+<td class="text-left"><p>Accès au système non autorisé.</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>CAS 3</p></td>
+<td class="text-left"><p>INACTIF</p></td>
+<td class="text-left"><p>ACTIF</p></td>
+<td class="text-left"><p>Accès au système non autorisé.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>CAS 4</p></td>
+<td class="text-left"><p>INACTIF</p></td>
+<td class="text-left"><p>INACTIF</p></td>
+<td class="text-left"><p>Accès au système non autorisé.</p></td>
+</tr>
+</tbody>
+</table>
 </section>
 </section>
 <section id="import-modification-et-suppression-des-habilitations">
@@ -438,6 +490,7 @@ Elle fait l’objet d’une journalisation dans le journal des opérations.</p>
     <dl>
       <dt>Branches</dt>
       <dd><a href="Vademecum_habilitations.html">master</a></dd>
+      <dd><a href="../../master_9.1.x/sections/Vademecum_habilitations.html">master_9.1.x</a></dd>
       <dd><a href="../../master_7.1.x/sections/Vademecum_habilitations.html">master_7.1.x</a></dd>
       <dd><a href="../../master_8.1.x/sections/Vademecum_habilitations.html">master_8.1.x</a></dd>
       <dd><a href="../../master_9.0.x/sections/Vademecum_habilitations.html">master_9.0.x</a></dd>
