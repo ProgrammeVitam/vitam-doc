@@ -135,6 +135,7 @@ La solution logicielle Vitam permet de rendre actif ou de désactiver un context
 En fonction du statut du contexte applicatif et de celui du contrat d’entrée associé, un transfert de SIP sera autorisé ou non :
 
 ||Contexte applicatif|Contrat d’entrée|Résultat|
+|:---|:---|:---|:---|
 |CAS 1|ACTIF|ACTIF|Transfert de SIP dans le système autorisé.|
 |CAS 2|ACTIF|INACTIF|Transfert de SIP dans le système non autorisé.|
 |CAS 3|INACTIF|ACTIF|Transfert de SIP dans le système non autorisé.|
@@ -143,6 +144,7 @@ En fonction du statut du contexte applicatif et de celui du contrat d’entrée 
 En fonction du statut du contexte applicatif et de celui du contrat d’accès associé, un accès au système sera autorisé ou non :
 
 ||Contexte applicatif|Contrat d’accès|Résultat|
+|:---|:---|:---|:---|
 |CAS 1|ACTIF|ACTIF|Accès au système autorisé.|
 |CAS 2|ACTIF|INACTIF|Accès au système non autorisé.|
 |CAS 3|INACTIF|ACTIF|Accès au système non autorisé.|
