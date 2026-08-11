@@ -41,7 +41,7 @@ Ce document s’articule autour des axes suivants :
 -   modalités de dégel d’archives.
 
 Le présent document décrit les fonctionnalités qui sont offertes par la
-solution logicielle Vitam au terme de la Version 9.1 (printemps 2026).
+solution logicielle Vitam au terme de la Version 10.0 (automne 2026).
 Il a vocation à être amendé, complété et enrichi au fur et à mesure de
 la réalisation de la solution logicielle Vitam et des retours et
 commentaires formulés par les ministères porteurs et les partenaires du
@@ -102,9 +102,9 @@ Elle peut être définie de deux manières :
     gérées dans ce référentiel ;
 -   sans durée ni mesure, si on n’est pas en mesure de les qualifier.
 
-*Exemple :*
+*Exemple : La première règle de gel définit une durée et une mesure, contrairement à la deuxième règle de gel.*
 
-``` La première règle de gel définit une durée et une mesure, contrairement à la deuxième règle de gel.```
+![](medias/gel/referentielRG.png)
   
 ### Formalisation du gel dans le Standard d’échanges de données pour l’archivage (SEDA)
 
