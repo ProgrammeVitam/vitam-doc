@@ -25,7 +25,7 @@ Il s’articule autour des axes suivants :
 - une présentation des mécanismes mis en œuvre dans la solution logicielle Vitam pour prendre en compte cette notion ;
 - quelques conseils complémentaires de mise en œuvre.
 
-Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 9.1 (printemps 2026).
+Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 10.0 (automne 2026).
 Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
 
 
@@ -52,22 +52,22 @@ Ces vocabulaires peuvent être utilisés pour décrire :
 
     - vocabulaires conformes au SEDA de type « objet », c'est-à-dire correspondant à un élément XML englobant un sous-élément XML (par exemple, Writer ou Management) ;
 
-*Exemple : sont présents dans le schéma les vocabulaires « Keyword », « Keyword.Keyword Content », « Keyword.KeywordType ».*
+	*Exemple : sont présents dans le schéma les vocabulaires « Keyword », « Keyword.Keyword Content », « Keyword.KeywordType ».*
 
-```xml
-<Keyword>
-    <KeywordContent>Paris</Content>
-    <KeywordType>geogname</Type>
-</Keyword>
+	```xml
+	<Keyword>
+		<KeywordContent>Paris</Content>
+		<KeywordType>geogname</Type>
+	</Keyword>
 
-```
+	```
 
     - vocabulaires générés par la solution logicielle Vitam, correspondant à un élément JSON de type « objet ».
 
-*Exemple : sont présents dans le schéma les éléments JSON _mgt, _v.* 
+	*Exemple : sont présents dans le schéma les éléments JSON _mgt, _v.* 
 
-```json
-"_mgt": {
+	```json
+	"_mgt": {
         "AccessRule": {
             "Rules": [
                 {
@@ -86,10 +86,10 @@ Ces vocabulaires peuvent être utilisés pour décrire :
             "
         ]
     },
-"_v" : 4
-```
+	"_v" : 4
+	```
 
-En d’autres termes, le schéma référence tous les vocabulaires, qu’il s’agisse de vocabulaires pouvant contenir des valeurs (ou métadonnées, dits vocabulaire de type « feuille ») quand ils sont utilisés ou de vocabulaires ne contenant pas de valeurs (ou objets).
+	En d’autres termes, le schéma référence tous les vocabulaires, qu’il s’agisse de vocabulaires pouvant contenir des valeurs (ou métadonnées, dits vocabulaire de type « feuille ») quand ils sont utilisés ou de vocabulaires ne contenant pas de valeurs (ou objets).
 
 ### Pourquoi un schéma ?
 
