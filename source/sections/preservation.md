@@ -1192,6 +1192,10 @@ Dans le cadre du processus de préservation d’un ensemble d’archives, suite 
 - pour une opération d’analyse de formats, le processus affiche systématiquement une étape d’alimentation du registre des fonds, même si cette dernière n’est pas exécutée ;
 - pour n’importe quelle opération de préservation, le processus affiche les étapes de préparation et de mise en œuvre de l’indexation des métadonnées de préservation et de la mise à jour du journal du cycle de vie des unités archivistiques concernées.
 
+Cette action est possible depuis :
+-  les API,
+-  l'APP VitamUI « Recherche, gestion et consultation des archives ».
+
 ##### Résultats d’une opération de préservation
 
 Quelle que soit l’action de préservation effectuée, la solution logicielle Vitam produit un rapport listant les objets binaires ayant fait l’objet de l’opération, ainsi que, pour chacun d’eux, le résultat de cette opération[^47].
