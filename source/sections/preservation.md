@@ -49,7 +49,7 @@ Il s’articule autour des axes suivants :
 - une présentation des mécanismes mis en œuvre dans la solution logicielle Vitam pour gérer et réaliser des opérations de préservation numérique ;
 - des recommandations aux utilisateurs de la solution logicielle Vitam sur la manière d’utiliser les fonctionnalités associées à ces outils de préservation numérique ;
 - des exemples de référentiels, de paramétrages, et de messages retournés par la solution logicielle Vitam à l’issue d’une opération en lien avec la préservation.
-Le présent document décrit les fonctionnalités qui sont offertes par la deuxième version de production de la solution logicielle Vitam au terme de la version 9.1 (printemps 2026). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
+Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 10.0 (automne 2026). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
 
 Administration de la préservation numérique
 ---
@@ -65,7 +65,7 @@ La solution logicielle Vitam s’appuie sur trois référentiels pour administre
 
 La préservation numérique implique d’effectuer des traitements sur des fichiers numériques en s’appuyant sur une identification fiable de ces derniers. Cette identification est assurée, référencée, harmonisée et normalisée au moyen d’un référentiel des formats, unique dans le système.<br>
 Par nature, un référentiel des formats identifie un ensemble de formats, en leur associant les informations nécessaires à leur identification, et fournit les moyens de contrôler les objets binaires conservés dans la solution logicielle Vitam.<br>
-La solution logicielle Vitam utilise comme référentiel des formats le registre PRONOM, développé en mars 2002 par The National Archives (UK) pour faciliter l’accès et la préservation sur le long terme aux archives numériques qu’elle conservait. Il s’agit de la principale ressource disponible en ligne sur les formats de fichiers connus ainsi que sur les produits logiciels capables de les créer et de les lire – y compris leur cycle de vie et leurs spécifications techniques. Mis en ligne à partir de février 2004, ce registre continue de s’enrichir et contient en septembre 2018 plus de 2000 entrées.<br>
+La solution logicielle Vitam utilise comme référentiel des formats le registre PRONOM, développé en mars 2002 par The National Archives (UK) pour faciliter l’accès et la préservation sur le long terme aux archives numériques qu’elle conservait. Il s’agit de la principale ressource disponible en ligne sur les formats de fichiers connus ainsi que sur les produits logiciels capables de les créer et de les lire – y compris leur cycle de vie et leurs spécifications techniques. Mis en ligne à partir de février 2004, ce registre continue de s’enrichir et contient en septembre 2026 plus de 2000 entrées.<br>
 Dans le registre PRONOM, chaque format de fichier dispose d’un identifiant unique, le Pronom Unique IDentifier (ou PUID) et est décrit avec les informations suivantes :
 - un résumé des informations essentielles disponibles :
   - nom du format ;
@@ -144,7 +144,7 @@ Les éléments XML du fichier de signatures sont modélisés comme suit :
 |HasPriorityOverFileFormatID|Identifiant XML, correspondant à un identifiant de format présent dans le registre PRONOM et associé au format décrit (facultatif et répétable). Indique que ce dernier a la priorité sur ce(s) format(s), c’est-à-dire qu’il sert de format de référence et le(s) rend obsolète(s)|
 
 **Point d’attention :**
-- Au terme de la version 6, la solution logicielle Vitam supporte la version 109 du référentiel PRONOM ;
+- Au terme de la version 10.0, la solution logicielle Vitam supporte la version 122 du référentiel PRONOM ;
 - La solution logicielle Vitam n’enregistre pas les signatures internes comme externes dans son référentiel interne. Ces informations, présentes dans le fichier de signatures, sont en revanche intégrées par les outils d’identification comme Siegfried ou Droid, en raison de leur caractère indispensable pour réaliser leurs traitements.
 
 ##### Dans la solution logicielle Vitam
@@ -293,7 +293,7 @@ La création d’un référentiel des formats est un préalable au transfert d�
 
 **Points d’attention :**
 - Après initialisation de la plate-forme, il est recommandé à l’administrateur technique de vérifier que la version du référentiel correspond à celle qui a été chargée dans l’outil d’identification Siegfried[^12].
-- Au terme de la version 6, la solution logicielle Vitam supporte la version 109 du registre PRONOM.
+- Au terme de la version 10.0, la solution logicielle Vitam supporte la version 122 du registre PRONOM.
 
 ##### Quand et comment ré-importer et mettre à jour le référentiel des formats ?
 
@@ -439,7 +439,10 @@ Ce référentiel est multi-tenant. Il est administrable et journalisé depuis le
 
 ###### Import
 
-Dans la solution logicielle Vitam, il est possible d’importer un référentiel des griffons, fonctionnant en mode « esclave ».<br>
+Dans la solution logicielle Vitam, il est possible d’importer un référentiel des griffons, fonctionnant en mode « esclave », depuis :
+- les API,
+- l’APP Vitam UI « Griffons et scénarios de préservation » .<br>
+
 Il s’agit d’une opération d’administration (« MASTERDATA »), tracée dans le journal des opérations de la solution logicielle Vitam sur le tenant d’administration[^22].
 
 ###### Ré-import et mise à jour
@@ -448,6 +451,12 @@ La modification du référentiel des griffons s'effectue par un réimport du fic
 - ajouter un nouveau griffon ;
 - modifier les informations associées à un griffon ;
 - supprimer un griffon.
+
+La modification du référentiel est possible depuis l’APP Vitam UI « Griffons et scénarios de préservation », fournie avec la solution logicielle Vitam. Cette dernière permet, depuis le tenant d’instance (ou tenant d’administration) de :
+- ajouter ou supprimer un griffon, modifier ses informations par un import du fichier au format JSON, en mode « annule et remplace » ;
+- modifier les informations associées à un griffon en particulier ;
+- supprimer un griffon en particulier.<br>
+
 Cette action provoque la création d’une nouvelle version du référentiel. Les différentes versions du référentiel font l’objet d’une sauvegarde sur les offres de stockage utilisées par la solution logicielle Vitam.<br>
 Elle fait l’objet d’une journalisation dans le journal des opérations du tenant d’administration (opération d’administration de type « MASTERDATA »)[^23].<br>
 
@@ -475,7 +484,9 @@ Sont disponibles les facettes de type :
 
 Par ailleurs, la solution logicielle permet de consulter le détail d'un griffon en particulier.
 
-L'accès au référentiel est possible uniquement depuis les API.
+L'accès au référentiel est possible depuis :
+-  les API,
+-  l'APP VitamUI « Griffons et scénarios de préservation ».
 
 #### Conseils de mise en œuvre
 
@@ -576,8 +587,7 @@ Les raisons pouvant amener à supprimer un griffon sont les suivantes :
 |Intitulé|Description|Niveau de recommandation|
 |:-----|:------|:-----|
 |Import ou modification du référentiel des griffons|Il est obligatoire d’effectuer les opérations d’import et de mise à jour du référentiel des griffons sur le tenant d’administration.|Obligatoire|
-|Import initial du référentiel des griffons|Il est recommandé d’importer un référentiel des griffons lors de l’installation de la solution logicielle Vitam, si on a installé des griffons.<br>Les griffons listés dans le référentiel doivent correspondre à ceux qui ont été installés.|
-Recommandé|
+|Import initial du référentiel des griffons|Il est recommandé d’importer un référentiel des griffons lors de l’installation de la solution logicielle Vitam, si on a installé des griffons.<br>Les griffons listés dans le référentiel doivent correspondre à ceux qui ont été installés.|Recommandé|
 |Mise à jour du référentiel des griffons|Il est recommandé de mettre à jour le référentiel des griffons.<br>Les griffons listés dans le référentiel doivent correspondre à ceux qui ont été installés sur la plate-forme.|Recommandé|
 |Nommage de l’identifiant des griffons|L’identifiant des griffons ne doit comprendre ni caractère accentué, ni virgule, ni apostrophe, ni parenthèse, ni espace, ni slash, ni élément de ponctuation, ou tout autre caractère spécial. Ne sont autorisés que l’underscore et le tiret comme séparateurs.|Obligatoire|
 |Nommage de l’exécutable|Il est obligatoire de nommer l’outil comme suit dans le référentiel des griffons, s’il est fourni par la solution logicielle Vitam : nom de l’outil en minuscules et sans espace, suivi d’un tiret et du terme « griffin », afin qu’il puisse être exécuté.|Obligatoire|
@@ -606,19 +616,17 @@ Afin de pouvoir être utilisé, un scénario de préservation doit être associ�
 - 1 à n griffon(s) ;
 - 1 à n format(s).
 
-![Exemple](./medias/preservation/exemple_scenario.png)
-
 *Exemple :* le premier scénario couvre une seule action de préservation, effectuée par deux griffons différents sur des formats différents, tandis que le second porte sur deux actions différentes effectuée par des griffons différents sur des formats différents.
+
+![Exemple](./medias/preservation/exemple_scenario.png)
 
 En outre, la solution logicielle Vitam permet d’utiliser :
 - une même action de préservation dans 1 à n scénario(s) de préservation (ex : plusieurs scénarios de préservation peuvent avoir pour objet une action de génération de binaires) ;  
 ![Exemple](./medias/preservation/exemple2_scenario.png)
 - un même griffon pour des tâches diverses dans 1 à n scénario(s) de préservation ;  
 ![Exemple](./medias/preservation/exemple3_scenario.png)
-
-![Exemple](./medias/preservation/exemple4_scenario.png)
-
 - un même format dans 1 à n scénario(s) de préservation.  
+![Exemple](./medias/preservation/exemple4_scenario.png)
 
 *Exemple :* deux scénarios de préservation ont pour objet les mêmes formats. En revanche, leurs actions et leurs griffons diffèrent.
 
@@ -751,15 +759,23 @@ Le bloc GriffinByFormat contient en plus un élément listant le(s) format(s) co
 
 ##### Import
 
-Dans la solution logicielle Vitam, il est possible d’importer un référentiel des scénarios de préservation, fonctionnant en mode « esclave », tenant par tenant.
+Dans la solution logicielle Vitam, il est possible d’importer un référentiel des scénarios de préservation, fonctionnant en mode « esclave », tenant par tenant, depuis :
+- les API,
+- l’APP Vitam UI « Griffons et scénarios de préservation » .<br>
+
 Il s’agit d’une opération d’administration (« MASTERDATA »), tracée dans le journal des opérations de la solution logicielle Vitam[^34].
 
 ##### Ré-import et mise à jour
 
-La modification du référentiel des scénarios de préservation s’effectue par un réimport du fichier JSON, en mode « annule et remplace ». De fait, la solution logicielle Vitam permet de :
+La modification du référentiel des scénarios de préservation s’effectue par un réimport du fichier JSON, en mode « annule et remplace ». 
+De fait, la solution logicielle Vitam permet de :
 - ajouter un nouveau scénario ;
 - modifier les informations associées à un scénario ;
 - supprimer un scénario.
+
+La modification du référentiel est possible depuis l’APP Vitam UI « Griffons et scénarios de préservation », fournie avec la solution logicielle Vitam. Cette dernière permet de :
+- ajouter ou supprimer un scénario de préservation, modifier ses informations par un import du fichier au format JSON, en mode « annule et remplace » ;
+- supprimer un scénario de préservation en particulier.<br>
 
 Cette action provoque la création d’une nouvelle version du référentiel. Les différentes versions du référentiel font l’objet d’une sauvegarde sur les offres de stockage utilisées par la solution logicielle Vitam.<br>
 Elle fait l’objet d’une journalisation dans le journal des opérations (opération d’administration de type « MASTERDATA »)[^35].
@@ -786,7 +802,9 @@ Sont disponibles les facettes de type :
 
 Par ailleurs, la solution logicielle permet de consulter le détail d'un scénario en particulier.
 
-L'accès au référentiel est possible uniquement depuis les API.
+L'accès au référentiel est possible uniquement depuis :
+-  les API,
+-  l'APP VitamUI « Griffons et scénarios de préservation ».
 
 #### Conseils de mise en œuvre
 
@@ -1164,6 +1182,7 @@ Dans le cadre du processus de préservation d’un ensemble d’archives, suite 
 À l’issue du traitement, l’opération peut aboutir aux statuts suivants :
 
 |Statut|Motifs[^45]|
+|:----|:-----|
 |Succès|opération réalisée sans rencontrer de problèmes particuliers.|
 |Avertissement|- opération réalisée, sans qu’aucun traitement ne soit effectué pour cause de :<br>- lot d’archives sélectionné n’ayant pas d’objets binaires à traiter ;<br>- scénario de préservation ne traitant pas les formats présents dans les objets binaires à traiter.<br>- opération réalisée, avec un traitement partiel effectué, dans le cas où une partie des objets binaires traités sont en erreur.|
 |Échec|- taille maximale dépassée pour au moins un objet binaire ;<br>- temps maximal de traitement dépassé pour au moins un objet binaire ;<br>- Action présente dans le scénario de préservation non gérée par le griffon utilisé.|
@@ -1172,6 +1191,10 @@ Dans le cadre du processus de préservation d’un ensemble d’archives, suite 
 **Point d’attention :** le processus de préservation est identique et unique, quelle que soit l’action de préservation effectuée (analyse, génération de binaire, réidentification de format, extraction de métadonnées). De fait, certaines tâches sont automatiquement effectuées, mais non exécutées, en fonction des actions de préservation déclarées par le scénario de préservation. Par exemple :
 - pour une opération d’analyse de formats, le processus affiche systématiquement une étape d’alimentation du registre des fonds, même si cette dernière n’est pas exécutée ;
 - pour n’importe quelle opération de préservation, le processus affiche les étapes de préparation et de mise en œuvre de l’indexation des métadonnées de préservation et de la mise à jour du journal du cycle de vie des unités archivistiques concernées.
+
+Cette action est possible depuis :
+-  les API,
+-  l'APP VitamUI « Recherche, gestion et consultation des archives ».
 
 ##### Résultats d’une opération de préservation
 
