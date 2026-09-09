@@ -26,7 +26,7 @@ Le présent document présente l'application Pastis Standalone, qui est une vers
 L'application Pastis Standalone est téléchargeable sur le site internet du programme Vitam à l’adresse suivante : https://download.programmevitam.fr/pastis-standalone/
 
 Le fichier ZIP a un unique répertoire contenant :
-- un environnement d'exécution Java 17, nécessaire si vous n'avez pas Java installé sur votre poste
+- un environnement d'exécution Java 21, nécessaire si vous n'avez pas Java installé sur votre poste
 - un fichier `readme.txt` décrivant succintement la procédure pour lancer l'application
 - un fichier de configuration `PASTIS-APP.url`
 - un fichier .exe, qui contient l'application devant être lancée
