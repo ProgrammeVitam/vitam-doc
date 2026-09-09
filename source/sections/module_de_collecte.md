@@ -4018,7 +4018,11 @@ Annexe 3 : Liste des points d’API
 | units             | Crée ou modifie un groupe d’objets techniques | transaction:object:upsert | POST | /collect-external/v1/units/{unitId}/objects/{usage}/{version}/|
 |                   | Insère ou modifie un objet binaire| transaction:binary:upsert | POST         | /collect-external/v1/units/{unitId}/objects/{usage}/{version}/binary/ |
 |                   | Récupère une unité archivistique  | transaction:unit:id:read | GET           | /collect-external/v1/units/{{unit-id}}/ |
-|                   | Mettre à jour les unités archivistiques | transaction:id:units:update | PUT  | /collect-external/v1/transactions/{transactionId}/units/|
+|                   | Récupérer la liste des unités archivistiques avec leurs règles de gestion héritées  | transaction:unitsWithInheritedRules:read | GET           | /collect-external/v1/transactions/{transactionId}/unitsWithInheritedRules/ |
+|                   | Mettre à jour les unités archivistiques (DEPRECIE) | transaction:id:units:update | PUT  | /collect-external/v1/transactions/{transactionId}/units/|
+|                   | Mettre à jour les unités archivistiques en lot | transaction:id:units:bulk:update | POST  | /collect-external/v1/transactions/{transactionId}/units/bulk/|
+|                   | Mettre à jour les unités archivistiques via un fichier JSONL | transaction:id:units:metadata:jsonl:update | PUT  | /collect-external/v1/transactions/{transactionId}/units/metadata/jsonl/|
+|                   | Mettre à jour les unités archivistiques via un fichier CSV | transaction:id:units:metadata:csv:update | PUT  | /collect-external/v1/transactions/{transactionId}/units/metadata/csv/|
 |                   | Télécharge un usage/version du binaire<br> d'un groupe d'objets techniques| transaction:binary:read | GET | /collect-external/v1/units/{unitId}/objects/{usage}/{version}/binary/|
 |                   | Réorganisation des arborescences | transaction:reclassification | POST  | /collect-external/v1/transactions/{transactionId}/reclassification|
 |                   | Supprime des archives | transaction:deletion:action             | POST  | /collect-external/v1/transactions/{transactionId}/deletion|
