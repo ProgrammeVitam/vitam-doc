@@ -2736,6 +2736,10 @@ Liste des permissions qui peuvent être associées à :
 |Ontologie|Importer le référentiel ontologique|ontologies:create:json|
 ||Lister le contenu du référentiel ontologique|ontologies:read|
 ||Lire un vocabulaire|ontologies:id:read:json|
+|Schéma|Récuperer le schéma des unités archivistiques|schema:unit:read|
+||Récuperer le schéma des unités archivistiques par rapport à un profil d'unité archivistique|schema:archiveunitprofile:read|
+||Supprimer un ou plusieurs schémas liés à des unités archivistiques|schema:unit:delete|
+||Récuperer le schéma des groupes d'objets techniques|schema:objectgroup:read|
 |Profils d’unité archivistique|Importer un ou plusieurs profils d’unité archivistique dans le référentiel|archiveunitprofiles:create:binary|
 ||Ecrire un ou plusieurs profils d’unité archivistique dans le référentiel|archiveunitprofiles:create:json|
 ||Lister le contenu du référentiel des profils d’unité archivistique|archiveunitprofiles:read|
@@ -2763,7 +2767,8 @@ Liste des permissions qui peuvent être associées à :
 ||Trouver un service agents avec son identifier|agencies:id:read|
 ||Lister le contenu du référentiel des services agents|agencies:read|
 ||Récupérer le référentiel pour une opération d’import de référentiel des services agents|agenciesreferential:id:read|
-||Création d’un projet de versement|project:create|
+
+|Collecte|Création d’un projet de versement|project:create|
 ||Récupère la liste des projets de versement|project:read|
 ||Récupère la liste des projets de versement par critère de recherche|project:query:read|
 ||Récupère un projet de versement|project:id:read|
@@ -2771,7 +2776,7 @@ Liste des permissions qui peuvent être associées à :
 ||Mise à jour d’un projet de versement|project:update|
 ||Supprime un projet de versement|project:id:delete|
 ||Récupère toutes les unités archivistiques associées à un projet|project:id:units|
-|Collect|Création de la transaction|transaction:create|
+||Création de la transaction|transaction:create|
 ||Mise à jour d’une transaction|transaction:update|
 ||Clôture de la transaction|transaction:close|
 ||Envoi de la transaction|transaction:send|
@@ -2779,9 +2784,12 @@ Liste des permissions qui peuvent être associées à :
 ||Rouvrir une transaction|transaction:reopen|
 ||Récupère une transaction|transaction:id:read|
 ||Supprime une transaction|transaction:id:delete|
+||Envoyer un SIP dans une transaction|transaction:sip:upload|
 ||Charge les binaires en lot|transaction:zip:create|
 ||Créer une unité archivistique|transaction:unit:create|
 ||Verser une archive arborescente ZIP à un projet de versement automatique sans transaction|createproject:id:zip:create|
+||Génère le SIP d'une transaction|transaction:sip:create|
+||Télécharge le SIP d'une transaction|transaction:sip:read|
 ||Récupère toutes les unités archivistiques|transaction:unit:read|
 ||Récupère les unités archivistiques d’une transaction|transaction:id:units|
 ||Récupère une unité archivistique|transaction:unit:id:read|
@@ -2791,6 +2799,11 @@ Liste des permissions qui peuvent être associées à :
 ||Récupère un groupe d’objets techniques|transaction:object:read|
 ||Télécharge un usage/version du binaire d'un groupe d'objets|transaction:binary:read|
 ||Mise à jour unitaire en masse des métadonnées descriptives|transaction:id:units:bulk:update|
+||Mettre à jour les unités archivistiques via fichier CSV de métadonnées|transaction:id:units:metadata:csv:update|
+||Mettre à jour les unités archivistiques via fichier JSONL de métadonnées|transaction:id:units:metadata:jsonl:update|
+||Reclassification d'unités archivistiques d'une transaction|transaction:reclassification|
+||Suppression d'unités archivistiques d'une transaction|transaction:deletion:action|
+
 |Entrées|Récupérer l'accusé de réception pour une opération d'entrée donnée|ingests:id:archivetransfertreply:read|
 ||Récupérer le bordereau de versement pour une opération d'entrée donnée|ingests:id:manifests:read|
 ||Envoyer un SIP à Vitam afin qu'il en réalise l'entrée|ingests:create|
