@@ -115,7 +115,7 @@ Mécanismes mis en œuvre dans la solution logicielle Vitam
 
 La solution logicielle Vitam offre à un service d’archives plusieurs fonctionnalités lui permettant de **collecter des archives** au moyen du module de collecte :
 
--   la **configuration** des (pré-)versements (ou transactions) au moyen de la définition d’un projet de versement ;
+-   la **configuration** des (pré-)versements (ou transactions) ;
 -   leur **(pré-)versement** (ou collecte) dans le module ;
 -   leur **recherche** et leur consultation ;
 -   leur **gestion** et leur traitement ;
@@ -125,7 +125,10 @@ La solution logicielle Vitam offre à un service d’archives plusieurs fonction
 
 #### Définitions
 
-Dans la solution logicielle Vitam, il est possible de configurer le versement de un à plusieurs SIP conforme(s) au Standard d’échanges des données pour l’archivage (SEDA) en initialisant un **projet de versement** au sein du module de collecte.
+Dans la solution logicielle Vitam, il est possible de :
+
+-   paramétrer le module de collecte en tant que tel ;
+-   configurer le versement de un à plusieurs SIP conforme(s) au Standard d’échanges des données pour l’archivage (SEDA) en initialisant un **projet de versement** au sein du module de collecte.
 
 Un projet de versement est propre à chaque tenant de la solution logicielle Vitam.
 
@@ -152,6 +155,32 @@ Un projet de versement est modifiable.
 -   La création et la modification d’un projet de versement dans le module de collecte ne sont pas journalisées dans le journal des opérations.
 -   Il est recommandé d’avoir une seule transaction en cours d’alimentation pour un projet de versement.
 -   Il n'est pas recommandé de modifier un projet de versement lorsqu'une transaction est en cours d'alimentation.
+
+#### Paramétrages techniques
+
+Afin d'éviter de surcharger le module de collecte par des versements volumineux effectués parallèlement, il est possible de définir :
+
+-  un seuil de plate-forme,
+-  des seuils de chargement par tenant,
+
+Cette configuration, optionnelle, peut être établie lors du paramétrage initial de la plate-forme par les administrateurs technique de la plate-forme.
+
+Le fichier de configuration[^59] se présente comme suit :
+```yaml
+# Storage saturation thresholds. Both checks are disabled by default; see the DEX for the operating procedure.
+# The sizeUnit below applies to platformCapacity and each tenant `threshold` (BYTE / KILOBYTE / MEGABYTE / GIGABYTE).
+
+storageThresholds:
+  platformCapacity: 0
+  sizeUnit: GIGABYTE
+  platformThresholdPercent: 90
+  cacheRefreshIntervalSeconds: 600
+  defaultTenantThreshold: 0
+```
+***Points d'attention :***
+
+-  Par défaut, aucune limitation n'est définie (valeur égale à 0).
+-  Si des seuils sont définis et si des versements les dépassent, ils seront alors rejetés par le système.        
 
 #### Création d'un projet de versement
 
@@ -5294,3 +5323,5 @@ Cette fonction analyse l'URL et renvoie un objet avec les clés [*scheme*, *user
 [^57]:  Pour en savoir plus, une liste de fonctions est disponible sur ce site : https://github.com/schibsted/jslt/blob/master/functions.md.   
 
 [^58]:  Pour une vision d'ensemble des différents statuts d'une transaction, se référer à la sous-section « Comment sont gérés les statuts d'une transaction ? » du présent document.
+
+[^59]:  Pour en savoir plus, consulter la documentation d'exploitation.
