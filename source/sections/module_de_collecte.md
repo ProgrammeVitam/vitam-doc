@@ -28,7 +28,7 @@ Il s’articule autour des axes suivants :
 -   une présentation des mécanismes mis en œuvre dans la solution logicielle Vitam pour prendre en compte les opérations de collecte, en application du SEDA ;
 -   des conseils de mise en œuvre.
 
-Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 9.1 (printemps 2026). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
+Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 10.0 (automne 2026). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
 
 Présentation du module de collecte
 ----------------------------------
@@ -1117,8 +1117,10 @@ L’envoi et l’enregistrement des données dans le module de collecte peut s�
 
 -   envoi sous forme de fichier .zip d’une arborescence bureautique,
 -   envoi sous forme de fichier .zip d’une arborescence bureautique et d’un fichier annexe intitulé « metadata.csv » ou « metadata.jsonl » référençant des métadonnées descriptives et de gestion.
+-   envoi sous forme de SIP d’un paquet d'archives.
 
-***Point d’attention :*** Pour ces deux envois, la commande est unique. Seule l’association d’un fichier annexe « metadata.csv » ou « metadata.jsonl », optionnelle, diffère.
+***Point d’attention :*** Pour les deux premiers envois, la commande est unique. Seule l’association d’un fichier annexe « metadata.csv » ou « metadata.jsonl », optionnelle, diffère.
+
 
 ##### Envoi d’une arborescence bureautique
 
@@ -1203,8 +1205,7 @@ Lors de cette action, l’opération peut aboutir aux résultats suivants :
 | Statut | Motifs |
 | --- | --- |
 | Succès | Action réalisée sans rencontrer de problèmes particuliers. |
-| Échec |  - Le fichier .zip n’a pas été téléchargé pour cause de nom erroné ou de chemin introuvable.<br> - La transaction n’existe pas ou est erronée.<br> - 
-La transaction a été clôturée. |
+| Échec |  - Le fichier .zip n’a pas été téléchargé pour cause de nom erroné ou de chemin introuvable.<br> - La transaction n’existe pas ou est erronée.<br> - La transaction a été clôturée. |
 
 Elle n’est pas journalisée dans le journal des opérations.
 
@@ -1366,7 +1367,7 @@ Lors de cette action, l’opération peut aboutir aux résultats suivants :
 
 Cette action n’est pas journalisée dans le journal des opérations.
 
-***Point d’attention :*****
+***Point d’attention :***
 
 -   Au terme de la V.8.1, le module de collecte peut :
 
@@ -1601,7 +1602,7 @@ Cette action provoque :
 		
 		   -   l’identifiant de la transaction (_opi),		   
 		   -   l’identifiant de l'upload ou batch (_batchId),
-           -   l'identifiant du service producteur, présent dans le SIP (_sp et _sps),
+		   -   l'identifiant du service producteur, présent dans le SIP (_sp et _sps),
 		   -   la version du SEDA du message ArchiveTransfer (_sedaVersion),
 		   -   la version de la solution logicielle Vitam (_implementationVersion);
 	
@@ -1716,7 +1717,7 @@ Lors de cette action, l’opération peut aboutir aux résultats suivants :
 
 Elle est journalisée dans le journal des opérations (COLLECT_INGEST). L'opération n'est pas associée à un rapport.
 
-***Point d’attention :*** Au terme de la V.9.1 :
+***Point d’attention :*** Au terme de la V.10.0 :
 
 -   Ce service est disponible dans une version **bétâ**.
 -   Les métadonnées d'en-tête du manifeste.xml ne sont pas enregistrées dans le module de collecte.
@@ -1725,7 +1726,7 @@ Elle est journalisée dans le journal des opérations (COLLECT_INGEST). L'opéra
 	-  les données référentielles présentes dans le projet de versement et la transaction associée au SIP,
 	-  les données référentielles présentes au niveau des unités archivistiques et des groupes d'objets techniques (_sp et _sps), mais aussi de l'opération présente dans le journal des opérations, qui sont celles présentes dans le SIP.
 -   Les journaux du cycle de vie, pouvant être présents dans le manifeste.xml ne sont pas enregistrés.
--   Les rattachements ne sont pas supportés. De fait, il est interdit de déclarer des blocs UpdateOperation dans le manifeste.xml.
+-   Les rattachements sont supportés. De fait, il est possible de déclarer des blocs UpdateOperation dans le manifeste.xml.
 -   Il n'est pas recommandé d'importer un SIP sans objets binaires, car le module de collecte ne permet pas de verser dans la solution logicielle Vitam d'arborescences sans objets binaires.
 
 ###### Utilisation dans VitamUI
@@ -1734,7 +1735,7 @@ L’APP « Collecte et préparation des versements » du front-office VitamUI 
 
 Le détail du projet de versement, ainsi que les archives qui lui sont associées sont par ailleurs accessibles depuis l’APP.
 
-***Point d’attention :*** Au terme de la V.9.0 :
+***Point d’attention :*** Au terme de la V.10.0 :
 
 -   Ce service est disponible dans une version **bétâ**.
 -   Les métadonnées d'en-tête du manifeste.xml ne sont pas enregistrées dans le module de collecte.
@@ -1743,7 +1744,7 @@ Le détail du projet de versement, ainsi que les archives qui lui sont associée
 	-  les données référentielles présentes dans le projet de versement et la transaction associée au SIP,
 	-  les données référentielles présentes au niveau des unités archivistiques et des groupes d'objets techniques (_sp et _sps), mais aussi de l'opération présente dans le journal des opérations, qui sont celles présentes dans le SIP.
 -   Les journaux du cycle de vie, pouvant être présents dans le manifeste.xml ne sont pas enregistrés.
--   Les rattachements ne sont pas supportés. De fait, il est interdit de déclarer des blocs UpdateOperation dans le manifeste.xml.
+-   Les rattachements sont supportés. De fait, il est possible de déclarer des blocs UpdateOperation dans le manifeste.xml.
 -   Il n'est pas recommandé d'importer un SIP sans objets binaires, car le module de collecte ne permet pas de verser dans la solution logicielle Vitam d'arborescences sans objets binaires.
 
 
@@ -2396,9 +2397,7 @@ Lors de cette action, l’opération peut aboutir aux résultats suivants :
 
 L’APP « Collecte et préparation des versements » du front-office VitamUI fournie avec la solution logicielle Vitam utilise l'API de téléchargement d'un SIP.
 
-Ce service est disponible depuis la page permettant de visualiser l’ensemble des transactions (ou versements) associées à un projet de versement, où il est possible de :
-
-    -   « Télécharger » un SIP.
+Ce service est disponible depuis la page permettant de visualiser l’ensemble des transactions (ou versements) associées à un projet de versement, où il est possible de  « Télécharger » un SIP.
 
 ***Point d'attention :*** Le bouton est :
 
@@ -2984,9 +2983,11 @@ Les opérations de suppression sont journalisées et leur résultat accessible d
 
 #### Ajout d'archives
 
-##### Utilisation des API
+##### Par envoi d'une arborescence bureautique
 
-La solution logicielle Vitam permet d'ajouter des unités archivistiques à une transaction donnée.
+###### Utilisation des API
+
+La solution logicielle Vitam permet d'ajouter des unités archivistiques à une transaction donnée par envoi d'une arborescence bureautique.
 
 ***Point d’attention :*** 
 
@@ -3066,9 +3067,117 @@ Elle n’est pas journalisée dans le journal des opérations.
 -   Au terme de la V.8.1, il est recommandé que les noms de répertoires et de fichiers ne contiennent ni caractère accentué, ni virgule, ni apostrophe, ni parenthèse, ni espace, ni élément de ponctuation, ou tout autre caractère spécial. Ne sont à privilégier que l’underscore et le tiret comme séparateurs.
     Néanmoins, s’ils en contiennent et si l’arborescence bureautique émane d’un environnement Windows, il est recommandé d’utiliser l’outil Winzip pour la zipper, afin d’éviter des problèmes d’encodage.
 
-##### Utilisation dans VitamUI
+###### Utilisation dans VitamUI
 
 L’APP « Collecte et préparation des versements » du front-office VitamUI fournie avec la solution logicielle Vitam permet d'ajouter des archives supplémentaires dans une transaction, en choisissant sa position cible dans l'arborescence, au moyen d’un wizard ou boîte de dialogue contenant une fenêtre d'upload.
+Elle propose d'ajouter une arborescence dans une forme zippée ou non zippée.
+
+##### Par envoi d'un paquet d'archives sous forme de SIP
+
+###### Utilisation des API
+
+La solution logicielle Vitam permet d'ajouter des unités archivistiques à une transaction donnée au moyen de l'envoi d'un paquet d'archives sous forme de SIP.
+
+***Point d’attention :*** En prérequis à cette action, il faut avoir au préalable créé une transaction et le signaler dans l’API.
+
+*Exemple : requête en vue d'ajouter une ou plusieurs unité(s) archivistique(s) à une transaction dont l’identifiant est «  aeeaaaaaachj3m7nabjocamcdqr2rqaaaaaq »*
+
+```  
+  @transaction-id= *aeeaaaaaachj3m7nabjocamcdqr2rqaaaaaq*
+  
+POST {{url}}/collect-external/v1/transactions/{{transaction-id}}/uploadSip
+Accept: application/json
+Content-Type: application/zip
+X-Tenant-Id: {{tenant}}
+X-Access-Contract-Id: {{access-contract}}
+*X-Attachement-Id : guid-de-au-cible*
+
+< C:/Users/doc_a_ajouter_dans_sip.zip
+```  
+
+Cette action provoque :
+
+-   si elle est en succès :
+
+	-   la création des unités archivistiques dans la base de données MongoDB, dans la collection « Unit » (base *MetadataCollect[^10]*). Sont enregistrés automatiquement[^11] :
+
+	    À chaque enregistrement, sont associés :
+				-   l’identifiant de la transaction (_opi) ;
+				-   un identifiant de batch (_batchId) ;
+				-   l'identifiant du service producteur (_sp et _sps) ;
+
+	-   la création de métadonnées techniques dans la base de données MongoDB, dans la collection « ObjectGroup » (base *MetadataCollect[^12]*) ;
+
+	    À chaque enregistrement, sont associés :
+					-   l’identifiant de la transaction (_opi) ;
+					-   un identifiant de batch (_batchId) ;
+					-   l'identifiant du service producteur (_sp) ;
+			
+			   Le cas échéant, la mise à jour des métadonnées techniques de l’objet avec :
+
+					-	modification de l’empreinte d’un fichier numérique,
+					-   ajout ou modification de l’identification de son format,
+					-   mise à jour de son poids exprimé en octets ;
+
+	-   l’enregistrement des objets numériques sur les offres de stockage.
+
+-   si elle est en erreur :
+
+    -   l'enregistrement de l'upload en erreur dans la transaction (Batches), incluant :
+	
+		- son identifiant (_batchId),
+		- le résultat qui sera alors égal à « KO » (_batchStatus),
+		- le traitement concerné (evTypeProc).
+	
+	-   si au moins une erreur concerne des contrôles relatifs aux unités archivistiques (STP_UNIT_CHECK_AND_PROCESS) :
+
+		- un enregistrement de l’erreur dans les métadonnées de l’unité archivistique (_errors).
+
+	-   si au moins une erreur concerne des contrôles relatifs aux groupes d’objets techniques (STP_OG_CHECK_AND_TRANSFORME) :
+
+		- un enregistrement de l’erreur dans les métadonnées de l’unité archivistique (_ogInfo),
+
+		- un enregistrement de l’erreur dans les métadonnées du groupe d’objets techniques (_errors).
+
+***Point d’attention :*** Au terme de la V.10.0 :
+
+-   Ce service d’enregistrement des erreurs est disponible dans une version bétâ.
+
+-   les erreurs liées aux contrôles relatifs aux unités archivistiques (STP_UNIT_CHECK_AND_PROCESS) ou aux groupes d’objets techniques (STP_OG_CHECK_AND_TRANSFORME) sont cumulables.
+
+-   si le groupe d’objets techniques contient une erreur à l’étape STP_OG_CHECK_AND_TRANSFORME, celle-ci sera également enregistrée dans les métadonnées de l’unité archivistique référençant ce groupe d’objets techniques.
+
+-   le contrôle antivirus a été intégré à l’étape STP_OG_CHECK_AND_TRANSFORME, lors du contrôle OG_OBJECTS_ANTIVIRUS_CHECK.
+
+Lors de cette action, l’opération peut aboutir aux résultats suivants :
+
+| Statut | Motifs |
+| --- | --- |
+| Succès | Action réalisée sans rencontrer de problèmes particuliers. |
+| Avertissement | - Au moins un format de fichier a été réidentifié.<br>- Le SIP ne contient pas d’objets binaires.<br>- L’empreinte a été recalculée. |
+| Échec |  - Le fichier .zip n’a pas été téléchargé pour cause de nom erroné ou de chemin introuvable.<br>- La transaction n’existe pas ou est erronée.<br>- La transaction a été clôturée.<br>- L'identifiant technique de la position cible est erroné.</br>- Le SIP contient au moins une erreur ne permettant pas d’aboutir à l’enregistrement du SIP dans la transaction. |
+
+Elle est journalisée dans le journal des opérations (COLLECT_INGEST). L’opération n’est pas associée à un rapport.
+
+***Point d’attention :*** Au terme de la V.10.0 :
+
+-   Ce service est disponible dans une version bétâ.
+
+-   Les métadonnées d’en-tête du manifeste.xml ne sont pas enregistrées dans le module de collecte.
+
+-   Aucun contrôle de cohérence n’est fait entre les données référentielles présentes dans la transaction associée au SIP et celles déclarées dans le SIP. Il faut veiller à ce que ces références coïncident, sans quoi certaines incohérences apparaîtront entre :
+
+	   -   les données référentielles présentes dans le projet de versement et la transaction associée au SIP,
+	   
+	   -   les données référentielles présentes au niveau des unités archivistiques et des groupes d’objets techniques (_sp et _sps), mais aussi de l’opération présente dans le journal des opérations, qui sont celles présentes dans le SIP.
+
+-   Les journaux du cycle de vie, pouvant être présents dans le manifeste.xml ne sont pas enregistrés.
+
+-   Il n’est pas recommandé d’importer un SIP sans objets binaires, car le module de collecte ne permet pas de verser dans la solution logicielle Vitam d’arborescences sans objets binaires.
+
+###### Utilisation dans VitamUI
+
+L’APP « Collecte et préparation des versements » du front-office VitamUI fournie avec la solution logicielle Vitam permet d'ajouter des archives supplémentaires dans une transaction par envoi d'un paquet d'archives inclut dans un SIP, en choisissant sa position cible dans l'arborescence, au moyen d’un wizard ou boîte de dialogue contenant une fenêtre d'upload.
 
 #### Suppression d'archives
 
