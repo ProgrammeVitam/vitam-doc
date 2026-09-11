@@ -20,7 +20,7 @@ Introduction
 
 Le présent document constitue une présentation des fonctionnalités associées au Dissemination Information Package dans la solution logicielle Vitam.  
 
-Il décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 9.1 (printemps 2026). Il a vocation à être amendé, complété et enrichi au fur et à mesure des développements de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
+Il décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 10.0 (automne 2026). Il a vocation à être amendé, complété et enrichi au fur et à mesure des développements de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
 
 Présentation du DIP
 ----
@@ -130,6 +130,7 @@ Ce bordereau minimal peut être enrichi par la suite par l’utilisateur applica
 Via les API aux bornes de la solution logicielle Vitam, plusieurs critères de constitution du DIP sont utilisables : identifiant d’une opération d’entrée, unité archivistique précise, ensemble des unités archivistiques dépendant d’une unité archivistique précise, etc. Des filtres supplémentaires peuvent être demandés sur : 
 
 - les usages. Ce filtre sera contrôlé par rapport aux droits octroyés par le contrat accès ;
+- les journaux du cycle de vie des unités archivistiques et des groupes d'objets techniques ;
 - la version du SEDA. Ce filtre fonctionne de la manière suivante :
   - S’il n’est pas utilisé, le DIP généré sera déclaré en SEDA 2.3 ;
   - Un contrôle de compatibilité est effectué entre la version du SEDA demandée dans le DIP et celle des unités archivistiques devant intégrer ce dernier.
@@ -156,8 +157,10 @@ Statut|Motifs|
 
 Lorsque l’opération d’export du DIP est terminée, le DIP peut être récupéré :
 
-- par API, en utilisant le service fourni par le endpoint access-external/v1/dipexport, au moyen de l’identifiant de l’opération d’export ;
+- par API, en utilisant le service fourni par le endpoint access-external/v2/dipexport, au moyen de l’identifiant de l’opération d’export ;
 - depuis VitamUI, à partir de l’APP Journal des opérations.
+
+***Point d'attention :*** le endpoint access-external/v1/dipexport a été remplacé par le endpoint actuel qui rend le même service.
 
 Il est également possible de récupérer l’empreinte du DIP générée depuis le journal des opérations et disponible à la tâche de Création de l’archive et de son déplacement vers l’espace de stockage .
 
@@ -193,13 +196,15 @@ La constitution du DIP complet nécessite de définir plusieurs paramètres qui 
 - informations facultatives :
     - identifiant de la réponse à une demande d’autorisation (AuthorizationRequestReply),
     - intitulé (Comment),
-    - identifiant du service versant (SubmissionAgencyIdentifier).
+    - identifiant du service versant (SubmissionAgencyIdentifier)
+	- contrat d’accès ou tout autre convention utilisée (ArchivalAgreement).
 
 Les valeurs de ces paramètres ne sont pas contrôlées par rapport aux référentiels présents dans la solution logicielle Vitam. Ainsi, il est tout à fait possible, par exemple, d’indiquer un identifiant de service d’archives qui ne figure pas dans le référentiel des services agents.
 
 Des filtres supplémentaires peuvent être demandés sur : 
 
 - les usages. Ce filtre sera contrôlé par rapport aux droits octroyés par le contrat accès ;
+- les journaux du cycle de vie des unités archivistiques et des groupes d'objets techniques ;
 - la version du SEDA. Ce filtre fonctionne de la manière suivante :
     - S’il n’est pas utilisé, le DIP généré sera déclaré en SEDA 2.3 ;
     - Un contrôle de compatibilité est effectué entre la version du SEDA demandée dans le DIP et celle des unités archivistiques devant intégrer ce dernier.
@@ -254,18 +259,18 @@ Il est composé :
     - avec leurs métadonnées descriptives ;
 - de métadonnées communes à toute l’arborescence d’unités archivistiques : déclaration du service producteur (hérité de la balise OriginatingAgencyIdentifier) présente dans le ManagementMetadata du SIP à l’origine de l’entrée pour les DIP mono-producteurs ; pour les DIP multi-producteurs, la valeur de ce champ est « Export VITAM »[^3]; déclaration du service versant (SubmissionAgencyIdentifier), identifiant de la demande (MessageRequestIdentifier), identifiant du demandeur (sous-bloc Identifier inclus dans le bloc Requester) et identifiant du service d’archives (sous-bloc Identifier inclus dans le bloc ArchivalAgency) alimentés à partir des informations fournies lors de la demande de constitution du DIP.
 
-Le DIP de transfert
+Le SIP / DIP de transfert
 ----
 
-Le DIP généré dans le cadre du transfert doit pouvoir être pris en charge sur une autre plate-forme utilisant la solution logicielle Vitam. Le bordereau correspond donc au message ArchiveTransfer du SEDA.
+Le SIP / DIP généré dans le cadre du transfert doit pouvoir être pris en charge sur une autre plate-forme utilisant la solution logicielle Vitam. Le bordereau correspond donc au message ArchiveTransfer du SEDA.
 
-### Les modalités de lancement de l’opération de mise à disposition du DIP de transfert
+### Les modalités de lancement de l’opération de mise à disposition du SIP / DIP de transfert
 
-Depuis VitamUI, il est également possible de demander à générer un DIP de transfert dans l’APP Recherche et consultation des archives, après avoir préalablement sélectionné un lot d’archives.
+Depuis VitamUI, il est également possible de demander à générer un SIP / DIP de transfert dans l’APP Recherche et consultation des archives, après avoir préalablement sélectionné un lot d’archives.
 
 Via les API aux bornes de la solution logicielle Vitam, plusieurs critères de constitution du DIP complet sont utilisables : identifiant d’une opération d’entrée, unité archivistique précise, ensemble des unités archivistiques dépendant d’une unité archivistique précise, etc. 
 
-La constitution du DIP de transfert nécessite de définir plusieurs paramètres qui seront utilisés pour renseigner le manifeste :
+La constitution du SIP / DIP de transfert nécessite de définir plusieurs paramètres qui seront utilisés pour renseigner le manifeste :
 - informations obligatoires :
     - contrat d’entrée à utiliser pour la prise en charge dans la plate-forme de destination (ArchivalAgreement),
     - identifiant du service d’archives (sous-bloc Identifier du bloc ArchivalAgency),
@@ -281,6 +286,7 @@ Les valeurs de ces paramètres ne sont pas contrôlées par rapport aux référe
 
 Des filtres supplémentaires peuvent être demandés sur : 
     - les usages. Ce filtre sera contrôlé par rapport aux droits octroyés par le contrat accès ;
+	- les journaux du cycle de vie des unités archivistiques et des groupes d'objets techniques ;
     - la version du SEDA. Ce filtre fonctionne de la manière suivante :
         - S’il n’est pas utilisé, le DIP généré sera déclaré en SEDA 2.3 ;
         - Un contrôle de compatibilité est effectué entre la version du SEDA demandée dans le DIP et celle des unités archivistiques devant intégrer ce dernier.
@@ -299,29 +305,29 @@ Elle peut aboutir aux statuts suivants :
 |Erreur technique|Erreur technique lors du déplacement des objets binaires de l'offre de stockage vers l'espace de travail interne.|
 
 **Point d’attention :** 
-- Dans le cas d’un DIP de transfert correspondant à une opération d’entrée, le paquet comprendra toutes les unités importées dans le système via cette opération d’entrée dans leur état au moment de la demande d’export du DIP : certaines unités archivistiques pourront avoir été modifiées ou éliminées depuis l’opération d’entrée initiale.
+- Dans le cas d’un SIP / DIP de transfert correspondant à une opération d’entrée, le paquet comprendra toutes les unités importées dans le système via cette opération d’entrée dans leur état au moment de la demande d’export du DIP : certaines unités archivistiques pourront avoir été modifiées ou éliminées depuis l’opération d’entrée initiale.
 - Si pour un usage donné le groupe d’objets techniques comprend plusieurs versions, c’est l’objet technique correspondant à la dernière version qui sera exporté.
 
 ### Les modalités de récupération du DIP de transfert
 
-Lorsque l’opération d’export du DIP de transfert est terminée, le DIP peut être récupéré :
+Lorsque l’opération d’export du SIP / DIP de transfert est terminée, le SIP / DIP peut être récupéré :
 
 - par API, en utilisant le service fourni par le endpoint access-external/v1/transfers, au moyen de l’identifiant de l’opération d’export.
 - depuis VitamUI, à partir de l’APP Journal des opérations.
 
-Il est également possible de récupérer l’empreinte du DIP générée depuis le journal des opérations et disponible à la tâche de Création de l’archive et de son déplacement vers l’espace de stockage.
+Il est également possible de récupérer l’empreinte du SIP / DIP générée depuis le journal des opérations et disponible à la tâche de Création de l’archive et de son déplacement vers l’espace de stockage.
 
-### Le bordereau du DIP de transfert
+### Le bordereau du SIP / DIP de transfert
 
-À la racine du DIP de transfert se trouve le bordereau de mise à disposition qui décrit l’ensemble des métadonnées du paquet. Ce bordereau répond aux caractéristiques définies par le SEDA pour le message ArchiveTransfer, de manière à pouvoir être pris en charge par une plate-forme utilisant la solution logicielle Vitam.
+À la racine du SIP / DIP de transfert se trouve le bordereau de mise à disposition qui décrit l’ensemble des métadonnées du paquet. Ce bordereau répond aux caractéristiques définies par le SEDA pour le message ArchiveTransfer, de manière à pouvoir être pris en charge par une plate-forme utilisant la solution logicielle Vitam.
 
 Il est composé :
-- d’un en-tête comprenant un intitulé (Comment) alimenté à partir des informations fournies lors de la demande de constitution du DIP ; une date correspondant à la date de génération du DIP ; un contrat d’entrée à utiliser lors de la prise en charge du DIP de transfert dans le SAE cible alimenté à partir des informations fournies lors de la demande de constitution du DIP ; un identifiant (MessageIdentifier) correspondant à l’opération de constitution du DIP ; la référence aux listes de codes ;
+- d’un en-tête comprenant un intitulé (Comment) alimenté à partir des informations fournies lors de la demande de constitution du SIP / DIP ; une date correspondant à la date de génération du SIP / DIP ; un contrat d’entrée à utiliser lors de la prise en charge du SIP / DIP de transfert dans le SAE cible alimenté à partir des informations fournies lors de la demande de constitution du SIP / DIP ; un identifiant (MessageIdentifier) correspondant à l’opération de constitution du SIP / DIP ; la référence aux listes de codes ;
 - d’une déclaration des objets binaires (DataObjectPackage > BinaryDataObject) ou des objets physiques (DataObjectPackage > PhysicalDataObject), le cas échéant avec les journaux du cycle de vie des objets ;
 - d’une déclaration des unités archivistiques représentées par ces objets (DataObjectPackage > DescriptiveMetadata) : 
     - avec leurs métadonnées de gestion, avec, le cas échéant, les journaux du cycle de vie associés ;
     - avec leurs métadonnées descriptives ;
-- de métadonnées communes à toute l’arborescence d’unités archivistiques alimentées à partir des informations fournies lors de la demande de constitution du DIP : identifiant du service producteur (OriginatingAgencyIdentifier) ; identifiant du service versant (SubmissionAgencyIdentifier) ; identifiant d’un transfert associé (RelatedTransferReference) ; identifiant de la réponse à une demande de transfert (TransferRequestReplyIdentifier) ; identifiant du service d’archives (sous-bloc Identifier inclus dans le bloc ArchivalAgency) ; identifiant du service de transfert (sous-bloc Identifier inclus dans le bloc TransferringAgency).
+- de métadonnées communes à toute l’arborescence d’unités archivistiques alimentées à partir des informations fournies lors de la demande de constitution du SIP / DIP : identifiant du service producteur (OriginatingAgencyIdentifier) ; identifiant du service versant (SubmissionAgencyIdentifier) ; identifiant d’un transfert associé (RelatedTransferReference) ; identifiant de la réponse à une demande de transfert (TransferRequestReplyIdentifier) ; identifiant du service d’archives (sous-bloc Identifier inclus dans le bloc ArchivalAgency) ; identifiant du service de transfert (sous-bloc Identifier inclus dans le bloc TransferringAgency).
 
 Configuration du service
 ----
