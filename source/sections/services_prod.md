@@ -87,6 +87,7 @@ Mécanismes mis en œuvre dans la solution logicielle Vitam
 
 La solution logicielle Vitam offre à un service d’archives plusieurs fonctionnalités lui permettant de prendre en compte la notion de service producteur :
 - en administration, l’existence d’un référentiel des services agents ;
+- en collecte, la désignation d'un référentiel à utiliser ;
 - en entrée, le contrôle du service producteur et du service versant par rapport au référentiel des services agents, l’enregistrement de la prise en charge d’un transfert pour un service producteur donné et l’enrichissement du registre des fonds des services producteurs ;
 - en gestion des archives :
   - la formalisation d’un état des archives produites par un même producteur et conservées par une plate-forme utilisant la solution logicielle Vitam sous la forme d’un registre des fonds ;
