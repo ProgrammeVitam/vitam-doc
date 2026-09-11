@@ -81,7 +81,7 @@ Pour une simple transmission d’objet technique, il est conseillé d’utiliser
 Réalisation d’une opération de transfert avec la solution logicielle Vitam
 ---
 
-La solution logicielle Vitam permet de constituer des DIP de transfert destinés à être pris en charge par une plate-forme utilisant la solution logicielle Vitam (autre tenant ou autre instance). Le transfert génère un accusé de prise en charge dans le système d’archivage de destination et un effacement des données dans le système d’origine.
+La solution logicielle Vitam permet de constituer des SIP / DIP de transfert destinés à être pris en charge par une plate-forme utilisant la solution logicielle Vitam (autre tenant ou autre instance). Le transfert génère un accusé de prise en charge dans le système d’archivage de destination et un effacement des données dans le système d’origine.
 
 Modélisation des opérations et des objets échangés :
 ![modélisation des opérations et des objets échangés](./medias/transfert/modelisation_operation_objet_echanges.png)
@@ -98,8 +98,8 @@ La solution logicielle permet de préparer un lot d’archives à transférer.
 - Des filtres supplémentaires peuvent être demandés sur :
     - les usages. Ce filtre sera contrôlé par rapport aux droits octroyés par le contrat accès, pour ne transférer par exemple que les originaux numériques (BinaryMaster) sans les versions de diffusion ou les vignettes ;
     - la version du SEDA. Ce filtre fonctionne de la manière suivante :
-        - S’il n’est pas utilisé, le DIP de transfert généré sera déclaré en SEDA 2.3 ;
-        - Un contrôle de compatibilité est effectué entre la version du SEDA demandée dans le DIP et celle des unités archivistiques devant intégrer ce dernier.
+        - S’il n’est pas utilisé, le SIP / DIP de transfert généré sera déclaré en SEDA 2.3 ;
+        - Un contrôle de compatibilité est effectué entre la version du SEDA demandée dans le SIP / DIP et celle des unités archivistiques devant intégrer ce dernier.
     - Les journaux de cycle de vie peuvent être intégrés dans le lot d’archives à transférer. Il est conseillé d’activer cette option lorsque les unités archivistiques et les groupes d’objets techniques transférés doivent pouvoir faire l’objet d’une traçabilité forte.
 
 L’utilisateur autorisé doit renseigner un certain nombre de paramètres qui permettront d’alimenter le manifeste référençant les archives à transférer :
@@ -145,10 +145,10 @@ Sont également disponibles :
 {"id":"aeaqaaaabahftfesaab6yalqlwe54laaaaba","status":"OK"}
 ```
 
-Un DIP dit de « transfert » dont l’intitulé correspond au préfixe « TRANSFER- », suivi de l’identifiant de l’opération, et qui prend la forme d’un fichier ZIP. Ce DIP contient :
+Un SIP / DIP dit de « transfert » dont l’intitulé correspond au préfixe « TRANSFER- », suivi de l’identifiant de l’opération, et qui prend la forme d’un fichier ZIP. Ce SIP / DIP contient :
 - un fichier « manifest.xml » correspondant à un message « ArchiveTransfer » du SEDA et dont l’identifiant du message correspond à l’identifiant de l’opération (MessageIdentifier) ;
 - un répertoire Content contenant l’ensemble des objets binaires (fichiers numériques) associés au bordereau, dans le cas où des objets sont transférés.
-- l’empreinte du DIP de transfert disponible à la tâche de Création de l’archive et de son déplacement vers l’espace de stockage .
+- l’empreinte du SIP / DIP de transfert disponible à la tâche de Création de l’archive et de son déplacement vers l’espace de stockage .
 
 **Point d’attention :**
 - Dans le fichier « manifest.xml », la distinction entre unités archivistiques d’arbre, de plan ou standard n’est pas conservée.
@@ -205,7 +205,7 @@ En effet, l’identifiant de l’opération de transfert est indexé dans les m�
 
 ### Transfert d’archives vers un autre système (INGEST)
 
-Le DIP dit « de transfert » peut être alors transféré :
+Le SIP / DIP dit « de transfert » peut être alors transféré :
 - soit sur un autre tenant de la même plate-forme d’archivage utilisant la solution logicielle Vitam ;
 - soit sur une autre plate-forme utilisant la solution logicielle Vitam ;
 - soit dans un autre système d’archivage électronique.
