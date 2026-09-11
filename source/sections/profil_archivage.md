@@ -110,6 +110,7 @@ Mécanismes mis en œuvre dans la solution logicielle Vitam
 La solution logicielle Vitam offre à un service d’archives ou à un service externe plusieurs fonctionnalités lui permettant de mettre en œuvre des profils d’archivage :
 - l’administration d’un référentiel des profils d’archivage, ainsi que sa préservation ;
 - l’association d’un profil d’archivage à un contrat d’entrée ;
+- en collecte, la désignation d'un référentiel à utiliser ;
 - en entrée du système, un double contrôle de cohérence :
     - vérification que le profil d’archivage déclaré dans le SIP (ArchivalProfile) est conforme au contrat d’entrée qui le déclare dans le référentiel des contrats d’entrée et que ce profil d’archivage est actif ;
     - vérification que le bordereau de transfert est conforme à son profil d’archivage.
@@ -308,7 +309,69 @@ Il s’agit d’un acte technique. Il donne lieu à un log et non pas à une op�
 |Succès|opération réalisée sans rencontrer de problèmes particuliers.|
 |Avertissement|opération réalisée, présentant une incohérence, notamment :<br>- quand un fichier est absent sur au moins une des offres,<br>- quand l'empreinte n'est pas conforme sur une des offres,<br>- quand un fichier (avec la même empreinte qu'en base) présent sur au moins une des offres à été recopié sur les offres,<br>- quand au moins un fichier est manquant ou son empreinte est différente.|
 |Échec|Au moins un profil d’archivage est incohérent entre la base de données MongoDB et toutes les offres de stockage.|
-   
+ 
+### Collecte
+
+##### Configuration de la connexion aux référentiels pour VitamUI
+
+Il est possible de choisir dans VitamUI d'utiliser ou non la connexion du projet de versement à des référentiels afin d'obtenir une aide à la saisie au sein du parcours de création du projet de versement.
+Cette connexion peut se faire avec le tenant et le SAE locaux mais elle peut également être mise en place avec des tenants d'autres instances externes de la solution logicielle Vitam. 
+Ce service vaut notamment pour le référentiel des règles de gestion.
+
+Cette connexion demande alors une configuration au préalable décrite ci-après : 
+
+Il est nécessaire de configurer les keystores et truststores des instances cibles dans le dossier environments/keystores_external_archiving_systems/ dans le dossier de déploiement de l'installation de Vitam-UI.
+
+    - /environments/keystores_external_archiving_systems/keystore_<external_system_id1>.p12
+    - /environments/keystores_external_archiving_systems/trustore_<external_system_id1>.jks
+    - ...
+
+Les mots de passe des keystores et truststores doivent être définis un fichier vault (exemple: vault_keystores_external_archiving_systems.yml) à éditer via l'outil ansible-vault :
+
+```
+external_archiving_systems:
+  keystore_password:
+    <external_system_id1>: keystore_external_system_1_changeit
+    <external_system_id2>: keystore_external_system_2_changeit
+  truststore_password:
+    <external_system_id1>: truststore_external_system_1_changeit
+    <external_system_id2>: truststore_external_system_2_changeit
+```
+
+Les URLs d'accès aux SAE tiers, et les autorisations d'accès par tenant sont à définir dans la configuration ansible :
+
+``` 
+external_archiving_systems:
+  client_configuration:
+  - archiving_system_id: <external_system_id1>
+    name: "EXTERNAL ENV NAME 1"
+    access_external:
+      host: <host_name>
+      port: <port>
+  - archiving_system_id: <external_system_id2>
+    name: "EXTERNAL ENV NAME 2"
+    access_external:
+        host: <host_name>
+        port: <port>
+  - ...
+``` 
+``` 
+  tenant_configuration:
+  - tenant: 2
+    external_archiving_system_references:
+      - archiving_system_id: local # Use "local" as archiving_system_id to reference the current Vitam instance with other tenants
+        tenantIds: [1, 2, 3]       # Target tenants
+      - archiving_system_id: <external_system_id1>
+        tenantIds: [0, 2]
+  - tenant: 3
+    external_archiving_system_references:
+      - archiving_system_id: <external_system_id2>
+        tenantIds: [10]
+  - ...
+``` 
+
+**Point d’attention :** Cette configuration n'est disponible que dans l'application VitamUI. Au terme de la version 9.0, il n'est pas mis à disposition dans le back-office de la solution logicielle Vitam. Un applicatif autre que VitamUI devra nécessairement développer son propre service s'il souhaite mettre à disposition de ses utilisateurs ce type de service.
+
 ### Processus d’entrée
 
 #### Déclaration d’un profil d’archivage dans un contrat d’entrée
