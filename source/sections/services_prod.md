@@ -22,7 +22,7 @@ Il s’articule autour des axes suivants :
 - une présentation des mécanismes mis en œuvre dans la solution logicielle Vitam pour prendre en compte cette notion, en application du SEDA ;
 - des recommandations aux ministères porteurs, partenaires et utilisateurs de la solution logicielle Vitam sur la manière d’utiliser les fonctionnalités associées aux services producteurs. 
 
-Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 9.1 (printemps 2026). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
+Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 10.0 (automne 2026). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
 
 Présentation de la notion de service producteur
 ---
@@ -175,6 +175,68 @@ Par ailleurs, la solution logicielle permet de consulter le détail d'un service
 L'accès au référentiel est possible depuis :
 -  les API,
 -  l'APP VitamUI « Services agents ».
+
+### Collecte
+
+##### Configuration de la connexion aux référentiels pour VitamUI
+
+Il est possible de choisir dans VitamUI d'utiliser ou non la connexion du projet de versement à des référentiels afin d'obtenir une aide à la saisie au sein du parcours de création du projet de versement.
+Cette connexion peut se faire avec le tenant et le SAE locaux mais elle peut également être mise en place avec des tenants d'autres instances externes de la solution logicielle Vitam. 
+Ce service vaut notamment pour le référentiel des règles de gestion.
+
+Cette connexion demande alors une configuration au préalable décrite ci-après : 
+
+Il est nécessaire de configurer les keystores et truststores des instances cibles dans le dossier environments/keystores_external_archiving_systems/ dans le dossier de déploiement de l'installation de Vitam-UI.
+
+    - /environments/keystores_external_archiving_systems/keystore_<external_system_id1>.p12
+    - /environments/keystores_external_archiving_systems/trustore_<external_system_id1>.jks
+    - ...
+
+Les mots de passe des keystores et truststores doivent être définis un fichier vault (exemple: vault_keystores_external_archiving_systems.yml) à éditer via l'outil ansible-vault :
+
+```
+external_archiving_systems:
+  keystore_password:
+    <external_system_id1>: keystore_external_system_1_changeit
+    <external_system_id2>: keystore_external_system_2_changeit
+  truststore_password:
+    <external_system_id1>: truststore_external_system_1_changeit
+    <external_system_id2>: truststore_external_system_2_changeit
+```
+
+Les URLs d'accès aux SAE tiers, et les autorisations d'accès par tenant sont à définir dans la configuration ansible :
+
+``` 
+external_archiving_systems:
+  client_configuration:
+  - archiving_system_id: <external_system_id1>
+    name: "EXTERNAL ENV NAME 1"
+    access_external:
+      host: <host_name>
+      port: <port>
+  - archiving_system_id: <external_system_id2>
+    name: "EXTERNAL ENV NAME 2"
+    access_external:
+        host: <host_name>
+        port: <port>
+  - ...
+``` 
+``` 
+  tenant_configuration:
+  - tenant: 2
+    external_archiving_system_references:
+      - archiving_system_id: local # Use "local" as archiving_system_id to reference the current Vitam instance with other tenants
+        tenantIds: [1, 2, 3]       # Target tenants
+      - archiving_system_id: <external_system_id1>
+        tenantIds: [0, 2]
+  - tenant: 3
+    external_archiving_system_references:
+      - archiving_system_id: <external_system_id2>
+        tenantIds: [10]
+  - ...
+``` 
+
+**Point d’attention :** Cette configuration n'est disponible que dans l'application VitamUI. Au terme de la version 9.0, il n'est pas mis à disposition dans le back-office de la solution logicielle Vitam. Un applicatif autre que VitamUI devra nécessairement développer son propre service s'il souhaite mettre à disposition de ses utilisateurs ce type de service.
 
 ### Entrées
 Dans le cadre du processus d’entrée d’un ensemble d’archives, suite à la réception d’un message ArchiveTransfer du SEDA, la solution logicielle Vitam effectue les tâches et traitements suivants pour les archives :
@@ -350,7 +412,7 @@ Ce filtrage s’applique également à l’accès au registre des fonds. Ne sero
 - les services producteurs déclarés dans les contrats d’accès font l’objet d’un contrôle d’existence dans le référentiel des services agents. Si un contrat est crée ou modifié avec l’identifiant d’un service inconnu du référentiel, la création ou la modification est refusée ;
 - le filtrage des droits de recherche et de consultation d’archives par service producteur est nécessaire mais non suffisant. D’autres filtres sont mis à disposition par la solution logicielle Vitam, par exemple un filtre définissant une ou plusieurs unité(s) archivistique(s) – qu’elle soit de type arbre de positionnement, plan de classement ou standard – à partir de laquelle les accès sont autorisés.
 
-L’IHM VitamUI utilise :
+L’interface VitamUI utilise :
 - l’ensemble des filtres disponibles dans les contrats d’accès pour :
     - l’APP « Recherche, consultation et gestion des archives »,
     - l’APP « Relevé de valeur probante »,
@@ -358,7 +420,6 @@ L’IHM VitamUI utilise :
     - l’APP « Requêtes DSL » ;
 - le filtre sur les services producteurs pour :
     - l’APP « Dépôt et suivi des versements » ;
-    - l’APP « Registre des fonds » ;
 	- l'APP « Collecte et préparation des versements »
 - le filtre sur les arborescences pour :
     - l’APP « Collecte et préparation des versements »,
