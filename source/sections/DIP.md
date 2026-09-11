@@ -196,7 +196,8 @@ La constitution du DIP complet nécessite de définir plusieurs paramètres qui 
 - informations facultatives :
     - identifiant de la réponse à une demande d’autorisation (AuthorizationRequestReply),
     - intitulé (Comment),
-    - identifiant du service versant (SubmissionAgencyIdentifier).
+    - identifiant du service versant (SubmissionAgencyIdentifier)
+	- contrat d’accès ou tout autre convention utilisée (ArchivalAgreement).
 
 Les valeurs de ces paramètres ne sont pas contrôlées par rapport aux référentiels présents dans la solution logicielle Vitam. Ainsi, il est tout à fait possible, par exemple, d’indiquer un identifiant de service d’archives qui ne figure pas dans le référentiel des services agents.
 
