@@ -28,7 +28,7 @@ Il s’articule autour des axes suivants :
 - une présentation des mécanismes mis en œuvre dans la solution logicielle Vitam pour gérer ces habilitations ;
 - des recommandations aux ministères porteurs, partenaires et utilisateurs de la solution logicielle Vitam sur la manière d’utiliser les fonctionnalités associées à ces habilitations.
 
-Le présent document décrit les fonctionnalités offertes au terme de la version 9.1 (printemps 2026). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
+Le présent document décrit les fonctionnalités offertes au terme de la version 10.0 (automne 2026). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
 
 Administration des habilitations
 ---
@@ -1844,6 +1844,71 @@ Pour connecter une application à la solution logicielle Vitam, il est recommand
 |Administrateur fonctionnel|Activation du contexte|Oui|À la date souhaitée pour commencer les interactions entre l’application versante et/ou accédante et la solution logicielle Vitam|
 |Administrateur technique / fonctionnel|Test avant utilisation courante|Oui||
 
+Collecte
+---
+
+### Mécanismes mis en œuvre par la solution logicielle Vitam
+
+#### Configuration de la connexion aux référentiels pour VitamUI
+
+Il est possible de choisir dans VitamUI d'utiliser ou non la connexion du projet de versement à des référentiels afin d'obtenir une aide à la saisie au sein du parcours de création du projet de versement.
+Cette connexion peut se faire avec le tenant et le SAE locaux mais elle peut également être mise en place avec des tenants d'autres instances externes de la solution logicielle Vitam. 
+Ce service vaut notamment pour le référentiel des règles de gestion.
+
+Cette connexion demande alors une configuration au préalable décrite ci-après : 
+
+Il est nécessaire de configurer les keystores et truststores des instances cibles dans le dossier environments/keystores_external_archiving_systems/ dans le dossier de déploiement de l'installation de Vitam-UI.
+
+    - /environments/keystores_external_archiving_systems/keystore_<external_system_id1>.p12
+    - /environments/keystores_external_archiving_systems/trustore_<external_system_id1>.jks
+    - ...
+
+Les mots de passe des keystores et truststores doivent être définis un fichier vault (exemple: vault_keystores_external_archiving_systems.yml) à éditer via l'outil ansible-vault :
+
+```
+external_archiving_systems:
+  keystore_password:
+    <external_system_id1>: keystore_external_system_1_changeit
+    <external_system_id2>: keystore_external_system_2_changeit
+  truststore_password:
+    <external_system_id1>: truststore_external_system_1_changeit
+    <external_system_id2>: truststore_external_system_2_changeit
+```
+
+Les URLs d'accès aux SAE tiers, et les autorisations d'accès par tenant sont à définir dans la configuration ansible :
+
+``` 
+external_archiving_systems:
+  client_configuration:
+  - archiving_system_id: <external_system_id1>
+    name: "EXTERNAL ENV NAME 1"
+    access_external:
+      host: <host_name>
+      port: <port>
+  - archiving_system_id: <external_system_id2>
+    name: "EXTERNAL ENV NAME 2"
+    access_external:
+        host: <host_name>
+        port: <port>
+  - ...
+``` 
+``` 
+  tenant_configuration:
+  - tenant: 2
+    external_archiving_system_references:
+      - archiving_system_id: local # Use "local" as archiving_system_id to reference the current Vitam instance with other tenants
+        tenantIds: [1, 2, 3]       # Target tenants
+      - archiving_system_id: <external_system_id1>
+        tenantIds: [0, 2]
+  - tenant: 3
+    external_archiving_system_references:
+      - archiving_system_id: <external_system_id2>
+        tenantIds: [10]
+  - ...
+``` 
+
+**Point d’attention :** Cette configuration n'est disponible que dans l'application VitamUI. Au terme de la version 9.0, il n'est pas mis à disposition dans le back-office de la solution logicielle Vitam. Un applicatif autre que VitamUI devra nécessairement développer son propre service s'il souhaite mettre à disposition de ses utilisateurs ce type de service.
+
 Entrées
 ---
 
@@ -2736,6 +2801,10 @@ Liste des permissions qui peuvent être associées à :
 |Ontologie|Importer le référentiel ontologique|ontologies:create:json|
 ||Lister le contenu du référentiel ontologique|ontologies:read|
 ||Lire un vocabulaire|ontologies:id:read:json|
+|Schéma|Récuperer le schéma des unités archivistiques|schema:unit:read|
+||Récuperer le schéma des unités archivistiques par rapport à un profil d'unité archivistique|schema:archiveunitprofile:read|
+||Supprimer un ou plusieurs schémas liés à des unités archivistiques|schema:unit:delete|
+||Récuperer le schéma des groupes d'objets techniques|schema:objectgroup:read|
 |Profils d’unité archivistique|Importer un ou plusieurs profils d’unité archivistique dans le référentiel|archiveunitprofiles:create:binary|
 ||Ecrire un ou plusieurs profils d’unité archivistique dans le référentiel|archiveunitprofiles:create:json|
 ||Lister le contenu du référentiel des profils d’unité archivistique|archiveunitprofiles:read|
@@ -2763,7 +2832,8 @@ Liste des permissions qui peuvent être associées à :
 ||Trouver un service agents avec son identifier|agencies:id:read|
 ||Lister le contenu du référentiel des services agents|agencies:read|
 ||Récupérer le référentiel pour une opération d’import de référentiel des services agents|agenciesreferential:id:read|
-||Création d’un projet de versement|project:create|
+
+|Collecte|Création d’un projet de versement|project:create|
 ||Récupère la liste des projets de versement|project:read|
 ||Récupère la liste des projets de versement par critère de recherche|project:query:read|
 ||Récupère un projet de versement|project:id:read|
@@ -2771,7 +2841,7 @@ Liste des permissions qui peuvent être associées à :
 ||Mise à jour d’un projet de versement|project:update|
 ||Supprime un projet de versement|project:id:delete|
 ||Récupère toutes les unités archivistiques associées à un projet|project:id:units|
-|Collect|Création de la transaction|transaction:create|
+||Création de la transaction|transaction:create|
 ||Mise à jour d’une transaction|transaction:update|
 ||Clôture de la transaction|transaction:close|
 ||Envoi de la transaction|transaction:send|
@@ -2779,9 +2849,12 @@ Liste des permissions qui peuvent être associées à :
 ||Rouvrir une transaction|transaction:reopen|
 ||Récupère une transaction|transaction:id:read|
 ||Supprime une transaction|transaction:id:delete|
+||Envoyer un SIP dans une transaction|transaction:sip:upload|
 ||Charge les binaires en lot|transaction:zip:create|
 ||Créer une unité archivistique|transaction:unit:create|
 ||Verser une archive arborescente ZIP à un projet de versement automatique sans transaction|createproject:id:zip:create|
+||Génère le SIP d'une transaction|transaction:sip:create|
+||Télécharge le SIP d'une transaction|transaction:sip:read|
 ||Récupère toutes les unités archivistiques|transaction:unit:read|
 ||Récupère les unités archivistiques d’une transaction|transaction:id:units|
 ||Récupère une unité archivistique|transaction:unit:id:read|
@@ -2791,6 +2864,11 @@ Liste des permissions qui peuvent être associées à :
 ||Récupère un groupe d’objets techniques|transaction:object:read|
 ||Télécharge un usage/version du binaire d'un groupe d'objets|transaction:binary:read|
 ||Mise à jour unitaire en masse des métadonnées descriptives|transaction:id:units:bulk:update|
+||Mettre à jour les unités archivistiques via fichier CSV de métadonnées|transaction:id:units:metadata:csv:update|
+||Mettre à jour les unités archivistiques via fichier JSONL de métadonnées|transaction:id:units:metadata:jsonl:update|
+||Reclassification d'unités archivistiques d'une transaction|transaction:reclassification|
+||Suppression d'unités archivistiques d'une transaction|transaction:deletion:action|
+
 |Entrées|Récupérer l'accusé de réception pour une opération d'entrée donnée|ingests:id:archivetransfertreply:read|
 ||Récupérer le bordereau de versement pour une opération d'entrée donnée|ingests:id:manifests:read|
 ||Envoyer un SIP à Vitam afin qu'il en réalise l'entrée|ingests:create|
