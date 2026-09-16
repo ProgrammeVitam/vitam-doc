@@ -2852,7 +2852,7 @@ Liste des permissions qui peuvent être associées à :
 ||Envoyer un SIP dans une transaction|transaction:sip:upload|
 ||Charge les binaires en lot|transaction:zip:create|
 ||Créer une unité archivistique|transaction:unit:create|
-||Verser une archive arborescente ZIP à un projet de versement automatique sans transaction|createproject:id:zip:create|
+||Verser une archive arborescente ZIP à un projet de versement automatique sans transaction|project:id:zip:create|
 ||Génère le SIP d'une transaction|transaction:sip:create|
 ||Télécharge le SIP d'une transaction|transaction:sip:read|
 ||Récupère toutes les unités archivistiques|transaction:unit:read|
