@@ -5462,3 +5462,129 @@ La partie « ReportDetail » contient les détails de l’opération de suppre
 		- « PersistentIdentifierContent » : identifiant pérenne
 -  «  objectGroupId » : Id de l’objet groupe
 -  «  unitIds » : une liste des unités archivistiques associées à la version de GOT
+
+
+### Structure du workflow d'audit de la chaîne de traçabilité
+
+Ce processus permet de vérifier l'intégrité et la continuité de la chaîne des journaux de traçabilité sécurisés (opérations (), cycle de vie des unités archivistiques, cycle de vie des objets groupes) sur une période, une version, et un niveau de verbosité des anomalie.
+
+| Identifiant du processus (`id`) | Nom (`name`) | Type de processus (`typeProc`) | Commentaire |
+| :--- | :--- | :--- | :--- |
+| `TRACEABILITY_CHAIN_AUDIT` | Traceability Chain Audit | `AUDIT` | Traceability Chain Audit Workflow |
+
+---
+
+## Vue synthétique des étapes
+
+| Étape (`stepName`) | Comportement (`behavior`) | Type de distribution (`distribution.kind`) | Action(s) principale(s) |
+| :--- | :--- | :--- | :--- |
+| **STP_PREPARE_TRACEABILITY_CHAIN_AUDIT** | `BLOCKING` | `REF` | `TRACEABILITY_CHAIN_AUDIT_DISTRIBUTION_THRESHOLD`, `TRACEABILITY_CHAIN_AUDIT_PREPARE` |
+| **STP_TRACEABILITY_CHAIN_AUDIT_UNIT_CHECKS** | `NOBLOCKING` | `LIST_IN_JSONL_FILE` (`logbookOperations.jsonl`) | `TRACEABILITY_CHAIN_AUDIT_UNITARY_CHECK` |
+| **STP_TRACEABILITY_CHAIN_AUDIT_OPERATIONS_CHAIN_CHECKS** | `BLOCKING` | `REF` | `TRACEABILITY_CHAIN_AUDIT_OPERATIONS_CHAINING_CHECK` |
+| **STP_TRACEABILITY_CHAIN_AUDIT_REPORTING** | `BLOCKING` | `REF` | `TRACEABILITY_CHAIN_AUDIT_REPORTING` |
+| **STP_FINALIZE_TRACEABILITY_CHAIN_AUDIT** | `FINALLY` | `REF` (`query.json`) | `TRACEABILITY_CHAIN_AUDIT_FINALIZATION` |
+
+---
+
+## Détail des étapes et des actions
+
+### 1. Préparation de l'audit (`STP_PREPARE_TRACEABILITY_CHAIN_AUDIT`)
+
+- **Règle** : Cette étape initialise les paramètres de la requête d'audit, prépare les seuils de distribution et identifie la liste des journaux d'opérations de traçabilité à auditer.
+- **Type** : bloquant
+
+#### Actions :
+* **`TRACEABILITY_CHAIN_AUDIT_DISTRIBUTION_THRESHOLD`** :
+  
+- **Règle** : tâche consistant à vérifier les seuils de limitation du nombre d'opérations de sécurisation concernées
+- **Type** : bloquant
+- **Statuts** :
+    - OK : Le nombre d'opérations de sécurisation est inferieur au seuil de la requête **threshold** s'il est renseigné et inferieur au seuil par defaut **distributionThreshold** (TRACEABILITY_CHAIN_AUDIT_DISTRIBUTION_THRESHOLD.OK = Succès de vérification des seuils de limitation de l'audit de chainage)
+    - WARNING: Le seuil de la requête **threshold** est présent et il est superieur au seuil par defaut **distributionThreshold**, et le nombre d'opérations de sécurisation est inferieur au seuil de la requête **threshold** et superieur à celui par défaut **distributionThreshold**(TRACEABILITY_CHAIN_AUDIT_DISTRIBUTION_THRESHOLD.WARNING = Avertissement lors de la vérification des seuils de limitation de l'audit de chainage)    
+    - KO : Si le seuil de la requête **threshold** est présent, le nombre d'opérations de sécurisation est superieur ce seuil. Si le seuil de la requête **threshold** est absent, le nombre d'opérations de sécurisation est superieur au seuil par defaut **distributionThreshold**. (TRACEABILITY_CHAIN_AUDIT_DISTRIBUTION_THRESHOLD.KO = Échec lors de la vérification des seuils de limitation de l'audit de chainage)
+    - FATAL : une erreur technique est survenue lors de la vérification des seuils (TRACEABILITY_CHAIN_AUDIT_DISTRIBUTION_THRESHOLD.FATAL = Erreur technique lors de la vérification des seuils de limitation de l'audit de chainage)
+
+
+* **`TRACEABILITY_CHAIN_AUDIT_PREPARE`** :
+   
+- **Règle** : tâche consistant à récupèrer les métadonnées des opérations de sécurisation, contrôler les statuts d'opérations, les croiser/enrichir avec les processus en cours/en pause, à la fin préparer le fichier de distribution pour le traitement des contrôles unitaires (`logbookOperations.jsonl`).
+- **Type** : bloquant
+
+---
+
+### 2. Contrôles unitaires de traçabilité (`STP_TRACEABILITY_CHAIN_AUDIT_UNIT_CHECKS`)
+
+- **Règle** : Cette étape distribuée, fait les contrôles unitaires des opérations de sécurisation.
+- **Type** : non bloquant
+- **Type de distribution** : `LIST_IN_JSONL_FILE`
+- **Fichier source** : `logbookOperations.jsonl`
+- **Type d'élément** : `LogbookOperation`
+- **Statut en cas de liste vide** : `KO`
+
+
+#### Actions :
+* **`TRACEABILITY_CHAIN_AUDIT_UNITARY_CHECK`** :
+
+- **Règle** : tâche consistant à vérifier unitairement les opérations de sécurisation.
+- **Type** : non bloquant
+- **Statuts** : `KO_CAUSES_WARNING` (une anomalie unitaire sur une opération n'interrompt pas le workflow mais produit un avertissement)
+
+- **Description** : Dans cette étape, on contrôle unitairement les opérations de sécurisation, en faisant les contrôles suivants:
+
+    - Vérification des status anormales.
+    - Vérification de la trancature d'opérations, on considère une trancature lorsque le nombre d'opérations sécurisées est égal à 10000, puisque les chances de tomber sur 10000 pile sont très faibles.
+    - vérification cryptographique des opérations, cela inclut l'extraction des données depuis les fichiers de sécurisation, le contrôle de l'arbre Merkle, et le contrôle du timeStamping.    
+
+---
+
+### 3. Contrôle du chaînage des opérations (`STP_TRACEABILITY_CHAIN_AUDIT_OPERATIONS_CHAIN_CHECKS`)
+
+- **Règle** : Cette étape valide la cohérence globale et chronologique de la chaîne de sécurisation. Cette vérification concerne que les opérations en succès avec fichier de traçabilité(OK, WARNING)
+
+
+#### Actions :
+* **`TRACEABILITY_CHAIN_AUDIT_OPERATIONS_CHAINING_CHECK`** :
+  - **Comportement** : `BLOCKING`
+  - **Type** : bloquant
+  - **Distribution** : Non distibué
+
+- **Description** : Dans cette étape, on contrôle le chainage des opérations de sécurisation, en enrichissant les anomalies liés aux contrôles suivants:
+
+- **checkValidPredecessors** : Permet de contrôler pour chaque opération si les opérations précédentes sont valides, en contrôlant la cohérence des dates de début et de fin des sécurisations, la cohérence du timestamp des opérations précédentes entre le logbook opération et le fichier de sécurisation, la cohérence du champ **previousOperationId** s'il est déclarée.
+
+- **detectDuplicateZips** : Contrôle s'il y des opérations de sécurisation déclare le même nom de fichier de séurisation, c'est lié à l'anomelie de plusieurs lancements en parallèle.
+
+- **detectBranches** Contrôle si plusieurs opérations de sécurisation déclarent une même date de début de sécurisation.
+
+- **detectParallelChains** Contrôle si plusieurs opérations de sécurisation déclarent des date de début de sécurisation qui ne correspondent à la date de fin de sécuriation d'aucune opération.
+
+- **detectInactivityPeriods** : Contrôle s'il y a des opérations sécurisées en retard, c'est le cas des problèmes de scheduler arretés, ou le système en maintenance par exemple.
+
+
+---
+
+### 4. Génération du rapport d'audit (`STP_TRACEABILITY_CHAIN_AUDIT_REPORTING`)
+
+  - **Règle** : Consolide les résultats anomalies et produit le rapport d'audit de la chaîne de traçabilité.
+
+
+#### Actions :
+* **`TRACEABILITY_CHAIN_AUDIT_REPORTING`** :
+  - **Comportement** : `BLOCKING`
+  - **Type** : bloquant
+  - **Distribution** : Non distibué
+
+- **Description** : Cette étape reporte les anomalies dans le rapport de l'audit en fonction du niveau de reporting **logLevel** avec les 2 niveaux : **minimal** et **verbose**, le niveau **minimal** ne reporte que les anomalies sevères ou critiques.
+
+
+---
+
+### 5. Finalisation du processus (`STP_FINALIZE_TRACEABILITY_CHAIN_AUDIT`)
+
+* **Comportement** : étape systématiquement exécutée, même en cas d'échec ou d'interruption en amont.
+* **Distribution** : Non distibué  
+
+#### Actions :
+* **`TRACEABILITY_CHAIN_AUDIT_FINALIZATION`** :
+  * **Comportement** : `BLOCKING`
+  * **Description** : Nettoie les fichiers temporaires, les collections de reporting de batch-report .
