@@ -335,6 +335,80 @@ Il s’agit d’une opération d’audit, tracée dans le journal des opération
 - disponible au format JSON depuis l’IHM démo ou l’API,
 - formaté en PDF depuis l’APP Relevé de valeur probante de VitamUI.
 
+### Audit de la chaîne de traçabilité
+-----
+
+
+Il s’agit d’une opération d’audit permettant de vérifier l'intégrité et la continuité de la chaîne des journaux de traçabilité sécurisés (opérations, cycle de vie des unités archivistiques, cycle de vie des objets groupes) sur une période, une version, et un niveau de verbosité des anomalie.
+
+#### Liste des anomalies émises
+
+Les anomalies sont classées par niveau de criticité : **CRITICAL**, **SEVERE**, **WARNING**, **NOTICE**
+
+1. #### Niveau critique: 
+
+- *CRITICAL_TRUNCATED_LOGBOOK_OPERATION_TRACEABILITY**: Nombre d'opérations de sécurisation est égal à 10 000 éléments des opérations ont pu échapper à la sécurisation.
+
+- **CRITICAL_MULTIPLE_TRACEABILITY_OPERATIONS_SAME_ZIP_NAME**: Plusieurs sécurisations ont produit le même fichier ZIP, contrôle sur le nom du fichier (écrasement possible).
+
+- **CRITICAL_MULTIPLE_TRACEABILITY_CHAIN_ROOTS**: Plusieurs chaînes indépendantes (plusieurs racines) dans la période auditée.
+
+- **CRITICAL_TRACEABILITY_OPERATION_HAS_MULTIPLE_PARENTS**: Une sécurisation se rattache à plusieurs prédécesseurs.
+
+- **CRITICAL_MISSING_PREVIOUS_TRACEABILITY_OPERATION**: La sécurisation précédente d'une sécurisation est introuvable (rupture de chaîne).
+
+- **CRITICAL_PREVIOUS_TRACEABILITY_OPERATIONS_WRONG_TIMESTAMP_TOKEN** : Le jeton d'horodatage « précédent » inscrit dans le fichier de sécurisation ZIP ne correspond pas à celui du prédécesseur en base de données (fichier altéré par exemple).
+
+- **CRITICAL_INVALID_MERKLE_TREE**: La chaine de Merkle recalculée diffère de celle déclarée dans le fichier de sécurisation ZIP.
+
+- **CRITICAL_INVALID_TIMESTAMP**: Jeton d'horodatage invalide (signature, certificat, validation TSP).
+
+- **CRITICAL_TIMESTAMP_MISMATCH_BETWEEN_DB_AND_TRACEABILITY_FILE** : Le jeton d'horodatage du ZIP diffère de celui enregistré dans le journal des opérations (fichier altéré par exemple).
+
+- **CRITICAL_TIMESTAMP_MISMATCH_BETWEEN_MERKLE_FILE_AND_COMPUTING_FILE**: Incohérence interne au ZIP entre fichier Merkle, fichier de calcul et empreinte horodatée (fichier altéré par exemple).
+
+- **CRITICAL_TRACEABILITY_FILE_NOT_FOUND_IN_ANY_OFFER**: Le fichier de sécurisation est absent de toutes les offres de stockage.
+
+- **CRITICAL_TRACEABILITY_FILE_HASH_MISMATCH_BETWEEN_OFFERS**: Le ZIP n'a pas la même empreinte selon les offres.
+
+2. #### Niveau critique: 
+
+- **SEVERE_TRACEABILITY_OPERATION_WRONG_STATUS**: Le statut final journalisé ne reflète pas le statut réel des événements.
+
+- **SEVERE_TRACEABILITY_OPERATION_CONTAINS_TOO_OLD_DATA**: La sécurisation porte sur des données de plus de 24 h.
+
+- **SEVERE_TRACEABILITY_OPERATION_WITHOUT_SUCCESSOR**: Dernière sécurisation de la chaîne sans successeur depuis plus de 24 h.
+
+- **SEVERE_TRACEABILITY_FILE_NOT_IN_ALL_OFFERS**: Le fichier de sécurisation ZIP est absent sur au moins une offre (mais existe ailleurs, empreintes identiques).
+
+3. #### Niveau warning: 
+
+- **WARNING_TRACEABILITY_OPERATION_PAUSED**: L'Opération de sécurisation est en pause.
+
+- **WARNING_TRACEABILITY_OPERATION_ABORTED**: Opération arrêtée par l'utilisateur ou terminée KO sans cause identifiée.
+
+- **WARNING_TRACEABILITY_OPERATION_FAILED**: Opération terminée en KO pour données invalides (KO_INVALID_DATA).
+
+- **WARNING_TRACEABILITY_OPERATION_ABNORMALLY_LONG**: Opération en cours depuis plus de 4 h.
+
+- **WARNING_TRUST_STORE_NOT_FOUND**: Pas de truststore : la chaîne de confiance du certificat d'horodatage n'a pas été vérifiée.
+
+- **WARNING_TRACEABILITY_OPERATION_CONTAINS_WARNINGS**: Opération terminée en WARNING avec un ZIP produit.
+
+- **WARNING_ROOT_TRACEABILITY_OPERATION_MAY_CONTAIN_TOO_OLD_DATA**: Une sécurisation peut couvrir des données anciennes (Incertitude).
+
+4. #### Niveau notice: 
+
+- **NOTICE_DISCONTINUED_TRACEABILITY_BRANCH**: Branche morte : une autre branche plus récente a pris le relais.
+
+- **NOTICE_TRACEABILITY_BRANCH_DETECTED**: Une sécurisation a plusieurs successeurs (bifurcation).
+
+- **NOTICE_TRACEABILITY_OPERATION_DEAD**: Une sécurisation morte (crash).
+
+- **NOTICE_CONCURRENT_TRACEABILITY_OPERATION**: Opération de sécurisation lancée en doublon avec une autre.
+
+
+
 Annexes
 ----
 

@@ -5466,7 +5466,7 @@ La partie « ReportDetail » contient les détails de l’opération de suppre
 
 ### Structure du workflow d'audit de la chaîne de traçabilité
 
-Ce processus permet de vérifier l'intégrité et la continuité de la chaîne des journaux de traçabilité sécurisés (opérations (), cycle de vie des unités archivistiques, cycle de vie des objets groupes) sur une période, une version, et un niveau de verbosité des anomalie.
+Ce processus permet de vérifier l'intégrité et la continuité de la chaîne des journaux de traçabilité sécurisés (opérations, cycle de vie des unités archivistiques, cycle de vie des objets groupes) sur une période, une version, et un niveau de verbosité des anomalie.
 
 | Identifiant du processus (`id`) | Nom (`name`) | Type de processus (`typeProc`) | Commentaire |
 | :--- | :--- | :--- | :--- |
