@@ -169,12 +169,12 @@ Il est également possible de récupérer l’empreinte du DIP générée depuis
 - d’une déclaration des unités archivistiques représentées par ces objets (DataObjectPackage > DescriptiveMetadata) :
     - avec leurs métadonnées de gestion, avec, le cas échéant, les journaux du cycle de vie associés ;
     - avec leurs métadonnées descriptives ;
-- de métadonnées communes à toute l’arborescence d’unités archivistiques : déclaration du service producteur (hérité de la balise OriginatingAgencyIdentifier présente dans le ManagementMetadata du SIP à l’origine de l’entrée pour les DIP mono-producteurs ; pour les DIP multi-producteurs, la valeur de ce champ est « Export VITAM » [^3]).
+- de métadonnées communes à toute l’arborescence d’unités archivistiques : déclaration du service producteur (hérité de la balise OriginatingAgencyIdentifier présente dans le ManagementMetadata du SIP à l’origine de l’entrée pour les DIP mono-producteurs ; pour les DIP multi-producteurs, la valeur de ce champ est « Export VITAM » [^2]).
 
 Le DIP complet
 ----
 
-La solution logicielle Vitam permet d’exporter un DIP dit complet [^2], composé du répertoire contenant les objets numériques demandés et d’un manifest correspondant au message SEDA  ArchiveDeliveryRequestReply.
+La solution logicielle Vitam permet d’exporter un DIP dit complet [^3], composé du répertoire contenant les objets numériques demandés et d’un manifest correspondant au message SEDA  ArchiveDeliveryRequestReply.
 
 ### Les modalités de lancement de l’opération de mise à disposition du DIP complet
 
