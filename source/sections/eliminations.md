@@ -23,7 +23,7 @@ Ce document s’articule autour des axes suivants :
 - calcul des règles et détermination du caractère éliminable des unités archivistiques,
 - modalités d’une campagne d’évaluation du caractère éliminable des unités archivistiques (analyse),
 - modalités d’une campagne de mise en œuvre de l’élimination (action).
-Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 9.1 (printemps 2026). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
+Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 10.0 (automne 2026). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.
 
 Détermination du caractère éliminable d’une unité archivistique avec la solution logicielle Vitam
 ----
@@ -62,9 +62,9 @@ Nota bene : cette propriété implicite est calculée à l’affichage des règ
 Réalisation d’une élimination avec la solution logicielle Vitam
 ---
 
-## Configuration de la plate-forme
+### Configuration de la plate-forme
 
-### Personnalisation des rapports d'élimination
+#### Personnalisation des rapports d'élimination
 
 Au terme de la version 9.0, la solution logicielle Vitam permet de personnaliser les rapports produits à la suite d'une opération d'élimination.
 
@@ -105,7 +105,7 @@ Dans l’exemple ci-dessus :
 - sur le tenant 4 :
     - le rapport d'élimination pourra contenir l'identifiant émanant du service producteur.
 
-### Préservation des identifiants pérennes
+#### Préservation des identifiants pérennes
 
 Au terme de la version 9.0, la solution logicielle Vitam permet de conserver ces identifiants pérennes dans la base de données MongoDB, malgré l'élimination des archives qu'ils référençaient.
 
@@ -126,6 +126,7 @@ Dans l’exemple ci-dessus, cet enregistrement s'effectue dans un délai de 5 mi
 ### Lancement d’une campagne d’évaluation des éliminables (analyse)
 
 #### Lancement de l’opération
+
 La solution logicielle permet d’étudier le caractère éliminable d’ensembles d’unités archivistiques.  
 - Par API,
 - Par l’IHM VitamUI, elle se fait depuis l’APP « Recherche et consultation des archives » et peut porter sur un lot d’archives sélectionnées à partir de critères descriptifs ou de filtres relatifs à leur durée d’utilité administrative.
