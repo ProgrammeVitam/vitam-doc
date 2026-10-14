@@ -81,12 +81,16 @@
 <li class="toctree-l4"><a class="reference internal" href="#acces-au-referentiel">8.3.1.1. Accès au référentiel</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#entrees">8.3.2. Entrées</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#registre-des-fonds">8.3.3. Registre des fonds</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#reattribution-de-service-agent">8.3.4. Réattribution de service agent</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#acces">8.3.5. Accès</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#recherche">8.3.5.1. Recherche</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#filtrage-des-resultats-au-moyen-des-contrats-dacces">8.3.5.2. Filtrage des résultats au moyen des contrats d’accès</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#collecte">8.3.2. Collecte</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#configuration-de-la-connexion-aux-referentiels-pour-vitamui">8.3.2.1. Configuration de la connexion aux référentiels pour VitamUI</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#entrees">8.3.3. Entrées</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#registre-des-fonds">8.3.4. Registre des fonds</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reattribution-de-service-agent">8.3.5. Réattribution de service agent</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#acces">8.3.6. Accès</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#recherche">8.3.6.1. Recherche</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#filtrage-des-resultats-au-moyen-des-contrats-dacces">8.3.6.2. Filtrage des résultats au moyen des contrats d’accès</a></li>
 </ul>
 </li>
 </ul>
@@ -242,7 +246,7 @@ Il s’articule autour des axes suivants :</p>
 <li><p>une présentation des mécanismes mis en œuvre dans la solution logicielle Vitam pour prendre en compte cette notion, en application du SEDA ;</p></li>
 <li><p>des recommandations aux ministères porteurs, partenaires et utilisateurs de la solution logicielle Vitam sur la manière d’utiliser les fonctionnalités associées aux services producteurs.</p></li>
 </ul>
-<p>Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 9.1 (printemps 2026). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.</p>
+<p>Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 10.0 (automne 2026). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.</p>
 </section>
 </section>
 <section id="presentation-de-la-notion-de-service-producteur">
@@ -322,6 +326,7 @@ Le message ArchiveTransfer défini par la norme NF Z 44-022 et précisé par l
 <p>La solution logicielle Vitam offre à un service d’archives plusieurs fonctionnalités lui permettant de prendre en compte la notion de service producteur :</p>
 <ul class="simple">
 <li><p>en administration, l’existence d’un référentiel des services agents ;</p></li>
+<li><p>en collecte, la désignation d’un référentiel à utiliser ;</p></li>
 <li><p>en entrée, le contrôle du service producteur et du service versant par rapport au référentiel des services agents, l’enregistrement de la prise en charge d’un transfert pour un service producteur donné et l’enrichissement du registre des fonds des services producteurs ;</p></li>
 <li><p>en gestion des archives :</p>
 <ul>
@@ -535,8 +540,65 @@ Sont disponibles les facettes de type :</p></li>
 </ul>
 </section>
 </section>
+<section id="collecte">
+<h3><span class="section-number">8.3.2. </span>Collecte<a class="headerlink" href="#collecte" title="Lien vers cette rubrique"></a></h3>
+<section id="configuration-de-la-connexion-aux-referentiels-pour-vitamui">
+<h4><span class="section-number">8.3.2.1. </span>Configuration de la connexion aux référentiels pour VitamUI<a class="headerlink" href="#configuration-de-la-connexion-aux-referentiels-pour-vitamui" title="Lien vers cette rubrique"></a></h4>
+<p>Il est possible de choisir dans VitamUI d’utiliser ou non la connexion du projet de versement à des référentiels afin d’obtenir une aide à la saisie au sein du parcours de création du projet de versement.
+Cette connexion peut se faire avec le tenant et le SAE locaux mais elle peut également être mise en place avec des tenants d’autres instances externes de la solution logicielle Vitam.
+Ce service vaut notamment pour le référentiel des règles de gestion.</p>
+<p>Cette connexion demande alors une configuration au préalable décrite ci-après :</p>
+<p>Il est nécessaire de configurer les keystores et truststores des instances cibles dans le dossier environments/keystores_external_archiving_systems/ dans le dossier de déploiement de l’installation de Vitam-UI.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- /environments/keystores_external_archiving_systems/keystore_&lt;external_system_id1&gt;.p12
+- /environments/keystores_external_archiving_systems/trustore_&lt;external_system_id1&gt;.jks
+- ...
+</pre></div>
+</div>
+<p>Les mots de passe des keystores et truststores doivent être définis un fichier vault (exemple: vault_keystores_external_archiving_systems.yml) à éditer via l’outil ansible-vault :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">external_archiving_systems</span><span class="p">:</span>
+  <span class="n">keystore_password</span><span class="p">:</span>
+    <span class="o">&lt;</span><span class="n">external_system_id1</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">keystore_external_system_1_changeit</span>
+    <span class="o">&lt;</span><span class="n">external_system_id2</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">keystore_external_system_2_changeit</span>
+  <span class="n">truststore_password</span><span class="p">:</span>
+    <span class="o">&lt;</span><span class="n">external_system_id1</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">truststore_external_system_1_changeit</span>
+    <span class="o">&lt;</span><span class="n">external_system_id2</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">truststore_external_system_2_changeit</span>
+</pre></div>
+</div>
+<p>Les URLs d’accès aux SAE tiers, et les autorisations d’accès par tenant sont à définir dans la configuration ansible :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">external_archiving_systems</span><span class="p">:</span>
+  <span class="n">client_configuration</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">archiving_system_id</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">external_system_id1</span><span class="o">&gt;</span>
+    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;EXTERNAL ENV NAME 1&quot;</span>
+    <span class="n">access_external</span><span class="p">:</span>
+      <span class="n">host</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">host_name</span><span class="o">&gt;</span>
+      <span class="n">port</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">port</span><span class="o">&gt;</span>
+  <span class="o">-</span> <span class="n">archiving_system_id</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">external_system_id2</span><span class="o">&gt;</span>
+    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;EXTERNAL ENV NAME 2&quot;</span>
+    <span class="n">access_external</span><span class="p">:</span>
+        <span class="n">host</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">host_name</span><span class="o">&gt;</span>
+        <span class="n">port</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">port</span><span class="o">&gt;</span>
+  <span class="o">-</span> <span class="o">...</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">tenant_configuration</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">tenant</span><span class="p">:</span> <span class="mi">2</span>
+    <span class="n">external_archiving_system_references</span><span class="p">:</span>
+      <span class="o">-</span> <span class="n">archiving_system_id</span><span class="p">:</span> <span class="n">local</span> <span class="c1"># Use &quot;local&quot; as archiving_system_id to reference the current Vitam instance with other tenants</span>
+        <span class="n">tenantIds</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>       <span class="c1"># Target tenants</span>
+      <span class="o">-</span> <span class="n">archiving_system_id</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">external_system_id1</span><span class="o">&gt;</span>
+        <span class="n">tenantIds</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+  <span class="o">-</span> <span class="n">tenant</span><span class="p">:</span> <span class="mi">3</span>
+    <span class="n">external_archiving_system_references</span><span class="p">:</span>
+      <span class="o">-</span> <span class="n">archiving_system_id</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">external_system_id2</span><span class="o">&gt;</span>
+        <span class="n">tenantIds</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">]</span>
+  <span class="o">-</span> <span class="o">...</span>
+</pre></div>
+</div>
+<p><strong>Point d’attention :</strong> Cette configuration n’est disponible que dans l’application VitamUI. Au terme de la version 9.0, il n’est pas mis à disposition dans le back-office de la solution logicielle Vitam. Un applicatif autre que VitamUI devra nécessairement développer son propre service s’il souhaite mettre à disposition de ses utilisateurs ce type de service.</p>
+</section>
+</section>
 <section id="entrees">
-<h3><span class="section-number">8.3.2. </span>Entrées<a class="headerlink" href="#entrees" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">8.3.3. </span>Entrées<a class="headerlink" href="#entrees" title="Lien vers cette rubrique"></a></h3>
 <p>Dans le cadre du processus d’entrée d’un ensemble d’archives, suite à la réception d’un message ArchiveTransfer du SEDA, la solution logicielle Vitam effectue les tâches et traitements suivants pour les archives :</p>
 <ul class="simple">
 <li><p>vérification de la déclaration d’un service producteur dans le message ArchiveTransfer ;</p></li>
@@ -564,7 +626,7 @@ Sont disponibles les facettes de type :</p></li>
 </ul>
 </section>
 <section id="registre-des-fonds">
-<h3><span class="section-number">8.3.3. </span>Registre des fonds<a class="headerlink" href="#registre-des-fonds" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">8.3.4. </span>Registre des fonds<a class="headerlink" href="#registre-des-fonds" title="Lien vers cette rubrique"></a></h3>
 <p>Afin de permettre aux services d’archives de disposer d’une vue globale sur les fonds d’archives qu’ils ont en charge, la solution logicielle Vitam propose un état récapitulatif correspondant à un registre des fonds.
 Le registre des fonds enregistre les archives prises en charge par tout service producteur :</p>
 <ul class="simple">
@@ -696,7 +758,7 @@ Elle autorise également :</p>
 Au terme de la version 9.1, l’APP VitamUI « Registre des fonds » fait appel uniquement aux traitements ayant trait aux opérations d’entrée et ne prend pas en compte les traitements relatifs aux opérations de préservation et de suppression de versions d’objets.</p>
 </section>
 <section id="reattribution-de-service-agent">
-<h3><span class="section-number">8.3.4. </span>Réattribution de service agent<a class="headerlink" href="#reattribution-de-service-agent" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">8.3.5. </span>Réattribution de service agent<a class="headerlink" href="#reattribution-de-service-agent" title="Lien vers cette rubrique"></a></h3>
 <p>La solution logicielle Vitam permet de modifier un service producteur sur un lot d’archives issues d’un SIP ou d’un plan de classement.
 Au terme de la version 9.1, cette modification doit être réalisée :</p>
 <ul class="simple">
@@ -754,9 +816,9 @@ Au terme de la version 9.1, cette modification doit être réalisée :</p>
 </ul>
 </section>
 <section id="acces">
-<h3><span class="section-number">8.3.5. </span>Accès<a class="headerlink" href="#acces" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">8.3.6. </span>Accès<a class="headerlink" href="#acces" title="Lien vers cette rubrique"></a></h3>
 <section id="recherche">
-<h4><span class="section-number">8.3.5.1. </span>Recherche<a class="headerlink" href="#recherche" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.3.6.1. </span>Recherche<a class="headerlink" href="#recherche" title="Lien vers cette rubrique"></a></h4>
 <p>Une application connectée et authentifiée à la solution logicielle Vitam peut effectuer des recherches sur les services producteurs déclarés dans les unités archivistiques, dans la limite des droits et des filtres qui lui sont définis, en utilisant les différentes notions existantes :</p>
 <ul class="simple">
 <li><p>services producteurs déclarés par chaque unité archivistique dans ses métadonnées descriptives (bloc <OriginatingAgency>) ;</p></li>
@@ -766,7 +828,7 @@ Au terme de la version 9.1, cette modification doit être réalisée :</p>
 <p>Depuis l’APP VitamUI « Recherche et consultation des archives », il est possible de rechercher les unités archivistiques à partir de l’identifiant ou de l’intitulé du service producteur référencé dans le référentiel des services agents, correspondant, dans l’unité archivistique, à la métadonnée propre au service producteur ayant transféré l’unité archivistique (information correspondant au champ OriginatingAgencyIdentifier du bloc ManagementMetadata).</p>
 </section>
 <section id="filtrage-des-resultats-au-moyen-des-contrats-dacces">
-<h4><span class="section-number">8.3.5.2. </span>Filtrage des résultats au moyen des contrats d’accès<a class="headerlink" href="#filtrage-des-resultats-au-moyen-des-contrats-dacces" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">8.3.6.2. </span>Filtrage des résultats au moyen des contrats d’accès<a class="headerlink" href="#filtrage-des-resultats-au-moyen-des-contrats-dacces" title="Lien vers cette rubrique"></a></h4>
 <p>Une application connectée et authentifiée à la solution logicielle Vitam, si elle dispose des droits de recherche et de consultation d’archives, peut voir le périmètre de ses droits restreint à un nombre précis de services producteurs en vertu de son contrat d’accès.<br />
 Dans ce cas, lorsque cette application effectue une recherche d’archives dans la solution logicielle Vitam, lui sont seulement retournées en résultat les unités archivistiques transférées par l’un des services producteurs autorisés dans son contrat d’accès, ou qui sont rattachées symboliquement à ce service. Les unités archivistiques transférées par d’autres services producteurs que ceux autorisés dans le contrat d’accès ne lui seront pas retournées en réponse à sa requête.<br />
 Deux options sont possibles dans le contrat d’accès :</p>
@@ -784,7 +846,7 @@ Ce filtrage s’applique également à l’accès au registre des fonds. Ne sero
 <li><p>les services producteurs déclarés dans les contrats d’accès font l’objet d’un contrôle d’existence dans le référentiel des services agents. Si un contrat est crée ou modifié avec l’identifiant d’un service inconnu du référentiel, la création ou la modification est refusée ;</p></li>
 <li><p>le filtrage des droits de recherche et de consultation d’archives par service producteur est nécessaire mais non suffisant. D’autres filtres sont mis à disposition par la solution logicielle Vitam, par exemple un filtre définissant une ou plusieurs unité(s) archivistique(s) – qu’elle soit de type arbre de positionnement, plan de classement ou standard – à partir de laquelle les accès sont autorisés.</p></li>
 </ul>
-<p>L’IHM VitamUI utilise :</p>
+<p>L’interface VitamUI utilise :</p>
 <ul class="simple">
 <li><p>l’ensemble des filtres disponibles dans les contrats d’accès pour :</p>
 <ul>
@@ -797,7 +859,6 @@ Ce filtrage s’applique également à l’accès au registre des fonds. Ne sero
 <li><p>le filtre sur les services producteurs pour :</p>
 <ul>
 <li><p>l’APP « Dépôt et suivi des versements » ;</p></li>
-<li><p>l’APP « Registre des fonds » ;</p></li>
 <li><p>l’APP « Collecte et préparation des versements »</p></li>
 </ul>
 </li>

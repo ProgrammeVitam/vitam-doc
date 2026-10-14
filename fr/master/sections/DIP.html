@@ -410,13 +410,13 @@ L’opération est journalisée. Suivant l’activation ou non de la fonctionnal
 <li><p>avec leurs métadonnées descriptives ;</p></li>
 </ul>
 </li>
-<li><p>de métadonnées communes à toute l’arborescence d’unités archivistiques : déclaration du service producteur (hérité de la balise OriginatingAgencyIdentifier présente dans le ManagementMetadata du SIP à l’origine de l’entrée pour les DIP mono-producteurs ; pour les DIP multi-producteurs, la valeur de ce champ est « Export VITAM » <a class="footnote-reference brackets" href="#id10" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>).</p></li>
+<li><p>de métadonnées communes à toute l’arborescence d’unités archivistiques : déclaration du service producteur (hérité de la balise OriginatingAgencyIdentifier présente dans le ManagementMetadata du SIP à l’origine de l’entrée pour les DIP mono-producteurs ; pour les DIP multi-producteurs, la valeur de ce champ est « Export VITAM » <a class="footnote-reference brackets" href="#id10" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>).</p></li>
 </ul>
 </section>
 </section>
 <section id="le-dip-complet">
 <h2><span class="section-number">5.5. </span>Le DIP complet<a class="headerlink" href="#le-dip-complet" title="Lien vers cette rubrique"></a></h2>
-<p>La solution logicielle Vitam permet d’exporter un DIP dit complet <a class="footnote-reference brackets" href="#id11" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>, composé du répertoire contenant les objets numériques demandés et d’un manifest correspondant au message SEDA  ArchiveDeliveryRequestReply.</p>
+<p>La solution logicielle Vitam permet d’exporter un DIP dit complet <a class="footnote-reference brackets" href="#id11" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>, composé du répertoire contenant les objets numériques demandés et d’un manifest correspondant au message SEDA  ArchiveDeliveryRequestReply.</p>
 <section id="les-modalites-de-lancement-de-loperation-de-mise-a-disposition-du-dip-complet">
 <h3><span class="section-number">5.5.1. </span>Les modalités de lancement de l’opération de mise à disposition du DIP complet<a class="headerlink" href="#les-modalites-de-lancement-de-loperation-de-mise-a-disposition-du-dip-complet" title="Lien vers cette rubrique"></a></h3>
 <p>Depuis VitamUI, il est possible de demander à générer un DIP complet dans l’APP Recherche et consultation des archives, après avoir préalablement sélectionné un lot d’archives.</p>
@@ -511,7 +511,7 @@ L’opération est journalisée. Suivant l’activation ou non de la fonctionnal
 <li><p>avec leurs métadonnées descriptives ;</p></li>
 </ul>
 </li>
-<li><p>de métadonnées communes à toute l’arborescence d’unités archivistiques : déclaration du service producteur (hérité de la balise OriginatingAgencyIdentifier) présente dans le ManagementMetadata du SIP à l’origine de l’entrée pour les DIP mono-producteurs ; pour les DIP multi-producteurs, la valeur de ce champ est « Export VITAM »<a class="footnote-reference brackets" href="#id10" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>; déclaration du service versant (SubmissionAgencyIdentifier), identifiant de la demande (MessageRequestIdentifier), identifiant du demandeur (sous-bloc Identifier inclus dans le bloc Requester) et identifiant du service d’archives (sous-bloc Identifier inclus dans le bloc ArchivalAgency) alimentés à partir des informations fournies lors de la demande de constitution du DIP.</p></li>
+<li><p>de métadonnées communes à toute l’arborescence d’unités archivistiques : déclaration du service producteur (hérité de la balise OriginatingAgencyIdentifier) présente dans le ManagementMetadata du SIP à l’origine de l’entrée pour les DIP mono-producteurs ; pour les DIP multi-producteurs, la valeur de ce champ est « Export VITAM »<a class="footnote-reference brackets" href="#id11" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>; déclaration du service versant (SubmissionAgencyIdentifier), identifiant de la demande (MessageRequestIdentifier), identifiant du demandeur (sous-bloc Identifier inclus dans le bloc Requester) et identifiant du service d’archives (sous-bloc Identifier inclus dans le bloc ArchivalAgency) alimentés à partir des informations fournies lors de la demande de constitution du DIP.</p></li>
 </ul>
 </section>
 </section>
@@ -1338,13 +1338,13 @@ L’opération est journalisée. Suivant l’activation ou non de la fonctionnal
 <p>Disponible à l’adresse suivante (lien vérifié le 14/02/2023): <a class="reference external" href="https://francearchives.fr/seda/">pour le SEDA 2.1</a> et <a class="reference external" href="https://github.com/culturecommunication/seda">pour le SEDA 2.2</a>.</p>
 </aside>
 <aside class="footnote brackets" id="id10" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></span>
-<span class="backrefs">(<a role="doc-backlink" href="#id2">1</a>,<a role="doc-backlink" href="#id4">2</a>)</span>
-<p>Cette valeur peut être modifiée en configuration.</p>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>La solution logicielle Vitam permet également d’exporter un DIP dit minimal, composé du répertoire contenant les objets numériques demandés et d’un manifeste simplifié, constitué autour du DataObjectPackage. La documentation des précédentes versions de Vitam expose le fonctionnement de ce DIP minimal en back-office.</p>
 </aside>
 <aside class="footnote brackets" id="id11" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">2</a><span class="fn-bracket">]</span></span>
-<p>La solution logicielle Vitam permet également d’exporter un DIP dit minimal, composé du répertoire contenant les objets numériques demandés et d’un manifeste simplifié, constitué autour du DataObjectPackage. La documentation des précédentes versions de Vitam expose le fonctionnement de ce DIP minimal en back-office.</p>
+<span class="label"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id3">1</a>,<a role="doc-backlink" href="#id4">2</a>)</span>
+<p>Cette valeur peut être modifiée en configuration.</p>
 </aside>
 <aside class="footnote brackets" id="id12" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></span>

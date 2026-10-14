@@ -86,7 +86,10 @@
 <li class="toctree-l2"><a class="reference internal" href="#preuve-systemique">20.3. Preuve systémique</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#securisation-des-journaux">20.4. Sécurisation des journaux</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#contexte-de-securisation">20.4.1. Contexte de sécurisation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#procedure-de-securisation">20.4.2. Procédure de sécurisation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#procedure-de-securisation">20.4.2. Procédure de sécurisation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#version-du-format-de-securisation-securisationversion">20.4.2.1. Version du format de sécurisation (SecurisationVersion)</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#mise-en-oeuvre-sur-le-journal-des-operations">20.4.3. Mise en œuvre sur le journal des opérations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#mise-en-oeuvre-sur-les-journaux-du-cycle-de-vie">20.4.4. Mise en œuvre sur les journaux du cycle de vie</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#mise-en-oeuvre-sur-le-journal-des-ecritures">20.4.5. Mise en œuvre sur le journal des écritures</a></li>
@@ -212,6 +215,10 @@
 <td class="text-center"><p></p></td>
 <td class="text-center"><p>Le document apporte des précisions sur le comportement de l’opération permettant de générer un relevé de valeur probante.</p></td>
 </tr>
+<tr class="row-even"><td class="text-center"><p><a class="reference internal" href="modele_de_workflow.html"><span class="std std-doc">Vitam – Modèle de workflow</span></a></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>Le document décrit le détail des étapes des processus de sécurisation des journaux et d’audit de la vérification des journaux sécurisés.</p></td>
+</tr>
 </tbody>
 </table>
 </section>
@@ -277,8 +284,68 @@ De fait, la conjonction du chaînage et de l’arbre de Merkle constituent des p
 </ul>
 <p><img alt="Contenu du conteneur de sécurisation" src="../_images/conteneur_secu.png" /></p>
 <p><img alt="Contenu des fichiers" src="../_images/contenu_fichiers.png" /></p>
+<p>Le fichier « additional_information.txt » est un fichier texte composé d’une propriété par ligne, sous la forme « clé=valeur ». Par exemple :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">numberOfElements</span><span class="o">=</span><span class="mi">1245</span>
+<span class="n">startDate</span><span class="o">=</span><span class="mi">2026</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">20</span><span class="n">T03</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mf">12.418</span>
+<span class="n">endDate</span><span class="o">=</span><span class="mi">2026</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">21</span><span class="n">T02</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mf">07.936</span>
+<span class="n">securisationVersion</span><span class="o">=</span><span class="n">V1</span>
+</pre></div>
+</div>
+<p>où :</p>
+<ul class="simple">
+<li><p>« numberOfElements » est le nombre de lignes de journal sécurisées, c’est-à-dire le nombre de lignes du fichier « data.txt » ;</p></li>
+<li><p>« startDate » et « endDate » sont les dates du premier et du dernier événement pris en compte, au format « AAAA-MM-JJTHH:MM:SS.mmm » (heure UTC, à la milliseconde) ;</p></li>
+<li><p>« securisationVersion » est la version du format de sécurisation, décrite ci-après.</p></li>
+</ul>
 <p>Cette procédure est lancée régulièrement sur les différents journaux, tenant par tenant. La périodicité de cette sécurisation est définie lors de l’installation de la plateforme et doit être définie pour lisser la charge de sécurisation. Elle doit, pour être conforme à la NF Z 42‑013, rester inférieure à 24 heures.</p>
 <p><strong>Point d’attention :</strong> Le format de sécurisation mis dans le fichier « additional_information.txt » est mis à titre conservatoire pour permettre la mise en place de nouveaux formats qui seront pris en compte dans les traitements ultérieurs d’audit ou de génération de relevé de valeur probante. À ce jour seul le format « V1 » est utilisé.</p>
+<section id="version-du-format-de-securisation-securisationversion">
+<h4><span class="section-number">20.4.2.1. </span>Version du format de sécurisation (SecurisationVersion)<a class="headerlink" href="#version-du-format-de-securisation-securisationversion" title="Lien vers cette rubrique"></a></h4>
+<p>La version du format de sécurisation désigne la manière dont le fichier de sécurisation a été construit. Elle est enregistrée à deux endroits lors de chaque sécurisation :</p>
+<ul class="simple">
+<li><p>dans le conteneur de sécurisation lui-même, sous la clé « securisationVersion » du fichier « additional_information.txt », aux côtés du nombre de lignes sécurisées et des dates de début et de fin des événements pris en compte ;</p></li>
+<li><p>dans le journal des opérations, sous la clé « SecurisationVersion » des informations complémentaires de l’événement de sécurisation. C’est cette occurrence qui est exploitée par les traitements ultérieurs, car elle est interrogeable sans avoir à ouvrir le conteneur stocké sur l’offre de stockage.</p></li>
+</ul>
+<p>Cette version répond à trois besoins.</p>
+<p>Le premier est le chaînage. Pour établir les liens vers la sécurisation précédente, celle du mois précédent et celle de l’année précédente, la solution logicielle Vitam recherche les dernières opérations de sécurisation en succès <strong>portant la même version</strong> que celle qu’elle s’apprête à produire. Une sécurisation n’est donc jamais chaînée avec une sécurisation d’une autre version : à chaque version correspond une chaîne autonome, homogène du point de vue des règles de construction des empreintes et des tampons d’horodatage.</p>
+<p>Par exemple, sur un tenant dont le paramétrage a été porté de « V1 » à « V2 » :</p>
+<ul class="simple">
+<li><p>sécurisations existantes :</p>
+<ul>
+<li><p>juin 2026 → V1 ;</p></li>
+<li><p>juillet 2026 → V1 ;</p></li>
+<li><p>juillet 2026 → V2 ;</p></li>
+</ul>
+</li>
+<li><p>nouvelle sécurisation : août 2026 → V2 ;</p></li>
+<li><p>sécurisation précédente retenue : juillet 2026 / V2.</p></li>
+</ul>
+<p>Les sécurisations V1 de juin et de juillet sont ignorées, car leur version est différente de celle de la sécurisation en cours de production. La sécurisation d’août 2026 est donc chaînée avec celle de juillet 2026 en V2.</p>
+<p>Le deuxième est l’homogénéité des vérifications. L’audit de la vérification des journaux sécurisés, comme la génération du relevé de valeur probante, ne retient que les sécurisations dont la version correspond à celle configurée pour le tenant et pour le type de journal concerné. Un traitement de vérification ne mélange ainsi jamais des conteneurs construits selon des règles différentes.</p>
+<p>Le périmètre d’un audit de la vérification des journaux sécurisés, ou d’une génération de relevé de valeur probante, n’est donc pas déterminé par la seule requête de l’utilisateur : les sécurisations retrouvées dans l’intervalle demandé sont ensuite filtrées sur la version configurée pour le tenant et pour le type de journal considéré, et celles qui portent une autre version sont écartées. Par exemple :</p>
+<ul class="simple">
+<li><p>configuration du tenant : « logbookOperation » → V2 ;</p></li>
+<li><p>sécurisations disponibles :</p>
+<ul>
+<li><p>juillet 2026 → V1 ;</p></li>
+<li><p>août 2026 → V1 ;</p></li>
+<li><p>août 2026 → V2 ;</p></li>
+</ul>
+</li>
+<li><p>vérification demandée : journal des opérations.</p></li>
+</ul>
+<p>Seule la sécurisation V2 d’août 2026 est prise en compte. Les sécurisations V1 de juillet et d’août sont exclues de la vérification, car le tenant est configuré en V2 pour ce type de journal.</p>
+<p>Le troisième est l’évolutivité. Le champ permet d’introduire ultérieurement de nouveaux formats de sécurisation sans invalider les conteneurs déjà produits : les traitements d’audit et de relevé de valeur probante disposent, pour chaque conteneur, de l’information leur indiquant selon quelles règles il doit être vérifié.</p>
+<p>La version est paramétrée tenant par tenant et par type de journal, lors de l’installation de la plateforme. Trois paramètres sont disponibles pour chaque tenant :</p>
+<ul class="simple">
+<li><p>« logbookOperation » pour la sécurisation du journal des opérations ;</p></li>
+<li><p>« lfcUnit » pour la sécurisation des journaux du cycle de vie des unités archivistiques ;</p></li>
+<li><p>« lfcGot » pour la sécurisation des journaux du cycle de vie des groupes d’objets techniques.</p></li>
+</ul>
+<p>Les valeurs admises sont de la forme « V » suivi d’un entier strictement positif (« V1 », « V2 »…) ; toute autre valeur est rejetée. En l’absence de paramétrage explicite pour un tenant, la valeur « V1 » est retenue.</p>
+<p><strong>Nota bene :</strong> la sécurisation du journal des écritures n’est pas concernée par ce paramétrage. Compte tenu des particularités de ce journal, décrites ci-après, elle utilise toujours la version « V1 ».</p>
+<p><strong>Point d’attention :</strong> à ce jour, seule la version « V1 » existe et le paramétrage ne doit pas être modifié en l’état. Changer la version configurée pour un tenant revient à démarrer une nouvelle chaîne de sécurisation : la première sécurisation produite dans la nouvelle version n’a pas de précédent et repart donc d’une chaîne vide. Les sécurisations antérieures restent valides et vérifiables, mais dans leur propre chaîne ; et, tant que la configuration désigne la nouvelle version, une unité archivistique ou un groupe d’objets techniques dont les journaux n’ont été sécurisés que sous la version antérieure ne peut plus faire l’objet d’un relevé de valeur probante, faute de sécurisation de référence retenue par le traitement.</p>
+</section>
 </section>
 <section id="mise-en-oeuvre-sur-le-journal-des-operations">
 <h3><span class="section-number">20.4.3. </span>Mise en œuvre sur le journal des opérations<a class="headerlink" href="#mise-en-oeuvre-sur-le-journal-des-operations" title="Lien vers cette rubrique"></a></h3>
@@ -547,6 +614,7 @@ Le relevé de valeur probante va en fait un cran plus loin que la simple preuve 
 <li><p>disponible au format JSON depuis l’API,</p></li>
 <li><p>formaté en PDF depuis l’APP Relevé de valeur probante de VitamUI.</p></li>
 </ul>
+<p><strong>Nota bene :</strong> pour chaque objet traité, le relevé s’appuie sur les sécurisations du journal des opérations et des journaux du cycle de vie des groupes d’objets techniques qui couvrent la période concernée et qui portent la version du format de sécurisation configurée pour le tenant (voir « Version du format de sécurisation (SecurisationVersion) » ci-dessus). Il en va de même pour l’opération d’audit de la vérification des journaux sécurisés, décrite dans le document <a class="reference internal" href="modele_de_workflow.html"><span class="std std-doc">Vitam – Modèle de workflow</span></a>, dont le périmètre est restreint aux sécurisations portant cette même version.</p>
 </section>
 </section>
 <section id="annexes">
