@@ -4813,12 +4813,12 @@ L'audit de sécurisation doit permettre de vérifier que les journaux de sécuri
 
 #####  Préparation de la vérification des journaux sécurisés TRACEABILITY_LINKED_CHECK_PREPARE (TraceabilityLinkedCheckPreparePlugin.java)
 
--  **Règle** : Tâche permettant de retrouver la liste des journaux de sécurisation tels que définis dans la requête DSL (type de journal et intervalle de temps).
+-  **Règle** : Tâche permettant de retrouver la liste des journaux de sécurisation tels que définis dans la requête DSL (type de journal et intervalle de temps). Seules les sécurisations dont la version du format de sécurisation (« SecurisationVersion ») correspond à celle configurée pour le tenant et pour le type de journal concerné sont retenues ; les autres, ainsi que celles dépourvues d’informations complémentaires, sont écartées du périmètre de l’audit. La version du format de sécurisation est décrite dans le document [Vitam – Conservation de la valeur probante](./valeur_probante.md).
 -  **Type** : Bloquant
 -  **Statuts** :
     -  OK : Tous les journaux demandés par la requête ont bien été récupérés (TRACEABILITY_LINKED_CHECK_PREPARE.OK= Succès de la préparation de la vérification des journaux sécurisés)
     - FATAL : Erreur technique dans la récupération des journaux demandés (TRACEABILITY_LINKED_CHECK_PREPARE.FATAL= Erreur technique lors de la préparation de la vérification des journaux sécurisés)
-    - WARNING : Pas de journaux trouvés ou certains journaux ne possède pas de données (TRACEABILITY_LINKED_CHECK_PREPARE.WARNING= Avertissement lors de la préparation de la vérification des journaux sécurisés)
+    - WARNING : Pas de journaux trouvés, ou certains journaux ne possèdent pas de données ou portent une version du format de sécurisation différente de celle configurée pour le tenant et sont donc écartés du périmètre (TRACEABILITY_LINKED_CHECK_PREPARE.WARNING= Avertissement lors de la préparation de la vérification des journaux sécurisés)
 
 ##### Récupération de la liste des stratégies de stockage PREPARE_STORAGE_STRATEGIES (PrepareStorageStrategiesPlugin.java)
 
