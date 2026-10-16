@@ -40,6 +40,7 @@ Documentation métier
    sections/gel.md
    sections/preservation.md
    sections/stockage.md
+   sections/offre_froide.md
    sections/transfert.md
    sections/valeur_probante.md
 
