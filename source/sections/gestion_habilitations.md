@@ -1863,7 +1863,7 @@ Il est nécessaire de configurer les keystores et truststores des instances cibl
     - /environments/keystores_external_archiving_systems/trustore_<external_system_id1>.jks
     - ...
 
-Les mots de passe des keystores et truststores doivent être définis un fichier vault (exemple: vault_keystores_external_archiving_systems.yml) à éditer via l'outil ansible-vault :
+Les mots de passe des keystores et truststores doivent être définis dans un fichier vault (exemple: vault_keystores_external_archiving_systems.yml) à éditer via l'outil ansible-vault :
 
 ```
 external_archiving_systems:
