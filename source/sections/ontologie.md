@@ -32,7 +32,7 @@ Il s’articule autour des axes suivants :
 - quelques conseils complémentaires de mise en œuvre.
 
 Le présent document décrit les fonctionnalités qui sont offertes par la
-solution logicielle Vitam au terme de la version 9.1 (printemps 2026).
+solution logicielle Vitam au terme de la version 10.0 (automne 2026).
 Il a vocation a être amendé, complété et enrichi au fur et à mesure de
 la réalisation de la solution logicielle Vitam et des retours et
 commentaires formulés par les ministères porteurs et les partenaires du
@@ -124,7 +124,7 @@ Ces vocabulaires peuvent être utilisés pour décrire :
     }	
 ```
 
-	En d’autres termes, l’ontologie **référence seulement les vocabulaires pouvant contenir des valeurs** (ou métadonnées) quand ils sont utilisés.
+En d’autres termes, l’ontologie **référence seulement les vocabulaires pouvant contenir des valeurs** (ou métadonnées) quand ils sont utilisés.
 
    -   A noter que les vocabulaires utilisés pour décrire un projet de versement ou une transaction ne sont pas référencés dans l'ontologie.
 
