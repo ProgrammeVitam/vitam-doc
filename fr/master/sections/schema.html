@@ -136,8 +136,9 @@
 <li class="toctree-l1"><a class="reference internal" href="gel.html">16. Le gel d’archives avec la solution logicielle Vitam</a></li>
 <li class="toctree-l1"><a class="reference internal" href="preservation.html">17. Gestion de la préservation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="stockage.html">18. Gestion de multiples stratégies de stockage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="transfert.html">19. Le transfert avec la solution logicielle Vitam</a></li>
-<li class="toctree-l1"><a class="reference internal" href="valeur_probante.html">20. Conservation de la valeur probante</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offre_froide.html">19. Archivage sur Offre Froide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transfert.html">20. Le transfert avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="valeur_probante.html">21. Conservation de la valeur probante</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">documentation Vitam UI</span></p>
 <ul>
@@ -259,7 +260,7 @@ Il s’articule autour des axes suivants :</p>
 <li><p>une présentation des mécanismes mis en œuvre dans la solution logicielle Vitam pour prendre en compte cette notion ;</p></li>
 <li><p>quelques conseils complémentaires de mise en œuvre.</p></li>
 </ul>
-<p>Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 9.1 (printemps 2026).
+<p>Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 10.0 (automne 2026).
 Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.</p>
 </section>
 </section>
@@ -281,48 +282,48 @@ Il a vocation à être amendé, complété et enrichi au fur et à mesure de la 
 <li><p>0 à n vocabulaire(s).</p></li>
 </ul>
 <p><strong>Points d’attention :</strong></p>
-<ul class="simple">
+<ul>
 <li><p>les chemins sont uniques dans la solution logicielle Vitam ;</p></li>
 <li><p>contrairement à l’ontologie, les vocabulaires utilisés par la solution logicielle Vitam de type « objet », c’est-à-dire ne contenant pas de valeurs informationnelles, sont référencés dans le schéma. Il peut s’agir de :</p>
-<ul>
+<ul class="simple">
 <li><p>vocabulaires conformes au SEDA de type « objet », c’est-à-dire correspondant à un élément XML englobant un sous-élément XML (par exemple, Writer ou Management) ;</p></li>
-</ul>
-</li>
 </ul>
 <p><em>Exemple : sont présents dans le schéma les vocabulaires « Keyword », « Keyword.Keyword Content », « Keyword.KeywordType ».</em></p>
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;Keyword&gt;</span>
-<span class="w">    </span><span class="nt">&lt;KeywordContent&gt;</span>Paris<span class="nt">&lt;/Content&gt;</span>
-<span class="w">    </span><span class="nt">&lt;KeywordType&gt;</span>geogname<span class="nt">&lt;/Type&gt;</span>
+<span class="w">	</span><span class="nt">&lt;KeywordContent&gt;</span>Paris<span class="nt">&lt;/Content&gt;</span>
+<span class="w">	</span><span class="nt">&lt;KeywordType&gt;</span>geogname<span class="nt">&lt;/Type&gt;</span>
 <span class="nt">&lt;/Keyword&gt;</span>
 </pre></div>
 </div>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- vocabulaires générés par la solution logicielle Vitam, correspondant à un élément JSON de type « objet ».
-</pre></div>
-</div>
+<ul class="simple">
+<li><p>vocabulaires générés par la solution logicielle Vitam, correspondant à un élément JSON de type « objet ».</p></li>
+</ul>
 <p><em>Exemple : sont présents dans le schéma les éléments JSON _mgt, _v.</em></p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;_mgt&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;AccessRule&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">&quot;Rules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                </span><span class="p">{</span>
-<span class="w">                    </span><span class="nt">&quot;Rule&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ACC-00001&quot;</span><span class="p">,</span>
-<span class="w">                    </span><span class="nt">&quot;StartDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1914-01-01&quot;</span><span class="p">,</span>
-<span class="w">                    </span><span class="nt">&quot;EndDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1914-01-01&quot;</span>
-<span class="w">                </span><span class="p">}</span>
-<span class="w">            </span><span class="p">]</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="nt">&quot;DescriptionLevel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Item&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;Description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Cabinet de Michel Mercier : correspondances.&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;CustodialHistory&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;CustodialHistoryItem&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">            </span><span class="s2">&quot;Fonds provenant des archives du cabinet du ministre Michel Mercier&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="s2">&quot;</span>
-<span class="s2">        ]</span>
-<span class="s2">    },</span>
+<span class="w">    </span><span class="nt">&quot;AccessRule&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;Rules&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;Rule&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ACC-00001&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;StartDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1914-01-01&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;EndDate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1914-01-01&quot;</span>
+<span class="w">            </span><span class="p">}</span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">},</span>
+<span class="nt">&quot;DescriptionLevel&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Item&quot;</span><span class="p">,</span>
+<span class="nt">&quot;Description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Cabinet de Michel Mercier : correspondances.&quot;</span><span class="p">,</span>
+<span class="nt">&quot;CustodialHistory&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;CustodialHistoryItem&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;Fonds provenant des archives du cabinet du ministre Michel Mercier&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="s2">&quot;</span>
+<span class="s2">    ]</span>
+<span class="s2">},</span>
 <span class="s2">&quot;</span><span class="err">_v&quot; : 4</span>
 </pre></div>
 </div>
 <p>En d’autres termes, le schéma référence tous les vocabulaires, qu’il s’agisse de vocabulaires pouvant contenir des valeurs (ou métadonnées, dits vocabulaire de type « feuille ») quand ils sont utilisés ou de vocabulaires ne contenant pas de valeurs (ou objets).</p>
+</li>
+</ul>
 </section>
 <section id="pourquoi-un-schema">
 <h3><span class="section-number">12.2.2. </span>Pourquoi un schéma ?<a class="headerlink" href="#pourquoi-un-schema" title="Lien vers cette rubrique"></a></h3>

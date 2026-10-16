@@ -84,6 +84,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#configuration-des-durees-minimales-autorisees-dans-le-referentiel-des-regles-de-gestion">7.3.1.1. Configuration des durées minimales autorisées dans le référentiel des règles de gestion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#configuration-des-niveaux-de-protection-du-secret-acceptes-sur-une-implementation-de-la-solution-logicielle-vitam">7.3.1.2. Configuration des niveaux de protection du secret acceptés sur une implémentation de la solution logicielle Vitam</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#configuration-des-indexations-en-base-des-regles-de-gestion">7.3.1.3. Configuration des indexations en base des règles de gestion</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#configuration-de-la-connexion-aux-referentiels-dans-le-module-de-collecte">7.3.1.4. Configuration de la connexion aux référentiels dans le module de collecte</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#administration-du-referentiel-des-regles-de-gestion">7.3.2. Administration du référentiel des règles de gestion</a><ul>
@@ -94,24 +95,20 @@
 <li class="toctree-l4"><a class="reference internal" href="#acces-au-referentiel">7.3.2.5. Accès au référentiel</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#collecte">7.3.3. Collecte</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#configuration-de-la-connexion-aux-referentiels-pour-vitamui">7.3.3.1. Configuration de la connexion aux référentiels pour VitamUI</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#entrees">7.3.4. Entrées</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#gestion-des-archives-existantes">7.3.5. Gestion des archives existantes</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#mise-a-jour-des-regles-de-gestion-associees-aux-unites-archivistiques">7.3.5.1. Mise à jour des règles de gestion associées aux unités archivistiques</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#indexation-desindexation-des-regles-de-gestion-heritees">7.3.5.2. Indexation/désindexation des règles de gestion héritées</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#indexation">7.3.5.2.1. Indexation</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#mise-a-jour-de-lindexation">7.3.5.2.2. Mise à jour de l’indexation</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#suppression-de-lindexation-desindexation">7.3.5.2.3. Suppression de l’indexation (désindexation)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#entrees">7.3.3. Entrées</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gestion-des-archives-existantes">7.3.4. Gestion des archives existantes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#mise-a-jour-des-regles-de-gestion-associees-aux-unites-archivistiques">7.3.4.1. Mise à jour des règles de gestion associées aux unités archivistiques</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#indexation-desindexation-des-regles-de-gestion-heritees">7.3.4.2. Indexation/désindexation des règles de gestion héritées</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#indexation">7.3.4.2.1. Indexation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#mise-a-jour-de-lindexation">7.3.4.2.2. Mise à jour de l’indexation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#suppression-de-lindexation-desindexation">7.3.4.2.3. Suppression de l’indexation (désindexation)</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#acces">7.3.6. Accès</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#calcul-des-regles-a-lacces">7.3.6.1. Calcul des règles à l’accès</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#filtrage-par-contrat-dacces-sur-les-echeances-indexees">7.3.6.2. Filtrage par contrat d’accès sur les échéances indexées</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#acces">7.3.5. Accès</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#calcul-des-regles-a-lacces">7.3.5.1. Calcul des règles à l’accès</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#filtrage-par-contrat-dacces-sur-les-echeances-indexees">7.3.5.2. Filtrage par contrat d’accès sur les échéances indexées</a></li>
 </ul>
 </li>
 </ul>
@@ -154,8 +151,9 @@
 <li class="toctree-l1"><a class="reference internal" href="gel.html">16. Le gel d’archives avec la solution logicielle Vitam</a></li>
 <li class="toctree-l1"><a class="reference internal" href="preservation.html">17. Gestion de la préservation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="stockage.html">18. Gestion de multiples stratégies de stockage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="transfert.html">19. Le transfert avec la solution logicielle Vitam</a></li>
-<li class="toctree-l1"><a class="reference internal" href="valeur_probante.html">20. Conservation de la valeur probante</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offre_froide.html">19. Archivage sur Offre Froide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transfert.html">20. Le transfert avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="valeur_probante.html">21. Conservation de la valeur probante</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">documentation Vitam UI</span></p>
 <ul>
@@ -1142,6 +1140,60 @@ Le fichier de configuration se présente comme suit (exemple fictif)<a class="fo
 <li><p>sur les autres tenants, le service d’indexation sera limité au service par défaut.</p></li>
 </ul>
 </section>
+<section id="configuration-de-la-connexion-aux-referentiels-dans-le-module-de-collecte">
+<h4><span class="section-number">7.3.1.4. </span>Configuration de la connexion aux référentiels dans le module de collecte<a class="headerlink" href="#configuration-de-la-connexion-aux-referentiels-dans-le-module-de-collecte" title="Lien vers cette rubrique"></a></h4>
+<p>Il est possible de choisir dans l’APP Collecte et préparation des versements de VitamUI d’utiliser ou non la connexion du projet de versement à des référentiels afin d’obtenir une aide à la saisie au sein du parcours de création du projet de versement.
+Cette connexion peut se faire avec le tenant et le SAE locaux mais elle peut également être mise en place avec des tenants d’autres instances externes de la solution logicielle Vitam.
+Ce service vaut notamment pour le référentiel des règles de gestion.</p>
+<p>Cette connexion demande alors une configuration au préalable décrite ci-après :</p>
+<p>Il est nécessaire de configurer les keystores et truststores des instances cibles dans le dossier environments/keystores_external_archiving_systems/ dans le dossier de déploiement de l’installation de Vitam-UI.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- /environments/keystores_external_archiving_systems/keystore_&lt;external_system_id1&gt;.p12
+- /environments/keystores_external_archiving_systems/trustore_&lt;external_system_id1&gt;.jks
+- ...
+</pre></div>
+</div>
+<p>Les mots de passe des keystores et truststores doivent être définis un fichier vault (exemple: vault_keystores_external_archiving_systems.yml) à éditer via l’outil ansible-vault :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">external_archiving_systems</span><span class="p">:</span>
+  <span class="n">keystore_password</span><span class="p">:</span>
+    <span class="o">&lt;</span><span class="n">external_system_id1</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">keystore_external_system_1_changeit</span>
+    <span class="o">&lt;</span><span class="n">external_system_id2</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">keystore_external_system_2_changeit</span>
+  <span class="n">truststore_password</span><span class="p">:</span>
+    <span class="o">&lt;</span><span class="n">external_system_id1</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">truststore_external_system_1_changeit</span>
+    <span class="o">&lt;</span><span class="n">external_system_id2</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">truststore_external_system_2_changeit</span>
+</pre></div>
+</div>
+<p>Les URLs d’accès aux SAE tiers, et les autorisations d’accès par tenant sont à définir dans la configuration ansible :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">external_archiving_systems</span><span class="p">:</span>
+  <span class="n">client_configuration</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">archiving_system_id</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">external_system_id1</span><span class="o">&gt;</span>
+    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;EXTERNAL ENV NAME 1&quot;</span>
+    <span class="n">access_external</span><span class="p">:</span>
+      <span class="n">host</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">host_name</span><span class="o">&gt;</span>
+      <span class="n">port</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">port</span><span class="o">&gt;</span>
+  <span class="o">-</span> <span class="n">archiving_system_id</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">external_system_id2</span><span class="o">&gt;</span>
+    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;EXTERNAL ENV NAME 2&quot;</span>
+    <span class="n">access_external</span><span class="p">:</span>
+        <span class="n">host</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">host_name</span><span class="o">&gt;</span>
+        <span class="n">port</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">port</span><span class="o">&gt;</span>
+  <span class="o">-</span> <span class="o">...</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">tenant_configuration</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">tenant</span><span class="p">:</span> <span class="mi">2</span>
+    <span class="n">external_archiving_system_references</span><span class="p">:</span>
+      <span class="o">-</span> <span class="n">archiving_system_id</span><span class="p">:</span> <span class="n">local</span> <span class="c1"># Use &quot;local&quot; as archiving_system_id to reference the current Vitam instance with other tenants</span>
+        <span class="n">tenantIds</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>       <span class="c1"># Target tenants</span>
+      <span class="o">-</span> <span class="n">archiving_system_id</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">external_system_id1</span><span class="o">&gt;</span>
+        <span class="n">tenantIds</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+  <span class="o">-</span> <span class="n">tenant</span><span class="p">:</span> <span class="mi">3</span>
+    <span class="n">external_archiving_system_references</span><span class="p">:</span>
+      <span class="o">-</span> <span class="n">archiving_system_id</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">external_system_id2</span><span class="o">&gt;</span>
+        <span class="n">tenantIds</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">]</span>
+  <span class="o">-</span> <span class="o">...</span>
+</pre></div>
+</div>
+<p><strong>Point d’attention :</strong> Cette configuration n’est disponible que dans l’application VitamUI. Au terme de la version 9.0, il n’est pas mis à disposition dans le back-office de la solution logicielle Vitam. Un applicatif autre que VitamUI devra nécessairement développer son propre service s’il souhaite mettre à disposition de ses utilisateurs ce type de service.</p>
+</section>
 </section>
 <section id="administration-du-referentiel-des-regles-de-gestion">
 <h3><span class="section-number">7.3.2. </span>Administration du référentiel des règles de gestion<a class="headerlink" href="#administration-du-referentiel-des-regles-de-gestion" title="Lien vers cette rubrique"></a></h3>
@@ -1266,65 +1318,8 @@ Sont disponibles les facettes de type :</p></li>
 </ul>
 </section>
 </section>
-<section id="collecte">
-<h3><span class="section-number">7.3.3. </span>Collecte<a class="headerlink" href="#collecte" title="Lien vers cette rubrique"></a></h3>
-<section id="configuration-de-la-connexion-aux-referentiels-pour-vitamui">
-<h4><span class="section-number">7.3.3.1. </span>Configuration de la connexion aux référentiels pour VitamUI<a class="headerlink" href="#configuration-de-la-connexion-aux-referentiels-pour-vitamui" title="Lien vers cette rubrique"></a></h4>
-<p>Il est possible de choisir dans VitamUI d’utiliser ou non la connexion du projet de versement à des référentiels afin d’obtenir une aide à la saisie au sein du parcours de création du projet de versement.
-Cette connexion peut se faire avec le tenant et le SAE locaux mais elle peut également être mise en place avec des tenants d’autres instances externes de la solution logicielle Vitam.
-Ce service vaut notamment pour le référentiel des règles de gestion.</p>
-<p>Cette connexion demande alors une configuration au préalable décrite ci-après :</p>
-<p>Il est nécessaire de configurer les keystores et truststores des instances cibles dans le dossier environments/keystores_external_archiving_systems/ dans le dossier de déploiement de l’installation de Vitam-UI.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- /environments/keystores_external_archiving_systems/keystore_&lt;external_system_id1&gt;.p12
-- /environments/keystores_external_archiving_systems/trustore_&lt;external_system_id1&gt;.jks
-- ...
-</pre></div>
-</div>
-<p>Les mots de passe des keystores et truststores doivent être définis un fichier vault (exemple: vault_keystores_external_archiving_systems.yml) à éditer via l’outil ansible-vault :</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">external_archiving_systems</span><span class="p">:</span>
-  <span class="n">keystore_password</span><span class="p">:</span>
-    <span class="o">&lt;</span><span class="n">external_system_id1</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">keystore_external_system_1_changeit</span>
-    <span class="o">&lt;</span><span class="n">external_system_id2</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">keystore_external_system_2_changeit</span>
-  <span class="n">truststore_password</span><span class="p">:</span>
-    <span class="o">&lt;</span><span class="n">external_system_id1</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">truststore_external_system_1_changeit</span>
-    <span class="o">&lt;</span><span class="n">external_system_id2</span><span class="o">&gt;</span><span class="p">:</span> <span class="n">truststore_external_system_2_changeit</span>
-</pre></div>
-</div>
-<p>Les URLs d’accès aux SAE tiers, et les autorisations d’accès par tenant sont à définir dans la configuration ansible :</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">external_archiving_systems</span><span class="p">:</span>
-  <span class="n">client_configuration</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">archiving_system_id</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">external_system_id1</span><span class="o">&gt;</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;EXTERNAL ENV NAME 1&quot;</span>
-    <span class="n">access_external</span><span class="p">:</span>
-      <span class="n">host</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">host_name</span><span class="o">&gt;</span>
-      <span class="n">port</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">port</span><span class="o">&gt;</span>
-  <span class="o">-</span> <span class="n">archiving_system_id</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">external_system_id2</span><span class="o">&gt;</span>
-    <span class="n">name</span><span class="p">:</span> <span class="s2">&quot;EXTERNAL ENV NAME 2&quot;</span>
-    <span class="n">access_external</span><span class="p">:</span>
-        <span class="n">host</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">host_name</span><span class="o">&gt;</span>
-        <span class="n">port</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">port</span><span class="o">&gt;</span>
-  <span class="o">-</span> <span class="o">...</span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">tenant_configuration</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">tenant</span><span class="p">:</span> <span class="mi">2</span>
-    <span class="n">external_archiving_system_references</span><span class="p">:</span>
-      <span class="o">-</span> <span class="n">archiving_system_id</span><span class="p">:</span> <span class="n">local</span> <span class="c1"># Use &quot;local&quot; as archiving_system_id to reference the current Vitam instance with other tenants</span>
-        <span class="n">tenantIds</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>       <span class="c1"># Target tenants</span>
-      <span class="o">-</span> <span class="n">archiving_system_id</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">external_system_id1</span><span class="o">&gt;</span>
-        <span class="n">tenantIds</span><span class="p">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
-  <span class="o">-</span> <span class="n">tenant</span><span class="p">:</span> <span class="mi">3</span>
-    <span class="n">external_archiving_system_references</span><span class="p">:</span>
-      <span class="o">-</span> <span class="n">archiving_system_id</span><span class="p">:</span> <span class="o">&lt;</span><span class="n">external_system_id2</span><span class="o">&gt;</span>
-        <span class="n">tenantIds</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">]</span>
-  <span class="o">-</span> <span class="o">...</span>
-</pre></div>
-</div>
-<p><strong>Point d’attention :</strong> Cette configuration n’est disponible que dans l’application VitamUI. Au terme de la version 9.0, il n’est pas mis à disposition dans le back-office de la solution logicielle Vitam. Un applicatif autre que VitamUI devra nécessairement développer son propre service s’il souhaite mettre à disposition de ses utilisateurs ce type de service.</p>
-</section>
-</section>
 <section id="entrees">
-<h3><span class="section-number">7.3.4. </span>Entrées<a class="headerlink" href="#entrees" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">7.3.3. </span>Entrées<a class="headerlink" href="#entrees" title="Lien vers cette rubrique"></a></h3>
 <p>Dans le cadre du processus d’entrée d’un ensemble d’unités archivistiques, suite à la réception d’un message ArchiveTransfer du SEDA, la solution logicielle Vitam effectue les tâches et traitements suivants pour les unités archivistiques déclarant des règles de gestion :</p>
 <ul class="simple">
 <li><p>vérification de la conformité du bordereau avec le schéma par défaut associé à la version 2.1., à la version 2.2. ou à la version 2.3. du SEDA ou avec les exigences portées dans un profil d’archivage et/ou dans un profil d’unité archivistique ;</p></li>
@@ -1421,9 +1416,9 @@ Ce service vaut notamment pour le référentiel des règles de gestion.</p>
 </ul>
 </section>
 <section id="gestion-des-archives-existantes">
-<h3><span class="section-number">7.3.5. </span>Gestion des archives existantes<a class="headerlink" href="#gestion-des-archives-existantes" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">7.3.4. </span>Gestion des archives existantes<a class="headerlink" href="#gestion-des-archives-existantes" title="Lien vers cette rubrique"></a></h3>
 <section id="mise-a-jour-des-regles-de-gestion-associees-aux-unites-archivistiques">
-<h4><span class="section-number">7.3.5.1. </span>Mise à jour des règles de gestion associées aux unités archivistiques<a class="headerlink" href="#mise-a-jour-des-regles-de-gestion-associees-aux-unites-archivistiques" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">7.3.4.1. </span>Mise à jour des règles de gestion associées aux unités archivistiques<a class="headerlink" href="#mise-a-jour-des-regles-de-gestion-associees-aux-unites-archivistiques" title="Lien vers cette rubrique"></a></h4>
 <p>La solution logicielle Vitam permet de mettre à jour les règles de gestion associées aux unités archivistiques :</p>
 <ul class="simple">
 <li><p>soit via une mise à jour des unités archivistiques, à l’unité ou en masse<a class="footnote-reference brackets" href="#id31" id="id15" role="doc-noteref"><span class="fn-bracket">[</span>15<span class="fn-bracket">]</span></a> :</p>
@@ -1457,10 +1452,10 @@ Il est également possible de mettre à jour des règles de gestion au moyen des
 </ul>
 </section>
 <section id="indexation-desindexation-des-regles-de-gestion-heritees">
-<h4><span class="section-number">7.3.5.2. </span>Indexation/désindexation des règles de gestion héritées<a class="headerlink" href="#indexation-desindexation-des-regles-de-gestion-heritees" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">7.3.4.2. </span>Indexation/désindexation des règles de gestion héritées<a class="headerlink" href="#indexation-desindexation-des-regles-de-gestion-heritees" title="Lien vers cette rubrique"></a></h4>
 <p>Afin de permettre aux plates-formes d’archivage de filtrer l’accès aux unités archivistiques en fonction des règles de gestion, la solution logicielle Vitam met en place un service permettant de gérer l’indexation des règles déclarées et héritées par une ou plusieurs unités archivistiques.</p>
 <section id="indexation">
-<h5><span class="section-number">7.3.5.2.1. </span>Indexation<a class="headerlink" href="#indexation" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">7.3.4.2.1. </span>Indexation<a class="headerlink" href="#indexation" title="Lien vers cette rubrique"></a></h5>
 <p>L’indexation des unités archivistiques peut être lancée :</p>
 <ul class="simple">
 <li><p>sur requête par une application utilisant la solution logicielle Vitam ;</p></li>
@@ -1554,7 +1549,7 @@ Il est également possible, en activant le paramétrage correspondant dans le co
 </ul>
 </section>
 <section id="mise-a-jour-de-lindexation">
-<h5><span class="section-number">7.3.5.2.2. </span>Mise à jour de l’indexation<a class="headerlink" href="#mise-a-jour-de-lindexation" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">7.3.4.2.2. </span>Mise à jour de l’indexation<a class="headerlink" href="#mise-a-jour-de-lindexation" title="Lien vers cette rubrique"></a></h5>
 <p>L’indexation des règles déclarées et héritées par une ou plusieurs unités archivistiques est automatiquement invalidée par la solution logicielle Vitam dans les cas suivants :</p>
 <ul class="simple">
 <li><p>mise à jour des métadonnées de gestion d’une unité archivistique ;</p></li>
@@ -1570,15 +1565,15 @@ Il est également possible, en activant le paramétrage correspondant dans le co
 <p>L’indexation invalidée sera recalculée par traitement automatique programmé (batch).</p>
 </section>
 <section id="suppression-de-lindexation-desindexation">
-<h5><span class="section-number">7.3.5.2.3. </span>Suppression de l’indexation (désindexation)<a class="headerlink" href="#suppression-de-lindexation-desindexation" title="Lien vers cette rubrique"></a></h5>
+<h5><span class="section-number">7.3.4.2.3. </span>Suppression de l’indexation (désindexation)<a class="headerlink" href="#suppression-de-lindexation-desindexation" title="Lien vers cette rubrique"></a></h5>
 <p>La suppression de l’indexation des unités archivistiques peut être lancée sur requête par une application utilisant la solution logicielle Vitam.</p>
 </section>
 </section>
 </section>
 <section id="acces">
-<h3><span class="section-number">7.3.6. </span>Accès<a class="headerlink" href="#acces" title="Lien vers cette rubrique"></a></h3>
+<h3><span class="section-number">7.3.5. </span>Accès<a class="headerlink" href="#acces" title="Lien vers cette rubrique"></a></h3>
 <section id="calcul-des-regles-a-lacces">
-<h4><span class="section-number">7.3.6.1. </span>Calcul des règles à l’accès<a class="headerlink" href="#calcul-des-regles-a-lacces" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">7.3.5.1. </span>Calcul des règles à l’accès<a class="headerlink" href="#calcul-des-regles-a-lacces" title="Lien vers cette rubrique"></a></h4>
 <p>Par défaut, lorsque l’utilisateur demande à accéder au détail d’une unité archivistique, la solution logicielle Vitam retourne :</p>
 <ul class="simple">
 <li><p>les règles déclarées par cette unité archivistique, y compris l’échéance de la règle si la date de départ de son calcul est connue ;</p></li>
@@ -1605,7 +1600,7 @@ Il est également possible, en activant le paramétrage correspondant dans le co
 <p>En revanche, l’APP « Collecte et préparation des versements » propose les mêmes services uniquement pour les règles portées par les unités archivistiques.</p>
 </section>
 <section id="filtrage-par-contrat-dacces-sur-les-echeances-indexees">
-<h4><span class="section-number">7.3.6.2. </span>Filtrage par contrat d’accès sur les échéances indexées<a class="headerlink" href="#filtrage-par-contrat-dacces-sur-les-echeances-indexees" title="Lien vers cette rubrique"></a></h4>
+<h4><span class="section-number">7.3.5.2. </span>Filtrage par contrat d’accès sur les échéances indexées<a class="headerlink" href="#filtrage-par-contrat-dacces-sur-les-echeances-indexees" title="Lien vers cette rubrique"></a></h4>
 <p>Le contrat d’accès permet de filtrer les résultats retournés à l’utilisateur en filtrant sur les échéances des règles de gestion indexées.</p>
 <p>Si le paramétrage correspondant est activé, la solution logicielle ne retournera en réponse à une requête que les unités archivistiques ayant fait l’objet d’une indexation des règles applicables pour lesquelles la ou les règles de gestion sélectionnées dans le contrat d’accès sont échues à la date à laquelle est faite la requête.</p>
 <p><strong>Points d’attention :</strong></p>

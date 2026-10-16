@@ -1015,6 +1015,30 @@
 <li class="toctree-l4"><a class="reference internal" href="#id121">13.17.6.2. Détail du rapport</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#structure-du-workflow-d-audit-de-la-chaine-de-tracabilite">13.17.7. Structure du workflow d’audit de la chaîne de traçabilité</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#detail-des-etapes-et-des-actions">13.18. Détail des étapes et des actions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#preparation-de-l-audit-stp-prepare-traceability-chain-audit">13.18.1. 1. Préparation de l’audit (<code class="docutils literal notranslate"><span class="pre">STP_PREPARE_TRACEABILITY_CHAIN_AUDIT</span></code>)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#actions">13.18.1.1. Actions :</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#controles-unitaires-de-tracabilite-stp-traceability-chain-audit-unit-checks">13.18.2. 2. Contrôles unitaires de traçabilité (<code class="docutils literal notranslate"><span class="pre">STP_TRACEABILITY_CHAIN_AUDIT_UNIT_CHECKS</span></code>)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id122">13.18.2.1. Actions :</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#controle-du-chainage-des-operations-stp-traceability-chain-audit-operations-chain-checks">13.18.3. 3. Contrôle du chaînage des opérations (<code class="docutils literal notranslate"><span class="pre">STP_TRACEABILITY_CHAIN_AUDIT_OPERATIONS_CHAIN_CHECKS</span></code>)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id123">13.18.3.1. Actions :</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#generation-du-rapport-d-audit-stp-traceability-chain-audit-reporting">13.18.4. 4. Génération du rapport d’audit (<code class="docutils literal notranslate"><span class="pre">STP_TRACEABILITY_CHAIN_AUDIT_REPORTING</span></code>)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id124">13.18.4.1. Actions :</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#finalisation-du-processus-stp-finalize-traceability-chain-audit">13.18.5. 5. Finalisation du processus (<code class="docutils literal notranslate"><span class="pre">STP_FINALIZE_TRACEABILITY_CHAIN_AUDIT</span></code>)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id125">13.18.5.1. Actions :</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -1024,8 +1048,9 @@
 <li class="toctree-l1"><a class="reference internal" href="gel.html">16. Le gel d’archives avec la solution logicielle Vitam</a></li>
 <li class="toctree-l1"><a class="reference internal" href="preservation.html">17. Gestion de la préservation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="stockage.html">18. Gestion de multiples stratégies de stockage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="transfert.html">19. Le transfert avec la solution logicielle Vitam</a></li>
-<li class="toctree-l1"><a class="reference internal" href="valeur_probante.html">20. Conservation de la valeur probante</a></li>
+<li class="toctree-l1"><a class="reference internal" href="offre_froide.html">19. Archivage sur Offre Froide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="transfert.html">20. Le transfert avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="valeur_probante.html">21. Conservation de la valeur probante</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">documentation Vitam UI</span></p>
 <ul>
@@ -9460,6 +9485,162 @@ Cette section décrit la manière dont ce rapport est structuré.</p>
 </li>
 <li><p>«  objectGroupId » : Id de l’objet groupe</p></li>
 <li><p>«  unitIds » : une liste des unités archivistiques associées à la version de GOT</p></li>
+</ul>
+</section>
+</section>
+<section id="structure-du-workflow-d-audit-de-la-chaine-de-tracabilite">
+<h3><span class="section-number">13.17.7. </span>Structure du workflow d’audit de la chaîne de traçabilité<a class="headerlink" href="#structure-du-workflow-d-audit-de-la-chaine-de-tracabilite" title="Lien vers cette rubrique"></a></h3>
+<p>Ce processus permet de vérifier l’intégrité et la continuité de la chaîne des journaux de traçabilité sécurisés (opérations, cycle de vie des unités archivistiques, cycle de vie des objets groupes) sur une période, une version, et un niveau de verbosité des anomalies.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p>Identifiant du processus (<code class="docutils literal notranslate"><span class="pre">id</span></code>)</p></th>
+<th class="head text-left"><p>Nom (<code class="docutils literal notranslate"><span class="pre">name</span></code>)</p></th>
+<th class="head text-left"><p>Type de processus (<code class="docutils literal notranslate"><span class="pre">typeProc</span></code>)</p></th>
+<th class="head text-left"><p>Commentaire</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">TRACEABILITY_CHAIN_AUDIT</span></code></p></td>
+<td class="text-left"><p>Traceability Chain Audit</p></td>
+<td class="text-left"><p><code class="docutils literal notranslate"><span class="pre">AUDIT</span></code></p></td>
+<td class="text-left"><p>Traceability Chain Audit Workflow</p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils" />
+<p>D’une façon synthétique, le workflow est décrit ainsi :</p>
+<p><img alt="" src="../_images/traceability_chain_audit.png" /></p>
+</section>
+</section>
+<section id="detail-des-etapes-et-des-actions">
+<h2><span class="section-number">13.18. </span>Détail des étapes et des actions<a class="headerlink" href="#detail-des-etapes-et-des-actions" title="Lien vers cette rubrique"></a></h2>
+<section id="preparation-de-l-audit-stp-prepare-traceability-chain-audit">
+<h3><span class="section-number">13.18.1. </span>1. Préparation de l’audit (<code class="docutils literal notranslate"><span class="pre">STP_PREPARE_TRACEABILITY_CHAIN_AUDIT</span></code>)<a class="headerlink" href="#preparation-de-l-audit-stp-prepare-traceability-chain-audit" title="Lien vers cette rubrique"></a></h3>
+<ul class="simple">
+<li><p><strong>Règle</strong> : Cette étape initialise les paramètres de la requête d’audit, prépare les seuils de distribution et identifie la liste des journaux d’opérations de traçabilité à auditer.</p></li>
+<li><p><strong>Type</strong> : bloquant</p></li>
+</ul>
+<section id="actions">
+<h4><span class="section-number">13.18.1.1. </span>Actions :<a class="headerlink" href="#actions" title="Lien vers cette rubrique"></a></h4>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">TRACEABILITY_CHAIN_AUDIT_DISTRIBUTION_THRESHOLD</span></code></strong> :</p></li>
+</ul>
+<ul class="simple">
+<li><p><strong>Règle</strong> : tâche consistant à vérifier les seuils de limitation du nombre d’opérations de sécurisation concernées</p></li>
+<li><p><strong>Type</strong> : bloquant</p></li>
+<li><p><strong>Statuts</strong> :</p>
+<ul>
+<li><p>OK : Le nombre d’opérations de sécurisation est inférieur au seuil de la requête <strong>threshold</strong> s’il est renseigné et inférieur au seuil par defaut <strong>distributionThreshold</strong> (TRACEABILITY_CHAIN_AUDIT_DISTRIBUTION_THRESHOLD.OK = Succès de vérification des seuils de limitation de l’audit de chainage)</p></li>
+<li><p>WARNING: Le seuil de la requête <strong>threshold</strong> est présent et il est supérieur au seuil par defaut <strong>distributionThreshold</strong>, et le nombre d’opérations de sécurisation est inférieur au seuil de la requête <strong>threshold</strong> et supérieur à celui par défaut <strong>distributionThreshold</strong>(TRACEABILITY_CHAIN_AUDIT_DISTRIBUTION_THRESHOLD.WARNING = Avertissement lors de la vérification des seuils de limitation de l’audit de chainage)</p></li>
+<li><p>KO : Si le seuil de la requête <strong>threshold</strong> est présent, le nombre d’opérations de sécurisation est supérieur à ce seuil. Si le seuil de la requête <strong>threshold</strong> est absent, le nombre d’opérations de sécurisation est supérieur au seuil par défaut <strong>distributionThreshold</strong>. (TRACEABILITY_CHAIN_AUDIT_DISTRIBUTION_THRESHOLD.KO = Échec lors de la vérification des seuils de limitation de l’audit de chainage)</p></li>
+<li><p>FATAL : une erreur technique est survenue lors de la vérification des seuils (TRACEABILITY_CHAIN_AUDIT_DISTRIBUTION_THRESHOLD.FATAL = Erreur technique lors de la vérification des seuils de limitation de l’audit de chainage)</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">TRACEABILITY_CHAIN_AUDIT_PREPARE</span></code></strong> :</p></li>
+</ul>
+<ul class="simple">
+<li><p><strong>Règle</strong> : tâche consistant à récupèrer les métadonnées des opérations de sécurisation, contrôler les statuts d’opérations, les croiser/enrichir avec les processus en cours/en pause, à la fin préparer le fichier de distribution pour le traitement des contrôles unitaires (<code class="docutils literal notranslate"><span class="pre">logbookOperations.jsonl</span></code>).</p></li>
+<li><p><strong>Type</strong> : bloquant</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="controles-unitaires-de-tracabilite-stp-traceability-chain-audit-unit-checks">
+<h3><span class="section-number">13.18.2. </span>2. Contrôles unitaires de traçabilité (<code class="docutils literal notranslate"><span class="pre">STP_TRACEABILITY_CHAIN_AUDIT_UNIT_CHECKS</span></code>)<a class="headerlink" href="#controles-unitaires-de-tracabilite-stp-traceability-chain-audit-unit-checks" title="Lien vers cette rubrique"></a></h3>
+<ul class="simple">
+<li><p><strong>Règle</strong> : Cette étape distribuée, fait les contrôles unitaires des opérations de sécurisation.</p></li>
+<li><p><strong>Type</strong> : non bloquant</p></li>
+<li><p><strong>Type de distribution</strong> : <code class="docutils literal notranslate"><span class="pre">LIST_IN_JSONL_FILE</span></code></p></li>
+<li><p><strong>Fichier source</strong> : <code class="docutils literal notranslate"><span class="pre">logbookOperations.jsonl</span></code></p></li>
+<li><p><strong>Type d’élément</strong> : <code class="docutils literal notranslate"><span class="pre">LogbookOperation</span></code></p></li>
+<li><p><strong>Statut en cas de liste vide</strong> : <code class="docutils literal notranslate"><span class="pre">KO</span></code></p></li>
+</ul>
+<section id="id122">
+<h4><span class="section-number">13.18.2.1. </span>Actions :<a class="headerlink" href="#id122" title="Lien vers cette rubrique"></a></h4>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">TRACEABILITY_CHAIN_AUDIT_UNITARY_CHECK</span></code></strong> :</p></li>
+</ul>
+<ul class="simple">
+<li><p><strong>Règle</strong> : tâche consistant à vérifier unitairement les opérations de sécurisation.</p></li>
+<li><p><strong>Type</strong> : non bloquant</p></li>
+<li><p><strong>Statuts</strong> : <code class="docutils literal notranslate"><span class="pre">KO_CAUSES_WARNING</span></code> (une anomalie unitaire sur une opération n’interrompt pas le workflow mais produit un avertissement)</p></li>
+<li><p><strong>Description</strong> : Dans cette étape, on contrôle unitairement les opérations de sécurisation, en faisant les contrôles suivants:</p>
+<ul>
+<li><p>Détection des status anormales.</p></li>
+<li><p>Vérification de la troncature d’opérations, on considère une troncature lorsque le nombre d’opérations sécurisées est égal à 10000, puisque les chances de tomber sur 10000 pile sont très faibles.</p></li>
+<li><p>vérification cryptographique des opérations, cela inclut l’extraction des données depuis les fichiers de sécurisation, le contrôle de l’arbre Merkle, et le contrôle du timeStamping.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="controle-du-chainage-des-operations-stp-traceability-chain-audit-operations-chain-checks">
+<h3><span class="section-number">13.18.3. </span>3. Contrôle du chaînage des opérations (<code class="docutils literal notranslate"><span class="pre">STP_TRACEABILITY_CHAIN_AUDIT_OPERATIONS_CHAIN_CHECKS</span></code>)<a class="headerlink" href="#controle-du-chainage-des-operations-stp-traceability-chain-audit-operations-chain-checks" title="Lien vers cette rubrique"></a></h3>
+<ul class="simple">
+<li><p><strong>Règle</strong> : Cette étape valide la cohérence globale et chronologique de la chaîne de sécurisation. Cette vérification concerne que les opérations en succès avec fichier de traçabilité(OK, WARNING)</p></li>
+</ul>
+<section id="id123">
+<h4><span class="section-number">13.18.3.1. </span>Actions :<a class="headerlink" href="#id123" title="Lien vers cette rubrique"></a></h4>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">TRACEABILITY_CHAIN_AUDIT_OPERATIONS_CHAINING_CHECK</span></code></strong> :</p>
+<ul>
+<li><p><strong>Comportement</strong> : <code class="docutils literal notranslate"><span class="pre">BLOCKING</span></code></p></li>
+<li><p><strong>Type</strong> : bloquant</p></li>
+<li><p><strong>Distribution</strong> : Non distibué</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p><strong>Description</strong> : Dans cette étape, on contrôle le chainage des opérations de sécurisation, en enrichissant les anomalies liés aux contrôles suivants:</p></li>
+<li><p><strong>checkValidPredecessors</strong> : Permet de contrôler pour chaque opération si les opérations précédentes sont valides, en contrôlant la cohérence des dates de début et de fin des sécurisations, la cohérence du timestamp des opérations précédentes entre le logbook opération et le fichier de sécurisation, la cohérence du champ <strong>previousOperationId</strong> s’il est déclarée.</p></li>
+<li><p><strong>detectDuplicateZips</strong> : Contrôle s’il y des opérations de sécurisation déclarant le même nom de fichier de sécurisation, c’est lié à l’anomalie de plusieurs lancements en parallèle.</p></li>
+<li><p><strong>detectBranches</strong> Contrôle si plusieurs opérations de sécurisation déclarent une même date de début de sécurisation.</p></li>
+<li><p><strong>detectParallelChains</strong> Contrôle si plusieurs opérations de sécurisation déclarent des dates de début de sécurisation, mais il n’y a aucune opération de  sécurisation avec comme date de fin cette date.</p></li>
+<li><p><strong>detectInactivityPeriods</strong> : Contrôle s’il y a des opérations sécurisées en retard, c’est le cas des problèmes de scheduler arretés, ou le système en maintenance par exemple.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="generation-du-rapport-d-audit-stp-traceability-chain-audit-reporting">
+<h3><span class="section-number">13.18.4. </span>4. Génération du rapport d’audit (<code class="docutils literal notranslate"><span class="pre">STP_TRACEABILITY_CHAIN_AUDIT_REPORTING</span></code>)<a class="headerlink" href="#generation-du-rapport-d-audit-stp-traceability-chain-audit-reporting" title="Lien vers cette rubrique"></a></h3>
+<ul class="simple">
+<li><p><strong>Règle</strong> : Consolide les anomalies remontées et produit le rapport d’audit de la chaîne de traçabilité.</p></li>
+</ul>
+<section id="id124">
+<h4><span class="section-number">13.18.4.1. </span>Actions :<a class="headerlink" href="#id124" title="Lien vers cette rubrique"></a></h4>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">TRACEABILITY_CHAIN_AUDIT_REPORTING</span></code></strong> :</p>
+<ul>
+<li><p><strong>Comportement</strong> : <code class="docutils literal notranslate"><span class="pre">BLOCKING</span></code></p></li>
+<li><p><strong>Type</strong> : bloquant</p></li>
+<li><p><strong>Distribution</strong> : Non distibué</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p><strong>Description</strong> : Cette étape reporte les anomalies dans le rapport de l’audit en fonction du niveau de reporting <strong>logLevel</strong> avec les 2 niveaux : <strong>minimal</strong> et <strong>verbose</strong>, le niveau <strong>minimal</strong> ne reporte que les anomalies sevères ou critiques.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="finalisation-du-processus-stp-finalize-traceability-chain-audit">
+<h3><span class="section-number">13.18.5. </span>5. Finalisation du processus (<code class="docutils literal notranslate"><span class="pre">STP_FINALIZE_TRACEABILITY_CHAIN_AUDIT</span></code>)<a class="headerlink" href="#finalisation-du-processus-stp-finalize-traceability-chain-audit" title="Lien vers cette rubrique"></a></h3>
+<ul class="simple">
+<li><p><strong>Comportement</strong> : étape systématiquement exécutée, même en cas d’échec ou d’interruption en amont.</p></li>
+<li><p><strong>Distribution</strong> : Non distibué</p></li>
+</ul>
+<section id="id125">
+<h4><span class="section-number">13.18.5.1. </span>Actions :<a class="headerlink" href="#id125" title="Lien vers cette rubrique"></a></h4>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">TRACEABILITY_CHAIN_AUDIT_FINALIZATION</span></code></strong> :</p>
+<ul>
+<li><p><strong>Comportement</strong> : <code class="docutils literal notranslate"><span class="pre">BLOCKING</span></code></p></li>
+<li><p><strong>Description</strong> : Nettoie les fichiers temporaires, les collections de reporting de batch-report .</p></li>
+</ul>
+</li>
 </ul>
 </section>
 </section>

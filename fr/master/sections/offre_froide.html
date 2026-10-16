@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="fr" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>19. Archivage sur Offre Froide &mdash; Vitam documentation fonctionnelle</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=eea1f72d" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=f4732e6d"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/translations.js?v=bf059b8c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+    <link rel="next" title="20. Le transfert avec la solution logicielle Vitam" href="transfert.html" />
+    <link rel="prev" title="18. Gestion de multiples stratégies de stockage" href="stockage.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: white" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/Vitam_Logo-CMJN.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Rechercher docs" aria-label="Rechercher docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">première approche</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="guide_lecture.html">1. Documentation Vitam - guide de lecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="presentation_programme.html">2. Présentation du programme Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="presentation_solution_logicielle.html">3. Présentation de la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guide_prise_en_main.html">4. Guide de prise en main de la solution logicielle Vitam – Vitam UI<br>
+<em>Réaliser une première entrée</em></a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">documentation métier</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="organisation_information.html">1. Organisation de l’information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gestion_archives_arbo.html">2. Gestion des archives et des arborescences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_donnees.html">3. Modèle de données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SIP.html">4. Structuration des <em>Submission Information Packages</em> (SIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DIP.html">5. Structuration des <em>Dissemination Information Packages</em> (DIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gestion_habilitations.html">6. Gestion des habilitations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="regles_gestion.html">7. Règles de gestion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="services_prod.html">8. Services producteurs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_archivage.html">9. Profils d’archivage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="profil_unite_archivistique.html">10. Profils d’unité archivistique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ontologie.html">11. Ontologie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="schema.html">12. Schéma</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modele_de_workflow.html">13. Description des workflows et des opérations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module_de_collecte.html">14. Module de collecte</a></li>
+<li class="toctree-l1"><a class="reference internal" href="eliminations.html">15. Les éliminations avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gel.html">16. Le gel d’archives avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preservation.html">17. Gestion de la préservation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="stockage.html">18. Gestion de multiples stratégies de stockage</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">19. Archivage sur Offre Froide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#resume">19.1. Résumé</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#documents-de-reference">19.1.1. Documents de référence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#presentation-du-document">19.1.2. Présentation du document</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#generalites">19.2. Généralités</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#bibliotheque-de-bandes">19.2.1. Bibliothèque de bandes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#quand-utiliser-un-stockage-sur-bandes-magnetiques">19.2.2. Quand utiliser un stockage sur bandes magnétiques ?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fonctionnement-du-stockage-sur-bandes-magnetiques">19.2.3. Fonctionnement du stockage sur bandes magnétiques</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ecriture-sur-une-bande">19.2.3.1. Écriture sur une bande</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#lecture-depuis-une-bande">19.2.3.2. Lecture depuis une bande</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#suppression">19.2.3.3. Suppression</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#fonctionnement-de-loffre-froide-vitam">19.3. Fonctionnement de l’offre froide Vitam</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#larchivage-dans-des-archives-tar">19.3.1. L’archivage dans des archives TAR</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#disque-local-de-l-offre-froide">19.3.2. Disque local de l’offre froide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#les-demandes-dacces">19.3.3. Les demandes d’accès</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#buckets-file-buckets">19.3.4. Buckets &amp; file buckets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fonctionnement-du-cache">19.3.5. Fonctionnement du cache</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cycle-de-vie-des-objets-dans-loffre-froide-de-vitam">19.3.6. Cycle de vie des objets dans l’offre froide de Vitam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lidentification-des-bandes">19.3.7. L’identification des bandes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cycle-de-vies-des-bandes">19.3.8. Cycle de vies des bandes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#detection-de-fin-de-bandes">19.3.9. Détection de fin de bandes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ordres-de-lecture-et-decriture">19.3.10. Ordres de lecture et d’écriture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#catalogue-en-base-de-donnees">19.3.11. Catalogue en base de données</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#suppression-depuis-loffre-froide-vitam">19.3.12. Suppression depuis l’offre froide Vitam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#backup-du-catalogue">19.3.13. Backup du catalogue</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#impacts-de-loffre-froide-dans-vitam">19.3.14. Impacts de l’offre froide dans Vitam</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#synchronisation-dune-offre-depuis-une-offre-froide">19.3.14.1. Synchronisation d’une offre depuis une offre froide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#les-workflows-necessitant-une-lecture-des-objets-binaires">19.3.14.2. Les workflows nécessitant une lecture des objets binaires</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#api-de-telechargement-unitaire-des-objets-binaires">19.3.14.3. API de téléchargement unitaire des objets binaires</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#integration-technique-avec-une-bibliotheque-de-bandes">19.4. Intégration technique avec une bibliothèque de bandes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#connexion-technique-a-une-bibliotheque-de-bandes-depuis-vitam">19.4.1. Connexion technique à une bibliothèque de bandes depuis Vitam</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pilotage-technique-dune-bibliotheque-de-bandes-depuis-vitam">19.4.2. Pilotage technique d’une bibliothèque de bandes depuis Vitam</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#limitations-et-challenges">19.5. Limitations et challenges</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="transfert.html">20. Le transfert avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="valeur_probante.html">21. Conservation de la valeur probante</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">documentation Vitam UI</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Autoprovisionning.html">1. Vitam UI : présentation de la fonctionnalité d’auto-provisioning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VitamUI_Arbres_Plans.html">2. APP Arbres et plans</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">outils connexes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="resip.html">1. RESIP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="resip_faq.html">2. RESIP : foire aux questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pastis_standalone.html">3. PASTIS STANDALONE</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Chantier préservation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="chantier_preservation_validation_format.html">1. Validation du format des fichiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_identification_format.html">2. Identification des formats de fichiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chantier_extraction_MD.html">3. Extraction des métadonnées techniques</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Vademecum</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_sommaire.html">1. Vademecum: sommaire thématique</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_glossaire.html">2. Notions utilisées dans la solution logicielle Vitam et lien vers la fiche qui les définit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_arbre.html">3. L’arbre de positionnement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_audit.html">4. Les audits dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_classification.html">5. La gestion des archives classifiées avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_acces.html">6. Le contrat d’accès dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_entree.html">7. Le contrat d’entrée dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_contrat_gestion.html">8. Le contrat de gestion dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_echeances.html">9. Le calcul des héritages des règles de gestion et l’indexation des échéances dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_eliminations.html">10. Réaliser des éliminations d’archives avec la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_habilitations.html">11. La gestion des droits et permissions des utilisateurs applicatifs dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_identifiants.html">12. L’attribution des identifiants dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_journalisation.html">13. La journalisation et la conservation de la valeur probante dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_ontologie.html">14. L’ontologie dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_pa.html">15. Les profils d’archivage dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_parametrages_pf.html">16. Le paramétrage fonctionnel d’une plate-forme utilisant la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_plan.html">17. Le plan de classement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_preservation.html">18. La préservation dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_pua.html">19. Les profils d’unité archivistique dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_rattachement.html">20. Faire un rattachement dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_formats.html">21. Le référentiel des formats dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_griffons.html">22. Le référentiel des griffons dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_preservation.html">23. Le référentiel des scénarios de préservation dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_rg.html">24. Le référentiel des règles de gestion dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_referentiel_sa.html">25. Le référentiel des services agents dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_registre_fonds.html">26. Le registre des fonds dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_structuration_information.html">27. La structuration des informations dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_suivi_acces.html">28. Le suivi des accès dans la solution logicielle Vitam</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Vademecum_tenant.html">29. Les tenants dans la solution logicielle Vitam</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: white" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Documentation utilisateur Vitam</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">19. </span>Archivage sur Offre Froide</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/sections/offre_froide.md.txt" rel="nofollow"> Afficher la source de la page</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+
+
+           <div itemprop="articleBody">
+             
+  <section id="archivage-sur-offre-froide">
+<h1><span class="section-number">19. </span>Archivage sur Offre Froide<a class="headerlink" href="#archivage-sur-offre-froide" title="Lien vers cette rubrique"></a></h1>
+<section id="resume">
+<h2><span class="section-number">19.1. </span>Résumé<a class="headerlink" href="#resume" title="Lien vers cette rubrique"></a></h2>
+<p>Jusqu’à présent, pour la gestion, la conservation, la préservation et la consultation des archives numériques, les acteurs du secteur public étatique ont utilisé des techniques d’archivage classiques, adaptées aux volumes limités dont la prise en charge leur était proposée. Cette situation évolue désormais rapidement et les acteurs du secteur public étatique doivent se mettre en capacité de traiter les volumes croissants d’archives numériques qui doivent être archivés, grâce à un saut technologique.</p>
+<section id="documents-de-reference">
+<h3><span class="section-number">19.1.1. </span>Documents de référence<a class="headerlink" href="#documents-de-reference" title="Lien vers cette rubrique"></a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p><strong>Document</strong></p></th>
+<th class="head text-center"><p><strong>Date de la version</strong></p></th>
+<th class="head text-center"><p><strong>Remarques</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/html/installation">Vitam – Documentation d’installation</a></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><a class="reference external" href="https://www.programmevitam.fr/ressources/DocCourante/html/exploitation">Vitam – Documentation d’exploitation</a></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><a class="reference internal" href="gestion_habilitations.html"><span class="std std-doc">Vitam – Gestion des habilitations</span></a></p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="presentation-du-document">
+<h3><span class="section-number">19.1.2. </span>Présentation du document<a class="headerlink" href="#presentation-du-document" title="Lien vers cette rubrique"></a></h3>
+<p>Le document décrit l’archivage de données dans la solution logicielle Vitam sur des bandes magnétiques.</p>
+<p>Il s’articule autour des axes suivants :</p>
+<ul class="simple">
+<li><p>généralités sur le stockage sur bande magnétiques ;</p></li>
+<li><p>fonctionnement de l’offre froide Vitam ;</p></li>
+<li><p>intégration technique avec une bande magnétique ;</p></li>
+<li><p>limitations et évolutions futures de la solution.</p></li>
+</ul>
+<p>Le présent document décrit les fonctionnalités qui sont offertes par la solution logicielle Vitam au terme de la version 10.0 (automne 2026). Il a vocation à être amendé, complété et enrichi au fur et à mesure de la réalisation de la solution logicielle Vitam et des retours et commentaires formulés par les ministères porteurs et les partenaires du programme.</p>
+</section>
+</section>
+<section id="generalites">
+<h2><span class="section-number">19.2. </span>Généralités<a class="headerlink" href="#generalites" title="Lien vers cette rubrique"></a></h2>
+<p>En plus des offres FileSystem, S3 et Swift, Vitam dispose d’une offre de stockage sur bandes magnétiques appelée <strong>Offre Froide</strong>.</p>
+<p>Les données sont écrites sur un support physique amovible de type bande magnétique, similaire au principe des cassettes “VHS”. Il s’agit d’une technologie principalement utilisée pour les backups de données volumineux dont l’accès est occasionnel.</p>
+<p>Les données sont écrites via des lecteurs dédiés sur des bandes à très forte densité. Permettant ainsi de stocker de très gros volumes de données et à faible coût.</p>
+<p>A titre d’exemple, une seule bande de type LTO-9 (2020) peut stocker 18 To avec débit de 708 Mo/s (voire 45 To si compression des données), avec une très grande longévité (15-30 années).</p>
+<section id="bibliotheque-de-bandes">
+<h3><span class="section-number">19.2.1. </span>Bibliothèque de bandes<a class="headerlink" href="#bibliotheque-de-bandes" title="Lien vers cette rubrique"></a></h3>
+<p>Une <strong>bibliothèque de bandes (Tape Library)</strong> consiste en :</p>
+<ul class="simple">
+<li><p>Un ensemble de <strong>bandes magnétiques</strong> (aussi appelées <strong>tapes</strong> ou <strong>cartridges</strong>)</p></li>
+<li><p>Un ou plusieurs <strong>lecteurs</strong> (<strong>drives</strong>)</p></li>
+<li><p>Des <strong>emplacements de stockage</strong> de bandes (<strong>slots</strong>) où sont entreposées les bandes</p></li>
+<li><p>Un <strong>robot</strong> / <strong>bras articulé</strong> (<strong>changer</strong>, <strong>auto-loader</strong>) permettant de charger les bandes depuis un slot vers un lecteur, et inversement, de décharger une bande d’un lecteur vers un slot</p></li>
+</ul>
+<p><img alt="Bibliothèque de bandes" src="../_images/bibliotheque_bandes.png" /></p>
+<p>Certains modèles de bibliothèques de bandes physique peuvent être partagée en plusieurs bibliothèques de bandes logiques, chacune disposant de ses lecteurs &amp; bandes dédiées à une application donnée. Chaque application ne “voit” que les drives &amp; slots qui lui sont affectés.</p>
+<p>Une bibliothèque de bandes virtuelle (Virtual Tape Library, VTL) est un émulateur logiciel d’une bibliothèque de bandes physique. Il peut être utilisé pour tester une installation d’offre froide Vitam sans accès physique à une bibliothèque de bande physique.</p>
+</section>
+<section id="quand-utiliser-un-stockage-sur-bandes-magnetiques">
+<h3><span class="section-number">19.2.2. </span>Quand utiliser un stockage sur bandes magnétiques ?<a class="headerlink" href="#quand-utiliser-un-stockage-sur-bandes-magnetiques" title="Lien vers cette rubrique"></a></h3>
+<p>Les offres chaudes (FileSystem, S3, Swift) correspondent à la majorité des cas d’usage de Vitam. Elles permettent de stocker un gros volume de données avec accès en écriture et lecture immédiat, et pour un coût de stockage correct.
+Le stockage sur bande est quant-à lui plus adapté à l’archivage de binaires très volumineux, et pour lesquels l’accès en lecture est très rare. Il s’agit d’un mode de stockage principalement adapté pour l’archivage à bas coûts de très gros volumes de données rarement relues.</p>
+<p>C’est également une contre-mesure efficace contre les attaques de type « ransomware », les attaquants ayant des difficultés à accéder aux données réparties sur de nombreuses bandes.</p>
+<p><strong>Avantages de l’offre froide</strong></p>
+<ul class="simple">
+<li><p>Coût de stockage assez compétitif pour les très grosses volumétries (densité de stockage, consommation électrique, refroidissement…)</p></li>
+<li><p>Bonnes performances d’écriture / lecture pour les données séquentielles</p></li>
+<li><p>Possibilité de gérer de très gros volumes (en Po) sur des milliers de bandes</p></li>
+<li><p>Durabilité des bandes (15-30 ans contre 5 ans pour les HDD/SSD), avec 20000 cycles de chargements/déchargements.</p></li>
+<li><p>Possibilité de ségrégation physique des données sur bandes différentes (séparer les données selon leur tenants dans des bandes distinctes physiquement)</p></li>
+<li><p>Résilience aux attaques de type ransomware (chiffrer ou altérer les données archivées nécessite une réécriture complète des bandes)</p></li>
+<li><p>Possibilité de blocage physique des réécritures (WORM), de compression et de chiffrement natifs des données</p></li>
+<li><p>Possibilité d’isolation physique des bandes (export physique de la bibliothèque de bandes, et stockage dans cages de faraday)</p></li>
+<li><p>Une fois les données inscrites sur les bandes, le stockage est neutre écologiquement : il ne nécessite pas d’électricité, ni de climatisation</p></li>
+</ul>
+<p><strong>Inconvénients de l’offre froide</strong></p>
+<ul class="simple">
+<li><p>L’accès aux données est lent et asynchrone ; les opérations sur bandes (chargement, déchargement, repositionnement, lecture, écriture…) peuvent prendre de quelques secondes à plusieurs minutes.</p></li>
+<li><p>Présence de “moving parts” ; un grand nombre d’opérations d’insertion / re-positionnement / re-bobinage / éjections des bandes peut altérer la durée de vie des bandes &amp; drives</p></li>
+<li><p>Écriture en append-only, pas de “delete”</p></li>
+<li><p>Logique d’orchestration compliquée</p></li>
+<li><p>Nécessite un catalogue externe (base mongo-offer) pour indexer les objets et leur informations</p></li>
+<li><p>Nécessite une infrastructure spécifique (hardware, hébergement…), coûteuse à installer et réquiérant des compétences particulière pour l’exploiter</p></li>
+</ul>
+</section>
+<section id="fonctionnement-du-stockage-sur-bandes-magnetiques">
+<h3><span class="section-number">19.2.3. </span>Fonctionnement du stockage sur bandes magnétiques<a class="headerlink" href="#fonctionnement-du-stockage-sur-bandes-magnetiques" title="Lien vers cette rubrique"></a></h3>
+<p>Les données sont écrites en séquentiel dans la bande :</p>
+<p><img alt="Écriture séquentielle dans la bande" src="../_images/ecriture_sequentielle.png" /></p>
+<p>La bibliothèque est commandée via un ensemble de primitives simples :</p>
+<ul class="simple">
+<li><p>Charger une bande depuis une slot vers un lecteur vide</p></li>
+<li><p>Avancer ou reculer la bande de N enregistrements</p></li>
+<li><p>Lire un fichier depuis la position actuelle</p></li>
+<li><p>Ecrire un fichier à la position actuelle</p></li>
+<li><p>Rembobiner la bande</p></li>
+<li><p>Ejecter une bande depuis lecteur</p></li>
+<li><p>Décharger une bande depuis une slot vers un lecteur vide</p></li>
+</ul>
+<section id="ecriture-sur-une-bande">
+<h4><span class="section-number">19.2.3.1. </span>Écriture sur une bande<a class="headerlink" href="#ecriture-sur-une-bande" title="Lien vers cette rubrique"></a></h4>
+<p>Afin d’écrire des données sur une bande magnétique, la bande cible est chargée depuis un emplacement de stockage vers un lecteur via le bras articulé. Les données sont écrites en fin de la bande (après avancement de la bande / repositionnement préalable de la tête de lecture après le dernier enregistrement).</p>
+<p>Si un lecteur contient déjà une autre bande, cette dernière doit être rembobinée, puis déchargée du lecteur avant d’être rangée dans un emplacement de stockage vide, avant que la nouvelle bande puisse être chargée.</p>
+</section>
+<section id="lecture-depuis-une-bande">
+<h4><span class="section-number">19.2.3.2. </span>Lecture depuis une bande<a class="headerlink" href="#lecture-depuis-une-bande" title="Lien vers cette rubrique"></a></h4>
+<p>Similairement à l’écriture, la lecture depuis une bande magnétique nécessite que la bande à lire soit préalablement chargée, et que la tête de lecture soit positionnée juste avant l’enregistrement à lire.</p>
+</section>
+<section id="suppression">
+<h4><span class="section-number">19.2.3.3. </span>Suppression<a class="headerlink" href="#suppression" title="Lien vers cette rubrique"></a></h4>
+<p>La suppression d’un fichier dans une bande est impossible car il nécessite soit un effacement complet de la bande (erase) ou une réécriture par dessus les données existantes, ce qui rend toutes les données suivantes inaccessibles.</p>
+<p>La suppression des données est uniquement une suppression “logique” ; les données sont toujours présentes sur la bande, mais ne sont plus indexées.</p>
+<p>De même, l’écriture d’une mise à jour d’un objet génère 2 écritures, dont seule la dernière est indexée.</p>
+</section>
+</section>
+</section>
+<section id="fonctionnement-de-loffre-froide-vitam">
+<h2><span class="section-number">19.3. </span>Fonctionnement de l’offre froide Vitam<a class="headerlink" href="#fonctionnement-de-loffre-froide-vitam" title="Lien vers cette rubrique"></a></h2>
+<section id="larchivage-dans-des-archives-tar">
+<h3><span class="section-number">19.3.1. </span>L’archivage dans des archives TAR<a class="headerlink" href="#larchivage-dans-des-archives-tar" title="Lien vers cette rubrique"></a></h3>
+<p>La technologie de stockage des bandes magnétiques n’est pas adaptée à l’écriture et la lecture d’un grand nombre d’objets. En effet, un grand nombre d’opérations sur bandes (chargement, déchargement, repositionnement, écriture…) réduisent considérablement la durée de vie des bandes et la durabilité des lecteurs et du robot, en plus de causer des latences conséquentes lors des accès I/O.</p>
+<p>Dans l’offre froide Vitam, les objets ne sont pas écrits individuellement, mais sont plutôt regroupés dans des archives TAR avant d’être archivés.</p>
+<p>En effet, le format TAR (de l’anglais Tape ARchiver), est le format de facto pour l’archivage sur support magnétique. En plus d’être un format simple et bien supporté, les archives TAR offrent l’avantage de permettre un accès direct (random access) à une entrée de l’archive, directement par son offset.</p>
+<p>À noter qu’aucune compression n’est opérée sur les archives TAR. Les bibliothèques de bandes supportent souvent déjà une compression des données native.</p>
+</section>
+<section id="disque-local-de-l-offre-froide">
+<h3><span class="section-number">19.3.2. </span>Disque local de l’offre froide<a class="headerlink" href="#disque-local-de-l-offre-froide" title="Lien vers cette rubrique"></a></h3>
+<p>Dans le cas d’une offre chaude (FileSystem, S3 ou Swift), la lecture et l’écriture des données sont immédiates vers et depuis le support de stockage cible. Ces offres sont dites <strong>synchrones</strong>.</p>
+<p>A contrario, l’écriture et la lecture sur une bande magnétique nécessitent un délai de traitement beaucoup plus conséquent pour la manipulation du bras articulé, du lecteur et de la bande (de quelques secondes pour une opération simple, à quelques heures, voir jours, pour traiter un grand lot d’opérations). L’offre froide est dite <strong>asynchrone</strong>.</p>
+<p>Pour mitiger ces contraintes, l’offre froide de Vitam utilise un stockage temporaire sur FileSystem local des données à lire / écrire depuis / vers une bande.</p>
+<p>Ainsi, lorsqu’une demande d’écriture est transmise à l’offre froide de Vitam, l’objet est stocké temporairement sur le disque, et l’appelant reçoit une confirmation de prise en charge. Ensuite, un traitement de background s’assure de l’écriture effective des données sur une bande.</p>
+<p>Ceci permet à l’offre froide de Vitam de disposer d’une API d’écriture synchrone, même si l’archivage effectif sur bande est asynchrone.</p>
+<p><img alt="Écriture sur l'offre froide" src="../_images/ecriture_asynchrone.png" /></p>
+</section>
+<section id="les-demandes-dacces">
+<h3><span class="section-number">19.3.3. </span>Les demandes d’accès<a class="headerlink" href="#les-demandes-dacces" title="Lien vers cette rubrique"></a></h3>
+<p>La lecture, quant-à-elle, nécessite la présence des données sur disque local. Pour s’assurer de la disponibilité des données, l’appelant doit préalablement faire une <strong>demande d’accès</strong> (access request).</p>
+<p>A réception d’une demande d’accès, l’offre froide vérifie la disponibilité des données demandées sur le disque local. Dans le cas contraire, elle planifie leur lecture depuis bande pour les rapatrier sur disque.</p>
+<p>Chaque demande d’accès possède un identifiant unique (accessRequestId) permettant la vérification régulière de son état (polling).</p>
+<p>Une fois la demande d’accès est prête, i.e. tous les objets nécessaires sont présents sur disque local, la lecture des objets peut être réalisée.</p>
+<p>Enfin, la demande d’accès est supprimée pour libérer les ressources depuis l’espace de stockage local.</p>
+<p><img alt="Demande d'accès" src="../_images/demande_acces.png" /></p>
+<p>A la création d’une demande d’accès, si les objets sous-jacents sont déjà disponibles, la demande d’accès est au statut <code class="docutils literal notranslate"><span class="pre">READY</span></code> (prête). Dans le cas contraire, est au statut <code class="docutils literal notranslate"><span class="pre">NOT_READY</span></code> (non prête).</p>
+<p>L’accès aux données sous-jacentes est garanti jusqu’à suppression explicite de la demande d’accès par l’appelant (recommandé), ou expiration automatique au bout d’un délai (configurable).</p>
+<p>Une demande d’accès expirée sera purgée automatiquement au bout d’un délai de purge (configurable).</p>
+<p><img alt="Cycle de vie d'une demande d'accès" src="../_images/cycle_vie_demande_acces.png" /></p>
+</section>
+<section id="buckets-file-buckets">
+<h3><span class="section-number">19.3.4. </span>Buckets &amp; file buckets<a class="headerlink" href="#buckets-file-buckets" title="Lien vers cette rubrique"></a></h3>
+<p>L’offre froide de Vitam permet d’isoler physiquement les données écrites sur les bandes par tenant ou ensemble de tenants via le paramétrage de <strong>buckets</strong>.</p>
+<p>Un exemple de configuration serait :</p>
+<ul class="simple">
+<li><p>bucket “test” : tenant 0</p></li>
+<li><p>bucket “admin” : tenant 1</p></li>
+<li><p>bucket “production” : tenants 2, 3 et 4</p></li>
+<li><p>bucket “critical” : tenant 5</p></li>
+</ul>
+<p>Une bande ne peut contenir que les données d’un seul bucket. Ainsi, les données des tenants 2 à 4 peuvent être archivées dans une même bande, mais ne peuvent être archivées sur le même support physique que des données des tenants 0, 1 ou 5.</p>
+<p><strong>NB.</strong> Tous les tenants doivent être affectés à un et un seul bucket.</p>
+<p><strong>NB.</strong> L’affectation d’un tenant à un bucket est définitive. i.e. Il est impossible de modifier le bucket auquel un tenant a été déjà affecté car les données ont déjà été écrites sur bandes. Il est possible cependant, lors de l’ajout d’un tout nouveau tenant à Vitam, d’affecter ce nouveau tenant à un bucket existant.</p>
+<p>À noter également qu’au sein d’un même bucket, Vitam regroupe les objets par type de données dans des catégories appelées <strong>file-buckets</strong> :</p>
+<ul class="simple">
+<li><p><strong>metadata</strong> (unités archivistiques, groupes d’objets techniques, ainsi que leur journaux de cycles de vie)</p></li>
+<li><p><strong>objects</strong> (objets binaires)</p></li>
+<li><p><strong>default</strong> (données système. i.e. tous les autres conteneurs restants)</p></li>
+</ul>
+<p>Le regroupement des objets par file-buckets permet :</p>
+<ul class="simple">
+<li><p>Une colocalisation des données de même nature (les objets de même nature sont souvent lus en même moment) ;</p></li>
+<li><p>et de permettre une politique d’expiration selon le type de données.</p></li>
+</ul>
+<p><strong>NB.</strong> La liste des file-buckets et leur paramétrage sont prédéfinis et non modifiables.</p>
+</section>
+<section id="fonctionnement-du-cache">
+<h3><span class="section-number">19.3.5. </span>Fonctionnement du cache<a class="headerlink" href="#fonctionnement-du-cache" title="Lien vers cette rubrique"></a></h3>
+<p>L’offre froide Vitam utilise également le disque local comme cache pour persister localement les archives TAR (<code class="docutils literal notranslate"><span class="pre">/vitam/data/offer/cachedTars/</span></code>).</p>
+<p>Ainsi, dès qu’un fichier TAR est archivé, il est déplacé dans le cache pour un éventuel accès futur depuis disque local. De même, si un fichier TAR est relu depuis une bande suite à une demande d’accès, l’archive récupérée est également entreposée dans le cache.</p>
+<p>Afin de ne pas saturer l’espace de stockage, les anciens TAR (les moins récemment lus) sont périodiquement évincés du système (politique d’éviction LRU, Least Recently Used).</p>
+<p>Le cache est configuré avec 3 niveaux de seuils de capacité :</p>
+<ul class="simple">
+<li><p>Niveau maximal (Ex. 10 To pour un env de production)</p></li>
+<li><p>Niveau critique à partir duquel le processus l’éviction des TAR est déclenché (Ex. 8 To pour un env de production)</p></li>
+<li><p>Niveau confortable, en dessous duquel le processus d’éviction des TAR est arrêté (Ex. 6 To pour un env de production)</p></li>
+</ul>
+<p>Vitam s’assure que lorsque le seuil critique est atteint, les TAR les moins récemment lus sont purgés jusqu’à disposer de suffisamment d’espace disque (en dessous du niveau confortable). Vitam s’assure également que la capacité maximale du cache n’est en aucun cas dépassée.</p>
+<p>À noter également que les TAR référencés par des demandes d’accès actives ne sont pas purgeables du cache (on ne supprime pas des TAR pour lesquels un processus Vitam ou un utilisateur souhaite avoir accès).</p>
+<p>De même, seuls les TAR qui contiennent des binaires sont purgeables du cache (file-bucket <em>objects</em>).</p>
+<p>Les TAR qui abritent des métadonnées et leurs journaux de cycle de vie (file-bucket <em>metadata</em>), ou des données système (file-bucket <em>default</em>) ne sont pas supprimables du cache.</p>
+<p><strong>NB.</strong> Ce choix de design de rendre les file-buckets <em>metadata</em> et <em>default</em> non expirables permet en particulier la reconstruction depuis une offre froide, ou même de permettre un déploiement Vitam basé uniquement sur des offres froides (sans offres chaudes).</p>
+</section>
+<section id="cycle-de-vie-des-objets-dans-loffre-froide-de-vitam">
+<h3><span class="section-number">19.3.6. </span>Cycle de vie des objets dans l’offre froide de Vitam<a class="headerlink" href="#cycle-de-vie-des-objets-dans-loffre-froide-de-vitam" title="Lien vers cette rubrique"></a></h3>
+<p>Lors d’une écriture unitaire d’un objet ou en bulk d’un lot d’objets, les objets reçus par l’offre froide sont initialement écrits à plat dans un dossier dédié du FileSystem local : <code class="docutils literal notranslate"><span class="pre">/vitam/data/offer/inputFiles/{container}/*</span></code></p>
+<p>Ensuite, un processus en background recopie ces objets vers une archive TAR en cours de construction, selon le bucket / file-bucket cibles :</p>
+<p><code class="docutils literal notranslate"><span class="pre">/vitam/data/offer/inputTars/{bucket-filebucket}/</span></code><strong><code class="docutils literal notranslate"><span class="pre">*.tar.tmp</span></code></strong></p>
+<p><strong>NB.</strong> Les objets très volumineux sont découpés en segments de 1 Go (configurable), et peuvent du coup donc s’étaler sur plusieurs archives TAR.</p>
+<p>Lorsqu’un TAR en cours de construction atteint une taille maximale configurée (10 Go par défaut), ou bien, après un délais maximum configuré (6h par exemple), le TAR est finalisé /scellé (renommé en <code class="docutils literal notranslate"><span class="pre">/vitam/data/offer/inputTars/{bucket-filebucket}/</span></code><strong><code class="docutils literal notranslate"><span class="pre">*.tar</span></code></strong>).</p>
+<p>Une fois un TAR scellé, il est planifié pour être archivé sur bande.</p>
+<p>Une fois le TAR est écrit sur bande, il est déplacé dans le cache disque, où il sera persisté jusqu’à éviction éventuelle du cache : <code class="docutils literal notranslate"><span class="pre">/vitam/data/offer/cachedTars/{bucket-filebucket}/</span></code><strong><code class="docutils literal notranslate"><span class="pre">*.tar</span></code></strong></p>
+<p><img alt="Cycle de vie des objets dans l'offre froide" src="../_images/cycle_vie_objets.png" /></p>
+<p>Lors de la lecture d’un objet depuis l’offre froide Vitam, les objets sont lus directement depuis disque (qu’ils soient encore persistés à plat dans inputFiles, dans un TAR en cours de construction, dans à TAR scellé et non encore archivé, ou dans un TAR archivé et en cache).</p>
+<p>L’accès aux objets est pré-conditionné par la création préalable d’une demande d’accès pour s’assurer de leur présence sur disque local.</p>
+</section>
+<section id="lidentification-des-bandes">
+<h3><span class="section-number">19.3.7. </span>L’identification des bandes<a class="headerlink" href="#lidentification-des-bandes" title="Lien vers cette rubrique"></a></h3>
+<p>Chaque bande possède un code à barres. Vitam utilise ce code à barre pour identifier les bandes de manière unique.</p>
+<p>De plus, un fichier appelé <strong>label</strong> est écrit par Vitam avant tout autre fichier à archiver. Le label est un fichier json spécial qui persiste un ensemble d’informations d’identification de la bande (dont le code à barres).</p>
+<p>Vitam procède à une vérification du label à chaque chargement de bande dans un lecteur. Ceci permet de s’assurer que la bande chargée est bien celle attendue (label conforme au code à barre de la bande), et qu’à priori, la bande n’a pas été altérée par un tiers.</p>
+</section>
+<section id="cycle-de-vies-des-bandes">
+<h3><span class="section-number">19.3.8. </span>Cycle de vies des bandes<a class="headerlink" href="#cycle-de-vies-des-bandes" title="Lien vers cette rubrique"></a></h3>
+<p>Au démarrage de l’offre froide, Vitam scanne la liste des bandes du système et leur emplacement (i.e. telle bande identifiée par tel code à barres, est présente dans tel lecteur ou slot).</p>
+<p>Vitam ajoute automatiquement les nouvelles bandes dans son catalogue en base mongo-offer. Une nouvelle bande est supposée être vide (statut <code class="docutils literal notranslate"><span class="pre">EMPTY</span></code> en base).</p>
+<p>À la première écriture sur une bande vide, Vitam vérifier qu’aucun enregistrement n’y est déjà présent :</p>
+<ul class="simple">
+<li><p>Si un enregistrement est trouvé (la bande contient déjà des données), une erreur est remontée et la bande est considérée comme inutilisable (statut <code class="docutils literal notranslate"><span class="pre">CONFLICT</span></code> en base). Ceci permet d’éviter d’écraser une bande.</p></li>
+<li><p>Sinon, un premier fichier label est écrit, suivi des données à archiver. Le statut de la bande est alors modifié en <code class="docutils literal notranslate"><span class="pre">OPEN</span></code> (en cours d’écriture).</p></li>
+</ul>
+<p>Les données sont écrites dans la bande jusqu’à ce que cette dernière soit remplie.</p>
+<p>Si une tentative d’écriture ou de lecture sur une bande échoue, la bande est considérée comme inutilisable (statut <code class="docutils literal notranslate"><span class="pre">CONFLICT</span></code> en base).</p>
+<p><strong>NB.</strong> Il est à noter qu’il est possible de désactiver le contrôle d’absence de données dans une bande vide dans le cas d’un environnement de développement ou de recette. Ceci permet de réutiliser des bandes non vierges dans le cadre de tests.</p>
+<p><img alt="Cycle de vie des bandes" src="../_images/cycle_vie_bandes.png" /></p>
+</section>
+<section id="detection-de-fin-de-bandes">
+<h3><span class="section-number">19.3.9. </span>Détection de fin de bandes<a class="headerlink" href="#detection-de-fin-de-bandes" title="Lien vers cette rubrique"></a></h3>
+<p>Les bandes disposent d’une capacité théorique (selon la génération de la bande / du lecteur). Cependant, les données sont généralement compressées à l’écriture, et la capacité théorique est généralement dépassée si les données ont une nature compressible.</p>
+<p>La détection exacte de fin de bande est impossible actuellement pour des raisons techniques.</p>
+<p>Vitam utilise une heuristique pour détecter au mieux les fins de bandes via un seuil de remplissage pré-configuré (typiquement 90% de la capacité théorique de la bande) :</p>
+<ul class="simple">
+<li><p>Si une erreur d’écriture survient sur une bande contenant peu de données écrites (volumes des données écrites &lt; 90% de la capacité théorique de la bande), la bande est considérée comme inutilisable (statut <code class="docutils literal notranslate"><span class="pre">CONFLICT</span></code> en base).</p></li>
+<li><p>Sinon, la bande est considérée comme remplie (statut <code class="docutils literal notranslate"><span class="pre">FULL</span></code> en base)</p></li>
+</ul>
+</section>
+<section id="ordres-de-lecture-et-decriture">
+<h3><span class="section-number">19.3.10. </span>Ordres de lecture et d’écriture<a class="headerlink" href="#ordres-de-lecture-et-decriture" title="Lien vers cette rubrique"></a></h3>
+<p>Dès qu’une archive TAR est prête à être écrite sur une bande, un <strong>ordre d’écriture</strong> (WriteOrder) est créé et planifié pour exécution dans une file d’attente dédiée.</p>
+<p>Similairement, lorsqu’une demande d’accès nécessite la lecture depuis une bande, un <strong>ordre de lecture</strong> (ReadOrder) est planifié.</p>
+<p>L’exécution des ordres d’écriture nécessite la sélection préalable d’une bande éligible. Vitam privilégie l’écriture sur une bande déjà ouverte (<code class="docutils literal notranslate"><span class="pre">OPEN</span></code>) affectée au même bucket. A défaut, une bande vide (<code class="docutils literal notranslate"><span class="pre">EMPTY</span></code>) est sélectionnée. Les bandes remplies (<code class="docutils literal notranslate"><span class="pre">FULL</span></code>) ou en erreur (<code class="docutils literal notranslate"><span class="pre">CONFLICT</span></code>) ne peuvent être utilisées.</p>
+<p>L’exécution des ordres de lecture nécessite la disponibilité de la bande cible (identifiée par son code à barres). Si la bande est en erreur (<code class="docutils literal notranslate"><span class="pre">CONFLICT</span></code>) ne peuvent être utilisées, et l’ordre de lecture est KO.</p>
+<p>Afin de réduire les déchargement/rechargement de bandes, Vitam priorise l’exécution des ordres d’écriture appartement au même bucket que la bande déjà chargée dans un lecteur, aux ordres ciblant d’autres buckets. De même, les ordres de lecture depuis une bande déjà chargée dans un lecteur sont priorisés par rapport aux ordres de lecture depuis une autre bande.</p>
+</section>
+<section id="catalogue-en-base-de-donnees">
+<h3><span class="section-number">19.3.11. </span>Catalogue en base de données<a class="headerlink" href="#catalogue-en-base-de-donnees" title="Lien vers cette rubrique"></a></h3>
+<p>L’offre froide de Vitam persiste dans sa base mongo-offer un ensemble d’informations servant à pouvoir inventorier les objets persistés sur bandes.</p>
+<p>En plus des collections standards d’une offre vitam (<code class="docutils literal notranslate"><span class="pre">OfferLog</span></code>, <code class="docutils literal notranslate"><span class="pre">CompactedOfferLog</span></code> et <code class="docutils literal notranslate"><span class="pre">OfferSequence</span></code>), l’offre froide utilise les collections suivantes :</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p>Collection</p></th>
+<th class="head text-left"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><strong><code class="docutils literal notranslate"><span class="pre">TapeCatalog</span></code></strong></p></td>
+<td class="text-left"><p>Répertorie le catalogue des bandes du système : code à barres, nombre de fichiers stockés, volume total stocké, l’état de la bande (vide, pleine…), le bucket auquel elle est affectée…etc.</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong><code class="docutils literal notranslate"><span class="pre">TapeObjectReferential</span></code></strong></p></td>
+<td class="text-left"><p>Indexe l’ensemble des objets persistés dans l’offre froide (conteneur, nom de l’objet, taille, empreinte…), ainsi que les archives TAR où ils sont persistés.</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><strong><code class="docutils literal notranslate"><span class="pre">TapeArchiveReferential</span></code></strong></p></td>
+<td class="text-left"><p>Indexe l’ensemble des TAR de l’offre. Un TAR peut être <code class="docutils literal notranslate"><span class="pre">building_on_disk</span></code> (en cours de construction), <code class="docutils literal notranslate"><span class="pre">ready_on_disk</span></code> (tar finalisé, prêt à être archivé), où <code class="docutils literal notranslate"><span class="pre">on_tape</span></code> (archivé sur telle bande à telle position)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p><strong><code class="docutils literal notranslate"><span class="pre">TapeQueueMessage</span></code></strong></p></td>
+<td class="text-left"><p>Queue de traitement des ordres de lecture/écriture depuis/vers les bandes</p></td>
+</tr>
+<tr class="row-even"><td class="text-center"><p><strong><code class="docutils literal notranslate"><span class="pre">TapeAccessRequestReferential</span></code></strong></p></td>
+<td class="text-left"><p>Contient l’ensemble des demandes d’accès à l’offre froide : objets à préparer, statut, dates d’expiration…</p></td>
+</tr>
+</tbody>
+</table>
+<p>La liste exhaustive des champs est décrite dans la documentation du modèle de données de Vitam.</p>
+</section>
+<section id="suppression-depuis-loffre-froide-vitam">
+<h3><span class="section-number">19.3.12. </span>Suppression depuis l’offre froide Vitam<a class="headerlink" href="#suppression-depuis-loffre-froide-vitam" title="Lien vers cette rubrique"></a></h3>
+<p>La suppression depuis l’offre froide est une suppression logique uniquement.</p>
+<p>Le catalogue mongo-offer de l’offre froide ne référence plus l’objet (suppression depuis la collection <code class="docutils literal notranslate"><span class="pre">TapeObjectReferential</span></code>), mais le contenu des objets existe bien toujours sur les bandes, et dans les TAR sur disque local.</p>
+<p><strong>NB.</strong> Une évolution future pourrait permettre d’implémenter un processus de <strong>compaction</strong> des bandes pour supprimer physiquement les données éliminées depuis les bandes, et depuis le disque local.</p>
+</section>
+<section id="backup-du-catalogue">
+<h3><span class="section-number">19.3.13. </span>Backup du catalogue<a class="headerlink" href="#backup-du-catalogue" title="Lien vers cette rubrique"></a></h3>
+<p>Le catalogue en base de données est critique pour l’offre froide de Vitam. Sans ce catalogue, il est impossible de savoir quel objet est persisté dans quel(s) TAR, dans quelle(s) bande et à quelle(s) position(s).</p>
+<p>Il est donc primordial qu’un backup régulier de la base mongo-offer soit réalisé.</p>
+<p>L’offre froide de Vitam permet d’archiver les backups de sa base mongo-offer dans une bande magnétique réservée au backups.</p>
+<p>En cas de perte du catalogue (corruption partielle ou totale de la base), il est possible de restaurer le dernier backup de la base manuellement depuis la bande.</p>
+<p>Contrôles de cohérences et audit des données</p>
+<p>L’offre froide réalise un contrôle des digests des objets lors de l’écriture dans des archives TAR sur disque. De même, lors de la récupération d’un objet, le digest est recontrôlé en même temps que la donnée est relue depuis disque.</p>
+<p>Cependant, la récupération du digest d’un objet se fait uniquement depuis le digest en base, et ne peut être recalculée à la demande.</p>
+<p>De même, l’offre froide n’implémente pas un audit des données effectivement sur bandes.</p>
+<p><strong>NB.</strong> Une évolution future pourrait permettre d’implémenter un audit du contenu d’une bande donnée (automatisé et/ou à la demande).</p>
+</section>
+<section id="impacts-de-loffre-froide-dans-vitam">
+<h3><span class="section-number">19.3.14. </span>Impacts de l’offre froide dans Vitam<a class="headerlink" href="#impacts-de-loffre-froide-dans-vitam" title="Lien vers cette rubrique"></a></h3>
+<p>Les objets des file-buckets <em>metadata</em> (métadonnées et leurs journaux de cycles de vie), et des file-buckets <em>default</em> (ATR, manifests, rapports, sécurisations…) sont toujours présents en cache (non expirables). L’accès à ces données est donc synchrone, et ne nécessite aucune pré-commande préalable (via demandes d’accès).</p>
+<p>À contrario, les objets binaires quant-à-eux (file-buckets <em>objets</em>) ne sont pas persistés indéfiniment en cache. Certains services et workflows de Vitam nécessitent un traitement spécifique pour l’accès en lecture aux objets binaires lorsqu’ils sont lus depuis une offre froide.</p>
+<section id="synchronisation-dune-offre-depuis-une-offre-froide">
+<h4><span class="section-number">19.3.14.1. </span>Synchronisation d’une offre depuis une offre froide<a class="headerlink" href="#synchronisation-dune-offre-depuis-une-offre-froide" title="Lien vers cette rubrique"></a></h4>
+<p>La synchronisation d’une offre depuis une offre froide met en œuvre des demandes d’accès par lots d’objets à synchroniser.</p>
+<p>Pour chaque lot d’objets à synchroniser :</p>
+<ul class="simple">
+<li><p>création d’une demande d’accès dans l’offre froide source ;</p></li>
+<li><p>attente la disponibilité des données sur disque (demande d’accès est prête) ;</p></li>
+<li><p>recopie des données ;</p></li>
+<li><p>suppression de la demande d’accès pour libérer les ressources du cache disque.</p></li>
+</ul>
+<p><img alt="Synchronisation par lots depuis une offre froide" src="../_images/synchronisation_lots.png" /></p>
+</section>
+<section id="les-workflows-necessitant-une-lecture-des-objets-binaires">
+<h4><span class="section-number">19.3.14.2. </span>Les workflows nécessitant une lecture des objets binaires<a class="headerlink" href="#les-workflows-necessitant-une-lecture-des-objets-binaires" title="Lien vers cette rubrique"></a></h4>
+<p>Les workflows d’export DIP, de demandes de transferts, de préservation et d’audit correctif nécessitent un accès en lecture à des objets binaires, qui nécessitent la création préalable d’une demande d’accès dans le cas d’une offre froide.</p>
+<p>En effet, ces workflows ont été adaptés comme suit :</p>
+<ul class="simple">
+<li><p>Une première action préparatoire permet le contrôle de disponibilité des données sur l’offre cible.</p></li>
+<li><p>Si les objets sont déjà disponibles (qu’il s’agisse d’une offre chaude, ou d’une offre froide disposant des données sur disque local), le reste des traitements peuvent s’exécuter normalement.</p></li>
+<li><p>Dans le cas contraire : une demande d’accès est créé auprès de l’offre froide, et le workflow renvoie son identifiant (accessRequestId) au process-engine avec une erreur “données temporairement indisponibles”.</p></li>
+<li><p>Le Process Engine monitore régulièrement (polling) l’état de la demande d’accès pour vérifier son statut.</p></li>
+<li><p>Une fois la demande d’accès est prête, l’exécution du workflow peut être replanifiée au sein d’un Worker.</p></li>
+<li><p>En fin de traitement, la suppression de la demande d’accès est réalisée.</p></li>
+</ul>
+<p><img alt="Workflows et demandes d'accès" src="../_images/workflow_demande_acces.png" /></p>
+</section>
+<section id="api-de-telechargement-unitaire-des-objets-binaires">
+<h4><span class="section-number">19.3.14.3. </span>API de téléchargement unitaire des objets binaires<a class="headerlink" href="#api-de-telechargement-unitaire-des-objets-binaires" title="Lien vers cette rubrique"></a></h4>
+<p>Vitam permet de récupérer unitairement l’objet binaire associé à une unité archivistique donnée. Cette API a été enrichie pour permettre la commande d’un objet depuis une offre froide.</p>
+<p><strong>NB.</strong> Une évolution future devrait apporter le support du téléchargement des objets binaires depuis une offre froide dans Vitam UI.</p>
+</section>
+</section>
+</section>
+<section id="integration-technique-avec-une-bibliotheque-de-bandes">
+<h2><span class="section-number">19.4. </span>Intégration technique avec une bibliothèque de bandes<a class="headerlink" href="#integration-technique-avec-une-bibliotheque-de-bandes" title="Lien vers cette rubrique"></a></h2>
+<section id="connexion-technique-a-une-bibliotheque-de-bandes-depuis-vitam">
+<h3><span class="section-number">19.4.1. </span>Connexion technique à une bibliothèque de bandes depuis Vitam<a class="headerlink" href="#connexion-technique-a-une-bibliotheque-de-bandes-depuis-vitam" title="Lien vers cette rubrique"></a></h3>
+<p>La bibliothèque de bandes doit être pré-configurée localement par l’administrateur système sur le host (linux) dans lequel sera déployé le service offre froide de Vitam. Le host peut avoir accès à la librairie soit par attachement direct, soit par le biais d’un accès distant ( ex: iscsi )</p>
+<p>Le pilotage de la bibliothèque de bande se fait via les devices spéciaux.</p>
+<p>Les robots articulés sont pilotés via :</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">/dev/sgX</span></code> (ex. <code class="docutils literal notranslate"><span class="pre">/dev/sg4</span></code>)</p></li>
+</ul>
+<p>Les lecteurs sont pilotés via :</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">/dev/stX</span></code> (ex. <code class="docutils literal notranslate"><span class="pre">/dev/st0</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/dev/nstX</span></code> (ex. <code class="docutils literal notranslate"><span class="pre">/dev/nst0</span></code>)</p></li>
+</ul>
+<p><img alt="Devices Linux de la bibliothèque de bandes" src="../_images/devices_linux.png" /></p>
+<p><strong>NB.</strong> Vitam utilise uniquement les devices <code class="docutils literal notranslate"><span class="pre">/dev/nstY</span></code>. Les devices <del><code class="docutils literal notranslate"><span class="pre">/dev/stY</span></code></del> ne doivent jamais être utilisés.</p>
+<p><strong>NB.</strong> Le chemin du device n’est pas garanti suite à un reboot de la machine host. i.e. le device <code class="docutils literal notranslate"><span class="pre">/dev/nst0</span></code> peut par exemple être re-mappé sur le lecteur 2 après reboot.</p>
+<p>Pour éviter tout conflit de nommage, Vitam recommande l’usage de devices “alias” qui dépendent uniquement du numéro de série du device, et qui sont donc déterministes. Ces alias sont automatiquement configurés au niveau système.</p>
+<p><strong>Exemples :</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">/dev/tape/by-id/scsi-1QUANTUM_10F73224E6664C84A1D00000</span></code> (alias vers <code class="docutils literal notranslate"><span class="pre">/dev/sgX</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/dev/tape/by-id/scsi-1IBM_ULT3580-TD6_1235308739-nst</span></code> (alias vers <code class="docutils literal notranslate"><span class="pre">/dev/nstY</span></code>)</p></li>
+</ul>
+<p><strong>NB.</strong> Une offre de stockage Vitam ne peut manipuler qu’une seule bibliothèque de bandes. Afin de piloter plusieurs bibliothèques de bandes, il convient d’utiliser des offres Vitam différentes.</p>
+<p><strong>NB.</strong> Un seul bras articulé peut être utilisé / configuré dans une bibliothèque de bandes.</p>
+</section>
+<section id="pilotage-technique-dune-bibliotheque-de-bandes-depuis-vitam">
+<h3><span class="section-number">19.4.2. </span>Pilotage technique d’une bibliothèque de bandes depuis Vitam<a class="headerlink" href="#pilotage-technique-dune-bibliotheque-de-bandes-depuis-vitam" title="Lien vers cette rubrique"></a></h3>
+<p>Vitam se base sur un ensemble de commandes Linux standards pour la manipulation de la robotique :</p>
+<p><strong>Commande “mtx” :</strong></p>
+<p>Permet de piloter le bras articulé :</p>
+<ul class="simple">
+<li><p>“<code class="docutils literal notranslate"><span class="pre">mtx</span> <span class="pre">status</span></code>” : Inventaire globale de la bibliothèque (listing des drives, slots, bandes…)</p></li>
+<li><p>“<code class="docutils literal notranslate"><span class="pre">mtx</span> <span class="pre">load</span></code>” : Récupère une bande d’un slot donné, et la charge dans un drive cible</p></li>
+<li><p>“<code class="docutils literal notranslate"><span class="pre">mtx</span> <span class="pre">unload</span></code>” : Prend une bande d’un drive, et l’entrepose dans un slot cible vide</p></li>
+</ul>
+<p><strong>Commande “<code class="docutils literal notranslate"><span class="pre">mt</span></code>” :</strong></p>
+<p>Permet de piloter un drive donné :</p>
+<ul class="simple">
+<li><p>“<code class="docutils literal notranslate"><span class="pre">mt</span> <span class="pre">status</span></code>” : Récupère l’état d’un drive donnée (infos de bande chargée, position actuelle…)</p></li>
+<li><p>“<code class="docutils literal notranslate"><span class="pre">mt</span> <span class="pre">rewind</span></code>” : Repositionner la tête du lecteur en début de bande</p></li>
+<li><p>“<code class="docutils literal notranslate"><span class="pre">mt</span> <span class="pre">eod</span></code>” : Repositionner la tête du lecteur en fin de bande</p></li>
+<li><p>“<code class="docutils literal notranslate"><span class="pre">mt</span> <span class="pre">fsf</span></code>” : Avancer la tête du lecteur de N fichiers</p></li>
+<li><p>“<code class="docutils literal notranslate"><span class="pre">mt</span> <span class="pre">bsfm</span></code>” : Reculer la tête du lecteur de N fichiers</p></li>
+<li><p>“<code class="docutils literal notranslate"><span class="pre">mt</span> <span class="pre">offline</span></code>” : Éjecte une bande d’un lecteur</p></li>
+</ul>
+<p><strong>Commande “<code class="docutils literal notranslate"><span class="pre">dd</span></code>” :</strong></p>
+<p>Permet de lire / écrire un fichier depuis/vers un lecteur donné</p>
+</section>
+</section>
+<section id="limitations-et-challenges">
+<h2><span class="section-number">19.5. </span>Limitations et challenges<a class="headerlink" href="#limitations-et-challenges" title="Lien vers cette rubrique"></a></h2>
+<p>Des évolutions suivantes pourraient enchérir l’offre froide de Vitam :</p>
+<ul class="simple">
+<li><p>Support du téléchargement des objets binaires depuis une offre froide dans Vitam UI.</p></li>
+<li><p>Audit (périodique ou manuel) du contenu des bandes</p></li>
+<li><p>Purge complète des données éliminées (depuis disque local, et depuis bande)</p></li>
+<li><p>Recopie bande-à-bande pour renouvellement de technologie de bande (ex. migration d’une bande LTO-8 vers une bande LTO-9)</p></li>
+<li><p>Support de l’export/import de bandes depuis une bibliothèque de bandes</p></li>
+<li><p>L’automatisation du backup de la DB qui est actuellement à la charge de l’exploitant</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pied de page">
+        <a href="stockage.html" class="btn btn-neutral float-left" title="18. Gestion de multiples stratégies de stockage" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Précédent</a>
+        <a href="transfert.html" class="btn btn-neutral float-right" title="20. Le transfert avec la solution logicielle Vitam" accesskey="n" rel="next">Suivant <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Droits d'auteur 2022, Programme Vitam.</p>
+  </div>
+
+  Compilé avec <a href="https://www.sphinx-doc.org/">Sphinx</a> en utilisant un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thème</a>
+    fourni par <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Other Versions</span>
+    v: master
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Tags</dt>
+      <dd><a href="../../7.1.0/index.html">7.1.0</a></dd>
+    </dl>
+    <dl>
+      <dt>Branches</dt>
+      <dd><a href="offre_froide.html">master</a></dd>
+      <dd><a href="../../master_7.1.x/index.html">master_7.1.x</a></dd>
+      <dd><a href="../../master_8.1.x/index.html">master_8.1.x</a></dd>
+      <dd><a href="../../master_9.0.x/index.html">master_9.0.x</a></dd>
+      <dd><a href="../../master_9.1.x/index.html">master_9.1.x</a></dd>
+    </dl>
+  </div>
+</div><script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>
