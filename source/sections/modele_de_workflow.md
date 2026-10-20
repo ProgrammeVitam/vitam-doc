@@ -6291,7 +6291,7 @@ D’une façon synthétique, le workflow est décrit ainsi :
 * **`TRACEABILITY_CHAIN_AUDIT_OPERATIONS_CHAINING_CHECK`** :
   - **Comportement** : `BLOCKING`
   - **Type** : bloquant
-  - **Distribution** : Non distibué
+  - **Distribution** : Non distribué
 
 - **Description** : Dans cette étape, on contrôle le chainage des opérations de sécurisation, en enrichissant les anomalies liés aux contrôles suivants:
 
@@ -6317,7 +6317,7 @@ D’une façon synthétique, le workflow est décrit ainsi :
 * **`TRACEABILITY_CHAIN_AUDIT_REPORTING`** :
   - **Comportement** : `BLOCKING`
   - **Type** : bloquant
-  - **Distribution** : Non distibué
+  - **Distribution** : Non distribué
 
 - **Description** : Cette étape reporte les anomalies dans le rapport de l'audit en fonction du niveau de reporting **logLevel** avec les 2 niveaux : **minimal** et **verbose**, le niveau **minimal** ne reporte que les anomalies sevères ou critiques.
 
@@ -6327,7 +6327,7 @@ D’une façon synthétique, le workflow est décrit ainsi :
 ### 5. Finalisation du processus (`STP_FINALIZE_TRACEABILITY_CHAIN_AUDIT`)
 
 * **Comportement** : étape systématiquement exécutée, même en cas d'échec ou d'interruption en amont.
-* **Distribution** : Non distibué  
+* **Distribution** : Non distribué  
 
 #### Actions :
 * **`TRACEABILITY_CHAIN_AUDIT_FINALIZATION`** :
@@ -6337,7 +6337,7 @@ D’une façon synthétique, le workflow est décrit ainsi :
 
 ### Rapport de l’audit de chaînage
 
-Le rapport de l’audit de chaînage est un fichier JSONL généré suite à l'execution du workflow.
+Le rapport de l’audit de chaînage est un fichier JSONL généré suite à l'exécution du workflow.
 
 Le rapport est structuré de la façon suivante:
 
@@ -6355,7 +6355,7 @@ Le rapport est structuré de la façon suivante:
 
 Le rapport de l’audit de chaînage est composé de quatre parties :
 
-La partie « OperationSummary », c’est le résumé de l’opération, il est composée des champs suivants :
+La partie « OperationSummary », c’est le résumé de l’opération, il est composé des champs suivants :
 -  « tenant » : tenant sur lequel l’opération a été lancée ;
 -  « evId » : identifiant de l’événement (l’opération) ;
 -  « evType » : code du type de l’opération (avant la dernière step) ;
@@ -6365,7 +6365,7 @@ La partie « OperationSummary », c’est le résumé de l’opération, il est 
 -  « evDetData » : détails des données de l’événement, contenant les paramètres de la requête d’audit (« type », « startDate », « endDate », « version », « threshold », « logLevel »).
 
 
-La partie « ReportSummary », ça correspond à des informations concernant l'execution de l'opération, il est composé des champs suivants :
+La partie « ReportSummary » correspond à des informations concernant l'execution de l'opération, il est composé des champs suivants :
 -  « evStartDateTime » : date du début de l’opération ;
 -  « evEndDateTime » : date de fin de l’opération ;
 -  « reportType » : correspond au modèle du rapport. Ici c'est **REASSIGNMENT_ORIGINATING_AGENCIES** ;
@@ -6435,7 +6435,7 @@ Les anomalies sont classées par niveau de criticité : **CRITICAL**, **SEVERE**
 
 3. #### Niveau warning:
 
-- **WARNING_TRACEABILITY_OPERATION_PAUSED**: L'Opération de sécurisation est en pause.
+- **WARNING_TRACEABILITY_OPERATION_PAUSED**: L'opération de sécurisation est en pause.
 
 - **WARNING_TRACEABILITY_OPERATION_ABORTED**: Opération arrêtée par l'utilisateur ou terminée KO sans cause identifiée.
 
@@ -6465,7 +6465,7 @@ Les anomalies sont classées par niveau de criticité : **CRITICAL**, **SEVERE**
 
 Cette section décrit le workflow de réattribution du service producteur des unités archivistiques et, optionnellement, des groupes d’objets techniques associés.
 
-Ce processus permet de remplacer le service producteur principal (champ « #originating_agency ») d’un ensemble d’unités archivistiques sélectionnées par une requête DSL, et propager la modification sur les unités filles ainsi qu'au objets groupes en mettant à jour le champ « #originating_agencies », puis mettre à jour le registre des fonds en conséquence.
+Ce processus permet de remplacer le service producteur principal (champ « #originating_agency ») d’un ensemble d’unités archivistiques sélectionnées par une requête DSL, et propager la modification sur les unités filles ainsi qu'aux objets groupes en mettant à jour le champ « #originating_agencies », puis mettre à jour le registre des fonds en conséquence.
 
 Le workflow est lancé avec les paramètres suivants:
 -  « dslRequest » : requête DSL de sélection des unités archivistiques à réattribuer ;
@@ -6502,7 +6502,7 @@ D’une façon synthétique, le workflow est décrit ainsi :
 
 - **Règle** : tâche consistant à vérifier qu’aucun processus de type RECLASSIFICATION, ELIMINATION_ACTION, ORIGINATING_AGENCY_REASSIGNMENT, TRANSFER_REPLY et INGEST_CLEANUP n’est en cours sur le tenant.
 - **Type** : bloquant
-- **Distribution** : Non distibué 
+- **Distribution** : Non distribué 
 - **Statuts** :
     - OK : aucun processus concurrent n’est en cours
     - KO : un processus concurrent est en cours d’exécution
@@ -6512,7 +6512,7 @@ D’une façon synthétique, le workflow est décrit ainsi :
 
 - **Règle** : tâche consistant à vérifier que le nombre d’unités archivistiques sélectionnées par la requête DSL ne dépasse pas le seuil de traitement autorisé.
 - **Type** : bloquant
-- **Distribution** : Non distibué 
+- **Distribution** : Non distribué 
 - **Statuts** :
     - OK : Le nombre d'unités archivistiques sélectionnées est inférieur au seuil de la requête **threshold** s'il est renseigné et inférieur au seuil par defaut **distributionThreshold**
     - KO : le nombre d’unités archivistiques sélectionnées dépasse le seuil autorisé 
@@ -6523,7 +6523,7 @@ D’une façon synthétique, le workflow est décrit ainsi :
 
 - **Règle** : tâche consistant à contrôler la requête de réattribution, à sélectionner les unités archivistiques et les groupes d’objets à mettre à jour, et à produire les fichiers de distribution « units_to_update.jsonl » et « object_groups_to_update_sp.jsonl » ainsi que le fichier de statistiques « reassignment_statistics.json » (nombre d’unités archivistiques, nombre de groupes d’objets et liste des opérations d’entrée « #opi » concernées).
 - **Type** : bloquant
-- **Distribution** : Non distibué
+- **Distribution** : Non distribué
 - **Contrôles effectués** :
     - le service producteur source doit être différent du service producteur cible ;
     - le service producteur cible doit exister dans le référentiel des services agents ;
@@ -6534,7 +6534,7 @@ D’une façon synthétique, le workflow est décrit ainsi :
 - **Limitations de la version courante** : la réattribution ne peut porter que sur la totalité des unités archivistiques, groupes d’objets et objets issus d’une même opération d’entrée, le registre des fonds n’étant mis à jour que par détail complet (une ligne par opération d’entrée). En conséquence :
     - la requête ne doit pas concerner plus de 1000 opérations d’entrée (« #opi ») distinctes ;
     - le périmètre sélectionné doit couvrir l’intégralité des unités archivistiques et des groupes d’objets des opérations d’entrée concernées ;
-    - un groupe d’objets sélectionné ne doit pas contenir d’objets issus d’une autre opération d’entrée ou de préservation.
+    - un groupe d’objets sélectionnés ne doit pas contenir d’objets issus d’une autre opération d’entrée ou de préservation.
 - **Statuts** :
     - OK : la préparation de la réattribution du service producteur a bien été effectuée 
     - WARNING : la propagation aux groupes d’objets a été demandée mais aucun groupe d’objets n’est à mettre à jour 
@@ -6545,7 +6545,7 @@ D’une façon synthétique, le workflow est décrit ainsi :
 
 - **Règle** : étape distribuée consistant à mettre à jour le service producteur des unités archivistiques sélectionnées, par lots de 1000. Si la liste est vide, l’étape est en avertissement.
 - **Type** : bloquant, non annulable
-- **Distribution** : distibué (LIST_IN_JSONL_FILE sur le fichier units_to_update.jsonl)
+- **Distribution** : distribué (LIST_IN_JSONL_FILE sur le fichier units_to_update.jsonl)
 - **Statuts** :
     - OK : la réattribution du service producteur des unités archivistiques a bien été effectuée 
     - KO : la réattribution du service producteur des unités archivistiques n’a pas été effectuée
@@ -6581,7 +6581,7 @@ D’une façon synthétique, le workflow est décrit ainsi :
 
 - **Règle** : étape distribuée consistant à mettre à jour le service producteur des groupes d’objets des unités archivistiques sélectionnées, par lots de **1000**. Cette étape ne traite des éléments que si « propagateToObjectGroups » est activé ; 
 - **Type** : bloquant, non annulable
-- **Distribution** : distibué (LIST_IN_JSONL_FILE sur le fichier object_groups_to_update_sp.jsonl)
+- **Distribution** : distribué (LIST_IN_JSONL_FILE sur le fichier object_groups_to_update_sp.jsonl)
 - **Statuts** :
     - OK : la réattribution du service producteur des groupes d’objets a bien été effectuée
     - KO : la réattribution du service producteur des groupes d’objets n’a pas été effectuée 
@@ -6618,7 +6618,7 @@ D’une façon synthétique, le workflow est décrit ainsi :
 
 #### Préparation de la réattribution des services producteurs des unités archivistiques filles (ORIGINATING_AGENCY_REASSIGNMENT_PREPARE_CHILD_UNITS )
 
-- **Règle** : tâche consistant, à partir du fichier « units_to_update.jsonl » qui a servi à mettre à jour les unités pricipales, à rechercher toutes les unités archivistiques filles (champ « #allunitups ») non encore traitées par l’opération de ré-attribution, ainsi que les groupes d’objets des unités archivistiques réattribuées et de leurs descendantes non encore traités par l’opération de ré-attribution. Les identifiants sont dédoublonnés via le module **batch-report** et exportés dans les fichiers de distribution « child_units_to_update.jsonl » et « object_groups_to_update_sps.jsonl ». 
+- **Règle** : tâche consistant, à partir du fichier « units_to_update.jsonl » qui a servi à mettre à jour les unités principales, à rechercher toutes les unités archivistiques filles (champ « #allunitups ») non encore traitées par l’opération de ré-attribution, ainsi que les groupes d’objets des unités archivistiques réattribuées et de leurs descendantes non encore traités par l’opération de ré-attribution. Les identifiants sont dédoublonnés via le module **batch-report** et exportés dans les fichiers de distribution « child_units_to_update.jsonl » et « object_groups_to_update_sps.jsonl ». 
 - **Type** : bloquant
 - **Statuts** :
     - OK : la préparation de la réattribution des services producteurs des unités archivistiques filles a bien été effectuée 
@@ -6628,7 +6628,7 @@ D’une façon synthétique, le workflow est décrit ainsi :
 ### Processus de réattribution des services producteurs des unités archivistiques filles (STP_ORIGINATING_AGENCY_REASSIGNMENT_UPDATE_CHILD_UNITS) 
 
 - **Règle** : étape consistant à recalculer les services producteurs des unités archivistiques filles, par lots de 1000.
-- **Distribution** : distibué (LIST_IN_JSONL_FILE sur le fichier child_units_to_update.jsonl)
+- **Distribution** : distribué (LIST_IN_JSONL_FILE sur le fichier child_units_to_update.jsonl)
 - **Type** : bloquant, non annulable
 - **Statuts** :
     - OK : la réattribution des services producteurs des unités archivistiques filles a bien été effectuée
@@ -6649,7 +6649,7 @@ D’une façon synthétique, le workflow est décrit ainsi :
 
 - **Règle** : étape consistant à recalculer les services producteurs des groupes d’objets des unités archivistiques réattribuées et leurs filles, par lots de 1000.
 - **Type** : bloquant, non annulable
-- **Distribution** : distibué (LIST_IN_JSONL_FILE sur le fichier object_groups_to_update_sps.jsonl)
+- **Distribution** : distribué (LIST_IN_JSONL_FILE sur le fichier object_groups_to_update_sps.jsonl)
 - **Statuts** :
     - OK : la réattribution des services producteurs des groupes d’objets a bien été effectuée 
     - KO : la réattribution des services producteurs des groupes d’objets n’a pas été effectuée
@@ -6714,7 +6714,7 @@ Le rapport de réattribution du service producteur est structuré de la manière
 
 Le rapport de réattribution du service producteur est composé de quatre parties :
 
-La partie « OperationSummary », c’est le résumé de l’opération, il est composée des champs suivants :
+La partie « OperationSummary », c’est le résumé de l’opération, il est composé des champs suivants :
 -  « tenant » : tenant sur lequel l’opération a été lancée ;
 -  « evId » : identifiant de l’événement (l’opération) ;
 -  « evType » : code du type de l’opération (avant la dernière step) ;
@@ -6724,7 +6724,7 @@ La partie « OperationSummary », c’est le résumé de l’opération, il est 
 -  « rightsStatementIdentifier » : identifiant du contrat d’entrée; 
 -  « evDetData » : détails des données de l’événement, ça contient la requête en format JSON.
 
-La partie « ReportSummary », ça correspond à des informations concernant l'execution de l'opération, il est composé des champs suivants :
+La partie « ReportSummary », ça correspond à des informations concernant l'exécution de l'opération, il est composé des champs suivants :
 -  « evStartDateTime » : date du début de l’opération ;
 -  « evEndDateTime » : date de fin de l’opération ;
 -  « reportType » : correspond au modèle du rapport. Ici c'est **REASSIGNMENT_ORIGINATING_AGENCIES** ;
