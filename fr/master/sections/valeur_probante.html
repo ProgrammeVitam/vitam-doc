@@ -100,10 +100,6 @@
 <li class="toctree-l3"><a class="reference internal" href="#principe">21.5.1. Principe</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#forme-du-releve">21.5.2. Forme du relevé</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#generation-du-releve">21.5.3. Génération du relevé</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#audit-de-la-chaine-de-tracabilite">21.5.4. Audit de la chaîne de traçabilité</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#liste-des-anomalies-emises">21.5.4.1. Liste des anomalies émises</a></li>
-</ul>
-</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#annexes">21.6. Annexes</a><ul>
@@ -243,7 +239,7 @@ Ce document présente rapidement, d’un point de vue fonctionnel, le mécanisme
 <li><p>Le journal des écritures, qui a pour objectif de tracer les opérations d’écriture effectuées par la solution logicielle sur les offres de stockage. Il garantit de fait l’horodatage et l’intégrité de tout élément dans le système.</p></li>
 </ul>
 <p><strong>Nota bene :</strong>
-Il y a un décalage dans les appellations des journaux par rapport à la norme NF Z 42‑013. Alors que la 42-013 parle de journal de cycle de vie des archives sans distinction de type d’évènements, la solution logicielle Vitam a fait le choix d’avoir des informations journalisées de type micro, pour chaque élément d’archives, et d’autres de type macro, pour les actions du système comme les entrées de SIP, les éliminations, les transferts…  Il a été décidé que le niveau de journal le plus fin devait garder l’appellation de « journal du cycle de vie des archives ». Par contre, les événements de niveau plus macro du système sont enregistrés dans le « journal des opérations »<a class="footnote-reference brackets" href="#id6" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
+Il y a un décalage dans les appellations des journaux par rapport à la norme NF Z 42‑013. Alors que la 42-013 parle de journal de cycle de vie des archives sans distinction de type d’évènements, la solution logicielle Vitam a fait le choix d’avoir des informations journalisées de type micro, pour chaque élément d’archives, et d’autres de type macro, pour les actions du système comme les entrées de SIP, les éliminations, les transferts…  Il a été décidé que le niveau de journal le plus fin devait garder l’appellation de « journal du cycle de vie des archives ». Par contre, les événements de niveau plus macro du système sont enregistrés dans le « journal des opérations »<a class="footnote-reference brackets" href="#id5" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>.</p>
 </section>
 <section id="preuve-systemique">
 <h2><span class="section-number">21.3. </span>Preuve systémique<a class="headerlink" href="#preuve-systemique" title="Lien vers cette rubrique"></a></h2>
@@ -266,7 +262,7 @@ Il y a un décalage dans les appellations des journaux par rapport à la norme N
 <li><p>Le guide GA Z 42-019 demande explicitement (cf 2.2.8.1.b) un chaînage des journaux, celui-ci est mis en œuvre.</p></li>
 <li><p>La norme NF Z 42-013 demande aussi un horodatage au moins toutes les 24 heures. Un fichier spécifique est généré avec toutes les lignes présentes dans le journal depuis la dernière sécurisation. Ce fichier est horodaté sûrement avec un tampon RFC 3161. Cette opération dont le délai est paramétrable doit être faite pour être conforme à la norme au moins une fois par 24 heures.</p></li>
 <li><p>La sécurité d’un tampon d’horodatage même ancien (plus que sa durée de validité cryptographique) peut être assurée par le chaînage et la vérification de la chaîne jusqu’à un tampon valide. Pour raccourcir ce parcours, le chaînage est fait avec des journaux du mois et de l’année précédents.</p></li>
-<li><p>Il est utile de pouvoir prouver une ligne d’un journal sans devoir montrer les autres, non seulement pour des raisons de poids de données à transmettre pour une vérification de l’ensemble des pièces, mais aussi pour des raisons de confidentialité. Un mécanisme d’arbre de Merkle<a class="footnote-reference brackets" href="#id7" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> est mis en œuvre pour rendre prouvable chaque ligne indépendamment des autres.
+<li><p>Il est utile de pouvoir prouver une ligne d’un journal sans devoir montrer les autres, non seulement pour des raisons de poids de données à transmettre pour une vérification de l’ensemble des pièces, mais aussi pour des raisons de confidentialité. Un mécanisme d’arbre de Merkle<a class="footnote-reference brackets" href="#id6" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> est mis en œuvre pour rendre prouvable chaque ligne indépendamment des autres.
 De fait, la conjonction du chaînage et de l’arbre de Merkle constituent des principes des blockchains dont l’usage grandissant permet de garantir l’efficacité.</p></li>
 </ol>
 </section>
@@ -362,10 +358,10 @@ Le journal des opérations correspond à une table dans laquelle chaque enregist
 <li><p>la dernière date d’événement est donc celle du dernier événement dans le tableau des  événements ;</p></li>
 <li><p>de plus, à chaque écriture effective en base d’un nouvel événement, une date technique de persistance est utilisée pour tracer l’écriture des événements en base.</p></li>
 </ul>
-<p>Lors de la sécurisation du journal des opérations, les éléments pris en compte pour la construction du fichier « data.txt » sont sélectionnés en fonction du moment de dernière modification en base des journaux à sécuriser, en partant du moment de dernière sécurisation jusqu’au moment présent, moins une période de temps paramétrable<a class="footnote-reference brackets" href="#id8" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a> (par défaut 5 minutes).</p>
+<p>Lors de la sécurisation du journal des opérations, les éléments pris en compte pour la construction du fichier « data.txt » sont sélectionnés en fonction du moment de dernière modification en base des journaux à sécuriser, en partant du moment de dernière sécurisation jusqu’au moment présent, moins une période de temps paramétrable<a class="footnote-reference brackets" href="#id7" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a> (par défaut 5 minutes).</p>
 <p>La question s’est posée de prendre comme élément à sécuriser soit les événements unitaires des opérations, soit les opérations elles-mêmes. Il a été choisi de prendre l’ensemble des opérations ayant fait l’objet d’un événement dans la période qui doit être sécurisée (date technique de persistance), et de reprendre tous les événements de ces opérations y compris les antérieurs à la période de sécurisation. Cela permet, pour les opérations réalisées sur une longue période, d’avoir un enregistrement complet de l’opération jusqu’à sa finalisation.</p>
 <p>Le fichier correspondant à l’extraction du journal des opérations est construit, de ce fait, avec tous les éléments du journal des opérations de la période de sécurisation (à savoir toutes les opérations dont l’un des événements a eu lieu dans la période temps de sécurisation), triés par date du dernier événement. Chaque élément du journal des opérations est enregistré au format JSON, mais à plat sur une ligne avec les sauts de ligne encodés.</p>
-<p><strong>Nota bene :</strong> comme la sécurisation est aussi une opération, en général<a class="footnote-reference brackets" href="#id9" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a>, le fichier de sécurisation du journal des opérations se finit par une opération de sécurisation non finalisée (celle en cours).</p>
+<p><strong>Nota bene :</strong> comme la sécurisation est aussi une opération, en général<a class="footnote-reference brackets" href="#id8" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a>, le fichier de sécurisation du journal des opérations se finit par une opération de sécurisation non finalisée (celle en cours).</p>
 </section>
 <section id="mise-en-oeuvre-sur-les-journaux-du-cycle-de-vie">
 <h3><span class="section-number">21.4.4. </span>Mise en œuvre sur les journaux du cycle de vie<a class="headerlink" href="#mise-en-oeuvre-sur-les-journaux-du-cycle-de-vie" title="Lien vers cette rubrique"></a></h3>
@@ -620,66 +616,6 @@ Le relevé de valeur probante va en fait un cran plus loin que la simple preuve 
 <li><p>formaté en PDF depuis l’APP Relevé de valeur probante de VitamUI.</p></li>
 </ul>
 <p><strong>Nota bene :</strong> pour chaque objet traité, le relevé s’appuie sur les sécurisations du journal des opérations et des journaux du cycle de vie des groupes d’objets techniques qui couvrent la période concernée et qui portent la version du format de sécurisation configurée pour le tenant (voir « Version du format de sécurisation (SecurisationVersion) » ci-dessus). Il en va de même pour l’opération d’audit de la vérification des journaux sécurisés, décrite dans le document <a class="reference internal" href="modele_de_workflow.html"><span class="std std-doc">Vitam – Modèle de workflow</span></a>, dont le périmètre est restreint aux sécurisations portant cette même version.</p>
-</section>
-<section id="audit-de-la-chaine-de-tracabilite">
-<h3><span class="section-number">21.5.4. </span>Audit de la chaîne de traçabilité<a class="headerlink" href="#audit-de-la-chaine-de-tracabilite" title="Lien vers cette rubrique"></a></h3>
-<hr class="docutils" />
-<p>Il s’agit d’une opération d’audit permettant de vérifier l’intégrité et la continuité de la chaîne des journaux de traçabilité sécurisés (opérations, cycle de vie des unités archivistiques, cycle de vie des objets groupes) sur une période, une version, et un niveau de verbosité des anomalies.</p>
-<section id="liste-des-anomalies-emises">
-<h4><span class="section-number">21.5.4.1. </span>Liste des anomalies émises<a class="headerlink" href="#liste-des-anomalies-emises" title="Lien vers cette rubrique"></a></h4>
-<p>Les anomalies sont classées par niveau de criticité : <strong>CRITICAL</strong>, <strong>SEVERE</strong>, <strong>WARNING</strong>, <strong>NOTICE</strong></p>
-<ol class="arabic">
-<li><h4 class="rubric" id="niveau-critique">Niveau critique:</h4>
-</li>
-</ol>
-<ul class="simple">
-<li><p><strong>CRITICAL_TRUNCATED_LOGBOOK_OPERATION_TRACEABILITY</strong>: Le nombre d’opérations sécurisées est égal à 10 000 éléments, des opérations ont pu échapper à la sécurisation.</p></li>
-<li><p><strong>CRITICAL_MULTIPLE_TRACEABILITY_OPERATIONS_SAME_ZIP_NAME</strong>: Plusieurs sécurisations ont produit le même fichier ZIP, contrôle sur le nom du fichier (écrasement possible).</p></li>
-<li><p><strong>CRITICAL_MULTIPLE_TRACEABILITY_CHAIN_ROOTS</strong>: Plusieurs chaînes indépendantes (plusieurs racines) dans la période auditée.</p></li>
-<li><p><strong>CRITICAL_TRACEABILITY_OPERATION_HAS_MULTIPLE_PARENTS</strong>: Une sécurisation se rattache à plusieurs prédécesseurs.</p></li>
-<li><p><strong>CRITICAL_MISSING_PREVIOUS_TRACEABILITY_OPERATION</strong>: La sécurisation précédente d’une sécurisation est introuvable (rupture de chaîne).</p></li>
-<li><p><strong>CRITICAL_PREVIOUS_TRACEABILITY_OPERATIONS_WRONG_TIMESTAMP_TOKEN</strong> : Le jeton d’horodatage « précédent » inscrit dans le fichier de sécurisation ZIP ne correspond pas à celui du prédécesseur en base de données (fichier altéré par exemple).</p></li>
-<li><p><strong>CRITICAL_INVALID_MERKLE_TREE</strong>: La chaine de Merkle recalculée diffère de celle déclarée dans le fichier de sécurisation ZIP.</p></li>
-<li><p><strong>CRITICAL_INVALID_TIMESTAMP</strong>: Jeton d’horodatage invalide (signature, certificat, validation TSP).</p></li>
-<li><p><strong>CRITICAL_TIMESTAMP_MISMATCH_BETWEEN_DB_AND_TRACEABILITY_FILE</strong> : Le jeton d’horodatage du ZIP diffère de celui enregistré dans le journal des opérations (fichier altéré par exemple).</p></li>
-<li><p><strong>CRITICAL_TIMESTAMP_MISMATCH_BETWEEN_MERKLE_FILE_AND_COMPUTING_FILE</strong>: Incohérence interne au ZIP entre fichier Merkle, fichier de calcul et empreinte horodatée (fichier altéré par exemple).</p></li>
-<li><p><strong>CRITICAL_TRACEABILITY_FILE_NOT_FOUND_IN_ANY_OFFER</strong>: Le fichier de sécurisation est absent de toutes les offres de stockage.</p></li>
-<li><p><strong>CRITICAL_TRACEABILITY_FILE_HASH_MISMATCH_BETWEEN_OFFERS</strong>: Le ZIP n’a pas la même empreinte selon les offres.</p></li>
-</ul>
-<ol class="arabic" start="2">
-<li><h4 class="rubric" id="id5">Niveau critique:</h4>
-</li>
-</ol>
-<ul class="simple">
-<li><p><strong>SEVERE_TRACEABILITY_OPERATION_WRONG_STATUS</strong>: Le statut final journalisé ne reflète pas le statut réel des événements.</p></li>
-<li><p><strong>SEVERE_TRACEABILITY_OPERATION_CONTAINS_TOO_OLD_DATA</strong>: La sécurisation porte sur des données de plus de 24 h.</p></li>
-<li><p><strong>SEVERE_TRACEABILITY_OPERATION_WITHOUT_SUCCESSOR</strong>: Dernière sécurisation de la chaîne sans successeur depuis plus de 24 h.</p></li>
-<li><p><strong>SEVERE_TRACEABILITY_FILE_NOT_IN_ALL_OFFERS</strong>: Le fichier de sécurisation ZIP est absent sur au moins une offre (mais existe ailleurs, empreintes identiques).</p></li>
-</ul>
-<ol class="arabic" start="3">
-<li><h4 class="rubric" id="niveau-warning">Niveau warning:</h4>
-</li>
-</ol>
-<ul class="simple">
-<li><p><strong>WARNING_TRACEABILITY_OPERATION_PAUSED</strong>: L’Opération de sécurisation est en pause.</p></li>
-<li><p><strong>WARNING_TRACEABILITY_OPERATION_ABORTED</strong>: Opération arrêtée par l’utilisateur ou terminée KO sans cause identifiée.</p></li>
-<li><p><strong>WARNING_TRACEABILITY_OPERATION_FAILED</strong>: Opération terminée en KO pour données invalides (KO_INVALID_DATA).</p></li>
-<li><p><strong>WARNING_TRACEABILITY_OPERATION_ABNORMALLY_LONG</strong>: Opération en cours depuis plus de 4 h.</p></li>
-<li><p><strong>WARNING_TRUST_STORE_NOT_FOUND</strong>: Pas de truststore : la chaîne de confiance du certificat d’horodatage n’a pas été vérifiée.</p></li>
-<li><p><strong>WARNING_TRACEABILITY_OPERATION_CONTAINS_WARNINGS</strong>: Opération terminée en WARNING avec un ZIP produit.</p></li>
-<li><p><strong>WARNING_ROOT_TRACEABILITY_OPERATION_MAY_CONTAIN_TOO_OLD_DATA</strong>: Une sécurisation peut couvrir des données anciennes (Incertitude).</p></li>
-</ul>
-<ol class="arabic" start="4">
-<li><h4 class="rubric" id="niveau-notice">Niveau notice:</h4>
-</li>
-</ol>
-<ul class="simple">
-<li><p><strong>NOTICE_DISCONTINUED_TRACEABILITY_BRANCH</strong>: Branche morte : une autre branche plus récente a pris le relais.</p></li>
-<li><p><strong>NOTICE_TRACEABILITY_BRANCH_DETECTED</strong>: Une sécurisation a plusieurs successeurs (bifurcation).</p></li>
-<li><p><strong>NOTICE_TRACEABILITY_OPERATION_DEAD</strong>: Une sécurisation morte (crash).</p></li>
-<li><p><strong>NOTICE_CONCURRENT_TRACEABILITY_OPERATION</strong>: Opération de sécurisation lancée en doublon avec une autre.</p></li>
-</ul>
-</section>
 </section>
 </section>
 <section id="annexes">
@@ -1250,19 +1186,19 @@ Le relevé de valeur probante va en fait un cran plus loin que la simple preuve 
 <p><a class="reference download internal" download="" href="../_downloads/cdc66b966742e0e24d750e88591b0a1e/annexe2.ods"><span class="xref download myst">Liste des vérifications présentes dans le relevé de valeur probante</span></a></p>
 <hr class="footnotes docutils" />
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id6" role="doc-footnote">
+<aside class="footnote brackets" id="id5" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
 <p>Pour une description fine des journaux, voir le <a class="reference internal" href="organisation_information.html"><span class="std std-doc">document VITAM. Organisation de l’information</span></a>.</p>
 </aside>
-<aside class="footnote brackets" id="id7" role="doc-footnote">
+<aside class="footnote brackets" id="id6" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
 <p>Pour une explication de l’arbre de Merkle et de son utilisation pour la preuve d’une partie des éléments voir <a class="reference external" href="https://www.certificate-transparency.org/log-proofs-work">https://www.certificate-transparency.org/log-proofs-work</a>.</p>
 </aside>
-<aside class="footnote brackets" id="id8" role="doc-footnote">
+<aside class="footnote brackets" id="id7" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">3</a><span class="fn-bracket">]</span></span>
 <p>Ce délai est nécessaire pour tenir compte de la latence de la base NoSQL au cœur de Vitam.</p>
 </aside>
-<aside class="footnote brackets" id="id9" role="doc-footnote">
+<aside class="footnote brackets" id="id8" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">4</a><span class="fn-bracket">]</span></span>
 <p>Si d’autres opérations ont été journalisées après le déclenchement de la journalisation mais avant sa fin, il peut y avoir des événements concurrents qui s’intercalent, et la période prise en compte assure un léger recouvrement pour éviter toute perte dans un environnement fortement distribué et donc non strictement synchrone.</p>
 </aside>
