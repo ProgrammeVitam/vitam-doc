@@ -6214,3 +6214,289 @@ La partie « ReportDetail » contient les détails de l’opération de suppre
 		- « PersistentIdentifierContent » : identifiant pérenne
 -  «  objectGroupId » : Id de l’objet groupe
 -  «  unitIds » : une liste des unités archivistiques associées à la version de GOT
+
+
+### Le workflow de réattribution du service producteur (ORIGINATING_AGENCY_REASSIGNMENT)
+----
+
+Cette section décrit le workflow de réattribution du service producteur des unités archivistiques et, optionnellement, des groupes d’objets techniques associés.
+
+Ce processus permet de remplacer le service producteur principal (champ « #originating_agency ») d’un ensemble d’unités archivistiques sélectionnées par une requête DSL, et propager la modification sur les unités filles ainsi qu'aux objets groupes en mettant à jour le champ « #originating_agencies », puis mettre à jour le registre des fonds en conséquence.
+
+Le workflow est lancé avec les paramètres suivants:
+-  « dslRequest » : requête DSL de sélection des unités archivistiques à réattribuer ;
+-  « sourceOriginatingAgency » : identifiant du service producteur actuel ;
+-  « targetOriginatingAgency » : identifiant du nouveau service producteur ;
+-  « propagateToObjectGroups » : indiquant si la réattribution doit également s’appliquer aux groupes d’objets techniques des unités archivistiques sélectionnées.
+
+- **Statuts** :
+    - OK : la réattribution du service producteur a bien été effectuée
+    - WARNING : avertissement lors de la réattribution du service producteur
+    - KO : la réattribution du service producteur n’a pas été effectuée
+    - FATAL : une erreur technique est survenue lors de la réattribution du service producteur
+
+Structure du workflow de réattribution du service producteur
+
+---
+
+D’une façon synthétique, le workflow est décrit ainsi :
+
+![](./medias/modele_workflow/reassignement_1.png)
+![](./medias/modele_workflow/reassignement_2.png)
+
+### Processus de préparation de la réattribution du service producteur (STP_ORIGINATING_AGENCY_REASSIGNMENT_PREPARATION)
+
+- **Règle** : étape consistant à vérifier les processus concurrents et les seuils de traitement, à contrôler la requête de réattribution et à préparer les listes des unités archivistiques et des groupes d’objets à mettre à jour.
+- **Type** : bloquant
+- **Statuts** :
+    - OK : la préparation de la réattribution du service producteur a bien été effectuée
+    - KO : la préparation de la réattribution du service producteur n’a pas été effectuée
+    - FATAL : une erreur technique est survenue lors de la préparation de la réattribution du service producteur
+    - WARNING : avertissement lors de la préparation de la réattribution du service producteur
+
+#### Vérification des processus concurrents (CHECK_CONCURRENT_WORKFLOW_LOCK : CheckConcurrentWorkflowLockHandler.java)
+
+- **Règle** : tâche consistant à vérifier qu’aucun processus de type RECLASSIFICATION, ELIMINATION_ACTION, ORIGINATING_AGENCY_REASSIGNMENT, TRANSFER_REPLY et INGEST_CLEANUP n’est en cours sur le tenant.
+- **Type** : bloquant
+- **Distribution** : Non distribué
+- **Statuts** :
+    - OK : aucun processus concurrent n’est en cours
+    - KO : un processus concurrent est en cours d’exécution
+    - FATAL : une erreur technique est survenue lors de la vérification des processus concurrents
+
+#### Vérification des seuils de limitation de traitement des unités archivistiques
+
+- **Règle** : tâche consistant à vérifier que le nombre d’unités archivistiques sélectionnées par la requête DSL ne dépasse pas le seuil de traitement autorisé.
+- **Type** : bloquant
+- **Distribution** : Non distribué
+- **Statuts** :
+    - OK : Le nombre d'unités archivistiques sélectionnées est inférieur au seuil de la requête **threshold** s'il est renseigné et inférieur au seuil par defaut **distributionThreshold**
+    - KO : le nombre d’unités archivistiques sélectionnées dépasse le seuil autorisé
+    - FATAL : une erreur technique est survenue lors de la vérification des seuils
+    - WARNING : Le seuil de la requête **threshold** est présent et il est supérieur au seuil par defaut **distributionThreshold**, et le nombre d'unités archivistiques sélectionnées est inférieur au seuil de la requête **threshold** et supérieur à celui par défaut **distributionThreshold**
+
+#### Préparation de la réattribution du service producteur (ORIGINATING_AGENCY_REASSIGNMENT_PREPARATION)
+
+- **Règle** : tâche consistant à contrôler la requête de réattribution, à sélectionner les unités archivistiques et les groupes d’objets à mettre à jour, et à produire les fichiers de distribution « units_to_update.jsonl » et « object_groups_to_update_sp.jsonl » ainsi que le fichier de statistiques « reassignment_statistics.json » (nombre d’unités archivistiques, nombre de groupes d’objets et liste des opérations d’entrée « #opi » concernées).
+- **Type** : bloquant
+- **Distribution** : Non distribué
+- **Contrôles effectués** :
+    - le service producteur source doit être différent du service producteur cible ;
+    - le service producteur cible doit exister dans le référentiel des services agents ;
+    - les unités archivistiques sélectionnées ne doivent pas être des unités archivistiques d’arbre ou de plan (S'il y en a == KO) ;
+    - le service producteur de chaque unité archivistique sélectionnée doit correspondre au service producteur source ou au service producteur cible. Seules les unités archivistiques rattachées au service producteur source sont mises à jour ; celles déjà rattachées au service producteur cible sont ignorées ;
+    - si « propagateToObjectGroups » est activé, seuls les groupes d’objets rattachés au service producteur source sont retenus (après dédoublonnage) ;
+
+- **Limitations de la version courante** : la réattribution ne peut porter que sur la totalité des unités archivistiques, groupes d’objets et objets issus d’une même opération d’entrée, le registre des fonds n’étant mis à jour que par détail complet (une ligne par opération d’entrée). En conséquence :
+    - la requête ne doit pas concerner plus de 1000 opérations d’entrée (« #opi ») distinctes ;
+    - le périmètre sélectionné doit couvrir l’intégralité des unités archivistiques et des groupes d’objets des opérations d’entrée concernées ;
+    - un groupe d’objets sélectionnés ne doit pas contenir d’objets issus d’une autre opération d’entrée ou de préservation.
+- **Statuts** :
+    - OK : la préparation de la réattribution du service producteur a bien été effectuée
+    - WARNING : la propagation aux groupes d’objets a été demandée mais aucun groupe d’objets n’est à mettre à jour
+    - KO : l’un des contrôles ci-dessus n’est pas respecté
+    - FATAL : une erreur technique est survenue lors de la préparation de la réattribution du service producteur
+
+### Processus de réattribution du service producteur des unités archivistiques (STP_ORIGINATING_AGENCY_REASSIGNMENT_UPDATE_UNITS)
+
+- **Règle** : étape distribuée consistant à mettre à jour le service producteur des unités archivistiques sélectionnées, par lots de 1000. Si la liste est vide, l’étape est en avertissement.
+- **Type** : bloquant, non annulable
+- **Distribution** : distribué (LIST_IN_JSONL_FILE sur le fichier units_to_update.jsonl)
+- **Statuts** :
+    - OK : la réattribution du service producteur des unités archivistiques a bien été effectuée
+    - KO : la réattribution du service producteur des unités archivistiques n’a pas été effectuée
+    - FATAL : une erreur technique est survenue lors de la réattribution du service producteur des unités archivistiques
+    - WARNING : avertissement lors de la réattribution du service producteur des unités archivistiques
+
+#### Réattribution du service producteur des unités archivistiques (ORIGINATING_AGENCY_REASSIGNMENT_UPDATE_UNITS )
+
+- **Règle** : tâche consistant, pour chaque unité archivistique, à :
+    - remplacer le service producteur « #originating_agency » par le service producteur cible ;
+    - ajouter le service producteur cible aux services producteurs « #originating_agencies » et en retirer le service producteur source, sauf si l’unité archivistique a au moins un parent toujours rattaché au service producteur source ;
+    - ajouter l’identifiant de l’opération de réattribution dans le champ « #operations » ;
+    - ajouter une entrée dans l’historique des réattributions « #reassignments » (« OperationId », « SourceOriginatingAgency », « TargetOriginatingAgency », « ReassignmentDate ») ;
+    - invalider les règles de gestion héritées calculées, le cas échéant.
+      Cette tâche alimente le journal du cycle de vie des unités archivistiques (LFC.ORIGINATING_AGENCY_REASSIGNMENT_UPDATE_UNITS).
+- **Type** : bloquant
+- **Statuts** :
+    - OK : la réattribution du service producteur de l’unité archivistique a bien été effectuée
+    - KO : la réattribution du service producteur de l’unité archivistique n’a pas été effectuée
+    - FATAL : une erreur technique est survenue lors de la réattribution du service producteur de l’unité archivistique
+
+#### Enregistrement des métadonnées des unités archivistiques sur l’offre de stockage (UNIT_METADATA_STORAGE)
+
+- **Règle** : tâche consistant à sauvegarder les métadonnées et le journal du cycle de vie des unités archivistiques mises à jour sur les offres de stockage.
+- **Type** : bloquant
+- **Statuts** :
+    - OK : l’enregistrement des métadonnées des unités archivistiques a bien été effectué
+    - KO : l’enregistrement des métadonnées des unités archivistiques n’a pas été effectué
+    - FATAL : une erreur technique est survenue lors de l’enregistrement des métadonnées des unités archivistiques
+
+
+### Processus de réattribution du service producteur des groupes d’objets (STP_ORIGINATING_AGENCY_REASSIGNMENT_UPDATE_OBJECT_GROUPS)
+
+- **Règle** : étape distribuée consistant à mettre à jour le service producteur des groupes d’objets des unités archivistiques sélectionnées, par lots de **1000**. Cette étape ne traite des éléments que si « propagateToObjectGroups » est activé ;
+- **Type** : bloquant, non annulable
+- **Distribution** : distribué (LIST_IN_JSONL_FILE sur le fichier object_groups_to_update_sp.jsonl)
+- **Statuts** :
+    - OK : la réattribution du service producteur des groupes d’objets a bien été effectuée
+    - KO : la réattribution du service producteur des groupes d’objets n’a pas été effectuée
+    - FATAL : une erreur technique est survenue lors de la réattribution du service producteur des groupes d’objets
+    - WARNING : avertissement lors de la réattribution du service producteur des groupes d’objets
+
+#### Réattribution du service producteur des groupes d’objets (ORIGINATING_AGENCY_REASSIGNMENT_UPDATE_OBJECT_GROUPS)
+
+- **Règle** : tâche consistant, pour chaque groupe d’objets, à remplacer le service producteur « #originating_agency » par le service producteur cible, à mettre à jour les services producteurs « #originating_agencies » selon les mêmes règles que pour les unités archivistiques, à ajouter l’identifiant de l’opération dans le champ « #operations » et à ajouter une entrée dans l’historique des réattributions « #reassignments ». Cette tâche alimente le journal du cycle de vie des groupes d’objets (LFC.ORIGINATING_AGENCY_REASSIGNMENT_UPDATE_OBJECT_GROUPS).
+- **Type** : bloquant
+- **Statuts** :
+    - OK : la réattribution du service producteur du groupe d’objets a bien été effectuée
+    - KO : la réattribution du service producteur du groupe d’objets n’a pas été effectuée
+    - FATAL : une erreur technique est survenue lors de la réattribution du service producteur du groupe d’objets
+
+#### Écriture des métadonnées des objets et groupes d’objets sur l’offre de stockage (OG_METADATA_STORAGE)
+
+- **Règle** : tâche consistant à sauvegarder les métadonnées et le journal du cycle de vie des groupes d’objets mis à jour sur les offres de stockage.
+- **Type** : bloquant
+- **Statuts** :
+    - OK : l’écriture des métadonnées des groupes d’objets a bien été effectuée
+    - KO : l’écriture des métadonnées des groupes d’objets n’a pas été effectuée
+    - FATAL : une erreur technique est survenue lors de l’écriture des métadonnées des groupes d’objets
+
+### Processus de préparation de la réattribution des services producteurs des unités archivistiques filles (STP_ORIGINATING_AGENCY_REASSIGNMENT_PREPARE_CHILD_UNITS)
+
+- **Règle** : étape consistant à identifier les unités archivistiques filles des unités archivistiques réattribuées ainsi que les groupes d’objets associés, afin de recalculer leurs services producteurs.
+- **Type** : bloquant, non annulable
+- **Statuts** :
+    - OK : la préparation de la réattribution des services producteurs des unités archivistiques filles a bien été effectuée
+    - KO : la préparation de la réattribution des services producteurs des unités archivistiques filles n’a pas été effectuée
+    - FATAL : une erreur technique est survenue lors de la préparation de la réattribution des services producteurs des unités archivistiques filles
+    - WARNING : avertissement lors de la préparation de la réattribution des services producteurs des unités archivistiques filles
+
+#### Préparation de la réattribution des services producteurs des unités archivistiques filles (ORIGINATING_AGENCY_REASSIGNMENT_PREPARE_CHILD_UNITS )
+
+- **Règle** : tâche consistant, à partir du fichier « units_to_update.jsonl » qui a servi à mettre à jour les unités principales, à rechercher toutes les unités archivistiques filles (champ « #allunitups ») non encore traitées par l’opération de ré-attribution, ainsi que les groupes d’objets des unités archivistiques réattribuées et de leurs descendantes non encore traités par l’opération de ré-attribution. Les identifiants sont dédoublonnés via le module **batch-report** et exportés dans les fichiers de distribution « child_units_to_update.jsonl » et « object_groups_to_update_sps.jsonl ».
+- **Type** : bloquant
+- **Statuts** :
+    - OK : la préparation de la réattribution des services producteurs des unités archivistiques filles a bien été effectuée
+    - KO : la préparation de la réattribution des services producteurs des unités archivistiques filles n’a pas été effectuée
+    - FATAL : une erreur technique est survenue lors de la préparation de la réattribution des services producteurs des unités archivistiques filles (ORIGINATING_AGENCY_REASSIGNMENT_PREPARE_CHILD_UNITS.FATAL = Erreur technique lors du processus de préparation de réattribution du service producteur des unités archivistiques)
+
+### Processus de réattribution des services producteurs des unités archivistiques filles (STP_ORIGINATING_AGENCY_REASSIGNMENT_UPDATE_CHILD_UNITS)
+
+- **Règle** : étape consistant à recalculer les services producteurs des unités archivistiques filles, par lots de 1000.
+- **Distribution** : distribué (LIST_IN_JSONL_FILE sur le fichier child_units_to_update.jsonl)
+- **Type** : bloquant, non annulable
+- **Statuts** :
+    - OK : la réattribution des services producteurs des unités archivistiques filles a bien été effectuée
+    - KO : la réattribution des services producteurs des unités archivistiques filles n’a pas été effectuée
+    - FATAL : une erreur technique est survenue lors de la réattribution des services producteurs des unités archivistiques filles
+    - WARNING : avertissement lors de la réattribution des services producteurs des unités archivistiques filles
+
+#### Réattribution des services producteurs des unités archivistiques filles (ORIGINATING_AGENCY_REASSIGNMENT_UPDATE_CHILD_UNITS : OriginatingAgencyReassignmentUpdateChildUnitsPlugin.java)
+
+- **Règle** : tâche consistant, pour chaque unité archivistique fille, à ajouter le service producteur cible aux services producteurs « #originating_agencies » et à en retirer le service producteur source, sauf si l’unité archivistique est elle-même rattachée au service producteur source ou si elle a au moins un parent toujours rattaché au service producteur source. Le service producteur principal « #originating_agency » n’est pas modifié. Cette tâche n’alimente pas les journaux du cycle de vie puisque la modification concerne un champ calculé.
+- **Type** : bloquant
+- **Statuts** :
+    - OK : la réattribution des services producteurs de l’unité archivistique fille a bien été effectuée
+    - KO : la réattribution des services producteurs de l’unité archivistique fille n’a pas été effectuée
+    - FATAL : une erreur technique est survenue lors de la réattribution des services producteurs de l’unité archivistique fille
+
+### Processus de réattribution des services producteurs des groupes d’objets hérités (STP_ORIGINATING_AGENCY_REASSIGNMENT_UPDATE_CHILD_OBJECT_GROUPS)
+
+- **Règle** : étape consistant à recalculer les services producteurs des groupes d’objets des unités archivistiques réattribuées et leurs filles, par lots de 1000.
+- **Type** : bloquant, non annulable
+- **Distribution** : distribué (LIST_IN_JSONL_FILE sur le fichier object_groups_to_update_sps.jsonl)
+- **Statuts** :
+    - OK : la réattribution des services producteurs des groupes d’objets a bien été effectuée
+    - KO : la réattribution des services producteurs des groupes d’objets n’a pas été effectuée
+    - FATAL : une erreur technique est survenue lors de la réattribution des services producteurs des groupes d’objets
+    - WARNING : avertissement lors de la réattribution des services producteurs des groupes d’objets
+
+#### Réattribution des services producteurs des groupes d’objets hérités (ORIGINATING_AGENCY_REASSIGNMENT_UPDATE_CHILD_OBJECT_GROUPS )
+
+- **Règle** : tâche consistant, pour chaque groupe d’objets, à ajouter le service producteur cible aux services producteurs « #originating_agencies » et à en retirer le service producteur source selon les mêmes règles que pour les unités archivistiques filles. Le service producteur principal « #originating_agency » n’est pas modifié. Cette tâche n’alimente pas les journaux du cycle de vie.
+- **Type** : bloquant
+- **Statuts** :
+    - OK : la réattribution des services producteurs du groupe d’objets a bien été effectuée
+    - KO : la réattribution des services producteurs du groupe d’objets n’a pas été effectuée
+    - FATAL : une erreur technique est survenue lors de la réattribution des services producteurs du groupe d’objets
+
+### Processus de mise à jour du registre des fonds (STP_ORIGINATING_AGENCY_REASSIGNMENT_ACCESSION_REGISTER_UPDATE)
+
+- **Règle** : étape consistant à mettre à jour le registre des fonds à la suite de la réattribution des services producteurs.
+- **Type** : bloquant, non annulable
+- **Statuts** :
+    - OK : la mise à jour du registre des fonds a bien été effectuée
+    - KO : la mise à jour du registre des fonds n’a pas été effectuée
+    - FATAL : une erreur technique est survenue lors de la mise à jour du registre des fonds
+    - WARNING : avertissement lors de la mise à jour du registre des fonds
+
+#### Mise à jour du registre des fonds (ORIGINATING_AGENCY_REASSIGNMENT_ACCESSION_REGISTER_UPDATE)
+
+- **Règle** : tâche consistant, à partir de la liste des opérations d’entrée (« #opi ») du fichier « reassignment_statistics.json », à :
+    - mettre à jour chaque détail du registre des fonds (« AccessionRegisterDetail ») concerné : remplacement du service producteur (« OriginatingAgency ») par le service producteur cible, mise à jour de l’opération courante (« Opc ») et ajout d’un événement de type « ORIGINATING_AGENCY_REASSIGNMENT » dans le champ « Events » (opération, services producteurs source et cible, date). Un détail déjà rattaché au service producteur cible n’est pas modifié ;
+    - mettre à jour les synthèses du registre des fonds (« AccessionRegisterSummary ») : les volumétries (unités archivistiques, groupes d’objets, objets et taille des objets) des détails réattribués sont ajoutées à la synthèse du service producteur cible et retranchées de celle du service producteur source.
+- **Type** : bloquant
+- **Statuts** :
+    - OK : la mise à jour du registre des fonds a bien été effectuée
+    - KO : la mise à jour du registre des fonds n’a pas été effectuée
+    - FATAL : une erreur technique est survenue lors de la mise à jour du registre des fonds, par exemple si aucun ou plusieurs détails du registre des fonds sont trouvés pour une même opération d’entrée
+
+### Processus de finalisation de la réattribution du service producteur (STP_ORIGINATING_AGENCY_REASSIGNMENT_FINALIZATION)
+
+- **Règle** : étape consistant à finaliser la réattribution du service producteur.
+- **Type** : finally, non annulable
+- **Statuts** :
+    - OK : la finalisation de la réattribution du service producteur a bien été effectuée
+    - KO : la finalisation de la réattribution du service producteur n’a pas été effectuée
+    - FATAL : une erreur technique est survenue lors de la finalisation de la réattribution du service producteur
+    - WARNING : avertissement lors de la finalisation de la réattribution du service producteur
+
+#### Finalisation de la réattribution du service producteur (ORIGINATING_AGENCY_REASSIGNMENT_FINALIZATION)
+
+- **Règle** : tâche consistant à générer le rapport de réattribution du service producteur, à le stocker, puis à supprimer les données temporaires de distribution du module batch-report (REASSIGNMENT_CHILD_UNITS, REASSIGNMENT_OBJECT_GROUPS et REASSIGNMENT_CHILD_OBJECT_GROUPS).
+- **Type** : bloquant
+- **Statuts** :
+    - OK : la finalisation de la réattribution du service producteur a bien été effectuée
+    - KO : la finalisation de la réattribution du service producteur n’a pas été effectuée
+    - FATAL : une erreur technique est survenue lors de la finalisation de la réattribution du service producteur
+
+
+### Rapport de réattribution du service producteur
+
+Le rapport de réattribution du service producteur est structuré de la manière suivante:
+
+####  Détail du rapport
+
+Le rapport de réattribution du service producteur est composé de quatre parties :
+
+La partie « OperationSummary », c’est le résumé de l’opération, il est composé des champs suivants :
+-  « tenant » : tenant sur lequel l’opération a été lancée ;
+-  « evId » : identifiant de l’événement (l’opération) ;
+-  « evType » : code du type de l’opération (avant la dernière step) ;
+-  « outcome » : statut de l’événement, pouvant correspondre aux valeurs « OK », « KO » ou « WARNING » ;
+-  « outDetail » : code correspondant au résultat de l’événement ;
+-  « outMsg » : détail du résultat de l’événement ;
+-  « rightsStatementIdentifier » : identifiant du contrat d’entrée;
+-  « evDetData » : détails des données de l’événement, ça contient la requête en format JSON.
+
+La partie « ReportSummary », ça correspond à des informations concernant l'exécution de l'opération, il est composé des champs suivants :
+-  « evStartDateTime » : date du début de l’opération ;
+-  « evEndDateTime » : date de fin de l’opération ;
+-  « reportType » : correspond au modèle du rapport. Ici c'est **REASSIGNMENT_ORIGINATING_AGENCIES** ;
+-  « vitamResults » : indique les statistiques de l'opération par statut (« OK »), « KO » ainsi que le « total » ;
+-  « extendedInfo » : statistiques supplémentaires de la réattribution:
+    - « nbUnits » : nombre d’unités archivistiques réattribuées ;
+    - « nbObjectGroups » : nombre de groupes d’objets réattribués ;
+    - « initialOperations » : liste des opérations d’entrée (« #opi ») concernées.
+
+La partie « Context » correspond à la requête de réattribution :
+-  « query » : requête de réattribution, composée des champs « dslRequest », « sourceOriginatingAgency », « targetOriginatingAgency » et « propagateToObjectGroups ».
+
+La partie « ReportDetail » contient une ligne par élément réattribué. Elle n’est générée que si le processus est en succès ou en avertissement :
+-  « id » : identifiant de l’unité archivistique ou du groupe d’objets ;
+-  « type » : type de l’élément, « Unit » ou « ObjectGroup » ;
+-  « opi » : identifiant de l’opération d’entrée de l’élément ;
+-  « sourceOriginatingAgency » : service producteur avant réattribution ;
+-  « targetOriginatingAgency » : service producteur après réattribution ;
+-  « objectGroupId » : identifiant du groupe d’objets de l’unité archivistique (uniquement pour les éléments de type « Unit » disposant d’un groupe d’objets).
