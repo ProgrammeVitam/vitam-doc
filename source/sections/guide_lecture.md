@@ -46,6 +46,8 @@ Un [guide de prise en main de Vitam UI pour premier versement est également pro
 |2.5 (Facultatif)|Déclarer un nouveau vocabulaire non présent dans l'ontologie SEDA|[VitamUI_DocAPP_Ontologie](https://www.programmevitam.fr/ressources/DocCourante/autres/fonctionnel/VitamUI_DocAPP_Ontologie.pdf)|Administrateur technique VITAM UI|
 |2.6 (Facultatif)|Importer un arbre de positionnement ou un plan de classement|[VitamUI_DocAPP_Arbres_plans](https://www.programmevitam.fr/ressources/DocCourante/autres/fonctionnel/VitamUI_DocAPP_Arbres_plans.pdf)|Administrateur fonctionnel VITAM UI||
 |2.7 (Facultatif)|Rechercher et consulter un contrat de gestion, le créer et le mettre à jour|[VitamUI_DocAPP_Contrat_gestion](https://www.programmevitam.fr/ressources/DocCourante/autres/fonctionnel/VitamUI_DocAPP_Contrat_gestion.pdf)|Administrateur fonctionnel VITAM UI|
+|2.8 (Facultatif)|importer ou exporter les référentiels des scénarios de préservation et des griffons, consulter les détails d'un scénario ou d'un griffon, mettre à jour les informations d'un griffon, supprimer un scénario de préservation ou un griffon|administrateur fonctionnel Vitam UI|[Griffons et scénarios de préservation](https://www.programmevitam.fr/ressources/DocCourante/autres/fonctionnel/VitamUI_DocAPP_Griffons_et_scenarios_de_preservation.pdf)|
+
 |**Sécurité et droits applicatifs**||||
 |3.1 (Obligatoire<br>sauf si le contrat est inchangé)|Paramétrer des droits pour le versement d'archives dans un coffre par une application|[VitamUI_DocAPP_Contrat_entree](https://www.programmevitam.fr/ressources/DocCourante/autres/fonctionnel/VitamUI_DocAPP_Contrat_entree.pdf)|Administrateur fonctionnel VITAM UI|
 |3.2 (Obligatoire<br>sauf si le contrat est inchangé)|Paramétrer des droits pour la consultation ou mise à jour d'archives dans un coffre par une application|[VitamUI_DocAPP_Contrat_acces](https://www.programmevitam.fr/ressources/DocCourante/autres/fonctionnel/VitamUI_DocAPP_Contrat_acces.pdf)|Administrateur fonctionnel VITAM UI|
@@ -1167,6 +1169,16 @@ Utiliser Vitam UI
 **Lien vers le document :** [Contrats de gestion](https://www.programmevitam.fr/ressources/DocCourante/autres/fonctionnel/VitamUI_DocAPP_Contrat_gestion.pdf)
 
 **Public cible :** Administrateur fonctionnel VITAM UI
+
+#### Griffons et scénarios de préservation
+
+**Présentation :** Le document permet de savoir comment importer ou exporter les référentiels des scénarios de préservation et des griffons, consulter les détails d'un scénario ou d'un griffon, mettre à jour les informations d'un griffon, supprimer un scénario de préservation ou un griffon
+
+**Public cible :** Administrateur fonctionnel Vitam UI
+
+**Nom de l'APP Vitam UI :** Griffons et scénarios de préservation
+
+**Lien vers le document :** [Griffons et scénarios de préservation](https://www.programmevitam.fr/ressources/DocCourante/autres/fonctionnel/VitamUI_DocAPP_Griffons_et_scenarios_de_preservation.pdf)
 
 ### Domaine : Sécurité et droits applicatifs
 
